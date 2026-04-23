@@ -1,0 +1,233 @@
+import Link from 'next/link';
+import { exams, examCategories, guides } from '@/lib/exams-data';
+
+export default function HomePage() {
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800 text-white">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl" />
+        </div>
+        <div className="container-main relative py-16 sm:py-24">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+              100% Free – No Login Required
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
+              Your Complete Guide to
+              <span className="block text-accent-300">Government Exams</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-primary-100 leading-relaxed mb-8 max-w-2xl">
+              Syllabus, study plans, best books, free resources, and preparation strategies for UPSC, SSC, Banking, Railway, and all major government exams. Everything you need, in one place.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/exams" className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]">
+                Explore All Exams
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+              </Link>
+              <Link href="/tools/age-calculator" className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all">
+                Check Your Eligibility
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-14">
+            {[
+              { value: '50+', label: 'Exams Covered' },
+              { value: '200+', label: 'Free Resources' },
+              { value: '28+', label: 'States' },
+              { value: '0', label: 'Cost to You' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                <div className="text-2xl sm:text-3xl font-heading font-bold">{stat.value}</div>
+                <div className="text-sm text-primary-200 mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Exam Categories */}
+      <section className="container-main py-16">
+        <h2 className="section-title text-center">Browse by Category</h2>
+        <p className="section-subtitle text-center mb-10">Choose your exam category to find detailed preparation guides</p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {examCategories.map((cat) => (
+            <Link
+              key={cat.name}
+              href={`/exams?category=${cat.name}`}
+              className="card p-5 text-center hover:border-primary-300 group"
+            >
+              <div className="text-3xl mb-3">{cat.icon}</div>
+              <h3 className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors">{cat.name}</h3>
+              <p className="text-xs text-surface-500 mt-1">{cat.description}</p>
+              <span className="badge badge-primary mt-3">{cat.count} exams</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Popular Exams */}
+      <section className="bg-surface-100 py-16">
+        <div className="container-main">
+          <h2 className="section-title">Most Popular Exams</h2>
+          <p className="section-subtitle mb-10">Detailed preparation guides with syllabus, books, and study plans</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {exams.map((exam) => (
+              <Link key={exam.slug} href={`/exams/${exam.slug}`} className="card p-6 group flex flex-col">
+                <div className="flex items-start justify-between mb-3">
+                  <span className="badge badge-primary">{exam.category}</span>
+                  <span className="badge badge-green">{exam.level}</span>
+                </div>
+                <h3 className="font-heading font-bold text-lg text-surface-900 group-hover:text-primary-500 transition-colors mb-2">
+                  {exam.shortName}
+                </h3>
+                <p className="text-sm text-surface-500 leading-relaxed mb-4 flex-1">
+                  {exam.description.substring(0, 140)}...
+                </p>
+                <div className="space-y-2 text-sm text-surface-600">
+                  <div className="flex justify-between">
+                    <span>Conducting Body</span>
+                    <span className="font-medium text-surface-800">{exam.conductingBody.split(' ').slice(0, 3).join(' ')}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Vacancies</span>
+                    <span className="font-medium text-surface-800">{exam.avgVacancies.split(' ')[0]}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Salary Range</span>
+                    <span className="font-medium text-emerald-600">{exam.salaryRange.split('–')[0].trim()}</span>
+                  </div>
+                </div>
+                <div className="mt-5 pt-4 border-t border-surface-100">
+                  <span className="text-sm font-medium text-primary-500 group-hover:text-primary-600 flex items-center gap-1">
+                    View Complete Guide
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/exams" className="btn-outline">
+              View All Exams →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why SarkariPath */}
+      <section className="container-main py-16">
+        <h2 className="section-title text-center">Why SarkariPath?</h2>
+        <p className="section-subtitle text-center mb-10">What makes us different from other exam preparation websites</p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              icon: '🆓',
+              title: '100% Free Forever',
+              description: 'No hidden charges, no premium plans, no login walls. Every piece of information is freely accessible.',
+            },
+            {
+              icon: '🎯',
+              title: 'Focused & Clutter-Free',
+              description: 'Clean, ad-minimal design. No pop-ups, no spam, no confusing navigation. Just the information you need.',
+            },
+            {
+              icon: '📋',
+              title: 'Complete Study Plans',
+              description: 'Month-by-month preparation roadmaps for every exam. Know exactly what to study and when.',
+            },
+            {
+              icon: '📚',
+              title: 'Curated Free Resources',
+              description: 'Handpicked YouTube channels, websites, Telegram groups, and free PDFs. No paid course promotions.',
+            },
+            {
+              icon: '✅',
+              title: 'Verified Information',
+              description: 'All syllabus, eligibility, and exam pattern data cross-verified with official sources.',
+            },
+            {
+              icon: '📱',
+              title: 'Mobile Friendly',
+              description: 'Designed for mobile-first reading. Study and browse comfortably on your phone anytime.',
+            },
+          ].map((feature) => (
+            <div key={feature.title} className="card p-6">
+              <div className="text-3xl mb-4">{feature.icon}</div>
+              <h3 className="font-heading font-semibold text-surface-900 mb-2">{feature.title}</h3>
+              <p className="text-sm text-surface-500 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Latest Guides */}
+      <section className="bg-surface-100 py-16">
+        <div className="container-main">
+          <h2 className="section-title">Preparation Guides</h2>
+          <p className="section-subtitle mb-10">Step-by-step guides to help you at every stage of your preparation</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {guides.slice(0, 6).map((guide) => (
+              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="card p-6 group">
+                <span className="badge badge-accent mb-3">{guide.category}</span>
+                <h3 className="font-heading font-semibold text-surface-900 group-hover:text-primary-500 transition-colors mb-2">
+                  {guide.title}
+                </h3>
+                <p className="text-sm text-surface-500 leading-relaxed mb-4">{guide.description}</p>
+                <span className="text-xs text-surface-400">{guide.readTime}</span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/guides" className="btn-outline">
+              View All Guides →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="container-main py-16">
+        <div className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-3xl p-8 sm:p-12 text-center text-white">
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4">Not Sure Which Exam to Choose?</h2>
+          <p className="text-primary-100 max-w-2xl mx-auto mb-6">
+            Use our Eligibility Checker to find out which government exams you qualify for based on your age, qualification, and category.
+          </p>
+          <Link href="/tools/age-calculator" className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg">
+            Check Your Eligibility →
+          </Link>
+        </div>
+      </section>
+
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'SarkariPath',
+            url: 'https://sarkaripath.in',
+            description: 'Free comprehensive guide for Indian government exam preparation.',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: 'https://sarkaripath.in/exams?q={search_term_string}',
+              'query-input': 'required name=search_term_string',
+            },
+          }),
+        }}
+      />
+    </>
+  );
+}
