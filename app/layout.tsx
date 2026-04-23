@@ -28,7 +28,7 @@ function Navbar() {
           <img
             src="/logo.svg"
             alt="TaiyarHo"
-            className="h-12 sm:h-14 w-auto transition-opacity group-hover:opacity-80"
+            className="h-10 w-auto"
           />
         </Link>
 
