@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { exams, examCategories, guides } from '@/lib/exams-data';
+import { exams, examCategories, guides, allExams } from '@/lib/exams-data';
 
 export default function HomePage() {
   return (
@@ -57,18 +57,21 @@ export default function HomePage() {
         <p className="section-subtitle text-center mb-10">Choose your exam category to find detailed preparation guides</p>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {examCategories.map((cat) => (
-            <Link
-              key={cat.name}
-              href={`/exams?category=${cat.name}`}
-              className="card p-5 text-center hover:border-primary-300 group"
-            >
-              <div className="text-3xl mb-3">{cat.icon}</div>
-              <h3 className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors">{cat.name}</h3>
-              <p className="text-xs text-surface-500 mt-1">{cat.description}</p>
-              <span className="badge badge-primary mt-3">{cat.count} exams</span>
-            </Link>
-          ))}
+          {examCategories.map((cat) => {
+            const count = allExams.filter(e => e.category === cat.name).length;
+            return (
+              <Link
+                key={cat.name}
+                href={`/exams?category=${cat.name}`}
+                className="card p-5 text-center hover:border-primary-300 group"
+              >
+                <div className="text-3xl mb-3">{cat.icon}</div>
+                <h3 className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors">{cat.name}</h3>
+                <p className="text-xs text-surface-500 mt-1">{cat.description}</p>
+                <span className="badge badge-primary mt-3">{count} exams</span>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
