@@ -37,7 +37,7 @@ export default function HomePage() {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-14">
             {[
-              { value: '50+', label: 'Exams Covered' },
+              { value: '100', label: 'Exams Covered' },
               { value: '200+', label: 'Free Resources' },
               { value: '28+', label: 'States' },
               { value: '0', label: 'Cost to You' },
