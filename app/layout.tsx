@@ -3,14 +3,14 @@ import Link from 'next/link';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'SarkariPath – Free Guide for Indian Government Exam Preparation',
+  title: 'TaiyarHo – Free Guide for Indian Government Exam Preparation',
   description: 'Complete free guide for all Indian government exams – UPSC, SSC, Banking, Railway. Syllabus, study plans, best books, free resources, and exam strategies.',
   keywords: 'government exam preparation, sarkari exam, UPSC preparation, SSC CGL, IBPS PO, railway exam, government job guide, free study material',
-  metadataBase: new URL('https://sarkaripath.in'),
+  metadataBase: new URL('https://taiyarho.in'),
   openGraph: {
-    title: 'SarkariPath – Free Guide for Indian Government Exam Preparation',
+    title: 'TaiyarHo – Free Guide for Indian Government Exam Preparation',
     description: 'Complete free guide for all Indian government exams. Syllabus, study plans, best books, and free resources.',
-    siteName: 'SarkariPath',
+    siteName: 'TaiyarHo',
     locale: 'en_IN',
     type: 'website',
   },
@@ -29,7 +29,7 @@ function Navbar() {
             S
           </div>
           <span className="font-heading font-bold text-xl text-surface-900 group-hover:text-primary-500 transition-colors">
-            Sarkari<span className="text-primary-500">Path</span>
+            Taiyar<span className="text-primary-500">Ho</span>
           </span>
         </Link>
 
@@ -93,10 +93,10 @@ function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center text-white font-heading font-bold">S</div>
-              <span className="font-heading font-bold text-lg text-white">SarkariPath</span>
+              <span className="font-heading font-bold text-lg text-white">TaiyarHo</span>
             </div>
             <p className="text-sm text-surface-400 leading-relaxed">
-              Free, comprehensive, and accurate guide for Indian government exam preparation. No paywalls, no spam.
+              Taiyar Ho? Your free, complete guide for Indian government exam preparation. No paywalls, no spam.
             </p>
           </div>
 
@@ -132,7 +132,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-surface-700 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-surface-500">&copy; {new Date().getFullYear()} SarkariPath. All rights reserved.</p>
+          <p className="text-sm text-surface-500">&copy; {new Date().getFullYear()} TaiyarHo. All rights reserved.</p>
           <p className="text-xs text-surface-600">
             Disclaimer: This is an informational resource. Always verify details from official exam websites.
           </p>

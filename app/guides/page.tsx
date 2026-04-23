@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { guides } from '@/lib/exams-data';
 
 export const metadata: Metadata = {
-  title: 'Preparation Guides – How to Prepare for Government Exams | SarkariPath',
+  title: 'Preparation Guides – How to Prepare for Government Exams | TaiyarHo',
   description: 'Step-by-step preparation guides for Indian government exams. Learn how to start preparing, find free resources, understand eligibility, and create study plans.',
 };
 

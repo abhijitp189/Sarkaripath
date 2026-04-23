@@ -1,4 +1,4 @@
-# SarkariPath – Free Indian Government Exam Preparation Guide
+# TaiyarHo – Free Indian Government Exam Preparation Guide
 
 A clean, modern, SEO-optimized static website for Indian government exam preparation.
 
@@ -16,20 +16,20 @@ A clean, modern, SEO-optimized static website for Indian government exam prepara
 
 ### Step 1: Upload to GitHub
 1. Go to github.com → click "+" → "New repository"
-2. Name it `sarkaripath` → click "Create repository"
+2. Name it `taiyarho` → click "Create repository"
 3. Click "uploading an existing file"
 4. Drag and drop ALL files from this folder
 5. Click "Commit changes"
 
 ### Step 2: Deploy on Vercel
 1. Go to vercel.com → "Add New Project"
-2. Import your `sarkaripath` repo from GitHub
+2. Import your `taiyarho` repo from GitHub
 3. Framework: Next.js (auto-detected)
 4. Click "Deploy"
 5. Your site is live!
 
 ### Step 3: Custom Domain (Optional)
-1. Buy a domain (e.g., sarkaripath.in from GoDaddy/BigRock)
+1. Buy a domain (e.g., taiyarho.in from GoDaddy/BigRock)
 2. In Vercel: Settings → Domains → Add your domain
 3. Copy DNS records to your domain registrar
 4. Wait 24 hours

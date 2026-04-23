@@ -10,7 +10,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const guide = guides.find((g) => g.slug === params.slug);
   if (!guide) return { title: 'Guide Not Found' };
   return {
-    title: `${guide.title} | SarkariPath`,
+    title: `${guide.title} | TaiyarHo`,
     description: guide.description,
   };
 }
@@ -37,7 +37,7 @@ const guideContent: Record<string, { sections: { heading: string; content: strin
       },
       {
         heading: 'Step 5: Create a Realistic Study Plan',
-        content: 'A study plan is non-negotiable. Break your preparation into phases: Foundation (cover basics), Building (reference books), Practice (mock tests), and Revision. Allocate specific hours to each subject daily. Be realistic — if you can study 4 hours daily, don\'t plan for 8. Consistency beats intensity. Each exam page on SarkariPath has a month-by-month study plan you can follow.',
+        content: 'A study plan is non-negotiable. Break your preparation into phases: Foundation (cover basics), Building (reference books), Practice (mock tests), and Revision. Allocate specific hours to each subject daily. Be realistic — if you can study 4 hours daily, don\'t plan for 8. Consistency beats intensity. Each exam page on TaiyarHo has a month-by-month study plan you can follow.',
       },
       {
         heading: 'Step 6: Practice with Mock Tests',

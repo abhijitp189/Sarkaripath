@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { exams, examCategories } from '@/lib/exams-data';
 
 export const metadata: Metadata = {
-  title: 'All Government Exams – Complete List with Preparation Guide | SarkariPath',
+  title: 'All Government Exams – Complete List with Preparation Guide | TaiyarHo',
   description: 'Browse all major Indian government exams – UPSC, SSC, Banking, Railway, Defence, State PSC, Teaching, Police. Get syllabus, study plans, best books, and free resources.',
 };
 

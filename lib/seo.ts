@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
-const SITE_NAME = 'SarkariPath';
-const SITE_URL = 'https://sarkaripath.in';
+const SITE_NAME = 'TaiyarHo';
+const SITE_URL = 'https://taiyarho.in';
 const SITE_DESCRIPTION = 'Free comprehensive guide for Indian government exam preparation. Syllabus, study plans, best books, free resources, and preparation strategies for UPSC, SSC, Banking, Railway, and all government exams.';
 
 export function generatePageMeta({

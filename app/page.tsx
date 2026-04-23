@@ -123,9 +123,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why SarkariPath */}
+      {/* Why TaiyarHo */}
       <section className="container-main py-16">
-        <h2 className="section-title text-center">Why SarkariPath?</h2>
+        <h2 className="section-title text-center">Why TaiyarHo?</h2>
         <p className="section-subtitle text-center mb-10">What makes us different from other exam preparation websites</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -217,12 +217,12 @@ export default function HomePage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebSite',
-            name: 'SarkariPath',
-            url: 'https://sarkaripath.in',
+            name: 'TaiyarHo',
+            url: 'https://taiyarho.in',
             description: 'Free comprehensive guide for Indian government exam preparation.',
             potentialAction: {
               '@type': 'SearchAction',
-              target: 'https://sarkaripath.in/exams?q={search_term_string}',
+              target: 'https://taiyarho.in/exams?q={search_term_string}',
               'query-input': 'required name=search_term_string',
             },
           }),

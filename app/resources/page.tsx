@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Free Resources for Government Exam Preparation | SarkariPath',
+  title: 'Free Resources for Government Exam Preparation | TaiyarHo',
   description: 'Curated list of best free resources for Indian government exam preparation – YouTube channels, websites, apps, NCERT books, previous year papers, mock tests.',
 };
 

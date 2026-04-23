@@ -12,10 +12,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!exam) return { title: 'Exam Not Found' };
 
   return {
-    title: `${exam.title} – Complete Preparation Guide, Syllabus, Books | SarkariPath`,
+    title: `${exam.title} – Complete Preparation Guide, Syllabus, Books | TaiyarHo`,
     description: `${exam.shortName} preparation guide: syllabus, exam pattern, best books, free resources, study plan, eligibility, and tips. Everything you need for ${exam.shortName} in one page.`,
     openGraph: {
-      title: `${exam.shortName} Preparation Guide | SarkariPath`,
+      title: `${exam.shortName} Preparation Guide | TaiyarHo`,
       description: `Complete ${exam.shortName} guide with syllabus, study plan, best books, and free resources.`,
     },
   };

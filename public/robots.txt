@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sarkaripath.in/sitemap.xml
+Sitemap: https://taiyarho.in/sitemap.xml
