@@ -24,13 +24,12 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-surface-200">
       <nav className="container-main flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-heading font-bold text-lg shadow-sm">
-            S
-          </div>
-          <span className="font-heading font-bold text-xl text-surface-900 group-hover:text-primary-500 transition-colors">
-            Taiyar<span className="text-primary-500">Ho</span>
-          </span>
+        <Link href="/" className="flex items-center group">
+          <img
+            src="/logo.svg"
+            alt="TaiyarHo"
+            className="h-10 w-auto transition-opacity group-hover:opacity-80"
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-1">
@@ -92,8 +91,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center text-white font-heading font-bold">S</div>
-              <span className="font-heading font-bold text-lg text-white">TaiyarHo</span>
+              <img src="/logo.svg" alt="TaiyarHo" className="h-10 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm text-surface-400 leading-relaxed">
               Taiyar Ho? Your free, complete guide for Indian government exam preparation. No paywalls, no spam.
