@@ -29,7 +29,7 @@ export default function HomePage() {
                 Explore All Exams
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
               </Link>
-              <Link href="/tools/age-calculator" className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all">
+              <Link href="/tools/eligibility-checker" className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all">
                 Check Your Eligibility
               </Link>
             </div>
@@ -251,7 +251,7 @@ export default function HomePage() {
           <p className="text-primary-100 max-w-2xl mx-auto mb-6">
             Use our Eligibility Checker to find out which government exams you qualify for based on your age, qualification, and category.
           </p>
-          <Link href="/tools/age-calculator" className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg">
+          <Link href="/tools/eligibility-checker" className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg">
             Check Your Eligibility →
           </Link>
         </div>

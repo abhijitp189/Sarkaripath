@@ -37,7 +37,7 @@ function Navbar() {
           <NavLink href="/guides">Guides</NavLink>
           <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/resources">Resources</NavLink>
-          <NavLink href="/tools/age-calculator">Eligibility Checker</NavLink>
+          <NavLink href="/tools/eligibility-checker">Eligibility Checker</NavLink>
         </div>
 
         <div className="md:hidden">
@@ -72,7 +72,7 @@ function MobileMenuButton() {
         <MobileNavLink href="/guides">Guides</MobileNavLink>
         <MobileNavLink href="/blog">Blog</MobileNavLink>
         <MobileNavLink href="/resources">Resources</MobileNavLink>
-        <MobileNavLink href="/tools/age-calculator">Eligibility Checker</MobileNavLink>
+        <MobileNavLink href="/tools/eligibility-checker">Eligibility Checker</MobileNavLink>
       </div>
     </details>
   );
@@ -118,7 +118,7 @@ function Footer() {
               <FooterLink href="/guides/how-to-start-government-exam-preparation">Getting Started</FooterLink>
               <FooterLink href="/guides/best-free-resources-government-exams">Free Resources</FooterLink>
               <FooterLink href="/guides/age-limit-relaxation-government-jobs">Age Relaxation</FooterLink>
-              <FooterLink href="/tools/age-calculator">Eligibility Checker</FooterLink>
+              <FooterLink href="/tools/eligibility-checker">Eligibility Checker</FooterLink>
             </div>
           </div>
 

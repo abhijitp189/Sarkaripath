@@ -555,7 +555,7 @@ function SscCgl2026Article({ post }: { post: any }) {
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Check Your Eligibility</h3>
               <p className="text-xs text-surface-500 mb-3">See if you qualify for SSC CGL based on your age and qualification.</p>
-              <Link href="/tools/age-calculator" className="btn-primary text-xs w-full text-center">Check Now →</Link>
+              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center">Check Now →</Link>
             </div>
           </div>
         </aside>

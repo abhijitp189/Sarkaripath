@@ -365,7 +365,7 @@ function BasicExamPage({ exam }: { exam: any }) {
           <div className="card p-6 bg-primary-50 border-primary-200 text-center mb-10">
             <h3 className="font-heading font-bold text-primary-800 mb-2">Check Your Eligibility</h3>
             <p className="text-sm text-primary-600 mb-4">Use our eligibility checker to see if you qualify for {exam.name}</p>
-            <Link href="/tools/age-calculator" className="btn-primary">Check Eligibility →</Link>
+            <Link href="/tools/eligibility-checker" className="btn-primary">Check Eligibility →</Link>
           </div>
 
           <div className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
