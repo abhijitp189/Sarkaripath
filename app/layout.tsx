@@ -35,6 +35,7 @@ function Navbar() {
         <div className="hidden md:flex items-center gap-1">
           <NavLink href="/exams">Exams</NavLink>
           <NavLink href="/guides">Guides</NavLink>
+          <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/resources">Resources</NavLink>
           <NavLink href="/tools/age-calculator">Eligibility Checker</NavLink>
         </div>
@@ -69,6 +70,7 @@ function MobileMenuButton() {
       <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-lg border border-surface-200 py-2 z-50">
         <MobileNavLink href="/exams">Exams</MobileNavLink>
         <MobileNavLink href="/guides">Guides</MobileNavLink>
+        <MobileNavLink href="/blog">Blog</MobileNavLink>
         <MobileNavLink href="/resources">Resources</MobileNavLink>
         <MobileNavLink href="/tools/age-calculator">Eligibility Checker</MobileNavLink>
       </div>
@@ -124,6 +126,7 @@ function Footer() {
             <h3 className="font-heading font-semibold text-white mb-4 text-sm uppercase tracking-wider">Quick Links</h3>
             <div className="space-y-2">
               <FooterLink href="/exams">All Exams</FooterLink>
+              <FooterLink href="/blog">Blog</FooterLink>
               <FooterLink href="/resources">Free Resources</FooterLink>
               <FooterLink href="/guides">Preparation Guides</FooterLink>
             </div>

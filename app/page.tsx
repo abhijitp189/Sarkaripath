@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { exams, examCategories, guides, allExams } from '@/lib/exams-data';
+import { blogPosts } from '@/lib/blog-data';
 
 export default function HomePage() {
   return (
@@ -197,6 +198,49 @@ export default function HomePage() {
               View All Guides →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="container-main py-16">
+        <div className="flex items-end justify-between mb-10">
+          <div>
+            <h2 className="section-title">Latest from the Blog</h2>
+            <p className="section-subtitle">In-depth guides on syllabus, exam pattern, and preparation strategy</p>
+          </div>
+          <Link href="/blog" className="hidden sm:inline-flex text-sm font-medium text-primary-500 hover:text-primary-600 items-center gap-1">
+            View All Posts →
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {blogPosts.slice(0, 3).map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="card p-6 group flex flex-col hover:border-primary-300">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="badge badge-primary">{post.category}</span>
+                <span className="text-xs text-surface-400">{post.readTime}</span>
+              </div>
+              <h3 className="font-heading font-bold text-surface-900 group-hover:text-primary-500 transition-colors mb-2 leading-snug flex-1">
+                {post.title}
+              </h3>
+              <p className="text-xs text-surface-500 leading-relaxed mb-4 line-clamp-2">
+                {post.excerpt}
+              </p>
+              <div className="flex items-center justify-between pt-3 border-t border-surface-100">
+                <span className="text-xs text-surface-400">{post.publishedDate}</span>
+                <span className="text-xs font-medium text-primary-500 group-hover:text-primary-600 flex items-center gap-1">
+                  Read
+                  <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="text-center mt-8 sm:hidden">
+          <Link href="/blog" className="btn-outline">View All Posts →</Link>
         </div>
       </section>
 
