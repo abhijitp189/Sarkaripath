@@ -1,203 +1,103 @@
+// app/layout.tsx
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { Poppins, Source_Sans_3 } from 'next/font/google';
 import './globals.css';
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
+
+const sourceSans3 = Source_Sans_3({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-source-sans',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'TaiyarHo – Free Guide for Indian Government Exam Preparation',
-  description: 'Complete free guide for all Indian government exams – UPSC, SSC, Banking, Railway. Syllabus, study plans, best books, free resources, and exam strategies.',
-  keywords: 'government exam preparation, sarkari exam, UPSC preparation, SSC CGL, IBPS PO, railway exam, government job guide, free study material',
+  title: {
+    default: 'TaiyarHo — Free Guide for Indian Government Exam Preparation',
+    template: '%s | TaiyarHo',
+  },
+  description:
+    'Free preparation guide for UPSC IAS, SSC CGL, IBPS PO, RRB NTPC, and SBI PO. Syllabus, study plans, salary calculator, free resources — all in one place.',
+  keywords: ['UPSC preparation', 'SSC CGL guide', 'IBPS PO', 'RRB NTPC', 'SBI PO', 'government exam free guide', 'sarkari naukri'],
   metadataBase: new URL('https://taiyarho.in'),
   openGraph: {
-    title: 'TaiyarHo – Free Guide for Indian Government Exam Preparation',
-    description: 'Complete free guide for all Indian government exams. Syllabus, study plans, best books, and free resources.',
     siteName: 'TaiyarHo',
     locale: 'en_IN',
     type: 'website',
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
-function Navbar() {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-surface-200">
-      <nav className="container-main flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center group">
-          <img
-            src="/logo.svg"
-            alt="TaiyarHo"
-            className="h-10 w-auto"
-          />
-        </Link>
-
-        <div className="hidden md:flex items-center gap-1">
-          <NavLink href="/exams">Exams</NavLink>
-          <NavLink href="/guides">Guides</NavLink>
-          <NavLink href="/blog">Blog</NavLink>
-          <NavLink href="/resources">Resources</NavLink>
-          <NavLink href="/tools/age-calculator">Eligibility Checker</NavLink>
-        </div>
-
-        <div className="md:hidden">
-          <MobileMenuButton />
-        </div>
-      </nav>
-    </header>
+    <html lang="en" className={`${poppins.variable} ${sourceSans3.variable}`}>
+      <body className="font-body text-surface-800 bg-surface-50 antialiased">
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html>
   );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function Header() {
   return (
-    <Link
-      href={href}
-      className="px-4 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-primary-500 hover:bg-primary-50 transition-all duration-200"
-    >
-      {children}
-    </Link>
-  );
-}
-
-function MobileMenuButton() {
-  return (
-    <details className="relative">
-      <summary className="list-none cursor-pointer p-2 rounded-lg hover:bg-surface-100">
-        <svg className="w-6 h-6 text-surface-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </summary>
-      <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-lg border border-surface-200 py-2 z-50">
-        <MobileNavLink href="/exams">Exams</MobileNavLink>
-        <MobileNavLink href="/guides">Guides</MobileNavLink>
-        <MobileNavLink href="/blog">Blog</MobileNavLink>
-        <MobileNavLink href="/resources">Resources</MobileNavLink>
-        <MobileNavLink href="/tools/age-calculator">Eligibility Checker</MobileNavLink>
+    <header className="bg-white border-b border-surface-200 sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+        <a href="/" className="font-heading font-bold text-primary-600 text-xl tracking-tight">
+          Taiyar<span className="text-accent-500">Ho</span>
+        </a>
+        <nav className="hidden sm:flex items-center gap-6 text-sm text-surface-600 font-medium">
+          <a href="/" className="hover:text-primary-600 transition-colors">Home</a>
+          <a href="/salary-calculator" className="hover:text-primary-600 transition-colors">Salary Calculator</a>
+          <a
+            href="/salary-calculator"
+            className="bg-primary-500 text-white px-4 py-1.5 rounded-full text-sm hover:bg-primary-600 transition-colors"
+          >
+            Free Tools
+          </a>
+        </nav>
+        {/* Mobile nav */}
+        <a
+          href="/salary-calculator"
+          className="sm:hidden bg-primary-500 text-white px-3 py-1.5 rounded-full text-xs font-medium"
+        >
+          Salary Calculator
+        </a>
       </div>
-    </details>
-  );
-}
-
-function MobileNavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link href={href} className="block px-4 py-3 text-sm text-surface-700 hover:bg-primary-50 hover:text-primary-500">
-      {children}
-    </Link>
+    </header>
   );
 }
 
 function Footer() {
   return (
-    <footer className="bg-surface-900 text-surface-300 mt-20">
-      <div className="container-main py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center text-white font-heading font-bold">T</div>
-              <span className="font-heading font-bold text-lg text-white">TaiyarHo</span>
-            </div>
-            <p className="text-sm text-surface-400 leading-relaxed">
-              Taiyar Ho? Your free, complete guide for Indian government exam preparation. No paywalls, no spam.
+    <footer className="bg-surface-900 text-surface-400 py-10 px-4 mt-12">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+          <div>
+            <p className="font-heading font-bold text-white text-lg">
+              Taiyar<span className="text-accent-400">Ho</span>
             </p>
+            <p className="text-sm mt-1">Free guide for Indian Government Exam preparation</p>
           </div>
-
-          <div>
-            <h3 className="font-heading font-semibold text-white mb-4 text-sm uppercase tracking-wider">Popular Exams</h3>
-            <div className="space-y-2">
-              <FooterLink href="/exams/upsc-ias">UPSC IAS</FooterLink>
-              <FooterLink href="/exams/ssc-cgl">SSC CGL</FooterLink>
-              <FooterLink href="/exams/ibps-po">IBPS PO</FooterLink>
-              <FooterLink href="/exams/rrb-ntpc">RRB NTPC</FooterLink>
-              <FooterLink href="/exams/sbi-po">SBI PO</FooterLink>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-heading font-semibold text-white mb-4 text-sm uppercase tracking-wider">Guides</h3>
-            <div className="space-y-2">
-              <FooterLink href="/guides/how-to-start-government-exam-preparation">Getting Started</FooterLink>
-              <FooterLink href="/guides/best-free-resources-government-exams">Free Resources</FooterLink>
-              <FooterLink href="/guides/age-limit-relaxation-government-jobs">Age Relaxation</FooterLink>
-              <FooterLink href="/tools/age-calculator">Eligibility Checker</FooterLink>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-heading font-semibold text-white mb-4 text-sm uppercase tracking-wider">Quick Links</h3>
-            <div className="space-y-2">
-              <FooterLink href="/exams">All Exams</FooterLink>
-              <FooterLink href="/blog">Blog</FooterLink>
-              <FooterLink href="/resources">Free Resources</FooterLink>
-              <FooterLink href="/guides">Preparation Guides</FooterLink>
-            </div>
+          <div className="flex gap-6 text-sm">
+            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <a href="/salary-calculator" className="hover:text-white transition-colors">Salary Calculator</a>
           </div>
         </div>
-
-        <div className="border-t border-surface-700 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-surface-500">&copy; {new Date().getFullYear()} TaiyarHo. All rights reserved.</p>
-          <p className="text-xs text-surface-600">
-            Disclaimer: This is an informational resource. Always verify details from official exam websites.
+        <div className="border-t border-surface-700 pt-6 text-xs text-surface-500">
+          <p>
+            Salary data based on 7th Pay Commission guidelines. Figures are estimates for
+            informational purposes. Always verify from official notifications.
           </p>
+          <p className="mt-2">© {new Date().getFullYear()} TaiyarHo. All rights reserved.</p>
         </div>
       </div>
     </footer>
-  );
-}
-
-function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link href={href} className="block text-sm text-surface-400 hover:text-primary-400 transition-colors">
-      {children}
-    </Link>
-  );
-}
-
-function AdSlot({ position }: { position: 'header-banner' | 'sidebar' | 'in-content' | 'footer-banner' }) {
-  const adSenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
-  if (!adSenseId) return null;
-
-  return (
-    <div className={`ad-slot ad-${position} flex items-center justify-center bg-surface-100 rounded-lg text-surface-400 text-xs ${
-      position === 'header-banner' || position === 'footer-banner' ? 'h-24 my-2' : 'h-64 my-4'
-    }`}>
-      {/* Google AdSense code goes here after approval */}
-      {/* <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-client={adSenseId} data-ad-slot="YOUR_AD_SLOT" data-ad-format="auto" data-full-width-responsive="true" /> */}
-    </div>
-  );
-}
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z5G3W10VG" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-7Z5G3W10VG');
-            `,
-          }}
-        />
-        {/* Google AdSense */}
-        {process.env.NEXT_PUBLIC_ADSENSE_ID && (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`}
-            crossOrigin="anonymous"
-          />
-        )}
-      </head>
-      <body className="min-h-screen flex flex-col">
-        <Navbar />
-        <AdSlot position="header-banner" />
-        <main className="flex-1">{children}</main>
-        <AdSlot position="footer-banner" />
-        <Footer />
-      </body>
-    </html>
   );
 }
