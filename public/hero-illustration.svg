@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 460" fill="none">
+
+  <!-- ── Floating backdrop blobs ── -->
+  <ellipse cx="340" cy="220" rx="160" ry="140" fill="rgba(255,255,255,0.06)"/>
+  <ellipse cx="420" cy="320" rx="90" ry="70" fill="rgba(249,115,22,0.1)"/>
+
+  <!-- ══════════════════════════════════════════
+       DESK SURFACE
+  ══════════════════════════════════════════ -->
+  <rect x="80" y="300" width="340" height="14" rx="7" fill="rgba(255,255,255,0.22)"/>
+  <!-- Desk legs -->
+  <rect x="105" y="314" width="12" height="55" rx="4" fill="rgba(255,255,255,0.15)"/>
+  <rect x="383" y="314" width="12" height="55" rx="4" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- ══════════════════════════════════════════
+       BOOK STACK (right side of desk)
+  ══════════════════════════════════════════ -->
+  <!-- Book 1 (bottom) -->
+  <rect x="305" y="272" width="90" height="16" rx="3" fill="#f97316"/>
+  <rect x="305" y="272" width="8" height="16" rx="2" fill="#c2410c"/>
+  <!-- Book 2 -->
+  <rect x="308" y="256" width="84" height="16" rx="3" fill="#fbbf24"/>
+  <rect x="308" y="256" width="8" height="16" rx="2" fill="#d97706"/>
+  <!-- Book 3 -->
+  <rect x="311" y="240" width="78" height="16" rx="3" fill="#e2e8f0"/>
+  <rect x="311" y="240" width="8" height="16" rx="2" fill="#94a3b8"/>
+  <!-- Book 4 (top, open/tilted) -->
+  <g transform="translate(330,228) rotate(-8)">
+    <rect x="-22" y="-10" width="44" height="14" rx="3" fill="#bae6fd"/>
+    <rect x="-22" y="-10" width="6" height="14" rx="2" fill="#38bdf8"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       OPEN NOTEBOOK ON DESK
+  ══════════════════════════════════════════ -->
+  <rect x="115" y="252" width="148" height="48" rx="6" fill="rgba(255,255,255,0.92)"/>
+  <!-- Notebook spine -->
+  <rect x="185" y="252" width="4" height="48" fill="#e2e8f0"/>
+  <!-- Left page lines -->
+  <line x1="127" y1="266" x2="180" y2="266" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="127" y1="274" x2="180" y2="274" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="127" y1="282" x2="180" y2="282" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="127" y1="290" x2="165" y2="290" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Right page — mini graph -->
+  <polyline points="196,292 208,278 220,283 234,265 248,270 256,258" stroke="#1a56db" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="234" cy="265" r="2.5" fill="#f97316"/>
+  <circle cx="256" cy="258" r="2.5" fill="#f97316"/>
+
+  <!-- Pencil resting on notebook -->
+  <g transform="translate(152,300) rotate(-12)">
+    <rect x="-4" y="-38" width="8" height="56" rx="2" fill="#fcd34d"/>
+    <polygon points="-4,18 4,18 0,30" fill="#d97706"/>
+    <circle cx="0" cy="30" r="2.5" fill="#374151"/>
+    <rect x="-4" y="-44" width="8" height="8" rx="1" fill="#9ca3af"/>
+    <rect x="-4" y="-38" width="8" height="4" fill="#f87171"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       STUDENT FIGURE
+  ══════════════════════════════════════════ -->
+  <!-- Chair -->
+  <rect x="175" y="330" width="110" height="10" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <rect x="195" y="340" width="8" height="35" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <rect x="257" y="340" width="8" height="35" rx="3" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- Lower body / legs -->
+  <rect x="195" y="330" width="32" height="50" rx="6" fill="#1e40af"/>
+  <rect x="233" y="330" width="32" height="50" rx="6" fill="#1e40af"/>
+  <!-- Shoes -->
+  <ellipse cx="211" cy="382" rx="18" ry="8" fill="#1e293b"/>
+  <ellipse cx="249" cy="382" rx="18" ry="8" fill="#1e293b"/>
+
+  <!-- Torso / shirt -->
+  <path d="M 185 240 Q 190 228 230 232 Q 270 228 275 240 L 280 330 L 180 330 Z" fill="rgba(255,255,255,0.88)"/>
+  <!-- Shirt details -->
+  <line x1="230" y1="232" x2="230" y2="310" stroke="#e2e8f0" stroke-width="1.5" opacity="0.7"/>
+  <!-- Collar -->
+  <path d="M 215 232 L 230 252 L 245 232" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Left arm (reaching to notebook) -->
+  <path d="M 188 260 Q 165 275 148 295" stroke="#e8b89a" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <!-- Left hand -->
+  <circle cx="148" cy="298" r="10" fill="#e8b89a"/>
+
+  <!-- Right arm (leaning) -->
+  <path d="M 272 260 Q 290 275 295 295" stroke="#e8b89a" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <circle cx="295" cy="298" r="10" fill="#e8b89a"/>
+
+  <!-- Neck -->
+  <rect x="220" y="208" width="20" height="26" rx="6" fill="#e8b89a"/>
+
+  <!-- Head -->
+  <circle cx="230" cy="185" r="38" fill="#e8b89a"/>
+
+  <!-- Hair -->
+  <path d="M 196 175 Q 198 145 230 148 Q 262 145 264 175 Q 255 158 230 160 Q 205 158 196 175 Z" fill="#2d1b00"/>
+  <!-- Side hair -->
+  <path d="M 196 175 Q 193 188 196 198 Q 198 185 200 178 Z" fill="#2d1b00"/>
+  <path d="M 264 175 Q 267 188 264 198 Q 262 185 260 178 Z" fill="#2d1b00"/>
+
+  <!-- Eyes -->
+  <ellipse cx="219" cy="185" rx="5" ry="5.5" fill="#3b1a00"/>
+  <ellipse cx="241" cy="185" rx="5" ry="5.5" fill="#3b1a00"/>
+  <!-- Eye shine -->
+  <circle cx="221" cy="183" r="1.5" fill="white"/>
+  <circle cx="243" cy="183" r="1.5" fill="white"/>
+
+  <!-- Eyebrows -->
+  <path d="M 213 177 Q 219 173 225 177" stroke="#2d1b00" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M 235 177 Q 241 173 247 177" stroke="#2d1b00" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Smile -->
+  <path d="M 220 197 Q 230 206 240 197" stroke="#c27d4f" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- ══════════════════════════════════════════
+       GRADUATION CAP (floating, top-left)
+  ══════════════════════════════════════════ -->
+  <g transform="translate(100,90)">
+    <polygon points="-38,0 38,0 0,-28" fill="rgba(255,255,255,0.92)"/>
+    <ellipse cx="0" cy="4" rx="28" ry="9" fill="rgba(255,255,255,0.85)"/>
+    <rect x="-6" y="0" width="12" height="22" rx="2" fill="rgba(255,255,255,0.7)"/>
+    <!-- Tassel -->
+    <line x1="30" y1="0" x2="38" y2="18" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="38" cy="22" r="5" fill="#f97316"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       UPWARD TREND CHART (top-right card)
+  ══════════════════════════════════════════ -->
+  <g transform="translate(395,130)">
+    <rect x="-52" y="-68" width="104" height="88" rx="12" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+    <!-- Chart bars -->
+    <rect x="-36" y="-10" width="14" height="24" rx="3" fill="rgba(255,255,255,0.3)"/>
+    <rect x="-16" y="-28" width="14" height="42" rx="3" fill="rgba(255,255,255,0.4)"/>
+    <rect x="4" y="-46" width="14" height="60" rx="3" fill="rgba(249,115,22,0.85)"/>
+    <!-- Trend line -->
+    <polyline points="-29,12 -9,-6 11,-24 33,-52" stroke="#4ade80" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Arrowhead -->
+    <polygon points="33,-52 26,-47 29,-40" fill="#4ade80"/>
+    <!-- Label -->
+    <text x="0" y="26" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,0.7)" letter-spacing="0.5">PROGRESS</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       BADGE / STAR (floating, right)
+  ══════════════════════════════════════════ -->
+  <g transform="translate(455,250)">
+    <circle r="28" fill="#f97316" opacity="0.95"/>
+    <circle r="22" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <!-- Star shape -->
+    <polygon points="0,-14 3.6,-5 13,-5 5.6,1.4 8.5,11 0,5.5 -8.5,11 -5.6,1.4 -13,-5 -3.6,-5" fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       CLOCK (floating, left)
+  ══════════════════════════════════════════ -->
+  <g transform="translate(62,230)">
+    <circle r="28" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <circle r="3" fill="rgba(255,255,255,0.8)"/>
+    <!-- Hour hand -->
+    <line x1="0" y1="0" x2="0" y2="-16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Minute hand -->
+    <line x1="0" y1="0" x2="13" y2="8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <!-- Clock marks -->
+    <line x1="0" y1="-24" x2="0" y2="-20" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="0" y1="20" x2="0" y2="24" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="-24" y1="0" x2="-20" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="20" y1="0" x2="24" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       SMALL FLOATING BOOK (far left)
+  ══════════════════════════════════════════ -->
+  <g transform="translate(55,140) rotate(-18)">
+    <rect x="-18" y="-26" width="36" height="52" rx="4" fill="#3b82f6" opacity="0.9"/>
+    <rect x="-14" y="-22" width="28" height="44" rx="3" fill="#60a5fa"/>
+    <line x1="-7" y1="-10" x2="12" y2="-10" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+    <line x1="-7" y1="-2" x2="12" y2="-2" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+    <line x1="-7" y1="6" x2="8" y2="6" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       CERTIFICATE / PAPER (top right floating)
+  ══════════════════════════════════════════ -->
+  <g transform="translate(462,60) rotate(12)">
+    <rect x="-30" y="-38" width="60" height="72" rx="5" fill="rgba(255,255,255,0.88)"/>
+    <!-- Header line -->
+    <rect x="-22" y="-28" width="44" height="5" rx="2" fill="#1a56db" opacity="0.7"/>
+    <!-- Content lines -->
+    <line x1="-22" y1="-16" x2="22" y2="-16" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="-22" y1="-7" x2="22" y2="-7" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="-22" y1="2" x2="15" y2="2" stroke="#cbd5e1" stroke-width="1.5"/>
+    <!-- Seal -->
+    <circle cx="0" cy="20" r="12" fill="#f97316" opacity="0.9"/>
+    <text x="0" y="25" text-anchor="middle" font-family="sans-serif" font-size="14" fill="white" font-weight="bold">✓</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       SPARKLE DOTS
+  ══════════════════════════════════════════ -->
+  <circle cx="148" cy="50" r="4.5" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="155" cy="42" r="2.5" fill="rgba(255,255,255,0.35)"/>
+  <circle cx="160" cy="55" r="2" fill="rgba(249,115,22,0.7)"/>
+
+  <circle cx="360" cy="42" r="3.5" fill="rgba(255,255,255,0.45)"/>
+  <circle cx="370" cy="32" r="2" fill="rgba(249,115,22,0.6)"/>
+
+  <circle cx="490" cy="180" r="3" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="500" cy="172" r="2" fill="rgba(249,115,22,0.5)"/>
+
+  <circle cx="45" cy="310" r="4" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="488" cy="360" r="5" fill="rgba(255,255,255,0.25)"/>
+
+  <!-- ══════════════════════════════════════════
+       GOVT. EMBLEM HINT (subtle, bottom right)
+  ══════════════════════════════════════════ -->
+  <g transform="translate(440,385)" opacity="0.18">
+    <circle r="22" fill="none" stroke="white" stroke-width="2"/>
+    <circle r="15" fill="none" stroke="white" stroke-width="1"/>
+    <!-- Ashoka wheel spokes hint -->
+    <line x1="0" y1="-15" x2="0" y2="15" stroke="white" stroke-width="1"/>
+    <line x1="-15" y1="0" x2="15" y2="0" stroke="white" stroke-width="1"/>
+    <line x1="-11" y1="-11" x2="11" y2="11" stroke="white" stroke-width="1"/>
+    <line x1="11" y1="-11" x2="-11" y2="11" stroke="white" stroke-width="1"/>
+    <circle r="3" fill="white"/>
+  </g>
+
+</svg>
