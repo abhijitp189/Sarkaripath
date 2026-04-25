@@ -12,14 +12,14 @@ export default function HomePage() {
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl" />
         </div>
         <div className="container-main relative py-16 sm:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 items-center">
             {/* Left — Text content */}
             <div>
               <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-6">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                 100% Free – No Login Required
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-heading font-bold leading-tight mb-6">
                 Your Complete Guide to
                 <span className="block text-accent-300">Government Exams</span>
               </h1>
@@ -37,13 +37,17 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right — Students illustration */}
-            <div className="hidden lg:flex items-end justify-center">
+            {/* Right — Students illustration (mix-blend-mode removes the black background) */}
+            <div className="hidden lg:flex items-end justify-end translate-x-8">
               <img
                 src="/students.png"
                 alt="Government exam aspirants"
-                className="w-full max-w-md object-contain drop-shadow-2xl"
-                style={{ maxHeight: '420px' }}
+                className="w-full object-contain"
+                style={{
+                  maxHeight: '520px',
+                  mixBlendMode: 'screen',
+                  filter: 'contrast(1.05) brightness(1.1)',
+                }}
               />
             </div>
           </div>
