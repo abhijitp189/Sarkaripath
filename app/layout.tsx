@@ -28,7 +28,7 @@ function Navbar() {
           <img
             src="/logo.svg"
             alt="TaiyarHo"
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 
@@ -93,8 +93,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center text-white font-heading font-bold">T</div>
-              <span className="font-heading font-bold text-lg text-white">TaiyarHo</span>
+              <img src="/logo.svg" alt="TaiyarHo" className="h-10 w-auto" style={{ filter: 'brightness(0) invert(1)' }} />
             </div>
             <p className="text-sm text-surface-400 leading-relaxed">
               Taiyar Ho? Your free, complete guide for Indian government exam preparation. No paywalls, no spam.

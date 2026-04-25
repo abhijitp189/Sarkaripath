@@ -12,26 +12,39 @@ export default function HomePage() {
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl" />
         </div>
         <div className="container-main relative py-16 sm:py-24">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              100% Free – No Login Required
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left — Text content */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                100% Free – No Login Required
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
+                Your Complete Guide to
+                <span className="block text-accent-300">Government Exams</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-primary-100 leading-relaxed mb-8">
+                Syllabus, study plans, best books, free resources, and preparation strategies for UPSC, SSC, Banking, Railway, and all major government exams. Everything you need, in one place.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/exams" className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]">
+                  Explore All Exams
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                </Link>
+                <Link href="/tools/eligibility-checker" className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all">
+                  Check Your Eligibility
+                </Link>
+              </div>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
-              Your Complete Guide to
-              <span className="block text-accent-300">Government Exams</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-primary-100 leading-relaxed mb-8 max-w-2xl">
-              Syllabus, study plans, best books, free resources, and preparation strategies for UPSC, SSC, Banking, Railway, and all major government exams. Everything you need, in one place.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/exams" className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]">
-                Explore All Exams
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-              </Link>
-              <Link href="/tools/eligibility-checker" className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all">
-                Check Your Eligibility
-              </Link>
+
+            {/* Right — Students illustration */}
+            <div className="hidden lg:flex items-end justify-center">
+              <img
+                src="/students.png"
+                alt="Government exam aspirants"
+                className="w-full max-w-md object-contain drop-shadow-2xl"
+                style={{ maxHeight: '420px' }}
+              />
             </div>
           </div>
 
