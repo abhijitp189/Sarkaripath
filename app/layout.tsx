@@ -37,24 +37,7 @@ function Navbar() {
           <NavLink href="/guides">Guides</NavLink>
           <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/resources">Resources</NavLink>
-          <div className="flex items-center gap-1 ml-1 pl-1 border-l border-surface-200">
-            <Link
-              href="/tools/age-calculator"
-              className="px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-all duration-200 flex items-center gap-1"
-              title="Check eligibility for all 100 government exams"
-            >
-              ✅ Quick Check
-              <span className="text-emerald-500 font-normal">100</span>
-            </Link>
-            <Link
-              href="/tools/eligibility-checker"
-              className="px-3 py-1.5 rounded-lg text-xs font-semibold text-primary-700 bg-primary-50 hover:bg-primary-100 transition-all duration-200 flex items-center gap-1"
-              title="Detailed eligibility check for 5 major exams"
-            >
-              🔍 Deep Check
-              <span className="text-primary-400 font-normal">5</span>
-            </Link>
-          </div>
+          <NavLink href="/tools/eligibility-checker">Eligibility Checker</NavLink>
         </div>
 
         <div className="md:hidden">
@@ -89,8 +72,7 @@ function MobileMenuButton() {
         <MobileNavLink href="/guides">Guides</MobileNavLink>
         <MobileNavLink href="/blog">Blog</MobileNavLink>
         <MobileNavLink href="/resources">Resources</MobileNavLink>
-        <MobileNavLink href="/tools/age-calculator">✅ Quick Check (100 Exams)</MobileNavLink>
-        <MobileNavLink href="/tools/eligibility-checker">🔍 Deep Check (5 Exams)</MobileNavLink>
+        <MobileNavLink href="/tools/eligibility-checker">Eligibility Checker</MobileNavLink>
       </div>
     </details>
   );
@@ -136,8 +118,7 @@ function Footer() {
               <FooterLink href="/guides/how-to-start-government-exam-preparation">Getting Started</FooterLink>
               <FooterLink href="/guides/best-free-resources-government-exams">Free Resources</FooterLink>
               <FooterLink href="/guides/age-limit-relaxation-government-jobs">Age Relaxation</FooterLink>
-              <FooterLink href="/tools/age-calculator">Quick Check (100 Exams)</FooterLink>
-              <FooterLink href="/tools/eligibility-checker">Deep Check (5 Exams)</FooterLink>
+              <FooterLink href="/tools/eligibility-checker">Eligibility Checker</FooterLink>
             </div>
           </div>
 
