@@ -11,49 +11,46 @@ export default function HomePage() {
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl" />
         </div>
-        <div className="container-main relative py-16 sm:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 items-center">
-            {/* Left — Text content */}
+        <div className="container-main relative py-16 sm:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-6 items-center">
+
+            {/* Left — Text */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-5">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                 100% Free – No Login Required
               </div>
-              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-heading font-bold leading-tight mb-6">
-                Your Complete Guide to
-                <span className="block text-accent-300">Government Exams</span>
+              <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-tight mb-5">
+                Your Complete Guide to{' '}
+                <span className="text-accent-300">Government Exams</span>
               </h1>
-              <p className="text-lg sm:text-xl text-primary-100 leading-relaxed mb-8">
-                Syllabus, study plans, best books, free resources, and preparation strategies for UPSC, SSC, Banking, Railway, and all major government exams. Everything you need, in one place.
+              <p className="text-base sm:text-lg text-primary-100 leading-relaxed mb-7 max-w-xl">
+                Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all major government exams. Everything in one place.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/exams" className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]">
+              <div className="flex flex-wrap gap-3">
+                <Link href="/exams" className="inline-flex items-center px-7 py-3.5 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] text-sm">
                   Explore All Exams
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                 </Link>
-                <Link href="/tools/eligibility-checker" className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all">
+                <Link href="/tools/eligibility-checker" className="inline-flex items-center px-7 py-3.5 border-2 border-white/30 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all text-sm">
                   Check Your Eligibility
                 </Link>
               </div>
             </div>
 
-            {/* Right — Students illustration (mix-blend-mode removes the black background) */}
-            <div className="hidden lg:flex items-end justify-end translate-x-8">
+            {/* Right — Students illustration (black bg removed via Pillow) */}
+            <div className="hidden lg:flex items-end justify-end">
               <img
                 src="/students.png"
                 alt="Government exam aspirants"
                 className="w-full object-contain"
-                style={{
-                  maxHeight: '520px',
-                  mixBlendMode: 'screen',
-                  filter: 'contrast(1.05) brightness(1.1)',
-                }}
+                style={{ maxHeight: '480px' }}
               />
             </div>
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-14">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12">
             {[
               { value: '100', label: 'Exams Covered' },
               { value: '200+', label: 'Free Resources' },
