@@ -38,13 +38,13 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right — Students illustration (black bg removed via Pillow) */}
-            <div className="hidden lg:flex items-end justify-end">
+            {/* Right — Hero illustration */}
+            <div className="hidden lg:flex items-center justify-center">
               <img
-                src="/students.png"
-                alt="Government exam aspirants"
-                className="w-full object-contain"
-                style={{ maxHeight: '480px' }}
+                src="/hero-illustration.svg"
+                alt="Student preparing for government exam"
+                className="w-full object-contain drop-shadow-2xl"
+                style={{ maxHeight: '460px' }}
               />
             </div>
           </div>
