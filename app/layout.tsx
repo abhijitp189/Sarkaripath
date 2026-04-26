@@ -37,6 +37,7 @@ function Navbar() {
           <NavLink href="/exams">Exams</NavLink>
           <NavLink href="/guides">Guides</NavLink>
           <NavLink href="/blog">Blog</NavLink>
+          <NavLink href="/exam-calendar">Exam Calendar</NavLink>
           <NavLink href="/resources">Resources</NavLink>
           <NavLink href="/tools/eligibility-checker">Eligibility Checker</NavLink>
         </div>
@@ -72,6 +73,7 @@ function MobileMenuButton() {
         <MobileNavLink href="/exams">Exams</MobileNavLink>
         <MobileNavLink href="/guides">Guides</MobileNavLink>
         <MobileNavLink href="/blog">Blog</MobileNavLink>
+        <MobileNavLink href="/exam-calendar">Exam Calendar</MobileNavLink>
         <MobileNavLink href="/resources">Resources</MobileNavLink>
         <MobileNavLink href="/tools/eligibility-checker">Eligibility Checker</MobileNavLink>
       </div>
