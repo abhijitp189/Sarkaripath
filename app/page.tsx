@@ -271,6 +271,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* All Exams Internal Links — SEO crawlability for all 100 exam pages */}
+      <section className="bg-surface-50 py-12">
+        <div className="container-main">
+          <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">All Government Exams</h2>
+          <p className="text-surface-500 text-sm mb-8">Browse preparation guides for {allExams.length} government exams across 8 categories</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {examCategories.map((cat) => {
+              const catExams = allExams.filter(e => e.category === cat.name);
+              if (catExams.length === 0) return null;
+              return (
+                <div key={cat.name}>
+                  <h3 className="font-heading font-bold text-surface-800 text-sm mb-3 flex items-center gap-2">
+                    <span>{cat.icon}</span> {cat.name} Exams
+                  </h3>
+                  <ul className="space-y-1.5">
+                    {catExams.map((exam) => (
+                      <li key={exam.slug}>
+                        <Link href={`/exams/${exam.slug}`} className="text-xs text-surface-500 hover:text-primary-500 transition-colors leading-tight block">
+                          {exam.name.length > 40 ? exam.name.substring(0, 40) + '…' : exam.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Schema.org structured data */}
       <script
         type="application/ld+json"
