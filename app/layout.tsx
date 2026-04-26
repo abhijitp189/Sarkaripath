@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -169,18 +170,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z5G3W10VG" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-7Z5G3W10VG');
-            `,
-          }}
-        />
         {/* Google AdSense */}
         {process.env.NEXT_PUBLIC_ADSENSE_ID && (
           <script
@@ -196,6 +185,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <AdSlot position="footer-banner" />
         <Footer />
+        {/* Google Analytics – loaded after page is interactive for reliable firing on all pages */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-7Z5G3W10VG"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7Z5G3W10VG');
+          `}
+        </Script>
       </body>
     </html>
   );
