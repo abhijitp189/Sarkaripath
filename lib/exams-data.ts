@@ -777,9 +777,9 @@ export const guides = [
   {
     slug: 'how-to-fill-government-job-application-form',
     title: 'How to Fill Government Job Application Forms (Step by Step)',
-    description: 'Common mistakes to avoid and step-by-step guide for filling online application forms for SSC, UPSC, Banking, Railway, and other government job exams.',
+    description: 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo and signature upload specifications, fee payment, common mistakes to avoid, and correction window details.',
     category: 'Application',
-    readTime: '6 min read',
+    readTime: '15 min read',
   },
   {
     slug: 'documents-needed-government-job',
