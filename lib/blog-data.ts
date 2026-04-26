@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     category: 'SSC',
     tags: ['SSC CGL', 'Syllabus 2026', 'Tier 1', 'Tier 2', 'Exam Pattern', 'Free Guide'],
     publishedDate: 'April 24, 2026',
-    updatedDate: 'April 24, 2026',
+    updatedDate: 'April 26, 2026',
     readTime: '12 min read',
     author: 'TaiyarHo Editorial',
     excerpt: 'Everything you need — full topic lists, exam pattern, marking scheme, and topic-wise weightage for SSC CGL 2026. Based on the official SSC notification. 100% free.',
