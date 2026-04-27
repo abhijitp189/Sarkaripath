@@ -796,6 +796,7 @@ export const guides = [
     readTime: '9 min read',
   },
   {
+    readTime: '15 min read',
     slug: 'rrb-group-d',
     title: 'RRB Group D (Level-1 Posts in Indian Railways)',
     shortName: 'RRB Group D',
