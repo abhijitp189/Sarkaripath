@@ -16,6 +16,7 @@ const categoryColors: Record<string, string> = {
   'State PSC': 'bg-yellow-100 text-yellow-700',
   Teaching: 'bg-pink-100 text-pink-700',
   Police: 'bg-indigo-100 text-indigo-700',
+  Preparation: 'bg-amber-100 text-amber-700',
 };
 
 export default function BlogPage() {

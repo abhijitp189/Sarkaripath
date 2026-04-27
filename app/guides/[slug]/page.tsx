@@ -45,32 +45,8 @@ const guideContent: Record<string, { sections: { heading: string; content: strin
   'how-to-start-government-exam-preparation': {
     sections: [
       {
-        heading: 'Step 1: Understand the Landscape',
-        content: 'India has hundreds of government exams conducted by various bodies like UPSC, SSC, IBPS, RRB, and State PSCs. Before jumping into preparation, spend a few days understanding which exams exist, what posts they offer, and which ones match your qualification and career goals. Visit our Exams page to browse all major exams with their details.',
-      },
-      {
-        heading: 'Step 2: Choose Your Target Exam',
-        content: 'Don\'t prepare for everything at once. Pick 2-3 exams that share a similar syllabus. For example, SSC CGL, SSC CHSL, and Railway NTPC have overlapping syllabi in Maths, Reasoning, and General Awareness. Similarly, all banking exams (IBPS PO, SBI PO, RBI Grade B) share common topics. Check our eligibility checker to find exams you qualify for.',
-      },
-      {
-        heading: 'Step 3: Know the Syllabus Inside Out',
-        content: 'Download the official syllabus from the conducting body\'s website. Print it out and pin it to your wall. Every single topic in the syllabus is a potential question. Don\'t add topics not in the syllabus — and don\'t skip topics that are. Our exam pages have the complete syllabus broken down subject-wise.',
-      },
-      {
-        heading: 'Step 4: Gather Study Materials',
-        content: 'You do NOT need expensive coaching or premium apps. The best preparation can be done with free resources: NCERT textbooks (free on ncert.nic.in), YouTube channels like Unacademy, StudyIQ, and Adda247, free mock tests on Testbook and Oliveboard, and one or two good reference books per subject. Check our Resources page for curated free materials.',
-      },
-      {
-        heading: 'Step 5: Create a Realistic Study Plan',
-        content: 'A study plan is non-negotiable. Break your preparation into phases: Foundation (cover basics), Building (reference books), Practice (mock tests), and Revision. Allocate specific hours to each subject daily. Be realistic — if you can study 4 hours daily, don\'t plan for 8. Consistency beats intensity. Each exam page on TaiyarHo has a month-by-month study plan you can follow.',
-      },
-      {
-        heading: 'Step 6: Practice with Mock Tests',
-        content: 'Start taking mock tests from Month 2 or 3 of your preparation. Don\'t wait until you\'ve "completed the syllabus" — that day never comes. Mock tests help you identify weak areas, improve time management, and build exam temperament. Analyze every mock test thoroughly — spend as much time analyzing as you spent taking the test.',
-      },
-      {
-        heading: 'Step 7: Stay Updated with Current Affairs',
-        content: 'For almost every government exam, current affairs carry significant weight. Read one newspaper daily (The Hindu or Indian Express), follow monthly current affairs compilations (available free on many YouTube channels), and maintain a handwritten notebook of important events. Focus on last 6-12 months of current affairs.',
+        heading: '🔄 This Guide Has Been Expanded',
+        content: 'We have upgraded this guide into a comprehensive, in-depth blog post with a 12-month roadmap, exam comparison tables, subject-wise strategy, daily timetables, and more. Please visit our new article: Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap.',
       },
     ],
   },
@@ -220,7 +196,18 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
         <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-4">{guide.title}</h1>
         <p className="text-lg text-surface-500 leading-relaxed mb-8">{guide.description}</p>
 
-        {content ? (
+        {params.slug === 'how-to-start-government-exam-preparation' ? (
+          <div className="card p-8 text-center border-2 border-primary-200 bg-primary-50">
+            <div className="text-4xl mb-3">🚀</div>
+            <h2 className="font-heading font-bold text-xl text-primary-800 mb-3">This Guide Has Been Upgraded!</h2>
+            <p className="text-sm text-surface-600 leading-relaxed mb-5 max-w-xl mx-auto">
+              We&apos;ve expanded this guide into a comprehensive, in-depth article with a 12-month preparation roadmap, exam comparison tables, subject-wise strategy, daily timetables for students and working professionals, free resources, and common mistakes to avoid.
+            </p>
+            <Link href="/blog/government-exam-preparation-beginners-2026" className="btn-primary inline-flex items-center gap-2">
+              Read the Full 2026 Roadmap →
+            </Link>
+          </div>
+        ) : content ? (
           <div className="space-y-8">
             {content.sections.map((section, i) => (
               <section key={i}>
