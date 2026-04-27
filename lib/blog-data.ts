@@ -15,6 +15,19 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'government-exam-preparation-beginners-2026',
+    title: 'Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap',
+    metaTitle: 'Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap | TaiyarHo',
+    metaDescription: 'Complete beginner\'s guide to government exam preparation in 2026. Learn which exam to choose, 12-month study roadmap, free resources, daily timetable, and common mistakes. From zero to selection.',
+    category: 'Preparation',
+    tags: ['Beginners Guide', 'Government Exams 2026', 'Study Plan', 'Roadmap', 'Free Guide'],
+    publishedDate: 'April 27, 2026',
+    updatedDate: 'April 27, 2026',
+    readTime: '15 min read',
+    author: 'TaiyarHo Editorial',
+    excerpt: 'Starting from zero? This step-by-step roadmap covers everything — which exam to pick, how to study, a 12-month plan, free resources, and the mistakes that fail 90% of aspirants. 100% free.',
+  },
+  {
     slug: 'ssc-cgl-2026-syllabus-complete-guide',
     title: 'SSC CGL 2026 Syllabus: Complete Guide (Tier 1 & Tier 2)',
     metaTitle: 'SSC CGL 2026 Syllabus: Complete Guide (Tier 1 & Tier 2) | TaiyarHo',
