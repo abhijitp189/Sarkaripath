@@ -755,10 +755,10 @@ export const examCategories = [
 export const guides = [
   {
     slug: 'how-to-start-government-exam-preparation',
-    title: 'How to Start Government Exam Preparation from Zero',
-    description: 'A complete beginner\'s guide to starting your government exam preparation journey, including choosing the right exam, creating a study plan, and essential resources.',
+    title: 'Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap',
+    description: 'Complete beginner\'s roadmap to government exam preparation in 2026. Learn which exam to choose, follow a 12-month study plan, get free resources, daily timetables, and avoid the mistakes that fail 90% of aspirants.',
     category: 'Getting Started',
-    readTime: '12 min read',
+    readTime: '15 min read',
   },
   {
     slug: 'best-free-resources-government-exams',
