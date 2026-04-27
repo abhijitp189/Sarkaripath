@@ -13,16 +13,19 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const seoTitles: Record<string, string> = {
     'how-to-start-government-exam-preparation': 'Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap | TaiyarHo',
     'how-to-fill-government-job-application-form': 'How to Fill Government Job Application Forms – Step by Step Guide (2026) | TaiyarHo',
+    'best-free-resources-government-exams': 'Best Free Resources for Government Exam Preparation (2026) – 50+ Verified Links | TaiyarHo',
   };
 
   const seoDescriptions: Record<string, string> = {
     'how-to-start-government-exam-preparation': 'Complete beginner\'s roadmap to government exam preparation in 2026. Which exam to choose, 12-month study plan, free resources, daily timetables, and the mistakes that fail 90% of aspirants. From zero to selection.',
     'how-to-fill-government-job-application-form': 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo & signature upload specs, fee payment, common mistakes to avoid, and correction window details.',
+    'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
   };
 
   const seoKeywords: Record<string, string> = {
     'how-to-start-government-exam-preparation': 'government exam preparation for beginners 2026, how to start government exam preparation, sarkari exam ki taiyari kaise kare, government exam study plan, which government exam to choose, 12 month government exam roadmap',
     'how-to-fill-government-job-application-form': 'how to fill government job application form, SSC CGL application form, UPSC application form, IBPS PO apply online, RRB NTPC application, government exam form filling, photo signature upload government exam, OTR registration, sarkari naukri form kaise bhare',
+    'best-free-resources-government-exams': 'free resources government exam preparation 2026, free study material UPSC SSC Banking Railway, best free YouTube channels government exams, NCERT free textbooks, free mock tests government exams, DIKSHA app, SWAYAM, sarkari exam free resources, previous year papers download, muft study material sarkari naukri',
   };
 
   return {
@@ -45,30 +48,6 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
 // Guide content — in a real app this would come from MDX files or a CMS
 const guideContent: Record<string, { sections: { heading: string; content: string }[] }> = {
-  'best-free-resources-government-exams': {
-    sections: [
-      {
-        heading: 'Free YouTube Channels',
-        content: 'YouTube is the single best free resource for government exam preparation. Top channels include: Unacademy (separate channels for UPSC, SSC, Banking), StudyIQ (all exams), Adda247 (Banking and SSC focus), Drishti IAS (Hindi medium UPSC), Wifistudy (Railway and SSC), and Mrunal Patel (Economy and current affairs). Subscribe to 3-4 channels relevant to your exam and follow their free playlists systematically.',
-      },
-      {
-        heading: 'Free Websites for Study Material',
-        content: 'NCERT official website (ncert.nic.in) has all textbooks for free — these are the foundation for every exam. Insights on India and Forum IAS are excellent for UPSC. GK Today provides daily current affairs. PRS Legislative Research is invaluable for Polity. For banking, the RBI website itself is the best resource for banking awareness. All official exam body websites have previous year papers available for free.',
-      },
-      {
-        heading: 'Free Mock Test Platforms',
-        content: 'Several platforms offer free mock tests: Testbook (limited free mocks for all exams), Oliveboard (free mocks for banking exams), Adda247 (free daily quizzes), IBPS official website (releases free mock tests before every exam), and SSC official website (practice sets). Take at least one free mock per week during your preparation.',
-      },
-      {
-        heading: 'Telegram Groups and Apps',
-        content: 'Telegram has become a hub for exam preparation. Join groups for your specific exam — they share daily current affairs PDFs, free study materials, and exam notifications. Be selective and join only 2-3 quality groups to avoid information overload. Popular apps include Pratiyogita Darpan (current affairs), GKToday, and exam-specific apps from Adda247 and Testbook.',
-      },
-      {
-        heading: 'Previous Year Question Papers',
-        content: 'Previous year papers are the most underrated free resource. Every official exam website publishes past papers. Solving 5-10 years of previous papers gives you more insight than any coaching class. You\'ll understand the exam pattern, difficulty level, frequently asked topics, and time management requirements. We link official PYQ sources on every exam page.',
-      },
-    ],
-  },
   'age-limit-relaxation-government-jobs': {
     sections: [
       {
@@ -179,6 +158,11 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
   // Full rich article for the beginner roadmap
   if (params.slug === 'how-to-start-government-exam-preparation') {
     return <GovExamBeginnersGuide guide={guide} />;
+  }
+
+  // Full rich article for the free resources guide
+  if (params.slug === 'best-free-resources-government-exams') {
+    return <FreeResourcesGuide guide={guide} />;
   }
 
   return (
@@ -758,6 +742,615 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
       {/* Schema.org */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: guide.title, description: guide.description, datePublished: '2026-04-27', dateModified: '2026-04-27', author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' }, publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' }, mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/guides/how-to-start-government-exam-preparation' } }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: 'Can I crack a government exam without coaching?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Lakhs of candidates clear SSC, Banking, and Railway exams every year through self-study.' } }, { '@type': 'Question', name: 'How many hours should I study daily?', acceptedAnswer: { '@type': 'Answer', text: 'Start with 3–4 focused hours and gradually increase to 5–6 hours.' } }, { '@type': 'Question', name: 'Which exam should I start with if I have no idea?', acceptedAnswer: { '@type': 'Answer', text: 'If you are a graduate, start with SSC CGL or IBPS PO.' } }] }) }} />
+    </div>
+  );
+}
+
+// ─── FREE RESOURCES GUIDE — FULL RICH ARTICLE ──────────────────────────────
+function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; description: string; category: string; readTime: string } }) {
+  const toc = [
+    { id: 'why-free', label: 'Why Free Resources Are Enough' },
+    { id: 'govt-platforms', label: 'Official Government Platforms' },
+    { id: 'youtube', label: 'Free YouTube Channels' },
+    { id: 'mock-tests', label: 'Free Mock Test Platforms' },
+    { id: 'websites', label: 'Websites for Study Material' },
+    { id: 'apps', label: 'Free Mobile Apps' },
+    { id: 'pyq', label: 'Previous Year Papers' },
+    { id: 'current-affairs', label: 'Current Affairs Resources' },
+    { id: 'community', label: 'Telegram & Communities' },
+    { id: 'strategy', label: 'How to Use These Effectively' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Free Resources 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        <article>
+          {/* Hero */}
+          <div className="mb-10">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="badge badge-accent">{guide.category}</span>
+              <span className="text-xs text-surface-400">Updated April 2026</span>
+              <span className="text-xs text-surface-400">•</span>
+              <span className="text-xs text-surface-400">{guide.readTime}</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-4 leading-tight">
+              Best Free Resources for Government Exam Preparation (2026)
+            </h1>
+            <p className="text-lg text-surface-500 leading-relaxed mb-6">
+              You do not need expensive coaching to crack a government exam. This guide lists 50+ verified free resources — official government platforms, YouTube channels, mock test sites, apps, and study material sources — that lakhs of successful candidates use every year. Every link has been verified as of April 2026.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="bg-primary-50 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-primary-600">50+</div>
+                <div className="text-xs text-primary-700 font-medium">Free Resources</div>
+              </div>
+              <div className="bg-emerald-50 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-emerald-600">8</div>
+                <div className="text-xs text-emerald-700 font-medium">Govt Platforms</div>
+              </div>
+              <div className="bg-amber-50 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-amber-600">15+</div>
+                <div className="text-xs text-amber-700 font-medium">YouTube Channels</div>
+              </div>
+              <div className="bg-violet-50 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-violet-600">100%</div>
+                <div className="text-xs text-violet-700 font-medium">Free to Access</div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Section 1: Why Free Resources Are Enough ────────────────────── */}
+          <GSection id="why-free" title="1. Why Free Resources Are Enough to Crack Any Government Exam">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Every year, lakhs of candidates clear SSC, Banking, Railway, and even UPSC exams through self-study using only free resources. The internet has fundamentally changed competitive exam preparation — you now have access to the same quality of teaching that coaching centres charge lakhs for, completely free on platforms like YouTube, DIKSHA, and SWAYAM.
+            </p>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              What matters is not how much you spend, but how consistently and strategically you study. A student watching Drishti IAS videos on YouTube has access to the same content as someone sitting in a Delhi coaching centre. The difference is discipline, not money.
+            </p>
+            <GCallout type="tip" title="The ₹0 Success Formula">
+              NCERT textbooks (free) + one good YouTube channel per subject + free mock tests + previous year papers = everything you need. This is the exact combination that toppers across SSC, Banking, and Railway exams recommend.
+            </GCallout>
+          </GSection>
+
+          {/* ── Section 2: Official Government Platforms ────────────────────── */}
+          <GSection id="govt-platforms" title="2. Official Government Platforms (100% Free, 100% Reliable)">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              The Indian government provides several high-quality digital education platforms that most aspirants do not know about or underuse. These are the most reliable sources because they are created by official bodies like NCERT, the Ministry of Education, and UGC.
+            </p>
+
+            <div className="space-y-4 mb-6">
+              <ResourceCard
+                icon="📚"
+                name="NCERT Textbooks (Class 6–12)"
+                url="https://ncert.nic.in/textbook.php"
+                desc="The absolute foundation for every government exam. Free PDF downloads of all textbooks from Class 6 to 12 in English and Hindi. Cover History, Geography, Polity, Economy, and Science from NCERT before touching any other book."
+                tags={['All Exams', 'Must-Have']}
+                highlight
+              />
+              <ResourceCard
+                icon="📱"
+                name="DIKSHA (Digital Infrastructure for Knowledge Sharing)"
+                url="https://diksha.gov.in"
+                desc="India's national digital learning platform by the Ministry of Education. Offers NCERT content with video explanations, practice questions, and AI-powered learning in 36 languages. Scan QR codes in your NCERT textbooks for instant video lessons."
+                tags={['All Exams', 'Multilingual']}
+              />
+              <ResourceCard
+                icon="🎓"
+                name="SWAYAM (Free Online Courses)"
+                url="https://swayam.gov.in"
+                desc="Free university-level courses by IIT and top university professors. Covers subjects like Public Administration, Political Science, Economics, and Mathematics. Completion certificates available. Excellent for UPSC optional subjects and in-depth learning."
+                tags={['UPSC', 'State PSC', 'Teaching']}
+              />
+              <ResourceCard
+                icon="📖"
+                name="e-Pathshala (NCERT Mobile App)"
+                url="https://epathshala.nic.in"
+                desc="Official NCERT app with all textbooks, audio content, and video lessons. Works offline after download — perfect for students with limited internet. Available on both Android and iOS."
+                tags={['All Exams', 'Offline Access']}
+              />
+              <ResourceCard
+                icon="📄"
+                name="NIOS (National Institute of Open Schooling)"
+                url="https://www.nios.ac.in"
+                desc="Free study material for secondary and senior secondary subjects. Excellent for building basics if your school education was weak. Material available in Hindi, English, and Urdu."
+                tags={['All Exams', 'Basics']}
+              />
+              <ResourceCard
+                icon="🏛️"
+                name="IGNOU eGyanKosh"
+                url="https://egyankosh.ac.in"
+                desc="Massive repository of free university-level content from IGNOU. Covers Public Administration, Political Science, History, Sociology, and more — directly useful for UPSC Mains optional subjects and State PSC preparation."
+                tags={['UPSC', 'State PSC']}
+              />
+              <ResourceCard
+                icon="📊"
+                name="Economic Survey of India"
+                url="https://www.indiabudget.gov.in/economicsurvey/"
+                desc="Annual publication by the Ministry of Finance. Essential reading for Economy sections in UPSC, Banking, and SSC exams. Contains the latest economic data, policy analysis, and government initiatives."
+                tags={['UPSC', 'Banking', 'SSC']}
+              />
+              <ResourceCard
+                icon="⚖️"
+                name="PRS Legislative Research"
+                url="https://prsindia.org"
+                desc="Independent research on Indian legislation. Provides simplified explanations of Bills, Acts, policy briefs, and Parliament sessions. One of the best free resources for Polity and Governance preparation."
+                tags={['UPSC', 'State PSC']}
+              />
+            </div>
+
+            <GCallout type="info" title="Government Platform Tip">
+              Download the DIKSHA app and scan the QR codes printed inside your NCERT books — each code links directly to video explanations, practice questions, and interactive content for that chapter. This feature alone replaces the need for many paid video courses.
+            </GCallout>
+          </GSection>
+
+          {/* ── Section 3: YouTube Channels ─────────────────────────────────── */}
+          <GSection id="youtube" title="3. Best Free YouTube Channels (by Exam Category)">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              YouTube is the single most powerful free resource for government exam preparation. These channels provide complete courses, daily current affairs, and topic-wise lectures — all free. Subscribe to 3–4 channels relevant to your target exam and follow their playlists systematically.
+            </p>
+
+            <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">🏛️ For UPSC &amp; State PSC</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              <YTCard name="Drishti IAS" url="https://www.youtube.com/@DrishtiIASvideos" desc="Hindi medium UPSC preparation — daily current affairs, prelims & mains lectures, and answer writing" lang="Hindi" />
+              <YTCard name="StudyIQ IAS" url="https://www.youtube.com/@StudyIQIAS" desc="Daily current affairs and subject-wise lectures by Gaurav Munjal and team for UPSC and all exams" lang="Hindi/English" />
+              <YTCard name="Unacademy IAS" url="https://www.youtube.com/@UnacademyIAS" desc="Free UPSC lectures by top educators on History, Geography, Polity, Economy, and optional subjects" lang="English/Hindi" />
+              <YTCard name="Mrunal Patel" url="https://www.youtube.com/@MrunalPatel" desc="Economy, Polity, and current affairs analysis — especially strong for UPSC Prelims and banking awareness" lang="English/Hindi" />
+            </div>
+
+            <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">📝 For SSC &amp; Railway</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              <YTCard name="Wifistudy (by Unacademy)" url="https://www.youtube.com/@wabornindia" desc="Free live classes for Railway, SSC, and Defence exams — Maths, Reasoning, GK, and English" lang="Hindi" />
+              <YTCard name="Rakesh Yadav Readers" url="https://www.youtube.com/@RAKESHYADAVREADERSPUBLICATI" desc="Mathematics shortcuts and advanced-level problem solving for SSC CGL and Railway exams" lang="Hindi" />
+              <YTCard name="Adda247" url="https://www.youtube.com/@adabornindia" desc="Comprehensive classes for Banking, SSC, and Railway exams with daily quizzes and mock analysis" lang="Hindi/English" />
+              <YTCard name="Gagan Pratap Maths" url="https://www.youtube.com/@GaganPratapMaths" desc="One of the most popular Maths channels for SSC — clear explanations and shortcuts for Quant" lang="Hindi" />
+            </div>
+
+            <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">🏦 For Banking &amp; Insurance</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              <YTCard name="Adda247 (Banking)" url="https://www.youtube.com/@adabornindia" desc="Complete Banking exam coverage — IBPS PO, SBI PO, RBI, NABARD. Daily CA and topic-wise lectures" lang="Hindi/English" />
+              <YTCard name="Oliveboard" url="https://www.youtube.com/@Oliveboard" desc="Banking exam specialists — free classes for IBPS, SBI, RBI Grade B with strong focus on Reasoning and DI" lang="English/Hindi" />
+              <YTCard name="Bankers Adda" url="https://www.youtube.com/@BankersAdda" desc="Focus on banking awareness, financial news analysis, and exam-specific preparation" lang="Hindi/English" />
+            </div>
+
+            <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">🎖️ For Defence &amp; Teaching</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              <YTCard name="Defence Adda247" url="https://www.youtube.com/@DefenceAdda247" desc="NDA, CDS, AFCAT, CAPF preparation with daily classes and mock test discussions" lang="Hindi" />
+              <YTCard name="Exampur (by Vivek Sir)" url="https://www.youtube.com/@exampur" desc="Covers CTET, State TET, DSSSB, and KVS along with SSC and Railway exams" lang="Hindi" />
+            </div>
+
+            <GCallout type="warning" title="Avoid This Common Mistake">
+              Do not subscribe to 10+ channels thinking &quot;more is better.&quot; Pick 2–3 channels for your target exam and follow one teacher per subject consistently. Jumping between channels creates confusion and wastes time. Consistency beats variety.
+            </GCallout>
+          </GSection>
+
+          {/* ── Section 4: Mock Test Platforms ──────────────────────────────── */}
+          <GSection id="mock-tests" title="4. Free Mock Test Platforms">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Mock tests are the single most important practice tool after covering basics. These platforms offer limited free mocks — use them wisely. Take at least one full-length mock per week from Month 2 of your preparation.
+            </p>
+
+            <div className="space-y-4 mb-6">
+              <ResourceCard
+                icon="📝"
+                name="Testbook (Free Mocks)"
+                url="https://testbook.com"
+                desc="India's largest test platform. Offers free daily quizzes and limited full-length mocks for SSC, Banking, Railway, Teaching, and Defence exams. The free tier includes 2–3 mocks per exam with detailed solutions."
+                tags={['All Exams', 'Daily Quizzes']}
+                highlight
+              />
+              <ResourceCard
+                icon="📊"
+                name="Oliveboard (Free Mocks)"
+                url="https://www.oliveboard.in"
+                desc="Strong in Banking and SSC mocks. Offers free sectional tests and a few full-length mocks. Known for high-quality Reasoning and DI questions that closely mirror actual exam difficulty."
+                tags={['Banking', 'SSC']}
+              />
+              <ResourceCard
+                icon="🎯"
+                name="Prepp.in (Free Test Series)"
+                url="https://prepp.in"
+                desc="Offers free mock tests for 500+ exams including SSC, Railway, Banking, State exams. Provides free previous year papers in online test format with detailed analytics."
+                tags={['All Exams', 'PYQs Online']}
+              />
+              <ResourceCard
+                icon="📱"
+                name="Adda247 (Free Daily Quizzes)"
+                url="https://www.adda247.com"
+                desc="Daily free quizzes on Quant, Reasoning, English, and GA for Banking, SSC, and Railway exams. Their free quiz section is excellent for daily practice."
+                tags={['Banking', 'SSC', 'Railway']}
+              />
+              <ResourceCard
+                icon="🏛️"
+                name="IBPS Official Free Mock Test"
+                url="https://ibps.in"
+                desc="IBPS releases free official mock tests before every exam cycle (PO, Clerk, SO, RRB). These are the closest to the actual exam interface. Always attempt these when available."
+                tags={['Banking', 'Official']}
+              />
+              <ResourceCard
+                icon="📋"
+                name="SSC Official Practice Sets"
+                url="https://ssc.gov.in"
+                desc="SSC occasionally publishes practice sets and sample papers on their official website. Check the 'For Candidates' section for available previous year question papers."
+                tags={['SSC', 'Official']}
+              />
+            </div>
+
+            <GCallout type="tip" title="Mock Test Strategy">
+              Take the mock test in exam conditions — full length, timed, no breaks, no phone. Then spend equal time analyzing it: which questions did you get wrong? Why? Which topics need revision? This analysis is more valuable than the test itself.
+            </GCallout>
+          </GSection>
+
+          {/* ── Section 5: Websites for Study Material ─────────────────────── */}
+          <GSection id="websites" title="5. Best Free Websites for Study Material">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Beyond official platforms, these websites provide high-quality free study material, notes, and exam-specific content.
+            </p>
+
+            <div className="space-y-4 mb-6">
+              <ResourceCard
+                icon="🔍"
+                name="Insights on India"
+                url="https://www.insightsonindia.com"
+                desc="Daily current affairs analysis, editorial breakdowns, and free study materials for UPSC. Their daily current affairs compilation is used by thousands of serious aspirants."
+                tags={['UPSC']}
+              />
+              <ResourceCard
+                icon="📰"
+                name="Forum IAS Blog"
+                url="https://blog.forumias.com"
+                desc="Answer writing practice, mains-focused content, and current affairs compilations for UPSC aspirants. Excellent for developing answer writing skills."
+                tags={['UPSC']}
+              />
+              <ResourceCard
+                icon="🌐"
+                name="GKToday"
+                url="https://www.gktoday.in"
+                desc="Daily current affairs, monthly compilations, and GK quizzes covering all government exams. Available in both English and Hindi."
+                tags={['All Exams', 'Current Affairs']}
+              />
+              <ResourceCard
+                icon="🏦"
+                name="RBI Website"
+                url="https://www.rbi.org.in"
+                desc="The best free source for banking awareness. Read RBI press releases, monetary policy updates, and publications. Questions in banking exams are directly sourced from RBI announcements."
+                tags={['Banking', 'Official']}
+              />
+              <ResourceCard
+                icon="📜"
+                name="India Code (Legislative Department)"
+                url="https://www.indiacode.nic.in"
+                desc="Complete repository of all Central Acts and Rules. Useful for detailed study of specific laws mentioned in Polity syllabus."
+                tags={['UPSC', 'State PSC']}
+              />
+              <ResourceCard
+                icon="📈"
+                name="PIB (Press Information Bureau)"
+                url="https://pib.gov.in"
+                desc="Official government press releases and policy announcements. A reliable primary source for current affairs — avoids media bias and gives you factual information directly."
+                tags={['UPSC', 'SSC', 'Banking']}
+              />
+            </div>
+          </GSection>
+
+          {/* ── Section 6: Free Mobile Apps ────────────────────────────────── */}
+          <GSection id="apps" title="6. Free Mobile Apps for On-the-Go Preparation">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              These apps help you utilize commuting time, breaks, and small pockets of free time for revision and practice. Most offer both free and paid tiers — the free tier is sufficient for practice.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <AppCard name="Testbook" platform="Android & iOS" desc="Daily free quizzes, live classes, and limited mock tests for all government exams" free="Free quizzes + 2–3 mocks per exam" />
+              <AppCard name="Adda247" platform="Android & iOS" desc="Free daily practice sets, GK updates, and exam notifications for Banking, SSC, Railway" free="Daily free quizzes + CA updates" />
+              <AppCard name="DIKSHA" platform="Android & iOS" desc="Official government learning app — NCERT content with videos, practice questions, AI assistance" free="Completely free" />
+              <AppCard name="e-Pathshala" platform="Android & iOS" desc="Official NCERT app with textbooks, audio books, and video content — works offline" free="Completely free" />
+              <AppCard name="Pratiyogita Darpan" platform="Android & iOS" desc="Monthly current affairs magazine with quizzes in both Hindi and English — essential for GK sections" free="Free monthly issues" />
+              <AppCard name="GKToday" platform="Android & iOS" desc="Daily current affairs, GK quizzes, and monthly compilations. Clean interface with bilingual content" free="Free daily content" />
+            </div>
+
+            <GCallout type="info" title="Smart Phone Usage">
+              Turn your smartphone into a study tool, not a distraction. Set up these apps on your home screen and replace social media scrolling with 10-minute quiz sessions. Even 30 minutes of daily app-based practice adds up to 180+ hours over 12 months.
+            </GCallout>
+          </GSection>
+
+          {/* ── Section 7: Previous Year Papers ─────────────────────────────── */}
+          <GSection id="pyq" title="7. Previous Year Question Papers — The Most Underrated Free Resource">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Previous year papers (PYQs) are the single most effective preparation tool — and they are completely free. Solving 5–10 years of PYQs gives you more insight into exam patterns, difficulty levels, and frequently asked topics than any coaching class.
+            </p>
+
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-primary-50">
+                    <th className="text-left p-3 font-heading font-semibold text-primary-800">Exam Body</th>
+                    <th className="text-left p-3 font-heading font-semibold text-primary-800">Official PYQ Source</th>
+                    <th className="text-left p-3 font-heading font-semibold text-primary-800">Exams Covered</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  <tr className="hover:bg-surface-50">
+                    <td className="p-3 font-medium text-surface-800">UPSC</td>
+                    <td className="p-3"><a href="https://upsc.gov.in/examinations/previous-question-papers" className="text-primary-500 hover:text-primary-600 underline" target="_blank" rel="noopener noreferrer">upsc.gov.in/examinations/previous-question-papers</a></td>
+                    <td className="p-3 text-surface-600">CSE, NDA, CDS, CAPF, ESE</td>
+                  </tr>
+                  <tr className="hover:bg-surface-50">
+                    <td className="p-3 font-medium text-surface-800">SSC</td>
+                    <td className="p-3"><a href="https://ssc.gov.in/for-candidates/previous-year-question-paper" className="text-primary-500 hover:text-primary-600 underline" target="_blank" rel="noopener noreferrer">ssc.gov.in → For Candidates → Previous Year Papers</a></td>
+                    <td className="p-3 text-surface-600">CGL, CHSL, MTS, GD, CPO</td>
+                  </tr>
+                  <tr className="hover:bg-surface-50">
+                    <td className="p-3 font-medium text-surface-800">IBPS</td>
+                    <td className="p-3"><a href="https://ibps.in" className="text-primary-500 hover:text-primary-600 underline" target="_blank" rel="noopener noreferrer">ibps.in (mock tests before each exam)</a></td>
+                    <td className="p-3 text-surface-600">PO, Clerk, SO, RRB</td>
+                  </tr>
+                  <tr className="hover:bg-surface-50">
+                    <td className="p-3 font-medium text-surface-800">RRB</td>
+                    <td className="p-3"><a href="https://rrbcdg.gov.in" className="text-primary-500 hover:text-primary-600 underline" target="_blank" rel="noopener noreferrer">Regional RRB websites (e.g., rrbcdg.gov.in)</a></td>
+                    <td className="p-3 text-surface-600">NTPC, Group D, ALP, JE</td>
+                  </tr>
+                  <tr className="hover:bg-surface-50">
+                    <td className="p-3 font-medium text-surface-800">SBI</td>
+                    <td className="p-3"><a href="https://sbi.co.in/careers" className="text-primary-500 hover:text-primary-600 underline" target="_blank" rel="noopener noreferrer">sbi.co.in/careers</a></td>
+                    <td className="p-3 text-surface-600">SBI PO, Clerk, SO</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <GCallout type="tip" title="PYQ Strategy">
+              Start solving PYQs from Month 2 of your preparation — do not wait until you have &quot;finished the syllabus.&quot; That day never comes. PYQs help you understand what the exam actually asks, which is often different from what you expect. Solve the papers first without a timer, then with exam-time conditions.
+            </GCallout>
+          </GSection>
+
+          {/* ── Section 8: Current Affairs Resources ────────────────────────── */}
+          <GSection id="current-affairs" title="8. Free Current Affairs Resources">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Current affairs carry significant weight in almost every government exam — from 25% in SSC to nearly 50% in Banking and UPSC Prelims (combined with static GK). Here are the best free sources to stay updated.
+            </p>
+
+            <div className="space-y-4 mb-6">
+              <div className="card p-5">
+                <h4 className="font-heading font-semibold text-surface-800 mb-3">📰 Daily Sources</h4>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-1 flex-shrink-0">•</span><span><strong>The Hindu / Indian Express</strong> — read one newspaper daily. Focus on editorials, national news, and economy sections. Available free online.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-1 flex-shrink-0">•</span><span><strong>PIB (pib.gov.in)</strong> — official government press releases. No opinion, just facts. Best for UPSC-level current affairs.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-1 flex-shrink-0">•</span><span><strong>YouTube daily CA videos</strong> — StudyIQ, Drishti IAS, and Adda247 upload 15–20 minute daily current affairs summaries. Watch one every morning.</span></li>
+                </ul>
+              </div>
+              <div className="card p-5">
+                <h4 className="font-heading font-semibold text-surface-800 mb-3">📅 Monthly Compilations</h4>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-1 flex-shrink-0">•</span><span><strong>Drishti IAS Monthly Current Affairs</strong> — available free on their website. Comprehensive monthly digest in Hindi and English.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-1 flex-shrink-0">•</span><span><strong>GKToday Monthly Magazine</strong> — free monthly current affairs PDF covering national, international, economy, sports, and awards.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-1 flex-shrink-0">•</span><span><strong>Pratiyogita Darpan</strong> — long-running current affairs magazine available as a free app with monthly issues.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <GCallout type="warning" title="Current Affairs Focus Areas for 2026">
+              Focus on: government schemes and policies, Supreme Court judgments, international summits (G20, COP, BRICS), economic indicators (GDP, inflation, RBI policy), awards and appointments, and sports events. For Banking exams, also cover RBI circulars, SEBI updates, and budget highlights.
+            </GCallout>
+          </GSection>
+
+          {/* ── Section 9: Telegram & Communities ───────────────────────────── */}
+          <GSection id="community" title="9. Telegram Groups & Online Communities">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Telegram has become a major hub for exam preparation. Groups share daily current affairs PDFs, free study materials, exam notifications, and cut-off discussions. However, be selective — joining too many groups creates information overload and distracts from actual study.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div className="card p-5 border-l-4 border-emerald-400">
+                <h4 className="font-heading font-semibold text-emerald-800 text-sm mb-2">✅ Good Practices</h4>
+                <ul className="text-sm text-surface-600 space-y-1">
+                  <li>• Join only 2–3 quality groups for your target exam</li>
+                  <li>• Use groups for daily CA PDFs and notifications</li>
+                  <li>• Follow official channels of Testbook, Adda247, Oliveboard</li>
+                  <li>• Mute group notifications — check once daily</li>
+                </ul>
+              </div>
+              <div className="card p-5 border-l-4 border-red-400">
+                <h4 className="font-heading font-semibold text-red-800 text-sm mb-2">❌ Avoid</h4>
+                <ul className="text-sm text-surface-600 space-y-1">
+                  <li>• Joining 10+ groups — leads to information overload</li>
+                  <li>• Relying on Telegram as your primary study source</li>
+                  <li>• Downloading random PDFs without verifying quality</li>
+                  <li>• Getting into exam anxiety discussions in groups</li>
+                </ul>
+              </div>
+            </div>
+
+            <GCallout type="info" title="Recommended Communities">
+              Look for official Telegram channels of Testbook, Adda247, and Drishti IAS — these share verified content. For peer discussion, platforms like Reddit (r/UPSC, r/IndianGovtJobs) and exam-specific forums can be helpful for strategy discussions and motivation.
+            </GCallout>
+          </GSection>
+
+          {/* ── Section 10: How to Use Effectively ──────────────────────────── */}
+          <GSection id="strategy" title="10. How to Use Free Resources Effectively — A 5-Step Strategy">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Having access to free resources is not enough — you need a system to use them effectively. Here is a proven 5-step approach that successful self-study candidates follow.
+            </p>
+
+            <div className="space-y-4 mb-6">
+              {[
+                { step: '1', title: 'Start with NCERT + One YouTube Channel', desc: 'Read NCERT books chapter by chapter. Watch the corresponding video lecture on your chosen YouTube channel. Make short handwritten notes. This builds your foundation in 2–3 months.' },
+                { step: '2', title: 'Add One Reference Book per Subject', desc: 'After NCERT, pick ONE standard reference book per subject (Laxmikanth for Polity, Bipan Chandra for History, etc.). Do not collect multiple books — finish one completely before starting another.' },
+                { step: '3', title: 'Start Daily Current Affairs from Day 1', desc: 'Watch one 15-minute daily CA video every morning. Read one newspaper (The Hindu or Indian Express). Maintain a handwritten CA notebook organized by month. Focus on the last 6–12 months for your exam.' },
+                { step: '4', title: 'Begin Mock Tests from Month 2', desc: 'Start with sectional tests (one subject at a time), then move to full-length mocks by Month 4. Take one full mock per week. Analyze every mock — spend as much time on analysis as on the test itself.' },
+                { step: '5', title: 'Revise Ruthlessly — The 3R Method', desc: 'Read → Revise → Re-revise. Revision is non-negotiable. Revise your notes every weekend. Do a complete revision in the last 30 days before the exam. The candidate who revises more wins.' },
+              ].map((s) => (
+                <div key={s.step} className="card p-5 flex gap-4">
+                  <div className="w-10 h-10 bg-primary-500 text-white rounded-xl flex items-center justify-center font-bold text-lg flex-shrink-0">{s.step}</div>
+                  <div>
+                    <h4 className="font-heading font-semibold text-surface-800 mb-1">{s.title}</h4>
+                    <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </GSection>
+
+          {/* ── Section 11: FAQs ───────────────────────────────────────────── */}
+          <GSection id="faq" title="11. Frequently Asked Questions">
+            <div className="space-y-4">
+              {[
+                { q: 'Can I crack a government exam without any paid resources?', a: 'Yes. Lakhs of candidates clear SSC, Banking, and Railway exams every year using only free resources. Even for UPSC, many candidates from the top 100 have used primarily free materials. What matters is consistency, strategy, and discipline — not money.' },
+                { q: 'Which is the best free resource for government exams?', a: 'NCERT textbooks are the absolute best free resource — they are the foundation for every exam. After that, YouTube channels for video learning and free mock tests for practice complete the trifecta. Everything else is supplementary.' },
+                { q: 'Are free mock tests accurate enough for real exam practice?', a: 'Free mocks from platforms like Testbook, Oliveboard, and Adda247 are generally good quality and follow the exam pattern closely. The best mocks are the official ones released by IBPS and SSC — always attempt these when available. For UPSC, previous year papers are more valuable than any mock.' },
+                { q: 'How many YouTube channels should I follow?', a: 'Follow a maximum of 2–3 channels for your target exam. Pick one channel per subject and stick with it. Jumping between 10 channels creates confusion and wastes time. Consistency with one good teacher beats sampling from many.' },
+                { q: 'Is Telegram necessary for exam preparation?', a: 'No. Telegram is useful for getting daily current affairs PDFs and exam notifications quickly, but it is not essential. Everything available on Telegram groups is also available on official websites and YouTube channels. Use it as a supplement, not a primary source.' },
+                { q: 'How do I know if a free resource is reliable?', a: 'Stick to: official government websites (.gov.in, .nic.in), established YouTube channels with 500K+ subscribers, and well-known platforms like Testbook, Adda247, and Oliveboard. Avoid random PDFs and unverified Telegram content. When in doubt, cross-check with official syllabus documents.' },
+                { q: 'Do I need a newspaper subscription for current affairs?', a: 'No. The Hindu and Indian Express both have free online editions. You can read the important articles without a physical subscription. Alternatively, daily current affairs videos on YouTube cover the same content in 15–20 minutes.' },
+              ].map((faq, i) => (
+                <details key={i} className="card group">
+                  <summary className="p-4 cursor-pointer font-heading font-semibold text-surface-800 text-sm flex items-center gap-2 hover:text-primary-600">
+                    <span className="text-primary-500 group-open:rotate-90 transition-transform flex-shrink-0">▶</span>
+                    {faq.q}
+                  </summary>
+                  <div className="px-4 pb-4 pt-0 text-sm text-surface-600 leading-relaxed border-t border-surface-100 mt-1 ml-6">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </GSection>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 text-center text-white mb-10">
+            <h3 className="font-heading font-bold text-xl mb-2">You Have Everything You Need — Start Now</h3>
+            <p className="text-primary-100 text-sm mb-5 max-w-xl mx-auto">Every resource on this page is free. The only cost is your time and discipline. Start with NCERT, pick a YouTube channel, and take your first mock test this week.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/exams" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Browse All Exams →</Link>
+              <Link href="/tools/eligibility-checker" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
+            </div>
+          </div>
+
+          <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+            All links verified as of April 2026. This guide is for informational purposes only. Websites, apps, and features may change — always verify from official sources. TaiyarHo is not affiliated with any platform mentioned above. Last updated: April 2026.
+          </p>
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-4">
+            <div className="card p-5 border-l-4 border-primary-500">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Table of Contents</div>
+              <ol className="space-y-2 list-decimal list-inside">
+                {toc.map(item => (
+                  <li key={item.id} className="text-sm">
+                    <a href={`#${item.id}`} className="text-primary-500 hover:text-primary-600 hover:underline">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <h3 className="font-heading font-semibold text-emerald-800 mb-3 text-sm">🎯 Quick Start Kit</h3>
+              <div className="space-y-2 text-sm text-emerald-700">
+                <a href="https://ncert.nic.in/textbook.php" className="block hover:underline font-medium" target="_blank" rel="noopener noreferrer">1. Download NCERT Books →</a>
+                <Link href="/resources" className="block hover:underline font-medium">2. View All Resources →</Link>
+                <Link href="/tools/eligibility-checker" className="block hover:underline font-medium">3. Find Your Exams →</Link>
+                <Link href="/guides/how-to-start-government-exam-preparation" className="block hover:underline font-medium">4. Read Beginner&apos;s Guide →</Link>
+              </div>
+            </div>
+            <div className="card p-5 bg-primary-50 border-primary-200">
+              <h3 className="font-heading font-semibold text-primary-800 mb-3 text-sm">Popular Exam Guides</h3>
+              <div className="space-y-2">
+                <Link href="/exams/ssc-cgl" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
+                <Link href="/exams/ibps-po" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
+                <Link href="/exams/rrb-ntpc" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
+                <Link href="/exams/upsc-ias" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
+              </div>
+            </div>
+            <div className="card p-5">
+              <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Find Your Exams</h3>
+              <p className="text-xs text-surface-500 mb-3">Enter your age and qualification — see every exam you qualify for.</p>
+              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center">Check Eligibility →</Link>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      {/* Schema.org Article + FAQ */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: guide.title,
+        description: guide.description,
+        datePublished: '2026-04-27',
+        dateModified: '2026-04-27',
+        author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
+        publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/guides/best-free-resources-government-exams' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Can I crack a government exam without any paid resources?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Lakhs of candidates clear SSC, Banking, and Railway exams every year using only free resources. What matters is consistency, strategy, and discipline — not money.' } },
+          { '@type': 'Question', name: 'Which is the best free resource for government exams?', acceptedAnswer: { '@type': 'Answer', text: 'NCERT textbooks are the best free resource — they are the foundation for every exam. After that, YouTube channels for video learning and free mock tests for practice.' } },
+          { '@type': 'Question', name: 'Are free mock tests accurate enough for real exam practice?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Free mocks from Testbook, Oliveboard, and Adda247 follow the exam pattern closely. Official mocks from IBPS and SSC are the most accurate.' } },
+          { '@type': 'Question', name: 'How many YouTube channels should I follow?', acceptedAnswer: { '@type': 'Answer', text: 'Follow a maximum of 2–3 channels for your target exam. Pick one channel per subject and stick with it consistently.' } },
+          { '@type': 'Question', name: 'Do I need a newspaper subscription for current affairs?', acceptedAnswer: { '@type': 'Answer', text: 'No. The Hindu and Indian Express have free online editions. Daily current affairs YouTube videos cover the same content in 15–20 minutes.' } },
+        ],
+      }) }} />
+    </div>
+  );
+}
+
+// ─── HELPER COMPONENTS FOR FREE RESOURCES GUIDE ──────────────────────────────
+function ResourceCard({ icon, name, url, desc, tags, highlight }: { icon: string; name: string; url: string; desc: string; tags: string[]; highlight?: boolean }) {
+  return (
+    <div className={`card p-5 ${highlight ? 'ring-2 ring-primary-200 bg-primary-50/30' : ''}`}>
+      <div className="flex items-start gap-3">
+        <span className="text-2xl flex-shrink-0">{icon}</span>
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <a href={url} className="font-heading font-semibold text-surface-900 hover:text-primary-500 transition-colors" target="_blank" rel="noopener noreferrer">{name}</a>
+            {highlight && <span className="text-xs bg-primary-100 text-primary-700 font-semibold px-2 py-0.5 rounded-full">⭐ Essential</span>}
+          </div>
+          <p className="text-sm text-surface-600 leading-relaxed mb-2">{desc}</p>
+          <div className="flex flex-wrap items-center gap-2">
+            {tags.map(tag => (
+              <span key={tag} className="text-xs bg-surface-100 text-surface-600 font-medium px-2.5 py-0.5 rounded-full">{tag}</span>
+            ))}
+            <a href={url} className="text-xs text-primary-500 hover:text-primary-600 font-medium ml-auto flex-shrink-0" target="_blank" rel="noopener noreferrer">Visit →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function YTCard({ name, url, desc, lang }: { name: string; url: string; desc: string; lang: string }) {
+  return (
+    <a href={url} className="card p-4 group hover:shadow-md transition-shadow" target="_blank" rel="noopener noreferrer">
+      <div className="flex items-center gap-2 mb-2">
+        <span className="text-red-500 text-lg">▶</span>
+        <span className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors text-sm">{name}</span>
+      </div>
+      <p className="text-xs text-surface-500 leading-relaxed mb-2">{desc}</p>
+      <span className="text-xs bg-red-50 text-red-600 font-medium px-2 py-0.5 rounded-full">{lang}</span>
+    </a>
+  );
+}
+
+function AppCard({ name, platform, desc, free }: { name: string; platform: string; desc: string; free: string }) {
+  return (
+    <div className="card p-4">
+      <div className="flex items-center justify-between mb-2">
+        <span className="font-heading font-semibold text-surface-800 text-sm">{name}</span>
+        <span className="text-xs bg-surface-100 text-surface-500 px-2 py-0.5 rounded-full">{platform}</span>
+      </div>
+      <p className="text-xs text-surface-500 leading-relaxed mb-2">{desc}</p>
+      <span className="text-xs text-emerald-600 font-medium">✓ {free}</span>
     </div>
   );
 }

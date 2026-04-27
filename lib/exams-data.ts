@@ -762,10 +762,10 @@ export const guides = [
   },
   {
     slug: 'best-free-resources-government-exams',
-    title: 'Best Free Resources for Government Exam Preparation (2025)',
-    description: 'Curated list of the best free YouTube channels, websites, apps, and Telegram groups for preparing for all major government exams without spending any money.',
+    title: 'Best Free Resources for Government Exam Preparation (2026)',
+    description: 'Curated list of 50+ best free YouTube channels, official government platforms, websites, apps, mock test sites, and Telegram groups for UPSC, SSC, Banking, Railway, and all major government exams — updated for 2026.',
     category: 'Resources',
-    readTime: '10 min read',
+    readTime: '18 min read',
   },
   {
     slug: 'age-limit-relaxation-government-jobs',
