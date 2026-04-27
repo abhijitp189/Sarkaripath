@@ -1,146 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
-  <url><loc>https://taiyarho.in/</loc><lastmod>2026-04-26</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-
-  <!-- Main listing pages -->
-  <url><loc>https://taiyarho.in/exams/</loc><lastmod>2026-04-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://taiyarho.in/blog/</loc><lastmod>2026-04-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://taiyarho.in/guides/</loc><lastmod>2026-04-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exam-calendar/</loc><lastmod>2026-04-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-
-  <!-- 5 Detailed exam pages -->
-  <url><loc>https://taiyarho.in/exams/upsc-ias/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://taiyarho.in/exams/ssc-cgl/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://taiyarho.in/exams/ibps-po/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://taiyarho.in/exams/rrb-ntpc/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://taiyarho.in/exams/sbi-po/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-
-  <!-- UPSC category -->
-  <url><loc>https://taiyarho.in/exams/upsc-nda/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/upsc-cds/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/upsc-ese/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/upsc-capf/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/upsc-epfo/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/upsc-cms/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/upsc-ifs/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/upsc-ies-iss/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/upsc-geo-scientist/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ib-acio/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/supreme-court-jca/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- SSC category -->
-  <url><loc>https://taiyarho.in/exams/ssc-chsl/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ssc-mts/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ssc-cpo/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ssc-je/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ssc-stenographer/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ssc-selection-post/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ssc-jht/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/dsssb-ldc/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- Banking & Insurance -->
-  <url><loc>https://taiyarho.in/exams/sbi-clerk/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ibps-clerk/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/rbi-grade-b/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/rbi-assistant/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ibps-rrb-po/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ibps-rrb-clerk/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/lic-aao/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/lic-ado/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/nabard-grade-a/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/nabard-dev-assistant/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/sebi-grade-a/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/sidbi-grade-a/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/exim-bank-mt/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/fci-manager/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/fci-assistant/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/esic-udc/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/esic-mts/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/niacl-ao/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/niacl-assistant/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/uiic-ao/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/oicl-ao/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/nicl-ao/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/aai-je-atc/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/aai-je-common/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- Railway -->
-  <url><loc>https://taiyarho.in/exams/rrb-group-d/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/rrb-alp/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/rrb-je/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/rpf-si/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/rpf-constable/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- Defence -->
-  <url><loc>https://taiyarho.in/exams/afcat/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/drdo-ceptam/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/isro-scientist/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/barc-oces/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/coast-guard-navik-gd/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/coast-guard-navik-db/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/navy-agniveer/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/army-agniveer/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/iaf-agniveer/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- State PSC -->
-  <url><loc>https://taiyarho.in/exams/mpsc-rajyaseva/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/uppsc-pcs/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/bpsc-cce/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/rpsc-ras/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/mppsc-state-service/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/wbcs-executive/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/tnpsc-group-1/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/tnpsc-group-2/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/tnpsc-group-4/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/kpsc-kas/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/kerala-psc-kas/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/gpsc-class-1-2/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/hpsc-hcs/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ppsc-pcs/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/cgpsc-state-service/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/jpsc-civil-services/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ukpsc-civil-services/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/opsc-civil-services/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/apsc-cce/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/hpas/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/upsssc-pet/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/rsmssb-patwari/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- Teaching -->
-  <url><loc>https://taiyarho.in/exams/ctet/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ugc-net/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/kvs-prt-tgt-pgt/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/nvs-teaching/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/dsssb-tgt-pgt-prt/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- Police -->
-  <url><loc>https://taiyarho.in/exams/ssc-gd-constable/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/ib-security-assistant/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/delhi-police-hc/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/delhi-police-constable/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/up-police-constable/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/up-police-si/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/bihar-police-si/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/bihar-police-constable/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/maharashtra-police-constable/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/rajasthan-police-constable/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/exams/mp-police-constable/</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- Blog -->
-  <url><loc>https://taiyarho.in/blog/government-exam-preparation-beginners-2026/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://taiyarho.in/blog/ssc-cgl-2026-syllabus-complete-guide/</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-
-  <!-- Guides -->
-  <url><loc>https://taiyarho.in/guides/how-to-start-government-exam-preparation/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://taiyarho.in/guides/best-free-resources-government-exams/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/guides/age-limit-relaxation-government-jobs/</loc><lastmod>2026-04-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/guides/how-to-fill-government-job-application-form/</loc><lastmod>2026-04-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/guides/documents-needed-government-job/</loc><lastmod>2026-04-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/guides/study-plan-working-professionals/</loc><lastmod>2026-04-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- Tools -->
-  <url><loc>https://taiyarho.in/resources/</loc><lastmod>2026-04-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://taiyarho.in/tools/eligibility-checker/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://taiyarho.in/tools/age-calculator/</loc><lastmod>2026-04-27</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://taiyarho.in/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://taiyarho.in/exams/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://taiyarho.in/exams/upsc-ias/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://taiyarho.in/exams/ssc-cgl/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://taiyarho.in/exams/ibps-po/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://taiyarho.in/exams/rrb-ntpc/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://taiyarho.in/exams/sbi-po/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://taiyarho.in/exams/rrb-group-d/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://taiyarho.in/blog/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://taiyarho.in/blog/ssc-cgl-2026-syllabus-complete-guide/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://taiyarho.in/guides/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://taiyarho.in/guides/how-to-start-government-exam-preparation/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://taiyarho.in/guides/best-free-resources-government-exams/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://taiyarho.in/guides/age-limit-relaxation-government-jobs/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://taiyarho.in/guides/how-to-fill-government-job-application-form/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://taiyarho.in/guides/documents-needed-government-job/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://taiyarho.in/guides/study-plan-working-professionals/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://taiyarho.in/resources/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://taiyarho.in/tools/eligibility-checker/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://taiyarho.in/tools/age-calculator/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://taiyarho.in/exam-calendar/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
 </urlset>
