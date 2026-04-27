@@ -18,6 +18,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
+    alternates: { canonical: `https://taiyarho.in/exams/${params.slug}/` },
   };
 }
 

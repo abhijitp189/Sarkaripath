@@ -12,7 +12,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: post.metaTitle,
     description: post.metaDescription,
-    openGraph: { title: post.metaTitle, description: post.metaDescription },
+    openGraph: { title: post.metaTitle, description: post.metaDescription, type: 'article' },
+    alternates: { canonical: `https://taiyarho.in/blog/${params.slug}/` },
   };
 }
 

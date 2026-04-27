@@ -5,6 +5,7 @@ import { blogPosts } from '@/lib/blog-data';
 export const metadata: Metadata = {
   title: 'Blog – Government Exam Guides, Syllabus & Tips | TaiyarHo',
   description: 'Free in-depth articles on government exam syllabus, preparation strategy, exam pattern, books, and tips. SSC, UPSC, Banking, Railway and more.',
+  alternates: { canonical: 'https://taiyarho.in/blog/' },
 };
 
 const categoryColors: Record<string, string> = {

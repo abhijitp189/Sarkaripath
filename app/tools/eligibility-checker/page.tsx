@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: 'Government Exam Eligibility Checker 2026 | TaiyarHo',
     description: 'Instantly check your eligibility for 100+ government exams. Free tool by TaiyarHo.',
   },
+  alternates: { canonical: 'https://taiyarho.in/tools/eligibility-checker/' },
 };
 
 const faqs = [
