@@ -1113,9 +1113,9 @@ export const guides = [
   {
     slug: 'age-limit-relaxation-government-jobs',
     title: 'Complete Guide to Age Limit & Relaxation for Government Jobs',
-    description: 'Detailed explanation of age limits and relaxation rules for OBC, SC, ST, EWS, PwBD, and Ex-Servicemen categories across all major government exams.',
+    description: 'Complete 2026 guide to age limits and relaxation rules for Indian government exams. Covers OBC (+3 yrs), SC/ST (+5 yrs), PwBD (+10–15 yrs), Ex-Servicemen, and EWS rules for UPSC, SSC CGL, IBPS PO, SBI PO, and RRB NTPC — with exam-wise tables, document checklist, and common mistakes to avoid.',
     category: 'Eligibility',
-    readTime: '8 min read',
+    readTime: '15 min read',
   },
   {
     slug: 'how-to-fill-government-job-application-form',

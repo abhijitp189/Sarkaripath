@@ -14,18 +14,21 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-start-government-exam-preparation': 'Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap | TaiyarHo',
     'how-to-fill-government-job-application-form': 'How to Fill Government Job Application Forms – Step by Step Guide (2026) | TaiyarHo',
     'best-free-resources-government-exams': 'Best Free Resources for Government Exam Preparation (2026) – 50+ Verified Links | TaiyarHo',
+    'age-limit-relaxation-government-jobs': 'Age Limit & Relaxation for Government Jobs (2026) – Complete Guide for OBC, SC/ST, EWS, PwBD, Ex-Servicemen | TaiyarHo',
   };
 
   const seoDescriptions: Record<string, string> = {
     'how-to-start-government-exam-preparation': 'Complete beginner\'s roadmap to government exam preparation in 2026. Which exam to choose, 12-month study plan, free resources, daily timetables, and the mistakes that fail 90% of aspirants. From zero to selection.',
     'how-to-fill-government-job-application-form': 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo & signature upload specs, fee payment, common mistakes to avoid, and correction window details.',
     'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
+    'age-limit-relaxation-government-jobs': 'Complete 2026 guide to age limits and relaxation rules for Indian government exams. Covers OBC (+3 yrs), SC/ST (+5 yrs), PwBD (+10–15 yrs), Ex-Servicemen, and EWS rules for UPSC, SSC CGL, IBPS PO, SBI PO, and RRB NTPC — with a quick-check table and common mistakes to avoid.',
   };
 
   const seoKeywords: Record<string, string> = {
     'how-to-start-government-exam-preparation': 'government exam preparation for beginners 2026, how to start government exam preparation, sarkari exam ki taiyari kaise kare, government exam study plan, which government exam to choose, 12 month government exam roadmap',
     'how-to-fill-government-job-application-form': 'how to fill government job application form, SSC CGL application form, UPSC application form, IBPS PO apply online, RRB NTPC application, government exam form filling, photo signature upload government exam, OTR registration, sarkari naukri form kaise bhare',
     'best-free-resources-government-exams': 'free resources government exam preparation 2026, free study material UPSC SSC Banking Railway, best free YouTube channels government exams, NCERT free textbooks, free mock tests government exams, DIKSHA app, SWAYAM, sarkari exam free resources, previous year papers download, muft study material sarkari naukri',
+    'age-limit-relaxation-government-jobs': 'age limit government jobs India 2026, age relaxation OBC SC ST EWS PwBD ex-servicemen, sarkari naukri age limit, UPSC SSC CGL IBPS PO SBI PO RRB NTPC age limit, government exam age relaxation rules, umar mein choot sarkari naukri, age relaxation central government',
   };
 
   return {
@@ -163,6 +166,11 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
   // Full rich article for the free resources guide
   if (params.slug === 'best-free-resources-government-exams') {
     return <FreeResourcesGuide guide={guide} />;
+  }
+
+  // Full rich article for age limit & relaxation guide
+  if (params.slug === 'age-limit-relaxation-government-jobs') {
+    return <AgeRelaxationGuide guide={guide} />;
   }
 
   return (
@@ -1351,6 +1359,567 @@ function AppCard({ name, platform, desc, free }: { name: string; platform: strin
       </div>
       <p className="text-xs text-surface-500 leading-relaxed mb-2">{desc}</p>
       <span className="text-xs text-emerald-600 font-medium">✓ {free}</span>
+    </div>
+  );
+}
+
+// ─── AGE LIMIT & RELAXATION GUIDE — FULL RICH ARTICLE ────────────────────────
+function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; description: string; category: string; readTime: string } }) {
+  const toc = [
+    { id: 'how-age-works', label: 'How Age Limits Work' },
+    { id: 'quick-table', label: 'Quick Reference Table' },
+    { id: 'obc', label: 'OBC Age Relaxation' },
+    { id: 'sc-st', label: 'SC / ST Age Relaxation' },
+    { id: 'ews', label: 'EWS — No Relaxation' },
+    { id: 'pwbd', label: 'PwBD Age Relaxation' },
+    { id: 'ex-servicemen', label: 'Ex-Servicemen Relaxation' },
+    { id: 'other-categories', label: 'Other Categories' },
+    { id: 'exam-wise', label: 'Exam-Wise Age Limits' },
+    { id: 'documents', label: 'Documents Required' },
+    { id: 'mistakes', label: 'Common Mistakes' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Age Limit &amp; Relaxation</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+        <article>
+          {/* Hero Banner */}
+          <div className="bg-gradient-to-br from-primary-500 to-primary-800 rounded-2xl p-8 mb-10 text-white">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="bg-white/20 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">{guide.category}</span>
+              <span className="text-white/70 text-xs">Updated April 2026</span>
+              <span className="text-white/50 text-xs">•</span>
+              <span className="text-white/70 text-xs">{guide.readTime}</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4 leading-tight">
+              Complete Guide to Age Limit &amp; Relaxation for Government Jobs (2026)
+            </h1>
+            <p className="text-white/85 leading-relaxed text-base mb-6">
+              Every central government exam has a maximum age limit. If you belong to OBC, SC/ST, PwBD, or are an Ex-Serviceman, you are entitled to extra years. This guide covers every rule, with a quick-check table, exam-wise limits, required documents, and the mistakes that cost candidates their chance.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { num: '+3 yrs', label: 'OBC relaxation', color: 'bg-white/20' },
+                { num: '+5 yrs', label: 'SC / ST relaxation', color: 'bg-white/20' },
+                { num: '+10 yrs', label: 'PwBD (General)', color: 'bg-white/20' },
+                { num: '0 yrs', label: 'EWS relaxation', color: 'bg-white/10' },
+              ].map(item => (
+                <div key={item.label} className={`${item.color} rounded-xl p-4 text-center`}>
+                  <div className="text-2xl font-bold text-white">{item.num}</div>
+                  <div className="text-xs text-white/80 font-medium mt-1">{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Section 1 — How Age Limits Work */}
+          <GSection id="how-age-works" title="How Age Limits Work in Government Exams">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Every government exam notification specifies a <strong>minimum age</strong> and a <strong>maximum age (upper age limit)</strong>. Your age is calculated as on a specific <em>cut-off date</em> mentioned in the notification — not the date you are applying. Always use this cut-off date when checking your eligibility.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
+              {[
+                { exam: 'UPSC / SSC exams', cutoff: '1st August of the exam year', note: 'E.g., for UPSC CSE 2026: age as on 01-08-2026' },
+                { exam: 'SSC CGL / CHSL', cutoff: '1st January of the exam year', note: 'E.g., for SSC CGL 2026: age as on 01-01-2026' },
+                { exam: 'Banking (IBPS / SBI)', cutoff: '1st of the notification month', note: 'Exact date mentioned in the CRP notification' },
+              ].map(item => (
+                <div key={item.exam} className="card p-4">
+                  <div className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-1">{item.exam}</div>
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.cutoff}</div>
+                  <div className="text-xs text-surface-400">{item.note}</div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="warning" title="⚠️ Critical Rule — Always Use Your 10th Certificate DOB">
+              The date of birth on your Class 10 (Matriculation) marksheet is the <strong>only accepted proof</strong> for government exams. Your Aadhaar or voter card date may differ — it does not matter. Only the 10th certificate DOB is considered.
+            </GCallout>
+            <p className="text-surface-600 leading-relaxed mt-4 text-sm">
+              Age relaxation means the government permits candidates from certain reserved categories to apply even if they exceed the general upper age limit. The relaxation is added on top of the upper age limit. So if the upper age limit is 30, an OBC candidate (who gets +3 years) can apply up to age 33.
+            </p>
+          </GSection>
+
+          {/* Section 2 — Quick Table */}
+          <GSection id="quick-table" title="Quick Reference: Age Relaxation at a Glance">
+            <p className="text-sm text-surface-500 mb-4">Standard relaxations for central government exams (SSC, UPSC, Railways, Banking). These are the default central government rules — state PSC exams may differ. Always verify the official notification.</p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-primary-600 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Category</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Relaxation</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Effective Max Age*</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Certificate Needed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['General / EWS', 'None', '30 yrs (Banking) / 32 yrs (SSC, UPSC)', 'No certificate needed'],
+                    ['OBC (Non-Creamy Layer)', '+3 years', '33 yrs / 35 yrs', 'OBC-NCL certificate (valid for current financial year)'],
+                    ['SC / ST', '+5 years', '35 yrs / 37 yrs', 'SC/ST caste certificate from competent authority'],
+                    ['PwBD — General', '+10 years', '40 yrs / 42 yrs', 'Disability certificate (min 40% disability)'],
+                    ['PwBD — OBC', '+13 years (10+3)', '43 yrs / 45 yrs', 'Both OBC-NCL + Disability certificate'],
+                    ['PwBD — SC/ST', '+15 years (10+5)', '45 yrs / 47 yrs', 'Both SC/ST caste + Disability certificate'],
+                    ['Ex-Servicemen (Group C/D)', 'Actual service + 3 yrs deducted from age', 'Varies by service length', 'Discharge / Service certificate'],
+                    ['Ex-Servicemen (Group A/B Competitive)', 'Max +5 years (min 5 yrs service)', 'Varies', 'Discharge certificate + service record'],
+                    ['Widows / Divorced Women (certain exams)', 'Up to 35 yrs (General) / 38 yrs (OBC) / 40 yrs (SC/ST)', 'Exam-specific', 'Death certificate / Court order + affidavit'],
+                  ].map(([cat, relax, maxAge, cert], i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800 text-xs">{cat}</td>
+                      <td className="p-3"><span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${relax === 'None' ? 'bg-surface-100 text-surface-500' : 'bg-emerald-100 text-emerald-700'}`}>{relax}</span></td>
+                      <td className="p-3 text-xs text-surface-600">{maxAge}</td>
+                      <td className="p-3 text-xs text-surface-500">{cert}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400">* &ldquo;Effective Max Age&rdquo; shown for 30 yrs (Banking) / 32 yrs (SSC/UPSC) base limits. Railway NTPC base is 33 yrs so add relaxation accordingly. Always check the official notification for the exact upper age limit of the specific post.</p>
+          </GSection>
+
+          {/* Section 3 — OBC */}
+          <GSection id="obc" title="OBC Age Relaxation — 3 Years (Non-Creamy Layer Only)">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              OBC (Other Backward Classes) candidates who belong to the <strong>Non-Creamy Layer (NCL)</strong> get 3 years of age relaxation in all central government recruitment. This is mandated by the Government of India and applies across UPSC, SSC, IBPS, SBI, and RRB exams.
+            </p>
+            <GCallout type="warning" title="⚠️ Creamy Layer OBC Candidates Get No Relaxation">
+              If your family income exceeds the Creamy Layer threshold (currently ₹8 lakh per annum), you are classified as OBC Creamy Layer. You cannot claim OBC reservation or age relaxation — you apply as General category.
+            </GCallout>
+            <div className="space-y-3 mt-5">
+              <div className="card p-4">
+                <div className="font-heading font-semibold text-surface-800 mb-2 text-sm">📄 OBC-NCL Certificate Requirements</div>
+                <ul className="text-sm text-surface-600 space-y-1.5">
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Must be issued by the competent authority (Sub-Divisional Officer / District Magistrate / Revenue Officer / Tehsildar — as prescribed by the exam body)</li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Must be in the <strong>central government format</strong> (Annexure — Format prescribed in the notification). State OBC certificates in state formats may not be valid for central exams</li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Must be valid for the current financial year (April–March). Certificates issued in a previous year for the previous financial year are considered expired</li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Must clearly state &ldquo;Non-Creamy Layer&rdquo; — a certificate without this phrase is not accepted for central government exams</li>
+                </ul>
+              </div>
+              <GCallout type="tip" title="✅ Tip: Renew Your OBC-NCL Certificate Every Year">
+                Many candidates lose their relaxation benefit because their OBC-NCL certificate expired. Get a fresh certificate every April (start of financial year). It costs nothing and takes 1–2 weeks to process at your local tahsil/tehsil office.
+              </GCallout>
+            </div>
+          </GSection>
+
+          {/* Section 4 — SC/ST */}
+          <GSection id="sc-st" title="SC / ST Age Relaxation — 5 Years">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Scheduled Caste (SC) and Scheduled Tribe (ST) candidates get <strong>5 years of age relaxation</strong> in all central government recruitment, in addition to reservation benefits. This is one of the most substantial age relaxations available and applies to UPSC, SSC, Banking, and Railway exams uniformly.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+              {[
+                { title: 'UPSC CSE', gen: '32 yrs', sc_st: '37 yrs (no attempt limit)', note: 'SC/ST also get unlimited attempts until age 37' },
+                { title: 'SSC CGL', gen: '32 yrs', sc_st: '37 yrs', note: 'Most posts. Some posts have lower base limits' },
+                { title: 'IBPS PO', gen: '30 yrs', sc_st: '35 yrs', note: 'Standard banking CRP notification rules' },
+                { title: 'RRB NTPC (Graduate)', gen: '33 yrs', sc_st: '38 yrs', note: 'Graduate level posts. UG posts: 30 → 35 yrs' },
+              ].map(item => (
+                <div key={item.title} className="card p-4">
+                  <div className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-2">{item.title}</div>
+                  <div className="flex gap-4 mb-2">
+                    <div><div className="text-xs text-surface-400">General</div><div className="font-heading font-bold text-surface-800">{item.gen}</div></div>
+                    <div><div className="text-xs text-surface-400">SC / ST</div><div className="font-heading font-bold text-emerald-600">{item.sc_st}</div></div>
+                  </div>
+                  <div className="text-xs text-surface-400">{item.note}</div>
+                </div>
+              ))}
+            </div>
+            <div className="card p-4">
+              <div className="font-heading font-semibold text-surface-800 mb-2 text-sm">📄 SC/ST Certificate Requirements</div>
+              <ul className="text-sm text-surface-600 space-y-1.5">
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Issued by competent authority (District Magistrate / Sub-Divisional Officer / Tehsildar)</li>
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Must be in the format prescribed by the Government of India (the format is mentioned in the official notification)</li>
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>SC/ST certificates do not expire — but must be valid as per the notification (no fresh certificate needed annually unlike OBC-NCL)</li>
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>For ST candidates who have migrated from their original state: the notification will specify which state&apos;s certificate is acceptable</li>
+              </ul>
+            </div>
+          </GSection>
+
+          {/* Section 5 — EWS */}
+          <GSection id="ews" title="EWS — 10% Reservation But NO Age Relaxation">
+            <GCallout type="warning" title="⚠️ EWS Candidates Follow General Category Age Limits">
+              EWS (Economically Weaker Section) candidates get 10% reservation in central government jobs. However, they do <strong>NOT</strong> get any age relaxation. EWS candidates must meet the same age limit as General category candidates.
+            </GCallout>
+            <p className="text-surface-600 leading-relaxed mt-4 mb-4">
+              This is a common source of confusion. Many aspirants assume EWS means they get relaxation like OBC. That is incorrect. EWS is purely a reservation in seats — the age limit remains the same as General category.
+            </p>
+            <div className="card p-4 mb-4">
+              <div className="font-heading font-semibold text-surface-800 mb-2 text-sm">📄 EWS Certificate Requirements</div>
+              <ul className="text-sm text-surface-600 space-y-1.5">
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Must be issued by: District Magistrate / Additional District Magistrate / Collector / Deputy Commissioner / Additional Deputy Commissioner / 1st Class Stipendiary Magistrate / Sub-Divisional Magistrate / Taluka Magistrate / Executive Magistrate / Extra Assistant Commissioner / Chief Presidency Magistrate / Additional Chief Presidency Magistrate / Presidency Magistrate / Revenue Officer not below the rank of Tehsildar / Sub-Divisional Officer of the area where the candidate or his/her family normally resides</li>
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Must be obtained <strong>fresh every year</strong> — based on the income of the previous financial year (April–March). An EWS certificate issued for 2024–25 income cannot be used to claim EWS for a 2026 recruitment if the cut-off date is in 2026</li>
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Family income must be below ₹8 lakh per annum from all sources in the preceding year, and the family must not own more than 5 acres of agricultural land, a flat above 1,000 sq ft, or a residential plot above 100 sq yd in notified municipalities (200 sq yd elsewhere)</li>
+              </ul>
+            </div>
+          </GSection>
+
+          {/* Section 6 — PwBD */}
+          <GSection id="pwbd" title="PwBD Age Relaxation — 10 to 15 Years">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Persons with Benchmark Disability (PwBD) — earlier called PH (Physically Handicapped) — receive the <strong>largest age relaxation</strong> in government recruitment. The relaxation is cumulative with category relaxation.
+            </p>
+            <div className="overflow-x-auto mb-5">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-surface-100">
+                  <tr>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide text-surface-600">PwBD Category</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide text-surface-600">Age Relaxation</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide text-surface-600">Formula</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['PwBD (General / EWS)', '+10 years', 'Base limit + 10'],
+                    ['PwBD + OBC', '+13 years', 'Base limit + 10 (PwBD) + 3 (OBC)'],
+                    ['PwBD + SC / ST', '+15 years', 'Base limit + 10 (PwBD) + 5 (SC/ST)'],
+                  ].map(([cat, relax, formula], i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800 text-xs">{cat}</td>
+                      <td className="p-3"><span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">{relax}</span></td>
+                      <td className="p-3 text-xs text-surface-500">{formula}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="card p-4 mb-4">
+              <div className="font-heading font-semibold text-surface-800 mb-2 text-sm">📋 Eligible Disability Types (as per RPwD Act, 2016)</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {[
+                  'Blindness and Low Vision',
+                  'Deaf and Hard of Hearing',
+                  'Locomotor Disability (including Cerebral Palsy, Leprosy Cured, Dwarfism, Acid Attack Victims, Muscular Dystrophy)',
+                  'Autism, Intellectual Disability, Specific Learning Disability, Mental Illness',
+                  'Multiple Disabilities (combination of above)',
+                  'Deaf-Blindness',
+                ].map(type => (
+                  <div key={type} className="flex items-start gap-2 text-xs text-surface-600 bg-surface-50 rounded-lg p-2">
+                    <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
+                    <span>{type}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="card p-4">
+              <div className="font-heading font-semibold text-surface-800 mb-2 text-sm">📄 PwBD Certificate Requirements</div>
+              <ul className="text-sm text-surface-600 space-y-1.5">
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Disability must be <strong>40% or more</strong> — certified by a government medical authority (Central/State Medical Board)</li>
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>Certificate issued by the competent authority constituted under the Rights of Persons with Disabilities Act, 2016</li>
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>The post must be identified as suitable for the specific type of disability — this is mentioned in the official notification. Not all posts are available for all disability types</li>
+                <li className="flex items-start gap-2"><span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>A scribe is allowed in the exam for certain disability types — apply for it at the time of form filling</li>
+              </ul>
+            </div>
+          </GSection>
+
+          {/* Section 7 — Ex-Servicemen */}
+          <GSection id="ex-servicemen" title="Ex-Servicemen Age Relaxation — Service Length + 3 Years">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Ex-Servicemen (ESM) get a unique age relaxation formula: the actual period of military service rendered is deducted from the candidate&apos;s actual age, and the resultant age must not exceed the upper age limit of the post by more than 3 years. This is governed by the <em>Ex-Servicemen (Re-employment in Central Civil Services and Posts) Rules, 1979</em>, amended in 2012.
+            </p>
+            <div className="card p-5 mb-5 bg-primary-50 border-primary-200">
+              <div className="font-heading font-semibold text-primary-800 mb-3 text-sm">📐 How to Calculate Ex-Servicemen Age Relaxation</div>
+              <div className="text-sm text-primary-700 leading-relaxed space-y-2">
+                <p><strong>Formula for Group B (Non-Gazetted), C, and D posts:</strong></p>
+                <p className="bg-white rounded-lg p-3 font-mono text-xs text-surface-800">
+                  Effective Age = Actual Age − Military Service Rendered<br />
+                  If Effective Age ≤ (Post Upper Limit + 3 years) → Eligible
+                </p>
+                <p className="text-xs text-primary-600 mt-2"><strong>Example:</strong> A candidate aged 45 with 13 years of military service.<br />
+                Effective Age = 45 − 13 = 32. Post upper limit = 30.<br />
+                32 ≤ 30 + 3 = 33 ✅ → Eligible</p>
+              </div>
+            </div>
+            <div className="overflow-x-auto mb-5">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-surface-100">
+                  <tr>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide text-surface-600">Post Type</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide text-surface-600">Relaxation Rule</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide text-surface-600">Min Service Required</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Group B (Non-Gazetted), C, D', 'Deduct service from age; resultant age must not exceed upper limit + 3 yrs', 'No minimum service required'],
+                    ['Group A and B (Non-Competitive — direct recruitment)', 'Upper age limit relaxed by military service + 3 years', 'No minimum service required'],
+                    ['Group A and B (Competitive — All India exam like UPSC)', 'Maximum 5 years relaxation', 'Minimum 5 years of military service'],
+                  ].map(([type, rule, min], i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800 text-xs">{type}</td>
+                      <td className="p-3 text-xs text-surface-600">{rule}</td>
+                      <td className="p-3 text-xs text-surface-500">{min}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="card p-4 mb-4">
+              <div className="font-heading font-semibold text-surface-800 mb-2 text-sm">📋 Reservation for Ex-Servicemen in Central Government Jobs</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  { post: 'Group C Posts', quota: '10% reservation', note: 'Central Government direct recruitment' },
+                  { post: 'Group D Posts', quota: '20% reservation', note: 'Central Government direct recruitment' },
+                  { post: 'Paramilitary (CRPF, BSF, etc.)', quota: '10% (up to Asst. Commandant level)', note: 'All paramilitary forces' },
+                ].map(item => (
+                  <div key={item.post} className="bg-surface-50 rounded-lg p-3">
+                    <div className="text-xs font-semibold text-surface-700 mb-1">{item.post}</div>
+                    <div className="text-sm font-heading font-bold text-emerald-600 mb-1">{item.quota}</div>
+                    <div className="text-xs text-surface-400">{item.note}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <GCallout type="info" title="ℹ️ Ex-Servicemen Status After First Government Job">
+              Once an ex-serviceman secures a central government job by using ESM benefits, their ex-serviceman status for <strong>re-employment purposes ceases</strong>. They can only avail age relaxation (not reservation) for applying to higher posts thereafter. This is as per DoPT OM No. 36034/27/84-Estt(SCT).
+            </GCallout>
+          </GSection>
+
+          {/* Section 8 — Other Categories */}
+          <GSection id="other-categories" title="Other Categories With Age Relaxation">
+            <div className="space-y-3">
+              {[
+                {
+                  title: 'Central Government Employees (Departmental Candidates)',
+                  icon: '🏛️',
+                  content: 'Serving central government employees get 5 years of age relaxation for posts filled through open competition (SSC/UPSC). Up to 3 years for posts filled via employment exchange (not competitive exam). They must produce a &ldquo;No Objection Certificate&rdquo; (NOC) from their current department.',
+                },
+                {
+                  title: 'Widows / Divorced / Judicially Separated Women',
+                  icon: '👤',
+                  content: 'In certain exams (especially SSC and state PSC), widows, divorced women, and women judicially separated and not remarried get age relaxation: up to 35 years for General, 38 years for OBC, and 40 years for SC/ST. Not universally applicable — check the specific exam notification.',
+                },
+                {
+                  title: 'Retrenched Central Government Employees',
+                  icon: '📋',
+                  content: 'Retrenched central government employees with a minimum of 6 months of continuous service are eligible for age relaxation equal to the period of their previous service + 3 years. This applies to posts filled through employment exchange, not through UPSC or SSC competitive exams.',
+                },
+                {
+                  title: 'NCC Whole-Time Cadet Instructors',
+                  icon: '🎖️',
+                  content: 'Persons who served as whole-time Cadet Instructors in the National Cadet Corps (NCC) are eligible for age relaxation equal to their period of NCC service + 3 years, for posts filled through employment exchange.',
+                },
+              ].map(item => (
+                <div key={item.title} className="card p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">{item.icon}</span>
+                    <div className="font-heading font-semibold text-surface-800 text-sm">{item.title}</div>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.content }} />
+                </div>
+              ))}
+            </div>
+          </GSection>
+
+          {/* Section 9 — Exam-Wise */}
+          <GSection id="exam-wise" title="Exam-Wise Age Limits (2026)">
+            <p className="text-sm text-surface-500 mb-4">General category upper age limits are shown. Add relaxation as per your category. Always verify from the official notification — post-wise limits within the same exam may vary.</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Exam</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Min Age</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Max Age (General)</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">OBC</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">SC/ST</th>
+                    <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Cut-off Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['UPSC CSE (IAS)', '21', '32', '35', '37', '1st August'],
+                    ['SSC CGL', '18', '27–32 (post-wise)', '30–35', '32–37', '1st January'],
+                    ['SSC CHSL', '18', '27', '30', '32', '1st January'],
+                    ['SSC MTS', '18', '25', '28', '30', '1st August'],
+                    ['IBPS PO (CRP PO)', '20', '30', '33', '35', '1st of notification month'],
+                    ['IBPS Clerk (CRP Clerk)', '20', '28', '31', '33', '1st of notification month'],
+                    ['SBI PO', '21', '30', '33', '35', '1st April'],
+                    ['SBI Clerk', '20', '28', '31', '33', '1st April'],
+                    ['RRB NTPC (Graduate)', '18', '33', '36', '38', '1st January of notification year'],
+                    ['RRB NTPC (Undergraduate)', '18', '30', '33', '35', '1st January of notification year'],
+                    ['RRB Group D', '18', '33', '36', '38', '1st July of notification year'],
+                    ['SSC CPO (SI/ASI)', '20', '25', '28', '30', '1st August'],
+                    ['SSC GD Constable', '18', '23', '26', '28', 'As per notification'],
+                  ].map(([exam, min, max, obc, scst, cutoff], i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800 text-xs">{exam}</td>
+                      <td className="p-3 text-xs text-surface-600 text-center">{min}</td>
+                      <td className="p-3 text-xs font-semibold text-surface-700 text-center">{max}</td>
+                      <td className="p-3 text-xs text-emerald-700 font-medium text-center">{obc}</td>
+                      <td className="p-3 text-xs text-emerald-700 font-medium text-center">{scst}</td>
+                      <td className="p-3 text-xs text-surface-400">{cutoff}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400 mt-3">Sources: UPSC CSE Notification, SSC CGL Notification, IBPS CRP PO/MT Notification, SBI PO Notification, RRB NTPC Notification (various cycles). All figures are for central government exams. State PSC exams have separate age limits. Always verify from the official notification PDF before applying.</p>
+          </GSection>
+
+          {/* Section 10 — Documents */}
+          <GSection id="documents" title="Documents Required to Claim Age Relaxation">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Age relaxation is not automatically granted. You must claim it during the application and produce the relevant documents at the document verification stage. Providing false documents leads to permanent disqualification and possible criminal action.
+            </p>
+            <div className="space-y-3">
+              {[
+                { cat: 'All Candidates', icon: '📋', docs: ['Class 10 (Matriculation) marksheet — proof of Date of Birth. This is the ONLY accepted document. Aadhaar, voter card, or driving licence are NOT accepted as age proof in government exams.'] },
+                { cat: 'OBC (Non-Creamy Layer)', icon: '🟡', docs: ['OBC-NCL certificate in the central government format', 'Issued by SDO / District Magistrate / Tehsildar', 'Valid for the current financial year (April–March)', 'Must explicitly state "Non-Creamy Layer"'] },
+                { cat: 'SC / ST', icon: '🟠', docs: ['Caste certificate issued by District Magistrate / SDO / Revenue Officer', 'In the Government of India prescribed format (Annexure — given in the notification)', 'No annual renewal required'] },
+                { cat: 'EWS', icon: '🔵', docs: ['Income and asset certificate in the prescribed format', 'Issued by Tehsildar / SDO / District Magistrate', 'Must be renewed every financial year', 'Based on family income of the previous year'] },
+                { cat: 'PwBD', icon: '♿', docs: ['Disability certificate issued by a government medical board or authority under RPwD Act, 2016', 'Must certify minimum 40% disability', 'Certificate mentioning the type and percentage of disability', 'Posts must be identified suitable for your disability type'] },
+                { cat: 'Ex-Servicemen', icon: '🎖️', docs: ['Discharge certificate (from Army / Navy / Air Force)', 'Service certificate showing exact period of service', 'For UPSC competitive exams: certificate of minimum 5 years of service', 'PPO (Pension Payment Order) if applicable'] },
+              ].map(item => (
+                <div key={item.cat} className="card p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">{item.icon}</span>
+                    <div className="font-heading font-semibold text-surface-800 text-sm">{item.cat}</div>
+                  </div>
+                  <ul className="space-y-1">
+                    {item.docs.map(doc => (
+                      <li key={doc} className="text-xs text-surface-600 flex items-start gap-2">
+                        <span className="text-primary-400 mt-0.5 flex-shrink-0">▸</span>
+                        <span>{doc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </GSection>
+
+          {/* Section 11 — Mistakes */}
+          <GSection id="mistakes" title="Common Mistakes That Cost Candidates Their Chance">
+            <div className="space-y-3 mb-6">
+              {[
+                { num: '1', mistake: 'Using an expired OBC-NCL certificate', fix: 'OBC-NCL certificates are valid only for the current financial year. Get a fresh one every April. Many candidates submit documents from a year or two ago and lose their reservation and relaxation benefit at DV stage.' },
+                { num: '2', mistake: 'Using an EWS certificate older than one year', fix: 'Like OBC-NCL, the EWS certificate must be based on the previous year\'s income. A certificate from 2023–24 income cannot be used for 2026 recruitment.' },
+                { num: '3', mistake: 'Calculating age using today\'s date instead of the cut-off date', fix: 'Always calculate your age as on the cut-off date mentioned in the notification (e.g., 01-01-2026 or 01-08-2026). Using today\'s date leads to incorrect eligibility checks.' },
+                { num: '4', mistake: 'Using state OBC format certificate for central government exams', fix: 'Central government exams require OBC-NCL certificates in the central government format (specified in the notification as an Annexure). State formats are not accepted. Get the correct format from your tehsil office.' },
+                { num: '5', mistake: 'Assuming EWS gets the same relaxation as OBC', fix: 'EWS gets 10% reservation but ZERO age relaxation. EWS candidates apply under General category age limits. This is different from OBC, SC, or ST.' },
+                { num: '6', mistake: 'Not claiming relaxation during form filling', fix: 'You must select your correct category (OBC/SC/ST/PwBD/ESM) in the application form to claim relaxation. You cannot retroactively claim it after submission in most exams.' },
+                { num: '7', mistake: 'Misunderstanding Ex-Servicemen relaxation as flat years', fix: 'ESM relaxation is not a flat "+5 years". It is a formula: deduct your military service from your actual age, and the result must not exceed the post limit by more than 3 years. Read the formula in Section 7 carefully.' },
+              ].map(item => (
+                <div key={item.num} className="card p-4 flex gap-4">
+                  <div className="w-8 h-8 bg-red-100 text-red-600 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0">{item.num}</div>
+                  <div>
+                    <div className="font-semibold text-surface-800 text-sm mb-1">❌ {item.mistake}</div>
+                    <div className="text-xs text-surface-500 leading-relaxed">✅ <strong>Fix:</strong> {item.fix}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </GSection>
+
+          {/* Section 12 — FAQ */}
+          <GSection id="faq" title="Frequently Asked Questions">
+            <div className="space-y-0">
+              {[
+                { q: 'Can I combine relaxations from two categories?', a: 'Yes, in specific cases. PwBD candidates who also belong to OBC or SC/ST get cumulative relaxation (PwBD + OBC = +13 years; PwBD + SC/ST = +15 years). Similarly, UPSC allows SC/ST/OBC candidates who are also Ex-Servicemen or PwBD to claim cumulative relaxation. However, you cannot combine OBC + SC/ST — you claim only one category.' },
+                { q: 'My OBC certificate is from the previous financial year. Can I use it?', a: 'Usually no. OBC-NCL certificates must be valid for the current financial year (April–March). A certificate from last year\'s financial year is considered expired for central government recruitment. Always get a fresh certificate before applying. The specific cut-off year is mentioned in the official notification.' },
+                { q: 'Does EWS get age relaxation in banking exams (IBPS / SBI)?', a: 'No. EWS candidates follow General category age limits in all central government exams, including IBPS and SBI banking exams. EWS only provides 10% reservation in seats — no age relaxation.' },
+                { q: 'I am an OBC candidate but applied as General. Can I change my category later?', a: 'In most exams, once the application is submitted, the category cannot be changed (even in the correction window). This is why it is critical to select the correct category from the beginning. Some exams (like SSC) may allow category corrections during the correction window — check the official notification.' },
+                { q: 'Does the PwBD relaxation apply to all government jobs?', a: 'PwBD relaxation applies to posts that are identified as suitable for persons with the specific type of disability. Not all posts are suitable for all disability types. The list of identified posts is mentioned in the exam notification. Additionally, the disability must be certified at 40% or more.' },
+                { q: 'For UPSC CSE, how many attempts do OBC and SC/ST candidates get?', a: 'General category and EWS: 6 attempts till age 32. OBC (NCL): 9 attempts till age 35. SC/ST: Unlimited attempts till age 37. PwBD (General/OBC): 9 attempts till age 42/45 respectively. PwBD (SC/ST): Unlimited attempts till age 47.' },
+                { q: 'Does age relaxation apply to state PSC exams?', a: 'State PSC exams follow their own age relaxation rules, which may be more generous than central government rules. For example, some state PSC exams offer 5 years relaxation for OBC instead of 3. Always check the specific state PSC notification for accurate limits.' },
+                { q: 'Can I use my Aadhaar card date of birth for age proof?', a: 'No. For government exams, the Class 10 (Matriculation) marksheet is the only accepted age proof. Your Aadhaar card, voter ID, PAN card, or driving licence are NOT accepted as age proof. Even if your Aadhaar shows a different DOB, only the 10th marksheet DOB is considered.' },
+              ].map((faq, i) => (
+                <details key={i} className="border-b border-surface-200 group">
+                  <summary className="flex items-start gap-3 py-4 cursor-pointer list-none font-medium text-surface-800 hover:text-primary-500 transition-colors">
+                    <span className="w-6 h-6 bg-accent-500 text-white text-xs font-bold rounded flex items-center justify-center flex-shrink-0 mt-0.5">Q</span>
+                    <span className="flex-1">{faq.q}</span>
+                    <svg className="w-4 h-4 text-surface-400 flex-shrink-0 mt-1 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="pl-9 pb-4 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </GSection>
+
+          {/* Bottom CTA */}
+          <div className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 text-center text-white mb-10">
+            <div className="text-3xl mb-3">🧮</div>
+            <h3 className="text-xl font-heading font-bold mb-2">Check Your Eligibility Now</h3>
+            <p className="text-white/80 text-sm mb-5">Enter your age, category, and qualification — see every government exam you qualify for across 100+ exams.</p>
+            <Link href="/tools/eligibility-checker" className="inline-flex items-center gap-2 bg-white text-primary-700 font-heading font-semibold px-6 py-3 rounded-full hover:bg-surface-50 transition-colors text-sm">
+              Open Eligibility Checker →
+            </Link>
+          </div>
+
+          {/* Related Guides */}
+          <div className="mt-4 pt-8 border-t border-surface-200">
+            <h3 className="font-heading font-bold text-lg text-surface-800 mb-4">Related Guides</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {guides.filter((g) => g.slug !== guide.slug).slice(0, 4).map((g) => (
+                <Link key={g.slug} href={`/guides/${g.slug}`} className="card p-4 group">
+                  <span className="badge badge-accent mb-2 text-xs">{g.category}</span>
+                  <h4 className="font-semibold text-sm text-surface-800 group-hover:text-primary-500 transition-colors">{g.title}</h4>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </article>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-4">
+            <div className="card p-5 border-l-4 border-primary-500">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Table of Contents</div>
+              <ol className="space-y-2 list-decimal list-inside">
+                {toc.map(item => (
+                  <li key={item.id} className="text-sm">
+                    <a href={`#${item.id}`} className="text-primary-500 hover:text-primary-600 hover:underline">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="card p-5 bg-primary-50 border-primary-200">
+              <h3 className="font-heading font-semibold text-primary-800 mb-3 text-sm">🧮 Eligibility Checker</h3>
+              <p className="text-xs text-primary-700 mb-3">Enter your details — see every exam you are eligible for, with category relaxation applied automatically.</p>
+              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center block">Check Eligibility →</Link>
+            </div>
+            <div className="card p-5">
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Popular Exam Pages</h3>
+              <div className="space-y-2">
+                <Link href="/exams/upsc-ias" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
+                <Link href="/exams/ssc-cgl" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
+                <Link href="/exams/ibps-po" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
+                <Link href="/exams/sbi-po" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SBI PO →</Link>
+                <Link href="/exams/rrb-ntpc" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
+              </div>
+            </div>
+            <div className="card p-5">
+              <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Related Guides</h3>
+              <div className="space-y-2">
+                <Link href="/guides/how-to-start-government-exam-preparation" className="text-sm text-primary-500 hover:text-primary-600 font-medium block">How to Start Preparation →</Link>
+                <Link href="/guides/documents-needed-government-job" className="text-sm text-primary-500 hover:text-primary-600 font-medium block">Documents Required →</Link>
+                <Link href="/guides/how-to-fill-government-job-application-form" className="text-sm text-primary-500 hover:text-primary-600 font-medium block">How to Fill Application Form →</Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      {/* Schema.org FAQPage */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'How much age relaxation do OBC candidates get in government exams?', acceptedAnswer: { '@type': 'Answer', text: 'OBC (Non-Creamy Layer) candidates get 3 years of age relaxation in central government exams. An expired or Creamy Layer OBC certificate does not qualify for relaxation.' } },
+          { '@type': 'Question', name: 'Does EWS category get age relaxation in government jobs?', acceptedAnswer: { '@type': 'Answer', text: 'No. EWS candidates get 10% reservation in seats but do not get any age relaxation. They must meet the General category age limit.' } },
+          { '@type': 'Question', name: 'How is age relaxation calculated for Ex-Servicemen?', acceptedAnswer: { '@type': 'Answer', text: 'Deduct the period of actual military service from the actual age. If the resultant age does not exceed the upper age limit by more than 3 years, the candidate is eligible.' } },
+          { '@type': 'Question', name: 'How many years of age relaxation do SC/ST candidates get?', acceptedAnswer: { '@type': 'Answer', text: 'SC and ST candidates get 5 years of age relaxation in all central government exams.' } },
+          { '@type': 'Question', name: 'What is the age relaxation for PwBD candidates in government jobs?', acceptedAnswer: { '@type': 'Answer', text: 'PwBD (General/EWS) candidates get 10 years. PwBD + OBC get 13 years (10+3). PwBD + SC/ST get 15 years (10+5).' } },
+        ]
+      }) }} />
     </div>
   );
 }
