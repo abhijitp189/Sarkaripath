@@ -24,6 +24,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ssc-gd-constable') {
+    return {
+      title: 'SSC GD Constable 2026 – Complete Preparation Guide: Syllabus, Pattern, Eligibility | TaiyarHo',
+      description: 'SSC GD Constable 2026: CBT exam from 27 Apr–30 May 2026. 25,487 vacancies in BSF, CISF, CRPF, ITBP. Check syllabus, exam pattern, physical standards (PET/PST), eligibility, salary and free resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/ssc-gd-constable/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -45,6 +53,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   }
 
   if (detailed && detailed.slug === 'ssc-cgl') return <SscCglPage exam={detailed} />;
+  if (detailed && detailed.slug === 'ssc-gd-constable') return <SscGdPage exam={detailed} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   return <BasicExamPage exam={brief!} />;
 }
@@ -659,6 +668,578 @@ function SscCglPage({ exam }: { exam: any }) {
   );
 }
 
+
+// ─── SSC GD CONSTABLE RICH PAGE ──────────────────────────────────────────────
+function SscGdPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility' },
+    { id: 'vacancies', label: 'Vacancies & Forces' },
+    { id: 'exam-pattern', label: 'Exam Pattern (CBT)' },
+    { id: 'physical', label: 'Physical Test (PET/PST)' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released', date: '01 December 2025', status: 'released' },
+    { event: 'Online Application Opens', date: '01 December 2025', status: 'released' },
+    { event: 'Last Date to Apply Online', date: '31 December 2025', status: 'released' },
+    { event: 'Fee Payment Last Date', date: '01 January 2026', status: 'released' },
+    { event: 'Application Correction Window', date: '08–10 January 2026', status: 'released' },
+    { event: 'Exam City Intimation Slip', date: 'Released', status: 'released' },
+    { event: 'Admit Card Released', date: 'Released (download at ssc.gov.in)', status: 'released' },
+    { event: 'CBT Exam Date', date: '27 April – 30 May 2026', status: 'upcoming' },
+    { event: 'CBT Answer Key', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'CBT Result', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'PET / PST Date', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Medical Examination & DV', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Final Merit List', date: 'To be notified (TBN)', status: 'tbn' },
+  ];
+
+  const cbtPattern = [
+    { section: 'General Intelligence & Reasoning', questions: 20, marks: 40 },
+    { section: 'General Knowledge & General Awareness', questions: 20, marks: 40 },
+    { section: 'Elementary Mathematics', questions: 20, marks: 40 },
+    { section: 'English / Hindi Language', questions: 20, marks: 40 },
+  ];
+
+  const vacancyData = [
+    { force: 'BSF (Border Security Force)', male: '~9,500', female: '~800', total: '~10,300' },
+    { force: 'CRPF (Central Reserve Police Force)', male: '~5,500', female: '~550', total: '~6,050' },
+    { force: 'CISF (Central Industrial Security Force)', male: '~3,200', female: '~350', total: '~3,550' },
+    { force: 'SSB (Sashastra Seema Bal)', male: '~2,500', female: '~150', total: '~2,650' },
+    { force: 'ITBP (Indo-Tibetan Border Police)', male: '~1,500', female: '~100', total: '~1,600' },
+    { force: 'AR (Assam Rifles – Rifleman)', male: '~800', female: '~50', total: '~850' },
+    { force: 'SSF / NCB / Others', male: '~467', female: '~20', total: '~487' },
+    { force: 'TOTAL (Official)', male: '23,467', female: '2,020', total: '25,487' },
+  ];
+
+  const vacancyTrend = [
+    { year: '2018', vacancies: '54,953' },
+    { year: '2021', vacancies: '25,271' },
+    { year: '2023', vacancies: '26,146' },
+    { year: '2024', vacancies: '39,481' },
+    { year: '2025 (CBT Feb 2025)', vacancies: '53,690 (revised)' },
+    { year: '2026 (CBT Apr–May 2026)', vacancies: '25,487' },
+  ];
+
+  const physicalPet = [
+    { category: 'Male – General/OBC/EWS/SC/ST', distance: '5 km', time: '24 minutes' },
+    { category: 'Female – General/OBC/EWS/SC/ST', distance: '1.6 km', time: '8 minutes 30 seconds' },
+    { category: 'Male – Ladakh / Tribal / NE Regions', distance: '1.6 km', time: '6 minutes 30 seconds' },
+    { category: 'Female – Ladakh / Tribal / NE Regions', distance: '800 m', time: '4 minutes' },
+    { category: 'Ex-Servicemen (all categories)', distance: 'Exempt', time: 'PST only (measurements)' },
+  ];
+
+  const physicalPst = [
+    { category: 'Male – General / OBC / EWS', height: '170 cm', chest: '80–85 cm' },
+    { category: 'Male – SC / ST', height: '162.5 cm', chest: '77–82 cm' },
+    { category: 'Male – NE States / Tribal', height: '162.5 cm', chest: '77–82 cm' },
+    { category: 'Female – General / OBC / EWS', height: '157 cm', chest: 'N/A' },
+    { category: 'Female – SC / ST', height: '150 cm', chest: 'N/A' },
+    { category: 'Female – NE States / Tribal', height: '150 cm', chest: 'N/A' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Released';
+    if (s === 'upcoming') return '🔔 Active';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* Hero Banner */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">SSC GD Constable 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Police / CAPF</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 CBT Active: Apr–May 2026</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            SSC GD Constable 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            CBT exam underway: 27 April – 30 May 2026. 25,487 vacancies in BSF, CISF, CRPF, ITBP, SSB, Assam Rifles & NCB. Class 10 pass eligible.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Total Vacancies', value: '25,487' },
+              { label: 'CBT Exam', value: 'Apr–May 2026' },
+              { label: 'Min. Qualification', value: 'Class 10 Pass' },
+              { label: 'Salary (Gross)', value: '₹30K–42K/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* TOC Mobile */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">What is SSC GD Constable?</h2>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  SSC GD Constable is conducted by the <strong>Staff Selection Commission (SSC)</strong> to recruit Constable (General Duty) in Central Armed Police Forces (CAPFs) and other central security organisations. It is one of India&apos;s largest central government recruitments — open to candidates who have passed Class 10.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  The selection involves a <strong>Computer-Based Test (CBT)</strong>, followed by <strong>Physical Efficiency Test (PET)</strong>, <strong>Physical Standard Test (PST)</strong>, and a <strong>Medical Examination</strong>. There is no interview — final merit is based on CBT score (with NCC bonus where applicable).
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Staff Selection Commission (SSC)' },
+                  { label: 'Post Type', value: 'Group C, Non-Gazetted' },
+                  { label: 'Pay Level', value: 'Level 3 (₹21,700–₹69,100)' },
+                  { label: 'Minimum Qualification', value: '10th Pass (Matric)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📅 Important Dates – SSC GD 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded ${statusColor(row.status)}`}>{statusLabel(row.status)}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">* Dates from official SSC notification (ssc.gov.in). TBN = To Be Notified. Always verify from official source.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { label: 'Nationality', value: 'Indian citizen (also accepts subjects of Nepal, Bhutan, and specific migrant communities)' },
+                  { label: 'Age Limit', value: '18–23 years as on 01 January 2026 (born: 02 Jan 2003 – 01 Jan 2008)' },
+                  { label: 'Educational Qualification', value: 'Matriculation (Class 10) pass from a recognised Board by 01 January 2026' },
+                  { label: 'Application Fee', value: '₹100 for General/OBC/EWS male | Exempted: Female, SC, ST, PwBD, Ex-SM' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-medium text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">Age Relaxation</h3>
+                <div className="overflow-x-auto rounded-lg border border-surface-100">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Relaxation</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {exam.ageRelaxations.map((r: any, i: number) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{r.category}</td>
+                          <td className="p-3 text-surface-600">{r.relaxation}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Vacancies & Forces – SSC GD 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Force</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Male</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Female</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${row.force.startsWith('TOTAL') ? 'bg-primary-50 font-bold' : i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.force}</td>
+                        <td className="p-3 text-center text-surface-600">{row.male}</td>
+                        <td className="p-3 text-center text-surface-600">{row.female}</td>
+                        <td className={`p-3 text-center font-semibold ${row.force.startsWith('TOTAL') ? 'text-primary-700' : 'text-surface-700'}`}>{row.total}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Vacancy Trend (Past Cycles)</h3>
+                <div className="flex flex-wrap gap-2">
+                  {vacancyTrend.map((v) => (
+                    <div key={v.year} className="bg-surface-50 border border-surface-200 rounded-lg px-4 py-2 text-center min-w-[110px]">
+                      <div className="text-xs text-surface-400">{v.year}</div>
+                      <div className="font-semibold text-sm text-surface-800">{v.vacancies}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-3">Note: Vacancies vary significantly each cycle. Always check the official notification for exact numbers.</p>
+              </div>
+            </section>
+
+            {/* CBT EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Exam Pattern – Computer Based Test (CBT)</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cbtPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center font-semibold text-primary-700">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-600">{row.marks}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-primary-50 font-bold">
+                      <td className="p-3 text-primary-800">TOTAL</td>
+                      <td className="p-3 text-center text-primary-800">80</td>
+                      <td className="p-3 text-center text-emerald-700">160</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+                {[
+                  { label: 'Duration', value: '60 minutes (no sectional timer)' },
+                  { label: 'Negative Marking', value: '–0.25 per wrong answer' },
+                  { label: 'Languages', value: 'English, Hindi & 13 regional languages' },
+                ].map((item) => (
+                  <div key={item.label} className="card p-4 text-center">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-semibold text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                <strong>💡 NCC Bonus Marks:</strong> NCC &apos;A&apos; certificate = 2% bonus | NCC &apos;B&apos; = 3% bonus | NCC &apos;C&apos; = 5% bonus — added to normalized CBT score in the final merit list.
+              </div>
+            </section>
+
+            {/* PHYSICAL TEST */}
+            <section id="physical" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Physical Test – PET & PST Standards</h2>
+              <div className="card p-1 mb-5">
+                <div className="bg-surface-900 text-white px-5 py-3 rounded-t-xl">
+                  <h3 className="font-heading font-semibold text-sm">Physical Efficiency Test (PET) – Running Standards</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Distance</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Time Limit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {physicalPet.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                          <td className="p-3 text-center text-surface-600">{row.distance}</td>
+                          <td className={`p-3 text-center font-semibold ${row.distance === 'Exempt' ? 'text-surface-400' : 'text-emerald-600'}`}>{row.time}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="card p-1 mb-4">
+                <div className="bg-surface-900 text-white px-5 py-3 rounded-t-xl">
+                  <h3 className="font-heading font-semibold text-sm">Physical Standard Test (PST) – Height & Chest</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Height</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Chest (Male only)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {physicalPst.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                          <td className="p-3 text-center font-semibold text-primary-700">{row.height}</td>
+                          <td className="p-3 text-center text-surface-600">{row.chest}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-800">
+                <strong>⚠️ Important:</strong> PET is QUALIFYING only — no marks added to merit. However, if you fail the race, you are immediately eliminated. There is no second chance for PET. Appeals are only allowed for PST (height/chest) on the same day. Start running training from Month 1 of your preparation.
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">SSC GD Syllabus 2026 – Subject Wise</h2>
+              <p className="text-surface-500 text-sm mb-4">Syllabus is at <strong>Matriculation (Class 10) level</strong>. Click each subject to expand the topic list.</p>
+              <div className="space-y-3">
+                {exam.syllabus.map((section: any, i: number) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer flex items-center gap-3 list-none font-heading font-semibold text-surface-800 hover:text-primary-500">
+                      <span className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm flex-shrink-0">{i + 1}</span>
+                      <span className="flex-1">{section.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 ml-9 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {section.topics.map((topic: string, j: number) => (
+                        <div key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0" />{topic}
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">SSC GD Constable Salary & Benefits</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { label: 'Pay Scale', value: 'Pay Level 3: ₹21,700 – ₹69,100/month', color: 'text-emerald-700' },
+                  { label: 'Estimated Gross (metro)', value: '₹38,000 – ₹45,000/month', color: 'text-emerald-700' },
+                  { label: 'Estimated Gross (non-metro)', value: '₹30,000 – ₹38,000/month', color: 'text-emerald-700' },
+                  { label: 'Annual Increment', value: '3% of basic pay each year', color: 'text-surface-700' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className={`font-semibold text-sm ${item.color}`}>{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Additional Benefits</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {[
+                    'Dearness Allowance (DA) – revised quarterly',
+                    'House Rent Allowance (HRA) – 8–27% of basic based on city',
+                    'Transport Allowance (TA)',
+                    'Free ration / ration money',
+                    'Risk & Hardship Allowance (for border postings)',
+                    'Government accommodation at posting (where available)',
+                    'Medical facilities for self and family (CGHS / force hospital)',
+                    'Pension under New Pension Scheme (NPS)',
+                    '30 days annual leave + sick leave + CL',
+                    'Promotion path: Constable → Head Constable → ASI → SI',
+                  ].map((b, i) => (
+                    <div key={i} className="flex items-start gap-2 text-sm text-surface-600">
+                      <span className="text-emerald-500 mt-0.5">✓</span>{b}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6-Month Study Plan for SSC GD 2026</h2>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {exam.studyPlan.map((step: string, i: number) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm z-10">{i + 1}</div>
+                      <div className="card p-5"><p className="text-surface-700 leading-relaxed text-sm">{step}</p></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Best Books for SSC GD Constable 2026</h2>
+              <BooksTable books={exam.bestBooks} />
+            </section>
+
+            {/* FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Free Preparation Resources</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {exam.freeResources.map((res: any, i: number) => (
+                  <a key={i} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-lg">{res.type === 'youtube' ? '🎥' : '🌐'}</span>
+                      <span className="badge badge-primary capitalize">{res.type}</span>
+                    </div>
+                    <h3 className="font-semibold text-surface-800 group-hover:text-primary-500 transition-colors mb-1">{res.name}</h3>
+                    <p className="text-xs text-surface-500">{res.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 flex items-center gap-2">
+                <span className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center text-accent-600 text-sm">💡</span>
+                Expert Preparation Tips for SSC GD 2026
+              </h2>
+              <div className="card p-6 bg-accent-50 border-accent-200 space-y-4">
+                {exam.tips.map((tip: string, i: number) => (
+                  <div key={i} className="flex items-start gap-3 text-sm text-surface-700">
+                    <span className="w-6 h-6 bg-accent-200 rounded-full flex items-center justify-center text-accent-700 text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
+                    {tip}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQ */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {exam.faqs.map((faq: any, i: number) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer flex items-center justify-between font-medium text-surface-800 hover:text-primary-500 list-none">
+                      <span className="flex-1">{faq.question}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5"><p className="text-sm text-surface-600 leading-relaxed">{faq.answer}</p></div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* CTA */}
+            <div className="bg-gradient-to-r from-[#0a1e4f] to-[#1a56db] rounded-2xl p-8 text-center text-white mb-8">
+              <h3 className="font-heading font-bold text-xl mb-2">Start Your SSC GD 2026 Preparation Today</h3>
+              <p className="text-blue-100 text-sm mb-5">Free resources, previous year papers, and eligibility checker — all free on TaiyarHo.</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link href="/resources" className="bg-white text-primary-700 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Free Resources →</Link>
+                <Link href="/tools/age-calculator" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Eligibility</Link>
+              </div>
+            </div>
+
+            <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+              <strong>Disclaimer:</strong> Information is based on the official SSC GD Constable 2025 notification (released 01 December 2025) and verified educational sources. Exam dates and vacancies may change. Always refer to the official notification at{' '}
+              <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500">ssc.gov.in</a> before applying.
+            </p>
+          </div>
+
+          {/* Sidebar */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-4 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{s.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div className="card p-5 bg-orange-50 border-orange-200">
+                <h3 className="font-heading font-semibold text-orange-800 mb-2 text-sm">🔔 CBT Active</h3>
+                <p className="text-xs text-orange-700 mb-3">Exam running: 27 Apr – 30 May 2026. Download admit card at ssc.gov.in</p>
+                <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="block w-full bg-orange-600 hover:bg-orange-700 text-white text-center text-sm font-semibold py-2 rounded-lg transition-colors">Go to ssc.gov.in →</a>
+              </div>
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm">Quick Facts</h3>
+                <div className="space-y-2 text-xs text-primary-700">
+                  <div className="flex justify-between"><span>Vacancies</span><strong>25,487</strong></div>
+                  <div className="flex justify-between"><span>CBT Date</span><strong>Apr–May 2026</strong></div>
+                  <div className="flex justify-between"><span>Application Fee</span><strong>₹100</strong></div>
+                  <div className="flex justify-between"><span>Qualification</span><strong>Class 10</strong></div>
+                  <div className="flex justify-between"><span>Interview</span><strong>No Interview</strong></div>
+                  <div className="flex justify-between"><span>Pay Level</span><strong>Level 3</strong></div>
+                </div>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related Exams</h3>
+                <div className="space-y-2">
+                  {[['ssc-cpo', 'SSC CPO'], ['ssc-chsl', 'SSC CHSL'], ['up-police-constable', 'UP Police Constable'], ['delhi-police-constable', 'Delhi Police Constable']].map(([slug, label]) => (
+                    <Link key={slug} href={`/exams/${slug}`} className="block text-sm text-primary-500 hover:text-primary-600 hover:underline">{label}</Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateExamJsonLd(exam)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFaqJsonLd(exam.faqs)) }} />
+    </>
+  );
+}
 
 function DetailedExamPage({ exam }: { exam: any }) {
   const sections = [
