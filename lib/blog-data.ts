@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ssc-cgl-vs-chsl-which-is-easier-2026',
+    title: 'SSC CGL vs CHSL: Which is Easier and More Worth It in 2026?',
+    metaTitle: 'SSC CGL vs SSC CHSL 2026: Which is Easier, Better Salary & More Worth It? | TaiyarHo',
+    metaDescription: 'Complete SSC CGL vs CHSL 2026 comparison — eligibility, salary, difficulty, vacancies, posts, and a clear recommendation. Find out which SSC exam is right for you.',
+    category: 'SSC',
+    tags: ['SSC CGL', 'SSC CHSL', 'SSC Comparison 2026', 'Government Job', 'Salary', 'Eligibility'],
+    publishedDate: 'April 28, 2026',
+    updatedDate: 'April 28, 2026',
+    readTime: '14 min read',
+    author: 'TaiyarHo Editorial',
+    excerpt: 'SSC CGL vs CHSL — which exam should you choose in 2026? Complete head-to-head comparison of eligibility, salary (up to ₹75,000/month), difficulty level, vacancies, posts, and a clear verdict based on your profile.',
+    examSlug: 'ssc-cgl',
+  },
+  {
     slug: 'ssc-cgl-2026-syllabus-complete-guide',
     title: 'SSC CGL 2026 Syllabus: Complete Guide (Tier 1 & Tier 2)',
     metaTitle: 'SSC CGL 2026 Syllabus: Complete Guide (Tier 1 & Tier 2) | TaiyarHo',

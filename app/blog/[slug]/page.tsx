@@ -30,6 +30,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   }
 
   // Route to correct article renderer
+  if (post.slug === 'ssc-cgl-vs-chsl-which-is-easier-2026') {
+    return <SscCglVsChslArticle post={post} />;
+  }
   if (post.slug === 'ssc-cgl-2026-syllabus-complete-guide') {
     return <SscCgl2026Article post={post} />;
   }
@@ -1235,6 +1238,638 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
           }),
         }}
       />
+    </div>
+  );
+}
+
+
+// ─── SSC CGL VS CHSL 2026 ARTICLE ────────────────────────────────────────────
+function SscCglVsChslArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'snapshot', label: 'Quick Snapshot' },
+    { id: 'eligibility', label: 'Eligibility Comparison' },
+    { id: 'exam-pattern', label: 'Exam Pattern & Difficulty' },
+    { id: 'syllabus', label: 'Syllabus Depth' },
+    { id: 'posts-salary', label: 'Posts & Salary 2026' },
+    { id: 'vacancies', label: 'Vacancies Trend' },
+    { id: 'career-growth', label: 'Career Growth' },
+    { id: 'faq', label: 'FAQs' },
+    { id: 'verdict', label: 'Final Verdict' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">SSC CGL vs CHSL 2026</span>
+      </nav>
+
+      {/* JSON-LD Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: post.title,
+            description: post.metaDescription,
+            datePublished: '2026-04-28',
+            dateModified: '2026-04-28',
+            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
+            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/blog/ssc-cgl-vs-chsl-which-is-easier-2026/' },
+          }),
+        }}
+      />
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'Is SSC CGL harder than SSC CHSL?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. SSC CGL is significantly harder than SSC CHSL. CGL has deeper mathematics (Algebra, Trigonometry, Data Interpretation), tougher English, and more questions per section. CHSL questions are of Class 10–12 standard, while CGL expects graduation-level depth. CGL competition is also much higher.' } },
+              { '@type': 'Question', name: 'Will SSC CGL vacancies increase in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL 2026 is expected to have approximately 14,000–15,000 vacancies, similar to 2025 which had 14,582 posts. The trend shows stable vacancy numbers over the past 3 years. An increase cannot be confirmed until the official notification is released on ssc.gov.in.' } },
+              { '@type': 'Question', name: 'What is the salary of SSC CHSL in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CHSL salary in 2026 ranges from ₹25,000–₹30,000 per month for LDC/JSA posts to ₹35,000–₹42,000 per month for DEO/PA/SA posts. This includes basic pay plus DA, HRA, and TA allowances under the 7th Pay Commission.' } },
+              { '@type': 'Question', name: 'Which job is called mini IAS?', acceptedAnswer: { '@type': 'Answer', text: 'The Assistant Section Officer (ASO) in the Central Secretariat Service (CSS) under SSC CGL is often called the "mini IAS." ASOs work directly with IAS officers on policy files and have one of the fastest promotion tracks in SSC CGL — ASO to Section Officer in just 3–5 years.' } },
+              { '@type': 'Question', name: 'Who is the rank 1 topper of SSC CHSL?', acceptedAnswer: { '@type': 'Answer', text: 'SSC does not officially publish a single rank 1 topper for CHSL. Final merit is category-wise and post-wise. The highest scorers are typically from the General category in DEO Grade A posts. SSC publishes merit lists on ssc.gov.in after each cycle.' } },
+              { '@type': 'Question', name: 'Can a 12th pass student appear in SSC CGL?', acceptedAnswer: { '@type': 'Answer', text: 'No. SSC CGL requires a graduation degree (any stream) from a recognised university. Final year students can apply conditionally, but must produce their degree certificate by the document verification stage.' } },
+            ],
+          }),
+        }}
+      />
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        {/* MAIN CONTENT */}
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-primary-900 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-accent-500 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-400 rounded-full opacity-10 translate-y-1/2 -translate-x-1/2" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-accent-500/20 border border-accent-500/40 text-accent-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse" />
+                  Updated {post.publishedDate}
+                </span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">SSC CGL</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">SSC CHSL</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Comparison 2026</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                SSC CGL vs CHSL: <span className="text-accent-300 italic">Which is Easier</span> and More Worth It in 2026?
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed mb-5">
+                A clear, data-backed comparison of both exams — eligibility, salary, difficulty, posts, vacancies, and a definitive recommendation based on your profile.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+                <span>📅 {post.publishedDate}</span>
+                <span>⏱ {post.readTime}</span>
+                <span>📊 Based on official SSC data</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Answer Strip */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+            {[
+              { q: 'Which is harder?', a: 'SSC CGL', sub: 'By a significant margin' },
+              { q: 'Better salary?', a: 'SSC CGL', sub: '₹50K–75K/month in metros' },
+              { q: 'Easier to clear?', a: 'SSC CHSL', sub: 'Simpler syllabus, Class 10–12 level' },
+            ].map(f => (
+              <div key={f.q} className="card p-4 text-center border-t-4 border-accent-500">
+                <div className="text-xs text-surface-400 uppercase tracking-wide font-semibold">{f.q}</div>
+                <div className="text-lg font-heading font-bold text-accent-500 mt-1">{f.a}</div>
+                <div className="text-xs text-surface-400 mt-0.5">{f.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <Callout type="info" title="📌 Who Should Read This?">
+            If you are a <strong>12th pass student</strong> wondering whether to wait for graduation and target CGL, or jump into CHSL now — this comparison is written exactly for you. Also useful for <strong>graduates</strong> deciding whether CGL's extra effort is worth it over CHSL.
+          </Callout>
+
+          {/* TOC mobile */}
+          <div className="card p-5 mb-10 border-l-4 border-primary-500 lg:hidden">
+            <div className="font-heading font-bold text-sm text-surface-800 mb-3">📋 Table of Contents</div>
+            <ol className="space-y-1.5">
+              {toc.map((item, i) => (
+                <li key={item.id}>
+                  <a href={`#${item.id}`} className="text-sm text-primary-600 hover:text-primary-800 hover:underline">
+                    {i + 1}. {item.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {/* SECTION 1: QUICK SNAPSHOT */}
+          <Section id="snapshot" title="1. Quick Snapshot: CGL vs CHSL at a Glance">
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              Before diving deep, here's the complete side-by-side picture. Both exams are conducted by the Staff Selection Commission (SSC) but are fundamentally different in who they're for and what they offer.
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-900 text-white">
+                    <th className="p-3 text-left font-heading font-semibold rounded-tl-lg">Parameter</th>
+                    <th className="p-3 text-center font-heading font-semibold text-accent-300">SSC CGL</th>
+                    <th className="p-3 text-center font-heading font-semibold text-emerald-300 rounded-tr-lg">SSC CHSL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Full Form', 'Combined Graduate Level', 'Combined Higher Secondary Level'],
+                    ['Minimum Education', 'Graduation (any stream)', '12th Pass (10+2)'],
+                    ['Age Limit', '18–32 years (varies by post)', '18–27 years'],
+                    ['Number of Tiers', '2 Tiers (Tier 1 qualifying)', '2 Tiers (Tier 1 qualifying)'],
+                    ['Difficulty Level', '⭐⭐⭐⭐⭐ High', '⭐⭐⭐ Moderate'],
+                    ['Vacancies (2025)', '~14,582 posts', '~3,131 posts'],
+                    ['Expected Vacancies 2026', '14,000–15,000', '~3,500 (estimated)'],
+                    ['Post Category', 'Group B & Group C', 'Group C (mostly clerical)'],
+                    ['Top Posts', 'Income Tax Inspector, ASO, CBI SI', 'LDC, DEO, Postal Assistant'],
+                    ['Starting In-Hand Salary', '₹44,000–₹55,000/month', '₹25,000–₹42,000/month'],
+                    ['Promotion Speed', 'Faster (merit-based)', 'Slower (departmental exams)'],
+                    ['Conducting Body', 'Staff Selection Commission', 'Staff Selection Commission'],
+                    ['Official Website', 'ssc.gov.in', 'ssc.gov.in'],
+                  ].map(([param, cgl, chsl], idx) => (
+                    <tr key={param} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{param}</td>
+                      <td className="p-3 text-center text-surface-600 border-b border-surface-100">{cgl}</td>
+                      <td className="p-3 text-center text-surface-600 border-b border-surface-100">{chsl}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <Callout type="tip" title="💡 Key Takeaway">
+              Both exams are from the same body (SSC) but are aimed at entirely different candidates. CGL is for graduates chasing officer-level posts. CHSL is for 12th-pass aspirants wanting a stable central government job early.
+            </Callout>
+          </Section>
+
+          {/* SECTION 2: ELIGIBILITY */}
+          <Section id="eligibility" title="2. Eligibility Comparison: Who Can Apply?">
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              Eligibility is the most fundamental difference. If you haven't graduated yet, you simply cannot apply for CGL — and that's where CHSL becomes the smarter starting move.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-5 mb-5">
+              <div className="card p-5 border-t-4 border-accent-500">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-8 h-8 bg-accent-500 text-white rounded-lg flex items-center justify-center text-sm font-bold">CGL</span>
+                  <h3 className="font-heading font-bold text-surface-900">SSC CGL 2026</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  <li className="flex gap-2"><span className="text-accent-500 font-bold mt-0.5">✓</span><span><strong>Education:</strong> Bachelor's Degree (any stream) from a recognised university. Final year students can apply conditionally.</span></li>
+                  <li className="flex gap-2"><span className="text-accent-500 font-bold mt-0.5">✓</span><span><strong>Age:</strong> 18–32 years (General). Varies by post — some posts go up to 30 years.</span></li>
+                  <li className="flex gap-2"><span className="text-accent-500 font-bold mt-0.5">✓</span><span><strong>Relaxation:</strong> OBC +3 yrs, SC/ST +5 yrs, PwBD +10 yrs, Ex-Servicemen +5 yrs</span></li>
+                  <li className="flex gap-2"><span className="text-accent-500 font-bold mt-0.5">✓</span><span><strong>Special:</strong> AAO post requires CA/MBA Finance/CMA. JSO requires Statistics as a subject in graduation.</span></li>
+                  <li className="flex gap-2"><span className="text-accent-500 font-bold mt-0.5">✓</span><span><strong>Attempts:</strong> Unlimited — only upper age limit matters.</span></li>
+                </ul>
+              </div>
+              <div className="card p-5 border-t-4 border-emerald-500">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-8 h-8 bg-emerald-500 text-white rounded-lg flex items-center justify-center text-sm font-bold">CHSL</span>
+                  <h3 className="font-heading font-bold text-surface-900">SSC CHSL 2026</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold mt-0.5">✓</span><span><strong>Education:</strong> 12th Pass (10+2) or equivalent from any recognised board. No specific stream required for most posts.</span></li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold mt-0.5">✓</span><span><strong>Age:</strong> 18–27 years (General). Narrower age window than CGL.</span></li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold mt-0.5">✓</span><span><strong>Relaxation:</strong> OBC +3 yrs, SC/ST +5 yrs, PwBD +10 yrs, Ex-Servicemen as per govt rules</span></li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold mt-0.5">✓</span><span><strong>Special:</strong> DEO post requires Science stream with Maths in Class 12. DEO Grade A (Department of Posts) has specific eligibility.</span></li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold mt-0.5">✓</span><span><strong>Key point:</strong> Graduates can also apply for CHSL and often gain an edge in English and reasoning sections.</span></li>
+                </ul>
+              </div>
+            </div>
+            <Callout type="warning" title="⚠️ Age Trap — Read Before You Plan">
+              CHSL has a stricter upper age limit of 27 years for General category. If you're 25+ and still a graduate student, your CHSL window is closing fast. Plan accordingly: many aspirants complete graduation first, attempt CGL, and simultaneously appear for CHSL as a backup.
+            </Callout>
+          </Section>
+
+          {/* SECTION 3: EXAM PATTERN */}
+          <Section id="exam-pattern" title="3. Exam Pattern & Difficulty Level">
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              Both exams now follow a streamlined 2-tier structure after SSC's 2023 restructuring. But the <em>depth</em> of questions is where they diverge sharply.
+            </p>
+            <div className="overflow-x-auto mb-5">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Aspect</th>
+                    <th className="p-3 text-center font-heading text-accent-300">SSC CGL</th>
+                    <th className="p-3 text-center font-heading text-emerald-300">SSC CHSL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Tiers', '2 Tiers', '2 Tiers'],
+                    ['Tier 1 Role', 'Qualifying only (marks NOT counted)', 'Qualifying only (marks NOT counted)'],
+                    ['Tier 2 Role', 'Final merit list — main exam', 'Final merit list — main exam'],
+                    ['Tier 1 Qs / Marks', '100 Qs / 200 marks / 60 min', '100 Qs / 200 marks / 60 min'],
+                    ['Tier 2 Paper I', 'Compulsory for all — 3 sections, ~2.5 hrs', 'Compulsory for all — 3 sections, ~2.5 hrs'],
+                    ['Tier 2 Paper II', 'Only for JSO posts (Statistics)', 'Not applicable'],
+                    ['Maths Depth', 'Advanced: Algebra, Trigonometry, DI', 'Basic: Arithmetic, BODMAS level'],
+                    ['English Depth', 'Cloze test, Para-jumbles, Reading Comprehension', 'Grammar rules, Synonyms, Fill-in-the-blanks'],
+                    ['Negative Marking', '0.50 marks per wrong answer (Tier 1)', '0.50 marks per wrong answer (Tier 1)'],
+                    ['Competition Level', 'Very High (~30–40 lakh applicants)', 'High (~20–25 lakh applicants)'],
+                    ['Cut-off Pattern', 'Generally 130–150/200 (Tier 1)', 'Generally 115–135/200 (Tier 1)'],
+                    ['Overall Difficulty', '⭐⭐⭐⭐⭐ High', '⭐⭐⭐ Moderate'],
+                  ].map(([asp, cgl, chsl], idx) => (
+                    <tr key={asp} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{asp}</td>
+                      <td className="p-3 text-center text-surface-600 border-b border-surface-100">{cgl}</td>
+                      <td className="p-3 text-center text-surface-600 border-b border-surface-100">{chsl}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-5">
+              <h4 className="font-heading font-bold text-amber-800 mb-3">🔥 Is SSC CGL Harder Than CHSL? — The Honest Answer</h4>
+              <p className="text-sm text-amber-700 leading-relaxed mb-3">
+                <strong>Yes, significantly harder.</strong> Here's the exact breakdown:
+              </p>
+              <ul className="space-y-2 text-sm text-amber-700">
+                <li><strong>Quantitative Aptitude:</strong> CGL expects Algebra, Trigonometry, Coordinate Geometry, and Data Interpretation at degree level. CHSL stays at basic arithmetic — percentage, ratio, profit-loss.</li>
+                <li><strong>English:</strong> CGL has longer reading passages, complex cloze tests, and advanced vocabulary. CHSL focuses on grammar rules and simpler comprehension.</li>
+                <li><strong>General Awareness:</strong> Overlap is high, but CGL expects deeper current affairs and static GK coverage.</li>
+                <li><strong>Competition:</strong> CGL sees a cut-off 10–20 marks higher than CHSL in most categories in Tier 1.</li>
+                <li><strong>Preparation time:</strong> CHSL can be cracked with 4–6 months of serious prep. CGL typically demands 8–12 months for a fresh graduate.</li>
+              </ul>
+            </div>
+          </Section>
+
+          {/* SECTION 4: SYLLABUS */}
+          <Section id="syllabus" title="4. Syllabus Depth — Where They Actually Differ">
+            <p className="text-surface-600 text-sm mb-4 leading-relaxed">
+              The subjects are the same in both exams. But the level of questions is where the real gap lies.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse mb-4">
+                <thead>
+                  <tr className="bg-primary-900 text-white">
+                    <th className="p-3 text-left font-heading">Subject</th>
+                    <th className="p-3 text-center font-heading text-accent-300">SSC CGL Level</th>
+                    <th className="p-3 text-center font-heading text-emerald-300">SSC CHSL Level</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Quantitative Aptitude', 'Advanced — Algebra, Trigonometry, Geometry, DI, Surds', 'Basic — Arithmetic, Percentage, SI/CI, Profit-Loss'],
+                    ['Reasoning / Intelligence', 'Complex analogies, syllogisms, matrix, non-verbal patterns', 'Moderate — Series, analogy, coding-decoding, Venn diagrams'],
+                    ['English Language', 'Reading Comprehension, Cloze, Para-jumbles, Advanced Vocabulary', 'Grammar, Synonyms/Antonyms, Sentence correction, Fill-in-the-blanks'],
+                    ['General Awareness', 'Current affairs + deep Static GK, Economy, Polity, Science', 'Current affairs + standard Static GK (lighter depth)'],
+                    ['Computer Knowledge', 'Qualifying only — basic MS Office, internet concepts', 'Qualifying only — similar to CGL'],
+                  ].map(([sub, cgl, chsl], idx) => (
+                    <tr key={sub} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{sub}</td>
+                      <td className="p-3 text-sm text-surface-600 border-b border-surface-100">{cgl}</td>
+                      <td className="p-3 text-sm text-surface-600 border-b border-surface-100">{chsl}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <Callout type="tip" title="💡 Smart Strategy for Dual Aspirants">
+              If you are preparing for SSC CGL, your preparation automatically covers the entire CHSL syllabus — and goes well beyond it. Many serious aspirants appear for CHSL as a safety net while targeting CGL as their primary goal. This dual strategy is highly recommended.
+            </Callout>
+          </Section>
+
+          {/* SECTION 5: POSTS & SALARY */}
+          <Section id="posts-salary" title="5. Posts & Salary in 2026 — The Complete Picture">
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              Salary is often the deciding factor. Here is the full, honest breakdown including in-hand pay, not just basic pay.
+            </p>
+
+            <h3 className="font-heading font-bold text-surface-800 mb-3 text-lg">SSC CGL 2026 — Top Posts & Salary</h3>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Post</th>
+                    <th className="p-3 text-center font-heading">Pay Level</th>
+                    <th className="p-3 text-center font-heading">Basic Pay</th>
+                    <th className="p-3 text-center font-heading">In-Hand (Metro)</th>
+                    <th className="p-3 text-center font-heading">Department</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Income Tax Inspector', 'Level 7', '₹44,900', '₹65,000–75,000', 'CBDT'],
+                    ['Assistant Section Officer (CSS)', 'Level 7', '₹44,900', '₹60,000–72,000', 'DoPT / Various Ministries'],
+                    ['Assistant Enforcement Officer', 'Level 7', '₹44,900', '₹62,000–74,000', 'Enforcement Directorate'],
+                    ['Sub-Inspector (CBI)', 'Level 6', '₹35,400', '₹55,000–65,000', 'CBI'],
+                    ['Inspector (Central Excise)', 'Level 7', '₹44,900', '₹60,000–70,000', 'CBIC'],
+                    ['Auditor', 'Level 5', '₹29,200', '₹44,000–52,000', 'CAG / CGDA'],
+                    ['Tax Assistant', 'Level 4', '₹25,500', '₹38,000–48,000', 'CBDT / CBIC'],
+                    ['Junior Statistical Officer', 'Level 6', '₹35,400', '₹52,000–62,000', 'M/o Statistics'],
+                  ].map(([post, lvl, basic, inhand, dept], idx) => (
+                    <tr key={post} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 font-medium text-surface-800 border-b border-surface-100">{post}</td>
+                      <td className="p-3 text-center text-surface-600 border-b border-surface-100">{lvl}</td>
+                      <td className="p-3 text-center text-surface-600 border-b border-surface-100">{basic}</td>
+                      <td className="p-3 text-center font-semibold text-accent-600 border-b border-surface-100">{inhand}</td>
+                      <td className="p-3 text-center text-surface-500 text-xs border-b border-surface-100">{dept}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="font-heading font-bold text-surface-800 mb-3 text-lg">SSC CHSL 2026 — Posts & Salary</h3>
+            <div className="overflow-x-auto mb-5">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Post</th>
+                    <th className="p-3 text-center font-heading">Pay Level</th>
+                    <th className="p-3 text-center font-heading">Basic Pay</th>
+                    <th className="p-3 text-center font-heading">In-Hand (Metro)</th>
+                    <th className="p-3 text-center font-heading">Nature of Work</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Lower Division Clerk (LDC)', 'Level 2', '₹19,900', '₹27,000–32,000', 'Clerical / File management'],
+                    ['Junior Secretariat Asst. (JSA)', 'Level 2', '₹19,900', '₹27,000–32,000', 'Clerical in ministries'],
+                    ['Postal Assistant (PA)', 'Level 4', '₹25,500', '₹35,000–42,000', 'Mail handling / postal ops'],
+                    ['Sorting Assistant (SA)', 'Level 4', '₹25,500', '₹35,000–42,000', 'Sorting mail, Dept. of Posts'],
+                    ['Data Entry Operator (DEO)', 'Level 4', '₹25,500', '₹35,000–42,000', 'Computer-based data entry'],
+                    ['DEO Grade A (Dept. of Posts)', 'Level 5', '₹29,200', '₹38,000–46,000', 'Senior DEO role'],
+                  ].map(([post, lvl, basic, inhand, nature], idx) => (
+                    <tr key={post} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 font-medium text-surface-800 border-b border-surface-100">{post}</td>
+                      <td className="p-3 text-center text-surface-600 border-b border-surface-100">{lvl}</td>
+                      <td className="p-3 text-center text-surface-600 border-b border-surface-100">{basic}</td>
+                      <td className="p-3 text-center font-semibold text-emerald-600 border-b border-surface-100">{inhand}</td>
+                      <td className="p-3 text-center text-surface-500 text-xs border-b border-surface-100">{nature}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+              <h4 className="font-heading font-bold text-blue-800 mb-2">🏆 Which Job is Called "Mini IAS"?</h4>
+              <p className="text-sm text-blue-700 leading-relaxed">
+                The <strong>Assistant Section Officer (ASO) in the Central Secretariat Service (CSS)</strong> under SSC CGL is widely known as the <strong>"Mini IAS"</strong> in government job circles. Here's why: ASOs work directly with IAS officers on policy files in central government ministries. They process decisions that shape national policy, draft important communications, and sit in the same secretariat where the country's administration happens. The promotion path is also the fastest in all of SSC CGL — ASO → Section Officer in just 3–5 years → Under Secretary → Deputy Secretary → Joint Secretary. An ASO who plays their cards right can reach a position equivalent to a State IAS officer within 15–20 years — without ever having to crack UPSC.
+              </p>
+            </div>
+          </Section>
+
+          {/* SECTION 6: VACANCIES */}
+          <Section id="vacancies" title="6. Vacancies Trend — Will CGL Vacancies Increase in 2026?">
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              One of the biggest questions aspirants ask every year: will vacancies go up? Here's what the data actually shows.
+            </p>
+            <div className="overflow-x-auto mb-5">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Year</th>
+                    <th className="p-3 text-center font-heading text-accent-300">SSC CGL Vacancies</th>
+                    <th className="p-3 text-center font-heading text-emerald-300">SSC CHSL Vacancies</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['2022', '20,000+', '4,500+'],
+                    ['2023', '7,500 (low year)', '~3,500'],
+                    ['2024', '17,727', '~3,700'],
+                    ['2025', '14,582', '~3,131'],
+                    ['2026 (Expected)', '14,000–15,000', '~3,500 (estimated)'],
+                  ].map(([year, cgl, chsl], idx) => (
+                    <tr key={year} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{year}</td>
+                      <td className={`p-3 text-center font-semibold border-b border-surface-100 ${year === '2026 (Expected)' ? 'text-accent-600' : 'text-surface-600'}`}>{cgl}</td>
+                      <td className={`p-3 text-center font-semibold border-b border-surface-100 ${year === '2026 (Expected)' ? 'text-emerald-600' : 'text-surface-600'}`}>{chsl}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <Callout type="info" title="📊 Vacancy Verdict for 2026">
+              <strong>CGL 2026:</strong> Approximately 14,000–15,000 vacancies are expected based on the 2024–2025 trend. A significant surge (like 2022) is unlikely but not impossible — it depends on government hiring requirements. The official notification on ssc.gov.in will confirm numbers.<br/><br/>
+              <strong>CHSL 2026:</strong> CHSL consistently sees fewer vacancies than CGL (around 3,000–4,000 posts), making competition per seat actually comparable despite the easier syllabus. Don't assume CHSL is easy to get just because the paper is easier — the final merit is highly competitive too.
+            </Callout>
+          </Section>
+
+          {/* SECTION 7: CAREER GROWTH */}
+          <Section id="career-growth" title="7. Career Growth — The Long Game">
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              Salary at joining is one thing. The 20-year trajectory is where CGL and CHSL diverge most dramatically.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-5 mb-5">
+              <div className="card p-5">
+                <h4 className="font-heading font-bold text-accent-600 mb-3">SSC CGL Career Path</h4>
+                <div className="space-y-3">
+                  {[
+                    { year: 'Year 0', role: 'Inspector / ASO / Auditor', pay: '₹44,000–65,000/month' },
+                    { year: 'Year 5–7', role: 'Section Officer / Senior Inspector', pay: '₹55,000–80,000/month' },
+                    { year: 'Year 10–12', role: 'Under Secretary / Dy. Commissioner', pay: '₹70,000–1,00,000/month' },
+                    { year: 'Year 15–20', role: 'Deputy Secretary / Joint Secretary level', pay: '₹1,00,000–1,60,000/month' },
+                  ].map(step => (
+                    <div key={step.year} className="flex items-start gap-3">
+                      <span className="text-xs bg-accent-100 text-accent-700 font-bold px-2 py-1 rounded whitespace-nowrap">{step.year}</span>
+                      <div>
+                        <div className="font-medium text-sm text-surface-800">{step.role}</div>
+                        <div className="text-xs text-surface-500">{step.pay}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="card p-5">
+                <h4 className="font-heading font-bold text-emerald-600 mb-3">SSC CHSL Career Path</h4>
+                <div className="space-y-3">
+                  {[
+                    { year: 'Year 0', role: 'LDC / DEO / Postal Assistant', pay: '₹27,000–42,000/month' },
+                    { year: 'Year 5–8', role: 'Upper Division Clerk (after dept. exam)', pay: '₹35,000–50,000/month' },
+                    { year: 'Year 10–15', role: 'Section Officer / Assistant (with dept. exams)', pay: '₹50,000–65,000/month' },
+                    { year: 'Year 20+', role: 'Senior Section Officer / Deputy Manager', pay: '₹65,000–85,000/month' },
+                  ].map(step => (
+                    <div key={step.year} className="flex items-start gap-3">
+                      <span className="text-xs bg-emerald-100 text-emerald-700 font-bold px-2 py-1 rounded whitespace-nowrap">{step.year}</span>
+                      <div>
+                        <div className="font-medium text-sm text-surface-800">{step.role}</div>
+                        <div className="text-xs text-surface-500">{step.pay}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <Callout type="info" title="📌 CHSL to CGL — The Bridge Strategy">
+              Many CHSL joiners appear for SSC CGL after joining, use their job security as a psychological cushion, and crack CGL from inside a government job. This is one of the smartest strategies in the SSC ecosystem. You get a stable salary, no exam anxiety, and a genuine shot at upgrading your designation.
+            </Callout>
+          </Section>
+
+          {/* SECTION 8: FAQs */}
+          <Section id="faq" title="8. FAQs — Everything Aspirants Actually Ask">
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'Is SSC CGL harder than SSC CHSL?',
+                  a: 'Yes — significantly. CGL demands graduation-level maths (Algebra, Trigonometry, DI) and deeper English. CHSL is Class 10–12 level across all subjects. CGL also has more competition with higher cut-offs. If you can crack CGL, CHSL would feel easy — not the other way around.',
+                },
+                {
+                  q: 'Will SSC CGL vacancies increase in 2026?',
+                  a: 'Based on the 3-year trend (17,727 in 2024 → 14,582 in 2025), CGL 2026 is expected to have 14,000–15,000 posts. A major increase like 2022 (20,000+) is possible but not guaranteed. Always check the official notification at ssc.gov.in once released — likely in late April 2026.',
+                },
+                {
+                  q: 'What is the salary of SSC CHSL in 2026?',
+                  a: 'SSC CHSL salary depends on the post and your posting city. For LDC/JSA: ₹27,000–₹32,000 per month in-hand (metro). For DEO/PA/SA: ₹35,000–₹42,000 per month in-hand. The basic pay starts at ₹19,900 (LDC) and goes up to ₹29,200 (DEO Grade A) under the 7th Pay Commission. All posts include DA, HRA, TA, and pension.',
+                },
+                {
+                  q: 'Which job is called "Mini IAS"?',
+                  a: 'The Assistant Section Officer (ASO) in the Central Secretariat Service (CSS) recruited through SSC CGL is called the "Mini IAS." ASOs work directly with IAS officers in central government ministries on policy-level files. The CSS promotion track (ASO → Section Officer → Under Secretary → Deputy Secretary → Joint Secretary) is the fastest in all of SSC and can take a non-IAS officer to near-parity with state IAS officers over a career.',
+                },
+                {
+                  q: 'Who is rank 1 topper of SSC CHSL?',
+                  a: 'SSC does not announce a single "rank 1 topper" officially. The merit list is category-wise (General, OBC, SC, ST) and post-wise. Top scorers are typically from the General category competing for DEO Grade A posts, which have the fewest vacancies. SSC publishes final merit lists and selected candidates\' marks on ssc.gov.in after each cycle. Past cycle toppers are sometimes featured in coaching institute testimonials.',
+                },
+                {
+                  q: 'Can a 12th pass student appear in SSC CGL?',
+                  a: 'No. SSC CGL strictly requires a Bachelor\'s degree from a recognised university. However, final year graduation students can apply conditionally — they must produce their final degree certificate before the document verification stage. Plan your CGL timeline accordingly if you\'re currently in final year.',
+                },
+                {
+                  q: 'Can I prepare for both CGL and CHSL simultaneously?',
+                  a: 'Absolutely yes — and this is the recommended strategy. CGL preparation covers the entire CHSL syllabus (and more). By targeting CGL as your primary exam and treating CHSL as a safety net, you maximise your chances with minimal extra effort. The only additional investment for CHSL is a typing test / skill test practice.',
+                },
+                {
+                  q: 'Is SSC CHSL worth it in 2026?',
+                  a: 'Yes — especially for 12th-pass candidates. A central government job at 20–22 years with job security, pension, HRA, and paid leave is genuinely valuable. The CHSL→MACP promotion system means your salary grows steadily even without cracking departmental exams. And if you clear CGL later, you can upgrade. CHSL is not a consolation prize — it\'s a solid career foundation.',
+                },
+              ].map((item) => (
+                <details key={item.q} className="card p-5 group">
+                  <summary className="font-heading font-semibold text-surface-900 cursor-pointer flex items-center justify-between text-sm sm:text-base">
+                    {item.q}
+                    <span className="ml-3 text-primary-500 group-open:rotate-180 transition-transform duration-200 text-lg">▾</span>
+                  </summary>
+                  <p className="text-sm text-surface-600 leading-relaxed mt-3 pt-3 border-t border-surface-100">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </Section>
+
+          {/* SECTION 9: VERDICT */}
+          <Section id="verdict" title="9. Final Verdict — Which Should You Choose?">
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              There is no universal answer — but there is a right answer <em>for your situation</em>. Here is the definitive guide:
+            </p>
+            <div className="space-y-4 mb-6">
+              {[
+                {
+                  profile: '✅ Choose SSC CGL if…',
+                  color: 'border-accent-500 bg-accent-50',
+                  titleColor: 'text-accent-700',
+                  points: [
+                    'You are a graduate (or final-year student) in any stream',
+                    'You want an officer-level post with real authority and decision-making',
+                    'Your target is Income Tax Inspector, CBI Sub-Inspector, or ASO (Mini IAS)',
+                    'You are willing to invest 8–12 months in serious, structured preparation',
+                    'You want the fastest route to ₹50,000–₹75,000+ per month starting salary',
+                    'Career growth and promotions matter more to you than taking the easier path',
+                  ],
+                },
+                {
+                  profile: '✅ Choose SSC CHSL if…',
+                  color: 'border-emerald-500 bg-emerald-50',
+                  titleColor: 'text-emerald-700',
+                  points: [
+                    'You have completed Class 12 and want to start earning in government ASAP',
+                    'You prefer a simpler syllabus and faster preparation timeline (4–6 months)',
+                    'You want job security, work-life balance, and steady income over high ambition',
+                    'Your age is nearing 27 (General) and you cannot wait to finish graduation',
+                    'You plan to prepare for CGL from inside a government job (smart dual strategy)',
+                    'A PA/DEO role in a central ministry with pension and benefits meets your goals',
+                  ],
+                },
+                {
+                  profile: '🎯 Best Strategy: Target Both',
+                  color: 'border-primary-500 bg-primary-50',
+                  titleColor: 'text-primary-700',
+                  points: [
+                    'If you are a graduate: Prepare seriously for CGL, appear for CHSL as backup — minimal extra effort',
+                    'If you are in final year of graduation: Apply for CHSL now (you\'re eligible), start CGL prep',
+                    'If you just joined via CHSL: Use job stability to prepare for CGL without financial pressure',
+                    'Remember: One exam\'s preparation supports the other. They share 80% of the syllabus.',
+                  ],
+                },
+              ].map(section => (
+                <div key={section.profile} className={`card p-5 border-l-4 ${section.color}`}>
+                  <h4 className={`font-heading font-bold mb-3 ${section.titleColor}`}>{section.profile}</h4>
+                  <ul className="space-y-2">
+                    {section.points.map(pt => (
+                      <li key={pt} className="flex items-start gap-2 text-sm text-surface-700">
+                        <span className="mt-0.5 text-surface-400">→</span>
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div className="bg-surface-900 text-white rounded-2xl p-6 text-center">
+              <div className="text-2xl mb-3">🏆</div>
+              <h3 className="font-heading font-bold text-xl mb-2">The Bottom Line</h3>
+              <p className="text-surface-300 text-sm leading-relaxed max-w-lg mx-auto">
+                <strong className="text-white">SSC CGL offers more</strong> — more salary, more authority, more growth. But it demands more too. <strong className="text-white">SSC CHSL is genuinely worth it</strong> for anyone who qualifies, especially as a launchpad or a backup. The question isn't which exam is better — it's which one is right for <em>where you are right now</em>. Start preparing today. Both exams reward consistency over intelligence.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 mt-5">
+                <Link href="/exams/ssc-cgl" className="btn-primary text-sm px-5 py-2">
+                  SSC CGL Full Guide →
+                </Link>
+                <Link href="/exams" className="btn-outline text-sm px-5 py-2">
+                  Browse All 100 Exams
+                </Link>
+              </div>
+            </div>
+          </Section>
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-5">
+            {/* TOC */}
+            <div className="card p-5 border-l-4 border-primary-500">
+              <div className="font-heading font-bold text-sm text-surface-800 mb-3">📋 On This Page</div>
+              <ol className="space-y-1.5">
+                {toc.map((item, i) => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm text-primary-600 hover:text-primary-800 hover:underline block py-0.5">
+                      {i + 1}. {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            {/* Quick Links */}
+            <div className="card p-5">
+              <div className="font-heading font-bold text-sm text-surface-800 mb-3">🔗 Related Pages</div>
+              <div className="space-y-2">
+                <Link href="/exams/ssc-cgl" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> SSC CGL Full Guide</Link>
+                <Link href="/exams" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> All SSC Exams</Link>
+                <Link href="/tools/age-calculator" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> Check Eligibility</Link>
+                <Link href="/blog" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> More Articles</Link>
+              </div>
+            </div>
+            {/* Verdict Card */}
+            <div className="bg-accent-500 text-white rounded-xl p-5 text-center">
+              <div className="text-2xl mb-2">🎯</div>
+              <div className="font-heading font-bold text-sm mb-1">Eligible for CGL?</div>
+              <div className="text-xs text-white/80 mb-3">Check if you qualify and which posts are open for you</div>
+              <Link href="/tools/age-calculator" className="block bg-white text-accent-600 font-semibold text-sm py-2 rounded-lg hover:bg-white/90 transition-colors">
+                Check Eligibility →
+              </Link>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   );
 }
