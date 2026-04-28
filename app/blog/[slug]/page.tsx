@@ -564,6 +564,40 @@ function SscCgl2026Article({ post }: { post: any }) {
           </div>
         </aside>
       </div>
+
+      {/* Article structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'SSC CGL 2026 Syllabus: Complete Guide (Tier 1 & Tier 2)',
+            description: 'Complete SSC CGL 2026 syllabus with topic-wise breakdown for Tier 1 and Tier 2, exam pattern, marking scheme, and free preparation tips. Updated April 2026.',
+            datePublished: '2026-04-24',
+            dateModified: '2026-04-26',
+            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
+            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in', logo: { '@type': 'ImageObject', url: 'https://taiyarho.in/logo.svg' } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/blog/ssc-cgl-2026-syllabus-complete-guide/' },
+          }),
+        }}
+      />
+      {/* FAQ structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'What is the SSC CGL 2026 exam date?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL 2026 Tier 1 is expected between September–October 2026. The official notification is typically released in April–May. Check ssc.gov.in for the latest schedule.' } },
+              { '@type': 'Question', name: 'How many subjects are in SSC CGL Tier 1?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL Tier 1 has 4 sections: General Intelligence & Reasoning (25 Qs), General Awareness (25 Qs), Quantitative Aptitude (25 Qs), and English Comprehension (25 Qs). Total: 100 questions, 200 marks, 60 minutes.' } },
+              { '@type': 'Question', name: 'Is there negative marking in SSC CGL?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. In Tier 1, there is a negative marking of 0.50 marks for each wrong answer. In Tier 2, Module 1 of Paper 1 carries 1 mark negative marking per wrong answer.' } },
+              { '@type': 'Question', name: 'What is the syllabus for SSC CGL Tier 2?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL Tier 2 Paper 1 has three modules: Module 1 (Mathematical Abilities + Reasoning), Module 2 (English Language), and Module 3 (General Awareness + Computer Knowledge + Data Entry Speed Test). Paper 2 is Statistics for JSO post.' } },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }

@@ -1,10 +1,42 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
 import { exams, examCategories, guides, allExams } from '@/lib/exams-data';
 import { blogPosts } from '@/lib/blog-data';
+
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://taiyarho.in/' },
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'TaiyarHo',
+  url: 'https://taiyarho.in',
+  logo: 'https://taiyarho.in/logo.svg',
+  description: 'Free comprehensive guide for Indian government exam preparation. Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all government exams.',
+  sameAs: [],
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'TaiyarHo',
+  url: 'https://taiyarho.in',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://taiyarho.in/exams/?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
 
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800 text-white">
         <div className="absolute inset-0 opacity-10">

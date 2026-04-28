@@ -36,12 +36,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     description: seoDescriptions[params.slug] || guide.description,
     keywords: seoKeywords[params.slug] || undefined,
     alternates: {
-      canonical: `https://taiyarho.in/guides/${params.slug}`,
+      canonical: `https://taiyarho.in/guides/${params.slug}/`,
     },
     openGraph: {
       title: seoTitles[params.slug] || `${guide.title} | TaiyarHo`,
       description: seoDescriptions[params.slug] || guide.description,
-      url: `https://taiyarho.in/guides/${params.slug}`,
+      url: `https://taiyarho.in/guides/${params.slug}/`,
       siteName: 'TaiyarHo',
       locale: 'en_IN',
       type: 'article',

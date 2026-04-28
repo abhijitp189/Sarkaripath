@@ -18,7 +18,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'ssc-cgl') {
     return {
-      title: 'SSC CGL 2026 – Complete Preparation Guide: Syllabus, Pattern, Eligibility | TaiyarHo',
+      title: 'SSC CGL 2026 – Syllabus, Eligibility & Preparation Guide | TaiyarHo',
       description: 'SSC CGL 2026 notification released. Tier 1 exam in May–June 2026. Check complete syllabus, exam pattern, eligibility, 14,000+ vacancies, salary, best books and free study resources.',
       alternates: { canonical: 'https://taiyarho.in/exams/ssc-cgl/' },
     };
@@ -26,7 +26,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'ssc-gd-constable') {
     return {
-      title: 'SSC GD Constable 2026 – Complete Preparation Guide: Syllabus, Pattern, Eligibility | TaiyarHo',
+      title: 'SSC GD Constable 2026 – Syllabus, Eligibility & Guide | TaiyarHo',
       description: 'SSC GD Constable 2026: CBT exam from 27 Apr–30 May 2026. 25,487 vacancies in BSF, CISF, CRPF, ITBP. Check syllabus, exam pattern, physical standards (PET/PST), eligibility, salary and free resources.',
       alternates: { canonical: 'https://taiyarho.in/exams/ssc-gd-constable/' },
     };
