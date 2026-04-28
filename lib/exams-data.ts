@@ -739,64 +739,8 @@ export const exams: Exam[] = [
       'Join a study group for GD practice – group discussions require practice with actual people.',
     ],
   },
-];
 
-export const examCategories = [
-  { name: 'UPSC', icon: '🏛️', description: 'Union Public Service Commission', count: 5 },
-  { name: 'SSC', icon: '📝', description: 'Staff Selection Commission', count: 8 },
-  { name: 'Banking', icon: '🏦', description: 'IBPS, SBI & RBI Exams', count: 6 },
-  { name: 'Railway', icon: '🚂', description: 'RRB & Railway Exams', count: 4 },
-  { name: 'Defence', icon: '🎖️', description: 'NDA, CDS, AFCAT', count: 4 },
-  { name: 'State PSC', icon: '🗺️', description: 'State Public Service Commissions', count: 28 },
-  { name: 'Teaching', icon: '📚', description: 'CTET, TET, NET, KVS', count: 5 },
-  { name: 'Police', icon: '🚔', description: 'State Police & CAPF', count: 6 },
-];
-
-export const guides = [
   {
-    slug: 'how-to-start-government-exam-preparation',
-    title: 'Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap',
-    description: 'Complete beginner\'s roadmap to government exam preparation in 2026. Learn which exam to choose, follow a 12-month study plan, get free resources, daily timetables, and avoid the mistakes that fail 90% of aspirants.',
-    category: 'Getting Started',
-    readTime: '15 min read',
-  },
-  {
-    slug: 'best-free-resources-government-exams',
-    title: 'Best Free Resources for Government Exam Preparation (2026)',
-    description: 'Curated list of 50+ best free YouTube channels, official government platforms, websites, apps, mock test sites, and Telegram groups for UPSC, SSC, Banking, Railway, and all major government exams — updated for 2026.',
-    category: 'Resources',
-    readTime: '18 min read',
-  },
-  {
-    slug: 'age-limit-relaxation-government-jobs',
-    title: 'Complete Guide to Age Limit & Relaxation for Government Jobs',
-    description: 'Detailed explanation of age limits and relaxation rules for OBC, SC, ST, EWS, PwBD, and Ex-Servicemen categories across all major government exams.',
-    category: 'Eligibility',
-    readTime: '8 min read',
-  },
-  {
-    slug: 'how-to-fill-government-job-application-form',
-    title: 'How to Fill Government Job Application Forms (Step by Step)',
-    description: 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo and signature upload specifications, fee payment, common mistakes to avoid, and correction window details.',
-    category: 'Application',
-    readTime: '15 min read',
-  },
-  {
-    slug: 'documents-needed-government-job',
-    title: 'Documents Required for Government Job Application',
-    description: 'Complete checklist of all documents you need for applying and joining a government job – certificates, ID proofs, photos, and more.',
-    category: 'Documents',
-    readTime: '5 min read',
-  },
-  {
-    slug: 'study-plan-working-professionals',
-    title: 'Government Exam Study Plan for Working Professionals',
-    description: 'How to prepare for competitive exams while working full-time. Time management tips, weekend study plans, and strategies for working aspirants.',
-    category: 'Strategy',
-    readTime: '9 min read',
-  },
-  {
-    readTime: '15 min read',
     slug: 'rrb-group-d',
     title: 'RRB Group D (Level-1 Posts in Indian Railways)',
     shortName: 'RRB Group D',
@@ -959,6 +903,62 @@ export const guides = [
       "Use a single source for current affairs. Don't scatter across 10 sources — pick one (PIB or Adda247 daily or Testbook daily) and stick to it for 6 months.",
       'Time management in CBT: 90 minutes / 100 questions = under 1 minute per question. Practice at this speed using online mock tests so the actual exam feels familiar.',
     ],
+  },
+];
+
+export const examCategories = [
+  { name: 'UPSC', icon: '🏛️', description: 'Union Public Service Commission', count: 5 },
+  { name: 'SSC', icon: '📝', description: 'Staff Selection Commission', count: 8 },
+  { name: 'Banking', icon: '🏦', description: 'IBPS, SBI & RBI Exams', count: 6 },
+  { name: 'Railway', icon: '🚂', description: 'RRB & Railway Exams', count: 4 },
+  { name: 'Defence', icon: '🎖️', description: 'NDA, CDS, AFCAT', count: 4 },
+  { name: 'State PSC', icon: '🗺️', description: 'State Public Service Commissions', count: 28 },
+  { name: 'Teaching', icon: '📚', description: 'CTET, TET, NET, KVS', count: 5 },
+  { name: 'Police', icon: '🚔', description: 'State Police & CAPF', count: 6 },
+];
+
+export const guides = [
+  {
+    slug: 'how-to-start-government-exam-preparation',
+    title: 'Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap',
+    description: 'Complete beginner\'s roadmap to government exam preparation in 2026. Learn which exam to choose, follow a 12-month study plan, get free resources, daily timetables, and avoid the mistakes that fail 90% of aspirants.',
+    category: 'Getting Started',
+    readTime: '15 min read',
+  },
+  {
+    slug: 'best-free-resources-government-exams',
+    title: 'Best Free Resources for Government Exam Preparation (2026)',
+    description: 'Curated list of 50+ best free YouTube channels, official government platforms, websites, apps, mock test sites, and Telegram groups for UPSC, SSC, Banking, Railway, and all major government exams — updated for 2026.',
+    category: 'Resources',
+    readTime: '18 min read',
+  },
+  {
+    slug: 'age-limit-relaxation-government-jobs',
+    title: 'Complete Guide to Age Limit & Relaxation for Government Jobs',
+    description: 'Detailed explanation of age limits and relaxation rules for OBC, SC, ST, EWS, PwBD, and Ex-Servicemen categories across all major government exams.',
+    category: 'Eligibility',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'how-to-fill-government-job-application-form',
+    title: 'How to Fill Government Job Application Forms (Step by Step)',
+    description: 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo and signature upload specifications, fee payment, common mistakes to avoid, and correction window details.',
+    category: 'Application',
+    readTime: '15 min read',
+  },
+  {
+    slug: 'documents-needed-government-job',
+    title: 'Documents Required for Government Job Application',
+    description: 'Complete checklist of all documents you need for applying and joining a government job – certificates, ID proofs, photos, and more.',
+    category: 'Documents',
+    readTime: '5 min read',
+  },
+  {
+    slug: 'study-plan-working-professionals',
+    title: 'Government Exam Study Plan for Working Professionals',
+    description: 'How to prepare for competitive exams while working full-time. Time management tips, weekend study plans, and strategies for working aspirants.',
+    category: 'Strategy',
+    readTime: '9 min read',
   },
 ];
 
