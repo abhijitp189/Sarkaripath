@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
+import UniversalSearch from '@/components/UniversalSearch';
+import ExamsMegaMenu from '@/components/ExamsMegaMenu';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -38,15 +40,19 @@ function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-1">
-          <NavLink href="/exams">Exams</NavLink>
+          <ExamsMegaMenu />
           <NavLink href="/guides">Guides</NavLink>
           <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/exam-calendar">Exam Calendar</NavLink>
           <NavLink href="/resources">Resources</NavLink>
           <NavLink href="/tools/eligibility-checker">Eligibility Checker</NavLink>
+          <div className="ml-2">
+            <UniversalSearch />
+          </div>
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <UniversalSearch />
           <MobileMenuButton />
         </div>
       </nav>

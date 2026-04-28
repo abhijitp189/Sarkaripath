@@ -1,12 +1,23 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { allExams, examCategories } from '@/lib/exams-data';
 
-export default function ExamsPage() {
+// Inner component that uses useSearchParams — must be wrapped in <Suspense>
+function ExamsContent() {
+  const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Pre-fill from URL params (e.g. from universal search or mega menu)
+  useEffect(() => {
+    const cat = searchParams.get('category');
+    const q = searchParams.get('q');
+    if (cat) setActiveCategory(cat);
+    if (q) setSearchQuery(q);
+  }, [searchParams]);
 
   const filteredExams = allExams
     .filter((exam) => activeCategory === 'All' || exam.category === activeCategory)
@@ -108,5 +119,27 @@ export default function ExamsPage() {
         </div>
       )}
     </div>
+  );
+}
+
+// Outer page wraps ExamsContent in Suspense — required for static export with useSearchParams
+export default function ExamsPage() {
+  return (
+    <Suspense fallback={
+      <div className="container-main py-10">
+        <div className="animate-pulse space-y-4">
+          <div className="h-8 bg-surface-200 rounded w-64" />
+          <div className="h-4 bg-surface-100 rounded w-96" />
+          <div className="flex gap-2 mt-6">
+            {[1,2,3,4,5].map(i => <div key={i} className="h-9 w-24 bg-surface-100 rounded-lg" />)}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+            {[1,2,3,4,5,6].map(i => <div key={i} className="h-48 bg-surface-100 rounded-2xl" />)}
+          </div>
+        </div>
+      </div>
+    }>
+      <ExamsContent />
+    </Suspense>
   );
 }
