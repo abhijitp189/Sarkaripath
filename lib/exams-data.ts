@@ -1134,9 +1134,9 @@ export const guides = [
   {
     slug: 'study-plan-working-professionals',
     title: 'Government Exam Study Plan for Working Professionals',
-    description: 'How to prepare for competitive exams while working full-time. Time management tips, weekend study plans, and strategies for working aspirants.',
+    description: 'The 2026 Survival & Success Guide: How to crack government exams while working full-time. Covers the 3-phase blueprint, real daily schedules, weekend study plans, best apps, and managing burnout.',
     category: 'Strategy',
-    readTime: '9 min read',
+    readTime: '12 min read',
   },
 ];
 
