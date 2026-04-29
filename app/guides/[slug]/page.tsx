@@ -15,6 +15,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-fill-government-job-application-form': 'How to Fill Government Job Application Forms – Step by Step Guide (2026) | TaiyarHo',
     'best-free-resources-government-exams': 'Best Free Resources for Government Exam Preparation (2026) – 50+ Verified Links | TaiyarHo',
     'age-limit-relaxation-government-jobs': 'Age Limit & Relaxation for Government Jobs (2026) – Complete Guide for OBC, SC/ST, EWS, PwBD, Ex-Servicemen | TaiyarHo',
+    'study-plan-working-professionals': 'Government Exam Preparation for Working Professionals 2026 – Study Plan, Schedule & Strategy | TaiyarHo',
   };
 
   const seoDescriptions: Record<string, string> = {
@@ -22,6 +23,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-fill-government-job-application-form': 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo & signature upload specs, fee payment, common mistakes to avoid, and correction window details.',
     'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
     'age-limit-relaxation-government-jobs': 'Complete 2026 guide to age limits and relaxation rules for Indian government exams. Covers OBC (+3 yrs), SC/ST (+5 yrs), PwBD (+10–15 yrs), Ex-Servicemen, and EWS rules for UPSC, SSC CGL, IBPS PO, SBI PO, and RRB NTPC — with a quick-check table and common mistakes to avoid.',
+    'study-plan-working-professionals': 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, 14-hour weekend strategy, best apps for micro-learning, and how to manage burnout as a working aspirant.',
   };
 
   const seoKeywords: Record<string, string> = {
@@ -29,6 +31,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-fill-government-job-application-form': 'how to fill government job application form, SSC CGL application form, UPSC application form, IBPS PO apply online, RRB NTPC application, government exam form filling, photo signature upload government exam, OTR registration, sarkari naukri form kaise bhare',
     'best-free-resources-government-exams': 'free resources government exam preparation 2026, free study material UPSC SSC Banking Railway, best free YouTube channels government exams, NCERT free textbooks, free mock tests government exams, DIKSHA app, SWAYAM, sarkari exam free resources, previous year papers download, muft study material sarkari naukri',
     'age-limit-relaxation-government-jobs': 'age limit government jobs India 2026, age relaxation OBC SC ST EWS PwBD ex-servicemen, sarkari naukri age limit, UPSC SSC CGL IBPS PO SBI PO RRB NTPC age limit, government exam age relaxation rules, umar mein choot sarkari naukri, age relaxation central government',
+    'study-plan-working-professionals': 'government exam preparation while working full time, sarkari exam naukri ke saath taiyari, working professional study plan 2026, UPSC preparation job, SSC CGL banking exam while employed, time management government exam, study schedule working professional, sarkari naukri taiyari job ke saath',
   };
 
   return {
@@ -171,6 +174,11 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
   // Full rich article for age limit & relaxation guide
   if (params.slug === 'age-limit-relaxation-government-jobs') {
     return <AgeRelaxationGuide guide={guide} />;
+  }
+
+  // Full rich article for working professionals study plan
+  if (params.slug === 'study-plan-working-professionals') {
+    return <WorkingProfessionalsGuide guide={guide} />;
   }
 
   return (
@@ -1961,6 +1969,439 @@ function GSubjectCard({ num, name, meta, badge, desc, hotTopics, normalTopics }:
           {normalTopics.map(t => <span key={t} className="text-xs bg-white border border-surface-200 text-surface-600 px-3 py-1 rounded-full">{t}</span>)}
         </div>
         <p className="text-xs text-surface-400 mt-3">🔥 Hot topics appear most frequently in previous year papers</p>
+      </div>
+    </div>
+  );
+}
+
+// ─── WORKING PROFESSIONALS GUIDE ──────────────────────────────────────────────
+function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: string; description: string; category: string; readTime: string } }) {
+  const toc = [
+    { id: 'advantage', label: 'The Working Professional Advantage' },
+    { id: 'blueprint', label: 'The 3-Phase Blueprint' },
+    { id: 'daily-schedule', label: 'The Real Daily Schedule' },
+    { id: 'weekend', label: 'The Weekend Marathon' },
+    { id: 'tech-stack', label: 'Tech Stack for 2026' },
+    { id: 'mental-health', label: 'Mental Health & Guilt' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Strategy</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-primary-700 to-primary-900 rounded-2xl p-8 mb-10 text-white">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="bg-white/20 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">{guide.category}</span>
+              <span className="text-white/70 text-xs">Updated April 2026</span>
+              <span className="text-white/50 text-xs">•</span>
+              <span className="text-white/70 text-xs">{guide.readTime}</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4 leading-tight">
+              The 2026 Survival &amp; Success Guide: Cracking Government Exams While Working Full-Time
+            </h1>
+            <p className="text-white/85 leading-relaxed text-base mb-6">
+              A no-fluff, friend-to-friend playbook for working professionals who want a government job in 2026 — without quitting, burning out, or giving up weekends forever.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { num: '3–4 hrs', label: 'Daily study target' },
+                { num: '14 hrs', label: 'Weekend harvest' },
+                { num: '12 mo', label: 'Avg. prep cycle' },
+                { num: '24 May', label: 'UPSC Prelims 2026' },
+              ].map(item => (
+                <div key={item.label} className="bg-white/15 rounded-xl p-4 text-center">
+                  <div className="text-xl font-bold text-white">{item.num}</div>
+                  <div className="text-xs text-white/80 font-medium mt-1">{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile TOC */}
+          <div className="card p-5 mb-10 border-l-4 border-primary-500 lg:hidden">
+            <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Table of Contents</div>
+            <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+              {toc.map(item => (
+                <li key={item.id}><a href={`#${item.id}`} className="text-sm text-primary-500 hover:underline">{item.label}</a></li>
+              ))}
+            </ol>
+          </div>
+
+          <GCallout type="info" title="📌 Quick Context: Key 2026 Dates">
+            UPSC Prelims 2026 is on <strong>May 24, 2026</strong>. SSC CGL 2026 notification is expected in <strong>early January 2026</strong>. IBPS PO and RRB NTPC cycles typically open in <strong>June–August</strong>. Plan your Phase 1 start date around these anchors.
+          </GCallout>
+
+          {/* SECTION 1 */}
+          <GSection id="advantage" title="The Working Professional Advantage">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Let me be straight with you — yes, your employed classmates who study 8 hours a day have a time advantage. But that doesn&apos;t mean you&apos;re behind. In fact, working full-time gives you three things that full-time aspirants struggle to fake.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              {[
+                { icon: '🧠', title: 'Real-World Context', desc: 'Office politics, governance, budgets, deadlines — you\'ve lived them. UPSC\'s Ethics and GS2 paper rewards this maturity. Your examples in answers will feel genuine, not bookish.' },
+                { icon: '⏰', title: 'Discipline Under Pressure', desc: 'You already wake up on time, manage priorities, and deliver under deadlines. That\'s half the mental game of exam prep already won. A first-year aspirant has to build that muscle from scratch.' },
+                { icon: '🎯', title: 'Interview Edge', desc: 'Interviewers frequently ask about your current job. A working professional who can say "I handled X, which connects to Y policy" stands out immediately over someone who hasn\'t worked a day.' },
+              ].map(c => (
+                <div key={c.title} className="card p-5">
+                  <div className="text-3xl mb-3">{c.icon}</div>
+                  <div className="font-heading font-bold text-surface-800 mb-2">{c.title}</div>
+                  <p className="text-sm text-surface-500 leading-relaxed">{c.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-surface-600 leading-relaxed">
+              Also — and I say this from experience — working makes you value study time intensely. You can&apos;t afford to waste it. That focused urgency, when channelled right, produces better retention than 6 distracted hours on a couch.
+            </p>
+          </GSection>
+
+          {/* SECTION 2 */}
+          <GSection id="blueprint" title="The 3-Phase Blueprint (12 Months)">
+            <p className="text-surface-600 leading-relaxed mb-6">
+              Don&apos;t try to do everything at once. Here&apos;s how to break 12 months into three clean phases so you always know exactly what you&apos;re working on.
+            </p>
+            {[
+              {
+                phase: 'Phase 1',
+                months: 'Months 1–4',
+                title: 'Building the Static Base',
+                color: 'bg-blue-50 border-blue-200',
+                headColor: 'text-blue-700',
+                badgeColor: 'bg-blue-100 text-blue-700',
+                goal: 'Build an unshakeable foundation in Polity, History, Geography, and Quantitative Aptitude.',
+                tasks: [
+                  'Polity: NCERT Class 11–12 + Laxmikant (1 reading, don\'t memorize — just build a mental map)',
+                  'History: NCERT Class 6–12 Modern India + Spectrum for modern history',
+                  'Geography: NCERT Class 11–12. Focus on physical geography first.',
+                  'Quant: Whichever book fits your exam — RS Aggarwal for SSC/Banking; skip for UPSC',
+                  'No current affairs yet — you\'ll add it in Phase 2',
+                ],
+                tip: '2026 shift: Exams now test Analytical Application — not just "who wrote the Constitution" but "why Article 356 was amended and what it means for federalism today." Read with a "so what?" mindset from Day 1.',
+              },
+              {
+                phase: 'Phase 2',
+                months: 'Months 5–8',
+                title: 'Integration: Current Affairs + Weekly Mocks',
+                color: 'bg-amber-50 border-amber-200',
+                headColor: 'text-amber-700',
+                badgeColor: 'bg-amber-100 text-amber-700',
+                goal: 'Weave current affairs into your static knowledge and start mock tests.',
+                tasks: [
+                  'Read The Hindu or Indian Express daily — 30 min maximum, focus only on Governance, Economy, Environment',
+                  'Link every news piece to a static topic: "RBI rate cut" → link to Monetary Policy chapter',
+                  'One full-length mock every weekend + 1 hour of analysis',
+                  'Start answer-writing practice (UPSC aspirants): 150-word answers twice a week',
+                  'Digital-first in 2026: Most mock platforms now have remote proctoring. Get used to the format early.',
+                ],
+                tip: 'Don\'t take mocks just to "see where you stand." Take them to find your weakest topic that week and attack it the next Monday. That loop is what makes mocks worth it.',
+              },
+              {
+                phase: 'Phase 3',
+                months: 'Final 4 Months',
+                title: 'Revision, Speed, and Answer Writing',
+                color: 'bg-emerald-50 border-emerald-200',
+                headColor: 'text-emerald-700',
+                badgeColor: 'bg-emerald-100 text-emerald-700',
+                goal: 'Stop adding new material. Revise hard, go fast, sharpen writing.',
+                tasks: [
+                  'Only revise what you\'ve already studied — no new books',
+                  '2 full-length mocks per week + deep analysis',
+                  'Previous year papers (last 5 years): do them timed, in exam conditions',
+                  'For UPSC: 3 answer writing sessions per week minimum',
+                  'Current affairs: switch from full newspaper to monthly compilation PDFs',
+                ],
+                tip: 'Cutting off new material is hard psychologically — it feels like you\'re leaving gaps. You\'re not. Revision converts weak memory to strong memory. That\'s the real work.',
+              },
+            ].map(p => (
+              <div key={p.phase} className={`card border ${p.color} mb-6 overflow-hidden`}>
+                <div className="p-5 border-b border-current/10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className={`text-xs font-heading font-bold px-3 py-1 rounded-full ${p.badgeColor}`}>{p.phase}</span>
+                    <span className="text-xs text-surface-400">{p.months}</span>
+                  </div>
+                  <h3 className={`font-heading font-bold text-lg ${p.headColor}`}>{p.title}</h3>
+                  <p className="text-sm text-surface-600 mt-1">{p.goal}</p>
+                </div>
+                <div className="p-5">
+                  <ul className="space-y-2 mb-4">
+                    {p.tasks.map((t, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-surface-700">
+                        <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="bg-white/60 rounded-lg p-3 text-xs text-surface-500 italic border border-current/10">
+                    💡 {p.tip}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </GSection>
+
+          {/* SECTION 3 */}
+          <GSection id="daily-schedule" title="The &lsquo;Real&rsquo; Daily Schedule">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              I know you&apos;ve seen those idealistic timetables with colour-coded blocks. This isn&apos;t that. This is built around the reality that you might have a late meeting on a Tuesday, or your commute got cancelled because of rain. Build in slack.
+            </p>
+            <div className="card overflow-hidden mb-6">
+              <div className="bg-surface-800 text-white p-4">
+                <div className="font-heading font-bold">Weekday Schedule — Working Professional</div>
+                <div className="text-xs text-surface-300 mt-0.5">Target: 3–4 focused hours/day across 3 windows</div>
+              </div>
+              {[
+                { time: '6:00–8:30 AM', label: 'Deep Work Block', task: 'Newspaper (30 min) + Static subject study (1.5 hrs) + Quick revision notes (30 min)', tag: 'Static', color: 'bg-blue-100 text-blue-700', icon: '🌅' },
+                { time: 'Commute', label: 'Micro-Learning', task: 'Audio current affairs (InShorts audio, Daily CA podcast) or flashcard app — no laptop needed', tag: 'Current Affairs', color: 'bg-purple-100 text-purple-700', icon: '🚇' },
+                { time: 'Lunch Break', label: 'Quick Hit', task: '15-question quiz on your phone (Testbook, GKToday) — builds speed and daily habit', tag: 'Quiz', color: 'bg-amber-100 text-amber-700', icon: '🍱' },
+                { time: '7:00–9:30 PM', label: 'Practice Block', task: 'Maths / Reasoning practice questions (1 hr) + weak area from morning\'s newspaper (30 min) + next day\'s topic preview (15 min)', tag: 'Practice', color: 'bg-emerald-100 text-emerald-700', icon: '🌙' },
+              ].map((slot, i) => (
+                <div key={i} className={`flex items-start gap-4 p-4 border-b border-surface-100 last:border-0 ${i % 2 === 1 ? 'bg-surface-50/50' : ''}`}>
+                  <div className="text-xl flex-shrink-0 mt-0.5">{slot.icon}</div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                      <span className="font-mono text-xs text-surface-400 font-medium">{slot.time}</span>
+                      <span className="font-heading font-semibold text-surface-800 text-sm">{slot.label}</span>
+                      <span className={`text-xs font-semibold px-2 py-0.5 rounded ${slot.color}`}>{slot.tag}</span>
+                    </div>
+                    <p className="text-sm text-surface-600">{slot.task}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="warning" title="⚠️ Real Talk: What If You Have a Late Meeting?">
+              If the office keeps you until 9 PM, skip the evening block. Don&apos;t try to study at 10:30 PM — your retention is near zero after a tiring day. Instead, protect your <strong>6 AM block like it&apos;s a doctor&apos;s appointment</strong>. That morning window is non-negotiable. The evening slot is flexible.
+            </GCallout>
+            <p className="text-surface-600 leading-relaxed mt-4">
+              For the commute window — if you drive, don&apos;t study. Use audio only. If you take the metro or bus, this is gold: 30–45 minutes of flashcards or a short video lecture. Over 6 months, that&apos;s roughly 100 extra hours of passive learning. That&apos;s not nothing.
+            </p>
+          </GSection>
+
+          {/* SECTION 4 */}
+          <GSection id="weekend" title="The Weekend Marathon (Without the Burnout)">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Weekends are your power days. The goal is 14 hours total across Saturday and Sunday — but the way you split it matters more than the total.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+              {[
+                {
+                  day: 'Saturday',
+                  emoji: '📚',
+                  blocks: [
+                    { time: '6:00–9:00 AM', task: 'Deep subject study — one full topic (3 hrs)' },
+                    { time: '10:00 AM–1:00 PM', task: 'Mock test — full length, timed, phone away (3 hrs)' },
+                    { time: '2:00–4:00 PM', task: 'Mock analysis — go over every wrong answer (2 hrs)' },
+                    { time: '5:00–7:00 PM', task: 'Weak area from mock — targeted practice (2 hrs)' },
+                    { time: 'Evening', task: 'Rest. No screens ideally. Walk, eat well, sleep by 10 PM.' },
+                  ],
+                  total: '10 hrs',
+                },
+                {
+                  day: 'Sunday',
+                  emoji: '🔁',
+                  blocks: [
+                    { time: '6:00–8:00 AM', task: 'Full week revision — notes only, no re-reading books (2 hrs)' },
+                    { time: '9:00–11:00 AM', task: 'Current affairs consolidation — weekly summary (2 hrs)' },
+                    { time: '11:00 AM–1:00 PM', task: 'Answer writing / previous year papers (2 hrs)' },
+                    { time: 'Afternoon', task: 'Buffer / catch-up time. Family time. Breathe.' },
+                    { time: 'Evening', task: 'Plan next week\'s schedule. Set Monday targets.' },
+                  ],
+                  total: '6 hrs',
+                },
+              ].map(d => (
+                <div key={d.day} className="card overflow-hidden">
+                  <div className="bg-primary-500 text-white p-4 flex items-center justify-between">
+                    <div className="font-heading font-bold">{d.emoji} {d.day}</div>
+                    <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-semibold">{d.total} study</span>
+                  </div>
+                  <div className="p-4 space-y-3">
+                    {d.blocks.map((b, i) => (
+                      <div key={i} className="flex gap-3">
+                        <span className="text-xs text-surface-400 font-mono w-28 flex-shrink-0 pt-0.5">{b.time}</span>
+                        <span className="text-sm text-surface-700">{b.task}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="tip" title="✅ The One Rule for Weekends">
+              Never study past 8 PM on Sunday. Your brain needs to reset for Monday. A tired Monday means a wasted weekday morning — and that&apos;s your most valuable study window.
+            </GCallout>
+          </GSection>
+
+          {/* SECTION 5 */}
+          <GSection id="tech-stack" title="Tech Stack for 2026: Study Smarter, Not Heavier">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              You don&apos;t need to carry a bag full of books on the train. In 2026, your phone is your study room. Here&apos;s what actually works.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Tool / App</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Best For</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">When to Use</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Anki (flashcard app)', 'Polity articles, History dates, Quant formulas', 'Commute, lunch break — 10 min sessions'],
+                    ['Testbook / Oliveboard', 'Full-length mocks + topic quizzes', 'Weekends for full mocks; weekdays for topic drills'],
+                    ['InShorts / Briefing app', 'Quick current affairs in 60-word bites', 'Morning while getting ready (audio mode)'],
+                    ['YouTube (StudyIQ, Exampur)', 'Concept videos for tough topics', 'Evening block when reading feels slow'],
+                    ['Claude / ChatGPT', 'Explaining concepts in simple language, self-quiz', 'When you\'re stuck on a concept at 10 PM'],
+                    ['Google Calendar', 'Blocking study slots, exam countdown', 'Every Sunday — plan the next week'],
+                    ['Telegram channels (exam-specific)', 'Daily PDFs, PYQs, notifications', 'Morning — 5 min scan only, don\'t scroll'],
+                  ].map(([tool, best, when], i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800">{tool}</td>
+                      <td className="p-3 text-surface-600 text-xs">{best}</td>
+                      <td className="p-3 text-surface-500 text-xs">{when}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <GCallout type="info" title="📱 2026 Trend: AI-Powered Micro-Learning">
+              AI tools are genuinely useful for gap-time studying now. Ask Claude or ChatGPT to quiz you on a topic, explain a concept in 3 sentences, or generate 10 MCQs on Directive Principles. It&apos;s like having a patient tutor in your pocket. The key is using it actively — not passively reading AI outputs like a textbook.
+            </GCallout>
+            <p className="text-surface-600 leading-relaxed mt-4">
+              One more thing on 2026 exams: remote proctoring is becoming more common for online mocks and, in some cases, preliminary rounds. Get comfortable studying with a webcam. Practice at home with your phone camera on — it removes the anxiety of feeling watched on exam day.
+            </p>
+          </GSection>
+
+          {/* SECTION 6 */}
+          <GSection id="mental-health" title="Mental Health: Handling the Working Professional&rsquo;s Guilt">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Here&apos;s something no one talks about. When you work a full day, come home tired, and then sit down to study, there&apos;s this crushing guilt that says: <em>"Everyone else is studying more. I&apos;m going to fail."</em>
+            </p>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              That guilt is a liar. It destroys more preparation cycles than Netflix ever has. Here&apos;s how to keep it in check.
+            </p>
+            <div className="space-y-4 mb-6">
+              {[
+                {
+                  icon: '📊',
+                  title: 'Track Output, Not Hours',
+                  desc: 'Don\'t measure how long you sat at the desk. Measure what you finished. "I completed 40 Polity MCQs and revised the Fundamental Rights chapter" is a successful session. "I studied for 2 hours" might be zero output. Output tracking kills guilt because it\'s honest.',
+                },
+                {
+                  icon: '🗓️',
+                  title: 'Build in Official Guilt-Free Days',
+                  desc: 'One day off per month is not weakness — it\'s maintenance. Tell yourself: "I\'m taking Sunday the 20th off." Having it planned means you won\'t feel like you\'re slipping when it arrives. Unplanned breaks become spirals. Planned breaks become recharges.',
+                },
+                {
+                  icon: '🔕',
+                  title: 'The "Done for Today" Signal',
+                  desc: 'When you close your books, physically put them away. Shut the laptop. Put your phone in another room. The brain needs a signal that study mode is off. Without it, you sit with your family but you\'re mentally still at your desk — which means you neither rest nor study well.',
+                },
+                {
+                  icon: '🧘',
+                  title: 'Burnout Looks Like Procrastination',
+                  desc: 'If you keep delaying your morning study session, you\'re probably not lazy — you\'re probably burned out. The fix isn\'t more discipline. It\'s two or three lighter days: 45 minutes instead of 2.5 hours. Coming back at 70% is infinitely better than not coming back at all.',
+                },
+              ].map(item => (
+                <div key={item.title} className="card p-5 flex gap-4">
+                  <div className="text-2xl flex-shrink-0">{item.icon}</div>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 mb-1">{item.title}</div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="tip" title="💬 Final Thought">
+              I&apos;ve seen people with 8-hour-a-day prep schedules fail, and I&apos;ve seen working professionals clear UPSC with 3.5 hours a day. The difference was never time. It was <strong>consistency and quality of attention</strong>. You&apos;re not at a disadvantage. You&apos;re just playing a different — and winnable — game.
+            </GCallout>
+          </GSection>
+
+          {/* FAQ */}
+          <GSection id="faq" title="FAQs">
+            <div className="divide-y divide-surface-200">
+              {[
+                { q: 'Can I really prepare for UPSC while working full-time?', a: 'Yes — but be honest about timelines. Working professionals typically need 2–3 years for UPSC, versus 1.5 years for a full-time aspirant. For SSC CGL, IBPS PO, or RRB NTPC, a working professional can clear in 6–12 months of focused prep.' },
+                { q: 'What if I can only study 1.5 hours on weekdays?', a: 'That\'s fine for Banking and SSC exams. Use weekdays for 1.5 focused hours + commute micro-learning, and load the weekend with 6–8 hours. The total weekly hours still add up to a serious preparation if you protect the quality.' },
+                { q: 'Should I take a study leave before the exam?', a: 'For UPSC Mains — strongly consider 2–3 weeks of earned leave. For Prelims and objective exams (SSC, Banking), it\'s usually not necessary if your Phase 3 revision is on track. Don\'t take leave impulsively; plan it 2 months out.' },
+                { q: 'How do I handle exam day anxiety after a tiring work week?', a: 'The week before any exam, deliberately reduce office workload if possible. Sleep 7–8 hours. Don\'t study the night before — revision only. Your brain consolidates memory during sleep; a rested brain on exam day outperforms a cramming brain every time.' },
+                { q: 'Is morning studying better than night studying?', a: 'For most people, yes — especially working professionals. Willpower and focus are highest in the morning. By evening, decision fatigue from work has set in. But if you\'re genuinely a night person and your evening energy is high, the morning-evening split is flexible. What matters is protecting that one deep-work slot, wherever it falls.' },
+              ].map((faq, i) => (
+                <details key={i} className="group">
+                  <summary className="flex items-start gap-3 py-4 cursor-pointer list-none font-medium text-surface-800 hover:text-primary-500 transition-colors">
+                    <span className="w-6 h-6 bg-accent-500 text-white text-xs font-bold rounded flex items-center justify-center flex-shrink-0 mt-0.5">Q</span>
+                    <span className="flex-1">{faq.q}</span>
+                    <svg className="w-4 h-4 text-surface-400 flex-shrink-0 mt-1 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="pl-9 pb-4 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </GSection>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 text-center text-white mb-10">
+            <h3 className="font-heading font-bold text-xl mb-2">Start Your Prep Today — Everything on TaiyarHo Is Free</h3>
+            <p className="text-primary-100 text-sm mb-5 max-w-xl mx-auto">Check which exams you qualify for, read exam-specific guides, and use the eligibility checker — no login, no fees.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/exams" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Browse All Exams →</Link>
+              <Link href="/tools/eligibility-checker" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
+            </div>
+          </div>
+
+          <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+            This guide is for informational purposes only. Exam patterns, eligibility, and syllabi may change — always verify from official exam websites. Last updated: April 2026.
+          </p>
+        </article>
+
+        {/* Desktop Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-4">📖 Contents</div>
+              <ol className="space-y-2 list-decimal list-inside">
+                {toc.map(item => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm text-primary-500 hover:underline">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="card p-5 border-l-4 border-accent-500">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">🗓️ Key 2026 Dates</div>
+              <div className="space-y-2">
+                {[
+                  { date: 'Jan 2026', event: 'SSC CGL Notification (expected)' },
+                  { date: '24 May 2026', event: 'UPSC Prelims 2026' },
+                  { date: 'Jun–Aug 2026', event: 'IBPS PO & RRB NTPC cycles' },
+                ].map(d => (
+                  <div key={d.date} className="flex gap-2">
+                    <span className="text-xs font-semibold text-accent-600 w-20 flex-shrink-0">{d.date}</span>
+                    <span className="text-xs text-surface-600">{d.event}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📚 Related Guides</div>
+              <div className="space-y-3">
+                {guides.filter(g => g.slug !== guide.slug).slice(0, 4).map(g => (
+                  <Link key={g.slug} href={`/guides/${g.slug}`} className="block text-sm text-primary-500 hover:underline leading-snug">
+                    {g.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
   );
