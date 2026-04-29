@@ -48,6 +48,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ssc-mts') {
+    return {
+      title: 'SSC MTS 2025 – Syllabus, Exam Pattern, Eligibility & Complete Guide | TaiyarHo',
+      description: 'SSC MTS 2025: 7,948 vacancies. CBT conducted Feb 4–20, 2026. Answer key released March 3. Check syllabus, exam pattern (Session I & II), eligibility (10th pass, 18–27 yrs), salary ₹18,000–₹22,000/month, and free preparation resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/ssc-mts/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -73,6 +81,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
+  if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -3074,5 +3083,895 @@ function TipsList({ tips }: { tips: string[] }) {
         </div>
       ))}
     </div>
+  );
+}
+
+// ─── SSC MTS RICH PAGE ───────────────────────────────────────────────────────
+function SscMtsPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility' },
+    { id: 'vacancies', label: 'Vacancies & Posts' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'physical', label: 'Physical Test (Havaldar)' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released', date: '26 June 2025', status: 'done' },
+    { event: 'Online Application Opens', date: '26 June 2025', status: 'done' },
+    { event: 'Last Date to Apply Online', date: '24 July 2025', status: 'done' },
+    { event: 'Fee Payment Last Date', date: '25 July 2025 (11 PM)', status: 'done' },
+    { event: 'Application Correction Window', date: '4–6 August 2025', status: 'done' },
+    { event: 'Vacancies Revised (Increased)', date: 'September 2025', status: 'done' },
+    { event: 'Exam City Intimation / Self-Slotting', date: '16–25 January 2026', status: 'done' },
+    { event: 'Admit Card Released', date: '2 February 2026', status: 'done' },
+    { event: 'CBT Exam (Paper I)', date: '4 February – 20 February 2026', status: 'done' },
+    { event: 'Tentative Answer Key Released', date: '3 March 2026', status: 'done' },
+    { event: 'Answer Key Objection Window', date: '3–6 March 2026', status: 'done' },
+    { event: 'Final Answer Key', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'CBT Result Declared', date: 'Expected April–June 2026', status: 'tbn' },
+    { event: 'PET / PST (Havaldar only)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Final Merit List', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'SSC MTS 2026 Notification', date: 'Expected June–July 2026', status: 'upcoming' },
+  ];
+
+  const examPatternS1 = [
+    { subject: 'Numerical & Mathematical Ability', questions: 20, marks: 60, negative: 'None' },
+    { subject: 'Reasoning Ability & Problem Solving', questions: 20, marks: 60, negative: 'None' },
+  ];
+
+  const examPatternS2 = [
+    { subject: 'General Awareness', questions: 25, marks: 75, negative: '−1 per wrong answer' },
+    { subject: 'English Language & Comprehension', questions: 25, marks: 75, negative: '−1 per wrong answer' },
+  ];
+
+  const vacancyData = [
+    { post: 'MTS (Multi-Tasking Staff) – General', ur: '3,249', obc: '1,935', sc: '1,183', st: '567', ews: '646', total: '7,580' },
+    { post: 'Havaldar – CBIC', ur: '539', obc: '286', sc: '157', st: '93', ews: '63', total: '1,138' },
+    { post: 'Havaldar – CBN', ur: '—', obc: '—', sc: '—', st: '—', ews: '—', total: '~230' },
+    { post: 'TOTAL (Revised)', ur: '—', obc: '—', sc: '—', st: '—', ews: '—', total: '7,948' },
+  ];
+
+  const physicalPet = [
+    { category: 'Male – All Categories', task: 'Walk 1,600 m', time: '15 minutes' },
+    { category: 'Female – All Categories', task: 'Walk 1 km', time: '20 minutes' },
+    { category: 'Male Cyclothon (alternative)', task: 'Cycle 3 km', time: '25 minutes' },
+  ];
+
+  const physicalPst = [
+    { category: 'Male – General / OBC / EWS / SC', height: '157.5 cm', weight: 'Proportionate', chest: '76–81 cm' },
+    { category: 'Male – ST / Tribal / NE States', height: '152.5 cm', weight: 'Proportionate', chest: '74–79 cm' },
+    { category: 'Female – General / OBC / EWS / SC', height: '152 cm', weight: 'Proportionate', chest: 'N/A' },
+    { category: 'Female – ST / Tribal / NE States', height: '148 cm', weight: 'Proportionate', chest: 'N/A' },
+  ];
+
+  const faqs = [
+    { q: 'What is the educational qualification for SSC MTS?', a: 'Candidates must have passed Matriculation (Class 10) or an equivalent examination from a recognised board. Graduation or higher degrees are NOT required.' },
+    { q: 'What is the age limit for SSC MTS 2025?', a: 'For MTS posts: 18–25 years. For Havaldar posts (CBIC & CBN): 18–27 years. Age is calculated as of 1 August 2025. OBC gets +3 years relaxation, SC/ST gets +5 years, and PwBD gets +10 years.' },
+    { q: 'Is there negative marking in SSC MTS?', a: 'Session I (Maths & Reasoning): No negative marking — attempt all 40 questions freely. Session II (General Awareness & English): 1 mark deducted per wrong answer — be careful here.' },
+    { q: 'What is the SSC MTS salary per month?', a: 'MTS posts are in Pay Level 1: basic pay ₹18,000/month. With DA, HRA and other allowances, in-hand salary is approximately ₹18,000–₹22,000/month depending on posting city. Havaldar posts (Pay Level 1) get similar pay with additional allowances for field duty.' },
+    { q: 'Is PET/PST required for all SSC MTS candidates?', a: 'No. PET/PST is required only for candidates who apply for the Havaldar post under CBIC & CBN. Candidates applying only for MTS (General) posts do not have any physical test.' },
+    { q: 'How many times can I attempt SSC MTS?', a: 'There is no limit on the number of attempts. You can appear as many times as you wish, as long as you meet the age criteria on the specified cut-off date.' },
+    { q: 'Can female candidates apply for Havaldar?', a: 'Yes. Female candidates can apply for Havaldar posts. However, they must meet the separate physical standards (height, weight) prescribed for female candidates.' },
+    { q: 'What is the difference between MTS and Havaldar in SSC MTS exam?', a: 'MTS (Multi-Tasking Staff) is a general Group C post in central government offices — clerical/peon type work. Havaldar posts are under CBIC (tax department) and CBN (narcotics), requiring physical fitness and field duties. Havaldar has a higher age limit (27) and an additional PET/PST round.' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* Hero Banner */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">SSC MTS 2025</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">SSC</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">10th Pass Eligible</span>
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🗓️ Result Expected: June 2026</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            SSC MTS 2025 –<br className="hidden sm:block" /> Complete Guide: Syllabus, Pattern & Eligibility
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            CBT completed (Feb 4–20, 2026). Answer key released March 3, 2026. Result expected April–June 2026. 7,948 total vacancies for MTS and Havaldar posts. Class 10 pass eligible.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Total Vacancies', value: '7,948' },
+              { label: 'CBT Conducted', value: 'Feb 2026' },
+              { label: 'Min. Qualification', value: 'Class 10 Pass' },
+              { label: 'In-Hand Salary', value: '₹18K–22K/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* MAIN CONTENT */}
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">What is SSC MTS?</h2>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  <strong>SSC MTS (Multi-Tasking Staff)</strong> is a national-level recruitment exam conducted annually by the <strong>Staff Selection Commission (SSC)</strong> to fill Group C, non-gazetted, non-ministerial posts across central government ministries, departments, and offices. It is the most accessible central government exam in India — open to anyone who has passed Class 10.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The 2025 cycle also recruits for <strong>Havaldar posts under CBIC (Central Board of Indirect Taxes) and CBN (Central Bureau of Narcotics)</strong>, which require an additional Physical Efficiency Test and Physical Standard Test (PET/PST) for shortlisted candidates.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  The selection process has a single Computer-Based Test (CBT) in two sessions, followed by PET/PST for Havaldar applicants only. There is no typing test, no interview, and no Paper II (it was removed from the exam pattern). Final merit is based entirely on CBT scores.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Staff Selection Commission (SSC)' },
+                  { label: 'Post Type', value: 'Group C, Non-Gazetted' },
+                  { label: 'Pay Level', value: 'Level 1 (₹18,000–₹56,900)' },
+                  { label: 'Min. Qualification', value: 'Matriculation (10th Pass)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">📅 Important Dates – SSC MTS 2025</h2>
+              <p className="text-sm text-surface-500 mb-5">The 2025 cycle exam has been completed. The table below reflects actual dates from the official notification and subsequent updates.</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">Source: Official SSC notification (ssc.gov.in) and subsequent corrigenda. Always verify dates on the official website before acting.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Eligibility Criteria – SSC MTS 2025</h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="bg-surface-50 rounded-xl p-5 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">Nationality</div>
+                  <div className="font-semibold text-sm text-surface-800 mb-2">Indian Citizen (or equivalent)</div>
+                  <p className="text-xs text-surface-500">Citizens of Nepal, Bhutan, Tibetan refugees (pre-1962), and persons of Indian origin migrating from specified countries are also eligible under specific conditions.</p>
+                </div>
+                <div className="bg-surface-50 rounded-xl p-5 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">Educational Qualification</div>
+                  <div className="font-semibold text-sm text-surface-800 mb-2">Matriculation (Class 10) Pass</div>
+                  <p className="text-xs text-surface-500">From any recognised board (CBSE, ICSE, State boards). No graduation required. There is no minimum percentage specified.</p>
+                </div>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Age Limit</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Min Age</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Max Age</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Age Cutoff</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { post: 'MTS (General) – Most posts', min: '18 years', max: '25 years', cutoff: '01 August 2025' },
+                      { post: 'MTS – Some specific posts', min: '18 years', max: '27 years', cutoff: '01 August 2025' },
+                      { post: 'Havaldar (CBIC & CBN)', min: '18 years', max: '27 years', cutoff: '01 August 2025' },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600">{row.min}</td>
+                        <td className="p-3 text-surface-600">{row.max}</td>
+                        <td className="p-3 text-surface-600">{row.cutoff}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Age Relaxation</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-primary-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Relaxation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { cat: 'OBC (Non-creamy layer)', relax: '+3 years' },
+                      { cat: 'SC / ST', relax: '+5 years' },
+                      { cat: 'PwBD – General / EWS', relax: '+10 years' },
+                      { cat: 'PwBD – OBC', relax: '+13 years' },
+                      { cat: 'PwBD – SC / ST', relax: '+15 years' },
+                      { cat: 'Ex-Servicemen (General / OBC)', relax: '+3 years (after service period deduction)' },
+                      { cat: 'Ex-Servicemen (SC / ST)', relax: '+8 years (after service period deduction)' },
+                      { cat: 'Widows / Divorced Women (General)', relax: 'Up to 35 years' },
+                      { cat: 'Widows / Divorced Women (OBC)', relax: 'Up to 38 years' },
+                      { cat: 'Widows / Divorced Women (SC / ST)', relax: 'Up to 40 years' },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.cat}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.relax}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mt-4">
+                <strong>📌 Note:</strong> Age relaxation applies to the upper age limit only. The lower age limit of 18 years remains fixed for all categories. Certificates must be produced during Document Verification to claim relaxation.
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">Vacancies & Posts – SSC MTS 2025</h2>
+              <p className="text-sm text-surface-500 mb-5">SSC initially notified 8,021 vacancies (6,946 MTS + 1,075 Havaldar). After revision, the total was updated to <strong>7,948 posts</strong>.</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">UR</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">OBC</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">SC</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">ST</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">EWS</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i === vacancyData.length - 1 ? 'bg-primary-50 font-bold' : i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-center text-surface-600">{row.ur}</td>
+                        <td className="p-3 text-center text-surface-600">{row.obc}</td>
+                        <td className="p-3 text-center text-surface-600">{row.sc}</td>
+                        <td className="p-3 text-center text-surface-600">{row.st}</td>
+                        <td className="p-3 text-center text-surface-600">{row.ews}</td>
+                        <td className="p-3 text-center font-semibold text-primary-700">{row.total}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { label: 'MTS (General) Posts', value: '6,810', color: 'text-primary-700', bg: 'bg-primary-50 border-primary-200' },
+                  { label: 'Havaldar (CBIC) Posts', value: '1,075 → revised 1,138', color: 'text-emerald-700', bg: 'bg-emerald-50 border-emerald-200' },
+                  { label: 'Total Vacancies (Revised)', value: '7,948', color: 'text-accent-600', bg: 'bg-orange-50 border-orange-200' },
+                ].map((item) => (
+                  <div key={item.label} className={`rounded-xl p-4 border ${item.bg} text-center`}>
+                    <div className="text-xs text-surface-500 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className={`text-xl font-heading font-bold ${item.color}`}>{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">Exam Pattern – SSC MTS 2025</h2>
+              <p className="text-sm text-surface-500 mb-5">The CBT is conducted in two compulsory sessions on the same day. Missing either session results in automatic disqualification. Total marks: <strong>270</strong>. Total time: <strong>90 minutes</strong>.</p>
+
+              <div className="card p-5 mb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="bg-primary-100 text-primary-700 text-xs font-bold px-3 py-1 rounded-full">Session I</span>
+                  <span className="text-surface-600 text-sm">40 Questions | 120 Marks | 45 Minutes | <span className="text-emerald-700 font-semibold">No Negative Marking</span></span>
+                </div>
+                <div className="overflow-x-auto rounded-xl border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide text-surface-600">Subject</th>
+                        <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide text-surface-600">Questions</th>
+                        <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide text-surface-600">Marks</th>
+                        <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide text-surface-600">Negative Marking</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {examPatternS1.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-3 text-center font-semibold text-primary-700">{row.marks}</td>
+                          <td className="p-3 text-center text-emerald-700 font-semibold">{row.negative}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t border-surface-200 bg-surface-50 font-bold">
+                        <td className="p-3 text-surface-800">Session I Total</td>
+                        <td className="p-3 text-center text-surface-800">40</td>
+                        <td className="p-3 text-center text-primary-700">120</td>
+                        <td className="p-3 text-center text-emerald-700">No Penalty</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="card p-5 mb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full">Session II</span>
+                  <span className="text-surface-600 text-sm">50 Questions | 150 Marks | 45 Minutes | <span className="text-red-600 font-semibold">−1 per wrong answer</span></span>
+                </div>
+                <div className="overflow-x-auto rounded-xl border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide text-surface-600">Subject</th>
+                        <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide text-surface-600">Questions</th>
+                        <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide text-surface-600">Marks</th>
+                        <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide text-surface-600">Negative Marking</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {examPatternS2.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-3 text-center font-semibold text-primary-700">{row.marks}</td>
+                          <td className="p-3 text-center text-red-600 font-semibold">{row.negative}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t border-surface-200 bg-surface-50 font-bold">
+                        <td className="p-3 text-surface-800">Session II Total</td>
+                        <td className="p-3 text-center text-surface-800">50</td>
+                        <td className="p-3 text-center text-primary-700">150</td>
+                        <td className="p-3 text-center text-red-600">−1 per wrong</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-primary-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Parameter</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { param: 'Mode of Exam', detail: 'Computer-Based Test (CBT) — online' },
+                      { param: 'Type of Questions', detail: 'Objective MCQ (4 options each)' },
+                      { param: 'Total Questions', detail: '90 (Session I: 40 + Session II: 50)' },
+                      { param: 'Total Marks', detail: '270 (Session I: 120 + Session II: 150)' },
+                      { param: 'Marks per Question', detail: '+3 marks for correct answer (both sessions)' },
+                      { param: 'Negative Marking', detail: 'Session I: None | Session II: −1 per wrong answer' },
+                      { param: 'Total Duration', detail: '90 minutes (45 min each session)' },
+                      { param: 'Language of Exam', detail: 'English, Hindi & 13 regional languages (excluding English section)' },
+                      { param: 'PwBD Candidates', detail: '60 minutes total (extra time allowed)' },
+                      { param: 'Normalisation', detail: 'Yes — scores normalised across shifts' },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-semibold text-surface-800">{row.param}</td>
+                        <td className="p-3 text-surface-600">{row.detail}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 mt-4">
+                <strong>⚠️ Key Strategy:</strong> Attempt ALL 40 questions in Session I — no penalty for wrong answers. In Session II, be selective — a wrong answer costs you 1 mark (not just +3 gone, but −1 deducted too, a 4-mark swing). Only guess if you can eliminate at least 2 options.
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">SSC MTS Syllabus 2025 – Subject Wise</h2>
+              <p className="text-surface-500 text-sm mb-5">Syllabus level is <strong>Matriculation (Class 10)</strong>. All topics below are from the official SSC MTS notification. Click each subject to expand.</p>
+              <div className="space-y-3">
+                {[
+                  {
+                    subject: 'Session I — Numerical & Mathematical Ability',
+                    badge: '20 Qs · 60 Marks · No Negative Marking',
+                    badgeColor: 'bg-primary-100 text-primary-700',
+                    topics: [
+                      'Number Systems – integers, natural numbers, whole numbers',
+                      'LCM and HCF',
+                      'Decimals and Fractions',
+                      'Ratio and Proportion',
+                      'Percentage',
+                      'Average',
+                      'Simple Interest & Compound Interest',
+                      'Profit, Loss and Discount',
+                      'Mensuration – area, perimeter (2D shapes)',
+                      'Time and Work',
+                      'Time, Speed and Distance',
+                      'Basic Algebra and Elementary Surds',
+                      'Geometry – triangles, circles, quadrilaterals',
+                      'Data Interpretation (bar chart, pie chart, table)',
+                    ],
+                  },
+                  {
+                    subject: 'Session I — Reasoning Ability & Problem Solving',
+                    badge: '20 Qs · 60 Marks · No Negative Marking',
+                    badgeColor: 'bg-primary-100 text-primary-700',
+                    topics: [
+                      'Analogies (Word, Number, Figure)',
+                      'Classification / Odd One Out',
+                      'Series Completion (Number, Alphabetic, Mixed)',
+                      'Coding and Decoding',
+                      'Blood Relations',
+                      'Directions and Distance',
+                      'Order and Ranking',
+                      'Venn Diagrams',
+                      'Syllogism',
+                      'Non-Verbal Reasoning (Mirror image, Paper folding, Figure counting)',
+                      'Matrix and Pattern Completion',
+                      'Missing Number in Grid / Table',
+                      'Statement and Conclusion',
+                    ],
+                  },
+                  {
+                    subject: 'Session II — General Awareness',
+                    badge: '25 Qs · 75 Marks · −1 Negative Marking',
+                    badgeColor: 'bg-orange-100 text-orange-700',
+                    topics: [
+                      'History – Ancient, Medieval, Modern Indian History',
+                      'Geography – India & World (rivers, mountains, climate, resources)',
+                      'Indian Polity (Constitution, Parliament, Judiciary, Amendments)',
+                      'Indian Economy (budget terms, banks, GDP basics)',
+                      'General Science – Physics, Chemistry, Biology (Class 8–10 level)',
+                      'Environment and Ecology',
+                      'Art and Culture – classical dances, music, painting, festivals',
+                      'Current Affairs – National and International (last 6 months)',
+                      'Important Schemes and Programmes of Government of India',
+                      'Books and Authors, Awards and Honours',
+                      'Important Dates and Days',
+                      'Sports – major events, tournaments, Indian achievements',
+                    ],
+                  },
+                  {
+                    subject: 'Session II — English Language & Comprehension',
+                    badge: '25 Qs · 75 Marks · −1 Negative Marking',
+                    badgeColor: 'bg-orange-100 text-orange-700',
+                    topics: [
+                      'Reading Comprehension (passage-based)',
+                      'Fill in the Blanks (grammar-based)',
+                      'Spotting Errors (sentence correction)',
+                      'Para Jumbles (sentence rearrangement)',
+                      'Synonyms and Antonyms',
+                      'Idioms and Phrases',
+                      'One Word Substitution',
+                      'Cloze Test',
+                      'Active and Passive Voice',
+                      'Direct and Indirect Speech (Narration)',
+                      'Nouns, Pronouns, Verbs, Adjectives, Adverbs',
+                      'Prepositions and Articles',
+                      'Tenses and Subject-Verb Agreement',
+                    ],
+                  },
+                ].map((section, i) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer flex items-center gap-3 list-none font-heading font-semibold text-surface-800 hover:text-primary-500">
+                      <span className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm flex-shrink-0">{i + 1}</span>
+                      <span className="flex-1">{section.subject}</span>
+                      <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full hidden sm:inline ${section.badgeColor}`}>{section.badge}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 ml-11 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {section.topics.map((topic, j) => (
+                        <div key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0" />{topic}
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* PHYSICAL TEST (HAVALDAR) */}
+            <section id="physical" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">Physical Test – Havaldar Post (PET & PST)</h2>
+              <p className="text-sm text-surface-500 mb-5">PET/PST is <strong>only for Havaldar (CBIC & CBN)</strong> applicants — not for regular MTS posts. It is a qualifying round with no marks added to the merit.</p>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical Efficiency Test (PET)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Task</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Time Limit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalPet.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-600">{row.task}</td>
+                        <td className="p-3 font-semibold text-primary-700">{row.time}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical Standard Test (PST)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Height</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Weight</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Chest (Male)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalPst.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-center text-surface-600">{row.height}</td>
+                        <td className="p-3 text-center text-surface-600">{row.weight}</td>
+                        <td className="p-3 text-center text-surface-600">{row.chest}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-800">
+                <strong>⚠️ Important:</strong> PET is QUALIFYING only — failing the walk/cycle means immediate elimination. No second chance. If you applied for Havaldar, begin physical training from Month 1 of your preparation.
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">SSC MTS Salary & Benefits</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                {[
+                  { label: 'Pay Scale (7th CPC)', value: 'Pay Level 1: ₹18,000–₹56,900/month', color: 'text-emerald-700', bg: 'bg-emerald-50 border-emerald-200' },
+                  { label: 'Estimated In-Hand (X City)', value: '₹21,000–₹22,000/month', color: 'text-primary-700', bg: 'bg-primary-50 border-primary-200' },
+                  { label: 'Estimated In-Hand (Y City)', value: '₹19,500–₹20,500/month', color: 'text-primary-700', bg: 'bg-primary-50 border-primary-200' },
+                ].map((item) => (
+                  <div key={item.label} className={`rounded-xl p-4 border ${item.bg}`}>
+                    <div className="text-xs text-surface-500 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className={`font-heading font-bold ${item.color}`}>{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Component</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Amount (Approx.)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { component: 'Basic Pay', amount: '₹18,000/month' },
+                      { component: 'Dearness Allowance (DA) ~50%', amount: '₹9,000/month' },
+                      { component: 'House Rent Allowance (HRA) – X city 24%', amount: '₹4,320/month' },
+                      { component: 'House Rent Allowance (HRA) – Y city 16%', amount: '₹2,880/month' },
+                      { component: 'Transport Allowance (TA)', amount: '₹1,350/month' },
+                      { component: 'Gross Salary (X city approximate)', amount: '₹32,670/month' },
+                      { component: 'Deductions (NPS + CGHS + CGEGIS)', amount: '~₹2,000–3,000/month' },
+                      { component: 'In-Hand Take-Home (X city)', amount: '₹21,000–22,000/month' },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.component}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Other Benefits</h3>
+                  <ul className="space-y-2">
+                    {[
+                      'Central Government Health Scheme (CGHS) for employee and family',
+                      'Leave Travel Concession (LTC) — travel reimbursement twice in 4 years',
+                      'NPS pension (National Pension System) — 10% of basic deducted, 14% contributed by Govt',
+                      'Maternity / Paternity / Child Care Leave',
+                      'Group Insurance (CGEGIS)',
+                      'Annual increments in basic pay',
+                      'Promotion opportunities through departmental exams after 5 years',
+                    ].map((b, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-surface-600">
+                        <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0" />{b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Job Profile</h3>
+                  <ul className="space-y-2">
+                    {[
+                      'Filing, photocopying, carrying papers within offices',
+                      'Cleaning, maintenance and upkeep of office premises',
+                      'Delivery of dak (official correspondence)',
+                      'Opening and closing of government offices',
+                      'Assisting senior officials as required',
+                      'Watch and ward duties (applicable to some ministries)',
+                      'Havaldar: Field inspection, escort, and collection duties under CBIC/CBN',
+                    ].map((b, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-surface-600">
+                        <span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0" />{b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3-Month Study Plan for SSC MTS</h2>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {[
+                    {
+                      month: 'Month 1',
+                      title: 'Build the Foundation',
+                      tasks: [
+                        'Revise Class 6–10 Maths — NCERT is sufficient. Focus on percentage, ratio, SI/CI, profit-loss.',
+                        'Practice 20 Reasoning questions daily — start with simple analogies and series.',
+                        'Read one newspaper article daily for General Awareness habit-building.',
+                        'Start a GK notebook — write 10 facts per day (history, geography, polity).',
+                      ],
+                    },
+                    {
+                      month: 'Month 2',
+                      title: 'Speed and Accuracy',
+                      tasks: [
+                        'Give 1 full mock test per week — both sessions together (simulate real exam).',
+                        'Target Session I accuracy: 35/40 correct, Session II: 35/50 correct.',
+                        'English: solve 30 grammar questions daily — focus on error spotting and fill-in-the-blanks.',
+                        'Current Affairs: subscribe to a monthly capsule (Adda247 or GK Today).',
+                        'Revise GK notes from Month 1 — repetition is key.',
+                      ],
+                    },
+                    {
+                      month: 'Month 3',
+                      title: 'Revision and Mock Tests',
+                      tasks: [
+                        'Give 2 full mock tests per week and analyse every wrong answer.',
+                        'Focus on weak sections identified from mock test analysis.',
+                        'Complete at least 5 previous year SSC MTS papers (2019–2024).',
+                        'Final 2 weeks: only revision — no new topics.',
+                        'For Havaldar aspirants: physical training (walking/cycling) daily from Month 1.',
+                      ],
+                    },
+                  ].map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-5">
+                      <span className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm z-10">{i + 1}</span>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="badge-primary text-xs">{step.month}</span>
+                        <h3 className="font-heading font-semibold text-surface-800">{step.title}</h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {step.tasks.map((t, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                            <span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0" />{t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Best Books for SSC MTS 2025</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-4 font-semibold text-xs uppercase tracking-wide">Book Name</th>
+                      <th className="text-left p-4 font-semibold text-xs uppercase tracking-wide">Author / Publisher</th>
+                      <th className="text-left p-4 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { name: 'SSC MTS Selection Mantra (TCS MCQs)', pub: 'Arihant Publications', sub: 'All Subjects (PYQs)' },
+                      { name: 'Quantitative Aptitude for Competitive Examinations', pub: 'R.S. Aggarwal', sub: 'Mathematics' },
+                      { name: 'A Modern Approach to Verbal & Non-Verbal Reasoning', pub: 'R.S. Aggarwal', sub: 'Reasoning' },
+                      { name: 'Lucent\'s General Knowledge', pub: 'Lucent Publications', sub: 'General Awareness' },
+                      { name: 'Plinth to Paramount (English Grammar)', pub: 'KD Campus', sub: 'English' },
+                      { name: 'SSC MTS Previous Year Papers (last 5 years)', pub: 'Kiran Publications', sub: 'Practice / PYQs' },
+                    ].map((book, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-4 font-medium text-surface-800">{book.name}</td>
+                        <td className="p-4 text-surface-600">{book.pub}</td>
+                        <td className="p-4"><span className="badge-primary">{book.sub}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">💡 You do not need all 6 books. Pick ONE Maths book + ONE Reasoning book + Lucent GK + Previous Year Papers. That is enough to crack SSC MTS.</p>
+            </section>
+
+            {/* TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Expert Preparation Tips for SSC MTS</h2>
+              <div className="card p-6 bg-orange-50 border-orange-200 space-y-3">
+                {[
+                  'Attempt ALL questions in Session I — no negative marking means zero risk. Even blind guesses statistically add marks here.',
+                  'In Session II, attempt questions you are 70%+ confident about. Skip uncertain ones — a wrong answer costs you 4 effective marks (you lose +3 and also incur −1).',
+                  'General Awareness is the highest-scoring section for toppers. Spend at least 40% of your study time on GK — it directly separates merit list candidates.',
+                  'Do not neglect English. For Hindi-medium students, focus only on grammar rules and synonyms/antonyms — skip heavy comprehension initially.',
+                  'Solve previous year papers (2019–2024). At least 20–30% of questions are repeated or follow the same pattern.',
+                  'Current Affairs from the last 6 months (before exam date) is heavily tested. Maintain a monthly capsule printout.',
+                  'SSC uses normalisation — do not worry about exam difficulty. Focus on your score relative to your preparation, not the paper.',
+                  'If applying for Havaldar, start physical training (1.6 km walk) from day one. PET disqualification means losing everything after clearing CBT.',
+                ].map((tip, i) => (
+                  <div key={i} className="flex items-start gap-3 text-sm text-surface-700">
+                    <span className="w-6 h-6 bg-orange-200 rounded-full flex items-center justify-center text-orange-700 text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>{tip}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQ */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Frequently Asked Questions – SSC MTS</h2>
+              <div className="space-y-3">
+                {faqs.map((item, i) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer flex items-center gap-3 list-none font-heading font-semibold text-surface-800 hover:text-primary-500">
+                      <span className="w-6 h-6 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xs flex-shrink-0">Q</span>
+                      <span className="flex-1 text-sm">{item.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 ml-9 text-sm text-surface-600 leading-relaxed">{item.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* CTA */}
+            <div className="rounded-2xl bg-gradient-to-br from-primary-900 via-primary-700 to-primary-500 p-8 text-center text-white mb-8">
+              <h3 className="font-heading font-bold text-xl mb-2">Prepare for SSC MTS 2026</h3>
+              <p className="text-blue-100 text-sm mb-5 max-w-md mx-auto">The 2026 notification is expected in June–July 2026. Use this time to build your foundation now — those who start early top the merit list.</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link href="/tools/age-calculator" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
+                  Check Eligibility →
+                </Link>
+                <Link href="/resources" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
+                  Free Resources
+                </Link>
+              </div>
+            </div>
+
+            <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+              All data sourced from the official SSC MTS 2025 notification (ssc.gov.in), corrigenda, and verified educational platforms (Shiksha, Careers360, Testbook, Adda247). Last updated: April 2026. Always verify dates from <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500">ssc.gov.in</a> before applying.
+            </p>
+          </div>
+
+          {/* SIDEBAR */}
+          <div className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</div>
+                <nav className="space-y-0.5">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{s.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="text-xs font-semibold uppercase tracking-wide text-primary-800 mb-2">Official Website</div>
+                <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all hover:underline">ssc.gov.in →</a>
+              </div>
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <div className="text-xs font-semibold uppercase tracking-wide text-emerald-800 mb-2">Current Status</div>
+                <div className="text-sm font-semibold text-emerald-700 mb-1">CBT Completed ✓</div>
+                <div className="text-xs text-surface-500">Answer key released March 3, 2026. Result expected April–June 2026.</div>
+              </div>
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Quick Facts</div>
+                <ul className="space-y-2">
+                  {[
+                    { label: 'Total Vacancies', val: '7,948' },
+                    { label: 'Exam Level', val: 'Class 10 (Matric)' },
+                    { label: 'Application Fee', val: '₹100 (Gen) | Free (SC/ST/Exsm/Female)' },
+                    { label: 'No. of Attempts', val: 'Unlimited' },
+                    { label: 'Typing Test', val: 'None' },
+                    { label: 'Interview', val: 'None' },
+                  ].map((f) => (
+                    <li key={f.label} className="text-xs">
+                      <span className="text-surface-400">{f.label}: </span>
+                      <span className="font-semibold text-surface-700">{f.val}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Exams</div>
+                <div className="space-y-2">
+                  {[
+                    { name: 'SSC CGL', slug: 'ssc-cgl' },
+                    { name: 'SSC CHSL', slug: 'ssc-chsl' },
+                    { name: 'SSC GD Constable', slug: 'ssc-gd-constable' },
+                    { name: 'RRB Group D', slug: 'rrb-group-d' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
