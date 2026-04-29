@@ -15,7 +15,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-fill-government-job-application-form': 'How to Fill Government Job Application Forms – Step by Step Guide (2026) | TaiyarHo',
     'best-free-resources-government-exams': 'Best Free Resources for Government Exam Preparation (2026) – 50+ Verified Links | TaiyarHo',
     'age-limit-relaxation-government-jobs': 'Age Limit & Relaxation for Government Jobs (2026) – Complete Guide for OBC, SC/ST, EWS, PwBD, Ex-Servicemen | TaiyarHo',
-    'study-plan-working-professionals': 'Government Exam Study Plan for Working Professionals 2026 | TaiyarHo',
+    'study-plan-working-professionals': 'Government Exam Preparation for Working Professionals 2026 – Study Plan, Schedule & Strategy | TaiyarHo',
   };
 
   const seoDescriptions: Record<string, string> = {
@@ -23,7 +23,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-fill-government-job-application-form': 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo & signature upload specs, fee payment, common mistakes to avoid, and correction window details.',
     'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
     'age-limit-relaxation-government-jobs': 'Complete 2026 guide to age limits and relaxation rules for Indian government exams. Covers OBC (+3 yrs), SC/ST (+5 yrs), PwBD (+10–15 yrs), Ex-Servicemen, and EWS rules for UPSC, SSC CGL, IBPS PO, SBI PO, and RRB NTPC — with a quick-check table and common mistakes to avoid.',
-    'study-plan-working-professionals': 'Preparing for a government exam while working full-time? This 2026 guide covers a 3-phase 12-month study plan, a real daily schedule (3–4 hrs/day), 14-hour weekend strategy, best apps, and how to beat burnout without quitting your job.',
+    'study-plan-working-professionals': 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, 14-hour weekend strategy, best apps for micro-learning, and how to manage burnout as a working aspirant.',
   };
 
   const seoKeywords: Record<string, string> = {
@@ -1978,11 +1978,11 @@ function GSubjectCard({ num, name, meta, badge, desc, hotTopics, normalTopics }:
 function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: string; description: string; category: string; readTime: string } }) {
   const toc = [
     { id: 'advantage', label: 'The Working Professional Advantage' },
-    { id: 'blueprint', label: '3-Phase Study Blueprint' },
-    { id: 'daily-schedule', label: 'Daily Study Schedule' },
-    { id: 'weekend', label: 'Weekend Study Plan' },
-    { id: 'tech-stack', label: 'Best Apps & Tools 2026' },
-    { id: 'mental-health', label: 'Managing Burnout & Stress' },
+    { id: 'blueprint', label: 'The 3-Phase Blueprint' },
+    { id: 'daily-schedule', label: 'The Real Daily Schedule' },
+    { id: 'weekend', label: 'The Weekend Marathon' },
+    { id: 'tech-stack', label: 'Tech Stack for 2026' },
+    { id: 'mental-health', label: 'Mental Health & Guilt' },
     { id: 'faq', label: 'FAQs' },
   ];
 
@@ -2043,7 +2043,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
           </GCallout>
 
           {/* SECTION 1 */}
-          <GSection id="advantage" title="Why Working Professionals Can Clear Government Exams Too">
+          <GSection id="advantage" title="The Working Professional Advantage">
             <p className="text-surface-600 leading-relaxed mb-4">
               Let me be straight with you — yes, your employed classmates who study 8 hours a day have a time advantage. But that doesn&apos;t mean you&apos;re behind. In fact, working full-time gives you three things that full-time aspirants struggle to fake.
             </p>
@@ -2066,7 +2066,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
           </GSection>
 
           {/* SECTION 2 */}
-          <GSection id="blueprint" title="Government Exam Study Plan for Working Professionals: The 3-Phase Blueprint">
+          <GSection id="blueprint" title="The 3-Phase Blueprint (12 Months)">
             <p className="text-surface-600 leading-relaxed mb-6">
               Don&apos;t try to do everything at once. Here&apos;s how to break 12 months into three clean phases so you always know exactly what you&apos;re working on.
             </p>
@@ -2150,7 +2150,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
           </GSection>
 
           {/* SECTION 3 */}
-          <GSection id="daily-schedule" title="Daily Study Schedule for Working Professionals (Weekday Timetable)">
+          <GSection id="daily-schedule" title="The &lsquo;Real&rsquo; Daily Schedule">
             <p className="text-surface-600 leading-relaxed mb-5">
               I know you&apos;ve seen those idealistic timetables with colour-coded blocks. This isn&apos;t that. This is built around the reality that you might have a late meeting on a Tuesday, or your commute got cancelled because of rain. Build in slack.
             </p>
@@ -2187,7 +2187,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
           </GSection>
 
           {/* SECTION 4 */}
-          <GSection id="weekend" title="Weekend Study Plan: How to Study 14 Hours Without Burning Out">
+          <GSection id="weekend" title="The Weekend Marathon (Without the Burnout)">
             <p className="text-surface-600 leading-relaxed mb-5">
               Weekends are your power days. The goal is 14 hours total across Saturday and Sunday — but the way you split it matters more than the total.
             </p>
@@ -2240,7 +2240,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
           </GSection>
 
           {/* SECTION 5 */}
-          <GSection id="tech-stack" title="Best Apps and Tools for Government Exam Preparation in 2026">
+          <GSection id="tech-stack" title="Tech Stack for 2026: Study Smarter, Not Heavier">
             <p className="text-surface-600 leading-relaxed mb-5">
               You don&apos;t need to carry a bag full of books on the train. In 2026, your phone is your study room. Here&apos;s what actually works.
             </p>
@@ -2281,7 +2281,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
           </GSection>
 
           {/* SECTION 6 */}
-          <GSection id="mental-health" title="Managing Burnout and Exam Stress While Working Full-Time">
+          <GSection id="mental-health" title="Mental Health: Handling the Working Professional&rsquo;s Guilt">
             <p className="text-surface-600 leading-relaxed mb-4">
               Here&apos;s something no one talks about. When you work a full day, come home tired, and then sit down to study, there&apos;s this crushing guilt that says: <em>"Everyone else is studying more. I&apos;m going to fail."</em>
             </p>
@@ -2326,7 +2326,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
           </GSection>
 
           {/* FAQ */}
-          <GSection id="faq" title="Frequently Asked Questions: Government Exam Prep While Working">
+          <GSection id="faq" title="FAQs">
             <div className="divide-y divide-surface-200">
               {[
                 { q: 'Can I really prepare for UPSC while working full-time?', a: 'Yes — but be honest about timelines. Working professionals typically need 2–3 years for UPSC, versus 1.5 years for a full-time aspirant. For SSC CGL, IBPS PO, or RRB NTPC, a working professional can clear in 6–12 months of focused prep.' },
@@ -2403,28 +2403,6 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
           </div>
         </aside>
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: 'Government Exam Study Plan for Working Professionals 2026',
-        description: 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, weekend study strategy, best apps, and managing burnout.',
-        datePublished: '2026-04-29',
-        dateModified: '2026-04-29',
-        author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-        publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/guides/study-plan-working-professionals/' },
-      }) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-          { '@type': 'Question', name: 'Can I really prepare for UPSC while working full-time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, but be realistic about timelines. Working professionals typically need 2–3 years for UPSC versus 1.5 years for a full-time aspirant. For SSC CGL, IBPS PO, or RRB NTPC, a working professional can clear in 6–12 months of focused preparation.' } },
-          { '@type': 'Question', name: 'How many hours should a working professional study for government exams?', acceptedAnswer: { '@type': 'Answer', text: 'A working professional should aim for 3–4 hours per day: 1.5–2 hours in the morning before work, 30 minutes during commute and lunch (micro-learning), and 1–1.5 hours in the evening. On weekends, aim for 6–8 hours per day.' } },
-          { '@type': 'Question', name: 'What is the best daily schedule for government exam preparation while working?', acceptedAnswer: { '@type': 'Answer', text: 'The recommended schedule is: 6:00–8:30 AM for deep study (newspaper + static subject), commute for audio current affairs or flashcards, lunch break for a 15-question quiz, and 7:00–9:30 PM for practice questions and weak area revision.' } },
-          { '@type': 'Question', name: 'Should I take study leave before a government exam?', acceptedAnswer: { '@type': 'Answer', text: 'For UPSC Mains, consider 2–3 weeks of earned leave. For Prelims and objective exams like SSC CGL or Banking, it is usually not necessary if your Phase 3 revision is on track. Plan any leave at least 2 months in advance.' } },
-          { '@type': 'Question', name: 'Which government exams are best for working professionals?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL, IBPS PO, SBI PO, and RRB NTPC are the most suitable for working professionals because they have well-defined syllabi, regular annual cycles, large vacancies, and can be cleared in 6–12 months of focused preparation alongside a job.' } },
-        ],
-      }) }} />
     </div>
   );
 }
