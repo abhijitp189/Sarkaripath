@@ -32,6 +32,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'up-police-constable') {
+    return {
+      title: 'UP Police Constable 2026 – Syllabus, Eligibility, Exam Date & Guide | TaiyarHo',
+      description: 'UP Police Constable 2026: 32,679 vacancies. Written exam on 8–10 June 2026. Check syllabus, exam pattern (150 Qs, 300 marks), PET/PST physical standards, eligibility, age limit, salary ₹21,700–₹69,100 and free resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/up-police-constable/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -55,6 +63,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (detailed && detailed.slug === 'ssc-cgl') return <SscCglPage exam={detailed} />;
   if (detailed && detailed.slug === 'ssc-gd-constable') return <SscGdPage exam={detailed} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
+  if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -1393,6 +1402,702 @@ function DetailedExamPage({ exam }: { exam: any }) {
     </>
   );
 }
+
+// ─── UP POLICE CONSTABLE RICH PAGE ──────────────────────────────────────────
+function UpPoliceConstablePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies & Posts' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'physical', label: 'Physical Test (PET/PST)' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released', date: '31 December 2025', status: 'released' },
+    { event: 'Online Application Opens', date: '31 December 2025', status: 'released' },
+    { event: 'Last Date to Apply Online', date: '30 January 2026', status: 'released' },
+    { event: 'OTR (One-Time Registration) Mandatory', date: 'Active at uppbpb.gov.in', status: 'released' },
+    { event: 'Admit Card Release', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Written Exam – Day 1', date: '08 June 2026', status: 'upcoming' },
+    { event: 'Written Exam – Day 2', date: '09 June 2026', status: 'upcoming' },
+    { event: 'Written Exam – Day 3', date: '10 June 2026', status: 'upcoming' },
+    { event: 'Answer Key Release', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Written Exam Result', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Physical Tests (PET / PST)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Document Verification & Medical', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Final Merit List', date: 'To be notified (TBN)', status: 'tbn' },
+  ];
+
+  const examPattern = [
+    { subject: 'General Hindi', questions: 37, marks: 74 },
+    { subject: 'General Knowledge', questions: 38, marks: 76 },
+    { subject: 'Numerical & Mental Ability', questions: 38, marks: 76 },
+    { subject: 'Mental Aptitude / IQ / Reasoning', questions: 37, marks: 74 },
+  ];
+
+  const vacancyData = [
+    { post: 'Constable Civil Police', male: 'Yes', female: 'Yes', total: 'Major share' },
+    { post: 'Constable PAC / Armed Police', male: 'Yes', female: 'Yes (Women Battalion)', total: 'Major share' },
+    { post: 'Constable Special Security Force (SSF)', male: 'Yes', female: 'No', total: 'Included' },
+    { post: 'Jail Warder (Male)', male: 'Yes', female: 'No', total: 'Included' },
+    { post: 'Mounted Police', male: 'Yes', female: 'No', total: 'Included' },
+    { post: 'TOTAL (Official 2025–26 Cycle)', male: '–', female: '–', total: '32,679' },
+  ];
+
+  const ageLimit = [
+    { category: 'General – Male', min: '18 years', max: '25 years*' },
+    { category: 'General – Female', min: '18 years', max: '28 years*' },
+    { category: 'OBC – Male', min: '18 years', max: '28 years*' },
+    { category: 'OBC – Female', min: '18 years', max: '31 years*' },
+    { category: 'SC / ST – Male', min: '18 years', max: '30 years*' },
+    { category: 'SC / ST – Female', min: '18 years', max: '33 years*' },
+    { category: 'Ex-Serviceman', min: '–', max: 'Service period + 3 yrs' },
+  ];
+
+  const physicalPst = [
+    { category: 'Male – General / OBC / EWS / SC', height: '168 cm', chest: '79 cm (min. 5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Male – ST / Hilly / Tribal Areas', height: '160 cm', chest: '77 cm (min. 5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Female – General / OBC / EWS / SC', height: '152 cm', chest: 'N/A', weight: 'Proportionate' },
+    { category: 'Female – ST / Hilly / Tribal Areas', height: '147 cm', chest: 'N/A', weight: 'Proportionate' },
+  ];
+
+  const physicalPet = [
+    { category: 'Male – All Categories', distance: '4.8 km', time: '25 minutes' },
+    { category: 'Female – All Categories', distance: '2.4 km', time: '14 minutes' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📘 General Hindi',
+      topics: [
+        'Hindi alphabet, punctuation marks',
+        'Word formation: Sandhi, Samas, prefixes, suffixes',
+        'Antonyms, synonyms, idioms and proverbs',
+        'Sentence structure and sentence correction',
+        'Letter writing, essay, paragraph composition',
+        'Comprehension passages',
+        'Tatsam, tadbhav, deshaj, foreign-origin words',
+      ],
+    },
+    {
+      subject: '🌐 General Knowledge',
+      topics: [
+        'Indian history – ancient, medieval, modern',
+        'Indian geography and Uttar Pradesh geography',
+        'Indian Constitution and polity',
+        'Indian economy and agriculture',
+        'General science – Physics, Chemistry, Biology',
+        'National and international current affairs',
+        'Uttar Pradesh – administration, culture, awards',
+        'Sports, computers, cyber crime, banking awareness',
+      ],
+    },
+    {
+      subject: '🔢 Numerical & Mental Ability',
+      topics: [
+        'Number system, simplification',
+        'Percentage, profit & loss, discount',
+        'Simple and compound interest',
+        'Time, speed & distance; time and work',
+        'Mensuration (area, volume)',
+        'Average, ratio and proportion',
+        'Data interpretation: bar, pie, line graphs',
+      ],
+    },
+    {
+      subject: '🧠 Mental Aptitude / IQ / Reasoning',
+      topics: [
+        'Alphabet and number series',
+        'Coding and decoding',
+        'Direction sense, mirror images',
+        'Blood relations, puzzles',
+        'Syllogism and logical reasoning',
+        'Public behaviour and ethical judgement',
+        'Law and order situations',
+        'Analytical ability and decision making',
+      ],
+    },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Released';
+    if (s === 'upcoming') return '🔔 Scheduled';
+    return 'TBN';
+  };
+
+  const faqs = [
+    { q: 'How many vacancies are there in UP Police Constable 2026?', a: 'UPPRPB has announced a total of 32,679 vacancies in its notification released on 31 December 2025. These include posts for Civil Police, PAC, Special Security Force, Jail Warder, and Mounted Police.' },
+    { q: 'When is the UP Police Constable 2026 written exam?', a: 'The written examination is scheduled across three days – 8, 9, and 10 June 2026. It will be conducted in offline (OMR-based) mode across multiple exam centres in Uttar Pradesh.' },
+    { q: 'Is there negative marking in the UP Police Constable exam?', a: 'There is some conflicting information across sources. Some report that negative marking has been removed for 2026, while others mention 0.5 marks deducted per wrong answer. Always verify the exact rule from the official UPPRPB notification at uppbpb.gov.in before the exam.' },
+    { q: 'What is the minimum educational qualification for UP Police Constable?', a: 'Candidates must have passed Class 12 (Intermediate) or an equivalent examination from a recognised board. This qualification must be completed on or before the last date of application.' },
+    { q: 'Are the physical tests (PET and PST) part of the merit calculation?', a: 'No. Both the Physical Efficiency Test (PET) and Physical Standard Test (PST) are qualifying in nature only. The final merit list is prepared entirely on the basis of written examination marks.' },
+    { q: 'What is the salary of a UP Police Constable?', a: 'The basic pay scale is Rs.21,700 to Rs.69,100 per month under Level 3 of the 7th Pay Commission. Including allowances such as DA, HRA, and TA, the gross monthly salary typically ranges from Rs.30,000 to Rs.40,000.' },
+    { q: 'What is OTR (One-Time Registration) and is it mandatory?', a: 'UPPRPB introduced mandatory One-Time Registration (OTR) from July 2025. Candidates must create an OTR account at uppbpb.gov.in once, entering their personal details. This avoids re-entering the same information for future recruitments.' },
+  ];
+
+  return (
+    <>
+      {/* Hero Banner */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">UP Police Constable 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🚔 State Police</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Uttar Pradesh</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">📝 Exam: 8–10 June 2026</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            UP Police Constable 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            UPPRPB has announced 32,679 constable vacancies. Written exam scheduled 8–10 June 2026. Minimum qualification: 12th Pass. 150 questions, 300 marks, 2 hours.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Total Vacancies', value: '32,679' },
+              { label: 'Written Exam', value: '8–10 June 2026' },
+              { label: 'Min. Qualification', value: '12th Pass' },
+              { label: 'Salary (Basic)', value: '₹21,700/month' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">What is UP Police Constable Recruitment?</h2>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The <strong>UP Police Constable Recruitment</strong> is conducted by the <strong>Uttar Pradesh Police Recruitment and Promotion Board (UPPRPB)</strong> to fill vacancies in the state police force. It is one of the largest state-level police recruitments in India — the current 2025–26 cycle has announced <strong>32,679 posts</strong>.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The recruitment covers multiple posts including Civil Police, PAC (Provincial Armed Constabulary), Special Security Force, Jail Warder, and Mounted Police. The selection process follows the stages: <strong>Written Exam → Document Verification → Physical Standard Test (PST) → Physical Efficiency Test (PET) → Medical Examination</strong>. The final merit list is based solely on written exam scores.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  The written exam is scheduled for <strong>8, 9, and 10 June 2026</strong> in offline OMR-based mode. This is a great opportunity for 12th pass candidates across Uttar Pradesh who want a stable government job with good salary and career growth.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'UPPRPB' },
+                  { label: 'Post Type', value: 'State Govt, Group C' },
+                  { label: 'Pay Scale', value: '₹21,700 – ₹69,100' },
+                  { label: 'Qualification', value: '12th Pass (Intermediate)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📅 Important Dates – UP Police Constable 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded ${statusColor(row.status)}`}>{statusLabel(row.status)}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">* Source: UPPRPB official notification (31 Dec 2025). TBN = To Be Notified. Always verify at uppbpb.gov.in before taking action.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { label: 'Nationality', value: 'Indian citizen. Tibetan refugees who arrived in India before 1 January 1962 are also eligible under specified conditions.' },
+                  { label: 'Educational Qualification', value: 'Class 12 (Intermediate) pass or equivalent from a recognised board. Must be completed on or before the last date of application.' },
+                  { label: 'Application Fee', value: 'General / OBC / EWS: ₹400 | SC / ST / Female: ₹400. Payment via Debit Card, Credit Card, or Net Banking.' },
+                  { label: 'Age Reference Date', value: 'Age calculated as on 1 July 2025. The UP Government granted a one-time 3-year relaxation in the upper age limit for all categories.' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-medium text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Age Limit – 2025–26 Recruitment Cycle</h3>
+                <div className="overflow-x-auto rounded-lg border border-surface-100">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Minimum Age</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Maximum Age*</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ageLimit.map((r, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{r.category}</td>
+                          <td className="p-3 text-surface-600">{r.min}</td>
+                          <td className="p-3 text-surface-600">{r.max}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-2">* The UP Government approved a one-time 3-year relaxation in the upper age limit for all categories under this recruitment cycle (Official Notice: 5 Jan 2026).</p>
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Vacancies – 32,679 Posts (2025–26 Cycle)</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post Name</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Male</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Female</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i === vacancyData.length - 1 ? 'bg-blue-50 font-bold' : i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600">{row.male}</td>
+                        <td className="p-3 text-surface-600">{row.female}</td>
+                        <td className="p-3 text-surface-700 font-semibold">{row.total}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <p className="text-sm text-amber-800"><strong>📌 Note:</strong> Category-wise breakdown (UR / OBC / SC / ST / EWS) is available in the official UPPRPB notification PDF at uppbpb.gov.in. Vacancy figures may be subject to minor revision via official corrigendum.</p>
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Exam Pattern – Written Test 2026</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                {[
+                  { label: 'Mode', value: 'Offline (OMR-based)' },
+                  { label: 'Total Questions', value: '150 MCQs' },
+                  { label: 'Total Marks', value: '300 marks' },
+                  { label: 'Duration', value: '2 hours (120 min)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-primary-50 rounded-xl p-4 border border-primary-100 text-center">
+                    <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-primary-700">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {examPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                        <td className="p-3 text-center text-surface-700 font-semibold">{row.questions}</td>
+                        <td className="p-3 text-center text-surface-700 font-semibold">{row.marks}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-blue-50 font-bold">
+                      <td className="p-3 text-surface-900">TOTAL</td>
+                      <td className="p-3 text-center text-surface-900">150</td>
+                      <td className="p-3 text-center text-surface-900">300</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">📌 Key Exam Rules</h3>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold">✓</span> Each correct answer: <strong>+2 marks</strong></li>
+                  <li className="flex gap-2"><span className="text-red-400 font-bold">✗</span> Negative marking: <strong>0.5 marks deducted per wrong answer</strong> — verify the exact rule from the official notification at uppbpb.gov.in</li>
+                  <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Language: <strong>Bilingual</strong> (Hindi and English)</li>
+                  <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Final merit is based <strong>only on written exam marks</strong>. Physical tests are qualifying only and do not add to the score.</li>
+                  <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Exam conducted in <strong>multiple shifts</strong> across 3 days — scores may be normalised across shifts.</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* PHYSICAL TEST */}
+            <section id="physical" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Physical Test – PST &amp; PET 2026</h2>
+              <p className="text-surface-600 mb-5 text-sm leading-relaxed">
+                Candidates who qualify the written exam are called for the Physical Standard Test (PST) and Physical Efficiency Test (PET). Both stages are <strong>qualifying in nature only</strong> — they do not contribute marks to the final merit list.
+              </p>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Physical Standard Test (PST) – Measurements</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Height</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Chest (Male only)</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalPst.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-600">{row.height}</td>
+                        <td className="p-3 text-surface-600">{row.chest}</td>
+                        <td className="p-3 text-surface-600">{row.weight}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Physical Efficiency Test (PET) – Running Race</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Distance</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Time Limit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalPet.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.distance}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.time}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-800"><strong>💡 Tip:</strong> Start your running practice well before the exam. Male candidates need to cover 4.8 km in just 25 minutes — that requires consistent training over at least 2–3 months. Begin with shorter distances and build up gradually.</p>
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Detailed Syllabus – UP Police Constable 2026</h2>
+              <div className="space-y-4">
+                {syllabus.map((sec, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-3">{sec.subject}</h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+                      {sec.topics.map((t, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="text-primary-400 mt-0.5">•</span>{t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-4">
+                <p className="text-sm text-amber-800"><strong>🎯 Focus Areas:</strong> Uttar Pradesh-specific General Knowledge (administration, geography, culture) carries significant weight and is often overlooked. Hindi grammar and idioms are high-scoring repeat topics. Make sure to cover all four subjects equally — the paper is well balanced.</p>
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Salary &amp; Benefits</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                {[
+                  { label: 'Basic Pay (Pay Scale)', value: '₹21,700 – ₹69,100/month', sub: 'Level 3 – 7th Pay Commission' },
+                  { label: 'Grade Pay', value: '₹2,000', sub: 'Fixed as per government norms' },
+                  { label: 'Gross Salary (with allowances)', value: '₹30,000 – ₹40,000/month', sub: 'Approx. including DA, HRA, TA' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-gradient-to-br from-primary-50 to-blue-50 rounded-xl p-5 border border-primary-100">
+                    <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-primary-700 text-lg">{item.value}</div>
+                    <div className="text-xs text-surface-500 mt-0.5">{item.sub}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Additional Perks &amp; Benefits</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-surface-600">
+                  {[
+                    'Dearness Allowance (DA) – revised bi-annually',
+                    'House Rent Allowance (HRA) – based on city',
+                    'Travel Allowance (TA)',
+                    'Medical allowance and family health benefits',
+                    'Uniform and gear allowance',
+                    'Leave Travel Concession (LTC)',
+                    'Pension benefits under NPS',
+                    'Annual increment as per 7th Pay Commission',
+                    'City Compensatory Allowance',
+                    'Job security and promotion opportunities',
+                  ].map((b, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold mt-0.5">✓</span>{b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">How to Apply</h2>
+              <div className="card p-5 mb-4">
+                <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                  ⚠️ The application window for the current cycle closed on <strong>30 January 2026</strong>. The steps below are for reference when the next cycle opens.
+                </p>
+                <ol className="space-y-3">
+                  {[
+                    { title: 'Complete OTR Registration (Mandatory)', desc: 'Visit uppbpb.gov.in and create a One-Time Registration (OTR) account. Enter your mobile number, email address, and basic personal details.' },
+                    { title: 'Log in and Fill the Application Form', desc: 'Use your OTR credentials to log in. Fill in personal details, educational qualifications, and other required information carefully.' },
+                    { title: 'Upload Documents', desc: 'Upload a clear passport-size photograph, signature, 10th/12th certificates, and category certificate (if applicable) in the prescribed format and file size.' },
+                    { title: 'Pay the Application Fee', desc: 'All categories (General / OBC / EWS / SC / ST / Female): Rs.400. Payment accepted via Debit Card, Credit Card, or Net Banking.' },
+                    { title: 'Submit and Save Confirmation', desc: 'Review all details before submitting. Download and print the submitted application form for future reference.' },
+                  ].map((item, i) => (
+                    <li key={i} className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center text-xs font-bold">{i + 1}</div>
+                      <div>
+                        <div className="font-semibold text-sm text-surface-800">{item.title}</div>
+                        <div className="text-sm text-surface-600 mt-0.5">{item.desc}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3-Month Study Plan</h2>
+              <div className="space-y-4">
+                {[
+                  {
+                    month: 'Month 1 – Build the Foundation',
+                    color: 'blue',
+                    tasks: [
+                      'UP-specific GK: cover history, geography, polity, and administration thoroughly',
+                      'Hindi grammar basics: focus on word formation, antonyms, synonyms',
+                      'Maths: percentage, profit & loss, SI/CI, time-work, speed-distance',
+                      'Reasoning: series, direction sense, blood relations — 30 questions daily',
+                    ],
+                  },
+                  {
+                    month: 'Month 2 – Deep Preparation',
+                    color: 'orange',
+                    tasks: [
+                      'Current affairs: read newspaper daily and revise a monthly magazine',
+                      'Hindi: comprehension passages, idioms, and proverbs practice',
+                      'Maths: mensuration, average, ratio — target 50 questions per day',
+                      'Weekly mock tests: attempt full 150-question paper within 2 hours',
+                    ],
+                  },
+                  {
+                    month: 'Month 3 – Revision + Physical Fitness',
+                    color: 'emerald',
+                    tasks: [
+                      'Full syllabus revision with extra focus on weak areas',
+                      'Solve previous year UP Police Constable papers (2018, 2019)',
+                      'Physical training: build up running from 2 km to 4.8 km daily',
+                      'Speed drills: aim to attempt 150 questions within 1 hour 45 minutes',
+                    ],
+                  },
+                ].map((m, i) => (
+                  <div key={i} className={`card p-5 border-l-4 ${m.color === 'blue' ? 'border-blue-400' : m.color === 'orange' ? 'border-orange-400' : 'border-emerald-400'}`}>
+                    <h3 className="font-heading font-semibold text-surface-800 mb-3">{m.month}</h3>
+                    <ul className="space-y-1.5">
+                      {m.tasks.map((t, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className={`mt-0.5 font-bold ${m.color === 'blue' ? 'text-blue-500' : m.color === 'orange' ? 'text-orange-500' : 'text-emerald-500'}`}>→</span>{t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Best Books for Preparation</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { subject: 'General Knowledge + UP GK', book: "Lucent's General Knowledge", author: 'Lucent Publications' },
+                  { subject: 'General Hindi', book: 'Samanya Hindi', author: 'Dr. Hardev Bahri / Arihant' },
+                  { subject: 'Numerical Ability', book: 'Quantitative Aptitude', author: 'R.S. Aggarwal' },
+                  { subject: 'Reasoning & Intelligence', book: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal' },
+                  { subject: 'UP Police Previous Year Papers', book: 'UP Police Constable Solved Papers', author: 'Arihant / Kiran Publications' },
+                  { subject: 'Complete Guide', book: 'UP Police Constable Bharti Pariksha', author: 'Upkar / Arihant' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200 flex gap-3">
+                    <div className="text-2xl">📗</div>
+                    <div>
+                      <div className="font-semibold text-sm text-surface-800">{item.book}</div>
+                      <div className="text-xs text-surface-500">{item.author}</div>
+                      <div className="text-xs text-primary-500 mt-0.5">{item.subject}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Expert Tips – Preparation Strategy</h2>
+              <div className="space-y-3">
+                {[
+                  { icon: '🎯', tip: 'Prioritise UP-specific General Knowledge', desc: 'Questions on Uttar Pradesh administration, geography, culture, and historic sites carry significant weight. Candidates who focus only on national GK books often miss these easy marks.' },
+                  { icon: '📝', tip: 'Practice Hindi grammar every day', desc: 'Idioms, proverbs, and one-word substitutions are repeat topics across UP Police papers and are high-scoring. Dedicate at least 20 minutes daily to Hindi grammar drills.' },
+                  { icon: '⏱️', tip: 'Time management is critical', desc: '150 questions in 120 minutes means roughly 48 seconds per question. Without timed practice, you will struggle on exam day. Attempt at least one full mock test per week.' },
+                  { icon: '🏃', tip: 'Begin physical training now', desc: 'Start running well before the written exam date. Male candidates need to cover 4.8 km in 25 minutes — this level of fitness requires consistent training over 2–3 months minimum.' },
+                  { icon: '📊', tip: 'Solve previous year papers', desc: 'Past UP Police Constable papers (2018, 2019 cycles) will show you the actual difficulty level, question distribution, and which topics repeat most often.' },
+                  { icon: '✅', tip: 'Verify negative marking rules before exam day', desc: 'There is conflicting information on whether negative marking applies in 2026. Always check the official UPPRPB notification at uppbpb.gov.in before finalising your exam strategy.' },
+                ].map((item, i) => (
+                  <div key={i} className="card p-4 flex gap-4">
+                    <div className="text-2xl flex-shrink-0">{item.icon}</div>
+                    <div>
+                      <div className="font-semibold text-sm text-surface-800 mb-0.5">{item.tip}</div>
+                      <div className="text-sm text-surface-600">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQ */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Frequently Asked Questions (FAQs)</h2>
+              <div className="space-y-3">
+                {faqs.map((item, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-semibold text-surface-800 mb-2 text-sm">Q{i + 1}: {item.q}</h3>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="hidden lg:block space-y-6">
+            <div className="card p-5 sticky top-6">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 On This Page</div>
+              <ol className="space-y-1.5 list-decimal list-inside">
+                {toc.map((s) => (
+                  <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline hover:text-primary-700">{s.label}</a></li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">⚡ Quick Facts</div>
+              <dl className="space-y-3 text-sm">
+                {[
+                  { label: 'Conducting Body', value: 'UPPRPB' },
+                  { label: 'Vacancies', value: '32,679' },
+                  { label: 'Written Exam', value: '8–10 June 2026' },
+                  { label: 'Qualification', value: '12th Pass' },
+                  { label: 'Age (Gen Male)', value: '18–25 years' },
+                  { label: 'Age (Gen Female)', value: '18–28 years' },
+                  { label: 'Total Questions', value: '150 MCQs' },
+                  { label: 'Total Marks', value: '300 marks' },
+                  { label: 'Exam Duration', value: '2 hours' },
+                  { label: 'Basic Pay', value: '₹21,700/month' },
+                  { label: 'Official Website', value: 'uppbpb.gov.in' },
+                ].map((item) => (
+                  <div key={item.label} className="flex justify-between border-b border-surface-100 pb-2">
+                    <dt className="text-surface-500">{item.label}</dt>
+                    <dd className="font-semibold text-surface-800 text-right max-w-[120px]">{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div className="card p-5 bg-gradient-to-br from-primary-50 to-blue-50 border-primary-100">
+              <div className="text-xs font-semibold uppercase tracking-wide text-primary-400 mb-3">🔗 Official Links</div>
+              <div className="space-y-2">
+                <a href="https://uppbpb.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800 font-medium">
+                  <span>🌐</span> uppbpb.gov.in (Official)
+                </a>
+                <a href="https://uppbpb.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800">
+                  <span>📄</span> Download Notification PDF
+                </a>
+                <a href="https://uppbpb.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800">
+                  <span>📝</span> Apply Online / OTR
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </>
+  );
+}
+
 
 // ─── ENHANCED BASIC EXAM PAGE (with category-specific content) ──────────────
 function BasicExamPage({ exam }: { exam: any }) {
