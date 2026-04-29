@@ -50,8 +50,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'ssc-mts') {
     return {
-      title: 'SSC MTS 2025 – Syllabus, Exam Pattern, Eligibility & Complete Guide | TaiyarHo',
-      description: 'SSC MTS 2025: 7,948 vacancies. CBT conducted Feb 4–20, 2026. Answer key released March 3. Check syllabus, exam pattern (Session I & II), eligibility (10th pass, 18–27 yrs), salary ₹18,000–₹22,000/month, and free preparation resources.',
+      title: 'SSC MTS 2026 – Syllabus, Exam Pattern, Eligibility & Complete Guide | TaiyarHo',
+      description: 'SSC MTS 2026: 7,948 vacancies. CBT conducted Feb 4–20, 2026. Answer key released March 3. Check syllabus, exam pattern (Session I & II), eligibility (10th pass, 18–27 yrs), salary ₹18,000–₹22,000/month, and free preparation resources.',
       alternates: { canonical: 'https://taiyarho.in/exams/ssc-mts/' },
     };
   }
@@ -3154,7 +3154,7 @@ function SscMtsPage({ exam }: { exam: any }) {
 
   const faqs = [
     { q: 'What is the educational qualification for SSC MTS?', a: 'Candidates must have passed Matriculation (Class 10) or an equivalent examination from a recognised board. Graduation or higher degrees are NOT required.' },
-    { q: 'What is the age limit for SSC MTS 2025?', a: 'For MTS posts: 18–25 years. For Havaldar posts (CBIC & CBN): 18–27 years. Age is calculated as of 1 August 2025. OBC gets +3 years relaxation, SC/ST gets +5 years, and PwBD gets +10 years.' },
+    { q: 'What is the age limit for SSC MTS 2026?', a: 'For MTS posts: 18–25 years. For Havaldar posts (CBIC & CBN): 18–27 years. Age is calculated as of 1 August 2025. OBC gets +3 years relaxation, SC/ST gets +5 years, and PwBD gets +10 years.' },
     { q: 'Is there negative marking in SSC MTS?', a: 'Session I (Maths & Reasoning): No negative marking — attempt all 40 questions freely. Session II (General Awareness & English): 1 mark deducted per wrong answer — be careful here.' },
     { q: 'What is the SSC MTS salary per month?', a: 'MTS posts are in Pay Level 1: basic pay ₹18,000/month. With DA, HRA and other allowances, in-hand salary is approximately ₹18,000–₹22,000/month depending on posting city. Havaldar posts (Pay Level 1) get similar pay with additional allowances for field duty.' },
     { q: 'Is PET/PST required for all SSC MTS candidates?', a: 'No. PET/PST is required only for candidates who apply for the Havaldar post under CBIC & CBN. Candidates applying only for MTS (General) posts do not have any physical test.' },
@@ -3184,7 +3184,7 @@ function SscMtsPage({ exam }: { exam: any }) {
             <span className="mx-1 opacity-50">›</span>
             <Link href="/exams" className="hover:text-white">Exams</Link>
             <span className="mx-1 opacity-50">›</span>
-            <span className="text-white">SSC MTS 2025</span>
+            <span className="text-white">SSC MTS 2026</span>
           </nav>
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">SSC</span>
@@ -3193,7 +3193,7 @@ function SscMtsPage({ exam }: { exam: any }) {
             <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🗓️ Result Expected: June 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
-            SSC MTS 2025 –<br className="hidden sm:block" /> Complete Guide: Syllabus, Pattern & Eligibility
+            SSC MTS 2026 –<br className="hidden sm:block" /> Complete Guide: Syllabus, Pattern & Eligibility
           </h1>
           <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
             CBT completed (Feb 4–20, 2026). Answer key released March 3, 2026. Result expected April–June 2026. 7,948 total vacancies for MTS and Havaldar posts. Class 10 pass eligible.
@@ -3260,7 +3260,7 @@ function SscMtsPage({ exam }: { exam: any }) {
 
             {/* IMPORTANT DATES */}
             <section id="important-dates" className="mb-12">
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">📅 Important Dates – SSC MTS 2025</h2>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">📅 Important Dates – SSC MTS 2026</h2>
               <p className="text-sm text-surface-500 mb-5">The 2025 cycle exam has been completed. The table below reflects actual dates from the official notification and subsequent updates.</p>
               <div className="overflow-x-auto rounded-xl border border-surface-200">
                 <table className="w-full text-sm">
@@ -3291,7 +3291,7 @@ function SscMtsPage({ exam }: { exam: any }) {
 
             {/* ELIGIBILITY */}
             <section id="eligibility" className="mb-12">
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Eligibility Criteria – SSC MTS 2025</h2>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Eligibility Criteria – SSC MTS 2026</h2>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div className="bg-surface-50 rounded-xl p-5 border border-surface-200">
@@ -3371,7 +3371,7 @@ function SscMtsPage({ exam }: { exam: any }) {
 
             {/* VACANCIES */}
             <section id="vacancies" className="mb-12">
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">Vacancies & Posts – SSC MTS 2025</h2>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">Vacancies & Posts – SSC MTS 2026</h2>
               <p className="text-sm text-surface-500 mb-5">SSC initially notified 8,021 vacancies (6,946 MTS + 1,075 Havaldar). After revision, the total was updated to <strong>7,948 posts</strong>.</p>
               <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
                 <table className="w-full text-sm">
@@ -3417,7 +3417,7 @@ function SscMtsPage({ exam }: { exam: any }) {
 
             {/* EXAM PATTERN */}
             <section id="exam-pattern" className="mb-12">
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">Exam Pattern – SSC MTS 2025</h2>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">Exam Pattern – SSC MTS 2026</h2>
               <p className="text-sm text-surface-500 mb-5">The CBT is conducted in two compulsory sessions on the same day. Missing either session results in automatic disqualification. Total marks: <strong>270</strong>. Total time: <strong>90 minutes</strong>.</p>
 
               <div className="card p-5 mb-4">
@@ -3829,7 +3829,7 @@ function SscMtsPage({ exam }: { exam: any }) {
 
             {/* BOOKS */}
             <section id="books" className="mb-12">
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Best Books for SSC MTS 2025</h2>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Best Books for SSC MTS 2026</h2>
               <div className="overflow-x-auto rounded-xl border border-surface-200">
                 <table className="w-full text-sm">
                   <thead className="bg-surface-900 text-white">
@@ -3913,7 +3913,7 @@ function SscMtsPage({ exam }: { exam: any }) {
             </div>
 
             <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
-              All data sourced from the official SSC MTS 2025 notification (ssc.gov.in), corrigenda, and verified educational platforms (Shiksha, Careers360, Testbook, Adda247). Last updated: April 2026. Always verify dates from <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500">ssc.gov.in</a> before applying.
+              All data sourced from the official SSC MTS 2026 notification (ssc.gov.in), corrigenda, and verified educational platforms (Shiksha, Careers360, Testbook, Adda247). Last updated: April 2026. Always verify dates from <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500">ssc.gov.in</a> before applying.
             </p>
           </div>
 
