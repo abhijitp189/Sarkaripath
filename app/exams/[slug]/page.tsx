@@ -56,6 +56,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ibps-clerk') {
+    return {
+      title: 'IBPS Clerk 2026 (CRP CSA-XVI) – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
+      description: 'IBPS Clerk 2026: Prelims on 10–11 Oct, Mains on 27 Dec. 15,000+ vacancies in 11 public sector banks. Check complete syllabus, exam pattern (revised Mains), eligibility, age limit, salary ₹28,000–₹32,000/month and free preparation resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/ibps-clerk/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
