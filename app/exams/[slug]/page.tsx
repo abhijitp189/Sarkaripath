@@ -40,6 +40,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ctet') {
+    return {
+      title: 'CTET 2026 – Syllabus, Eligibility, Exam Date, Pattern & Complete Guide | TaiyarHo',
+      description: 'CTET July 2026 exam on 5 July 2026. Check complete syllabus for Paper 1 & Paper 2, eligibility criteria, exam pattern (150 MCQs, no negative marking), application dates, qualifying marks and free preparation resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/ctet/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -64,6 +72,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (detailed && detailed.slug === 'ssc-gd-constable') return <SscGdPage exam={detailed} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
+  if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -2300,7 +2309,723 @@ function BasicExamPage({ exam }: { exam: any }) {
   );
 }
 
-// ─── SHARED COMPONENTS ──────────────────────────────────────────────────────
+// ─── CTET RICH PAGE ──────────────────────────────────────────────────────────
+function CtetPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'qualifying-marks', label: 'Qualifying Marks' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'after-ctet', label: 'After Clearing CTET' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  // July 2026 cycle (most current) + Feb 2026 cycle reference
+  const importantDates = [
+    { event: 'CTET Feb 2026 – Notification Released', date: '27 November 2025', status: 'released' },
+    { event: 'CTET Feb 2026 – Application Window', date: '27 Nov – 18 Dec 2025', status: 'released' },
+    { event: 'CTET Feb 2026 – Exam Date', date: '7 & 8 February 2026', status: 'released' },
+    { event: 'CTET Feb 2026 – Result Declared', date: 'March 2026', status: 'released' },
+    { event: 'CTET July 2026 – Notification Released', date: '5 March 2026', status: 'released' },
+    { event: 'CTET July 2026 – Application Opens', date: '5 March 2026', status: 'released' },
+    { event: 'CTET July 2026 – Last Date to Apply', date: '2 April 2026', status: 'released' },
+    { event: 'CTET July 2026 – Admit Card', date: 'Mid-June 2026 (Expected)', status: 'upcoming' },
+    { event: 'CTET July 2026 – Exam Date', date: '5 July 2026 (Sunday)', status: 'upcoming' },
+    { event: 'CTET July 2026 – Answer Key', date: 'Within 2–3 weeks of exam (TBN)', status: 'tbn' },
+    { event: 'CTET July 2026 – Result', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'CTET Dec 2026 – Notification', date: 'Oct–Nov 2026 (Expected)', status: 'tbn' },
+  ];
+
+  const paper1Pattern = [
+    { section: 'Child Development & Pedagogy', questions: 30, marks: 30, notes: 'Compulsory' },
+    { section: 'Language I (Medium of Instruction)', questions: 30, marks: 30, notes: 'Compulsory' },
+    { section: 'Language II (Other Language)', questions: 30, marks: 30, notes: 'Compulsory' },
+    { section: 'Mathematics', questions: 30, marks: 30, notes: 'Compulsory' },
+    { section: 'Environmental Studies (EVS)', questions: 30, marks: 30, notes: 'Compulsory' },
+  ];
+
+  const paper2Pattern = [
+    { section: 'Child Development & Pedagogy', questions: 30, marks: 30, notes: 'Compulsory' },
+    { section: 'Language I (Medium of Instruction)', questions: 30, marks: 30, notes: 'Compulsory' },
+    { section: 'Language II (Other Language)', questions: 30, marks: 30, notes: 'Compulsory' },
+    { section: 'Mathematics & Science (or) Social Studies', questions: 60, marks: 60, notes: 'Choose 1 specialisation' },
+  ];
+
+  const qualifyingMarks = [
+    { category: 'General / EWS', minMarks: '90 out of 150', percentage: '60%' },
+    { category: 'OBC (Non-Creamy Layer)', minMarks: '82 out of 150', percentage: '55%' },
+    { category: 'SC / ST', minMarks: '82 out of 150', percentage: '55%' },
+    { category: 'PwD (Persons with Disabilities)', minMarks: '82 out of 150', percentage: '55%' },
+  ];
+
+  const eligibilityPaper1 = [
+    { qualification: 'Senior Secondary (Class 12)', requirement: 'Minimum 50% marks + passed/appearing in 2-year D.El.Ed' },
+    { qualification: 'Senior Secondary (Class 12)', requirement: 'Minimum 45% marks + passed/appearing in 2-year D.El.Ed (under NCTE norms 2002)' },
+    { qualification: 'Senior Secondary (Class 12)', requirement: 'Minimum 50% marks + 4-year B.El.Ed (Integrated)' },
+    { qualification: 'Senior Secondary (Class 12)', requirement: 'Minimum 50% marks + 2-year Diploma in Education (Special Education)' },
+    { qualification: 'Graduation', requirement: 'Any degree + 2-year D.El.Ed' },
+  ];
+
+  const eligibilityPaper2 = [
+    { qualification: 'Graduation', requirement: 'Minimum 50% marks + passed/appearing in 1-year B.Ed' },
+    { qualification: 'Graduation', requirement: 'Minimum 45% marks + 1-year B.Ed (under NCTE norms)' },
+    { qualification: 'Senior Secondary (Class 12)', requirement: 'Minimum 50% marks + 4-year B.A.B.Ed / B.Sc.B.Ed (Integrated)' },
+    { qualification: 'Graduation', requirement: 'Minimum 50% marks + 1-year B.Ed (Special Education)' },
+    { qualification: 'Senior Secondary (Class 12)', requirement: 'Minimum 50% marks + 4-year B.El.Ed (Integrated)' },
+  ];
+
+  const paper1Syllabus = [
+    {
+      subject: '🧒 Child Development & Pedagogy (30 Qs)',
+      topics: [
+        'Development of child (age 6–11): Piaget, Vygotsky, Kohlberg theories',
+        'Concept of inclusive education – children with special needs',
+        'Learning and pedagogy: how children learn and think',
+        'Individual differences: language, caste, gender, community, religion',
+        'Continuous Comprehensive Evaluation (CCE) and assessment',
+        'Intelligence: theories of multiple intelligences (Gardner)',
+        'Motivation, emotion and behavioural challenges',
+        'Socio-cultural context of learning (Bronfenbrenner)',
+      ],
+    },
+    {
+      subject: '📐 Mathematics (30 Qs)',
+      topics: [
+        'Numbers: whole numbers, LCM, HCF, fractions, decimals',
+        'Geometry: shapes, space, angles, symmetry',
+        'Measurement: length, weight, volume, time, money',
+        'Data handling: tables, graphs, bar charts',
+        'Patterns, algebra (basic), division, multiplication',
+        'Pedagogical issues: nature of maths, teaching methods, problem-solving',
+      ],
+    },
+    {
+      subject: '🌿 Environmental Studies – EVS (30 Qs)',
+      topics: [
+        'Family & friends, food, shelter, water, travel',
+        'Things we make and do (work, industry)',
+        'Animals, plants and natural resources',
+        'Environmental concerns, conservation, biodiversity',
+        'EVS pedagogy: objectives, integration with science & social studies',
+        'Activities, experiments and hands-on learning',
+      ],
+    },
+    {
+      subject: '🔤 Language I & Language II (30 + 30 Qs)',
+      topics: [
+        'Reading comprehension: two unseen passages (prose + poem)',
+        'Grammar: tenses, active/passive voice, reported speech',
+        'Language pedagogy: language acquisition and development',
+        'Challenges in diverse classrooms, language errors, disorders',
+        'Remedial teaching and language enrichment techniques',
+      ],
+    },
+  ];
+
+  const paper2Syllabus = [
+    {
+      subject: '🧠 Child Development & Pedagogy (30 Qs)',
+      topics: [
+        'Development of children aged 11–14 years',
+        'Adolescence: characteristics, challenges, peer influence',
+        'Theories: Piaget (formal operational stage), Vygotsky, Kohlberg',
+        'Concepts of assessment and evaluation at upper primary stage',
+        'Inclusive education and children with special needs (11–14 yrs)',
+        'Learning disabilities: dyslexia, ADHD, autism – classroom strategies',
+        'Classroom management and creating inclusive environments',
+      ],
+    },
+    {
+      subject: '🔢 Mathematics & Science – Paper II (60 Qs)',
+      topics: [
+        'Mathematics: Number system, algebra, geometry, mensuration, statistics',
+        'Mathematics pedagogy: nature of math, place of math in curriculum',
+        'Science: Food, materials, the world of the living, moving things',
+        'Science: How things work, natural phenomena, natural resources',
+        'Science pedagogy: scientific method, innovation, observation',
+        'Problems in teaching science; activities and experiments',
+      ],
+    },
+    {
+      subject: '🌏 Social Studies / Social Sciences – Paper II (60 Qs)',
+      topics: [
+        'History: when, where, how; earliest cities; early states; new ideas',
+        'History: first empire, trade contacts, culture, political developments',
+        'Geography: our environment, inside our earth, natural vegetation',
+        'Geography: human environment, life in tropical/desert regions',
+        'Political Science: democracy, state government, women and gender',
+        'Economics: poverty, food security, markets, understanding media',
+        'Pedagogical issues: developing critical thinking and problem-solving',
+      ],
+    },
+  ];
+
+  const applySteps = [
+    'Visit the official CTET website at ctet.nic.in',
+    'Click "Apply Online" → complete new registration with name, email, and mobile number',
+    'Fill the application form carefully – choose Paper I, Paper II or Both',
+    'Choose your preferred language(s) for Language I and Language II',
+    'Upload a recent passport-size photograph and signature (as per size/format specs)',
+    'Pay the examination fee online (Debit/Credit card or Net Banking)',
+    'Submit the form and save/print the Confirmation Page with Application Number',
+    'Download Admit Card from ctet.nic.in approximately 2–3 weeks before the exam',
+  ];
+
+  const afterCtetOpportunities = [
+    { org: 'Kendriya Vidyalaya Sangathan (KVS)', role: 'PRT / TGT', requirement: 'CTET Paper I / II mandatory', salary: '₹35,400 – ₹1,12,400/month' },
+    { org: 'Navodaya Vidyalaya Samiti (NVS)', role: 'TGT / Misc Teaching', requirement: 'CTET Paper II mandatory', salary: '₹44,900 – ₹1,42,400/month' },
+    { org: 'Army Public Schools (AWES)', role: 'PRT / TGT / PGT', requirement: 'CTET required for lower classes', salary: '₹35,400 – ₹1,12,400/month' },
+    { org: 'Central Tibetan Schools (CTS)', role: 'PRT / TGT', requirement: 'CTET mandatory', salary: 'As per 7th Pay Commission' },
+    { org: 'CBSE-affiliated Private Schools', role: 'PRT / TGT', requirement: 'CTET preferred / mandatory', salary: 'Varies (₹25,000 – ₹60,000)' },
+    { org: 'State School Service Commissions', role: 'Teacher posts', requirement: 'State TET or CTET accepted', salary: 'As per state pay scales' },
+  ];
+
+  const books = [
+    { title: 'Child Development & Pedagogy', author: 'Disha Experts', subject: 'CDP' },
+    { title: 'CTET Paper 1 – 10 Practice Sets', author: 'Arihant Publications', subject: 'Paper I' },
+    { title: 'CTET Paper 2 – 10 Practice Sets', author: 'Arihant Publications', subject: 'Paper II' },
+    { title: 'Mathematics & Pedagogy for CTET Paper 1', author: 'RS Aggarwal / Pearson', subject: 'Maths' },
+    { title: 'Environmental Studies for CTET Paper 1', author: 'Arihant Experts', subject: 'EVS' },
+    { title: 'CTET Social Studies Paper 2 Guide', author: 'Disha Publications', subject: 'Social Studies' },
+    { title: 'CTET & TET English Language & Pedagogy', author: 'Pearson / Arihant', subject: 'Language' },
+    { title: 'NCERT Books Class 1–8 (All Subjects)', author: 'NCERT', subject: 'Core Study Material' },
+  ];
+
+  const studyPlan = [
+    { week: 'Week 1–2', focus: 'Child Development & Pedagogy (CDP)', tasks: 'Master all major theorists (Piaget, Vygotsky, Kohlberg, Gardner). Solve 200+ MCQs on CDP. This section is common to both papers — highest ROI.' },
+    { week: 'Week 3–4', focus: 'Language I & Language II', tasks: 'Practice comprehension passages daily. Revise grammar rules and language pedagogy concepts. Aim for 80%+ accuracy here.' },
+    { week: 'Week 5–6', focus: 'Mathematics / EVS (Paper I) or Subject Specialisation (Paper II)', tasks: 'Cover NCERT textbooks Class 1–8 thoroughly. For Paper II, deep-dive into your chosen specialisation (Maths & Science OR Social Studies).' },
+    { week: 'Week 7–8', focus: 'Full Mock Tests + Weak Area Revision', tasks: 'Attempt 2 full-length mock tests per week. Analyse mistakes. Revise weak chapters. Target 120+ marks out of 150 to ensure a safe qualifying margin.' },
+  ];
+
+  const tips = [
+    'CTET has NO negative marking — attempt every single question. Never leave any blank.',
+    'CDP (Child Development & Pedagogy) is common to both papers and contributes 30 marks — prioritise it above all else.',
+    'NCERT textbooks (Class 1–8) are the single most important study source. Questions are directly concept-based, not fact-recall.',
+    'The CTET certificate is now valid for a lifetime (since 2021 amendment) — qualifying once is sufficient, no need to re-appear.',
+    'Solve at least 5 previous year question papers in exam conditions. Time management is key within the 2.5 hour window.',
+    'For Language I & II, pick languages you are genuinely strong in — the pedagogy section is scorable with the right conceptual approach.',
+    'For Paper II aspirants: Maths & Science is generally higher scoring for science graduates; Social Studies suits arts graduates. Choose wisely.',
+    'Aim for 120–130/150 to have a strong score that satisfies both General (90) and reserved category (82) thresholds comfortably.',
+  ];
+
+  const faqs = [
+    { q: 'What is CTET and who conducts it?', a: 'CTET (Central Teacher Eligibility Test) is a national-level eligibility exam conducted by CBSE (Central Board of Secondary Education). It is a mandatory qualification for anyone seeking teaching posts in central government schools like KVS, NVS, and Army Public Schools for Classes I to VIII.' },
+    { q: 'When is the CTET July 2026 exam date?', a: 'CTET July 2026 is confirmed and scheduled for 5 July 2026 (Sunday). The notification was officially released on 5 March 2026. Paper II (Classes 6–8) will be held from 9:30 AM to 12:00 Noon, and Paper I (Classes 1–5) from 2:00 PM to 4:30 PM.' },
+    { q: 'Can I apply for CTET July 2026 now?', a: 'No. The CTET July 2026 application window was open from 5 March to 2 April 2026 and is now closed. Candidates who have successfully registered should focus on exam preparation. The next cycle (December 2026) is expected to open for applications around October–November 2026.' },
+    { q: 'Is there negative marking in CTET?', a: 'No. CTET has no negative marking for wrong answers. Both Paper I and Paper II consist of 150 MCQs worth 150 marks, with no deductions for incorrect responses. You should attempt all questions.' },
+    { q: 'What are the qualifying marks in CTET?', a: 'General / EWS candidates must score at least 60% (90 out of 150). OBC, SC, ST, and PwD candidates need at least 55% (82 out of 150). Candidates qualifying this threshold receive a CTET Eligibility Certificate.' },
+    { q: 'Is the CTET certificate valid for life?', a: 'Yes. As per the CBSE amendment effective June 2021, the CTET qualification certificate is now valid for lifetime. Previously it was valid for only 7 years. A single qualifying score is sufficient for all future teaching job applications.' },
+    { q: 'What is the age limit for CTET?', a: 'CTET has no upper age limit. The minimum age is 18 years. There is no age relaxation or category-based age distinction because it is an eligibility test, not a direct recruitment exam.' },
+    { q: 'How many times is CTET conducted in a year?', a: 'CBSE conducts CTET twice a year — typically a February/July session and a December/January session. Both cycles follow a similar pattern of notification, application, exam, and result declaration.' },
+    { q: 'Does clearing CTET guarantee a teaching job?', a: 'No. Clearing CTET makes you eligible to apply for teaching posts but does not guarantee a job. You still need to apply and clear the recruitment process (written test, interview, demo class) for specific organisations like KVS, NVS, DSSSB, or state boards that require CTET scores.' },
+    { q: 'What is the application fee for CTET?', a: 'For one paper: General/OBC candidates pay ₹1,000 and SC/ST/PwD candidates pay ₹500. For both papers: General/OBC candidates pay ₹1,200 and SC/ST/PwD candidates pay ₹600. Fees may be subject to revision per official notification.' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Released';
+    if (s === 'upcoming') return '🔔 Scheduled';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* ── Hero Banner ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">CTET 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">📚 Teaching</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">CBSE / Central Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">📝 Exam: 5 July 2026</span>
+            <span className="bg-purple-400/20 text-purple-200 text-xs font-semibold px-3 py-1 rounded-full">🎓 Lifetime Validity</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            CTET 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            CTET July 2026 exam confirmed for 5 July 2026. Mandatory eligibility test conducted by CBSE for teaching posts in KVS, NVS & Army schools. 150 MCQs, no negative marking, lifetime valid certificate.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Exam Date', value: '5 July 2026' },
+              { label: 'Total Questions', value: '150 MCQs' },
+              { label: 'Negative Marking', value: 'None' },
+              { label: 'Certificate Validity', value: 'Lifetime' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* Main content */}
+          <div className="space-y-14">
+
+            {/* 1. Overview */}
+            <section id="overview">
+              <SectionHeading num="1" title="CTET 2026 – What is it?" />
+              <div className="card p-6 mb-6">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>Central Teacher Eligibility Test (CTET)</strong> is a national-level eligibility examination conducted by the <strong>Central Board of Secondary Education (CBSE)</strong>, New Delhi. It is a mandatory qualification for candidates aspiring to teach in <strong>Classes I to VIII</strong> in central government schools — including Kendriya Vidyalayas (KVS), Navodaya Vidyalayas (NVS), Army Public Schools, and other centrally administered institutions.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  CTET is held <strong>twice a year</strong> — typically in February/July and December. The exam has <strong>two papers</strong>: Paper I for those who wish to teach Classes 1–5, and Paper II for Classes 6–8. Candidates who want to be eligible for both levels must appear in both papers.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  Since 2021, the CTET qualification certificate carries <strong>lifetime validity</strong> — once you clear it, you never need to re-appear. This makes CTET one of the most valuable certifications in India's government education sector.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'CBSE' },
+                  { label: 'Exam Level', value: 'National' },
+                  { label: 'Frequency', value: 'Twice a year' },
+                  { label: 'Mode', value: 'Offline (Pen & Paper)' },
+                  { label: 'Total Marks', value: '150 per paper' },
+                  { label: 'Duration', value: '2 hours 30 minutes' },
+                  { label: 'No. of Papers', value: 'Paper I & Paper II' },
+                  { label: 'Negative Marking', value: 'None' },
+                  { label: 'Certificate Validity', value: 'Lifetime (since 2021)' },
+                  { label: 'Official Website', value: 'ctet.nic.in' },
+                  { label: 'Age Limit', value: 'Min 18 yrs, No upper limit' },
+                  { label: 'Min. Qualification', value: 'D.El.Ed / B.Ed (Paper-wise)' },
+                ].map((i) => <InfoCard key={i.label} label={i.label} value={i.value} />)}
+              </div>
+            </section>
+
+            {/* 2. Important Dates */}
+            <section id="important-dates">
+              <SectionHeading num="2" title="CTET 2026 Important Dates" />
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
+                ⚠️ <strong>Note:</strong> CTET July 2026 application window (5 Mar – 2 Apr 2026) is now <strong>closed</strong>. If you did not apply, the next opportunity is the <strong>December 2026 cycle</strong>, expected around October–November 2026. Focus on preparation now!
+              </div>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50">
+                        <th className="text-left p-4 font-semibold text-surface-700">Event</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Date</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-4 font-medium text-surface-800">{row.event}</td>
+                          <td className="p-4 text-surface-600">{row.date}</td>
+                          <td className="p-4">
+                            <span className={`text-xs font-semibold px-2 py-1 rounded-full ${statusColor(row.status)}`}>
+                              {statusLabel(row.status)}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 3. Eligibility */}
+            <section id="eligibility">
+              <SectionHeading num="3" title="CTET 2026 Eligibility Criteria" />
+
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6 text-sm text-blue-800">
+                📌 <strong>Key Points:</strong> There is <strong>NO upper age limit</strong> for CTET. Minimum age is 18 years. Nationality: Indian citizen (or specified categories of persons of Indian origin). Both passed and appearing candidates in teacher training courses are eligible.
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3 mt-6">Paper I – For Classes 1 to 5 (Primary Teachers)</h3>
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-primary-50">
+                        <th className="text-left p-4 font-semibold text-primary-700">Qualification</th>
+                        <th className="text-left p-4 font-semibold text-primary-700">Requirement</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {eligibilityPaper1.map((row, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-4 font-medium text-surface-800 whitespace-nowrap">{row.qualification}</td>
+                          <td className="p-4 text-surface-600">{row.requirement}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Paper II – For Classes 6 to 8 (Upper Primary Teachers)</h3>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-primary-50">
+                        <th className="text-left p-4 font-semibold text-primary-700">Qualification</th>
+                        <th className="text-left p-4 font-semibold text-primary-700">Requirement</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {eligibilityPaper2.map((row, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-4 font-medium text-surface-800 whitespace-nowrap">{row.qualification}</td>
+                          <td className="p-4 text-surface-600">{row.requirement}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 4. Exam Pattern */}
+            <section id="exam-pattern">
+              <SectionHeading num="4" title="CTET 2026 Exam Pattern" />
+
+              <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                {[
+                  { label: 'Exam Mode', value: 'Offline – Pen & Paper (OMR Sheet)' },
+                  { label: 'Total Questions', value: '150 MCQs per paper' },
+                  { label: 'Total Marks', value: '150 marks per paper' },
+                  { label: 'Duration', value: '2 hours 30 minutes' },
+                  { label: 'Negative Marking', value: 'None – attempt every question!' },
+                  { label: 'Language of Paper', value: '20 languages available (including Hindi, English)' },
+                ].map((i) => <InfoCard key={i.label} label={i.label} value={i.value} highlight={i.label === 'Negative Marking'} />)}
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Paper I – Classes 1–5 (Primary Level)</h3>
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50">
+                        <th className="text-left p-4 font-semibold text-surface-700">Section</th>
+                        <th className="text-center p-4 font-semibold text-surface-700">Questions</th>
+                        <th className="text-center p-4 font-semibold text-surface-700">Marks</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Note</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {paper1Pattern.map((row, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-4 font-medium text-surface-800">{row.section}</td>
+                          <td className="p-4 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-4 text-center text-surface-600">{row.marks}</td>
+                          <td className="p-4"><span className="badge badge-primary">{row.notes}</span></td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-primary-200 bg-primary-50">
+                        <td className="p-4 font-bold text-primary-700">Total</td>
+                        <td className="p-4 text-center font-bold text-primary-700">150</td>
+                        <td className="p-4 text-center font-bold text-primary-700">150</td>
+                        <td className="p-4 text-sm text-surface-500">2.5 hours</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Paper II – Classes 6–8 (Upper Primary Level)</h3>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50">
+                        <th className="text-left p-4 font-semibold text-surface-700">Section</th>
+                        <th className="text-center p-4 font-semibold text-surface-700">Questions</th>
+                        <th className="text-center p-4 font-semibold text-surface-700">Marks</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Note</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {paper2Pattern.map((row, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-4 font-medium text-surface-800">{row.section}</td>
+                          <td className="p-4 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-4 text-center text-surface-600">{row.marks}</td>
+                          <td className="p-4"><span className="badge badge-primary">{row.notes}</span></td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-primary-200 bg-primary-50">
+                        <td className="p-4 font-bold text-primary-700">Total</td>
+                        <td className="p-4 text-center font-bold text-primary-700">150</td>
+                        <td className="p-4 text-center font-bold text-primary-700">150</td>
+                        <td className="p-4 text-sm text-surface-500">2.5 hours</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-sm text-surface-500 mt-3">* Paper II candidates must choose <strong>one</strong> specialisation: either Mathematics & Science OR Social Studies / Social Sciences.</p>
+            </section>
+
+            {/* 5. Syllabus */}
+            <section id="syllabus">
+              <SectionHeading num="5" title="CTET 2026 Syllabus" />
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-4">Paper I Syllabus (Classes 1–5)</h3>
+              <div className="space-y-4 mb-8">
+                {paper1Syllabus.map((sec) => (
+                  <div key={sec.subject} className="card p-5">
+                    <h4 className="font-heading font-semibold text-surface-800 mb-3">{sec.subject}</h4>
+                    <ul className="grid sm:grid-cols-2 gap-1.5">
+                      {sec.topics.map((t, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="text-primary-400 mt-0.5">•</span>{t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-4">Paper II Syllabus (Classes 6–8)</h3>
+              <div className="space-y-4">
+                {paper2Syllabus.map((sec) => (
+                  <div key={sec.subject} className="card p-5">
+                    <h4 className="font-heading font-semibold text-surface-800 mb-3">{sec.subject}</h4>
+                    <ul className="grid sm:grid-cols-2 gap-1.5">
+                      {sec.topics.map((t, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="text-primary-400 mt-0.5">•</span>{t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 6. Qualifying Marks */}
+            <section id="qualifying-marks">
+              <SectionHeading num="6" title="CTET Qualifying Marks & Cutoff" />
+              <div className="card overflow-hidden mb-5">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50">
+                        <th className="text-left p-4 font-semibold text-surface-700">Category</th>
+                        <th className="text-center p-4 font-semibold text-surface-700">Min. Marks (out of 150)</th>
+                        <th className="text-center p-4 font-semibold text-surface-700">Min. Percentage</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {qualifyingMarks.map((row, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-4 font-medium text-surface-800">{row.category}</td>
+                          <td className="p-4 text-center font-semibold text-emerald-600">{row.minMarks}</td>
+                          <td className="p-4 text-center text-surface-600">{row.percentage}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-800">
+                🏆 <strong>Pro Tip:</strong> While the minimum qualifying score is 90/150 for General category, most competitive KVS/NVS recruitment processes shortlist candidates scoring <strong>120+</strong>. Aim high!
+              </div>
+            </section>
+
+            {/* 7. How to Apply */}
+            <section id="how-to-apply">
+              <SectionHeading num="7" title="How to Apply for CTET" />
+              <div className="card p-6">
+                <p className="text-sm text-surface-500 mb-4">The application process is fully online at <strong>ctet.nic.in</strong>. Here are the steps:</p>
+                <ol className="space-y-3">
+                  {applySteps.map((step, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-surface-700">
+                      <span className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
+                      {step}
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-5 p-4 bg-surface-50 rounded-xl text-sm">
+                  <p className="font-semibold text-surface-700 mb-2">📋 Application Fee (per notification):</p>
+                  <ul className="space-y-1 text-surface-600">
+                    <li>• One Paper – General / OBC / EWS: <strong>₹1,000</strong></li>
+                    <li>• One Paper – SC / ST / PwD: <strong>₹500</strong></li>
+                    <li>• Both Papers – General / OBC / EWS: <strong>₹1,200</strong></li>
+                    <li>• Both Papers – SC / ST / PwD: <strong>₹600</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* 8. After CTET */}
+            <section id="after-ctet">
+              <SectionHeading num="8" title="Career Opportunities After Clearing CTET" />
+              <p className="text-surface-600 mb-4 text-sm">Clearing CTET opens the door to teaching jobs in central government schools. Here are the major employers:</p>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50">
+                        <th className="text-left p-4 font-semibold text-surface-700">Organisation</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Role</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">CTET Requirement</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Salary Range</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {afterCtetOpportunities.map((row, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-4 font-medium text-surface-800">{row.org}</td>
+                          <td className="p-4 text-surface-600">{row.role}</td>
+                          <td className="p-4"><span className="badge badge-primary">{row.requirement}</span></td>
+                          <td className="p-4 text-emerald-600 font-medium">{row.salary}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 9. Study Plan */}
+            <section id="study-plan">
+              <SectionHeading num="9" title="CTET 8-Week Study Plan" />
+              <div className="space-y-4">
+                {studyPlan.map((week) => (
+                  <div key={week.week} className="card p-5 border-l-4 border-primary-400">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-xs font-bold bg-primary-100 text-primary-700 px-2 py-1 rounded">{week.week}</span>
+                      <span className="font-heading font-semibold text-surface-800">{week.focus}</span>
+                    </div>
+                    <p className="text-sm text-surface-600">{week.tasks}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. Best Books */}
+            <section id="books">
+              <SectionHeading num="10" title="Best Books for CTET 2026 Preparation" />
+              <BooksTable books={books} />
+              <p className="text-sm text-surface-500 mt-3">💡 <strong>Most Important:</strong> NCERT textbooks for Classes 1–8 in all subjects are the primary source for CTET questions. Always read them before any guide book.</p>
+            </section>
+
+            {/* 11. Expert Tips */}
+            <section id="tips">
+              <SectionHeading num="11" title="Expert Tips to Crack CTET 2026" />
+              <TipsList tips={tips} />
+            </section>
+
+            {/* 12. FAQs */}
+            <section id="faq">
+              <SectionHeading num="12" title="CTET 2026 – Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <div key={i} className="card p-5">
+                    <p className="font-semibold text-surface-800 mb-2 text-sm">Q{i + 1}. {faq.q}</p>
+                    <p className="text-sm text-surface-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── Sidebar ── */}
+          <aside className="hidden lg:block space-y-6 sticky top-6 self-start">
+            {/* TOC */}
+            <div className="card p-5 border-l-4 border-primary-500">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 On This Page</div>
+              <ol className="space-y-1.5 list-decimal list-inside">
+                {toc.map((s) => (
+                  <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Key Facts */}
+            <div className="card p-5 bg-primary-50 border-primary-200">
+              <div className="text-xs font-semibold uppercase tracking-wide text-primary-600 mb-3">📌 Key Facts</div>
+              <ul className="space-y-2 text-sm text-surface-700">
+                <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>Exam: 5 July 2026</li>
+                <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>150 MCQs, 150 Marks</li>
+                <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>No Negative Marking</li>
+                <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>Qualifying: 60% (Gen), 55% (Reserved)</li>
+                <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>Certificate valid for Lifetime</li>
+                <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>No upper age limit</li>
+                <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>Conducted by CBSE</li>
+              </ul>
+            </div>
+
+            {/* Exam Timeline */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📅 July 2026 Timeline</div>
+              <div className="space-y-3 text-sm">
+                {[
+                  { event: 'Notification', date: '5 Mar 2026', done: true },
+                  { event: 'Application Closes', date: '2 Apr 2026', done: true },
+                  { event: 'Admit Card', date: 'Mid-June 2026', done: false },
+                  { event: 'Exam Day', date: '5 July 2026', done: false },
+                  { event: 'Result', date: 'TBN', done: false },
+                ].map((step) => (
+                  <div key={step.event} className="flex items-center gap-3">
+                    <span className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold ${step.done ? 'bg-emerald-500 text-white' : 'bg-surface-200 text-surface-500'}`}>
+                      {step.done ? '✓' : '○'}
+                    </span>
+                    <div>
+                      <div className="font-medium text-surface-700">{step.event}</div>
+                      <div className="text-xs text-surface-400">{step.date}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="card p-5 bg-gradient-to-br from-[#0a1e4f] to-[#1a56db] text-white">
+              <div className="text-sm font-semibold mb-2">🎯 Start CTET Preparation</div>
+              <p className="text-blue-100 text-xs mb-4">Exam on 5 July 2026 – start your preparation today!</p>
+              <Link href="/resources" className="block text-center bg-white text-primary-600 font-semibold text-sm py-2 rounded-lg hover:bg-blue-50 transition-colors">
+                Free Study Resources →
+              </Link>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
 function SectionHeading({ num, title }: { num: string; title: string }) {
   return (
     <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 flex items-center gap-2">
