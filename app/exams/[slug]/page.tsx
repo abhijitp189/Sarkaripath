@@ -64,6 +64,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'sbi-clerk') {
+    return {
+      title: 'SBI Clerk 2026 (Junior Associate) – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
+      description: 'SBI Clerk 2026 notification expected July/August 2026. 6,000+ vacancies. Check complete syllabus, exam pattern (Prelims + Mains), eligibility, age limit 20–28 years, salary ₹46,000/month and free preparation resources for Junior Associate exam.',
+      alternates: { canonical: 'https://taiyarho.in/exams/sbi-clerk/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -90,6 +98,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
   if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
+  if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -3978,6 +3987,834 @@ function SscMtsPage({ exam }: { exam: any }) {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SBI CLERK 2026 DETAILED PAGE
+   ───────────────────────────────────────────────────────────────────────── */
+function SbiClerkPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'apply',           label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  /* ── Important Dates ── */
+  const importantDates = [
+    /* 2025 cycle (completed) */
+    { event: 'Official Notification Released (2025 cycle)',  date: '5 August 2025',                    status: 'done' },
+    { event: 'Online Application Starts',                   date: '6 August 2025',                    status: 'done' },
+    { event: 'Last Date to Apply Online',                   date: '26 August 2025',                   status: 'done' },
+    { event: 'Pre-Examination Training Call Letter',        date: 'September 2025',                   status: 'done' },
+    { event: 'Prelims Admit Card Released',                 date: 'September 2025',                   status: 'done' },
+    { event: 'Prelims Exam (Phase I)',                      date: '20, 21 & 27 September 2025',       status: 'done' },
+    { event: 'Prelims Result Declared',                     date: 'October / November 2025',          status: 'done' },
+    { event: 'Mains Admit Card Released',                   date: 'November 2025',                    status: 'done' },
+    { event: 'Mains Exam (Phase II)',                       date: '21 November 2025',                 status: 'done' },
+    { event: 'Mains Result Declared',                       date: '27 February 2026',                 status: 'done' },
+    { event: 'Mains Cutoff & Scorecard Released',           date: '10 March 2026',                    status: 'done' },
+    { event: 'Language Proficiency Test (LPT)',             date: 'To be notified (TBN)',             status: 'tbn'  },
+    { event: 'Document Verification & Final Joining',       date: 'To be notified (TBN)',             status: 'tbn'  },
+    /* 2026 cycle (upcoming) */
+    { event: 'SBI Clerk 2026 Notification Expected',        date: 'July / August 2026',               status: 'upcoming' },
+    { event: 'Application Window (2026 cycle)',             date: 'August 2026 (expected)',           status: 'upcoming' },
+    { event: 'Prelims Exam 2026 (expected)',                date: 'September / October 2026',         status: 'upcoming' },
+    { event: 'Mains Exam 2026 (expected)',                  date: 'November / December 2026',         status: 'upcoming' },
+  ];
+
+  /* ── Prelims Pattern ── */
+  const prelimsPattern = [
+    { section: 'English Language',      questions: 30, marks: 30, duration: '20 min', negative: '−0.25/wrong' },
+    { section: 'Numerical Ability',     questions: 35, marks: 35, duration: '20 min', negative: '−0.25/wrong' },
+    { section: 'Reasoning Ability',     questions: 35, marks: 35, duration: '20 min', negative: '−0.25/wrong' },
+  ];
+
+  /* ── Mains Pattern ── */
+  const mainsPattern = [
+    { section: 'General/Financial Awareness', questions: 50, marks: 50,  duration: '35 min', negative: '−0.25/wrong' },
+    { section: 'General English',             questions: 40, marks: 40,  duration: '35 min', negative: '−0.25/wrong' },
+    { section: 'Quantitative Aptitude & DI',  questions: 50, marks: 50,  duration: '45 min', negative: '−0.25/wrong' },
+    { section: 'Reasoning & Computer Aptitude', questions: 50, marks: 60, duration: '45 min', negative: '−0.25/wrong' },
+  ];
+
+  /* ── Syllabus ── */
+  const syllabus = [
+    {
+      subject: 'Reasoning Ability',
+      color: 'text-indigo-600',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Puzzles – Floor, Box, Month-based, Scheduling',
+        'Seating Arrangement – Linear, Circular, Square',
+        'Syllogisms (Direct + Reverse Pattern)',
+        'Coding-Decoding (New pattern)',
+        'Blood Relations, Direction & Distance',
+        'Inequality (Direct + Coded)',
+        'Order & Ranking, Alphanumeric Series',
+        'Data Sufficiency, Input-Output',
+      ],
+    },
+    {
+      subject: 'Numerical / Quantitative Aptitude',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Simplification & Approximation',
+        'Number Series (Missing & Wrong)',
+        'Data Interpretation – Bar, Line, Pie, Table, Caselet',
+        'Percentage, Average, Ratio & Proportion',
+        'Profit & Loss, Discount, Markup',
+        'Simple & Compound Interest',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time, Boats & Streams',
+        'Permutation, Combination & Probability',
+        'Quadratic Equations, Mensuration',
+      ],
+    },
+    {
+      subject: 'English Language',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Reading Comprehension (1–2 passages)',
+        'Cloze Test (Single + Double Blank)',
+        'Error Detection & Spotting',
+        'Sentence Rearrangement (Para Jumbles)',
+        'Fill in the Blanks (Single/Double)',
+        'Phrase Replacement, Word Usage',
+        'Match the Column, Vocabulary-based Questions',
+      ],
+    },
+    {
+      subject: 'General / Financial Awareness (Mains only)',
+      color: 'text-orange-700',
+      bg: 'bg-orange-50 border-orange-200',
+      topics: [
+        'Current Affairs – Last 6 months (National + International)',
+        'Banking Awareness – Types of Accounts, NPA, CRAR, CBS',
+        'RBI – Monetary Policy, Repo Rate, CRR, SLR',
+        'Government Schemes – PMJDY, MUDRA, PM Suraksha Bima',
+        'SBI – History, Products, Awards, Branches, Subsidiaries',
+        'Financial Terms – Inflation, GDP, Budget, Fiscal Deficit',
+        'Capital Markets, Insurance Basics, SEBI, IRDAI',
+        'Important Appointments, Sports, Awards, Summits',
+      ],
+    },
+    {
+      subject: 'Computer Aptitude (Mains only)',
+      color: 'text-purple-700',
+      bg: 'bg-purple-50 border-purple-200',
+      topics: [
+        'Computer Basics – Hardware & Software',
+        'MS Office – Word, Excel, PowerPoint shortcuts',
+        'Internet & Networking – Browsers, URLs, IP, DNS',
+        'Security – Virus, Malware, Firewall, Encryption',
+        'Operating Systems – Windows, Linux basics',
+        'DBMS Basics, Binary & Number Systems',
+        'Input/Output Devices, Memory types',
+      ],
+    },
+  ];
+
+  /* ── Salary data ── */
+  const salaryComponents = [
+    { component: 'Basic Pay (Graduate – 2 advance increments)', amount: '₹26,730' },
+    { component: 'Dearness Allowance (DA – at current rate)', amount: '~₹9,500' },
+    { component: 'House Rent Allowance (HRA)', amount: '₹1,750 – ₹2,550' },
+    { component: 'Transport Allowance', amount: '₹500 – ₹1,000' },
+    { component: 'Special Allowance', amount: '~₹2,500' },
+    { component: 'Other Allowances (Medical, Uniform etc.)', amount: '~₹2,000' },
+  ];
+
+  /* ── Year-wise vacancies ── */
+  const vacancyHistory = [
+    { year: '2025', vacancies: '6,589 (5,180 regular + 1,409 backlog)' },
+    { year: '2023', vacancies: '8,773' },
+    { year: '2021', vacancies: '5,008' },
+    { year: '2020', vacancies: '8,000' },
+    { year: '2019', vacancies: '8,904' },
+  ];
+
+  /* ── Books ── */
+  const books = [
+    { subject: 'Reasoning',    title: 'A New Approach to Reasoning',       author: 'B.S. Sijwali (Arihant)',           freeLink: '' },
+    { subject: 'Reasoning',    title: 'Analytical Reasoning',              author: 'M.K. Pandey (BSC)',               freeLink: '' },
+    { subject: 'Quant',        title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal (S.Chand)', freeLink: '' },
+    { subject: 'Quant',        title: 'Data Interpretation for Banking',   author: 'Arun Sharma (TMH)',               freeLink: '' },
+    { subject: 'English',      title: 'Objective English for Competitive Exams', author: 'Hari Mohan Prasad (TMH)',   freeLink: '' },
+    { subject: 'English',      title: 'Word Power Made Easy',              author: 'Norman Lewis',                    freeLink: '' },
+    { subject: 'Banking GK',   title: 'Banking Awareness',                 author: 'Arihant / Disha Publications',    freeLink: '' },
+    { subject: 'Current Affairs', title: 'GK Digest – Monthly',           author: 'Adda247 / GK Today (online)',      freeLink: 'https://www.gktoday.in' },
+  ];
+
+  /* ── FAQs ── */
+  const faqs = [
+    { q: 'What is the full name of SBI Clerk post?', a: 'The official designation is Junior Associate (Customer Support & Sales) in the clerical cadre of State Bank of India. It is commonly called SBI Clerk.' },
+    { q: 'What is the age limit for SBI Clerk 2026?', a: 'Candidates must be between 20 and 28 years of age. This means born not earlier than 02 April 1997 and not later than 01 April 2005 (based on 2025 cycle norms; the 2026 cut-off date will be specified in the official notification). OBC gets +3 years, SC/ST gets +5 years, PwBD gets +10 years.' },
+    { q: 'Is there an interview in SBI Clerk?', a: 'No. SBI Clerk has no Group Discussion or Personal Interview. Final selection is based entirely on the marks obtained in the Mains exam (objective portion only). The Language Proficiency Test (LPT) is qualifying in nature – marks are not counted.' },
+    { q: 'How is SBI Clerk different from IBPS Clerk?', a: 'SBI Clerk recruits exclusively for State Bank of India – the country\'s largest public sector bank. IBPS Clerk recruits for 11 other public sector banks. SBI Clerk exam is separate, generally tougher, and offers a slightly better salary and career growth due to SBI\'s scale and brand.' },
+    { q: 'What is the SBI Clerk salary per month in 2026?', a: 'Starting basic pay is ₹26,730/month (₹24,050 + 2 advance increments for graduates). With all allowances (DA, HRA, Transport, Special Pay), gross in-hand salary is approximately ₹46,000–₹48,000/month. Pay scale: ₹24,050 – ₹64,480 with periodic increments.' },
+    { q: 'Can final-year graduation students apply for SBI Clerk?', a: 'Yes. Candidates in the final year or final semester of graduation may apply provisionally. If selected, they must produce their graduation degree/marksheet by 31 December 2026 (or as specified in the 2026 notification). If you fail to do so, the provisional selection is cancelled.' },
+    { q: 'Is there sectional cut-off in SBI Clerk?', a: 'Prelims: No sectional cut-off as per recent notifications – you just need to qualify overall. Mains: No sectional cut-off either; overall Mains score determines final merit. However, minimum qualifying marks in aggregate are prescribed (with 5% relaxation for SC/ST/OBC/PwBD/XS candidates).' },
+    { q: 'Can I apply for SBI Clerk in more than one state?', a: 'No. Each candidate can apply for vacancies in only one state or Union Territory. You will also be required to have proficiency in the local language of the state you choose. There is no inter-circle or inter-state transfer after joining.' },
+    { q: 'What is the application fee for SBI Clerk?', a: 'Based on the 2025 notification: General/EWS/OBC candidates pay ₹750. SC/ST/PwBD/Ex-Servicemen candidates are exempt from the fee. This may vary slightly in the 2026 notification.' },
+    { q: 'How many attempts are allowed for SBI Clerk?', a: 'There is no official limit on the number of attempts for SBI Clerk. You can apply every year as long as you meet the age and qualification criteria on the specified cut-off date.' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">SBI Clerk 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Banking</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Graduate Eligible</span>
+            <span className="bg-purple-400/20 text-purple-200 text-xs font-semibold px-3 py-1 rounded-full">No Interview</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold mb-3 leading-tight">
+            SBI Clerk 2026 (Junior Associate) – Complete Guide
+          </h1>
+          <p className="text-blue-100 leading-relaxed max-w-2xl text-base">
+            The SBI Clerk exam recruits Junior Associates (Customer Support &amp; Sales) for State Bank of India branches across India. With 6,000+ vacancies annually, it is one of the most sought-after banking jobs for graduates. The 2025 cycle results are declared; the 2026 notification is expected in July/August 2026.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-4 text-sm">
+            <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer"
+               className="text-blue-200 hover:text-white underline underline-offset-2">
+              🔗 Official SBI Careers Page →
+            </a>
+          </div>
+          {/* Quick stats strip */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+            {[
+              { label: 'Conducting Body', value: 'State Bank of India' },
+              { label: 'Vacancies (2025)',  value: '6,589 Posts' },
+              { label: 'Age Limit',         value: '20 – 28 Years' },
+              { label: 'Gross Salary',      value: '~₹46,000/month' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/15">
+                <div className="text-xs text-blue-300 uppercase tracking-wide mb-1">{stat.label}</div>
+                <div className="font-semibold text-white text-sm">{stat.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT + SIDEBAR ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* ── LEFT CONTENT ── */}
+          <div className="min-w-0">
+
+            {/* ── SECTION 1: OVERVIEW ── */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI Clerk 2026 Overview</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                {[
+                  { label: 'Full Post Name',        value: 'Junior Associate (Customer Support & Sales)' },
+                  { label: 'Conducting Body',       value: 'State Bank of India (SBI)' },
+                  { label: 'Exam Level',            value: 'National (Central Government Bank)' },
+                  { label: 'Frequency',             value: 'Annual (every year)' },
+                  { label: 'Selection Stages',      value: 'Prelims → Mains → Language Proficiency Test (LPT)' },
+                  { label: 'Interview',             value: 'No Group Discussion / No Interview' },
+                  { label: 'Vacancies (2025 cycle)',value: '6,589 (5,180 regular + 1,409 backlog)' },
+                  { label: 'Starting Basic Pay',    value: '₹26,730/month (gross ~₹46,000)' },
+                  { label: 'Posting',               value: 'State/UT chosen at time of application – no inter-state transfer' },
+                  { label: 'Age Limit',             value: '20 – 28 years (with relaxation for reserved categories)' },
+                  { label: 'Qualification',         value: 'Any Graduate from recognised university' },
+                  { label: 'Official Website',      value: 'sbi.co.in/web/careers' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-semibold text-surface-800 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <p className="text-sm text-emerald-800 leading-relaxed">
+                  <strong>2025 Cycle Status:</strong> The SBI Clerk 2025 Mains was held on 21 November 2025 for 6,589 vacancies. Mains results were declared on 27 February 2026 and the cutoff/scorecard was released on 10 March 2026. The Language Proficiency Test (LPT) and final joining are awaited. The next SBI Clerk 2026 notification is expected in July/August 2026.
+                </p>
+              </div>
+            </section>
+
+            {/* ── SECTION 2: IMPORTANT DATES ── */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI Clerk Important Dates 2025–2026</h2>
+              </div>
+              <p className="text-surface-500 text-sm mb-4">The table below covers both the completed 2025 cycle and the expected 2026 cycle schedule. All confirmed dates are sourced from official SBI notifications.</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Date / Schedule</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-center text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">
+                ⚠ TBN = To Be Notified. All 2026 dates are tentative based on the previous year pattern. Always verify at <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">sbi.co.in/web/careers</a>.
+              </p>
+            </section>
+
+            {/* ── SECTION 3: ELIGIBILITY ── */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI Clerk 2026 Eligibility Criteria</h2>
+              </div>
+
+              {/* Nationality */}
+              <div className="card p-5 mb-4">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base flex items-center gap-2">
+                  <span className="text-xl">🌏</span> Nationality
+                </h3>
+                <p className="text-sm text-surface-600 leading-relaxed">
+                  Candidates must be: (a) a Citizen of India, or (b) a subject of Nepal/Bhutan, or (c) a Tibetan Refugee who came to India before 1 January 1962, or (d) a Person of Indian Origin (PIO) who migrated from specific countries with the intent of permanent settlement. Non-Indian candidates must hold a Certificate of Eligibility issued by the Government of India.
+                </p>
+              </div>
+
+              {/* Age limit */}
+              <div className="card p-5 mb-4">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base flex items-center gap-2">
+                  <span className="text-xl">🎂</span> Age Limit
+                </h3>
+                <p className="text-sm text-surface-600 mb-4">Minimum 20 years — Maximum 28 years (as on the cut-off date specified in the notification, typically 1 April of the application year).</p>
+                <div className="overflow-x-auto rounded-lg border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-900 text-white">
+                        <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Category</th>
+                        <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Age Relaxation</th>
+                        <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Effective Upper Age</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { cat: 'General / EWS',                 relax: 'No relaxation',  max: '28 years' },
+                        { cat: 'OBC (Non-Creamy Layer)',        relax: '+3 years',        max: '31 years' },
+                        { cat: 'SC / ST',                       relax: '+5 years',        max: '33 years' },
+                        { cat: 'PwBD (General)',                relax: '+10 years',       max: '38 years' },
+                        { cat: 'PwBD (OBC)',                   relax: '+13 years',       max: '41 years' },
+                        { cat: 'PwBD (SC/ST)',                 relax: '+15 years',       max: '43 years' },
+                        { cat: 'Ex-Servicemen',                relax: 'Actual service + 3 yrs', max: 'As applicable' },
+                        { cat: 'Widows / Divorced Women (Gen)', relax: '+9 years',       max: '37 years' },
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.cat}</td>
+                          <td className="p-3 text-center text-surface-600">{row.relax}</td>
+                          <td className="p-3 text-center font-semibold text-emerald-700">{row.max}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Educational Qualification */}
+              <div className="card p-5 mb-4">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base flex items-center gap-2">
+                  <span className="text-xl">🎓</span> Educational Qualification
+                </h3>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0"></span>A <strong>Bachelor's Degree in any discipline</strong> from a recognised university or its equivalent qualification recognised by the Central Government.</li>
+                  <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0"></span>Candidates with an <strong>Integrated Dual Degree (IDD)</strong> certificate must ensure the date of passing is on or before the application deadline.</li>
+                  <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0"></span><strong>Final year / semester students</strong> may also apply provisionally. If selected, they must produce proof of graduation by 31 December 2026.</li>
+                  <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0"></span>Candidates must also have <strong>proficiency in reading, writing, and speaking the local language</strong> of the state they apply for.</li>
+                </ul>
+              </div>
+
+              {/* Special note for apprentices */}
+              <div className="card p-4 bg-amber-50 border-amber-200">
+                <p className="text-sm text-amber-800">
+                  <strong>🎯 Bonus for SBI Apprentices:</strong> Trained SBI Apprentices who completed at least 1 year of branch experience (start date on or after 01 January 2022, with satisfactory conduct) are eligible for 2.5% bonus marks (5 out of 200) in the Mains Examination.
+                </p>
+              </div>
+            </section>
+
+            {/* ── SECTION 4: VACANCIES ── */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI Clerk Vacancies – Trend & Distribution</h2>
+              </div>
+              <div className="card p-5 bg-primary-50 border-primary-200 mb-6">
+                <p className="text-sm text-primary-800">
+                  <strong>2026 Vacancy:</strong> The exact vacancy count for SBI Clerk 2026 will be announced with the official notification in July/August 2026. Based on the 5-year trend, expect 6,000–9,000 vacancies, distributed state-wise and category-wise across SBI circles.
+                </p>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Year-wise Vacancy Trend</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Recruitment Year</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Total Vacancies</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-700">{row.vacancies}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t border-primary-200 bg-primary-50">
+                      <td className="p-3 font-bold text-primary-800">2026 (Expected)</td>
+                      <td className="p-3 text-center font-bold text-primary-700">To be notified (TBN)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-surface-500">State-wise and category-wise (UR/OBC/SC/ST/EWS) vacancy breakdown will be published in the official notification PDF. Top states with highest vacancies historically include Uttar Pradesh, Maharashtra, Tamil Nadu, Karnataka, and West Bengal.</p>
+            </section>
+
+            {/* ── SECTION 5: SELECTION PROCESS ── */}
+            <section id="selection" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI Clerk Selection Process</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                {[
+                  { stage: '1', name: 'Preliminary Exam', desc: '100 questions · 100 marks · 1 hour (sectional timing) · Qualifying in nature', color: 'border-blue-300 bg-blue-50', badge: 'Qualifying Only', badgeColor: 'bg-amber-100 text-amber-700' },
+                  { stage: '2', name: 'Mains Exam',       desc: '190 questions · 200 marks · 2 hrs 40 min · Decides final merit & cut-off', color: 'border-primary-300 bg-primary-50', badge: 'Merit Deciding', badgeColor: 'bg-emerald-100 text-emerald-700' },
+                  { stage: '3', name: 'Language Proficiency Test (LPT)', desc: 'For candidates who have not studied the opted local language in Class 10/12. Qualifying in nature.', color: 'border-purple-300 bg-purple-50', badge: 'Qualifying Only', badgeColor: 'bg-amber-100 text-amber-700' },
+                ].map((s) => (
+                  <div key={s.stage} className={`card p-5 ${s.color}`}>
+                    <div className="text-xs font-semibold uppercase tracking-wide text-surface-400 mb-1">Stage {s.stage}</div>
+                    <div className="text-lg font-heading font-bold text-surface-800 mb-2">{s.name}</div>
+                    <p className="text-xs text-surface-500 mb-3">{s.desc}</p>
+                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${s.badgeColor}`}>{s.badge}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-4 bg-surface-50 border-surface-200">
+                <p className="text-sm text-surface-700 leading-relaxed">
+                  <strong>Key Points:</strong> The Prelims exam only shortlists candidates for Mains — Prelims marks are NOT included in the final merit. The final selection is based solely on Mains performance. There is no interview, group discussion, or physical test. Posting is state-specific with no inter-state transfer.
+                </p>
+              </div>
+            </section>
+
+            {/* ── SECTION 6: EXAM PATTERN ── */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI Clerk 2026 Exam Pattern</h2>
+              </div>
+
+              {/* Prelims */}
+              <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3">Phase I – Preliminary Exam (Qualifying)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Section</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Questions</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Marks</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Duration</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Negative</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prelimsPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-surface-800">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-600">{row.duration}</td>
+                        <td className="p-3 text-center text-red-500 text-xs font-semibold">{row.negative}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-900 text-white">
+                      <td className="p-3 font-bold">Total</td>
+                      <td className="p-3 text-center font-bold">100</td>
+                      <td className="p-3 text-center font-bold">100</td>
+                      <td className="p-3 text-center font-bold">1 hour</td>
+                      <td className="p-3 text-center text-xs">Sectional Timing</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-3 bg-amber-50 border-amber-200 mb-8">
+                <p className="text-xs text-amber-800"><strong>⚠ Important:</strong> Each section in Prelims has its own time limit (20 minutes each). You cannot move to the next section before the time is up. There is NO sectional cut-off — you must qualify overall to proceed to Mains.</p>
+              </div>
+
+              {/* Mains */}
+              <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3">Phase II – Mains Exam (Merit Deciding)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Section</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Questions</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Marks</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Duration</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Negative</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mainsPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-surface-800">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-600">{row.duration}</td>
+                        <td className="p-3 text-center text-red-500 text-xs font-semibold">{row.negative}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-900 text-white">
+                      <td className="p-3 font-bold">Total</td>
+                      <td className="p-3 text-center font-bold">190</td>
+                      <td className="p-3 text-center font-bold">200</td>
+                      <td className="p-3 text-center font-bold">2 hrs 40 min</td>
+                      <td className="p-3 text-center text-xs">Sectional Timing</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-3 bg-emerald-50 border-emerald-200">
+                <p className="text-xs text-emerald-800"><strong>✅ Final Merit:</strong> Based only on Mains marks (out of 200). No interview. No descriptive test. Mains is the only stage that determines your selection. Language choice: Hindi, English, or a regional language (except for the English section).</p>
+              </div>
+            </section>
+
+            {/* ── SECTION 7: SYLLABUS ── */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI Clerk 2026 Detailed Syllabus</h2>
+              </div>
+              <p className="text-surface-500 text-sm mb-5">SBI does not publish an official topic-wise syllabus. The topics below are based on a thorough analysis of the past 5 years of Prelims and Mains question papers.</p>
+              <div className="space-y-3">
+                {syllabus.map((sub) => (
+                  <details key={sub.subject} className={`card border rounded-xl overflow-hidden ${sub.bg}`}>
+                    <summary className="flex items-center justify-between cursor-pointer p-4 gap-3 select-none">
+                      <div className="flex items-center gap-3">
+                        <span className={`font-heading font-semibold text-base ${sub.color}`}>{sub.subject}</span>
+                        <span className="text-xs text-surface-400">({sub.topics.length} topics)</span>
+                      </div>
+                      <svg className="w-4 h-4 text-surface-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-4 pb-4 pt-1 grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                      {sub.topics.map((t) => (
+                        <div key={t} className="flex items-start gap-2 text-sm text-surface-700">
+                          <span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0"></span>
+                          {t}
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 8: SALARY ── */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI Clerk Salary & Benefits 2026</h2>
+              </div>
+              <div className="card p-5 mb-5 border-emerald-200 bg-emerald-50">
+                <div className="text-xs text-emerald-600 uppercase tracking-wide font-semibold mb-1">Approximate Gross Monthly Salary</div>
+                <div className="text-3xl font-heading font-bold text-emerald-700">~₹46,000</div>
+                <div className="text-sm text-emerald-600 mt-1">Starting salary (new joinees in metro cities)</div>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Pay Component</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryComponents.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 text-surface-700">{row.component}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-700">{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Pay Scale Progression</h3>
+              <p className="text-sm text-surface-600 mb-4">Pay scale: <strong>₹24,050 – ₹64,480</strong> with periodic increments.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                {[
+                  { years: 'After 3 yrs', pay: '₹28,070' },
+                  { years: 'After 6 yrs', pay: '₹33,020' },
+                  { years: 'After 10 yrs', pay: '₹41,020' },
+                  { years: 'After 17 yrs', pay: '₹57,400' },
+                ].map((p) => (
+                  <div key={p.years} className="bg-surface-50 rounded-xl p-3 border border-surface-200 text-center">
+                    <div className="text-xs text-surface-400 mb-1">{p.years}</div>
+                    <div className="font-bold text-surface-800 text-sm">{p.pay}</div>
+                  </div>
+                ))}
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Additional Benefits</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {['Provident Fund (PF) & Gratuity', 'Pension (NPS scheme)', 'Medical Aid for self and dependents', 'Concessional home loan & car loan', 'Leave Fare Concession (LFC)', 'Subsidised staff canteen', 'Annual performance bonus', 'Clear promotion path to Officer grade via internal exams'].map((b) => (
+                  <div key={b} className="flex items-center gap-2 text-sm text-surface-700 bg-surface-50 rounded-lg px-3 py-2 border border-surface-100">
+                    <span className="text-emerald-500 text-base">✓</span> {b}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 9: HOW TO APPLY ── */}
+            <section id="apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for SBI Clerk 2026</h2>
+              </div>
+              <div className="card p-4 bg-amber-50 border-amber-200 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠ Note:</strong> The 2026 application window will open after the official notification is released (expected July/August 2026). The steps below are based on the standard SBI Clerk online application process.</p>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { step: '1', title: 'Visit Official Website', desc: 'Go to sbi.co.in/web/careers and click on "Recruitment of Junior Associates (Customer Support & Sales)" under Current Openings.' },
+                  { step: '2', title: 'New Registration', desc: 'Click "Apply Online" → "New Registration". Enter your name, mobile number, and email ID. Save the Registration Number and Password sent to your phone/email.' },
+                  { step: '3', title: 'Fill Application Form', desc: 'Log in and fill the application form carefully. Select your preferred State/UT (you can choose only ONE). Fill personal, educational, and category details accurately.' },
+                  { step: '4', title: 'Upload Documents', desc: 'Upload scanned photo (20–50 KB, JPG), signature (10–20 KB, JPG), left thumb impression, and hand-written declaration (as per specification in the notification).' },
+                  { step: '5', title: 'Pay Application Fee', desc: 'General/OBC/EWS: ₹750 (approximate — confirm in official notification). SC/ST/PwBD/XS: Exempt. Pay via internet banking, debit/credit card, or UPI.' },
+                  { step: '6', title: 'Submit & Print', desc: 'Review all details before final submission. After submission, take a printout of the application form and fee payment receipt. Keep them safe for future reference.' },
+                ].map((s) => (
+                  <div key={s.step} className="flex gap-4 card p-5">
+                    <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-base flex-shrink-0">{s.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.title}</div>
+                      <p className="text-sm text-surface-600">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 10: STUDY PLAN ── */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI Clerk 6-Month Study Plan</h2>
+              </div>
+              <div className="relative pl-6">
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-200"></div>
+                {[
+                  { month: 'Month 1', title: 'Build Your Foundation', tasks: ['Reasoning: Syllogisms, Inequalities, Coding-Decoding', 'Quant: Number System, Percentages, Ratio & Proportion, Simplification', 'English: Grammar rules, 10 new words daily from Word Power Made Easy', 'Start reading The Hindu or Economic Times for 30 min/day'] },
+                  { month: 'Month 2', title: 'Core Concepts – Deep Dive', tasks: ['Reasoning: Seating Arrangement (Linear & Circular), Blood Relations', 'Quant: Data Interpretation (Bar, Line, Pie Charts)', 'English: Reading Comprehension practice (1 passage/day)', 'GK: Start making notes on Banking Awareness — types of accounts, RBI functions'] },
+                  { month: 'Month 3', title: 'Advanced Topics', tasks: ['Reasoning: Floor puzzles, Complex seating, Input-Output', 'Quant: Caselets, Time & Work, Probability, Quadratic Equations', 'English: Para Jumbles, Cloze Tests, Error Detection', 'GK: Current Affairs (last 3 months), Government schemes'] },
+                  { month: 'Month 4', title: 'Sectional Tests & Speed Building', tasks: ['Take 2 sectional tests per day (rotate sections)', 'Focus on accuracy first, then increase speed', 'Computer Aptitude: Basics, MS Office, Networking (for Mains)', 'GK: SBI-specific knowledge — history, subsidiaries, products'] },
+                  { month: 'Month 5', title: 'Full Mock Tests', tasks: ['2 full Prelims mock tests per week with analysis', '1 full Mains mock test per week', 'Identify weak sections and revise them immediately', 'Current Affairs: Last 6 months compilation'] },
+                  { month: 'Month 6', title: 'Final Revision & Exam Ready', tasks: ['Daily mocks and PYQs (Last 5 years) — simulate actual exam conditions', 'Revise all Banking Awareness and GK notes', 'Focus on high-scoring topics: GFA, Reasoning puzzles', 'Sleep well, manage stress — consistency beats cramming'] },
+                ].map((m) => (
+                  <div key={m.month} className="relative mb-6 pl-8">
+                    <div className="absolute -left-3 w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold">{m.month.split(' ')[1]}</div>
+                    <div className="card p-5">
+                      <div className="font-heading font-semibold text-surface-800 mb-3">{m.month}: {m.title}</div>
+                      <ul className="space-y-1.5">
+                        {m.tasks.map((t) => (
+                          <li key={t} className="flex items-start gap-2 text-sm text-surface-600">
+                            <span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0"></span>{t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 11: BEST BOOKS ── */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for SBI Clerk 2026</h2>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Subject</th>
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Book Title</th>
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Author / Publisher</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Free Link</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3"><span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full font-semibold">{b.subject}</span></td>
+                        <td className="p-3 font-medium text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-500 text-xs">{b.author}</td>
+                        <td className="p-3 text-center">
+                          {b.freeLink ? (
+                            <a href={b.freeLink} target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:text-primary-700 text-xs font-medium">Free →</a>
+                          ) : (
+                            <span className="text-surface-300 text-xs">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* ── SECTION 12: EXPERT TIPS ── */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips to Crack SBI Clerk</h2>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { num: '1', tip: 'GFA is your biggest weapon in Mains.', detail: 'General/Financial Awareness carries 50 marks in Mains and takes the least time to answer. Aspirants who score 40+ in GFA have a huge advantage. Invest 20–25% of your total study time here.' },
+                  { num: '2', tip: 'Prelims is a speed game — not a knowledge game.', detail: '100 marks in 60 minutes means 36 seconds per question. Practise daily with a timer. Master simplification, basic reasoning, and grammar rules — these are fast scoring and high in frequency.' },
+                  { num: '3', tip: 'Puzzles and DI decide your Mains rank.', detail: 'Reasoning Puzzles and Data Interpretation together carry 50–60% of the Mains questions. Solve 3 new puzzles and 2 DI sets every single day. No shortcuts here — only consistent practice.' },
+                  { num: '4', tip: 'Never skip negative marking calculations.', detail: 'SBI Clerk deducts 0.25 marks per wrong answer. A wrong attempt in Prelims where you had 33% chance costs you 0.25 marks. Skip questions where you have no idea — do NOT guess blindly.' },
+                  { num: '5', tip: 'Solving previous year papers is non-negotiable.', detail: 'SBI Clerk repeats question patterns heavily year after year. Solving 5 years of Prelims and Mains PYQs will reveal exactly which topics appear most and what the difficulty level is. Do it before month 4.' },
+                  { num: '6', tip: 'Choose your state wisely.', detail: 'You apply for vacancies in ONE state. States like Uttar Pradesh, Maharashtra, and Tamil Nadu typically have the most vacancies but also the highest competition. Smaller states may have lower competition. Research the state-wise vacancy distribution before applying.' },
+                ].map((t) => (
+                  <div key={t.num} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center font-heading font-bold text-base flex-shrink-0">{t.num}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{t.tip}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{t.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 13: FAQs ── */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card border border-surface-200 rounded-xl overflow-hidden">
+                    <summary className="flex items-center justify-between cursor-pointer p-4 gap-4 select-none">
+                      <span className="font-heading font-semibold text-surface-800 text-sm pr-2">{faq.q}</span>
+                      <svg className="w-4 h-4 text-surface-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-4 pb-4 pt-1 text-sm text-surface-600 leading-relaxed border-t border-surface-100">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Disclaimer */}
+            <div className="card p-5 bg-surface-50 border-surface-200 text-xs text-surface-400 leading-relaxed">
+              <strong className="text-surface-600">Disclaimer:</strong> The information on this page is compiled from official SBI notifications (Advt. No. CRPD/CR/2025-26/06) and trusted educational sources. All 2026 dates are tentative based on the previous year pattern. Always verify latest details at the official SBI Careers page: <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">sbi.co.in/web/careers</a>. TaiyarHo is not affiliated with SBI.
+            </div>
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <div className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">On This Page</div>
+                <nav className="space-y-0.5">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">
+                      {s.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+              {/* Official Website */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="font-heading font-semibold text-primary-800 text-sm mb-2">Official Website</div>
+                <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all hover:text-primary-800">
+                  sbi.co.in/web/careers →
+                </a>
+              </div>
+              {/* Eligibility Checker CTA */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <div className="font-heading font-semibold text-emerald-800 text-sm mb-2">Check Your Eligibility</div>
+                <p className="text-xs text-emerald-700 mb-3">Use our free tool to instantly check if you qualify for SBI Clerk 2026.</p>
+                <Link href="/tools/age-calculator" className="block text-center text-xs font-semibold bg-emerald-600 text-white px-3 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                  Check Eligibility →
+                </Link>
+              </div>
+              {/* Related Banking Exams */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-3">Related Banking Exams</div>
+                <div className="space-y-1.5">
+                  {[
+                    { name: 'SBI PO', slug: 'sbi-po' },
+                    { name: 'IBPS PO', slug: 'ibps-po' },
+                    { name: 'IBPS Clerk', slug: 'ibps-clerk' },
+                    { name: 'RBI Grade B', slug: 'rbi-grade-b' },
+                    { name: 'IBPS RRB', slug: 'ibps-rrb' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </>
