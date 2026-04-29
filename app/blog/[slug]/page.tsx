@@ -1036,7 +1036,7 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
                 <tbody>
                   {[
                     ['NCERT Books (ncert.nic.in)', 'Foundation for all subjects', 'Free', '⭐⭐⭐⭐⭐'],
-                    ['YouTube (StudyIQ, Adda247, Wifistudy)', 'Video lectures for all exams', 'Free', '⭐⭐⭐⭐⭐'],
+                    ['YouTube (StudyIQ, Adda247, Exampur)', 'Video lectures for all exams', 'Free', '⭐⭐⭐⭐⭐'],
                     ['Official exam websites (ssc.gov.in, ibps.in)', 'Previous year papers + notifications', 'Free', '⭐⭐⭐⭐⭐'],
                     ['Testbook / Oliveboard free mocks', 'Mock tests with analysis', 'Free (limited)', '⭐⭐⭐⭐'],
                     ['Daily newspaper (The Hindu / Indian Express)', 'Current affairs', '₹0–₹300/mo', '⭐⭐⭐⭐⭐'],

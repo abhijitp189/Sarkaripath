@@ -208,7 +208,7 @@ const resourceSections: ResourceSection[] = [
     items: [
       {
         name: 'StudyIQ IAS — All Exams',
-        url: 'https://www.youtube.com/@StudyIQIAS',
+        url: 'https://www.youtube.com/@StudyIQEducationLtd',
         desc: 'Daily current affairs, topic-wise subject lectures, exam analysis, and strategy sessions. Covers UPSC, SSC, Banking, Railway, and State PSC comprehensively.',
         tags: ['All Exams'],
         badge: '20M+ subscribers',
@@ -216,7 +216,7 @@ const resourceSections: ResourceSection[] = [
       },
       {
         name: 'Unacademy IAS — UPSC',
-        url: 'https://www.youtube.com/@UnacademyIAS',
+        url: 'https://www.youtube.com/@UnacademyIASEnglish',
         desc: 'Free UPSC lectures by Roman Saini and top educators. Covers GS 1-4, Essay, and Current Affairs. Daily live sessions available.',
         tags: ['UPSC'],
         badge: '15M+ subscribers',
@@ -230,7 +230,7 @@ const resourceSections: ResourceSection[] = [
       },
       {
         name: 'Mrunal Patel — Economy & GS',
-        url: 'https://www.youtube.com/@MrunalPatel',
+        url: 'https://www.youtube.com/@TheMrunalPatel',
         desc: "India's most popular economy lecturer for UPSC and Banking. Clear, structured explanations of Indian Economy, Budget, and Monetary Policy.",
         tags: ['UPSC', 'Banking'],
       },
@@ -241,20 +241,14 @@ const resourceSections: ResourceSection[] = [
         tags: ['SSC', 'Banking', 'Railway'],
       },
       {
-        name: 'Wifistudy — Railway & SSC',
-        url: 'https://www.youtube.com/channel/UCuWuAvEnKWez5BUr29VpwqA',
-        desc: "Free classes for RRB NTPC, Group D, SSC MTS, GD Constable. India's No.1 study channel with 16M+ subscribers. Very popular for Maths shortcuts and Railway GK.",
-        tags: ['Railway', 'SSC'],
-      },
-      {
         name: 'Rakesh Yadav Maths',
-        url: 'https://www.youtube.com/@RAKESHYADAVREADERSPUBLICATI',
+        url: 'https://www.youtube.com/@rakeshyadav_sir',
         desc: 'Quantitative aptitude shortcuts and tricks for SSC CGL, CHSL, and Railway. Best for students who struggle with the Maths section.',
         tags: ['SSC', 'Railway'],
       },
       {
         name: 'Exampur — Teaching & State PSC',
-        url: 'https://www.youtube.com/@exampur',
+        url: 'https://www.youtube.com/@Exampur__Official',
         desc: 'Excellent for CTET, TET, and State PSC preparation. Free live classes and comprehensive subject coverage for teaching recruitment exams.',
         tags: ['Teaching', 'State PSC'],
       },

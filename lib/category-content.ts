@@ -20,8 +20,8 @@ export const categoryContent: Record<string, CategoryContent> = {
       { title: 'NCERT Books (Class 6-12)', author: 'NCERT', subject: 'Foundation' },
     ],
     youtubeChannels: [
-      { name: 'Unacademy IAS', url: 'https://www.youtube.com/@UnacademyIAS', desc: 'Free UPSC lectures by top educators' },
-      { name: 'StudyIQ IAS', url: 'https://www.youtube.com/@StudyIQIAS', desc: 'Current affairs and subject-wise lectures' },
+      { name: 'Unacademy IAS', url: 'https://www.youtube.com/@UnacademyIASEnglish', desc: 'Free UPSC lectures by top educators' },
+      { name: 'StudyIQ IAS', url: 'https://www.youtube.com/@StudyIQEducationLtd', desc: 'Current affairs and subject-wise lectures' },
       { name: 'Drishti IAS', url: 'https://www.youtube.com/@DrishtiIASvideos', desc: 'Hindi medium UPSC preparation' },
     ],
     websites: [
@@ -55,7 +55,7 @@ export const categoryContent: Record<string, CategoryContent> = {
       { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'Vocabulary' },
     ],
     youtubeChannels: [
-      { name: 'Rakesh Yadav Maths', url: 'https://www.youtube.com/@RAKESHYADAVREADERSPUBLICATI', desc: 'Mathematics shortcuts and tricks' },
+      { name: 'Rakesh Yadav Maths', url: 'https://www.youtube.com/@rakeshyadav_sir', desc: 'Mathematics shortcuts and tricks' },
       { name: 'Adda247', url: 'https://www.youtube.com/@adabornindia', desc: 'Free SSC preparation classes' },
       { name: 'Unacademy SSC', url: 'https://www.youtube.com/@UnacademySSCExams', desc: 'Subject-wise SSC lectures' },
     ],
@@ -90,7 +90,7 @@ export const categoryContent: Record<string, CategoryContent> = {
     youtubeChannels: [
       { name: 'Adda247 Banking', url: 'https://www.youtube.com/@adabornindia', desc: 'Free banking exam preparation' },
       { name: 'Unacademy Banking', url: 'https://www.youtube.com/@UnacademyBanking', desc: 'Free classes for banking exams' },
-      { name: 'Mrunal Patel', url: 'https://www.youtube.com/@MrunalPatel', desc: 'Economy and banking awareness' },
+      { name: 'Mrunal Patel', url: 'https://www.youtube.com/@TheMrunalPatel', desc: 'Economy and banking awareness' },
     ],
     websites: [
       { name: 'Oliveboard', url: 'https://www.oliveboard.in', desc: 'Free mock tests for banking exams' },
@@ -121,7 +121,7 @@ export const categoryContent: Record<string, CategoryContent> = {
       { title: "Lucent's General Science", author: 'Lucent Publications', subject: 'Science' },
     ],
     youtubeChannels: [
-      { name: 'Wifistudy (Unacademy)', url: 'https://www.youtube.com/@wabornindia', desc: 'Free daily classes for Railway exams' },
+      { name: 'Exampur', url: 'https://www.youtube.com/@Exampur__Official', desc: 'Free daily classes for Railway exams' },
       { name: 'Adda247', url: 'https://www.youtube.com/@adabornindia', desc: 'Railway exam preparation videos' },
       { name: 'Study Smart', url: 'https://www.youtube.com/@testabornindia', desc: 'Free video classes' },
     ],
@@ -183,9 +183,9 @@ export const categoryContent: Record<string, CategoryContent> = {
       { title: 'Certificate Physical and Human Geography', author: 'G.C. Leong', subject: 'Geography' },
     ],
     youtubeChannels: [
-      { name: 'StudyIQ', url: 'https://www.youtube.com/@StudyIQIAS', desc: 'State PSC preparation' },
+      { name: 'StudyIQ', url: 'https://www.youtube.com/@StudyIQEducationLtd', desc: 'State PSC preparation' },
       { name: 'Drishti IAS', url: 'https://www.youtube.com/@DrishtiIASvideos', desc: 'Hindi medium preparation' },
-      { name: 'Unacademy State PSC', url: 'https://www.youtube.com/@UnacademyIAS', desc: 'State-specific content' },
+      { name: 'Unacademy State PSC', url: 'https://www.youtube.com/@UnacademyIASEnglish', desc: 'State-specific content' },
     ],
     websites: [
       { name: 'NCERT Textbooks', url: 'https://ncert.nic.in/textbook.php', desc: 'Free foundation textbooks' },
@@ -213,7 +213,7 @@ export const categoryContent: Record<string, CategoryContent> = {
       { title: 'Previous Year Papers', author: 'Various publishers', subject: 'Practice' },
     ],
     youtubeChannels: [
-      { name: 'Exampur', url: 'https://www.youtube.com/@exampur', desc: 'CTET and teaching exam preparation' },
+      { name: 'Exampur', url: 'https://www.youtube.com/@Exampur__Official', desc: 'CTET and teaching exam preparation' },
       { name: 'Adda247 Teaching', url: 'https://www.youtube.com/@adabornindia', desc: 'Free teaching exam classes' },
     ],
     websites: [
@@ -243,7 +243,7 @@ export const categoryContent: Record<string, CategoryContent> = {
     ],
     youtubeChannels: [
       { name: 'Adda247', url: 'https://www.youtube.com/@adabornindia', desc: 'Police exam preparation' },
-      { name: 'Exampur', url: 'https://www.youtube.com/@exampur', desc: 'State police exam classes' },
+      { name: 'Exampur', url: 'https://www.youtube.com/@Exampur__Official', desc: 'State police exam classes' },
     ],
     websites: [
       { name: 'SSC Official', url: 'https://ssc.gov.in', desc: 'For central police exams (CPO, GD)' },

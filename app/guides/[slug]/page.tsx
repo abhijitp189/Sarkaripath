@@ -612,7 +612,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
                 <tbody>
                   {[
                     ['NCERT Books (ncert.nic.in)', 'Foundation for all subjects', 'Free', '⭐⭐⭐⭐⭐'],
-                    ['YouTube (StudyIQ, Adda247, Wifistudy)', 'Video lectures for all exams', 'Free', '⭐⭐⭐⭐⭐'],
+                    ['YouTube (StudyIQ, Adda247, Exampur)', 'Video lectures for all exams', 'Free', '⭐⭐⭐⭐⭐'],
                     ['Official exam websites (ssc.gov.in, ibps.in)', 'Previous year papers + notifications', 'Free', '⭐⭐⭐⭐⭐'],
                     ['Testbook / Oliveboard free mocks', 'Mock tests with analysis', 'Free (limited)', '⭐⭐⭐⭐'],
                     ['Daily newspaper (The Hindu / Indian Express)', 'Current affairs', '₹0–₹300/mo', '⭐⭐⭐⭐⭐'],
@@ -909,15 +909,15 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
             <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">🏛️ For UPSC &amp; State PSC</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
               <YTCard name="Drishti IAS" url="https://www.youtube.com/@DrishtiIASvideos" desc="Hindi medium UPSC preparation — daily current affairs, prelims & mains lectures, and answer writing" lang="Hindi" />
-              <YTCard name="StudyIQ IAS" url="https://www.youtube.com/@StudyIQIAS" desc="Daily current affairs and subject-wise lectures by Gaurav Munjal and team for UPSC and all exams" lang="Hindi/English" />
-              <YTCard name="Unacademy IAS" url="https://www.youtube.com/@UnacademyIAS" desc="Free UPSC lectures by top educators on History, Geography, Polity, Economy, and optional subjects" lang="English/Hindi" />
-              <YTCard name="Mrunal Patel" url="https://www.youtube.com/@MrunalPatel" desc="Economy, Polity, and current affairs analysis — especially strong for UPSC Prelims and banking awareness" lang="English/Hindi" />
+              <YTCard name="StudyIQ IAS" url="https://www.youtube.com/@StudyIQEducationLtd" desc="Daily current affairs and subject-wise lectures by Gaurav Munjal and team for UPSC and all exams" lang="Hindi/English" />
+              <YTCard name="Unacademy IAS" url="https://www.youtube.com/@UnacademyIASEnglish" desc="Free UPSC lectures by top educators on History, Geography, Polity, Economy, and optional subjects" lang="English/Hindi" />
+              <YTCard name="Mrunal Patel" url="https://www.youtube.com/@TheMrunalPatel" desc="Economy, Polity, and current affairs analysis — especially strong for UPSC Prelims and banking awareness" lang="English/Hindi" />
             </div>
 
             <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">📝 For SSC &amp; Railway</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-              <YTCard name="Wifistudy (by Unacademy)" url="https://www.youtube.com/@wabornindia" desc="Free live classes for Railway, SSC, and Defence exams — Maths, Reasoning, GK, and English" lang="Hindi" />
-              <YTCard name="Rakesh Yadav Readers" url="https://www.youtube.com/@RAKESHYADAVREADERSPUBLICATI" desc="Mathematics shortcuts and advanced-level problem solving for SSC CGL and Railway exams" lang="Hindi" />
+              <YTCard name="Exampur" url="https://www.youtube.com/@Exampur__Official" desc="Free live classes for Railway, SSC, and State exams — Maths, Reasoning, GK, and English" lang="Hindi" />
+              <YTCard name="Rakesh Yadav Readers" url="https://www.youtube.com/@rakeshyadav_sir" desc="Mathematics shortcuts and advanced-level problem solving for SSC CGL and Railway exams" lang="Hindi" />
               <YTCard name="Adda247" url="https://www.youtube.com/@adabornindia" desc="Comprehensive classes for Banking, SSC, and Railway exams with daily quizzes and mock analysis" lang="Hindi/English" />
               <YTCard name="Gagan Pratap Maths" url="https://www.youtube.com/@GaganPratapMaths" desc="One of the most popular Maths channels for SSC — clear explanations and shortcuts for Quant" lang="Hindi" />
             </div>
@@ -932,7 +932,7 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
             <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">🎖️ For Defence &amp; Teaching</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
               <YTCard name="Defence Adda247" url="https://www.youtube.com/@DefenceAdda247" desc="NDA, CDS, AFCAT, CAPF preparation with daily classes and mock test discussions" lang="Hindi" />
-              <YTCard name="Exampur (by Vivek Sir)" url="https://www.youtube.com/@exampur" desc="Covers CTET, State TET, DSSSB, and KVS along with SSC and Railway exams" lang="Hindi" />
+              <YTCard name="Exampur (by Vivek Sir)" url="https://www.youtube.com/@Exampur__Official" desc="Covers CTET, State TET, DSSSB, and KVS along with SSC and Railway exams" lang="Hindi" />
             </div>
 
             <GCallout type="warning" title="Avoid This Common Mistake">
