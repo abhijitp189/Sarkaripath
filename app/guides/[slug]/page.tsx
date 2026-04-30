@@ -174,6 +174,11 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
     return <FreeResourcesGuide guide={guide} />;
   }
 
+  // Full rich article for how to fill application form guide
+  if (params.slug === 'how-to-fill-government-job-application-form') {
+    return <FillFormGuide guide={guide} />;
+  }
+
   // Full rich article for age limit & relaxation guide
   if (params.slug === 'age-limit-relaxation-government-jobs') {
     return <AgeRelaxationGuide guide={guide} />;
@@ -1375,6 +1380,583 @@ function AppCard({ name, platform, desc, free }: { name: string; platform: strin
       </div>
       <p className="text-xs text-surface-500 leading-relaxed mb-2">{desc}</p>
       <span className="text-xs text-emerald-600 font-medium">✓ {free}</span>
+    </div>
+  );
+}
+
+// ─── HOW TO FILL GOVERNMENT JOB APPLICATION FORM — FULL RICH ARTICLE ─────────
+function FillFormGuide({ guide }: { guide: { slug: string; title: string; description: string; category: string; readTime: string } }) {
+  const toc = [
+    { id: 'docs', label: 'Documents to Keep Ready' },
+    { id: 'otr', label: 'Step 1: OTR Registration' },
+    { id: 'login', label: 'Step 2: Log In & Select Exam' },
+    { id: 'personal', label: 'Step 3: Personal Details' },
+    { id: 'education', label: 'Step 4: Educational Details' },
+    { id: 'upload', label: 'Step 5: Photo & Signature Upload' },
+    { id: 'centres', label: 'Step 6: Centre & Preferences' },
+    { id: 'fee', label: 'Step 7: Pay Application Fee' },
+    { id: 'preview', label: 'Step 8: Preview & Submit' },
+    { id: 'confirmation', label: 'Step 9: Save Confirmation' },
+    { id: 'mistakes', label: 'Common Mistakes' },
+    { id: 'correction', label: 'Using the Correction Window' },
+    { id: 'websites', label: 'Official Websites' },
+    { id: 'checklist', label: 'Pre-Submit Checklist' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Application Form</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10 max-w-6xl">
+        <article>
+          {/* Blue gradient hero — required for all guide pages */}
+          <div className="bg-gradient-to-br from-primary-500 to-primary-800 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full opacity-5 -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-300 rounded-full opacity-10 translate-y-1/2 -translate-x-1/4" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-white/20 border border-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                  Updated April 2026
+                </span>
+                <span className="bg-white/10 text-white/70 text-xs px-2.5 py-1 rounded">Application</span>
+                <span className="bg-white/10 text-white/70 text-xs px-2.5 py-1 rounded">Step-by-Step</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                How to Fill Government Job <span className="text-yellow-200">Application Forms</span> (Step by Step)
+              </h1>
+              <p className="text-primary-100 text-base leading-relaxed mb-5 max-w-2xl">
+                Complete guide for SSC, UPSC, IBPS, SBI, and Railway exam forms — OTR registration, photo &amp; signature specs, fee payment, and how to avoid silent rejection.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-primary-200">
+                <span>📅 April 2026</span>
+                <span>⏱ {guide.readTime}</span>
+                <span>📋 9 Steps covered</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+            {[
+              { label: 'Exams Covered', value: '5+', sub: 'SSC, UPSC, IBPS, SBI, RRB' },
+              { label: 'Steps in Process', value: '9', sub: 'Registration to confirmation' },
+              { label: 'Common Mistakes', value: '8', sub: 'That cause silent rejection' },
+              { label: 'Photo Specs Listed', value: '4', sub: 'Exam-wise requirements' },
+            ].map(f => (
+              <div key={f.label} className="card p-4 text-center">
+                <div className="text-xs text-surface-400 uppercase tracking-wide font-semibold">{f.label}</div>
+                <div className="text-xl font-heading font-bold text-primary-500 mt-1">{f.value}</div>
+                <div className="text-xs text-surface-400 mt-0.5">{f.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <GCallout type="warning" title="⚠️ Why This Matters">
+            Every year, thousands of applications are rejected silently — not for lacking eligibility, but for avoidable form errors. SSC, UPSC, IBPS, and RRB <strong>do not notify you about rejection</strong>. Your application simply disappears. Read this guide before you apply.
+          </GCallout>
+
+          {/* Mobile TOC */}
+          <div className="card p-5 mb-10 border-l-4 border-primary-500 lg:hidden">
+            <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Table of Contents</div>
+            <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+              {toc.map(item => (
+                <li key={item.id}><a href={`#${item.id}`} className="text-sm text-primary-500 hover:underline">{item.label}</a></li>
+              ))}
+            </ol>
+          </div>
+
+          {/* DOCUMENTS */}
+          <GSection id="docs" title="Documents and Information to Keep Ready">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Before you open any application portal, gather everything you need. Last-minute scrambling causes mistakes. Keep all files in one clearly labelled folder on your device.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+              {[
+                { icon: '🪪', title: 'Aadhaar Card', desc: 'Mandatory for most exams. Keep the number ready — do not rely on memory.' },
+                { icon: '📱', title: 'Mobile & Email', desc: 'You\'ll receive OTPs, registration IDs, and admit card links. Do not change these mid-process.' },
+                { icon: '📋', title: '10th Marksheet', desc: 'Your name, date of birth, roll number, board name must match exactly. This is the base document for all govt exams.' },
+                { icon: '🎓', title: '12th & Graduation', desc: 'Percentage and passing year for both. If you have a CGPA, convert it to percentage first.' },
+                { icon: '🏷️', title: 'Category Certificate', desc: 'OBC Non-Creamy Layer, SC, ST, or EWS — must be in central government format from the competent authority.' },
+                { icon: '🖼️', title: 'Photo & Signature', desc: 'Recent passport-size JPG photo (plain white background) + signature in black ink. Specifications vary by exam — see Step 5.' },
+                { icon: '👆', title: 'Thumb Impression', desc: 'Left-hand thumb impression scanned on white paper — required by IBPS and some banking exams.' },
+                { icon: '♿', title: 'PwBD Certificate', desc: '40%+ disability certified by a government medical board, if applicable.' },
+              ].map(item => (
+                <div key={item.title} className="card p-4 flex gap-3">
+                  <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.title}</div>
+                    <div className="text-xs text-surface-500 leading-relaxed">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="tip" title="✅ Pro Tip: Name Everything Clearly">
+              Save your files as: <strong>Photo_SSC.jpg</strong>, <strong>Signature_SSC.jpg</strong>, <strong>Thumb_IBPS.jpg</strong>. Confusion between files is a common cause of uploading the wrong document.
+            </GCallout>
+          </GSection>
+
+          {/* OTR */}
+          <GSection id="otr" title="Step 1: One-Time Registration (OTR) — Your Permanent Exam Profile">
+            <GCallout type="info" title="ℹ️ What Is OTR?">
+              Most major exam bodies now use a One-Time Registration system. You create your profile once and reuse it for all future exams by the same body. This saves time and prevents re-entering details for every notification.
+            </GCallout>
+            <div className="space-y-4 mt-5">
+              {[
+                { exam: 'SSC (CGL, CHSL, MTS, GD, CPO)', url: 'ssc.gov.in', steps: 'Click "Register / Login" or use the MySSC app. Enter your name, DOB, father\'s name, mobile, email, and Aadhaar. You\'ll receive a Registration ID and password via SMS and email.' },
+                { exam: 'UPSC (CSE, NDA, CDS, CAPF)', url: 'upsconline.nic.in', steps: 'Click "New Registration" under the OTR section. Verify email and mobile via OTP, then create a password. UPSC\'s new portal (2025) saves personal details, documents, and a Common Application Form permanently.' },
+                { exam: 'IBPS (PO, Clerk, SO, RRB)', url: 'ibps.in', steps: 'Click the relevant exam notification link, then "New Registration". Enter your name, mobile, email, and security code. Login credentials arrive on your registered mobile and email.' },
+                { exam: 'RRB (NTPC, Group D, ALP)', url: 'rrbcdg.gov.in (or your regional RRB)', steps: 'Visit your regional RRB website and register with basic details. The notification will specify which RRB site to use.' },
+              ].map((item, i) => (
+                <div key={item.exam} className="card p-5">
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">{i + 1}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{item.exam}</div>
+                      <div className="text-xs text-primary-500 mb-2">🌐 {item.url}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.steps}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="warning" title="⚠️ Save Your Credentials Immediately">
+              Write down your Registration ID and password. Screenshot it. You will need these for admit cards, results, and all future exams. Losing credentials means contacting helplines — which takes days.
+            </GCallout>
+          </GSection>
+
+          {/* LOGIN */}
+          <GSection id="login" title="Step 2: Log In and Select the Exam You Want to Apply For">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              After registration, log in using your Registration ID (or email/mobile for UPSC) and password. Navigate to the active exam notifications:
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Portal</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Where to Find Active Exams</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['SSC', '"Apply" or "Latest Notifications" on ssc.gov.in'],
+                    ['IBPS', '"CRP PO/MT" or "CRP Clerk" link on ibps.in'],
+                    ['UPSC', '"Latest Notification" in your OTR dashboard'],
+                    ['RRB', 'Specific recruitment link on the regional RRB website'],
+                  ].map(([portal, where], i) => (
+                    <tr key={portal} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-semibold text-primary-600">{portal}</td>
+                      <td className="p-3 text-surface-600">{where}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <GCallout type="warning" title="⚠️ Never Apply on the Last Day">
+              Server crashes and payment failures are common on the final day. Apply at least 5–7 days before the deadline. The exam body will not extend the deadline for you.
+            </GCallout>
+          </GSection>
+
+          {/* PERSONAL DETAILS */}
+          <GSection id="personal" title="Step 3: Fill Personal Details Accurately">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              This is the section where most rejection-causing errors happen. Every field must match your 10th marksheet exactly.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+              {[
+                { field: 'Full Name', rule: 'Must match your 10th marksheet exactly — spelling, order of first/middle/last name, and initials must be identical.' },
+                { field: "Father's & Mother's Name", rule: 'Again, exactly as on your 10th certificate. No abbreviations unless that\'s how it appears in the certificate.' },
+                { field: 'Date of Birth', rule: 'Must match your 10th certificate. This is the only document accepted as date of birth proof for government exams.' },
+                { field: 'Category', rule: 'Choose carefully: General, OBC-NCL, SC, ST, EWS, or PwBD. OBC certificate must be Non-Creamy Layer and valid for the current financial year.' },
+                { field: 'Correspondence Address', rule: 'Use a complete, correct address. Admit cards and documents are sent here. Pin code must be correct.' },
+                { field: 'Gender, Nationality, Religion', rule: 'Standard fields — fill accurately. Some exams use these for quota eligibility.' },
+              ].map(item => (
+                <div key={item.field} className="card p-4 border-l-4 border-primary-200">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.field}</div>
+                  <div className="text-xs text-surface-500 leading-relaxed">{item.rule}</div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="info" title="ℹ️ Correction Windows Are Limited">
+              Some portals (SSC, IBPS) offer a correction window — but it only covers specific fields like name and DOB. Category and address fields may not be editable. Get it right the first time.
+            </GCallout>
+          </GSection>
+
+          {/* EDUCATION */}
+          <GSection id="education" title="Step 4: Fill Educational Qualification Details">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Enter qualifications from 10th (matriculation) onward. The fields you&apos;ll need for each level:
+            </p>
+            <div className="space-y-3 mb-5">
+              {[
+                { level: '10th (Matriculation)', fields: 'Board name, roll number, passing year, percentage or CGPA — mandatory for SSC (used as primary reference)' },
+                { level: '12th', fields: 'Board name, stream (Science/Commerce/Arts), passing year, percentage' },
+                { level: 'Graduation', fields: 'Degree name, university name, passing year, percentage. Also computer course details for banking exams.' },
+                { level: 'Post-Graduation', fields: 'Degree, university, year, percentage — if applicable' },
+              ].map((item, i) => (
+                <div key={item.level} className="card p-4 flex gap-3">
+                  <div className="w-7 h-7 bg-surface-100 rounded-lg flex items-center justify-center text-sm font-bold text-surface-600 flex-shrink-0">{i + 1}</div>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm">{item.level}</div>
+                    <div className="text-xs text-surface-500 mt-1 leading-relaxed">{item.fields}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="warning" title="⚠️ CGPA to Percentage Conversion">
+              If you have a CGPA, convert it to percentage using your university&apos;s official conversion formula <strong>before</strong> entering it. A mismatch discovered during document verification can cancel your candidature even after you&apos;ve cleared the written exam.
+            </GCallout>
+          </GSection>
+
+          {/* PHOTO & SIGNATURE */}
+          <GSection id="upload" title="Step 5: Upload Photograph and Signature">
+            <GCallout type="warning" title="⚠️ Most Common Reason for Silent Rejection">
+              Wrong photo/signature format, size, or dimensions is the most frequent cause of applications being silently rejected. Each exam body has specific requirements. Check the table below before uploading.
+            </GCallout>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 my-5">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Exam</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Photo (JPG)</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Signature (JPG)</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Extra Requirement</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['SSC (CGL, CHSL, MTS, GD)', '100×120 px, 4–12 KB, white/light bg', '1–12 KB, black/blue ink on white', '—'],
+                    ['UPSC (CSE, NDA, CDS)', '200×230 px, 20–300 KB, plain white bg + name & date printed at bottom', 'Triple signature (3 signatures on one sheet)', 'Live photo capture during form submission (new portal)'],
+                    ['IBPS & SBI (PO, Clerk, SO)', '200×230 px, 20–50 KB, white bg', '140×60 px, 10–20 KB, black ink on white', 'Left-hand thumb impression (10–20 KB, JPG) + handwritten declaration'],
+                    ['RRB (NTPC, Group D, ALP)', '3.5×4.5 cm passport size, 20–50 KB, white bg — photo taken after notification date', '10–20 KB, black ink on white', '—'],
+                  ].map(([exam, photo, sign, extra], i) => (
+                    <tr key={exam} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-semibold text-surface-800 text-xs">{exam}</td>
+                      <td className="p-3 text-surface-600 text-xs">{photo}</td>
+                      <td className="p-3 text-surface-600 text-xs">{sign}</td>
+                      <td className="p-3 text-surface-500 text-xs italic">{extra}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <GCallout type="tip" title="✅ Use a Free Online Photo Resizer">
+              Several free tools let you select your specific exam and automatically resize photo and signature to the correct specifications. Search &quot;photo resizer for SSC / UPSC / IBPS&quot; — saves time and prevents size errors.
+            </GCallout>
+          </GSection>
+
+          {/* CENTRES */}
+          <GSection id="centres" title="Step 6: Choose Exam Centres, Post Preferences, and Other Options">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Most exams let you select 3–4 preferred exam centre cities. The conducting body will try to allot your first preference — but there is no guarantee. Choose cities that are closest and easy to travel to on exam day.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { exam: 'IBPS PO / SBI PO', detail: 'Select preferred banks in order of priority. Your posting after final selection depends on this — think carefully about where you\'re willing to work. IBPS has 11 participating public sector banks.' },
+                { exam: 'SSC CGL', detail: 'You may indicate post preferences (Inspector of Income Tax, Sub-Inspector in CBI, AAO, etc.) during the application or in a separate post-preference form after the exam.' },
+                { exam: 'UPSC CSE', detail: 'Rank your preferred services (IAS, IPS, IFS, IRS, etc.) and select your optional subject and examination language.' },
+                { exam: 'Pre-Examination Training', detail: 'Some banking and central government exams offer PET for SC/ST/OBC/EWS candidates. Opt in if eligible — it\'s free coaching and helps you prepare.' },
+              ].map(item => (
+                <div key={item.exam} className="card p-4 border-t-4 border-primary-300">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-2">{item.exam}</div>
+                  <div className="text-xs text-surface-500 leading-relaxed">{item.detail}</div>
+                </div>
+              ))}
+            </div>
+          </GSection>
+
+          {/* FEE */}
+          <GSection id="fee" title="Step 7: Pay the Application Fee">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Fees can be paid via net banking, debit/credit card, or UPI. SSC also accepts SBI challan (offline). Exempted categories vary by exam — check the notification carefully.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Exam</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">General / OBC</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">SC / ST / PwBD / Female</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['SSC (CGL, CHSL, MTS)', '₹100', 'Exempt (₹0)'],
+                    ['UPSC CSE', '₹100', 'Exempt (₹0) for Female/SC/ST/PwBD'],
+                    ['IBPS PO', '₹850', '₹175'],
+                    ['SBI PO', '₹750 (+ GST)', '₹125 (+ GST)'],
+                    ['RRB NTPC', '₹500', '₹250 (partial refund on appearing)'],
+                  ].map(([exam, gen, sc], i) => (
+                    <tr key={exam} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-semibold text-surface-800">{exam}</td>
+                      <td className="p-3 text-surface-700">{gen}</td>
+                      <td className="p-3 text-emerald-600 font-semibold text-xs">{sc}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <GCallout type="warning" title="⚠️ Payment Failure? Do Not Submit Again">
+              Your application is NOT submitted until the fee is paid. If payment fails, log back in and retry. If the amount was debited but the portal shows failure, wait 48–72 hours — it usually auto-reconciles. If not, contact the helpline with your transaction reference number. Do not submit a second application.
+            </GCallout>
+          </GSection>
+
+          {/* PREVIEW */}
+          <GSection id="preview" title="Step 8: Preview, Verify, and Submit the Form">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Before final submission, every portal shows a preview of your complete application. This is your <strong>last chance</strong> to verify everything. Check systematically:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
+              {[
+                '✅ Name matches your 10th marksheet exactly',
+                '✅ Date of birth is correct',
+                '✅ Category is selected accurately',
+                '✅ Photo is clear, correct format and size',
+                '✅ Signature is legible and within size limits',
+                '✅ Educational details (%, passing year) are accurate',
+                '✅ Exam centre preferences are filled in',
+                '✅ Application fee is paid and confirmed',
+              ].map(item => (
+                <div key={item} className="card p-3 text-sm text-surface-700 font-medium">{item}</div>
+              ))}
+            </div>
+            <div className="overflow-x-auto rounded-xl border border-surface-200">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Exam</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Correction Window?</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">What Can Be Changed?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['SSC', '2–3 days after application closes', 'Name, father\'s/mother\'s name, DOB, gender, 10th roll number (up to 2 edits)'],
+                    ['IBPS', '2 days (₹200 fee)', 'Most fields except name, email ID, and mobile number'],
+                    ['UPSC', 'None', 'No corrections allowed after final submission'],
+                    ['RRB', 'Limited — check notification', 'Specific to each notification'],
+                  ].map(([exam, window, what], i) => (
+                    <tr key={exam} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-semibold text-surface-800">{exam}</td>
+                      <td className="p-3 text-surface-600">{window}</td>
+                      <td className="p-3 text-surface-600">{what}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </GSection>
+
+          {/* CONFIRMATION */}
+          <GSection id="confirmation" title="Step 9: Download and Save Confirmation">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              After successful submission, take these steps <strong>immediately</strong> — do not close the confirmation page before completing them:
+            </p>
+            <div className="space-y-3 mb-5">
+              {[
+                { n: '1', action: 'Screenshot the confirmation page', why: 'Contains your application number — your only proof of submission before receiving the formal confirmation email.' },
+                { n: '2', action: 'Download/print the submitted application form as PDF', why: 'Most portals offer a "Print Application" option. You need this during document verification.' },
+                { n: '3', action: 'Save the payment receipt and transaction ID separately', why: 'Required if a payment dispute arises later.' },
+                { n: '4', action: 'Note your Registration ID and password in a safe place', why: 'Needed for admit card, results, and all future exams from the same body.' },
+              ].map(item => (
+                <div key={item.n} className="card p-4 flex gap-3">
+                  <div className="w-7 h-7 bg-primary-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">{item.n}</div>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.action}</div>
+                    <div className="text-xs text-surface-500 leading-relaxed">{item.why}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="info" title="ℹ️ Keep Everything Till Final Joining">
+              The entire recruitment process (exam → result → document verification → joining) can take 8–18 months. Keep all documents safely until you have officially joined the post.
+            </GCallout>
+          </GSection>
+
+          {/* MISTAKES */}
+          <GSection id="mistakes" title="Common Mistakes That Lead to Form Rejection">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              These are the most frequent errors based on official guidelines and candidate experiences across lakhs of applications:
+            </p>
+            <div className="space-y-3">
+              {[
+                { mistake: 'Name Mismatch', detail: 'Your application name must match your 10th marksheet letter-for-letter. Even small differences like "Mohammad" vs "Mohammed" or "Subramaniam" vs "Subramanian" cause problems in DV.' },
+                { mistake: 'Wrong Date of Birth', detail: 'Must match your 10th certificate exactly. No exceptions, no alternative documents accepted.' },
+                { mistake: 'Wrong Category Selection', detail: 'Choosing General when you\'re OBC, or selecting OBC without a valid Non-Creamy Layer certificate. If your OBC NCL certificate has expired, you lose the reservation benefit.' },
+                { mistake: 'Wrong Photo/Signature Format', detail: 'Using PNG instead of JPG, exceeding the file size limit, uploading a blurry photo, or for IBPS — signing in capital letters instead of a running-hand signature.' },
+                { mistake: 'Fee Not Paid', detail: 'Many candidates fill the entire form but forget to complete payment. The application remains incomplete and invalid.' },
+                { mistake: 'Multiple Applications', detail: 'SSC explicitly states that if duplicate applications are found, all of them may be cancelled. Apply only once per exam.' },
+                { mistake: 'Incorrect Educational Details', detail: 'Wrong passing year, wrong percentage, or wrong university name leads to cancellation during DV — even after clearing the written exam.' },
+                { mistake: 'Email/Mobile Changed Mid-Process', detail: 'Admit cards and results are sent to the registered contact. Changing these after registration means missing critical communications.' },
+              ].map((item, i) => (
+                <div key={item.mistake} className="card p-4 border-l-4 border-red-300">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-red-500 font-bold text-sm">✗</span>
+                    <div className="font-heading font-semibold text-surface-800 text-sm">{item.mistake}</div>
+                  </div>
+                  <div className="text-xs text-surface-500 leading-relaxed pl-5">{item.detail}</div>
+                </div>
+              ))}
+            </div>
+          </GSection>
+
+          {/* CORRECTION WINDOW */}
+          <GSection id="correction" title="Using the Correction Window Effectively">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              If you spot an error after submission, check whether the exam body offers a correction window — and act fast. The window typically opens within 1–3 days of the application period closing.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+              {[
+                { exam: 'SSC', when: '2–3 days after application deadline', how: 'Log in with Registration ID and password. You can make up to 2 corrections to: name, father\'s/mother\'s name, DOB, gender, 10th roll number.' },
+                { exam: 'IBPS', when: 'Usually 2 days, ₹200 fee', how: 'Most details editable except name, email ID, and mobile number.' },
+                { exam: 'UPSC', when: 'No correction window', how: 'Verify everything before submission. No changes allowed after final submit.' },
+                { exam: 'RRB', when: 'Limited — check notification', how: 'Look for specific correction details in the official notification for each recruitment.' },
+              ].map(item => (
+                <div key={item.exam} className="card p-5">
+                  <div className="font-heading font-bold text-primary-600 mb-1">{item.exam}</div>
+                  <div className="text-xs text-surface-500 mb-2 font-semibold uppercase tracking-wide">When: {item.when}</div>
+                  <p className="text-sm text-surface-600 leading-relaxed">{item.how}</p>
+                </div>
+              ))}
+            </div>
+            <GCallout type="tip" title="✅ If Window Has Closed and Error Is Major">
+              Write an application to the exam body&apos;s helpline or nearest regional office explaining the mistake. Attach supporting documents. While there is no guarantee, it creates a record that can help you during document verification.
+            </GCallout>
+          </GSection>
+
+          {/* OFFICIAL WEBSITES */}
+          <GSection id="websites" title="Official Websites for Applying to Major Government Exams">
+            <GCallout type="warning" title="⚠️ Beware of Fake Websites">
+              Always apply through the official website only. Fake portals that look identical are designed to steal your money and personal data. Bookmark the official URLs below.
+            </GCallout>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
+              {[
+                { body: 'SSC', exams: 'CGL, CHSL, MTS, GD, CPO, Stenographer', url: 'ssc.gov.in', extra: 'Also available on the MySSC mobile app (Google Play).' },
+                { body: 'UPSC', exams: 'CSE, NDA, CDS, CAPF, ESE, CMS', url: 'upsconline.nic.in (applications) + upsc.gov.in (notifications)', extra: '' },
+                { body: 'IBPS', exams: 'PO, Clerk, SO, RRB Officer', url: 'ibps.in', extra: 'Only one official IBPS portal.' },
+                { body: 'SBI', exams: 'PO, Clerk, SO', url: 'sbi.co.in/careers', extra: 'Navigate to the Recruitment section.' },
+                { body: 'RRB (Railway)', exams: 'NTPC, Group D, ALP, JE', url: 'Regional RRB website (rrbcdg.gov.in, rrbchennai.gov.in, rrbmumbai.gov.in, etc.)', extra: 'The notification will specify which regional RRB to use.' },
+              ].map(item => (
+                <div key={item.body} className="card p-4 group">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="font-heading font-bold text-surface-800">{item.body}</div>
+                    <span className="badge-primary text-xs">{item.exams.split(',').length} exams</span>
+                  </div>
+                  <div className="text-xs text-surface-500 mb-1">Exams: {item.exams}</div>
+                  <div className="text-xs text-primary-600 font-semibold break-all">🌐 {item.url}</div>
+                  {item.extra && <div className="text-xs text-surface-400 mt-1 italic">{item.extra}</div>}
+                </div>
+              ))}
+            </div>
+          </GSection>
+
+          {/* CHECKLIST */}
+          <GSection id="checklist" title="Quick Checklist Before You Submit">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Take five extra minutes to run through this list. It can save you months of regret.
+            </p>
+            <div className="card p-6 bg-emerald-50 border-emerald-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  'Name, father\'s and mother\'s name match your 10th marksheet exactly',
+                  'Date of birth is correct and matches your 10th certificate',
+                  'Category (General/OBC/SC/ST/EWS/PwBD) is selected correctly with a valid certificate',
+                  'Photo is recent (within last 3 months), JPG format, within specified file size, white background',
+                  'Signature is black ink on white paper, JPG, within specified file size',
+                  'Educational details (board, percentage, passing year) are accurate',
+                  'Exam centre preferences are filled in',
+                  'Application fee is paid and confirmed',
+                  'You have saved or printed the confirmation page and noted your registration number',
+                ].map(item => (
+                  <div key={item} className="flex items-start gap-2 text-sm text-emerald-800">
+                    <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-surface-600 text-sm leading-relaxed">Fill the form carefully, apply early, and focus on your preparation. Good luck with your exam! 🎯</p>
+            </div>
+          </GSection>
+
+          {/* Related Guides */}
+          <div className="mt-12 pt-8 border-t border-surface-200">
+            <h3 className="font-heading font-bold text-lg text-surface-800 mb-4">Related Guides</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { slug: 'how-to-start-government-exam-preparation', cat: 'Getting Started', title: 'Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap' },
+                { slug: 'best-free-resources-government-exams', cat: 'Resources', title: 'Best Free Resources for Government Exam Preparation (2026)' },
+                { slug: 'age-limit-relaxation-government-jobs', cat: 'Eligibility', title: 'Complete Guide to Age Limit & Relaxation for Government Jobs' },
+                { slug: 'documents-needed-government-job', cat: 'Documents', title: 'Documents Required for Government Job (2026) – Complete Checklist' },
+              ].map(g => (
+                <Link key={g.slug} href={`/guides/${g.slug}`} className="card p-4 group">
+                  <span className="badge-primary mb-2 text-xs inline-block">{g.cat}</span>
+                  <h4 className="font-semibold text-sm text-surface-800 group-hover:text-primary-500 transition-colors leading-snug">{g.title}</h4>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </article>
+
+        {/* Sticky Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-5">
+            {/* TOC */}
+            <div className="card p-5">
+              <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-4">On This Page</div>
+              <nav className="space-y-1">
+                {toc.map(item => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className="flex items-center gap-2 text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 px-2 py-1.5 rounded-lg transition-colors"
+                  >
+                    <span className="w-1 h-1 bg-surface-300 rounded-full flex-shrink-0" />
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            {/* Key Portals Card */}
+            <div className="card p-5 bg-primary-50 border-primary-200">
+              <div className="text-xs font-heading font-semibold uppercase tracking-wide text-primary-600 mb-3">Official Apply Portals</div>
+              <div className="space-y-2 text-sm">
+                {[
+                  { name: 'SSC', url: 'https://ssc.gov.in' },
+                  { name: 'UPSC', url: 'https://upsconline.nic.in' },
+                  { name: 'IBPS', url: 'https://www.ibps.in' },
+                  { name: 'SBI Careers', url: 'https://sbi.co.in/careers' },
+                  { name: 'RRB CDG', url: 'https://rrbcdg.gov.in' },
+                ].map(item => (
+                  <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-primary-600 hover:text-primary-800 font-medium">
+                    <span>{item.name}</span>
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Eligibility Tool CTA */}
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <div className="text-sm font-heading font-semibold text-emerald-800 mb-2">Check Your Eligibility</div>
+              <p className="text-xs text-emerald-600 mb-3">See which exams you qualify for based on your age, qualification, and category.</p>
+              <Link href="/tools/eligibility-checker" className="btn-primary text-sm w-full text-center block">
+                Check Eligibility →
+              </Link>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   );
 }
