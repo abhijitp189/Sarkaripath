@@ -72,6 +72,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ugc-net') {
+    return {
+      title: 'UGC NET 2026 – Notification Out, Application Dates, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'UGC NET June 2026 notification released on 29 April 2026. Exam from 22–30 June 2026. Apply by 20 May 2026. Check complete syllabus for Paper 1 & Paper 2 (85 subjects), eligibility (Master\'s degree, 55%), exam pattern, JRF age limit 30 years, application fee and free preparation resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/ugc-net/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -99,6 +107,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
   if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
   if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
+  if (brief && brief.slug === 'ugc-net') return <UgcNetPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -4815,6 +4824,551 @@ function SbiClerkPage({ exam }: { exam: any }) {
             </div>
           </div>
 
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── UGC NET 2026 RICH PAGE ──────────────────────────────────────────────────
+function UgcNetPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Paper 1 Syllabus' },
+    { id: 'application', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'faq', label: 'FAQ' },
+  ];
+
+  return (
+    <>
+      <div className="container-main py-10">
+        {/* Breadcrumb */}
+        <nav className="text-sm text-surface-500 mb-6">
+          <Link href="/" className="hover:text-primary-500">Home</Link>
+          <span className="mx-2">›</span>
+          <Link href="/exams" className="hover:text-primary-500">Exams</Link>
+          <span className="mx-2">›</span>
+          <span className="text-surface-800">UGC NET</span>
+        </nav>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── MAIN CONTENT ── */}
+          <div>
+            {/* Page Header */}
+            <div className="mb-8">
+              <div className="flex flex-wrap gap-2 mb-3">
+                <span className="badge badge-primary">Teaching</span>
+                <span className="badge badge-green">Central</span>
+                <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 rounded-full px-2.5 py-0.5 text-xs font-medium">🔔 Notification Out</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
+                UGC NET 2026 – Complete Guide (June Session)
+              </h1>
+              <p className="text-surface-500 leading-relaxed">
+                UGC NET (National Eligibility Test) is India's most prestigious national exam for eligibility as <strong>Assistant Professor</strong> and for the award of <strong>Junior Research Fellowship (JRF)</strong> in Indian universities and colleges. Conducted by NTA twice a year (June &amp; December), UGC NET is the gateway to a career in academia and research across 85 subjects. The June 2026 notification has been released on 29 April 2026 — applications are now open.
+              </p>
+              <a href="https://ugcnet.nta.nic.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium">
+                Official Website: ugcnet.nta.nic.in →
+              </a>
+            </div>
+
+            {/* ── SECTION 1: OVERVIEW STATS ── */}
+            <div id="overview" className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+              {[
+                { label: 'Conducting Body', value: 'NTA (for UGC)' },
+                { label: 'Frequency', value: 'Twice a Year' },
+                { label: 'Subjects', value: '85 Subjects' },
+                { label: 'JRF Fellowship', value: '₹37,000/month' },
+              ].map((item) => (
+                <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                  <div className={`font-semibold mt-1 text-sm ${item.label === 'JRF Fellowship' ? 'text-emerald-600' : 'text-surface-800'}`}>{item.value}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* ── SECTION 2: IMPORTANT DATES ── */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">UGC NET 2026 Important Dates</h2>
+              </div>
+
+              {/* June 2026 Session — ACTIVE NOW */}
+              <div className="card p-5 mb-4 border-primary-200 bg-primary-50">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">June 2026 Session — NOW OPEN</span>
+                </div>
+                <div className="overflow-x-auto rounded-xl border border-primary-200">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-primary-700 text-white">
+                        <th className="text-left p-3 font-semibold">Event</th>
+                        <th className="text-left p-3 font-semibold">Date</th>
+                        <th className="text-left p-3 font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { event: 'Notification Released', date: '29 April 2026', status: '✅ Done' },
+                        { event: 'Application Window Opens', date: '29 April 2026', status: '✅ Open Now' },
+                        { event: 'Last Date to Apply', date: '20 May 2026', status: '⏳ Active' },
+                        { event: 'Application Correction Window', date: '22–24 May 2026', status: '🔜 Upcoming' },
+                        { event: 'City Intimation Slip', date: '~June 12, 2026', status: '🔜 Upcoming' },
+                        { event: 'Admit Card Release', date: '~June 15, 2026', status: '🔜 Upcoming' },
+                        { event: 'Exam Dates', date: '22–30 June 2026', status: '🔜 Upcoming' },
+                        { event: 'Provisional Answer Key', date: 'July 2026 (TBN)', status: 'TBN' },
+                        { event: 'Result Declaration', date: 'August 2026 (TBN)', status: 'TBN' },
+                        { event: 'e-Certificate Issuance', date: 'September 2026 (TBN)', status: 'TBN' },
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                          <td className="p-3 text-surface-700">{row.date}</td>
+                          <td className="p-3">
+                            <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${row.status.includes('✅') ? 'bg-emerald-100 text-emerald-700' : row.status === 'TBN' ? 'bg-surface-100 text-surface-500' : 'bg-amber-100 text-amber-700'}`}>{row.status}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-primary-700 mt-3 font-medium">⚠ TBN = To Be Notified. Always verify exact dates on the official site: ugcnet.nta.nic.in</p>
+              </div>
+
+              {/* December 2025 Session — Completed */}
+              <div className="card p-5">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="bg-surface-600 text-white text-xs font-bold px-3 py-1 rounded-full">December 2025 Session — Completed</span>
+                </div>
+                <div className="overflow-x-auto rounded-xl border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-semibold">Event</th>
+                        <th className="text-left p-3 font-semibold">Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { event: 'Notification Released', date: '7 October 2025' },
+                        { event: 'Application Window', date: '7 October – 7 November 2025' },
+                        { event: 'Application Correction', date: '10–12 November 2025' },
+                        { event: 'Exam Dates', date: '31 Dec 2025 – 7 Jan 2026' },
+                        { event: 'Provisional Answer Key', date: '14 January 2026' },
+                        { event: 'Answer Key Challenge', date: '14–17 January 2026' },
+                        { event: 'Result Declared', date: '4 February 2026' },
+                        { event: 'e-Certificate Issued', date: '23 April 2026' },
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                          <td className="p-3 text-emerald-700 font-medium">{row.date}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* ── SECTION 3: ELIGIBILITY ── */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                {[
+                  { label: 'Nationality', value: 'Indian National' },
+                  { label: 'Educational Qualification', value: "Master's Degree (55% for General/EWS, 50% for OBC-NCL/SC/ST/PwBD/Transgender)" },
+                  { label: 'Age Limit – JRF', value: '30 years (as of 01 June 2026)' },
+                  { label: 'Age Limit – Assistant Professor / PhD', value: 'No upper age limit' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-semibold text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Age Relaxation (for JRF only)</h3>
+                <div className="overflow-x-auto rounded-xl border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase text-surface-600">Category</th>
+                        <th className="text-left p-3 font-semibold text-xs uppercase text-surface-600">Relaxation</th>
+                        <th className="text-left p-3 font-semibold text-xs uppercase text-surface-600">Effective Age Limit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { cat: 'OBC – Non Creamy Layer', rel: '3 Years', age: '33 Years' },
+                        { cat: 'SC / ST', rel: '5 Years', age: '35 Years' },
+                        { cat: 'PwBD (40%+ disability)', rel: '10 Years', age: '40 Years' },
+                        { cat: 'Women candidates', rel: '5 Years', age: '35 Years' },
+                        { cat: 'Ex-Servicemen (ESM)', rel: '5 Years', age: '35 Years' },
+                        { cat: 'Transgender (OBC/SC/ST)', rel: 'Applicable as per category', age: 'As applicable' },
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.cat}</td>
+                          <td className="p-3 text-primary-700 font-semibold">{row.rel}</td>
+                          <td className="p-3 text-emerald-700 font-semibold">{row.age}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-500 mt-3">Note: Total age relaxation cannot exceed 5 years under any combination of grounds.</p>
+              </div>
+
+              <div className="card p-5 mt-3 bg-amber-50 border-amber-200">
+                <h3 className="font-heading font-semibold text-amber-800 mb-2 text-sm">✅ Qualification Note</h3>
+                <ul className="space-y-1.5 text-sm text-amber-900">
+                  <li>• Candidates appearing in the final year of their Master's degree are also eligible to apply (provisionally).</li>
+                  <li>• Candidates with a 4-year Bachelor's Degree (FYUP) can also apply for PhD admission subject to UGC regulations.</li>
+                  <li>• No limit on the number of attempts — you can appear as many times as needed.</li>
+                  <li>• JRF certificate is valid for 3 years; Assistant Professor certificate is valid for lifetime.</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* ── SECTION 4: EXAM PATTERN ── */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">UGC NET Exam Pattern 2026</h2>
+              </div>
+              <p className="text-surface-600 text-sm mb-4">UGC NET is conducted in <strong>CBT (Computer-Based Test)</strong> mode in a single sitting of 3 hours. Both papers are compulsory. There is <strong className="text-emerald-700">no negative marking</strong>.</p>
+
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-semibold">Paper</th>
+                      <th className="text-center p-3 font-semibold">Questions</th>
+                      <th className="text-center p-3 font-semibold">Marks</th>
+                      <th className="text-center p-3 font-semibold">Duration</th>
+                      <th className="text-center p-3 font-semibold">Negative Marking</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { paper: 'Paper I – Teaching & Research Aptitude (General)', q: 50, m: 100, dur: '—', neg: 'None' },
+                      { paper: 'Paper II – Subject Specific (your chosen subject)', q: 100, m: 200, dur: '—', neg: 'None' },
+                      { paper: 'Total', q: 150, m: 300, dur: '3 Hours', neg: 'None' },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i === 2 ? 'bg-surface-100 font-bold' : i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800">{row.paper}</td>
+                        <td className="p-3 text-center text-surface-700">{row.q}</td>
+                        <td className="p-3 text-center font-semibold text-primary-700">{row.m}</td>
+                        <td className="p-3 text-center text-surface-700">{row.dur}</td>
+                        <td className="p-3 text-center text-emerald-700 font-semibold">{row.neg}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  { icon: '💡', title: 'Mode', desc: 'Computer-Based Test (CBT) — online at exam centres' },
+                  { icon: '🌐', title: 'Language', desc: 'English and Hindi (except language-specific papers)' },
+                  { icon: '📋', title: 'Question Type', desc: 'Objective MCQs — 4 options, 1 correct answer' },
+                ].map((item) => (
+                  <div key={item.title} className="card p-4">
+                    <div className="text-2xl mb-2">{item.icon}</div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm">{item.title}</div>
+                    <div className="text-xs text-surface-500 mt-1">{item.desc}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Qualifying Criteria */}
+              <div className="card p-5 mt-4 bg-blue-50 border-blue-200">
+                <h3 className="font-heading font-semibold text-blue-800 mb-3 text-sm">Qualifying Criteria &amp; Categories</h3>
+                <div className="space-y-2 text-sm text-blue-900">
+                  <div className="flex items-start gap-2"><span className="w-5 h-5 rounded-full bg-blue-200 text-blue-800 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span><span><strong>JRF + Assistant Professor:</strong> Top merit + age ≤ 30 yrs. JRF fellowship ₹37,000/month (1st 2 years) → ₹42,000/month (next 3 years as SRF).</span></div>
+                  <div className="flex items-start gap-2"><span className="w-5 h-5 rounded-full bg-blue-200 text-blue-800 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span><span><strong>Assistant Professor + PhD Admission:</strong> Top 6% candidates per subject qualify. No age limit. Lifetime validity.</span></div>
+                  <div className="flex items-start gap-2"><span className="w-5 h-5 rounded-full bg-blue-200 text-blue-800 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</span><span><strong>PhD Admission Only:</strong> Separate merit list for candidates who only seek PhD admission.</span></div>
+                </div>
+                <div className="mt-3 pt-3 border-t border-blue-200 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                  {[
+                    { cat: 'General / EWS', pct: '40%' },
+                    { cat: 'OBC-NCL', pct: '35%' },
+                    { cat: 'SC / ST / PwBD', pct: '35%' },
+                    { cat: 'Transgender', pct: '35%' },
+                  ].map((c) => (
+                    <div key={c.cat} className="bg-white rounded-lg p-2 border border-blue-100 text-center">
+                      <div className="text-blue-500 font-bold text-base">{c.pct}</div>
+                      <div className="text-blue-700">{c.cat}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-blue-600 mt-2">Minimum qualifying percentages in aggregate (Paper I + Paper II combined)</p>
+              </div>
+            </section>
+
+            {/* ── SECTION 5: PAPER 1 SYLLABUS ── */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">UGC NET Paper 1 Syllabus (All Subjects)</h2>
+              </div>
+              <p className="text-surface-500 text-sm mb-4">Paper 1 is <strong>common for all candidates</strong>, regardless of their chosen subject. It tests teaching &amp; research aptitude across 10 units — 5 questions per unit.</p>
+
+              <div className="space-y-2">
+                {[
+                  { unit: 1, title: 'Teaching Aptitude', topics: 'Nature, Objectives, Levels of Teaching; Teaching Methods & Aids; Characteristics of effective teachers; Evaluation Systems' },
+                  { unit: 2, title: 'Research Aptitude', topics: 'Research: Meaning, Types, Methods; Steps of Research; Thesis & Article Writing; Research Ethics' },
+                  { unit: 3, title: 'Reading Comprehension', topics: 'Passage-based questions — inference, vocabulary, analysis (5 questions from one passage)' },
+                  { unit: 4, title: 'Communication', topics: 'Communication: Meaning, Types, Barriers; Effective Communication; Mass Communication; Digital Communication' },
+                  { unit: 5, title: 'Mathematical Reasoning & Aptitude', topics: 'Number Series; Letter Series; Codes; Relationships; Venn Diagrams; Data Interpretation' },
+                  { unit: 6, title: 'Logical Reasoning', topics: 'Deductive & Inductive Reasoning; Verbal and Non-verbal Arguments; Analogy; Syllogism; Fallacies' },
+                  { unit: 7, title: 'Data Interpretation', topics: 'Bar Chart, Pie Chart, Line Graph, Table; Reading, Comparing & Interpreting Data' },
+                  { unit: 8, title: 'Information & Communication Technology (ICT)', topics: 'ICT: Basics, Internet, Email, Social Media; Digital Divide; Cybersecurity; Digital Initiatives in Education' },
+                  { unit: 9, title: 'People, Development & Environment', topics: 'Human and Environment Interaction; Climate Change; Sustainable Development; Environmental Policies; Biodiversity' },
+                  { unit: 10, title: 'Higher Education System', topics: 'Governance & Institutions: UGC, NAAC, AICTE, NEP 2020; Professional Ethics; Central & State Acts; Research Institutions' },
+                ].map((unit) => (
+                  <details key={unit.unit} className="card p-0 overflow-hidden group">
+                    <summary className="flex items-center gap-3 cursor-pointer p-4 hover:bg-surface-50 transition-colors">
+                      <div className="w-7 h-7 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-xs font-bold flex-shrink-0">{unit.unit}</div>
+                      <span className="font-heading font-semibold text-surface-800 flex-1">Unit {unit.unit}: {unit.title}</span>
+                      <svg className="w-4 h-4 text-surface-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-4 pb-4 text-sm text-surface-600 border-t border-surface-100 pt-3">
+                      {unit.topics}
+                    </div>
+                  </details>
+                ))}
+              </div>
+
+              <div className="card p-5 mt-4 bg-surface-50">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-2">Paper 2 – Subject-Specific</h3>
+                <p className="text-sm text-surface-600">Paper 2 is based on the subject you choose at the time of application. There are <strong>85 subjects</strong> available — ranging from Commerce, Economics, History, Psychology, Computer Science, Hindi, English, Environmental Science, to Law, Education, and more. The syllabus for each subject is available on the official UGC website.</p>
+                <a href="https://www.ugcnetonline.in/syllabus-new.php" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-2 font-medium">Download Subject-wise Syllabus PDF →</a>
+              </div>
+            </section>
+
+            {/* ── SECTION 6: APPLICATION FEE & PROCESS ── */}
+            <section id="application" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Application Fee &amp; How to Apply</h2>
+              </div>
+
+              <div className="card p-5 mb-4">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Application Fee (June 2026)</h3>
+                <div className="overflow-x-auto rounded-xl border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase text-surface-600">Category</th>
+                        <th className="text-right p-3 font-semibold text-xs uppercase text-surface-600">Fee</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { cat: 'General / Unreserved (UR)', fee: '₹1,150' },
+                        { cat: 'EWS / OBC – Non Creamy Layer', fee: '₹600' },
+                        { cat: 'SC / ST / PwBD / Transgender', fee: '₹325' },
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.cat}</td>
+                          <td className="p-3 text-right text-primary-700 font-bold">{row.fee}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-500 mt-2">Payment modes: Debit Card / Credit Card / Net Banking / UPI. Fee once paid is non-refundable.</p>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Step-by-Step: How to Apply Online</h3>
+                <ol className="space-y-3">
+                  {[
+                    { step: 'Visit Official Website', desc: 'Go to ugcnet.nta.nic.in — click "Apply for UGC NET June 2026".' },
+                    { step: 'New Registration', desc: 'Enter name, date of birth, mobile number, and email. Generate your application number and password.' },
+                    { step: 'Fill Application Form', desc: 'Log in and complete personal details, category, educational qualifications, and choose your subject for Paper 2.' },
+                    { step: 'Select Exam Cities', desc: 'Choose 4 preferred exam cities from the available list (you will be allotted one).' },
+                    { step: 'Upload Documents', desc: 'Upload recent passport-size photo and scanned signature in the required format (JPG, specified dimensions).' },
+                    { step: 'Pay Application Fee', desc: 'Pay online using Debit/Credit Card, Net Banking, or UPI. Download fee receipt.' },
+                    { step: 'Download Confirmation', desc: 'Save the confirmation page and application PDF for future reference. NTA will not send physical documents.' },
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-primary-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</div>
+                      <div>
+                        <div className="font-semibold text-sm text-surface-800">{item.step}</div>
+                        <div className="text-xs text-surface-500 mt-0.5">{item.desc}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </section>
+
+            {/* ── SECTION 7: STUDY PLAN ── */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">UGC NET Study Plan (6-Week Crash Plan)</h2>
+              </div>
+              <p className="text-surface-500 text-sm mb-5">With exams starting 22 June 2026, here is a focused 6-week plan if you begin now (1 May):</p>
+
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {[
+                    { week: 'Week 1', title: 'Foundation – Paper 1 Units 1–5', desc: 'Cover Teaching Aptitude, Research Aptitude, Reading Comprehension, Communication, and Mathematical Reasoning. Solve 50 PYQs from these units.', color: 'bg-blue-500' },
+                    { week: 'Week 2', title: 'Foundation – Paper 1 Units 6–10', desc: 'Cover Logical Reasoning, Data Interpretation, ICT, Environment, and Higher Education System. Complete the full Paper 1 syllabus with a mock test.', color: 'bg-purple-500' },
+                    { week: 'Week 3', title: 'Paper 2 – Core Subject (Part A)', desc: 'Start your chosen subject. Cover 50% of Paper 2 syllabus. Focus on high-weightage units based on previous papers.', color: 'bg-emerald-500' },
+                    { week: 'Week 4', title: 'Paper 2 – Core Subject (Part B)', desc: 'Complete remaining 50% of Paper 2. Attempt 2 full-length subject mock tests. Revise weak areas.', color: 'bg-orange-500' },
+                    { week: 'Week 5', title: 'Full-Length Mock Tests', desc: 'Take one full mock test every day (Paper 1 + Paper 2). Analyse mistakes. Revise Paper 1 ICT and Higher Education — most-asked topics.', color: 'bg-red-500' },
+                    { week: 'Week 6 (Pre-Exam)', title: 'Revision + PYQs', desc: 'Only revision — no new topics. Solve last 5 years\' PYQs. Keep Paper 1 sharp. Download admit card. Prepare documents.', color: 'bg-amber-500' },
+                  ].map((item) => (
+                    <div key={item.week} className="card p-5 sm:pl-14 relative">
+                      <div className={`absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 ${item.color} rounded-xl text-white text-xs font-bold hidden sm:flex items-center justify-center`}>
+                        {item.week.replace('Week ', '')}
+                      </div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className={`sm:hidden w-6 h-6 ${item.color} rounded-lg text-white text-xs font-bold flex items-center justify-center`}>{item.week.replace('Week ', '')}</span>
+                        <span className="font-heading font-semibold text-surface-800">{item.week}: {item.title}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── SECTION 8: BEST BOOKS ── */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for UGC NET 2026</h2>
+              </div>
+
+              <div className="card overflow-hidden mb-4">
+                <div className="bg-surface-800 text-white p-3 text-xs font-semibold uppercase tracking-wide">Paper 1 – Teaching &amp; Research Aptitude</div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase text-surface-600">Book Title</th>
+                        <th className="text-left p-3 font-semibold text-xs uppercase text-surface-600">Author / Publisher</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { title: 'NTA UGC NET/SET Paper 1 – Teaching & Research Aptitude', author: 'KVS Madaan (Pearson)' },
+                        { title: 'UGC NET Paper I: Teaching & Research Aptitude', author: 'R. Gupta (Ramesh Publishing)' },
+                        { title: 'Trueman\'s UGC NET Teaching & Research Aptitude', author: 'Danika Publishing' },
+                        { title: 'NTA UGC NET Paper 1 (Topic-wise Solved Papers)', author: 'Arihant Experts' },
+                        { title: 'UGC NET Paper 1 Official Mock Tests', author: 'NTA (Free on ugcnet.nta.nic.in)' },
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.title}</td>
+                          <td className="p-3 text-surface-600">{row.author}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="card p-5 bg-surface-50">
+                <h3 className="font-heading font-semibold text-surface-700 text-sm mb-2">📌 Paper 2 Book Tip</h3>
+                <p className="text-sm text-surface-600">For Paper 2, use your subject's standard postgraduate-level textbooks. Supplement with subject-specific UGC NET solved papers (Arihant / CBS / Trueman's series covers most subjects). Practice minimum 3 previous year papers for your subject before the exam.</p>
+              </div>
+            </section>
+
+            {/* ── SECTION 9: FAQ ── */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-2">
+                {[
+                  { q: 'What is the difference between UGC NET and CSIR NET?', a: 'UGC NET is for Arts, Humanities, Social Sciences, Commerce, Management and some Science subjects (85 subjects). CSIR NET is specifically for Science subjects like Life Sciences, Chemical Sciences, Physical Sciences, Mathematical Sciences, and Earth Sciences. Both are conducted by NTA and both qualify you for JRF and Assistant Professor posts.' },
+                  { q: 'Is there any negative marking in UGC NET 2026?', a: 'No. There is no negative marking in UGC NET. Unanswered or unattempted questions also carry zero marks — so always attempt all questions.' },
+                  { q: 'How many times can I attempt UGC NET?', a: 'There is no limit on the number of attempts. You can appear in UGC NET as many times as you wish, as long as you meet the eligibility criteria (age limit for JRF applies).' },
+                  { q: 'What is the validity of the UGC NET certificate?', a: 'The JRF certificate is valid for 3 years from the date of issue. The Assistant Professor eligibility certificate is valid for lifetime.' },
+                  { q: 'Can I appear in UGC NET if I am in the final year of my Master\'s degree?', a: 'Yes. Candidates appearing in the final year of their Master\'s degree are eligible to apply provisionally. However, the final qualifying certificate must be submitted to the institution at the time of appointment.' },
+                  { q: 'What is the JRF fellowship amount in 2026?', a: 'JRF fellows receive ₹37,000 per month for the first two years. After two years (as Senior Research Fellow / SRF), the fellowship increases to ₹42,000 per month for the remaining period.' },
+                  { q: 'How is UGC NET result calculated?', a: 'NTA declares a merit list for JRF and a separate list for Assistant Professor / PhD eligibility. For Assistant Professor: top 6% of candidates per subject who score above the minimum qualifying marks (40% for General, 35% for reserved categories) are declared qualified.' },
+                ].map((item, i) => (
+                  <details key={i} className="card p-0 overflow-hidden group">
+                    <summary className="flex items-center justify-between cursor-pointer p-4 hover:bg-surface-50 transition-colors">
+                      <span className="font-heading font-semibold text-surface-800 pr-4 text-sm">{item.q}</span>
+                      <svg className="w-4 h-4 text-surface-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-4 pb-4 text-sm text-surface-600 leading-relaxed border-t border-surface-100 pt-3">{item.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Disclaimer */}
+            <div className="card p-5 bg-amber-50 border-amber-200 text-sm text-amber-800">
+              <strong>⚠ Disclaimer:</strong> All dates and information above are based on the official NTA notification released on 29 April 2026 and are accurate as of 30 April 2026. UGC NET notifications may include corrigendums (corrections) — always verify on <a href="https://ugcnet.nta.nic.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">ugcnet.nta.nic.in</a> before taking any action.
+            </div>
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{s.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Apply Now CTA */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <div className="font-heading font-semibold text-emerald-800 text-sm mb-1">🔔 Apply Now — June 2026</div>
+                <p className="text-xs text-emerald-700 mb-3">Application window is open. Last date: <strong>20 May 2026</strong>.</p>
+                <a href="https://ugcnet.nta.nic.in" target="_blank" rel="noopener noreferrer" className="block text-center text-xs font-semibold bg-emerald-600 text-white px-3 py-2 rounded-lg hover:bg-emerald-700 transition-colors">Apply at ugcnet.nta.nic.in →</a>
+              </div>
+
+              {/* Official Links */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="text-xs font-semibold uppercase tracking-wide text-primary-400 mb-3">🔗 Official Links</div>
+                <div className="space-y-2">
+                  <a href="https://ugcnet.nta.nic.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800 font-medium"><span>🌐</span> ugcnet.nta.nic.in (Official)</a>
+                  <a href="https://cdnbbsr.s3waas.gov.in/s301eee509ee2f68dc6014898c309e86bf/uploads/2026/04/202604291863555100.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800"><span>📄</span> June 2026 Notification PDF</a>
+                  <a href="https://ugcnet.nta.nic.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800"><span>📝</span> Apply Online (June 2026)</a>
+                  <a href="https://www.ugcnetonline.in/syllabus-new.php" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800"><span>📚</span> Subject-wise Syllabus PDFs</a>
+                </div>
+              </div>
+
+              {/* Related Teaching Exams */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-3">Related Teaching Exams</div>
+                <div className="space-y-1.5">
+                  {[
+                    { name: 'CTET 2026', slug: 'ctet' },
+                    { name: 'KVS PRT/TGT/PGT', slug: 'kvs-prt-tgt-pgt' },
+                    { name: 'NVS Teaching Staff', slug: 'nvs-teaching' },
+                    { name: 'DSSSB TGT/PGT', slug: 'dsssb' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </>
