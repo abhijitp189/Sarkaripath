@@ -16,6 +16,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'best-free-resources-government-exams': 'Best Free Resources for Government Exam Preparation (2026) – 50+ Verified Links | TaiyarHo',
     'age-limit-relaxation-government-jobs': 'Age Limit & Relaxation for Government Jobs (2026) – Complete Guide for OBC, SC/ST, EWS, PwBD, Ex-Servicemen | TaiyarHo',
     'study-plan-working-professionals': 'Government Exam Preparation for Working Professionals 2026 – Study Plan, Schedule & Strategy | TaiyarHo',
+    'documents-needed-government-job': 'Documents Required for Government Job 2026 – Complete Checklist for Application & Document Verification | TaiyarHo',
   };
 
   const seoDescriptions: Record<string, string> = {
@@ -24,6 +25,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
     'age-limit-relaxation-government-jobs': 'Complete 2026 guide to age limits and relaxation rules for Indian government exams. Covers OBC (+3 yrs), SC/ST (+5 yrs), PwBD (+10–15 yrs), Ex-Servicemen, and EWS rules for UPSC, SSC CGL, IBPS PO, SBI PO, and RRB NTPC — with a quick-check table and common mistakes to avoid.',
     'study-plan-working-professionals': 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, 14-hour weekend strategy, best apps for micro-learning, and how to manage burnout as a working aspirant.',
+    'documents-needed-government-job': 'Complete 2026 checklist of documents needed for government job applications and document verification. Covers ID proof, educational certificates, OBC/SC/ST/EWS reservation documents, NOC, and pro tips to avoid rejection in SSC, IBPS, UPSC, SBI, and Railway exams.',
   };
 
   const seoKeywords: Record<string, string> = {
@@ -32,6 +34,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'best-free-resources-government-exams': 'free resources government exam preparation 2026, free study material UPSC SSC Banking Railway, best free YouTube channels government exams, NCERT free textbooks, free mock tests government exams, DIKSHA app, SWAYAM, sarkari exam free resources, previous year papers download, muft study material sarkari naukri',
     'age-limit-relaxation-government-jobs': 'age limit government jobs India 2026, age relaxation OBC SC ST EWS PwBD ex-servicemen, sarkari naukri age limit, UPSC SSC CGL IBPS PO SBI PO RRB NTPC age limit, government exam age relaxation rules, umar mein choot sarkari naukri, age relaxation central government',
     'study-plan-working-professionals': 'government exam preparation while working full time, sarkari exam naukri ke saath taiyari, working professional study plan 2026, UPSC preparation job, SSC CGL banking exam while employed, time management government exam, study schedule working professional, sarkari naukri taiyari job ke saath',
+    'documents-needed-government-job': 'documents for government job India 2026, document verification DV government exam, OBC NCL certificate validity, documents needed SSC CGL IBPS PO UPSC, government job document checklist, sarkari naukri ke liye documents, name mismatch affidavit, EWS certificate format, government job rejection reasons',
   };
 
   return {
@@ -179,6 +182,11 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
   // Full rich article for working professionals study plan
   if (params.slug === 'study-plan-working-professionals') {
     return <WorkingProfessionalsGuide guide={guide} />;
+  }
+
+  // Full rich article for documents needed guide
+  if (params.slug === 'documents-needed-government-job') {
+    return <DocumentsGuide guide={guide} />;
   }
 
   return (
@@ -2404,5 +2412,565 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
         </aside>
       </div>
     </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DOCUMENTS NEEDED FOR GOVERNMENT JOB — Full Rich Guide
+// ─────────────────────────────────────────────────────────────────────────────
+function DocumentsGuide({ guide }: { guide: { slug: string; title: string; description: string; category: string; readTime: string } }) {
+  const tocItems = [
+    { id: 'summary', label: 'Quick Summary' },
+    { id: 'master-list', label: 'Master Document List' },
+    { id: 'identity', label: 'Identity & Age Proof' },
+    { id: 'education', label: 'Educational Credentials' },
+    { id: 'reservation', label: 'Reservation Certificates' },
+    { id: 'special', label: 'Special Documents' },
+    { id: 'application-vs-dv', label: 'Application vs DV Stage' },
+    { id: 'pro-tips', label: 'Pro Tips' },
+    { id: 'mistakes', label: 'Common Mistakes' },
+    { id: 'salary', label: 'Jobs Paying ₹50,000+/month' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Documents</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+        <article>
+          {/* Hero Banner */}
+          <div className="bg-gradient-to-br from-primary-500 to-primary-800 rounded-2xl p-8 mb-10 text-white">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="bg-white/20 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">{guide.category}</span>
+              <span className="text-white/70 text-xs">Updated May 2026</span>
+              <span className="text-white/50 text-xs">•</span>
+              <span className="text-white/70 text-xs">15 min read</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4 leading-tight">
+              Documents Required for Government Job (2026) – Complete Checklist
+            </h1>
+            <p className="text-white/85 leading-relaxed text-base">
+              From the online application stage to the final Document Verification (DV) round — this guide covers every document you need, what format it must be in, and the mistakes that cause even toppers to get rejected.
+            </p>
+          </div>
+
+          {/* Quick Summary Box */}
+          <div id="summary" className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-10">
+            <h2 className="text-lg font-heading font-bold text-amber-800 mb-3">⚡ Quick Summary — What You Need to Know</h2>
+            <ul className="space-y-2 text-sm text-amber-900">
+              <li>✅ <strong>Stage 1 (Online Application):</strong> Scanned copies of photo, signature, and basic ID — kept under specific file size limits.</li>
+              <li>✅ <strong>Stage 2 (Document Verification / DV):</strong> Originals + 2 self-attested photocopies of every document listed in the appointment letter.</li>
+              <li>✅ <strong>OBC-NCL certificates</strong> must be issued within the current or immediately previous financial year — this is the #1 reason for DV rejection.</li>
+              <li>✅ <strong>Name mismatches</strong> are fixable with an affidavit + gazette notification — but you need to arrange this before DV day.</li>
+              <li>✅ <strong>If you are a serving government employee,</strong> you will need an NOC from your current employer — don't forget it.</li>
+            </ul>
+          </div>
+
+          {/* Master Document List */}
+          <DocSection id="master-list" title="📋 The Master Document Checklist">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Below is the full list of documents you will need across all major central government exams (SSC, UPSC, IBPS, SBI, Railway). Not every document applies to every candidate — pick what is relevant to your situation.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead className="bg-primary-50 text-primary-800">
+                  <tr>
+                    <th className="text-left px-4 py-3 font-heading font-semibold">Category</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold">Documents</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold">Who Needs It</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    { cat: 'Identity & Age', docs: 'Aadhaar, PAN, Voter ID, Passport, 10th Marksheet', who: 'All candidates' },
+                    { cat: 'Education', docs: '10th, 12th, Graduation (all semester marksheets + degree/provisional)', who: 'All candidates' },
+                    { cat: 'Reservation', docs: 'OBC-NCL / SC / ST / EWS certificate (Central Govt format)', who: 'Reserved category candidates' },
+                    { cat: 'Disability', docs: 'PwBD certificate from CMO/Government hospital board', who: 'PwBD candidates' },
+                    { cat: 'Ex-Servicemen', docs: 'Discharge certificate, service certificate, pension payment order', who: 'Ex-servicemen' },
+                    { cat: 'Employment', docs: 'NOC from current employer, service certificate', who: 'Serving Govt employees' },
+                    { cat: 'Domicile', docs: 'State domicile certificate (for State-specific posts)', who: 'Candidates applying for State quota posts' },
+                    { cat: 'Experience', docs: 'Experience letters on letterhead, appointment order', who: 'Posts requiring work experience' },
+                    { cat: 'Photo', docs: 'Passport-size photographs (6–10 copies, recent)', who: 'All candidates' },
+                  ].map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 font-semibold text-surface-700 whitespace-nowrap">{row.cat}</td>
+                      <td className="px-4 py-3 text-surface-600">{row.docs}</td>
+                      <td className="px-4 py-3 text-surface-500 text-xs">{row.who}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </DocSection>
+
+          {/* Identity & Age Proof */}
+          <DocSection id="identity" title="🪪 Identity & Age Proof Documents">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              These are the documents you use to prove who you are and how old you are. The most important one is your <strong>Class 10 (Matriculation) Marksheet</strong> — every recruiting body treats it as the primary document for both identity and date of birth.
+            </p>
+            <div className="space-y-4">
+              {[
+                {
+                  name: '10th / Matriculation Marksheet',
+                  badge: 'Must-Have',
+                  badgeColor: 'bg-red-100 text-red-700',
+                  detail: 'This is the base document for your name and date of birth in every government exam. Your name must match this marksheet exactly in your application form and all other certificates. Make sure you have both the original and at least 3 self-attested photocopies.',
+                },
+                {
+                  name: 'Aadhaar Card',
+                  badge: 'Must-Have',
+                  badgeColor: 'bg-red-100 text-red-700',
+                  detail: 'Mandatory for most central exams (SSC, IBPS, RRB). Carry both the physical card and download an e-Aadhaar from the UIDAI website as a backup. Your Aadhaar name and DOB should ideally match your 10th marksheet.',
+                },
+                {
+                  name: 'PAN Card',
+                  badge: 'Important',
+                  badgeColor: 'bg-amber-100 text-amber-700',
+                  detail: 'Required during document verification for most Central Government posts, especially those that fall under income tax deduction categories (banking, revenue department). Some recruitment bodies also ask for it during salary account opening.',
+                },
+                {
+                  name: 'Voter ID Card',
+                  badge: 'Useful Backup',
+                  badgeColor: 'bg-blue-100 text-blue-700',
+                  detail: 'Accepted as valid photo ID at exam centres and during DV. Also serves as address proof. Download a digital voter card from voters.eci.gov.in if you have lost the original.',
+                },
+                {
+                  name: 'Passport (if available)',
+                  badge: 'Optional',
+                  badgeColor: 'bg-green-100 text-green-700',
+                  detail: 'Useful as an additional strong ID document. For posts involving international travel or security clearance (like IFS, foreign services), having a passport is an advantage during verification.',
+                },
+              ].map((doc, i) => (
+                <div key={i} className="card p-4 flex gap-3">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-heading font-semibold text-surface-800 text-sm">{doc.name}</span>
+                      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${doc.badgeColor}`}>{doc.badge}</span>
+                    </div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{doc.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </DocSection>
+
+          {/* Educational Credentials */}
+          <DocSection id="education" title="🎓 Educational Credentials">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              You need to carry all educational certificates from 10th onwards. The typical mistake aspirants make is bringing only the final degree certificate — DV officers often ask for individual semester marksheets too.
+            </p>
+            <div className="space-y-4">
+              {[
+                {
+                  name: 'Class 10 Certificate & Marksheet',
+                  tip: 'Carry both the pass certificate and the marksheet separately. Some boards issue them as one document, some as two. DV officers check the full name, date of birth, board name, roll number, and year of passing.',
+                },
+                {
+                  name: 'Class 12 Certificate & Marksheet',
+                  tip: 'Required for most Central Government exams. The stream (Science/Commerce/Arts) sometimes matters for specific posts. Carry originals and two photocopies.',
+                },
+                {
+                  name: 'Graduation Degree or Provisional Certificate',
+                  tip: 'If you have not yet received your original degree, a Provisional Certificate issued by your university is accepted in most exams. Make sure it is stamped and signed by a competent university authority, not just a department head.',
+                },
+                {
+                  name: 'All Semester / Year Marksheets (Graduation)',
+                  tip: 'This is the document most candidates forget. DV officers ask for semester-wise or year-wise marksheets to verify attendance requirements, individual subject scores, and to calculate overall percentage. Carry all 6 (or 8) semesters.',
+                },
+                {
+                  name: 'Consolidated Marksheet (if issued)',
+                  tip: 'Some universities issue a consolidated marksheet showing all years/semesters together. Carry it as well — it speeds up the verification process.',
+                },
+                {
+                  name: 'Post-Graduation Marksheets & Degree (if applicable)',
+                  tip: 'Required only if the post demands a post-graduate qualification or if you have mentioned it in your application. Carry originals + 2 attested copies.',
+                },
+              ].map((doc, i) => (
+                <div key={i} className="bg-surface-50 border-l-4 border-primary-400 rounded-r-xl p-4">
+                  <p className="font-heading font-semibold text-surface-800 text-sm mb-1">{doc.name}</p>
+                  <p className="text-sm text-surface-600 leading-relaxed">{doc.tip}</p>
+                </div>
+              ))}
+            </div>
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mt-5">
+              <p className="text-sm text-blue-800 font-semibold mb-1">📌 If you studied from a foreign university:</p>
+              <p className="text-sm text-blue-700">Your degree must be recognised by the Association of Indian Universities (AIU). Get an Equivalence Certificate from AIU (aiu.ac.in) before appearing for DV. Without this, your foreign degree is not valid for Central Government posts.</p>
+            </div>
+          </DocSection>
+
+          {/* Reservation / Category Documents */}
+          <DocSection id="reservation" title="📜 Reservation / Category Documents (OBC / SC / ST / EWS)">
+            <p className="text-surface-600 leading-relaxed mb-2">
+              Reservation documents are the most scrutinised at DV. Even a single-day expiry or a wrong format can cause rejection. Read this section carefully if you belong to OBC, SC, ST, or EWS.
+            </p>
+
+            {/* OBC */}
+            <div className="mt-5">
+              <h3 className="text-base font-heading font-bold text-surface-800 mb-3">OBC-NCL Certificate</h3>
+              <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-3">
+                <p className="text-sm font-semibold text-orange-800 mb-1">⚠️ The #1 Document Verification Rejection Reason</p>
+                <p className="text-sm text-orange-700">An expired OBC-NCL certificate gets more candidates rejected at DV than any other document issue. Don't let this happen to you.</p>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { label: 'Validity Period', content: 'OBC-NCL certificates are valid only for the financial year in which they are issued (April to March). If your certificate was issued in FY 2024–25 and your DV is in May 2025, it is already expired. Most recruiting bodies ask for a certificate issued in the current financial year OR the immediately preceding financial year, depending on their notification.' },
+                  { label: 'Central vs. State Format', content: 'This is the most common format-related error. For Central Government exams (SSC, IBPS, UPSC, Railways), your OBC certificate must be in the Central Government format — it must state that you belong to OBC as per the Central List and are not in the Creamy Layer. A State Government format OBC certificate — which most State Governments issue by default — is NOT accepted for Central Government posts. Ask your Tehsildar or SDM office for a certificate "in the prescribed format for Central Government services."' },
+                  { label: 'Who Issues It', content: 'The certificate must be issued by a competent authority — usually the Sub-Divisional Magistrate (SDM), District Magistrate (DM), Tehsildar, or Revenue Officer authorised by the State Government. Certificates from unofficial sources or panchayat offices are not accepted.' },
+                  { label: 'Non-Creamy Layer Clause', content: 'Your certificate must clearly state that you do not belong to the Creamy Layer. The Creamy Layer threshold is a family income of ₹8 lakh per year (as of 2024 — subject to revision). If your family income exceeds this limit, you are no longer eligible for OBC reservation in Central Government exams.' },
+                ].map((item, i) => (
+                  <div key={i} className="card p-4">
+                    <p className="font-semibold text-surface-700 text-sm mb-1">{item.label}</p>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.content}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* SC/ST */}
+            <div className="mt-6">
+              <h3 className="text-base font-heading font-bold text-surface-800 mb-3">SC / ST Caste Certificate</h3>
+              <div className="space-y-3">
+                {[
+                  { label: 'Validity', content: 'SC and ST certificates do not expire — they are issued once and are valid for life. However, the certificate must be in the format prescribed by the Central Government for Central Govt posts.' },
+                  { label: 'Who Issues It', content: 'District Magistrate (DM), Sub-Divisional Magistrate (SDM), Tehsildar, or any other officer authorised by the State Government for issuing SC/ST certificates.' },
+                  { label: 'Central Format Requirement', content: 'Just like OBC, the SC/ST certificate must be in the Central Government format for Central Govt jobs. State formats are generally accepted for SC/ST (more lenient than OBC), but some SSC and Railway notifications explicitly ask for the Central format. Check your notification.' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <p className="font-semibold text-surface-700 text-sm mb-1">{item.label}</p>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.content}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* EWS */}
+            <div className="mt-6">
+              <h3 className="text-base font-heading font-bold text-surface-800 mb-3">EWS (Economically Weaker Section) Certificate</h3>
+              <div className="space-y-3">
+                {[
+                  { label: 'Who Needs It', content: 'General (unreserved) category candidates whose family annual income is below ₹8 lakh and who do not own agricultural land above 5 acres, a residential flat above 1000 sq. ft., a residential plot above 100 sq. yards in notified municipalities, or a residential plot above 200 sq. yards in non-notified areas.' },
+                  { label: 'Validity Period', content: 'EWS certificates must be renewed every year. The certificate issued for a particular financial year is valid for that year only. For DV purposes, the certificate must relate to the financial year in which the notification or application was made — check your exam notification for the exact requirement.' },
+                  { label: 'Age Relaxation Note', content: 'EWS candidates get 10% reservation in Central Government jobs but do NOT get any age relaxation. They must meet the General category age limit. This is different from OBC (which gets +3 years) and SC/ST (which gets +5 years).' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <p className="font-semibold text-surface-700 text-sm mb-1">{item.label}</p>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.content}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </DocSection>
+
+          {/* Special Documents */}
+          <DocSection id="special" title="📂 Special Documents">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              These documents apply to specific situations. If any of these apply to you, start arranging them early — some take weeks to process.
+            </p>
+            <div className="space-y-5">
+              {[
+                {
+                  icon: '🏛️',
+                  name: 'NOC (No Objection Certificate) for Serving Employees',
+                  detail: 'If you are already working in a Central or State Government job and applying for a new government post, you need an NOC from your current employer. The NOC must be on official letterhead, signed by your appointing authority (not just your manager), and state that your department has no objection to you applying for and joining the new post. Some departments issue this freely; others may require you to apply in writing and wait several weeks. Start the process as soon as you clear the written exam. Without an NOC, you cannot be considered for appointment even if you top the merit list.',
+                },
+                {
+                  icon: '♿',
+                  name: 'PwBD (Persons with Benchmark Disability) Certificate',
+                  detail: 'The disability must be 40% or more as certified by the competent authority — a government-run medical board (CMO or Medical Superintendent of a District/Civil Hospital). The certificate must clearly state the type of disability, percentage of disability, and permanent or temporary status. The format is prescribed in the Rights of Persons with Disabilities Act 2016 (RPWD Act). This certificate entitles you to reservation, age relaxation (General +10 years, OBC +13 years, SC/ST +15 years), and post-specific concessions.',
+                },
+                {
+                  icon: '🎖️',
+                  name: 'Ex-Servicemen Documents',
+                  detail: 'You need: a Discharge Certificate (issued when you left military service), a Service Certificate (details of your rank, dates of service, and type of discharge), and a Pension Payment Order (PPO) if applicable. For widows of Ex-Servicemen claiming their dependent quota, a marriage certificate and the Ex-Serviceman\'s death certificate are also required. The age relaxation formula for Ex-Servicemen is: (Actual Age) minus (Period of Military Service) must not exceed the upper age limit by more than 3 years.',
+                },
+                {
+                  icon: '💼',
+                  name: 'Experience Letters (for Posts Requiring Work Experience)',
+                  detail: 'For posts that demand prior work experience (e.g., certain SSC posts, IBPS Specialist Officer, or State PSC Group B posts), you need experience letters from each employer on their official letterhead. The letter must state your designation, nature of work, period of employment (start and end dates), and whether the employment was full-time or part-time. Self-certification of experience is not accepted.',
+                },
+                {
+                  icon: '📍',
+                  name: 'Domicile Certificate',
+                  detail: 'Required for State Government jobs and for Central Government posts that have a State-wise quota or "Local candidate" preference. Issued by the Tehsildar or SDM of your district. Some states require you to have lived there for a minimum number of years (usually 10–15 years). For Central Govt exams, domicile is generally not required unless specified in the notification.',
+                },
+              ].map((doc, i) => (
+                <div key={i} className="card p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">{doc.icon}</span>
+                    <div>
+                      <p className="font-heading font-bold text-surface-800 text-sm mb-2">{doc.name}</p>
+                      <p className="text-sm text-surface-600 leading-relaxed">{doc.detail}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </DocSection>
+
+          {/* Application vs DV Stage */}
+          <DocSection id="application-vs-dv" title="⏱️ What You Need: Online Application vs. Document Verification">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              The documents required at the online application stage and the DV stage are very different. Many aspirants confuse the two and either over-prepare at application time or under-prepare at DV.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+                <h3 className="font-heading font-bold text-blue-800 mb-3 text-base">🖥️ Online Application Stage</h3>
+                <p className="text-xs text-blue-700 mb-3">You only upload scanned digital files — no originals needed.</p>
+                <ul className="space-y-2 text-sm text-blue-800">
+                  <li>📷 <strong>Recent passport-size photo</strong> (JPG, 20–50 KB, white background)</li>
+                  <li>✍️ <strong>Signature</strong> (JPG, 10–20 KB, black ink on white paper)</li>
+                  <li>👆 <strong>Left thumb impression</strong> (IBPS/SBI only — JPG, 10–20 KB)</li>
+                  <li>📝 <strong>Handwritten declaration</strong> (IBPS — JPG, your own handwriting)</li>
+                  <li>🔢 Aadhaar number, mobile, email entered manually</li>
+                  <li>📊 Educational details entered manually (no certificate upload)</li>
+                  <li>📂 Category certificate details entered — no upload usually required</li>
+                </ul>
+                <p className="text-xs text-blue-600 mt-3">⚠️ UPSC is an exception — their new portal requires document uploads during registration itself.</p>
+              </div>
+              <div className="bg-green-50 border border-green-200 rounded-xl p-5">
+                <h3 className="font-heading font-bold text-green-800 mb-3 text-base">📁 Document Verification (DV) Stage</h3>
+                <p className="text-xs text-green-700 mb-3">Bring originals + 2 self-attested photocopies of everything.</p>
+                <ul className="space-y-2 text-sm text-green-800">
+                  <li>🪪 <strong>All identity documents</strong> (Aadhaar, PAN, Voter ID)</li>
+                  <li>🎓 <strong>All educational certificates</strong> (10th to highest, all semester marksheets)</li>
+                  <li>📜 <strong>Reservation certificate</strong> (fresh, in Central Govt format)</li>
+                  <li>📋 <strong>Admit card + call letter</strong> from all exam stages</li>
+                  <li>🏛️ <strong>NOC</strong> (if serving in Govt job)</li>
+                  <li>♿ <strong>PwBD certificate</strong> (if applicable)</li>
+                  <li>🎖️ <strong>Ex-SM documents</strong> (if applicable)</li>
+                  <li>📸 <strong>6–8 passport photos</strong> (recent, same as submitted online)</li>
+                  <li>📄 <strong>Printed application form</strong> from online submission</li>
+                </ul>
+              </div>
+            </div>
+            <div className="bg-surface-100 rounded-xl p-4 mt-5">
+              <p className="text-sm text-surface-700 font-semibold mb-1">📌 Self-Attestation — Do It Right</p>
+              <p className="text-sm text-surface-600">On each photocopy, write <em>"Self-Attested"</em>, sign with your full signature, and write the date. Some bodies also ask for your name and application number. Never get photocopies attested by someone else for government DV — self-attestation is the accepted norm. Gazetted officer attestation is only required if specifically mentioned in the appointment letter.</p>
+            </div>
+          </DocSection>
+
+          {/* Pro Tips */}
+          <DocSection id="pro-tips" title="💡 Pro Tips — The Stuff Most Guides Don't Tell You">
+            <div className="space-y-5">
+
+              <div className="card p-5 border-l-4 border-amber-400">
+                <h3 className="font-heading font-semibold text-surface-800 mb-2">Name Mismatch? Don't Panic — Here's the Fix</h3>
+                <p className="text-sm text-surface-600 leading-relaxed mb-3">
+                  It is common for names to be spelled differently across documents — for example, "Abhijit" in your 10th marksheet and "Abhijeet" in your Aadhaar, or "Md." vs "Mohammad." DV officers flag these, but they will not automatically reject you. Here's what you need to arrange before DV day:
+                </p>
+                <ol className="space-y-2 text-sm text-surface-600 list-decimal list-inside">
+                  <li><strong>Affidavit:</strong> Get a sworn affidavit on non-judicial stamp paper from a Notary Public stating that both names refer to the same person. This is the most widely accepted solution.</li>
+                  <li><strong>Gazette Notification:</strong> For permanent resolution, publish a name change notice in the State or Central Gazette. This is a formal legal process but makes your corrected name officially recognised. Useful if you want to update all documents uniformly.</li>
+                  <li><strong>Newspaper Advertisement:</strong> Some bodies accept a newspaper advertisement of name change (in two newspapers, one regional and one English daily) along with an affidavit.</li>
+                </ol>
+                <p className="text-sm text-surface-600 mt-3">The safest approach is an affidavit + a request letter to the DV officer explaining the discrepancy. Arrange this before your DV date.</p>
+              </div>
+
+              <div className="card p-5 border-l-4 border-red-400">
+                <h3 className="font-heading font-semibold text-surface-800 mb-2">Lost Your Certificates? Here's How to Get Duplicates</h3>
+                <p className="text-sm text-surface-600 leading-relaxed mb-2">
+                  If you have lost a certificate, act immediately — replacement processes take time.
+                </p>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  <li>📄 <strong>10th / 12th Marksheet:</strong> Apply to your Board office (CBSE, ICSE, or State Board) for a duplicate. You will need your old roll number or hall ticket number. CBSE offers duplicate certificates online through cbse.gov.in.</li>
+                  <li>🎓 <strong>Graduation Degree:</strong> Contact your university's examination or registrar section. Most universities take 3–6 weeks to issue a duplicate or a new provisional certificate.</li>
+                  <li>🪪 <strong>Aadhaar Card:</strong> Download an e-Aadhaar from uidai.gov.in using your enrolled mobile number — it is legally equivalent to the physical card.</li>
+                  <li>📝 <strong>Category Certificate:</strong> Apply afresh from your Tehsildar/SDM office. A new certificate is the cleanest solution.</li>
+                </ul>
+              </div>
+
+              <div className="card p-5 border-l-4 border-green-400">
+                <h3 className="font-heading font-semibold text-surface-800 mb-2">The "Crucial Date" — One Concept Most Aspirants Miss</h3>
+                <p className="text-sm text-surface-600 leading-relaxed">
+                  Every exam notification mentions a "Crucial Date" — the date on which eligibility (age, qualification, category) is determined. If the crucial date is 1 August 2025 and your OBC-NCL certificate was issued in September 2025, it is valid. But if your certificate was issued in January 2025 and you are appearing for DV in December 2025 — and the notification said the certificate must be valid "as on the date of DV" — it may be expired. Read your notification carefully. The crucial date varies by exam: it is typically 1 January, 1 August, or the closing date of the application.
+                </p>
+              </div>
+
+              <div className="card p-5 border-l-4 border-primary-400">
+                <h3 className="font-heading font-semibold text-surface-800 mb-2">Build Your "DV Ready" Document Folder Now</h3>
+                <p className="text-sm text-surface-600 leading-relaxed">
+                  Don't wait for the DV call letter to start collecting documents. Start a physical folder today with originals and a digital folder on your phone with scanned copies. Label everything clearly. When your DV date arrives (which is often announced with only 7–10 days notice), you should be ready without any scrambling.
+                </p>
+              </div>
+            </div>
+          </DocSection>
+
+          {/* Common Mistakes */}
+          <DocSection id="mistakes" title="🚫 Common Mistakes to Avoid at Document Verification">
+            <div className="space-y-3">
+              {[
+                { mistake: 'Carrying an expired OBC-NCL certificate', fix: 'Get a fresh certificate from your SDM/Tehsildar office every year. Check your notification for the exact validity requirement.' },
+                { mistake: 'OBC certificate in State format (not Central Government format)', fix: 'Specifically request a certificate "in the prescribed format for Central Government services" from the issuing authority.' },
+                { mistake: 'Missing semester marksheets', fix: 'Carry all semester or year-wise marksheets, not just the final year or consolidated marksheet.' },
+                { mistake: 'Name mismatch across documents', fix: 'Get a notarised affidavit explaining the discrepancy. Arrange it before your DV date.' },
+                { mistake: 'Not bringing the original application printout', fix: 'Print your application form at every stage (application submission, admit card), and carry all of them to DV.' },
+                { mistake: 'Forgetting the NOC if serving in a government job', fix: 'Apply for NOC from your employer as soon as you clear the written exam. It can take weeks.' },
+                { mistake: 'Photocopies without self-attestation', fix: 'Write "Self-Attested", sign, and date every photocopy before arriving for DV.' },
+                { mistake: 'EWS certificate from the wrong financial year', fix: 'EWS certificates must be renewed annually. Carry a fresh one for the relevant financial year.' },
+                { mistake: 'Relying only on e-documents (soft copies)', fix: 'Always carry physical originals. Most DV panels ask for originals to physically verify. E-copies on your phone are a backup, not a substitute.' },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-3 card p-4">
+                  <span className="text-red-500 text-lg flex-shrink-0">✗</span>
+                  <div>
+                    <p className="text-sm font-semibold text-surface-800 mb-1">{item.mistake}</p>
+                    <p className="text-sm text-surface-600"><span className="text-green-600 font-semibold">Fix: </span>{item.fix}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </DocSection>
+
+          {/* Salary Section */}
+          <DocSection id="salary" title="💰 Which Government Jobs Pay ₹50,000+ Per Month?">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Many aspirants ask this question — and the answer depends on the post, pay level, and allowances. Here are the most realistic government jobs where in-hand salary crosses ₹50,000 per month (including HRA, DA, and other allowances as applicable in major cities).
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200">
+              <table className="w-full text-sm">
+                <thead className="bg-primary-50 text-primary-800">
+                  <tr>
+                    <th className="text-left px-4 py-3 font-heading font-semibold">Post / Exam</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold">Pay Level</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold">Approx. In-Hand (City)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    { post: 'IAS / IPS / IFS (UPSC CSE)', level: 'Level 10 (₹56,100 basic) → Level 18', salary: '₹70,000 – ₹2,50,000+' },
+                    { post: 'SSC CGL — Inspector of Income Tax, CBI Sub-Inspector', level: 'Level 7 (₹44,900 basic) + allowances', salary: '₹55,000 – ₹70,000 (metros)' },
+                    { post: 'SSC CGL — Assistant Section Officer (MEA, CSS)', level: 'Level 7 (₹44,900 basic) + allowances', salary: '₹55,000 – ₹65,000' },
+                    { post: 'IBPS PO / SBI PO (Probationary Officer)', level: 'JMGS-I (₹48,480 – ₹85,920 scale)', salary: '₹52,000 – ₹65,000 (metros)' },
+                    { post: 'RBI Grade B Officer', level: 'Grade B (₹55,200 basic)', salary: '₹80,000 – ₹1,00,000+' },
+                    { post: 'NABARD Grade A', level: 'Grade A (₹44,500 basic + allowances)', salary: '₹55,000 – ₹70,000' },
+                    { post: 'State PSC Class II Officers (e.g., Deputy SP, SDM)', level: 'PB-3 / Level 10 equivalent', salary: '₹50,000 – ₹80,000 (varies by state)' },
+                    { post: 'SSC CGL — Auditor / Accountant (CAG)', level: 'Level 5 (₹29,200 basic) — lower, but rises fast with promotions', salary: '₹38,000 – ₹48,000 initially; ₹55,000+ after 5–7 yrs' },
+                  ].map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 font-semibold text-surface-700">{row.post}</td>
+                      <td className="px-4 py-3 text-surface-600 text-xs">{row.level}</td>
+                      <td className="px-4 py-3 text-green-700 font-semibold text-xs">{row.salary}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400 mt-3">Note: In-hand salaries are estimates including HRA and DA as applicable in Class X cities. Salaries change with DA revisions. Always check the official notification for the most current pay scale.</p>
+          </DocSection>
+
+          {/* FAQ */}
+          <DocSection id="faq" title="❓ Frequently Asked Questions">
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'What documents are needed for a government job?',
+                  a: 'The core documents every candidate needs are: Aadhaar card, PAN card, Class 10 marksheet (for identity + DOB), Class 12 marksheet, graduation degree + all semester marksheets, a recent passport-size photograph, and a reservation certificate if you belong to OBC/SC/ST/EWS. Serving government employees also need an NOC, and PwBD candidates need a disability certificate. The full exam-specific list is always published in the official appointment/DV call letter.',
+                },
+                {
+                  q: 'Which document is required when applying for a job (online application)?',
+                  a: 'At the online application stage, you only need digital copies. The main ones are: a scanned passport-size photograph (JPG, 20–50 KB), a scanned signature (JPG, 10–20 KB), and your Aadhaar/enrollment number. Your educational and category details are usually entered manually — no certificate upload is required for SSC, IBPS, or RRB at this stage.',
+                },
+                {
+                  q: 'Can I get rejected in document verification?',
+                  a: 'Yes. Rejection at DV does happen, and it is more common than most aspirants realise. The most frequent reasons are: an expired or incorrectly formatted OBC-NCL certificate, name or date-of-birth mismatch between documents, missing semester marksheets, no NOC for serving government employees, and PwBD certificate from a non-government hospital. Rejection at DV means your candidature is cancelled and the next candidate on the merit list is called — even after you cleared the written exam and interview.',
+                },
+                {
+                  q: 'Is self-attestation enough for photocopies at DV?',
+                  a: 'Yes, self-attestation is the accepted standard for Central Government document verification. Write "Self-Attested", sign, and date each photocopy. Gazetted officer attestation is only needed if the appointment letter specifically asks for it (rare for most exams).',
+                },
+                {
+                  q: 'How many passport-size photographs should I bring to DV?',
+                  a: 'Bring at least 8–10 recent passport-size photographs. DV offices often ask for 2–4 photos, and there are sometimes multiple stages (medical examination, joining formalities) that each need separate sets. Use photographs taken on the same day in the same clothes as far as possible — consistency helps.',
+                },
+                {
+                  q: 'What if my OBC-NCL certificate expired just last month?',
+                  a: 'Get a fresh certificate immediately. The process at your Tehsildar or SDM office typically takes 7–15 working days. Many offices now have Tatkal or same-week processing for these. Do not attend DV with an expired certificate — you will be rejected and given no second chance on the spot.',
+                },
+              ].map((item, i) => (
+                <details key={i} className="card p-5 group" open={i === 0}>
+                  <summary className="font-heading font-semibold text-surface-800 text-sm cursor-pointer list-none flex justify-between items-center">
+                    {item.q}
+                    <span className="text-primary-500 ml-4 flex-shrink-0">▾</span>
+                  </summary>
+                  <p className="text-sm text-surface-600 leading-relaxed mt-3">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </DocSection>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-br from-primary-500 to-primary-800 rounded-2xl p-8 text-center text-white mt-10">
+            <h2 className="text-xl font-heading font-bold mb-3">Ready for Your Exam?</h2>
+            <p className="text-white/80 text-sm mb-5">Start preparing with our free tools and 100+ exam pages.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/tools/eligibility-checker" className="bg-white text-primary-700 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors">Check Eligibility</Link>
+              <Link href="/exams" className="border border-white/40 text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-white/10 transition-colors">Browse All Exams</Link>
+            </div>
+          </div>
+
+        </article>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block mt-2">
+          <div className="sticky top-24 space-y-5">
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📑 Contents</div>
+              <nav className="space-y-1">
+                {tocItems.map(item => (
+                  <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 transition-colors leading-snug">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">🔗 Related Guides</div>
+              <div className="space-y-3">
+                <Link href="/guides/how-to-fill-government-job-application-form" className="block text-sm text-primary-500 hover:underline leading-snug">How to Fill Application Form →</Link>
+                <Link href="/guides/age-limit-relaxation-government-jobs" className="block text-sm text-primary-500 hover:underline leading-snug">Age Limit & Relaxation Guide →</Link>
+                <Link href="/guides/how-to-start-government-exam-preparation" className="block text-sm text-primary-500 hover:underline leading-snug">Beginner's Preparation Roadmap →</Link>
+              </div>
+            </div>
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">🚀 Quick Links</div>
+              <div className="space-y-2">
+                <Link href="/exams/ssc-cgl" className="block text-sm text-primary-500 hover:underline">SSC CGL →</Link>
+                <Link href="/exams/ibps-po" className="block text-sm text-primary-500 hover:underline">IBPS PO →</Link>
+                <Link href="/exams/sbi-po" className="block text-sm text-primary-500 hover:underline">SBI PO →</Link>
+                <Link href="/tools/eligibility-checker" className="block text-sm text-primary-500 hover:underline">Eligibility Checker →</Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      {/* Schema.org FAQPage */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What documents are needed for a government job?', acceptedAnswer: { '@type': 'Answer', text: 'Core documents: Aadhaar card, PAN card, Class 10 marksheet, Class 12 marksheet, graduation degree + all semester marksheets, passport-size photographs, and reservation certificate (OBC-NCL/SC/ST/EWS if applicable). Serving govt employees also need an NOC.' } },
+          { '@type': 'Question', name: 'Can I get rejected in document verification?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Common rejection reasons include: expired OBC-NCL certificate, wrong format (State format instead of Central Government format), name mismatch, missing semester marksheets, and no NOC for serving government employees.' } },
+          { '@type': 'Question', name: 'What is the validity period of an OBC-NCL certificate for Central Government jobs?', acceptedAnswer: { '@type': 'Answer', text: 'OBC-NCL certificates are valid for the financial year in which they are issued (April to March). Most Central Government exams require a certificate from the current or immediately preceding financial year.' } },
+          { '@type': 'Question', name: 'Which government jobs pay ₹50,000 per month?', acceptedAnswer: { '@type': 'Answer', text: 'Jobs paying ₹50,000+ per month (in-hand, metros) include: IAS/IPS via UPSC CSE, SSC CGL Inspector of Income Tax, SSC CGL Assistant Section Officer in MEA/CSS, IBPS PO / SBI PO, RBI Grade B Officer, and NABARD Grade A Officer.' } },
+        ],
+      })}} />
+    </div>
+  );
+}
+
+function DocSection({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
+  return (
+    <section id={id} className="mb-10">
+      <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 pb-3 border-b border-surface-200">{title}</h2>
+      {children}
+    </section>
   );
 }

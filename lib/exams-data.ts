@@ -1280,10 +1280,10 @@ export const guides = [
   },
   {
     slug: 'documents-needed-government-job',
-    title: 'Documents Required for Government Job Application',
-    description: 'Complete checklist of all documents you need for applying and joining a government job – certificates, ID proofs, photos, and more.',
+    title: 'Documents Required for Government Job (2026) – Complete Checklist',
+    description: 'Complete 2026 checklist of documents needed for government job applications and Document Verification (DV). Covers identity proof, educational certificates, OBC-NCL/SC/ST/EWS reservation documents, NOC, disability certificates, pro tips on name mismatches, and the most common DV rejection reasons.',
     category: 'Documents',
-    readTime: '5 min read',
+    readTime: '15 min read',
   },
   {
     slug: 'study-plan-working-professionals',
