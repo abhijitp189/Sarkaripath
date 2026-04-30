@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ibps-po-salary-in-hand-2026',
+    title: 'IBPS PO Salary In Hand 2026: CTC, Allowances & Perks Explained',
+    metaTitle: 'IBPS PO Salary In Hand 2026: CTC, Allowances & Perks Explained | TaiyarHo',
+    metaDescription: 'IBPS PO salary in hand 2026 — exact figures for basic pay, DA, HRA, allowances, deductions & hidden perks. Based on 12th Bipartite Settlement.',
+    category: 'Banking',
+    tags: ['IBPS PO', 'Bank PO Salary 2026', 'IBPS PO In-Hand Salary', '12th Bipartite Settlement', 'Bank PO Allowances'],
+    publishedDate: 'April 30, 2026',
+    updatedDate: 'April 30, 2026',
+    readTime: '13 min read',
+    author: 'TaiyarHo Editorial',
+    excerpt: 'What does an IBPS PO actually earn in 2026? Break down the complete salary structure — basic pay, DA, HRA, city allowances, and the hidden perks that can push your total package to ₹1 lakh/month.',
+    examSlug: 'ibps-po',
+  },
+  {
     slug: 'ssc-cgl-vs-chsl-which-is-easier-2026',
     title: 'SSC CGL vs CHSL: Which is Easier and More Worth It in 2026?',
     metaTitle: 'SSC CGL vs SSC CHSL 2026: Which is Easier, Better Salary & More Worth It? | TaiyarHo',

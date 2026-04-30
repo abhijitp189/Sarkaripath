@@ -30,6 +30,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   }
 
   // Route to correct article renderer
+  if (post.slug === 'ibps-po-salary-in-hand-2026') {
+    return <IbpsPOSalaryArticle post={post} />;
+  }
   if (post.slug === 'ssc-cgl-vs-chsl-which-is-easier-2026') {
     return <SscCglVsChslArticle post={post} />;
   }
@@ -1939,6 +1942,644 @@ function TopicGrid({ hot, normal }: { hot: string[]; normal: string[] }) {
       {normal.map(t => (
         <span key={t} className="text-xs bg-white border border-surface-200 text-surface-600 px-3 py-1.5 rounded-full">{t}</span>
       ))}
+    </div>
+  );
+}
+
+// ─── IBPS PO SALARY IN HAND 2026 ARTICLE ─────────────────────────────────────
+function IbpsPOSalaryArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'why-ibps-po', label: 'Why IBPS PO Stands Out' },
+    { id: 'salary-components', label: 'Salary Components Table' },
+    { id: 'in-hand', label: 'In-Hand vs Gross Salary' },
+    { id: 'hidden-perks', label: 'The Hidden Perks' },
+    { id: 'city-wise', label: 'City-wise Salary Difference' },
+    { id: 'career-growth', label: 'Salary After Promotion' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">IBPS PO Salary 2026</span>
+      </nav>
+
+      {/* JSON-LD Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: post.title,
+            description: post.metaDescription,
+            datePublished: '2026-04-30',
+            dateModified: '2026-04-30',
+            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
+            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/blog/ibps-po-salary-in-hand-2026/' },
+          }),
+        }}
+      />
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What is the starting salary of IBPS PO in 2026?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'The starting basic pay for IBPS PO in 2026 is ₹48,480 per month under the 12th Bipartite Settlement. With DA, HRA, and other allowances, the gross salary ranges from ₹68,000 to ₹82,000 per month depending on posting city.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What is the in-hand salary of IBPS PO?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'After deductions like NPS (10% of Basic+DA), Professional Tax (₹200/month), and Income Tax (varies), the net in-hand salary for an IBPS PO in a metro city is approximately ₹55,000–₹65,000 per month.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Can an IBPS PO earn ₹1 lakh per month?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. When you factor in leased accommodation (worth ₹8,000–₹29,500/month), fuel allowance, newspaper reimbursement, LFC, and medical benefits, the total CTC equivalent can comfortably reach ₹90,000–₹1,10,000 per month in metro postings.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What is the bank PO salary after 5 years?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'After 5 years, an IBPS PO earns 5 annual increments (₹1,750 each), pushing basic pay to approximately ₹57,230. A promotion to Scale-II (Senior Manager) raises basic pay to ₹64,820 with higher allowances, taking gross salary well above ₹90,000.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        {/* MAIN CONTENT */}
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-primary-950 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
+                  Banking
+                </span>
+                <span className="text-surface-400 text-xs">{post.publishedDate} · {post.readTime}</span>
+              </div>
+              <h1 className="font-heading font-bold text-2xl sm:text-3xl text-white leading-tight mb-4">
+                IBPS PO Salary In Hand 2026: <span className="text-accent-400">CTC, Allowances & Perks Explained</span>
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed max-w-2xl">
+                The real number that lands in your account every month — plus the allowances and perks that most guides forget to mention.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-5">
+                {['IBPS PO Salary In Hand 2026', 'IBPS PO CTC', 'Bank PO Allowances', '12th Bipartite Settlement'].map(tag => (
+                  <span key={tag} className="text-xs bg-white/10 text-surface-300 px-2.5 py-1 rounded-full">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Stats Bar */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            {[
+              { label: 'Basic Pay', value: '₹48,480', sub: 'Starting (Scale I)' },
+              { label: 'Gross Salary', value: '₹68K–82K', sub: 'Metro posting' },
+              { label: 'In-Hand', value: '₹55K–65K', sub: 'After deductions' },
+              { label: 'Total CTC', value: '~₹1 Lakh', sub: 'With perks & benefits' },
+            ].map(stat => (
+              <div key={stat.label} className="card p-4 text-center">
+                <div className="text-xs text-surface-400 font-medium mb-1">{stat.label}</div>
+                <div className="text-xl font-heading font-bold text-primary-600">{stat.value}</div>
+                <div className="text-xs text-surface-400 mt-0.5">{stat.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* WHY IBPS PO */}
+          <section id="why-ibps-po" className="mb-12 scroll-mt-20">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 pb-3 border-b border-surface-200">
+              Why IBPS PO Is Still One of India's Most Sought-After Jobs
+            </h2>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Every year, over 1 crore aspirants compete for roughly 4,000–6,000 IBPS PO seats. That level of competition does not happen by accident — it tells you something real about the job's value.
+            </p>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Here's what drives it: a Probationary Officer in a public sector bank gets a salary that is competitive with many private sector IT roles, but also comes with job security, a pension scheme, subsidised housing, and perks that quietly add ₹15,000–₹30,000 worth of value every single month — value that never shows up on a pay slip.
+            </p>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              The 12th Bipartite Settlement (BPS), signed between IBA (Indian Banks' Association) and bank employee unions in 2025, brought significant pay revisions effective from November 2022. The result? An IBPS PO's starting basic pay jumped from ₹36,000 to <strong>₹48,480 per month</strong>.
+            </p>
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-xl text-sm text-emerald-800 leading-relaxed">
+              <div className="font-semibold text-xs uppercase tracking-wide mb-1">✅ Key Update for 2026</div>
+              All figures in this article reflect the <strong>12th Bipartite Settlement</strong> pay scales, which are fully applicable for IBPS PO recruits joining in 2025–26. The settlement is effective from 1st November 2022.
+            </div>
+          </section>
+
+          {/* SALARY COMPONENTS TABLE */}
+          <section id="salary-components" className="mb-12 scroll-mt-20">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 pb-3 border-b border-surface-200">
+              IBPS PO Salary Components: The Complete Breakdown
+            </h2>
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Let's break it down component by component. An IBPS PO's gross salary has several parts, each calculated differently.
+            </p>
+
+            <h3 className="text-lg font-heading font-bold text-surface-800 mb-3">Pay Scale & Basic Pay</h3>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              IBPS PO is recruited at <strong>JMGS-I (Junior Management Grade Scale I)</strong>. The revised pay scale under the 12th BPS is:
+            </p>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold">Pay Scale Component</th>
+                    <th className="text-left p-3 font-semibold">Details</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  <tr className="bg-white hover:bg-surface-50">
+                    <td className="p-3 font-medium text-surface-800">Starting Basic Pay</td>
+                    <td className="p-3 text-surface-600">₹48,480/month</td>
+                  </tr>
+                  <tr className="bg-surface-50 hover:bg-surface-100">
+                    <td className="p-3 font-medium text-surface-800">Annual Increment</td>
+                    <td className="p-3 text-surface-600">₹1,750/year (for first 7 years)</td>
+                  </tr>
+                  <tr className="bg-white hover:bg-surface-50">
+                    <td className="p-3 font-medium text-surface-800">Pay Scale Range (JMGS-I)</td>
+                    <td className="p-3 text-surface-600">₹48,480 – ₹85,920</td>
+                  </tr>
+                  <tr className="bg-surface-50 hover:bg-surface-100">
+                    <td className="p-3 font-medium text-surface-800">Pay Scale Range (MMGS-II)</td>
+                    <td className="p-3 text-surface-600">₹64,820 – ₹93,960 (after promotion)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="text-lg font-heading font-bold text-surface-800 mb-3">Full Salary Components Table</h3>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              The table below shows a typical monthly gross salary for a newly joined IBPS PO in a <strong>metro city (X category)</strong> as of 2026:
+            </p>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-primary-700 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold">Salary Component</th>
+                    <th className="text-left p-3 font-semibold">Calculation Basis</th>
+                    <th className="text-right p-3 font-semibold">Monthly Amount</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    ['Basic Pay', '12th BPS (JMGS-I starting)', '₹48,480', false],
+                    ['Dearness Allowance (DA)', '~50–56% of Basic Pay (varies quarterly)', '₹26,664', false],
+                    ['House Rent Allowance (HRA)', '9% of Basic Pay (Metro/X city)', '₹4,363', false],
+                    ['City Compensatory Allowance (CCA)', 'Fixed for metro postings', '₹870', false],
+                    ['Learning Allowance / Special Pay', 'Fixed component', '₹530', false],
+                    ['Transport / Conveyance Allowance', 'Fixed component', '₹425', false],
+                    ['Gross Salary (approx.)', '', '~₹81,332', true],
+                  ].map(([comp, basis, amt, isTotal]) => (
+                    <tr key={comp as string} className={isTotal ? 'bg-primary-50 font-bold' : 'bg-white hover:bg-surface-50 even:bg-surface-50'}>
+                      <td className={`p-3 ${isTotal ? 'text-primary-800' : 'text-surface-800 font-medium'}`}>{comp}</td>
+                      <td className={`p-3 ${isTotal ? 'text-primary-600' : 'text-surface-500 text-xs'}`}>{basis}</td>
+                      <td className={`p-3 text-right font-semibold ${isTotal ? 'text-primary-700' : 'text-surface-700'}`}>{amt}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400 mb-6">
+              * DA rate changes quarterly based on the All India Consumer Price Index (AICPI). The figures above use an approximate DA rate of 55% as applicable in early 2026. Actual amounts may vary slightly.
+            </p>
+
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl text-sm text-blue-800 leading-relaxed">
+              <div className="font-semibold text-xs uppercase tracking-wide mb-1">📌 Quick Note on DA</div>
+              DA is revised twice a year — in February and August. As of early 2026, DA for bank employees is approximately <strong>55–56% of basic pay</strong>. This means your gross salary will keep increasing every 6 months even without a promotion.
+            </div>
+          </section>
+
+          {/* IN-HAND VS GROSS */}
+          <section id="in-hand" className="mb-12 scroll-mt-20">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 pb-3 border-b border-surface-200">
+              In-Hand Salary: What Actually Lands in Your Account
+            </h2>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Gross salary and in-hand salary are two very different numbers. Here's what gets deducted before the money hits your account:
+            </p>
+
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold">Deduction</th>
+                    <th className="text-left p-3 font-semibold">Rate / Rule</th>
+                    <th className="text-right p-3 font-semibold">Approx. Monthly Amount</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    ['NPS (National Pension System)', '10% of Basic Pay + DA', '~₹7,514'],
+                    ['Professional Tax', 'State-wise, typically ₹150–₹200', '~₹200'],
+                    ['Income Tax (TDS)', 'As per IT slab (new vs old regime)', '~₹3,000–₹6,000'],
+                    ['Total Deductions', '', '~₹10,714–₹13,714'],
+                  ].map(([item, rule, amt]) => (
+                    <tr key={item as string} className="bg-white hover:bg-surface-50 even:bg-surface-50 last:bg-red-50 last:font-bold">
+                      <td className="p-3 text-surface-800 font-medium">{item}</td>
+                      <td className="p-3 text-surface-500 text-xs">{rule}</td>
+                      <td className="p-3 text-right font-semibold text-red-600">{amt}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="text-lg font-heading font-bold text-surface-800 mb-4">Net In-Hand Salary by City Category</h3>
+            <div className="grid sm:grid-cols-3 gap-4 mb-6">
+              {[
+                { city: 'Metro / X City', eg: 'Mumbai, Delhi, Bengaluru', hra: '9% Basic', gross: '~₹81,000', inhand: '~₹67,000–₹70,000', color: 'border-primary-400 bg-primary-50' },
+                { city: 'Y Category City', eg: 'Pune, Jaipur, Lucknow', hra: '8% Basic', gross: '~₹79,500', inhand: '~₹65,000–₹68,000', color: 'border-emerald-400 bg-emerald-50' },
+                { city: 'Z Category City', eg: 'Smaller towns', hra: '7% Basic', gross: '~₹78,500', inhand: '~₹63,000–₹66,000', color: 'border-amber-400 bg-amber-50' },
+              ].map(c => (
+                <div key={c.city} className={`rounded-xl border-2 p-4 ${c.color}`}>
+                  <div className="font-heading font-bold text-surface-800 mb-1">{c.city}</div>
+                  <div className="text-xs text-surface-500 mb-3">{c.eg}</div>
+                  <div className="space-y-1.5 text-sm">
+                    <div className="flex justify-between"><span className="text-surface-500">HRA</span><span className="font-medium text-surface-700">{c.hra}</span></div>
+                    <div className="flex justify-between"><span className="text-surface-500">Gross</span><span className="font-medium text-surface-700">{c.gross}</span></div>
+                    <div className="flex justify-between border-t border-surface-200 pt-1.5"><span className="text-surface-700 font-semibold">In-Hand</span><span className="font-bold text-primary-700">{c.inhand}</span></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl text-sm text-amber-800 leading-relaxed">
+              <div className="font-semibold text-xs uppercase tracking-wide mb-1">⚠️ On Income Tax</div>
+              Tax deductions depend on your regime choice (old vs new) and your investments. A fresh IBPS PO in the old regime who maximises NPS (Section 80CCD(2)) and standard deduction benefits could reduce monthly TDS to near zero. Consult a CA for your specific situation.
+            </div>
+          </section>
+
+          {/* HIDDEN PERKS */}
+          <section id="hidden-perks" className="mb-12 scroll-mt-20">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2 pb-3 border-b border-surface-200">
+              The Hidden Perks: Where the Real Value Is
+            </h2>
+            <p className="text-surface-500 text-sm mb-6">These are the allowances and benefits that most job sites don't tell you about — but they add serious money to your effective package.</p>
+
+            {/* Leased Accommodation */}
+            <div className="card p-5 mb-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center text-xl flex-shrink-0">🏠</div>
+                <div>
+                  <h3 className="font-heading font-bold text-surface-800 mb-1">1. Leased Accommodation</h3>
+                  <p className="text-sm text-surface-500 leading-relaxed mb-3">
+                    Instead of the standard HRA, most banks offer to lease a house for you directly and pay the rent to the landlord. This is a far better deal because the lease limit is <em>much</em> higher than the HRA you'd receive in cash. You can live in a decent apartment without paying rent from your pocket.
+                  </p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border border-surface-100 rounded-lg overflow-hidden">
+                      <thead className="bg-surface-100">
+                        <tr>
+                          <th className="text-left p-2.5 font-semibold text-surface-700">City Category</th>
+                          <th className="text-left p-2.5 font-semibold text-surface-700">Monthly Lease Limit</th>
+                          <th className="text-left p-2.5 font-semibold text-surface-700">Your HRA if no lease</th>
+                          <th className="text-right p-2.5 font-semibold text-surface-700">Extra Benefit</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          ['Metro (X)', '₹29,500/month', '₹4,363/month', '~₹25,137/month'],
+                          ['Y Category', '₹18,000/month', '₹3,878/month', '~₹14,122/month'],
+                          ['Z Category', '₹8,000/month', '₹3,394/month', '~₹4,606/month'],
+                        ].map(row => (
+                          <tr key={row[0] as string} className="bg-white even:bg-surface-50">
+                            <td className="p-2.5 text-surface-700 font-medium">{row[0]}</td>
+                            <td className="p-2.5 text-emerald-700 font-semibold">{row[1]}</td>
+                            <td className="p-2.5 text-surface-500">{row[2]}</td>
+                            <td className="p-2.5 text-right font-bold text-primary-600">{row[3]}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2">A bank-leased flat in a metro is worth ₹25,000+ per month above your HRA — that's like a bonus salary you never see on paper.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Petrol Allowance */}
+            <div className="card p-5 mb-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl flex-shrink-0">⛽</div>
+                <div>
+                  <h3 className="font-heading font-bold text-surface-800 mb-1">2. Petrol / Fuel Allowance</h3>
+                  <p className="text-sm text-surface-500 leading-relaxed">
+                    IBPS PO officers are eligible for a monthly petrol allowance — typically <strong>₹1,200–₹2,000 per month</strong> (bank-specific, revised periodically). This is paid as reimbursement against fuel bills. It is tax-free up to a certain limit, making it a low-profile but consistent monthly benefit. Scale-II and above officers get higher limits.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Newspaper Allowance */}
+            <div className="card p-5 mb-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl flex-shrink-0">📰</div>
+                <div>
+                  <h3 className="font-heading font-bold text-surface-800 mb-1">3. Newspaper, Magazine & Cleaning Allowances</h3>
+                  <p className="text-sm text-surface-500 leading-relaxed">
+                    Officers receive reimbursement for newspaper and magazine subscriptions (₹200–₹400/month). There's also a <strong>cleaning/washing allowance</strong> (around ₹500/month) to maintain uniform/dress standards. These are small amounts individually but they reflect a culture of perks that add up collectively.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* LFC */}
+            <div className="card p-5 mb-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl flex-shrink-0">✈️</div>
+                <div>
+                  <h3 className="font-heading font-bold text-surface-800 mb-1">4. LFC (Leave Fare Concession)</h3>
+                  <p className="text-sm text-surface-500 leading-relaxed">
+                    Every 2 years (or annually for some banks), an officer can claim <strong>LFC</strong> — reimbursement for travel expenses for themselves and their family. For a Scale-I officer, this means the bank covers AC 2-tier rail fare for the officer + spouse + 2 dependent children, for a round trip anywhere in India. Depending on where you travel, this can be worth ₹10,000–₹40,000 per claim.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Medical Aid */}
+            <div className="card p-5 mb-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-xl flex-shrink-0">🏥</div>
+                <div>
+                  <h3 className="font-heading font-bold text-surface-800 mb-1">5. Medical Aid & Hospitalisation</h3>
+                  <p className="text-sm text-surface-500 leading-relaxed">
+                    Officers are entitled to <strong>medical aid of ₹2,355/year</strong> (revised under 12th BPS) for OPD expenses, with a higher ceiling for family members. For hospitalisation, the bank covers actual expenses up to prescribed limits — or provides cashless treatment at empanelled hospitals. This is effectively a ₹15,000–₹30,000/year health benefit for your entire family.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* NPS + Gratuity */}
+            <div className="card p-5 mb-4 bg-surface-50">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-surface-200 text-surface-600 flex items-center justify-center text-xl flex-shrink-0">🏦</div>
+                <div>
+                  <h3 className="font-heading font-bold text-surface-800 mb-1">6. NPS Employer Contribution + Gratuity</h3>
+                  <p className="text-sm text-surface-500 leading-relaxed">
+                    The bank contributes <strong>14% of Basic + DA</strong> to your NPS corpus every month (you contribute 10% from your side). On a starting salary, that's roughly ₹10,524/month going into your retirement fund — money you don't see in hand, but it's building long-term wealth. You also earn gratuity after 5 years of service.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Total CTC Calculation */}
+            <h3 className="text-lg font-heading font-bold text-surface-800 mb-3 mt-6">Can an IBPS PO Really Earn ₹1 Lakh Per Month?</h3>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              The bottom line is: yes — if you're posted in a metro and you factor in everything (not just what appears on the pay slip). Here's how the math works:
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold">Component</th>
+                    <th className="text-right p-3 font-semibold">Monthly Value</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    ['Gross Salary (cash in-hand components)', '₹81,332'],
+                    ['Leased Accommodation benefit (metro)', '₹29,500'],
+                    ['Petrol Allowance', '₹1,500'],
+                    ['Medical Aid (monthly equivalent)', '₹1,800'],
+                    ['LFC (monthly equivalent, biennial)', '₹1,200'],
+                    ['NPS Employer Contribution (14%)', '₹10,524'],
+                  ].map(([comp, val]) => (
+                    <tr key={comp as string} className="bg-white hover:bg-surface-50 even:bg-surface-50">
+                      <td className="p-3 text-surface-700">{comp}</td>
+                      <td className="p-3 text-right font-semibold text-surface-800">{val}</td>
+                    </tr>
+                  ))}
+                  <tr className="bg-emerald-50 font-bold">
+                    <td className="p-3 text-emerald-800">Total CTC (Effective Package)</td>
+                    <td className="p-3 text-right text-emerald-700 text-base">~₹1,25,856</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400">* Leased accommodation is offered in lieu of HRA — not in addition to it. The benefit shown above is the difference vs receiving HRA in cash.</p>
+          </section>
+
+          {/* CITY-WISE */}
+          <section id="city-wise" className="mb-12 scroll-mt-20">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 pb-3 border-b border-surface-200">
+              Does Your Posting City Change Your Salary?
+            </h2>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Yes, and significantly. The three city categories — X (metro), Y (large cities), and Z (smaller towns) — affect your HRA, CCA, and lease limits. Here's the practical impact:
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-primary-700 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold">City Category</th>
+                    <th className="text-left p-3 font-semibold">Examples</th>
+                    <th className="text-right p-3 font-semibold">HRA Rate</th>
+                    <th className="text-right p-3 font-semibold">Lease Limit</th>
+                    <th className="text-right p-3 font-semibold">Net In-Hand</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    ['X (Metro)', 'Mumbai, Delhi, Chennai, Kolkata, Bengaluru, Hyderabad', '9%', '₹29,500', '₹67,000–₹70,000'],
+                    ['Y (Large)', 'Pune, Ahmedabad, Jaipur, Lucknow, Surat, Nagpur', '8%', '₹18,000', '₹65,000–₹68,000'],
+                    ['Z (Others)', 'All other cities and towns', '7%', '₹8,000', '₹63,000–₹66,000'],
+                  ].map(row => (
+                    <tr key={row[0] as string} className="bg-white hover:bg-surface-50 even:bg-surface-50">
+                      {row.map((cell, i) => (
+                        <td key={i} className={`p-3 ${i === 0 ? 'font-bold text-surface-800' : i >= 3 ? 'text-right font-semibold text-primary-700' : 'text-surface-600'}`}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* CAREER GROWTH */}
+          <section id="career-growth" className="mb-12 scroll-mt-20">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 pb-3 border-b border-surface-200">
+              How the Salary Grows: Year 1 to Year 10
+            </h2>
+            <p className="text-surface-600 leading-relaxed mb-5">
+              One of the underrated features of the IBPS PO career is how quickly the salary grows — through annual increments, DA revisions, and promotions.
+            </p>
+
+            <h3 className="text-lg font-heading font-bold text-surface-800 mb-3">Annual Increments (No Exam Needed)</h3>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Every year, you receive an automatic increment of <strong>₹1,750</strong> added to your basic pay. This isn't a promotion — it's just your annual raise for staying in service. Over the first 7 years, your basic pay grows from ₹48,480 to ₹60,730. Since DA is calculated as a percentage of basic, your gross salary grows accordingly.
+            </p>
+
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead className="bg-surface-800 text-white">
+                  <tr>
+                    <th className="text-left p-3 font-semibold">Year of Service</th>
+                    <th className="text-right p-3 font-semibold">Basic Pay</th>
+                    <th className="text-right p-3 font-semibold">Approx. Gross (Metro)</th>
+                    <th className="text-right p-3 font-semibold">Approx. In-Hand</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    ['Year 1 (Joining)', '₹48,480', '~₹81,000', '~₹67,000'],
+                    ['Year 2', '₹50,230', '~₹84,000', '~₹70,000'],
+                    ['Year 3', '₹51,980', '~₹87,000', '~₹72,500'],
+                    ['Year 5', '₹55,480', '~₹92,000', '~₹76,000'],
+                    ['Year 7', '₹59,730', '~₹99,000', '~₹82,000'],
+                  ].map(row => (
+                    <tr key={row[0] as string} className="bg-white even:bg-surface-50 hover:bg-surface-100">
+                      <td className="p-3 font-medium text-surface-800">{row[0]}</td>
+                      <td className="p-3 text-right text-surface-700">{row[1]}</td>
+                      <td className="p-3 text-right text-surface-700">{row[2]}</td>
+                      <td className="p-3 text-right font-semibold text-primary-700">{row[3]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="text-lg font-heading font-bold text-surface-800 mb-3">Promotion Ladder & Salary Jumps</h3>
+            <div className="space-y-3 mb-4">
+              {[
+                { grade: 'JMGS-I (PO)', years: 'Joining', basic: '₹48,480', note: 'This is where you start' },
+                { grade: 'MMGS-II (Senior Manager)', years: '3–5 years (internal exam)', basic: '₹64,820', note: '+₹16,340 jump in basic pay' },
+                { grade: 'MMGS-III (Chief Manager)', years: '7–9 years', basic: '₹76,010', note: 'Significant authority and perks' },
+                { grade: 'SMGS-IV (AGM)', years: '12–15 years', basic: '₹1,02,300', note: 'Senior management, very high CTC' },
+              ].map(item => (
+                <div key={item.grade} className="flex items-start gap-4 p-4 rounded-xl border border-surface-200 bg-white hover:bg-surface-50">
+                  <div className="w-2 h-2 rounded-full bg-primary-500 mt-2 flex-shrink-0" />
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                      <span className="font-heading font-bold text-surface-800">{item.grade}</span>
+                      <span className="text-xs bg-surface-100 text-surface-500 px-2 py-0.5 rounded-full">{item.years}</span>
+                    </div>
+                    <div className="text-sm text-surface-500">{item.note}</div>
+                  </div>
+                  <div className="font-bold text-primary-600 text-sm">{item.basic}</div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-xl text-sm text-emerald-800 leading-relaxed">
+              <div className="font-semibold text-xs uppercase tracking-wide mb-1">💡 After 5 Years</div>
+              An IBPS PO who clears the internal promotion exam to Scale-II at the earliest (around 3 years) would be drawing a basic pay of ₹64,820 — translating to a gross salary of ₹1,05,000+ in metro cities, with in-hand of ₹85,000–₹92,000.
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section id="faq" className="mb-12 scroll-mt-20">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 pb-3 border-b border-surface-200">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'What is the starting salary of IBPS PO in 2026?',
+                  a: 'The starting basic pay is ₹48,480/month under the 12th Bipartite Settlement. Total gross salary (basic + DA + HRA + allowances) is approximately ₹78,000–₹82,000 per month for a metro posting. This is a significant revision from the earlier ₹36,000 starting basic under the 11th BPS.',
+                },
+                {
+                  q: 'What is the in-hand salary of IBPS PO?',
+                  a: 'After deductions — NPS (10% of basic+DA), professional tax (~₹200), and income tax — the net in-hand salary in a metro city is approximately ₹67,000–₹70,000 per month. In Y and Z category cities, it is ₹63,000–₹68,000. These numbers assume the standard tax regime and no extraordinary deductions.',
+                },
+                {
+                  q: 'Can an IBPS PO earn ₹1 lakh per month?',
+                  a: 'Yes — when you count the complete CTC. The gross cash salary alone won\'t hit ₹1 lakh at joining, but when you add bank-leased accommodation (worth ₹29,500/month in metros), employer NPS contribution (₹10,500), LFC, medical benefits, and petrol allowance, the total effective package in a metro city is easily ₹1,10,000–₹1,25,000 per month. After your first promotion (Scale-II), even gross cash salary crosses ₹1 lakh.',
+                },
+                {
+                  q: 'What is the bank PO salary after 5 years?',
+                  a: 'After 5 years, your basic pay grows by 5 increments (₹1,750 each) to approximately ₹57,230, pushing gross salary to ₹92,000+ in metro cities. If promoted to Scale-II (which typically happens 3–5 years in after clearing an internal exam), basic pay jumps to ₹64,820 and gross salary crosses ₹1,00,000 per month.',
+                },
+              ].map((item, i) => (
+                <div key={i} className="card p-5">
+                  <div className="font-heading font-bold text-surface-800 mb-2">Q{i + 1}. {item.q}</div>
+                  <p className="text-sm text-surface-500 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Conclusion */}
+          <div className="bg-gradient-to-br from-primary-700 to-primary-900 rounded-2xl p-8 text-white mb-10">
+            <h2 className="font-heading font-bold text-2xl mb-3">The Bottom Line</h2>
+            <p className="text-primary-100 leading-relaxed mb-4">
+              IBPS PO is one of the best-paying government jobs available to any graduate in India — and most salary comparisons actually <em>understate</em> its value because they only look at in-hand cash, ignoring ₹40,000–₹50,000 worth of monthly benefits that don't appear on a pay slip.
+            </p>
+            <p className="text-primary-100 leading-relaxed mb-5">
+              If you're serious about cracking IBPS PO, start your preparation now. The exam rewards consistency, and the payoff — both financial and in terms of career security — is real.
+            </p>
+            <Link href="/exams/ibps-po" className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-5 py-2.5 rounded-xl text-sm hover:bg-primary-50 transition-colors">
+              View IBPS PO Complete Guide →
+            </Link>
+          </div>
+
+          {/* Back to blog */}
+          <div className="flex justify-start">
+            <Link href="/blog" className="text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1.5 font-medium">
+              ← Back to all articles
+            </Link>
+          </div>
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            {/* TOC */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</div>
+              <nav className="space-y-1">
+                {toc.map(item => (
+                  <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 px-2 rounded hover:bg-primary-50 transition-colors leading-snug">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+            {/* Related */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related</div>
+              <div className="space-y-2">
+                <Link href="/exams/ibps-po" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                  IBPS PO Complete Exam Guide →
+                </Link>
+                <Link href="/exams/sbi-po" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                  SBI PO Salary Comparison →
+                </Link>
+                <Link href="/tools/age-calculator" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                  Check IBPS PO Eligibility →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   );
 }
