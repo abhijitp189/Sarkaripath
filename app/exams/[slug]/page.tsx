@@ -79,6 +79,13 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       alternates: { canonical: 'https://taiyarho.in/exams/ugc-net/' },
     };
   }
+  if (params.slug === 'army-agniveer') {
+    return {
+      title: 'Army Agniveer 2026 – Eligibility, CEE Exam, Salary & Guide | TaiyarHo',
+      description: 'Complete guide on Indian Army Agniveer 2026: 25,000+ vacancies, CEE exam pattern, eligibility, physical standards, salary ₹30k–₹40k, Seva Nidhi ₹11.71 lakh.',
+      alternates: { canonical: 'https://taiyarho.in/exams/army-agniveer/' },
+    };
+  }
 
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
@@ -108,6 +115,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
   if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
   if (brief && brief.slug === 'ugc-net') return <UgcNetPage exam={brief} />;
+  if (brief && brief.slug === 'army-agniveer') return <ArmyAgniveerPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -5365,6 +5373,588 @@ function UgcNetPage({ exam }: { exam: any }) {
                   ].map((e) => (
                     <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
                   ))}
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── ARMY AGNIVEER RICH PAGE ─────────────────────────────────────────────────
+function ArmyAgniveerPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Posts & Vacancies' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'CEE Exam Pattern' },
+    { id: 'physical',        label: 'Physical Standards' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'after-4-years',   label: 'After 4 Years' },
+    { id: 'study-plan',      label: 'Preparation Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released',   date: '12 February 2026',        status: 'done' },
+    { event: 'Online Application Opens',         date: '13 February 2026',        status: 'done' },
+    { event: 'Last Date to Apply (Extended)',    date: '10 April 2026',           status: 'done' },
+    { event: 'CEE Admit Card',                   date: 'To be notified (TBN)',    status: 'tbn'  },
+    { event: 'CEE Online Exam Window',           date: '01 – 16 June 2026',       status: 'upcoming' },
+    { event: 'CEE Result / Shortlist',           date: 'To be notified (TBN)',    status: 'tbn'  },
+    { event: 'Recruitment Rally (Physical)',     date: 'Zone-wise – TBN',         status: 'tbn'  },
+    { event: 'Medical Examination',             date: 'After Rally – TBN',       status: 'tbn'  },
+    { event: 'Final Merit List & Joining',      date: 'To be notified (TBN)',    status: 'tbn'  },
+  ];
+
+  const posts = [
+    { post: 'Agniveer General Duty (GD) – Male',  qual: '10th Pass, 45% aggregate, 33% per subject',        ageMax: '21 yrs' },
+    { post: 'Agniveer GD (Women Military Police)', qual: '10th Pass, 45% aggregate, 33% per subject',        ageMax: '21 yrs' },
+    { post: 'Agniveer Technical',                  qual: '12th (PCM) with 50% aggregate',                    ageMax: '21 yrs' },
+    { post: 'Agniveer Clerk / Store Keeper Technical', qual: '12th (any stream) with 60% aggregate; 50% in English & Maths', ageMax: '21 yrs' },
+    { post: 'Agniveer Tradesman (10th Pass)',       qual: '10th Pass with 33% marks in each subject',         ageMax: '21 yrs' },
+    { post: 'Agniveer Tradesman (8th Pass)',        qual: '8th Pass with 33% marks in each subject',          ageMax: '21 yrs' },
+    { post: 'Sepoy Pharma / Nursing Assistant',    qual: '12th (PCB) + specific technical qualification',    ageMax: '25 yrs' },
+    { post: 'JCO Religious Teacher (RT)',           qual: 'Graduate + relevant religious qualification',       ageMax: '34 yrs' },
+  ];
+
+  const ceePatternGD = [
+    { subject: 'General Knowledge',    questions: 15, marks: 30, negMarking: '−0.5' },
+    { subject: 'General Science',      questions: 15, marks: 30, negMarking: '−0.5' },
+    { subject: 'Mathematics',          questions: 10, marks: 20, negMarking: '−0.5' },
+    { subject: 'Logical Reasoning',    questions: 10, marks: 20, negMarking: '−0.5' },
+  ];
+
+  const ceePatternClerk = [
+    { subject: 'General Knowledge',    questions: 25, marks: 50, negMarking: '−0.5' },
+    { subject: 'General Science',      questions: 10, marks: 20, negMarking: '−0.5' },
+    { subject: 'Mathematics',          questions: 25, marks: 50, negMarking: '−0.5' },
+    { subject: 'Computer Science',     questions: 10, marks: 20, negMarking: '−0.5' },
+    { subject: 'English',              questions: 25, marks: 50, negMarking: '−0.5' },
+    { subject: 'General Reasoning',    questions: 5,  marks: 10, negMarking: '−0.5' },
+  ];
+
+  const physicalMale = [
+    { test: '1.6 km Run',     group1: 'Up to 5 min 30 sec (Bonus marks)',    group2: '5 min 31 sec – 5 min 45 sec' },
+    { test: 'Pull Ups',       group1: '10 pull-ups (max bonus)',              group2: 'Minimum 6 pull-ups required' },
+    { test: '9-Foot Ditch',   group1: 'Must clear in single jump',           group2: 'Qualifying – no marks' },
+    { test: 'Zig-Zag Balance', group1: 'Complete the course without errors', group2: 'Qualifying – no marks' },
+    { test: 'Height (Min)',   group1: '170 cm (General/OBC/EWS)',            group2: '162.5 cm (SC/ST/NE/Tribal)' },
+    { test: 'Chest (Male)',   group1: 'Unexpanded: 80 cm',                   group2: 'Minimum expansion: 5 cm' },
+  ];
+
+  const salaryTable = [
+    { year: 'Year 1', gross: '₹30,000', deduction: '₹9,000', inHand: '~₹21,000', annualPkg: '₹4.76 Lakh' },
+    { year: 'Year 2', gross: '₹33,000', deduction: '₹9,900', inHand: '~₹23,100', annualPkg: '₹5.24 Lakh' },
+    { year: 'Year 3', gross: '₹36,500', deduction: '₹10,950', inHand: '~₹25,550', annualPkg: '₹5.80 Lakh' },
+    { year: 'Year 4', gross: '₹40,000', deduction: '₹12,000', inHand: '~₹28,000', annualPkg: '₹6.92 Lakh' },
+  ];
+
+  const books = [
+    { subject: 'GK & Current Affairs', title: 'Lucent\'s General Knowledge', author: 'Lucent Publications', freeLink: '' },
+    { subject: 'Mathematics',          title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal (S. Chand)', freeLink: '' },
+    { subject: 'General Science',      title: 'Lucent\'s General Science', author: 'Lucent Publications', freeLink: '' },
+    { subject: 'Logical Reasoning',    title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', freeLink: '' },
+    { subject: 'English (Clerk post)', title: 'Objective English for Competitive Exams', author: 'S.P. Bakshi (Arihant)', freeLink: '' },
+    { subject: 'Previous Papers',      title: 'Army Agniveer Previous Year Papers (Chapter-wise)', author: 'Arihant / Oswaal', freeLink: '' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the age limit for Army Agniveer 2026?',
+      a: 'For most posts (GD, Technical, Clerk, Tradesman), the age must be between 17.5 years and 21 years as on 01 July 2026. Sepoy Pharma allows up to 25 years, and JCO Religious Teacher up to 34 years.',
+    },
+    {
+      q: 'How many vacancies are there in Army Agniveer 2026?',
+      a: 'The Indian Army has announced 25,000+ vacancies across all categories for the 2026 recruitment cycle. Post-wise breakup is published by individual Army Recruiting Offices (AROs).',
+    },
+    {
+      q: 'What is the Seva Nidhi package in the Agniveer scheme?',
+      a: 'After completing 4 years of service, every Agniveer receives a tax-free lump-sum Seva Nidhi payout of approximately ₹11.71 lakh. This includes your own contributions (30% of monthly package) + equal government contribution + accrued interest.',
+    },
+    {
+      q: 'Can girls / female candidates apply for Army Agniveer?',
+      a: 'Yes. Female candidates can apply for the Agniveer General Duty (Women Military Police) category. Other posts are currently open to male candidates only. Check the official notification for the latest update.',
+    },
+    {
+      q: 'Is there negative marking in the Agniveer CEE exam?',
+      a: 'Yes. Each wrong answer carries a penalty of −0.5 marks. Unattempted questions carry no penalty. Plan your attempts carefully to avoid losing marks.',
+    },
+    {
+      q: 'What happens after 4 years? Can I continue in the Army?',
+      a: 'Up to 25% of top-performing Agniveers are selected for regular enrolment in the Indian Army based on merit, medical fitness, and organisational requirements. The remaining 75% receive the Seva Nidhi package, a skill certificate, and priority consideration for Central Armed Police Forces (CAPF) and state government jobs.',
+    },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-amber-100 text-amber-700';
+  };
+  const statusLabel = (s: string) => s === 'done' ? 'Completed' : s === 'upcoming' ? 'Upcoming' : 'TBN';
+
+  return (
+    <>
+      <div className="container-main py-10">
+        {/* Breadcrumb */}
+        <nav className="text-sm text-surface-500 mb-6">
+          <Link href="/" className="hover:text-primary-500">Home</Link><span className="mx-2">›</span>
+          <Link href="/exams" className="hover:text-primary-500">Exams</Link><span className="mx-2">›</span>
+          <span className="text-surface-800">Indian Army Agniveer</span>
+        </nav>
+
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── Main Content ── */}
+          <div>
+            {/* Page Header */}
+            <div className="mb-8" id="overview">
+              <div className="flex flex-wrap gap-2 mb-3">
+                <span className="badge badge-primary">Defence</span>
+                <span className="badge badge-green">Central Govt</span>
+                <span className="badge bg-surface-100 text-surface-600">Biannual</span>
+                <span className="badge bg-red-100 text-red-700">Agnipath Scheme</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">Indian Army Agniveer 2026 – Complete Guide</h1>
+              <p className="text-surface-500 leading-relaxed text-lg">
+                Join the Indian Army for a 4-year tenure under the Agnipath Scheme. Open to candidates who have passed 8th, 10th, or 12th class across various trades. Over 25,000 vacancies announced for the 2026 cycle.
+              </p>
+              <a href="https://joinindianarmy.nic.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium">Official Website: joinindianarmy.nic.in →</a>
+            </div>
+
+            {/* Hero Highlight Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+              {[
+                { label: '📋 Vacancies',           value: '25,000+' },
+                { label: '📅 CEE Exam Window',      value: '1 – 16 Jun 2026' },
+                { label: '⏳ Apply Last Date',      value: '10 Apr 2026 (Done)' },
+                { label: '💰 Monthly Package',      value: '₹30,000 – ₹40,000' },
+              ].map((item) => (
+                <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                  <div className="font-semibold text-surface-800 text-sm">{item.value}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* 💡 Update Callout */}
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-10 text-sm text-blue-800">
+              <strong>💡 Key update for 2026:</strong> Indian Army Agniveer CEE notification was released on <strong>12 February 2026</strong>. Application window was open from 13 Feb to <strong>10 April 2026 (extended)</strong>. CEE exam will be conducted from <strong>1 to 16 June 2026</strong>. Shortlisted candidates will be called for recruitment rallies (physical + medical). Check joinindianarmy.nic.in for zone-wise rally schedules.
+            </div>
+
+            {/* ── 1. Important Dates ── */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="1" title="📅 Important Dates – Army Agniveer 2026" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Event</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Date</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                          <td className="px-4 py-3 text-surface-800 font-medium">{row.date}</td>
+                          <td className="px-4 py-3">
+                            <span className={`text-xs px-2 py-1 rounded-full font-semibold ${statusColor(row.status)}`}>
+                              {statusLabel(row.status)}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ TBN = To Be Notified. Dates are subject to change. Always verify at joinindianarmy.nic.in.</p>
+            </section>
+
+            {/* ── 2. Eligibility ── */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="2" title="🎓 Eligibility Criteria" />
+              <div className="card p-6 space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🪪 Nationality</div>
+                    <div className="font-semibold text-surface-800">Indian Citizen (Undivided India residents also eligible for some posts)</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Age (Most Posts)</div>
+                    <div className="font-semibold text-surface-800">17.5 – 21 years as on 01 July 2026</div>
+                    <div className="text-xs text-surface-500 mt-1">Born between 01 Oct 2005 – 01 Jan 2009 (GD/Technical/Clerk)</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Marital Status</div>
+                    <div className="font-semibold text-surface-800">Must be unmarried at time of enrolment</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🎓 Qualification (Varies by Post)</div>
+                    <div className="font-semibold text-surface-800">8th / 10th / 12th Pass depending on trade</div>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-surface-100">
+                  <h3 className="font-semibold text-surface-800 mb-3 text-sm">Age Relaxation</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">OBC (NCL)</span><div className="font-bold text-surface-700 mt-1">+2 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">SC / ST</span><div className="font-bold text-surface-700 mt-1">+3 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">J&K Domicile</span><div className="font-bold text-surface-700 mt-1">+5 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">Tribal / NE areas</span><div className="font-bold text-surface-700 mt-1">Height relaxation</div></div>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2">* Always check the official notification for post-specific age relaxation rules.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 3. Posts & Vacancies ── */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="3" title="📋 Posts, Vacancies & Education" />
+              <div className="card overflow-hidden mb-3">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Post</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Educational Qualification</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Max Age</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {posts.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-medium text-surface-800">{row.post}</td>
+                          <td className="px-4 py-3 text-surface-600">{row.qual}</td>
+                          <td className="px-4 py-3 text-surface-700">{row.ageMax}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-800">
+                <strong>✅ Total Vacancies 2026:</strong> 25,000+ posts announced. Exact post-wise numbers are published by individual Army Recruiting Offices (AROs). Candidates may apply for up to two categories based on their eligibility.
+              </div>
+            </section>
+
+            {/* ── 4. Selection Process ── */}
+            <section id="selection" className="mb-12">
+              <SectionHeading num="4" title="Selection Process" />
+              <div className="card p-6">
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {['Stage 1: CEE (Online Written Test)', 'Stage 2: Recruitment Rally', 'Physical Fitness Test (PFT)', 'Physical Measurement Test (PMT)', 'Medical Examination', 'Document Verification', 'Final Merit & Enrolment'].map((stage, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      {i > 0 && <svg className="w-4 h-4 text-surface-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>}
+                      <span className="bg-primary-50 text-primary-700 px-3 py-2 rounded-lg text-sm font-medium">{stage}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-3 text-sm text-surface-700">
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>CEE is conducted online at designated centres across India in 13 regional languages.</div>
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>CEE shortlisted candidates are called for a physical recruitment rally at their zonal ARO centre.</div>
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>The PFT is marks-based (run timing and pull-ups earn bonus marks); PMT and Medical are qualifying.</div>
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>Final merit = CEE score + PFT bonus marks. Ties are broken by date of birth (older gets priority).</div>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 5. CEE Exam Pattern ── */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="📋 CEE Exam Pattern" />
+              <p className="text-sm text-surface-500 mb-4">The Common Entrance Exam (CEE) is an online MCQ-based test. Pattern varies by post. The two most common patterns are shown below.</p>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Agniveer GD (50 Questions | 100 Marks | 60 Minutes)</h3>
+                  <div className="card overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="bg-surface-800 text-white">
+                            <th className="text-left px-4 py-3 font-heading font-semibold">Subject</th>
+                            <th className="text-center px-4 py-3 font-heading font-semibold">Questions</th>
+                            <th className="text-center px-4 py-3 font-heading font-semibold">Marks</th>
+                            <th className="text-center px-4 py-3 font-heading font-semibold">Negative Marking</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {ceePatternGD.map((row, i) => (
+                            <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                              <td className="px-4 py-3 text-surface-700">{row.subject}</td>
+                              <td className="px-4 py-3 text-center text-surface-800 font-medium">{row.questions}</td>
+                              <td className="px-4 py-3 text-center text-surface-800 font-medium">{row.marks}</td>
+                              <td className="px-4 py-3 text-center text-red-600 font-medium">{row.negMarking}</td>
+                            </tr>
+                          ))}
+                          <tr className="bg-surface-800 text-white">
+                            <td className="px-4 py-3 font-heading font-semibold">Total</td>
+                            <td className="px-4 py-3 text-center font-bold">50</td>
+                            <td className="px-4 py-3 text-center font-bold">100</td>
+                            <td className="px-4 py-3 text-center">−0.5 per wrong</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Agniveer Clerk / SKT (100 Questions | 200 Marks | 120 Minutes)</h3>
+                  <div className="card overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="bg-surface-800 text-white">
+                            <th className="text-left px-4 py-3 font-heading font-semibold">Subject</th>
+                            <th className="text-center px-4 py-3 font-heading font-semibold">Questions</th>
+                            <th className="text-center px-4 py-3 font-heading font-semibold">Marks</th>
+                            <th className="text-center px-4 py-3 font-heading font-semibold">Negative Marking</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {ceePatternClerk.map((row, i) => (
+                            <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                              <td className="px-4 py-3 text-surface-700">{row.subject}</td>
+                              <td className="px-4 py-3 text-center text-surface-800 font-medium">{row.questions}</td>
+                              <td className="px-4 py-3 text-center text-surface-800 font-medium">{row.marks}</td>
+                              <td className="px-4 py-3 text-center text-red-600 font-medium">{row.negMarking}</td>
+                            </tr>
+                          ))}
+                          <tr className="bg-surface-800 text-white">
+                            <td className="px-4 py-3 font-heading font-semibold">Total</td>
+                            <td className="px-4 py-3 text-center font-bold">100</td>
+                            <td className="px-4 py-3 text-center font-bold">200</td>
+                            <td className="px-4 py-3 text-center">−0.5 per wrong</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ Technical post has a separate 100-question pattern with PCM and technical subjects. Download the official pattern PDF from joinindianarmy.nic.in.</p>
+            </section>
+
+            {/* ── 6. Physical Standards ── */}
+            <section id="physical" className="mb-12">
+              <SectionHeading num="6" title="Physical Fitness & Measurement Standards" />
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Physical Test</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Group I / Standard</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Group II / Minimum</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {physicalMale.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-medium text-surface-800">{row.test}</td>
+                          <td className="px-4 py-3 text-surface-600">{row.group1}</td>
+                          <td className="px-4 py-3 text-surface-600">{row.group2}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-sm text-surface-500">Run timing earns bonus marks (Group I = higher bonus). Height, chest, and weight are assessed as part of the Physical Measurement Test (PMT) — these are qualifying standards, not scored.</p>
+            </section>
+
+            {/* ── 7. Salary ── */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="7" title="💰 Salary, Package & Benefits" />
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Year</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Gross Package</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Seva Nidhi Deduction (30%)</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">In-Hand Salary</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Annual CTC</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryTable.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-semibold text-surface-800">{row.year}</td>
+                          <td className="px-4 py-3 text-center text-surface-700">{row.gross}</td>
+                          <td className="px-4 py-3 text-center text-red-600">{row.deduction}</td>
+                          <td className="px-4 py-3 text-center font-bold text-emerald-600">{row.inHand}</td>
+                          <td className="px-4 py-3 text-center text-surface-700">{row.annualPkg}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                  <div className="font-semibold text-emerald-800 mb-2">✅ Seva Nidhi Package (End of 4 Years)</div>
+                  <div className="text-2xl font-heading font-bold text-emerald-700 mb-1">~₹11.71 Lakh</div>
+                  <div className="text-xs text-emerald-600">Tax-free lump sum. Includes your contribution + equal govt match + interest.</div>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                  <div className="font-semibold text-blue-800 mb-2">🛡️ Life Insurance During Service</div>
+                  <div className="text-2xl font-heading font-bold text-blue-700 mb-1">₹48 Lakh</div>
+                  <div className="text-xs text-blue-600">Non-contributory cover. Family receives full amount in case of unfortunate demise.</div>
+                </div>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Other Benefits & Allowances</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-surface-600">
+                  {['⚔️ Risk & Hardship Allowance (based on deployment)', '🍽️ Ration Allowance', '👗 Dress Allowance', '🚆 Travel Allowance', '🏥 Medical facilities at Service Hospitals', '🛒 CSD Canteen access (subsidised rates)', '📄 30 days annual leave per year', '🎓 Class 12th certificate for 10th pass Agniveers (on completion)'].map((b, i) => (
+                    <div key={i} className="flex items-start gap-2"><span className="mt-0.5 flex-shrink-0">{b.split(' ')[0]}</span><span>{b.split(' ').slice(1).join(' ')}</span></div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── 8. After 4 Years ── */}
+            <section id="after-4-years" className="mb-12">
+              <SectionHeading num="8" title="After 4 Years – Career Pathways" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5 border-emerald-300">
+                  <div className="text-2xl mb-2">🎖️</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Regular Army Enrolment (25%)</h3>
+                  <p className="text-sm text-surface-600">Top 25% performers (by merit, medical fitness, and vacancy) are inducted into the regular Indian Army. Full career of 15+ years, higher pay scales, pension benefits, and promotion opportunities.</p>
+                </div>
+                <div className="card p-5 border-blue-300">
+                  <div className="text-2xl mb-2">💰</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Seva Nidhi + Civilian Life (75%)</h3>
+                  <p className="text-sm text-surface-600">Receive ₹11.71 lakh Seva Nidhi, a detailed skill certificate, and a Class 12 equivalent certificate (if enrolled after 10th). Priority for CAPF & state government jobs.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">👮</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">CAPF Priority Hiring</h3>
+                  <p className="text-sm text-surface-600">Agniveer completers get priority and age relaxation for recruitment into BSF, CRPF, CISF, ITBP, SSB, and other Central Armed Police Forces.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🏢</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">State Govt & Private Jobs</h3>
+                  <p className="text-sm text-surface-600">Several state governments and private companies offer priority consideration to Agniveer completers. The discipline, skills, and service record carry significant value in the job market.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 9. Preparation Plan ── */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="9" title="🗓️ 90-Day Preparation Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {[
+                    'Month 1 – Foundation: Focus on GK (Lucent\'s), Basic Maths (R.S. Aggarwal up to Class 10 level), and General Science. Cover 2 chapters per subject per day. Run 1 km daily to build stamina.',
+                    'Month 2 – Practice: Shift to topic-wise MCQ practice. Solve 50+ questions per day. Begin timed mock tests (30 minutes). Increase run distance to 1.6 km and start pull-up training.',
+                    'Month 3 – Mock Tests & Revision: Solve 5 full mock tests per week. Analyse mistakes and revise weak topics. Aim for 1.6 km in under 5:45 min and 10+ pull-ups consistently.',
+                    'Final 2 Weeks: Revision only. Re-read GK notes, solve 2 mocks per day. Focus on physical fitness — do not start new topics. Rest properly before the exam.',
+                  ].map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm z-10">{i + 1}</div>
+                      <div className="card p-5"><p className="text-surface-700 leading-relaxed text-sm">{step}</p></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── 10. Books ── */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="10" title="📚 Recommended Books" />
+              <BooksTable books={books} />
+              <p className="text-xs text-surface-400 mt-3">Practice with Army Agniveer-specific previous year papers for best results. Free PDFs may be available on official prep channels.</p>
+            </section>
+
+            {/* ── 11. FAQ ── */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="11" title="❓ Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer flex items-center justify-between font-heading font-semibold text-surface-800 hover:text-primary-500 transition-colors list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Internal Links */}
+            <div className="card p-6 bg-surface-50 mb-6">
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related Defence Exams</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                {[
+                  { name: 'IAF Agniveer Vayu', slug: 'iaf-agniveer' },
+                  { name: 'Indian Navy Agniveer SSR/MR', slug: 'navy-agniveer' },
+                  { name: 'UPSC CAPF Assistant Commandant', slug: 'upsc-capf' },
+                  { name: 'AFCAT – Air Force Officer', slug: 'afcat' },
+                  { name: 'Indian Coast Guard Navik GD', slug: 'coast-guard-navik-gd' },
+                  { name: 'SSC GD Constable', slug: 'ssc-gd-constable' },
+                ].map((e) => (
+                  <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Eligibility CTA */}
+            <div className="card p-6 bg-primary-50 border-primary-200 text-center mb-6">
+              <h3 className="font-heading font-bold text-primary-800 mb-2">Check If You Are Eligible</h3>
+              <p className="text-sm text-primary-600 mb-4">Use our free eligibility checker to see if you qualify for Indian Army Agniveer.</p>
+              <Link href="/tools/age-calculator" className="btn-primary">Check Eligibility →</Link>
+            </div>
+
+            <div className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+              <strong>Disclaimer:</strong> All information is sourced from official notifications and reputable sources. Exam dates, vacancies, and eligibility criteria may change. Always refer to the official website joinindianarmy.nic.in for the latest details.
+            </div>
+          </div>
+
+          {/* ── Sidebar ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24">
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-4 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{s.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div className="card p-5 mt-4 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm">Official Website</h3>
+                <a href="https://joinindianarmy.nic.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all">joinindianarmy.nic.in →</a>
+              </div>
+              <div className="card p-5 mt-4">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-3">Quick Facts</div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between"><span className="text-surface-500">Scheme</span><span className="font-medium text-surface-800">Agnipath</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Tenure</span><span className="font-medium text-surface-800">4 Years</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Vacancies</span><span className="font-medium text-surface-800">25,000+</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Age</span><span className="font-medium text-surface-800">17.5 – 21 yrs</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Min Qual</span><span className="font-medium text-surface-800">8th Pass</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Start Salary</span><span className="font-medium text-emerald-600">₹30,000/mo</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Seva Nidhi</span><span className="font-medium text-emerald-600">~₹11.71 L</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">App Fee</span><span className="font-medium text-surface-800">₹250</span></div>
                 </div>
               </div>
             </div>
