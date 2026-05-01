@@ -42,6 +42,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   if (post.slug === 'government-exam-preparation-beginners-2026') {
     return <GovExamBeginnersArticle post={post} />;
   }
+  if (post.slug === 'government-exam-age-limit-obc-sc-st-relaxation-2026') {
+    return <AgeLimit2026Article post={post} />;
+  }
 
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
@@ -2574,6 +2577,577 @@ function IbpsPOSalaryArticle({ post }: { post: any }) {
                 </Link>
                 <Link href="/tools/age-calculator" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Check IBPS PO Eligibility →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── AGE LIMIT 2026 ARTICLE ──────────────────────────────────────────────────
+function AgeLimit2026Article({ post }: { post: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview & Key Numbers' },
+    { id: 'logic', label: 'How Age Relaxation Works' },
+    { id: 'table', label: 'Exam-wise Age Limit Table' },
+    { id: 'upsc', label: 'UPSC CSE Age Limit' },
+    { id: 'ssc', label: 'SSC Age Limits' },
+    { id: 'banking', label: 'Banking Age Limits' },
+    { id: 'railway', label: 'Railway Age Limits' },
+    { id: 'special', label: 'Ex-SM & Other Relaxations' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is the age limit for SSC CGL 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The SSC CGL age limit is 18–32 years for General/EWS candidates. OBC candidates get +3 years (up to 35), SC/ST get +5 years (up to 37), and PwBD (General) get +10 years (up to 42).',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can an OBC candidate apply for UPSC after 32 years of age?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. While the General category upper age limit for UPSC CSE is 32 years, OBC candidates receive a 3-year relaxation, allowing them to apply up to 35 years of age.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the age limit for IBPS PO 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'IBPS PO age limit is 20–30 years for General/EWS candidates. OBC candidates can apply up to 33 years, SC/ST up to 35 years, and PwBD (General) up to 40 years.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much age relaxation do PwBD candidates get in government exams?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'PwBD (General) candidates receive a base relaxation of 10 years. This stacks with category relaxation: PwBD (OBC) gets +13 years, and PwBD (SC/ST) gets +15 years added to the standard upper age limit.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the age relaxation for Ex-Servicemen in government exams?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Ex-Servicemen receive a relaxation of 3 years plus the actual period of service rendered, subject to a maximum age of 45–50 years depending on the post. For SSC and Group B/C posts, the limit is often extended to 45–50 years.',
+        },
+      },
+    ],
+  };
+
+  return (
+    <div className="container-main py-10">
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Age Limit 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        {/* MAIN ARTICLE */}
+        <article>
+          {/* Hero Banner */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-accent-500/20 border border-accent-500/40 text-accent-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse" />
+                  Updated {post.updatedDate}
+                </span>
+                <span className="bg-amber-400/20 text-amber-300 text-xs px-2.5 py-1 rounded font-semibold">Preparation</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Age Limit</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">OBC SC ST</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                Government Exam Age Limit 2026:{' '}
+                <span className="text-accent-300 italic">OBC, SC/ST & PwBD Relaxation</span> — Full List
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed mb-5">
+                One complete table. Every major exam. Exact category-wise relaxations for UPSC, SSC, Banking, and Railway. Know your limit before the notification drops.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+                <span>📅 {post.publishedDate}</span>
+                <span>⏱ {post.readTime}</span>
+                <span>✍️ {post.author}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 4-grid highlight box */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            {[
+              { icon: '🎂', label: 'Min. Starting Age', value: '18–21 Years' },
+              { icon: '📋', label: 'Max Age (General)', value: '27–33 Years' },
+              { icon: '✅', label: 'Highest Relaxation', value: '+15 Yrs (PwBD SC/ST)' },
+              { icon: '🏛️', label: 'Top Sectors', value: 'SSC, UPSC, Bank, RRB' },
+            ].map(item => (
+              <div key={item.label} className="card p-4 text-center">
+                <div className="text-2xl mb-1">{item.icon}</div>
+                <div className="text-xs text-surface-500 font-semibold uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="text-sm font-heading font-bold text-surface-900">{item.value}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Key Update */}
+          <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-8">
+            <p className="font-heading font-semibold text-primary-700 mb-1">✅ Key Update — 2026 Recruitment Cycle</p>
+            <p className="text-sm text-surface-700 leading-relaxed">
+              Major bodies like UPSC, SSC, IBPS, and RRB have maintained their standard age limits for 2026.
+              However, the exact cut-off date for age calculation — usually <strong>August 1 for UPSC/SSC</strong> and{' '}
+              <strong>January 1 for RRB</strong> — is the ultimate deciding factor. Always check the official notification.
+            </p>
+          </div>
+
+          {/* SECTION: Overview */}
+          <section id="overview" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              📋 Overview: Age Limits at a Glance
+            </h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Government exams have strict age cut-offs, but reserved category candidates get significant
+              buffers that can extend eligibility by up to 15 years. Understanding these rules
+              can be the difference between applying confidently and missing your window entirely.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The minimum age for most central government exams is <strong>18 years</strong>, while a few
+              like UPSC CSE require you to be at least <strong>21 years</strong> old. The maximum age
+              for General/EWS candidates typically falls between <strong>27 and 33 years</strong>, depending
+              on the exam and post.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Use our{' '}
+              <Link href="/tools/age-calculator" className="text-primary-500 hover:text-primary-600 underline">
+                free Eligibility Checker tool
+              </Link>{' '}
+              to instantly verify whether you qualify for any of our{' '}
+              <Link href="/exams" className="text-primary-500 hover:text-primary-600 underline">
+                100 listed government exams
+              </Link>
+              .
+            </p>
+          </section>
+
+          {/* SECTION: Logic */}
+          <section id="logic" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              🧮 How Age Relaxation Works
+            </h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Your maximum eligible age is simply the General (UR) upper age limit for that exam{' '}
+              <strong>plus</strong> your specific category relaxation. This is consistent across virtually
+              all central government recruitment bodies.
+            </p>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-900 text-white">
+                    <th className="text-left p-3 font-heading font-semibold rounded-tl-lg">Category</th>
+                    <th className="text-center p-3 font-heading font-semibold">Relaxation</th>
+                    <th className="text-left p-3 font-heading font-semibold rounded-tr-lg">Example (IBPS PO, Base 30 yrs)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { cat: 'General / EWS', rel: '0 years', eg: '30 years' },
+                    { cat: 'OBC (Non-Creamy Layer)', rel: '+3 years', eg: '33 years' },
+                    { cat: 'SC / ST', rel: '+5 years', eg: '35 years' },
+                    { cat: 'PwBD — General', rel: '+10 years', eg: '40 years' },
+                    { cat: 'PwBD — OBC', rel: '+13 years', eg: '43 years' },
+                    { cat: 'PwBD — SC/ST', rel: '+15 years', eg: '45 years' },
+                  ].map((row, i) => (
+                    <tr key={row.cat} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 text-surface-800 font-medium">{row.cat}</td>
+                      <td className="p-3 text-center font-heading font-bold text-emerald-600">{row.rel}</td>
+                      <td className="p-3 text-surface-600">{row.eg}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-amber-50 border-l-4 border-accent-500 rounded-r-xl p-4">
+              <p className="font-heading font-semibold text-accent-600 mb-1">⚠️ Warning: Calculate to the Exact Day</p>
+              <p className="text-sm text-surface-700 leading-relaxed">
+                Never estimate your age eligibility. Calculate your exact age based on the specific cut-off
+                date in the official notification. Even being one day over the limit will result in
+                immediate application rejection at document verification.
+              </p>
+            </div>
+          </section>
+
+          {/* SECTION: Master Table */}
+          <section id="table" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              📊 Full List: Exam-wise Maximum Age Limits (2026)
+            </h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The table below covers the maximum upper age limit for all major central government exams.
+              Minimum age varies from 18 to 21 years depending on the exam.
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-900 text-white">
+                    <th className="text-left p-3 font-heading font-semibold">Exam</th>
+                    <th className="text-center p-3 font-heading font-semibold">General / EWS</th>
+                    <th className="text-center p-3 font-heading font-semibold">OBC (NCL)</th>
+                    <th className="text-center p-3 font-heading font-semibold">SC / ST</th>
+                    <th className="text-center p-3 font-heading font-semibold">PwBD (UR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { exam: 'UPSC CSE (IAS/IPS)', gen: '32', obc: '35', scst: '37', pwd: '42' },
+                    { exam: 'SSC CGL (Max Post Age)', gen: '32', obc: '35', scst: '37', pwd: '42' },
+                    { exam: 'SSC CHSL', gen: '27', obc: '30', scst: '32', pwd: '37' },
+                    { exam: 'SSC MTS', gen: '25', obc: '28', scst: '30', pwd: '35' },
+                    { exam: 'IBPS PO', gen: '30', obc: '33', scst: '35', pwd: '40' },
+                    { exam: 'SBI PO', gen: '30', obc: '33', scst: '35', pwd: '40' },
+                    { exam: 'IBPS Clerk', gen: '28', obc: '31', scst: '33', pwd: '38' },
+                    { exam: 'RBI Grade B', gen: '33', obc: '36', scst: '38', pwd: '43' },
+                    { exam: 'RRB NTPC (UG Posts)', gen: '30', obc: '33', scst: '35', pwd: '40' },
+                    { exam: 'RRB Group D (Level 1)', gen: '33', obc: '36', scst: '38', pwd: '43' },
+                    { exam: 'RRB ALP', gen: '33', obc: '36', scst: '38', pwd: '43' },
+                    { exam: 'UPSC NDA', gen: '19.5', obc: '—', scst: '—', pwd: '—' },
+                    { exam: 'UPSC CDS', gen: '24–25', obc: '—', scst: '—', pwd: '—' },
+                    { exam: 'CAPF AC', gen: '25', obc: '28', scst: '30', pwd: '35' },
+                  ].map((row, i) => (
+                    <tr key={row.exam} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 text-surface-800 font-medium">{row.exam}</td>
+                      <td className="p-3 text-center text-surface-700">{row.gen} yrs</td>
+                      <td className="p-3 text-center text-emerald-600 font-semibold">{row.obc !== '—' ? `${row.obc} yrs` : '—'}</td>
+                      <td className="p-3 text-center text-primary-600 font-semibold">{row.scst !== '—' ? `${row.scst} yrs` : '—'}</td>
+                      <td className="p-3 text-center text-accent-600 font-semibold">{row.pwd !== '—' ? `${row.pwd} yrs` : '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+              <p className="font-heading font-semibold text-emerald-700 mb-1">📌 Quick Note</p>
+              <p className="text-sm text-surface-700 leading-relaxed">
+                NDA and CDS do not offer category-based age relaxation (OBC/SC/ST) as they are defence entry
+                exams with fixed age bands. Ex-Servicemen and central government employees have separate rules
+                — see the section below.
+              </p>
+            </div>
+          </section>
+
+          {/* SECTION: UPSC */}
+          <section id="upsc" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              🏛️ UPSC CSE Age Limit in Detail
+            </h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              UPSC CSE (IAS/IPS/IFS) is the most attempt-sensitive exam in India. The General category
+              upper age limit is <strong>32 years</strong> with a maximum of <strong>6 attempts</strong>.
+              OBC candidates get 9 attempts up to age 35. SC/ST candidates have unlimited attempts up to age 37.
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-primary-700 text-white">
+                    <th className="text-left p-3 font-heading font-semibold">Category</th>
+                    <th className="text-center p-3 font-heading font-semibold">Upper Age</th>
+                    <th className="text-center p-3 font-heading font-semibold">Max Attempts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { cat: 'General / EWS', age: '32 years', att: '6' },
+                    { cat: 'OBC (NCL)', age: '35 years', att: '9' },
+                    { cat: 'SC / ST', age: '37 years', att: 'Unlimited' },
+                    { cat: 'PwBD — General', age: '42 years', att: '9' },
+                    { cat: 'PwBD — SC/ST', age: '47 years', att: 'Unlimited' },
+                  ].map((row, i) => (
+                    <tr key={row.cat} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 text-surface-800 font-medium">{row.cat}</td>
+                      <td className="p-3 text-center font-heading font-bold text-primary-600">{row.age}</td>
+                      <td className="p-3 text-center text-surface-700">{row.att}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The UPSC CSE cut-off date for age calculation is <strong>August 1 of the exam year</strong>.
+              Visit the{' '}
+              <Link href="/exams/upsc-ias" className="text-primary-500 hover:text-primary-600 underline">
+                UPSC IAS exam page
+              </Link>{' '}
+              for complete eligibility criteria, syllabus, and preparation resources.
+            </p>
+          </section>
+
+          {/* SECTION: SSC */}
+          <section id="ssc" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              📄 SSC Exam Age Limits
+            </h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              SSC (Staff Selection Commission) covers multiple exams with different age bands. SSC CGL has
+              the highest upper age limit among SSC exams (up to 32 years for some posts), while SSC MTS
+              has the lowest (25 years for General). The cut-off date is generally <strong>August 1</strong>.
+            </p>
+            <ul className="list-disc ml-6 space-y-2 text-surface-700 mb-4">
+              <li>🎓 <strong>SSC CGL:</strong> 18–32 years (General). Varies by post — some posts like Tax Assistant go up to 27 years, while Inspector posts allow up to 30 years.</li>
+              <li>📋 <strong>SSC CHSL:</strong> 18–27 years (General). Strictly for 12th-pass candidates.</li>
+              <li>🔧 <strong>SSC MTS:</strong> 18–25 years (General). Entry-level central government roles.</li>
+              <li>🚔 <strong>SSC GD Constable:</strong> 18–23 years (General). Cut-off date is January 1.</li>
+              <li>👮 <strong>SSC CPO (SI):</strong> 20–25 years (General). For Delhi Police and CAPF posts.</li>
+            </ul>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              See the full{' '}
+              <Link href="/exams/ssc-cgl" className="text-primary-500 hover:text-primary-600 underline">
+                SSC CGL exam guide
+              </Link>{' '}
+              including eligibility, syllabus, and preparation strategy.
+            </p>
+          </section>
+
+          {/* SECTION: Banking */}
+          <section id="banking" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              🏦 Banking Exam Age Limits
+            </h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Banking exams (IBPS, SBI, RBI) generally have a narrower age window compared to UPSC/SSC.
+              The standard upper age for PO-level exams is <strong>30 years</strong> for General candidates.
+              Unlike UPSC, banking exams rarely have an attempt limit — you can keep applying until you cross
+              your age limit.
+            </p>
+            <ul className="list-disc ml-6 space-y-2 text-surface-700 mb-4">
+              <li>🏦 <strong>IBPS PO:</strong> 20–30 years (General). Cut-off: date of notification.</li>
+              <li>💳 <strong>IBPS Clerk:</strong> 20–28 years (General). Cut-off: date of notification.</li>
+              <li>🏛️ <strong>SBI PO:</strong> 21–30 years (General). Max 4 attempts for General category.</li>
+              <li>💵 <strong>RBI Grade B:</strong> 21–33 years (General). Maximum age is higher than other banks.</li>
+              <li>📊 <strong>NABARD Grade A:</strong> 21–30 years (General).</li>
+            </ul>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Check the{' '}
+              <Link href="/exams/ibps-po" className="text-primary-500 hover:text-primary-600 underline">
+                IBPS PO complete guide
+              </Link>{' '}
+              and the{' '}
+              <Link href="/exams/sbi-po" className="text-primary-500 hover:text-primary-600 underline">
+                SBI PO complete guide
+              </Link>{' '}
+              for full eligibility breakdowns.
+            </p>
+          </section>
+
+          {/* SECTION: Railway */}
+          <section id="railway" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              🚂 Railway (RRB) Age Limits
+            </h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Railway Recruitment Board (RRB) exams are unique — they use <strong>January 1</strong> as the
+              cut-off date for age calculation, unlike the August 1 used by SSC/UPSC. RRB also offers age
+              relaxation for serving railway employees in addition to standard category relaxations.
+            </p>
+            <ul className="list-disc ml-6 space-y-2 text-surface-700 mb-4">
+              <li>🚆 <strong>RRB NTPC (Graduate Posts):</strong> 18–36 years (General). Covers Station Master, Goods Guard, etc.</li>
+              <li>🔩 <strong>RRB NTPC (Undergraduate):</strong> 18–30 years (General).</li>
+              <li>⚙️ <strong>RRB Group D:</strong> 18–33 years (General). Largest railway recruitment.</li>
+              <li>🔧 <strong>RRB ALP & Technician:</strong> 18–33 years (General).</li>
+              <li>🚔 <strong>RPF Constable:</strong> 18–25 years (General).</li>
+            </ul>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Visit the{' '}
+              <Link href="/exams/rrb-ntpc" className="text-primary-500 hover:text-primary-600 underline">
+                RRB NTPC complete guide
+              </Link>{' '}
+              for full preparation resources.
+            </p>
+          </section>
+
+          {/* SECTION: Special Relaxations */}
+          <section id="special" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              🎖️ Special Age Relaxations (Ex-SM, Govt. Employees)
+            </h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Beyond the standard OBC/SC/ST relaxations, certain other groups receive significant age
+              allowances. These are post-specific and you must verify them in the official notification.
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left p-3 font-heading font-semibold">Special Category</th>
+                    <th className="text-center p-3 font-heading font-semibold">Typical Relaxation</th>
+                    <th className="text-left p-3 font-heading font-semibold">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { cat: 'Ex-Servicemen (General)', rel: '3 yrs + service period', note: 'Subject to max 45–50 yrs depending on post' },
+                    { cat: 'Ex-Servicemen (OBC)', rel: '6 yrs + service period', note: 'OBC relaxation stacks with Ex-SM' },
+                    { cat: 'Ex-Servicemen (SC/ST)', rel: '8 yrs + service period', note: 'SC/ST relaxation stacks with Ex-SM' },
+                    { cat: 'Central Govt. Employee (Gp. C)', rel: 'Up to 40 years', note: 'For Group C posts only' },
+                    { cat: 'Widows / Divorced Women', rel: 'Up to 35 years (Gen)', note: 'Varies by exam; not universal' },
+                    { cat: 'J&K Domicile (1980–89)', rel: '+5 years', note: 'For candidates who resided in J&K during that period' },
+                  ].map((row, i) => (
+                    <tr key={row.cat} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 text-surface-800 font-medium">{row.cat}</td>
+                      <td className="p-3 text-center font-heading font-bold text-emerald-600">{row.rel}</td>
+                      <td className="p-3 text-surface-600 text-xs">{row.note}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+              <p className="font-heading font-semibold text-primary-700 mb-1">📌 Quick Note</p>
+              <p className="text-sm text-surface-700 leading-relaxed">
+                Ex-Servicemen relaxation is calculated differently: the actual period of service is deducted
+                from your chronological age before comparing it to the standard upper limit. This can extend
+                eligibility well beyond 40 or even 45 years in some posts.
+              </p>
+            </div>
+          </section>
+
+          {/* Why Govt Jobs */}
+          <section className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              💡 Why the Age Window Matters More Than You Think
+            </h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Many candidates realize they are still eligible for top exams only after learning about
+              category relaxations. If you are in the OBC/SC/ST category, your effective window can be
+              3–5 years wider than a General candidate — often the difference between one more attempt
+              and giving up entirely.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              {[
+                { icon: '🏠', title: 'Housing (HRA / Quarters)', desc: 'Government housing allowance or official quarters in major cities.' },
+                { icon: '🏥', title: 'Healthcare (CGHS)', desc: 'Comprehensive medical coverage for you and your dependents.' },
+                { icon: '🚌', title: 'Transport Allowances', desc: 'Travel, Transport, and Dearness Allowances linked to inflation.' },
+                { icon: '🔒', title: 'Job Security & Pension', desc: 'Unmatched job security with NPS pension benefits post-retirement.' },
+              ].map(item => (
+                <div key={item.title} className="card p-4 flex gap-3 items-start">
+                  <span className="text-2xl">{item.icon}</span>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-900 text-sm">{item.title}</div>
+                    <div className="text-xs text-surface-600 leading-relaxed mt-0.5">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section id="faq" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
+              ❓ Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'What is the age limit for SSC CGL 2026?',
+                  a: 'The SSC CGL age limit is 18–32 years for General/EWS candidates. OBC candidates get +3 years (up to 35), SC/ST get +5 years (up to 37), and PwBD (General) get +10 years (up to 42). The cut-off date is August 1 of the exam year.',
+                },
+                {
+                  q: 'Can an OBC candidate apply for UPSC after 32 years of age?',
+                  a: 'Yes. While the General category upper age limit for UPSC CSE is 32 years, OBC (NCL) candidates receive a 3-year relaxation and can apply up to 35 years of age with up to 9 attempts.',
+                },
+                {
+                  q: 'What is the age limit for IBPS PO 2026?',
+                  a: 'IBPS PO age limit is 20–30 years for General/EWS candidates. OBC can apply up to 33 years, SC/ST up to 35 years, and PwBD (General) up to 40 years. There is no attempt limit for IBPS PO.',
+                },
+                {
+                  q: 'How much age relaxation do PwBD candidates get?',
+                  a: 'PwBD (General) candidates receive a base relaxation of 10 years. PwBD (OBC) gets 13 years, and PwBD (SC/ST) gets 15 years of relaxation over the standard General category upper age limit.',
+                },
+                {
+                  q: 'What is the age relaxation for Ex-Servicemen in central government exams?',
+                  a: 'Ex-Servicemen (General) receive 3 years of relaxation plus the actual period of service rendered. For OBC Ex-SM it is 6 years plus service, and for SC/ST Ex-SM it is 8 years plus service. The relaxed age is subject to a maximum of 45–50 years depending on the post.',
+                },
+              ].map((item, i) => (
+                <div key={i} className="card p-5">
+                  <h3 className="text-base font-heading font-semibold text-surface-900 mb-2">Q: {item.q}</h3>
+                  <p className="text-sm text-surface-700 leading-relaxed">A: {item.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-6 mb-8 text-center">
+            <h3 className="text-lg font-heading font-bold text-white mb-2">Check Your Eligibility Right Now</h3>
+            <p className="text-primary-100 text-sm mb-4">
+              Enter your date of birth and category — our free tool instantly tells you which of our 100 listed exams you are eligible for.
+            </p>
+            <Link
+              href="/tools/age-calculator"
+              className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-5 py-2.5 rounded-xl text-sm hover:bg-primary-50 transition-colors"
+            >
+              Open Eligibility Checker →
+            </Link>
+          </div>
+
+          {/* Back to blog */}
+          <div className="flex justify-start">
+            <Link href="/blog" className="text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1.5 font-medium">
+              ← Back to all articles
+            </Link>
+          </div>
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</div>
+              <nav className="space-y-1">
+                {toc.map(item => (
+                  <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 px-2 rounded hover:bg-primary-50 transition-colors leading-snug">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Try Our Tools</div>
+              <div className="space-y-2">
+                <Link href="/tools/age-calculator" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                  Free Eligibility Checker →
+                </Link>
+                <Link href="/exams" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                  Browse All 100 Exams →
+                </Link>
+                <Link href="/exams/upsc-ias" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                  UPSC IAS Complete Guide →
+                </Link>
+                <Link href="/exams/ssc-cgl" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                  SSC CGL Complete Guide →
+                </Link>
+                <Link href="/exams/ibps-po" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                  IBPS PO Complete Guide →
                 </Link>
               </div>
             </div>
