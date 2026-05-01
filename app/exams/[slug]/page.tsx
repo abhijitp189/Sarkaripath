@@ -56,6 +56,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ibps-rrb-clerk') {
+    return {
+      title: 'IBPS RRB Clerk 2026 – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
+      description: 'IBPS RRB Office Assistant 2026 (CRP RRB XIV): 5,000+ vacancies in 43 Rural Banks. Check syllabus, exam pattern (Prelims + Mains), eligibility, age limit 18–28 years, salary ₹22,000–₹26,000/month and free preparation resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/ibps-rrb-clerk/' },
+    };
+  }
+
   if (params.slug === 'ibps-clerk') {
     return {
       title: 'IBPS Clerk 2026 (CRP CSA-XVI) – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
@@ -116,6 +124,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
   if (brief && brief.slug === 'ugc-net') return <UgcNetPage exam={brief} />;
   if (brief && brief.slug === 'army-agniveer') return <ArmyAgniveerPage exam={brief} />;
+  if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -5959,6 +5968,802 @@ function ArmyAgniveerPage({ exam }: { exam: any }) {
               </div>
             </div>
           </aside>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── IBPS RRB OFFICE ASSISTANT (CLERK) RICH PAGE ────────────────────────────
+function IbpsRrbClerkPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & RRBs' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'apply',           label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'CRP RRB XIII Notification Released',         date: 'June 2024',                        status: 'done' },
+    { event: 'Online Application Window Open',              date: '7 June – 27 June 2024',            status: 'done' },
+    { event: 'Prelims Admit Card Released',                 date: 'July 2024',                        status: 'done' },
+    { event: 'Prelims Exam (Office Assistant)',             date: '3, 4, 10, 11 August 2024',         status: 'done' },
+    { event: 'Prelims Result Declared',                     date: 'September 2024',                   status: 'done' },
+    { event: 'Mains Admit Card Released',                   date: 'September 2024',                   status: 'done' },
+    { event: 'Mains Exam (Office Assistant)',               date: '6 October 2024',                   status: 'done' },
+    { event: 'Mains Result & Provisional Allotment',        date: 'December 2024 – January 2025',     status: 'done' },
+    { event: 'Document Verification / Joining',             date: 'Completed (cycle-wise)',           status: 'done' },
+    { event: 'CRP RRB XIV Notification Expected',           date: 'June / July 2026',                 status: 'upcoming' },
+    { event: 'Online Application Window (2026)',            date: 'June – July 2026 (expected)',      status: 'upcoming' },
+    { event: 'Prelims Exam 2026 (expected)',                date: 'August 2026 (expected)',           status: 'upcoming' },
+    { event: 'Mains Exam 2026 (expected)',                  date: 'October 2026 (expected)',          status: 'upcoming' },
+    { event: 'Provisional Allotment 2026',                  date: 'December 2026 – January 2027',     status: 'upcoming' },
+  ];
+
+  const prelimsPattern = [
+    { section: 'Reasoning',           questions: 40, marks: 40, duration: '45 min', negative: '−0.25/wrong' },
+    { section: 'Numerical Ability',   questions: 40, marks: 40, duration: '45 min', negative: '−0.25/wrong' },
+  ];
+
+  const mainsPattern = [
+    { section: 'Reasoning',                     questions: 40, marks: 50, duration: '30 min', negative: '−0.25/wrong' },
+    { section: 'Computer Knowledge',            questions: 40, marks: 20, duration: '20 min', negative: '−0.25/wrong' },
+    { section: 'General Awareness',             questions: 40, marks: 40, duration: '25 min', negative: '−0.25/wrong' },
+    { section: 'English Language OR Hindi',     questions: 40, marks: 40, duration: '20 min', negative: '−0.25/wrong' },
+    { section: 'Numerical Ability',             questions: 40, marks: 50, duration: '30 min', negative: '−0.25/wrong' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'Reasoning',
+      color: 'text-indigo-600',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Puzzles – Floor, Box, Month-based, Linear arrangement',
+        'Seating Arrangement – Linear, Circular',
+        'Syllogisms (Direct & Reverse)',
+        'Coding-Decoding (Old & New Pattern)',
+        'Blood Relations, Direction & Distance',
+        'Inequality (Direct & Coded)',
+        'Alphanumeric Series, Number Series',
+        'Order & Ranking, Input-Output',
+        'Data Sufficiency',
+      ],
+    },
+    {
+      subject: 'Numerical Ability',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Simplification & Approximation',
+        'Number Series (Missing & Wrong term)',
+        'Data Interpretation – Bar, Line, Pie, Table',
+        'Percentage, Ratio & Proportion, Average',
+        'Profit & Loss, Simple & Compound Interest',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time',
+        'Quadratic Equations',
+        'Miscellaneous Arithmetic (Age, Partnership)',
+      ],
+    },
+    {
+      subject: 'English Language (OR Hindi)',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Reading Comprehension',
+        'Cloze Test',
+        'Error Detection & Spotting',
+        'Sentence Rearrangement (Para Jumbles)',
+        'Fill in the Blanks',
+        'Phrase Replacement',
+        'Vocabulary – Synonyms, Antonyms',
+        'Hindi Grammar & Comprehension (if opted)',
+      ],
+    },
+    {
+      subject: 'General Awareness (Mains)',
+      color: 'text-orange-700',
+      bg: 'bg-orange-50 border-orange-200',
+      topics: [
+        'Current Affairs – Last 6 months',
+        'Banking Awareness – RBI, Repo Rate, CRR, SLR, NPA',
+        'Regional Rural Banks – History, Sponsor Banks, Functions',
+        'NABARD – Role in RRB supervision',
+        'Government Schemes – PMJDY, KISAN Credit Card, PM SVANidhi',
+        'Indian Economy – GDP, Budget, Fiscal Policy',
+        'Important Appointments, Sports, Awards, Summits',
+        'Static GK – Capitals, Currencies, Headquarters',
+      ],
+    },
+    {
+      subject: 'Computer Knowledge (Mains)',
+      color: 'text-purple-700',
+      bg: 'bg-purple-50 border-purple-200',
+      topics: [
+        'Computer Basics – Hardware, Software, OS',
+        'MS Office – Word, Excel, PowerPoint',
+        'Internet – Browsers, Search Engines, E-mail',
+        'Networking Basics – LAN, WAN, Wi-Fi',
+        'Core Banking Solutions (CBS) basics',
+        'Security – Virus, Firewall, Encryption',
+        'Input/Output Devices, Memory types',
+        'Number Systems – Binary, Octal, Hexadecimal',
+      ],
+    },
+  ];
+
+  const salaryComponents = [
+    { component: 'Basic Pay (Pay Scale starting point)', amount: '₹15,000' },
+    { component: 'Dearness Allowance (DA)', amount: '~₹5,200 (at current rate)' },
+    { component: 'House Rent Allowance (HRA)', amount: '₹750 – ₹1,500 (depends on posting)' },
+    { component: 'Special Allowance', amount: '~₹1,200' },
+    { component: 'Transport / Conveyance Allowance', amount: '₹400 – ₹800' },
+    { component: 'Total Gross In-Hand (approx.)', amount: '₹22,000 – ₹26,000/month' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'CRP RRB XIII (2024)', vacancies: '5,585 (Office Assistant)' },
+    { year: 'CRP RRB XII (2023)',  vacancies: '5,538' },
+    { year: 'CRP RRB XI (2022)',   vacancies: '8,695' },
+    { year: 'CRP RRB X (2021)',    vacancies: '4,113' },
+    { year: 'CRP RRB IX (2020)',   vacancies: '6,030' },
+  ];
+
+  const books = [
+    { subject: 'Reasoning',      title: 'A New Approach to Reasoning',        author: 'B.S. Sijwali (Arihant)',             freeLink: '' },
+    { subject: 'Numerical',      title: 'Quantitative Aptitude',               author: 'R.S. Aggarwal (S.Chand)',            freeLink: '' },
+    { subject: 'English',        title: 'Objective English for Competitive Exams', author: 'Hari Mohan Prasad (TMH)',       freeLink: '' },
+    { subject: 'Banking GK',     title: 'Banking & Financial Awareness',       author: 'Arihant Publications',              freeLink: '' },
+    { subject: 'Computer',       title: 'Objective Computer Awareness',        author: 'Arihant (Somya Ranjan Behera)',     freeLink: '' },
+    { subject: 'Current Affairs',title: 'GK Digest – Monthly',                 author: 'GK Today / Adda247 (online)',       freeLink: 'https://www.gktoday.in' },
+    { subject: 'Full Practice',  title: 'IBPS RRB Office Assistant 20 Sets',  author: 'Kiran Prakashan',                   freeLink: '' },
+  ];
+
+  const faqs = [
+    { q: 'What is IBPS RRB Office Assistant (Clerk)?', a: 'IBPS RRB Office Assistant (commonly called IBPS RRB Clerk) is the clerical-level recruitment conducted by IBPS for Regional Rural Banks (RRBs) across India. The Office Assistant handles day-to-day banking operations such as cash handling, account opening, NEFT/RTGS processing, and customer service at rural bank branches.' },
+    { q: 'How many Regional Rural Banks participate in IBPS RRB recruitment?', a: 'As of the CRP RRB XIII cycle, 43 Regional Rural Banks across India participate in the common recruitment process. These RRBs are spread across all states and UTs and are supervised by NABARD. Each RRB is sponsored by a major public sector bank (e.g., Aryavart Bank sponsored by Bank of India, Baroda UP Gramin Bank by Bank of Baroda).' },
+    { q: 'What is the IBPS RRB Clerk salary in 2026?', a: 'The starting pay scale for IBPS RRB Office Assistant is ₹15,000 – ₹19,500/month (basic). After adding DA, HRA, and other allowances, the gross in-hand salary ranges from ₹22,000 to ₹26,000/month. While lower than urban bank salaries, the cost of living in rural/semi-urban posting areas is significantly less, making it highly attractive.' },
+    { q: 'Is there a language test in IBPS RRB Clerk?', a: 'Yes. Unlike IBPS Clerk (urban banks), IBPS RRB has a language paper in the Mains exam itself. Candidates can choose between English and Hindi as their language test option. Proficiency in the local/official language of the state where the RRB is located is also expected for actual banking operations post-joining.' },
+    { q: 'What is the difference between IBPS RRB Officer Scale I and Office Assistant?', a: 'Officer Scale I (PO equivalent) is a supervisory/managerial role with a pay scale of ₹36,000–₹63,840/month. It has three exam stages: Prelims, Mains, and Interview. Office Assistant (Clerk equivalent) is an operational/clerical role with a pay scale starting at ₹15,000/month. It has only two stages: Prelims and Mains — no interview. Office Assistant is easier to crack and is an excellent entry point.' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">IBPS RRB Clerk 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Banking</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Regional Rural Banks</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Graduate Eligible</span>
+            <span className="bg-purple-400/20 text-purple-200 text-xs font-semibold px-3 py-1 rounded-full">No Interview</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold mb-3 leading-tight">
+            IBPS RRB Office Assistant (Clerk) 2026 – Complete Guide
+          </h1>
+          <p className="text-blue-100 leading-relaxed max-w-2xl text-base">
+            IBPS RRB Office Assistant (CRP RRB) recruits Clerks for 43 Regional Rural Banks across India. With 4,000–8,000+ vacancies every year and no interview round, it is one of the most accessible banking jobs for graduates. The CRP RRB XIII (2024) cycle is complete; the 2026 cycle notification is expected in June/July 2026.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-4 text-sm">
+            <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer"
+               className="text-blue-200 hover:text-white underline underline-offset-2">
+              🔗 Official IBPS Website →
+            </a>
+          </div>
+          {/* Quick stats strip */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+            {[
+              { label: 'Conducting Body', value: 'IBPS (for 43 RRBs)' },
+              { label: 'Vacancies (2024)',  value: '5,585 Posts' },
+              { label: 'Age Limit',         value: '18 – 28 Years' },
+              { label: 'Gross Salary',      value: '₹22,000–₹26,000/mo' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/15">
+                <div className="text-xs text-blue-300 uppercase tracking-wide mb-1">{stat.label}</div>
+                <div className="font-semibold text-white text-sm">{stat.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT + SIDEBAR ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* ── LEFT CONTENT ── */}
+          <div className="min-w-0">
+
+            {/* Quick Nav */}
+            <nav className="card p-4 mb-10 lg:hidden">
+              <div className="font-heading font-semibold text-surface-700 text-sm mb-3">Quick Navigation</div>
+              <div className="flex flex-wrap gap-2">
+                {toc.map((t) => (
+                  <a key={t.id} href={`#${t.id}`} className="text-xs bg-primary-50 text-primary-600 px-3 py-1.5 rounded-full hover:bg-primary-100 transition-colors">
+                    {t.label}
+                  </a>
+                ))}
+              </div>
+            </nav>
+
+            {/* ── SECTION 1: OVERVIEW ── */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">IBPS RRB Clerk 2026 Overview</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                {[
+                  { label: 'Official Post Name',    value: 'Office Assistant (Multipurpose)' },
+                  { label: 'Conducting Body',       value: 'Institute of Banking Personnel Selection (IBPS)' },
+                  { label: 'Participating Banks',   value: '43 Regional Rural Banks (RRBs) across India' },
+                  { label: 'Supervised by',         value: 'NABARD (National Bank for Agriculture & Rural Development)' },
+                  { label: 'Frequency',             value: 'Annual (notification usually in June/July)' },
+                  { label: 'Selection Stages',      value: 'Prelims → Mains (No Interview)' },
+                  { label: 'Vacancies (2024)',       value: '5,585 (CRP RRB XIII)' },
+                  { label: 'Pay Scale',             value: '₹15,000 – ₹19,500/month (basic)' },
+                  { label: 'Posting Location',      value: 'Rural / Semi-urban branches within applied state' },
+                  { label: 'Age Limit',             value: '18 – 28 years (relaxation available)' },
+                  { label: 'Qualification',         value: 'Any Graduate from recognised university' },
+                  { label: 'Official Website',      value: 'ibps.in' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-semibold text-surface-800 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5 bg-blue-50 border-blue-200">
+                <p className="text-sm text-blue-800 leading-relaxed">
+                  <strong>💡 Key Update 2026:</strong> The CRP RRB XIII (2024) cycle concluded with 5,585 vacancies for Office Assistant across 43 RRBs. Provisional allotment was completed in early 2025. The next cycle — <strong>CRP RRB XIV</strong> — is expected to be notified in <strong>June/July 2026</strong>. Bookmark <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">ibps.in</a> and start preparation now.
+                </p>
+              </div>
+            </section>
+
+            {/* ── SECTION 2: IMPORTANT DATES ── */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 IBPS RRB Clerk Important Dates 2024–2026</h2>
+              </div>
+              <p className="text-surface-500 text-sm mb-4">The table below covers the completed CRP RRB XIII (2024) cycle and the expected CRP RRB XIV (2026) cycle. <span className="font-medium text-surface-700">⚠️ TBN = To Be Notified.</span></p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50 border-b border-surface-200">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Event</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Date</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-100">
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className="hover:bg-surface-50 transition-colors">
+                        <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.date}</td>
+                        <td className="px-4 py-3">
+                          <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ 2026 dates are tentative, based on previous year patterns. Always verify at <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">ibps.in</a>.</p>
+            </section>
+
+            {/* ── SECTION 3: ELIGIBILITY ── */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+
+              <div className="space-y-5">
+                {/* Nationality */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                    <span className="text-lg">🪪</span> Nationality
+                  </h3>
+                  <p className="text-sm text-surface-600">Must be a citizen of India. Candidates from Nepal, Bhutan, and certain categories of Persons of Indian Origin (PIO) with valid eligibility certificates may also apply as per IBPS norms.</p>
+                </div>
+
+                {/* Education */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                    <span className="text-lg">🎓</span> Educational Qualification
+                  </h3>
+                  <p className="text-sm text-surface-600 mb-3">
+                    <strong>Graduation in any discipline</strong> from a recognised university or equivalent qualification recognised by Central Government. Candidates appearing in the final year of graduation may apply provisionally.
+                  </p>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm text-amber-800">
+                    <strong>⚠️ Important:</strong> Proficiency in the official language of the state/UT where the RRB is located is compulsory. This is verified at the time of joining. Candidates must be able to read, write, and speak the local language.
+                  </div>
+                </div>
+
+                {/* Age */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                    <span className="text-lg">📋</span> Age Limit
+                  </h3>
+                  <p className="text-sm text-surface-500 mb-3">Minimum: 18 years | Maximum: 28 years (as on the cut-off date specified in notification)</p>
+                  <div className="overflow-x-auto rounded-lg border border-surface-200">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50">
+                        <tr>
+                          <th className="text-left px-4 py-2.5 font-semibold text-surface-700">Category</th>
+                          <th className="text-left px-4 py-2.5 font-semibold text-surface-700">Age Relaxation</th>
+                          <th className="text-left px-4 py-2.5 font-semibold text-surface-700">Effective Upper Limit</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / EWS',              rel: 'No relaxation',     upper: '28 years' },
+                          { cat: 'OBC (Non-Creamy Layer)',      rel: '+3 years',          upper: '31 years' },
+                          { cat: 'SC / ST',                    rel: '+5 years',          upper: '33 years' },
+                          { cat: 'PwBD (General)',             rel: '+10 years',         upper: '38 years' },
+                          { cat: 'PwBD (OBC)',                 rel: '+13 years',         upper: '41 years' },
+                          { cat: 'PwBD (SC/ST)',               rel: '+15 years',         upper: '43 years' },
+                          { cat: 'Ex-Servicemen',              rel: 'Service + 3 yrs',   upper: 'As per norms' },
+                          { cat: 'J&K Domicile (1980–1989)',   rel: '+5 years',          upper: '33 years' },
+                        ].map((r, i) => (
+                          <tr key={i} className="hover:bg-surface-50">
+                            <td className="px-4 py-2.5 text-surface-700">{r.cat}</td>
+                            <td className="px-4 py-2.5 text-emerald-700 font-medium">{r.rel}</td>
+                            <td className="px-4 py-2.5 text-surface-600">{r.upper}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2">Use our <Link href="/tools/age-calculator" className="text-primary-500 underline">free Eligibility Checker</Link> to instantly verify your age eligibility.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── SECTION 4: VACANCIES ── */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies & Participating RRBs</h2>
+              </div>
+              <div className="card p-5 mb-5 bg-blue-50 border-blue-200">
+                <p className="text-sm text-blue-800">
+                  <strong>📌 Note:</strong> Vacancies for Office Assistant are announced RRB-wise in the official notification. Candidates apply for vacancies in their state of choice and are allotted a specific RRB based on merit and preference. The total for CRP RRB XIII was <strong>5,585 posts</strong>.
+                </p>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Year-wise Vacancy Trend</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50 border-b border-surface-200">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Cycle / Year</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Office Assistant Vacancies</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-100">
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className="hover:bg-surface-50">
+                        <td className="px-4 py-3 font-medium text-surface-700">{row.year}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.vacancies}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">Vacancies fluctuate based on RRB requirements approved by NABARD. The 2026 vacancy count will be declared in the official CRP RRB XIV notification.</p>
+            </section>
+
+            {/* ── SECTION 5: SELECTION PROCESS ── */}
+            <section id="selection" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Selection Process</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                {[
+                  { step: '1', title: 'Preliminary Exam', desc: 'Online CBT — Reasoning (40 Qs) + Numerical Ability (40 Qs). 80 marks, 45 min. Qualifying in nature.', color: 'border-l-primary-500', bg: 'bg-primary-50' },
+                  { step: '2', title: 'Mains Exam',       desc: 'Online CBT — 5 sections, 200 marks, 2 hrs. Final merit is based on Mains score only.', color: 'border-l-orange-500', bg: 'bg-orange-50' },
+                  { step: '3', title: 'Provisional Allotment', desc: 'Document Verification and joining at the allotted RRB. No interview or group discussion.', color: 'border-l-emerald-500', bg: 'bg-emerald-50' },
+                ].map((s) => (
+                  <div key={s.step} className={`card p-5 border-l-4 ${s.color} ${s.bg}`}>
+                    <div className="text-xs font-bold text-surface-400 uppercase tracking-wide mb-1">Stage {s.step}</div>
+                    <div className="font-heading font-bold text-surface-800 mb-2">{s.title}</div>
+                    <p className="text-sm text-surface-600">{s.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-4 bg-emerald-50 border-emerald-200 text-sm text-emerald-800">
+                <strong>✅ No Interview:</strong> Unlike IBPS RRB Officer Scale I, there is <strong>no interview</strong> for the Office Assistant post. Your final selection depends entirely on your Mains exam score. This makes it purely merit-based and one of the fairest entry points in government banking.
+              </div>
+            </section>
+
+            {/* ── SECTION 6: EXAM PATTERN ── */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern</h2>
+              </div>
+
+              {/* Prelims */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Preliminary Exam (Qualifying)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50 border-b border-surface-200">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Section</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Questions</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Marks</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Duration</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Negative Marking</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-100">
+                    {prelimsPattern.map((row, i) => (
+                      <tr key={i} className="hover:bg-surface-50">
+                        <td className="px-4 py-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.questions}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.marks}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.duration}</td>
+                        <td className="px-4 py-3 text-red-600 text-xs font-medium">{row.negative}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50 font-semibold">
+                      <td className="px-4 py-3 text-primary-800">Total</td>
+                      <td className="px-4 py-3 text-primary-800">80</td>
+                      <td className="px-4 py-3 text-primary-800">80</td>
+                      <td className="px-4 py-3 text-primary-800">45 min</td>
+                      <td className="px-4 py-3 text-primary-800">—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mains */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Mains Exam (Final – Merit Based)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50 border-b border-surface-200">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Section</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Questions</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Marks</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Duration</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Negative Marking</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-100">
+                    {mainsPattern.map((row, i) => (
+                      <tr key={i} className="hover:bg-surface-50">
+                        <td className="px-4 py-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.questions}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.marks}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.duration}</td>
+                        <td className="px-4 py-3 text-red-600 text-xs font-medium">{row.negative}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-orange-50 font-semibold">
+                      <td className="px-4 py-3 text-orange-800">Total</td>
+                      <td className="px-4 py-3 text-orange-800">200</td>
+                      <td className="px-4 py-3 text-orange-800">200</td>
+                      <td className="px-4 py-3 text-orange-800">~125 min</td>
+                      <td className="px-4 py-3 text-orange-800">—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-4 bg-amber-50 border-amber-200 text-sm text-amber-800">
+                <strong>⚠️ Important:</strong> Sectional timing applies in Mains — each section has its own time limit and cannot be attempted out of order. Candidates must choose <strong>English OR Hindi</strong> as the language section at the time of registration.
+              </div>
+            </section>
+
+            {/* ── SECTION 7: SYLLABUS ── */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-4">
+                {syllabus.map((sub) => (
+                  <div key={sub.subject} className={`card p-5 border ${sub.bg}`}>
+                    <h3 className={`font-heading font-bold text-base mb-3 ${sub.color}`}>{sub.subject}</h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                      {sub.topics.map((t, i) => (
+                        <li key={i} className="text-sm text-surface-600 flex items-start gap-2">
+                          <span className="text-surface-300 mt-0.5">▸</span>
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 8: SALARY ── */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary & Benefits</h2>
+              </div>
+              <p className="text-surface-500 text-sm mb-4">IBPS RRB Office Assistant pay scale is <strong>₹15,000 – ₹19,500</strong> with 12 increments of ₹500. The following is the approximate in-hand salary breakdown:</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50 border-b border-surface-200">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Salary Component</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-100">
+                    {salaryComponents.map((row, i) => (
+                      <tr key={i} className={`hover:bg-surface-50 ${i === salaryComponents.length - 1 ? 'bg-emerald-50 font-semibold' : ''}`}>
+                        <td className="px-4 py-3 text-surface-700">{row.component}</td>
+                        <td className={`px-4 py-3 ${i === salaryComponents.length - 1 ? 'text-emerald-700' : 'text-surface-600'}`}>{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-emerald-800 mb-3">Additional Perks & Benefits</h3>
+                <ul className="space-y-1.5 text-sm text-emerald-700">
+                  <li>🏠 Subsidised housing or HRA as per posting location</li>
+                  <li>⛽ Leave Travel Concession (LTC)</li>
+                  <li>🏥 Medical facilities for employee and dependent family</li>
+                  <li>📈 Annual increment of ₹500 per year (automatic)</li>
+                  <li>🎓 Study leave and professional development opportunities</li>
+                  <li>🏦 Staff loan at concessional interest rates (housing, vehicle)</li>
+                  <li>👨‍👩‍👧 Family pension and NPS (National Pension System) benefits</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* ── SECTION 9: HOW TO APPLY ── */}
+            <section id="apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for IBPS RRB Clerk</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { num: '01', title: 'Register on ibps.in', desc: 'Visit the official IBPS website and click on "CRP RRBs" under the active notifications section. Click "New Registration" and enter your name, mobile number, and email ID to get login credentials via SMS/email.' },
+                  { num: '02', title: 'Fill the Application Form', desc: 'Log in and fill in all personal details, educational qualifications, preferred state and RRB, and language (English/Hindi for the Mains paper). Double-check all entries — errors are difficult to correct after submission.' },
+                  { num: '03', title: 'Upload Documents', desc: 'Upload a recent passport-size photo (JPG, 20–50 KB), signature (JPG, 10–20 KB), and left thumb impression. Ensure your photo is on a white background, taken within the last 3 months.' },
+                  { num: '04', title: 'Pay the Application Fee', desc: 'General/EWS/OBC candidates pay ₹850. SC/ST/PwBD/Ex-Servicemen are exempt (fee: ₹175 for intimation charges only). Payment is via online mode – net banking, debit/credit card, or UPI.' },
+                  { num: '05', title: 'Submit & Save Confirmation', desc: 'After final submission, download and print the confirmation page showing your registration number. Store this safely — you will need the registration number for admit card download and future communication.' },
+                ].map((s) => (
+                  <div key={s.num} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 flex-shrink-0 bg-primary-100 rounded-xl flex items-center justify-center text-primary-700 font-bold text-sm">{s.num}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.title}</div>
+                      <p className="text-sm text-surface-500 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
+                  Apply on ibps.in →
+                </a>
+                <Link href="/guides/how-to-fill-government-exam-form" className="btn-outline text-sm">
+                  Full Application Guide →
+                </Link>
+              </div>
+            </section>
+
+            {/* ── SECTION 10: STUDY PLAN ── */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">6-Month Study Plan</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { month: 'Month 1', title: 'Build Quantitative Foundation', desc: 'Focus on Simplification, Approximation, Number Series, Percentage, and Average. These topics give quick marks in Prelims. Practice 30–40 questions daily with a timer.' },
+                  { month: 'Month 2', title: 'Reasoning + Quant DI', desc: 'Master Puzzles (Floor, Box, Month) and Seating Arrangement — these form 50–60% of the Reasoning section. Start Data Interpretation (Bar, Pie, Table) for Quant.' },
+                  { month: 'Month 3', title: 'English/Hindi + Remaining Reasoning', desc: 'Complete Reasoning (Syllogisms, Coding, Blood Relations). Begin English/Hindi practice — Reading Comprehension, Cloze Test, Error Detection — at least 20 questions daily.' },
+                  { month: 'Month 4', title: 'General & Banking Awareness', desc: 'Study RRB-specific topics: NABARD role, RRB history, sponsor banks, Kisan Credit Card, PM schemes. Maintain a daily current affairs diary covering last 6 months.' },
+                  { month: 'Month 5', title: 'Computer Knowledge + Mock Tests', desc: 'Complete Computer Awareness module (2–3 weeks). Start taking 2 full-length mock tests per week. After each mock, spend equal time analysing your mistakes.' },
+                  { month: 'Month 6', title: 'Revision + Speed Building', desc: 'Daily mocks + targeted revision of weak areas. Practice current affairs of last 6 months. Focus on accuracy and time management — finish Prelims in under 40 minutes to build buffer.' },
+                ].map((m) => (
+                  <div key={m.month} className="card p-5 border-l-4 border-l-primary-400">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs font-bold bg-primary-100 text-primary-700 px-2.5 py-1 rounded-full">{m.month}</span>
+                      <span className="font-heading font-semibold text-surface-800">{m.title}</span>
+                    </div>
+                    <p className="text-sm text-surface-500 leading-relaxed">{m.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 11: BOOKS ── */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for IBPS RRB Clerk</h2>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50 border-b border-surface-200">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Subject</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Book Title</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-100">
+                    {books.map((b, i) => (
+                      <tr key={i} className="hover:bg-surface-50">
+                        <td className="px-4 py-3 font-medium text-surface-700">{b.subject}</td>
+                        <td className="px-4 py-3 text-surface-700">{b.title}</td>
+                        <td className="px-4 py-3 text-surface-500">
+                          {b.freeLink ? (
+                            <a href={b.freeLink} target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">{b.author} 🔗</a>
+                          ) : b.author}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">💡 Books are supplementary. IBPS also releases free official mock tests before every exam — always attempt those first as they show the exact pattern.</p>
+            </section>
+
+            {/* ── SECTION 12: TIPS ── */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Preparation Tips</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '🎯', tip: 'Prelims is just a filter — aim to clear it with 95%+ accuracy rather than attempting all 80 questions. 60–65 correct answers in 80 Qs will comfortably clear most state cutoffs.' },
+                  { icon: '⏱️', tip: 'Practice Prelims under strict 45-minute timing from Day 1 of mock tests. Train yourself to skip time-consuming questions instantly — this is your most valuable skill for Prelims.' },
+                  { icon: '🏦', tip: 'Mains General Awareness is where state-toppers are made. Candidates who maintain a banking diary (RBI circulars, scheme launches) score 35–40 out of 40 in this section.' },
+                  { icon: '🗣️', tip: 'Since IBPS RRB serves rural India, having working knowledge of the local language is critical post-joining — even if not tested in the exam. Start picking up basics of your preferred state\'s language now.' },
+                  { icon: '📊', tip: 'Cut-offs vary significantly by state and category. Always check state-wise previous year cut-offs before choosing your preferred state — some states have lower cut-offs due to fewer applicants.' },
+                  { icon: '💻', tip: 'Computer Knowledge in Mains is the easiest scoring section — 20 marks in just 20 minutes. Dedicate just 2–3 weeks to it and score close to full marks here consistently.' },
+                ].map((t, i) => (
+                  <div key={i} className="card p-4 flex gap-3">
+                    <span className="text-2xl flex-shrink-0">{t.icon}</span>
+                    <p className="text-sm text-surface-600 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 13: FAQs ── */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-4">
+                {faqs.map((faq, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Q{i + 1}. {faq.q}</h3>
+                    <p className="text-sm text-surface-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── DISCLAIMER ── */}
+            <div className="card p-4 bg-surface-50 border-surface-200 text-xs text-surface-400 leading-relaxed">
+              <strong className="text-surface-500">Disclaimer:</strong> All information is sourced from official IBPS notifications and trusted educational sources. Dates marked as &ldquo;expected&rdquo; or &ldquo;upcoming&rdquo; are based on previous year patterns and are subject to change. Always verify the latest details at <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">ibps.in</a>. TaiyarHo is not affiliated with IBPS or any Regional Rural Bank.
+            </div>
+
+          </div>
+          {/* ── END LEFT CONTENT ── */}
+
+          {/* ── SIDEBAR ── */}
+          <div className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">On This Page</div>
+                <nav className="space-y-0.5">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">
+                      {s.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+              {/* Official Website */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="font-heading font-semibold text-primary-800 text-sm mb-2">Official Website</div>
+                <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all hover:text-primary-800">
+                  ibps.in →
+                </a>
+              </div>
+              {/* Eligibility Checker CTA */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <div className="font-heading font-semibold text-emerald-800 text-sm mb-2">Check Your Eligibility</div>
+                <p className="text-xs text-emerald-700 mb-3">Instantly check if you qualify for IBPS RRB Clerk 2026 — age, education, category.</p>
+                <Link href="/tools/age-calculator" className="block text-center text-xs font-semibold bg-emerald-600 text-white px-3 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                  Check Eligibility →
+                </Link>
+              </div>
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-3">Quick Facts</div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between"><span className="text-surface-500">Exam Body</span><span className="font-medium text-surface-800">IBPS</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Post</span><span className="font-medium text-surface-800">Office Assistant</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">RRBs</span><span className="font-medium text-surface-800">43 Banks</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Vacancies (2024)</span><span className="font-medium text-surface-800">5,585</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Age</span><span className="font-medium text-surface-800">18 – 28 yrs</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Qualification</span><span className="font-medium text-surface-800">Graduate</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Salary (gross)</span><span className="font-medium text-emerald-600">~₹24,000/mo</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Interview</span><span className="font-medium text-emerald-600">None ✓</span></div>
+                </div>
+              </div>
+              {/* Related Banking Exams */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-3">Related Banking Exams</div>
+                <div className="space-y-1.5">
+                  {[
+                    { name: 'IBPS RRB Officer Scale I (PO)', slug: 'ibps-rrb-po' },
+                    { name: 'IBPS Clerk',                    slug: 'ibps-clerk' },
+                    { name: 'IBPS PO',                       slug: 'ibps-po' },
+                    { name: 'SBI Clerk',                     slug: 'sbi-clerk' },
+                    { name: 'SBI PO',                        slug: 'sbi-po' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </>
