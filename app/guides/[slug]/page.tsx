@@ -42,12 +42,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     description: seoDescriptions[params.slug] || guide.description,
     keywords: seoKeywords[params.slug] || undefined,
     alternates: {
-      canonical: `https://taiyarho.in/guides/${params.slug}/`,
+      canonical: `https://www.taiyarho.in/guides/${params.slug}/`,
     },
     openGraph: {
       title: seoTitles[params.slug] || `${guide.title} | TaiyarHo`,
       description: seoDescriptions[params.slug] || guide.description,
-      url: `https://taiyarho.in/guides/${params.slug}/`,
+      url: `https://www.taiyarho.in/guides/${params.slug}/`,
       siteName: 'TaiyarHo',
       locale: 'en_IN',
       type: 'article',
@@ -252,16 +252,16 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
             author: {
               '@type': 'Organization',
               name: 'TaiyarHo',
-              url: 'https://taiyarho.in',
+              url: 'https://www.taiyarho.in',
             },
             publisher: {
               '@type': 'Organization',
               name: 'TaiyarHo',
-              url: 'https://taiyarho.in',
+              url: 'https://www.taiyarho.in',
             },
             mainEntityOfPage: {
               '@type': 'WebPage',
-              '@id': `https://taiyarho.in/guides/${params.slug}`,
+              '@id': `https://www.taiyarho.in/guides/${params.slug}`,
             },
             ...(params.slug === 'how-to-fill-government-job-application-form'
               ? {
@@ -769,7 +769,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
       </div>
 
       {/* Schema.org */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: guide.title, description: guide.description, datePublished: '2026-04-27', dateModified: '2026-04-27', author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' }, publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' }, mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/guides/how-to-start-government-exam-preparation' } }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: guide.title, description: guide.description, datePublished: '2026-04-27', dateModified: '2026-04-27', author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' }, publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' }, mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/guides/how-to-start-government-exam-preparation' } }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: 'Can I crack a government exam without coaching?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Lakhs of candidates clear SSC, Banking, and Railway exams every year through self-study.' } }, { '@type': 'Question', name: 'How many hours should I study daily?', acceptedAnswer: { '@type': 'Answer', text: 'Start with 3–4 focused hours and gradually increase to 5–6 hours.' } }, { '@type': 'Question', name: 'Which exam should I start with if I have no idea?', acceptedAnswer: { '@type': 'Answer', text: 'If you are a graduate, start with SSC CGL or IBPS PO.' } }] }) }} />
     </div>
   );
@@ -1315,9 +1315,9 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
         description: guide.description,
         datePublished: '2026-04-27',
         dateModified: '2026-04-27',
-        author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-        publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/guides/best-free-resources-government-exams' },
+        author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+        publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/guides/best-free-resources-government-exams' },
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

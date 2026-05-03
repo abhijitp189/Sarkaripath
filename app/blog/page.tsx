@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Blog – Government Exam Guides, Syllabus & Tips | TaiyarHo',
   description:
     'Free in-depth articles on government exam syllabus, preparation strategy, exam pattern, books, and tips. SSC, UPSC, Banking, Railway and more.',
-  alternates: { canonical: 'https://taiyarho.in/blog/' },
+  alternates: { canonical: 'https://www.taiyarho.in/blog/' },
 };
 
 // ─── JSON-LD Blog Schema ─────────────────────────────────────────────────────
@@ -17,16 +17,16 @@ const blogSchema = {
   name: 'TaiyarHo Blog',
   description:
     'Free in-depth guides on government exam syllabus, exam pattern, preparation strategy, and tips for SSC, Banking, UPSC, and Railway exams.',
-  url: 'https://taiyarho.in/blog/',
+  url: 'https://www.taiyarho.in/blog/',
   publisher: {
     '@type': 'Organization',
     name: 'TaiyarHo',
-    url: 'https://taiyarho.in',
+    url: 'https://www.taiyarho.in',
   },
   blogPost: blogPosts.map((p) => ({
     '@type': 'BlogPosting',
     headline: p.title,
-    url: `https://taiyarho.in/blog/${p.slug}/`,
+    url: `https://www.taiyarho.in/blog/${p.slug}/`,
     datePublished: p.publishedDate,
     author: { '@type': 'Organization', name: p.author },
   })),

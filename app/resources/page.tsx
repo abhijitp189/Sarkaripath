@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'government exam preparation free website',
     'sarkari naukri study material free',
   ],
-  alternates: { canonical: 'https://taiyarho.in/resources/' },
+  alternates: { canonical: 'https://www.taiyarho.in/resources/' },
   openGraph: {
     title: 'Free Resources for Government Exam Preparation | TaiyarHo',
     description:
       'Curated free study material, YouTube channels, mock tests, PYQ papers, current affairs and more for UPSC, SSC, Banking, Railway & all government exams.',
-    url: 'https://taiyarho.in/resources/',
+    url: 'https://www.taiyarho.in/resources/',
     type: 'website',
   },
 };

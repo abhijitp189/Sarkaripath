@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     'upcoming sarkari naukri exams',
   ],
   alternates: {
-    canonical: 'https://taiyarho.in/exam-calendar/',
+    canonical: 'https://www.taiyarho.in/exam-calendar/',
   },
   openGraph: {
     title: 'Upcoming Government Exams 2026 – Exam Calendar | TaiyarHo',
     description:
       'Official & tentative exam dates for UPSC, SSC, Banking, Railway, Teaching, Police exams in 2026.',
-    url: 'https://taiyarho.in/exam-calendar/',
+    url: 'https://www.taiyarho.in/exam-calendar/',
     siteName: 'TaiyarHo',
     type: 'website',
   },
