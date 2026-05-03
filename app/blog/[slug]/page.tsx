@@ -3706,9 +3706,11 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
             </p>
             <div className="space-y-3">
               {[
-                { label: '🏛️ RRB CDG Official Website', desc: 'Primary RRB portal — syllabus PDF inside the CEN notification', url: 'https://www.rrbcdg.gov.in' },
-                { label: '🚂 Indian Railways Recruitment', desc: 'Central portal listing all active RRB notifications', url: 'https://indianrailways.gov.in' },
-                { label: '📋 RRB Apply Portal', desc: 'Registration and online application for RRB exams', url: 'https://rrbapply.gov.in' },
+                { label: '📄 CEN 05/2024 NTPC Graduate — Official PDF', desc: 'Detailed notification PDF for Graduate-level posts (Level 4–6) — direct from rrbcdg.gov.in', url: 'https://www.rrbcdg.gov.in/uploads/2024/05-NTPCG/CEN_05_2024_Graduate.pdf', badge: 'Graduate Posts' },
+                { label: '📄 CEN 06/2024 NTPC Under-Graduate — Official PDF', desc: 'Detailed notification PDF for Under-Graduate posts (Level 2–3, 12th pass) — direct from rrbcdg.gov.in', url: 'https://www.rrbcdg.gov.in/uploads/2024/06-NTPCUG/Detailed%20CEN%2006-2024%20NTPC.pdf', badge: 'UG Posts' },
+                { label: '🏛️ RRB CDG Official Website', desc: 'All notifications, results, call letters, and score cards for ongoing CENs', url: 'https://www.rrbcdg.gov.in', badge: null },
+                { label: '🚂 Indian Railways — Ministry Portal', desc: 'Central government portal for Railway Recruitment Board listings', url: 'https://indianrailways.gov.in', badge: null },
+                { label: '📋 RRB Apply Portal', desc: 'Online registration and application portal for all RRB exams', url: 'https://rrbapply.gov.in', badge: null },
               ].map(link => (
                 <a
                   key={link.url}
@@ -3717,8 +3719,13 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
                   rel="noopener noreferrer"
                   className="card p-4 flex items-center justify-between gap-4 hover:border-primary-300 group"
                 >
-                  <div>
-                    <div className="font-semibold text-surface-800 text-sm group-hover:text-primary-600">{link.label}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap mb-0.5">
+                      <div className="font-semibold text-surface-800 text-sm group-hover:text-primary-600">{link.label}</div>
+                      {link.badge && (
+                        <span className="text-xs bg-orange-100 text-orange-700 font-semibold px-2 py-0.5 rounded-full">{link.badge}</span>
+                      )}
+                    </div>
                     <div className="text-xs text-surface-500 mt-0.5">{link.desc}</div>
                   </div>
                   <svg className="w-4 h-4 text-primary-500 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
