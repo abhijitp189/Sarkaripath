@@ -103,6 +103,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rrb-alp') {
+    return {
+      title: 'RRB ALP 2026 – Syllabus, CBT 1 Result, Exam Pattern & Guide | TaiyarHo',
+      description: 'RRB ALP 2026 (CEN 01/2024): 27,943 vacancies for ALP & Technician. CBT 1 held Feb 2026. Check syllabus, CBT 2 pattern, CBAT, eligibility (10th + ITI), salary ₹19,900/month and free preparation resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/rrb-alp/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -126,6 +134,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (detailed && detailed.slug === 'ssc-cgl') return <SscCglPage exam={detailed} />;
   if (detailed && detailed.slug === 'ssc-gd-constable') return <SscGdPage exam={detailed} />;
   if (detailed && detailed.slug === 'rrb-ntpc') return <RrbNtpcPage exam={detailed} />;
+  if (brief && brief.slug === 'rrb-alp') return <RrbAlpPage exam={brief} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
@@ -7556,6 +7565,792 @@ function RrbNtpcPage({ exam }: { exam: any }) {
             </div>
 
           </aside>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── RRB ALP (ASSISTANT LOCO PILOT) RICH PAGE ──────────────────────────────
+function RrbAlpPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',       label: 'Overview' },
+    { id: 'latest-update',  label: 'Latest Update 2025-26' },
+    { id: 'dates',          label: 'Important Dates' },
+    { id: 'eligibility',    label: 'Eligibility Criteria' },
+    { id: 'vacancies',      label: 'Vacancies & Posts' },
+    { id: 'exam-pattern',   label: 'Exam Pattern' },
+    { id: 'syllabus',       label: 'Syllabus' },
+    { id: 'salary',         label: 'Salary & Benefits' },
+    { id: 'study-plan',     label: 'Study Plan' },
+    { id: 'books',          label: 'Best Books' },
+    { id: 'resources',      label: 'Free Resources' },
+    { id: 'tips',           label: 'Expert Tips' },
+    { id: 'faq',            label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'CEN 01/2024 Notification Released',           date: '20 January 2024',        status: 'done' },
+    { event: 'CEN 01/2024 Online Application Window',       date: '20 Jan – 19 Feb 2024',   status: 'done' },
+    { event: 'CBT 1 Exam (CEN 01/2024)',                   date: '16 – 18 February 2026',   status: 'done' },
+    { event: 'CBT 1 Answer Key & Objection Window',         date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'CBT 1 Result Declared',                       date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'CBT 2 – Part A (Technical Ability)',         date: 'June 2026 (Tentative)',    status: 'upcoming' },
+    { event: 'CBT 2 – Part B (Trade Syllabus)',            date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'CBAT (Computer-Based Aptitude Test)',         date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Document Verification (DV)',                  date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Medical Examination',                         date: 'To be notified (TBN)',    status: 'tbn' },
+  ];
+
+  const vacancies = [
+    { post: 'Assistant Loco Pilot (ALP)', vacancies: '18,799', payLevel: 'Level 2', basicPay: '₹19,900' },
+    { post: 'Technician Gr. III',          vacancies: '9,144',  payLevel: 'Level 2', basicPay: '₹19,900' },
+  ];
+
+  const cbt1Pattern = [
+    { section: 'Mathematics',                       questions: 20, marks: 20 },
+    { section: 'General Intelligence & Reasoning',  questions: 25, marks: 25 },
+    { section: 'General Science',                   questions: 20, marks: 20 },
+    { section: 'General Awareness & Current Affairs', questions: 10, marks: 10 },
+  ];
+
+  const cbt2PartA = [
+    { section: 'Mathematics',                       questions: 15, marks: 15 },
+    { section: 'General Intelligence & Reasoning',  questions: 10, marks: 10 },
+    { section: 'Basic Science & Engineering',       questions: 40, marks: 40 },
+    { section: 'General Awareness & Current Affairs', questions: 10, marks: 10 },
+    { section: 'Part B – Relevant Trade Syllabus',  questions: 75, marks: 75 },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📐 Mathematics (CBT 1 & 2)',
+      topics: [
+        'Number System, BODMAS, Decimals, Fractions, LCM & HCF',
+        'Ratio & Proportion, Percentage, Square Root',
+        'Profit & Loss, Simple & Compound Interest',
+        'Time & Work, Time & Distance, Pipes & Cisterns',
+        'Algebra, Geometry, Mensuration, Trigonometry',
+        'Elementary Statistics, Data Interpretation',
+      ],
+    },
+    {
+      subject: '🧠 General Intelligence & Reasoning (CBT 1 & 2)',
+      topics: [
+        'Analogies, Alphabetical & Number Series',
+        'Coding-Decoding, Mathematical Operations',
+        'Venn Diagrams, Data Interpretation & Sufficiency',
+        'Conclusions & Decision Making',
+        'Similarities & Differences, Analytical Reasoning',
+        'Statement-Conclusion, Non-verbal reasoning',
+        'Blood Relations, Direction Test, Syllogisms',
+      ],
+    },
+    {
+      subject: '🔬 General Science (CBT 1)',
+      topics: [
+        'Physics – Motion, Force, Energy, Electricity, Magnetism, Sound, Light (up to Class 10)',
+        'Chemistry – Elements, Compounds, Mixtures, Chemical Reactions, Acids & Bases',
+        'Life Sciences – Cell biology, Human body systems, Diseases, Nutrition, Heredity',
+      ],
+    },
+    {
+      subject: '⚙️ Basic Science & Engineering (CBT 2 Part A)',
+      topics: [
+        'Engineering Drawing – Projections, Views, Drawing Instruments',
+        'Units & Measurements, Mass, Weight, Density, Speed, Velocity, Acceleration',
+        'Work, Power, Energy; Heat & Temperature; Basic Electricity',
+        'Levers & Simple Machines, Occupational Safety & Health, Environment Education',
+        'IT Literacy – basic computer concepts',
+      ],
+    },
+    {
+      subject: '🌍 General Awareness & Current Affairs',
+      topics: [
+        'Science & Technology Milestones, Sports & Games',
+        'Culture & Personalities, Indian Polity & Constitution',
+        'Indian Economy, Indian History – Freedom Struggle',
+        'Geography – India & World',
+        'Current Affairs – National & International (last 12 months)',
+        'Indian Railways – zones, headquarters, history, important firsts',
+      ],
+    },
+    {
+      subject: '🔧 Part B – Trade Syllabus (CBT 2, Qualifying)',
+      topics: [
+        'Fitter, Electrician, Wireman, Armature & Coil Winder, Electronics Mechanic',
+        'Mechanic Radio & TV, Mechanic Motor Vehicle, Tractor Mechanic, Diesel Mechanic',
+        'Heat Engine, Turner, Machinist, Refrigeration & AC Mechanic, Instrument Mechanic',
+        'Welder (Gas & Electric), Carpenter, Plumber, Pipe Fitter, and 40+ other ITI trades',
+        'Diploma/Degree holders (Mechanical, Electrical, Electronics, Automobile Engineering) also eligible',
+        'Exact trade-wise syllabus is published in the official notification – check indianrailways.gov.in',
+      ],
+    },
+  ];
+
+  const salaryTable = [
+    { post: 'Assistant Loco Pilot (ALP)', payLevel: 'Level 2', basicPay: '₹19,900', grossSalary: '~₹30,000–₹40,000', note: '+ DA, HRA, TA, free rail pass' },
+    { post: 'Technician Gr. III',          payLevel: 'Level 2', basicPay: '₹19,900', grossSalary: '~₹30,000–₹38,000', note: '+ DA, HRA, TA, free rail pass' },
+  ];
+
+  const studyPlan = [
+    {
+      month: 'Month 1',
+      title: 'Build the Foundation',
+      content: 'Start with NCERT Class 8–10 Mathematics (covers most of the CBT 1 syllabus). Cover all basic arithmetic — percentages, ratios, time-work, profit-loss. Begin General Science with NCERT Class 9 and 10 Physics, Chemistry, and Biology. Target: 4–5 hours daily.',
+    },
+    {
+      month: 'Month 2',
+      title: 'Reasoning & Science Deep Dive',
+      content: 'Master Reasoning — series, analogies, coding-decoding, blood relations, direction test, Venn diagrams. Complete NCERT Science revision. Begin daily current affairs from a single reliable source. Solve 30–40 topic-wise practice questions daily per subject.',
+    },
+    {
+      month: 'Month 3',
+      title: 'Trade Syllabus (Your Secret Weapon)',
+      content: 'Start CBT 2 Part B — your trade-specific syllabus. This section is qualifying but a strong Part B score often separates toppers from average scorers in cut-offs. Use your ITI notes, NCVT question banks, and trade-specific PDFs. Do not neglect Basic Science & Engineering (CBT 2 Part A).',
+    },
+    {
+      month: 'Month 4',
+      title: 'Mock Test Phase Begins',
+      content: 'Attempt 1 full CBT 1 mock test daily. Review every wrong answer. Maintain an error notebook. Target 80%+ accuracy in Mathematics and Reasoning. Start Railway-specific current affairs — 18 zones, HQs, important milestones, minister names.',
+    },
+    {
+      month: 'Month 5',
+      title: 'CBT 2 + CBAT Preparation',
+      content: 'Shift primary focus to CBT 2 Part A (Basic Science & Engineering). Solve previous years\' ALP CBT 2 papers. For CBAT — practice battery of tests: Memory Test, Following Directions Test, Depth Perception, Concentration Test, and Perceptual Speed Test. These are NOT a standard aptitude test; practice specifically.',
+    },
+    {
+      month: 'Month 6',
+      title: 'Final Sprint & Medical Preparation',
+      content: 'Take 2 CBT mocks per day (one CBT 1, one CBT 2). Pure revision — no new topics. Start medical fitness prep: eyesight is strictly tested for ALP (A-1 vision standard). Consult an eye specialist early if you wear glasses — many candidates are screened out at medical.',
+    },
+  ];
+
+  const books = [
+    { title: 'Fast Track Objective Arithmetic',        author: 'Rajesh Verma (Arihant)',     subject: 'Mathematics' },
+    { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' },
+    { title: 'Lucent\'s General Knowledge',             author: 'Lucent Publications',       subject: 'General Awareness' },
+    { title: 'NCERT Science (Class 9 & 10)',           author: 'NCERT',                     subject: 'General Science' },
+    { title: 'RRB ALP/Technician Exam Guide',          author: 'Arihant Experts',            subject: 'All-in-One' },
+    { title: 'Objective General Science',              author: 'S. Chand Publications',      subject: 'General Science' },
+    { title: 'Basic Electrical Engineering',           author: 'V.K. Mehta',                subject: 'CBT 2 Part A' },
+    { title: 'RRB ALP Previous Year Papers',           author: 'Multiple Publishers',        subject: 'Practice' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the educational qualification for RRB ALP 2026?',
+      a: 'For ALP: You need a 10th pass certificate PLUS an ITI certificate in a relevant trade from an NCVT/SCVT recognised institution. Alternatively, a Diploma or Degree in Engineering in a relevant discipline also makes you eligible. For Technician posts: Same 10th + ITI qualification applies, with the trade requirement matching the specific Technician post you apply for. Always check the post-wise trade-eligibility table in the official notification.',
+    },
+    {
+      q: 'How many stages are there in RRB ALP selection process?',
+      a: 'There are 4 stages: (1) CBT 1 — 75 questions, 60 minutes, objective screening test. (2) CBT 2 — 175 questions, 150 minutes; split into Part A (general + technical, merit-based) and Part B (trade-specific, qualifying). (3) CBAT — Computer-Based Aptitude Test (for ALP post only, not Technicians). (4) Document Verification and Medical Examination. Final merit is based on CBT 2 Part A marks only.',
+    },
+    {
+      q: 'What is the CBAT and who has to appear for it?',
+      a: 'CBAT stands for Computer-Based Aptitude Test. It is required only for the ALP (Assistant Loco Pilot) post — not for Technicians. It tests psychological aptitude for train operation: Memory, Following Directions, Depth Perception, Concentration, and Perceptual Speed. You must score above the minimum T-Score cutoff set by Railways to qualify. If you clear CBT 2 and choose only the Technician post, you skip CBAT.',
+    },
+    {
+      q: 'What is the salary of RRB ALP in 2025?',
+      a: 'The ALP starts at Level 2 with a basic pay of ₹19,900 per month under the 7th Pay Commission. After adding DA (currently ~53%), HRA, Transport Allowance, and other allowances, the gross in-hand salary works out to approximately ₹30,000–₹40,000 per month depending on posting location. Additionally, ALP employees receive free rail passes for themselves and their family, railway housing or HRA, and medical benefits at Railway hospitals — perks that significantly raise effective compensation.',
+    },
+    {
+      q: 'How strict is the medical standard for RRB ALP?',
+      a: 'Very strict. ALP follows the A-1 medical standard — the highest standard in Indian Railways. The most critical criterion is vision: distant vision must be 6/6 in both eyes without glasses (only +/- 0.5D power for Technicians, not at all for ALP without correction). Colour blindness, squint, and night blindness disqualify a candidate. Candidates who wear glasses or contact lenses should consult a Railway Medical Officer early. A single-eye disqualification can end the candidacy at the final stage.',
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home',  item: 'https://taiyarho.in/' },
+      { '@type': 'ListItem', position: 2, name: 'Exams', item: 'https://taiyarho.in/exams/' },
+      { '@type': 'ListItem', position: 3, name: 'RRB ALP 2026 Complete Guide', item: 'https://taiyarho.in/exams/rrb-alp/' },
+    ],
+  };
+
+  const statusBadge = (s: string) => {
+    if (s === 'done')     return <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-700">✅ Done</span>;
+    if (s === 'upcoming') return <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-700">🔵 Upcoming</span>;
+    return                       <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-700">⚠️ TBN</span>;
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <div className="container-main py-10">
+        {/* Breadcrumb */}
+        <nav className="text-sm text-surface-500 mb-6">
+          <Link href="/" className="hover:text-primary-500">Home</Link>
+          <span className="mx-2">›</span>
+          <Link href="/exams" className="hover:text-primary-500">Exams</Link>
+          <span className="mx-2">›</span>
+          <span className="text-surface-800">RRB ALP</span>
+        </nav>
+
+        {/* Page Header */}
+        <div className="mb-8">
+          <div className="flex flex-wrap gap-2 mb-3">
+            <span className="badge-primary">Railway</span>
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-100 text-orange-700">Central Govt</span>
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">Technical Post</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
+            RRB ALP 2026 – Assistant Loco Pilot Complete Guide
+          </h1>
+          <p className="text-surface-500 leading-relaxed max-w-3xl">
+            RRB ALP (CEN 01/2024) is one of the largest railway technical recruitments with 27,943 vacancies for Assistant Loco Pilot and Technician posts across all 21 Railway Recruitment Board zones. CBT 1 was conducted in February 2026. CBT 2 is expected in mid-2026.
+          </p>
+          <a
+            href="https://www.indianrailways.gov.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium inline-block"
+          >
+            🌐 Official Website: indianrailways.gov.in →
+          </a>
+        </div>
+
+        {/* Overview Stats Strip */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+          {[
+            { label: 'Conducting Body',  value: 'Railway Recruitment Board (RRB)' },
+            { label: 'Total Vacancies',  value: '27,943 Posts (CEN 01/2024)' },
+            { label: 'CBT 1 Exam Date', value: 'Feb 16–18, 2026 (Done)' },
+            { label: 'Salary Range',    value: '₹19,900 – ₹63,200/mo', green: true },
+          ].map((item) => (
+            <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+              <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+              <div className={`font-semibold mt-1 text-sm ${item.green ? 'text-emerald-600' : 'text-surface-800'}`}>{item.value}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Two-column layout */}
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* ── MAIN CONTENT ── */}
+          <main>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is RRB ALP?</h2>
+              </div>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                RRB ALP stands for <strong>Railway Recruitment Board – Assistant Loco Pilot</strong>. It is a Central Government technical recruitment conducted by the 21 Railway Recruitment Boards (RRBs) under the Ministry of Railways. The exam recruits candidates for two posts — <strong>Assistant Loco Pilot (ALP)</strong>, who operate locomotives, and <strong>Technician Grade III</strong>, who maintain rolling stock and railway equipment.
+              </p>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                ALP is one of the most sought-after railway jobs for ITI and Diploma holders because it offers a permanent Central Government job with job security, free rail travel for the entire family, railway housing, and a clear promotion path to Loco Pilot (LP) and eventually Senior Loco Pilot (SLP).
+              </p>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm font-semibold text-blue-800 mb-1">💡 Key Update for 2025-26 (CEN 01/2024):</p>
+                <p className="text-sm text-blue-700">RRB released CEN 01/2024 in January 2024 for 27,943 vacancies (18,799 ALP + 9,144 Technicians). CBT 1 was successfully conducted on <strong>16–18 February 2026</strong>. Results and CBT 2 dates are yet to be announced. Stay updated at your regional RRB website.</p>
+              </div>
+            </section>
+
+            {/* SECTION 2: LATEST UPDATE */}
+            <section id="latest-update" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Latest Update 2025-26</h2>
+              </div>
+              <div className="space-y-3">
+                <div className="card p-4 border-l-4 border-emerald-400">
+                  <p className="text-sm font-semibold text-surface-800">✅ CBT 1 Conducted (Feb 2026)</p>
+                  <p className="text-sm text-surface-600 mt-1">RRB ALP CBT 1 for CEN 01/2024 was held on 16, 17, and 18 February 2026 across all RRB zones. Approximately 25+ lakh candidates appeared. The answer key and result are awaited.</p>
+                </div>
+                <div className="card p-4 border-l-4 border-amber-400">
+                  <p className="text-sm font-semibold text-surface-800">⚠️ CBT 2 Expected Mid-2026</p>
+                  <p className="text-sm text-surface-600 mt-1">Based on the CBT 1 timeline, CBT 2 (Part A + Part B) is expected to be conducted around June–July 2026. No official date has been announced yet. Candidates who cleared CBT 1 should begin CBT 2 preparation immediately.</p>
+                </div>
+                <div className="card p-4 border-l-4 border-primary-400">
+                  <p className="text-sm font-semibold text-surface-800">📋 CBAT Preparation Tip</p>
+                  <p className="text-sm text-surface-600 mt-1">CBAT (for ALP post) is a psychological aptitude battery — very different from standard MCQ tests. Practise Memory, Depth Perception, Concentration, and Direction-Following tests specifically. Start now while CBT 2 prep is ongoing.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 3: IMPORTANT DATES */}
+            <section id="dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 RRB ALP Important Dates (CEN 01/2024)</h2>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-3">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Event</th>
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Date</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">{statusBadge(row.status)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400">⚠️ TBN = To Be Notified. Always verify latest dates at your regional RRB website (e.g. rrbcdg.gov.in, rrbchennai.gov.in).</p>
+            </section>
+
+            {/* SECTION 4: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🪪 Nationality</div>
+                  <p className="text-sm font-semibold text-surface-800">Indian Citizen</p>
+                  <p className="text-xs text-surface-500 mt-1">Citizens of Nepal, Bhutan, and certain categories of Tibetan refugees / persons of Indian origin are also eligible as per GoI norms.</p>
+                </div>
+                <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Age Limit</div>
+                  <p className="text-sm font-semibold text-surface-800">18 – 30 Years</p>
+                  <p className="text-xs text-surface-500 mt-1">Age calculated as on 01.07.2024. OBC: +3 yrs | SC/ST: +5 yrs | PwBD: +10 yrs. Ex-Servicemen relaxation as per GoI norms.</p>
+                </div>
+                <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🎓 Educational Qualification</div>
+                  <p className="text-sm font-semibold text-surface-800">10th Pass + ITI / Diploma / Degree (Engineering)</p>
+                  <p className="text-xs text-surface-500 mt-1">Matriculation (10th) PLUS ITI from NCVT/SCVT in a relevant trade. OR Diploma/Degree in Engineering in a relevant discipline. Trade must match the post applied for.</p>
+                </div>
+                <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">👁️ Medical Standard</div>
+                  <p className="text-sm font-semibold text-surface-800 text-red-700">A-1 Vision (Very Strict)</p>
+                  <p className="text-xs text-surface-500 mt-1">ALP requires A-1 vision standard — no glasses allowed. Distant vision 6/6 both eyes. Colour blindness, squint, or night blindness will disqualify. Check medical standards before applying.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 5: VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies &amp; Posts (CEN 01/2024)</h2>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Post Name</th>
+                      <th className="text-center p-3 text-xs uppercase tracking-wide font-semibold">Total Vacancies</th>
+                      <th className="text-center p-3 text-xs uppercase tracking-wide font-semibold">Pay Level</th>
+                      <th className="text-center p-3 text-xs uppercase tracking-wide font-semibold">Basic Pay</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancies.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-center font-semibold text-primary-600">{row.vacancies}</td>
+                        <td className="p-3 text-center"><span className="badge-primary">{row.payLevel}</span></td>
+                        <td className="p-3 text-center font-semibold text-emerald-600">{row.basicPay}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-primary-50">
+                      <td className="p-3 font-bold text-surface-900">Total</td>
+                      <td className="p-3 text-center font-bold text-primary-700">27,943</td>
+                      <td className="p-3"></td>
+                      <td className="p-3"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400">Vacancies are distributed across all 21 Railway Recruitment Board zones. Zone-wise and category-wise breakdown is available in the official CEN 01/2024 notification.</p>
+            </section>
+
+            {/* SECTION 6: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">RRB ALP Exam Pattern 2024</h2>
+              </div>
+
+              {/* Stage Overview Cards */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                {[
+                  { stage: 'CBT 1', desc: 'Screening Test', detail: '75 Qs · 60 min', color: 'amber' },
+                  { stage: 'CBT 2', desc: 'Merit + Trade', detail: '175 Qs · 150 min', color: 'primary' },
+                  { stage: 'CBAT', desc: 'Aptitude (ALP only)', detail: 'Qualifying', color: 'purple' },
+                  { stage: 'DV + Medical', desc: 'Final Stage', detail: 'A-1 Standard', color: 'emerald' },
+                ].map((s) => (
+                  <div key={s.stage} className={`card p-4 border-${s.color}-300 bg-${s.color}-50 text-center`}>
+                    <div className={`text-xs font-semibold uppercase tracking-wide text-${s.color}-600 mb-1`}>{s.desc}</div>
+                    <div className={`text-xl font-heading font-bold text-${s.color}-700`}>{s.stage}</div>
+                    <div className="text-xs text-surface-500 mt-1">{s.detail}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CBT 1 */}
+              <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3">Stage 1 – CBT 1 (Screening)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Subject</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Questions</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cbt1Pattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-100 font-bold">
+                      <td className="p-3 text-surface-900">Total</td>
+                      <td className="p-3 text-center text-surface-900">75</td>
+                      <td className="p-3 text-center text-primary-700">75</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mb-6">Duration: 60 minutes | Negative Marking: 1/3 per wrong answer | CBT 1 is only a screening test; marks are NOT counted in final merit.</p>
+
+              {/* CBT 2 */}
+              <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3">Stage 2 – CBT 2 (Merit-Based)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Section</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Questions</th>
+                      <th className="p-3 text-xs uppercase tracking-wide font-semibold text-center">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cbt2PartA.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''} ${i === 4 ? 'bg-amber-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-100 font-bold">
+                      <td className="p-3 text-surface-900">Total</td>
+                      <td className="p-3 text-center text-surface-900">175</td>
+                      <td className="p-3 text-center text-primary-700">175</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
+                <p className="text-sm text-amber-800"><strong>⚠️ Part A vs Part B:</strong> Part A (100 marks) determines merit ranking. Part B (75 marks – trade-specific) is <strong>qualifying only</strong> — you must pass but marks are not added to merit. Final selection is based solely on CBT 2 Part A score.</p>
+              </div>
+
+              {/* CBAT */}
+              <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3">Stage 3 – CBAT (ALP Post Only)</h3>
+              <div className="card p-5 mb-4">
+                <p className="text-sm text-surface-700 mb-3">The Computer-Based Aptitude Test is conducted only for candidates who qualify CBT 2 and opt for the ALP post. It is a battery of 5 psychological tests:</p>
+                <ul className="space-y-2">
+                  {['Memory Test', 'Following Directions Test', 'Depth Perception Test', 'Concentration Test', 'Perceptual Speed Test'].map((t) => (
+                    <li key={t} className="flex items-start gap-2 text-sm text-surface-700">
+                      <span className="w-2 h-2 bg-primary-400 rounded-full mt-1.5 flex-shrink-0"></span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs text-surface-500 mt-3">Minimum T-score must be achieved in each test. If you fail CBAT, you are considered only for Technician posts (if opted). Technician candidates do NOT appear for CBAT.</p>
+              </div>
+            </section>
+
+            {/* SECTION 7: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((s) => (
+                  <details key={s.subject} className="card p-4 group">
+                    <summary className="flex items-center gap-3 cursor-pointer list-none">
+                      <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-base flex-shrink-0">📖</div>
+                      <span className="font-heading font-semibold text-surface-800">{s.subject}</span>
+                      <svg className="w-4 h-4 ml-auto text-surface-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <ul className="mt-3 space-y-1.5 pl-11">
+                      {s.topics.map((t) => (
+                        <li key={t} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0"></span>
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 8: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary &amp; Benefits</h2>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Post</th>
+                      <th className="text-center p-3 text-xs uppercase tracking-wide font-semibold">Pay Level</th>
+                      <th className="text-center p-3 text-xs uppercase tracking-wide font-semibold">Basic Pay</th>
+                      <th className="text-center p-3 text-xs uppercase tracking-wide font-semibold">Gross Salary</th>
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Perks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryTable.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-center"><span className="badge-primary">{row.payLevel}</span></td>
+                        <td className="p-3 text-center font-semibold text-surface-800">{row.basicPay}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-600">{row.grossSalary}</td>
+                        <td className="p-3 text-xs text-surface-500">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                {[
+                  { icon: '🚂', title: 'Free Rail Pass', desc: 'Free rail travel for ALP and their entire family across Indian Railways — one of the most valuable perks.' },
+                  { icon: '🏠', title: 'Railway Housing / HRA', desc: 'Subsidised railway quarters or House Rent Allowance, depending on posting location.' },
+                  { icon: '🏥', title: 'Medical Benefits', desc: 'Free medical treatment for employee and dependents at Railway hospitals and empanelled hospitals.' },
+                  { icon: '📈', title: 'Promotion Path', desc: 'ALP → Loco Pilot (LP) → Senior LP → Power Controller — clear, structured promotion hierarchy.' },
+                ].map((b) => (
+                  <div key={b.title} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-2xl mb-2">{b.icon}</div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{b.title}</div>
+                    <div className="text-xs text-surface-500">{b.desc}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-surface-400">Gross salary includes DA (~53% of basic as of 2025), HRA (based on city tier), and Transport Allowance. In-hand salary varies by posting location and city classification.</p>
+            </section>
+
+            {/* SECTION 9: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">6-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block"></div>
+                <div className="space-y-4">
+                  {studyPlan.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-5">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm z-10">{i + 1}</div>
+                      <div className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-1">{step.month}</div>
+                      <div className="font-heading font-semibold text-surface-800 mb-2">{step.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{step.content}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10: BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 Best Books for RRB ALP</h2>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-900 text-white">
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Book Title</th>
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Author / Publisher</th>
+                      <th className="text-left p-3 text-xs uppercase tracking-wide font-semibold">Subject</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                        <td className="p-3"><span className="badge-primary text-xs">{b.subject}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 11: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Online Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '▶️', type: 'YouTube', name: 'Exampur (Vinay Sir)', desc: 'Comprehensive CBT 1 + CBT 2 playlists — Maths, Reasoning, Science in Hindi.' },
+                  { icon: '▶️', type: 'YouTube', name: 'Sarkari Exam Wala', desc: 'ALP-specific study videos, mock test walkthroughs, and CBAT practice sessions.' },
+                  { icon: '🌐', type: 'Website', name: 'indianrailways.gov.in', desc: 'Official source for all notifications, answer keys, results, and admit cards.' },
+                  { icon: '🌐', type: 'Website', name: 'TaiyarHo Free Resources', desc: 'Curated free mock tests, previous year papers, and study material links for Railway exams.', internal: '/resources' },
+                  { icon: '📄', type: 'PDF', name: 'RRB ALP Previous Year Papers', desc: 'Solve 2014, 2018 ALP papers — available free on indianrailways.gov.in and RRB zone websites.' },
+                  { icon: '📄', type: 'PDF', name: 'NCERT Class 9 & 10 Science', desc: 'Best resource for CBT 1 General Science — freely downloadable from ncert.nic.in.' },
+                ].map((r, i) => (
+                  <div key={i} className="card p-4 hover:border-primary-300 transition">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl flex-shrink-0">{r.icon}</span>
+                      <div>
+                        <div className="text-xs font-semibold uppercase tracking-wide text-surface-400 mb-0.5">{r.type}</div>
+                        <div className="font-heading font-semibold text-surface-800 text-sm">{r.name}</div>
+                        <div className="text-xs text-surface-500 mt-1">{r.desc}</div>
+                        {r.internal && (
+                          <Link href={r.internal} className="text-xs text-primary-500 hover:underline mt-1 inline-block">Browse Free Resources →</Link>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 12: EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Preparation Tips</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { num: '01', tip: 'CBT 1 is just a gateway — but don\'t underestimate it. Roughly 3 candidates are called per vacancy for CBT 2. For popular zones like Central, Northern, and Western Railways, competition is intense. Score as high as possible in CBT 1 even though marks don\'t count in merit.' },
+                  { num: '02', tip: 'Master your ITI trade for Part B. This section is qualifying but candidates often fail Part B while excelling in Part A — and lose their chance. Solve 5 years of trade-specific ALP question papers available on RRB zone websites.' },
+                  { num: '03', tip: 'Start CBAT preparation NOW, not after CBT 2 results. The aptitude battery requires specific practice — it is unlike any standard exam. Free CBAT simulators are available online. Practice 20 minutes daily alongside your regular prep.' },
+                  { num: '04', tip: 'Get your eyes checked early. A-1 vision standard for ALP is non-negotiable. Many candidates discover vision issues only at the medical stage. Visit a Railway Medical Officer or ophthalmologist before applying so you can plan accordingly — including whether to opt for Technician posts instead.' },
+                  { num: '05', tip: 'Use region-specific previous papers. Each RRB zone sets its own question papers. If you\'re applying in RRB Mumbai, solve papers from RRB Mumbai. Zone-specific papers often have local railway GK questions about that zone\'s headquarters, zone name, and local milestones.' },
+                ].map((t) => (
+                  <div key={t.num} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 font-heading font-bold text-sm flex-shrink-0">{t.num}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card p-0 group">
+                    <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-5 py-4">
+                      <span className="font-heading font-semibold text-surface-800 text-sm">{faq.q}</span>
+                      <svg className="w-4 h-4 text-surface-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Disclaimer */}
+            <div className="bg-surface-100 rounded-xl p-4 mb-8">
+              <p className="text-xs text-surface-500">
+                <strong>Disclaimer:</strong> All information on this page is sourced from official Railway Recruitment Board notifications (CEN 01/2024) and Indian Railways announcements. Exam dates, vacancies, and eligibility criteria may change via official corrigenda. Always verify the latest details at <a href="https://www.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">indianrailways.gov.in</a> and your regional RRB website before applying.
+              </p>
+            </div>
+
+          </main>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+
+              {/* On This Page */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">On This Page</h3>
+                <nav className="space-y-0.5">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">
+                      {s.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-primary-800 text-sm mb-2">🔗 Official Links</h3>
+                <div className="space-y-2">
+                  <a href="https://www.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800 font-medium break-all">
+                    <span>🌐</span> indianrailways.gov.in →
+                  </a>
+                  <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800 break-all">
+                    <span>📄</span> RRB CDG (Delhi) →
+                  </a>
+                  <a href="https://www.rrbchennai.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800 break-all">
+                    <span>📝</span> RRB Chennai →
+                  </a>
+                </div>
+              </div>
+
+              {/* Related Railway Exams */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">Related Railway Exams</h3>
+                <div className="space-y-1.5">
+                  {[
+                    { name: 'RRB NTPC 2025-26',  slug: 'rrb-ntpc' },
+                    { name: 'RRB Group D',         slug: 'rrb-group-d' },
+                    { name: 'RRB Junior Engineer', slug: 'rrb-je' },
+                    { name: 'SSC CGL 2026',        slug: 'ssc-cgl' },
+                    { name: 'SSC GD Constable',    slug: 'ssc-gd-constable' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">
+                      {e.name} →
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Check Eligibility CTA */}
+              <div className="card p-5 bg-orange-50 border-orange-200">
+                <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
+                <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
+                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+              </div>
+
+            </div>
+          </aside>
+
         </div>
       </div>
     </>
