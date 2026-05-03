@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://taiyarho.in/sitemap.xml
+Sitemap: https://www.taiyarho.in/sitemap.xml
