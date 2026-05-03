@@ -111,6 +111,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rrb-group-d') {
+    return {
+      title: 'RRB Group D 2025 – Eligibility, Syllabus & Vacancy | TaiyarHo',
+      description: 'RRB Group D 2025: 32,438 vacancies (CEN-08/2024) for 10th pass candidates. Check CBT syllabus, PET details, eligibility (18–33 yrs), salary ₹22,500–₹26,000/mo and free preparation resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/rrb-group-d/' },
+    };
+  }
+
   if (params.slug === 'rrb-alp') {
     return {
       title: 'RRB ALP 2026 – Syllabus, CBT 1 Result, Exam Pattern & Guide | TaiyarHo',
@@ -142,6 +150,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (detailed && detailed.slug === 'ssc-cgl') return <SscCglPage exam={detailed} />;
   if (detailed && detailed.slug === 'ssc-gd-constable') return <SscGdPage exam={detailed} />;
   if (detailed && detailed.slug === 'rrb-ntpc') return <RrbNtpcPage exam={detailed} />;
+  if (detailed && detailed.slug === 'rrb-group-d') return <RrbGroupDPage exam={detailed} />;
   if (brief && brief.slug === 'rrb-alp') return <RrbAlpPage exam={brief} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
@@ -9132,6 +9141,651 @@ function SscChslPage({ exam }: { exam: any }) {
                 <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
                 <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
               </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── RRB GROUP D RICH PAGE ───────────────────────────────────────────────────
+function RrbGroupDPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'pet',             label: 'PET Details' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'CEN-08/2024 Official Notification Released',    date: 'January 2025',            status: 'done' },
+    { event: 'Online Application Window',                      date: 'January – February 2025', status: 'done' },
+    { event: 'Application Fee Payment Deadline',              date: 'February 2025',           status: 'done' },
+    { event: 'Application Correction Window',                 date: 'February – March 2025',   status: 'done' },
+    { event: 'CBT Admit Card Release',                        date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Computer Based Test (CBT)',                     date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'CBT Result & PET Call Letter',                  date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Physical Efficiency Test (PET)',                 date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Document Verification (DV)',                    date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Medical Examination & Appointment',             date: 'To be notified (TBN)',    status: 'tbn' },
+  ];
+
+  const examPattern = [
+    { section: 'General Intelligence & Reasoning', questions: 30, marks: 30, note: 'Highest weightage section' },
+    { section: 'Mathematics',                       questions: 25, marks: 25, note: 'Class 10 level' },
+    { section: 'General Science',                   questions: 25, marks: 25, note: 'NCERT Class 6–10 only' },
+    { section: 'General Awareness & Current Affairs', questions: 20, marks: 20, note: 'Railways-specific GK important' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'Track Maintainer Grade-IV (Trackman / P-Way)', dept: 'Civil Engineering (P-Way)', level: 'Level 1', qualification: '10th Pass' },
+    { post: 'Helper / Assistant (Electrical General Services)', dept: 'Electrical — General Services', level: 'Level 1', qualification: '10th Pass or ITI' },
+    { post: 'Helper / Assistant (TL & AC)', dept: 'Electrical — TL & AC', level: 'Level 1', qualification: 'ITI (relevant trade)' },
+    { post: 'Helper / Assistant (Signal & Telecom)', dept: 'Signal & Telecom (S&T)', level: 'Level 1', qualification: 'ITI (relevant trade)' },
+    { post: 'Helper / Assistant (Mechanical Workshop)', dept: 'Mechanical — Workshop', level: 'Level 1', qualification: '10th Pass or ITI' },
+    { post: 'Helper / Assistant (Bridge)', dept: 'Civil Engineering — Bridge', level: 'Level 1', qualification: '10th Pass' },
+    { post: 'Porter / Station Porter', dept: 'Traffic / Commercial', level: 'Level 1', qualification: '10th Pass' },
+  ];
+
+  const ageRelaxations = [
+    { category: 'General / EWS', relaxation: 'No relaxation', effectiveAge: '18–33 years' },
+    { category: 'OBC (Non-Creamy Layer)', relaxation: '+3 years', effectiveAge: '18–36 years' },
+    { category: 'SC / ST', relaxation: '+5 years', effectiveAge: '18–38 years' },
+    { category: 'PwBD (General/EWS)', relaxation: '+10 years', effectiveAge: '18–43 years' },
+    { category: 'PwBD (OBC-NCL)', relaxation: '+13 years', effectiveAge: '18–46 years' },
+    { category: 'PwBD (SC/ST)', relaxation: '+15 years', effectiveAge: '18–48 years' },
+    { category: 'Ex-Servicemen', relaxation: 'Service rendered + 3 years', effectiveAge: 'Varies' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'General Intelligence & Reasoning (30 Qs — Highest Weightage)',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Analogies – Semantic & Figural',
+        'Number & Alphabetical Series',
+        'Coding-Decoding',
+        'Mathematical Operations',
+        'Blood Relations & Direction Test',
+        'Venn Diagrams & Syllogisms',
+        'Statement & Conclusion',
+        'Jumbling & Classification',
+        'Non-Verbal: Mirror Image, Cube & Dice, Figure Completion',
+        'Data Interpretation & Sufficiency',
+      ],
+    },
+    {
+      subject: 'Mathematics (25 Qs)',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Number System & BODMAS, Decimals & Fractions',
+        'LCM, HCF, Ratio & Proportion, Percentage',
+        'Mensuration – Area, Volume, Surface Area',
+        'Time & Work, Time & Distance, Trains, Boats & Streams',
+        'Simple Interest & Compound Interest',
+        'Profit & Loss, Discount, Average',
+        'Basic Algebra, Geometry & Trigonometry (Class 10)',
+        'Square Root, Age Calculations, Calendar & Clock',
+        'Pipes & Cisterns, Mixture & Alligation',
+      ],
+    },
+    {
+      subject: 'General Science (25 Qs — NCERT Class 6–10 Only)',
+      color: 'text-green-700',
+      bg: 'bg-green-50 border-green-200',
+      topics: [
+        'Physics – Motion, Force, Work, Energy, Light, Sound, Electricity, Heat',
+        'Chemistry – Elements, Compounds, Acids, Bases, Salts, Metals & Non-metals',
+        'Biology – Human Body Systems, Diseases, Cell, Nutrition, Reproduction',
+        'Life Sciences – Plant & Animal Kingdom, Ecosystem basics',
+      ],
+    },
+    {
+      subject: 'General Awareness & Current Affairs (20 Qs)',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Current Affairs – Last 12 months (national & international)',
+        'Indian History – Ancient, Medieval, Modern & Freedom Struggle',
+        'Indian & World Geography',
+        'Indian Polity – Constitution, Parliament, Fundamental Rights',
+        'Indian Economy – Budgets, Schemes, Banking basics',
+        'Indian Railways – 18 Zones & HQs, Rail Bhawan, History & Firsts',
+        'Awards & Honours, Sports, Important Days',
+        'Books & Authors, Space & Defence',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', title: 'Foundation Building', tasks: 'Build your Maths base — Number System, Percentage, Ratio, Average. Read Lucent GK chapters 1–5 (Indian History basics). Start daily current affairs from a single source (PIB or one news app). Daily target: 4–5 hours.' },
+    { month: 'Month 2', title: 'Reasoning Push', tasks: 'Reasoning has 30 questions — the highest weightage. Master Series, Analogies, Coding-Decoding, Mathematical Operations, Blood Relations, and Direction Test. Continue Maths — Profit/Loss, Time & Work, Time & Distance.' },
+    { month: 'Month 3', title: 'Science Deep Dive', tasks: 'General Science = NCERT Class 6–10 only. Focus heavily on Physics (motion, electricity, light, heat) and Biology (human body, diseases). Quick coverage of Chemistry. Solve sectional quizzes daily after each NCERT chapter.' },
+    { month: 'Month 4', title: 'GA & Railways-Specific', tasks: 'Static GK from Lucent. Indian Railways special section: 18 zones & HQs, Rail Bhawan, railway history, important firsts. Memorise awards, sports, books from last 12 months. Daily current affairs — do not skip.' },
+    { month: 'Month 5', title: 'Mock Test Phase', tasks: 'Take 1 full mock test daily. Review every wrong answer thoroughly. Maintain an "error notebook" for repeated mistakes. Focus revision on weak sections. Solve at least 5 years of previous year papers.' },
+    { month: 'Month 6', title: 'Sprint + PET Preparation', tasks: 'Take 2 mocks daily. Pure revision — no new topics. Start PET preparation: 1000 m running daily + weight-carry simulation. The PET is qualifying but you cannot afford to ignore it. Build mental confidence for exam day.' },
+  ];
+
+  const books = [
+    { subject: 'Mathematics', title: 'Fast Track Objective Arithmetic', author: 'Rajesh Verma (Arihant)' },
+    { subject: 'Mathematics', title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal (S. Chand)' },
+    { subject: 'Reasoning', title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal (S. Chand)' },
+    { subject: 'Reasoning', title: 'A New Approach to Reasoning (Verbal & Non-Verbal)', author: 'B.S. Sijwali & Indu Sijwali (Arihant)' },
+    { subject: 'General Science', title: 'NCERT Science Textbooks (Class 6 to 10)', author: 'NCERT (Free PDF at ncert.nic.in)' },
+    { subject: 'GK & Current Affairs', title: "Lucent's General Knowledge", author: 'Lucent Publications' },
+    { subject: 'Current Affairs', title: 'Manorama Yearbook (Latest Edition)', author: 'Malayala Manorama' },
+    { subject: 'Practice', title: 'RRB Group D Previous Year Papers (Solved)', author: 'Kiran / Arihant Publications' },
+  ];
+
+  const tips = [
+    { title: 'Reasoning is your highest-value section — master it first', body: 'With 30 questions, Reasoning carries the single highest weightage in the CBT. If you master it thoroughly, you can secure 25+ marks here alone — often enough to clear the cutoff comfortably without depending on other sections.' },
+    { title: 'General Science = NCERT only, nothing more', body: 'General Science in RRB Group D is 100% NCERT Class 6–10. Read all five science textbooks once and revise 2–3 times. No advanced books, no coaching material — just the NCERT. This alone can get you 20+ in this section.' },
+    { title: 'Indian Railways GK is easy free marks', body: 'Questions about Indian Railways (18 zones, HQs, Rail Bhawan, historical firsts) appear in every Group D cycle. Memorise the 18 zones with their headquarters — this alone secures 2–3 easy marks that others miss.' },
+    { title: 'Avoid guesswork — negative marking hurts', body: 'Every wrong answer costs you 1/3rd mark. If you cannot eliminate at least 2 options, it is better to skip the question. A disciplined 75-attempt strategy with 90% accuracy beats a reckless 100-attempt strategy every time.' },
+    { title: 'Start PET training alongside CBT preparation', body: 'Do not leave the Physical Efficiency Test for after CBT results. Start 1000 m running practice at least 2 months before the PET. The running test (4:15 for men, 5:40 for women) is where most candidates fail — and it is purely a matter of consistent practice.' },
+    { title: 'Apply to only ONE RRB region per cycle', body: 'You can apply to only one RRB per cycle. Submitting applications to multiple RRBs leads to automatic rejection of all applications. Choose your preferred zone carefully based on where you want to be posted.' },
+  ];
+
+  const faqs = exam.faqs as { question: string; answer: string }[];
+
+  const statusBadge = (status: string) => {
+    if (status === 'done') return <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">✅ Done</span>;
+    if (status === 'upcoming') return <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">🔜 Upcoming</span>;
+    return <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">⏳ TBN</span>;
+  };
+
+  return (
+    <>
+      {/* HERO */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#2563eb] text-white">
+        <div className="container-main py-10 md:py-14">
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="badge bg-[#0a1e4f] text-white text-xs px-3 py-1 rounded-md font-semibold">Railway</span>
+            <span className="badge bg-emerald-700 text-white text-xs px-3 py-1 rounded-md font-semibold">Central Govt</span>
+            <span className="badge bg-accent text-white text-xs px-3 py-1 rounded-md font-semibold">10th Pass Eligible</span>
+            <span className="badge bg-white/20 text-white text-xs px-3 py-1 rounded-md font-semibold border border-white/30">📅 CBT: TBN 2025</span>
+          </div>
+          <h1 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 max-w-4xl">
+            RRB Group D 2025 –<br />Complete Guide: Eligibility, Syllabus &amp; Vacancy
+          </h1>
+          <p className="text-blue-100 text-base md:text-lg leading-relaxed max-w-3xl mb-6">
+            CEN-08/2024 notification released January 2025 with <strong className="text-white">32,438 vacancies</strong> for Track Maintainer, Helper &amp; Assistant posts across Indian Railways. 10th pass or ITI qualified. CBT exam date to be announced by your regional RRB.
+          </p>
+          <div className="bg-emerald-900/40 border border-emerald-400/30 rounded-xl px-4 py-3 mb-8 max-w-3xl text-sm text-emerald-100">
+            💡 <strong>Key Update for 2025:</strong> CEN-08/2024 with 32,438 vacancies is the active cycle. Application window closed. Admit cards and CBT exam dates are awaited. Check{' '}
+            <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="underline text-emerald-200">rrbcdg.gov.in</a> for real-time updates.
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: 'Total Vacancies (CEN-08/2024)', value: '32,438' },
+              { label: 'CBT Exam Date', value: 'TBN ⚠️' },
+              { label: 'Min. Qualification', value: '10th Pass' },
+              { label: 'In-Hand Salary', value: '₹22.5K–₹26K/mo' },
+            ].map((s) => (
+              <div key={s.label} className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4">
+                <div className="text-blue-200 text-xs font-semibold uppercase tracking-wide mb-1">{s.label}</div>
+                <div className="font-heading font-bold text-xl text-white">{s.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        <div className="flex flex-col lg:flex-row gap-8">
+
+          {/* MAIN */}
+          <article className="flex-1 min-w-0">
+
+            {/* Quick Nav */}
+            <div className="card p-5 mb-10">
+              <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-1">
+                {toc.map((t) => (
+                  <a key={t.id} href={`#${t.id}`} className="text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-1.5 rounded-md transition-colors">{t.label}</a>
+                ))}
+              </div>
+            </div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="What is RRB Group D?" />
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-3">
+                  <strong>RRB Group D</strong> is the national-level recruitment examination conducted by <strong>Railway Recruitment Boards (RRBs)</strong> and <strong>Railway Recruitment Cells (RRCs)</strong> under the Ministry of Railways. It fills <strong>Level-1 posts</strong> in Indian Railways — primarily Track Maintainer Grade-IV and Helper/Assistant posts across departments including S&amp;T, Electrical, Mechanical, Bridge, Workshop, and TL &amp; AC.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-3">
+                  With vacancies routinely in the tens of thousands, RRB Group D is one of the <strong>largest entry-level government recruitment drives in India</strong> — ideal for 10th pass and ITI-qualified candidates seeking stable employment with Indian Railways perks including free rail passes, medical facilities, and pension benefits.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  The active cycle is <strong>CEN-08/2024</strong>, released January 2025, with <strong>32,438 vacancies</strong> across all 21 RRBs. A previous cycle (CEN-RRC-01/2019) had 1,03,769 vacancies, giving you an idea of the scale of this exam.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <InfoCard label="Conducting Body" value="Railway Recruitment Boards (RRBs) / Railway Recruitment Cells (RRCs)" />
+                <InfoCard label="Exam Frequency" value="Every 2–4 years (irregular, based on Railway needs)" />
+                <InfoCard label="Active Cycle Vacancies" value="32,438 (CEN-08/2024)" highlight />
+                <InfoCard label="Official Website" value="rrbcdg.gov.in" />
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="📅 RRB Group D Important Dates (CEN-08/2024)" />
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
+                ⚠️ <strong>TBN = To Be Notified.</strong> CBT and PET dates have not been officially announced yet. Bookmark{' '}
+                <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="underline">rrbcdg.gov.in</a> and this page for live updates.
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-surface-50">
+                    <th className="text-left p-4 font-semibold text-surface-700">Event</th>
+                    <th className="text-left p-4 font-semibold text-surface-700">Date</th>
+                    <th className="text-left p-4 font-semibold text-surface-700">Status</th>
+                  </tr></thead>
+                  <tbody>
+                    {importantDates.map((d, i) => (
+                      <tr key={i} className="border-t border-surface-100 hover:bg-surface-50">
+                        <td className="p-4 text-surface-800">{d.event}</td>
+                        <td className="p-4 text-surface-600">{d.date}</td>
+                        <td className="p-4">{statusBadge(d.status)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria" />
+
+              <div className="card p-6 mb-4">
+                <p className="font-semibold text-surface-700 text-sm mb-2">🪪 Nationality</p>
+                <p className="text-surface-600 text-sm leading-relaxed">Candidates must be a Citizen of India, or a subject of Nepal/Bhutan, or a Tibetan refugee who came to India before 1 January 1962, or a person of Indian origin who migrated from specified countries with intention to permanently settle in India — as per standard Railway Recruitment rules.</p>
+              </div>
+
+              <div className="card p-6 mb-4">
+                <p className="font-semibold text-surface-700 text-sm mb-3">📋 Age Limit (as on 01-01-2025 for CEN-08/2024)</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-50">
+                      <th className="text-left p-3 font-semibold text-surface-700">Category</th>
+                      <th className="text-left p-3 font-semibold text-surface-700">Relaxation</th>
+                      <th className="text-left p-3 font-semibold text-surface-700">Effective Age Range</th>
+                    </tr></thead>
+                    <tbody>
+                      {ageRelaxations.map((r, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-3 text-surface-800">{r.category}</td>
+                          <td className="p-3 text-surface-600">{r.relaxation}</td>
+                          <td className="p-3 font-medium text-surface-800">{r.effectiveAge}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-3">Note: For specific cycles, Railways may grant a one-time upper-age relaxation. Always verify in the official notification on rrbcdg.gov.in.</p>
+              </div>
+
+              <div className="card p-6">
+                <p className="font-semibold text-surface-700 text-sm mb-3">🎓 Educational Qualification</p>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4 text-sm text-blue-800">
+                  💡 <strong>Key Update 2025:</strong> For CEN-08/2024, ITI in the relevant trade is mandatory only for specific technical posts. Check the post-wise eligibility table in the official notification.
+                </div>
+                <ul className="space-y-2 text-sm text-surface-700">
+                  <li className="flex gap-2"><span className="text-primary-500 font-bold mt-0.5">→</span><span><strong>10th Pass (Matriculation)</strong> from a recognised Board of School Education</span></li>
+                  <li className="flex gap-2"><span className="text-primary-500 font-bold mt-0.5">→</span><span><strong>ITI certificate</strong> from an institution recognised by NCVT / SCVT</span></li>
+                  <li className="flex gap-2"><span className="text-primary-500 font-bold mt-0.5">→</span><span><strong>National Apprenticeship Certificate (NAC)</strong> granted by NCVT</span></li>
+                  <li className="flex gap-2"><span className="text-amber-500 font-bold mt-0.5">⚠️</span><span>For posts like <em>Assistant TL &amp; AC, Assistant S&amp;T, Assistant Loco Shed, Assistant Operations-Electrical</em> — ITI in the relevant trade is <strong>mandatory</strong></span></li>
+                </ul>
+              </div>
+            </section>
+
+            {/* 4. VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="Vacancies & Posts (CEN-08/2024)" />
+              <div className="bg-primary-50 border border-primary-100 rounded-lg px-5 py-3 mb-4 text-sm font-semibold text-primary-700">
+                Total Vacancies: <strong>32,438</strong> across all 21 RRBs nationally
+              </div>
+              <div className="card overflow-hidden mb-3">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-50">
+                      <th className="text-left p-4 font-semibold text-surface-700">Post Name</th>
+                      <th className="text-left p-4 font-semibold text-surface-700">Department</th>
+                      <th className="text-left p-4 font-semibold text-surface-700">Pay Level</th>
+                      <th className="text-left p-4 font-semibold text-surface-700">Qualification</th>
+                    </tr></thead>
+                    <tbody>
+                      {vacancyPosts.map((v, i) => (
+                        <tr key={i} className="border-t border-surface-100 hover:bg-surface-50">
+                          <td className="p-4 font-medium text-surface-800">{v.post}</td>
+                          <td className="p-4 text-surface-600">{v.dept}</td>
+                          <td className="p-4"><span className="badge badge-primary">{v.level}</span></td>
+                          <td className="p-4 text-surface-600">{v.qualification}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400">Exact post-wise vacancy breakdown varies by RRB region. Refer to the official CEN-08/2024 notification PDF for zonal and category-wise vacancy details.</p>
+            </section>
+
+            {/* 5. SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <SectionHeading num="5" title="Selection Process" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {[
+                    { step: '1', title: 'Computer Based Test (CBT)', desc: 'Single-stage online exam: 100 questions / 100 marks / 90 minutes. Sections: Mathematics (25), Reasoning (30), General Science (25), General Awareness (20). Negative marking: 1/3rd per wrong answer. Qualifying marks: 40% for UR/EWS, 30% for OBC/SC/ST.' },
+                    { step: '2', title: 'Physical Efficiency Test (PET)', desc: 'Qualifying in nature — marks NOT added to merit. Male: lift 35 kg / 100 m in 2 min + run 1000 m in 4:15. Female: lift 20 kg / 100 m in 2 min + run 1000 m in 5:40. Candidates called for PET = 3× total vacancies (category-wise).' },
+                    { step: '3', title: 'Document Verification (DV)', desc: 'Original documents verified: 10th marksheet, ITI certificate (if applicable), caste certificate, age proof, photo ID. Final merit list is prepared based on CBT marks only — PET is qualifying, not merit-based.' },
+                    { step: '4', title: 'Medical Examination & Appointment', desc: 'Candidates must meet Railway medical fitness standards. Posts have specific medical categories (A1, A2, B1, B2, C, D) based on job requirements. Appointment follows after medical fitness confirmation.' },
+                  ].map((s) => (
+                    <div key={s.step} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm z-10">{s.step}</div>
+                      <div className="card p-5">
+                        <p className="font-semibold text-surface-800 mb-1">{s.title}</p>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 6. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="6" title="Exam Pattern — CBT" />
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5 text-sm text-blue-800">
+                💡 <strong>Important:</strong> RRB Group D has only <strong>ONE stage of CBT</strong> (unlike RRB NTPC which has two stages). Your CBT score directly determines PET shortlisting and the final merit list.
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-50">
+                      <th className="text-left p-4 font-semibold text-surface-700">Section</th>
+                      <th className="text-center p-4 font-semibold text-surface-700">Questions</th>
+                      <th className="text-center p-4 font-semibold text-surface-700">Marks</th>
+                      <th className="text-left p-4 font-semibold text-surface-700">Note</th>
+                    </tr></thead>
+                    <tbody>
+                      {examPattern.map((e, i) => (
+                        <tr key={i} className="border-t border-surface-100 hover:bg-surface-50">
+                          <td className="p-4 font-medium text-surface-800">{e.section}</td>
+                          <td className="p-4 text-center text-surface-700">{e.questions}</td>
+                          <td className="p-4 text-center font-semibold text-surface-800">{e.marks}</td>
+                          <td className="p-4 text-xs text-surface-500">{e.note}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t border-surface-200 bg-surface-50 font-semibold">
+                        <td className="p-4 text-surface-800">Total</td>
+                        <td className="p-4 text-center text-surface-800">100</td>
+                        <td className="p-4 text-center text-surface-800">100</td>
+                        <td className="p-4 text-xs text-surface-500">90 minutes (120 min for PwBD)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <InfoCard label="Question Type" value="MCQ — 4 options, 1 correct" />
+                <InfoCard label="Negative Marking" value="−1/3 mark per wrong answer" />
+                <InfoCard label="Medium of Exam" value="15 languages incl. Hindi & English" />
+              </div>
+            </section>
+
+            {/* 7. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="7" title="Detailed Syllabus" />
+              <div className="space-y-4">
+                {syllabus.map((s, i) => (
+                  <div key={i} className={`card border ${s.bg} overflow-hidden`}>
+                    <div className={`px-5 py-3 border-b border-current/10`}>
+                      <p className={`font-heading font-semibold text-sm ${s.color}`}>{s.subject}</p>
+                    </div>
+                    <div className="p-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {s.topics.map((t, j) => (
+                        <div key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                          <span className="text-primary-400 mt-0.5 flex-shrink-0">→</span>{t}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 8. PET */}
+            <section id="pet" className="mb-12">
+              <SectionHeading num="8" title="Physical Efficiency Test (PET) — Full Details" />
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
+                ⚠️ <strong>PET is qualifying only.</strong> Marks are NOT counted in the final merit list. Only CBT marks determine your rank. But failing PET means automatic disqualification — so prepare seriously.
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-50">
+                      <th className="text-left p-4 font-semibold text-surface-700">Gender</th>
+                      <th className="text-left p-4 font-semibold text-surface-700">Weight-Carry Task</th>
+                      <th className="text-left p-4 font-semibold text-surface-700">Running Task</th>
+                    </tr></thead>
+                    <tbody>
+                      <tr className="border-t border-surface-100">
+                        <td className="p-4 font-semibold text-surface-800">Male</td>
+                        <td className="p-4 text-surface-700">Lift &amp; carry <strong>35 kg</strong> for <strong>100 metres</strong> in <strong>2 minutes</strong><br /><span className="text-xs text-surface-400">One chance only. Cannot put down the weight.</span></td>
+                        <td className="p-4 text-surface-700">Run <strong>1,000 metres</strong> in <strong>4 min 15 sec</strong></td>
+                      </tr>
+                      <tr className="border-t border-surface-100">
+                        <td className="p-4 font-semibold text-surface-800">Female</td>
+                        <td className="p-4 text-surface-700">Lift &amp; carry <strong>20 kg</strong> for <strong>100 metres</strong> in <strong>2 minutes</strong><br /><span className="text-xs text-surface-400">One chance only.</span></td>
+                        <td className="p-4 text-surface-700">Run <strong>1,000 metres</strong> in <strong>5 min 40 sec</strong></td>
+                      </tr>
+                      <tr className="border-t border-surface-100">
+                        <td className="p-4 font-semibold text-surface-800">PwBD</td>
+                        <td className="p-4 text-surface-600" colSpan={2}>Exempted from PET — subject to medical standards of the specific post</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="card p-5">
+                <p className="font-semibold text-surface-700 text-sm mb-3">🏃 PET Training Tips</p>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  {['Start 1000 m running practice at least 2 months before the exam. Most failures happen in running, not weight-carry.',
+                    'Practice carrying weight bags (start at 20–25 kg) to build grip and shoulder strength progressively.',
+                    'Run daily: 3–4 km in the morning. Build up to completing 1000 m comfortably under 4 minutes as buffer.',
+                    'Do not skip PET preparation during CBT mock test phase. 2 months is the minimum runway needed.'].map((t, i) => (
+                    <li key={i} className="flex gap-2"><span className="text-primary-500 flex-shrink-0">→</span>{t}</li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* 9. SALARY */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="9" title="💰 Salary & Benefits" />
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-surface-50">
+                    <th className="text-left p-4 font-semibold text-surface-700">Component</th>
+                    <th className="text-left p-4 font-semibold text-surface-700">Amount / Details</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { label: 'Pay Matrix Level', value: 'Level 1 (7th CPC Pay Matrix)' },
+                      { label: 'Basic Pay', value: '₹18,000 per month' },
+                      { label: 'Dearness Allowance (DA)', value: '~55% of Basic Pay (revised bi-annually)' },
+                      { label: 'House Rent Allowance (HRA)', value: '8–24% of Basic Pay (depends on posting city)' },
+                      { label: 'Transport Allowance', value: '₹900–₹3,600/month (depends on city & pay level)' },
+                      { label: 'In-Hand Salary (Approx.)', value: '₹22,500 – ₹26,000/month (varies by posting)' },
+                      { label: 'Maximum Pay Scale (Level 1)', value: '₹56,900' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-t border-surface-100">
+                        <td className="p-4 text-surface-600">{r.label}</td>
+                        <td className={`p-4 ${r.label.includes('In-Hand') ? 'font-bold text-emerald-600' : 'text-surface-800'}`}>{r.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-6">
+                <p className="font-semibold text-surface-700 text-sm mb-3">🎁 Additional Perks & Benefits</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-surface-700">
+                  {['🚂 Free rail travel pass (self + family) for all Railway zones',
+                    '🏥 Medical facilities at Railway hospitals for self & dependents',
+                    '🏠 Railway quarters (subject to availability at posting location)',
+                    '📈 Pension under National Pension System (NPS)',
+                    '📚 Children\'s education allowance',
+                    '⬆️ Promotion to Level 2 posts on passing departmental exams',
+                    '🌴 30 days Earned Leave + 20 days Half Pay Leave per year',
+                    '🛡️ Job security — Indian Railways is India\'s largest employer'].map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-4">Actual salary varies by posting city, DA revision, and applicable allowances.</p>
+              </div>
+            </section>
+
+            {/* 10. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="10" title="6-Month Study Plan for RRB Group D 2025" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((s, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm z-10">{i + 1}</div>
+                      <div className="card p-5">
+                        <p className="font-heading font-semibold text-surface-800 mb-1">{s.month} — {s.title}</p>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.tasks}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 11. BOOKS */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="11" title="Best Books for RRB Group D 2025" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* 12. TIPS */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="12" title="Expert Preparation Tips" />
+              <div className="space-y-4">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 bg-accent/10 rounded-xl flex items-center justify-center text-accent font-bold text-sm flex-shrink-0">{i + 1}</div>
+                    <div>
+                      <p className="font-semibold text-surface-800 mb-1 text-sm">{t.title}</p>
+                      <p className="text-sm text-surface-600 leading-relaxed">{t.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="13" title="Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card p-0 overflow-hidden group">
+                    <summary className="flex items-center justify-between px-5 py-4 font-semibold text-surface-800 text-sm cursor-pointer list-none">
+                      {f.question}
+                      <svg className="w-4 h-4 text-surface-400 flex-shrink-0 ml-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-4 pt-1 text-sm text-surface-600 leading-relaxed border-t border-surface-100">{f.answer}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Internal Links */}
+            <div className="card p-6 mb-6">
+              <p className="font-semibold text-surface-700 text-sm mb-3">🔗 Also Explore on TaiyarHo</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {[
+                  { name: 'RRB NTPC Guide', slug: 'rrb-ntpc' },
+                  { name: 'RRB ALP Guide', slug: 'rrb-alp' },
+                  { name: 'SSC CGL Guide', slug: 'ssc-cgl' },
+                  { name: 'SSC CHSL Guide', slug: 'ssc-chsl' },
+                  { name: 'SSC GD Constable', slug: 'ssc-gd-constable' },
+                  { name: 'Check Eligibility', slug: '../tools/age-calculator' },
+                ].map((e) => (
+                  <Link key={e.slug} href={e.slug.startsWith('..') ? e.slug : `/exams/${e.slug}`} className="text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Disclaimer */}
+            <div className="card p-5 bg-surface-50">
+              <p className="text-xs text-surface-400 leading-relaxed">
+                <strong>Disclaimer:</strong> This page is for informational purposes only. Always verify eligibility, dates, and vacancies from the official RRB notification at{' '}
+                <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:underline">rrbcdg.gov.in</a>. TaiyarHo is a free preparation platform — no paywall, no spam.
+              </p>
+            </div>
+
+          </article>
+
+          {/* SIDEBAR */}
+          <aside className="lg:w-72 flex-shrink-0 space-y-5">
+            <div className="card p-5 sticky top-20">
+              <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-4">Quick Facts</p>
+              <ul className="space-y-3">
+                {[
+                  { label: 'Conducting Body', val: 'Railway Recruitment Boards (RRBs)' },
+                  { label: 'Vacancies (CEN-08/2024)', val: '32,438' },
+                  { label: 'Exam Level', val: '10th Pass / ITI' },
+                  { label: 'Application Fee (Gen)', val: '₹500 (₹400 refunded)' },
+                  { label: 'No. of Attempts', val: 'Unlimited' },
+                  { label: 'Interview', val: 'None' },
+                  { label: 'Negative Marking', val: '1/3 per wrong answer' },
+                ].map((f) => (
+                  <li key={f.label} className="text-xs border-b border-surface-100 pb-3 last:border-0 last:pb-0">
+                    <span className="text-surface-400 block mb-0.5">{f.label}</span>
+                    <span className="font-semibold text-surface-700">{f.val}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-5 pt-4 border-t border-surface-100 space-y-2">
+                <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary block text-center text-sm py-2.5">Official Website ↗</a>
+                <Link href="/tools/age-calculator" className="btn-outline block text-center text-sm py-2.5">Check Eligibility</Link>
+              </div>
+            </div>
+
+            <div className="card p-5">
+              <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Railway Exams</p>
+              <div className="space-y-2">
+                {[{ name: 'RRB NTPC', slug: 'rrb-ntpc' }, { name: 'RRB ALP', slug: 'rrb-alp' }, { name: 'RRB JE', slug: 'rrb-je' }, { name: 'RPF Constable', slug: 'rpf-constable' }, { name: 'RPF SI', slug: 'rpf-si' }].map((e) => (
+                  <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="card p-5 bg-orange-50 border-orange-200">
+              <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
+              <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
+              <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
             </div>
           </aside>
 
