@@ -2205,6 +2205,746 @@ function UpPoliceConstablePage({ exam }: { exam: any }) {
 }
 
 
+// ─── BIHAR POLICE CONSTABLE RICH PAGE ─────────────────────────────────────────
+function BiharPoliceConstablePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies & Posts' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'physical', label: 'Physical Test (PET/PST)' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released', date: '28 May 2025', status: 'released' },
+    { event: 'Online Application Opens', date: '3 June 2025', status: 'released' },
+    { event: 'Last Date to Apply Online', date: '28 June 2025', status: 'released' },
+    { event: 'Admit Card Release', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Written Exam Date', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Answer Key Release', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Written Exam Result', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Physical Tests (PET / PST)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Document Verification & Medical', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Final Merit List', date: 'To be notified (TBN)', status: 'tbn' },
+  ];
+
+  const examPattern = [
+    { subject: 'Hindi', questions: 25, marks: 25 },
+    { subject: 'English', questions: 15, marks: 15 },
+    { subject: 'Mathematics', questions: 15, marks: 15 },
+    { subject: 'General Science', questions: 15, marks: 15 },
+    { subject: 'Social Science (History, Geography, Civics, Economy)', questions: 15, marks: 15 },
+    { subject: 'General Knowledge / Current Affairs', questions: 15, marks: 15 },
+  ];
+
+  const vacancyData = [
+    { post: 'Bihar Police Constable (General)', category: 'District Police', total: 'Majority share' },
+    { post: 'Bihar Military Police (BMP)', category: 'Armed Police', total: 'Included' },
+    { post: 'Special Armed Police (SAP)', category: 'Armed Police', total: 'Included' },
+    { post: 'Bihar Home Guard (Driver-cum-Constable)', category: 'Driver Posts', total: 'Included' },
+    { post: 'TOTAL (2026 Recruitment)', category: '–', total: '19,838' },
+  ];
+
+  const ageLimit = [
+    { category: 'General – Male', min: '18 years', max: '25 years' },
+    { category: 'General – Female', min: '18 years', max: '25 years' },
+    { category: 'OBC (Male – Non-Creamy Layer)', min: '18 years', max: '27 years' },
+    { category: 'OBC (Female – Non-Creamy Layer)', min: '18 years', max: '27 years' },
+    { category: 'SC / ST – Male', min: '18 years', max: '30 years' },
+    { category: 'SC / ST – Female', min: '18 years', max: '30 years' },
+    { category: 'Ex-Serviceman (All categories)', min: '–', max: 'As per Bihar Govt rules' },
+  ];
+
+  const physicalPst = [
+    { category: 'Male – General / OBC / SC / EBC', height: '165 cm', chest: '81 cm (min. 5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Male – SC / ST (Bihar Scheduled Tribe)', height: '160 cm', chest: '79 cm (min. 5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Female – General / OBC / SC / EBC', height: '155 cm', chest: 'N/A', weight: 'Proportionate' },
+    { category: 'Female – SC / ST (Bihar Scheduled Tribe)', height: '150 cm', chest: 'N/A', weight: 'Proportionate' },
+  ];
+
+  const physicalPet = [
+    { category: 'Male – All Categories', task: '1 mile (1.6 km) run', time: '6 minutes' },
+    { category: 'Female – All Categories', task: '1 mile (1.6 km) run', time: '8 minutes' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📘 Hindi (हिंदी)',
+      topics: [
+        'Hindi grammar: Sandhi, Samas, prefixes & suffixes',
+        'Antonyms, synonyms, and one-word substitution',
+        'Proverbs and idioms (Lokoktiyan & Muhavare)',
+        'Sentence correction and word order',
+        'Comprehension passages',
+        'Letter writing and paragraph composition',
+        'Tatsam, tadbhav, and regional vocabulary',
+      ],
+    },
+    {
+      subject: '🌐 English',
+      topics: [
+        'Basic grammar: tenses, articles, prepositions',
+        'Spotting errors and sentence improvement',
+        'Vocabulary: antonyms, synonyms, spellings',
+        'Fill in the blanks with correct words',
+        'Reading comprehension',
+        'Idioms and phrases',
+        'Active and passive voice',
+      ],
+    },
+    {
+      subject: '🔢 Mathematics (गणित)',
+      topics: [
+        'Number system and BODMAS',
+        'Percentage, profit & loss',
+        'Simple and compound interest',
+        'Time, speed & distance',
+        'Time and work',
+        'Average, ratio and proportion',
+        'Mensuration: area, perimeter, volume',
+        'Basic algebra and geometry',
+      ],
+    },
+    {
+      subject: '🔬 General Science (सामान्य विज्ञान)',
+      topics: [
+        'Physics: force, motion, electricity, light',
+        'Chemistry: elements, compounds, acids & bases',
+        'Biology: human body, cells, diseases',
+        'Environmental science basics',
+        'Scientific inventions and discoveries',
+        'Nutrition and health awareness',
+      ],
+    },
+    {
+      subject: '🌏 Social Science',
+      topics: [
+        'Indian history: ancient, medieval, modern',
+        'Bihar history and culture',
+        'Indian and Bihar geography',
+        'Indian Constitution and political system',
+        'Indian economy and agriculture',
+        'Civics: fundamental rights and duties',
+      ],
+    },
+    {
+      subject: '📰 General Knowledge & Current Affairs',
+      topics: [
+        'National and international current affairs',
+        'Bihar-specific news and government schemes',
+        'Sports: national and international events',
+        'Awards and honours (National, International)',
+        'Important dates and national symbols',
+        'Science & technology current affairs',
+        'Books and authors, India and world',
+      ],
+    },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Released';
+    if (s === 'upcoming') return '🔔 Scheduled';
+    return 'TBN';
+  };
+
+  const faqs = [
+    { q: 'How many vacancies are there in Bihar Police Constable 2026?', a: 'CSBC (Central Selection Board of Constable) has announced a total of 19,838 vacancies in its 2025 notification. These posts are spread across District Police, Bihar Military Police (BMP), Special Armed Police (SAP), and Driver-cum-Constable posts.' },
+    { q: 'What is the educational qualification required for Bihar Police Constable?', a: 'Candidates must have passed Class 12 (Intermediate/10+2) from a recognised board. The qualification must be obtained on or before the application closing date. There is no graduation requirement.' },
+    { q: 'What is the exam pattern for Bihar Police Constable written test?', a: 'The written exam has 100 multiple-choice questions (MCQs) for 100 marks, with a duration of 2 hours. Subjects covered include Hindi (25 marks), English (15), Maths (15), General Science (15), Social Science (15), and General Knowledge / Current Affairs (15). There is no negative marking.' },
+    { q: 'Is there negative marking in the Bihar Police Constable exam?', a: 'No — there is no negative marking in the Bihar Police Constable written exam. Each correct answer carries 1 mark, and no marks are deducted for wrong answers. This means candidates should attempt all 100 questions.' },
+    { q: 'What is the physical test standard for Bihar Police Constable?', a: 'The physical standard test (PST) requires General/OBC male candidates to be at least 165 cm tall with an 81 cm chest (5 cm expansion). Female candidates must be at least 155 cm. The physical efficiency test (PET) requires candidates to run 1 mile (1.6 km) — 6 minutes for males and 8 minutes for females.' },
+    { q: 'What is the salary of a Bihar Police Constable?', a: 'Bihar Police Constables are placed in Level 3 of the 7th Pay Commission pay matrix, with a basic pay scale of ₹21,700 to ₹69,100 per month. The gross monthly salary including Dearness Allowance (DA), House Rent Allowance (HRA), and other allowances typically ranges from ₹28,000 to ₹38,000 per month.' },
+    { q: 'What is the official website to apply for Bihar Police Constable?', a: 'Applications must be submitted online at csbc.bihar.gov.in — the official website of the Central Selection Board of Constable, Bihar. Candidates should register, fill the application form, upload documents, and pay the fee only through this official portal.' },
+  ];
+
+  return (
+    <>
+      {/* Hero Banner */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">Bihar Police Constable 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🚔 State Police</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Bihar</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">⚠️ Exam Date: TBN</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            Bihar Police Constable 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            CSBC has announced 19,838 constable vacancies. Notification released 28 May 2025. Minimum qualification: 12th Pass. 100 questions, 100 marks, 2 hours. No negative marking.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Total Vacancies', value: '19,838' },
+              { label: 'Exam Date', value: 'TBN' },
+              { label: 'Min. Qualification', value: '12th Pass' },
+              { label: 'Salary (Basic)', value: '₹21,700/month' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">What is Bihar Police Constable Recruitment?</h2>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The <strong>Bihar Police Constable Recruitment</strong> is conducted by the <strong>Central Selection Board of Constable (CSBC), Bihar</strong> to fill vacancies for Constable (Civil Police) and allied posts in the Bihar Police force. The 2026 recruitment cycle has announced <strong>19,838 posts</strong> — one of the largest police recruitments in Bihar in recent years.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  Posts are spread across District Police, Bihar Military Police (BMP), and Special Armed Police (SAP). The selection process follows the stages: <strong>Written Exam → Physical Standard Test (PST) → Physical Efficiency Test (PET) → Document Verification → Medical Examination</strong>. The final merit list is based solely on written exam marks.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  This is an excellent opportunity for 12th pass candidates from Bihar who want a stable government job with pension, allowances, and career growth in state law enforcement. The exam is straightforward — 100 MCQs, no negative marking, 2-hour duration.
+                </p>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-blue-800">
+                  <strong>💡 Key Update for 2026:</strong> CSBC released the official notification on 28 May 2025 announcing 19,838 vacancies. The application window closed on 28 June 2025. The written exam date is yet to be announced — bookmark csbc.bihar.gov.in for updates.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'CSBC, Bihar' },
+                  { label: 'Post Type', value: 'State Govt, Group C' },
+                  { label: 'Pay Scale', value: '₹21,700 – ₹69,100' },
+                  { label: 'Qualification', value: '12th Pass (Intermediate)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📅 Important Dates – Bihar Police Constable 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded ${statusColor(row.status)}`}>{statusLabel(row.status)}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">* Source: CSBC official notification (28 May 2025). ⚠️ TBN = To Be Notified. Always verify at csbc.bihar.gov.in before taking action.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { label: '🪪 Nationality', value: 'Must be a citizen of India. Candidates domiciled in Bihar are given preference for state quota posts.' },
+                  { label: '🎓 Educational Qualification', value: 'Class 12 (Intermediate / 10+2) pass or equivalent from a recognised board. Must be completed before the application closing date.' },
+                  { label: '💳 Application Fee', value: 'General / OBC / EBC: ₹675 | SC / ST of Bihar: ₹180. Payment via online mode only (Debit Card / Net Banking).' },
+                  { label: '📋 Age Reference Date', value: 'Age calculated as on 1 August 2025 (as per 2025 notification). Candidates must be between 18 and 25 years (General category).' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-medium text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Age Limit – 2026 Recruitment Cycle</h3>
+                <div className="overflow-x-auto rounded-lg border border-surface-100">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Minimum Age</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Maximum Age</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ageLimit.map((r, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{r.category}</td>
+                          <td className="p-3 text-surface-600">{r.min}</td>
+                          <td className="p-3 text-surface-600">{r.max}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-2">* Age is calculated as on 1 August 2025. Always verify category-wise age limits from the official CSBC notification PDF at csbc.bihar.gov.in.</p>
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Vacancies – 19,838 Posts (2026 Cycle)</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post Name</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i === vacancyData.length - 1 ? 'bg-blue-50 font-bold' : i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600">{row.category}</td>
+                        <td className="p-3 text-surface-700 font-semibold">{row.total}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <p className="text-sm text-amber-800"><strong>📌 Note:</strong> Category-wise (UR / OBC / EBC / SC / ST / EWS) and district-wise vacancy breakdown is available in the official CSBC notification PDF at csbc.bihar.gov.in. Vacancy figures may be revised via official corrigendum.</p>
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Exam Pattern – Written Test 2026</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                {[
+                  { label: 'Mode', value: 'Offline (OMR-based)' },
+                  { label: 'Total Questions', value: '100 MCQs' },
+                  { label: 'Total Marks', value: '100 marks' },
+                  { label: 'Duration', value: '2 hours (120 min)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-primary-50 rounded-xl p-4 border border-primary-100 text-center">
+                    <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-primary-700">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {examPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                        <td className="p-3 text-center text-surface-700 font-semibold">{row.questions}</td>
+                        <td className="p-3 text-center text-surface-700 font-semibold">{row.marks}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-blue-50 font-bold">
+                      <td className="p-3 text-surface-900">TOTAL</td>
+                      <td className="p-3 text-center text-surface-900">100</td>
+                      <td className="p-3 text-center text-surface-900">100</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">📌 Key Exam Rules</h3>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold">✓</span> Each correct answer: <strong>+1 mark</strong></li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold">✓</span> <strong>No negative marking</strong> — attempt all 100 questions</li>
+                  <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Language: <strong>Bilingual</strong> (Hindi and English)</li>
+                  <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Questions are of <strong>Matric/10th standard</strong> difficulty level</li>
+                  <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Final merit is based <strong>only on written exam marks</strong>. Physical tests are qualifying only.</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* PHYSICAL TEST */}
+            <section id="physical" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Physical Test – PST &amp; PET</h2>
+              <p className="text-surface-600 mb-5 text-sm leading-relaxed">
+                Candidates who qualify the written exam are called for the Physical Standard Test (PST) and Physical Efficiency Test (PET). Both are <strong>qualifying in nature only</strong> — they do not add marks to the final merit list.
+              </p>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Physical Standard Test (PST) – Measurements</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Height</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Chest (Male only)</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalPst.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-600">{row.height}</td>
+                        <td className="p-3 text-surface-600">{row.chest}</td>
+                        <td className="p-3 text-surface-600">{row.weight}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Physical Efficiency Test (PET) – Running Race</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Task</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Time Limit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalPet.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.task}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.time}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-800"><strong>💡 Tip:</strong> The Bihar Police PET requires running 1 mile in 6 minutes (males) — that is a pace of about 6 min/km. Start running at least 2–3 months before the physical test date. Build your stamina gradually from shorter distances.</p>
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Detailed Syllabus – Bihar Police Constable 2026</h2>
+              <div className="space-y-4">
+                {syllabus.map((sec, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-3">{sec.subject}</h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+                      {sec.topics.map((t, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="text-primary-400 mt-0.5">•</span>{t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-4">
+                <p className="text-sm text-amber-800"><strong>🎯 Focus Areas:</strong> Bihar-specific General Knowledge (history, culture, schemes, government) and current affairs carry significant weight and are often overlooked. Hindi is the highest-weightage subject (25 marks) — prioritise it. Since there is no negative marking, attempt every question.</p>
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">💰 Salary &amp; Benefits</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                {[
+                  { label: 'Basic Pay (Pay Scale)', value: '₹21,700 – ₹69,100/month', sub: 'Level 3 – 7th Pay Commission' },
+                  { label: 'Grade Pay', value: '₹2,000', sub: 'Fixed as per government norms' },
+                  { label: 'Gross Salary (with allowances)', value: '₹28,000 – ₹38,000/month', sub: 'Approx. including DA, HRA, TA' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-gradient-to-br from-primary-50 to-blue-50 rounded-xl p-5 border border-primary-100">
+                    <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-primary-700 text-lg">{item.value}</div>
+                    <div className="text-xs text-surface-500 mt-0.5">{item.sub}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Additional Perks &amp; Benefits</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-surface-600">
+                  {[
+                    'Dearness Allowance (DA) – revised bi-annually',
+                    'House Rent Allowance (HRA) – based on posting city',
+                    'Travel Allowance (TA)',
+                    'Medical allowance and health benefits',
+                    'Uniform and kit allowance',
+                    'Leave Travel Concession (LTC)',
+                    'National Pension System (NPS)',
+                    'Annual increment as per 7th Pay Commission',
+                    'Job security with promotion opportunities',
+                    'Police welfare fund and canteen facilities',
+                  ].map((b, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold mt-0.5">✓</span>{b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">How to Apply</h2>
+              <div className="card p-5 mb-4">
+                <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                  ⚠️ The application window for the 2025 cycle closed on <strong>28 June 2025</strong>. The steps below are for reference when the next cycle opens.
+                </p>
+                <ol className="space-y-3">
+                  {[
+                    { title: 'Visit the Official CSBC Website', desc: 'Go to csbc.bihar.gov.in — the only official portal for Bihar Police Constable recruitment. Avoid third-party sites.' },
+                    { title: 'Register and Create an Account', desc: 'Click on the recruitment notification link. Register using your mobile number and email address to create a candidate login.' },
+                    { title: 'Fill the Application Form', desc: 'Log in and fill in your personal details, educational qualifications, category, address, and other required information carefully. Ensure all details match your documents.' },
+                    { title: 'Upload Documents', desc: 'Upload a recent passport-size photograph, your signature, and scanned copies of 10th and 12th certificates in the prescribed format and file size.' },
+                    { title: 'Pay the Application Fee', desc: 'General / OBC / EBC: ₹675 | SC / ST (Bihar domicile): ₹180. Payment must be made online via Debit Card, Credit Card, or Net Banking.' },
+                    { title: 'Submit and Download Confirmation', desc: 'Review all details before final submission. After submitting, download and print the filled application form and fee receipt for your records.' },
+                  ].map((item, i) => (
+                    <li key={i} className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center text-xs font-bold">{i + 1}</div>
+                      <div>
+                        <div className="font-semibold text-sm text-surface-800">{item.title}</div>
+                        <div className="text-sm text-surface-600 mt-0.5">{item.desc}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3-Month Study Plan</h2>
+              <div className="space-y-4">
+                {[
+                  {
+                    month: 'Month 1 – Build the Foundation',
+                    color: 'blue',
+                    tasks: [
+                      'Hindi: cover grammar basics — Sandhi, Samas, antonyms, synonyms, and idioms daily',
+                      'Bihar GK: cover Bihar history, geography, state government schemes, districts, and culture',
+                      'Maths: number system, percentage, profit & loss, SI/CI — 20 questions daily',
+                      'General Science: cover 10th-level Physics, Chemistry, and Biology from NCERT',
+                    ],
+                  },
+                  {
+                    month: 'Month 2 – Depth + Practice',
+                    color: 'orange',
+                    tasks: [
+                      'Current Affairs: read daily newspaper or watch news; maintain a monthly GK diary',
+                      'English: focus on grammar rules, vocabulary, and comprehension passages',
+                      'Social Science: revise Indian and Bihar history, Constitution basics, geography',
+                      'Take one full 100-question mock test every week under timed conditions',
+                    ],
+                  },
+                  {
+                    month: 'Month 3 – Revision + Physical Fitness',
+                    color: 'emerald',
+                    tasks: [
+                      'Full syllabus revision with focus on Bihar-specific GK and current affairs',
+                      'Solve previous year Bihar Police Constable papers to understand question patterns',
+                      'Physical training: build running stamina — target 1 mile under 6 min (male)',
+                      'Speed drills: aim to solve all 100 questions within 90 minutes, leaving time to review',
+                    ],
+                  },
+                ].map((m, i) => (
+                  <div key={i} className={`card p-5 border-l-4 ${m.color === 'blue' ? 'border-blue-400' : m.color === 'orange' ? 'border-orange-400' : 'border-emerald-400'}`}>
+                    <h3 className="font-heading font-semibold text-surface-800 mb-3">{m.month}</h3>
+                    <ul className="space-y-1.5">
+                      {m.tasks.map((t, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className={`mt-0.5 font-bold ${m.color === 'blue' ? 'text-blue-500' : m.color === 'orange' ? 'text-orange-500' : 'text-emerald-500'}`}>→</span>{t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Best Books for Preparation</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { subject: 'General Knowledge + Bihar GK', book: "Lucent's General Knowledge", author: 'Lucent Publications' },
+                  { subject: 'Bihar-specific GK', book: 'Bihar Samanya Gyan', author: 'Arihant / Prabhat Prakashan' },
+                  { subject: 'General Hindi', book: 'Samanya Hindi', author: 'Dr. Hardev Bahri / Arihant' },
+                  { subject: 'Mathematics (10th level)', book: 'Quantitative Aptitude', author: 'R.S. Aggarwal' },
+                  { subject: 'General Science', book: 'Lucent General Science', author: 'Lucent Publications' },
+                  { subject: 'Previous Year Papers', book: 'Bihar Police Constable Solved Papers', author: 'Arihant / Kiran Publications' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200 flex gap-3">
+                    <div className="text-2xl">📗</div>
+                    <div>
+                      <div className="font-semibold text-sm text-surface-800">{item.book}</div>
+                      <div className="text-xs text-surface-500">{item.author}</div>
+                      <div className="text-xs text-primary-500 mt-0.5">{item.subject}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-surface-400 mt-3">* These books are widely used by successful Bihar Police aspirants. Check your local bookstore or online marketplaces for the latest editions.</p>
+            </section>
+
+            {/* EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Expert Tips – Preparation Strategy</h2>
+              <div className="space-y-3">
+                {[
+                  { icon: '🎯', tip: 'Hindi is your highest-scoring subject', desc: 'With 25 marks, Hindi carries the most weight of any single subject. Candidates who master grammar — Sandhi, Samas, idioms, and comprehension — often gain a decisive edge over others on the merit list.' },
+                  { icon: '🌏', tip: 'Study Bihar-specific GK separately', desc: 'Questions on Bihar history, districts, rivers, government schemes (like Mukhyamantri Kanya Utthan Yojana), and state culture are direct marks. Most general GK books do not cover this — use a dedicated Bihar GK book.' },
+                  { icon: '✅', tip: 'Attempt all 100 questions — no negative marking', desc: 'There is zero negative marking in the Bihar Police Constable exam. Never leave any question blank. Use elimination strategy on questions you are unsure about and always mark your best guess.' },
+                  { icon: '🏃', tip: 'Begin physical training as early as possible', desc: 'The PET requires running 1 mile in 6 minutes (males) — that demands real aerobic fitness. Start with 2–3 km runs and gradually increase pace. Physical fitness cannot be built in a week.' },
+                  { icon: '📊', tip: 'Solve previous year question papers', desc: 'Past Bihar Police Constable papers reveal the actual question style, difficulty level, and which topics recur most often. This also builds speed — crucial since 100 questions in 120 minutes requires steady pacing.' },
+                  { icon: '📰', tip: 'Follow Bihar current affairs daily', desc: 'GK and Current Affairs together account for 15 marks. Focus on Bihar-specific news: government schemes, budget highlights, sports achievements, and appointments in Bihar. A simple daily newspaper habit over 3 months is enough.' },
+                ].map((item, i) => (
+                  <div key={i} className="card p-4 flex gap-4">
+                    <div className="text-2xl flex-shrink-0">{item.icon}</div>
+                    <div>
+                      <div className="font-semibold text-sm text-surface-800 mb-0.5">{item.tip}</div>
+                      <div className="text-sm text-surface-600">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* INTERNAL LINKS */}
+            <section className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Related Exams &amp; Resources</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { href: '/exams/up-police-constable', label: 'UP Police Constable 2026', desc: '32,679 vacancies • Exam: 8–10 June 2026' },
+                  { href: '/exams/ssc-gd-constable', label: 'SSC GD Constable 2026', desc: '25,487 vacancies • CBT: Apr–May 2026' },
+                  { href: '/exams/bihar-police-si', label: 'Bihar Police SI (Daroga)', desc: 'Sub Inspector level • BPSSC' },
+                  { href: '/exams/ssc-cpo', label: 'SSC CPO 2026', desc: 'SI in Delhi Police & CAPF' },
+                ].map((item, i) => (
+                  <Link key={i} href={item.href} className="card p-4 hover:border-primary-300 group">
+                    <div className="font-semibold text-sm text-surface-800 group-hover:text-primary-600">{item.label}</div>
+                    <div className="text-xs text-surface-500 mt-0.5">{item.desc}</div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQ */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Frequently Asked Questions (FAQs)</h2>
+              <div className="space-y-3">
+                {faqs.map((item, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-semibold text-surface-800 mb-2 text-sm">Q{i + 1}: {item.q}</h3>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-6 space-y-6">
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 On This Page</div>
+                <ol className="space-y-1.5 list-decimal list-inside">
+                  {toc.map((s) => (
+                    <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline hover:text-primary-700">{s.label}</a></li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">⚡ Quick Facts</div>
+                <dl className="space-y-3 text-sm">
+                  {[
+                    { label: 'Conducting Body', value: 'CSBC Bihar' },
+                    { label: 'Vacancies', value: '19,838' },
+                    { label: 'Notification', value: '28 May 2025' },
+                    { label: 'Qualification', value: '12th Pass' },
+                    { label: 'Age (General)', value: '18–25 years' },
+                    { label: 'Total Questions', value: '100 MCQs' },
+                    { label: 'Total Marks', value: '100 marks' },
+                    { label: 'Negative Marking', value: 'None' },
+                    { label: 'Exam Duration', value: '2 hours' },
+                    { label: 'Basic Pay', value: '₹21,700/month' },
+                    { label: 'Official Website', value: 'csbc.bihar.gov.in' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex justify-between border-b border-surface-100 pb-2">
+                      <dt className="text-surface-500">{item.label}</dt>
+                      <dd className="font-semibold text-surface-800 text-right max-w-[120px]">{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+
+              <div className="card p-5 bg-gradient-to-br from-primary-50 to-blue-50 border-primary-100">
+                <div className="text-xs font-semibold uppercase tracking-wide text-primary-400 mb-3">🔗 Official Links</div>
+                <div className="space-y-2">
+                  <a href="https://csbc.bihar.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800 font-medium">
+                    <span>🌐</span> csbc.bihar.gov.in (Official)
+                  </a>
+                  <a href="https://csbc.bihar.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800">
+                    <span>📄</span> Download Notification PDF
+                  </a>
+                  <a href="https://csbc.bihar.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-800">
+                    <span>📝</span> Apply Online
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
 // ─── ENHANCED BASIC EXAM PAGE (with category-specific content) ──────────────
 function BasicExamPage({ exam }: { exam: any }) {
   const catContent = getCategoryContent(exam.category);
