@@ -95,6 +95,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rrb-ntpc') {
+    return {
+      title: 'RRB NTPC 2026 – Syllabus, Exam Date, Vacancies & Guide | TaiyarHo',
+      description: 'RRB NTPC 2026: 8,868 vacancies (CEN 06/2025 & 07/2025). UG CBT 1 exam from May 7–June 21, 2026. Check syllabus, exam pattern, eligibility (18–33 yrs), salary ₹19,900–₹35,400 and free preparation resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/rrb-ntpc/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -117,6 +125,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
 
   if (detailed && detailed.slug === 'ssc-cgl') return <SscCglPage exam={detailed} />;
   if (detailed && detailed.slug === 'ssc-gd-constable') return <SscGdPage exam={detailed} />;
+  if (detailed && detailed.slug === 'rrb-ntpc') return <RrbNtpcPage exam={detailed} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
@@ -6764,6 +6773,789 @@ function IbpsRrbClerkPage({ exam }: { exam: any }) {
             </div>
           </div>
 
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── RRB NTPC RICH PAGE ──────────────────────────────────────────────────────
+function RrbNtpcPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',      label: 'Overview' },
+    { id: 'latest-update', label: 'Latest Update 2025-26' },
+    { id: 'dates',         label: 'Important Dates' },
+    { id: 'eligibility',   label: 'Eligibility Criteria' },
+    { id: 'vacancies',     label: 'Vacancies & Posts' },
+    { id: 'exam-pattern',  label: 'Exam Pattern' },
+    { id: 'syllabus',      label: 'Syllabus' },
+    { id: 'salary',        label: 'Salary & Benefits' },
+    { id: 'study-plan',    label: 'Study Plan' },
+    { id: 'books',         label: 'Best Books' },
+    { id: 'resources',     label: 'Free Resources' },
+    { id: 'tips',          label: 'Expert Tips' },
+    { id: 'faq',           label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    // CEN 05/2024 – Graduate cycle (completed)
+    { event: 'CEN 05/2024 (Graduate) Notification Released',    date: '13 September 2024',      status: 'done' },
+    { event: 'CEN 05/2024 Online Application Window',           date: '14 Sep – 13 Oct 2024',   status: 'done' },
+    { event: 'CEN 05/2024 CBT 1 Exam (Graduate)',              date: '5 – 23 June 2025',        status: 'done' },
+    // CEN 06/2024 – UG cycle (completed)
+    { event: 'CEN 06/2024 (UG) CBT 1 Result Declared',         date: 'November 2025',           status: 'done' },
+    { event: 'CEN 06/2024 CBT 2 Exam (UG)',                    date: '20 December 2025',        status: 'done' },
+    // NEW – CEN 06/2025 (Graduate) & CEN 07/2025 (UG)
+    { event: 'CEN 06/2025 (Graduate) Notification Released',   date: '20 October 2025',         status: 'done' },
+    { event: 'CEN 07/2025 (UG) Notification Released',         date: 'October / November 2025', status: 'done' },
+    { event: 'CEN 06/2025 + 07/2025 Application Window',       date: 'Oct – Dec 2025',          status: 'done' },
+    { event: 'CBT 1 Exam – Graduate Level (CEN 06/2025)',      date: '16 – 27 March 2026',      status: 'done' },
+    { event: 'CBT 1 Exam – Undergraduate Level (CEN 07/2025)', date: '7 May – 21 June 2026',    status: 'upcoming' },
+    { event: 'CBT 1 Answer Key (CEN 06/2025 Graduate)',        date: 'To be notified (TBN)',     status: 'tbn' },
+    { event: 'CBT 1 Result (CEN 06/2025 Graduate)',            date: 'To be notified (TBN)',     status: 'tbn' },
+    { event: 'CBT 2 Exam – Graduate Level',                    date: 'To be notified (TBN)',     status: 'tbn' },
+    { event: 'Typing Skill Test / CBAT',                       date: 'To be notified (TBN)',     status: 'tbn' },
+    { event: 'Document Verification & Medical',                date: 'To be notified (TBN)',     status: 'tbn' },
+  ];
+
+  const graduatePosts = [
+    { post: 'Station Master',                      payLevel: 'Level 6', basicPay: '₹35,400', qualification: 'Graduation' },
+    { post: 'Goods Guard (Goods Train Manager)',   payLevel: 'Level 5', basicPay: '₹29,200', qualification: 'Graduation' },
+    { post: 'Senior Commercial cum Ticket Clerk', payLevel: 'Level 5', basicPay: '₹29,200', qualification: 'Graduation' },
+    { post: 'Junior Account Assistant cum Typist',payLevel: 'Level 4', basicPay: '₹25,500', qualification: 'Graduation' },
+    { post: 'Senior Clerk cum Typist',             payLevel: 'Level 4', basicPay: '₹25,500', qualification: 'Graduation' },
+    { post: 'Traffic Assistant',                   payLevel: 'Level 4', basicPay: '₹25,500', qualification: 'Graduation' },
+    { post: 'Commercial Apprentice',               payLevel: 'Level 4', basicPay: '₹25,500', qualification: 'Graduation' },
+  ];
+
+  const ugPosts = [
+    { post: 'Commercial cum Ticket Clerk',   payLevel: 'Level 3', basicPay: '₹21,700', qualification: '12th Pass' },
+    { post: 'Junior Clerk cum Typist',       payLevel: 'Level 2', basicPay: '₹19,900', qualification: '12th Pass' },
+    { post: 'Accounts Clerk cum Typist',     payLevel: 'Level 2', basicPay: '₹19,900', qualification: '12th Pass' },
+    { post: 'Trains Clerk',                  payLevel: 'Level 2', basicPay: '₹19,900', qualification: '12th Pass' },
+    { post: 'Junior Time Keeper',            payLevel: 'Level 2', basicPay: '₹19,900', qualification: '12th Pass' },
+  ];
+
+  const cbt1Pattern = [
+    { section: 'Mathematics',                           questions: 30, marks: 30 },
+    { section: 'General Intelligence & Reasoning',      questions: 30, marks: 30 },
+    { section: 'General Awareness',                     questions: 40, marks: 40 },
+  ];
+
+  const cbt2Pattern = [
+    { section: 'Mathematics',                           questions: 35, marks: 35 },
+    { section: 'General Intelligence & Reasoning',      questions: 35, marks: 35 },
+    { section: 'General Awareness',                     questions: 50, marks: 50 },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📐 Mathematics',
+      topics: [
+        'Number System, Decimals, Fractions, LCM & HCF',
+        'Percentage, Ratio & Proportion, Square Root',
+        'Profit & Loss, Discount',
+        'Simple & Compound Interest',
+        'Time & Work, Time & Distance, Pipes & Cisterns',
+        'Trains, Boats & Streams',
+        'Algebra, Geometry, Mensuration',
+        'Trigonometry, Elementary Statistics',
+        'Data Interpretation – Tables, Pie, Bar & Line Charts',
+      ],
+    },
+    {
+      subject: '🧠 General Intelligence & Reasoning',
+      topics: [
+        'Number, Alphabetical & Mixed Series',
+        'Analogies, Classification',
+        'Coding-Decoding, Mathematical Operations',
+        'Venn Diagrams, Syllogisms',
+        'Puzzles, Seating Arrangement',
+        'Blood Relations, Direction Test',
+        'Statement-Conclusion, Decision Making',
+        'Non-Verbal: Figure Series, Mirror Image, Cube & Dice',
+        'Ranking, Calendar, Clock',
+      ],
+    },
+    {
+      subject: '🌍 General Awareness',
+      topics: [
+        'Indian History – Ancient, Medieval, Modern (Freedom Struggle)',
+        'Indian & World Geography',
+        'Indian Polity – Constitution, Parliament, Judiciary',
+        'Indian Economy – Budget, Banking, Financial Awareness',
+        'General Science – Physics, Chemistry, Biology (Class 10 level)',
+        'Current Affairs – National & International (last 12 months)',
+        'Indian Railways – Zones, HQs, History, Milestones',
+        'Awards, Sports, Books, Important Days',
+        'Space, Defence, Science & Technology',
+        'Computer Basics',
+      ],
+    },
+  ];
+
+  const salaryTable = [
+    { post: 'Station Master',                  payLevel: 'Level 6', basicPay: '₹35,400', grossSalary: '~₹55,000–₹62,000' },
+    { post: 'Goods Guard',                     payLevel: 'Level 5', basicPay: '₹29,200', grossSalary: '~₹46,000–₹52,000' },
+    { post: 'Sr. Commercial cum Ticket Clerk', payLevel: 'Level 5', basicPay: '₹29,200', grossSalary: '~₹46,000–₹52,000' },
+    { post: 'Jr. Account Assistant / Sr. Clerk',payLevel: 'Level 4', basicPay: '₹25,500', grossSalary: '~₹40,000–₹46,000' },
+    { post: 'Commercial cum Ticket Clerk',      payLevel: 'Level 3', basicPay: '₹21,700', grossSalary: '~₹33,000–₹38,000' },
+    { post: 'Jr. Clerk / Accounts Clerk / Trains Clerk', payLevel: 'Level 2', basicPay: '₹19,900', grossSalary: '~₹28,000–₹33,000' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the RRB NTPC 2025-26 total vacancy?',
+      a: 'RRB NTPC 2025-26 has a total of 8,868 vacancies — 5,810 for graduate-level posts (CEN 06/2025) and 3,058 for undergraduate-level posts (CEN 07/2025) — across all 21 Railway Recruitment Board zones.',
+    },
+    {
+      q: 'Is RRB NTPC for 12th pass or graduates?',
+      a: 'Both. Undergraduate posts (Level 2–3) like Junior Clerk, Accounts Clerk, Trains Clerk, and Commercial cum Ticket Clerk require 12th pass with age 18–30 years. Graduate posts (Level 4–6) like Station Master, Goods Guard, and Commercial Apprentice require graduation with age 18–33 years.',
+    },
+    {
+      q: 'What is the RRB NTPC 2026 exam date?',
+      a: 'The Graduate level CBT 1 (CEN 06/2025) was conducted from 16–27 March 2026. The Undergraduate level CBT 1 (CEN 07/2025) is scheduled from 7 May to 21 June 2026.',
+    },
+    {
+      q: 'Is there negative marking in RRB NTPC?',
+      a: 'Yes. There is a negative marking of 1/3rd (0.33 marks) for each wrong answer in both CBT-1 and CBT-2. Unattempted questions carry no penalty.',
+    },
+    {
+      q: 'What are the perks of RRB NTPC Railway jobs?',
+      a: 'Railway employees enjoy free rail passes for self and family, medical facilities at Railway hospitals, subsidised housing or HRA, pension under NPS, LTC (Leave Travel Concession), Children Education Allowance (CEA), and several other allowances that often double the effective take-home pay.',
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home',  item: 'https://taiyarho.in/' },
+      { '@type': 'ListItem', position: 2, name: 'Exams', item: 'https://taiyarho.in/exams/' },
+      { '@type': 'ListItem', position: 3, name: 'RRB NTPC 2025-26 Complete Guide', item: 'https://taiyarho.in/exams/rrb-ntpc/' },
+    ],
+  };
+
+  const statusBadge = (s: string) => {
+    if (s === 'done')     return <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-700">✅ Done</span>;
+    if (s === 'upcoming') return <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-700">🔔 Upcoming</span>;
+    return                       <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-700">⏳ TBN</span>;
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
+      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3a7a] to-[#1a56db] text-white py-10 sm:py-14">
+        <div className="container-main">
+          <nav className="text-xs text-blue-200 mb-4 flex items-center gap-1.5 flex-wrap">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span>/</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span>/</span>
+            <span className="text-white font-medium">RRB NTPC 2025-26</span>
+          </nav>
+
+          <div className="flex items-start gap-3 mb-3">
+            <span className="bg-orange-500 text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide shrink-0">Railway</span>
+            <span className="bg-emerald-500 text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide shrink-0">Central Govt</span>
+          </div>
+
+          <h1 className="text-2xl sm:text-4xl font-heading font-bold leading-tight mb-3">
+            RRB NTPC 2025-26 – Complete Guide
+          </h1>
+          <p className="text-blue-100 text-sm sm:text-base max-w-2xl mb-6">
+            Railway Recruitment Board Non-Technical Popular Categories (RRB NTPC) recruits for 8,868 vacancies in 2025-26 across 21 zones. UG CBT 1 exam is live — running <strong className="text-white">7 May – 21 June 2026</strong>. Full syllabus, exam pattern, eligibility, salary and free resources — all in one place.
+          </p>
+
+          {/* 4-grid highlight box */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Total Vacancies', value: '8,868', icon: '📋', sub: 'CEN 06 & 07 / 2025' },
+              { label: 'UG CBT 1 Exam', value: 'May 7 – Jun 21', icon: '📅', sub: '2026 (Live!)' },
+              { label: 'Age Limit', value: '18–33 yrs', icon: '🎂', sub: 'Graduate posts' },
+              { label: 'Starting Salary', value: '₹19,900/mo', icon: '💰', sub: 'Up to ₹35,400' },
+            ].map((h) => (
+              <div key={h.label} className="bg-white/10 backdrop-blur rounded-xl p-3 sm:p-4 border border-white/20">
+                <div className="text-xl mb-1">{h.icon}</div>
+                <div className="font-heading font-bold text-white text-sm sm:text-base">{h.value}</div>
+                <div className="text-blue-200 text-xs mt-0.5">{h.label}</div>
+                <div className="text-blue-300 text-xs">{h.sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-8 sm:py-12">
+        <div className="flex flex-col lg:flex-row gap-8">
+
+          {/* ── MAIN CONTENT ─────────────────────────────────────────────────── */}
+          <article className="flex-1 min-w-0">
+
+            {/* Quick Navigation */}
+            <nav id="quick-nav" className="card p-4 mb-8 bg-blue-50 border border-blue-100">
+              <p className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-3">📌 Quick Navigation</p>
+              <div className="flex flex-wrap gap-2">
+                {toc.map((t) => (
+                  <a key={t.id} href={`#${t.id}`} className="text-xs bg-white border border-blue-200 text-blue-700 hover:bg-blue-700 hover:text-white rounded-full px-3 py-1 transition-colors">
+                    {t.label}
+                  </a>
+                ))}
+              </div>
+            </nav>
+
+            {/* 1 – Overview */}
+            <section id="overview" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">1 What is RRB NTPC?</h2>
+              <p className="text-surface-600 mb-3">
+                RRB NTPC (Non-Technical Popular Categories) is a recruitment conducted by the 21 Railway Recruitment Boards (RRBs) of India to fill clerical, supervisory, and operational posts in Indian Railways — the world's fourth-largest rail network and one of the largest employers on the planet.
+              </p>
+              <p className="text-surface-600 mb-3">
+                Unlike Group D (Level 1 manual posts), NTPC covers <strong>Group C posts</strong> — office-based and station-operation roles like Station Master, Goods Guard, Commercial Apprentice, and various clerk cadres. These jobs offer excellent pay, job security, non-contributory perks, and fast promotion tracks.
+              </p>
+              <p className="text-surface-600 mb-4">
+                The 2025-26 cycle is split into two notifications — <strong>CEN 06/2025</strong> for Graduate posts and <strong>CEN 07/2025</strong> for Undergraduate posts — with a combined total of <strong>8,868 vacancies</strong>.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <tbody>
+                    {[
+                      { label: 'Conducting Body',    value: 'Railway Recruitment Boards (21 RRBs)' },
+                      { label: 'Notification',       value: 'CEN 06/2025 (Graduate) + CEN 07/2025 (UG)' },
+                      { label: 'Total Vacancies',    value: '8,868 (5,810 Graduate + 3,058 UG)' },
+                      { label: 'Level',              value: 'Central Government (Group C)' },
+                      { label: 'Frequency',          value: 'Irregular (every 2–4 years)' },
+                      { label: 'Application Fee',    value: '₹500 (General/EWS/OBC) | ₹250 (SC/ST/Female/PwBD/EBC)' },
+                      { label: 'Official Website',   value: 'indianrailways.gov.in + regional RRB sites' },
+                    ].map((row) => (
+                      <tr key={row.label} className="border-b border-surface-100 even:bg-surface-50">
+                        <td className="px-4 py-2.5 font-medium text-surface-700 w-40 shrink-0">{row.label}</td>
+                        <td className="px-4 py-2.5 text-surface-600">{row.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 2 – Latest Update */}
+            <section id="latest-update" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">2 RRB NTPC Latest Update 2025-26</h2>
+              <div className="bg-blue-50 border-l-4 border-blue-500 rounded-r-xl p-4 mb-4">
+                <p className="font-semibold text-blue-800 mb-1">💡 Key Update – May 2026</p>
+                <p className="text-blue-700 text-sm">
+                  The <strong>Graduate Level CBT 1 (CEN 06/2025)</strong> was successfully conducted from <strong>16–27 March 2026</strong>. The <strong>Undergraduate Level CBT 1 (CEN 07/2025)</strong> is currently underway — exam dates are <strong>7–9 May and 13–21 June 2026</strong>. If you appeared in the Graduate exam, the result is awaited. If you are appearing in the UG exam, download your admit card from your regional RRB portal immediately.
+                </p>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                <strong>⚠️ Note:</strong> There are two separate active NTPC cycles. CEN 05/2024 (Graduate, 8,113 vacancies) is at the post-CBT1 stage. CEN 06/2024 (UG, 3,445 vacancies) had its CBT 2 in December 2025. The <strong>new 2025-26 cycle</strong> (CEN 06/2025 + 07/2025) is what this page primarily covers — with 8,868 fresh vacancies.
+              </div>
+            </section>
+
+            {/* 3 – Dates */}
+            <section id="dates" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">3 📅 RRB NTPC Important Dates 2025-26</h2>
+              <p className="text-surface-500 text-sm mb-4">⚠️ TBN = To Be Notified. Dates marked "Done" are confirmed official dates.</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Event</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Date</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((d, i) => (
+                      <tr key={i} className="border-t border-surface-100 even:bg-surface-50">
+                        <td className="px-4 py-2.5 text-surface-700">{d.event}</td>
+                        <td className="px-4 py-2.5 text-surface-600">{d.date}</td>
+                        <td className="px-4 py-2.5">{statusBadge(d.status)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 4 – Eligibility */}
+            <section id="eligibility" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">4 Eligibility Criteria</h2>
+
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">🪪 Nationality</h3>
+                  <p className="text-surface-600 text-sm">Candidate must be a citizen of India. Citizens of Nepal, Bhutan, or Tibetan refugees who came before 1 January 1962 are also eligible with a certificate of eligibility from the Government of India.</p>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">🎓 Educational Qualification</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50">
+                        <tr>
+                          <th className="text-left px-3 py-2 font-medium text-surface-700">Post Type</th>
+                          <th className="text-left px-3 py-2 font-medium text-surface-700">Minimum Qualification</th>
+                          <th className="text-left px-3 py-2 font-medium text-surface-700">Example Posts</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-t border-surface-100">
+                          <td className="px-3 py-2 font-medium text-blue-700">Graduate Level</td>
+                          <td className="px-3 py-2 text-surface-600">Bachelor's degree from a recognised university</td>
+                          <td className="px-3 py-2 text-surface-600">Station Master, Goods Guard, Commercial Apprentice</td>
+                        </tr>
+                        <tr className="border-t border-surface-100 bg-surface-50">
+                          <td className="px-3 py-2 font-medium text-blue-700">Undergraduate Level</td>
+                          <td className="px-3 py-2 text-surface-600">12th Pass (+2 Stage) from a recognised board</td>
+                          <td className="px-3 py-2 text-surface-600">Jr. Clerk, Trains Clerk, Accounts Clerk, Ticket Clerk</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-500 mt-2">* Some posts have additional requirements (e.g., Science stream, typing speed). Check the official notification PDF for the specific post you are targeting.</p>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">📋 Age Limit</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50">
+                        <tr>
+                          <th className="text-left px-3 py-2 font-medium text-surface-700">Category</th>
+                          <th className="text-left px-3 py-2 font-medium text-surface-700">UG Posts (12th)</th>
+                          <th className="text-left px-3 py-2 font-medium text-surface-700">Graduate Posts</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { cat: 'General / EWS', ug: '18 – 30 years', grad: '18 – 33 years' },
+                          { cat: 'OBC (NCL)',      ug: '18 – 33 years (+3)', grad: '18 – 36 years (+3)' },
+                          { cat: 'SC / ST',        ug: '18 – 35 years (+5)', grad: '18 – 38 years (+5)' },
+                          { cat: 'PwBD (General)', ug: 'Up to 40 years (+10)', grad: 'Up to 43 years (+10)' },
+                          { cat: 'Ex-Servicemen',  ug: 'Service + 3 years', grad: 'Service + 3 years' },
+                        ].map((row) => (
+                          <tr key={row.cat} className="border-t border-surface-100 even:bg-surface-50">
+                            <td className="px-3 py-2 font-medium text-surface-700">{row.cat}</td>
+                            <td className="px-3 py-2 text-surface-600">{row.ug}</td>
+                            <td className="px-3 py-2 text-surface-600">{row.grad}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* 5 – Vacancies */}
+            <section id="vacancies" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">5 Vacancies & Posts 2025-26</h2>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5 text-sm text-emerald-800">
+                <strong>📋 Total 8,868 Vacancies</strong> — 5,810 for Graduate posts (CEN 06/2025) and 3,058 for Undergraduate posts (CEN 07/2025) across all 21 RRB zones in India.
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">A. Graduate Level Posts (CEN 06/2025)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Post Name</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Pay Level</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Basic Pay</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Qualification</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {graduatePosts.map((p, i) => (
+                      <tr key={i} className="border-t border-surface-100 even:bg-surface-50">
+                        <td className="px-4 py-2.5 font-medium text-surface-800">{p.post}</td>
+                        <td className="px-4 py-2.5 text-surface-600">{p.payLevel}</td>
+                        <td className="px-4 py-2.5 text-emerald-700 font-medium">{p.basicPay}</td>
+                        <td className="px-4 py-2.5 text-surface-600">{p.qualification}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">B. Undergraduate Level Posts (CEN 07/2025)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Post Name</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Pay Level</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Basic Pay</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Qualification</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {ugPosts.map((p, i) => (
+                      <tr key={i} className="border-t border-surface-100 even:bg-surface-50">
+                        <td className="px-4 py-2.5 font-medium text-surface-800">{p.post}</td>
+                        <td className="px-4 py-2.5 text-surface-600">{p.payLevel}</td>
+                        <td className="px-4 py-2.5 text-emerald-700 font-medium">{p.basicPay}</td>
+                        <td className="px-4 py-2.5 text-surface-600">{p.qualification}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 6 – Exam Pattern */}
+            <section id="exam-pattern" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">6 RRB NTPC Exam Pattern 2025-26</h2>
+              <p className="text-surface-600 mb-5 text-sm">The selection process has <strong>4 stages</strong>: CBT-1 → CBT-2 → Typing Test / CBAT → Document Verification & Medical Exam.</p>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2 text-base bg-blue-50 px-4 py-2 rounded-lg">Stage 1: CBT-1 (First Stage Computer Based Test)</h3>
+                  <div className="overflow-x-auto rounded-xl border border-surface-200">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50">
+                        <tr>
+                          <th className="text-left px-4 py-3 font-semibold text-surface-700">Subject</th>
+                          <th className="text-center px-4 py-3 font-semibold text-surface-700">Questions</th>
+                          <th className="text-center px-4 py-3 font-semibold text-surface-700">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {cbt1Pattern.map((r, i) => (
+                          <tr key={i} className="border-t border-surface-100 even:bg-surface-50">
+                            <td className="px-4 py-2.5 text-surface-700">{r.section}</td>
+                            <td className="px-4 py-2.5 text-center text-surface-600">{r.questions}</td>
+                            <td className="px-4 py-2.5 text-center font-medium text-surface-800">{r.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="border-t-2 border-surface-300 bg-blue-50">
+                          <td className="px-4 py-2.5 font-bold text-surface-900">Total</td>
+                          <td className="px-4 py-2.5 text-center font-bold text-surface-900">100</td>
+                          <td className="px-4 py-2.5 text-center font-bold text-surface-900">100</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-500 mt-2 px-1">Duration: 90 minutes (120 mins for PwBD with scribe) | Negative Marking: 1/3 mark per wrong answer | Normalisation applies (multi-shift exam)</p>
+                </div>
+
+                <div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2 text-base bg-blue-50 px-4 py-2 rounded-lg">Stage 2: CBT-2 (Second Stage Computer Based Test)</h3>
+                  <div className="overflow-x-auto rounded-xl border border-surface-200">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50">
+                        <tr>
+                          <th className="text-left px-4 py-3 font-semibold text-surface-700">Subject</th>
+                          <th className="text-center px-4 py-3 font-semibold text-surface-700">Questions</th>
+                          <th className="text-center px-4 py-3 font-semibold text-surface-700">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {cbt2Pattern.map((r, i) => (
+                          <tr key={i} className="border-t border-surface-100 even:bg-surface-50">
+                            <td className="px-4 py-2.5 text-surface-700">{r.section}</td>
+                            <td className="px-4 py-2.5 text-center text-surface-600">{r.questions}</td>
+                            <td className="px-4 py-2.5 text-center font-medium text-surface-800">{r.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="border-t-2 border-surface-300 bg-blue-50">
+                          <td className="px-4 py-2.5 font-bold text-surface-900">Total</td>
+                          <td className="px-4 py-2.5 text-center font-bold text-surface-900">120</td>
+                          <td className="px-4 py-2.5 text-center font-bold text-surface-900">120</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-500 mt-2 px-1">Duration: 90 minutes | Negative Marking: 1/3 mark per wrong answer | CBT-2 is post-specific — candidates are shortlisted based on post preference and CBT-1 merit.</p>
+                </div>
+
+                <div className="card p-4 border-l-4 border-orange-400">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Stage 3: Typing Skill Test / CBAT</h3>
+                  <p className="text-surface-600 text-sm">Posts requiring typing (Clerk, Typist cadre) undergo a Typing Skill Test: English 30 WPM or Hindi 25 WPM on a computer. Station Master and Traffic Assistant posts have a Computer Based Aptitude Test (CBAT) instead of typing — tests spatial reasoning and signal awareness. Both are <strong>qualifying only</strong> (marks not added to final merit).</p>
+                </div>
+              </div>
+            </section>
+
+            {/* 7 – Syllabus */}
+            <section id="syllabus" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">7 RRB NTPC Syllabus 2025-26</h2>
+              <p className="text-surface-600 mb-5 text-sm">The CBT-1 and CBT-2 syllabus is largely the same — CBT-2 has a higher difficulty level. GA carries the most marks and is the biggest differentiator.</p>
+              <div className="space-y-4">
+                {syllabus.map((s) => (
+                  <div key={s.subject} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-3">{s.subject}</h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                      {s.topics.map((t, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="text-primary-500 mt-0.5 shrink-0">→</span>
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 8 – Salary */}
+            <section id="salary" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">8 💰 RRB NTPC Salary & Benefits</h2>
+              <p className="text-surface-600 mb-4 text-sm">Salaries follow the 7th Pay Commission Pay Matrix. Gross salary (basic + DA + HRA + TA) is significantly higher than the basic pay shown below.</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Post</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Pay Level</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Basic Pay</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Gross (Approx)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryTable.map((r, i) => (
+                      <tr key={i} className="border-t border-surface-100 even:bg-surface-50">
+                        <td className="px-4 py-2.5 font-medium text-surface-800">{r.post}</td>
+                        <td className="px-4 py-2.5 text-surface-600">{r.payLevel}</td>
+                        <td className="px-4 py-2.5 text-emerald-700 font-medium">{r.basicPay}</td>
+                        <td className="px-4 py-2.5 text-emerald-600 font-semibold">{r.grossSalary}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Perks & Allowances (Beyond Salary)</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { icon: '🚆', perk: 'Free Rail Passes', desc: 'For self and family across Indian Railways' },
+                  { icon: '🏠', perk: 'Housing / HRA',    desc: 'Railway quarters or HRA (8–24% of basic)' },
+                  { icon: '🏥', perk: 'Medical Benefits', desc: 'Railway hospitals and empanelled hospitals' },
+                  { icon: '📈', perk: 'NPS Pension',       desc: 'National Pension Scheme contributions' },
+                  { icon: '✈️', perk: 'LTC',              desc: 'Leave Travel Concession for family' },
+                  { icon: '📚', perk: 'CEA',              desc: 'Children Education Allowance up to 12th' },
+                ].map((p) => (
+                  <div key={p.perk} className="flex gap-3 items-start bg-emerald-50 border border-emerald-100 rounded-xl p-3">
+                    <span className="text-xl shrink-0">{p.icon}</span>
+                    <div>
+                      <div className="font-semibold text-surface-800 text-sm">{p.perk}</div>
+                      <div className="text-surface-500 text-xs">{p.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 9 – Study Plan */}
+            <section id="study-plan" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">9 6-Month Study Plan for RRB NTPC</h2>
+              <div className="space-y-3">
+                {[
+                  { month: 'Month 1', focus: 'Foundation', content: 'Maths: Number system, Percentage, Ratio, Average, LCM-HCF. Read Lucent GK Chapters 1–5. Start 30-min daily current affairs (The Hindu Summary / Inshorts).' },
+                  { month: 'Month 2', focus: 'Core Maths + Reasoning Basics', content: 'Maths: Profit/Loss, CI/SI, Time & Work, Time & Distance. Reasoning: Series, Analogies, Coding-Decoding, Venn Diagrams. Solve 50 GA questions daily.' },
+                  { month: 'Month 3', focus: 'Advanced Topics', content: 'Maths: Geometry, Mensuration, Trigonometry, DI. Reasoning: Puzzles, Seating Arrangement, Syllogisms, Blood Relations. Complete General Science (NCERT Class 6–10).' },
+                  { month: 'Month 4', focus: 'General Awareness Deep Dive', content: 'History, Geography, Polity, Economy from standard books. Indian Railways: 18 zones + HQs, milestones, recent budget announcements. Continue daily CA.' },
+                  { month: 'Month 5', focus: 'Mock Tests + PYQ Sprint', content: 'Minimum 1 full mock test per day. Solve last 5 years of RRB NTPC PYQs. Analyse every test for weak areas. Maintain an error log.' },
+                  { month: 'Month 6', focus: 'Revision + Final Push', content: '2–3 mocks per day. Revise all GA notes. Focus on Indian Railways GK and current affairs — they differentiate high scorers. Stay calm and consistent.' },
+                ].map((m, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="shrink-0 w-24 text-center">
+                      <div className="bg-primary-600 text-white text-xs font-bold rounded-full px-3 py-1">{m.month}</div>
+                      <div className="text-xs text-surface-500 mt-1">{m.focus}</div>
+                    </div>
+                    <div className="flex-1 bg-surface-50 border border-surface-200 rounded-xl p-3 text-sm text-surface-600">{m.content}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10 – Books */}
+            <section id="books" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">10 Best Books for RRB NTPC 2025-26</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-50">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Book Title</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Author / Publisher</th>
+                      <th className="text-left px-4 py-3 font-semibold text-surface-700">Subject</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { title: 'Fast Track Objective Arithmetic',     author: 'Rajesh Verma (Arihant)',   subject: 'Mathematics' },
+                      { title: 'Quantitative Aptitude',              author: 'R.S. Aggarwal (S. Chand)', subject: 'Mathematics' },
+                      { title: 'Verbal & Non-Verbal Reasoning',      author: 'R.S. Aggarwal (S. Chand)', subject: 'Reasoning' },
+                      { title: 'A Modern Approach to Verbal Reasoning', author: 'R.S. Aggarwal',        subject: 'Reasoning' },
+                      { title: "Lucent's General Knowledge",         author: 'Lucent Publications',      subject: 'GK & Static' },
+                      { title: "Lucent's General Science",           author: 'Lucent Publications',      subject: 'Science' },
+                      { title: 'NCERT Textbooks (Class 6–10)',       author: 'NCERT',                    subject: 'Science + History + Geography (Free)' },
+                      { title: 'RRB NTPC Previous Year Papers',      author: 'Kiran Prakashan / Arihant',subject: 'PYQs & Practice' },
+                    ].map((b, i) => (
+                      <tr key={i} className="border-t border-surface-100 even:bg-surface-50">
+                        <td className="px-4 py-2.5 font-medium text-surface-800">{b.title}</td>
+                        <td className="px-4 py-2.5 text-surface-600">{b.author}</td>
+                        <td className="px-4 py-2.5"><span className="badge-primary text-xs">{b.subject}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 11 – Free Resources */}
+            <section id="resources" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">11 Free Resources for RRB NTPC Preparation</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { name: 'RRB Official Websites',    type: 'Official',  url: 'https://www.rrbcdg.gov.in',                      desc: 'Notifications, admit cards, PYQ papers, and results' },
+                  { name: 'NCERT Textbooks (Free)',   type: 'Free PDF',  url: 'https://ncert.nic.in/textbook.php',              desc: 'Class 6–10 Science, History, Geography — core GA content' },
+                  { name: 'Exampur (YouTube)',         type: 'YouTube',   url: 'https://www.youtube.com/@Exampur__Official',     desc: 'Free daily live classes for Railway and SSC exams' },
+                  { name: 'Testbook RRB NTPC',        type: 'Mock Tests',url: 'https://testbook.com/rrb-ntpc',                  desc: 'Free and paid mock tests with detailed analysis' },
+                  { name: 'TaiyarHo Free Resources',  type: 'Guide',     url: '/resources',                                     desc: 'Curated free books, YouTube channels, and mock test links' },
+                  { name: 'Eligibility Checker Tool', type: 'Tool',      url: '/tools/age-calculator',                          desc: 'Check your age eligibility for RRB NTPC instantly' },
+                ].map((r, i) => (
+                  <a key={i} href={r.url} target={r.url.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer"
+                    className="card p-4 hover:border-primary-300 hover:shadow-md transition-all group">
+                    <div className="flex items-start justify-between mb-1">
+                      <div className="font-semibold text-surface-800 text-sm group-hover:text-primary-600 transition-colors">{r.name}</div>
+                      <span className="badge-primary text-xs ml-2 shrink-0">{r.type}</span>
+                    </div>
+                    <p className="text-surface-500 text-xs">{r.desc}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 12 – Tips */}
+            <section id="tips" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">12 Expert Preparation Tips</h2>
+              <div className="space-y-3">
+                {[
+                  { icon: '🌍', tip: 'GA is king — invest 40% of your time', detail: 'General Awareness carries 40 marks in CBT-1 and 50 marks in CBT-2. It is the highest-scoring section and the biggest differentiator. Indian Railways-specific questions appear every single year — memorise 18 zones with their HQs and recent Railway Budget highlights.' },
+                  { icon: '📐', tip: 'Practice Maths with a timer from Day 1', detail: 'In CBT-1, you get under 54 seconds per question on average. Speed comes from repeated timed practice, not just concept knowledge. Use previous year questions and mock tests under strict time conditions.' },
+                  { icon: '🔁', tip: 'Solve 5+ years of PYQs', detail: 'RRB repeats concepts and similar questions across cycles. Previous year papers (available free on rrbcdg.gov.in) are your single most valuable resource. Analyse patterns in GA questions especially.' },
+                  { icon: '⚠️', tip: 'Avoid blind guessing — negative marking applies', detail: '1/3rd mark is deducted for every wrong answer. Only guess when you can eliminate at least 2 options confidently. Unattempted questions are always safer than wild guesses.' },
+                  { icon: '🎯', tip: 'Target your post wisely', detail: 'CBT-1 is common, but CBT-2 merit lists are post-specific. Rank your post preferences carefully — Station Master is prestigious but requires CBAT; Goods Guard has the highest vacancy. Choose based on your strengths and long-term career goals.' },
+                  { icon: '📱', tip: 'Use your phone for current affairs daily', detail: '15 minutes every morning on a current affairs app or newspaper headline digest compounds over 6 months into a massive GA advantage. Focus on national news, Indian Railways, and science/tech developments.' },
+                ].map((t, i) => (
+                  <div key={i} className="card p-4 flex gap-4 items-start">
+                    <span className="text-2xl shrink-0">{t.icon}</span>
+                    <div>
+                      <div className="font-semibold text-surface-800 mb-1 text-sm">{t.tip}</div>
+                      <div className="text-surface-500 text-xs leading-relaxed">{t.detail}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13 – FAQ */}
+            <section id="faq" className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">13 Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-semibold text-surface-800 mb-2 text-sm">Q{i + 1}. {f.q}</h3>
+                    <p className="text-surface-600 text-sm leading-relaxed">{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </article>
+
+          {/* ── SIDEBAR ───────────────────────────────────────────────────────── */}
+          <aside className="lg:w-72 shrink-0 space-y-5">
+
+            {/* Quick Stats */}
+            <div className="card p-5">
+              <h3 className="font-heading font-semibold text-surface-800 text-sm mb-4 pb-2 border-b border-surface-100">RRB NTPC 2025-26 At a Glance</h3>
+              <div className="space-y-2.5 text-sm">
+                {[
+                  { label: 'Total Vacancies',  value: '8,868' },
+                  { label: 'Graduate Posts',   value: '5,810 (CEN 06/2025)' },
+                  { label: 'UG Posts',         value: '3,058 (CEN 07/2025)' },
+                  { label: 'Grad Age Limit',   value: '18 – 33 years' },
+                  { label: 'UG Age Limit',     value: '18 – 30 years' },
+                  { label: 'UG CBT 1 Exam',    value: 'May 7 – Jun 21, 2026' },
+                  { label: 'Grad Salary',      value: '₹25,500 – ₹35,400' },
+                  { label: 'UG Salary',        value: '₹19,900 – ₹21,700' },
+                  { label: 'Neg. Marking',     value: '1/3 per wrong answer' },
+                ].map((s) => (
+                  <div key={s.label} className="flex justify-between">
+                    <span className="text-surface-500">{s.label}</span>
+                    <span className="font-medium text-surface-800 text-right max-w-[55%]">{s.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="card p-5 bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+              <p className="text-sm font-semibold text-surface-800 mb-3">🎯 Check Your Eligibility</p>
+              <p className="text-xs text-surface-500 mb-4">Use our free eligibility checker to see if you qualify for RRB NTPC and 100+ other exams.</p>
+              <Link href="/tools/age-calculator" className="btn-primary text-sm w-full text-center block">
+                Open Eligibility Checker →
+              </Link>
+            </div>
+
+            {/* Official Link */}
+            <div className="card p-5">
+              <p className="text-sm font-semibold text-surface-800 mb-3">🔗 Official RRB Websites</p>
+              <div className="space-y-1.5 text-sm">
+                {[
+                  { name: 'RRB Chandigarh',  url: 'https://www.rrbcdg.gov.in' },
+                  { name: 'RRB Chennai',     url: 'https://www.rrbchennai.gov.in' },
+                  { name: 'RRB Mumbai',      url: 'https://www.rrbmumbai.gov.in' },
+                  { name: 'RRB Bhubaneswar',url: 'https://www.rrbbbs.gov.in' },
+                ].map((r) => (
+                  <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer"
+                    className="block text-primary-600 hover:text-primary-800 hover:underline text-xs">{r.name} ↗</a>
+                ))}
+                <p className="text-xs text-surface-400 pt-1">Always apply through your regional RRB website only.</p>
+              </div>
+            </div>
+
+            {/* Related Exams */}
+            <div className="card p-5">
+              <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">Related Railway Exams</h3>
+              <div className="space-y-1.5">
+                {[
+                  { name: 'RRB Group D',        slug: 'rrb-group-d' },
+                  { name: 'RRB ALP (Loco Pilot)',slug: 'rrb-alp' },
+                  { name: 'RRB JE',              slug: 'rrb-je' },
+                  { name: 'SSC CGL',             slug: 'ssc-cgl' },
+                  { name: 'SSC CHSL',            slug: 'ssc-chsl' },
+                ].map((e) => (
+                  <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">
+                    {e.name} →
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Internal: Resources */}
+            <div className="card p-5 bg-orange-50 border-orange-200">
+              <p className="text-sm font-semibold text-orange-800 mb-2">📚 Free Study Resources</p>
+              <p className="text-xs text-orange-700 mb-3">Get free books, YouTube channels, and mock test links curated for Railway exams.</p>
+              <Link href="/resources" className="text-xs font-semibold text-orange-700 hover:underline">Browse Free Resources →</Link>
+            </div>
+
+          </aside>
         </div>
       </div>
     </>
