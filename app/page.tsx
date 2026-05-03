@@ -4,15 +4,15 @@ import { exams, examCategories, guides, allExams } from '@/lib/exams-data';
 import { blogPosts } from '@/lib/blog-data';
 
 export const metadata: Metadata = {
-  alternates: { canonical: 'https://taiyarho.in/' },
+  alternates: { canonical: 'https://www.taiyarho.in/' },
 };
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'TaiyarHo',
-  url: 'https://taiyarho.in',
-  logo: 'https://taiyarho.in/logo.svg',
+  url: 'https://www.taiyarho.in',
+  logo: 'https://www.taiyarho.in/logo.svg',
   description: 'Free comprehensive guide for Indian government exam preparation. Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all government exams.',
   sameAs: [],
 };
@@ -21,12 +21,12 @@ const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'TaiyarHo',
-  url: 'https://taiyarho.in',
+  url: 'https://www.taiyarho.in',
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://taiyarho.in/exams/?q={search_term_string}',
+      urlTemplate: 'https://www.taiyarho.in/exams/?q={search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   },
@@ -341,11 +341,11 @@ export default function HomePage() {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
             name: 'TaiyarHo',
-            url: 'https://taiyarho.in',
+            url: 'https://www.taiyarho.in',
             description: 'Free comprehensive guide for Indian government exam preparation.',
             potentialAction: {
               '@type': 'SearchAction',
-              target: 'https://taiyarho.in/exams?q={search_term_string}',
+              target: 'https://www.taiyarho.in/exams?q={search_term_string}',
               'query-input': 'required name=search_term_string',
             },
           }),

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'TaiyarHo – Free Guide for Indian Government Exam Preparation',
   description: 'Complete free guide for all Indian government exams – UPSC, SSC, Banking, Railway. Syllabus, study plans, best books, free resources, and exam strategies.',
   keywords: 'government exam preparation, sarkari exam, UPSC preparation, SSC CGL, IBPS PO, railway exam, government job guide, free study material',
-  metadataBase: new URL('https://taiyarho.in'),
+  metadataBase: new URL('https://www.taiyarho.in'),
   openGraph: {
     title: 'TaiyarHo – Free Guide for Indian Government Exam Preparation',
     description: 'Complete free guide for all Indian government exams. Syllabus, study plans, best books, and free resources.',

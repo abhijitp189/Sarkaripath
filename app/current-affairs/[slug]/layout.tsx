@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
   return {
     alternates: {
-      canonical: `https://taiyarho.in/current-affairs/${post.slug}/`,
+      canonical: `https://www.taiyarho.in/current-affairs/${post.slug}/`,
     },
   };
 }

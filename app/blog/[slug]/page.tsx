@@ -13,7 +13,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: post.metaTitle,
     description: post.metaDescription,
     openGraph: { title: post.metaTitle, description: post.metaDescription, type: 'article' },
-    alternates: { canonical: `https://taiyarho.in/blog/${params.slug}/` },
+    alternates: { canonical: `https://www.taiyarho.in/blog/${params.slug}/` },
   };
 }
 
@@ -588,9 +588,9 @@ function SscCgl2026Article({ post }: { post: any }) {
             description: 'Complete SSC CGL 2026 syllabus with topic-wise breakdown for Tier 1 and Tier 2, exam pattern, marking scheme, and free preparation tips. Updated April 2026.',
             datePublished: '2026-04-24',
             dateModified: '2026-04-26',
-            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in', logo: { '@type': 'ImageObject', url: 'https://taiyarho.in/logo.svg' } },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/blog/ssc-cgl-2026-syllabus-complete-guide/' },
+            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in', logo: { '@type': 'ImageObject', url: 'https://www.taiyarho.in/logo.svg' } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/blog/ssc-cgl-2026-syllabus-complete-guide/' },
           }),
         }}
       />
@@ -1223,9 +1223,9 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
             description: post.metaDescription,
             datePublished: '2026-04-27',
             dateModified: '2026-04-27',
-            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/blog/government-exam-preparation-beginners-2026' },
+            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/blog/government-exam-preparation-beginners-2026' },
           }),
         }}
       />
@@ -1288,9 +1288,9 @@ function SscCglVsChslArticle({ post }: { post: any }) {
             description: post.metaDescription,
             datePublished: '2026-04-28',
             dateModified: '2026-04-28',
-            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/blog/ssc-cgl-vs-chsl-which-is-easier-2026/' },
+            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/blog/ssc-cgl-vs-chsl-which-is-easier-2026/' },
           }),
         }}
       />
@@ -1986,9 +1986,9 @@ function IbpsPOSalaryArticle({ post }: { post: any }) {
             description: post.metaDescription,
             datePublished: '2026-04-30',
             dateModified: '2026-04-30',
-            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://taiyarho.in/blog/ibps-po-salary-in-hand-2026/' },
+            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/blog/ibps-po-salary-in-hand-2026/' },
           }),
         }}
       />
@@ -3184,11 +3184,11 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
         headline: 'RRB NTPC 2026 Syllabus: Tier 1 & Tier 2 with PDF Download',
         description: 'Complete RRB NTPC 2026 syllabus — CBT-1 and CBT-2 topic-wise breakdown, exam pattern, marking scheme, and official PDF download links.',
         author: { '@type': 'Organization', name: 'TaiyarHo Editorial' },
-        publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://taiyarho.in' },
+        publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
         datePublished: '2026-05-03',
         dateModified: '2026-05-03',
-        url: 'https://taiyarho.in/blog/rrb-ntpc-2026-syllabus-tier-1-tier-2/',
-        mainEntityOfPage: 'https://taiyarho.in/blog/rrb-ntpc-2026-syllabus-tier-1-tier-2/',
+        url: 'https://www.taiyarho.in/blog/rrb-ntpc-2026-syllabus-tier-1-tier-2/',
+        mainEntityOfPage: 'https://www.taiyarho.in/blog/rrb-ntpc-2026-syllabus-tier-1-tier-2/',
       },
       {
         '@type': 'FAQPage',
@@ -3223,9 +3223,9 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://taiyarho.in' },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://taiyarho.in/blog' },
-          { '@type': 'ListItem', position: 3, name: 'RRB NTPC 2026 Syllabus', item: 'https://taiyarho.in/blog/rrb-ntpc-2026-syllabus-tier-1-tier-2/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.taiyarho.in' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.taiyarho.in/blog' },
+          { '@type': 'ListItem', position: 3, name: 'RRB NTPC 2026 Syllabus', item: 'https://www.taiyarho.in/blog/rrb-ntpc-2026-syllabus-tier-1-tier-2/' },
         ],
       },
     ],

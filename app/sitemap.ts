@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { allExams, guides } from '@/lib/exams-data';
 import { blogPosts } from '@/lib/blog-data';
+import { currentAffairsPosts } from '@/lib/current-affairs-data';
 
 const BASE_URL = 'https://www.taiyarho.in';
 
@@ -38,10 +39,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/tools/age-calculator/`,
+      url: `${BASE_URL}/current-affairs/`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
   ];
 
@@ -69,5 +70,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...examRoutes, ...blogRoutes, ...guideRoutes];
+  // ── Current Affairs pages ──────────────────────────────────────────────────
+  const currentAffairsRoutes: MetadataRoute.Sitemap = currentAffairsPosts.map((post) => ({
+    url: `${BASE_URL}/current-affairs/${post.slug}/`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }));
+
+  return [...staticRoutes, ...examRoutes, ...blogRoutes, ...guideRoutes, ...currentAffairsRoutes];
 }

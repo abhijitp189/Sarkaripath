@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     openGraph: { title, description, siteName: 'TaiyarHo', locale: 'en_IN', type: 'article' },
-    alternates: { canonical: `https://taiyarho.in/current-affairs/${post.slug}` },
+    alternates: { canonical: `https://www.taiyarho.in/current-affairs/${post.slug}` },
   };
 }
 

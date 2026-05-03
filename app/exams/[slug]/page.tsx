@@ -20,7 +20,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SSC CGL 2026 – Syllabus, Eligibility & Preparation Guide | TaiyarHo',
       description: 'SSC CGL 2026 notification released. Tier 1 exam in May–June 2026. Check complete syllabus, exam pattern, eligibility, 14,000+ vacancies, salary, best books and free study resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/ssc-cgl/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-cgl/' },
     };
   }
 
@@ -28,7 +28,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SSC GD Constable 2026 – Syllabus, Eligibility & Guide | TaiyarHo',
       description: 'SSC GD Constable 2026: CBT exam from 27 Apr–30 May 2026. 25,487 vacancies in BSF, CISF, CRPF, ITBP. Check syllabus, exam pattern, physical standards (PET/PST), eligibility, salary and free resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/ssc-gd-constable/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-gd-constable/' },
     };
   }
 
@@ -36,7 +36,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'UP Police Constable 2026 – Syllabus, Eligibility, Exam Date & Guide | TaiyarHo',
       description: 'UP Police Constable 2026: 32,679 vacancies. Written exam on 8–10 June 2026. Check syllabus, exam pattern (150 Qs, 300 marks), PET/PST physical standards, eligibility, age limit, salary ₹21,700–₹69,100 and free resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/up-police-constable/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/up-police-constable/' },
     };
   }
 
@@ -44,7 +44,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'Bihar Police Constable 2026 – Syllabus, Eligibility & Guide | TaiyarHo',
       description: 'Bihar Police Constable 2026 (CSBC): 19,838 vacancies. Check syllabus, exam pattern (100 Qs, 100 marks), PET/PST physical standards, eligibility, age limit 18–25 yrs, salary ₹21,700–₹69,100 and free study resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/bihar-police-constable/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/bihar-police-constable/' },
     };
   }
 
@@ -52,7 +52,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'CTET 2026 – Syllabus, Eligibility, Exam Date, Pattern & Complete Guide | TaiyarHo',
       description: 'CTET July 2026 exam on 5 July 2026. Check complete syllabus for Paper 1 & Paper 2, eligibility criteria, exam pattern (150 MCQs, no negative marking), application dates, qualifying marks and free preparation resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/ctet/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ctet/' },
     };
   }
 
@@ -60,7 +60,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SSC MTS 2026 – Syllabus, Exam Pattern, Eligibility & Complete Guide | TaiyarHo',
       description: 'SSC MTS 2026: 7,948 vacancies. CBT conducted Feb 4–20, 2026. Answer key released March 3. Check syllabus, exam pattern (Session I & II), eligibility (10th pass, 18–27 yrs), salary ₹18,000–₹22,000/month, and free preparation resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/ssc-mts/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-mts/' },
     };
   }
 
@@ -68,7 +68,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SSC CHSL 2026 – Eligibility, Syllabus, Exam Pattern & Complete Guide | TaiyarHo',
       description: 'SSC CHSL 2026: 3,131 vacancies for LDC, JSA, PA, SA & DEO. Tier 1 result declared 27 Feb 2026. Tier 2 on 10 Apr 2026. Check complete syllabus, exam pattern, eligibility (12th pass, 18–27 yrs), salary ₹25K–₹38K/month and free resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/ssc-chsl/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-chsl/' },
     };
   }
 
@@ -76,7 +76,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'IBPS RRB Clerk 2026 – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
       description: 'IBPS RRB Office Assistant 2026 (CRP RRB XIV): 5,000+ vacancies in 43 Rural Banks. Check syllabus, exam pattern (Prelims + Mains), eligibility, age limit 18–28 years, salary ₹22,000–₹26,000/month and free preparation resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/ibps-rrb-clerk/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ibps-rrb-clerk/' },
     };
   }
 
@@ -84,7 +84,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'IBPS Clerk 2026 (CRP CSA-XVI) – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
       description: 'IBPS Clerk 2026: Prelims on 10–11 Oct, Mains on 27 Dec. 15,000+ vacancies in 11 public sector banks. Check complete syllabus, exam pattern (revised Mains), eligibility, age limit, salary ₹28,000–₹32,000/month and free preparation resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/ibps-clerk/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ibps-clerk/' },
     };
   }
 
@@ -92,7 +92,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SBI Clerk 2026 (Junior Associate) – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
       description: 'SBI Clerk 2026 notification expected July/August 2026. 6,000+ vacancies. Check complete syllabus, exam pattern (Prelims + Mains), eligibility, age limit 20–28 years, salary ₹46,000/month and free preparation resources for Junior Associate exam.',
-      alternates: { canonical: 'https://taiyarho.in/exams/sbi-clerk/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/sbi-clerk/' },
     };
   }
 
@@ -100,14 +100,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'UGC NET 2026 – Notification Out, Application Dates, Syllabus, Eligibility & Complete Guide | TaiyarHo',
       description: 'UGC NET June 2026 notification released on 29 April 2026. Exam from 22–30 June 2026. Apply by 20 May 2026. Check complete syllabus for Paper 1 & Paper 2 (85 subjects), eligibility (Master\'s degree, 55%), exam pattern, JRF age limit 30 years, application fee and free preparation resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/ugc-net/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ugc-net/' },
     };
   }
   if (params.slug === 'army-agniveer') {
     return {
       title: 'Army Agniveer 2026 – Eligibility, CEE Exam, Salary & Guide | TaiyarHo',
       description: 'Complete guide on Indian Army Agniveer 2026: 25,000+ vacancies, CEE exam pattern, eligibility, physical standards, salary ₹30k–₹40k, Seva Nidhi ₹11.71 lakh.',
-      alternates: { canonical: 'https://taiyarho.in/exams/army-agniveer/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/army-agniveer/' },
     };
   }
 
@@ -115,7 +115,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'RRB NTPC 2026 – Syllabus, Exam Date, Vacancies & Guide | TaiyarHo',
       description: 'RRB NTPC 2026: 8,868 vacancies (CEN 06/2025 & 07/2025). UG CBT 1 exam from May 7–June 21, 2026. Check syllabus, exam pattern, eligibility (18–33 yrs), salary ₹19,900–₹35,400 and free preparation resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/rrb-ntpc/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rrb-ntpc/' },
     };
   }
 
@@ -123,7 +123,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'RRB Group D 2026 – Eligibility, Syllabus & Vacancy | TaiyarHo',
       description: 'RRB Group D 2026: 32,438 vacancies (CEN-08/2024) for 10th pass candidates. CBT expected 2026. Check syllabus, PET details, eligibility (18–33 yrs), salary ₹22,500–₹26,000/mo & free resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/rrb-group-d/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rrb-group-d/' },
     };
   }
 
@@ -131,14 +131,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'RRB ALP 2026 – Syllabus, CBT 1 Result, Exam Pattern & Guide | TaiyarHo',
       description: 'RRB ALP 2026 (CEN 01/2024): 27,943 vacancies for ALP & Technician. CBT 1 held Feb 2026. Check syllabus, CBT 2 pattern, CBAT, eligibility (10th + ITI), salary ₹19,900/month and free preparation resources.',
-      alternates: { canonical: 'https://taiyarho.in/exams/rrb-alp/' },
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rrb-alp/' },
     };
   }
 
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
-    alternates: { canonical: `https://taiyarho.in/exams/${params.slug}/` },
+    alternates: { canonical: `https://www.taiyarho.in/exams/${params.slug}/` },
   };
 }
 
@@ -7716,9 +7716,9 @@ function RrbNtpcPage({ exam }: { exam: any }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home',  item: 'https://taiyarho.in/' },
-      { '@type': 'ListItem', position: 2, name: 'Exams', item: 'https://taiyarho.in/exams/' },
-      { '@type': 'ListItem', position: 3, name: 'RRB NTPC 2025-26 Complete Guide', item: 'https://taiyarho.in/exams/rrb-ntpc/' },
+      { '@type': 'ListItem', position: 1, name: 'Home',  item: 'https://www.taiyarho.in/' },
+      { '@type': 'ListItem', position: 2, name: 'Exams', item: 'https://www.taiyarho.in/exams/' },
+      { '@type': 'ListItem', position: 3, name: 'RRB NTPC 2025-26 Complete Guide', item: 'https://www.taiyarho.in/exams/rrb-ntpc/' },
     ],
   };
 
@@ -8541,9 +8541,9 @@ function RrbAlpPage({ exam }: { exam: any }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home',  item: 'https://taiyarho.in/' },
-      { '@type': 'ListItem', position: 2, name: 'Exams', item: 'https://taiyarho.in/exams/' },
-      { '@type': 'ListItem', position: 3, name: 'RRB ALP 2026 Complete Guide', item: 'https://taiyarho.in/exams/rrb-alp/' },
+      { '@type': 'ListItem', position: 1, name: 'Home',  item: 'https://www.taiyarho.in/' },
+      { '@type': 'ListItem', position: 2, name: 'Exams', item: 'https://www.taiyarho.in/exams/' },
+      { '@type': 'ListItem', position: 3, name: 'RRB ALP 2026 Complete Guide', item: 'https://www.taiyarho.in/exams/rrb-alp/' },
     ],
   };
 

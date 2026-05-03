@@ -55,12 +55,12 @@ const jsonLd = {
   '@type': 'ItemList',
   name: 'Government Exam Preparation Guides — TaiyarHo',
   description: 'Step-by-step preparation guides for Indian government exams.',
-  url: 'https://taiyarho.in/guides/',
+  url: 'https://www.taiyarho.in/guides/',
   numberOfItems: guides.length,
   itemListElement: guides.map((g, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    url: `https://taiyarho.in/guides/${g.slug}`,
+    url: `https://www.taiyarho.in/guides/${g.slug}`,
     name: g.title,
   })),
 };
