@@ -105,8 +105,13 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'rrb-alp') {
     return {
+<<<<<<< HEAD
       title: 'RRB ALP 2026 – Syllabus, CBT 1 Result, Exam Pattern & Guide | TaiyarHo',
       description: 'RRB ALP 2026 (CEN 01/2024): 27,943 vacancies for ALP & Technician. CBT 1 held Feb 2026. Check syllabus, CBT 2 pattern, CBAT, eligibility (10th + ITI), salary ₹19,900/month and free preparation resources.',
+=======
+      title: 'RRB ALP 2024 – Syllabus, CBT 1 Result, Exam Pattern & Guide | TaiyarHo',
+      description: 'RRB ALP 2024 (CEN 01/2024): 27,943 vacancies for ALP & Technician. CBT 1 held Feb 2026. Check syllabus, CBT 2 pattern, CBAT, eligibility (10th + ITI), salary ₹19,900/month and free preparation resources.',
+>>>>>>> 8cbe93306f2766e2f22863fb2264d58b64e51c3b
       alternates: { canonical: 'https://taiyarho.in/exams/rrb-alp/' },
     };
   }
@@ -7739,7 +7744,11 @@ function RrbAlpPage({ exam }: { exam: any }) {
 
   const faqs = [
     {
+<<<<<<< HEAD
       q: 'What is the educational qualification for RRB ALP 2026?',
+=======
+      q: 'What is the educational qualification for RRB ALP 2024?',
+>>>>>>> 8cbe93306f2766e2f22863fb2264d58b64e51c3b
       a: 'For ALP: You need a 10th pass certificate PLUS an ITI certificate in a relevant trade from an NCVT/SCVT recognised institution. Alternatively, a Diploma or Degree in Engineering in a relevant discipline also makes you eligible. For Technician posts: Same 10th + ITI qualification applies, with the trade requirement matching the specific Technician post you apply for. Always check the post-wise trade-eligibility table in the official notification.',
     },
     {
@@ -7776,7 +7785,11 @@ function RrbAlpPage({ exam }: { exam: any }) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home',  item: 'https://taiyarho.in/' },
       { '@type': 'ListItem', position: 2, name: 'Exams', item: 'https://taiyarho.in/exams/' },
+<<<<<<< HEAD
       { '@type': 'ListItem', position: 3, name: 'RRB ALP 2026 Complete Guide', item: 'https://taiyarho.in/exams/rrb-alp/' },
+=======
+      { '@type': 'ListItem', position: 3, name: 'RRB ALP 2024 Complete Guide', item: 'https://taiyarho.in/exams/rrb-alp/' },
+>>>>>>> 8cbe93306f2766e2f22863fb2264d58b64e51c3b
     ],
   };
 
@@ -7815,7 +7828,11 @@ function RrbAlpPage({ exam }: { exam: any }) {
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">Technical Post</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
+<<<<<<< HEAD
             RRB ALP 2026 – Assistant Loco Pilot Complete Guide
+=======
+            RRB ALP 2024 – Assistant Loco Pilot Complete Guide
+>>>>>>> 8cbe93306f2766e2f22863fb2264d58b64e51c3b
           </h1>
           <p className="text-surface-500 leading-relaxed max-w-3xl">
             RRB ALP (CEN 01/2024) is one of the largest railway technical recruitments with 27,943 vacancies for Assistant Loco Pilot and Technician posts across all 21 Railway Recruitment Board zones. CBT 1 was conducted in February 2026. CBT 2 is expected in mid-2026.
