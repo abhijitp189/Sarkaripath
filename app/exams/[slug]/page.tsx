@@ -56,6 +56,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ssc-chsl') {
+    return {
+      title: 'SSC CHSL 2026 – Eligibility, Syllabus, Exam Pattern & Complete Guide | TaiyarHo',
+      description: 'SSC CHSL 2026: 3,131 vacancies for LDC, JSA, PA, SA & DEO. Tier 1 result declared 27 Feb 2026. Tier 2 on 10 Apr 2026. Check complete syllabus, exam pattern, eligibility (12th pass, 18–27 yrs), salary ₹25K–₹38K/month and free resources.',
+      alternates: { canonical: 'https://taiyarho.in/exams/ssc-chsl/' },
+    };
+  }
+
   if (params.slug === 'ibps-rrb-clerk') {
     return {
       title: 'IBPS RRB Clerk 2026 – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
@@ -143,6 +151,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ugc-net') return <UgcNetPage exam={brief} />;
   if (brief && brief.slug === 'army-agniveer') return <ArmyAgniveerPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
+  if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -8348,6 +8357,781 @@ function RrbAlpPage({ exam }: { exam: any }) {
                 <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
               </div>
 
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SSC CHSL 2025-26 DETAILED PAGE
+   ───────────────────────────────────────────────────────────────────────── */
+function SscChslPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'CHSL 2025 Official Notification Released',      date: '23 June 2025',                  status: 'done' },
+    { event: 'Online Application Window Open',                 date: '23 June – 18 July 2025',        status: 'done' },
+    { event: 'Application Correction Window',                  date: 'August 2025',                   status: 'done' },
+    { event: 'Exam City Intimation / Self-Slot Selection',     date: '22–28 October 2025',            status: 'done' },
+    { event: 'Admit Card Released',                            date: '9 November 2025',               status: 'done' },
+    { event: 'Tier 1 Exam Conducted',                         date: '12–30 November 2025',           status: 'done' },
+    { event: 'Provisional Answer Key Released',                date: '8 December 2025',               status: 'done' },
+    { event: 'Answer Key Objection Last Date',                 date: '11 December 2025',              status: 'done' },
+    { event: 'Tier 1 Result Declared',                         date: '27 February 2026',              status: 'done' },
+    { event: 'Tier 1 Scorecard Released',                      date: 'March 2026',                    status: 'done' },
+    { event: 'Tier 2 Exam (2025 Cycle)',                       date: '10 April 2026',                 status: 'done' },
+    { event: 'Tier 2 Result & Final Merit List',               date: 'To be notified (TBN)',          status: 'tbn' },
+    { event: 'Skill Test / Typing Test',                       date: 'To be notified (TBN)',          status: 'tbn' },
+    { event: 'Document Verification & Joining',                date: 'To be notified (TBN)',          status: 'tbn' },
+    { event: 'SSC CHSL 2026 Notification Expected',            date: 'May – June 2026',               status: 'upcoming' },
+    { event: 'CHSL 2026 Tier 1 Exam (Expected)',               date: 'July – September 2026',         status: 'upcoming' },
+  ];
+
+  const tier1Pattern = [
+    { section: 'General Intelligence & Reasoning', questions: 25, marks: 50, negative: '−0.50/wrong' },
+    { section: 'General Awareness',                 questions: 25, marks: 50, negative: '−0.50/wrong' },
+    { section: 'Quantitative Aptitude',             questions: 25, marks: 50, negative: '−0.50/wrong' },
+    { section: 'English Language & Comprehension', questions: 25, marks: 50, negative: '−0.50/wrong' },
+  ];
+
+  const tier2PatternS1 = [
+    { section: 'Mathematical Abilities',            questions: 30, marks: 90,  duration: '60 min', neg: '−1/wrong' },
+    { section: 'Reasoning & General Intelligence', questions: 30, marks: 90,  duration: '60 min', neg: '−1/wrong' },
+    { section: 'English Language & Comprehension', questions: 40, marks: 120, duration: '60 min', neg: '−1/wrong' },
+    { section: 'General Awareness',                 questions: 20, marks: 60,  duration: '30 min', neg: '−1/wrong' },
+    { section: 'Computer Knowledge Module',        questions: 15, marks: 45,  duration: '15 min', neg: '−1/wrong' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'Lower Division Clerk (LDC) / Junior Secretariat Assistant (JSA)', payLevel: 'Pay Level 2', payScale: '₹19,900 – ₹63,200', vacancies: '~2,300' },
+    { post: 'Postal Assistant (PA) / Sorting Assistant (SA)',                   payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100', vacancies: '~550' },
+    { post: 'Data Entry Operator (DEO)',                                         payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100', vacancies: '~200' },
+    { post: 'Data Entry Operator Grade A (DEO-A)',                              payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100', vacancies: '~81' },
+  ];
+
+  const salaryBreakdown = [
+    { post: 'LDC / JSA', basic: '₹19,900', da: '~₹5,173', hra: '₹2,388–₹4,776', gross: '~₹29,000–₹34,000', inhand: '₹25,000–₹30,000' },
+    { post: 'PA / SA',   basic: '₹25,500', da: '~₹6,630', hra: '₹3,060–₹6,120', gross: '~₹37,000–₹43,000', inhand: '₹32,000–₹38,000' },
+    { post: 'DEO',       basic: '₹25,500', da: '~₹6,630', hra: '₹3,060–₹6,120', gross: '~₹37,000–₹43,000', inhand: '₹32,000–₹38,000' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'General Intelligence & Reasoning',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Analogies – Semantic & Figural',
+        'Classification – Odd One Out',
+        'Series – Number, Letter & Figural',
+        'Coding-Decoding (old & new pattern)',
+        'Blood Relations & Direction Sense',
+        'Matrix, Word Formation',
+        'Venn Diagrams & Syllogisms',
+        'Embedded Figures & Paper Folding',
+        'Missing Number, Non-verbal Reasoning',
+      ],
+    },
+    {
+      subject: 'Quantitative Aptitude (Maths)',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Number System – HCF, LCM, Fractions',
+        'Percentage, Ratio & Proportion',
+        'Profit & Loss, Discount',
+        'Simple Interest & Compound Interest',
+        'Average, Mixture & Alligation',
+        'Time & Work, Pipes & Cisterns',
+        'Time, Speed & Distance',
+        'Basic Algebra & Trigonometry (Class 10 level)',
+        'Mensuration – Area, Volume (2D & 3D)',
+        'Data Interpretation – Table, Bar, Pie',
+        'Geometry – Lines, Angles, Triangles, Circles',
+      ],
+    },
+    {
+      subject: 'English Language & Comprehension',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Reading Comprehension (1–2 passages)',
+        'Cloze Test (Fill-in-the-blank paragraph)',
+        'Error Spotting & Sentence Correction',
+        'Para Jumbles (Sentence Rearrangement)',
+        'Fill in the Blanks (Single & Double)',
+        'Phrase Replacement / Sentence Improvement',
+        'Synonyms, Antonyms, One Word Substitution',
+        'Idioms & Phrases, Spelling Correction',
+        'Active & Passive Voice, Direct & Indirect Speech',
+      ],
+    },
+    {
+      subject: 'General Awareness',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Current Affairs – Last 6–12 months (national & international)',
+        'Indian History – Ancient, Medieval, Modern & Freedom Struggle',
+        'Indian Geography – Physical features, Rivers, Climate, States',
+        'Indian Polity – Constitution, Parliament, Fundamental Rights',
+        'Indian Economy – Budgets, Schemes, Banking basics',
+        'General Science – Physics, Chemistry, Biology (Class 10 level)',
+        'Static GK – Sports, Awards, Important Days, Books & Authors',
+        'Environment & Ecology basics',
+      ],
+    },
+    {
+      subject: 'Computer Knowledge (Tier 2 Module)',
+      color: 'text-purple-700',
+      bg: 'bg-purple-50 border-purple-200',
+      topics: [
+        'Basics of Computer – Hardware, Software, Input/Output devices',
+        'Memory – RAM, ROM, Storage devices',
+        'MS Office – Word, Excel, PowerPoint basics',
+        'Internet basics – Browser, Email, Networking concepts',
+        'Operating Systems – Windows, shortcuts',
+        'Number Systems – Binary, Decimal, Hexadecimal',
+        'Keyboard Shortcuts & Function Keys',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', title: 'Foundation Building', tasks: 'Complete NCERT Maths (6th–10th). Cover basic English grammar (tenses, parts of speech, error spotting). Start Lucent GK — History and Polity chapters. Practice 20 Reasoning questions daily.' },
+    { month: 'Month 2', title: 'Core Subject Mastery', tasks: 'Focus on Quantitative Aptitude — Percentage, Profit & Loss, SI/CI, Time & Work. English: Cloze tests, comprehension passages, vocabulary. GK: Geography, Economy, and Science. Daily mock drills of 25 questions per subject.' },
+    { month: 'Month 3', title: 'Mock Tests & Weak Areas', tasks: 'Give full-length Tier 1 mock tests every alternate day (100 questions/60 min). Track accuracy and time per section. Strengthen weak topics. Target score: 150+/200 in every mock.' },
+    { month: 'Month 4', title: 'Tier 2 Preparation', tasks: 'Start Tier 2 syllabus — Maths at higher difficulty, advanced English (RC, para jumbles), Computer Knowledge module. Daily typing practice (35 wpm English target for LDC/JSA). 1 full Tier 2 mock per week.' },
+    { month: 'Month 5', title: 'Revision & Final Mocks', tasks: 'Revise all formulas, vocabulary lists, GK static facts. Attempt 20+ full-length mock tests. Analyse toppers\' strategies. Target: consistent 160+/200 in Tier 1 mocks. Stay updated on current affairs.' },
+  ];
+
+  const books = [
+    { subject: 'Quantitative Aptitude', title: 'Fast Track Objective Arithmetic', author: 'Rajesh Verma (Arihant)', pdf: null },
+    { subject: 'Reasoning', title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', pdf: null },
+    { subject: 'English Language', title: 'Objective General English', author: 'S.P. Bakshi (Arihant)', pdf: null },
+    { subject: 'General Awareness', title: "Lucent's General Knowledge", author: 'Lucent Publications', pdf: null },
+    { subject: 'Computer Knowledge', title: 'Objective Computer Knowledge', author: 'Kiran Prakashan', pdf: null },
+    { subject: 'All Subjects (PYQs)', title: 'SSC CHSL Chapterwise Solved Papers (Last 10 Years)', author: 'Kiran Prakashan', pdf: null },
+  ];
+
+  const tips = [
+    { title: 'Tier 1 is qualifying — focus heavily on Tier 2', body: 'Tier 1 marks are NOT counted in the final merit list. Many toppers underperform in Tier 1 and still crack CHSL. Yes, you need to clear Tier 1, but your entire score comes from Tier 2. Plan accordingly.' },
+    { title: 'English is your scoring engine', body: 'For most candidates, English has the highest scope for improvement. A well-prepared English section can add 30–40 extra marks in Tier 2. Spend at least 40 minutes daily reading and doing RC/cloze test practice.' },
+    { title: 'Start typing practice from Day 1', body: 'Typing test (35 wpm for English, 30 wpm for Hindi) is mandatory for LDC/JSA candidates. This is a purely mechanical skill that requires weeks of daily practice. Don\'t leave it for the last month.' },
+    { title: 'Computer Knowledge is the easiest 45 marks of Tier 2', body: 'With just 15 questions worth 45 marks (3 marks each), Computer Knowledge is the highest-marks-per-minute section. Spend 2 weeks on it, nail it, and treat it as a guaranteed scoring zone.' },
+    { title: 'Mock tests > theory reading', body: 'Once the basics are covered (Month 1–2), switch to mock tests as your primary preparation tool. Test → Analyse → Fix → Repeat. This cycle, done 50+ times, is what creates toppers.' },
+    { title: 'Negative marking = be selective in Tier 1', body: 'In Tier 1, each wrong answer costs 0.50 marks. In Tier 2, it\'s 1 full mark. If you\'re unsure about a question, skip it. A wrong answer in Tier 2 costs you 2 marks net (0 you scored + 1 you lost). Be strategic.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the minimum qualification for SSC CHSL?', a: 'Candidates must have passed Class 12 (10+2) or equivalent from a recognised board. Graduates can also apply. Exception: DEO posts under some departments require Science stream with Mathematics in Class 12.' },
+    { q: 'What is the SSC CHSL age limit?', a: 'The general age limit is 18–27 years. OBC candidates get +3 years (18–30), SC/ST candidates get +5 years (18–32), and PwBD candidates get +10 years. Age is calculated as on the cut-off date specified in the official notification.' },
+    { q: 'How many tiers are there in SSC CHSL 2026?', a: 'SSC CHSL has 2 tiers: Tier 1 (qualifying, 100 MCQs/200 marks/60 min) and Tier 2 (merit-based, conducted in 2 sessions on the same day). Both are Computer-Based Tests. After Tier 2, a Typing Test or Skill Test is conducted for specific posts.' },
+    { q: 'What is the SSC CHSL in-hand salary?', a: 'For LDC/JSA posts (Pay Level 2): approximately ₹25,000–₹30,000/month in-hand depending on city posting. For PA/SA and DEO posts (Pay Level 4): approximately ₹32,000–₹38,000/month. DA, HRA, and medical benefits are additional.' },
+    { q: 'Is there a typing test in SSC CHSL?', a: 'Yes. After Tier 2, candidates selected for LDC/JSA posts must clear a Typing Test at 35 words per minute in English or 30 words per minute in Hindi. For DEO posts, a Data Entry Skill Test is conducted. These are qualifying (pass/fail) in nature and do not contribute to the merit list.' },
+    { q: 'Can I apply for SSC CHSL if I am a graduate?', a: 'Yes. Graduates are fully eligible to apply for SSC CHSL. In fact, graduation often gives an advantage in reasoning, maths, and English sections. However, graduates are often advised to also target SSC CGL, which offers higher-grade posts.' },
+    { q: 'What was the SSC CHSL Tier 1 cut-off for 2025?', a: 'For the 2025 cycle (result declared 27 Feb 2026), the General category cut-off for LDC/JSA was 144.26 marks (normalized). Out of 11,07,975 candidates who appeared, 37,520 qualified for Tier 2. The cut-off varies by category and post.' },
+    { q: 'What is All India Service Liability (AISL) in SSC CHSL?', a: 'SSC CHSL recruitment carries All India Service Liability, meaning if selected, you may be posted in any state or union territory across India. You cannot restrict your posting to a specific city or state. This is important to keep in mind before applying.' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">SSC CHSL 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">SSC</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">12th Pass Eligible</span>
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🗓️ Tier 2: 10 April 2026</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            SSC CHSL 2026 –<br className="hidden sm:block" /> Complete Guide: Eligibility, Pattern & Syllabus
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            2025 cycle Tier 1 result declared 27 Feb 2026 (37,520 qualified). Tier 2 held on 10 April 2026. 3,131 vacancies for LDC, JSA, PA, SA & DEO posts. Class 12 pass eligible. 2026 notification expected May–June 2026.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Total Vacancies (2025)',  value: '3,131' },
+              { label: 'Tier 2 Exam',             value: '10 Apr 2026' },
+              { label: 'Min. Qualification',      value: '12th Pass' },
+              { label: 'In-Hand Salary',          value: '₹25K–₹38K/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── MAIN CONTENT ── */}
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is SSC CHSL?</h2>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  <strong>SSC CHSL (Combined Higher Secondary Level)</strong> is an annual national-level examination conducted by the <strong>Staff Selection Commission (SSC)</strong> to recruit candidates for Group C clerical and data-entry posts in central government ministries, departments, constitutional bodies, statutory bodies, and tribunals across India.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The exam is open to candidates who have passed Class 12 (10+2), making it the ideal first government job for students who do not wish to wait until after graduation. Posts recruited include <strong>Lower Division Clerk (LDC), Junior Secretariat Assistant (JSA), Postal Assistant (PA), Sorting Assistant (SA), and Data Entry Operator (DEO)</strong>.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  The selection process consists of two Computer-Based Tests (Tier 1 and Tier 2), followed by a Typing Test or Data Entry Skill Test for specific posts. There is no interview. Tier 1 is qualifying only — the final merit list is based entirely on Tier 2 performance.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',  value: 'Staff Selection Commission (SSC)' },
+                  { label: 'Post Group',        value: 'Group C (Non-Gazetted)' },
+                  { label: 'Exam Frequency',    value: 'Annual' },
+                  { label: 'Official Website',  value: 'ssc.gov.in' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">2. 📅 Important Dates – SSC CHSL 2025–26</h2>
+              <p className="text-sm text-surface-500 mb-5">
+                The 2025 cycle is currently in its final stages — Tier 2 completed on 10 April 2026. Result and joining are awaited.
+                💡 <strong>Key update for 2026:</strong> The 2026 notification is expected May–June 2026 with exam in July–September 2026.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ TBN = To Be Notified. Always verify on <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">ssc.gov.in</a> before taking any action.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. 🎓 Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed mb-3">
+                    Must have passed <strong>Class 12 (10+2) or equivalent</strong> from a recognised board or university. Graduates are also eligible.
+                  </p>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
+                    <strong>Exception for DEO:</strong> DEO posts in Ministry of Consumer Affairs, Ministry of Culture, and SSC require <strong>Science stream with Mathematics</strong> in Class 12. All other posts have no stream restriction.
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      { cat: 'General / EWS', age: '18 – 27 years' },
+                      { cat: 'OBC (Non-Creamy Layer)', age: '18 – 30 years (+3 yrs)' },
+                      { cat: 'SC / ST', age: '18 – 32 years (+5 yrs)' },
+                      { cat: 'PwBD (General)', age: '18 – 37 years (+10 yrs)' },
+                      { cat: 'PwBD + OBC', age: '18 – 40 years (+13 yrs)' },
+                      { cat: 'PwBD + SC/ST', age: '18 – 42 years (+15 yrs)' },
+                    ].map((r) => (
+                      <div key={r.cat} className="flex justify-between text-xs">
+                        <span className="text-surface-600">{r.cat}</span>
+                        <span className="font-semibold text-surface-800">{r.age}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed">
+                    Must be a citizen of India. Subjects of Nepal/Bhutan and Tibetan refugees who settled before 1 January 1962 may also be eligible as per Government of India norms.
+                  </p>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🔁</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Number of Attempts</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed">
+                    There is <strong>no limit</strong> on attempts. You can appear as many times as you wish as long as you meet the age limit on the cut-off date of each cycle's notification.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. 📊 Vacancies & Posts (2025 Cycle)</h2>
+              <p className="text-sm text-surface-500 mb-4">
+                A total of <strong>3,131 tentative vacancies</strong> were announced for the 2025 recruitment cycle. These are distributed across the following posts and categories. Final vacancy count is subject to official confirmation.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Post</th>
+                      <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Pay Level</th>
+                      <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Pay Scale</th>
+                      <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">~Vacancies</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyPosts.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600">{row.payLevel}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.payScale}</td>
+                        <td className="p-3 text-right font-bold text-surface-800">{row.vacancies}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+                <strong>📌 Note:</strong> Vacancies are distributed across ministries and departments of the Government of India. SSC CHSL carries <strong>All India Service Liability (AISL)</strong> — you can be posted anywhere in the country.
+              </div>
+            </section>
+
+            {/* SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. Selection Process</h2>
+              <div className="space-y-4">
+                {[
+                  {
+                    step: '1', title: 'Tier 1 — Computer-Based Test (Qualifying)',
+                    desc: '100 objective MCQs | 200 marks | 60 minutes. Tests Reasoning, General Awareness, Quantitative Aptitude, and English. This stage is qualifying only — marks are NOT counted in the final merit list. Negative marking: −0.50 per wrong answer.',
+                    badge: 'Qualifying Only', badgeColor: 'bg-amber-100 text-amber-700',
+                  },
+                  {
+                    step: '2', title: 'Tier 2 — Computer-Based Test (Merit-Based)',
+                    desc: 'Conducted in 2 sessions on the same day. Session I: Mathematical Abilities, Reasoning, English, General Awareness & Computer Knowledge. Session II (Module II): Skill test for DEO candidates. Total: 150 questions, 450 marks. Negative marking: −1 per wrong answer. Final merit list is based entirely on Tier 2 marks.',
+                    badge: 'Counts for Merit', badgeColor: 'bg-emerald-100 text-emerald-700',
+                  },
+                  {
+                    step: '3', title: 'Typing Test / Skill Test (Post-specific)',
+                    desc: 'LDC/JSA: Typing Test at 35 wpm (English) or 30 wpm (Hindi). DEO: Data Entry Skill Test (8,000 key depressions/hour). PA/SA: Computer Proficiency Test (CPT). These are qualifying (pass/fail) tests and do NOT add to the merit score.',
+                    badge: 'Qualifying Only', badgeColor: 'bg-amber-100 text-amber-700',
+                  },
+                  {
+                    step: '4', title: 'Document Verification & Final Joining',
+                    desc: 'Candidates shortlisted based on Tier 2 merit and who clear the skill/typing test are called for document verification. Original certificates for age, education, category, and medical fitness are verified before final appointment.',
+                    badge: 'Final Stage', badgeColor: 'bg-blue-100 text-blue-700',
+                  },
+                ].map((s) => (
+                  <div key={s.step} className="card p-5 flex gap-4">
+                    <div className="w-9 h-9 shrink-0 bg-primary-100 rounded-xl flex items-center justify-center text-primary-700 font-heading font-bold">{s.step}</div>
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 mb-1">
+                        <h3 className="font-heading font-semibold text-surface-800">{s.title}</h3>
+                        <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${s.badgeColor}`}>{s.badge}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. Exam Pattern (Tier 1 & Tier 2)</h2>
+
+              {/* Tier 1 */}
+              <div className="card p-5 mb-5">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="bg-primary-100 text-primary-700 text-xs font-bold px-3 py-1 rounded-full">TIER 1</span>
+                  <span className="text-sm text-surface-500">100 Questions | 200 Marks | 60 Minutes | Computer-Based (Qualifying)</span>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="p-3 text-left text-xs font-semibold uppercase tracking-wide">Section</th>
+                        <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Questions</th>
+                        <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Marks</th>
+                        <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Negative Marking</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tier1Pattern.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-3 text-center font-semibold text-surface-800">{row.marks}</td>
+                          <td className="p-3 text-center text-red-600 font-medium">{row.negative}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-surface-300 bg-surface-100 font-bold">
+                        <td className="p-3 text-surface-900">TOTAL</td>
+                        <td className="p-3 text-center text-surface-900">100</td>
+                        <td className="p-3 text-center text-surface-900">200</td>
+                        <td className="p-3 text-center text-surface-500 text-sm">60 min total</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Tier 2 */}
+              <div className="card p-5 mb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full">TIER 2</span>
+                  <span className="text-sm text-surface-500">Session I — 135 Questions | 405 Marks | ~3 hrs | Merit-Based</span>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="p-3 text-left text-xs font-semibold uppercase tracking-wide">Section</th>
+                        <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Questions</th>
+                        <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Marks</th>
+                        <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Duration</th>
+                        <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Negative</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tier2PatternS1.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-3 text-center font-semibold text-surface-800">{row.marks}</td>
+                          <td className="p-3 text-center text-surface-600">{row.duration}</td>
+                          <td className="p-3 text-center text-red-600 font-medium">{row.neg}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                ⚠️ <strong>Tier 2 Session II (Module II)</strong> is the Skill Test for DEO candidates — it is conducted on the same day as Session I. All other candidates (LDC/JSA, PA/SA) do not appear for Session II during Tier 2; their skill/typing test is a separate qualifying event held after results.
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">7. Detailed Syllabus (Tier 1 & Tier 2)</h2>
+              <p className="text-sm text-surface-500 mb-5">The Tier 1 and Tier 2 syllabus largely overlap. Tier 2 tests the same topics at a higher difficulty level and depth. Click any subject to expand the full topic list.</p>
+              <div className="space-y-3">
+                {syllabus.map((sub) => (
+                  <details key={sub.subject} className="card overflow-hidden group">
+                    <summary className={`flex items-center justify-between cursor-pointer p-5 border ${sub.bg} rounded-2xl`}>
+                      <div className="flex items-center gap-3">
+                        <span className={`w-8 h-8 ${sub.bg} rounded-lg flex items-center justify-center ${sub.color} text-sm font-bold border ${sub.bg}`}>✦</span>
+                        <span className={`font-heading font-semibold ${sub.color}`}>{sub.subject}</span>
+                      </div>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
+                    </summary>
+                    <div className="p-5 pt-3">
+                      <ul className="space-y-2">
+                        {sub.topics.map((topic) => (
+                          <li key={topic} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 shrink-0" />
+                            {topic}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. 💰 Salary & Benefits</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="p-3 text-left text-xs font-semibold uppercase tracking-wide">Post</th>
+                      <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Basic Pay</th>
+                      <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">DA (~26%)</th>
+                      <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">HRA (City-wise)</th>
+                      <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Gross</th>
+                      <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">In-Hand</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-center text-surface-600">{row.basic}</td>
+                        <td className="p-3 text-center text-surface-600">{row.da}</td>
+                        <td className="p-3 text-center text-surface-600">{row.hra}</td>
+                        <td className="p-3 text-center font-semibold text-surface-800">{row.gross}</td>
+                        <td className="p-3 text-center font-bold text-emerald-700">{row.inhand}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Additional Allowances</h3>
+                  <ul className="space-y-1.5 text-sm text-surface-600">
+                    {[
+                      '🏥 Medical facility for employee & family (CGHS)',
+                      '🚆 Free/subsidised railway passes',
+                      '📚 Children Education Allowance (CEA)',
+                      '🏠 Government accommodation (if eligible)',
+                      '🏖️ Annual Leave Travel Concession (LTC)',
+                      '💼 GPF, Gratuity & Pension (Old or NPS)',
+                      '⛽ Transport Allowance (city-dependent)',
+                    ].map((b) => <li key={b}>{b}</li>)}
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Career Progression</h3>
+                  <ul className="space-y-2 text-sm text-surface-600">
+                    {[
+                      'LDC → UDC (Upper Division Clerk) via LDCE',
+                      'UDC → Assistant Section Officer (ASO)',
+                      'PA/SA → IP/IPS (Inspector of Posts) via departmental exam',
+                      'DEO → DEO Grade A → DEO Grade B',
+                      'Annual increment: 3% of basic pay (as per 7th CPC)',
+                      'DA revised twice a year (Jan & July)',
+                      'In-service promotion without changing department',
+                    ].map((c) => (
+                      <li key={c} className="flex gap-2">
+                        <span className="text-primary-500 font-bold mt-0.5">→</span>
+                        <span>{c}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. 5-Month Study Plan for SSC CHSL</h2>
+              <div className="relative pl-4">
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-200" />
+                <div className="space-y-6">
+                  {studyPlan.map((phase, i) => (
+                    <div key={i} className="relative pl-10">
+                      <div className="absolute left-[-16px] top-0 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm">
+                        {i + 1}
+                      </div>
+                      <div className="card p-5">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-xs font-semibold bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full">{phase.month}</span>
+                          <h3 className="font-heading font-semibold text-surface-800">{phase.title}</h3>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{phase.tasks}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. Best Books for SSC CHSL Preparation</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="p-3 text-left text-xs font-semibold uppercase tracking-wide">Subject</th>
+                      <th className="p-3 text-left text-xs font-semibold uppercase tracking-wide">Book Title</th>
+                      <th className="p-3 text-left text-xs font-semibold uppercase tracking-wide">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{b.subject}</td>
+                        <td className="p-3 text-surface-700">{b.title}</td>
+                        <td className="p-3 text-surface-500">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">💡 For free practice, use <strong>TCS iON</strong> mock tests (official SSC partner) and previous year question papers from the SSC official website.</p>
+            </section>
+
+            {/* TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. Expert Preparation Tips</h2>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-9 h-9 shrink-0 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center font-heading font-bold">{i + 1}</div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{tip.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQ */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between cursor-pointer p-5">
+                      <span className="font-heading font-semibold text-surface-800 pr-4">{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <p className="text-sm text-surface-600 leading-relaxed">{faq.a}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* DISCLAIMER */}
+            <div className="card p-5 bg-surface-50 border-surface-200 text-xs text-surface-400">
+              <strong className="text-surface-600">Disclaimer:</strong> All information on this page is for general guidance only. Vacancy numbers, dates, and eligibility criteria are sourced from official SSC notifications and may change. Always verify the latest details on the <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">official SSC website (ssc.gov.in)</a> before applying. TaiyarHo is not affiliated with SSC or any government body.
+            </div>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              {/* On This Page */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</div>
+                <nav className="space-y-0.5">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">
+                      {s.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+              {/* Official Site */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="text-xs font-semibold text-primary-800 mb-2">🔗 Official Website</div>
+                <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all hover:underline">ssc.gov.in →</a>
+              </div>
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Quick Facts</div>
+                <ul className="space-y-2">
+                  {[
+                    { label: 'Total Vacancies', val: '3,131 (2025)' },
+                    { label: 'Exam Level',      val: '12th Pass (10+2)' },
+                    { label: 'Application Fee', val: '₹100 | Free (SC/ST/ExSM/Female)' },
+                    { label: 'No. of Attempts', val: 'Unlimited' },
+                    { label: 'Tier 1 Marks',    val: 'NOT counted in merit' },
+                    { label: 'AISL',            val: 'Yes — Pan India posting' },
+                  ].map((f) => (
+                    <li key={f.label} className="text-xs">
+                      <span className="text-surface-400">{f.label}: </span>
+                      <span className="font-semibold text-surface-700">{f.val}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Related Exams */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Exams</div>
+                <div className="space-y-2">
+                  {[
+                    { name: 'SSC CGL 2026',        slug: 'ssc-cgl' },
+                    { name: 'SSC MTS 2026',         slug: 'ssc-mts' },
+                    { name: 'SSC GD Constable',     slug: 'ssc-gd-constable' },
+                    { name: 'IBPS Clerk',           slug: 'ibps-clerk' },
+                    { name: 'RRB NTPC 2025-26',     slug: 'rrb-ntpc' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+              {/* Eligibility Checker CTA */}
+              <div className="card p-5 bg-orange-50 border-orange-200">
+                <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
+                <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
+                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+              </div>
             </div>
           </aside>
 
