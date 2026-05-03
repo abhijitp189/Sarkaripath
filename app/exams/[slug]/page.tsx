@@ -113,8 +113,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'rrb-group-d') {
     return {
-      title: 'RRB Group D 2025 – Eligibility, Syllabus & Vacancy | TaiyarHo',
-      description: 'RRB Group D 2025: 32,438 vacancies (CEN-08/2024) for 10th pass candidates. Check CBT syllabus, PET details, eligibility (18–33 yrs), salary ₹22,500–₹26,000/mo and free preparation resources.',
+      title: 'RRB Group D 2026 – Eligibility, Syllabus & Vacancy | TaiyarHo',
+      description: 'RRB Group D 2026: 32,438 vacancies (CEN-08/2024) for 10th pass candidates. CBT expected 2026. Check syllabus, PET details, eligibility (18–33 yrs), salary ₹22,500–₹26,000/mo & free resources.',
       alternates: { canonical: 'https://taiyarho.in/exams/rrb-group-d/' },
     };
   }
@@ -9174,7 +9174,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
     { event: 'Application Fee Payment Deadline',              date: 'February 2025',           status: 'done' },
     { event: 'Application Correction Window',                 date: 'February – March 2025',   status: 'done' },
     { event: 'CBT Admit Card Release',                        date: 'To be notified (TBN)',    status: 'tbn' },
-    { event: 'Computer Based Test (CBT)',                     date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Computer Based Test (CBT)',                     date: 'Expected 2026 (TBN)',     status: 'tbn' },
     { event: 'CBT Result & PET Call Letter',                  date: 'To be notified (TBN)',    status: 'tbn' },
     { event: 'Physical Efficiency Test (PET)',                 date: 'To be notified (TBN)',    status: 'tbn' },
     { event: 'Document Verification (DV)',                    date: 'To be notified (TBN)',    status: 'tbn' },
@@ -9316,22 +9316,22 @@ function RrbGroupDPage({ exam }: { exam: any }) {
             <span className="badge bg-[#0a1e4f] text-white text-xs px-3 py-1 rounded-md font-semibold">Railway</span>
             <span className="badge bg-emerald-700 text-white text-xs px-3 py-1 rounded-md font-semibold">Central Govt</span>
             <span className="badge bg-accent text-white text-xs px-3 py-1 rounded-md font-semibold">10th Pass Eligible</span>
-            <span className="badge bg-white/20 text-white text-xs px-3 py-1 rounded-md font-semibold border border-white/30">📅 CBT: TBN 2025</span>
+            <span className="badge bg-white/20 text-white text-xs px-3 py-1 rounded-md font-semibold border border-white/30">📅 CBT: TBN 2026</span>
           </div>
           <h1 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 max-w-4xl">
-            RRB Group D 2025 –<br />Complete Guide: Eligibility, Syllabus &amp; Vacancy
+            RRB Group D 2026 –<br />Complete Guide: Eligibility, Syllabus &amp; Vacancy
           </h1>
           <p className="text-blue-100 text-base md:text-lg leading-relaxed max-w-3xl mb-6">
-            CEN-08/2024 notification released January 2025 with <strong className="text-white">32,438 vacancies</strong> for Track Maintainer, Helper &amp; Assistant posts across Indian Railways. 10th pass or ITI qualified. CBT exam date to be announced by your regional RRB.
+            CEN-08/2024 notification released January 2025 with <strong className="text-white">32,438 vacancies</strong> for Track Maintainer, Helper &amp; Assistant posts across Indian Railways. 10th pass or ITI qualified. CBT exam expected in 2026 — date to be announced by your regional RRB.
           </p>
           <div className="bg-emerald-900/40 border border-emerald-400/30 rounded-xl px-4 py-3 mb-8 max-w-3xl text-sm text-emerald-100">
-            💡 <strong>Key Update for 2025:</strong> CEN-08/2024 with 32,438 vacancies is the active cycle. Application window closed. Admit cards and CBT exam dates are awaited. Check{' '}
+            💡 <strong>Key Update for 2026:</strong> CEN-08/2024 with 32,438 vacancies is the active cycle. Application window closed. Admit cards and CBT exam dates are awaited. Check{' '}
             <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="underline text-emerald-200">rrbcdg.gov.in</a> for real-time updates.
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { label: 'Total Vacancies (CEN-08/2024)', value: '32,438' },
-              { label: 'CBT Exam Date', value: 'TBN ⚠️' },
+              { label: 'CBT Exam Date', value: 'TBN 2026 ⚠️' },
               { label: 'Min. Qualification', value: '10th Pass' },
               { label: 'In-Hand Salary', value: '₹22.5K–₹26K/mo' },
             ].map((s) => (
@@ -9419,7 +9419,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
               </div>
 
               <div className="card p-6 mb-4">
-                <p className="font-semibold text-surface-700 text-sm mb-3">📋 Age Limit (as on 01-01-2025 for CEN-08/2024)</p>
+                <p className="font-semibold text-surface-700 text-sm mb-3">📋 Age Limit (as on cut-off date in the CEN-08/2024 notification)</p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead><tr className="bg-surface-50">
@@ -9444,7 +9444,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
               <div className="card p-6">
                 <p className="font-semibold text-surface-700 text-sm mb-3">🎓 Educational Qualification</p>
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4 text-sm text-blue-800">
-                  💡 <strong>Key Update 2025:</strong> For CEN-08/2024, ITI in the relevant trade is mandatory only for specific technical posts. Check the post-wise eligibility table in the official notification.
+                  💡 <strong>Key Update 2026:</strong> For CEN-08/2024, ITI in the relevant trade is mandatory only for specific technical posts. Check the post-wise eligibility table in the official notification.
                 </div>
                 <ul className="space-y-2 text-sm text-surface-700">
                   <li className="flex gap-2"><span className="text-primary-500 font-bold mt-0.5">→</span><span><strong>10th Pass (Matriculation)</strong> from a recognised Board of School Education</span></li>
@@ -9665,7 +9665,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
 
             {/* 10. STUDY PLAN */}
             <section id="study-plan" className="mb-12">
-              <SectionHeading num="10" title="6-Month Study Plan for RRB Group D 2025" />
+              <SectionHeading num="10" title="6-Month Study Plan for RRB Group D 2026" />
               <div className="relative">
                 <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
                 <div className="space-y-4">
@@ -9684,7 +9684,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
 
             {/* 11. BOOKS */}
             <section id="books" className="mb-12">
-              <SectionHeading num="11" title="Best Books for RRB Group D 2025" />
+              <SectionHeading num="11" title="Best Books for RRB Group D 2026" />
               <BooksTable books={books} />
             </section>
 
