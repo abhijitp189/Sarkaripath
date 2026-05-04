@@ -48,6 +48,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   if (post.slug === 'government-exam-age-limit-obc-sc-st-relaxation-2026') {
     return <AgeLimit2026Article post={post} />;
   }
+  if (post.slug === 'highest-salary-government-exam-after-12th-2026') {
+    return <HighestSalary12thArticle post={post} />;
+  }
 
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
@@ -3924,6 +3927,632 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
                   Free Study Resources →
                 </Link>
               </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── HIGHEST SALARY GOVT EXAM AFTER 12TH 2026 ────────────────────────────────
+function HighestSalary12thArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'why-12th', label: 'Why 12th-Pass Jobs Matter' },
+    { id: 'ranked-list', label: 'Top Exams Ranked by Salary' },
+    { id: 'salary-table', label: '8th CPC Salary Comparison' },
+    { id: 'nda-deep', label: 'NDA – The Gold Standard' },
+    { id: 'ssc-chsl-deep', label: 'SSC CHSL (DEO Grade A)' },
+    { id: 'rbi-attendant', label: 'RBI Office Attendant' },
+    { id: 'other-options', label: 'Other Strong Options' },
+    { id: 'myth', label: 'RBI vs SEBI: The Myth' },
+    { id: 'how-to-choose', label: 'Which Exam Is Right for You?' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Highest Salary Govt Exam After 12th 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        {/* MAIN CONTENT */}
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-green-500/20 border border-green-500/40 text-green-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+                  Defence
+                </span>
+                <span className="text-white/50 text-xs">{post.publishedDate} · {post.readTime}</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                Highest Salary Government Exam After 12th Pass in{' '}
+                <span className="text-orange-400">2026: Ranked List</span>
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed mb-5">
+                Start your career with a six-figure salary — before you even graduate. Here is every high-paying government exam open to 12th-pass students, ranked by in-hand salary with 8th Pay Commission projections.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['NDA Salary 2026', 'SSC CHSL DEO', '8th CPC Update', 'Govt Job 12th Pass'].map(tag => (
+                  <span key={tag} className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Key Metrics */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            {[
+              { label: 'Max In-Hand Pay', value: '₹1 Lakh+', sub: 'NDA Post-Commission' },
+              { label: '8th CPC', value: 'Active 2026', sub: 'Salary revision' },
+              { label: 'SSC CHSL Launch', value: '30 April', sub: '2026 notification' },
+              { label: 'TaiyarHo Guides', value: '100% Free', sub: 'No paywall, no spam' },
+            ].map(m => (
+              <div key={m.label} className="card p-4 text-center">
+                <p className="text-xs text-surface-500 font-medium mb-1">{m.label}</p>
+                <p className="text-xl font-heading font-bold text-primary-600">{m.value}</p>
+                <p className="text-xs text-surface-400">{m.sub}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* ✅ 2026 Key Update */}
+          <div className="bg-green-50 border border-green-200 rounded-xl p-5 mb-8 flex gap-3">
+            <span className="text-xl mt-0.5">✅</span>
+            <div>
+              <p className="font-semibold text-green-800 mb-1">2026 Key Update</p>
+              <p className="text-green-700 text-sm leading-relaxed">
+                The 8th Pay Commission is in effect from January 2026. Expected fitment factor of 2.86× means salaries across all central government posts — including NDA, SSC CHSL, and RBI — are projected significantly higher than 7th CPC figures. All salary figures on this page reflect the <strong>expected 8th CPC numbers</strong>.
+              </p>
+            </div>
+          </div>
+
+          {/* Section 1: Why 12th-Pass */}
+          <section id="why-12th" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-4">Why 12th-Pass Government Jobs Are Underrated</h2>
+            <p className="text-surface-700 mb-3 leading-relaxed">
+              Most students assume the best government salaries are locked behind a graduation degree. That is simply not true. The NDA entry — open to 12th-pass students — places you directly at <strong>Level 10 of the Pay Matrix</strong>, the same level as IAS and IPS entry-level officers.
+            </p>
+            <p className="text-surface-700 mb-3 leading-relaxed">
+              Even desk-based options like SSC CHSL (DEO Grade A) and RBI Office Attendant offer better starting salaries than most private sector jobs at the same qualification level. The secret is knowing <em>which post</em> within each exam pays the most.
+            </p>
+            <div className="bg-blue-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-4">
+              <p className="text-sm font-semibold text-primary-700 mb-1">📌 Quick Note</p>
+              <p className="text-sm text-primary-700">
+                Within SSC CHSL, the <strong>DEO (Data Entry Operator) Grade A</strong> post pays significantly more than the popular LDC (Lower Division Clerk) post. Always aim for the highest post within each exam, not just the exam name.
+              </p>
+            </div>
+          </section>
+
+          {/* Section 2: Ranked List */}
+          <section id="ranked-list" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-6">Top Government Exams After 12th — Ranked by Salary (2026)</h2>
+
+            {/* NDA Card */}
+            <div className="border-2 border-orange-300 bg-orange-50 rounded-2xl p-6 mb-5">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">🏅</span>
+                <div>
+                  <h3 className="text-xl font-heading font-bold text-surface-900">1. NDA Officer (Army / Navy / Air Force)</h3>
+                  <div className="flex gap-2 mt-1">
+                    <span className="bg-orange-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded">HIGHEST PAY</span>
+                    <span className="bg-green-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded">GAZETTED OFFICER</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-surface-700 text-sm leading-relaxed mb-4">
+                NDA is the only 12th-pass exam that bypasses clerical levels entirely. It places you directly into a <strong>Level 10 Pay Matrix</strong> — equivalent to IAS/IPS entry level. Navy and Air Force wings require PCM in 12th.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div className="bg-white rounded-lg p-3 border border-orange-200">
+                  <p className="text-xs text-surface-500 mb-1">💰 In-Hand (2026)</p>
+                  <p className="font-bold text-orange-600 text-base">₹95,000 – ₹1,10,000</p>
+                  <p className="text-xs text-surface-400">Expected 8th CPC</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-orange-200">
+                  <p className="text-xs text-surface-500 mb-1">📅 NDA 2 Exam Date</p>
+                  <p className="font-bold text-surface-800 text-base">13 Sept 2026</p>
+                  <p className="text-xs text-surface-400">UPSC NDA & NA (II)</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-orange-200">
+                  <p className="text-xs text-surface-500 mb-1">🎓 Eligibility</p>
+                  <p className="font-bold text-surface-800 text-base">12th Pass</p>
+                  <p className="text-xs text-surface-400">PCM for Navy/Air Force</p>
+                </div>
+              </div>
+            </div>
+
+            {/* SSC CHSL Card */}
+            <div className="border border-primary-200 bg-primary-50 rounded-2xl p-6 mb-5">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">📝</span>
+                <div>
+                  <h3 className="text-xl font-heading font-bold text-surface-900">2. SSC CHSL – DEO Grade A</h3>
+                  <div className="flex gap-2 mt-1">
+                    <span className="bg-primary-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded">BEST DESK JOB</span>
+                    <span className="bg-blue-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded">CITY POSTING</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-surface-700 text-sm leading-relaxed mb-4">
+                While LDC is the popular CHSL post, the <strong>DEO Grade A</strong> sits on a significantly higher pay scale. With the 2026 notification releasing on 30 April, this is the best desk-based government job for 12th-pass aspirants who want to be city-posted.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div className="bg-white rounded-lg p-3 border border-primary-200">
+                  <p className="text-xs text-surface-500 mb-1">💰 In-Hand (2026)</p>
+                  <p className="font-bold text-primary-600 text-base">₹48,000 – ₹52,000</p>
+                  <p className="text-xs text-surface-400">DEO Grade A post</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-primary-200">
+                  <p className="text-xs text-surface-500 mb-1">📅 Notification</p>
+                  <p className="font-bold text-surface-800 text-base">30 April 2026</p>
+                  <p className="text-xs text-surface-400">Applications open</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-primary-200">
+                  <p className="text-xs text-surface-500 mb-1">🎓 Eligibility</p>
+                  <p className="font-bold text-surface-800 text-base">12th Pass</p>
+                  <p className="text-xs text-surface-400">Science stream for DEO</p>
+                </div>
+              </div>
+            </div>
+
+            {/* RBI Card */}
+            <div className="border border-green-200 bg-green-50 rounded-2xl p-6 mb-5">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">🏦</span>
+                <div>
+                  <h3 className="text-xl font-heading font-bold text-surface-900">3. RBI Office Attendant</h3>
+                  <div className="flex gap-2 mt-1">
+                    <span className="bg-green-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded">BANKING PERKS</span>
+                    <span className="bg-teal-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded">CAREER LADDER</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-surface-700 text-sm leading-relaxed mb-4">
+                The RBI Office Attendant exam is one of the most underrated options for 12th-pass students. It comes with full RBI benefits — housing, medical, canteen — and a clear promotion path to RBI Assistant via internal exams within 3 years.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div className="bg-white rounded-lg p-3 border border-green-200">
+                  <p className="text-xs text-surface-500 mb-1">💰 In-Hand (2026)</p>
+                  <p className="font-bold text-green-600 text-base">₹44,000 – ₹48,000</p>
+                  <p className="text-xs text-surface-400">With RBI allowances</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-green-200">
+                  <p className="text-xs text-surface-500 mb-1">📅 Notification 2026</p>
+                  <p className="font-bold text-surface-800 text-base">TBN</p>
+                  <p className="text-xs text-surface-400">To be notified</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-green-200">
+                  <p className="text-xs text-surface-500 mb-1">🎓 Eligibility</p>
+                  <p className="font-bold text-surface-800 text-base">10th / 12th Pass</p>
+                  <p className="text-xs text-surface-400">Varies by state</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Army Agniveer */}
+            <div className="border border-surface-200 bg-surface-50 rounded-2xl p-6 mb-5">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">🪖</span>
+                <h3 className="text-xl font-heading font-bold text-surface-900">4. Army Agniveer (Technical / Clerk)</h3>
+              </div>
+              <p className="text-surface-700 text-sm leading-relaxed mb-4">
+                The Agniveer scheme is a 4-year short-service military engagement. The Technical and Clerk trades (open to 12th-pass) offer solid pay plus a ₹11.71 lakh Seva Nidhi package at exit. 25% of Agniveers are retained permanently.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div className="bg-white rounded-lg p-3 border border-surface-200">
+                  <p className="text-xs text-surface-500 mb-1">💰 Monthly Pay</p>
+                  <p className="font-bold text-surface-800 text-base">₹30,000 – ₹40,000</p>
+                  <p className="text-xs text-surface-400">Year 1 to Year 4</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-surface-200">
+                  <p className="text-xs text-surface-500 mb-1">📅 Notification</p>
+                  <p className="font-bold text-surface-800 text-base">TBN 2026</p>
+                  <p className="text-xs text-surface-400">Indian Army website</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-surface-200">
+                  <p className="text-xs text-surface-500 mb-1">🎓 Eligibility</p>
+                  <p className="font-bold text-surface-800 text-base">12th Pass</p>
+                  <p className="text-xs text-surface-400">Technical: PCM</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CISF / CRPF */}
+            <div className="border border-surface-200 bg-surface-50 rounded-2xl p-6 mb-2">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">🛡️</span>
+                <h3 className="text-xl font-heading font-bold text-surface-900">5. SSC GD Constable (CISF / CRPF / BSF)</h3>
+              </div>
+              <p className="text-surface-700 text-sm leading-relaxed mb-4">
+                SSC GD Constable is the highest-vacancy 12th-pass central government exam. The in-hand salary is lower than NDA or CHSL DEO, but the job security, risk allowance, and promotion prospects are excellent. CISF posting to industrial units often includes free accommodation.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div className="bg-white rounded-lg p-3 border border-surface-200">
+                  <p className="text-xs text-surface-500 mb-1">💰 In-Hand (2026)</p>
+                  <p className="font-bold text-surface-800 text-base">₹32,000 – ₹38,000</p>
+                  <p className="text-xs text-surface-400">With risk allowance</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-surface-200">
+                  <p className="text-xs text-surface-500 mb-1">📅 Result</p>
+                  <p className="font-bold text-surface-800 text-base">2026 Result Pending</p>
+                  <p className="text-xs text-surface-400">Written exam done</p>
+                </div>
+                <div className="bg-white rounded-lg p-3 border border-surface-200">
+                  <p className="text-xs text-surface-500 mb-1">🎓 Eligibility</p>
+                  <p className="font-bold text-surface-800 text-base">10th / 12th Pass</p>
+                  <p className="text-xs text-surface-400">Age: 18–23</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 3: Salary Table */}
+          <section id="salary-table" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-4">2026 Salary Comparison: 8th Pay Commission Projections</h2>
+            <p className="text-surface-700 mb-5 leading-relaxed">
+              The table below shows expected in-hand salaries after the 8th CPC implementation (fitment factor ~2.86×). These are projections based on official Pay Level data — not confirmed numbers where marked TBN.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-900 text-white">
+                    <th className="text-left px-4 py-3 font-semibold rounded-tl-xl">Exam / Post</th>
+                    <th className="text-left px-4 py-3 font-semibold">Pay Level</th>
+                    <th className="text-left px-4 py-3 font-semibold">Basic Pay (8th CPC)</th>
+                    <th className="text-left px-4 py-3 font-semibold rounded-tr-xl">In-Hand (2026)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    { exam: 'NDA (Lieutenant)', level: 'Level 10', basic: '₹72,000+', inhand: '₹1,00,000+', highlight: true },
+                    { exam: 'SSC CHSL (DEO Grade A)', level: 'Level 8', basic: '₹32,000+', inhand: '₹50,000', highlight: false },
+                    { exam: 'RBI Office Attendant', level: 'Level 3', basic: '₹30,000+', inhand: '₹46,000', highlight: false },
+                    { exam: 'Army Agniveer (Technical)', level: 'Short Service', basic: 'Package', inhand: '₹30,000–40,000', highlight: false },
+                    { exam: 'SSC GD Constable', level: 'Level 3', basic: '₹21,700+', inhand: '₹32,000–38,000', highlight: false },
+                    { exam: 'SSC CHSL (LDC/JSA)', level: 'Level 2', basic: '₹19,900+', inhand: '₹28,000–33,000', highlight: false },
+                    { exam: 'RRB Group D', level: 'Level 1', basic: '₹18,000+', inhand: '₹26,000–30,000', highlight: false },
+                    { exam: 'India Post GDS', level: 'TRCA Scale', basic: '₹12,000+', inhand: '₹18,000–22,000', highlight: false },
+                  ].map((row, i) => (
+                    <tr key={i} className={row.highlight ? 'bg-orange-50' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className={`px-4 py-3 font-medium ${row.highlight ? 'text-orange-700' : 'text-surface-800'}`}>{row.exam}</td>
+                      <td className="px-4 py-3 text-surface-600">{row.level}</td>
+                      <td className="px-4 py-3 text-surface-700">{row.basic}</td>
+                      <td className={`px-4 py-3 font-bold ${row.highlight ? 'text-orange-600' : 'text-green-600'}`}>{row.inhand}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400">* 8th CPC projections based on fitment factor 2.86×. Actual figures may vary. RBI Attendant figures include allowances specific to RBI. NDA salary includes military service pay and X/Y/Z city allowances.</p>
+          </section>
+
+          {/* Section 4: NDA Deep Dive */}
+          <section id="nda-deep" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-4">NDA — The Gold Standard for 12th-Pass Students</h2>
+            <p className="text-surface-700 mb-3 leading-relaxed">
+              No other 12th-pass exam in India comes close to NDA in terms of career trajectory and starting salary. You commission as a Lieutenant and receive Level 10 pay — the same entry level as IAS and IPS officers coming through UPSC CSE.
+            </p>
+            <div className="bg-surface-900 text-white rounded-xl p-6 mb-5">
+              <p className="text-sm font-semibold text-orange-400 mb-3">NDA 2026 Salary Breakdown (Expected 8th CPC)</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
+                {[
+                  { label: 'Basic Pay', val: '₹72,500' },
+                  { label: 'Mil. Service Pay', val: '₹15,500' },
+                  { label: 'DA (50%)', val: '₹44,000' },
+                  { label: 'HRA / Kit Allowance', val: '~₹15,000' },
+                ].map(s => (
+                  <div key={s.label} className="bg-white/10 rounded-lg p-3">
+                    <p className="text-white/60 text-xs mb-1">{s.label}</p>
+                    <p className="font-bold text-white">{s.val}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-white/50 text-xs mt-3">Total gross: ~₹1,47,000 → In-hand after deductions: ₹95,000–₹1,10,000. Figures are projections.</p>
+            </div>
+            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+              <p className="text-sm font-semibold text-yellow-800 mb-1">⚠️ Important Note</p>
+              <p className="text-sm text-yellow-700">
+                NDA requires a rigorous 3-year training at the National Defence Academy in Pune, followed by pre-commission training at the respective service academy (IMA / INA / AFA). The physical and psychological demands are significantly higher than civilian exams. Apply only if you genuinely want a military career.
+              </p>
+            </div>
+          </section>
+
+          {/* Section 5: SSC CHSL */}
+          <section id="ssc-chsl-deep" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-4">SSC CHSL 2026 — DEO Grade A Is the Post to Target</h2>
+            <p className="text-surface-700 mb-3 leading-relaxed">
+              Most aspirants apply for SSC CHSL targeting the LDC (Lower Division Clerk) post — but the <strong>DEO (Data Entry Operator) Grade A</strong> post in the Comptroller and Auditor General office sits two pay levels higher. If you are from the Science stream in 12th, always select DEO Grade A as your first preference.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-100">
+                    <th className="text-left px-4 py-3 font-semibold text-surface-700">Post</th>
+                    <th className="text-left px-4 py-3 font-semibold text-surface-700">Pay Level</th>
+                    <th className="text-left px-4 py-3 font-semibold text-surface-700">In-Hand (2026)</th>
+                    <th className="text-left px-4 py-3 font-semibold text-surface-700">Stream Req.</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    { post: 'DEO Grade A (C&AG)', level: 'Level 8', salary: '₹48,000–52,000', stream: 'Science' },
+                    { post: 'DEO (Other Ministries)', level: 'Level 4', salary: '₹35,000–40,000', stream: 'Any' },
+                    { post: 'LDC / JSA', level: 'Level 2', salary: '₹28,000–33,000', stream: 'Any' },
+                    { post: 'PA / SA (Postal)', level: 'Level 4', salary: '₹35,000–40,000', stream: 'Any' },
+                  ].map((r, i) => (
+                    <tr key={i} className={i === 0 ? 'bg-orange-50' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className={`px-4 py-3 font-medium ${i === 0 ? 'text-orange-700' : 'text-surface-800'}`}>{r.post}</td>
+                      <td className="px-4 py-3 text-surface-600">{r.level}</td>
+                      <td className={`px-4 py-3 font-semibold ${i === 0 ? 'text-orange-600' : 'text-green-600'}`}>{r.salary}</td>
+                      <td className="px-4 py-3 text-surface-600">{r.stream}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-blue-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+              <p className="text-sm font-semibold text-primary-700 mb-1">📌 Quick Note — SSC CHSL 2026 Notification</p>
+              <p className="text-sm text-primary-700">
+                The SSC CHSL 2026 official notification was released on <strong>30 April 2026</strong>. Applications are expected to close on <strong>31 May 2026</strong>. This is a time-critical window — do not miss it.
+              </p>
+            </div>
+          </section>
+
+          {/* Section 6: RBI Attendant */}
+          <section id="rbi-attendant" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-4">RBI Office Attendant — Banking Perks on a 12th-Pass Salary</h2>
+            <p className="text-surface-700 mb-3 leading-relaxed">
+              The Reserve Bank of India hires Office Attendants (formerly called Class IV / Support Staff) through a state-wise recruitment process. This is one of the most sought-after 10th/12th-pass banking sector jobs because of the unmatched perks that come with any RBI employment.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                <p className="font-semibold text-green-800 mb-2 text-sm">✅ What You Get</p>
+                <ul className="space-y-1 text-sm text-green-700">
+                  <li>• Free / subsidised RBI housing colony accommodation</li>
+                  <li>• Medical treatment for self and dependents</li>
+                  <li>• LFC (Leave Fare Concession) — 2 trips/year</li>
+                  <li>• Pension under New Pension Scheme (NPS)</li>
+                  <li>• Promotion to RBI Assistant via internal exam (3 yrs)</li>
+                </ul>
+              </div>
+              <div className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                <p className="font-semibold text-surface-800 mb-2 text-sm">📋 Key Facts</p>
+                <ul className="space-y-1 text-sm text-surface-600">
+                  <li>• Eligibility: 10th pass (some states 12th pass)</li>
+                  <li>• Age: 18–25 years (relaxation for reserved categories)</li>
+                  <li>• Selection: Written test + Language proficiency</li>
+                  <li>• State-wise vacancies — regional language mandatory</li>
+                  <li>• 2026 Notification: TBN (check rbi.org.in)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 7: Other Options */}
+          <section id="other-options" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-4">Other Strong 12th-Pass Government Job Options</h2>
+            <div className="space-y-3">
+              {[
+                { name: 'Indian Coast Guard Navik (GD/DB)', pay: '₹29,000–36,000', note: 'Only for male candidates; PCM required for DB', icon: '⚓' },
+                { name: 'Navy AA / MR (Artificer Apprentice)', pay: '₹28,000–35,000', note: 'PCM required for AA; excellent growth to officer via UES', icon: '🛳️' },
+                { name: 'Air Force Group Y (Non-Tech)', pay: '₹28,000–34,000', note: 'Open to any stream; best path to Airman to officer via AFCAT', icon: '✈️' },
+                { name: 'India Post Postman / Mail Guard', pay: '₹22,000–28,000', note: 'Level 3; low competition, departmental promotion possible', icon: '📮' },
+                { name: 'FCI (Junior Engineer / Assistant)', pay: '₹35,000–45,000', note: 'Diploma/12th for some posts; check FCI recruitment 2026', icon: '🌾' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 bg-surface-50 border border-surface-200 rounded-xl p-4">
+                  <span className="text-xl mt-0.5">{item.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-3 mb-1">
+                      <p className="font-semibold text-surface-800 text-sm">{item.name}</p>
+                      <span className="text-xs font-bold text-green-600 bg-green-50 border border-green-200 px-2 py-0.5 rounded">{item.pay}</span>
+                    </div>
+                    <p className="text-xs text-surface-500">{item.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section 8: RBI vs SEBI Myth */}
+          <section id="myth" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-4">The ₹1.8 Lakh SEBI Myth — Cleared Once and For All</h2>
+            <div className="bg-red-50 border border-red-200 rounded-xl p-5 mb-5">
+              <p className="text-sm font-semibold text-red-800 mb-2">⚠️ Common Aspirant Mistake</p>
+              <p className="text-sm text-red-700 italic mb-3">"I want a SEBI job after 12th pass because of the ₹1.8 Lakh salary."</p>
+              <p className="text-sm text-red-700">
+                <strong>SEBI Grade A (Assistant Manager)</strong> — the entry-level SEBI officer post — requires a <strong>Graduation degree</strong>. There are no direct entry-level officer posts in SEBI for 12th-pass students. The ₹1.8 Lakh figure applies only to experienced Grade A officers with allowances, not entry-level salaries.
+              </p>
+            </div>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+              <p className="text-sm text-primary-700">
+                If you want to enter the <strong>finance/banking sector immediately after 12th</strong>, focus on the <strong>RBI Office Attendant</strong> exam. It offers RBI-grade benefits and a clear promotion path to RBI Assistant via internal exams within 3 years — which then makes you eligible for RBI Grade B eventually.
+              </p>
+            </div>
+          </section>
+
+          {/* Section 9: How to Choose */}
+          <section id="how-to-choose" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-4">Which Exam Is Right for You?</h2>
+            <div className="overflow-x-auto rounded-xl border border-surface-200">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-100">
+                    <th className="text-left px-4 py-3 font-semibold text-surface-700">Your Profile</th>
+                    <th className="text-left px-4 py-3 font-semibold text-surface-700">Best Exam</th>
+                    <th className="text-left px-4 py-3 font-semibold text-surface-700">Why</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-100">
+                  {[
+                    { profile: 'PCM student, physically fit, want highest pay', exam: 'NDA', why: 'Direct Level 10 salary; ₹1 Lakh+ in hand' },
+                    { profile: 'Science stream, want city desk job', exam: 'SSC CHSL (DEO A)', why: 'Highest paying desk job for 12th; city posting' },
+                    { profile: 'Any stream, want banking sector', exam: 'RBI Office Attendant', why: 'Best perks + promotion to RBI Assistant in 3 yrs' },
+                    { profile: 'Want maximum job security', exam: 'SSC GD Constable', why: 'Central govt; huge vacancies; pension' },
+                    { profile: '12th pass, want short-term income + resume', exam: 'Army Agniveer', why: '₹11.71L exit package + priority in other govt jobs' },
+                    { profile: 'Any stream, wants state govt options', exam: 'State Police Constable', why: 'High vacancies, local language advantage' },
+                  ].map((r, i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 text-surface-700">{r.profile}</td>
+                      <td className="px-4 py-3 font-semibold text-primary-600">{r.exam}</td>
+                      <td className="px-4 py-3 text-surface-500 text-xs">{r.why}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-5 bg-surface-900 text-white rounded-xl p-5">
+              <p className="text-sm font-semibold text-orange-400 mb-2">💡 TaiyarHo Recommendation</p>
+              <p className="text-sm text-surface-300 leading-relaxed">
+                If you are physically fit and under 19.5 years old, prepare for <strong>NDA first</strong>. The salary ceiling and career growth are unmatched. If you are older or want a civilian job, target <strong>SSC CHSL (DEO A)</strong> and <strong>RBI Attendant</strong> simultaneously — the syllabi overlap significantly and both have 2026 notifications open or upcoming.
+              </p>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section id="faq" className="mb-10">
+            <h2 className="text-2xl font-heading font-bold text-surface-900 mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'Which government exam has the highest salary after 12th pass in 2026?',
+                  a: 'NDA (National Defence Academy) offers the highest salary for 12th-pass students. After commissioning as a Lieutenant (typically 3.5–4 years after joining NDA), the expected in-hand salary is ₹95,000–₹1,10,000/month under 8th CPC projections — equivalent to an IAS/IPS entry-level officer.'
+                },
+                {
+                  q: 'Which government job has the highest salary for girls after 12th pass?',
+                  a: 'NDA is now open to all genders. For girls preferring an office/civilian posting, SSC CHSL DEO Grade A (₹48,000–52,000 in-hand) and RBI Office Attendant (₹44,000–48,000) are the best high-paying options after 12th.'
+                },
+                {
+                  q: 'When is the SSC CHSL 2026 notification date?',
+                  a: 'The SSC CHSL 2026 notification was officially released on 30 April 2026. Applications are expected to remain open until 31 May 2026. Always check ssc.gov.in for the latest official dates.'
+                },
+                {
+                  q: 'Is SEBI recruitment open for 12th-pass students?',
+                  a: 'No. SEBI Grade A (Assistant Manager) — the entry-level SEBI post — requires a graduation degree. There are no direct officer-level posts in SEBI for 12th-pass students. The RBI Office Attendant exam is the best banking option for 12th-pass aspirants.'
+                },
+                {
+                  q: 'What is the impact of the 8th Pay Commission on 12th-pass government job salaries?',
+                  a: 'The 8th Pay Commission (effective January 2026) is expected to use a fitment factor of approximately 2.86×. This would push NDA entry-level pay from ~₹56,000 to ~₹1,00,000+ in-hand, SSC CHSL DEO from ~₹38,000 to ~₹50,000, and RBI Attendant from ~₹32,000 to ~₹46,000. These are projections — confirm from official notifications.'
+                },
+              ].map((item, i) => (
+                <div key={i} className="border border-surface-200 rounded-xl overflow-hidden">
+                  <div className="bg-surface-50 px-5 py-4">
+                    <p className="font-semibold text-surface-800 text-sm">{item.q}</p>
+                  </div>
+                  <div className="px-5 py-4">
+                    <p className="text-surface-700 text-sm leading-relaxed">{item.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* JSON-LD FAQ Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Which government exam has the highest salary after 12th pass in 2026?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "NDA (National Defence Academy) offers the highest salary for 12th-pass students. After commissioning as a Lieutenant, the expected in-hand salary is ₹95,000–₹1,10,000/month under 8th CPC projections."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Which government job has the highest salary for girls after 12th pass?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "NDA is now open to all genders. For civilian postings, SSC CHSL DEO Grade A (₹48,000–52,000) and RBI Office Attendant (₹44,000–48,000) are the best high-paying options after 12th."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "When is the SSC CHSL 2026 notification date?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The SSC CHSL 2026 notification was officially released on 30 April 2026. Applications are expected to close on 31 May 2026."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is SEBI recruitment open for 12th-pass students?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. SEBI Grade A requires a graduation degree. There are no direct officer-level posts in SEBI for 12th-pass students."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the impact of the 8th Pay Commission on 12th-pass government job salaries?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The 8th Pay Commission (effective January 2026) with a fitment factor of ~2.86× is projected to push NDA entry-level pay to ₹1,00,000+, SSC CHSL DEO to ~₹50,000, and RBI Attendant to ~₹46,000 in-hand."
+                    }
+                  }
+                ]
+              })
+            }}
+          />
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="mt-10 lg:mt-0 space-y-5">
+          {/* TOC */}
+          <div className="card p-5 sticky top-24">
+            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</div>
+            <nav className="space-y-1.5">
+              {toc.map(item => (
+                <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-600 hover:translate-x-1 transition-all duration-150 leading-snug">
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Quick Salary Box */}
+          <div className="card p-5">
+            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Quick Salary Summary</div>
+            <div className="space-y-2 text-sm">
+              {[
+                { label: 'NDA', val: '₹1 Lakh+', color: 'text-orange-600' },
+                { label: 'SSC CHSL DEO A', val: '₹50,000', color: 'text-primary-600' },
+                { label: 'RBI Attendant', val: '₹46,000', color: 'text-green-600' },
+                { label: 'Agniveer Tech', val: '₹40,000', color: 'text-surface-700' },
+                { label: 'SSC GD Constable', val: '₹38,000', color: 'text-surface-700' },
+              ].map(s => (
+                <div key={s.label} className="flex justify-between items-center">
+                  <span className="text-surface-600">{s.label}</span>
+                  <span className={`font-bold ${s.color}`}>{s.val}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Related Links */}
+          <div className="card p-5">
+            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related</div>
+            <div className="space-y-2">
+              <Link href="/exams/ssc-cgl" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL Complete Guide →</Link>
+              <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL 2026 →</Link>
+              <Link href="/blog/ibps-po-salary-in-hand-2026" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 →</Link>
+              <Link href="/tools/age-calculator" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
+              <Link href="/exams" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
             </div>
           </div>
         </aside>
