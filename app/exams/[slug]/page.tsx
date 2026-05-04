@@ -165,6 +165,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'sbi-po') {
+    return {
+      title: 'SBI PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'SBI PO 2026: Notification expected Oct–Nov 2026. 2,000–3,000 vacancies. Check complete Prelims & Mains syllabus, exam pattern, GE & Interview, eligibility (Graduate, 21–30 yrs), salary ₹65,000–₹75,000/month and free preparation resources.',
+      keywords: 'SBI PO 2026, SBI PO taiyari, SBI PO notification 2026, SBI PO syllabus Hindi, SBI PO परीक्षा तैयारी, State Bank PO bharti, bank PO sarkari naukri 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/sbi-po/' },
+      other: { 'description:hi': 'SBI PO 2026 – भारत के सबसे बड़े बैंक SBI में 2,000–3,000 रिक्तियाँ। सिलेबस, परीक्षा पैटर्न (प्रारंभिक + मुख्य + GE/साक्षात्कार), पात्रता, आयु 21-30 वर्ष, वेतन ₹65,000–₹75,000/माह और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'ibps-po') {
     return {
       title: 'IBPS PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -211,6 +221,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (detailed && detailed.slug === 'rrb-group-d') return <RrbGroupDPage exam={detailed} />;
   if (brief && brief.slug === 'rrb-alp') return <RrbAlpPage exam={brief} />;
   if (detailed && detailed.slug === 'ibps-po') return <IbpsPoPage exam={detailed} />;
+  if (detailed && detailed.slug === 'sbi-po') return <SbiPoPage exam={detailed} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'rajasthan-police-constable') return <RajasthanPoliceConstablePage exam={brief} />;
@@ -12159,6 +12170,843 @@ function IbpsPoPage({ exam }: { exam: any }) {
           { "@type": "ListItem", "position": 3, "name": "IBPS PO 2026", "item": "https://www.taiyarho.in/exams/ibps-po/" }
         ]
       }) }} />
+    </>
+  );
+}
+
+// ─── SBI PO 2026 RICH PAGE ────────────────────────────────────────────────────
+function SbiPoPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies History' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'cutoff', label: 'Previous Year Cut-offs' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'SBI PO 2024 Notification Released', date: '31 October 2024', status: 'released' },
+    { event: 'SBI PO 2024 Online Application Opens', date: '31 October 2024', status: 'released' },
+    { event: 'SBI PO 2024 Application Last Date', date: '21 November 2024', status: 'released' },
+    { event: 'SBI PO 2024 Prelims Exam', date: '13 & 14 December 2024', status: 'released' },
+    { event: 'SBI PO 2024 Prelims Result', date: 'January 2025', status: 'released' },
+    { event: 'SBI PO 2024 Mains Exam', date: '12 February 2025', status: 'released' },
+    { event: 'SBI PO 2024 Mains Result', date: 'March 2025', status: 'released' },
+    { event: 'SBI PO 2024 GE & Interview (Phase 3)', date: 'April–May 2025', status: 'released' },
+    { event: 'SBI PO 2024 Final Merit List & Joining', date: 'June–July 2025', status: 'upcoming' },
+    { event: '💡 SBI PO 2025 (for 2026 cycle) Notification', date: 'Expected Oct–Nov 2025 (TBN)', status: 'tbn' },
+    { event: 'SBI PO 2025 Online Application Dates', date: 'Expected Oct–Nov 2025 (TBN)', status: 'tbn' },
+    { event: 'SBI PO 2025 Prelims Exam', date: 'Expected Dec 2025 – Jan 2026 (TBN)', status: 'tbn' },
+    { event: 'SBI PO 2025 Mains Exam', date: 'Expected Feb–Mar 2026 (TBN)', status: 'tbn' },
+    { event: 'SBI PO 2025 GE & Interview', date: 'Expected Apr–May 2026 (TBN)', status: 'tbn' },
+    { event: 'SBI PO 2025 Final Result & Joining', date: 'Expected Jun–Jul 2026 (TBN)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'SBI PO 2021', vacancies: '2,056', prelims: 'Nov–Dec 2021', mains: 'Jan 2022' },
+    { year: 'SBI PO 2022', vacancies: '1,673', prelims: 'Dec 2022', mains: 'Jan 2023' },
+    { year: 'SBI PO 2023', vacancies: '2,000', prelims: 'Nov 2023', mains: 'Dec 2023' },
+    { year: 'SBI PO 2024', vacancies: '1,913', prelims: 'Dec 2024', mains: 'Feb 2025' },
+    { year: 'SBI PO 2025 (upcoming)', vacancies: '2,000–3,000 (Expected)', prelims: 'Dec 2025 – Jan 2026 (TBN)', mains: 'Feb–Mar 2026 (TBN)' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'English Language', questions: 30, marks: 30, time: '20 min' },
+    { subject: 'Quantitative Aptitude', questions: 35, marks: 35, time: '20 min' },
+    { subject: 'Reasoning Ability', questions: 35, marks: 35, time: '20 min' },
+  ];
+
+  const mainsPattern = [
+    { subject: 'Reasoning & Computer Aptitude', questions: 45, marks: 60, time: '60 min' },
+    { subject: 'Data Analysis & Interpretation', questions: 35, marks: 60, time: '45 min' },
+    { subject: 'General/Economy/Banking Awareness', questions: 40, marks: 40, time: '35 min' },
+    { subject: 'English Language', questions: 35, marks: 40, time: '40 min' },
+    { subject: 'Descriptive Paper (Letter + Essay)', questions: 2, marks: 50, time: '30 min' },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', prelims2024: '~62.50', mains2024: '~55/150', prelims2023: '~60.25', mains2023: '~52/150' },
+    { category: 'OBC', prelims2024: '~57.00', mains2024: '~48/150', prelims2023: '~55.50', mains2023: '~45/150' },
+    { category: 'SC', prelims2024: '~49.75', mains2024: '~40/150', prelims2023: '~47.25', mains2023: '~37/150' },
+    { category: 'ST', prelims2024: '~44.00', mains2024: '~34/150', prelims2023: '~41.00', mains2023: '~31/150' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Scale I, post-12th Bipartite)', amount: '₹41,960/month' },
+    { component: 'Dearness Allowance (DA) ~53%', amount: '~₹22,238/month' },
+    { component: 'House Rent Allowance (HRA) Metro', amount: '₹4,196–₹6,294/month' },
+    { component: 'City Compensatory Allowance (CCA)', amount: '₹1,100–₹2,000/month' },
+    { component: 'Special Allowance & Other Perks', amount: '~₹5,000–₹8,000/month' },
+    { component: 'Gross Estimated In-Hand (Metro)', amount: '~₹65,000–₹75,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Probationary Officer (PO)', scale: 'Scale I', years: '0–2 yrs (Training)', payband: '₹41,960–₹85,920' },
+    { level: 'Assistant Manager', scale: 'Scale I', years: '2–5 yrs', payband: '₹41,960–₹85,920' },
+    { level: 'Deputy Manager', scale: 'Scale II', years: '5–10 yrs', payband: '₹50,030–₹95,920' },
+    { level: 'Manager', scale: 'Scale III', years: '10–15 yrs', payband: '₹63,840–₹1,04,240' },
+    { level: 'Chief Manager / AGM', scale: 'Scale IV', years: '15–20 yrs', payband: '₹76,010–₹1,13,860' },
+    { level: 'DGM / GM / MD', scale: 'Scale V–VII', years: '20+ yrs', payband: '₹1,00,000+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🔢 Quantitative Aptitude / Data Analysis & Interpretation',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Number Series (missing number, wrong number)',
+        'Simplification & Approximation',
+        'Percentage, Average, Ratio & Proportion',
+        'Profit & Loss, Simple & Compound Interest, Partnership',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time – Trains, Boats & Streams',
+        'Permutation, Combination & Probability',
+        'Data Interpretation – Bar, Pie, Line, Tabular, Caselet, Mixed, Radar',
+        'Data Sufficiency (2-statement), Quadratic Equations',
+        'Mensuration, Quantity Comparison',
+      ],
+    },
+    {
+      subject: '🧩 Reasoning Ability & Computer Aptitude',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Puzzles – Floor based, Box, Month-Year-Day, Scheduling, Comparison',
+        'Seating Arrangement – Linear, Circular, Square, Rectangular, Double row',
+        'Syllogisms (Direct & Reverse pattern)',
+        'Coding-Decoding (new pattern)',
+        'Blood Relations, Direction & Distance',
+        'Inequality (Direct & Coded), Input-Output',
+        'Order & Ranking, Data Sufficiency (reasoning)',
+        'Computer – Hardware, Software, Networking, Internet, MS Office',
+        'Cyber Security basics, Database fundamentals',
+      ],
+    },
+    {
+      subject: '📝 English Language',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Reading Comprehension (2–3 long passages with vocab)',
+        'Cloze Test (new sentence-based pattern)',
+        'Error Spotting (word-level and clause-level)',
+        'Sentence Rearrangement, Para Jumbles',
+        'Phrase Replacement, Double Fillers, Triple Fillers',
+        'Word Usage, Match the Column',
+        'Vocabulary – Synonyms, Antonyms in context',
+        'Descriptive Paper (Mains only): Formal Letter + Essay (~250–300 words each)',
+      ],
+    },
+    {
+      subject: '🏦 General/Economy/Banking Awareness',
+      prelims: false,
+      mains: true,
+      topics: [
+        'SBI – History, products, services, current MD & Chairman, subsidiaries',
+        'Banking Awareness – NPA, CRAR, Basel Norms, Priority Sector Lending',
+        'RBI – Monetary Policy, Repo Rate, CRR, SLR, MSF, NABARD, SEBI, NHB',
+        'Financial Inclusion – PMJDY, MUDRA, Stand Up India, DBT',
+        'Union Budget – Key highlights, fiscal deficit, revenue/capital expenditure',
+        'Insurance – IRDAI, types of policies, LIC, health insurance basics',
+        'Capital Markets – NSE, BSE, Sensex, Nifty, SEBI regulations',
+        'Current Affairs – last 6 months national + international',
+        'Awards, Appointments, Important Days, International summits',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Quant Foundation', detail: 'Number Series, Simplification, Percentage, Ratio & Proportion, SI/CI. Practice 30 arithmetic questions daily with a timer. Start reading a financial newspaper (Hindu BusinessLine or Economic Times) every morning for 15 minutes — this pays dividends in Banking Awareness.' },
+    { month: 'Month 2', focus: 'Advanced Quant + Reasoning Start', detail: 'DI — all types (bar, pie, caselet, mixed). SBI PO DI is harder than IBPS — focus heavily on caselet-based and mixed DI. Reasoning: Linear, Circular, Floor Puzzles. Master all variations — puzzles form 60–70% of the Reasoning section.' },
+    { month: 'Month 3', focus: 'Complete Reasoning + English', detail: 'Syllogisms (both direct and reverse), Coding-Decoding, Blood Relations, Input-Output. English: 2 RC passages daily. Error Spotting and Cloze Tests every day. Start Descriptive writing — one essay per week on banking or economy topics.' },
+    { month: 'Month 4', focus: 'Banking Awareness + Computer Knowledge', detail: 'This is your SBI-specific month. Learn SBI\'s history, subsidiaries, products, current leadership. RBI policies, banking terminology, government financial schemes. Computer Knowledge: 2–3 weeks of study is sufficient for full marks. Start sectional mock tests: 1 per subject per week.' },
+    { month: 'Month 5', focus: 'Mains Pattern + Descriptive Paper', detail: 'Practice advanced and mixed DI daily. Descriptive writing: one formal letter and one essay per week. Practise Group Discussion topics — banking reforms, digital payments, financial inclusion, economic policy. One full Mains-level mock per week.' },
+    { month: 'Month 6', focus: 'Full Mocks + GD/Interview Prep', detail: 'Take 2–3 full-length Prelims mocks per week. Analyse every mock — focus on wrong answers. Revise Banking Awareness twice. Prepare for Group Exercise: practise GD in groups or watch recordings online. Stay current on last 6 months of national and international news.' },
+  ];
+
+  const books = [
+    { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Quant' },
+    { title: 'Quantum CAT (for advanced DI)', author: 'Sarvesh K. Verma', subject: 'Quant (Advanced DI)' },
+    { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali & Indu Sijwali', subject: 'Reasoning' },
+    { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English Vocabulary' },
+    { title: 'Objective English for Competitive Exams', author: 'Hari Mohan Prasad', subject: 'English' },
+    { title: 'Banking & Financial Awareness', author: 'Arihant Publications', subject: 'Banking Awareness' },
+    { title: 'SBI PO 30 Practice Sets', author: 'Adda247 / Disha', subject: 'Full Mock Tests' },
+    { title: 'Descriptive English for Banking Exams', author: 'S.P. Bakshi (Arihant)', subject: 'Descriptive Paper' },
+  ];
+
+  const freeResources = [
+    { name: 'SBI Official Careers Page', type: 'website', url: 'https://sbi.co.in/web/careers', description: 'Official notifications, admit cards, and result PDFs — always the primary source.' },
+    { name: 'Oliveboard SBI PO Free Mocks', type: 'website', url: 'https://www.oliveboard.in/sbi-po/', description: 'Free full-length and sectional mocks with AI-based analysis matching SBI PO exam pattern.' },
+    { name: 'Adda247 Banking on YouTube', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Daily free classes, current affairs, and mock solutions for SBI PO.' },
+    { name: 'Mrunal Patel (Economy & DI)', type: 'youtube', url: 'https://www.youtube.com/@TheMrunalPatel', description: 'Best free resource for Banking/Economy Awareness and high-level Data Interpretation.' },
+    { name: 'Unacademy Banking', type: 'youtube', url: 'https://www.youtube.com/@UnacademyBanking', description: 'Free SBI PO classes by top banking educators covering all sections.' },
+    { name: 'RBI Official Website', type: 'website', url: 'https://www.rbi.org.in', description: 'Stay updated on monetary policy, repo rate, banking circulars — directly from source.' },
+    { name: 'GK Today Daily Current Affairs', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily current affairs, banking awareness capsules, and monthly revision PDFs.' },
+    { name: 'Testbook SBI PO Free Tests', type: 'website', url: 'https://testbook.com/sbi-po', description: 'Free full-length mocks and section-wise practice for SBI PO.' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'Prelims is only a filter — aim for 65–70 correct out of 100, not all 100. Accuracy matters far more than attempting every question. Skipping tricky questions and securing your strong sections is the Prelims strategy.' },
+    { icon: '📊', tip: 'SBI PO DI is harder than IBPS PO. Caselet-based and mixed DI require strong calculation speed. Practise these daily from Month 2. Develop shortcuts — never calculate full fractions when approximate values work.' },
+    { icon: '📝', tip: 'The Descriptive Paper (Essay + Letter, 50 marks) is where SBI PO candidates separate from the rest. Prepare 10–15 banking and economy topics for essays. Use formal structure, simple English, and relevant data.' },
+    { icon: '🏦', tip: 'Know SBI inside out. Every interview panel asks about SBI\'s history, current MD & Chairman, subsidiaries, products, digital initiatives (YONO), and market position. Prepare a 2-minute SBI knowledge pitch.' },
+    { icon: '🤝', tip: 'The Group Exercise (GE) tests communication, leadership, and teamwork — not just knowledge. Practise GD in groups or online. Speak clearly, listen actively, and never be aggressive. Even 2–3 well-made points that build on others\' ideas score high.' },
+    { icon: '🔄', tip: '3 focused hours daily for 6 months is better than last-minute 14-hour cramming. Build a daily schedule with mock tests from Month 3. Analyse every mock — understand your mistake patterns before they become habits.' },
+    { icon: '💡', tip: 'Current Affairs carries 35–40 marks in Mains. Use Telegram channels (Adda247, Oliveboard) for free daily PDFs. Reading 15 minutes of financial news every morning for 6 months is more effective than bulk-reading before the exam.' },
+    { icon: '🌐', tip: 'Join Testbook or Oliveboard for free mock tests — SBI PO ranking is visible across lakhs of candidates. Use it to benchmark your performance. Aim to be in the top 10% after Month 4.' },
+  ];
+
+  const faqs = [
+    { q: 'What is SBI PO 2025–26 notification date?', a: 'SBI PO 2025 notification date has not been officially released yet. Based on historical patterns, SBI typically releases the PO notification in October–November. SBI PO 2024 notification was released on 31 October 2024 for 1,913 vacancies. Check sbi.co.in/web/careers regularly for the 2025 cycle announcement.' },
+    { q: 'How many vacancies are expected in SBI PO 2025–26?', a: 'Based on the trend over recent years — 2,056 (2021), 1,673 (2022), 2,000 (2023), 1,913 (2024) — SBI PO 2025 is expected to have approximately 2,000–3,000 vacancies. The exact number is announced with the official notification.' },
+    { q: 'What is the SBI PO 2026 salary?', a: 'After joining, SBI PO (Scale I) starts at a basic pay of ₹41,960/month (under the 12th Bipartite Settlement). With Dearness Allowance (~53%), HRA, CCA, and other allowances, the total gross in-hand salary is approximately ₹65,000–₹75,000/month in metro cities — one of the highest entry-level banking salaries in India.' },
+    { q: 'How is SBI PO different from IBPS PO?', a: 'SBI PO recruits exclusively for State Bank of India, while IBPS PO recruits for 11 other public sector banks. Key difference: SBI PO includes a Group Exercise (GE) in Phase 3 (worth 20 marks), while IBPS PO only has an Interview. SBI PO Mains DI and Reasoning are generally harder. Starting salary for SBI PO is also higher (₹41,960 vs ₹36,000 basic).' },
+    { q: 'Is there a Group Discussion in SBI PO?', a: 'Yes. SBI PO Phase 3 includes a Group Exercise (20 marks) + Personal Interview (30 marks) = 50 marks total. The GE is a Group Discussion or Case Study Discussion that tests your communication, leadership, and analytical skills. IBPS PO does not have a GE — only an Interview.' },
+    { q: 'What is the age limit for SBI PO 2026?', a: 'The age limit for SBI PO is 21–30 years for General/EWS candidates. Age relaxations: OBC (+3 years = up to 33), SC/ST (+5 years = up to 35), PwBD (+10 years), Ex-Servicemen (as per Government norms). The age is calculated as of the cut-off date mentioned in each year\'s official notification.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">SBI PO 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏦 Banking</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification 2025: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            SBI PO 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            SBI PO 2025 notification expected Oct–Nov 2025 with ~2,000–3,000 vacancies for India&apos;s largest public sector bank. 3-stage selection: Prelims (100 marks, 1 hr) → Mains (250 marks + Descriptive) → Group Exercise &amp; Interview (50 marks). Graduate degree required. Age 21–30 years.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '2,000–3,000', sub: '(2025 est.)' },
+              { label: 'Prelims Exam Date', value: 'Dec 2025', sub: '(TBN)' },
+              { label: 'Min. Qualification', value: 'Any Graduate', sub: 'Degree required' },
+              { label: 'Gross Salary', value: '~₹65,000–₹75,000', sub: 'per month (metro)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update 2026:</strong> SBI PO 2024 had 1,913 vacancies — notification released 31 October 2024. The 2025 cycle (whose joining will be in 2026) is expected to open Oct–Nov 2025. ⚠️ All upcoming dates are TBN — verify from <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">sbi.co.in/web/careers</a> when released.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is SBI PO 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>SBI PO (Probationary Officer) exam</strong> is conducted annually by the <strong>State Bank of India (SBI)</strong> to recruit Probationary Officers for its branches across India. SBI is the <strong>country&apos;s largest public sector bank</strong> with over 22,000 branches and 1.4 lakh employees — making an SBI PO posting one of the most coveted banking careers in India.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  A Probationary Officer joins as a management-level officer and undergoes a structured <strong>2-year probation</strong> with training at SBI&apos;s dedicated training centres. After successful probation, the officer is confirmed as an <strong>Assistant Manager in Junior Management Grade Scale-I (JMGS-I)</strong>.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  What sets SBI PO apart is its <strong>Group Exercise (GE) round</strong> in Phase 3 — a unique stage not present in IBPS PO — which tests teamwork, communication, and leadership. With over <strong>20–25 lakh applicants</strong> every cycle, SBI PO is one of India&apos;s most competitive yet rewarding banking exams.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'State Bank of India' },
+                  { label: 'Selection Stages', value: 'Prelims + Mains + GE & Interview' },
+                  { label: 'Joining as', value: 'JMGS-I (Asst. Manager)' },
+                  { label: 'Probation Period', value: '2 Years' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 SBI PO 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> SBI PO 2025–26 dates are not yet officially announced. The table below shows confirmed 2024 dates and expected 2025–26 dates based on SBI&apos;s historical annual cycle. Always verify from <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer" className="underline font-medium">sbi.co.in/web/careers</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released' && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'upcoming' && <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">🔵 Upcoming</span>}
+                          {row.status === 'tbn' && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria for SBI PO 2026</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">Candidate must be a citizen of India. Citizens of Nepal, Bhutan, and certain categories of Tibetan refugees/migrants may also apply — refer to the official notification for full details.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>21 years</strong> | Maximum: <strong>30 years</strong> (as of the cut-off date in the notification)</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50 border border-surface-200">
+                        <tr>
+                          <th className="text-left p-2 font-semibold text-surface-700">Category</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Relaxation</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Max Age</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / EWS', rel: 'No relaxation', max: '30 years' },
+                          { cat: 'OBC (Non-Creamy Layer)', rel: '+3 years', max: '33 years' },
+                          { cat: 'SC / ST', rel: '+5 years', max: '35 years' },
+                          { cat: 'PwBD (General)', rel: '+10 years', max: '40 years' },
+                          { cat: 'PwBD (OBC)', rel: '+13 years', max: '43 years' },
+                          { cat: 'PwBD (SC/ST)', rel: '+15 years', max: '45 years' },
+                          { cat: 'Ex-Servicemen', rel: 'As per Govt. norms', max: 'As applicable' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                            <td className="p-2 text-surface-700">{row.cat}</td>
+                            <td className="p-2 text-primary-600 font-medium">{row.rel}</td>
+                            <td className="p-2 text-surface-700">{row.max}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">
+                    <strong>Graduation in any discipline</strong> from a university recognised by the Government of India or any equivalent qualification. Candidates who are in their final year of graduation and are awaiting results may also apply, subject to producing proof of graduation by the date of joining.
+                  </p>
+                  <p className="text-sm text-surface-500 mt-2">Candidates with Integrated Dual Degree (IDD) are also eligible if they have completed the degree by the notification cut-off date.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI PO Vacancy History &amp; 2026 Outlook</h2>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-emerald-800">💡 <strong>Key Update 2026:</strong> SBI PO vacancies have ranged between 1,673 and 2,056 in recent years. Based on SBI&apos;s expansion plans and digital banking growth, the 2025 cycle (joining in 2026) is expected to announce 2,000–3,000 vacancies. ⚠️ Exact vacancy count is TBN.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Cycle</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Vacancies</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 text-center font-bold text-primary-600">{row.vacancies}</td>
+                        <td className="p-3 text-surface-600">{row.prelims}</td>
+                        <td className="p-3 text-surface-600">{row.mains}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI PO 2026 Exam Pattern</h2>
+              </div>
+
+              {/* Phase 1: Prelims */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded-lg">Phase 1</span>
+                Preliminary Examination
+              </h3>
+              <div className="card overflow-hidden mb-6">
+                <div className="bg-surface-50 border-b border-surface-200 p-3 text-xs text-surface-500 font-medium">
+                  100 Questions | 100 Marks | 1 Hour (20 min per section) | Negative Marking: −0.25 per wrong answer
+                </div>
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Subject</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-100">
+                    {prelimsPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                        <td className="p-3 font-medium text-surface-700">{row.subject}</td>
+                        <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                        <td className="p-3 text-center text-surface-600">{row.marks}</td>
+                        <td className="p-3 text-center text-primary-600 font-medium">{row.time}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-surface-800 text-white">
+                      <td className="p-3 font-bold">Total</td>
+                      <td className="p-3 text-center font-bold">100</td>
+                      <td className="p-3 text-center font-bold">100</td>
+                      <td className="p-3 text-center font-bold">60 min</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Phase 2: Mains */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded-lg">Phase 2</span>
+                Main Examination
+              </h3>
+              <div className="card overflow-hidden mb-6">
+                <div className="bg-surface-50 border-b border-surface-200 p-3 text-xs text-surface-500 font-medium">
+                  Objective: 155 Qs | 200 Marks | 3 hours | + Descriptive: 2 Qs | 50 Marks | 30 min | Negative Marking: −0.25 (objective only)
+                </div>
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Subject</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-100">
+                    {mainsPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                        <td className="p-3 font-medium text-surface-700">{row.subject}</td>
+                        <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                        <td className="p-3 text-center text-surface-600">{row.marks}</td>
+                        <td className="p-3 text-center text-primary-600 font-medium">{row.time}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-surface-800 text-white">
+                      <td className="p-3 font-bold">Total</td>
+                      <td className="p-3 text-center font-bold">157</td>
+                      <td className="p-3 text-center font-bold">250</td>
+                      <td className="p-3 text-center font-bold">3h 30min</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Phase 3: GE & Interview */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded-lg">Phase 3</span>
+                Group Exercise (GE) &amp; Interview
+              </h3>
+              <div className="card p-5 mb-4">
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-emerald-700">20</div>
+                    <div className="text-xs text-emerald-600 font-medium mt-1">Group Exercise Marks</div>
+                  </div>
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-blue-700">30</div>
+                    <div className="text-xs text-blue-600 font-medium mt-1">Interview Marks</div>
+                  </div>
+                </div>
+                <p className="text-sm text-surface-600 leading-relaxed">
+                  The Group Exercise tests your <strong>leadership, communication, teamwork, and analytical thinking</strong> through a group discussion or case study discussion. The Interview panel assesses your banking knowledge, current affairs awareness, and personality. Final selection is based on <strong>Mains (75%) + GE &amp; Interview (25%)</strong>.
+                </p>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI PO 2026 Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-4">
+                {syllabus.map((section, i) => (
+                  <details key={i} className="card group" open={i === 0}>
+                    <summary className="p-5 cursor-pointer flex items-center justify-between font-heading font-semibold text-surface-800 hover:text-primary-500 transition-colors list-none">
+                      <span className="flex items-center gap-3">
+                        <span className="w-6 h-6 bg-primary-50 rounded-md flex items-center justify-center text-primary-500 text-xs font-bold">{i + 1}</span>
+                        <span>{section.subject}</span>
+                      </span>
+                      <div className="flex items-center gap-2">
+                        {section.prelims && <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">Prelims</span>}
+                        {section.mains && <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">Mains</span>}
+                      </div>
+                    </summary>
+                    <div className="px-5 pb-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {section.topics.map((topic, j) => (
+                        <div key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                          <svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>
+                          {topic}
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI PO Previous Year Cut-offs</h2>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-blue-800">ℹ️ <strong>Note:</strong> Mains cut-offs are out of 150 (Objective 200 marks, scaled to 150 for final merit). Official cut-offs are released by SBI in the result notification. Data below is based on widely reported trends — verify from official SBI notifications.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Category</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Prelims 2024</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Mains 2024</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Prelims 2023</th>
+                      <th className="text-center p-3 text-xs font-semibold uppercase tracking-wide">Mains 2023</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-center text-surface-600">{row.prelims2024}/100</td>
+                        <td className="p-3 text-center text-primary-600 font-medium">{row.mains2024}</td>
+                        <td className="p-3 text-center text-surface-600">{row.prelims2023}/100</td>
+                        <td className="p-3 text-center text-surface-500">{row.mains2023}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 8: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 SBI PO 2026 Salary &amp; Career Growth</h2>
+              </div>
+              <div className="card overflow-hidden mb-6">
+                <div className="bg-emerald-600 text-white p-4">
+                  <div className="text-sm font-medium opacity-90">SBI PO Gross In-Hand Salary (Metro City)</div>
+                  <div className="text-3xl font-heading font-bold mt-1">₹65,000 – ₹75,000 <span className="text-lg font-normal opacity-75">/month</span></div>
+                  <div className="text-xs opacity-75 mt-1">Under 12th Bipartite Settlement (2025)</div>
+                </div>
+                <table className="w-full text-sm">
+                  <tbody className="divide-y divide-surface-100">
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                        <td className="p-3 text-surface-700">{row.component}</td>
+                        <td className="p-3 text-right font-semibold text-emerald-600">{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-4">SBI Officer Career Progression</h3>
+              <div className="space-y-2">
+                {careerPath.map((row, i) => (
+                  <div key={i} className="flex items-center gap-4 card p-4">
+                    <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 font-bold text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-surface-800 text-sm">{row.level}</div>
+                      <div className="text-xs text-surface-500">{row.years} · {row.scale}</div>
+                    </div>
+                    <div className="text-right text-xs font-medium text-emerald-600 flex-shrink-0">{row.payband}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 9: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for SBI PO 2026</h2>
+              </div>
+              <div className="card p-6">
+                <div className="space-y-4">
+                  {[
+                    { step: 1, title: 'Visit the Official SBI Careers Portal', detail: 'Go to sbi.co.in → Career with Us → Current Openings. Wait for the SBI PO 2025 notification to be released (expected Oct–Nov 2025).' },
+                    { step: 2, title: 'Register with a New Account', detail: 'Click "New Registration" and enter your email ID and mobile number. An OTP will be sent for verification. Complete your basic registration first.' },
+                    { step: 3, title: 'Fill the Online Application Form', detail: 'Enter personal details, educational qualification, category, and state of domicile. Double-check all entries before proceeding — corrections may not be allowed later.' },
+                    { step: 4, title: 'Upload Documents', detail: 'Upload a recent passport-size photograph (JPG, 20–50 KB), signature (JPG, 10–20 KB), and any other documents specified in the notification.' },
+                    { step: 5, title: 'Pay the Application Fee', detail: 'General / OBC / EWS: ₹750 | SC / ST / PwBD / Ex-SM: No fee. Payment is via net banking, credit/debit card, or UPI through the SBI portal.' },
+                    { step: 6, title: 'Submit and Download Confirmation', detail: 'After payment, submit the application and download/save the confirmation page and fee receipt. This is your proof of application.' },
+                  ].map((s) => (
+                    <div key={s.step} className="flex gap-4">
+                      <div className="w-7 h-7 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">{s.step}</div>
+                      <div>
+                        <div className="font-semibold text-surface-800 mb-1">{s.title}</div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 pt-4 border-t border-surface-200">
+                  <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 text-sm">
+                    Apply on SBI Official Website →
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI PO 6-Month Study Plan</h2>
+              </div>
+              <div className="space-y-4">
+                {studyPlan.map((month, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-16 h-16 bg-primary-600 text-white rounded-xl flex items-center justify-center font-heading font-bold text-xs text-center leading-tight flex-shrink-0">
+                      {month.month.split(' ').map((w, j) => <span key={j} className="block">{w}</span>)}
+                    </div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{month.focus}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{month.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 11: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for SBI PO 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Author</th>
+                      <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Subject</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-100">
+                    {books.map((b, i) => (
+                      <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                        <td className="p-3 font-medium text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                        <td className="p-3"><span className="bg-primary-50 text-primary-700 text-xs font-medium px-2 py-0.5 rounded-full">{b.subject}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 12: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources for SBI PO 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-4 group hover:border-primary-300 transition-colors">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-base">{r.type === 'youtube' ? '▶️' : '🌐'}</span>
+                      <span className="font-semibold text-surface-800 group-hover:text-primary-600 transition-colors text-sm">{r.name}</span>
+                      <span className={`ml-auto text-xs px-2 py-0.5 rounded-full font-medium ${r.type === 'youtube' ? 'bg-red-100 text-red-600' : 'bg-blue-100 text-blue-600'}`}>
+                        {r.type === 'youtube' ? 'YouTube' : 'Website'}
+                      </span>
+                    </div>
+                    <p className="text-xs text-surface-500 leading-relaxed">{r.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips to Crack SBI PO 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="text-2xl flex-shrink-0">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: FAQ */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SBI PO 2026 – Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-500 transition-colors list-none flex items-start justify-between gap-3">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <p className="text-sm text-surface-600 leading-relaxed">{faq.a}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* RELATED EXAMS */}
+            <div className="card p-5 bg-surface-50 border-surface-200">
+              <h3 className="font-heading font-semibold text-surface-800 mb-4">Related Banking Exams</h3>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { name: 'IBPS PO 2026', slug: 'ibps-po' },
+                  { name: 'SBI Clerk 2026', slug: 'sbi-clerk' },
+                  { name: 'IBPS RRB Clerk', slug: 'ibps-rrb-clerk' },
+                  { name: 'RBI Grade B', slug: 'rbi-grade-b' },
+                  { name: 'NABARD Grade A', slug: 'nabard-grade-a' },
+                ].map((e) => (
+                  <Link key={e.slug} href={`/exams/${e.slug}`} className="text-sm bg-white border border-surface-200 hover:border-primary-300 hover:text-primary-600 rounded-lg px-3 py-1.5 transition-colors font-medium text-surface-700">
+                    {e.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">📋 On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{s.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="font-heading font-semibold text-primary-800 text-sm mb-2">🏦 Official SBI Careers</div>
+                <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all">sbi.co.in/web/careers →</a>
+              </div>
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <div className="font-heading font-semibold text-emerald-800 text-sm mb-3">⚡ Quick Facts</div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between"><span className="text-emerald-700">Basic Pay</span><span className="font-bold text-emerald-800">₹41,960/mo</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">In-Hand (Metro)</span><span className="font-bold text-emerald-800">~₹65K–₹75K</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">Age Limit</span><span className="font-bold text-emerald-800">21–30 yrs</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">Qualification</span><span className="font-bold text-emerald-800">Any Graduate</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">Stages</span><span className="font-bold text-emerald-800">3 (Pre+Main+GE)</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">Notification</span><span className="font-bold text-amber-600">Oct–Nov (TBN)</span></div>
+                </div>
+              </div>
+              <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for SBI PO.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+            </div>
+          </aside>
+        </div>
+      </div>
     </>
   );
 }
