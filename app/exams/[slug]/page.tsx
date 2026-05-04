@@ -46,6 +46,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rajasthan-police-constable') {
+    return {
+      title: 'Rajasthan Police Constable 2026 – Syllabus, Eligibility & Guide | TaiyarHo',
+      description: 'Rajasthan Police Constable 2026: ~4,000 vacancies expected Jun–Jul 2026. Check syllabus, exam pattern (150 Qs, 150 marks, -0.25 negative marking), PET/PST standards, CET requirement, eligibility, age limit 18–23 yrs, salary and free resources.',
+      keywords: 'Rajasthan Police Constable 2026, Raj Police bharti 2026, राजस्थान पुलिस कांस्टेबल भर्ती 2026, Rajasthan Police syllabus Hindi, सरकारी नौकरी राजस्थान',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rajasthan-police-constable/' },
+      other: { 'description:hi': 'राजस्थान पुलिस कांस्टेबल 2026 – ~4,000 रिक्तियाँ जून–जुलाई 2026 में अपेक्षित। सिलेबस, परीक्षा पैटर्न (150 प्रश्न, 150 अंक), PET/PST मानक, CET अनिवार्यता, आयु सीमा 18–23 वर्ष और निःशुल्क संसाधन देखें।' },
+    };
+  }
+
   if (params.slug === 'bihar-police-constable') {
     return {
       title: 'Bihar Police Constable 2026 – Syllabus, Eligibility & Guide | TaiyarHo',
@@ -192,6 +202,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rrb-alp') return <RrbAlpPage exam={brief} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
+  if (brief && brief.slug === 'rajasthan-police-constable') return <RajasthanPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'bihar-police-constable') return <BiharPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
   if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
@@ -10565,6 +10576,677 @@ function RrbGroupDPage({ exam }: { exam: any }) {
               <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
               <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
               <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── RAJASTHAN POLICE CONSTABLE RICH PAGE ─────────────────────────────────────
+function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies & Posts' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'physical', label: 'Physical Test (PET/PST)' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification (2025 Cycle)', date: '9 April 2025', status: 'released' },
+    { event: 'CBT Written Exam (2025 Cycle)', date: '13–14 September 2025', status: 'released' },
+    { event: 'Final Result (2025 Cycle)', date: '16 December 2025', status: 'released' },
+    { event: 'Rajasthan Police Constable 2026 Notification', date: 'Expected June–July 2026', status: 'upcoming' },
+    { event: 'Online Application Opens (2026)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Last Date to Apply Online (2026)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'CBT Written Exam Date (2026)', date: 'Expected June–July 2026', status: 'upcoming' },
+    { event: 'Admit Card Release (2026)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Physical Tests – PET / PST (2026)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Document Verification & Medical (2026)', date: 'To be notified (TBN)', status: 'tbn' },
+  ];
+
+  const examPattern = [
+    { subject: 'Reasoning, Logic & Basic Computer Knowledge', questions: 60, marks: 60 },
+    { subject: 'General Knowledge, General Science, Social Science & Current Affairs', questions: 45, marks: 45 },
+    { subject: 'Knowledge of Laws (Women & Children)', questions: 10, marks: 10 },
+    { subject: 'Rajasthan History, Culture, Arts, Geography, Polity & Economy', questions: 35, marks: 35 },
+  ];
+
+  const vacancyData = [
+    { post: 'Constable GD (General Duty) – Non-TSP', category: 'Civil Police', total: 'Major share' },
+    { post: 'Constable GD (General Duty) – TSP', category: 'Tribal Sub-Plan areas', total: 'Included' },
+    { post: 'Constable Driver – Non-TSP & TSP', category: 'Driver cadre', total: 'Included' },
+    { post: 'Constable Band', category: 'Police Band', total: 'Included' },
+    { post: 'Constable Telecom Operator', category: 'Telecommunications', total: 'Included' },
+    { post: 'TOTAL (2026 Recruitment Cycle)', category: '–', total: '~4,000 (Expected)' },
+  ];
+
+  const ageLimit = [
+    { category: 'General – Male', min: '18 years', max: '23 years' },
+    { category: 'General – Female', min: '18 years', max: '23 years' },
+    { category: 'OBC / MBC (Non-Creamy Layer) – Rajasthan Domicile', min: '18 years', max: '26 years' },
+    { category: 'SC / ST – Rajasthan Domicile', min: '18 years', max: '28 years' },
+    { category: 'Widow / Divorcee (All categories)', min: '18 years', max: '35 years' },
+    { category: 'Ex-Serviceman', min: '–', max: 'Service period + 3 years' },
+  ];
+
+  const physicalPst = [
+    { category: 'Male – General / OBC / SC / EBC', height: '168 cm', chest: '81–86 cm (min. 5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Male – ST / Sahariya Tribe', height: '160 cm', chest: '79–84 cm (min. 5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Female – General / OBC / SC / ST', height: '152 cm', chest: 'N/A', weight: 'Min. 47.5 kg' },
+  ];
+
+  const physicalPet = [
+    { category: 'Male – All Categories', task: '5 km race', time: '25 minutes' },
+    { category: 'Female – All Categories', task: '5 km race', time: '35 minutes' },
+    { category: 'Ex-Serviceman', task: '5 km race', time: '30 minutes' },
+    { category: 'Male – Sahariya Tribe (Baran District)', task: '5 km race', time: '30 minutes' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🧠 Reasoning, Logic & Basic Computer Knowledge (60 marks)',
+      topics: [
+        'Verbal and non-verbal reasoning',
+        'Coding and decoding, number series',
+        'Analogy, classification, and blood relations',
+        'Direction sense and distance problems',
+        'Syllogism and logical deduction',
+        'Internet basics, cyber security concepts',
+        'MS Office (Word, Excel, PowerPoint basics)',
+        'Computer hardware, networking fundamentals',
+      ],
+    },
+    {
+      subject: '🌐 General Knowledge, Science, Social Science & Current Affairs (45 marks)',
+      topics: [
+        'Indian history – ancient, medieval, and modern',
+        'Indian geography, economy, and environment',
+        'Indian Constitution, polity, and governance',
+        'General science – Physics, Chemistry, Biology',
+        'National and international current affairs',
+        'Government schemes and institutions',
+        'Laws related to women and child protection',
+        'Sports, awards, and important personalities',
+      ],
+    },
+    {
+      subject: '⚖️ Laws Related to Women & Children (10 marks)',
+      topics: [
+        'Protection of Women from Domestic Violence Act',
+        'POCSO Act (Protection of Children from Sexual Offences)',
+        'Juvenile Justice Act',
+        'Dowry Prohibition Act',
+        'Crimes against women – IPC provisions',
+        'Child labour laws and child rights',
+      ],
+    },
+    {
+      subject: '🏜️ Rajasthan History, Culture, Arts, Geography, Polity & Economy (35 marks)',
+      topics: [
+        'Rajasthan: physical features, location, districts',
+        'Rajasthan history – major dynasties and events',
+        'Art, culture, fairs, festivals, and folk traditions',
+        'Rivers, lakes, soils, irrigation projects',
+        'Mineral resources and energy resources',
+        'Tourism, wildlife sanctuaries, national parks',
+        'Rajasthan polity – Governor, CM, Legislature, High Court',
+        'State-level current affairs and government schemes',
+        'Agriculture, crops, livestock, and rural economy',
+        'Population (2011 Census) and social indicators',
+      ],
+    },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Released';
+    if (s === 'upcoming') return '🔔 Expected';
+    return 'TBN';
+  };
+
+  const faqs = [
+    { q: 'How many vacancies are expected in Rajasthan Police Constable 2026?', a: 'As per the Rajasthan Upcoming Job Calendar 2026, approximately 4,000 constable vacancies are expected in the next recruitment cycle. The 2025 cycle had 10,000 vacancies. The official notification for 2026 is expected in June–July 2026 at police.rajasthan.gov.in.' },
+    { q: 'Is CET mandatory for Rajasthan Police Constable 2026?', a: 'Yes. Candidates must have a valid CET (Common Eligibility Test) Senior Secondary Level score from RSSB to apply for Rajasthan Police Constable. The CET acts as a preliminary screening — only CET-qualified candidates can appear for the main written exam and physical tests.' },
+    { q: 'What is the age limit for Rajasthan Police Constable?', a: 'The minimum age is 18 years and maximum age is 23 years for General category candidates. OBC/MBC (Rajasthan domicile) get relaxation up to 26 years, and SC/ST candidates get relaxation up to 28 years. Widows and divorcees can apply up to 35 years.' },
+    { q: 'Is there negative marking in Rajasthan Police Constable written exam?', a: 'Yes. There is negative marking of 0.25 marks (1/4 mark) for every wrong answer. Unlike Bihar Police Constable which has no negative marking, candidates must be careful and avoid blind guessing in this exam.' },
+    { q: 'What is the salary of a Rajasthan Police Constable?', a: 'Selected candidates receive a basic pay of ₹14,600 per month during the probation/training period under Pay Matrix Level 5. After confirmation, the gross salary including HRA, DA, and other allowances is approximately ₹21,700–₹69,100 per month as per the 7th Pay Commission.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Hero Banner */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">Rajasthan Police Constable 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🚔 State Police</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Rajasthan</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">📋 DV/Medical: TBN</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            Rajasthan Police Constable 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            Rajasthan Police Constable 2026 notification expected June–July 2026 with ~4,000 vacancies. Previous cycle (2025): 10,000 posts filled, result declared December 2025. CET (Senior Secondary) mandatory to apply. 150 questions, 150 marks, 2 hours, negative marking applies.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Expected Vacancies', value: '~4,000 (2026)' },
+              { label: 'Exam Date', value: 'Jun–Jul 2026 (TBN)' },
+              { label: 'Min. Qualification', value: '12th Pass + CET' },
+              { label: 'Salary (Basic)', value: '₹14,600/month' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">What is Rajasthan Police Constable Recruitment?</h2>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The <strong>Rajasthan Police Constable Recruitment</strong> is conducted by the <strong>Rajasthan Police Headquarters</strong> to fill vacancies for Constable (General Duty), Driver, Band, and Telecom Operator posts across the state. The 2026 recruitment cycle is expected to announce approximately <strong>4,000 posts</strong> as per the Rajasthan Upcoming Job Calendar 2026.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  A key requirement unique to Rajasthan Police is the <strong>CET (Common Eligibility Test) at Senior Secondary Level</strong>, conducted by RSSB. Only candidates who have cleared the CET are eligible to apply for the main exam. The selection process follows: <strong>PET/PST → Written Exam (CBT) → Proficiency Test → Medical Examination → Document Verification</strong>.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  This is an excellent opportunity for 12th pass candidates from Rajasthan who want a stable government job. The written exam is 150 MCQs, 150 marks, 2-hour duration — but note that <strong>negative marking of 0.25 per wrong answer applies</strong>, unlike some other state police exams.
+                </p>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-blue-800">
+                  <strong>💡 Key Update for 2026:</strong> The 2025 recruitment cycle is complete — final result was declared on 16 December 2025. As per the Rajasthan Upcoming Job Calendar 2026, approximately <strong>4,000 new constable vacancies</strong> are expected in the next cycle with the exam likely in June–July 2026. Notification expected soon. Keep checking police.rajasthan.gov.in.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Rajasthan Police HQ' },
+                  { label: 'Post Type', value: 'State Govt, Group C' },
+                  { label: 'Pay Scale', value: '₹14,600 – ₹69,100' },
+                  { label: 'Qualification', value: '12th Pass + CET' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📅 Important Dates – Rajasthan Police Constable 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded ${statusColor(row.status)}`}>{statusLabel(row.status)}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">* 2025 cycle data: Rajasthan Police official notification (9 April 2025). 2026 dates are expected/TBN. ⚠️ TBN = To Be Notified. Always verify at police.rajasthan.gov.in before taking action.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { label: '🪪 Nationality', value: 'Must be a citizen of India. Domicile of Rajasthan is required for reserved category age relaxations and some quota benefits.' },
+                  { label: '🎓 Educational Qualification', value: 'Class 12 (Senior Secondary / 10+2) pass from a recognised board, AND a valid CET (Senior Secondary Level) score from RSSB. CET is mandatory.' },
+                  { label: '💳 Application Fee', value: 'General / OBC (Creamy Layer): ₹600 | SC / ST / OBC (Non-Creamy Layer) of Rajasthan: ₹400. Payment via Rajasthan E-Mitra, Debit Card, Credit Card, or Net Banking.' },
+                  { label: '📋 Age Reference Date', value: 'Age is typically calculated as on 1 January of the recruitment year. For 2026 cycle, exact cut-off date will be in the official notification. General candidates: 18–23 years. Relaxation available for OBC, SC/ST, widows, and ex-servicemen.' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-medium text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Age Limit Table */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">📋 Age Limit – Category-wise</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Min. Age</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Max. Age</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {ageLimit.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-600">{row.min}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.max}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <p className="text-sm text-amber-800"><strong>⚠️ Important:</strong> Age relaxations for OBC/SC/ST apply only to domicile of Rajasthan. Candidates from other states get no age relaxation. Always verify your eligibility in the official notification before applying.</p>
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Vacancies &amp; Posts</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post Name</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Vacancies</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'} ${i === vacancyData.length - 1 ? 'font-bold bg-primary-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600">{row.category}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.total}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-800"><strong>💡 TSP vs Non-TSP:</strong> TSP (Tribal Sub-Plan) vacancies are reserved for candidates from tribal districts of Rajasthan. Non-TSP vacancies are open to all eligible domicile candidates. Drivers must hold a valid LMV/HMV license made at least one year prior to the reference date.</p>
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Exam Pattern – Written Test (CBT)</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                {[
+                  { label: 'Mode', value: 'Online CBT' },
+                  { label: 'Questions', value: '150 MCQs' },
+                  { label: 'Total Marks', value: '150 Marks' },
+                  { label: 'Duration', value: '2 Hours' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-primary-50 rounded-xl p-4 border border-primary-100 text-center">
+                    <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-primary-700">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject / Section</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {examPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.questions}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.marks}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-primary-50">
+                      <td className="p-3 font-bold text-surface-900">TOTAL</td>
+                      <td className="p-3 font-bold text-surface-900">150</td>
+                      <td className="p-3 font-bold text-surface-900">150</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                <p className="text-sm text-red-800"><strong>⚠️ Negative Marking Applies:</strong> Unlike many other state police exams, Rajasthan Police Constable has <strong>negative marking of 0.25 marks (1/4 mark) for each wrong answer</strong>. Do not attempt questions randomly. Skip uncertain ones rather than guessing.</p>
+              </div>
+            </section>
+
+            {/* PHYSICAL TEST */}
+            <section id="physical" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Physical Test – PET &amp; PST</h2>
+              <p className="text-surface-600 leading-relaxed mb-5">The physical tests are qualifying in nature — marks are not counted in the final merit list. However, failing either test means disqualification. PET (endurance run) is conducted first, followed by PST (physical measurements).</p>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical Standard Test (PST) – Measurements</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Height</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Chest / Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalPst.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.height}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.chest}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical Efficiency Test (PET) – Running Race</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Race Distance</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Time Limit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalPet.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.task}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.time}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-800"><strong>💡 Tip:</strong> Male candidates must cover <strong>5 km in just 25 minutes</strong> — that is a pace of 5 min/km, requiring serious training. Candidates get only one attempt. Start your running practice immediately after applying and build up gradually over 2–3 months.</p>
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Detailed Syllabus – Rajasthan Police Constable 2026</h2>
+              <div className="space-y-4">
+                {syllabus.map((sec, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-3">{sec.subject}</h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+                      {sec.topics.map((t, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="text-primary-400 mt-0.5">•</span>{t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-4">
+                <p className="text-sm text-amber-800"><strong>🎯 High-Weightage Focus:</strong> Rajasthan-specific GK (35 marks) is the section where most local aspirants gain a decisive edge. Topics like Rajasthan geography, history, art and culture, and state current affairs are frequently tested and very scorable. Do not neglect this section!</p>
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">💰 Salary &amp; Benefits</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                {[
+                  { label: 'Basic Pay (Probation/Training)', value: '₹14,600/month', sub: 'Pay Matrix Level 5' },
+                  { label: 'Gross Salary (after confirmation)', value: '₹21,700 – ₹69,100/month', sub: 'Incl. HRA, DA & allowances' },
+                  { label: 'Additional Benefits', value: 'Uniform, Pension, Medical', sub: 'As per Rajasthan Govt norms' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-surface-800">{item.value}</div>
+                    <div className="text-xs text-surface-400 mt-0.5">{item.sub}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-800"><strong>💡 Note:</strong> The initial pay during training/probation is ₹14,600. After successful completion of training and confirmation, the pay scale is revised to ₹21,700–₹69,100/month (Level 5, 7th Pay Commission), plus Dearness Allowance, House Rent Allowance, and other government perquisites.</p>
+              </div>
+            </section>
+
+            {/* HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">How to Apply</h2>
+              <div className="card p-6 mb-4">
+                <ol className="space-y-3">
+                  {[
+                    { step: '1', title: 'Check CET Eligibility First', desc: 'Ensure you have a valid CET (Senior Secondary Level) score from RSSB. This is mandatory before applying for Rajasthan Police Constable.' },
+                    { step: '2', title: 'Visit the Official Website', desc: 'Go to police.rajasthan.gov.in and look for the active recruitment notification under the Recruitment section.' },
+                    { step: '3', title: 'Register / Log In', desc: 'Create a new account using your Aadhaar ID or Driving License number. Note down your login credentials for future use.' },
+                    { step: '4', title: 'Fill the Application Form', desc: 'Enter all personal, educational, and category details carefully. Upload your passport photo and signature as per the specified size and format.' },
+                    { step: '5', title: 'Pay the Application Fee', desc: 'Pay ₹600 (General) or ₹400 (SC/ST/OBC-NCL) via Rajasthan E-Mitra, Debit Card, Credit Card, or Net Banking.' },
+                    { step: '6', title: 'Submit & Download Confirmation', desc: 'Review all details before final submission. Download and save your application confirmation receipt for future reference.' },
+                  ].map((item) => (
+                    <li key={item.step} className="flex gap-4">
+                      <div className="w-7 h-7 rounded-full bg-primary-100 text-primary-600 text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{item.step}</div>
+                      <div>
+                        <div className="font-semibold text-sm text-surface-800">{item.title}</div>
+                        <div className="text-sm text-surface-600">{item.desc}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="text-center">
+                <a href="https://police.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
+                  Visit Official Website →
+                </a>
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📅 3-Month Study Plan</h2>
+              <div className="space-y-3">
+                {[
+                  { month: 'Month 1', title: 'Foundation & Physical Fitness', desc: 'Cover Reasoning basics (series, analogy, coding-decoding), Computer fundamentals, and start Rajasthan GK (geography + history). Begin running 2–3 km daily to build base fitness. Target 4–5 hours daily study.' },
+                  { month: 'Month 2', title: 'Deep Syllabus + PET Training', desc: 'Focus on General Science, Indian Polity & Economy, and Laws related to Women & Children. Intensify running to 4 km daily. Cover Rajasthan arts, culture, and state polity. Start solving previous year papers.' },
+                  { month: 'Month 3', title: 'Revision + Full Mock Tests', desc: 'Full mock tests daily (150 questions, 2 hours, with negative marking simulation). Revise Rajasthan GK — state current affairs, schemes, wildlife. Aim 5 km runs at target pace. Review weak areas and eliminate silly mistakes.' },
+                ].map((item, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="bg-primary-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg h-fit whitespace-nowrap">{item.month}</div>
+                    <div>
+                      <div className="font-semibold text-sm text-surface-800 mb-1">{item.title}</div>
+                      <div className="text-sm text-surface-600">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Best Books for Rajasthan Police Constable</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Book / Resource</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Publisher / Author</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { book: 'Rajasthan Police Constable Complete Guide', subject: 'All Subjects', author: 'Arihant Publications' },
+                      { book: 'Rajasthan GK – History, Geography, Culture', subject: 'Rajasthan GK (35 marks)', author: 'Lucent / Local Rajasthan publishers' },
+                      { book: 'A Modern Approach to Logical Reasoning', subject: 'Reasoning & Logic', author: 'R.S. Aggarwal' },
+                      { book: 'Rajasthan Police Constable Previous Year Papers', subject: 'All Subjects (PYQ)', author: 'Kiran Prakashan / Arihant' },
+                      { book: 'Lucent\'s General Knowledge', subject: 'GK & Current Affairs', author: 'Lucent Publications' },
+                      { book: 'NCERT Class 8–10 Science & Social Science', subject: 'Science & Social Studies', author: 'NCERT (Free PDF)' },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.book}</td>
+                        <td className="p-3 text-surface-600">{row.subject}</td>
+                        <td className="p-3 text-surface-500">{row.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">💡 Tip: For Rajasthan-specific GK, books from local Jaipur publishers (available at Jaipur book markets) tend to be more detailed and relevant than national publishers.</p>
+            </section>
+
+            {/* TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Expert Preparation Tips</h2>
+              <div className="space-y-3">
+                {[
+                  { icon: '🏜️', tip: 'Master Rajasthan GK — it is your biggest advantage', desc: 'With 35 marks dedicated to Rajasthan history, culture, geography, and polity, local candidates have a natural advantage. Cover Rajasthan-specific topics first before national GK. This section separates toppers from average scorers.' },
+                  { icon: '⚠️', tip: 'Respect the negative marking', desc: '0.25 marks cut per wrong answer. Unlike Bihar or UP Police exams, blind guessing here is costly. Practice with timed mock tests that simulate negative marking to develop your own threshold for skipping vs. attempting.' },
+                  { icon: '🏃', tip: 'Start 5 km running training immediately', desc: 'Male candidates need to cover 5 km in 25 minutes — a demanding 5 min/km pace. You get only ONE chance. Begin training at least 3 months before the physical test and progressively increase distance and speed.' },
+                  { icon: '📱', tip: 'CET score is a prerequisite — do not miss it', desc: 'Without a valid RSSB CET (Senior Secondary Level) score, you cannot apply for Rajasthan Police Constable. If you have not taken CET yet, register on rssb.rajasthan.gov.in at the earliest opportunity.' },
+                  { icon: '📊', tip: 'Solve at least 5 previous year papers', desc: 'Rajasthan Police Constable papers from 2018, 2020, and 2022 cycles are widely available. They show you the exact question style, topic distribution, and the high weightage of Rajasthan-specific questions versus national GK.' },
+                  { icon: '✅', tip: 'Register for the 2026 notification right away', desc: 'The 2025 cycle is complete. The next cycle with approximately 4,000 vacancies is expected in June–July 2026. Set a browser bookmark or Google Alert for police.rajasthan.gov.in so you never miss the notification window.' },
+                ].map((item, i) => (
+                  <div key={i} className="card p-4 flex gap-4">
+                    <div className="text-2xl flex-shrink-0">{item.icon}</div>
+                    <div>
+                      <div className="font-semibold text-sm text-surface-800 mb-0.5">{item.tip}</div>
+                      <div className="text-sm text-surface-600">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* INTERNAL LINKS */}
+            <section className="mb-12">
+              <div className="bg-surface-50 rounded-2xl p-6 border border-surface-200">
+                <h3 className="font-heading font-semibold text-surface-800 mb-4">Related Exams You Should Also Explore</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  {[
+                    { name: 'UP Police Constable 2026', slug: 'up-police-constable', desc: '32,679 vacancies, Written + PET/PST' },
+                    { name: 'Bihar Police Constable 2026', slug: 'bihar-police-constable', desc: '19,838 vacancies, No negative marking' },
+                    { name: 'SSC GD Constable 2026', slug: 'ssc-gd-constable', desc: '25,487 central vacancies, CBT based' },
+                    { name: 'MP Police Constable', slug: 'mp-police-constable', desc: '3,000–10,000 vacancies, 10th/12th pass' },
+                    { name: 'Delhi Police Constable', slug: 'delhi-police-constable', desc: 'Central police, SSC-conducted' },
+                    { name: 'RPSC RAS', slug: 'rpsc-ras', desc: 'Rajasthan State Administrative Service' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="flex items-start gap-3 p-3 rounded-xl hover:bg-primary-50 transition-colors group">
+                      <span className="text-primary-400 mt-0.5 flex-shrink-0">→</span>
+                      <div>
+                        <div className="font-semibold text-surface-800 group-hover:text-primary-600">{e.name}</div>
+                        <div className="text-xs text-surface-500">{e.desc}</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* FAQ */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Frequently Asked Questions – Rajasthan Police Constable 2026</h2>
+              <div className="space-y-3">
+                {faqs.map((item, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-semibold text-surface-800 mb-2 text-sm">Q{i + 1}: {item.q}</h3>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="hidden lg:block space-y-6">
+            <div className="card p-5 sticky top-6">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 On This Page</div>
+              <ol className="space-y-1.5 list-decimal list-inside">
+                {toc.map((s) => (
+                  <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+                ))}
+              </ol>
+
+              <div className="mt-5 pt-5 border-t border-surface-100">
+                <div className="text-xs font-semibold text-primary-800 mb-2">🌐 Official Website</div>
+                <a href="https://police.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all hover:underline">police.rajasthan.gov.in →</a>
+              </div>
+
+              <div className="mt-5 pt-5 border-t border-surface-100">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Police Exams</p>
+                <div className="space-y-2">
+                  {[{ name: 'UP Police Constable', slug: 'up-police-constable' }, { name: 'Bihar Police Constable', slug: 'bihar-police-constable' }, { name: 'SSC GD Constable', slug: 'ssc-gd-constable' }, { name: 'MP Police Constable', slug: 'mp-police-constable' }, { name: 'Delhi Police Constable', slug: 'delhi-police-constable' }].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="card p-5 bg-orange-50 border-orange-200 mt-4">
+                <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
+                <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
+                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+              </div>
             </div>
           </aside>
 
