@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { currentAffairsPosts } from '@/lib/current-affairs-data';
+import DownloadButton from './DownloadButton';
 
 interface Props {
   params: { slug: string };
@@ -133,7 +134,10 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
                 {post.title}
               </h1>
               <p className="text-surface-300 leading-relaxed mb-4">{post.excerpt}</p>
-              <p className="text-xs text-surface-500">Published: {post.publishedDate} · TaiyarHo Editorial</p>
+              <div className="flex flex-wrap items-center justify-between gap-3 mt-4">
+                <p className="text-xs text-surface-500">Published: {post.publishedDate} · TaiyarHo Editorial</p>
+                <DownloadButton title={post.title} />
+              </div>
             </div>
 
             {/* Key Points */}
@@ -228,7 +232,10 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
                 </svg>
                 All Current Affairs
               </Link>
-              <span className="text-xs text-surface-400">No paywalls. No spam. 100% Free.</span>
+              <div className="flex items-center gap-3">
+                <DownloadButton title={post.title} />
+                <span className="text-xs text-surface-400 hidden sm:block">No paywalls. 100% Free.</span>
+              </div>
             </div>
 
           </article>

@@ -62,6 +62,26 @@ export default function CurrentAffairsPage() {
               Banking, and Railway aspirants. No paywalls, no spam.
             </p>
 
+            {/* PDF Download SEO Banner */}
+            <div className="mt-6 flex flex-wrap items-center gap-3 p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+              <span className="text-2xl">📄</span>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-heading font-semibold text-emerald-800">
+                  Free Current Affairs PDF Download — Weekly &amp; Monthly (2026)
+                </p>
+                <p className="text-xs text-emerald-600 mt-0.5">
+                  Open any weekly roundup below and click <strong>Download PDF</strong> — save it for offline revision. No signup, no login, 100% free.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-heading font-semibold px-3 py-1.5 rounded-lg bg-emerald-600 text-white flex-shrink-0">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h4a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                </svg>
+                Free PDF
+              </span>
+            </div>
+
             {/* Stats row */}
             <div className="flex flex-wrap gap-6 mt-8">
               {[
@@ -249,11 +269,12 @@ export default function CurrentAffairsPage() {
           <h2 className="font-heading font-bold text-lg text-primary-900 mb-3">
             How to Use This Section
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-primary-800">
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-sm text-primary-800">
             {[
               { icon: '📌', title: 'Key Points first', desc: 'Each issue opens with 8–10 bullet facts — review these quickly before any exam.' },
               { icon: '🧠', title: 'Quick Quiz', desc: 'Test yourself with 3 MCQs at the end of each article — exactly like real exam questions.' },
               { icon: '🎯', title: 'Exam Tags', desc: 'Every story is tagged with the exams where it is most likely to appear. Focus accordingly.' },
+              { icon: '📄', title: 'Download Free PDF', desc: 'Click "Download PDF" on any weekly page to save it for offline revision — no account needed.' },
             ].map((item) => (
               <div key={item.title} className="flex gap-3">
                 <span className="text-2xl flex-shrink-0">{item.icon}</span>
