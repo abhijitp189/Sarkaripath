@@ -16,6 +16,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const name = detailed ? detailed.shortName : brief!.name;
   const desc = detailed ? detailed.description : brief!.description || '';
 
+  if (params.slug === 'upsc-ias') {
+    return {
+      title: 'UPSC Civil Services 2026 – Syllabus, Eligibility & IAS Guide | TaiyarHo',
+      description: 'UPSC CSE 2026 notification expected Feb 2026. Prelims on 25 May 2026. ~1,000 vacancies for IAS, IPS, IFS. Check complete syllabus (GS + Optional), exam pattern, eligibility (Graduate, 21–32 yrs), salary ₹56,100–₹2,50,000 and free study resources.',
+      keywords: 'UPSC IAS 2026, UPSC Civil Services taiyari, UPSC syllabus Hindi, IAS IPS IFS preparation, UPSC CSE 2026, UPSC परीक्षा तैयारी, IAS kaise bane, sarkari naukri taiyari',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/upsc-ias/' },
+      other: { 'description:hi': 'UPSC Civil Services 2026 – Prelims 25 मई 2026। ~1,000 रिक्तियाँ (IAS, IPS, IFS)। पूरा सिलेबस (GS + Optional), परीक्षा पैटर्न, पात्रता (Graduation, 21–32 वर्ष), वेतन ₹56,100–₹2,50,000 और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'ssc-cgl') {
     return {
       title: 'SSC CGL 2026 – Syllabus, Eligibility & Preparation Guide | TaiyarHo',
@@ -215,6 +225,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
     );
   }
 
+  if (detailed && detailed.slug === 'upsc-ias') return <UpscIasPage exam={detailed} />;
   if (detailed && detailed.slug === 'ssc-cgl') return <SscCglPage exam={detailed} />;
   if (detailed && detailed.slug === 'ssc-gd-constable') return <SscGdPage exam={detailed} />;
   if (detailed && detailed.slug === 'rrb-ntpc') return <RrbNtpcPage exam={detailed} />;
@@ -234,6 +245,798 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
+}
+
+// ─── UPSC IAS RICH PAGE ────────────────────────────────────────────────────────
+function UpscIasPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility' },
+    { id: 'vacancies', label: 'Vacancies & Services' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'salary', label: 'Salary & Perks' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released', date: 'January 2026 (TBN)', status: 'tbn' },
+    { event: 'Online Application Opens', date: 'January 2026 (TBN)', status: 'tbn' },
+    { event: 'Last Date to Apply Online', date: 'February 2026 (TBN)', status: 'tbn' },
+    { event: 'Prelims Admit Card', date: 'April 2026 (TBN)', status: 'tbn' },
+    { event: 'Prelims Exam Date', date: '25 May 2026 (Expected)', status: 'upcoming' },
+    { event: 'Prelims Answer Key / Marks Upload', date: 'June 2026 (TBN)', status: 'tbn' },
+    { event: 'Prelims Result', date: 'July 2026 (TBN)', status: 'tbn' },
+    { event: 'Mains Application Window', date: 'July 2026 (TBN)', status: 'tbn' },
+    { event: 'Mains Exam Date', date: 'September 2026 (Expected)', status: 'upcoming' },
+    { event: 'Mains Result', date: 'January 2027 (TBN)', status: 'tbn' },
+    { event: 'Personality Test (Interview)', date: 'February–April 2027 (TBN)', status: 'tbn' },
+    { event: 'Final Result & Rank List', date: 'May 2027 (TBN)', status: 'tbn' },
+  ];
+
+  const services = [
+    { service: 'Indian Administrative Service (IAS)', group: 'A', role: 'District Collector, DM, Secretary, Cabinet Secretary', payLevel: '10–18' },
+    { service: 'Indian Police Service (IPS)', group: 'A', role: 'SP, DIG, DGP, Director CBI/IB', payLevel: '10–18' },
+    { service: 'Indian Foreign Service (IFS)', group: 'A', role: 'Ambassador, High Commissioner, Consul General', payLevel: '10–18' },
+    { service: 'Indian Revenue Service (IRS – IT)', group: 'A', role: 'Income Tax Commissioner, CCIT', payLevel: '10–17' },
+    { service: 'Indian Revenue Service (IRS – C&CE)', group: 'A', role: 'Customs & GST Commissioner', payLevel: '10–17' },
+    { service: 'Indian Audit & Accounts Service (IAAS)', group: 'A', role: 'CAG Audit, Principal Director of Audit', payLevel: '10–17' },
+    { service: 'Indian P&T Accounts Service (IP&TAFS)', group: 'A', role: 'Director General, DoT Finance', payLevel: '10–17' },
+    { service: 'Indian Defence Accounts Service (IDAS)', group: 'A', role: 'Principal Controller of Defence Accounts', payLevel: '10–17' },
+    { service: 'Central Secretariat Service (CSS)', group: 'B', role: 'Under Secretary, Deputy Secretary, Joint Secretary', payLevel: '7–13' },
+    { service: 'Railway Protection Force (RPF)', group: 'A', role: 'ASG, DIG, IG in Railway Security', payLevel: '10–16' },
+  ];
+
+  const vacancyHistory = [
+    { year: '2015', notified: '1164', filled: '1078' },
+    { year: '2016', notified: '1209', filled: '1099' },
+    { year: '2017', notified: '980', filled: '990' },
+    { year: '2018', notified: '782', filled: '759' },
+    { year: '2019', notified: '896', filled: '829' },
+    { year: '2020', notified: '796', filled: '761' },
+    { year: '2021', notified: '712', filled: '685' },
+    { year: '2022', notified: '861', filled: '933' },
+    { year: '2023', notified: '1105', filled: '1016' },
+    { year: '2024', notified: '1056', filled: 'Result Awaited' },
+    { year: '2026', notified: '~1,000 (Expected)', filled: '—' },
+  ];
+
+  const prelimsPattern = [
+    { paper: 'Paper I – General Studies', questions: 100, marks: 200, time: '2 hours', nature: 'Counts for cut-off (merit)' },
+    { paper: 'Paper II – CSAT', questions: 80, marks: 200, time: '2 hours', nature: 'Qualifying (33% = 66 marks)' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper A – Indian Language (Compulsory)', marks: 300, type: 'Qualifying', duration: '3 hours' },
+    { paper: 'Paper B – English (Compulsory)', marks: 300, type: 'Qualifying', duration: '3 hours' },
+    { paper: 'Essay (GS Paper I)', marks: 250, type: 'Merit', duration: '3 hours' },
+    { paper: 'GS Paper I – History, Geography, Society', marks: 250, type: 'Merit', duration: '3 hours' },
+    { paper: 'GS Paper II – Governance, Polity, IR', marks: 250, type: 'Merit', duration: '3 hours' },
+    { paper: 'GS Paper III – Economy, Science, Environment', marks: 250, type: 'Merit', duration: '3 hours' },
+    { paper: 'GS Paper IV – Ethics, Integrity, Aptitude', marks: 250, type: 'Merit', duration: '3 hours' },
+    { paper: 'Optional Paper I', marks: 250, type: 'Merit', duration: '3 hours' },
+    { paper: 'Optional Paper II', marks: 250, type: 'Merit', duration: '3 hours' },
+  ];
+
+  const gs1Topics = [
+    'Indian Culture: Salient aspects of Art, Architecture, Literature from ancient to modern times',
+    'Modern Indian History: Significant events, personalities, issues from 1857 to Independence',
+    'Post-Independence Consolidation and Reorganisation',
+    'Freedom Struggle – Its Various Stages and Important Contributors',
+    'History and Culture of the World: 18th century up to WW I, II',
+    'Salient Features of Indian Society, Diversity, Role of Women, Population and Development',
+    'Urbanization – Problems and Remedies; Effects of Globalisation on Society',
+    'Physical Geography: Salient features of world physical geography',
+    'Distribution of Natural Resources – India and World',
+    'Important Geophysical Phenomena: Earthquakes, Volcanoes, Cyclones, Tsunamis',
+  ];
+
+  const gs2Topics = [
+    'Indian Constitution: Historical underpinnings, evolution, features, amendments, significant provisions',
+    'Separation of Powers; Parliament & State Legislatures – Structure, Functioning',
+    'Government Ministries & Departments, Pressure Groups, RTI, Constitutional Bodies',
+    'Federalism, Devolution of Powers to Panchayati Raj & ULBs',
+    'India and Neighbourhood; Bilateral, Regional & Global Groupings',
+    'Foreign Policy; Effect of Policies of Developed and Developing Countries on India',
+    'Important International Institutions: UN, WTO, IMF, World Bank',
+    'Welfare Schemes for Vulnerable Sections; Issues Relating to Poverty, Hunger, Malnutrition',
+    'Issues Relating to Health, Education, Human Resources, Social Sector',
+    'Governance, Transparency and Accountability, e-Governance',
+  ];
+
+  const gs3Topics = [
+    'Indian Economy & Planning: Growth, Development, Employment, Inclusive Growth',
+    'Government Budgeting; Major Crops & Irrigation; Food Security; PDS',
+    'Land Reforms in India, Technology Missions; Animal Husbandry',
+    'Science & Technology: Developments and Applications in Everyday Life',
+    'IT, Space, Biotechnology, Nanotechnology, Cyber Security',
+    'Infrastructure: Energy, Ports, Roads, Airports, Railways',
+    'Disaster and Disaster Management; Environmental Impact Assessment',
+    'Conservation, Environmental Pollution, Biodiversity & Climate Change',
+    'Internal Security: Challenges, Terrorism, Money Laundering, Organised Crime',
+    'Security Forces; Linkages between Development and Spread of Extremism',
+  ];
+
+  const gs4Topics = [
+    'Ethics and Human Interface: Essence, determinants and consequences of Ethics in human actions',
+    'Attitude: Content, Structure, Function; Its Influence and Relation with Thought and Behaviour',
+    'Aptitude and Foundational Values for Civil Services: Integrity, Impartiality, Objectivity, Empathy',
+    'Emotional Intelligence – Concepts, Utilities and Application in Administration',
+    'Contributions of Moral Thinkers and Philosophers from India and World',
+    'Public/Civil Service Values and Ethics in Public Administration',
+    'Probity in Governance: Concept of Public Service, Philosophical Basis, Codes of Ethics',
+    'Case Studies on the above issues',
+  ];
+
+  const salaryComponents = [
+    { post: 'IAS (Entry – Junior Time Scale)', payLevel: '10', basic: '₹56,100', gross: '₹80,000–₹1,00,000', perks: 'Bungalow, Car, Staff' },
+    { post: 'IAS (DM / District Collector)', payLevel: '12', basic: '₹78,800', gross: '₹1,10,000–₹1,30,000', perks: 'Official Residence, Security' },
+    { post: 'IAS (Joint Secretary / Special Secretary)', payLevel: '14', basic: '₹1,44,200', gross: '₹1,80,000–₹2,10,000', perks: 'Govt Bungalow, Vehicle' },
+    { post: 'IAS (Secretary to GoI)', payLevel: '17', basic: '₹2,25,000', gross: '₹2,50,000+', perks: 'All privileges + SPG protocol' },
+    { post: 'Cabinet Secretary (Apex Scale)', payLevel: '18 (Apex)', basic: '₹2,50,000', gross: '₹2,80,000+', perks: 'Highest in Indian Bureaucracy' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return 'Released';
+    if (s === 'upcoming') return 'Expected';
+    return 'TBN';
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: exam.faqs.map((f: { question: string; answer: string }) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.taiyarho.in/' },
+            { '@type': 'ListItem', position: 2, name: 'Exams', item: 'https://www.taiyarho.in/exams/' },
+            { '@type': 'ListItem', position: 3, name: 'UPSC Civil Services 2026', item: 'https://www.taiyarho.in/exams/upsc-ias/' },
+          ],
+        }) }}
+      />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">UPSC Civil Services 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">⭐ UPSC</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">All India Level</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">📋 Prelims: 25 May 2026</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            UPSC Civil Services 2026 –<br className="hidden sm:block" /> Complete IAS/IPS/IFS Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            India&apos;s most prestigious exam recruiting IAS, IPS, IFS &amp; 20+ services. UPSC CSE 2026 Prelims expected on <strong>25 May 2026</strong> with ~1,000 vacancies. 3-stage exam: Prelims → Mains → Interview.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Expected Vacancies', value: '~1,000 (2026)' },
+              { label: 'Prelims Date', value: '25 May 2026' },
+              { label: 'Min Qualification', value: 'Any Graduation' },
+              { label: 'Salary (IAS Entry)', value: '₹56,100/month' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* TOC Mobile */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 ON THIS PAGE</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map(item => (
+              <li key={item.id}><a href={`#${item.id}`} className="text-sm text-primary-500 hover:underline">{item.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* ── SECTION 1: OVERVIEW ── */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="What is UPSC Civil Services 2026?" />
+              <div className="card p-6 mb-4">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The <strong>Union Public Service Commission Civil Services Examination (UPSC CSE) 2026</strong> is India&apos;s most competitive and prestigious government examination. Conducted annually by UPSC, it recruits officers for the <strong>Indian Administrative Service (IAS), Indian Police Service (IPS), Indian Foreign Service (IFS)</strong>, and over 20 other Group A and Group B Central Services.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  With approximately <strong>10–12 lakh candidates</strong> appearing each year for roughly 1,000 vacancies, the selection ratio is under 0.1% — making it one of the world&apos;s most competitive exams. Yet it remains the most sought-after career path for millions of graduates across India due to its unmatched prestige, authority, and responsibility.
+                </p>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+                  <strong>💡 Key update for 2026:</strong> UPSC typically releases the CSE notification in <strong>January–February</strong>. The Prelims exam is scheduled for <strong>25 May 2026</strong> as per UPSC&apos;s Annual Calendar. The official notification with exact vacancy count and application dates will be announced on <strong>upsc.gov.in</strong>.
+                </div>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Union Public Service Commission (UPSC)' },
+                  { label: 'Exam Level', value: 'National – All India Services' },
+                  { label: 'Qualification', value: 'Any Bachelor\'s Degree' },
+                  { label: 'Age Limit', value: '21–32 years (Gen)' },
+                  { label: 'Application Fee', value: '₹100 (Gen/OBC) | Free (SC/ST/PwBD/Women)' },
+                  { label: 'Official Website', value: 'upsc.gov.in' },
+                ].map(item => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-semibold text-surface-800 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 2: IMPORTANT DATES ── */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="UPSC CSE 2026 Important Dates" />
+              <div className="card overflow-hidden mb-4">
+                <div className="bg-surface-900 text-white px-5 py-3 text-sm font-semibold flex items-center gap-2">
+                  <span>📅</span> Official Schedule – UPSC CSE 2026
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50 border-b border-surface-200">
+                        <th className="text-left p-4 font-semibold text-surface-700">Event</th>
+                        <th className="p-4 font-semibold text-surface-700 text-center">Date</th>
+                        <th className="p-4 font-semibold text-surface-700 text-center">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 0 ? '' : 'bg-surface-50/50'}`}>
+                          <td className="p-4 font-medium text-surface-800">{row.event}</td>
+                          <td className="p-4 text-center text-surface-600">{row.date}</td>
+                          <td className="p-4 text-center">
+                            <span className={`text-xs font-semibold px-2 py-1 rounded-full ${statusColor(row.status)}`}>{statusLabel(row.status)}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-3">
+                ⚠️ TBN = To Be Notified. Prelims date of 25 May 2026 is from UPSC Annual Exam Calendar. All other dates are estimated based on historical patterns. Always verify on{' '}
+                <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">upsc.gov.in</a>.
+              </p>
+            </section>
+
+            {/* ── SECTION 3: ELIGIBILITY ── */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="UPSC CSE 2026 Eligibility Criteria" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed mb-3">{exam.qualification}</p>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
+                    <strong>Note:</strong> Final-year graduation students can apply provisionally. Degree certificate must be submitted before the Mains interview stage.
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <ul className="text-surface-600 text-sm leading-relaxed space-y-1.5">
+                    <li>✅ Citizen of India (for IAS, IPS, IFS)</li>
+                    <li>✅ Subjects of Nepal or Bhutan</li>
+                    <li>✅ Tibetan Refugees settled before 1 Jan 1962</li>
+                    <li>✅ PIOs from Pakistan, Burma, Sri Lanka (certain conditions apply)</li>
+                    <li className="text-xs text-surface-400 pt-1">Note: Candidates other than Indian citizens are eligible only for services other than IAS, IPS, IFS.</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="card p-6">
+                <h3 className="font-heading font-semibold text-surface-800 mb-4 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-primary-100 rounded text-primary-600 flex items-center justify-center text-xs">📋</span>
+                  Age Limit &amp; Number of Attempts (as of 1 June 2026)
+                </h3>
+                <div className="mb-3 flex flex-wrap gap-3">
+                  <div className="bg-surface-50 rounded-lg px-4 py-2 text-sm"><span className="text-surface-400">Min Age</span><strong className="text-surface-800 ml-1">21 years</strong></div>
+                  <div className="bg-surface-50 rounded-lg px-4 py-2 text-sm"><span className="text-surface-400">Max Age (General)</span><strong className="text-surface-800 ml-1">32 years</strong></div>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-primary-900 text-white">
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Age Relaxation</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Max Age</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Max Attempts</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { cat: 'General / EWS', rel: 'None', max: '32 years', att: '6' },
+                        { cat: 'OBC (Non-Creamy Layer)', rel: '+3 years', max: '35 years', att: '9' },
+                        { cat: 'SC / ST', rel: '+5 years', max: '37 years', att: 'Unlimited (till age limit)' },
+                        { cat: 'PwBD – General', rel: '+10 years', max: '42 years', att: '9' },
+                        { cat: 'PwBD – OBC', rel: '+13 years', max: '45 years', att: '9' },
+                        { cat: 'PwBD – SC/ST', rel: '+15 years', max: '47 years', att: 'Unlimited' },
+                        { cat: 'Ex-Servicemen (General)', rel: '+5 years', max: '37 years', att: '9' },
+                        { cat: 'Defence Service (J&K period)', rel: '+5 years', max: '37 years', att: 'As per category' },
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.cat}</td>
+                          <td className="p-3 text-center text-emerald-600 font-semibold">{row.rel}</td>
+                          <td className="p-3 text-center text-surface-600">{row.max}</td>
+                          <td className="p-3 text-center text-surface-600">{row.att}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-3">An &ldquo;attempt&rdquo; counts the moment you appear in Prelims, even if you submit a blank answer sheet. Withdrawal after submitting the form but before the exam does NOT count as an attempt.</p>
+              </div>
+            </section>
+
+            {/* ── SECTION 4: VACANCIES & SERVICES ── */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="UPSC CSE 2026 Vacancies & Services" />
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-5">
+                <strong>💡 2026 Vacancy note:</strong> UPSC has not yet released the official 2026 vacancy notification (expected January–February 2026). Based on the 2023 cycle (1,105 posts) and 2024 cycle (1,056 posts), approximately <strong>~1,000 vacancies</strong> are expected.
+              </div>
+              <div className="card overflow-hidden mb-6">
+                <div className="bg-surface-900 text-white px-5 py-3 text-sm font-semibold">Year-Wise Vacancy History</div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50 border-b border-surface-200">
+                        <th className="text-left p-4 font-semibold text-surface-700">Year</th>
+                        <th className="p-4 font-semibold text-surface-700 text-center">Vacancies Notified</th>
+                        <th className="p-4 font-semibold text-surface-700 text-center">Filled / Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyHistory.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 0 ? '' : 'bg-surface-50/50'} ${row.year === '2026' ? 'bg-blue-50 font-semibold' : ''}`}>
+                          <td className="p-4 font-medium text-surface-800">{row.year}</td>
+                          <td className="p-4 text-center text-surface-700">{row.notified}</td>
+                          <td className="p-4 text-center text-surface-600">{row.filled}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Top Services Recruited via UPSC CSE</h3>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-primary-900 text-white">
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Service</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Group</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-left">Key Roles</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Pay Level</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {services.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.service}</td>
+                          <td className="p-3 text-center"><span className={`text-xs font-bold px-2 py-0.5 rounded-full ${row.group === 'A' ? 'bg-primary-100 text-primary-700' : 'bg-surface-100 text-surface-600'}`}>Group {row.group}</span></td>
+                          <td className="p-3 text-surface-600 text-xs">{row.role}</td>
+                          <td className="p-3 text-center text-surface-600">{row.payLevel}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* ── SECTION 5: EXAM PATTERN ── */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="UPSC CSE 2026 Exam Pattern" />
+              <p className="text-surface-600 mb-5">UPSC CSE is a three-stage process. Prelims qualifies you for Mains; Mains qualifies you for the Personality Test. Only Mains + Interview marks decide your final rank and service allocation.</p>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Stage 1: Preliminary Examination (Objective)</h3>
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-900 text-white">
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Paper</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Questions</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Marks</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Duration</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Nature</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {prelimsPattern.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.paper}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-3 text-center font-semibold text-surface-800">{row.marks}</td>
+                          <td className="p-3 text-center text-surface-600">{row.time}</td>
+                          <td className="p-3 text-center"><span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${row.nature.startsWith('Qualifying') ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'}`}>{row.nature}</span></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="px-5 py-3 bg-surface-50 text-xs text-surface-500 border-t border-surface-200">
+                  ⚠️ Negative Marking: ⅓ mark deducted per wrong answer in Paper I (GS). Paper II (CSAT) is qualifying — you need only 33% (66/200) to clear it; these marks are NOT counted for merit.
+                </div>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Stage 2: Main Examination (Descriptive / Written)</h3>
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-900 text-white">
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Paper</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Marks</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Type</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Duration</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {mainsPattern.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.paper}</td>
+                          <td className="p-3 text-center font-semibold text-surface-800">{row.marks}</td>
+                          <td className="p-3 text-center"><span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${row.type === 'Qualifying' ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'}`}>{row.type}</span></td>
+                          <td className="p-3 text-center text-surface-600">{row.duration}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="px-5 py-3 bg-emerald-50 text-xs text-emerald-800 border-t border-surface-200">
+                  <strong>Total Merit Marks (Mains):</strong> 7 × 250 = <strong>1,750 marks</strong>. Papers A &amp; B are qualifying only and do NOT count toward the final merit list. Total for Final Ranking = Mains (1,750) + Interview (275) = <strong>2,025 marks</strong>.
+                </div>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Stage 3: Personality Test (Interview)</h3>
+              <div className="card p-5 text-sm text-surface-600 leading-relaxed">
+                <p className="mb-2">The <strong>Personality Test</strong> is conducted by a UPSC Board and carries <strong>275 marks</strong>. It is NOT a test of general knowledge but a structured assessment of your:</p>
+                <ul className="list-disc list-inside space-y-1 mb-3 text-surface-600">
+                  <li>Mental alertness, critical powers of assimilation</li>
+                  <li>Clear and logical exposition, balance of judgement</li>
+                  <li>Variety and depth of interest, ability for social cohesion</li>
+                  <li>Leadership, intellectual and moral integrity</li>
+                </ul>
+                <p className="text-xs text-surface-400">Average interview duration: 20–45 minutes. The board comprises 5 members including a Chairman. You may be questioned on your DAF (Detailed Application Form), Optional subject, Home State/District, and current affairs.</p>
+              </div>
+            </section>
+
+            {/* ── SECTION 6: SYLLABUS ── */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="UPSC CSE 2026 Syllabus" />
+              <p className="text-surface-600 mb-5 text-sm">UPSC Mains syllabus is vast but structured. Below are the key topics for each GS paper. The Optional subject syllabus varies by subject — check the official notification for your Optional.</p>
+
+              <div className="space-y-4">
+                {[
+                  { title: 'GS Paper I – History, Geography & Society', color: 'bg-blue-50 border-blue-200', header: 'bg-blue-600', topics: gs1Topics },
+                  { title: 'GS Paper II – Governance, Polity & International Relations', color: 'bg-emerald-50 border-emerald-200', header: 'bg-emerald-600', topics: gs2Topics },
+                  { title: 'GS Paper III – Economy, Science, Technology & Environment', color: 'bg-orange-50 border-orange-200', header: 'bg-orange-600', topics: gs3Topics },
+                  { title: 'GS Paper IV – Ethics, Integrity & Aptitude', color: 'bg-purple-50 border-purple-200', header: 'bg-purple-600', topics: gs4Topics },
+                ].map((paper, i) => (
+                  <div key={i} className={`border rounded-xl overflow-hidden ${paper.color}`}>
+                    <div className={`${paper.header} text-white px-5 py-3 text-sm font-semibold`}>{paper.title}</div>
+                    <div className="p-4">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+                        {paper.topics.map((t, j) => (
+                          <li key={j} className="text-sm text-surface-700 flex items-start gap-2">
+                            <span className="text-primary-400 mt-0.5 shrink-0">•</span>{t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4 card p-5">
+                <h4 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Optional Subject (Papers I &amp; II – 500 marks total)</h4>
+                <p className="text-sm text-surface-600 mb-3">UPSC offers 48 optional subjects. You choose one; it contributes 500 marks to your final merit. Popular choices:</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Sociology', 'Geography', 'Public Administration', 'Political Science & IR', 'History', 'Philosophy', 'Psychology', 'Anthropology', 'Law', 'Mathematics', 'Medical Science', 'Economics'].map(opt => (
+                    <span key={opt} className="bg-primary-50 text-primary-700 text-xs font-medium px-3 py-1 rounded-full border border-primary-100">{opt}</span>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-3">Choose your Optional based on graduation background, interest, success rate, and availability of study material — not on toppers&apos; choices alone.</p>
+              </div>
+            </section>
+
+            {/* ── SECTION 7: SALARY ── */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="7" title="UPSC CSE Salary, Pay Scale & Perks" />
+              <div className="card overflow-hidden mb-4">
+                <div className="bg-surface-900 text-white px-5 py-3 text-sm font-semibold">💰 IAS/IPS/IFS Pay Scale (7th Pay Commission)</div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50 border-b border-surface-200">
+                        <th className="text-left p-4 font-semibold text-surface-700">Designation / Post</th>
+                        <th className="p-4 font-semibold text-surface-700 text-center">Pay Level</th>
+                        <th className="p-4 font-semibold text-surface-700 text-center">Basic Pay</th>
+                        <th className="p-4 font-semibold text-surface-700 text-center">Gross (Approx.)</th>
+                        <th className="p-4 font-semibold text-surface-700 text-left">Key Perks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryComponents.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-4 font-medium text-surface-800">{row.post}</td>
+                          <td className="p-4 text-center text-surface-600">{row.payLevel}</td>
+                          <td className="p-4 text-center font-semibold text-emerald-600">{row.basic}</td>
+                          <td className="p-4 text-center text-surface-700">{row.gross}</td>
+                          <td className="p-4 text-xs text-surface-500">{row.perks}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <h4 className="font-semibold text-surface-800 mb-3 text-sm">Non-Monetary Benefits</h4>
+                  <ul className="text-sm text-surface-600 space-y-1.5">
+                    {['Government accommodation (bungalow at senior levels)', 'Official vehicle with driver', 'Domestic staff (orderlies) on posting', 'LTC (Leave Travel Concession)', 'Medical facilities for self & family', 'Pension (NPS for post-2004 recruits)', 'Children Education Allowance', 'Phone & electricity subsidies at senior posts'].map(b => (
+                      <li key={b} className="flex items-center gap-2"><span className="text-emerald-500">✓</span>{b}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <h4 className="font-semibold text-surface-800 mb-3 text-sm">Career Progression (IAS)</h4>
+                  <div className="space-y-2">
+                    {[
+                      { year: 'Year 1–4', role: 'Sub-Divisional Magistrate / SDO', level: 'Level 10' },
+                      { year: 'Year 4–9', role: 'District Collector / CEO Zila Parishad', level: 'Level 12' },
+                      { year: 'Year 9–13', role: 'Additional Secretary / Director (GoI)', level: 'Level 13' },
+                      { year: 'Year 13–16', role: 'Joint Secretary to GoI', level: 'Level 14' },
+                      { year: 'Year 16–25', role: 'Additional / Special Secretary', level: 'Level 15–16' },
+                      { year: '25+ years', role: 'Secretary / Cabinet Secretary', level: 'Level 17–18' },
+                    ].map((row, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <span className="text-xs bg-primary-100 text-primary-700 font-semibold px-2 py-0.5 rounded shrink-0 w-20 text-center">{row.year}</span>
+                        <div>
+                          <div className="text-xs font-semibold text-surface-800">{row.role}</div>
+                          <div className="text-xs text-surface-400">{row.level}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ── SECTION 8: STUDY PLAN ── */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="8" title="12-Month UPSC CSE Study Plan" />
+              <div className="space-y-4">
+                {[
+                  { phase: 'Phase 1', title: 'Foundation – NCERTs & Basics', months: 'Month 1–2', color: 'bg-blue-500', tasks: exam.studyPlan.slice(0, 2) },
+                  { phase: 'Phase 2', title: 'Standard References & Optional', months: 'Month 3–6', color: 'bg-indigo-500', tasks: exam.studyPlan.slice(2, 4) },
+                  { phase: 'Phase 3', title: 'Current Affairs & Answer Writing', months: 'Month 7–8', color: 'bg-orange-500', tasks: exam.studyPlan.slice(4, 6) },
+                  { phase: 'Phase 4', title: 'Mock Tests & Revision', months: 'Month 9–12', color: 'bg-emerald-500', tasks: exam.studyPlan.slice(6) },
+                ].map((p, i) => (
+                  <div key={i} className="card overflow-hidden">
+                    <div className={`${p.color} text-white px-5 py-3 flex items-center justify-between`}>
+                      <span className="font-heading font-bold">{p.phase}: {p.title}</span>
+                      <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">{p.months}</span>
+                    </div>
+                    <div className="p-4">
+                      <ul className="space-y-2">
+                        {p.tasks.map((t: string, j: number) => (
+                          <li key={j} className="text-sm text-surface-700 flex items-start gap-2">
+                            <span className="w-5 h-5 rounded-full bg-surface-100 text-surface-600 flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">{j + 1}</span>{t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── SECTION 9: BOOKS ── */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="9" title="Best Books for UPSC CSE 2026" />
+              <div className="card overflow-hidden mb-3">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-900 text-white">
+                        <th className="text-left p-4 font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                        <th className="text-left p-4 font-semibold text-xs uppercase tracking-wide">Author</th>
+                        <th className="text-left p-4 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {exam.bestBooks.map((b: { title: string; author: string; subject: string; freeLink?: string }, i: number) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-4 font-medium text-surface-800">{b.title}</td>
+                          <td className="p-4 text-surface-600">
+                            {b.freeLink ? (
+                              <a href={b.freeLink} target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">{b.author} 🔗</a>
+                            ) : b.author}
+                          </td>
+                          <td className="p-4"><span className="badge badge-primary">{b.subject}</span></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-3">
+                💡 Start with NCERTs before any reference book. NCERT Class 6–12 books for History, Geography, Polity, Economy, and Science are <strong>free</strong> at{' '}
+                <a href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">ncert.nic.in</a>.
+              </p>
+            </section>
+
+            {/* ── SECTION 10: FREE RESOURCES ── */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="10" title="Free UPSC Preparation Resources" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {exam.freeResources.map((r: { name: string; type: string; url: string; description: string }, i: number) => {
+                  const icons: Record<string, string> = { youtube: '🎬', website: '🌐', telegram: '📱', pdf: '📄', app: '📲' };
+                  return (
+                    <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
+                      className="card p-4 flex items-start gap-3 hover:border-primary-300 transition-colors group">
+                      <span className="text-2xl shrink-0">{icons[r.type] ?? '🔗'}</span>
+                      <div>
+                        <div className="font-semibold text-surface-800 text-sm group-hover:text-primary-600 transition-colors">{r.name}</div>
+                        <p className="text-xs text-surface-500 mt-0.5 leading-relaxed">{r.description}</p>
+                        <span className={`text-xs font-medium mt-1.5 inline-block px-2 py-0.5 rounded-full ${r.type === 'youtube' ? 'bg-red-100 text-red-600' : 'bg-blue-100 text-blue-600'}`}>
+                          {r.type}
+                        </span>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* ── SECTION 11: TIPS ── */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="11" title="Expert UPSC Preparation Tips" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {exam.tips.map((tip: string, i: number) => {
+                  const icons = ['📚', '📰', '✍️', '🔄', '📝', '🎯'];
+                  return (
+                    <div key={i} className="card p-5 flex items-start gap-3">
+                      <span className="text-xl shrink-0">{icons[i % icons.length]}</span>
+                      <p className="text-sm text-surface-700 leading-relaxed">{tip}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* ── SECTION 12: FAQS ── */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="12" title="UPSC CSE 2026 – Frequently Asked Questions" />
+              <div className="space-y-3">
+                {exam.faqs.map((faq: { question: string; answer: string }, i: number) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">{faq.question}</h3>
+                    <p className="text-sm text-surface-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── STICKY SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-6 space-y-5">
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 ON THIS PAGE</div>
+                <ol className="space-y-1.5 list-decimal list-inside">
+                  {toc.map(item => (
+                    <li key={item.id} className="text-xs">
+                      <a href={`#${item.id}`} className="text-primary-500 hover:underline">{item.label}</a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">⚡ Quick Facts</div>
+                <div className="space-y-2.5">
+                  {[
+                    { label: 'Exam Name', value: 'UPSC Civil Services' },
+                    { label: 'Short Name', value: 'UPSC CSE / IAS' },
+                    { label: 'Conducting Body', value: 'UPSC' },
+                    { label: 'Frequency', value: 'Annual' },
+                    { label: 'Stages', value: 'Prelims → Mains → Interview' },
+                    { label: 'Total Merit Marks', value: '2,025 (Mains+Interview)' },
+                    { label: 'Prelims Marks (GS I)', value: '200 marks / 100 Qs' },
+                    { label: 'Negative Marking', value: '1/3rd in Prelims GS I' },
+                    { label: 'Application Fee', value: '₹100 (Gen) | Free others' },
+                    { label: 'Official Website', value: 'upsc.gov.in' },
+                  ].map(f => (
+                    <div key={f.label} className="flex justify-between text-xs gap-2">
+                      <span className="text-surface-500 shrink-0">{f.label}</span>
+                      <span className="font-semibold text-surface-800 text-right">{f.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Official Link */}
+              <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer"
+                className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🔗 Official UPSC Website</div>
+                <p className="text-xs text-surface-500">Apply, download admit card, check results and notifications on upsc.gov.in</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Visit upsc.gov.in →</span>
+              </a>
+              {/* Eligibility Tool */}
+              <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for UPSC CSE 2026.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+              {/* Related Exams */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📚 Related UPSC Exams</div>
+                <div className="space-y-2">
+                  {[
+                    { name: 'UPSC CAPF AC', slug: 'upsc-capf' },
+                    { name: 'UPSC NDA & NA', slug: 'upsc-nda' },
+                    { name: 'UPSC CDS', slug: 'upsc-cds' },
+                    { name: 'UPSC ESE (IES)', slug: 'upsc-ese' },
+                  ].map(e => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="text-xs text-primary-500 hover:underline flex items-center gap-1">
+                      <span>→</span>{e.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </>
+  );
 }
 
 // ─── SSC CGL RICH PAGE (custom layout with dates, posts, salary tables) ────────
