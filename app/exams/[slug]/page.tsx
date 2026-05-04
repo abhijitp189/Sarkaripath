@@ -20,7 +20,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SSC CGL 2026 – Syllabus, Eligibility & Preparation Guide | TaiyarHo',
       description: 'SSC CGL 2026 notification released. Tier 1 exam in May–June 2026. Check complete syllabus, exam pattern, eligibility, 14,000+ vacancies, salary, best books and free study resources.',
+      keywords: 'SSC CGL 2026, SSC CGL syllabus, SSC CGL taiyari, sarkari naukri taiyari, SSC CGL परीक्षा तैयारी, SSC CGL सिलेबस, government exam preparation',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-cgl/' },
+      other: { 'description:hi': 'SSC CGL 2026 परीक्षा की पूरी जानकारी – सिलेबस, परीक्षा पैटर्न, पात्रता, 14,000+ रिक्तियाँ, वेतन और मुफ्त अध्ययन सामग्री। SSC CGL तैयारी के लिए TaiyarHo पर आएं।' },
     };
   }
 
@@ -28,7 +30,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SSC GD Constable 2026 – Syllabus, Eligibility & Guide | TaiyarHo',
       description: 'SSC GD Constable 2026: CBT exam from 27 Apr–30 May 2026. 25,487 vacancies in BSF, CISF, CRPF, ITBP. Check syllabus, exam pattern, physical standards (PET/PST), eligibility, salary and free resources.',
+      keywords: 'SSC GD 2026, SSC GD Constable taiyari, SSC GD syllabus Hindi, SSC GD परीक्षा, सरकारी नौकरी, BSF CISF CRPF भर्ती, government job guide',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-gd-constable/' },
+      other: { 'description:hi': 'SSC GD Constable 2026 – BSF, CISF, CRPF, ITBP में 25,487 पद। परीक्षा 27 अप्रैल से 30 मई 2026 तक। सिलेबस, PET/PST शारीरिक मानक, पात्रता और मुफ्त संसाधन देखें।' },
     };
   }
 
@@ -36,7 +40,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'UP Police Constable 2026 – Syllabus, Eligibility, Exam Date & Guide | TaiyarHo',
       description: 'UP Police Constable 2026: 32,679 vacancies. Written exam on 8–10 June 2026. Check syllabus, exam pattern (150 Qs, 300 marks), PET/PST physical standards, eligibility, age limit, salary ₹21,700–₹69,100 and free resources.',
+      keywords: 'UP Police Constable 2026, UP Police taiyari, UP Police syllabus Hindi, यूपी पुलिस कांस्टेबल परीक्षा, UP Police bharti, सरकारी नौकरी UP',
       alternates: { canonical: 'https://www.taiyarho.in/exams/up-police-constable/' },
+      other: { 'description:hi': 'UP Police Constable 2026 – 32,679 रिक्तियाँ। लिखित परीक्षा 8-10 जून 2026। सिलेबस (150 प्रश्न, 300 अंक), PET/PST मानक, आयु सीमा, वेतन ₹21,700–₹69,100 और मुफ्त तैयारी सामग्री।' },
     };
   }
 
@@ -44,7 +50,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'Bihar Police Constable 2026 – Syllabus, Eligibility & Guide | TaiyarHo',
       description: 'Bihar Police Constable 2026 (CSBC): 19,838 vacancies. Check syllabus, exam pattern (100 Qs, 100 marks), PET/PST physical standards, eligibility, age limit 18–25 yrs, salary ₹21,700–₹69,100 and free study resources.',
+      keywords: 'Bihar Police Constable 2026, Bihar Police taiyari, CSBC bharti, बिहार पुलिस कांस्टेबल परीक्षा, Bihar Police syllabus Hindi, सरकारी नौकरी बिहार',
       alternates: { canonical: 'https://www.taiyarho.in/exams/bihar-police-constable/' },
+      other: { 'description:hi': 'Bihar Police Constable 2026 (CSBC) – 19,838 रिक्तियाँ। सिलेबस, परीक्षा पैटर्न (100 प्रश्न, 100 अंक), PET/PST मानक, आयु सीमा 18-25 वर्ष, वेतन ₹21,700–₹69,100 और मुफ्त संसाधन।' },
     };
   }
 
@@ -52,7 +60,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'CTET 2026 – Syllabus, Eligibility, Exam Date, Pattern & Complete Guide | TaiyarHo',
       description: 'CTET July 2026 exam on 5 July 2026. Check complete syllabus for Paper 1 & Paper 2, eligibility criteria, exam pattern (150 MCQs, no negative marking), application dates, qualifying marks and free preparation resources.',
+      keywords: 'CTET 2026, CTET taiyari, CTET syllabus Hindi, CTET परीक्षा तैयारी, teacher eligibility test, शिक्षक पात्रता परीक्षा, sarkari teacher job',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ctet/' },
+      other: { 'description:hi': 'CTET 2026 परीक्षा 5 जुलाई 2026 को होगी। Paper 1 और Paper 2 का पूरा सिलेबस, पात्रता मानदंड, परीक्षा पैटर्न (150 MCQ, कोई नकारात्मक अंकन नहीं) और मुफ्त तैयारी सामग्री देखें।' },
     };
   }
 
@@ -60,7 +70,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SSC MTS 2026 – Syllabus, Exam Pattern, Eligibility & Complete Guide | TaiyarHo',
       description: 'SSC MTS 2026: 7,948 vacancies. CBT conducted Feb 4–20, 2026. Answer key released March 3. Check syllabus, exam pattern (Session I & II), eligibility (10th pass, 18–27 yrs), salary ₹18,000–₹22,000/month, and free preparation resources.',
+      keywords: 'SSC MTS 2026, SSC MTS taiyari, SSC MTS syllabus Hindi, SSC MTS परीक्षा तैयारी, 10th pass sarkari naukri, मल्टी टास्किंग स्टाफ भर्ती',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-mts/' },
+      other: { 'description:hi': 'SSC MTS 2026 – 7,948 रिक्तियाँ। CBT परीक्षा 4-20 फरवरी 2026 को हुई। सिलेबस (Session I & II), पात्रता (10वीं पास, 18-27 वर्ष), वेतन ₹18,000–₹22,000/माह और मुफ्त संसाधन।' },
     };
   }
 
@@ -68,7 +80,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SSC CHSL 2026 – Eligibility, Syllabus, Exam Pattern & Complete Guide | TaiyarHo',
       description: 'SSC CHSL 2026: 3,131 vacancies for LDC, JSA, PA, SA & DEO. Tier 1 result declared 27 Feb 2026. Tier 2 on 10 Apr 2026. Check complete syllabus, exam pattern, eligibility (12th pass, 18–27 yrs), salary ₹25K–₹38K/month and free resources.',
+      keywords: 'SSC CHSL 2026, SSC CHSL taiyari, SSC CHSL syllabus Hindi, SSC CHSL परीक्षा, LDC JSA DEO sarkari naukri, 12th pass government job',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-chsl/' },
+      other: { 'description:hi': 'SSC CHSL 2026 – LDC, JSA, PA, SA और DEO के लिए 3,131 रिक्तियाँ। Tier 2 परीक्षा 10 अप्रैल 2026। सिलेबस, पात्रता (12वीं पास, 18-27 वर्ष), वेतन ₹25K–₹38K/माह और मुफ्त संसाधन।' },
     };
   }
 
@@ -76,7 +90,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'IBPS RRB Clerk 2026 – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
       description: 'IBPS RRB Office Assistant 2026 (CRP RRB XIV): 5,000+ vacancies in 43 Rural Banks. Check syllabus, exam pattern (Prelims + Mains), eligibility, age limit 18–28 years, salary ₹22,000–₹26,000/month and free preparation resources.',
+      keywords: 'IBPS RRB Clerk 2026, RRB Office Assistant taiyari, gramin bank bharti, IBPS RRB syllabus Hindi, ग्रामीण बैंक क्लर्क भर्ती, banking sarkari naukri',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ibps-rrb-clerk/' },
+      other: { 'description:hi': 'IBPS RRB Office Assistant 2026 – 43 ग्रामीण बैंकों में 5,000+ रिक्तियाँ। सिलेबस (प्रारंभिक + मुख्य), पात्रता, आयु सीमा 18-28 वर्ष, वेतन ₹22,000–₹26,000/माह और मुफ्त संसाधन।' },
     };
   }
 
@@ -84,7 +100,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'IBPS Clerk 2026 (CRP CSA-XVI) – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
       description: 'IBPS Clerk 2026: Prelims on 10–11 Oct, Mains on 27 Dec. 15,000+ vacancies in 11 public sector banks. Check complete syllabus, exam pattern (revised Mains), eligibility, age limit, salary ₹28,000–₹32,000/month and free preparation resources.',
+      keywords: 'IBPS Clerk 2026, IBPS Clerk taiyari, bank clerk sarkari naukri, IBPS Clerk syllabus Hindi, बैंक क्लर्क परीक्षा तैयारी, banking exam preparation',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ibps-clerk/' },
+      other: { 'description:hi': 'IBPS Clerk 2026 – 11 सार्वजनिक क्षेत्र के बैंकों में 15,000+ रिक्तियाँ। प्रारंभिक परीक्षा 10-11 अक्टूबर, मुख्य 27 दिसंबर। सिलेबस, पात्रता, वेतन ₹28,000–₹32,000/माह और मुफ्त संसाधन।' },
     };
   }
 
@@ -92,7 +110,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'SBI Clerk 2026 (Junior Associate) – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
       description: 'SBI Clerk 2026 notification expected July/August 2026. 6,000+ vacancies. Check complete syllabus, exam pattern (Prelims + Mains), eligibility, age limit 20–28 years, salary ₹46,000/month and free preparation resources for Junior Associate exam.',
+      keywords: 'SBI Clerk 2026, SBI Junior Associate taiyari, SBI Clerk syllabus Hindi, SBI क्लर्क परीक्षा, SBI bank bharti, sarkari bank naukri taiyari',
       alternates: { canonical: 'https://www.taiyarho.in/exams/sbi-clerk/' },
+      other: { 'description:hi': 'SBI Clerk 2026 (Junior Associate) – 6,000+ रिक्तियाँ। सिलेबस, परीक्षा पैटर्न (प्रारंभिक + मुख्य), पात्रता, आयु सीमा 20-28 वर्ष, वेतन ₹46,000/माह और मुफ्त तैयारी सामग्री।' },
     };
   }
 
@@ -100,14 +120,18 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'UGC NET 2026 – Notification Out, Application Dates, Syllabus, Eligibility & Complete Guide | TaiyarHo',
       description: 'UGC NET June 2026 notification released on 29 April 2026. Exam from 22–30 June 2026. Apply by 20 May 2026. Check complete syllabus for Paper 1 & Paper 2 (85 subjects), eligibility (Master\'s degree, 55%), exam pattern, JRF age limit 30 years, application fee and free preparation resources.',
+      keywords: 'UGC NET 2026, UGC NET taiyari, JRF Assistant Professor exam, UGC NET syllabus Hindi, UGC NET परीक्षा तैयारी, university teaching job India',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ugc-net/' },
+      other: { 'description:hi': 'UGC NET June 2026 – अधिसूचना 29 अप्रैल 2026 को जारी। परीक्षा 22-30 जून 2026। Paper 1 और Paper 2 का सिलेबस, पात्रता (Master\'s, 55%), JRF आयु सीमा 30 वर्ष और मुफ्त संसाधन।' },
     };
   }
   if (params.slug === 'army-agniveer') {
     return {
       title: 'Army Agniveer 2026 – Eligibility, CEE Exam, Salary & Guide | TaiyarHo',
       description: 'Complete guide on Indian Army Agniveer 2026: 25,000+ vacancies, CEE exam pattern, eligibility, physical standards, salary ₹30k–₹40k, Seva Nidhi ₹11.71 lakh.',
+      keywords: 'Army Agniveer 2026, Agniveer taiyari, Indian Army bharti, अग्निवीर परीक्षा तैयारी, Agniveer syllabus Hindi, army sarkari naukri, CEE exam guide',
       alternates: { canonical: 'https://www.taiyarho.in/exams/army-agniveer/' },
+      other: { 'description:hi': 'Indian Army Agniveer 2026 – 25,000+ रिक्तियाँ। CEE परीक्षा पैटर्न, शारीरिक मानक, पात्रता, वेतन ₹30k–₹40k और सेवा निधि ₹11.71 लाख की पूरी जानकारी।' },
     };
   }
 
@@ -115,7 +139,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'RRB NTPC 2026 – Syllabus, Exam Date, Vacancies & Guide | TaiyarHo',
       description: 'RRB NTPC 2026: 8,868 vacancies (CEN 06/2025 & 07/2025). UG CBT 1 exam from May 7–June 21, 2026. Check syllabus, exam pattern, eligibility (18–33 yrs), salary ₹19,900–₹35,400 and free preparation resources.',
+      keywords: 'RRB NTPC 2026, RRB NTPC taiyari, railway NTPC syllabus Hindi, RRB NTPC परीक्षा तैयारी, railway sarkari naukri, रेलवे NTPC भर्ती 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/rrb-ntpc/' },
+      other: { 'description:hi': 'RRB NTPC 2026 – 8,868 रिक्तियाँ। UG CBT 1 परीक्षा 7 मई से 21 जून 2026 तक। सिलेबस, परीक्षा पैटर्न, पात्रता (18-33 वर्ष), वेतन ₹19,900–₹35,400 और मुफ्त संसाधन।' },
     };
   }
 
@@ -123,7 +149,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'RRB Group D 2026 – Eligibility, Syllabus & Vacancy | TaiyarHo',
       description: 'RRB Group D 2026: 32,438 vacancies (CEN-08/2024) for 10th pass candidates. CBT expected 2026. Check syllabus, PET details, eligibility (18–33 yrs), salary ₹22,500–₹26,000/mo & free resources.',
+      keywords: 'RRB Group D 2026, Railway Group D taiyari, RRB Group D syllabus Hindi, रेलवे ग्रुप D परीक्षा, 10th pass railway job, रेलवे भर्ती 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/rrb-group-d/' },
+      other: { 'description:hi': 'RRB Group D 2026 – 10वीं पास उम्मीदवारों के लिए 32,438 रिक्तियाँ। CBT परीक्षा 2026 में होगी। सिलेबस, PET विवरण, पात्रता (18-33 वर्ष), वेतन ₹22,500–₹26,000/माह।' },
     };
   }
 
@@ -131,7 +159,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: 'RRB ALP 2026 – Syllabus, CBT 1 Result, Exam Pattern & Guide | TaiyarHo',
       description: 'RRB ALP 2026 (CEN 01/2024): 27,943 vacancies for ALP & Technician. CBT 1 held Feb 2026. Check syllabus, CBT 2 pattern, CBAT, eligibility (10th + ITI), salary ₹19,900/month and free preparation resources.',
+      keywords: 'RRB ALP 2026, Railway ALP taiyari, loco pilot syllabus Hindi, RRB ALP परीक्षा, assistant loco pilot bharti, ITI railway sarkari naukri',
       alternates: { canonical: 'https://www.taiyarho.in/exams/rrb-alp/' },
+      other: { 'description:hi': 'RRB ALP 2026 – ALP और Technician के लिए 27,943 रिक्तियाँ। CBT 1 फरवरी 2026 में हुई। सिलेबस, CBT 2 पैटर्न, पात्रता (10वीं + ITI), वेतन ₹19,900/माह और मुफ्त संसाधन।' },
     };
   }
 

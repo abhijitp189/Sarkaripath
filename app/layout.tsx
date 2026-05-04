@@ -3,12 +3,13 @@ import Link from 'next/link';
 import Script from 'next/script';
 import UniversalSearch from '@/components/UniversalSearch';
 import ExamsMegaMenu from '@/components/ExamsMegaMenu';
+import GoogleTranslate from '@/components/GoogleTranslate';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'TaiyarHo – Free Guide for Indian Government Exam Preparation',
   description: 'Complete free guide for all Indian government exams – UPSC, SSC, Banking, Railway. Syllabus, study plans, best books, free resources, and exam strategies.',
-  keywords: 'government exam preparation, sarkari exam, UPSC preparation, SSC CGL, IBPS PO, railway exam, government job guide, free study material',
+  keywords: 'government exam preparation, sarkari exam, sarkari naukri taiyari, UPSC preparation, SSC CGL, IBPS PO, railway exam, government job guide, free study material, सरकारी नौकरी तैयारी, सरकारी परीक्षा, SSC CGL तैयारी, UPSC परीक्षा',
   metadataBase: new URL('https://www.taiyarho.in'),
   openGraph: {
     title: 'TaiyarHo – Free Guide for Indian Government Exam Preparation',
@@ -50,9 +51,13 @@ function Navbar() {
           <div className="ml-2">
             <UniversalSearch />
           </div>
+          <div className="ml-1">
+            <GoogleTranslate />
+          </div>
         </div>
 
         <div className="md:hidden flex items-center gap-2">
+          <GoogleTranslate />
           <UniversalSearch />
           <MobileMenuButton />
         </div>
