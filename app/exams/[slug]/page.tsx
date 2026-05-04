@@ -165,6 +165,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ibps-po') {
+    return {
+      title: 'IBPS PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'IBPS PO 2026 (CRP PO-XVI): Notification expected Aug 2026. 3,000–5,000 vacancies in 11 public sector banks. Check complete Prelims & Mains syllabus, exam pattern, eligibility (Graduate, 20–30 yrs), salary ₹52,000+/month and free preparation resources.',
+      keywords: 'IBPS PO 2026, IBPS PO taiyari, bank PO sarkari naukri, IBPS PO syllabus Hindi, बैंक PO परीक्षा तैयारी, IBPS PO notification, banking exam 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ibps-po/' },
+      other: { 'description:hi': 'IBPS PO 2026 – 11 सार्वजनिक क्षेत्र के बैंकों में 3,000–5,000 रिक्तियाँ। सिलेबस, परीक्षा पैटर्न (प्रारंभिक + मुख्य), पात्रता, आयु सीमा 20-30 वर्ष, वेतन ₹52,000+/माह और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'rrb-alp') {
     return {
       title: 'RRB ALP 2026 – Syllabus, CBT 1 Result, Exam Pattern & Guide | TaiyarHo',
@@ -200,6 +210,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (detailed && detailed.slug === 'rrb-ntpc') return <RrbNtpcPage exam={detailed} />;
   if (detailed && detailed.slug === 'rrb-group-d') return <RrbGroupDPage exam={detailed} />;
   if (brief && brief.slug === 'rrb-alp') return <RrbAlpPage exam={brief} />;
+  if (detailed && detailed.slug === 'ibps-po') return <IbpsPoPage exam={detailed} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'rajasthan-police-constable') return <RajasthanPoliceConstablePage exam={brief} />;
@@ -11252,6 +11263,902 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
 
         </div>
       </div>
+    </>
+  );
+}
+
+// ─── IBPS PO RICH PAGE ──────────────────────────────────────────────────────
+function IbpsPoPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies & Banks' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'cutoff', label: 'Previous Year Cut-offs' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'IBPS PO 2025 (CRP PO-XV) Notification', date: '1 August 2025', status: 'released' },
+    { event: 'IBPS PO 2025 Online Application Start', date: '1 August 2025', status: 'released' },
+    { event: 'IBPS PO 2025 Application Last Date', date: '21 August 2025', status: 'released' },
+    { event: 'IBPS PO 2025 Prelims Exam', date: 'October 4, 11, 12 & 18, 2025', status: 'released' },
+    { event: 'IBPS PO 2025 Prelims Result', date: 'November 2025', status: 'released' },
+    { event: 'IBPS PO 2025 Mains Exam', date: '30 November 2025', status: 'released' },
+    { event: 'IBPS PO 2025 Mains Result', date: 'January 2026', status: 'released' },
+    { event: 'IBPS PO 2025 Interview / Provisional Allotment', date: 'February–April 2026', status: 'upcoming' },
+    { event: '💡 IBPS PO 2026 (CRP PO-XVI) Notification', date: 'Expected August 2026 (TBN)', status: 'tbn' },
+    { event: 'IBPS PO 2026 Online Application Opens', date: 'Expected August 2026 (TBN)', status: 'tbn' },
+    { event: 'IBPS PO 2026 Application Last Date', date: 'Expected August 2026 (TBN)', status: 'tbn' },
+    { event: 'IBPS PO 2026 Prelims Exam', date: 'Expected October 2026 (TBN)', status: 'tbn' },
+    { event: 'IBPS PO 2026 Mains Exam', date: 'Expected November 2026 (TBN)', status: 'tbn' },
+    { event: 'IBPS PO 2026 Interview & Allotment', date: 'Expected Feb–April 2027 (TBN)', status: 'tbn' },
+  ];
+
+  const participatingBanks = [
+    { bank: 'Bank of Baroda', short: 'BOB' },
+    { bank: 'Bank of India', short: 'BOI' },
+    { bank: 'Bank of Maharashtra', short: 'BOM' },
+    { bank: 'Canara Bank', short: 'CB' },
+    { bank: 'Central Bank of India', short: 'CBI' },
+    { bank: 'Indian Bank', short: 'IB' },
+    { bank: 'Indian Overseas Bank', short: 'IOB' },
+    { bank: 'Punjab & Sind Bank', short: 'PSB' },
+    { bank: 'Punjab National Bank', short: 'PNB' },
+    { bank: 'UCO Bank', short: 'UCO' },
+    { bank: 'Union Bank of India', short: 'UBI' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'CRP PO-XI (2021)', vacancies: '4,135', prelims: 'Nov 2021', mains: 'Jan 2022' },
+    { year: 'CRP PO-XII (2022)', vacancies: '6,432', prelims: 'Sep–Oct 2022', mains: 'Nov 2022' },
+    { year: 'CRP PO-XIII (2023)', vacancies: '3,049', prelims: 'Sep–Oct 2023', mains: 'Nov 2023' },
+    { year: 'CRP PO-XIV (2024)', vacancies: '4,455', prelims: 'Sep 2024', mains: 'Nov 2024' },
+    { year: 'CRP PO-XV (2025)', vacancies: '5,208', prelims: 'Oct 2025', mains: 'Nov 2025' },
+    { year: 'CRP PO-XVI (2026)', vacancies: '3,000–5,500 (Expected)', prelims: 'Oct 2026 (TBN)', mains: 'Nov 2026 (TBN)' },
+  ];
+
+  const preliimPattern = [
+    { subject: 'English Language', questions: 30, marks: 30, time: '20 min' },
+    { subject: 'Quantitative Aptitude', questions: 35, marks: 35, time: '20 min' },
+    { subject: 'Reasoning Ability', questions: 35, marks: 35, time: '20 min' },
+  ];
+
+  const mainsPattern = [
+    { subject: 'Reasoning & Computer Aptitude', questions: 45, marks: 60, time: '60 min' },
+    { subject: 'Data Analysis & Interpretation', questions: 35, marks: 60, time: '45 min' },
+    { subject: 'General/Economy/Banking Awareness', questions: 40, marks: 40, time: '35 min' },
+    { subject: 'English Language', questions: 35, marks: 40, time: '40 min' },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', prelims2025: '59.50', mains2025: '~41/75', prelims2024: '58.25', mains2024: '~38/75' },
+    { category: 'OBC', prelims2025: '55.25', mains2025: '~36/75', prelims2024: '54.00', mains2024: '~33/75' },
+    { category: 'SC', prelims2025: '47.75', mains2025: '~30/75', prelims2024: '46.50', mains2024: '~27/75' },
+    { category: 'ST', prelims2025: '42.00', mains2025: '~26/75', prelims2024: '40.50', mains2024: '~24/75' },
+    { category: 'EWS', prelims2025: '57.75', mains2025: '~39/75', prelims2024: '56.25', mains2024: '~36/75' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Scale I start)', amount: '₹36,000/month' },
+    { component: 'Dearness Allowance (DA) ~50%', amount: '~₹18,000/month' },
+    { component: 'House Rent Allowance (HRA) Metro', amount: '₹3,240–₹5,040/month' },
+    { component: 'City Compensatory Allowance (CCA)', amount: '₹750–₹2,000/month' },
+    { component: 'Special Allowance & Other Perks', amount: '~₹5,000–₹7,000/month' },
+    { component: 'Gross Estimated In-Hand (Metro)', amount: '~₹52,000–₹58,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Probationary Officer (PO)', scale: 'Scale I', years: '0–2 yrs (Training)', payband: '₹36,000–₹63,840' },
+    { level: 'Officer / Assistant Manager', scale: 'Scale I', years: '2–5 yrs', payband: '₹36,000–₹63,840' },
+    { level: 'Manager', scale: 'Scale II', years: '5–10 yrs', payband: '₹48,170–₹69,810' },
+    { level: 'Senior Manager', scale: 'Scale III', years: '10–15 yrs', payband: '₹63,840–₹78,230' },
+    { level: 'Chief Manager / AGM', scale: 'Scale IV', years: '15–20 yrs', payband: '₹76,010–₹89,890' },
+    { level: 'DGM / GM', scale: 'Scale V–VII', years: '20+ yrs', payband: '₹89,890+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🔢 Quantitative Aptitude / Data Analysis & Interpretation',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Number Series (missing & wrong number)',
+        'Simplification & Approximation',
+        'Percentage, Average, Ratio & Proportion',
+        'Profit & Loss, Simple & Compound Interest',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time – Trains, Boats & Streams',
+        'Permutation, Combination & Probability',
+        'Data Interpretation – Bar, Pie, Line, Tabular, Caselet, Mixed',
+        'Data Sufficiency (2-statement type)',
+        'Quadratic Equations, Mensuration',
+      ],
+    },
+    {
+      subject: '🧩 Reasoning Ability & Computer Aptitude',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Puzzles – Floor based, Box, Scheduling, Comparison, Month-Day-Year',
+        'Seating Arrangement – Linear, Circular, Square, Rectangular',
+        'Syllogisms – Direct & Reverse (new pattern)',
+        'Coding-Decoding (new pattern), Blood Relations',
+        'Direction & Distance, Order & Ranking',
+        'Inequality (Direct & Coded), Input-Output',
+        'Data Sufficiency (3-statement reasoning)',
+        'Computer – History, Hardware, Software, Networking, Internet',
+        'MS Office, Shortcuts, Database Basics, Cyber Security',
+      ],
+    },
+    {
+      subject: '📝 English Language',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Reading Comprehension (2–3 passages, 10–15 questions)',
+        'Cloze Test (new pattern – sentence-based)',
+        'Error Spotting (word-level and sentence-level)',
+        'Sentence Rearrangement / Para Jumbles',
+        'Phrase Replacement, Double Fillers',
+        'Word Usage, Match the Column',
+        'Vocabulary – Synonyms, Antonyms in context',
+        'Descriptive Paper (Mains only) – Formal Letter + Essay (~250–300 words each)',
+      ],
+    },
+    {
+      subject: '🏦 General/Economy/Banking Awareness',
+      prelims: false,
+      mains: true,
+      topics: [
+        'Banking Awareness – Types of accounts, NPA, CRAR, Basel Norms',
+        'RBI – Monetary Policy, Repo Rate, CRR, SLR, NABARD, SEBI',
+        'Financial Awareness – Union Budget highlights, fiscal deficit',
+        'Government Schemes – PM Jan Dhan, MUDRA, Stand Up India, DBT',
+        'Insurance – IRDAI, types of insurance, LIC, health insurance basics',
+        'Static GK – Countries, capitals, currencies, headquarters',
+        'Current Affairs – Last 6 months (national + international)',
+        'Awards, summits, appointments, important days',
+        'Stock Market basics – NSE, BSE, Sensex, Nifty',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Quant Foundation', detail: 'Number Series, Simplification, Percentage, Ratio & Proportion, SI/CI. Build arithmetic speed daily with 30 targeted questions. Start reading one financial newspaper (The Hindu Business Line or Economic Times) every morning — just 15 min.' },
+    { month: 'Month 2', focus: 'Advanced Quant + Reasoning Start', detail: 'DI — all types (bar, pie, caselet). Time & Work, Boats & Trains. Reasoning: Linear & Circular Seating Arrangement, Floor Puzzles. Puzzles form 50–60% of Reasoning — master variations early.' },
+    { month: 'Month 3', focus: 'Complete Reasoning + English', detail: 'Syllogisms (both patterns), Coding-Decoding, Blood Relations, Input-Output. English: RC daily (2 passages). Practice Error Spotting and Cloze Tests. Para Jumbles every alternate day.' },
+    { month: 'Month 4', focus: 'Banking Awareness + Computer', detail: 'Deep-dive into Banking Awareness — RBI policies, banking terminology, financial inclusion schemes. Computer Knowledge basics — 2-3 weeks is enough for full marks. Start mock tests: 1 sectional test per subject per week.' },
+    { month: 'Month 5', focus: 'Mains Pattern + Descriptive Writing', detail: 'Practice advanced DI (mixed DI, missing DI). Descriptive writing: one formal letter and one essay per week. Research banking topics for essay writing. Mains-level Reasoning puzzles daily.' },
+    { month: 'Month 6', focus: 'Full Mocks + Revision', detail: 'Take 2–3 full-length Prelims mocks per week. Analyze every mock — especially wrong answers. Revise Banking Awareness twice. Practice Current Affairs of the last 6 months intensively. Fine-tune speed and accuracy.' },
+  ];
+
+  const books = [
+    { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Quant' },
+    { title: 'Quantum CAT (for advanced DI)', author: 'Sarvesh K. Verma', subject: 'Quant (Advanced)' },
+    { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali & Indu Sijwali', subject: 'Reasoning' },
+    { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English Vocabulary' },
+    { title: 'Objective English for Competitive Exams', author: 'Hari Mohan Prasad', subject: 'English' },
+    { title: 'Banking & Financial Awareness', author: 'Arihant Publications', subject: 'Banking Awareness' },
+    { title: 'Computer Knowledge for Banking Exams', author: 'Kiran Prakashan', subject: 'Computer' },
+  ];
+
+  const freeResources = [
+    { name: 'IBPS Official Mock Tests', type: 'website', url: 'https://www.ibps.in', description: 'Free official mock tests released by IBPS before every exam — exact paper pattern.' },
+    { name: 'Oliveboard Free IBPS PO Mocks', type: 'website', url: 'https://www.oliveboard.in/ibps-po/', description: 'Free full-length and sectional mocks with detailed AI-based analysis.' },
+    { name: 'Adda247 Banking on YouTube', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Daily free classes, current affairs, mock test solutions for IBPS PO.' },
+    { name: 'Mrunal Patel (Economy & DI)', type: 'youtube', url: 'https://www.youtube.com/@TheMrunalPatel', description: 'Best free resource for Banking Awareness, Economy and Data Interpretation.' },
+    { name: 'RBI Official Website', type: 'website', url: 'https://www.rbi.org.in', description: 'Stay updated on monetary policy, repo rate, banking circulars — directly from source.' },
+    { name: 'GK Today', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily current affairs, banking awareness capsules, and monthly PDFs.' },
+    { name: 'Unacademy Banking', type: 'youtube', url: 'https://www.youtube.com/@UnacademyBanking', description: 'Free lectures by top banking educators on all IBPS PO topics.' },
+    { name: 'IndiaBIX – Aptitude Practice', type: 'website', url: 'https://www.indiabix.com', description: 'Unlimited free practice questions for Reasoning and Quantitative Aptitude.' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'Prelims is a filter — do not waste time on it. Aim for 65–70 correct in 80 questions (instead of attempting all 80). Speed matters more than completeness in Prelims.' },
+    { icon: '⏱️', tip: 'Mains is where the real battle is. The Descriptive Paper (Essay + Letter) carries 25 marks each — candidates who prepare it seriously gain a huge edge over those who ignore it.' },
+    { icon: '🏦', tip: 'General/Economy/Banking Awareness is the most differentiating section in Mains. Maintain a \'Banking Diary\' — note down every RBI circular, policy change, and scheme launch you read.' },
+    { icon: '📊', tip: 'Reasoning & Computer Aptitude in Mains (60 marks) allows 60 minutes. That\'s 1 minute per mark — very tight. Practice Mains Reasoning puzzles under a 60-minute timer from Month 2 onwards.' },
+    { icon: '📝', tip: 'For the Descriptive Paper, practice writing on topics like banking reforms, financial inclusion, digital payments, climate change. Use simple English with good structure — intro, body, conclusion.' },
+    { icon: '💡', tip: 'Choose your preferred bank state wisely. IBPS allots banks based on preference + state domicile. Some states have significantly lower cut-offs. Research state-wise Mains cut-offs before form filling.' },
+    { icon: '🔄', tip: 'Consistency beats intensity. 3 focused hours daily for 6 months beats a last-minute 14-hour cramming sprint. Build your schedule around daily mock tests from Month 3 onwards.' },
+    { icon: '📱', tip: 'Use Telegram channels (Adda247, Oliveboard, Gradeup) for free daily current affairs PDFs. Reading one current affairs capsule daily for 6 months is more effective than bulk-reading just before the exam.' },
+  ];
+
+  const faqs = [
+    { q: 'What is IBPS PO 2026 notification date?', a: 'IBPS follows a consistent annual cycle. The CRP PO-XVI 2026 notification is expected in August 2026, with online applications opening around the same time. IBPS has not released the 2026 notification yet — mark it as TBN (To Be Notified). Check ibps.in directly for the official announcement.' },
+    { q: 'How many banks participate in IBPS PO 2026?', a: '11 public sector banks participate in IBPS CRP PO: Bank of Baroda, Bank of India, Bank of Maharashtra, Canara Bank, Central Bank of India, Indian Bank, Indian Overseas Bank, Punjab & Sind Bank, Punjab National Bank, UCO Bank, and Union Bank of India. Note: SBI conducts its own separate PO exam.' },
+    { q: 'What is the IBPS PO 2026 salary after joining?', a: 'After joining, IBPS PO (Scale I) draws a basic pay of ₹36,000/month. With Dearness Allowance (~50%), HRA (7–9%), City Compensatory Allowance, and Special Allowances, the total gross in-hand salary is approximately ₹52,000–₹58,000/month in metro cities. Under the 12th Bipartite Settlement (2025), the revised salary structure is higher.' },
+    { q: 'Is there negative marking in IBPS PO 2026?', a: 'Yes. Both Prelims and Mains have negative marking of 0.25 marks (one-fourth mark) for every wrong answer. There is no penalty for unattempted questions. This is why accuracy is more important than attempting the maximum number of questions — especially in Prelims.' },
+    { q: 'How is IBPS PO different from SBI PO?', a: 'IBPS PO recruits for 11 public sector banks (excluding SBI), while SBI PO recruits exclusively for the State Bank of India. SBI PO includes a Group Exercise (GD) in addition to the Interview, while IBPS PO has only an Interview. SBI PO is generally considered slightly more competitive and the salary is marginally higher. Both are prestigious banking careers.' },
+    { q: 'What is the IBPS PO 2026 vacancy count?', a: 'The exact IBPS PO 2026 vacancy count will be announced with the official CRP PO-XVI notification. Based on historical trends, expect 3,000–5,500 vacancies. Previous cycles: 5,208 (2025), 4,455 (2024), 3,049 (2023). Vacancies vary significantly year to year based on bank requirements.' },
+  ];
+
+  return (
+    <>
+      {/* ── HERO SECTION ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">IBPS PO 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏦 Banking</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ Notification 2026: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            IBPS PO 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            IBPS PO 2026 (CRP PO-XVI) notification expected August 2026 with 3,000–5,500 vacancies in 11 public sector banks. 3-stage selection: Prelims (100 marks, 60 min) → Mains (200 marks + Descriptive 50 marks) → Interview. Graduate degree required. Age 20–30 years.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '3,000–5,500', sub: '(2026 est.)' },
+              { label: 'Prelims Exam Date', value: 'Oct 2026', sub: '(TBN)' },
+              { label: 'Min. Qualification', value: 'Any Graduate', sub: 'Degree required' },
+              { label: 'Gross Salary', value: '~₹52,000+', sub: 'per month' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update 2026:</strong> IBPS PO 2025 (CRP PO-XV) had 5,208 vacancies — the highest in recent cycles. The 2026 cycle is expected to open in August 2026. ⚠️ All 2026 dates are TBN — verify from <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">ibps.in</a> when released.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is IBPS PO 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>IBPS PO (Probationary Officer) exam</strong>, officially known as <strong>Common Recruitment Process for Probationary Officers (CRP PO)</strong>, is conducted annually by the <strong>Institute of Banking Personnel Selection (IBPS)</strong> to recruit Probationary Officers for 11 public sector banks across India.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  A Probationary Officer is the starting management-level position in a public sector bank. After a 2-year probation period, POs are confirmed as Officers in <strong>Junior Management Grade Scale-I (JMGS-I)</strong> — the gateway to a lifelong banking career with excellent growth prospects.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  IBPS PO is one of India's most applied-for banking exams, with over <strong>10–15 lakh applicants</strong> every cycle. It is open to graduates of any discipline — making it one of the most accessible high-salaried government careers in the country.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'IBPS' },
+                  { label: 'Official Name', value: 'CRP PO-XVI (2026)' },
+                  { label: 'Participating Banks', value: '11 PSBs' },
+                  { label: 'Selection Stages', value: 'Prelims + Mains + Interview' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 IBPS PO 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> IBPS PO 2026 (CRP PO-XVI) dates are not yet officially announced. The table below shows confirmed 2025 dates and expected 2026 dates based on IBPS historical patterns. Always verify from <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">ibps.in</a> for official announcements.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released' && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'upcoming' && <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">🔵 Upcoming</span>}
+                          {row.status === 'tbn' && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-6">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3 flex items-center gap-2"><span>🪪</span> Nationality</h3>
+                  <p className="text-surface-700 text-sm">Must be a Citizen of India. Candidates who are subjects of Nepal, Bhutan, or Tibet refugees who came before 1962 may also be eligible subject to conditions.</p>
+                </div>
+                <div className="card p-6">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3 flex items-center gap-2"><span>🎓</span> Educational Qualification</h3>
+                  <p className="text-surface-700 text-sm mb-3">{exam.qualification}</p>
+                  <div className="bg-primary-50 border border-primary-200 rounded-lg p-3 text-sm text-primary-800">
+                    💡 <strong>Appearing candidates:</strong> Final year degree students may also apply, provided they submit proof of graduation by the time of joining (if selected).
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-4 flex items-center gap-2"><span>📋</span> Age Limit (as on notification date)</h3>
+                  <div className="mb-3 flex gap-6 text-sm">
+                    <div><span className="text-surface-500">Minimum Age:</span> <strong className="text-surface-800">20 years</strong></div>
+                    <div><span className="text-surface-500">Maximum Age:</span> <strong className="text-surface-800">30 years</strong></div>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead><tr className="bg-surface-50">
+                        <th className="text-left p-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Age Relaxation</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Upper Limit</th>
+                      </tr></thead>
+                      <tbody>
+                        {[
+                          { cat: 'General / EWS', rel: 'No relaxation', limit: '30 years' },
+                          { cat: 'OBC (Non-Creamy Layer)', rel: '+3 years', limit: '33 years' },
+                          { cat: 'SC / ST', rel: '+5 years', limit: '35 years' },
+                          { cat: 'PwBD (General)', rel: '+10 years', limit: '40 years' },
+                          { cat: 'PwBD (OBC)', rel: '+13 years', limit: '43 years' },
+                          { cat: 'PwBD (SC/ST)', rel: '+15 years', limit: '45 years' },
+                          { cat: 'Ex-Servicemen', rel: 'Actual service + 3 years', limit: 'Subject to max 50 yrs' },
+                          { cat: 'J&K Domicile (1980–1989)', rel: '+5 years', limit: '35 years' },
+                        ].map((r, i) => (
+                          <tr key={i} className="border-t border-surface-100">
+                            <td className="p-3 font-medium text-surface-800">{r.cat}</td>
+                            <td className="p-3 text-surface-600">{r.rel}</td>
+                            <td className="p-3 text-surface-700 font-semibold">{r.limit}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-3">Age cut-off date: As specified in the official notification (usually the date of notification release). No attempt limit for IBPS PO — you can apply until you exceed the age limit.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies & Participating Banks</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4">Historical Vacancy Trend</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-semibold text-xs uppercase">Cycle</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase">Vacancies</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase">Prelims</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase">Mains</th>
+                    </tr></thead>
+                    <tbody>
+                      {vacancyHistory.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i === vacancyHistory.length - 1 ? 'bg-amber-50' : i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                          <td className="p-3 text-center font-heading font-bold text-primary-600">{row.vacancies}</td>
+                          <td className="p-3 text-center text-surface-600">{row.prelims}</td>
+                          <td className="p-3 text-center text-surface-600">{row.mains}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-2">* 2026 row shows expected figures based on trends. Official count TBN.</p>
+              </div>
+              <div className="card p-6">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4">11 Participating Public Sector Banks</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {participatingBanks.map((b) => (
+                    <div key={b.short} className="flex items-center gap-3 bg-surface-50 rounded-lg p-3 border border-surface-200">
+                      <span className="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center text-primary-700 font-heading font-bold text-xs flex-shrink-0">{b.short}</span>
+                      <span className="text-sm text-surface-700 font-medium">{b.bank}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-3">⚠️ SBI, RBI, NABARD, and SIDBI conduct their own separate exams and are NOT part of IBPS CRP PO.</p>
+              </div>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">IBPS PO 2026 Exam Pattern</h2>
+              </div>
+
+              {/* Stage 1 */}
+              <div className="card p-6 mb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center text-white font-heading font-bold">1</div>
+                  <div>
+                    <h3 className="font-heading font-bold text-surface-900">Preliminary Exam (Qualifying)</h3>
+                    <span className="text-xs text-surface-500">MCQ · Total 100 Marks · 60 Minutes (Sectional Timing) · Negative marking: 0.25/wrong answer</span>
+                  </div>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-50">
+                      <th className="text-left p-3 font-semibold text-surface-700">Subject</th>
+                      <th className="text-center p-3 font-semibold text-surface-700">Questions</th>
+                      <th className="text-center p-3 font-semibold text-surface-700">Marks</th>
+                      <th className="text-center p-3 font-semibold text-surface-700">Time</th>
+                    </tr></thead>
+                    <tbody>
+                      {preliimPattern.map((row, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-3 text-center text-surface-600">{row.marks}</td>
+                          <td className="p-3 text-center text-primary-600 font-semibold">{row.time}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-surface-300 bg-surface-50 font-bold">
+                        <td className="p-3 text-surface-900">Total</td>
+                        <td className="p-3 text-center text-surface-900">100</td>
+                        <td className="p-3 text-center text-surface-900">100</td>
+                        <td className="p-3 text-center text-primary-700">60 min</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-3 text-sm text-blue-800">
+                  💡 <strong>Prelims is qualifying only.</strong> Marks are NOT counted in final merit. You just need to clear the sectional + overall cut-off to qualify for Mains.
+                </div>
+              </div>
+
+              {/* Stage 2 */}
+              <div className="card p-6 mb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center text-white font-heading font-bold">2</div>
+                  <div>
+                    <h3 className="font-heading font-bold text-surface-900">Mains Exam (Merit-Based)</h3>
+                    <span className="text-xs text-surface-500">Objective (200 marks, 3 hrs) + Descriptive Paper (50 marks, 30 min) · Negative: 0.25/wrong answer</span>
+                  </div>
+                </div>
+                <div className="overflow-x-auto mb-4">
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-50">
+                      <th className="text-left p-3 font-semibold text-surface-700">Subject</th>
+                      <th className="text-center p-3 font-semibold text-surface-700">Questions</th>
+                      <th className="text-center p-3 font-semibold text-surface-700">Marks</th>
+                      <th className="text-center p-3 font-semibold text-surface-700">Time</th>
+                    </tr></thead>
+                    <tbody>
+                      {mainsPattern.map((row, i) => (
+                        <tr key={i} className="border-t border-surface-100">
+                          <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-3 text-center text-surface-600">{row.marks}</td>
+                          <td className="p-3 text-center text-primary-600 font-semibold">{row.time}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t border-surface-200">
+                        <td className="p-3 font-medium text-surface-800">Descriptive Paper – English</td>
+                        <td className="p-3 text-center text-surface-600">2 (Letter + Essay)</td>
+                        <td className="p-3 text-center text-surface-600">50</td>
+                        <td className="p-3 text-center text-primary-600 font-semibold">30 min</td>
+                      </tr>
+                      <tr className="border-t-2 border-surface-300 bg-surface-50 font-bold">
+                        <td className="p-3 text-surface-900">Total</td>
+                        <td className="p-3 text-center text-surface-900">157</td>
+                        <td className="p-3 text-center text-surface-900">250</td>
+                        <td className="p-3 text-center text-primary-700">3.5 hrs</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-sm text-emerald-800">
+                  ✅ <strong>Mains score determines your final merit.</strong> The Descriptive Paper is typed on a computer in the exam hall. Your Mains score (out of 250) + Interview (25 marks) = Final merit for allotment.
+                </div>
+              </div>
+
+              {/* Stage 3 */}
+              <div className="card p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center text-white font-heading font-bold">3</div>
+                  <div>
+                    <h3 className="font-heading font-bold text-surface-900">Interview (25 Marks)</h3>
+                    <span className="text-xs text-surface-500">Called based on Mains score · Personal Interview only (no Group Discussion)</span>
+                  </div>
+                </div>
+                <p className="text-sm text-surface-700">Candidates shortlisted from Mains attend a personal interview. The final allotment merit is computed as: <strong>80% Mains score + 20% Interview score</strong>. The interview is conducted jointly by IBPS and participating banks.</p>
+                <div className="mt-3 bg-primary-50 border border-primary-200 rounded-lg p-3 text-sm text-primary-800">
+                  💡 <strong>Local Language Test (LLPT):</strong> Candidates must demonstrate proficiency in the Official Language of their applied state. Exempted if 10th/12th was passed with that language as a subject.
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">IBPS PO 2026 Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((sec, i) => (
+                  <details key={i} className="card group" open={i === 0}>
+                    <summary className="p-5 cursor-pointer flex items-center justify-between font-heading font-semibold text-surface-800 hover:text-primary-500 transition-colors list-none">
+                      <span className="flex items-center gap-3">
+                        <span className="w-6 h-6 bg-primary-50 rounded-md flex items-center justify-center text-primary-500 text-xs font-bold">{i + 1}</span>
+                        <span>{sec.subject}</span>
+                        <span className="flex gap-1.5">
+                          {sec.prelims && <span className="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded font-medium">Prelims</span>}
+                          {sec.mains && <span className="text-xs bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-medium">Mains</span>}
+                        </span>
+                      </span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 ml-9 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                      {sec.topics.map((topic, j) => (
+                        <div key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0" />
+                          {topic}
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year Cut-offs (2024 & 2025)</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
+                ⚠️ These are approximate cut-offs based on available data. Official IBPS Prelims cut-offs are out of 100 marks. Mains cut-offs shown are out of 75 (scaled score). Actual marks may vary slightly by state and category.
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase">Category</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase">Prelims 2025</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase">Mains 2025*</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase">Prelims 2024</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase">Mains 2024*</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-center font-heading font-bold text-primary-600">{row.prelims2025}</td>
+                        <td className="p-3 text-center text-surface-700">{row.mains2025}</td>
+                        <td className="p-3 text-center font-heading font-bold text-primary-500">{row.prelims2024}</td>
+                        <td className="p-3 text-center text-surface-700">{row.mains2024}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">* Mains cut-off is the scaled score out of 75 used for shortlisting for Interview. Final merit includes interview marks. Cut-offs vary slightly by state allotment preference.</p>
+            </section>
+
+            {/* SECTION 8: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 IBPS PO Salary 2026 & Career Growth</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4">Salary Breakdown (12th Bipartite Settlement 2025)</h3>
+                <div className="space-y-3">
+                  {salaryBreakdown.map((item, i) => (
+                    <div key={i} className={`flex justify-between items-center py-2 px-3 rounded-lg text-sm ${i === salaryBreakdown.length - 1 ? 'bg-primary-50 border border-primary-200 font-bold text-primary-800' : 'border-b border-surface-100 text-surface-700'}`}>
+                      <span>{item.component}</span>
+                      <span className="font-heading font-semibold">{item.amount}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-3">Additional perks: Medical insurance (self + family), LFC/LTC, pension (NPS), subsidised housing/lease rental, staff loans at lower rates, annual increments, and performance bonuses.</p>
+              </div>
+              <div className="card p-6">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4">Career Progression Path</h3>
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  <div className="space-y-3">
+                    {careerPath.map((step, i) => (
+                      <div key={i} className="sm:pl-14 relative">
+                        <div className="hidden sm:flex absolute left-0 top-3 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-bold text-xs z-10">{i + 1}</div>
+                        <div className="card p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                          <div>
+                            <span className="font-heading font-semibold text-surface-900 text-sm">{step.level}</span>
+                            <span className="ml-2 text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full">{step.scale}</span>
+                          </div>
+                          <div className="flex gap-4 text-xs text-surface-500">
+                            <span>⏱ {step.years}</span>
+                            <span className="font-semibold text-surface-700">₹ {step.payband}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 9: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for IBPS PO 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { step: 'Check notification at ibps.in', detail: 'When IBPS releases the CRP PO-XVI 2026 notification (expected August 2026), read it carefully — especially the vacancy list, eligibility cutoff dates, and state preference options.', icon: '🔔' },
+                  { step: 'Register at ibps.in', detail: 'Go to ibps.in → Click on CRP PO-XVI → Click "Apply Online" → Register with your name, email, and mobile number. You will receive your provisional registration number.', icon: '📝' },
+                  { step: 'Fill the online application form', detail: 'Enter personal details, educational qualifications, bank/state preference, and upload photo (scanned, 20–50 KB) and signature (10–20 KB). Only JPEG format allowed.', icon: '📋' },
+                  { step: 'Pay the application fee', detail: 'General/EWS/OBC: ₹850. SC/ST/PwBD: ₹175. Payment is online only (Debit card, Credit card, Net Banking, UPI). Fee is non-refundable.', icon: '💳' },
+                  { step: 'Submit & take printout', detail: 'Review all details before final submission. Take a printout of the completed application form. Keep it safely until the recruitment process ends.', icon: '🖨️' },
+                ].map((item, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{item.icon}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-900 mb-1">Step {i + 1}: {item.step}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 flex justify-center">
+                <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+                  Apply at ibps.in (when available) →
+                </a>
+              </div>
+            </section>
+
+            {/* SECTION 10: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">6-Month IBPS PO 2026 Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((item, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-xs z-10">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="font-heading font-bold text-primary-600 text-sm">{item.month}</span>
+                          <span className="text-xs bg-primary-50 text-primary-700 px-2 py-0.5 rounded-full font-medium">{item.focus}</span>
+                        </div>
+                        <p className="text-surface-700 leading-relaxed text-sm">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 11: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for IBPS PO 2026</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase">Book Title</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase">Author / Publisher</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase">Subject</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                        <td className="p-3"><span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full">{b.subject}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">💡 Books are supplementary. IBPS releases free official mock tests before every exam — always attempt those first as they show the exact pattern.</p>
+            </section>
+
+            {/* SECTION 12: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources for IBPS PO 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res, i) => (
+                  <a key={i} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition-colors">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-lg">{res.type === 'youtube' ? '🎥' : '🌐'}</span>
+                      <span className="badge badge-primary capitalize text-xs">{res.type}</span>
+                    </div>
+                    <h3 className="font-semibold text-surface-800 group-hover:text-primary-500 transition-colors mb-1 text-sm">{res.name}</h3>
+                    <p className="text-xs text-surface-500 leading-relaxed">{res.description}</p>
+                  </a>
+                ))}
+              </div>
+              <div className="mt-5">
+                <Link href="/resources" className="text-sm text-primary-500 hover:text-primary-700 font-medium">
+                  → Browse all free study resources on TaiyarHo
+                </Link>
+              </div>
+            </section>
+
+            {/* SECTION 13: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-accent-500 rounded-lg flex items-center justify-center text-white text-sm">💡</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips to Crack IBPS PO 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {tips.map((item, i) => (
+                  <div key={i} className="card p-5 flex gap-3">
+                    <span className="text-2xl flex-shrink-0 mt-0.5">{item.icon}</span>
+                    <p className="text-sm text-surface-700 leading-relaxed">{item.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: FAQ */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">IBPS PO 2026 FAQs</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer flex items-center justify-between font-medium text-surface-800 hover:text-primary-500 list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5"><p className="text-sm text-surface-600 leading-relaxed">{faq.a}</p></div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* CTA */}
+            <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-6 text-center">
+              <h3 className="text-lg font-heading font-bold text-white mb-2">Check Your IBPS PO Eligibility Now</h3>
+              <p className="text-primary-100 text-sm mb-4">Enter your age, qualification, and category — our free tool tells you instantly which exams you qualify for.</p>
+              <Link href="/tools/age-calculator" className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-primary-50 transition-colors">
+                Check Eligibility Free →
+              </Link>
+            </div>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-4 text-sm uppercase tracking-wide flex items-center gap-2">📋 On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{s.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm">🏦 Official IBPS Website</h3>
+                <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all hover:underline">www.ibps.in →</a>
+                <p className="text-xs text-primary-600 mt-1">Notifications, admit cards, results — all on ibps.in</p>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">Quick Facts 2026</h3>
+                {[
+                  { label: 'Vacancies (est.)', value: '3,000–5,500' },
+                  { label: 'Age Limit', value: '20–30 years' },
+                  { label: 'Qualification', value: 'Any Graduate' },
+                  { label: 'Prelims Marks', value: '100 (60 min)' },
+                  { label: 'Mains Marks', value: '250 (3.5 hrs)' },
+                  { label: 'Interview', value: '25 marks' },
+                  { label: 'Salary (in-hand)', value: '~₹52,000/mo' },
+                  { label: 'Probation Period', value: '2 years' },
+                ].map((item) => (
+                  <div key={item.label} className="flex justify-between text-xs py-1.5 border-b border-surface-100 last:border-0">
+                    <span className="text-surface-500">{item.label}</span>
+                    <span className="font-semibold text-surface-800">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card p-5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Banking Exams</p>
+                <div className="space-y-2">
+                  {[
+                    { name: 'SBI PO 2026', slug: 'sbi-po' },
+                    { name: 'IBPS Clerk 2026', slug: 'ibps-clerk' },
+                    { name: 'IBPS RRB Clerk 2026', slug: 'ibps-rrb-clerk' },
+                    { name: 'SBI Clerk 2026', slug: 'sbi-clerk' },
+                    { name: 'RBI Grade B 2026', slug: 'rbi-grade-b' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="card p-5 bg-orange-50 border-orange-200">
+                <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
+                <p className="text-xs text-orange-700 mb-3">Check your eligibility for IBPS PO and 100 other government exams — free, instant.</p>
+                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      {/* JSON-LD Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+        }))
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.taiyarho.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Exams", "item": "https://www.taiyarho.in/exams/" },
+          { "@type": "ListItem", "position": 3, "name": "IBPS PO 2026", "item": "https://www.taiyarho.in/exams/ibps-po/" }
+        ]
+      }) }} />
     </>
   );
 }
