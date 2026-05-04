@@ -32,32 +32,30 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-surface-200">
       <nav className="container-main flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center group">
-          <img
-            src="/logo.svg"
-            alt="TaiyarHo"
-            className="h-14 w-auto"
-          />
+        {/* Logo */}
+        <Link href="/" className="flex items-center shrink-0">
+          <img src="/logo.svg" alt="TaiyarHo" className="h-14 w-auto" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-1">
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-0.5">
+          {/* Primary links — always visible */}
           <ExamsMegaMenu />
           <NavLink href="/current-affairs">Current Affairs</NavLink>
-          <NavLink href="/guides">Guides</NavLink>
           <NavLink href="/blog">Blog</NavLink>
-          <NavLink href="/exam-calendar">Exam Calendar</NavLink>
-          <NavLink href="/resources">Resources</NavLink>
-          <NavLink href="/tools/eligibility-checker">Eligibility Checker</NavLink>
-          <div className="ml-2">
+
+          {/* More dropdown — secondary links */}
+          <MoreMenu />
+
+          {/* Utilities */}
+          <div className="ml-2 flex items-center gap-1.5">
             <UniversalSearch />
-          </div>
-          <div className="ml-1">
             <GoogleTranslate />
           </div>
         </div>
 
-        <div className="md:hidden flex items-center gap-2">
-          <GoogleTranslate />
+        {/* Mobile nav */}
+        <div className="md:hidden flex items-center gap-1.5">
           <UniversalSearch />
           <MobileMenuButton />
         </div>
@@ -70,9 +68,42 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   return (
     <Link
       href={href}
-      className="px-4 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-primary-500 hover:bg-primary-50 transition-all duration-200"
+      className="px-3 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-primary-500 hover:bg-primary-50 transition-all duration-200 whitespace-nowrap"
     >
       {children}
+    </Link>
+  );
+}
+
+/** Secondary links tucked into a "More ▾" dropdown */
+function MoreMenu() {
+  return (
+    <details className="relative group">
+      <summary className="list-none cursor-pointer flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-primary-500 hover:bg-primary-50 transition-all duration-200 select-none">
+        More
+        <svg className="w-3.5 h-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div className="absolute left-0 top-full mt-2 w-52 bg-white rounded-xl shadow-xl border border-surface-200 py-1.5 z-50">
+        <MoreMenuLink href="/guides" icon="📖">Guides</MoreMenuLink>
+        <MoreMenuLink href="/exam-calendar" icon="📅">Exam Calendar</MoreMenuLink>
+        <MoreMenuLink href="/resources" icon="📚">Resources</MoreMenuLink>
+        <div className="my-1 border-t border-surface-100" />
+        <MoreMenuLink href="/tools/eligibility-checker" icon="✅">Eligibility Checker</MoreMenuLink>
+      </div>
+    </details>
+  );
+}
+
+function MoreMenuLink({ href, icon, children }: { href: string; icon: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-surface-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+    >
+      <span className="text-base leading-none">{icon}</span>
+      <span className="font-medium">{children}</span>
     </Link>
   );
 }
@@ -85,23 +116,29 @@ function MobileMenuButton() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </summary>
-      <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-lg border border-surface-200 py-2 z-50">
-        <MobileNavLink href="/exams">Exams</MobileNavLink>
-        <MobileNavLink href="/current-affairs">Current Affairs</MobileNavLink>
-        <MobileNavLink href="/guides">Guides</MobileNavLink>
-        <MobileNavLink href="/blog">Blog</MobileNavLink>
-        <MobileNavLink href="/exam-calendar">Exam Calendar</MobileNavLink>
-        <MobileNavLink href="/resources">Resources</MobileNavLink>
-        <MobileNavLink href="/tools/eligibility-checker">Eligibility Checker</MobileNavLink>
+      <div className="absolute right-0 top-full mt-2 w-60 bg-white rounded-xl shadow-lg border border-surface-200 py-2 z-50">
+        <MobileNavLink href="/exams" icon="🏛️">All Exams</MobileNavLink>
+        <MobileNavLink href="/current-affairs" icon="📰">Current Affairs</MobileNavLink>
+        <MobileNavLink href="/blog" icon="✍️">Blog</MobileNavLink>
+        <div className="my-1 border-t border-surface-100" />
+        <MobileNavLink href="/guides" icon="📖">Guides</MobileNavLink>
+        <MobileNavLink href="/exam-calendar" icon="📅">Exam Calendar</MobileNavLink>
+        <MobileNavLink href="/resources" icon="📚">Resources</MobileNavLink>
+        <MobileNavLink href="/tools/eligibility-checker" icon="✅">Eligibility Checker</MobileNavLink>
+        <div className="my-1 border-t border-surface-100" />
+        <div className="px-4 py-2">
+          <GoogleTranslate />
+        </div>
       </div>
     </details>
   );
 }
 
-function MobileNavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function MobileNavLink({ href, icon, children }: { href: string; icon?: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="block px-4 py-3 text-sm text-surface-700 hover:bg-primary-50 hover:text-primary-500">
-      {children}
+    <Link href={href} className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-surface-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+      {icon && <span className="text-base leading-none">{icon}</span>}
+      <span className="font-medium">{children}</span>
     </Link>
   );
 }
@@ -219,7 +256,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <AdSlot position="footer-banner" />
         <Footer />
-        {/* Google Analytics – loaded after page is interactive for reliable firing on all pages */}
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7Z5G3W10VG"
           strategy="afterInteractive"
