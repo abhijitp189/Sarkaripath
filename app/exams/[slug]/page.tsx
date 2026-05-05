@@ -86,6 +86,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ssc-cpo') {
+    return {
+      title: 'SSC CPO 2026 – Notification, Syllabus, Eligibility & Guide | TaiyarHo',
+      description: 'SSC CPO 2026 notification expected 31 May 2026. ~3,000–5,000 SI vacancies in Delhi Police & CAPFs. Eligibility: Graduation, Age 20–25. Exam pattern, PET/PST, salary ₹35,400–₹1,12,400/month.',
+      keywords: 'SSC CPO 2026, SSC CPO notification, SSC CPO syllabus, Delhi Police SI 2026, CAPF Sub Inspector, SSC CPO taiyari, sarkari naukri 2026, Sub Inspector bharti',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-cpo/' },
+      other: { 'description:hi': 'SSC CPO 2026 – दिल्ली पुलिस और CAPF में Sub Inspector के लिए 3,000–5,000 रिक्तियाँ। अधिसूचना 31 मई 2026 को अपेक्षित। सिलेबस, PET/PST, पात्रता, वेतन ₹35,400–₹1,12,400/माह और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'ssc-mts') {
     return {
       title: 'SSC MTS 2026 – Syllabus, Exam Pattern, Eligibility & Complete Guide | TaiyarHo',
@@ -248,6 +258,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rajasthan-police-constable') return <RajasthanPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'bihar-police-constable') return <BiharPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
+  if (brief && brief.slug === 'ssc-cpo') return <SscCpoPage exam={brief} />;
   if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
   if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
   if (brief && brief.slug === 'ugc-net') return <UgcNetPage exam={brief} />;
@@ -14684,6 +14695,897 @@ function SbiPoPage({ exam }: { exam: any }) {
           </aside>
         </div>
       </div>
+    </>
+  );
+}
+
+// ─── SSC CPO 2026 RICH PAGE ────────────────────────────────────────────────────
+function SscCpoPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility' },
+    { id: 'vacancies', label: 'Vacancies & Posts' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'physical', label: 'Physical Test (PET/PST)' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'SSC CPO 2025 Notification Released', date: '26 September 2025', status: 'done' },
+    { event: 'Application Window (2025 cycle)', date: '26 Sep – 16 Oct 2025', status: 'done' },
+    { event: 'Application Correction Window', date: '24–26 October 2025', status: 'done' },
+    { event: 'Paper I (CBT) Exam', date: '9–12 December 2025', status: 'done' },
+    { event: 'Paper I Result + Cut-off Released', date: '30 March 2026', status: 'done' },
+    { event: 'PET / PST (Physical Test)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Paper II (English Comprehension)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Detailed Medical Examination', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'SSC CPO 2026 Notification', date: '31 May 2026 (Expected)', status: 'upcoming' },
+    { event: 'Application Opens (2026 cycle)', date: '31 May 2026 (Expected)', status: 'upcoming' },
+    { event: 'Last Date to Apply Online (2026)', date: '30 June 2026 (Expected)', status: 'upcoming' },
+    { event: 'Paper I Exam Date (2026 cycle)', date: 'October–November 2026 (Expected)', status: 'upcoming' },
+  ];
+
+  const examPatternP1 = [
+    { subject: 'General Intelligence & Reasoning', questions: 50, marks: 50, time: '30 min (sectional timer)' },
+    { subject: 'General Knowledge & General Awareness', questions: 50, marks: 50, time: '30 min (sectional timer)' },
+    { subject: 'Quantitative Aptitude', questions: 50, marks: 50, time: '30 min (sectional timer)' },
+    { subject: 'English Comprehension', questions: 50, marks: 50, time: '30 min (sectional timer)' },
+  ];
+
+  const vacancyData = [
+    { force: 'Delhi Police – SI (Executive) Male', vacancies2025: '125', vacancies2024: '~900', notes: 'Driving licence (LMV) required' },
+    { force: 'Delhi Police – SI (Executive) Female', vacancies2025: '87', vacancies2024: '~100', notes: 'Driving licence (LMV) required' },
+    { force: 'BSF – SI (GD)', vacancies2025: '~800', vacancies2024: '~1,200', notes: 'Pan-India posting' },
+    { force: 'CRPF – SI (GD)', vacancies2025: '~600', vacancies2024: '~700', notes: 'Pan-India posting' },
+    { force: 'CISF – ASI & SI', vacancies2025: '~700', vacancies2024: '~800', notes: 'Industrial security' },
+    { force: 'ITBP – SI (GD)', vacancies2025: '~350', vacancies2024: '~300', notes: 'Mountain border force' },
+    { force: 'SSB – SI (GD)', vacancies2025: '~411', vacancies2024: '~500', notes: 'Nepal/Bhutan border' },
+    { force: 'TOTAL (Revised 2025)', vacancies2025: '5,308', vacancies2024: '~4,500+', notes: '—' },
+  ];
+
+  const vacancyTrend = [
+    { year: '2019', vacancies: '1,564' },
+    { year: '2020', vacancies: '1,564' },
+    { year: '2022', vacancies: '4,300' },
+    { year: '2023', vacancies: '4,187' },
+    { year: '2024', vacancies: '4,500+' },
+    { year: '2025', vacancies: '5,308 (revised)' },
+  ];
+
+  const physicalPet = [
+    { category: 'Male – General / OBC / EWS / SC', distance: '5 km run', time: '24 minutes' },
+    { category: 'Male – ST / Tribal / NE States / Hilly', distance: '5 km run', time: '27 minutes' },
+    { category: 'Female – General / OBC / EWS / SC', distance: '1.6 km run', time: '8 min 30 sec' },
+    { category: 'Female – ST / Tribal / NE States / Hilly', distance: '1.6 km run', time: '9 minutes' },
+    { category: 'Male – Long Jump', distance: '3.65 m (3 chances)', time: 'N/A' },
+    { category: 'Male – High Jump', distance: '1.2 m (3 chances)', time: 'N/A' },
+    { category: 'Female – Long Jump', distance: '2.7 m (3 chances)', time: 'N/A' },
+    { category: 'Female – High Jump', distance: '0.9 m (3 chances)', time: 'N/A' },
+  ];
+
+  const physicalPst = [
+    { category: 'Male – General / OBC / EWS / SC', height: '170 cm', chest: '80–85 cm', weight: 'Proportionate' },
+    { category: 'Male – ST / Tribal / Hill / NE States', height: '162.5 cm', chest: '77–82 cm', weight: 'Proportionate' },
+    { category: 'Female – General / OBC / EWS / SC', height: '157 cm', chest: 'N/A', weight: 'Proportionate' },
+    { category: 'Female – ST / Tribal / Hill / NE States', height: '154 cm', chest: 'N/A', weight: 'Proportionate' },
+  ];
+
+  const syllabusSections = [
+    {
+      subject: 'General Intelligence & Reasoning',
+      topics: [
+        'Analogy, Classification, Series',
+        'Coding-Decoding, Direction Sense',
+        'Blood Relations, Syllogism',
+        'Venn Diagrams, Seating Arrangement',
+        'Statement & Conclusions',
+        'Non-Verbal: Figure completion, Mirror image, Paper cutting',
+        'Matrix, Word Formation',
+      ],
+    },
+    {
+      subject: 'General Knowledge & Awareness',
+      topics: [
+        'History of India & World',
+        'Indian Polity & Constitution',
+        'Indian & World Geography',
+        'Economy & Five-Year Plans',
+        'Science: Physics, Chemistry, Biology',
+        'Current Affairs (last 6 months)',
+        'Awards, Sports, Books, Schemes',
+      ],
+    },
+    {
+      subject: 'Quantitative Aptitude',
+      topics: [
+        'Number System, HCF & LCM',
+        'Percentage, Ratio & Proportion',
+        'Profit & Loss, Discount, SI & CI',
+        'Average, Time & Work, Speed–Distance',
+        'Geometry: Lines, Triangles, Circles',
+        'Mensuration: Area, Volume',
+        'Trigonometry, Heights & Distances',
+        'Data Interpretation: Tables, Graphs',
+      ],
+    },
+    {
+      subject: 'English Comprehension (Paper I)',
+      topics: [
+        'Synonyms & Antonyms',
+        'Idioms & Phrases',
+        'One Word Substitution',
+        'Sentence Improvement & Error Detection',
+        'Active/Passive Voice, Direct/Indirect Speech',
+        'Reading Comprehension passages',
+        'Cloze Test, Para Jumbles',
+      ],
+    },
+    {
+      subject: 'English Language & Comprehension (Paper II – 200 marks)',
+      topics: [
+        'Reading Comprehension (3–4 passages)',
+        'Cloze Test',
+        'Para Jumbles (sentence rearrangement)',
+        'Error Spotting',
+        'Fill in the Blanks',
+        'Idioms & Phrases',
+        'Vocabulary: Synonyms, Antonyms, One-word substitution',
+      ],
+    },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the educational qualification for SSC CPO 2026?',
+      a: 'Candidates must hold a Bachelor\'s Degree in any discipline from a recognised university. Those in their final year of graduation may also apply, but must have the degree by the cut-off date in the notification. For SI (Executive) in Delhi Police (Male), a valid Driving Licence for LMV (Motorcycle and Car) is additionally required on the date of the Physical Test.',
+    },
+    {
+      q: 'What is the age limit for SSC CPO 2026?',
+      a: 'The age limit is 20 to 25 years, calculated on the reference date given in the official notification (typically 1 August of the exam year). Age relaxation: OBC +3 years, SC/ST +5 years, Ex-Servicemen +3 years (after deducting military service), PwBD +10 years. The 2026 notification will confirm the exact reference date.',
+    },
+    {
+      q: 'What are the stages of the SSC CPO selection process?',
+      a: 'SSC CPO has four stages: (1) Paper I – CBT with 200 objective-type questions, 200 marks, 2 hours with a 30-minute sectional timer per subject; (2) PET/PST – Physical Endurance Test (running, long jump, high jump) and Physical Standard Test (height, chest, weight); (3) Paper II – English Language & Comprehension, 200 questions, 200 marks, 2 hours; (4) Detailed Medical Examination. Only candidates qualifying each stage proceed to the next.',
+    },
+    {
+      q: 'What is the SSC CPO salary per month in 2026?',
+      a: 'SSC CPO Sub-Inspectors are placed at Pay Level 6 under the 7th Pay Commission. Basic pay is ₹35,400/month with a scale up to ₹1,12,400/month. With DA, HRA (city-based), TA, ration money (for CAPF), and other allowances, the in-hand take-home salary ranges from approximately ₹41,000–₹55,000/month depending on the posting city (metro/urban/rural).',
+    },
+    {
+      q: 'How many vacancies are expected for SSC CPO 2026?',
+      a: 'The exact 2026 vacancies will be announced with the official notification on 31 May 2026. Based on recent trends — 4,187 in 2023, 4,500+ in 2024, and 5,308 (revised) in 2025 — a similar or higher number is expected. Vacancies cover Sub-Inspector posts in Delhi Police (Male/Female), BSF, CRPF, CISF, ITBP, and SSB.',
+    },
+    {
+      q: 'Is there negative marking in SSC CPO Paper I and Paper II?',
+      a: 'Yes. Both Paper I and Paper II carry negative marking of 0.25 marks (¼ mark) for each incorrect answer. Unattempted questions carry no penalty. Since Paper I has a 30-minute sectional timer per section, time management is critical — do not leave an entire section for the end.',
+    },
+    {
+      q: 'Can female candidates apply for all SSC CPO posts?',
+      a: 'Yes. Female candidates can apply for Sub-Inspector (Executive) in Delhi Police and Sub-Inspector (GD) posts in all CAPFs (BSF, CRPF, CISF, ITBP, SSB). Separate physical standards apply for female candidates — shorter height requirement and no chest measurement test. Female candidates must also clear the PET (1.6 km run) and PST.',
+    },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">SSC CPO 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">⭐ SSC</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">All India Level</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">🎓 Graduation Required</span>
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">📅 Notification: 31 May 2026</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            SSC CPO 2026 –<br className="hidden sm:block" /> Complete Sub Inspector Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-3xl mb-6 leading-relaxed">
+            Sub-Inspector in Delhi Police, BSF, CRPF, CISF, ITBP & SSB. Notification expected <strong className="text-white">31 May 2026</strong>. Apply online 31 May – 30 June 2026. Exam in 4 stages: Paper I → PET/PST → Paper II → Medical.
+          </p>
+
+          {/* 4-grid fast-fact */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-2">
+            {[
+              { label: 'Expected Vacancies', value: '3,000–5,000+ (2026)' },
+              { label: 'Notification Date', value: '31 May 2026 (Expected)' },
+              { label: 'Application Deadline', value: '30 June 2026 (Expected)' },
+              { label: 'Salary (SI, Pay Level 6)', value: '₹35,400–₹1,12,400/mo' },
+            ].map((f) => (
+              <div key={f.label} className="bg-white/10 border border-white/15 rounded-xl p-4">
+                <div className="text-blue-200 text-xs mb-1">{f.label}</div>
+                <div className="text-white font-heading font-bold text-sm sm:text-base">{f.value}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* 2026 alert */}
+          <div className="mt-5 bg-amber-400/15 border border-amber-300/30 rounded-xl p-4 flex gap-3">
+            <span className="text-xl flex-shrink-0">💡</span>
+            <div>
+              <span className="font-semibold text-amber-200 text-sm">Key Update for 2026:</span>
+              <span className="text-blue-100 text-sm ml-1">
+                SSC CPO 2025 cycle had <strong className="text-white">5,308 revised vacancies</strong>. Paper I was held 9–12 Dec 2025; result released 30 March 2026. The 2026 notification is scheduled for <strong className="text-white">31 May 2026</strong> at ssc.gov.in. Vacancies for 2026 are ⚠️ TBN (To Be Notified).
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── BODY ── */}
+      <div className="container-main py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+
+          {/* ── MAIN CONTENT ── */}
+          <article className="flex-1 min-w-0 space-y-10">
+
+            {/* 1. OVERVIEW */}
+            <section id="overview">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">1</span>
+                What is SSC CPO 2026?
+              </h2>
+              <div className="card p-6">
+                <p className="text-surface-600 text-sm sm:text-base leading-relaxed mb-4">
+                  The <strong>SSC CPO (Central Police Organisation) Examination 2026</strong> is conducted annually by the <strong>Staff Selection Commission (SSC)</strong> to recruit <strong>Sub-Inspectors (SI)</strong> in Delhi Police and in five Central Armed Police Forces (CAPFs) — BSF, CRPF, CISF, ITBP, and SSB — as well as <strong>Assistant Sub-Inspector (ASI)</strong> in CISF.
+                </p>
+                <p className="text-surface-600 text-sm sm:text-base leading-relaxed mb-4">
+                  It is a national-level, graduate-level exam with one of the tightest age windows (20–25 years) among all SSC exams. The posts are <strong>Group B (Non-Gazetted) and Group C (Non-Gazetted)</strong> — a Sub-Inspector has law enforcement authority and a clear promotion pathway up to Inspector, ACP, DCP, and beyond.
+                </p>
+                <p className="text-surface-600 text-sm sm:text-base leading-relaxed">
+                  Unlike SSC CGL or CHSL which are desk jobs, SSC CPO is a <strong>uniformed service</strong> with operational duties. Candidates must clear both written exams AND physical fitness tests. The role demands discipline, physical fitness, and a strong command of English.
+                </p>
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">2</span>
+                SSC CPO Important Dates 2026
+              </h2>
+              <div className="card overflow-hidden">
+                <div className="bg-amber-50 border-b border-amber-200 px-5 py-3 text-amber-700 text-xs font-semibold">
+                  ⚠️ Dates marked TBN are To Be Notified. "Expected" dates are based on SSC Annual Calendar 2026 and past patterns. Always verify at ssc.gov.in.
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Event</th>
+                        <th className="p-3 text-xs font-semibold uppercase tracking-wide text-center">Date</th>
+                        <th className="p-3 text-xs font-semibold uppercase tracking-wide text-center">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((d, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 text-surface-700 font-medium">{d.event}</td>
+                          <td className="p-3 text-surface-600 text-center">{d.date}</td>
+                          <td className="p-3 text-center">
+                            <span className={`text-xs font-semibold px-2 py-1 rounded-full ${statusColor(d.status)}`}>{statusLabel(d.status)}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">3</span>
+                SSC CPO 2026 Eligibility Criteria
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                {[
+                  { icon: '🪪', title: 'Nationality', body: 'Indian citizen (or subject of Nepal/Bhutan with certificate of eligibility from Govt. of India).' },
+                  { icon: '🎓', title: 'Educational Qualification', body: 'Bachelor\'s Degree in any discipline from a recognised university. Final-year graduates can also apply (must have degree by cut-off date).' },
+                  { icon: '📋', title: 'Age Limit (General)', body: '20 to 25 years as on the reference date in the notification (expected 1 Aug 2026). Born between 02 Aug 2001 and 01 Aug 2006 (tentative).' },
+                  { icon: '🚗', title: 'Driving Licence (Delhi Police Male)', body: 'A valid driving licence for LMV (Motorcycle and Car) is MANDATORY on the date of the Physical Test. This requirement is specific to SI (Executive) Male in Delhi Police.' },
+                ].map((item) => (
+                  <div key={item.title} className="card p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xl">{item.icon}</span>
+                      <h3 className="font-heading font-semibold text-surface-800 text-sm">{item.title}</h3>
+                    </div>
+                    <p className="text-surface-600 text-sm leading-relaxed">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">📋 Age Relaxation Table</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold text-surface-600">Category</th>
+                        <th className="p-3 text-xs font-semibold text-surface-600 text-center">Upper Age Limit</th>
+                        <th className="p-3 text-xs font-semibold text-surface-600 text-center">Relaxation</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { cat: 'General / EWS', limit: '25 years', relax: 'None' },
+                        { cat: 'OBC', limit: '28 years', relax: '+3 years' },
+                        { cat: 'SC / ST', limit: '30 years', relax: '+5 years' },
+                        { cat: 'Ex-Servicemen', limit: '28 years', relax: '+3 years (after deducting military service from actual age)' },
+                        { cat: 'PwBD (General)', limit: '35 years', relax: '+10 years' },
+                        { cat: 'PwBD (OBC)', limit: '38 years', relax: '+13 years' },
+                        { cat: 'PwBD (SC/ST)', limit: '40 years', relax: '+15 years' },
+                        { cat: 'Departmental Candidates (Delhi Police)', limit: '30 years', relax: '+5 years (for constables/HCs with 3+ years service)' },
+                      ].map((r, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-700">{r.cat}</td>
+                          <td className="p-3 text-center text-primary-600 font-semibold">{r.limit}</td>
+                          <td className="p-3 text-surface-600 text-center">{r.relax}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 4. VACANCIES */}
+            <section id="vacancies">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">4</span>
+                Vacancies &amp; Posts 2026
+              </h2>
+              <div className="card p-5 bg-amber-50 border-amber-200 mb-5">
+                <p className="text-amber-800 text-sm font-medium">
+                  💡 2026 vacancies are <strong>⚠️ TBN</strong> (To Be Notified with the 31 May 2026 notification). The table below shows the <strong>2025 cycle (revised) distribution of 5,308 vacancies</strong> for reference. Based on the trend, 3,000–5,000+ posts are expected for 2026.
+                </p>
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Force / Post</th>
+                        <th className="p-3 text-xs font-semibold uppercase tracking-wide text-center">2025 Vacancies</th>
+                        <th className="p-3 text-xs font-semibold uppercase tracking-wide text-center">2024 (Approx.)</th>
+                        <th className="p-3 text-xs font-semibold uppercase tracking-wide">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyData.map((v, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'} ${v.force.includes('TOTAL') ? 'bg-primary-50 font-bold' : ''}`}>
+                          <td className="p-3 text-surface-700 font-medium">{v.force}</td>
+                          <td className="p-3 text-center text-primary-600 font-semibold">{v.vacancies2025}</td>
+                          <td className="p-3 text-center text-surface-500">{v.vacancies2024}</td>
+                          <td className="p-3 text-surface-500 text-xs">{v.notes}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">Vacancy Trend (Last 6 Cycles)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      {vacancyTrend.map((v) => (
+                        <th key={v.year} className="p-3 text-center text-xs font-semibold">{v.year}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {vacancyTrend.map((v) => (
+                        <td key={v.year} className="p-3 text-center font-semibold text-primary-600 border-t border-surface-100 whitespace-nowrap">{v.vacancies}</td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 5. EXAM PATTERN */}
+            <section id="exam-pattern">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">5</span>
+                SSC CPO Exam Pattern 2026
+              </h2>
+              <div className="space-y-5">
+                {/* Paper I */}
+                <div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Paper I – Computer Based Test (CBT) | 200 Marks | 2 Hours</h3>
+                  <div className="card overflow-hidden mb-3">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-primary-900 text-white">
+                          <tr>
+                            <th className="text-left p-3 text-xs font-semibold">Subject</th>
+                            <th className="p-3 text-xs font-semibold text-center">Questions</th>
+                            <th className="p-3 text-xs font-semibold text-center">Marks</th>
+                            <th className="p-3 text-xs font-semibold text-center">Sectional Timer</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {examPatternP1.map((row, i) => (
+                            <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                              <td className="p-3 text-surface-700 font-medium">{row.subject}</td>
+                              <td className="p-3 text-center font-semibold text-primary-600">{row.questions}</td>
+                              <td className="p-3 text-center font-semibold">{row.marks}</td>
+                              <td className="p-3 text-center text-surface-500 text-xs">{row.time}</td>
+                            </tr>
+                          ))}
+                          <tr className="border-t-2 border-primary-200 bg-primary-50">
+                            <td className="p-3 font-bold text-primary-900">Total</td>
+                            <td className="p-3 text-center font-bold text-primary-900">200</td>
+                            <td className="p-3 text-center font-bold text-primary-900">200</td>
+                            <td className="p-3 text-center font-bold text-primary-700 text-xs">2 Hours</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-red-800 text-xs">
+                    <strong>⚠️ Important:</strong> Negative marking of <strong>−0.25 marks</strong> per wrong answer applies. A 30-minute <strong>sectional timer</strong> is enforced — you cannot revisit a section after its time expires. Plan accordingly.
+                  </div>
+                </div>
+
+                {/* Stage 2 – PET/PST */}
+                <div className="card p-5 bg-emerald-50 border-emerald-200">
+                  <h3 className="font-heading font-semibold text-emerald-800 mb-2 text-sm">Stage 2 – PET / PST (Physical Endurance & Standard Test)</h3>
+                  <p className="text-emerald-700 text-xs leading-relaxed">
+                    Qualifying in nature — no marks added to merit. Candidates who clear Paper I are called for PET (running, long jump, high jump) and PST (height, chest, weight). Failure at PET/PST ends the candidature. See Section 7 for full physical standards.
+                  </p>
+                </div>
+
+                {/* Paper II */}
+                <div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Paper II – English Language &amp; Comprehension | 200 Marks | 2 Hours</h3>
+                  <div className="card p-5">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center mb-3">
+                      {[
+                        { label: 'Questions', value: '200' },
+                        { label: 'Marks', value: '200 (1 per Q)' },
+                        { label: 'Duration', value: '2 Hours' },
+                        { label: 'Negative Marking', value: '−0.25 per wrong' },
+                      ].map((s) => (
+                        <div key={s.label} className="bg-surface-50 rounded-lg p-3">
+                          <div className="text-xs text-surface-500 mb-1">{s.label}</div>
+                          <div className="font-bold text-surface-800 text-sm">{s.value}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-surface-600 text-xs">
+                      Paper II is conducted <strong>only in English</strong> (not bilingual). Questions test reading comprehension, grammar, vocabulary, and error detection. Strong English skills are essential — many candidates who clear Paper I fail Paper II.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Stage 4 – Medical */}
+                <div className="card p-5 bg-blue-50 border-blue-200">
+                  <h3 className="font-heading font-semibold text-blue-800 mb-2 text-sm">Stage 4 – Detailed Medical Examination (DME)</h3>
+                  <p className="text-blue-700 text-xs leading-relaxed">
+                    Conducted for candidates shortlisted after Paper II. Tests vision (near/distant), colour blindness, hearing, physical fitness, and overall health. Post-specific medical standards apply. Candidates declared medically unfit can appeal through the Review Medical Examination process.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* 6. SYLLABUS */}
+            <section id="syllabus">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">6</span>
+                SSC CPO Syllabus 2026
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {syllabusSections.map((sec) => (
+                  <div key={sec.subject} className="card p-5">
+                    <h3 className="font-heading font-semibold text-primary-600 mb-3 text-sm border-b border-surface-100 pb-2">{sec.subject}</h3>
+                    <ul className="space-y-1">
+                      {sec.topics.map((t) => (
+                        <li key={t} className="flex items-start gap-2 text-sm text-surface-600">
+                          <span className="text-primary-400 flex-shrink-0 mt-1">▸</span>
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 7. PHYSICAL */}
+            <section id="physical">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">7</span>
+                Physical Test (PET &amp; PST) Standards
+              </h2>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-amber-800 text-xs">
+                ⚠️ PET/PST is <strong>qualifying only</strong> — no marks awarded. However, failing it means immediate disqualification. Start physical training <strong>from Day 1</strong> of your preparation, not at the last minute.
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">Physical Endurance Test (PET)</h3>
+              <div className="card overflow-hidden mb-5">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold">Category</th>
+                        <th className="p-3 text-xs font-semibold text-center">Event</th>
+                        <th className="p-3 text-xs font-semibold text-center">Qualifying Standard</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {physicalPet.map((r, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 text-surface-700 font-medium">{r.category}</td>
+                          <td className="p-3 text-center text-surface-600">{r.distance}</td>
+                          <td className="p-3 text-center font-semibold text-primary-600">{r.time}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">Physical Standard Test (PST)</h3>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold">Category</th>
+                        <th className="p-3 text-xs font-semibold text-center">Min. Height</th>
+                        <th className="p-3 text-xs font-semibold text-center">Chest (Unexpanded / Expanded)</th>
+                        <th className="p-3 text-xs font-semibold text-center">Weight</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {physicalPst.map((r, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 text-surface-700 font-medium">{r.category}</td>
+                          <td className="p-3 text-center font-semibold text-primary-600">{r.height}</td>
+                          <td className="p-3 text-center text-surface-600">{r.chest}</td>
+                          <td className="p-3 text-center text-surface-600">{r.weight}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 8. SALARY */}
+            <section id="salary">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">8</span>
+                Salary, Benefits &amp; Career Growth
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                {[
+                  { label: 'Pay Level', value: 'Level 6 (7th CPC)', color: 'bg-primary-50 border-primary-200', text: 'text-primary-800' },
+                  { label: 'Basic Pay (SI)', value: '₹35,400/month', color: 'bg-emerald-50 border-emerald-200', text: 'text-emerald-800' },
+                  { label: 'Max Basic Pay', value: '₹1,12,400/month', color: 'bg-blue-50 border-blue-200', text: 'text-blue-800' },
+                ].map((s) => (
+                  <div key={s.label} className={`card p-5 ${s.color}`}>
+                    <div className={`text-xs font-semibold uppercase tracking-wide mb-1 ${s.text} opacity-70`}>{s.label}</div>
+                    <div className={`text-2xl font-heading font-bold ${s.text}`}>{s.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5 mb-4">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">💰 In-Hand Salary Estimate (after joining)</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold">Posting City Class</th>
+                        <th className="p-3 text-xs font-semibold text-center">Basic Pay</th>
+                        <th className="p-3 text-xs font-semibold text-center">HRA</th>
+                        <th className="p-3 text-xs font-semibold text-center">Approx. In-Hand</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { city: 'X Class (Metro – Delhi, Mumbai)', basic: '₹35,400', hra: '24% = ₹8,496', inhand: '₹48,000–₹55,000' },
+                        { city: 'Y Class (Urban – Lucknow, Pune)', basic: '₹35,400', hra: '16% = ₹5,664', inhand: '₹43,000–₹49,000' },
+                        { city: 'Z Class (Rural / Other towns)', basic: '₹35,400', hra: '8% = ₹2,832', inhand: '₹40,000–₹45,000' },
+                        { city: 'CAPF (Field / Border posting)', basic: '₹35,400', hra: 'Govt. quarters', inhand: '₹41,000–₹52,000 + hardship allowance' },
+                      ].map((r, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 text-surface-700 font-medium">{r.city}</td>
+                          <td className="p-3 text-center text-surface-600">{r.basic}</td>
+                          <td className="p-3 text-center text-surface-600">{r.hra}</td>
+                          <td className="p-3 text-center font-bold text-emerald-700">{r.inhand}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-3">* Includes DA (current rate), TA, and standard allowances. CAPF field posts also receive ration money (≈₹3,000–₹5,000/month extra) and uniform allowance. Figures are estimates; actual salary depends on DA revision, posting city, and joining date.</p>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Career Progression Ladder</h3>
+                <div className="flex flex-wrap gap-2 items-center">
+                  {['Sub-Inspector (Entry)', '→', 'Inspector', '→', 'Sub-Inspector Gr. I', '→', 'ACP / DSP', '→', 'DCP / SP', '→', 'DIG / SSP'].map((s, i) => (
+                    s === '→'
+                      ? <span key={i} className="text-surface-400 font-bold">→</span>
+                      : <span key={i} className="bg-primary-50 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full border border-primary-200">{s}</span>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 9. STUDY PLAN */}
+            <section id="study-plan">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">9</span>
+                4-Month Study Plan for SSC CPO 2026
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  {
+                    month: 'Month 1 – Foundation',
+                    color: 'bg-blue-50 border-blue-200',
+                    head: 'text-blue-800',
+                    tasks: [
+                      'Build number system & arithmetic (QA fundamentals)',
+                      'Start basic reasoning: analogy, series, coding-decoding',
+                      'Read NCERTs: Geography Cl 6–10, History Cl 6–10',
+                      'Vocabulary: learn 15 new words/day; read a newspaper',
+                      'Physical: start 2 km running daily, build up to 5 km',
+                    ],
+                  },
+                  {
+                    month: 'Month 2 – Core Topics',
+                    color: 'bg-emerald-50 border-emerald-200',
+                    head: 'text-emerald-800',
+                    tasks: [
+                      'QA: advance to geometry, trigonometry, mensuration',
+                      'Reasoning: matrix, Venn diagrams, sitting arrangement',
+                      'GK: Polity (NCERT), Economy basics, Science facts',
+                      'English: grammar rules, reading comprehension, cloze tests',
+                      'Physical: 5 km under 24 min daily; start long/high jump',
+                    ],
+                  },
+                  {
+                    month: 'Month 3 – Revision & Mocks',
+                    color: 'bg-orange-50 border-orange-200',
+                    head: 'text-orange-800',
+                    tasks: [
+                      'Solve 2 full-length SSC CPO mock tests per week (timed)',
+                      'Analyse error patterns; revise weak topics aggressively',
+                      'GK: Current affairs Jan–June 2026 from trusted sources',
+                      'English Paper II: 3 comprehension passages + cloze tests/day',
+                      'Physical: maintain 5 km pace; include long jump practice',
+                    ],
+                  },
+                  {
+                    month: 'Month 4 – PYQs + Final Prep',
+                    color: 'bg-purple-50 border-purple-200',
+                    head: 'text-purple-800',
+                    tasks: [
+                      'Solve 5 years of SSC CPO previous year papers (Paper I & II)',
+                      'Identify high-weightage topics and do final 3-round revision',
+                      'Current affairs: last 3 months daily revision capsule',
+                      'Speed drills: 50 QA questions in 30 minutes daily',
+                      'Physical: peak conditioning — timed 5 km runs, jump drills',
+                    ],
+                  },
+                ].map((m) => (
+                  <div key={m.month} className={`card p-5 ${m.color}`}>
+                    <h3 className={`font-heading font-semibold mb-3 text-sm ${m.head}`}>{m.month}</h3>
+                    <ul className="space-y-2">
+                      {m.tasks.map((t) => (
+                        <li key={t} className="flex items-start gap-2 text-sm text-surface-700">
+                          <span className="text-emerald-500 flex-shrink-0 mt-1">✓</span>
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. BOOKS */}
+            <section id="books">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">10</span>
+                Best Books for SSC CPO 2026
+              </h2>
+              <div className="overflow-x-auto card">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 text-xs font-semibold">Subject</th>
+                      <th className="p-3 text-xs font-semibold">Book</th>
+                      <th className="p-3 text-xs font-semibold">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { sub: 'Quantitative Aptitude', book: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal (S. Chand)' },
+                      { sub: 'Quantitative Aptitude', book: 'Fast Track Arithmetic', author: 'Rajesh Verma (Arihant)' },
+                      { sub: 'Reasoning', book: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal (S. Chand)' },
+                      { sub: 'Reasoning', book: 'Analytical Reasoning', author: 'M.K. Pandey (BSC Publishing)' },
+                      { sub: 'General Knowledge', book: 'Lucent\'s General Knowledge', author: 'Lucent Publications' },
+                      { sub: 'Current Affairs', book: 'Monthly Current Affairs Capsule', author: 'Vision IAS / GK Today (Free Online)' },
+                      { sub: 'English (Paper I)', book: 'Objective General English', author: 'S.P. Bakshi (Arihant)' },
+                      { sub: 'English (Paper II)', book: 'Plinth to Paramount – English', author: 'Neetu Singh (KD Publications)' },
+                      { sub: 'Previous Year Papers', book: 'SSC CPO SI Solved Papers', author: 'Arihant / Kiran Prakashan' },
+                    ].map((r, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 text-primary-600 font-semibold text-xs">{r.sub}</td>
+                        <td className="p-3 text-surface-700 font-medium">{r.book}</td>
+                        <td className="p-3 text-surface-500 text-xs">{r.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 11. EXPERT TIPS */}
+            <section id="tips">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">11</span>
+                Expert Preparation Tips
+              </h2>
+              <div className="space-y-3">
+                {[
+                  { icon: '⏱️', tip: 'Master the Sectional Timer', body: 'Paper I now has a 30-minute sectional timer. You cannot move to the next section early, and you cannot come back. Practice section-wise timed mocks from Day 1 to build the right exam reflex.' },
+                  { icon: '🏃', tip: 'Physical Prep is Non-Negotiable', body: 'Start running from Day 1. The 5 km in 24 minutes goal requires months of consistent training — not last-minute sprints. Many toppers who clear Paper I fail the PET due to insufficient fitness preparation.' },
+                  { icon: '📚', tip: 'English Paper II is the Differentiator', body: 'Most candidates neglect Paper II (English only). Since it\'s conducted only in English with no bilingual option, 30–40 minutes of daily English reading comprehension practice is essential to rank in the top tier.' },
+                  { icon: '📰', tip: 'Current Affairs: Consistent Over Intensive', body: 'GK and current affairs carry 50 marks in Paper I. Read one reliable current affairs app or YouTube channel daily. Don\'t leave it for revision week — it won\'t work.' },
+                  { icon: '🎯', tip: 'Use Negative Marking Strategically', body: 'Both papers have −0.25 per wrong answer. For questions where you can eliminate 2 out of 4 options, attempting is still mathematically favourable. For pure guesses, skip.' },
+                  { icon: '📅', tip: 'Apply the Day the Notification Drops', body: 'SSC applications are first-come, first-served for exam city preferences. Set a reminder for 31 May 2026. Apply within the first 2–3 days to get your preferred city.' },
+                ].map((t) => (
+                  <div key={t.tip} className="card p-5 flex gap-4">
+                    <span className="text-2xl flex-shrink-0">{t.icon}</span>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1 text-sm">{t.tip}</h3>
+                      <p className="text-surface-600 text-sm leading-relaxed">{t.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 12. FAQs */}
+            <section id="faq">
+              <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">
+                <span className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">12</span>
+                Frequently Asked Questions – SSC CPO 2026
+              </h2>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">{f.q}</h3>
+                    <p className="text-surface-600 text-sm leading-relaxed">{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* CTA */}
+            <div className="rounded-2xl bg-gradient-to-br from-[#0a1e4f] to-[#1a56db] p-7 text-white text-center">
+              <h3 className="font-heading font-bold text-xl mb-2">Start Your SSC CPO 2026 Preparation Today</h3>
+              <p className="text-blue-100 text-sm mb-4">Free resources. No paywalls. No spam.</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link href="/resources" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
+                  Free Study Resources →
+                </Link>
+                <Link href="/tools/age-calculator" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
+                  Check Eligibility
+                </Link>
+              </div>
+            </div>
+          </article>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="w-full lg:w-64 xl:w-72 flex-shrink-0 space-y-4">
+            {/* TOC */}
+            <div className="card p-5 sticky top-4">
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-xs uppercase tracking-wide flex items-center gap-2">
+                <span>📋</span> ON THIS PAGE
+              </h3>
+              <nav className="space-y-1">
+                {toc.map((item) => (
+                  <a key={item.id} href={`#${item.id}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline py-0.5 transition-colors">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            {/* Quick Facts */}
+            <div className="card p-5">
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Quick Facts – SSC CPO 2026</h3>
+              <div className="space-y-2 text-xs">
+                {[
+                  { label: 'Notification', value: '31 May 2026 (Exp.)' },
+                  { label: 'Apply By', value: '30 Jun 2026 (Exp.)' },
+                  { label: 'Exam (Paper I)', value: 'Oct–Nov 2026 (Exp.)' },
+                  { label: 'Eligibility', value: 'Graduation' },
+                  { label: 'Age Limit', value: '20–25 years' },
+                  { label: 'Application Fee', value: '₹100 (Gen/OBC) | Free (SC/ST/Female/Ex-SM)' },
+                  { label: 'Pay Level', value: 'Level 6 (7th CPC)' },
+                  { label: 'Posts', value: 'SI Delhi Police + CAPFs, ASI CISF' },
+                  { label: 'Official Website', value: 'ssc.gov.in' },
+                ].map((f) => (
+                  <div key={f.label} className="flex justify-between gap-2 border-b border-surface-50 pb-1">
+                    <span className="text-surface-500">{f.label}</span>
+                    <span className="font-semibold text-surface-700 text-right">{f.value}</span>
+                  </div>
+                ))}
+              </div>
+              <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="block w-full bg-orange-600 hover:bg-orange-700 text-white text-center text-sm font-semibold py-2 rounded-lg transition-colors mt-4">
+                Go to ssc.gov.in →
+              </a>
+            </div>
+
+            {/* Related Exams */}
+            <div className="card p-5">
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related Exams</h3>
+              <div className="space-y-2">
+                {[
+                  ['ssc-gd-constable', 'SSC GD Constable 2026'],
+                  ['ssc-cgl', 'SSC CGL 2026'],
+                  ['ssc-chsl', 'SSC CHSL 2026'],
+                  ['up-police-si', 'UP Police SI 2026'],
+                  ['delhi-police-constable', 'Delhi Police Constable'],
+                  ['upsc-capf', 'UPSC CAPF AC 2026'],
+                ].map(([slug, label]) => (
+                  <Link key={slug} href={`/exams/${slug}`} className="block text-sm text-primary-500 hover:text-primary-600 hover:underline">{label}</Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Eligibility checker */}
+            <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+              <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+              <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for SSC CPO.</p>
+              <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+            </Link>
+          </aside>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </>
   );
 }
