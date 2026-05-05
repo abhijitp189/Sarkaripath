@@ -116,6 +116,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'maharashtra-police-constable') {
+    return {
+      title: 'Maharashtra Police Constable 2026 – Syllabus, Eligibility, PET & Guide | TaiyarHo',
+      description: 'Maharashtra Police Constable 2026: 15,631 vacancies for Shipai, SRPF & Driver posts. PET/PST: Jan–Feb 2026. Written Exam: Mar–Apr 2026. 12th pass eligible. Salary ₹30K–₹35K/month.',
+      keywords: 'Maharashtra Police Constable 2026, Maharashtra Police Bharti, महाराष्ट्र पोलीस भरती 2026, mahapolice constable syllabus, पोलीस शिपाई भरती, state police sarkari naukri Maharashtra',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/maharashtra-police-constable/' },
+      other: { 'description:hi': 'महाराष्ट्र पोलीस कांस्टेबल 2026 – 15,631 रिक्तियाँ। लिखित परीक्षा मार्च–अप्रैल 2026। सिलेबस (100 प्रश्न, 100 अंक), PET/PST शारीरिक मानक, आयु सीमा 18-28 वर्ष, वेतन ₹30,000–₹35,000/माह।' },
+    };
+  }
+
   if (params.slug === 'ssc-chsl') {
     return {
       title: 'SSC CHSL 2026 – Eligibility, Syllabus, Exam Pattern & Complete Guide | TaiyarHo',
@@ -277,6 +287,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ibps-rrb-po') return <IbpsRrbPoPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
+  if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -16280,6 +16291,688 @@ function SscCpoPage({ exam }: { exam: any }) {
             <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
               <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
               <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for SSC CPO.</p>
+              <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+            </Link>
+          </aside>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── MAHARASHTRA POLICE CONSTABLE PAGE ────────────────────────────────────────
+function MaharashtraPoliceConstablePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies & Posts' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'physical', label: 'Physical Test (PET/PST)' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released', date: 'October 29, 2025', status: 'released' },
+    { event: 'Online Application Opens', date: 'October 29, 2025', status: 'released' },
+    { event: 'Last Date to Apply (Extended)', date: 'December 30, 2025', status: 'released' },
+    { event: 'Application Fee', date: 'General: ₹450 | Reserved: ₹350', status: 'released' },
+    { event: 'Admit Card – PET/PST Stage', date: 'January 2026', status: 'released' },
+    { event: 'Physical Test (PET/PST)', date: 'January – February 2026', status: 'released' },
+    { event: 'Admit Card – Written Exam', date: 'March 2026', status: 'released' },
+    { event: 'Written Examination', date: 'March – April 2026', status: 'released' },
+    { event: 'District Provisional Merit Lists', date: 'Being released (May 2026)', status: 'upcoming' },
+    { event: 'Final Selection / Joining', date: 'Expected July – August 2026', status: 'tbn' },
+  ];
+
+  const vacancyData = [
+    { post: 'Police Constable (Shipai)', category: 'District Police', total: '12,399' },
+    { post: 'Armed Police Constable (SRPF)', category: 'State Reserve Police Force', total: '1,566' },
+    { post: 'Police Constable Driver', category: 'Driver Posts', total: '515' },
+    { post: 'Jail Constable', category: 'Prison Department', total: '554' },
+    { post: 'Police Bandsman', category: 'Band Unit (10th pass)', total: '113' },
+    { post: 'TOTAL (2026 Cycle)', category: '–', total: '15,631' },
+  ];
+
+  const vacancyHistory = [
+    { year: '2022–23 Cycle', vacancies: '18,331' },
+    { year: '2024 Cycle', vacancies: '17,471' },
+    { year: '2026 Cycle', vacancies: '15,631' },
+  ];
+
+  const ageLimit = [
+    { category: 'General (Open)', min: '18 years', max: '28 years' },
+    { category: 'OBC (Non-Creamy Layer)', min: '18 years', max: '31 years (+3)' },
+    { category: 'SC / ST', min: '18 years', max: '33 years (+5)' },
+    { category: 'Project / Earthquake Affected', min: '18 years', max: 'Up to 45 years' },
+    { category: 'Ex-Servicemen', min: '–', max: 'Service Period + 3 years' },
+  ];
+
+  const examPattern = [
+    { subject: 'Mathematics (अंकगणित)', questions: 25, marks: 25 },
+    { subject: 'General Knowledge & Current Affairs', questions: 25, marks: 25 },
+    { subject: 'Intellectual Test (Reasoning)', questions: 25, marks: 25 },
+    { subject: 'Marathi Grammar (मराठी व्याकरण)', questions: 25, marks: 25 },
+  ];
+
+  const physicalPst = [
+    { category: 'Male – General / OBC / SC / ST', height: '165 cm (min)', chest: '79 cm unexpanded | 84 cm expanded', weight: 'Proportionate' },
+    { category: 'Female – All Categories', height: '155 cm (min)', chest: 'N/A', weight: 'Proportionate' },
+  ];
+
+  const physicalPet = [
+    { gender: 'Male', task1: '1600m Run – 30 marks', task2: '100m Run – 10 marks', task3: 'Shot Put – 10 marks' },
+    { gender: 'Female', task1: '800m Run – 30 marks', task2: '100m Run – 10 marks', task3: 'Shot Put – 10 marks' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🔵 Marathi Grammar (मराठी व्याकरण)',
+      topics: [
+        'Vocabulary and word meanings (शब्दसंग्रह)',
+        'Grammar: Tense (काळ), Gender (लिंग), Case (विभक्ती)',
+        'Idioms and phrases (वाक्प्रचार व म्हणी)',
+        'Sentence correction and word order',
+        'Reading comprehension passages',
+        'Sandhi, Samas, prefixes and suffixes',
+      ],
+    },
+    {
+      subject: '🔢 Mathematics (अंकगणित)',
+      topics: [
+        'Number system and BODMAS',
+        'LCM and HCF',
+        'Percentage calculations',
+        'Profit and loss problems',
+        'Simple and compound interest',
+        'Time and work, Time speed and distance',
+      ],
+    },
+    {
+      subject: '🧠 Reasoning / Intellectual Test',
+      topics: [
+        'Coding-Decoding',
+        'Blood relations',
+        'Syllogism',
+        'Number and alphabet series',
+        'Venn diagrams',
+        'Analogies and odd one out',
+      ],
+    },
+    {
+      subject: '📰 General Knowledge & Current Affairs',
+      topics: [
+        'Maharashtra geography and history',
+        'Indian Constitution basics',
+        'National and state current affairs',
+        'Basic Science and technology',
+        'Important government schemes (Central & Maharashtra)',
+        'Sports: national and international events',
+      ],
+    },
+  ];
+
+  const books = [
+    { subject: 'Marathi Grammar', title: 'Sugam Marathi Vyakaran', author: 'M.R. Walimbe', notes: 'Best for Marathi grammar foundation' },
+    { subject: 'Mathematics', title: 'Pandharinath Rane Maths', author: 'Pandharinath Rane', notes: 'Most recommended for Police Bharti maths' },
+    { subject: 'Reasoning', title: 'Sushil Bari Reasoning', author: 'Sushil Bari', notes: 'Widely used for police constable reasoning' },
+    { subject: 'General Knowledge', title: 'Thokala GK', author: 'Eknath Patil', notes: 'Maharashtra-focused GK and static facts' },
+    { subject: 'Current Affairs', title: 'Monthly Current Affairs Magazine', author: 'Satyajeet Rathore', notes: 'Monthly updates for Maharashtra & national CA' },
+  ];
+
+  const selectionStages = [
+    { step: 1, stage: 'Physical Standard Test (PST)', marks: 'Qualifying', notes: 'Height and chest measurement — pass/fail only' },
+    { step: 2, stage: 'Physical Efficiency Test (PET)', marks: '50 Marks', notes: 'Run, 100m sprint, shot put — min 25/50 to qualify' },
+    { step: 3, stage: 'Written Examination', marks: '100 Marks', notes: 'OMR-based offline — counts toward final merit' },
+    { step: 4, stage: 'Skill Test (Driver/Bandsman only)', marks: 'Qualifying', notes: 'Applicable only for specific posts' },
+    { step: 5, stage: 'Medical Examination', marks: 'Qualifying', notes: 'Physical fitness and eyesight test' },
+    { step: 6, stage: 'Document Verification', marks: 'Qualifying', notes: 'Final stage before joining' },
+  ];
+
+  const faqs = [
+    {
+      q: 'How many vacancies are there in Maharashtra Police Constable 2026?',
+      a: 'Maharashtra Police has announced 15,631 vacancies in the 2026 recruitment cycle. These are spread across Police Constable (Shipai) – 12,399, SRPF Armed Constable – 1,566, Driver Constable – 515, Jail Constable – 554, and Bandsman – 113.',
+    },
+    {
+      q: 'What is the minimum qualification for Maharashtra Police Constable?',
+      a: 'Candidates must have passed Class 12 (HSC) from a recognised board for most posts. An exception applies for the Police Bandsman post, which accepts Class 10 (SSC) pass candidates.',
+    },
+    {
+      q: 'Is there negative marking in the Maharashtra Police written exam?',
+      a: 'No, there is no negative marking in the Maharashtra Police Constable written exam. Candidates are advised to attempt all 100 questions to maximise their score.',
+    },
+    {
+      q: 'How is the final merit list calculated?',
+      a: 'The final merit is calculated out of a total of 150 marks: PET marks (50) + Written exam marks (100). Both the PET qualifying score (minimum 25/50) and written exam (minimum 40%) must be cleared to appear in the final merit list.',
+    },
+    {
+      q: 'Can non-Maharashtra candidates apply for this exam?',
+      a: 'Yes, candidates from other states can apply but they will be considered only in the General/Open category. Maharashtra domicile is required to claim reservation benefits like OBC/SC/ST category.',
+    },
+    {
+      q: 'What is the physical standard requirement for female candidates?',
+      a: 'Female candidates must have a minimum height of 155 cm. There is no chest measurement requirement for female candidates. They must participate in the PET events: 800m run (30 marks), 100m sprint (10 marks), and shot put (10 marks).',
+    },
+    {
+      q: 'What is the salary of a Maharashtra Police Constable?',
+      a: 'Maharashtra Police Constables are placed at Pay Level S-7 (7th Pay Commission) with a basic pay of ₹21,700. The estimated in-hand monthly salary including HRA, DA, and other allowances is ₹30,000 to ₹35,000, varying by posting city.',
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Active';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">Maharashtra Police Constable 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🚔 State Police</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Maharashtra</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">📋 Written: Mar–Apr 2026</span>
+            <span className="bg-white/10 text-blue-100 text-xs font-semibold px-3 py-1 rounded-full">12th Pass Eligible</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            Maharashtra Police Constable 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            Maharashtra Police Department has announced 15,631 vacancies for Shipai, SRPF, Driver, Jail Constable, and Bandsman posts. PET/PST completed Jan–Feb 2026. Written exam held Mar–Apr 2026. District merit lists being released as of May 2026.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Total Vacancies', value: '15,631' },
+              { label: 'Written Exam', value: 'Mar–Apr 2026' },
+              { label: 'Min. Qualification', value: '12th Pass' },
+              { label: 'In-Hand Salary', value: '₹30K–₹35K/mo' },
+            ].map(({ label, value }) => (
+              <div key={label} className="bg-white/10 rounded-xl p-3 sm:p-4">
+                <div className="text-blue-200 text-xs mb-1">{label}</div>
+                <div className="text-white font-heading font-bold text-base sm:text-lg">{value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* Main content */}
+          <div className="space-y-12">
+
+            {/* 1. Overview */}
+            <section id="overview">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">1. What is Maharashtra Police Constable 2026?</h2>
+              <div className="card p-6">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  <strong>Maharashtra Police Constable Recruitment 2026 (पोलीस शिपाई भरती 2026)</strong> is a state-level recruitment drive conducted by the <strong>Maharashtra Police Department</strong> to fill constable-level vacancies across all districts, commissionerates, and SRPF units of Maharashtra. This is one of the most sought-after government jobs in Maharashtra with 15,631 total openings.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The recruitment follows a three-stage process: Physical Standard Test (PST), Physical Efficiency Test (PET), and a Written Examination. Final merit is computed out of 150 marks (50 PET + 100 Written). Candidates who have passed Class 12 and are physically fit are ideal candidates for this exam.
+                </p>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                  <p className="text-blue-800 text-sm font-medium mb-1">💡 2026 Key Update</p>
+                  <p className="text-blue-700 text-sm">Physical tests (PET/PST) have been completed in January–February 2026. The written exam was conducted in March–April 2026. District-level provisional merit lists are currently being released (May 2026). Final joining is expected in July–August 2026.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* 2. Important Dates */}
+            <section id="important-dates">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">2. Important Dates & Schedule</h2>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border-b border-surface-200">
+                      <tr>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Event</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Date</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {importantDates.map(({ event, date, status }) => (
+                        <tr key={event} className="hover:bg-surface-50">
+                          <td className="px-4 py-3 text-surface-700 font-medium">{event}</td>
+                          <td className="px-4 py-3 text-surface-600">{date}</td>
+                          <td className="px-4 py-3">
+                            <span className={`text-xs font-semibold px-2 py-1 rounded-full ${statusColor(status)}`}>{statusLabel(status)}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 3. Eligibility */}
+            <section id="eligibility">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">3. Eligibility Criteria</h2>
+              <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🎓</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Educational Qualification</h3>
+                  <p className="text-surface-600 text-sm">Minimum <strong>12th Pass (HSC)</strong> from any recognised board for most posts. For the <strong>Bandsman post only</strong>, Class 10 (SSC) pass is accepted.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🪪</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Nationality & Domicile</h3>
+                  <p className="text-surface-600 text-sm">Must be an Indian citizen. <strong>Maharashtra domicile</strong> is required to claim reservation category benefits (OBC/SC/ST). Non-Maharashtra candidates can apply under Open/General category.</p>
+                </div>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="px-5 py-3 bg-surface-50 border-b border-surface-200">
+                  <h3 className="font-heading font-semibold text-surface-700">📋 Age Limit (as on cutoff date)</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border-b border-surface-100">
+                      <tr>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Min Age</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Max Age</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {ageLimit.map(({ category, min, max }) => (
+                        <tr key={category} className="hover:bg-surface-50">
+                          <td className="px-4 py-3 text-surface-700 font-medium">{category}</td>
+                          <td className="px-4 py-3 text-surface-600">{min}</td>
+                          <td className="px-4 py-3 text-surface-600">{max}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 4. Vacancies */}
+            <section id="vacancies">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">4. Vacancies & Posts (2026)</h2>
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border-b border-surface-200">
+                      <tr>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Post Name</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-right px-4 py-3 font-semibold text-surface-700">Vacancies</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {vacancyData.map(({ post, category, total }) => (
+                        <tr key={post} className={`hover:bg-surface-50 ${post.includes('TOTAL') ? 'bg-blue-50 font-semibold' : ''}`}>
+                          <td className="px-4 py-3 text-surface-700">{post}</td>
+                          <td className="px-4 py-3 text-surface-500">{category}</td>
+                          <td className="px-4 py-3 text-right text-surface-700">{total}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">📊 Vacancy Trend (Last 3 Cycles)</h3>
+                <div className="space-y-2">
+                  {vacancyHistory.map(({ year, vacancies }) => (
+                    <div key={year} className="flex justify-between items-center py-2 border-b border-surface-100 last:border-0">
+                      <span className="text-surface-600 text-sm">{year}</span>
+                      <span className="font-semibold text-surface-800">{vacancies}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 5. Selection Process */}
+            <section id="exam-pattern">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">5. Selection Process & Exam Pattern</h2>
+              <div className="card overflow-hidden mb-6">
+                <div className="px-5 py-3 bg-surface-50 border-b border-surface-200">
+                  <h3 className="font-heading font-semibold text-surface-700">Selection Stages</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border-b border-surface-100">
+                      <tr>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Step</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Stage</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Marks</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700 hidden sm:table-cell">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {selectionStages.map(({ step, stage, marks, notes }) => (
+                        <tr key={step} className="hover:bg-surface-50">
+                          <td className="px-4 py-3 text-primary-600 font-bold">{step}</td>
+                          <td className="px-4 py-3 text-surface-700 font-medium">{stage}</td>
+                          <td className="px-4 py-3"><span className={`text-xs font-semibold px-2 py-1 rounded-full ${marks === 'Qualifying' ? 'bg-surface-100 text-surface-600' : 'bg-primary-100 text-primary-700'}`}>{marks}</span></td>
+                          <td className="px-4 py-3 text-surface-500 text-xs hidden sm:table-cell">{notes}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="px-5 py-3 bg-surface-50 border-b border-surface-200">
+                  <h3 className="font-heading font-semibold text-surface-700">Written Examination Pattern (100 Marks | 90 Minutes | OMR Offline)</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border-b border-surface-100">
+                      <tr>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Subject</th>
+                        <th className="text-right px-4 py-3 font-semibold text-surface-700">Questions</th>
+                        <th className="text-right px-4 py-3 font-semibold text-surface-700">Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {examPattern.map(({ subject, questions, marks }) => (
+                        <tr key={subject} className="hover:bg-surface-50">
+                          <td className="px-4 py-3 text-surface-700">{subject}</td>
+                          <td className="px-4 py-3 text-right text-surface-600">{questions}</td>
+                          <td className="px-4 py-3 text-right font-semibold text-surface-700">{marks}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-blue-50 font-semibold">
+                        <td className="px-4 py-3 text-surface-800">TOTAL</td>
+                        <td className="px-4 py-3 text-right text-surface-800">100</td>
+                        <td className="px-4 py-3 text-right text-surface-800">100</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="px-5 py-3 bg-amber-50 border-t border-amber-100 text-amber-800 text-sm">
+                  ✅ No negative marking. Qualifying marks: 40% in written exam. Language of exam: Marathi.
+                </div>
+              </div>
+            </section>
+
+            {/* 6. Physical Test */}
+            <section id="physical">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">6. Physical Test (PET/PST)</h2>
+              <div className="card overflow-hidden mb-4">
+                <div className="px-5 py-3 bg-surface-50 border-b border-surface-200">
+                  <h3 className="font-heading font-semibold text-surface-700">Physical Standard Test (PST) – Qualifying</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border-b border-surface-100">
+                      <tr>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Height</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Chest</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Weight</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {physicalPst.map(({ category, height, chest, weight }) => (
+                        <tr key={category} className="hover:bg-surface-50">
+                          <td className="px-4 py-3 text-surface-700 font-medium">{category}</td>
+                          <td className="px-4 py-3 text-surface-600">{height}</td>
+                          <td className="px-4 py-3 text-surface-600">{chest}</td>
+                          <td className="px-4 py-3 text-surface-600">{weight}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="px-5 py-3 bg-surface-50 border-b border-surface-200">
+                  <h3 className="font-heading font-semibold text-surface-700">Physical Efficiency Test (PET) – 50 Marks (Min. 25/50 to qualify)</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border-b border-surface-100">
+                      <tr>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Gender</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Long Run (30 marks)</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">100m Sprint (10 marks)</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Shot Put (10 marks)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {physicalPet.map(({ gender, task1, task2, task3 }) => (
+                        <tr key={gender} className="hover:bg-surface-50">
+                          <td className="px-4 py-3 font-semibold text-surface-700">{gender}</td>
+                          <td className="px-4 py-3 text-surface-600">{task1}</td>
+                          <td className="px-4 py-3 text-surface-600">{task2}</td>
+                          <td className="px-4 py-3 text-surface-600">{task3}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 7. Syllabus */}
+            <section id="syllabus">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">7. Detailed Syllabus</h2>
+              <div className="space-y-4">
+                {syllabus.map(({ subject, topics }) => (
+                  <div key={subject} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-3">{subject}</h3>
+                    <ul className="space-y-1">
+                      {topics.map((t) => (
+                        <li key={t} className="text-surface-600 text-sm flex gap-2"><span className="text-primary-500 mt-0.5">•</span>{t}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 8. Salary */}
+            <section id="salary">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">8. Salary & Benefits</h2>
+              <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                {[
+                  { label: 'Pay Level (7th CPC)', value: 'Level S-7' },
+                  { label: 'Basic Pay (Starting)', value: '₹21,700/month' },
+                  { label: 'Estimated In-Hand', value: '₹30,000 – ₹35,000/month' },
+                  { label: 'HRA', value: '8% – 24% (city-based)' },
+                ].map(({ label, value }) => (
+                  <div key={label} className="card p-4 flex items-start gap-3">
+                    <div className="text-2xl">💰</div>
+                    <div>
+                      <div className="text-xs text-surface-500 mb-1">{label}</div>
+                      <div className="font-heading font-bold text-surface-800">{value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Additional Allowances</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {['Dearness Allowance (DA)', 'Travel Allowance (TA)', 'Washing / Uniform Allowance', 'Ration Allowance', 'Medical Benefits', 'Government Quarters (at some postings)'].map((a) => (
+                    <div key={a} className="bg-surface-50 rounded-lg px-3 py-2 text-sm text-surface-600 flex items-center gap-2">
+                      <span className="text-emerald-500">✓</span>{a}
+                    </div>
+                  ))}
+                </div>
+                <p className="text-surface-500 text-sm mt-4">Posting is within Maharashtra State, assigned to specific districts or commissionerates after training. Salary during training includes basic pay and applicable allowances as a stipend.</p>
+              </div>
+            </section>
+
+            {/* 9. How to Apply */}
+            <section id="how-to-apply">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">9. How to Apply</h2>
+              <div className="card p-6">
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-5">
+                  <p className="text-amber-800 text-sm font-semibold">⚠️ Application Closed</p>
+                  <p className="text-amber-700 text-sm mt-1">The application window for the 2026 cycle closed on December 30, 2025. The exam process is currently in the result/merit list stage. Watch the official website for the next recruitment cycle.</p>
+                </div>
+                <ol className="space-y-3">
+                  {[
+                    'Visit the official website: mahapolice.gov.in',
+                    'Click on "Recruitment" and find the active constable notification',
+                    'Register with your mobile number and email ID',
+                    'Fill the application form with personal, educational, and physical details',
+                    'Upload required documents: photo, signature, caste/domicile certificate',
+                    'Pay the application fee online (General: ₹450 | Reserved: ₹350)',
+                    'Submit and download the acknowledgement slip',
+                  ].map((step, i) => (
+                    <li key={i} className="flex gap-3 text-surface-600 text-sm">
+                      <span className="bg-primary-100 text-primary-700 font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">{i + 1}</span>
+                      {step}
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-5">
+                  <a href="https://www.mahapolice.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 text-sm">
+                    Visit Official Website ↗
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* 10. Best Books */}
+            <section id="books">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">10. Best Books for Preparation</h2>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border-b border-surface-200">
+                      <tr>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Subject</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Book Title</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700">Author</th>
+                        <th className="text-left px-4 py-3 font-semibold text-surface-700 hidden sm:table-cell">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {books.map(({ subject, title, author, notes }) => (
+                        <tr key={subject} className="hover:bg-surface-50">
+                          <td className="px-4 py-3 font-medium text-surface-700">{subject}</td>
+                          <td className="px-4 py-3 text-surface-700">{title}</td>
+                          <td className="px-4 py-3 text-surface-500">{author}</td>
+                          <td className="px-4 py-3 text-surface-400 text-xs hidden sm:table-cell">{notes}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="card p-5 mt-4">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">📺 Recommended YouTube Channel</h3>
+                <a href="https://youtu.be/x_ppMPqfZC8" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">
+                  <div className="bg-red-100 rounded-lg p-2 flex-shrink-0">
+                    <svg className="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-surface-800 group-hover:text-primary-600 text-sm">Maharashtra Police Bharti – Complete Overview</p>
+                    <p className="text-surface-500 text-xs mt-1">Understand the selection stages, physical requirements, and preparation strategy in this detailed video guide.</p>
+                  </div>
+                </a>
+              </div>
+            </section>
+
+            {/* 11. FAQs */}
+            <section id="faq">
+              <h2 className="text-2xl font-heading font-bold text-surface-800 mb-4">11. Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {faqs.map(({ q, a }) => (
+                  <div key={q} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm sm:text-base">{q}</h3>
+                    <p className="text-surface-600 text-sm leading-relaxed">{a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          {/* Sidebar */}
+          <aside className="hidden lg:block space-y-6 mt-2">
+            {/* TOC */}
+            <div className="card p-5 sticky top-20">
+              <h3 className="font-heading font-bold text-surface-800 text-sm mb-4 uppercase tracking-wider">ON THIS PAGE</h3>
+              <nav className="space-y-1">
+                {toc.map(({ id, label }) => (
+                  <a key={id} href={`#${id}`} className="block text-sm text-surface-500 hover:text-primary-600 hover:bg-primary-50 px-2 py-1.5 rounded transition-colors">{label}</a>
+                ))}
+              </nav>
+            </div>
+
+            {/* Quick Facts */}
+            <div className="card p-5">
+              <h3 className="font-heading font-bold text-surface-800 text-sm mb-4">📌 Quick Facts</h3>
+              <div className="space-y-3 text-sm">
+                {[
+                  { label: 'Conducting Body', value: 'Maharashtra Police Dept.' },
+                  { label: 'Level', value: 'State Government' },
+                  { label: 'Total Vacancies', value: '15,631' },
+                  { label: 'Exam Mode', value: 'Offline (OMR)' },
+                  { label: 'Total Marks', value: '150 (50 PET + 100 Written)' },
+                  { label: 'Negative Marking', value: 'None' },
+                  { label: 'Exam Language', value: 'Marathi' },
+                  { label: 'Official Website', value: 'mahapolice.gov.in' },
+                ].map(({ label, value }) => (
+                  <div key={label} className="flex justify-between gap-2">
+                    <span className="text-surface-500">{label}</span>
+                    <span className="font-semibold text-surface-700 text-right">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Related exams */}
+            <div className="card p-5">
+              <h3 className="font-heading font-bold text-surface-800 text-sm mb-4">Related Police Exams</h3>
+              <div className="space-y-2">
+                {[
+                  ['up-police-constable', 'UP Police Constable 2026'],
+                  ['bihar-police-constable', 'Bihar Police Constable 2026'],
+                  ['rajasthan-police-constable', 'Rajasthan Police 2026'],
+                  ['mp-police-constable', 'MP Police Constable 2026'],
+                  ['ssc-gd-constable', 'SSC GD Constable 2026'],
+                  ['ssc-cpo', 'SSC CPO Sub-Inspector 2026'],
+                ].map(([slug, label]) => (
+                  <Link key={slug} href={`/exams/${slug}`} className="block text-sm text-primary-500 hover:text-primary-600 hover:underline">{label}</Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Eligibility checker */}
+            <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+              <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+              <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for Maharashtra Police Constable.</p>
               <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
             </Link>
           </aside>
