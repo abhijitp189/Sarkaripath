@@ -36,11 +36,11 @@ const KNOWN_SLUGS = new Set([
 ]);
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
-// Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in
-// Last updated: 26 April 2026
+// Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
+// Last updated: 5 May 2026
 const upcomingExams: MonthGroup[] = [
   {
-    month: 'April–May 2026',
+    month: 'May 2026',
     exams: [
       {
         name: 'SSC GD Constable (CBT)',
@@ -49,13 +49,17 @@ const upcomingExams: MonthGroup[] = [
         category: 'Police',
         internalSlug: 'ssc-gd-constable',
         externalUrl: 'https://ssc.gov.in',
-        note: '25,487 vacancies • Admit cards released',
+        note: '25,487 vacancies • Exam ongoing',
       },
-    ],
-  },
-  {
-    month: 'May 2026',
-    exams: [
+      {
+        name: 'RRB NTPC UG (CBT 1)',
+        date: '7–9 May & 13–21 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Railway',
+        internalSlug: 'rrb-ntpc',
+        externalUrl: 'https://rrbapply.gov.in',
+        note: '3,058 vacancies (12th-level) • CEN 07/2025',
+      },
       {
         name: 'UPSC Civil Services (Prelims)',
         date: '24 May 2026',
@@ -72,15 +76,6 @@ const upcomingExams: MonthGroup[] = [
         category: 'Defence',
         internalSlug: 'upsc-cds',
         externalUrl: 'https://upsc.gov.in',
-      },
-      {
-        name: 'SSC CGL (Tier 1 CBT)',
-        date: 'May–Jun 2026',
-        status: 'OFFICIAL',
-        category: 'SSC',
-        internalSlug: 'ssc-cgl',
-        externalUrl: 'https://ssc.gov.in',
-        note: 'Notification expected late Apr 2026',
       },
       {
         name: 'Haryana TET (HTET)',
@@ -110,7 +105,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'rbi-assistant',
         externalUrl: 'https://rbi.org.in',
-        note: '650 vacancies • Prelims already conducted',
+        note: '650 vacancies • Prelims conducted Apr 2026',
       },
       {
         name: 'UP TGT',
@@ -121,18 +116,37 @@ const upcomingExams: MonthGroup[] = [
         externalUrl: 'https://upsessb.org',
       },
       {
-        name: 'RRB ALP',
+        name: 'SSC CGL (Notification)',
         date: 'Jun 2026',
         status: 'TENTATIVE',
-        category: 'Railway',
-        internalSlug: 'rrb-alp',
-        externalUrl: 'https://indianrailways.gov.in',
+        category: 'SSC',
+        internalSlug: 'ssc-cgl',
+        externalUrl: 'https://ssc.gov.in',
+        note: '~15,000 vacancies expected • Tier 1 Jun–Jul 2026',
       },
     ],
   },
   {
     month: 'July 2026',
     exams: [
+      {
+        name: 'SSC CGL (Tier 1 CBT)',
+        date: 'Jun–Jul 2026',
+        status: 'TENTATIVE',
+        category: 'SSC',
+        internalSlug: 'ssc-cgl',
+        externalUrl: 'https://ssc.gov.in',
+        note: 'As per SSC Exam Calendar 2026–27',
+      },
+      {
+        name: 'SSC CHSL (Tier 1)',
+        date: 'Jul–Sep 2026',
+        status: 'OFFICIAL',
+        category: 'SSC',
+        internalSlug: 'ssc-chsl',
+        externalUrl: 'https://ssc.gov.in',
+        note: 'As per SSC Exam Calendar 2026–27',
+      },
       {
         name: 'UP TET',
         date: '2–4 Jul 2026',
@@ -150,11 +164,11 @@ const upcomingExams: MonthGroup[] = [
         externalUrl: 'https://upsc.gov.in',
       },
       {
-        name: 'RRB Technician',
+        name: 'RRB ALP',
         date: 'Jul 2026',
         status: 'TENTATIVE',
         category: 'Railway',
-        internalSlug: 'rrb-technician',
+        internalSlug: 'rrb-alp',
         externalUrl: 'https://indianrailways.gov.in',
       },
     ],
@@ -172,11 +186,29 @@ const upcomingExams: MonthGroup[] = [
       },
       {
         name: 'SBI PO (Prelims)',
-        date: 'Aug 2026',
+        date: '1–2 Aug 2026',
         status: 'TENTATIVE',
         category: 'Banking',
         internalSlug: 'sbi-po',
         externalUrl: 'https://sbi.co.in/careers',
+        note: 'Notification expected May–Jun 2026',
+      },
+      {
+        name: 'IBPS PO (Prelims)',
+        date: '22–23 Aug 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'ibps-po',
+        externalUrl: 'https://ibps.in',
+        note: 'As per IBPS Calendar 2026 (released Jan 2026)',
+      },
+      {
+        name: 'IBPS SO (Prelims)',
+        date: '29 Aug 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        externalUrl: 'https://ibps.in',
+        note: 'As per IBPS Calendar 2026',
       },
     ],
   },
@@ -200,6 +232,14 @@ const upcomingExams: MonthGroup[] = [
         externalUrl: 'https://upsc.gov.in',
       },
       {
+        name: 'SBI PO (Mains)',
+        date: '12 Sep 2026',
+        status: 'TENTATIVE',
+        category: 'Banking',
+        internalSlug: 'sbi-po',
+        externalUrl: 'https://sbi.co.in/careers',
+      },
+      {
         name: 'Bihar Teacher (BPSC)',
         date: '22–27 Sep 2026',
         status: 'OFFICIAL',
@@ -209,7 +249,7 @@ const upcomingExams: MonthGroup[] = [
       },
       {
         name: 'SBI Clerk (Prelims)',
-        date: 'Sep 2026',
+        date: '27 Sep & 3 Oct 2026',
         status: 'TENTATIVE',
         category: 'Banking',
         internalSlug: 'sbi-clerk',
@@ -220,6 +260,24 @@ const upcomingExams: MonthGroup[] = [
   {
     month: 'October 2026',
     exams: [
+      {
+        name: 'IBPS PO (Mains)',
+        date: '4 Oct 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'ibps-po',
+        externalUrl: 'https://ibps.in',
+        note: 'As per IBPS Calendar 2026',
+      },
+      {
+        name: 'IBPS Clerk (Prelims)',
+        date: '10–11 Oct 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'ibps-rrb-clerk',
+        externalUrl: 'https://ibps.in',
+        note: 'As per IBPS Calendar 2026',
+      },
       {
         name: 'SSC Stenographer',
         date: 'Oct 2026',
@@ -251,11 +309,20 @@ const upcomingExams: MonthGroup[] = [
     exams: [
       {
         name: 'IBPS RRB PO (Prelims)',
-        date: 'Nov 2026',
-        status: 'TENTATIVE',
+        date: '21–22 Nov 2026',
+        status: 'OFFICIAL',
         category: 'Banking',
         internalSlug: 'ibps-rrb-po',
         externalUrl: 'https://ibps.in',
+        note: 'As per IBPS Calendar 2026',
+      },
+      {
+        name: 'SBI Clerk (Mains)',
+        date: '7 Nov 2026',
+        status: 'TENTATIVE',
+        category: 'Banking',
+        internalSlug: 'sbi-clerk',
+        externalUrl: 'https://sbi.co.in/careers',
       },
       {
         name: 'UPSC IFS (Mains)',
@@ -264,18 +331,44 @@ const upcomingExams: MonthGroup[] = [
         category: 'UPSC',
         externalUrl: 'https://upsc.gov.in',
       },
+      {
+        name: 'RRB Technician (CBT)',
+        date: 'Nov 2026',
+        status: 'TENTATIVE',
+        category: 'Railway',
+        internalSlug: 'rrb-technician',
+        externalUrl: 'https://indianrailways.gov.in',
+      },
     ],
   },
   {
     month: 'December 2026',
     exams: [
       {
-        name: 'IBPS PO (Prelims)',
+        name: 'IBPS Clerk (Mains)',
+        date: '27 Dec 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'ibps-rrb-clerk',
+        externalUrl: 'https://ibps.in',
+        note: 'As per IBPS Calendar 2026',
+      },
+      {
+        name: 'RRB Group D (Notification)',
         date: 'Dec 2026',
         status: 'TENTATIVE',
-        category: 'Banking',
-        internalSlug: 'ibps-po',
-        externalUrl: 'https://ibps.in',
+        category: 'Railway',
+        internalSlug: 'rrb-group-d',
+        externalUrl: 'https://rrbapply.gov.in',
+        note: 'As per RRB Exam Calendar 2026',
+      },
+      {
+        name: 'SSC CPO (Tier 1)',
+        date: 'Dec 2026',
+        status: 'TENTATIVE',
+        category: 'SSC',
+        internalSlug: 'ssc-cpo',
+        externalUrl: 'https://ssc.gov.in',
       },
     ],
   },
@@ -302,7 +395,16 @@ const pastExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'rbi-assistant',
         externalUrl: 'https://rbi.org.in',
-        note: '650 vacancies • Result expected May 2026',
+        note: '650 vacancies',
+      },
+      {
+        name: 'RBI Grade B (Notification)',
+        date: '29 Apr 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'rbi-grade-b',
+        externalUrl: 'https://rbi.org.in',
+        note: 'Phase 1 exam expected Jun 2026',
       },
     ],
   },
@@ -310,15 +412,16 @@ const pastExams: MonthGroup[] = [
     month: 'March 2026',
     exams: [
       {
-        name: 'RRB NTPC (CBT)',
+        name: 'RRB NTPC Graduate (CBT 1)',
         date: '16–27 Mar 2026',
         status: 'OFFICIAL',
         category: 'Railway',
         internalSlug: 'rrb-ntpc',
-        externalUrl: 'https://indianrailways.gov.in',
+        externalUrl: 'https://rrbapply.gov.in',
+        note: '5,810 vacancies (Graduate posts) • CEN 06/2025',
       },
       {
-        name: 'RRB Technician',
+        name: 'RRB Technician (CBT)',
         date: '5–9 Mar 2026',
         status: 'OFFICIAL',
         category: 'Railway',
@@ -370,7 +473,7 @@ const pastExams: MonthGroup[] = [
         externalUrl: 'https://gate2026.iisc.ac.in',
       },
       {
-        name: 'RRB ALP',
+        name: 'RRB ALP (CBT)',
         date: '16–18 Feb 2026',
         status: 'OFFICIAL',
         category: 'Railway',
@@ -378,8 +481,8 @@ const pastExams: MonthGroup[] = [
         externalUrl: 'https://indianrailways.gov.in',
       },
       {
-        name: 'RRB JE',
-        date: '19–20 Feb, 3 Mar 2026',
+        name: 'RRB JE (CBT)',
+        date: '19–20 Feb & 3 Mar 2026',
         status: 'OFFICIAL',
         category: 'Railway',
         internalSlug: 'rrb-je',
@@ -705,9 +808,10 @@ export default function ExamCalendarPage() {
       {/* DISCLAIMER */}
       <div className="container-main mt-12">
         <div className="bg-surface-100 border border-surface-200 rounded-xl px-5 py-4 text-sm text-surface-500">
-          <strong className="text-surface-700">Disclaimer:</strong> Exam dates are sourced from official notifications (upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in)
-          and may change without notice. Tentative dates are based on previous-year patterns. Always verify from the
-          official conducting body&apos;s website before applying. Last updated: 26 April 2026.
+          <strong className="text-surface-700">Disclaimer:</strong> Exam dates are sourced from official notifications
+          (upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in) and may change without notice.
+          Tentative dates are based on official exam calendars and previous-year patterns. Always verify from the
+          official conducting body&apos;s website before applying. Last updated: 5 May 2026.
         </div>
       </div>
     </div>
