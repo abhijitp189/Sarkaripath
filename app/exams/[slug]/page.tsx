@@ -215,6 +215,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rrb-je') {
+    return {
+      title: 'RRB JE 2026 – Notification, Syllabus, Vacancies & Complete Guide | TaiyarHo',
+      description: 'RRB JE 2026: 2,585 vacancies (CEN 05/2025). CBT 1 held Feb 19–25, 2026 — result expected May 2026. Check syllabus, exam pattern, eligibility (Diploma/BE, 18–33 yrs), salary ₹35,400/month & free preparation resources.',
+      keywords: 'RRB JE 2026, RRB Junior Engineer taiyari, Railway JE syllabus Hindi, RRB JE परीक्षा तैयारी, Railway JE bharti 2026, रेलवे जूनियर इंजीनियर भर्ती',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rrb-je/' },
+      other: { 'description:hi': 'RRB JE 2026 – 2,585 रिक्तियाँ (CEN 05/2025)। CBT 1 परीक्षा 19-25 फरवरी 2026 को हुई। सिलेबस, परीक्षा पैटर्न, पात्रता (डिप्लोमा/बी.ई., 18-33 वर्ष), वेतन ₹35,400/माह और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'sbi-po') {
     return {
       title: 'SBI PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -287,6 +297,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ibps-rrb-po') return <IbpsRrbPoPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
+  if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
@@ -11575,6 +11586,730 @@ function RrbAlpPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-orange-50 border-orange-200">
                 <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
                 <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
+                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   RRB JE 2026 DETAILED PAGE
+   ───────────────────────────────────────────────────────────────────────── */
+function RrbJePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'RRB JE Official Notification Released (CEN 05/2025)',  date: '28 October 2025',             status: 'done' },
+    { event: 'Online Application Window Open',                         date: '31 Oct – 10 Dec 2025',        status: 'done' },
+    { event: 'Application Fee Payment Last Date',                      date: '10 December 2025',            status: 'done' },
+    { event: 'Application Correction Window',                          date: '13–22 December 2025',         status: 'done' },
+    { event: 'City Intimation Slip Released',                          date: '11 February 2026',            status: 'done' },
+    { event: 'Admit Card Released',                                    date: '16 February 2026',            status: 'done' },
+    { event: 'CBT 1 Exam Conducted',                                  date: '19, 20 & 25 February 2026',   status: 'done' },
+    { event: 'CBT 1 Provisional Answer Key Released',                 date: '5 March 2026',                status: 'done' },
+    { event: 'Answer Key Objection Window',                            date: '5–12 March 2026',             status: 'done' },
+    { event: '💡 CBT 1 Result & Scorecard (Expected)',                 date: 'May 2026 (TBN)',              status: 'tbn' },
+    { event: 'CBT 2 Exam (Expected)',                                  date: 'July–August 2026 (TBN)',      status: 'tbn' },
+    { event: 'Document Verification & Medical Exam (Expected)',        date: 'Oct–Dec 2026 (TBN)',          status: 'tbn' },
+    { event: 'Final Appointment & Joining (Expected)',                 date: '2027 (TBN)',                  status: 'tbn' },
+  ];
+
+  const cbt1Pattern = [
+    { section: 'Mathematics',                      questions: 30, marks: 30, negative: '−1/3 per wrong' },
+    { section: 'General Intelligence & Reasoning', questions: 25, marks: 25, negative: '−1/3 per wrong' },
+    { section: 'General Awareness',                questions: 15, marks: 15, negative: '−1/3 per wrong' },
+    { section: 'General Science',                  questions: 30, marks: 30, negative: '−1/3 per wrong' },
+  ];
+
+  const cbt2Pattern = [
+    { section: 'General Awareness',                           questions: 15,  marks: 15,  duration: '~10 min' },
+    { section: 'Physics & Chemistry',                         questions: 15,  marks: 15,  duration: '~10 min' },
+    { section: 'Basics of Computers & Applications',         questions: 10,  marks: 10,  duration: '~7 min' },
+    { section: 'Basics of Environment & Pollution Control',  questions: 10,  marks: 10,  duration: '~7 min' },
+    { section: 'Technical Abilities (Branch-specific)',       questions: 100, marks: 100, duration: '~86 min' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'Junior Engineer (JE) – Civil / Mechanical / Electrical / Electronics / IT / Others', payLevel: 'Pay Level 6', payScale: '₹35,400 – ₹1,12,400', vac2026: '~2,200+' },
+    { post: 'Depot Material Superintendent (DMS)',                                                  payLevel: 'Pay Level 6', payScale: '₹35,400 – ₹1,12,400', vac2026: '~200+' },
+    { post: 'Chemical & Metallurgical Assistant (CMA)',                                             payLevel: 'Pay Level 5', payScale: '₹29,200 – ₹92,300',  vac2026: '~100+' },
+    { post: 'Chemical Supervisor / Research (CS/R)',                                                payLevel: 'Pay Level 7', payScale: '₹44,900 – ₹1,42,400', vac2026: 'Limited' },
+    { post: 'Metallurgical Supervisor / Research (MS/R)',                                           payLevel: 'Pay Level 7', payScale: '₹44,900 – ₹1,42,400', vac2026: 'Limited' },
+  ];
+
+  const salaryBreakdown = [
+    { post: 'JE / DMS (Pay Level 6)', basic: '₹35,400', da: '~₹19,470 (55%)', hra: '₹2,832–₹8,496', gross: '~₹60,000–₹68,000', inhand: '₹50,000–₹58,000' },
+    { post: 'CMA (Pay Level 5)',       basic: '₹29,200', da: '~₹16,060 (55%)', hra: '₹2,336–₹7,008', gross: '~₹51,000–₹57,000', inhand: '₹43,000–₹49,000' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'Mathematics (CBT 1)',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Number System, HCF & LCM, Simplification',
+        'Percentage, Ratio & Proportion',
+        'Profit & Loss, Discount, Simple & Compound Interest',
+        'Time & Work, Pipes & Cisterns',
+        'Time, Speed & Distance, Trains, Boats',
+        'Algebra – Basic identities, Polynomials',
+        'Trigonometry – Ratios, Identities, Heights & Distances',
+        'Mensuration – Area, Volume of 2D & 3D figures',
+        'Geometry – Lines, Triangles, Circles, Quadrilaterals',
+        'Data Interpretation – Table, Bar, Pie, Line charts',
+        'Coordinate Geometry (basics)',
+      ],
+    },
+    {
+      subject: 'General Intelligence & Reasoning (CBT 1)',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Analogies – Verbal, Non-verbal & Figural',
+        'Classification & Odd One Out',
+        'Series – Number, Letter, Figural',
+        'Coding-Decoding',
+        'Blood Relations & Direction Sense',
+        'Venn Diagrams, Syllogisms',
+        'Matrix, Word Formation, Ranking',
+        'Statement & Conclusions / Inferences',
+        'Mirror Image, Paper Folding, Embedded Figures',
+        'Miscellaneous Non-verbal Reasoning',
+      ],
+    },
+    {
+      subject: 'General Science (CBT 1)',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Physics – Units & Measurements, Motion, Forces, Work & Energy',
+        'Physics – Heat, Light, Sound, Electricity & Magnetism',
+        'Chemistry – Basic concepts: Atoms, Molecules, Elements',
+        'Chemistry – Periodic Table, Chemical reactions, Acids & Bases',
+        'Chemistry – Carbon compounds, Polymers, Fuels',
+        'Biology – Cell structure, Life Processes, Reproduction',
+        'Biology – Diseases, Nutrition, Human Organ Systems',
+        'Environment – Ecosystems, Pollution, Conservation',
+        'Science & Technology – Latest developments, Space missions',
+      ],
+    },
+    {
+      subject: 'General Awareness (CBT 1 + CBT 2)',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Current Affairs – National & International (last 12 months)',
+        'Indian History – Ancient, Medieval, Modern & Freedom Struggle',
+        'Indian Geography – Physical, Climate, Rivers, States & UTs',
+        'Indian Polity – Constitution, Parliament, Panchayati Raj',
+        'Indian Economy – Budgets, Schemes, Railway Finance basics',
+        'Railways – History, Zones, Committees, Innovations',
+        'Static GK – Sports, Awards, Books & Authors, Important Days',
+        'Science & Technology, Space, Defence news',
+      ],
+    },
+    {
+      subject: 'Technical Abilities – Civil Engineering',
+      color: 'text-orange-700',
+      bg: 'bg-orange-50 border-orange-200',
+      topics: [
+        'Engineering Mechanics & Strength of Materials',
+        'Structural Analysis – Beams, Columns, Trusses',
+        'Building Materials & Construction Technology',
+        'Soil Mechanics & Foundation Engineering',
+        'Fluid Mechanics & Hydraulics',
+        'Water Supply & Sanitary Engineering',
+        'Highway Engineering & Surveying',
+        'RCC Design, Steel Structure basics',
+        'Estimating, Costing & Specifications',
+        'Environmental Engineering',
+      ],
+    },
+    {
+      subject: 'Technical Abilities – Electrical Engineering',
+      color: 'text-purple-700',
+      bg: 'bg-purple-50 border-purple-200',
+      topics: [
+        'Electrical Circuits – KVL, KCL, Thevenin, Norton',
+        'AC Fundamentals – Phasors, RLC Circuits, Resonance',
+        'DC Machines – Generators and Motors',
+        'AC Machines – Transformers, Induction Motors, Alternators',
+        'Electrical Measurements & Instrumentation',
+        'Power Systems – Generation, Transmission, Distribution',
+        'Control Systems – Transfer function, Bode plot, Stability',
+        'Electronics – Diodes, BJT, FET, Op-Amp basics',
+        'Digital Electronics – Logic Gates, Flip-flops, Number systems',
+        'Switchgear & Protection (basics)',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', title: 'Foundation: Non-Technical', tasks: 'Cover Class 9–10 level Maths and Science (NCERT). Start Lucent GK for General Awareness. Do 20 Reasoning questions daily. Target: strong basics in all 4 CBT 1 subjects.' },
+    { month: 'Month 3', title: 'Maths Mastery', tasks: 'Complete all Maths chapters with shortcuts — Algebra, Trigonometry, Mensuration, Coordinate Geometry. Practise 40 questions daily. Aim to solve 30 CBT 1 Maths questions in under 25 minutes.' },
+    { month: 'Month 4', title: 'CBT 1 Mock Tests', tasks: 'Give full-length CBT 1 mocks (100 Qs / 90 min) every alternate day. Analyse accuracy per section. Strengthen weak Science topics. Target score: 70+/100 in each mock before moving to CBT 2 prep.' },
+    { month: 'Month 5–6', title: 'Technical Branch Preparation', tasks: 'Deep-dive into your engineering branch for CBT 2 Technical Abilities (100 marks). Prioritise exam-relevant chapters. Solve 5+ years of previous papers for your branch. Technical section is merit-deciding.' },
+    { month: 'Month 7', title: 'CBT 2 Integrated Revision', tasks: 'Full-length CBT 2 mocks (150 Qs / 120 min). Revise Physics, Chemistry, Computer Basics, Environment sections. Technical: daily 2-hour practice. Target: 100+/150 consistently.' },
+    { month: 'Month 8', title: 'Final Sprint & Current Affairs', tasks: 'Last 6 months of current affairs, Railway schemes, and news. Attempt 10+ full-length CBT 2 mocks. Revise all formulas and important facts. Stay confident and sleep well before exam day.' },
+  ];
+
+  const books = [
+    { subject: 'Mathematics',           title: 'Fast Track Objective Arithmetic',                    author: 'Rajesh Verma (Arihant)', pdf: null },
+    { subject: 'Reasoning',             title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal',          pdf: null },
+    { subject: 'General Science',       title: 'Lucent General Science',                             author: 'Lucent Publications',    pdf: null },
+    { subject: 'General Awareness',     title: "Lucent's General Knowledge",                         author: 'Lucent Publications',    pdf: null },
+    { subject: 'Civil / Mechanical',    title: 'RRB JE 2026 (Branch-wise) Previous Year Papers',    author: 'Kiran Prakashan',        pdf: null },
+    { subject: 'Electrical / ECE',      title: 'GATE/RRB JE Chapter-wise Solved Papers',             author: 'Made Easy Publications', pdf: null },
+    { subject: 'All Subjects (CBT 1)',  title: 'RRB JE CBT 1 Chapterwise Solved Papers (2013–2025)', author: 'Kiran Prakashan',        pdf: null },
+  ];
+
+  const tips = [
+    { title: 'CBT 1 is qualifying — not merit-deciding', body: 'Your final rank is determined entirely by CBT 2. CBT 1 is just a screening test to shortlist roughly 15× the number of vacancies. Clear it comfortably, then pour your energy into CBT 2 technical preparation.' },
+    { title: 'Technical section = 67% of CBT 2 marks', body: 'CBT 2 has 150 questions — 100 are from your engineering branch. This is where toppers are separated from the rest. Go deep into your branch syllabus. Previous year papers from GATE and SSC JE are excellent practice material.' },
+    { title: 'Know your RRB zone before applying', body: 'India has 21 RRB zones. You can only apply to one zone per notification. Your posting will typically be in that zone\'s region. Check vacancy distribution zone-wise before applying to maximise your chances.' },
+    { title: 'General Science > current affairs in CBT 1', body: 'In CBT 1, General Science carries 30 marks — the same as Mathematics. Many candidates underestimate it. Cover Physics, Chemistry, and Biology up to Class 10 NCERT level thoroughly; it is very scorable.' },
+    { title: 'Physical fitness matters — medical exam is strict', body: 'RRB JE includes a Medical Examination after document verification. Vision standards, colour blindness tests, and general fitness are checked. Candidates with certain colour vision defects may be ineligible for some posts. Read the notification medical requirements carefully.' },
+    { title: 'Previous year papers are your best friend', body: 'RRB JE has been conducted multiple times — 2015, 2019, 2024. Analysing PYQs reveals repeated question patterns, especially in Technical Abilities. Solve at least 5 years of papers for your branch before appearing for CBT 2.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the RRB JE CBT 1 result date 2026?', a: 'The RRB JE CBT 1 exam was conducted on 19, 20 and 25 February 2026. The provisional answer key was released on 5 March 2026, and the objection window closed on 12 March 2026. The CBT 1 result is expected to be released in May 2026 on all regional RRB official websites (e.g., rrbcdg.gov.in).' },
+    { q: 'How many vacancies are there in RRB JE 2026?', a: 'Under CEN 05/2025, the Railway Recruitment Board notified 2,585 vacancies (revised from 2,569) for posts of Junior Engineer (various branches), Depot Material Superintendent (DMS), and Chemical & Metallurgical Assistant (CMA) across all Railway Recruitment Board zones.' },
+    { q: 'What is the educational qualification for RRB JE?', a: 'Candidates must hold a 3-year Diploma in Engineering or a B.E./B.Tech degree in the relevant discipline from a recognised university or institute. The relevant branches include Civil, Mechanical, Electrical, Electronics, Computer Science/IT, and others as specified post-wise in the official notification.' },
+    { q: 'What is the age limit for RRB JE 2026?', a: 'The general age limit is 18–33 years. OBC (Non-Creamy Layer) candidates get +3 years relaxation (up to 36 years). SC/ST candidates get +5 years (up to 38 years). PwBD candidates get additional relaxation as per rules. Age is calculated as on the cut-off date in the notification (typically 1 July of the notification year).' },
+    { q: 'What is the in-hand salary of RRB JE in 2026?', a: 'RRB JE (Pay Level 6) starts at a basic pay of ₹35,400 per month. With DA at 55% (effective January 2026), HRA, and other allowances, the gross salary is approximately ₹60,000–₹68,000/month. The in-hand salary after deductions is approximately ₹50,000–₹58,000/month, depending on the posting city.' },
+    { q: 'Is there an interview for RRB JE?', a: 'No. RRB JE has no interview round. Selection is based entirely on CBT 1 (qualifying), CBT 2 (merit-based), document verification, and medical examination. The final merit list is based on CBT 2 marks, which includes your technical branch subjects and general subjects.' },
+    { q: 'What is the difference between CBT 1 and CBT 2 in RRB JE?', a: 'CBT 1 (100 questions / 100 marks / 90 min) tests general subjects: Mathematics, General Intelligence & Reasoning, General Awareness, and General Science. It is qualifying only and not counted in the merit. CBT 2 (150 questions / 150 marks / 120 min) tests your engineering branch (100 marks) plus General Awareness, Physics & Chemistry, Computer Basics, and Environment (50 marks). CBT 2 determines your final rank.' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">RRB JE 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Railway</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Diploma / B.E. / B.Tech</span>
+            <span className="bg-yellow-400/20 text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full">⚙️ Engineering Jobs in Railways</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            RRB JE 2026 –<br className="hidden sm:block" /> Notification, Syllabus, Eligibility & Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            CBT 1 conducted 19–25 Feb 2026 for 2,585 vacancies — result expected May 2026. CBT 2 (merit-based) expected July–August 2026. Diploma / B.E. / B.Tech holders eligible. Salary ₹35,400/month + allowances.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies (CEN 05/2025)', value: '2,585' },
+              { label: 'CBT 1 Result (Expected)',  value: 'May 2026' },
+              { label: 'Min. Qualification',        value: 'Diploma / B.E.' },
+              { label: 'Starting Basic Pay',        value: '₹35,400/month' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── MAIN CONTENT ── */}
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is RRB JE 2026?</h2>
+              <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-4 mb-5 flex gap-3">
+                <span className="text-xl shrink-0">🔔</span>
+                <div>
+                  <p className="text-sm font-semibold text-yellow-900 mb-1">CBT 1 Done — Await Result & Prepare for CBT 2</p>
+                  <p className="text-xs text-yellow-800">CBT 1 was held on 19, 20 & 25 Feb 2026. Answer key released 5 March 2026. CBT 1 result expected May 2026. Candidates who qualify must start CBT 2 technical preparation immediately — CBT 2 is merit-deciding.</p>
+                </div>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  <strong>RRB JE (Railway Recruitment Board Junior Engineer)</strong> is a national-level recruitment conducted by the <strong>Railway Recruitment Board (RRB)</strong> to hire qualified engineers for technical posts in <strong>Indian Railways</strong>. The current cycle (CEN 05/2025) has 2,585 vacancies across Junior Engineer (JE), Depot Material Superintendent (DMS), and Chemical & Metallurgical Assistant (CMA) posts.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  RRB JE is one of the most sought-after government engineering jobs in India, offering job security, strong pay, and career growth within the Indian Railways ecosystem. The exam is conducted every 2–3 years depending on vacancy availability, making every cycle highly competitive.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  The selection process comprises two Computer-Based Tests (CBT 1 — qualifying, CBT 2 — merit-based), followed by Document Verification and Medical Examination. <strong>There is no interview.</strong> Your final rank depends entirely on your CBT 2 performance.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Railway Recruitment Board (RRB)' },
+                  { label: 'Notification Ref', value: 'CEN 05/2025' },
+                  { label: 'Post Group',        value: 'Group B (Non-Gazetted)' },
+                  { label: 'Official Website',  value: 'rrbcdg.gov.in' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">2. 📅 Important Dates – RRB JE 2025–26</h2>
+              <p className="text-sm text-surface-500 mb-5">
+                CBT 1 completed. 5,74,351 candidates appeared for 2,585 seats.
+                💡 <strong>Key update:</strong> CBT 1 result expected May 2026. If you cleared CBT 1, start CBT 2 technical prep now — that is where your rank is decided.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ TBN dates are estimates based on previous RRB cycles. Always verify at your regional RRB website.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {[
+                  { icon: '🪪', title: 'Nationality', desc: 'Indian Citizen. Citizens of Nepal / Bhutan or Tibetan refugees (settled before 1 Jan 1962) may also apply under specified conditions.' },
+                  { icon: '📋', title: 'Age Limit (General)', desc: '18–33 years as on cut-off date. OBC (NCL): +3 years (up to 36). SC/ST: +5 years (up to 38). PwBD: +10 years additional.' },
+                  { icon: '🎓', title: 'Educational Qualification', desc: 'Diploma in Engineering (3-year) OR B.E. / B.Tech in relevant branch from a recognised university. Branch must match the applied post (Civil, Mechanical, Electrical, Electronics, IT, etc.).' },
+                  { icon: '💻', title: 'Computer Proficiency', desc: 'Basic Computer skills are desirable. Computer Knowledge is tested in CBT 2 for 10 marks.' },
+                ].map((c) => (
+                  <div key={c.title} className="card p-5 flex gap-4">
+                    <div className="text-2xl shrink-0">{c.icon}</div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{c.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{c.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 flex gap-3">
+                <span className="text-xl shrink-0">💡</span>
+                <p className="text-sm text-blue-800"><strong>Important:</strong> Final year students whose results are awaited can also apply, but must produce their final certificates at the time of Document Verification. Check the specific branch eligibility for each post type in the official CEN 05/2025 notification PDF.</p>
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">4. Vacancies & Posts 2026</h2>
+              <p className="text-sm text-surface-500 mb-5">Total <strong>2,585 vacancies</strong> across RRB zones under CEN 05/2025. Distributed across 21 RRB zones — highest vacancies in Chennai, Allahabad, Bhopal, and Secunderabad zones.</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post Name</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Pay Level (7th CPC)</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Pay Scale</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Approx. Vacancies</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyPosts.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600">{row.payLevel}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.payScale}</td>
+                        <td className="p-3 text-primary-700 font-semibold">{row.vac2026}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ Exact zone-wise and category-wise breakdowns are in the CEN 05/2025 official notification at rrbcdg.gov.in.</p>
+            </section>
+
+            {/* SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. Selection Process</h2>
+              <div className="space-y-4">
+                {[
+                  { step: '1', color: 'bg-blue-100 text-blue-700', title: 'CBT 1 — Qualifying Stage', desc: '100 questions / 100 marks / 90 minutes. Tests Mathematics, General Intelligence & Reasoning, General Awareness, and General Science. CBT 1 is qualifying only — marks are NOT added to your final merit score. Candidates equal to 15× the vacancy count are shortlisted for CBT 2.' },
+                  { step: '2', color: 'bg-orange-100 text-orange-700', title: 'CBT 2 — Merit-Deciding Stage', desc: '150 questions / 150 marks / 120 minutes. Tests General Awareness, Physics & Chemistry, Computer Basics, Environment & Pollution Control (50 marks), and Technical Abilities specific to your engineering branch (100 marks). Final rank is based entirely on CBT 2 marks. Candidates equal to 2–3× the vacancy count are shortlisted for DV.' },
+                  { step: '3', color: 'bg-purple-100 text-purple-700', title: 'Document Verification (DV)', desc: 'Original certificates for education, caste, age, address, etc. are verified. Candidates must bring all documents mentioned in the notification. Any discrepancy leads to disqualification.' },
+                  { step: '4', color: 'bg-emerald-100 text-emerald-700', title: 'Medical Examination', desc: 'Conducted at Railway Hospitals. Visual standards, colour vision, hearing, and general fitness are checked as per the medical criteria specified in the notification. Some posts (e.g., involving traction or field duty) have stricter vision requirements.' },
+                ].map((s) => (
+                  <div key={s.step} className="card p-5 flex gap-4">
+                    <div className={`w-9 h-9 rounded-full flex items-center justify-center font-heading font-bold text-sm shrink-0 ${s.color}`}>{s.step}</div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{s.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. Exam Pattern 2026</h2>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">CBT 1 — Screening Test (Qualifying)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Section</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Questions</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Marks</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Negative Marking</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cbt1Pattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-primary-700">{row.marks}</td>
+                        <td className="p-3 text-center text-red-600 text-xs">{row.negative}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-50">
+                      <td className="p-3 font-bold text-surface-900">Total</td>
+                      <td className="p-3 text-center font-bold text-surface-900">100</td>
+                      <td className="p-3 text-center font-bold text-surface-900">100</td>
+                      <td className="p-3 text-center text-xs text-surface-500">Duration: 90 min</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">CBT 2 — Merit-Based Test</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Section</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Questions</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Marks</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Approx. Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cbt2Pattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                        <td className={`p-3 text-center font-semibold ${row.marks === 100 ? 'text-orange-600' : 'text-primary-700'}`}>{row.marks}</td>
+                        <td className="p-3 text-center text-surface-500 text-xs">{row.duration}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-50">
+                      <td className="p-3 font-bold text-surface-900">Total</td>
+                      <td className="p-3 text-center font-bold text-surface-900">150</td>
+                      <td className="p-3 text-center font-bold text-surface-900">150</td>
+                      <td className="p-3 text-center text-xs text-surface-500">Duration: 120 min</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 flex gap-3">
+                <span className="text-xl shrink-0">⚠️</span>
+                <p className="text-sm text-orange-800"><strong>Negative Marking:</strong> Both CBT 1 and CBT 2 carry negative marking of <strong>1/3 mark (0.33)</strong> for each wrong answer. Leave questions you are unsure about.</p>
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">7. Detailed Syllabus 2026</h2>
+              <p className="text-sm text-surface-500 mb-5">CBT 1 syllabus is common for all branches. CBT 2 Technical Abilities (100 marks) is branch-specific — shown below for Civil and Electrical. Mechanical, Electronics, and IT branches follow similar core engineering topics.</p>
+              <div className="space-y-4">
+                {syllabus.map((sub) => (
+                  <details key={sub.subject} className={`rounded-xl border p-4 ${sub.bg}`}>
+                    <summary className={`cursor-pointer font-heading font-semibold ${sub.color} flex items-center justify-between list-none`}>
+                      <span>{sub.subject}</span>
+                      <svg className="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-1">
+                      {sub.topics.map((t) => (
+                        <li key={t} className="flex items-start gap-1.5 text-sm text-surface-700">
+                          <span className="mt-1 w-1.5 h-1.5 rounded-full bg-current opacity-50 shrink-0" />
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ))}
+              </div>
+              <p className="text-xs text-surface-400 mt-3">Note: For Mechanical, Electronics, and IT branch syllabi, refer to the official CEN 05/2025 notification PDF. The Technical Abilities section covers your specific engineering discipline.</p>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">8. 💰 Salary & Benefits 2026</h2>
+              <p className="text-sm text-surface-500 mb-5">DA revised to 55% effective January 2026. Salary varies by HRA city classification (X/Y/Z cities).</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Basic Pay</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">DA (55%)</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">HRA</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Gross Salary</th>
+                      <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">In-Hand</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-center text-surface-700">{row.basic}</td>
+                        <td className="p-3 text-center text-surface-700">{row.da}</td>
+                        <td className="p-3 text-center text-surface-700">{row.hra}</td>
+                        <td className="p-3 text-center font-semibold text-primary-700">{row.gross}</td>
+                        <td className="p-3 text-center font-bold text-emerald-700">{row.inhand}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { title: 'Railway Pass', desc: 'Free/concessional train travel passes for self and family within Indian Railways network. One of the most valued perks.' },
+                  { title: 'Medical Benefits', desc: 'Free treatment at Railway Hospitals for employee and dependants. Includes CGHS-equivalent coverage at major stations.' },
+                  { title: 'Career Growth', desc: 'Promotions to Senior Section Engineer (SSE), JE Gr-II, Assistant Divisional Engineer (ADE), and Deputy Chief Engineer over time.' },
+                ].map((b) => (
+                  <div key={b.title} className="card p-4">
+                    <p className="font-heading font-semibold text-surface-800 text-sm mb-1">{b.title}</p>
+                    <p className="text-xs text-surface-500 leading-relaxed">{b.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. 8-Month Study Plan</h2>
+              <div className="space-y-3">
+                {studyPlan.map((phase, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-20 shrink-0">
+                      <div className="text-xs font-heading font-semibold text-primary-600 bg-primary-50 rounded-lg px-2 py-1 text-center">{phase.month}</div>
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 text-sm mb-1">{phase.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{phase.tasks}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 flex items-center gap-2">
+                <span className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm">📚</span>
+                10. Best Books for RRB JE 2026
+              </h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3"><span className="badge-primary text-xs">{b.subject}</span></td>
+                        <td className="p-3 font-medium text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-500">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 flex items-center gap-2">
+                <span className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center text-accent-600 text-sm">💡</span>
+                11. Expert Preparation Tips for RRB JE
+              </h2>
+              <div className="card p-6 bg-accent-50 border-accent-200 space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="flex items-start gap-3 text-sm text-surface-700">
+                    <span className="w-6 h-6 bg-accent-200 rounded-full flex items-center justify-center text-accent-700 text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
+                    <div>
+                      <strong className="text-surface-900">{tip.title}: </strong>{tip.body}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQ */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer flex items-center justify-between font-medium text-surface-800 hover:text-primary-500 list-none">
+                      <span className="flex-1">{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5"><p className="text-sm text-surface-600 leading-relaxed">{faq.a}</p></div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>{/* end main content */}
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 On This Page</p>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-0.5 hover:underline">{s.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-4">⚡ Quick Facts</p>
+                <ul className="space-y-3 text-sm">
+                  {[
+                    { label: 'Notification Ref',   val: 'CEN 05/2025' },
+                    { label: 'Total Vacancies',     val: '2,585' },
+                    { label: 'CBT 1 Exam',          val: '19–25 Feb 2026' },
+                    { label: 'CBT 1 Result',        val: 'May 2026 (TBN)' },
+                    { label: 'CBT 2 Exam',          val: 'July–Aug 2026 (TBN)' },
+                    { label: 'Age Limit',           val: '18–33 years' },
+                    { label: 'Qualification',       val: 'Diploma / B.E. / B.Tech' },
+                    { label: 'Starting Basic Pay',  val: '₹35,400/month' },
+                    { label: 'Interview',           val: 'None' },
+                    { label: 'Negative Marking',    val: '1/3 per wrong answer' },
+                  ].map((f) => (
+                    <li key={f.label} className="text-xs border-b border-surface-100 pb-3 last:border-0 last:pb-0">
+                      <span className="text-surface-400 block mb-0.5">{f.label}</span>
+                      <span className="font-semibold text-surface-700">{f.val}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 pt-4 border-t border-surface-100 space-y-2">
+                  <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary block text-center text-sm py-2.5">Official RRB Website ↗</a>
+                  <Link href="/tools/age-calculator" className="btn-outline block text-center text-sm py-2.5">Check Eligibility</Link>
+                </div>
+              </div>
+
+              {/* Related Railway Exams */}
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Railway Exams</p>
+                <div className="space-y-2">
+                  {[
+                    { name: 'RRB NTPC 2026',    slug: 'rrb-ntpc' },
+                    { name: 'RRB Group D 2026', slug: 'rrb-group-d' },
+                    { name: 'RRB ALP 2026',     slug: 'rrb-alp' },
+                    { name: 'RPF SI 2026',       slug: 'rpf-si' },
+                    { name: 'SSC JE 2026',       slug: 'ssc-je' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="card p-5 bg-orange-50 border-orange-200">
+                <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
+                <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to find out which railway and engineering exams you qualify for based on your age, qualification, and category.</p>
                 <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
               </div>
 
