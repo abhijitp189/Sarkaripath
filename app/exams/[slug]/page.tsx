@@ -76,6 +76,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'mp-police-constable') {
+    return {
+      title: 'MP Police Constable 2026 – Syllabus, Eligibility, Exam Date & Guide | TaiyarHo',
+      description: 'MP Police Constable 2026 (MPESB): Exam tentatively Oct 2026. 10th/8th pass eligible. 100+100 marks (written + PET). No negative marking. Check syllabus, physical standards, age limit 18–33 yrs, salary ₹19,500–₹62,000 and free resources.',
+      keywords: 'MP Police Constable 2026, MP Police bharti 2026, MPESB constable exam, मध्यप्रदेश पुलिस कांस्टेबल 2026, MP Police syllabus Hindi, सरकारी नौकरी MP',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/mp-police-constable/' },
+      other: { 'description:hi': 'MP Police Constable 2026 (MPESB) – परीक्षा अक्टूबर 2026 अपेक्षित। 10वीं पास पात्र। 100+100 अंक (लिखित + PET)। सिलेबस, शारीरिक मानक, आयु सीमा 18–33 वर्ष, वेतन ₹19,500–₹62,000।' },
+    };
+  }
+
   if (params.slug === 'ctet') {
     return {
       title: 'CTET 2026 – Syllabus, Eligibility, Exam Date, Pattern & Complete Guide | TaiyarHo',
@@ -257,6 +267,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'rajasthan-police-constable') return <RajasthanPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'bihar-police-constable') return <BiharPoliceConstablePage exam={brief} />;
+  if (brief && brief.slug === 'mp-police-constable') return <MpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
   if (brief && brief.slug === 'ssc-cpo') return <SscCpoPage exam={brief} />;
   if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
@@ -4031,6 +4042,696 @@ function BasicExamPage({ exam }: { exam: any }) {
         </aside>
       </div>
     </div>
+  );
+}
+
+// ─── MP POLICE CONSTABLE RICH PAGE ───────────────────────────────────────────
+function MpPoliceConstablePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies & Posts' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'physical', label: 'Physical Test (PET/PST)' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'MPESB Exam Calendar 2026 Released', date: 'April 2026', status: 'released' },
+    { event: 'Band Recruitment 2026 – Notification (679 posts)', date: 'April 2026', status: 'released' },
+    { event: 'Official Notification (GD/SAF/Radio)', date: 'To be notified (TBN) – Expected Oct 2026', status: 'tbn' },
+    { event: 'Online Application Start Date', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Online Application Last Date', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Admit Card Release', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Written Exam (CBT)', date: 'Tentative: October 2026 onwards', status: 'tbn' },
+    { event: 'Answer Key Release', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Written Exam Result', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Physical Tests (PET / PST)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Document Verification & Medical', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Final Selection / Joining', date: 'To be notified (TBN)', status: 'tbn' },
+  ];
+
+  const examPattern = [
+    { subject: 'General Knowledge & Reasoning', questions: 40, marks: 40 },
+    { subject: 'Intellectual Ability & Mental Ability', questions: 30, marks: 30 },
+    { subject: 'Science & Simple Arithmetic', questions: 30, marks: 30 },
+  ];
+
+  const vacancyHistory = [
+    { year: '2023', posts: 7411, notes: 'Last major recruitment cycle' },
+    { year: '2020', posts: 4000, notes: 'Mid-cycle recruitment' },
+    { year: '2017', posts: 14088, notes: 'Largest recent recruitment' },
+    { year: '2026', posts: 'TBN', notes: 'Band: 679 posts announced. GD/SAF: Expected Oct 2026' },
+  ];
+
+  const postsList = [
+    { post: 'Constable (General Duty – GD)', dept: 'MP Police (District Forces)', notes: 'Largest share of vacancies' },
+    { post: 'Constable (Special Armed Force – SAF)', dept: 'MP Police (Armed Wing)', notes: 'Paramilitary-style deployment' },
+    { post: 'Constable (Radio Operator – Technical)', dept: 'MP Police (Telecom Wing)', notes: '12th + ITI/Diploma required' },
+  ];
+
+  const ageLimit = [
+    { category: 'General – Male', min: '18 years', max: '33 years' },
+    { category: 'General – Female', min: '18 years', max: '38 years (+5 for all females)' },
+    { category: 'OBC – Male', min: '18 years', max: '38 years (+5)' },
+    { category: 'OBC – Female', min: '18 years', max: '43 years (+5 OBC +5 Female)' },
+    { category: 'SC / ST – Male', min: '18 years', max: '38 years (+5)' },
+    { category: 'SC / ST – Female', min: '18 years', max: '43 years (+5 SC/ST +5 Female)' },
+    { category: 'Ex-Servicemen', min: '–', max: 'As per MP Govt rules' },
+  ];
+
+  const physicalPst = [
+    { category: 'Male – General / OBC / SC', height: '168 cm', chest: '79–84 cm (5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Male – ST', height: '160 cm', chest: '76–81 cm (5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Female – All Categories', height: '155 cm', chest: 'N/A', weight: '40 kg minimum' },
+  ];
+
+  const physicalPet = [
+    { task: '800m Run', male: 'Performance-based marks awarded (faster = higher score)', female: 'Performance-based marks awarded' },
+    { task: 'Long Jump', male: 'Performance-based marks awarded (longer = higher score)', female: 'Performance-based marks awarded' },
+    { task: 'Shot Put', male: 'Performance-based marks awarded (farther = higher score)', female: 'Performance-based marks awarded' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📰 General Knowledge & Reasoning (40 Qs)',
+      topics: [
+        'MP History: medieval kingdoms, Maratha period, freedom movement',
+        'MP Geography: rivers, districts, national parks, tribal regions',
+        'MP Culture: folk arts, festivals, tribal culture, famous personalities',
+        'Indian Constitution: fundamental rights, duties, DPSP, amendments',
+        'Current Affairs: national and state-level events',
+        'Analogies, syllogisms, coding-decoding',
+        'Visual memory, blood relations, series completion',
+        'Important awards, sports, science & technology news',
+      ],
+    },
+    {
+      subject: '🧠 Intellectual & Mental Ability (30 Qs)',
+      topics: [
+        'Logical reasoning and analytical thinking',
+        'Number series and letter series',
+        'Direction and distance problems',
+        'Classification and odd-one-out',
+        'Matrix-based and pattern recognition questions',
+        'Verbal and non-verbal reasoning',
+        'Statement and conclusions / assumptions',
+        'Puzzle-based reasoning (seating arrangement, scheduling)',
+      ],
+    },
+    {
+      subject: '🔬 Science & Simple Arithmetic (30 Qs)',
+      topics: [
+        'Physics: force, motion, light, sound, electricity (Class 10 level)',
+        'Chemistry: elements, acids & bases, metals & non-metals',
+        'Biology: human body, diseases, nutrition, environment',
+        'Percentages, ratios, and proportions',
+        'Average, profit & loss, simple & compound interest',
+        'Time, speed & distance; time and work',
+        'Simplification and number system',
+        'Basic algebra and mensuration',
+      ],
+    },
+  ];
+
+  const books = [
+    { subject: 'General Knowledge', title: "Lucent's General Knowledge", author: 'Dr. Binay Karna', why: 'Comprehensive GK coverage for all police exams' },
+    { subject: 'MP Specific GK', title: 'Madhya Pradesh Ek Parichay', author: 'McGraw Hill / Punekar', why: 'Best MP-focused GK for MPESB exams' },
+    { subject: 'Arithmetic / Maths', title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', why: 'Covers all arithmetic topics with practice sets' },
+    { subject: 'Reasoning', title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', why: 'Standard text for mental ability sections' },
+    { subject: 'Science', title: "Lucent's General Science / NCERT Class 6–10", author: 'Lucent / NCERT', why: 'Exact level of science questions asked in MP Police' },
+    { subject: 'Practice Sets', title: 'MP Police Constable Practice Workbook', author: 'Arihant / Examcart', why: 'Previous year questions + full mock tests' },
+  ];
+
+  const faqs = [
+    { q: 'Is there negative marking in the MP Police Constable 2026 written exam?', a: 'No — there is no negative marking in the MP Police Constable written examination. Each correct answer earns 1 mark, and incorrect answers carry zero marks. This means you should attempt all 100 questions without fear of penalty.' },
+    { q: 'Does the Physical Efficiency Test (PET) carry marks in MP Police?', a: 'Yes — unlike many other police exams where the physical test is only qualifying, the MP Police PET carries 100 marks for General Duty (GD) posts. These marks are added to the written exam marks to create the final merit list. So both the written exam and physical test together determine your final rank.' },
+    { q: 'Can candidates from other states apply for MP Police Constable 2026?', a: 'Yes, candidates from all Indian states can apply for MP Police Constable 2026. However, category-based reservations (OBC/SC/ST) and fee concessions apply only to candidates who are permanent residents (domicile) of Madhya Pradesh. Out-of-state candidates are treated as the Unreserved (General) category.' },
+    { q: 'What is the minimum educational qualification for ST category candidates?', a: 'Candidates from the Scheduled Tribe (ST) category have a relaxed educational qualification. They are eligible to apply if they have passed Class 8 (Middle School / Matriculation Part I). For General, OBC, and SC candidates, the minimum qualification is Class 10 (Matriculation). Radio Operator posts require 12th + ITI/Diploma.' },
+    { q: 'When will the MP Police Constable 2026 exam be held?', a: 'According to the MPESB (Madhya Pradesh Employees Selection Board) Examination Calendar 2026, the MP Police Constable exam is tentatively scheduled to begin from October 2026. The official notification for GD/SAF posts is expected in October 2026. A separate Band recruitment for 679 posts was already notified in April 2026. Always verify dates at esb.mp.gov.in.' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Released';
+    if (s === 'upcoming') return '🔔 Scheduled';
+    return 'TBN';
+  };
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
+      {/* Hero Banner */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">MP Police Constable 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🚔 State Police</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Madhya Pradesh</span>
+            <span className="bg-white/10 text-blue-100 text-xs font-semibold px-3 py-1 rounded-full">State Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">⚠️ Exam: Oct 2026 (Tentative)</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            MP Police Constable 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            Conducted by MPESB. 10th pass eligible (8th for ST). Written exam 100 marks + PET 100 marks — both count in merit. No negative marking. Exam expected October 2026.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Total Vacancies 2026', value: 'TBN (Oct 2026)' },
+              { label: 'Exam Date', value: 'Oct 2026 (Tentative)' },
+              { label: 'Min. Qualification', value: '10th Pass (8th for ST)' },
+              { label: 'In-Hand Salary', value: '₹24K–₹27K/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is MP Police Constable 2026?</h2>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The <strong>MP Police Constable Recruitment Examination</strong> is conducted by the <strong>Madhya Pradesh Employees Selection Board (MPESB)</strong> to fill constable positions in Madhya Pradesh Police. Posts include General Duty (GD), Special Armed Force (SAF), and Radio Operator (Technical) roles across the state.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The selection process has two merit-bearing stages: a <strong>Written Exam (100 marks)</strong> and a <strong>Physical Efficiency Test or PET (100 marks)</strong> — both scores are combined to form the final merit list. This is a key difference from many other state police exams where the physical test is only qualifying.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  The exam is conducted irregularly, typically every 1–2 years. Past cycles filled 7,411 posts (2023), 4,000 posts (2020), and 14,088 posts (2017). The 2026 cycle is expected to be notified by October 2026. A separate Band Constable recruitment for 679 posts was already released in April 2026.
+                </p>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-blue-800">
+                  <strong>💡 Key Update for 2026:</strong> According to the MPESB Exam Calendar 2026, the MP Police Constable (GD/SAF) exam is tentatively scheduled from October 2026. The official notification is yet to be released. A Band Constable recruitment for 679 posts was separately notified in April 2026. Bookmark <strong>esb.mp.gov.in</strong> for real-time updates.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'MPESB' },
+                  { label: 'Post Type', value: 'State Govt, Group C' },
+                  { label: 'Pay Scale (Basic)', value: '₹19,500 – ₹62,000' },
+                  { label: 'Minimum Qualification', value: '10th Pass (8th for ST)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">2. 📅 Important Dates – MP Police Constable 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded ${statusColor(row.status)}`}>{statusLabel(row.status)}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ TBN = To Be Notified. All 2026 GD/SAF dates are tentative as per MPESB Calendar. Always verify the final schedule at <strong>esb.mp.gov.in</strong> before taking any action.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { label: '🪪 Nationality', value: 'Must be a citizen of India. Candidates from all states can apply. However, category-based reservations and fee concessions apply only to MP domicile candidates.' },
+                  { label: '🎓 Educational Qualification', value: 'General / OBC / SC: 10th Pass (Matriculation). ST Category: 8th Pass (Middle School). Radio Operator post: 12th Pass + ITI / Diploma in relevant technical field.' },
+                  { label: '💳 Application Fee (Expected)', value: 'General: ₹500 | SC/ST/OBC/EWS (MP Domicile): ₹250 | Portal fee: ₹60 (Citizen User: ₹20). Fee subject to official confirmation.' },
+                  { label: '📋 Domicile Note', value: 'Out-of-state candidates are treated as Unreserved (General) category regardless of their caste certificate. MP domicile candidates get full reservation benefits.' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-medium text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Age Limit – 2026 Recruitment Cycle</h3>
+                <div className="overflow-x-auto rounded-lg border border-surface-100">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Minimum Age</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Maximum Age</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ageLimit.map((r, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{r.category}</td>
+                          <td className="p-3 text-surface-600">{r.min}</td>
+                          <td className="p-3 text-surface-600">{r.max}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-2">* Age relaxation: OBC +5 yrs | SC/ST +5 yrs | Female (all) +5 yrs | Ex-Servicemen as per MP Govt rules. The state may provide one-time additional relaxations as seen in previous years. Verify with official notification at esb.mp.gov.in.</p>
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. Vacancies & Posts – MP Police 2026</h2>
+
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post Name</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Department</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {postsList.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600">{row.dept}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.notes}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Vacancy History (Last 3 Cycles)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-100">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-surface-700">Year</th>
+                      <th className="text-left p-3 font-semibold text-surface-700">Vacancies</th>
+                      <th className="text-left p-3 font-semibold text-surface-700">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${row.year === '2026' ? 'bg-blue-50 font-semibold' : i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 text-surface-700 font-semibold">{row.posts}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.notes}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> The 2026 vacancy count for GD/SAF/Radio posts is yet to be announced (TBN). A separate Band Constable recruitment for 679 posts was released in April 2026. Category-wise (UR/OBC/SC/ST/EWS) breakdowns will be published in the official notification at esb.mp.gov.in.</p>
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. Exam Pattern – Written Test 2026</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                {[
+                  { label: 'Mode', value: 'Online (CBT)' },
+                  { label: 'Total Questions', value: '100 MCQs' },
+                  { label: 'Total Marks', value: '100 marks' },
+                  { label: 'Duration', value: '2 hours (120 min)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-primary-50 rounded-xl p-4 border border-primary-100 text-center">
+                    <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-primary-700">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {examPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                        <td className="p-3 text-center text-surface-700 font-semibold">{row.questions}</td>
+                        <td className="p-3 text-center text-surface-700 font-semibold">{row.marks}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-blue-50 font-bold">
+                      <td className="p-3 text-surface-900">TOTAL</td>
+                      <td className="p-3 text-center text-surface-900">100</td>
+                      <td className="p-3 text-center text-surface-900">100</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">📌 Key Exam Rules</h3>
+                <ul className="space-y-2 text-sm text-surface-600">
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold">✓</span> Each correct answer: <strong>+1 mark</strong></li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold">✓</span> <strong>No negative marking</strong> — attempt all 100 questions</li>
+                  <li className="flex gap-2"><span className="text-orange-500 font-bold">★</span> Written exam marks are <strong>NOT qualifying</strong> — they count toward final merit</li>
+                  <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Language: <strong>Bilingual</strong> (Hindi and English)</li>
+                  <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Difficulty level: <strong>Class 10th standard</strong></li>
+                  <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Final merit = Written Exam (100) + PET (100) = <strong>200 marks total</strong></li>
+                </ul>
+              </div>
+            </section>
+
+            {/* PHYSICAL TEST */}
+            <section id="physical" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. Physical Test – PET & PST Standards 2026</h2>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-blue-800">
+                  <strong>💡 MP Police Physical Test is Merit-Based:</strong> Unlike most state police exams, both the Physical Standard Test (PST) and the Physical Efficiency Test (PET) are part of the selection process. PST is qualifying only, but PET carries 100 marks that are added to your written exam score. Train hard for PET — it directly impacts your final rank.
+                </p>
+              </div>
+
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical Standard Test (PST) – Qualifying Only</h3>
+                <div className="overflow-x-auto rounded-lg border border-surface-100">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Category</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Height</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Chest</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Weight</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {physicalPst.map((r, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{r.category}</td>
+                          <td className="p-3 text-surface-600">{r.height}</td>
+                          <td className="p-3 text-surface-600">{r.chest}</td>
+                          <td className="p-3 text-surface-600">{r.weight}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical Efficiency Test (PET) – Carries 100 Marks (GD Posts)</h3>
+                <div className="overflow-x-auto rounded-lg border border-surface-100 mb-3">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Task</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Male</th>
+                        <th className="text-left p-3 font-semibold text-surface-700">Female</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {physicalPet.map((r, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{r.task}</td>
+                          <td className="p-3 text-surface-600 text-xs">{r.male}</td>
+                          <td className="p-3 text-surface-600 text-xs">{r.female}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400">* PET marks are awarded based on performance — faster 800m time and longer jump distances earn higher marks. The marking scheme is specified in the official notification. Practice consistently for 4–6 months before the exam.</p>
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">7. Detailed Syllabus – MP Police Constable 2026</h2>
+              <div className="space-y-4">
+                {syllabus.map((s, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-3">{s.subject}</h3>
+                    <ul className="space-y-1.5">
+                      {s.topics.map((t, j) => (
+                        <li key={j} className="flex gap-2 text-sm text-surface-600">
+                          <span className="text-primary-400 mt-0.5 flex-shrink-0">▸</span>
+                          <span>{t}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mt-4">
+                <p className="text-sm text-emerald-800">
+                  <strong>✅ 2026 Preparation Tip:</strong> Focus heavily on <strong>MP-specific GK</strong> (history, geography, culture, government schemes) as it carries significant weight in the General Knowledge section. Use a dedicated MP GK book alongside standard preparation.
+                </p>
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. 💰 Salary & Benefits – MP Police Constable</h2>
+              <div className="card p-5 mb-5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                  {[
+                    { label: 'Pay Level', value: 'Level 4 (7th Pay Commission)' },
+                    { label: 'Basic Pay Scale', value: '₹19,500 – ₹62,000/month' },
+                    { label: 'Estimated In-Hand Salary', value: '₹24,000 – ₹27,000/month' },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                      <div className="font-heading font-bold text-surface-800">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Key Allowances & Benefits</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-surface-600">
+                  {['Dearness Allowance (DA)', 'House Rent Allowance (HRA)', 'Medical & Health Benefits', 'Uniform Allowance', 'Travelling Allowance', 'Government Pension (NPS)', 'Job posting across MP state', 'Annual increment and promotions'].map((b) => (
+                    <li key={b} className="flex gap-2"><span className="text-emerald-500 font-bold">✓</span>{b}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-800">
+                  <strong>📌 Career Growth:</strong> Constables can rise through the ranks — Head Constable → Sub-Inspector (SI) → Inspector — through departmental exams and promotions. MP Police also has internal quota for SI promotion exams exclusively for serving constables.
+                </p>
+              </div>
+            </section>
+
+            {/* HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. How to Apply – MP Police Constable 2026</h2>
+              <div className="card p-5 mb-4">
+                <ol className="space-y-4">
+                  {[
+                    { step: 'Visit the Official Website', desc: 'Go to esb.mp.gov.in — the official portal of MPESB. All applications must be submitted here only.' },
+                    { step: 'New Registration', desc: 'Click "Apply Online" → complete one-time registration with your name, mobile number, and email address. Save your login credentials.' },
+                    { step: 'Fill Application Form', desc: 'Log in and carefully fill in all details — personal information, educational qualifications, category, and post preference.' },
+                    { step: 'Upload Documents', desc: 'Upload a recent passport-size photograph, signature, and any required certificates (domicile, category certificate) as per the specified format and size.' },
+                    { step: 'Pay Application Fee', desc: 'General: ₹500 | SC/ST/OBC/EWS (MP Domicile): ₹250 | Portal fee: ₹60. Payment via online mode (Debit Card, Credit Card, Net Banking, UPI).' },
+                    { step: 'Submit & Download Confirmation', desc: 'Review all details before final submission. Download and print the application confirmation slip for future reference.' },
+                  ].map((item, i) => (
+                    <li key={i} className="flex gap-4">
+                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary-500 text-white text-xs font-bold flex items-center justify-center">{i + 1}</span>
+                      <div>
+                        <div className="font-semibold text-surface-800 text-sm">{item.step}</div>
+                        <div className="text-sm text-surface-500 mt-0.5">{item.desc}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                <p className="text-sm font-semibold text-surface-700 mb-2">Official Website</p>
+                <a href="https://esb.mp.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:text-primary-600 font-medium break-all">esb.mp.gov.in →</a>
+                <p className="text-xs text-surface-400 mt-1">Visit for latest notifications, admit cards, results, and answer keys.</p>
+              </div>
+            </section>
+
+            {/* BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. Best Books for MP Police Constable 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Author</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Why Recommended</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-semibold text-primary-700">{row.subject}</td>
+                        <td className="p-3 font-medium text-surface-800">{row.title}</td>
+                        <td className="p-3 text-surface-600">{row.author}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.why}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. Expert Tips – How to Crack MP Police Constable 2026</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '🗺️', title: 'Master MP-Specific GK', tip: 'Prepare a dedicated notebook for Madhya Pradesh — rivers, districts, tribal regions, famous temples, government schemes, and historical events. At least 10–15 GK questions come from MP-specific topics.' },
+                  { icon: '🏃', title: 'Train for PET from Day One', tip: 'PET carries 100 marks and directly affects your merit rank. Begin 800m running, long jump, and shot put training at least 4–6 months before the exam. Treat PET preparation as seriously as written exam preparation.' },
+                  { icon: '📝', title: 'Attempt All 100 Questions', tip: 'There is no negative marking in MP Police Constable. Never leave any question blank. Use elimination and educated guessing on questions you are unsure about — you can only gain marks, not lose them.' },
+                  { icon: '🔢', title: 'Focus on High-Scoring Sections', tip: 'GK & Reasoning (40 marks) is the largest section. Devote maximum study time here. Science & Arithmetic (30 marks) is straightforward at Class 10 level — practice NCERT concepts and arithmetic shortcuts.' },
+                  { icon: '📅', title: 'Follow MPESB Updates Closely', tip: 'MP Police recruitment dates are irregular and notifications can come with short application windows. Bookmark esb.mp.gov.in and enable notifications. Missing the application deadline means waiting 1–2 years for the next cycle.' },
+                  { icon: '📺', title: 'Watch the Official 2026 Preparation Video', tip: 'A comprehensive 2026 preparation roadmap video (covering expected vacancies, exam strategy, and physical training tips) is available on YouTube. Search for "MP Police Constable 2026 Preparation Guide" to find updated coaching content.' },
+                ].map((item, i) => (
+                  <div key={i} className="card p-4">
+                    <div className="text-2xl mb-2">{item.icon}</div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.title}</div>
+                    <div className="text-sm text-surface-500 leading-relaxed">{item.tip}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQ */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. Frequently Asked Questions – MP Police Constable 2026</h2>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card p-5 group">
+                    <summary className="font-heading font-semibold text-surface-800 cursor-pointer list-none flex justify-between items-start gap-3">
+                      <span>{f.q}</span>
+                      <span className="text-primary-400 text-lg flex-shrink-0 mt-0.5 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p className="text-sm text-surface-600 leading-relaxed mt-3 pt-3 border-t border-surface-100">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Eligibility CTA */}
+            <div className="card p-6 bg-primary-50 border-primary-200 text-center mb-10">
+              <h3 className="font-heading font-bold text-primary-800 mb-2">Check Your Eligibility for MP Police Constable</h3>
+              <p className="text-sm text-primary-600 mb-4">Use our free eligibility checker to verify your age, qualification, and category eligibility instantly.</p>
+              <Link href="/tools/eligibility-checker" className="btn-primary">Check Eligibility →</Link>
+            </div>
+
+            <div className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+              <strong>Disclaimer:</strong> Information provided is for general guidance based on MPESB official notifications and exam calendar. Exam patterns, dates, vacancies, and eligibility criteria may change. Always refer to the official notification at <strong>esb.mp.gov.in</strong> before taking any action.
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-4 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{s.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm">Official Website</h3>
+                <a href="https://esb.mp.gov.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all">esb.mp.gov.in →</a>
+              </div>
+              <div className="card p-5 bg-amber-50 border-amber-200">
+                <div className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">⚠️ 2026 Key Facts</div>
+                <ul className="space-y-1.5 text-xs text-amber-800">
+                  <li>📋 Exam: Oct 2026 (Tentative)</li>
+                  <li>📝 100 Qs + PET = 200 marks total</li>
+                  <li>✅ No negative marking</li>
+                  <li>🎓 10th pass (8th for ST)</li>
+                  <li>💰 In-hand: ₹24K–₹27K/mo</li>
+                  <li>🌐 Apply: esb.mp.gov.in</li>
+                </ul>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related Police Exams</h3>
+                <div className="space-y-1">
+                  {[
+                    { name: 'UP Police Constable', slug: 'up-police-constable' },
+                    { name: 'Bihar Police Constable', slug: 'bihar-police-constable' },
+                    { name: 'Rajasthan Police', slug: 'rajasthan-police-constable' },
+                    { name: 'SSC GD Constable', slug: 'ssc-gd-constable' },
+                    { name: 'Delhi Police Constable', slug: 'delhi-police-constable' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </>
   );
 }
 
