@@ -128,11 +128,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'ssc-chsl') {
     return {
-      title: 'SSC CHSL 2026 – Eligibility, Syllabus, Exam Pattern & Complete Guide | TaiyarHo',
-      description: 'SSC CHSL 2026: 3,131 vacancies for LDC, JSA, PA, SA & DEO. Tier 1 result declared 27 Feb 2026. Tier 2 on 10 Apr 2026. Check complete syllabus, exam pattern, eligibility (12th pass, 18–27 yrs), salary ₹25K–₹38K/month and free resources.',
-      keywords: 'SSC CHSL 2026, SSC CHSL taiyari, SSC CHSL syllabus Hindi, SSC CHSL परीक्षा, LDC JSA DEO sarkari naukri, 12th pass government job',
+      title: 'SSC CHSL 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'SSC CHSL 2026 notification expected May–June 2026. 2025 cycle: Tier 2 held 10 Apr 2026, result awaited. Complete guide: syllabus, exam pattern, eligibility (12th pass, 18–27 yrs), vacancies, salary ₹25K–₹38K/month and free resources.',
+      keywords: 'SSC CHSL 2026, SSC CHSL notification 2026, SSC CHSL taiyari, SSC CHSL syllabus Hindi, SSC CHSL परीक्षा, LDC JSA DEO sarkari naukri, 12th pass government job 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-chsl/' },
-      other: { 'description:hi': 'SSC CHSL 2026 – LDC, JSA, PA, SA और DEO के लिए 3,131 रिक्तियाँ। Tier 2 परीक्षा 10 अप्रैल 2026। सिलेबस, पात्रता (12वीं पास, 18-27 वर्ष), वेतन ₹25K–₹38K/माह और मुफ्त संसाधन।' },
+      other: { 'description:hi': 'SSC CHSL 2026 अधिसूचना मई–जून 2026 में अपेक्षित। 2025 चक्र: Tier 2 परीक्षा 10 अप्रैल 2026 को हुई, परिणाम प्रतीक्षित। सिलेबस, पात्रता (12वीं पास, 18-27 वर्ष), वेतन ₹25K–₹38K/माह और मुफ्त संसाधन।' },
     };
   }
 
@@ -11615,14 +11615,16 @@ function SscChslPage({ exam }: { exam: any }) {
     { event: 'Tier 1 Exam Conducted',                         date: '12–30 November 2025',           status: 'done' },
     { event: 'Provisional Answer Key Released',                date: '8 December 2025',               status: 'done' },
     { event: 'Answer Key Objection Last Date',                 date: '11 December 2025',              status: 'done' },
-    { event: 'Tier 1 Result Declared',                         date: '27 February 2026',              status: 'done' },
+    { event: 'Tier 1 Result Declared (37,520 qualified)',      date: '27 February 2026',              status: 'done' },
     { event: 'Tier 1 Scorecard Released',                      date: 'March 2026',                    status: 'done' },
-    { event: 'Tier 2 Exam (2025 Cycle)',                       date: '10 April 2026',                 status: 'done' },
-    { event: 'Tier 2 Result & Final Merit List',               date: 'To be notified (TBN)',          status: 'tbn' },
-    { event: 'Skill Test / Typing Test',                       date: 'To be notified (TBN)',          status: 'tbn' },
-    { event: 'Document Verification & Joining',                date: 'To be notified (TBN)',          status: 'tbn' },
-    { event: 'SSC CHSL 2026 Notification Expected',            date: 'May – June 2026',               status: 'upcoming' },
-    { event: 'CHSL 2026 Tier 1 Exam (Expected)',               date: 'July – September 2026',         status: 'upcoming' },
+    { event: 'Tier 2 Exam (2025 Cycle) Held',                  date: '10 April 2026',                 status: 'done' },
+    { event: 'Tier 2 Provisional Answer Key (Expected)',       date: 'May 2026 (TBN)',                status: 'tbn' },
+    { event: 'Tier 2 Result & Final Merit List',               date: 'June–July 2026 (TBN)',          status: 'tbn' },
+    { event: 'Skill Test / Typing Test (2025 Cycle)',          date: 'To be notified (TBN)',          status: 'tbn' },
+    { event: 'Document Verification & Joining (2025 Cycle)',   date: 'To be notified (TBN)',          status: 'tbn' },
+    { event: '💡 SSC CHSL 2026 Notification Expected',         date: 'May – June 2026',               status: 'upcoming' },
+    { event: 'CHSL 2026 Application Window (Expected)',        date: 'June – July 2026',              status: 'upcoming' },
+    { event: 'CHSL 2026 Tier 1 Exam (Expected)',               date: 'August – September 2026',       status: 'upcoming' },
   ];
 
   const tier1Pattern = [
@@ -11641,16 +11643,16 @@ function SscChslPage({ exam }: { exam: any }) {
   ];
 
   const vacancyPosts = [
-    { post: 'Lower Division Clerk (LDC) / Junior Secretariat Assistant (JSA)', payLevel: 'Pay Level 2', payScale: '₹19,900 – ₹63,200', vacancies: '~2,300' },
-    { post: 'Postal Assistant (PA) / Sorting Assistant (SA)',                   payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100', vacancies: '~550' },
-    { post: 'Data Entry Operator (DEO)',                                         payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100', vacancies: '~200' },
-    { post: 'Data Entry Operator Grade A (DEO-A)',                              payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100', vacancies: '~81' },
+    { post: 'Lower Division Clerk (LDC) / Junior Secretariat Assistant (JSA)', payLevel: 'Pay Level 2', payScale: '₹19,900 – ₹63,200', vac2025: '~2,300', vac2026: 'TBN' },
+    { post: 'Postal Assistant (PA) / Sorting Assistant (SA)',                   payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100', vac2025: '~550',   vac2026: 'TBN' },
+    { post: 'Data Entry Operator (DEO)',                                         payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100', vac2025: '~200',   vac2026: 'TBN' },
+    { post: 'Data Entry Operator Grade A (DEO-A)',                              payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100', vac2025: '~81',    vac2026: 'TBN' },
   ];
 
   const salaryBreakdown = [
-    { post: 'LDC / JSA', basic: '₹19,900', da: '~₹5,173', hra: '₹2,388–₹4,776', gross: '~₹29,000–₹34,000', inhand: '₹25,000–₹30,000' },
-    { post: 'PA / SA',   basic: '₹25,500', da: '~₹6,630', hra: '₹3,060–₹6,120', gross: '~₹37,000–₹43,000', inhand: '₹32,000–₹38,000' },
-    { post: 'DEO',       basic: '₹25,500', da: '~₹6,630', hra: '₹3,060–₹6,120', gross: '~₹37,000–₹43,000', inhand: '₹32,000–₹38,000' },
+    { post: 'LDC / JSA', basic: '₹19,900', da: '~₹10,945', hra: '₹2,388–₹4,776', gross: '~₹35,000–₹39,000', inhand: '₹28,000–₹33,000' },
+    { post: 'PA / SA',   basic: '₹25,500', da: '~₹14,025', hra: '₹3,060–₹6,120', gross: '~₹44,000–₹48,000', inhand: '₹37,000–₹42,000' },
+    { post: 'DEO',       basic: '₹25,500', da: '~₹14,025', hra: '₹3,060–₹6,120', gross: '~₹44,000–₹48,000', inhand: '₹37,000–₹42,000' },
   ];
 
   const syllabus = [
@@ -11762,10 +11764,11 @@ function SscChslPage({ exam }: { exam: any }) {
   ];
 
   const faqs = [
+    { q: 'What is the SSC CHSL 2026 notification date?', a: 'The SSC CHSL 2026 notification is expected in May–June 2026, based on SSC\'s annual calendar pattern. The Tier 1 exam is likely to be held in August–September 2026. Keep checking ssc.gov.in for the official announcement. The 2025 cycle notification was released on 23 June 2025 for reference.' },
     { q: 'What is the minimum qualification for SSC CHSL?', a: 'Candidates must have passed Class 12 (10+2) or equivalent from a recognised board. Graduates can also apply. Exception: DEO posts under some departments require Science stream with Mathematics in Class 12.' },
     { q: 'What is the SSC CHSL age limit?', a: 'The general age limit is 18–27 years. OBC candidates get +3 years (18–30), SC/ST candidates get +5 years (18–32), and PwBD candidates get +10 years. Age is calculated as on the cut-off date specified in the official notification.' },
     { q: 'How many tiers are there in SSC CHSL 2026?', a: 'SSC CHSL has 2 tiers: Tier 1 (qualifying, 100 MCQs/200 marks/60 min) and Tier 2 (merit-based, conducted in 2 sessions on the same day). Both are Computer-Based Tests. After Tier 2, a Typing Test or Skill Test is conducted for specific posts.' },
-    { q: 'What is the SSC CHSL in-hand salary?', a: 'For LDC/JSA posts (Pay Level 2): approximately ₹25,000–₹30,000/month in-hand depending on city posting. For PA/SA and DEO posts (Pay Level 4): approximately ₹32,000–₹38,000/month. DA, HRA, and medical benefits are additional.' },
+    { q: 'What is the SSC CHSL in-hand salary in 2026?', a: 'With DA revised to 55% effective January 2026: For LDC/JSA posts (Pay Level 2): approximately ₹28,000–₹33,000/month in-hand. For PA/SA and DEO posts (Pay Level 4): approximately ₹37,000–₹42,000/month. DA, HRA, and CGHS medical benefits are additional.' },
     { q: 'Is there a typing test in SSC CHSL?', a: 'Yes. After Tier 2, candidates selected for LDC/JSA posts must clear a Typing Test at 35 words per minute in English or 30 words per minute in Hindi. For DEO posts, a Data Entry Skill Test is conducted. These are qualifying (pass/fail) in nature and do not contribute to the merit list.' },
     { q: 'Can I apply for SSC CHSL if I am a graduate?', a: 'Yes. Graduates are fully eligible to apply for SSC CHSL. In fact, graduation often gives an advantage in reasoning, maths, and English sections. However, graduates are often advised to also target SSC CGL, which offers higher-grade posts.' },
     { q: 'What was the SSC CHSL Tier 1 cut-off for 2025?', a: 'For the 2025 cycle (result declared 27 Feb 2026), the General category cut-off for LDC/JSA was 144.26 marks (normalized). Out of 11,07,975 candidates who appeared, 37,520 qualified for Tier 2. The cut-off varies by category and post.' },
@@ -11799,20 +11802,20 @@ function SscChslPage({ exam }: { exam: any }) {
             <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">SSC</span>
             <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
             <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">12th Pass Eligible</span>
-            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🗓️ Tier 2: 10 April 2026</span>
+            <span className="bg-yellow-400/20 text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 2026 Notification: May–Jun 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
-            SSC CHSL 2026 –<br className="hidden sm:block" /> Complete Guide: Eligibility, Pattern & Syllabus
+            SSC CHSL 2026 –<br className="hidden sm:block" /> Notification, Syllabus, Eligibility & Complete Guide
           </h1>
           <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
-            2025 cycle Tier 1 result declared 27 Feb 2026 (37,520 qualified). Tier 2 held on 10 April 2026. 3,131 vacancies for LDC, JSA, PA, SA & DEO posts. Class 12 pass eligible. 2026 notification expected May–June 2026.
+            2025 cycle Tier 2 held on 10 April 2026 — result awaited. 3,131 vacancies for LDC, JSA, PA, SA & DEO posts. SSC CHSL 2026 notification expected May–June 2026 with Tier 1 exam in July–September 2026. Class 12 pass eligible.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              { label: 'Total Vacancies (2025)',  value: '3,131' },
-              { label: 'Tier 2 Exam',             value: '10 Apr 2026' },
+              { label: 'Vacancies (2025 Cycle)',  value: '3,131' },
+              { label: '2026 Notification',       value: 'May–Jun 2026' },
               { label: 'Min. Qualification',      value: '12th Pass' },
-              { label: 'In-Hand Salary',          value: '₹25K–₹38K/mo' },
+            { label: 'In-Hand Salary',          value: '₹28K–₹42K/mo' },
             ].map((item) => (
               <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
                 <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
@@ -11841,6 +11844,13 @@ function SscChslPage({ exam }: { exam: any }) {
             {/* OVERVIEW */}
             <section id="overview" className="mb-12">
               <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is SSC CHSL?</h2>
+              <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-4 mb-5 flex gap-3">
+                <span className="text-xl shrink-0">🔔</span>
+                <div>
+                  <p className="text-sm font-semibold text-yellow-900 mb-1">SSC CHSL 2026 Notification Expected: May–June 2026</p>
+                  <p className="text-xs text-yellow-800">The 2025 cycle Tier 2 was held on 10 April 2026. Results are awaited. The 2026 cycle notification is expected imminently — now is the best time to start preparation. Tier 1 exam expected August–September 2026.</p>
+                </div>
+              </div>
               <div className="card p-6 mb-5">
                 <p className="text-surface-600 leading-relaxed mb-4">
                   <strong>SSC CHSL (Combined Higher Secondary Level)</strong> is an annual national-level examination conducted by the <strong>Staff Selection Commission (SSC)</strong> to recruit candidates for Group C clerical and data-entry posts in central government ministries, departments, constitutional bodies, statutory bodies, and tribunals across India.
@@ -11871,8 +11881,8 @@ function SscChslPage({ exam }: { exam: any }) {
             <section id="important-dates" className="mb-12">
               <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">2. 📅 Important Dates – SSC CHSL 2025–26</h2>
               <p className="text-sm text-surface-500 mb-5">
-                The 2025 cycle is currently in its final stages — Tier 2 completed on 10 April 2026. Result and joining are awaited.
-                💡 <strong>Key update for 2026:</strong> The 2026 notification is expected May–June 2026 with exam in July–September 2026.
+                The 2025 cycle is in its final stages — Tier 2 completed on 10 April 2026, result expected June–July 2026.
+                💡 <strong>Key update:</strong> SSC CHSL 2026 notification is expected in May–June 2026 with Tier 1 exam in August–September 2026. Start preparation now.
               </p>
               <div className="overflow-x-auto rounded-xl border border-surface-200">
                 <table className="w-full text-sm">
@@ -11961,9 +11971,12 @@ function SscChslPage({ exam }: { exam: any }) {
 
             {/* VACANCIES */}
             <section id="vacancies" className="mb-12">
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. 📊 Vacancies & Posts (2025 Cycle)</h2>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. 📊 Vacancies & Posts</h2>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-4">
+                <strong>💡 2026 Cycle Update:</strong> Official vacancy count for SSC CHSL 2026 will be announced in the notification (expected May–June 2026). Based on historical trends and departmental requirement patterns, vacancies are expected to be in the range of <strong>3,000–5,000+</strong>. The 2025 cycle had 3,131 vacancies.
+              </div>
               <p className="text-sm text-surface-500 mb-4">
-                A total of <strong>3,131 tentative vacancies</strong> were announced for the 2025 recruitment cycle. These are distributed across the following posts and categories. Final vacancy count is subject to official confirmation.
+                The table below shows the <strong>2025 cycle post structure</strong>. The same post categories are expected for 2026 with updated vacancy counts. Posts are distributed across central government ministries and departments.
               </p>
               <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
                 <table className="w-full text-sm">
@@ -11972,7 +11985,8 @@ function SscChslPage({ exam }: { exam: any }) {
                       <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Post</th>
                       <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Pay Level</th>
                       <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Pay Scale</th>
-                      <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">~Vacancies</th>
+                      <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">2025 Cycle</th>
+                      <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">2026 Cycle</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -11981,9 +11995,15 @@ function SscChslPage({ exam }: { exam: any }) {
                         <td className="p-3 font-medium text-surface-800">{row.post}</td>
                         <td className="p-3 text-surface-600">{row.payLevel}</td>
                         <td className="p-3 text-emerald-700 font-semibold">{row.payScale}</td>
-                        <td className="p-3 text-right font-bold text-surface-800">{row.vacancies}</td>
+                        <td className="p-3 text-right font-bold text-surface-800">{row.vac2025}</td>
+                        <td className="p-3 text-right font-medium text-amber-700">{row.vac2026}</td>
                       </tr>
                     ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-100 font-bold">
+                      <td className="p-3 text-surface-900" colSpan={3}>TOTAL</td>
+                      <td className="p-3 text-right text-surface-900">3,131</td>
+                      <td className="p-3 text-right text-amber-700">TBN</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -12139,14 +12159,15 @@ function SscChslPage({ exam }: { exam: any }) {
 
             {/* SALARY */}
             <section id="salary" className="mb-12">
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. 💰 Salary & Benefits</h2>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">8. 💰 Salary & Benefits (7th CPC + DA as of Jan 2026)</h2>
+              <p className="text-sm text-surface-500 mb-4">DA has been revised to 55% of basic pay effective January 2026, significantly increasing take-home salaries. All figures below reflect the updated DA rate.</p>
               <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
                 <table className="w-full text-sm">
                   <thead className="bg-surface-900 text-white">
                     <tr>
                       <th className="p-3 text-left text-xs font-semibold uppercase tracking-wide">Post</th>
                       <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Basic Pay</th>
-                      <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">DA (~26%)</th>
+                      <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">DA (~55%)</th>
                       <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">HRA (City-wise)</th>
                       <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">Gross</th>
                       <th className="p-3 text-center text-xs font-semibold uppercase tracking-wide">In-Hand</th>
@@ -12318,7 +12339,7 @@ function SscChslPage({ exam }: { exam: any }) {
                 <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Quick Facts</div>
                 <ul className="space-y-2">
                   {[
-                    { label: 'Total Vacancies', val: '3,131 (2025)' },
+                    { label: 'Vacancies (2025)',  val: '3,131 | 2026: TBN' },
                     { label: 'Exam Level',      val: '12th Pass (10+2)' },
                     { label: 'Application Fee', val: '₹100 | Free (SC/ST/ExSM/Female)' },
                     { label: 'No. of Attempts', val: 'Unlimited' },
