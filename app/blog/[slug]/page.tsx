@@ -3971,7 +3971,7 @@ function HighestSalary12thArticle({ post }: { post: any }) {
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="inline-flex items-center gap-1.5 bg-green-500/20 border border-green-500/40 text-green-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
                   <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-                  Defence
+                  Career
                 </span>
                 <span className="text-white/50 text-xs">{post.publishedDate} · {post.readTime}</span>
               </div>

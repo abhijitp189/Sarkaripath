@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Highest Salary Govt Exam After 12th Pass in 2026 – Ranked List',
     metaTitle: 'Highest Salary Govt Exam After 12th Pass 2026 – Ranked List | TaiyarHo',
     metaDescription: 'Which government exam has the highest salary after 12th pass in 2026? NDA, SSC CHSL, RBI Office Attendant — ranked by in-hand salary with 8th CPC projections.',
-    category: 'Defence',
+    category: 'Career',
     tags: ['Highest Salary After 12th', 'NDA Salary 2026', 'SSC CHSL Salary', 'Government Job 12th Pass', '8th Pay Commission'],
     publishedDate: 'May 5, 2026',
     updatedDate: 'May 5, 2026',
