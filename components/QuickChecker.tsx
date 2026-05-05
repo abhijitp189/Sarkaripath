@@ -50,7 +50,7 @@ function getRelaxation(cat: string): number {
 
 function calculateAge(dob: string): number {
   const birth = new Date(dob);
-  const ref = new Date(new Date().getFullYear(), 7, 1);
+  const ref = new Date(new Date().getFullYear(), 7, 1); // 1 Aug
   let age = ref.getFullYear() - birth.getFullYear();
   const m = ref.getMonth() - birth.getMonth();
   if (m < 0 || (m === 0 && ref.getDate() < birth.getDate())) age--;
@@ -83,13 +83,13 @@ export default function QuickChecker() {
 
       let reason = '';
       if (eligible) {
-        reason = `Age ${calculatedAge} within ${exam.minAge}–${relaxedMaxAge === 99 ? 'no limit' : relaxedMaxAge} yrs · Requires: ${minQualNeeded} ✓`;
+        reason = `Age ${calculatedAge} within ${exam.minAge}–${relaxedMaxAge === 99 ? 'no limit' : relaxedMaxAge} yrs · Needs: ${minQualNeeded} ✓`;
       } else if (!meetsAge && calculatedAge < exam.minAge) {
         reason = `Min age is ${exam.minAge} yrs. You are ${calculatedAge}.`;
       } else if (!meetsAge) {
         reason = `Max age is ${relaxedMaxAge} yrs (${exam.maxAge}+${relaxation} relaxation). You are ${calculatedAge}.`;
       } else {
-        reason = `Requires ${minQualNeeded}. You selected ${qualification}.`;
+        reason = `Needs ${minQualNeeded}. You selected ${qualification}.`;
       }
 
       return { id: exam.id, name: exam.name, slug: exam.slug, category: exam.category, eligible, reason, relaxedMaxAge, requiredQual: minQualNeeded };
@@ -104,6 +104,7 @@ export default function QuickChecker() {
     .filter(r => filterCategory === 'All' || r.category === filterCategory);
 
   const eligibleCount = results.filter(r => r.eligible).length;
+  const relaxation = getRelaxation(category);
 
   return (
     <div className="max-w-3xl">
@@ -111,7 +112,7 @@ export default function QuickChecker() {
       <div className="card p-6 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
           <div>
-            <label className="block text-sm font-medium text-surface-700 mb-1.5">Date of Birth</label>
+            <label className="block text-sm font-medium text-surface-700 mb-1.5">📅 Date of Birth <span className="text-red-500">*</span></label>
             <input type="date" value={dob} onChange={e => setDob(e.target.value)}
               className="w-full px-4 py-2.5 rounded-xl border border-surface-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none text-sm" />
           </div>
@@ -121,17 +122,19 @@ export default function QuickChecker() {
               className="w-full px-4 py-2.5 rounded-xl border border-surface-300 focus:border-primary-500 outline-none text-sm bg-white">
               {['General', 'OBC', 'SC', 'ST', 'PwBD', 'Ex-Servicemen'].map(c => <option key={c}>{c}</option>)}
             </select>
+            {relaxation > 0 && <p className="text-xs text-emerald-600 mt-1 font-medium">+{relaxation} yrs age relaxation applied</p>}
           </div>
           <div>
-            <label className="block text-sm font-medium text-surface-700 mb-1.5">Highest Qualification</label>
+            <label className="block text-sm font-medium text-surface-700 mb-1.5">🎓 Highest Qualification</label>
             <select value={qualification} onChange={e => setQualification(e.target.value)}
               className="w-full px-4 py-2.5 rounded-xl border border-surface-300 focus:border-primary-500 outline-none text-sm bg-white">
               {['8th Pass', '10th Pass', '12th Pass', 'Diploma', 'Graduate', 'Post Graduate'].map(q => <option key={q}>{q}</option>)}
             </select>
           </div>
         </div>
-        <button onClick={checkEligibility} className="btn-primary w-full sm:w-auto">
-          Check All 100 Exams →
+        <button onClick={checkEligibility} disabled={!dob}
+          className={`btn-primary w-full sm:w-auto ${!dob ? 'opacity-50 cursor-not-allowed' : ''}`}>
+          ⚡ Check All 100 Exams Instantly →
         </button>
       </div>
 
@@ -139,29 +142,32 @@ export default function QuickChecker() {
       {age !== null && results.length > 0 && (
         <div id="quick-results">
           {/* Summary */}
-          <div className={`rounded-xl p-5 mb-6 flex items-center gap-4 ${eligibleCount > 0 ? 'bg-emerald-50 border border-emerald-200' : 'bg-red-50 border border-red-200'}`}>
+          <div className={`rounded-2xl p-5 mb-6 flex items-center gap-4 ${eligibleCount > 0 ? 'bg-emerald-50 border border-emerald-200' : 'bg-red-50 border border-red-200'}`}>
             <span className="text-3xl">{eligibleCount > 30 ? '🎉' : eligibleCount > 10 ? '✅' : eligibleCount > 0 ? '👍' : '😔'}</span>
             <div>
               <p className="font-heading font-bold text-surface-900">
-                Eligible for <span className={eligibleCount > 0 ? 'text-emerald-600' : 'text-red-500'}>{eligibleCount} out of 100</span> exams
+                Eligible for <span className={eligibleCount > 0 ? 'text-emerald-600' : 'text-red-500'}>{eligibleCount} out of {allExams.length}</span> exams in 2026
               </p>
               <p className="text-sm text-surface-500 mt-0.5">
-                Age: <strong>{age} years</strong> · Category: <strong>{category}</strong> · +<strong>{getRelaxation(category)} yrs relaxation</strong> · Qualification: <strong>{qualification}</strong>
+                Age: <strong>{age} years</strong> · {category}{relaxation > 0 ? ` (+${relaxation} yrs relaxation)` : ''} · <strong>{qualification}</strong>
               </p>
+              {eligibleCount === 0 && (
+                <p className="text-xs text-red-600 mt-1">No exams matched — try checking if your DOB or qualification is correct.</p>
+              )}
             </div>
           </div>
 
-          {/* Filters */}
+          {/* Filter bar */}
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <button onClick={() => setShowEligibleOnly(!showEligibleOnly)}
-              className={`text-sm px-4 py-2 rounded-lg font-medium transition-all ${showEligibleOnly ? 'bg-emerald-500 text-white' : 'bg-surface-100 text-surface-600'}`}>
-              {showEligibleOnly ? `✅ Eligible Only (${eligibleCount})` : 'Showing All (100)'}
+              className={`text-sm px-4 py-2 rounded-lg font-medium transition-all border ${showEligibleOnly ? 'bg-emerald-500 text-white border-emerald-500' : 'bg-white text-surface-600 border-surface-300 hover:border-emerald-400'}`}>
+              {showEligibleOnly ? `✅ Eligible Only (${eligibleCount})` : `Showing All (${allExams.length})`}
             </button>
             <button onClick={() => setFilterCategory('All')}
-              className={`text-sm px-3 py-2 rounded-lg font-medium transition-all ${filterCategory === 'All' ? 'bg-primary-500 text-white' : 'bg-surface-100 text-surface-600 hover:bg-primary-50'}`}>All</button>
+              className={`text-sm px-3 py-2 rounded-lg font-medium transition-all ${filterCategory === 'All' ? 'bg-primary-500 text-white' : 'bg-surface-100 text-surface-600 hover:bg-primary-50 hover:text-primary-600'}`}>All</button>
             {examCategories.map(cat => (
               <button key={cat.name} onClick={() => setFilterCategory(cat.name)}
-                className={`text-sm px-3 py-2 rounded-lg font-medium transition-all flex items-center gap-1 ${filterCategory === cat.name ? 'bg-primary-500 text-white' : 'bg-surface-100 text-surface-600 hover:bg-primary-50'}`}>
+                className={`text-sm px-3 py-2 rounded-lg font-medium transition-all flex items-center gap-1 ${filterCategory === cat.name ? 'bg-primary-500 text-white' : 'bg-surface-100 text-surface-600 hover:bg-primary-50 hover:text-primary-600'}`}>
                 {cat.icon} {cat.name}
               </button>
             ))}
@@ -174,26 +180,32 @@ export default function QuickChecker() {
               <div key={r.id} className={`card p-4 border-l-4 ${r.eligible ? 'border-l-emerald-500' : 'border-l-red-300'}`}>
                 <div className="flex items-start justify-between mb-1.5 gap-2">
                   <h3 className="font-heading font-semibold text-surface-900 text-sm leading-tight">{r.name}</h3>
-                  <span className={`badge flex-shrink-0 text-xs ${r.eligible ? 'badge-green' : 'bg-red-100 text-red-700'}`}>{r.eligible ? '✓' : '✗'}</span>
+                  <span className={`badge flex-shrink-0 text-xs font-heading font-bold ${r.eligible ? 'badge-green' : 'bg-red-100 text-red-700'}`}>
+                    {r.eligible ? '✓ Eligible' : '✗'}
+                  </span>
                 </div>
-                <div className="flex gap-2 mb-2">
+                <div className="flex gap-2 mb-2 flex-wrap">
                   <span className="badge badge-primary text-xs">{r.category}</span>
                   <span className="text-xs text-surface-400">Min: {r.requiredQual}</span>
                 </div>
                 <p className="text-xs text-surface-500 mb-2 leading-relaxed">{r.reason}</p>
-                <Link href={`/exams/${r.slug}`} className="text-xs text-primary-500 hover:text-primary-600 font-medium">View Exam →</Link>
+                <Link href={`/exams/${r.slug}`} className="text-xs text-primary-500 hover:text-primary-600 font-medium">
+                  View 2026 Guide →
+                </Link>
               </div>
             ))}
           </div>
 
           {filtered.length === 0 && (
             <div className="card p-10 text-center border-dashed border-2 border-surface-200">
-              <p className="text-surface-500">No exams found for this filter.</p>
+              <div className="text-4xl mb-3">🔍</div>
+              <p className="text-surface-600 font-medium">No exams found for this filter</p>
+              <p className="text-surface-400 text-sm mt-1">Try switching to &ldquo;All&rdquo; category or disabling &ldquo;Eligible Only&rdquo;</p>
             </div>
           )}
 
           <p className="text-xs text-surface-400 mt-6 p-4 bg-surface-50 rounded-xl">
-            <strong>Disclaimer:</strong> Approximate check based on general criteria. Age as of 1 August of current year. Always verify from the official notification.
+            <strong>Disclaimer:</strong> Approximate check based on general eligibility criteria. Age calculated as of 1 August {new Date().getFullYear()}. Some exams require specific degrees (Engineering, MBBS, B.Ed). Always verify from the official 2026 notification.
           </p>
         </div>
       )}

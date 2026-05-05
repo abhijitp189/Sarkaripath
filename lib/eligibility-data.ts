@@ -201,7 +201,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'UPSC IAS',
     icon: '🏛️',
     slug: 'upsc-ias',
-    tip: 'You are eligible for UPSC CSE! Start with NCERTs and build your foundation.',
+    tip: 'You are eligible for UPSC CSE 2026! Start with NCERTs (Class 6–12), build your NCERT base, then move to standard references. The 2026 notification was released in February.',
   },
   {
     id: 'ssc',
@@ -209,7 +209,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'SSC CGL',
     icon: '📝',
     slug: 'ssc-cgl',
-    tip: 'You qualify for SSC CGL! Focus on Maths and Reasoning to crack Tier 1.',
+    tip: 'You qualify for SSC CGL 2026! The notification is out — focus on Quantitative Aptitude and Reasoning for Tier 1. In-hand salary can reach ₹75,000/month for top posts.',
   },
   {
     id: 'ibps',
@@ -217,7 +217,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'IBPS PO',
     icon: '🏦',
     slug: 'ibps-po',
-    tip: 'IBPS PO is yours to crack! Master puzzles and DI for Mains.',
+    tip: 'IBPS PO 2026 is expected July–August. Master puzzles, seating arrangement, and DI. In-hand salary ~₹52,000–₹65,000/month (Metro city) under 12th Bipartite Settlement.',
   },
   {
     id: 'sbi',
@@ -225,7 +225,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'SBI PO',
     icon: '💼',
     slug: 'sbi-po',
-    tip: 'SBI PO eligibility confirmed! Practice mock tests and improve your speed.',
+    tip: 'SBI PO 2026 notification was released in March. Practice mock tests daily and aim for ₹75,000/month in-hand salary at one of India\'s biggest banks.',
   },
   {
     id: 'rrb',
@@ -233,6 +233,6 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'RRB NTPC',
     icon: '🚂',
     slug: 'rrb-ntpc',
-    tip: 'Railway career awaits! General Awareness is key — read Lucent GK daily.',
+    tip: 'Railway career awaits! RRB NTPC 2026 notification is expected. General Awareness accounts for 40 marks — read Lucent GK and follow current affairs daily.',
   },
 ];
