@@ -156,6 +156,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'bpsc-cce') {
+    return {
+      title: 'BPSC CCE 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'BPSC 70th CCE 2026: Prelims completed 13 Apr 2025, Mains result awaited. BPSC 71st CCE notification expected 2026. 1,473 vacancies for Deputy Collector, DSP, BDO & 34+ posts. Syllabus, eligibility (Graduate, 20–37 yrs), salary & free resources.',
+      keywords: 'BPSC CCE 2026, BPSC 71st notification, BPSC taiyari, BPSC syllabus Hindi, बीपीएससी परीक्षा 2026, Bihar civil services, Deputy Collector bharti Bihar, sarkari naukri Bihar 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/bpsc-cce/' },
+      other: { 'description:hi': 'BPSC CCE 2026 – बिहार लोक सेवा आयोग। 70वीं CCE Prelims 13 अप्रैल 2025 को हुई। 71वीं अधिसूचना 2026 में अपेक्षित। 1,473 रिक्तियाँ। सिलेबस, पात्रता (स्नातक, 20-37 वर्ष), वेतन।' },
+    };
+  }
+
   if (params.slug === 'ibps-rrb-po') {
     return {
       title: 'IBPS RRB PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -340,6 +350,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'upsc-nda') return <UpscNdaPage exam={brief} />;
   if (brief && brief.slug === 'up-police-si') return <UpPoliceSiPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
+  if (brief && brief.slug === 'bpsc-cce') return <BpscCcePage exam={brief} />;
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'rpf-constable') return <RpfConstablePage exam={brief} />;
@@ -20896,6 +20907,748 @@ function UpscNdaPage({ exam }: { exam: any }) {
               </div>
             </aside>
           </div>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── BPSC CCE RICH PAGE ───────────────────────────────────────────────────────
+function BpscCcePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'BPSC 70th CCE – Notification Released',            date: '28 September 2024',            status: 'done' },
+    { event: 'Online Application Opens (70th CCE)',               date: '28 Sep – 18 Oct 2024',         status: 'done' },
+    { event: 'Application Correction Window (70th CCE)',          date: 'November 2024',                status: 'done' },
+    { event: 'Admit Card Released (70th Prelims)',                 date: 'March 2025',                   status: 'done' },
+    { event: 'BPSC 70th CCE Prelims (PT)',                        date: '13 April 2025',                status: 'done' },
+    { event: 'Prelims Answer Key Released',                       date: 'April 2025',                   status: 'done' },
+    { event: 'BPSC 70th Prelims Result Declared',                 date: '30 June 2025',                 status: 'done' },
+    { event: 'Mains Application Window (70th CCE)',               date: 'July – August 2025',           status: 'done' },
+    { event: 'BPSC 70th CCE Mains Exam',                         date: 'October – November 2025',      status: 'done' },
+    { event: 'BPSC 70th Mains Result',                           date: '2026 (TBN)',                   status: 'tbn' },
+    { event: 'Interview / Personality Test (70th CCE)',           date: 'To be notified (TBN)',         status: 'tbn' },
+    { event: 'BPSC 70th Final Result & Merit List',              date: 'To be notified (TBN)',         status: 'tbn' },
+    { event: '💡 BPSC 71st CCE Notification (Expected)',          date: 'Mid-2026 (TBN)',               status: 'upcoming' },
+    { event: 'BPSC 71st Application Window (Expected)',           date: '2026 (TBN)',                   status: 'upcoming' },
+    { event: 'BPSC 71st CCE Prelims (Expected)',                  date: 'Late 2026 (TBN)',              status: 'upcoming' },
+  ];
+
+  const prelims = [
+    { section: 'General Studies', questions: 150, marks: 150, duration: '2 hours', note: '0.25 negative marking' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper 1 – General Hindi',                       marks: 100, duration: '3 hours', type: 'Qualifying (30% required)' },
+    { paper: 'Paper 2 – General Studies I (History, Polity)', marks: 300, duration: '3 hours', type: 'Merit-based' },
+    { paper: 'Paper 3 – General Studies II (Sci, Geography)', marks: 300, duration: '3 hours', type: 'Merit-based' },
+    { paper: 'Optional Subject Paper',                        marks: 300, duration: '3 hours', type: 'Merit-based' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'Deputy Collector',                               payLevel: 'Pay Level 11', payScale: '₹67,700 – ₹2,08,700', vac70: '12',   vac71: 'TBN' },
+    { post: 'Deputy Superintendent of Police (DSP)',          payLevel: 'Pay Level 11', payScale: '₹67,700 – ₹2,08,700', vac70: '13',   vac71: 'TBN' },
+    { post: 'Block Development Officer (BDO)',                payLevel: 'Pay Level 10', payScale: '₹56,100 – ₹1,77,500', vac70: '80',   vac71: 'TBN' },
+    { post: 'District Minority Welfare Officer',              payLevel: 'Pay Level 9',  payScale: '₹53,100 – ₹1,67,800', vac70: '44',   vac71: 'TBN' },
+    { post: 'Supply Inspector (Food & Civil Supplies)',       payLevel: 'Pay Level 7',  payScale: '₹44,900 – ₹1,42,400', vac70: '170',  vac71: 'TBN' },
+    { post: 'Child Development Project Officer (CDPO)',       payLevel: 'Pay Level 8',  payScale: '₹47,600 – ₹1,51,100', vac70: '72',   vac71: 'TBN' },
+    { post: 'Revenue Officer / Circle Officer',               payLevel: 'Pay Level 7',  payScale: '₹44,900 – ₹1,42,400', vac70: '184',  vac71: 'TBN' },
+    { post: 'Planning Officer',                               payLevel: 'Pay Level 9',  payScale: '₹53,100 – ₹1,67,800', vac70: '11',   vac71: 'TBN' },
+    { post: 'Probation Officer',                              payLevel: 'Pay Level 7',  payScale: '₹44,900 – ₹1,42,400', vac70: '25',   vac71: 'TBN' },
+    { post: 'Other Group A/B Posts (34+ categories total)',   payLevel: 'Various',      payScale: '₹44,900 – ₹2,08,700', vac70: '862',  vac71: 'TBN' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Pay Level 11 – e.g. Deputy Collector)',   amount: '₹67,700',       note: '7th Pay Commission' },
+    { component: 'Dearness Allowance (DA @ 55%)',                      amount: '~₹37,235',      note: 'Revised Jan 2026' },
+    { component: 'House Rent Allowance (HRA)',                         amount: '₹5,416–₹16,248', note: 'Depends on city (X/Y/Z)' },
+    { component: 'Transport Allowance',                                amount: '₹1,350–₹3,600', note: 'Plus DA on TA' },
+    { component: 'Gross Salary (Deputy Collector / DSP)',              amount: '~₹1,12,000–₹1,25,000', note: 'Before deductions' },
+    { component: 'In-Hand Salary (Deputy Collector / DSP)',            amount: '₹90,000–₹1,05,000',    note: 'After NPS and tax deductions' },
+    { component: 'In-Hand Salary (BDO / Circle Officer – Level 7–8)', amount: '₹58,000–₹72,000',       note: 'After NPS and tax deductions' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'History (Indian & World)',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Ancient India – Indus Valley, Vedic Period, Mauryan, Gupta empires',
+        'Medieval India – Delhi Sultanate, Mughal Empire, Bhakti & Sufi movements',
+        'Modern India – British colonial policy, Freedom Movement, 1857 Revolt',
+        'Indian National Congress and major independence events',
+        'Bihar History – Magadh Empire, Nalanda, Pataliputra as ancient capital',
+        'Post-independence consolidation, Five Year Plans',
+        'World History – French Revolution, World Wars, Cold War',
+        'Bihar Reorganisation – Formation of Bihar and Jharkhand (2000)',
+      ],
+    },
+    {
+      subject: 'Geography (Indian & Bihar)',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Physical Geography – Geomorphology, Climatology, Oceanography',
+        'Indian Geography – Mountains, Rivers, Soil types, Vegetation, Resources',
+        'Bihar Geography – Location, Rivers (Ganga, Gandak, Kosi), Districts',
+        'Agriculture in Bihar – Crops, Irrigation, Flood management',
+        'Economic Geography – Industries, Transport, Trade',
+        'Population Geography – Census 2011 data, Urbanisation',
+        'World Geography – Continents, Climate zones, Major rivers',
+        'Environmental Geography – Biodiversity, Conservation',
+      ],
+    },
+    {
+      subject: 'Indian Polity & Governance',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Constitution of India – Preamble, Fundamental Rights, DPSP, FDuties',
+        'Parliament – Structure, Legislative process, Bills',
+        'Executive – President, PM, Council of Ministers, Governor',
+        'Judiciary – Supreme Court, High Courts, Judicial Review',
+        'Panchayati Raj – 73rd & 74th Amendments, Bihar Panchayat system',
+        'Bihar governance – State Legislature, Chief Minister, Ministers',
+        'Important Amendments – 42nd, 44th, 86th, 101st, etc.',
+        'Constitutional bodies – Election Commission, CAG, UPSC/BPSC',
+      ],
+    },
+    {
+      subject: 'Economy (Indian & Bihar)',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'National Income – GDP, GNP, NNP, Per Capita Income',
+        'Budgeting & Fiscal Policy – Union Budget components, Deficit types',
+        'Banking & Finance – RBI, Commercial Banks, NABARD, Cooperative Banks',
+        'Planning – NITI Aayog, Five Year Plans, development schemes',
+        'Bihar Economy – Agriculture, MSME sector, infrastructure',
+        'Government schemes – PM Kisan, Ayushman Bharat, Bihar-specific schemes',
+        'Poverty & Unemployment – Concepts, measures, MGNREGA',
+        'International Trade – Balance of Payments, WTO, trade policy',
+      ],
+    },
+    {
+      subject: 'Science & Technology',
+      color: 'text-purple-700',
+      bg: 'bg-purple-50 border-purple-200',
+      topics: [
+        'Basic Physics – Newton Laws, Optics, Electricity, Sound',
+        'Basic Chemistry – Periodic table, Acids-Bases-Salts, Carbon chemistry',
+        'Basic Biology – Cell theory, Human body systems, Genetics basics',
+        'Nutrition, Diseases, and Public Health (Bihar-specific disease burden)',
+        'Environment & Ecology – Pollution, Climate change, Biodiversity',
+        'Computers & IT – Internet basics, E-governance',
+        'Space technology – ISRO missions, Satellite applications',
+        'Current Science & Technology developments (national)',
+      ],
+    },
+    {
+      subject: 'General Hindi (Mains Paper 1)',
+      color: 'text-orange-700',
+      bg: 'bg-orange-50 border-orange-200',
+      topics: [
+        'निबंध लेखन – सामाजिक, आर्थिक, राजनीतिक विषयों पर',
+        'प्रतिवेदन / रिपोर्ट लेखन – प्रशासनिक शैली',
+        'पत्र लेखन – शासकीय और अर्धशासकीय पत्र',
+        'अनुच्छेद का सारांश लेखन',
+        'संधि, समास, विलोम, पर्यायवाची, मुहावरे',
+        'वाक्य शुद्धि एवं वर्तनी सुधार',
+        'व्याकरण – कारक, वचन, लिंग, काल, उपसर्ग, प्रत्यय',
+        'हिन्दी साहित्य की प्रमुख रचनाएँ (बेसिक ज्ञान)',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', title: 'Foundation – NCERT + Bihar Focus', tasks: 'Read NCERT History (6–12), Geography (6–12), and Polity (Class 11–12) thoroughly. Simultaneously, start Arihant\'s Bihar-specific GK — this is unique to BPSC and most aspirants ignore it. Study Bihar\'s history, geography, economy, and governance structure in detail. Make handwritten notes from Day 1.' },
+    { month: 'Month 3–4', title: 'Economy + Science + Current Affairs', tasks: 'Complete Indian Economy from Ramesh Singh or NCERT Class 11–12. Cover Science & Technology — focus on environment, biotechnology, and IT basics. Start daily The Hindu or Indian Express reading (30 minutes). Revise Bihar-specific current affairs monthly. Begin Prelims-pattern MCQ practice for all subjects.' },
+    { month: 'Month 5', title: 'Prelims Mock Tests & Speed Building', tasks: 'Give 3–4 full BPSC Prelims mock tests per week (150 MCQs/2 hours). Track accuracy by section. Target score: 100+/150 in mocks. The BPSC Prelims cut-off typically ranges from 87 to 105 for General category. Use previous year papers (BPSC 67th, 68th, 69th PYQs) as primary reference.' },
+    { month: 'Month 6', title: 'Mains Preparation Begins', tasks: 'Start writing practice for Mains — answer writing is a distinct skill. Begin with Hindi paper: essays (1,000–1,200 words), reports, official letters. For GS papers, practice 15-mark and 8-mark answer formats. Join a BPSC Mains test series if possible. Optional subject preparation should run parallel from Month 3.' },
+    { month: 'Month 7–8', title: 'Mains Intensive + Optional Subject', tasks: 'Full focus on Mains GS papers and Optional. Revise all NCERT and standard texts. Practice minimum 3 answers daily. Target full-length Mains mock test every Sunday. Hindi Essay preparation — practice at least 30 topic-wise essays. Revise Bihar GK intensively as it plays a big role in GS papers.' },
+    { month: 'Month 9', title: 'Interview Preparation (If Qualified)', tasks: 'Read detailed current affairs of last 1 year. Revise Bihar administrative structure, district names, recent Bihar government initiatives. Practice mock interviews. Know your optional subject deeply — it may be questioned. Stay updated on national and Bihar-specific news. Focus on personality presentation, language, and composure.' },
+  ];
+
+  const books = [
+    { subject: 'Bihar History & GK',      title: 'Bihar Ek Parichay / Bihar Samanya Gyan',               author: 'Arihant / Lucent Publications',    pdf: null },
+    { subject: 'Indian History',           title: 'History of Modern India',                              author: 'Bipan Chandra',                     pdf: null },
+    { subject: 'Indian Polity',            title: 'Indian Polity',                                        author: 'M. Laxmikanth',                     pdf: null },
+    { subject: 'Indian Economy',           title: 'Indian Economy: Key Concepts',                         author: 'Sanjeev Verma',                     pdf: null },
+    { subject: 'Geography',                title: 'Geography of India',                                   author: 'Majid Husain',                      pdf: null },
+    { subject: 'General Science',          title: 'Lucent\'s General Science',                            author: 'Lucent Publications',               pdf: null },
+    { subject: 'Hindi Essay & Writing',   title: 'Sahitya Bhawan Hindi Nibandh',                         author: 'Sahitya Bhawan',                    pdf: null },
+    { subject: 'Previous Year Papers',    title: 'BPSC Chapterwise Solved Papers (67th–70th)',           author: 'Arihant / Examcart',                pdf: null },
+    { subject: 'Optional: Public Admin',  title: 'Public Administration: Concepts & Theories',           author: 'Mohit Bhattacharya',                pdf: null },
+    { subject: 'Current Affairs',         title: 'Pratiyogita Darpan / Yojana Magazine',                 author: 'Monthly magazines',                  pdf: null },
+  ];
+
+  const tips = [
+    { title: 'Bihar GK is non-negotiable — it separates BPSC toppers', body: 'Roughly 20–30% of Prelims questions are Bihar-specific: history, rivers, districts, schemes, government policies, and flora/fauna of Bihar. Most candidates prepare general GK well but lose the Bihar GK battle. Spend dedicated time on Bihar Ek Parichay and Bihar government websites.' },
+    { title: 'Optional subject choice will define your Mains rank', body: 'The Optional paper is 300 marks — as much as either GS paper. Choose your optional (e.g. Public Administration, History, Geography, Sociology) based on your graduation background, available study material, and previous year BPSC scoring trends. Do not choose based on what friends select.' },
+    { title: 'Start answer writing from Month 3, not Month 6', body: 'BPSC Mains is entirely descriptive. Candidates who start writing practice late never develop the speed or structure needed. Write at least 2–3 full Mains-pattern answers daily from Month 3. For 15-mark answers, target 250 words in 15 minutes.' },
+    { title: 'Hindi paper is qualifying — but don\'t take it lightly', body: 'The Hindi paper is qualifying at 30% (30/100 marks) but a poor score can disqualify you despite excellent GS performance. Practise essay writing in proper administrative Hindi style. Pay attention to official letter (शासकीय पत्र) and report (प्रतिवेदन) formats which are frequently asked.' },
+    { title: 'BPSC 70th analysis: Cut-offs and coaching trap', body: 'The 70th CCE Prelims cut-off for General category was approximately 100–105 marks. The exam rewards candidates who have strong foundations over those who use shortcuts. Coaching institutes are optional — many BPSC toppers are self-study candidates who used standard books consistently.' },
+    { title: 'Map Bihar districts and administrative structure', body: 'Bihar has 38 districts across 9 administrative divisions. Questions on district headquarters, rivers flowing through districts, industrial zones, and flood-prone areas appear in both Prelims and Mains. A physical map of Bihar on your study table is essential.' },
+  ];
+
+  const faqs = [
+    { q: 'What is BPSC CCE 2026 and when will the notification come?', a: 'BPSC CCE (Combined Competitive Examination) is the Bihar state civil services exam conducted by the Bihar Public Service Commission. The 70th CCE Prelims was held on 13 April 2025 with Mains completed in Oct–Nov 2025. The 71st CCE notification is expected in mid-2026. Keep checking bpsc.bih.nic.in for official updates.' },
+    { q: 'What posts can I get through BPSC CCE?', a: 'BPSC CCE recruits for 34+ posts including Deputy Collector, Deputy Superintendent of Police (DSP), Block Development Officer (BDO), Child Development Project Officer (CDPO), Revenue Officer, Circle Officer, Supply Inspector, Probation Officer, District Minority Welfare Officer, and many more Group A and Group B Bihar state service posts.' },
+    { q: 'What is the BPSC CCE 2026 age limit?', a: 'The general age limit for BPSC CCE is 20–37 years as on 1 August of the application year. Relaxations apply: OBC (Bihar domicile) +3 years (20–40), SC/ST +5 years (20–42), PwBD +10 years. Women of Bihar domicile (all categories) get relaxation up to age 40 for Group B posts. Always verify exact age limits in the official notification.' },
+    { q: 'How many stages are there in BPSC CCE selection?', a: 'BPSC CCE has three stages: (1) Preliminary Test (PT) — 150 MCQs, 150 marks, qualifying nature; (2) Main Examination — 4 papers: General Hindi (qualifying), GS Paper 1, GS Paper 2, and one Optional Subject (each 300 marks); (3) Personality Test / Interview — for final merit list. The final rank is based on Mains + Interview combined score.' },
+    { q: 'Which optional subjects are available for BPSC Mains?', a: 'BPSC offers 34 optional subjects including: Public Administration, History, Geography, Sociology, Political Science, Economics, Mathematics, Physics, Chemistry, Zoology, Botany, Agriculture, Hindi Literature, Urdu Literature, Sanskrit, Engineering (Civil/Electrical/Mechanical), Law, Psychology, Commerce, Labour & Social Welfare, Management, Anthropology, and others. Public Administration, History, and Geography are the most popular choices.' },
+    { q: 'What is the BPSC CCE salary for Deputy Collector and BDO?', a: 'Deputy Collector and DSP are Pay Level 11 posts: Basic Pay ₹67,700 with DA at 55% (Jan 2026). In-hand salary is approximately ₹90,000–₹1,05,000/month after NPS and tax deductions. BDO is a Pay Level 10 post: Basic ₹56,100, in-hand approximately ₹72,000–₹85,000/month. Benefits include HRA, TA, government accommodation/HRA, LTC, and CGHS medical facilities.' },
+    { q: 'Can a candidate from outside Bihar apply for BPSC CCE?', a: 'Yes. BPSC CCE is open to all Indian citizens meeting the educational and age criteria. However, certain reservations (OBC, EWS, BC, EBC) are applicable only to candidates with Bihar domicile. Candidates from other states can apply as General category. Some posts may have domicile-specific conditions — check the official notification for each cycle.' },
+    { q: 'How many vacancies were there in BPSC 70th CCE?', a: 'BPSC 70th CCE was notified for 1,473 vacancies across 34+ post categories in various Bihar state government departments. The largest chunk was Supply Inspector (170 posts), Circle Officer/Revenue Officer (184 posts), BDO (80 posts), CDPO (72 posts), and various other posts. DSP had 13 vacancies and Deputy Collector had 12 vacancies in the 70th CCE.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">BPSC CCE 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">State PSC</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Bihar State</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Graduate Eligible</span>
+            <span className="bg-yellow-400/20 text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 71st CCE: 2026 (TBN)</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            BPSC CCE 2026 –<br className="hidden sm:block" /> Notification, Syllabus, Eligibility & Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            BPSC 70th CCE Prelims held on 13 April 2025; Mains completed in Oct–Nov 2025. 1,473 vacancies for Deputy Collector, DSP, BDO & 34+ posts. BPSC 71st CCE notification expected mid-2026. Graduate eligible, age 20–37 years.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies (70th CCE)', value: '1,473' },
+              { label: '71st Notification',    value: 'Mid-2026 (TBN)' },
+              { label: 'Min. Qualification',   value: 'Graduate' },
+              { label: 'In-Hand Salary',       value: '₹58K–₹1.05L/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── MAIN CONTENT ── */}
+          <div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is BPSC CCE?</h2>
+              <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-4 mb-5 flex gap-3">
+                <span className="text-xl shrink-0">🔔</span>
+                <div>
+                  <p className="text-sm font-semibold text-yellow-900 mb-1">BPSC 71st CCE Notification Expected: Mid-2026</p>
+                  <p className="text-xs text-yellow-800">The 70th CCE Mains was completed in October–November 2025. Results and interviews are pending. The 71st CCE notification is expected in mid-2026 — now is the ideal time to start or continue preparation so you are ready when the notification drops.</p>
+                </div>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  <strong>BPSC CCE (Bihar Public Service Commission Combined Competitive Examination)</strong> is the premier state-level civil services examination in Bihar, conducted by the <strong>Bihar Public Service Commission (BPSC)</strong>. It is the gateway to the most prestigious administrative, police, and development officer posts in Bihar&apos;s state government.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  Successful candidates are appointed as <strong>Deputy Collector, Deputy Superintendent of Police (DSP), Block Development Officer (BDO), Child Development Project Officer (CDPO), Circle Officer, Supply Inspector</strong>, and 34+ other Group A and Group B posts across all departments of the Bihar state government.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  The selection process has three stages: a Preliminary Test (qualifying), a Main Examination (merit-based, with GS papers and an optional subject), and a Personality Test (interview). The final merit list is prepared based on combined Mains + Interview scores. BPSC follows a <strong>domicile-neutral policy</strong> for General category candidates — any graduate from any state can apply.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',    value: 'Bihar Public Service Commission (BPSC)' },
+                  { label: 'Post Group',          value: 'Group A & Group B (State Service)' },
+                  { label: 'Exam Frequency',      value: 'Annual (approx.)' },
+                  { label: 'Official Website',    value: 'bpsc.bih.nic.in' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">2. 📅 Important Dates – BPSC CCE 2025–26</h2>
+              <p className="text-sm text-surface-500 mb-5">
+                The 70th CCE is in its final stages — Mains completed, result and interviews pending for 2026. 💡 <strong>Key update:</strong> BPSC 71st CCE notification is expected in mid-2026. Use this waiting period for focused preparation.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ TBN = To Be Notified. Always verify on <a href="https://bpsc.bih.nic.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">bpsc.bih.nic.in</a> before taking any action.</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. 🎓 Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed mb-3">
+                    Must hold a <strong>Bachelor&apos;s Degree (Graduation)</strong> in any discipline from a recognised university. Final year students may apply provisionally — degree must be completed before joining.
+                  </p>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-xs text-blue-800">
+                    <strong>Note:</strong> No specific stream is required for most posts. Engineering, Medical, and Agriculture graduates are also eligible and often have an advantage in optional subject selection.
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      { cat: 'General / EWS (Male)', age: '20 – 37 years' },
+                      { cat: 'OBC / BC / EBC (Bihar Domicile)', age: '20 – 40 years (+3 yrs)' },
+                      { cat: 'SC / ST', age: '20 – 42 years (+5 yrs)' },
+                      { cat: 'Women (Bihar domicile, Group B)', age: 'Up to 40 years' },
+                      { cat: 'PwBD', age: '+10 years relaxation' },
+                      { cat: 'Ex-Servicemen', age: 'As per Bihar Govt rules' },
+                    ].map((r) => (
+                      <div key={r.cat} className="flex justify-between text-xs">
+                        <span className="text-surface-600">{r.cat}</span>
+                        <span className="font-semibold text-surface-800">{r.age}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed">
+                    Must be a citizen of India. Reservation benefits (OBC, BC, EBC, SC, ST, EWS) are applicable only to candidates with Bihar domicile. Candidates from other states may apply as General category.
+                  </p>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🔁</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Number of Attempts</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed">
+                    There is <strong>no prescribed attempt limit</strong> for BPSC CCE. You can appear as many times as you wish as long as you meet the age limit on the cut-off date specified in the official notification for each cycle.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* 4. VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. 📊 Vacancies & Posts</h2>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-4">
+                <strong>💡 2026 Cycle Update:</strong> BPSC 71st CCE vacancy count will be announced in the notification (expected mid-2026). Based on historical trends, vacancies typically range from <strong>800 to 1,800+</strong>. The 70th CCE had 1,473 vacancies across 34+ post categories.
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Pay Level</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Pay Scale</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">70th CCE</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">71st CCE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyPosts.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600">{row.payLevel}</td>
+                        <td className="p-3 text-surface-600">{row.payScale}</td>
+                        <td className="p-3 font-semibold text-emerald-700">{row.vac70}</td>
+                        <td className="p-3 text-surface-400 text-xs">{row.vac71}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400">⚠️ 71st CCE vacancy figures will be updated when the official notification is released on bpsc.bih.nic.in.</p>
+            </section>
+
+            {/* 5. SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. 🔄 Selection Process</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                {[
+                  { step: '1', title: 'Preliminary Test (PT)', desc: '150 MCQs | 150 marks | 2 hours. Qualifying in nature — marks are NOT counted in final merit. Cut-off for Gen/EWS typically 95–110 marks.' },
+                  { step: '2', title: 'Main Examination', desc: '4 papers: Hindi (qualifying) + GS I + GS II + Optional Subject. Total 900 marks. These marks determine your rank.' },
+                  { step: '3', title: 'Personality Test (Interview)', desc: '120 marks. Final merit = Mains 900 + Interview 120 = 1020 marks total. Post allocation is based on merit + preference.' },
+                ].map((s) => (
+                  <div key={s.step} className="card p-5">
+                    <div className="w-8 h-8 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm mb-3">{s.step}</div>
+                    <h3 className="font-heading font-semibold text-surface-800 mb-2">{s.title}</h3>
+                    <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                <strong>⚠️ Important:</strong> Prelims is <em>qualifying only</em>. No matter how high you score in Prelims, those marks are not added to your final score. Focus on clearing the cut-off in Prelims, then shift 100% effort to Mains preparation.
+              </div>
+            </section>
+
+            {/* 6. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. 📋 Exam Pattern</h2>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Stage 1 – Preliminary Test (PT)</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Duration</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prelims.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-surface-600">{row.questions}</td>
+                        <td className="p-3 font-semibold text-emerald-700">{row.marks}</td>
+                        <td className="p-3 text-surface-600">{row.duration}</td>
+                        <td className="p-3 text-xs text-surface-500">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Stage 2 – Main Examination</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Paper</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Duration</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mainsPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.paper}</td>
+                        <td className="p-3 font-semibold text-emerald-700">{row.marks}</td>
+                        <td className="p-3 text-surface-600">{row.duration}</td>
+                        <td className="p-3 text-xs text-surface-500">{row.type}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-surface-50 border border-surface-200 rounded-xl p-4 text-xs text-surface-600">
+                <strong>Total Mains Marks:</strong> 900 (Hindi qualifying + GS I 300 + GS II 300 + Optional 300) | <strong>Interview:</strong> 120 marks | <strong>Grand Total:</strong> 1,020 marks.
+              </div>
+            </section>
+
+            {/* 7. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">7. 📖 Detailed Syllabus</h2>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-5">
+                <strong>💡 Bihar-specific content</strong> appears in both Prelims and Mains GS papers. Approximately 20–30% of questions test knowledge specific to Bihar&apos;s history, geography, polity, economy, and current affairs. Prepare standard GS AND Bihar GK in parallel.
+              </div>
+              <div className="space-y-4">
+                {syllabus.map((sub, i) => (
+                  <div key={i} className={`rounded-xl border p-5 ${sub.bg}`}>
+                    <h3 className={`font-heading font-semibold mb-3 ${sub.color}`}>{sub.subject}</h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+                      {sub.topics.map((t, j) => (
+                        <li key={j} className="text-xs text-surface-700 flex gap-2">
+                          <span className="mt-1 shrink-0">•</span>
+                          <span>{t}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 8. SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. 💰 Salary & Benefits</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Salary Component</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Amount</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.component}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.amount}</td>
+                        <td className="p-3 text-xs text-surface-500">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Post-Appointment Perks & Benefits</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { icon: '🏠', title: 'Government Accommodation', desc: 'Official government quarter or HRA in lieu at all posting locations across Bihar.' },
+                  { icon: '🏥', title: 'Medical Benefits', desc: 'Free medical treatment for officer and family under Bihar government health scheme.' },
+                  { icon: '🎓', title: 'Education Allowance', desc: 'Children Education Allowance for up to 2 children up to Class 12.' },
+                  { icon: '🚗', title: 'Vehicle & TA', desc: 'Official vehicle for field officers (BDO, Circle Officer). Travel allowance and daily allowance on tour.' },
+                  { icon: '📅', title: 'Leave & LTC', desc: 'Annual, medical, casual, and maternity/paternity leaves. Leave Travel Concession for family.' },
+                  { icon: '🏛️', title: 'Pension (Old Scheme)', desc: 'Officers joining under old scheme are eligible for NPS. Certain categories may still have defined pension benefits.' },
+                ].map((item) => (
+                  <div key={item.title} className="card p-4 flex gap-3">
+                    <span className="text-2xl shrink-0">{item.icon}</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-surface-800 text-sm">{item.title}</h4>
+                      <p className="text-xs text-surface-500 mt-1">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 9. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. 📅 BPSC 2026 Preparation Roadmap (9-Month Plan)</h2>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-5">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-xs text-center leading-tight">
+                        {step.month.split('–')[0].replace('Month ', 'M')}
+                      </div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{step.month} — {step.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{step.tasks}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 10. BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. 📖 Best Books for BPSC CCE 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Author / Publisher</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Free PDF</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 text-surface-500 text-xs font-medium">{b.subject}</td>
+                        <td className="p-3 font-medium text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                        <td className="p-3"><span className="text-surface-400 text-xs">—</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 11. TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. 💡 Expert Tips for BPSC CCE 2026</h2>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center text-accent-600 font-heading font-bold text-sm shrink-0">
+                      {i + 1}
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{tip.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 12. FAQs */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. ❓ Frequently Asked Questions – BPSC CCE 2026</h2>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">ON THIS PAGE</p>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 hover:pl-1 transition-all">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              <a href="https://bpsc.bih.nic.in" target="_blank" rel="noopener noreferrer" className="card p-5 block hover:border-primary-300 transition-colors">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-2">Official Website</p>
+                <p className="font-heading font-semibold text-primary-600 text-sm">bpsc.bih.nic.in →</p>
+                <p className="text-xs text-surface-500 mt-1">Notifications, Admit Card, Results</p>
+              </a>
+
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">BPSC CCE At a Glance</p>
+                <div className="space-y-2 text-xs">
+                  {[
+                    { label: 'Minimum Qualification', value: 'Graduate (any stream)' },
+                    { label: 'Age Limit (General)',    value: '20 – 37 years' },
+                    { label: 'Application Fee',        value: '₹600 (Gen) / ₹150 (SC/ST Bihar)' },
+                    { label: '70th CCE Vacancies',     value: '1,473 posts' },
+                    { label: 'Prelims Format',         value: '150 MCQs, 150 marks, 2 hrs' },
+                    { label: 'Mains (Merit) Marks',    value: '900 marks (3 papers)' },
+                    { label: 'Interview Marks',        value: '120 marks' },
+                    { label: 'Total (Mains + Ivw)',    value: '1,020 marks' },
+                  ].map((r) => (
+                    <div key={r.label} className="flex justify-between gap-2">
+                      <span className="text-surface-500">{r.label}</span>
+                      <span className="font-semibold text-surface-800 text-right">{r.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">Other State PSC Exams</p>
+                <div className="space-y-2">
+                  {[
+                    { name: 'UPPSC PCS 2026',        slug: 'uppsc-pcs' },
+                    { name: 'MPSC State Services',   slug: 'mpsc-rajyaseva' },
+                    { name: 'RPSC RAS 2026',         slug: 'rpsc-ras' },
+                    { name: 'MPPSC State Service',   slug: 'mppsc-state-service' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+
+              <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for BPSC CCE 2026.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+            </div>
+          </aside>
         </div>
       </div>
 
