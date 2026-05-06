@@ -278,10 +278,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (params.slug === 'sbi-po') {
     return {
       title: 'SBI PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
-      description: 'SBI PO 2026: Notification expected Oct–Nov 2026. 2,000–3,000 vacancies. Check complete Prelims & Mains syllabus, exam pattern, GE & Interview, eligibility (Graduate, 21–30 yrs), salary ₹65,000–₹75,000/month and free preparation resources.',
+      description: 'SBI PO 2026: Notification expected June 2026. 2,000–3,000 vacancies. Check Prelims & Mains syllabus, exam pattern, Phase 3 Psychometric Test + GE & Interview, eligibility (Graduate, 21–30 yrs), salary ₹72,500–₹76,000/month (DA revised May 2026) and free preparation resources.',
       keywords: 'SBI PO 2026, SBI PO taiyari, SBI PO notification 2026, SBI PO syllabus Hindi, SBI PO परीक्षा तैयारी, State Bank PO bharti, bank PO sarkari naukri 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/sbi-po/' },
-      other: { 'description:hi': 'SBI PO 2026 – भारत के सबसे बड़े बैंक SBI में 2,000–3,000 रिक्तियाँ। सिलेबस, परीक्षा पैटर्न (प्रारंभिक + मुख्य + GE/साक्षात्कार), पात्रता, आयु 21-30 वर्ष, वेतन ₹65,000–₹75,000/माह और मुफ्त संसाधन।' },
+      other: { 'description:hi': 'SBI PO 2026 – भारत के सबसे बड़े बैंक SBI में 2,000–3,000 रिक्तियाँ। अधिसूचना जून 2026 (अपेक्षित)। सिलेबस, परीक्षा पैटर्न (प्रारंभिक + मुख्य + साइकोमेट्रिक टेस्ट + GE/साक्षात्कार), पात्रता, आयु 21-30 वर्ष, वेतन ₹72,500–₹76,000/माह (मई 2026 DA संशोधन के बाद) और मुफ्त संसाधन।' },
     };
   }
 
@@ -16172,13 +16172,12 @@ function SbiPoPage({ exam }: { exam: any }) {
     { event: 'SBI PO 2024 Mains Exam', date: '12 February 2025', status: 'released' },
     { event: 'SBI PO 2024 Mains Result', date: 'March 2025', status: 'released' },
     { event: 'SBI PO 2024 GE & Interview (Phase 3)', date: 'April–May 2025', status: 'released' },
-    { event: 'SBI PO 2024 Final Merit List & Joining', date: 'June–July 2025', status: 'upcoming' },
-    { event: '💡 SBI PO 2025 (for 2026 cycle) Notification', date: 'Expected Oct–Nov 2025 (TBN)', status: 'tbn' },
-    { event: 'SBI PO 2025 Online Application Dates', date: 'Expected Oct–Nov 2025 (TBN)', status: 'tbn' },
-    { event: 'SBI PO 2025 Prelims Exam', date: 'Expected Dec 2025 – Jan 2026 (TBN)', status: 'tbn' },
-    { event: 'SBI PO 2025 Mains Exam', date: 'Expected Feb–Mar 2026 (TBN)', status: 'tbn' },
-    { event: 'SBI PO 2025 GE & Interview', date: 'Expected Apr–May 2026 (TBN)', status: 'tbn' },
-    { event: 'SBI PO 2025 Final Result & Joining', date: 'Expected Jun–Jul 2026 (TBN)', status: 'tbn' },
+    { event: 'SBI PO 2024 Final Merit List & Joining', date: 'June–July 2025', status: 'released' },
+    { event: '🆕 SBI PO 2026 – Online Application', date: 'June 2026 (Expected)', status: 'tbn' },
+    { event: 'SBI PO 2026 – Phase 1 (Prelims)', date: 'July 2026 (Expected)', status: 'tbn' },
+    { event: 'SBI PO 2026 – Phase 2 (Mains)', date: 'September 2026 (Expected)', status: 'tbn' },
+    { event: 'SBI PO 2026 – Phase 3 (Psychometric Test + Interview)', date: 'November 2026 (Expected)', status: 'tbn' },
+    { event: 'SBI PO 2026 – Final Result & Joining', date: 'December 2026 / January 2027 (Expected)', status: 'tbn' },
   ];
 
   const vacancyHistory = [
@@ -16186,7 +16185,7 @@ function SbiPoPage({ exam }: { exam: any }) {
     { year: 'SBI PO 2022', vacancies: '1,673', prelims: 'Dec 2022', mains: 'Jan 2023' },
     { year: 'SBI PO 2023', vacancies: '2,000', prelims: 'Nov 2023', mains: 'Dec 2023' },
     { year: 'SBI PO 2024', vacancies: '1,913', prelims: 'Dec 2024', mains: 'Feb 2025' },
-    { year: 'SBI PO 2025 (upcoming)', vacancies: '2,000–3,000 (Expected)', prelims: 'Dec 2025 – Jan 2026 (TBN)', mains: 'Feb–Mar 2026 (TBN)' },
+    { year: 'SBI PO 2026 (upcoming)', vacancies: '2,000–3,000 (Expected)', prelims: 'July 2026 (Expected)', mains: 'Sep 2026 (Expected)' },
   ];
 
   const prelimsPattern = [
@@ -16211,12 +16210,12 @@ function SbiPoPage({ exam }: { exam: any }) {
   ];
 
   const salaryBreakdown = [
-    { component: 'Basic Pay (Scale I, post-12th Bipartite)', amount: '₹41,960/month' },
-    { component: 'Dearness Allowance (DA) ~53%', amount: '~₹22,238/month' },
-    { component: 'House Rent Allowance (HRA) Metro', amount: '₹4,196–₹6,294/month' },
+    { component: 'Basic Pay (12th BPS, Scale I – incl. 4 advance increments)', amount: '₹48,480/month' },
+    { component: 'Dearness Allowance (DA) @ 25.70% of Basic Pay (effective May 2026)', amount: '~₹12,459/month' },
+    { component: 'House Rent Allowance (HRA) Metro – 10% of Basic', amount: '₹4,848/month' },
     { component: 'City Compensatory Allowance (CCA)', amount: '₹1,100–₹2,000/month' },
     { component: 'Special Allowance & Other Perks', amount: '~₹5,000–₹8,000/month' },
-    { component: 'Gross Estimated In-Hand (Metro)', amount: '~₹65,000–₹75,000/month' },
+    { component: 'Gross Estimated In-Hand (Metro)', amount: '~₹72,500–₹76,000/month' },
   ];
 
   const careerPath = [
@@ -16338,11 +16337,11 @@ function SbiPoPage({ exam }: { exam: any }) {
   ];
 
   const faqs = [
-    { q: 'What is SBI PO 2025–26 notification date?', a: 'SBI PO 2025 notification date has not been officially released yet. Based on historical patterns, SBI typically releases the PO notification in October–November. SBI PO 2024 notification was released on 31 October 2024 for 1,913 vacancies. Check sbi.co.in/web/careers regularly for the 2025 cycle announcement.' },
+    { q: 'What is SBI PO 2025–26 notification date?', a: 'SBI PO 2026 notification is expected in June 2026 based on the current cycle. The SBI careers portal shows the notification as TBN (To Be Notified) as of May 2026. Applications are expected to open in June 2026, with Prelims in July 2026. Check sbi.co.in/web/careers regularly for the official announcement.' },
     { q: 'How many vacancies are expected in SBI PO 2025–26?', a: 'Based on the trend over recent years — 2,056 (2021), 1,673 (2022), 2,000 (2023), 1,913 (2024) — SBI PO 2025 is expected to have approximately 2,000–3,000 vacancies. The exact number is announced with the official notification.' },
-    { q: 'What is the SBI PO 2026 salary?', a: 'After joining, SBI PO (Scale I) starts at a basic pay of ₹41,960/month (under the 12th Bipartite Settlement). With Dearness Allowance (~53%), HRA, CCA, and other allowances, the total gross in-hand salary is approximately ₹65,000–₹75,000/month in metro cities — one of the highest entry-level banking salaries in India.' },
+    { q: 'What is the SBI PO 2026 salary?', a: 'SBI PO (Scale I) basic pay is ₹48,480/month under the 12th Bipartite Settlement (including 4 advance increments). Dearness Allowance was revised to 25.70% effective May 2026 (up from 25.00%), adding ~₹12,459/month. With HRA, CCA, and other allowances, the total gross in-hand salary is approximately ₹72,500–₹76,000/month in metro cities. Note: SBI follows IBA Bipartite Settlements — not the Central Pay Commission (CPC) or Pay Commission revisions.' },
     { q: 'How is SBI PO different from IBPS PO?', a: 'SBI PO recruits exclusively for State Bank of India, while IBPS PO recruits for 11 other public sector banks. Key difference: SBI PO includes a Group Exercise (GE) in Phase 3 (worth 20 marks), while IBPS PO only has an Interview. SBI PO Mains DI and Reasoning are generally harder. Starting salary for SBI PO is also higher (₹41,960 vs ₹36,000 basic).' },
-    { q: 'Is there a Group Discussion in SBI PO?', a: 'Yes. SBI PO Phase 3 includes a Group Exercise (20 marks) + Personal Interview (30 marks) = 50 marks total. The GE is a Group Discussion or Case Study Discussion that tests your communication, leadership, and analytical skills. IBPS PO does not have a GE — only an Interview.' },
+    { q: 'Is there a Group Discussion in SBI PO?', a: 'Yes. SBI PO Phase 3 now includes three components: (1) Psychometric Test (qualifying/pass-fail — screens personality fit), (2) Group Exercise/GE (20 marks) — a Group Discussion or Case Study, and (3) Personal Interview (30 marks). Total Phase 3 marks: 50. IBPS PO does not have a GE or Psychometric Test — only an Interview. Clearing the Psychometric Test is mandatory to appear for the GE and Interview.' },
     { q: 'What is the age limit for SBI PO 2026?', a: 'The age limit for SBI PO is 21–30 years for General/EWS candidates. Age relaxations: OBC (+3 years = up to 33), SC/ST (+5 years = up to 35), PwBD (+10 years), Ex-Servicemen (as per Government norms). The age is calculated as of the cut-off date mentioned in each year\'s official notification.' },
   ];
 
@@ -16374,7 +16373,7 @@ function SbiPoPage({ exam }: { exam: any }) {
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏦 Banking</span>
             <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
-            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification 2025: TBN</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: June 2026 (Expected)</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
@@ -16382,15 +16381,15 @@ function SbiPoPage({ exam }: { exam: any }) {
           </h1>
 
           <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
-            SBI PO 2025 notification expected Oct–Nov 2025 with ~2,000–3,000 vacancies for India&apos;s largest public sector bank. 3-stage selection: Prelims (100 marks, 1 hr) → Mains (250 marks + Descriptive) → Group Exercise &amp; Interview (50 marks). Graduate degree required. Age 21–30 years.
+            SBI PO 2026 notification expected in <strong>June 2026</strong> with ~2,000–3,000 vacancies for India&apos;s largest public sector bank. 3-stage selection: Prelims → Mains → Psychometric Test &amp; Interview. Graduate degree required. Age 21–30 years. Gross salary <strong>₹72,500–₹76,000/month</strong> (metro, post May 2026 DA revision).
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
             {[
-              { label: 'Expected Vacancies', value: '2,000–3,000', sub: '(2025 est.)' },
-              { label: 'Prelims Exam Date', value: 'Dec 2025', sub: '(TBN)' },
+              { label: 'Expected Vacancies', value: '2,000–3,000', sub: '(2026 est.)' },
+              { label: 'Prelims Exam Date', value: 'July 2026', sub: '(Expected)' },
               { label: 'Min. Qualification', value: 'Any Graduate', sub: 'Degree required' },
-              { label: 'Gross Salary', value: '~₹65,000–₹75,000', sub: 'per month (metro)' },
+              { label: 'Gross Salary', value: '~₹72,500–₹76,000', sub: 'per month (metro)' },
             ].map((item) => (
               <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
                 <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
@@ -16401,7 +16400,7 @@ function SbiPoPage({ exam }: { exam: any }) {
           </div>
 
           <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
-            💡 <strong>Key Update 2026:</strong> SBI PO 2024 had 1,913 vacancies — notification released 31 October 2024. The 2025 cycle (whose joining will be in 2026) is expected to open Oct–Nov 2025. ⚠️ All upcoming dates are TBN — verify from <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">sbi.co.in/web/careers</a> when released.
+            💡 <strong>Key Update May 2026:</strong> DA has been revised to <strong>25.70%</strong> (effective May 2026) per latest IBA circular. The 2026 notification is expected in <strong>June 2026</strong>. Application and exam cycle has shifted — all upcoming dates are estimated. Always verify from <a href="https://sbi.co.in/web/careers" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">sbi.co.in/web/careers</a>.
           </div>
         </div>
       </div>
@@ -16431,7 +16430,7 @@ function SbiPoPage({ exam }: { exam: any }) {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
                   { label: 'Conducting Body', value: 'State Bank of India' },
-                  { label: 'Selection Stages', value: 'Prelims + Mains + GE & Interview' },
+                  { label: 'Selection Stages', value: 'Prelims + Mains + Psychometric + GE & Interview' },
                   { label: 'Joining as', value: 'JMGS-I (Asst. Manager)' },
                   { label: 'Probation Period', value: '2 Years' },
                 ].map((item) => (
@@ -16536,11 +16535,55 @@ function SbiPoPage({ exam }: { exam: any }) {
                     <strong>Graduation in any discipline</strong> from a university recognised by the Government of India or any equivalent qualification. Candidates who are in their final year of graduation and are awaiting results may also apply, subject to producing proof of graduation by the date of joining.
                   </p>
                   <p className="text-sm text-surface-500 mt-2">Candidates with Integrated Dual Degree (IDD) are also eligible if they have completed the degree by the notification cut-off date.</p>
+                  <div className="mt-3 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
+                    🎓 <strong>Eligibility Cut-off (Expected 2026):</strong> Candidates in their final year of graduation may apply, but must produce proof of passing the degree examination (final result) by <strong>31 December 2026</strong> (to be confirmed in the official notification PDF).
+                  </div>
                 </div>
               </div>
             </section>
 
-            {/* SECTION 4: VACANCIES */}
+            {/* 2026 KEY CALLOUTS */}
+            <section className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center text-white text-sm font-bold">!</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🔔 Important Clarifications for 2026 Aspirants</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl">💡</span>
+                    <div>
+                      <h3 className="font-heading font-semibold text-blue-900 mb-1">Psychometric Test in Phase 3 (New Addition)</h3>
+                      <p className="text-sm text-blue-800 leading-relaxed">
+                        SBI has introduced a <strong>Psychometric Test</strong> as a mandatory part of Phase 3 (along with the Group Exercise and Personal Interview). This test screens candidates for personality fit, decision-making style, and behavioural traits. Candidates must clear the Psychometric Test to proceed to the GE &amp; Interview rounds. This replaces older cycles where only GE + Interview were conducted.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl">⚠️</span>
+                    <div>
+                      <h3 className="font-heading font-semibold text-amber-900 mb-1">5-Day Work Week — Not Yet Implemented</h3>
+                      <p className="text-sm text-amber-800 leading-relaxed">
+                        The <strong>12th Bipartite Settlement (signed March 2024)</strong> includes a provision for all Saturdays to be bank holidays. However, this clause is still <strong>pending final government notification</strong> as of May 2026. Bank branches were officially open on Saturday, 3 May 2026 (1st/3rd/5th Saturdays remain working). <strong>Do not treat the 5-day work week as active yet</strong> — it is expected to come into effect once the Government of India issues the formal gazette notification.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-purple-50 border border-purple-200 rounded-xl p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl">💰</span>
+                    <div>
+                      <h3 className="font-heading font-semibold text-purple-900 mb-1">SBI Salary ≠ Central Pay Commission (Important Myth)</h3>
+                      <p className="text-sm text-purple-800 leading-relaxed">
+                        A common search query is &ldquo;SBI PO 8th Pay Commission salary.&rdquo; This is a misconception — <strong>SBI and all public sector banks follow IBA Bipartite Settlements</strong>, not the Central Pay Commission (CPC). The 8th Pay Commission applies only to Central Government employees (IAS, IPS, Railway staff, etc.). Banking sector salaries are governed by the <strong>12th Bipartite Settlement (2022–27)</strong>, which set the current pay structure. The next revision will come under the 13th BPS.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
             <section id="vacancies" className="mb-12">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
@@ -16657,10 +16700,14 @@ function SbiPoPage({ exam }: { exam: any }) {
               {/* Phase 3: GE & Interview */}
               <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
                 <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded-lg">Phase 3</span>
-                Group Exercise (GE) &amp; Interview
+                Psychometric Test + Group Exercise (GE) &amp; Interview
               </h3>
               <div className="card p-5 mb-4">
-                <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="grid grid-cols-3 gap-4 mb-4">
+                  <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-purple-700">✓/✗</div>
+                    <div className="text-xs text-purple-600 font-medium mt-1">Psychometric Test (Qualifying)</div>
+                  </div>
                   <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
                     <div className="text-2xl font-bold text-emerald-700">20</div>
                     <div className="text-xs text-emerald-600 font-medium mt-1">Group Exercise Marks</div>
@@ -16670,9 +16717,12 @@ function SbiPoPage({ exam }: { exam: any }) {
                     <div className="text-xs text-blue-600 font-medium mt-1">Interview Marks</div>
                   </div>
                 </div>
-                <p className="text-sm text-surface-600 leading-relaxed">
-                  The Group Exercise tests your <strong>leadership, communication, teamwork, and analytical thinking</strong> through a group discussion or case study discussion. The Interview panel assesses your banking knowledge, current affairs awareness, and personality. Final selection is based on <strong>Mains (75%) + GE &amp; Interview (25%)</strong>.
+                <p className="text-sm text-surface-600 leading-relaxed mb-3">
+                  Phase 3 now includes a <strong>mandatory Psychometric Test</strong> that screens candidates for personality fit and behavioural attributes before the GE &amp; Interview. Only candidates who clear this test proceed to the Group Exercise. The GE tests <strong>leadership, communication, teamwork, and analytical thinking</strong> through a group discussion or case study. Final selection is based on <strong>Mains (75%) + GE &amp; Interview (25%)</strong>.
                 </p>
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
+                  ⚠️ <strong>Note:</strong> The Psychometric Test is qualifying in nature (pass/fail). It does not carry marks toward the final merit list but must be cleared to appear for the GE and Interview.
+                </div>
               </div>
             </section>
 
@@ -16752,8 +16802,8 @@ function SbiPoPage({ exam }: { exam: any }) {
               <div className="card overflow-hidden mb-6">
                 <div className="bg-emerald-600 text-white p-4">
                   <div className="text-sm font-medium opacity-90">SBI PO Gross In-Hand Salary (Metro City)</div>
-                  <div className="text-3xl font-heading font-bold mt-1">₹65,000 – ₹75,000 <span className="text-lg font-normal opacity-75">/month</span></div>
-                  <div className="text-xs opacity-75 mt-1">Under 12th Bipartite Settlement (2025)</div>
+                  <div className="text-3xl font-heading font-bold mt-1">₹72,500 – ₹76,000 <span className="text-lg font-normal opacity-75">/month</span></div>
+                  <div className="text-xs opacity-75 mt-1">DA revised to 25.70% effective May 2026 (12th Bipartite Settlement)</div>
                 </div>
                 <table className="w-full text-sm">
                   <tbody className="divide-y divide-surface-100">
