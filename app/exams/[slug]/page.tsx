@@ -245,6 +245,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rpf-constable') {
+    return {
+      title: 'RPF Constable 2026 – Notification, Syllabus, PET/PMT & Complete Guide | TaiyarHo',
+      description: 'RPF Constable 2026: New notification expected. 10th pass eligible. Check CBT syllabus, exam pattern (120 Qs), PET/PMT physical standards, eligibility (age 18–25), salary ₹21,700–₹69,100/month and free preparation resources.',
+      keywords: 'RPF Constable 2026, RPF Constable taiyari, Railway Protection Force Constable syllabus, RPF Constable PET PMT, RPF Constable salary, railway constable sarkari naukri 2026, आरपीएफ कांस्टेबल भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rpf-constable/' },
+      other: { 'description:hi': 'RPF Constable 2026 – 10वीं पास उम्मीदवारों के लिए रेलवे सुरक्षा बल में कांस्टेबल भर्ती। CBT (120 प्रश्न), PET/PMT शारीरिक मानक, आयु सीमा 18–25 वर्ष, वेतन ₹21,700–₹69,100/माह।' },
+    };
+  }
+
   if (params.slug === 'rrb-alp') {
     return {
       title: 'RRB ALP 2026 – Syllabus, CBT 1 Result, Exam Pattern & Guide | TaiyarHo',
@@ -299,6 +309,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
+  if (brief && brief.slug === 'rpf-constable') return <RpfConstablePage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -17729,6 +17740,787 @@ function MaharashtraPoliceConstablePage({ exam }: { exam: any }) {
             <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
               <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
               <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for Maharashtra Police Constable.</p>
+              <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+            </Link>
+          </aside>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── RPF CONSTABLE RICH PAGE ────────────────────────────────────────────────
+function RpfConstablePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & History' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern (CBT)' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'pet-pmt',         label: 'PET / PMT Standards' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'RPF Constable 2024 Notification Released (CEN RPF-01/2024)',  date: '15 April 2024',           status: 'done' },
+    { event: 'Online Application Window Open',                                date: '15 April – 14 May 2024',  status: 'done' },
+    { event: 'CBT Exam Conducted (Phase 1)',                                  date: '2–4 March 2025',          status: 'done' },
+    { event: 'CBT Exam Conducted (Phase 2)',                                  date: '14 April – 3 May 2025',   status: 'done' },
+    { event: 'CBT Provisional Answer Key Released',                           date: 'May 2025',                status: 'done' },
+    { event: 'CBT Result / Merit List Declared',                              date: '26 February 2026',        status: 'done' },
+    { event: 'PET / PMT Physical Tests (Ongoing)',                            date: 'March – June 2026',       status: 'done' },
+    { event: 'Document Verification & Medical Examination',                   date: 'June – August 2026 (TBN)',status: 'tbn' },
+    { event: 'Final Appointment & Joining',                                   date: 'August – October 2026 (TBN)', status: 'tbn' },
+    { event: '💡 RPF Constable 2026 New Notification (Expected)',             date: 'Second Half 2026 (TBN)',  status: 'upcoming' },
+  ];
+
+  const vacancyHistory = [
+    { cycle: '2018 (CEN 01/2018)', posts: 'Constable (General + Para)', vacancies: '~9,739', status: 'Completed' },
+    { cycle: '2019 (CEN 01/2019)', posts: 'Constable (General)',         vacancies: '~3,688', status: 'Completed' },
+    { cycle: '2024 (CEN 01/2024)', posts: 'Constable (General + Para)',  vacancies: '4,208',  status: 'PET/PMT Stage (2026)' },
+    { cycle: '2026 (Expected)',     posts: 'Constable (New Cycle)',        vacancies: 'TBN',    status: 'Notification Awaited' },
+  ];
+
+  const cbtPattern = [
+    { section: 'General Awareness',             questions: 50, marks: 50, negative: '−1/3 per wrong' },
+    { section: 'Arithmetic (Maths)',            questions: 35, marks: 35, negative: '−1/3 per wrong' },
+    { section: 'General Intelligence & Reasoning', questions: 35, marks: 35, negative: '−1/3 per wrong' },
+  ];
+
+  const petStandards = [
+    {
+      gender: 'Male (General / OBC / SC)',
+      events: [
+        { event: '1600 m Run', standard: 'Must complete in 5 min 45 sec', note: 'Qualifying' },
+        { event: 'Long Jump', standard: '14 feet (4.27 m) — 3 chances', note: 'Qualifying' },
+        { event: 'High Jump', standard: '3 feet 9 inches (1.14 m) — 3 chances', note: 'Qualifying' },
+      ],
+    },
+    {
+      gender: 'Male (ST Category)',
+      events: [
+        { event: '1600 m Run', standard: 'Must complete in 6 min 15 sec', note: 'Qualifying' },
+        { event: 'Long Jump', standard: '14 feet (4.27 m) — 3 chances', note: 'Qualifying' },
+        { event: 'High Jump', standard: '3 feet 9 inches (1.14 m) — 3 chances', note: 'Qualifying' },
+      ],
+    },
+    {
+      gender: 'Female (General / OBC / SC)',
+      events: [
+        { event: '800 m Run', standard: 'Must complete in 3 min 40 sec', note: 'Qualifying' },
+        { event: 'Long Jump', standard: '9 feet (2.74 m) — 3 chances', note: 'Qualifying' },
+        { event: 'High Jump', standard: '3 feet (0.91 m) — 3 chances', note: 'Qualifying' },
+      ],
+    },
+    {
+      gender: 'Female (ST Category)',
+      events: [
+        { event: '800 m Run', standard: 'Must complete in 4 min 00 sec', note: 'Qualifying' },
+        { event: 'Long Jump', standard: '9 feet (2.74 m) — 3 chances', note: 'Qualifying' },
+        { event: 'High Jump', standard: '3 feet (0.91 m) — 3 chances', note: 'Qualifying' },
+      ],
+    },
+  ];
+
+  const pmtStandards = [
+    { attribute: 'Height (Male – General / OBC / SC / ST)', standard: '165 cm (Hilly / ST: 160 cm)' },
+    { attribute: 'Height (Female – General / OBC / SC / ST)', standard: '157 cm (Hilly / ST: 152 cm)' },
+    { attribute: 'Chest (Male – Unexpanded)', standard: '80 cm (Hilly / ST: 76 cm)' },
+    { attribute: 'Chest (Male – Expanded)', standard: '85 cm (Hilly / ST: 81 cm) — min. 5 cm expansion' },
+    { attribute: 'Weight (Female)', standard: 'Proportionate to height & age' },
+    { attribute: 'Vision – Distant (With correction)', standard: '6/12 both eyes, or 6/9 one eye & 6/12 other' },
+    { attribute: 'Colour Blindness', standard: 'Not permitted — must pass Ishihara chart' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'General Awareness',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      questions: 50,
+      topics: [
+        'Current Affairs – National & International (last 12 months)',
+        'Indian History – Ancient, Medieval, Modern & Freedom Struggle',
+        'Indian Geography – Rivers, Climate, States, National Parks',
+        'Indian Polity – Constitution, Parliament, President, Fundamental Rights',
+        'Indian Economy – Budget basics, Five Year Plans, Banking & RBI',
+        'Science & Technology – Space, Defence, IT (ISRO, DRDO launches)',
+        'Railways – History of Indian Railways, Zones, Terminology',
+        'Sports – Major tournaments, Olympic & Commonwealth medals (India)',
+        'Books, Authors & Awards – Padma, Bharat Ratna, Nobel Prize winners',
+        'Important Days & Schemes – National & International days, PM schemes',
+        'Static GK – Capitals, Currencies, UN agencies, Dams & Rivers',
+      ],
+    },
+    {
+      subject: 'Arithmetic (Maths)',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      questions: 35,
+      topics: [
+        'Number System – Integers, Fractions, HCF, LCM, BODMAS',
+        'Decimal & Percentage',
+        'Ratio & Proportion, Average',
+        'Profit & Loss, Discount',
+        'Simple Interest & Compound Interest',
+        'Time & Work, Pipes & Cisterns',
+        'Time, Speed & Distance (Trains, Boats)',
+        'Mensuration – Area, Perimeter, Volume (2D & 3D)',
+        'Basic Algebra – Linear equations (2 variables)',
+        'Data Interpretation – Tables, Bar Charts, Pie Charts',
+      ],
+    },
+    {
+      subject: 'General Intelligence & Reasoning',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      questions: 35,
+      topics: [
+        'Analogies – Verbal & Non-Verbal',
+        'Number & Letter Series',
+        'Coding-Decoding',
+        'Blood Relations & Family Tree',
+        'Direction & Distance',
+        'Odd One Out / Classification',
+        'Syllogisms & Logical Conclusions',
+        'Sitting Arrangement (Linear & Circular)',
+        'Ranking & Order',
+        'Matrix & Venn Diagrams',
+        'Statement & Conclusion / Assumption',
+        'Embedded & Mirror Figures (Non-verbal)',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', title: 'Foundation', tasks: 'NCERT Maths 6th–10th for Arithmetic basics. Start Reasoning with R.S. Aggarwal — cover series, coding, blood relations. Read one newspaper/day. Complete Lucent GK — History & Polity chapters. Practice 30 MCQs daily.' },
+    { month: 'Month 2', title: 'Core Building', tasks: 'Cover all Arithmetic topics (Time & Work, Ratio, Profit & Loss, SI/CI). Reasoning: arrangements, syllogisms, direction sense. GK: Geography, Economy, Railway-specific GK, Science. Practice 60 MCQs daily mixing all sections.' },
+    { month: 'Month 3', title: 'Mock Tests', tasks: 'Give one full 120-question mock test every 2 days (90 min each). Review errors the same day. Track per-section accuracy. Target: 90+ correct with <5 wrong. Tighten weak topics. Focus on speed — aim for 45 sec/question average.' },
+    { month: 'Month 4', title: 'Physical Prep + Revision', tasks: 'Daily physical training: 1600m run, long jump, high jump practice (run training 6 weeks before PET). Revise formulas, GK capsule, current affairs. Final mocks — target 100+ correct. Stay calm before CBT.' },
+  ];
+
+  const books = [
+    { subject: 'General Awareness',  title: "Lucent's General Knowledge",                 author: 'Lucent Publications' },
+    { subject: 'Arithmetic',         title: 'Fast Track Objective Arithmetic',             author: 'Rajesh Verma (Arihant)' },
+    { subject: 'Reasoning',          title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal' },
+    { subject: 'All Subjects (PYQs)', title: 'RPF Constable & SI Chapterwise Solved Papers', author: 'Kiran Prakashan' },
+    { subject: 'Railways GK',        title: 'Railway General Awareness',                   author: 'Arihant Experts' },
+  ];
+
+  const tips = [
+    { title: 'GK is the game-changer — spend 40% of your time here', body: 'RPF Constable has 50 GK questions out of 120 total. This is the highest-weightage section. Most candidates score low here because they ignore Railways-specific GK (zones, history, terminology). Build a dedicated notes sheet for railway facts.' },
+    { title: 'Negative marking is real — attempt smartly', body: 'Each wrong answer costs you 1/3 marks. With 120 questions at 1 mark each, a single wrong answer cancels 3 correct ones. If you are less than 60% sure of an answer, skip it. Target 90–100 correct answers, not 120 attempts.' },
+    { title: 'PET/PMT fitness training must start BEFORE CBT result', body: 'PET and PMT are purely qualifying — no marks, just pass/fail. But failing PET means disqualification even after cracking the written test. Start your 1600m (or 800m) running training at least 6–8 weeks before the PET date. Do not wait for the result.' },
+    { title: 'Reasoning is your fastest-scoring section', body: 'Most Reasoning questions in RPF Constable are at Class 8–10 difficulty. With focused practice, you can score 30–35 out of 35 in this section. This makes Reasoning your safety net — practice 30 questions daily for at least 30 days.' },
+    { title: 'Maths — master the high-frequency topics only', body: 'RPF Constable does not ask advanced Maths. Focus on: Percentage, Profit & Loss, Time & Work, SI/CI, Ratio & Proportion, and DI. These 6 topic clusters cover 25+ of the 35 questions in every paper. Do not waste time on Geometry or Trigonometry.' },
+    { title: 'Previous year papers are your best mock tests', body: 'RPF Constable 2018 and 2024 papers are now publicly available (Kiran Prakashan compiles them). Solving these under 90-minute timed conditions gives you the exact feel of the real exam and reveals the actual difficulty level, which is moderate-to-easy.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the RPF Constable 2026 notification date?',
+      a: 'As of May 2026, a new RPF Constable 2026 notification has not been officially released. The 2024 cycle (CEN RPF-01/2024) is in its final stages — PET/PMT is ongoing. A fresh notification for the next cycle is expected in the second half of 2026. Monitor rpf.indianrailways.gov.in for updates.',
+    },
+    {
+      q: 'What is the minimum qualification for RPF Constable?',
+      a: 'The minimum educational qualification is passing Class 10th (Matriculation or equivalent) from any recognised board. Graduates are also eligible. There is no subject or stream restriction.',
+    },
+    {
+      q: 'What is the age limit for RPF Constable 2026?',
+      a: 'The general age limit is 18–25 years. OBC candidates get +3 years (18–28), SC/ST candidates get +5 years (18–30), and ex-servicemen get relaxation as per Government of India norms. Age is calculated as on the cut-off date mentioned in the official notification.',
+    },
+    {
+      q: 'What is the RPF Constable CBT exam pattern?',
+      a: 'The CBT consists of 120 objective-type questions for 120 marks, to be solved in 90 minutes. The three sections are: General Awareness (50 questions), Arithmetic (35 questions), and General Intelligence & Reasoning (35 questions). Each correct answer gives 1 mark, each wrong answer deducts 1/3 mark. The exam is bilingual (English & Hindi) and taken on a computer.',
+    },
+    {
+      q: 'What are the PET standards for RPF Constable males?',
+      a: 'For General/OBC/SC male candidates: complete 1600m run in 5 min 45 sec, long jump minimum 14 feet (3 chances), and high jump minimum 3 feet 9 inches (3 chances). ST male candidates get a relaxed run time of 6 min 15 sec. All three events are qualifying — failing any one disqualifies the candidate.',
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">RPF Constable 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Railway</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">10th Pass Eligible</span>
+            <span className="bg-yellow-400/20 text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full">⚠️ 2026 Notification: TBN</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            RPF Constable 2026 –<br className="hidden sm:block" /> Notification, Syllabus, PET/PMT & Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            2024 cycle (4,208 vacancies) is in final PET/PMT stage as of 2026. A fresh RPF Constable notification is expected in second half 2026. 10th pass eligible. Railway security career with job security and steady pay.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies (2024 Cycle)',  value: '4,208' },
+              { label: '2026 Notification',        value: 'H2 2026 (TBN)' },
+              { label: 'Min. Qualification',       value: '10th Pass' },
+              { label: 'Salary (In-Hand)',          value: '₹25K–₹30K/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── MAIN CONTENT ── */}
+          <div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is RPF Constable 2026?</h2>
+              <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-4 mb-5 flex gap-3">
+                <span className="text-xl shrink-0">⚠️</span>
+                <div>
+                  <p className="text-sm font-semibold text-yellow-900 mb-1">RPF Constable 2026 Notification: To Be Notified</p>
+                  <p className="text-xs text-yellow-800">The 2024 cycle (CEN RPF-01/2024) PET/PMT is ongoing. A fresh 2026 cycle notification has not been released yet. Expected in the second half of 2026. Bookmark <a href="https://rpf.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">rpf.indianrailways.gov.in</a> and start preparation now — this is your best head start.</p>
+                </div>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  <strong>RPF Constable</strong> is a Group C central government post under the <strong>Railway Protection Force (RPF)</strong>, which functions under the Ministry of Railways, Government of India. The RPF is responsible for protecting railway property, passengers, and ensuring safety on the vast Indian Railways network — one of the largest in the world.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  Recruitment is done through a national-level <strong>Computer-Based Test (CBT)</strong> followed by a mandatory <strong>Physical Efficiency Test (PET)</strong> and <strong>Physical Measurement Test (PMT)</strong>. The exam is open to candidates who have cleared Class 10th — making it one of the most accessible central government jobs in India.
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  Selected constables are posted at railway stations, trains, goods yards, and RPF barracks across all 18 railway zones. The job comes with <strong>Grade Pay Level 3</strong> (₹21,700 – ₹69,100), government quarters, uniform allowance, CGHS medical coverage, and pension under NPS.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Railway Recruitment Boards (RRBs)' },
+                  { label: 'Post Category',    value: 'Group C (Non-Gazetted)' },
+                  { label: 'Pay Level',        value: 'Level 3 (7th CPC)' },
+                  { label: 'Official Website', value: 'rpf.indianrailways.gov.in' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">2. 📅 Important Dates – RPF Constable 2024–2026</h2>
+              <p className="text-sm text-surface-500 mb-5">
+                The 2024 cycle CBT result was declared on 26 February 2026 and PET/PMT is currently underway. The next fresh cycle is expected later in 2026.
+                💡 <strong>Key update:</strong> If you missed the 2024 cycle, now is the ideal time to prepare — competition is predictably high but consistent preparation pays off.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ TBN = To Be Notified. Always verify on <a href="https://rpf.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">rpf.indianrailways.gov.in</a> before taking any action.</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. 🎓 Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed mb-3">
+                    Must have passed <strong>Class 10th (Matriculation)</strong> or equivalent examination from a recognised board. Higher qualifications are also acceptable — graduates and above can apply.
+                  </p>
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-xs text-emerald-800">
+                    <strong>Good news:</strong> There is no minimum percentage requirement and no restriction on the stream or subject combination. Any 10th pass candidate can apply.
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      { cat: 'General / EWS', age: '18 – 25 years' },
+                      { cat: 'OBC (Non-Creamy Layer)', age: '18 – 28 years (+3 yrs)' },
+                      { cat: 'SC / ST', age: '18 – 30 years (+5 yrs)' },
+                      { cat: 'Ex-Servicemen (General)', age: 'Up to 30 years (+5 yrs)' },
+                      { cat: 'Ex-Servicemen (OBC)', age: 'Up to 33 years (+8 yrs)' },
+                      { cat: 'Ex-Servicemen (SC/ST)', age: 'Up to 35 years (+10 yrs)' },
+                    ].map((r) => (
+                      <div key={r.cat} className="flex justify-between text-xs">
+                        <span className="text-surface-600">{r.cat}</span>
+                        <span className="font-semibold text-surface-800">{r.age}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed">
+                    Must be a citizen of India. Subjects of Nepal or Bhutan and Tibetan refugees who settled in India before 1 January 1962 may also apply as per Government of India rules with a certificate of eligibility.
+                  </p>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🏃</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Physical Requirements</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed">
+                    Candidates must be physically fit and able to pass the PET (running, long jump, high jump) and PMT (height, chest, weight, vision). See Section 8 for detailed standards. Ex-servicemen are exempted from PET but must clear PMT.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* 4. VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">4. 💰 Vacancies & Recruitment History</h2>
+              <p className="text-sm text-surface-500 mb-5">RPF Constable recruitment is irregular — new cycles are notified every 3–5 years with vacancy counts varying widely. The 2024 cycle had 4,208 vacancies across General (armed) and Para (band) categories.</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Recruitment Cycle</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Posts</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Vacancies</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Current Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.cycle}</td>
+                        <td className="p-3 text-surface-600">{row.posts}</td>
+                        <td className="p-3 font-semibold text-primary-600">{row.vacancies}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${row.status.includes('PET') ? 'bg-blue-100 text-blue-700' : row.status.includes('Awaited') ? 'bg-yellow-100 text-yellow-700' : 'bg-emerald-100 text-emerald-700'}`}>
+                            {row.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-800">💡 <strong>Vacancy insight:</strong> RPF Constable vacancies fluctuate based on Ministry of Railways staffing needs. Historically, each cycle sees 3,000–10,000 vacancies. With the Indian Railways expanding, demand for RPF personnel remains consistently high. The 2024 cycle also included RPSF (Railway Protection Special Force) posts.</p>
+              </div>
+            </section>
+
+            {/* 5. SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. 📋 Selection Process</h2>
+              <div className="space-y-4 mb-6">
+                {[
+                  { step: '01', title: 'Computer-Based Test (CBT)', color: 'bg-primary-500', desc: '120 objective-type questions (120 marks, 90 minutes). Sections: General Awareness (50), Arithmetic (35), Reasoning (35). Negative marking of 1/3 mark per wrong answer. Exam is bilingual — English and Hindi.' },
+                  { step: '02', title: 'Physical Efficiency Test (PET)', color: 'bg-emerald-500', desc: 'Running, Long Jump, and High Jump events. Standards vary by gender and category. Qualifying in nature — no marks awarded. Failing PET means disqualification regardless of CBT score. Ex-servicemen are exempted.' },
+                  { step: '03', title: 'Physical Measurement Test (PMT)', color: 'bg-orange-500', desc: 'Height, chest (for males), and weight measurement. Vision test including colour blindness (Ishihara chart) screening. Qualifying only. Candidates not meeting standards are rejected at this stage.' },
+                  { step: '04', title: 'Document Verification (DV)', color: 'bg-purple-500', desc: 'Original documents verified — 10th marksheet, category certificate (OBC/SC/ST), age proof, domicile, etc. Candidates must carry all originals and attested copies.' },
+                  { step: '05', title: 'Medical Examination', color: 'bg-red-500', desc: 'Detailed medical examination by a Railway Medical Officer. Must meet RPF medical fitness standards. Final selection is subject to medical fitness clearance.' },
+                ].map((s) => (
+                  <div key={s.step} className="flex gap-4 card p-5">
+                    <div className={`${s.color} text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0`}>{s.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <p className="text-sm text-amber-800">⚠️ <strong>Important:</strong> There is NO written Mains exam and NO interview in RPF Constable recruitment. The final merit list is prepared solely on the basis of CBT marks (after PET/PMT/DV/Medical clearances). Higher CBT score = better posting preference.</p>
+              </div>
+            </section>
+
+            {/* 6. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. 🖥️ Exam Pattern – CBT</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                {[
+                  { label: 'Total Questions', value: '120' },
+                  { label: 'Total Marks',     value: '120' },
+                  { label: 'Duration',        value: '90 Minutes' },
+                  { label: 'Negative Marking', value: '−1/3 per wrong' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-primary-50 rounded-xl p-4 border border-primary-100 text-center">
+                    <div className="text-2xl font-heading font-bold text-primary-600">{item.value}</div>
+                    <div className="text-xs text-surface-500 mt-1">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Section</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Negative Marking</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cbtPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.questions}</td>
+                        <td className="p-3 text-primary-600 font-semibold">{row.marks}</td>
+                        <td className="p-3 text-red-600 text-xs">{row.negative}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-100 font-bold">
+                      <td className="p-3 text-surface-900">Total</td>
+                      <td className="p-3 text-surface-900">120</td>
+                      <td className="p-3 text-primary-700">120</td>
+                      <td className="p-3 text-xs text-surface-500">1 mark each</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">The CBT is conducted in bilingual mode (English & Hindi) on a computer. The difficulty level is moderate — Class 10 to Class 12 standard for Maths and Reasoning, with GK requiring current affairs awareness.</p>
+            </section>
+
+            {/* 7. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">7. 📖 Detailed Syllabus 2026</h2>
+              <div className="space-y-5">
+                {syllabus.map((s) => (
+                  <div key={s.subject} className={`card p-5 border ${s.bg}`}>
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className={`font-heading font-semibold text-base ${s.color}`}>{s.subject}</h3>
+                      <span className="text-xs bg-white border border-surface-200 px-2 py-1 rounded-full font-semibold text-surface-600">{s.questions} questions</span>
+                    </div>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                      {s.topics.map((t) => (
+                        <li key={t} className="text-sm text-surface-700 flex items-start gap-2">
+                          <span className="text-surface-400 mt-0.5 shrink-0">→</span>
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 8. PET / PMT */}
+            <section id="pet-pmt" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. 🏃 PET / PMT Physical Standards</h2>
+              <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6 flex gap-3">
+                <span className="text-xl shrink-0">⚠️</span>
+                <p className="text-sm text-red-800"><strong>PET/PMT is purely qualifying</strong> — passing does not add any marks to your score. But failing means immediate disqualification, even if you topped the CBT. Take physical preparation as seriously as the written exam.</p>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-4 text-base">Physical Efficiency Test (PET) Standards</h3>
+              <div className="space-y-5 mb-8">
+                {petStandards.map((grp) => (
+                  <div key={grp.gender} className="card p-5">
+                    <div className="font-semibold text-surface-800 mb-3 text-sm">{grp.gender}</div>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="bg-surface-100 text-surface-600">
+                            <th className="text-left p-2 font-semibold text-xs">Event</th>
+                            <th className="text-left p-2 font-semibold text-xs">Qualifying Standard</th>
+                            <th className="text-left p-2 font-semibold text-xs">Nature</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {grp.events.map((ev, i) => (
+                            <tr key={ev.event} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                              <td className="p-2 font-medium text-surface-800">{ev.event}</td>
+                              <td className="p-2 text-surface-600">{ev.standard}</td>
+                              <td className="p-2"><span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-semibold">{ev.note}</span></td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-4 text-base">Physical Measurement Test (PMT) Standards</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Attribute</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Standard</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {pmtStandards.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.attribute}</td>
+                        <td className="p-3 text-surface-600">{row.standard}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400">* Hilly area candidates (Garhwal, Kumaon, Himachal, Gorkha, Dogra, Marathas, Sikkim, Nagaland, Arunachal, Manipur, Tripura, Mizoram, Meghalaya, Assam, Cachar Hills, Ladakh, Kashmir) get relaxed height and chest measurements. Confirm exact standards in the official notification.</p>
+            </section>
+
+            {/* 9. SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. 💰 Salary & Benefits</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {[
+                  { label: 'Pay Level',        value: 'Level 3 (7th CPC)',       icon: '📊' },
+                  { label: 'Basic Pay',         value: '₹21,700/month',           icon: '💵' },
+                  { label: 'Dearness Allowance (DA @ 55%)', value: '~₹11,935/month', icon: '📈' },
+                  { label: 'HRA',               value: '₹1,302–₹4,340/month (city-dependent)', icon: '🏠' },
+                  { label: 'Transport Allowance', value: '₹900–₹1,800/month',   icon: '🚌' },
+                  { label: 'Gross Salary',      value: '~₹36,000–₹40,000/month', icon: '💰' },
+                  { label: 'In-Hand Salary',    value: '~₹25,000–₹30,000/month', icon: '✋' },
+                  { label: 'Maximum Pay Scale', value: '₹69,100/month (on promotion)', icon: '🚀' },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-start gap-3 card p-4">
+                    <span className="text-xl shrink-0">{item.icon}</span>
+                    <div>
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                      <div className="font-semibold text-surface-800 mt-0.5">{item.value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-emerald-900 mb-3">Additional Benefits & Perks</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {[
+                    'Free/subsidised railway travel passes (self + family)',
+                    'CGHS (Central Government Health Scheme) medical coverage',
+                    'Government accommodation / railway quarters (where available)',
+                    'Annual leave, sick leave, and casual leave entitlements',
+                    'Uniform and kit maintenance allowance',
+                    'National Pension System (NPS) — employer contributes 14%',
+                    'Group insurance under CGEGIS',
+                    'Promotion: Constable → Head Constable → ASI → SI',
+                  ].map((b) => (
+                    <li key={b} className="text-sm text-emerald-800 flex items-start gap-2">
+                      <span className="text-emerald-500 shrink-0 mt-0.5">✓</span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* 10. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. 🗓️ 4-Month Study Plan for RPF Constable 2026</h2>
+              <div className="space-y-4">
+                {studyPlan.map((m, i) => (
+                  <div key={m.month} className="card p-5 flex gap-4">
+                    <div className="bg-primary-500 text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{m.month}: {m.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{m.tasks}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+                <p className="text-sm text-indigo-800">💡 <strong>Physical Prep Note:</strong> Start your 1600m run training in parallel from Month 1 itself. Running fitness takes 6–8 weeks of consistent effort to build. Do not wait for the CBT result — if you pass CBT, you will need to be PET-ready within weeks.</p>
+              </div>
+            </section>
+
+            {/* 11. BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. 📚 Best Books for RPF Constable 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-semibold text-primary-600 text-xs">{b.subject}</td>
+                        <td className="p-3 text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-500 text-xs">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">🆓 Free preparation resources are also available on <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">YouTube</a>. Search for "RPF Constable 2026 preparation" — channels like Khan GS Research Centre, Adda247 Hindi, and Wifistudy have free lectures covering all sections.</p>
+            </section>
+
+            {/* 12. TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. 💡 Expert Preparation Tips</h2>
+              <div className="space-y-4">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 border-l-4 border-primary-400">
+                    <div className="font-heading font-semibold text-surface-800 mb-2">💡 {t.title}</div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{t.body}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. FAQs */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">13. ❓ Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                {faqs.map((f, i) => (
+                  <div key={i} className="card p-5">
+                    <div className="font-heading font-semibold text-surface-800 mb-2">Q: {f.q}</div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="space-y-5 lg:sticky lg:top-24 self-start">
+            {/* Quick Facts */}
+            <div className="card p-5">
+              <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-4">RPF Constable — Quick Facts</p>
+              <ul className="space-y-3">
+                {[
+                  { label: 'Conducting Body',   val: 'Railway Recruitment Boards' },
+                  { label: 'Mode of Exam',      val: 'Computer-Based Test (CBT)' },
+                  { label: 'Questions',          val: '120 (90 Minutes)' },
+                  { label: 'Negative Marking',   val: '1/3 per wrong answer' },
+                  { label: 'Min. Qualification', val: '10th Pass' },
+                  { label: 'Age Limit (Gen)',    val: '18–25 years' },
+                  { label: 'Interview',          val: 'None' },
+                  { label: 'Last Notified',      val: 'April 2024' },
+                ].map((f) => (
+                  <li key={f.label} className="text-xs border-b border-surface-100 pb-3 last:border-0 last:pb-0">
+                    <span className="text-surface-400 block mb-0.5">{f.label}</span>
+                    <span className="font-semibold text-surface-700">{f.val}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-5 pt-4 border-t border-surface-100 space-y-2">
+                <a href="https://rpf.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary block text-center text-sm py-2.5">Official Website ↗</a>
+                <Link href="/tools/age-calculator" className="btn-outline block text-center text-sm py-2.5">Check Eligibility</Link>
+              </div>
+            </div>
+
+            {/* Related Railway Exams */}
+            <div className="card p-5">
+              <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Railway Exams</p>
+              <div className="space-y-2">
+                {[
+                  { name: 'RRB NTPC 2026', slug: 'rrb-ntpc' },
+                  { name: 'RRB Group D 2026', slug: 'rrb-group-d' },
+                  { name: 'RRB ALP 2026', slug: 'rrb-alp' },
+                  { name: 'RPF SI 2026', slug: 'rpf-si' },
+                  { name: 'RRB JE 2026', slug: 'rrb-je' },
+                ].map((e) => (
+                  <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Also check */}
+            <div className="card p-5">
+              <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">Other 10th Pass Govt Jobs</p>
+              <div className="space-y-2">
+                {[
+                  { name: 'SSC GD Constable 2026', slug: 'ssc-gd-constable' },
+                  { name: 'RRB Group D 2026', slug: 'rrb-group-d' },
+                  { name: 'SSC MTS 2026', slug: 'ssc-mts' },
+                  { name: 'Army Agniveer 2026', slug: 'army-agniveer' },
+                ].map((e) => (
+                  <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Eligibility checker */}
+            <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+              <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+              <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for RPF Constable 2026.</p>
               <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
             </Link>
           </aside>
