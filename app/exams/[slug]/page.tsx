@@ -146,6 +146,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'uppsc-pcs') {
+    return {
+      title: 'UPPSC PCS 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'UPPSC PCS 2026 complete guide: notification expected June–July 2026. SDM, DSP, BDO & 200+ posts. Eligibility: Graduate, 21–40 yrs. Prelims, Mains & Interview. Salary ₹56,100–₹2,09,200/month.',
+      keywords: 'UPPSC PCS 2026, UPPSC PCS notification 2026, UP PSC syllabus Hindi, UPPSC PCS taiyari, UPPSC PCS eligibility, SDM DSP BDO bharti UP, Uttar Pradesh PSC 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/uppsc-pcs/' },
+      other: { 'description:hi': 'UPPSC PCS 2026 – यूपीपीएससी पीसीएस अधिसूचना जून–जुलाई 2026 में अपेक्षित। SDM, DSP, BDO सहित 200+ पद। पात्रता: स्नातक, 21-40 वर्ष। वेतन ₹56,100–₹2,09,200/माह।' },
+    };
+  }
+
   if (params.slug === 'ssc-chsl') {
     return {
       title: 'SSC CHSL 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -350,6 +360,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'upsc-nda') return <UpscNdaPage exam={brief} />;
   if (brief && brief.slug === 'up-police-si') return <UpPoliceSiPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
+  if (brief && brief.slug === 'uppsc-pcs') return <UppscPcsPage exam={brief} />;
   if (brief && brief.slug === 'bpsc-cce') return <BpscCcePage exam={brief} />;
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
@@ -21644,6 +21655,779 @@ function BpscCcePage({ exam }: { exam: any }) {
               <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
                 <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
                 <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for BPSC CCE 2026.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── UPPSC PCS 2026 RICH PAGE ─────────────────────────────────────────────────
+function UppscPcsPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'UPPSC PCS 2024 Prelims Held',                         date: 'December 2024',           status: 'done' },
+    { event: 'UPPSC PCS 2024 Prelims Result',                       date: 'January 2025',            status: 'done' },
+    { event: 'UPPSC PCS 2024 Mains Held',                           date: 'January–March 2025',      status: 'done' },
+    { event: 'UPPSC PCS 2024 Mains Result (Expected)',               date: 'Mid-2025',                status: 'done' },
+    { event: 'UPPSC PCS 2024 Interview (Expected)',                  date: '2025–2026',               status: 'done' },
+    { event: 'UPPSC PCS 2025 Official Notification',                 date: '8 November 2025',         status: 'done' },
+    { event: 'UPPSC PCS 2025 Online Application Open',               date: '8 November – 9 Dec 2025', status: 'done' },
+    { event: 'UPPSC PCS 2025 Prelims Admit Card (Expected)',         date: 'April – May 2026 (TBN)',  status: 'tbn' },
+    { event: 'UPPSC PCS 2025 Prelims Exam (Expected)',               date: 'May – June 2026 (TBN)',   status: 'tbn' },
+    { event: 'UPPSC PCS 2025 Mains (Expected)',                      date: 'Late 2026 (TBN)',         status: 'tbn' },
+    { event: '💡 UPPSC PCS 2026 Notification (Expected)',            date: 'June – July 2026',        status: 'upcoming' },
+    { event: 'UPPSC PCS 2026 Prelims (Expected)',                    date: 'October – November 2026', status: 'upcoming' },
+  ];
+
+  const preliPsPattern = [
+    { paper: 'Paper I – General Studies', questions: 150, marks: 200, duration: '2 hours', negative: '−0.33/wrong' },
+    { paper: 'Paper II – CSAT (Qualifying)', questions: 100, marks: 200, duration: '2 hours', negative: 'Min. 33% required' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper I – General Hindi', marks: 150, type: 'Descriptive', note: 'Qualifying (min. 33%)' },
+    { paper: 'Paper II – Essay', marks: 150, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper III – General Studies I', marks: 200, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper IV – General Studies II', marks: 200, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper V – General Studies III', marks: 200, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper VI – General Studies IV', marks: 200, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper VII – Optional Subject (Paper I)', marks: 200, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper VIII – Optional Subject (Paper II)', marks: 200, type: 'Descriptive', note: 'Merit-based' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'Deputy Collector (SDM)',         payLevel: 'Pay Level 13', payScale: '₹56,100 – ₹1,77,500', vac2025: '~50–70', vac2026: 'TBN' },
+    { post: 'Deputy SP (DSP)',                 payLevel: 'Pay Level 13', payScale: '₹56,100 – ₹1,77,500', vac2025: '~30–50', vac2026: 'TBN' },
+    { post: 'Block Development Officer (BDO)', payLevel: 'Pay Level 10', payScale: '₹56,100 – ₹1,77,500', vac2025: '~50–80', vac2026: 'TBN' },
+    { post: 'District Programme Officer',      payLevel: 'Pay Level 11', payScale: '₹67,700 – ₹2,09,200', vac2025: '~20–30', vac2026: 'TBN' },
+    { post: 'Finance & Accounts Officer',      payLevel: 'Pay Level 10', payScale: '₹56,100 – ₹1,77,500', vac2025: '~30–50', vac2026: 'TBN' },
+    { post: 'Other Allied Services (Group A/B)', payLevel: 'Pay Level 7–12', payScale: '₹44,900 – ₹1,51,100', vac2025: '~100–200', vac2026: 'TBN' },
+  ];
+
+  const salaryBreakdown = [
+    { post: 'Deputy Collector / DSP', basic: '₹56,100', da: '~₹30,855', hra: '₹6,732–₹13,464', gross: '~₹95,000–₹1,10,000', inhand: '₹80,000–₹95,000' },
+    { post: 'BDO / Finance Officer',   basic: '₹56,100', da: '~₹30,855', hra: '₹4,488–₹8,976', gross: '~₹85,000–₹1,00,000', inhand: '₹72,000–₹88,000' },
+    { post: 'Allied Services (PPS-7)', basic: '₹44,900', da: '~₹24,695', hra: '₹3,592–₹7,184', gross: '~₹70,000–₹85,000', inhand: '₹60,000–₹75,000' },
+  ];
+
+  const ageRelaxation = [
+    { category: 'General (Male)', limit: '21 – 40 years' },
+    { category: 'General (Female)', limit: '21 – 40 years' },
+    { category: 'OBC (NCL)', limit: '21 – 43 years (+3)' },
+    { category: 'SC / ST', limit: '21 – 45 years (+5)' },
+    { category: 'PwBD (General)', limit: '+10 years relaxation' },
+    { category: 'PwBD (OBC)', limit: '+13 years relaxation' },
+    { category: 'PwBD (SC/ST)', limit: '+15 years relaxation' },
+    { category: 'Ex-Servicemen', limit: '+5 years (subject to rules)' },
+    { category: 'State Govt Employees (UP)', limit: 'Up to 5 years extra (on regular posts)' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'General Studies I – History & Culture',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Indian Culture — Art, Architecture, Literature from Ancient to Modern',
+        'Modern Indian History (mid-18th century to present)',
+        'The Freedom Struggle — various stages and movements',
+        'Post-independence consolidation and reorganisation',
+        'Indian History of the World — important events (18th–20th century)',
+        'Indian Society — features, diversity, role of women',
+        'Urbanisation, their problems and remedies',
+        'Effects of globalisation on Indian society',
+        'Social empowerment, communalism, regionalism & secularism',
+      ],
+    },
+    {
+      subject: 'General Studies II – Governance & Polity',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Indian Constitution — historical underpinnings, evolution, features',
+        'Functions and responsibilities of Union and State governments',
+        'Parliament and State Legislatures — structure, functioning, conduct',
+        'Structure, organisation and functioning of the Executive and Judiciary',
+        'Panchayati Raj & Urban local bodies — 73rd and 74th Amendments',
+        'Government Policies and Interventions — up to SDG targets',
+        'Welfare schemes for vulnerable sections (SC/ST/Women/Minorities)',
+        'Health, Education, Human Resources — issues and policies',
+        'Important aspects of governance, transparency, accountability',
+        'e-Governance applications, models, successes & challenges',
+        'Role of Civil Services in a democracy',
+        'India and its neighbourhood — bilateral, regional and global groupings',
+        "Effect of foreign countries' policies on India's interests",
+        "Diaspora in India's interests",
+      ],
+    },
+    {
+      subject: 'General Studies III – Economy & Environment',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Indian Economy and planning, resource mobilisation',
+        'Major crops, cropping patterns, irrigation',
+        'Food processing and related industries (in and out of UP)',
+        'Land reforms in India, effects of liberalisation on agriculture',
+        'Infrastructure — energy, ports, roads, airports, railways',
+        'Investment models — PPP, FDI, WTO-related issues',
+        'Science and Technology — recent developments, their implications',
+        'Conservation, environmental pollution and degradation',
+        'Disaster and disaster management',
+        'Extremism — role and challenges of security forces in this context',
+        'Organised crime — terrorism, its connection with global events',
+        'Internal security challenges — money laundering, hawala',
+        'Cyber security — basics and border management',
+        'Various Security Forces and their mandates',
+      ],
+    },
+    {
+      subject: 'General Studies IV – Ethics',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Ethics and Human Interface — essence, determinants, consequences',
+        'Attitude — content, structure, function, influence and thought',
+        'Aptitude and foundational values for Civil Services',
+        'Emotional Intelligence — concepts, utilities and application',
+        'Contributions of moral thinkers and philosophers',
+        'Public / Civil Service values and Ethics in Public Administration',
+        'Probity in Governance — concept of public service, integrity',
+        'Information sharing and transparency in government',
+        "Code of Ethics, Code of Conduct, Citizen's Charter",
+        'Work culture, quality of service delivery, public fund utilisation',
+        'Challenges of corruption — anti-corruption measures',
+        'Case Studies — at least 3 case studies in the paper',
+      ],
+    },
+    {
+      subject: 'Essay Writing',
+      color: 'text-purple-700',
+      bg: 'bg-purple-50 border-purple-200',
+      topics: [
+        'Three essays (choice from sets) covering national issues, social topics and abstract/philosophical topics',
+        'Total 150 marks — typically 50 marks per essay',
+        'Strong link between Optional Subject knowledge and essay depth',
+        'Clarity, structure, relevance, and factual accuracy are judged',
+        'Reading newspaper editorials and UPPSC toppers\' essays is recommended',
+      ],
+    },
+    {
+      subject: 'Optional Subjects (choose one)',
+      color: 'text-rose-700',
+      bg: 'bg-rose-50 border-rose-200',
+      topics: [
+        'Agriculture, Animal Husbandry & Veterinary Science',
+        'Anthropology, Botany, Chemistry, Civil Engineering',
+        'Commerce & Accountancy, Economics, Electrical Engineering',
+        'Geography, Geology, History, Law, Management',
+        'Mathematics, Mechanical Engineering, Medical Science',
+        'Philosophy, Physics, Political Science & International Relations',
+        'Psychology, Public Administration, Sociology',
+        'Statistics, Zoology, Hindi Literature, Urdu Literature',
+        'Sanskrit Literature, English Literature, Agriculture (Hindi medium)',
+        'Full syllabus for each subject is available in the official UPPSC notification',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', title: 'Foundation & NCERT Base', tasks: 'Complete NCERTs for History (6th–12th), Geography (6th–12th), Polity (11th–12th), Economics (11th–12th). Simultaneously begin optional subject study. Read one national newspaper daily (The Hindu or Dainik Jagran). Set up a current affairs notebook.' },
+    { month: 'Month 3–4', title: 'Core Subject Depth', tasks: 'Study standard references: Bipin Chandra for Modern History, Laxmikanth for Polity, Shankar IAS for Environment. Continue optional subject (at least 2 hrs/day). Begin solving UPPSC PCS previous year Prelims papers. Target: 80+ marks in Prelims mock tests.' },
+    { month: 'Month 5–6', title: 'Prelims-Focused Revision', tasks: 'Full-length Prelims mock tests every 3 days. Revise static GK: UP-specific topics (culture, rivers, economy, current schemes). Revise current affairs of the last 12 months. CSAT practice — focus on passages and maths. Target: 110+/200 in every mock.' },
+    { month: 'Month 7–8', title: 'Mains Answer Writing', tasks: 'Start Mains answer writing practice — 2 answers daily from GS I/II/III/IV. Join test series or answer exchange groups. Deep dive into optional subject — cover complete syllabus and solve previous papers.' },
+    { month: 'Month 9–10', title: 'Mains Full Preparation', tasks: 'One full Mains mock every week. Revise all GS papers with notes. Strengthen essay writing — practise 2 essays per week. Focus on UP-specific issues for GS II and III: Bundelkhand, eastern UP development, MSME sector, agricultural distress.' },
+    { month: 'Month 11–12', title: 'Interview Preparation', tasks: "Prepare detailed DAF (Detailed Application Form) answers. Read extensively about UP's development agenda, district of your domicile, current affairs of last 6 months. Practise mock interviews. Keep up Hindi and English communication polished." },
+  ];
+
+  const books = [
+    { subject: 'Modern History', title: "India's Struggle for Independence", author: 'Bipin Chandra', pdf: null },
+    { subject: 'Indian Polity', title: 'Indian Polity', author: 'M. Laxmikanth (McGraw-Hill)', pdf: null },
+    { subject: 'Geography', title: 'Certificate Physical & Human Geography', author: 'G.C. Leong + NCERTs', pdf: null },
+    { subject: 'Indian Economy', title: 'Indian Economy', author: 'Ramesh Singh (McGraw-Hill)', pdf: null },
+    { subject: 'Environment & Ecology', title: 'Environment for Civil Services', author: 'Shankar IAS Academy', pdf: null },
+    { subject: 'General Hindi', title: 'Samanya Hindi', author: 'Hardev Bahri / Arihant', pdf: null },
+    { subject: 'Ethics', title: 'Ethics, Integrity & Aptitude', author: 'G. Subba Rao & P.N. Roy Chowdhury', pdf: null },
+    { subject: 'Static GK (UP-focused)', title: 'UPPSC PCS Previous Years Solved Papers', author: 'Arihant / Youth Competition Times', pdf: null },
+  ];
+
+  const tips = [
+    { title: 'UP-specific GK is a game-changer in Prelims', body: 'Around 25–35 questions in UPPSC PCS Prelims are UP-centric — UP history, culture, geography, schemes, economy, and current affairs. Most candidates neglect this. Dedicating 45 minutes daily to UP current affairs and static GK can add 20–30 extra marks over competitors.' },
+    { title: 'Optional subject = your secret weapon in Mains', body: 'The optional subject carries 400 marks out of 1,550 in Mains. Your choice of optional should be based on genuine interest and availability of guidance — not just what others are choosing. Geography, Public Administration, and Sociology are consistently popular among UPPSC toppers.' },
+    { title: 'Answer writing matters more than reading', body: 'UPPSC Mains is a descriptive exam. Reading alone does not build the skill to write sharp, structured answers in 7–8 minutes. Start answer writing practice from Month 4 onwards — daily, without fail. Quality and structure beat length every time.' },
+    { title: 'CSAT Paper II needs a minimum 33% — don\'t ignore it', body: 'Many candidates skip CSAT preparation assuming it\'s easy. The CSAT Paper II (100 questions, 200 marks) requires a minimum qualifying score of 33%. Non-qualifying in CSAT means disqualification regardless of GS Paper I score. Allocate 3–4 weeks to CSAT basics.' },
+    { title: 'General Hindi (Mains) requires daily practice', body: 'Paper I (General Hindi, 150 marks) is qualifying but critical — many candidates fail here despite strong GS performance. Practise Hindi essay writing, precis writing, grammar, and translation exercises from the first month itself.' },
+    { title: 'Follow UPPSC notification dates — don\'t rely on coaching institutes', body: 'UPPSC timelines are set by the Commission, not by third parties. Always bookmark uppsc.up.nic.in for official notifications, admit cards, and result declarations. Coaching centre social media posts frequently carry incorrect dates.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the UPPSC PCS 2026 notification date?', a: 'The UPPSC PCS 2026 notification is expected in June–July 2026, based on the Commission\'s annual calendar pattern. The 2025 cycle notification was released on 8 November 2025. Always check the official website uppsc.up.nic.in for exact dates. The 2025 cycle Prelims is expected in May–June 2026.' },
+    { q: 'What is the age limit for UPPSC PCS 2026?', a: 'The general age limit is 21 to 40 years. OBC (NCL) candidates get a 3-year relaxation (21–43 years). SC/ST candidates get 5 years (21–45 years). PwBD candidates get an additional 10 years relaxation. Age is calculated as on the 1 July of the year of notification.' },
+    { q: 'How many vacancies are there in UPPSC PCS 2025?', a: 'The UPPSC PCS 2025 notification released on 8 November 2025 advertised 220 vacancies across various services including Deputy Collector, DSP, BDO, District Programme Officer, and allied posts. The exact service-wise breakup is available in the official notification on uppsc.up.nic.in.' },
+    { q: 'What is the UPPSC PCS Mains exam pattern?', a: 'The Mains exam has 8 papers: General Hindi (qualifying, 150 marks), Essay (150 marks), General Studies I–IV (200 marks each), and two Optional Subject papers (200 marks each). Total marks for merit calculation: 1,550. The interview carries 100 marks, making the final total 1,650 marks.' },
+    { q: 'Which optional subject is best for UPPSC PCS?', a: 'There is no universal "best" optional — it depends on your background, interest, and guidance availability. Among popular choices, Geography (widely available coaching, UP-relevant content), Public Administration (GS overlap, manageable syllabus), and Sociology (abstract but scoring) consistently perform well among UPPSC toppers. Choose based on genuine interest over popularity.' },
+    { q: 'What is the UPPSC PCS in-hand salary in 2026?', a: 'For Deputy Collector and DSP posts (Pay Level 13, Basic ₹56,100): approximate in-hand salary is ₹80,000–₹95,000/month including DA at 55% (effective January 2026), HRA, and other allowances. For allied Group B posts: ₹60,000–₹75,000/month. Additional benefits include Government accommodation, CGHS medical, pension under NPS, and LTC.' },
+    { q: 'Is UPPSC PCS valid for UP domicile only?', a: 'For unreserved posts, candidates from all states can apply. However, reservation benefits (OBC, SC, ST) are applicable only for UP domicile candidates under UP reservation policy. Many horizontal reservations (women, freedom fighter dependents, etc.) also require UP domicile. Check the official notification for category-specific eligibility.' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">UPPSC PCS 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">State PSC</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Uttar Pradesh</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Graduate Eligible</span>
+            <span className="bg-yellow-400/20 text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 2026 Notification: Jun–Jul 2026</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            UPPSC PCS 2026 –<br className="hidden sm:block" /> Notification, Syllabus, Eligibility &amp; Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            2025 cycle notification released 8 November 2025 — 220 vacancies for SDM, DSP, BDO &amp; allied posts. Prelims expected May–June 2026. UPPSC PCS 2026 notification expected June–July 2026. Graduation eligible.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies (2025 Cycle)', value: '220 Posts' },
+              { label: '2026 Notification',      value: 'Jun–Jul 2026' },
+              { label: 'Min. Qualification',     value: 'Graduate' },
+              { label: 'In-Hand Salary',         value: '₹60K–₹95K/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── MAIN CONTENT ── */}
+          <div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is UPPSC PCS?</h2>
+              <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-5 flex gap-3">
+                <span className="text-yellow-500 text-lg flex-shrink-0">🔔</span>
+                <div>
+                  <p className="text-sm font-semibold text-yellow-900 mb-1">UPPSC PCS 2025 Prelims Expected: May–June 2026</p>
+                  <p className="text-xs text-yellow-800">Application window closed December 2025. Admit cards and exam date for Prelims are expected to be announced by UPPSC in April–May 2026. Check uppsc.up.nic.in regularly.</p>
+                </div>
+              </div>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                <strong>UPPSC PCS (Provincial Civil Services)</strong> is the annual state civil services examination conducted by the <strong>Uttar Pradesh Public Service Commission (UPPSC)</strong>. It recruits officers for prestigious Group A and Group B posts in the Uttar Pradesh state government — including Deputy Collector (SDM), Deputy Superintendent of Police (DSP), Block Development Officer (BDO), District Programme Officer, and more than 20 allied services.
+              </p>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                UPPSC PCS is considered one of the most competitive state PSC exams in India, given Uttar Pradesh's large population and aspirant base. The exam follows a three-stage structure: Prelims (screening), Mains (merit), and Interview. With a salary reaching ₹2,09,200/month at the highest levels, UPPSC PCS offers unmatched career security and social standing.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+                {[
+                  { icon: '🏛️', label: 'Conducting Body', value: 'UPPSC, Prayagraj' },
+                  { icon: '📋', label: 'Post Level', value: 'Group A & Group B' },
+                  { icon: '📅', label: 'Frequency', value: 'Annual' },
+                  { icon: '🎓', label: 'Min. Qualification', value: 'Graduation (any stream)' },
+                  { icon: '📋', label: 'Age Limit', value: '21 – 40 years (General)' },
+                  { icon: '💰', label: 'Pay Scale', value: '₹56,100 – ₹2,09,200/mo' },
+                ].map((item) => (
+                  <div key={item.label} className="card p-4 flex gap-3 items-start">
+                    <span className="text-xl">{item.icon}</span>
+                    <div>
+                      <div className="text-xs text-surface-400 font-medium">{item.label}</div>
+                      <div className="text-sm font-semibold text-surface-800">{item.value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">2. 📅 Important Dates – UPPSC PCS 2025–26</h2>
+              <p className="text-sm text-surface-500 mb-4 italic">
+                💡 <strong>Key update:</strong> UPPSC PCS 2025 Prelims is expected in May–June 2026. Start preparation now for both 2025 (Prelims approaching) and 2026 (notification expected June–July 2026).
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-primary-900 text-white">
+                      <th className="p-3 text-left font-heading">Event</th>
+                      <th className="p-3 text-center font-heading">Date</th>
+                      <th className="p-3 text-center font-heading">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, idx) => (
+                      <tr key={row.event} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700 border-b border-surface-100">{row.event}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100 whitespace-nowrap">{row.date}</td>
+                        <td className="p-3 text-center border-b border-surface-100">
+                          <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${statusColor(row.status)}`}>{statusLabel(row.status)}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. Eligibility Criteria</h2>
+              <div className="grid sm:grid-cols-2 gap-4 mb-5">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🪪</span>
+                    <span className="font-heading font-semibold text-surface-800">Nationality</span>
+                  </div>
+                  <p className="text-sm text-surface-600">Citizen of India. Tibetan refugees who settled in India before 1 January 1962 and persons of Indian origin who have permanently migrated from certain specified countries are also eligible per rules.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🎓</span>
+                    <span className="font-heading font-semibold text-surface-800">Educational Qualification</span>
+                  </div>
+                  <p className="text-sm text-surface-600">A Bachelor's degree (Graduation) in any discipline from a recognised university is the minimum requirement. Final year students are generally not eligible — degree must be complete by the application deadline. Some posts (e.g., Finance Officer) may require specific stream.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">📋</span>
+                    <span className="font-heading font-semibold text-surface-800">Age Limit 2026</span>
+                  </div>
+                  <div className="space-y-1.5">
+                    {ageRelaxation.map((r) => (
+                      <div key={r.category} className="flex justify-between text-xs">
+                        <span className="text-surface-500">{r.category}</span>
+                        <span className="font-semibold text-surface-800">{r.limit}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2 italic">Age calculated as on 1 July of the year of notification.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">📝</span>
+                    <span className="font-heading font-semibold text-surface-800">Application Fee (2025 Cycle)</span>
+                  </div>
+                  <div className="space-y-1.5">
+                    {[
+                      { cat: 'General / OBC (Other States)', fee: '₹125' },
+                      { cat: 'OBC (UP Domicile)',             fee: '₹125' },
+                      { cat: 'SC / ST (UP Domicile)',         fee: '₹65' },
+                      { cat: 'PwBD',                          fee: '₹25' },
+                      { cat: 'Ex-Servicemen',                 fee: '₹25' },
+                    ].map((r) => (
+                      <div key={r.cat} className="flex justify-between text-xs">
+                        <span className="text-surface-500">{r.cat}</span>
+                        <span className="font-semibold text-surface-800">{r.fee}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2 italic">Fee to be paid online. Fees for 2026 cycle may change — verify from official notification.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* 4. VACANCIES & POSTS */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. Vacancies &amp; Posts</h2>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-4">
+                <p className="text-sm text-primary-900"><strong>2025 Cycle Total Vacancies: 220 Posts</strong> — notified on 8 November 2025. UPPSC PCS 2026 vacancies will be announced with the new notification (expected June–July 2026). Historical range: 300–600 posts per year.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-primary-900 text-white">
+                      <th className="p-3 text-left font-heading">Post Name</th>
+                      <th className="p-3 text-center font-heading">Pay Level</th>
+                      <th className="p-3 text-center font-heading">Pay Scale</th>
+                      <th className="p-3 text-center font-heading">Vac. 2025</th>
+                      <th className="p-3 text-center font-heading">Vac. 2026</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyPosts.map((row, idx) => (
+                      <tr key={row.post} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{row.post}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.payLevel}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100 whitespace-nowrap">{row.payScale}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.vac2025}</td>
+                        <td className="p-3 text-center border-b border-surface-100">
+                          <span className="text-xs font-medium bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">{row.vac2026}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3 italic">⚠️ Vacancy count for 2026 cycle is To Be Notified (TBN). Exact post-wise breakup is available in the official UPPSC notification on uppsc.up.nic.in.</p>
+            </section>
+
+            {/* 5. SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. Selection Process</h2>
+              <div className="space-y-4">
+                {[
+                  { step: '1', title: 'Preliminary Examination (Prelims)', color: 'border-primary-500 bg-primary-50', badge: 'bg-primary-500 text-white', desc: 'Screening test with 2 papers: GS Paper I (200 marks, 150 questions, 2 hrs) and CSAT Paper II (qualifying, min. 33%). Marks of Paper II are NOT counted in merit. Only Paper I marks determine Prelims cut-off. Computer-Based (OMR) Exam.' },
+                  { step: '2', title: 'Main Examination (Mains)', color: 'border-amber-500 bg-amber-50', badge: 'bg-amber-500 text-white', desc: 'Descriptive written exam with 8 papers — General Hindi (qualifying), Essay, General Studies I–IV, and two Optional Subject papers. Total merit marks: 1,550. This is the most critical stage. Rough ratio: 12–15 candidates called per vacancy.' },
+                  { step: '3', title: 'Interview (Personality Test)', color: 'border-emerald-500 bg-emerald-50', badge: 'bg-emerald-500 text-white', desc: 'Interview carries 100 marks conducted by UPPSC board. Tests personality, clarity of thought, communication in Hindi and English, awareness of UP and national current affairs, and DAF (application form) topics. Final merit = Mains + Interview (total 1,650 marks).' },
+                ].map((s) => (
+                  <div key={s.step} className={`flex gap-4 p-5 rounded-xl border ${s.color}`}>
+                    <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 ${s.badge}`}>{s.step}</span>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.title}</div>
+                      <p className="text-sm text-surface-600">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 6. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. Exam Pattern – Prelims &amp; Mains 2026</h2>
+
+              <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">Prelims Exam Pattern</h3>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="p-3 text-left font-heading">Paper</th>
+                      <th className="p-3 text-center font-heading">Questions</th>
+                      <th className="p-3 text-center font-heading">Marks</th>
+                      <th className="p-3 text-center font-heading">Duration</th>
+                      <th className="p-3 text-center font-heading">Negative Marking</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {preliPsPattern.map((row, idx) => (
+                      <tr key={row.paper} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{row.paper}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-primary-600 border-b border-surface-100">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.duration}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.negative}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">Mains Exam Pattern</h3>
+              <div className="overflow-x-auto mb-4">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="p-3 text-left font-heading">Paper</th>
+                      <th className="p-3 text-center font-heading">Marks</th>
+                      <th className="p-3 text-center font-heading">Type</th>
+                      <th className="p-3 text-center font-heading">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mainsPattern.map((row, idx) => (
+                      <tr key={row.paper} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{row.paper}</td>
+                        <td className="p-3 text-center font-semibold text-primary-600 border-b border-surface-100">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.type}</td>
+                        <td className="p-3 text-center border-b border-surface-100">
+                          <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${row.note.includes('Qualifying') ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'}`}>{row.note}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-surface-50 rounded-xl p-4 text-sm text-surface-600 border border-surface-200">
+                <strong>Total Merit Marks:</strong> Mains (1,550) + Interview (100) = <strong>1,650 marks</strong> | Interview-to-vacancy ratio: approximately 3:1 | Hindi is the primary medium; answers can be written in English (bilingual answers not allowed).
+              </div>
+            </section>
+
+            {/* 7. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">7. Detailed Syllabus – UPPSC PCS Mains 2026</h2>
+              <p className="text-sm text-surface-500 mb-5">The Prelims GS Paper I covers History, Geography, Polity, Economy, Science, and UP-specific topics. The Mains syllabus below is for GS Papers I–IV and Optional Subject.</p>
+              <div className="space-y-3">
+                {syllabus.map((s) => (
+                  <details key={s.subject} className={`rounded-xl border ${s.bg} group`}>
+                    <summary className={`cursor-pointer px-5 py-3.5 font-heading font-semibold text-sm ${s.color} flex items-center justify-between list-none`}>
+                      <span>{s.subject}</span>
+                      <span className="text-surface-400 group-open:rotate-90 transition-transform text-lg">›</span>
+                    </summary>
+                    <div className="px-5 pb-4 pt-2">
+                      <ul className="space-y-1.5">
+                        {s.topics.map((t) => (
+                          <li key={t} className="flex gap-2 text-sm text-surface-600">
+                            <span className="text-surface-300 mt-0.5 flex-shrink-0">•</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 8. SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. 💰 Salary &amp; Benefits (2026)</h2>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-emerald-900"><strong>💡 DA Update:</strong> Dearness Allowance (DA) was revised to <strong>55%</strong> effective 1 January 2026. HRA depends on city classification: 27% (X cities), 18% (Y cities), 9% (Z cities). Figures below are indicative based on current DA rates.</p>
+              </div>
+              <div className="overflow-x-auto mb-5">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-primary-900 text-white">
+                      <th className="p-3 text-left font-heading">Post</th>
+                      <th className="p-3 text-center font-heading">Basic Pay</th>
+                      <th className="p-3 text-center font-heading">DA (55%)</th>
+                      <th className="p-3 text-center font-heading">HRA</th>
+                      <th className="p-3 text-center font-heading">Gross</th>
+                      <th className="p-3 text-center font-heading">In-Hand</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, idx) => (
+                      <tr key={row.post} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{row.post}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.basic}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.da}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.hra}</td>
+                        <td className="p-3 text-center text-surface-600 border-b border-surface-100">{row.gross}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-700 border-b border-surface-100">{row.inhand}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[
+                  { icon: '🏠', title: 'Government Accommodation', desc: 'Officers posted to district/tehsil level are typically allotted government bungalows or quarters at heavily subsidised rent.' },
+                  { icon: '🏥', title: 'CGHS / State Medical', desc: 'UP state government employees and their families receive medical benefits under the state health insurance scheme.' },
+                  { icon: '🎓', title: 'Children Education Allowance', desc: 'Monthly allowance for school-going children — revised under 7th Pay Commission rules.' },
+                  { icon: '✈️', title: 'LTC – Leave Travel Concession', desc: 'Reimbursement for travel expenses to home state or anywhere in India — once in 4 years.' },
+                  { icon: '💼', title: 'NPS (Pension)', desc: 'UP state employees appointed after 2005 are covered under New Pension Scheme (NPS) with employer contribution.' },
+                  { icon: '🚗', title: 'Vehicle &amp; Staff Benefits', desc: 'Senior officers (Deputy Collector / DSP level) are eligible for official vehicle use for duty purposes.' },
+                ].map((b) => (
+                  <div key={b.title} className="card p-4 flex gap-3">
+                    <span className="text-xl flex-shrink-0">{b.icon}</span>
+                    <div>
+                      <div className="text-sm font-semibold text-surface-800 mb-0.5">{b.title}</div>
+                      <p className="text-xs text-surface-500">{b.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 9. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. 12-Month Study Plan for UPPSC PCS 2026</h2>
+              <div className="space-y-4">
+                {studyPlan.map((phase, i) => (
+                  <div key={phase.month} className="flex gap-4">
+                    <div className="flex flex-col items-center">
+                      <div className="w-10 h-10 rounded-full bg-primary-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">{i + 1}</div>
+                      {i < studyPlan.length - 1 && <div className="w-0.5 flex-1 bg-surface-200 my-1" />}
+                    </div>
+                    <div className="card p-4 mb-2 flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs font-semibold bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full">{phase.month}</span>
+                        <span className="font-heading font-semibold text-surface-800 text-sm">{phase.title}</span>
+                      </div>
+                      <p className="text-sm text-surface-600">{phase.tasks}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. Best Books for UPPSC PCS Preparation</h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="p-3 text-left font-heading">Subject</th>
+                      <th className="p-3 text-left font-heading">Book Title</th>
+                      <th className="p-3 text-left font-heading">Author</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, idx) => (
+                      <tr key={b.subject} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{b.subject}</td>
+                        <td className="p-3 text-surface-700 border-b border-surface-100">{b.title}</td>
+                        <td className="p-3 text-surface-600 border-b border-surface-100">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-4">
+                <p className="text-sm text-primary-900"><strong>📌 Note:</strong> NCERTs (6th–12th) for History, Geography, Polity, and Economics are <em>non-negotiable</em> first reads. All standard references listed above are available at district-level book shops and online. No coaching material is strictly required — self-study with these books and a good test series is sufficient.</p>
+              </div>
+            </section>
+
+            {/* 11. TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. Expert Tips to Crack UPPSC PCS</h2>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={tip.title} className="card p-5 flex gap-4">
+                    <div className="w-9 h-9 rounded-xl bg-accent-100 text-accent-600 text-sm font-bold font-heading flex items-center justify-center flex-shrink-0">{i + 1}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</div>
+                      <p className="text-sm text-surface-600">{tip.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 12. FAQs */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. Frequently Asked Questions (FAQs)</h2>
+              <div className="space-y-3">
+                {faqs.map((faq) => (
+                  <details key={faq.q} className="card group">
+                    <summary className="cursor-pointer px-5 py-4 font-heading font-semibold text-surface-800 text-sm flex justify-between items-start gap-3 list-none">
+                      <span>{faq.q}</span>
+                      <span className="text-surface-400 group-open:rotate-45 transition-transform mt-0.5 flex-shrink-0 text-lg">+</span>
+                    </summary>
+                    <p className="px-5 pb-4 text-sm text-surface-600 leading-relaxed border-t border-surface-100 pt-3">{faq.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>{/* end main */}
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">ON THIS PAGE</p>
+                <ol className="space-y-1.5 list-decimal list-inside">
+                  {toc.map((s) => (
+                    <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:text-primary-700 hover:underline">{s.label}</a></li>
+                  ))}
+                </ol>
+              </div>
+
+              <a href="https://uppsc.up.nic.in" target="_blank" rel="noopener noreferrer"
+                className="card p-5 block hover:border-primary-300 transition-colors">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-2">Official Website</p>
+                <p className="font-semibold text-surface-800 text-sm mb-1">UPPSC Official Portal</p>
+                <p className="text-xs text-surface-500 mb-3">Notification, admit card, result &amp; official calendar</p>
+                <span className="text-xs font-semibold text-primary-500">uppsc.up.nic.in →</span>
+              </a>
+
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">UPPSC PCS At a Glance</p>
+                <div className="space-y-2 text-xs">
+                  {[
+                    { label: 'Conducting Body', value: 'UPPSC, Prayagraj' },
+                    { label: 'Min. Qualification', value: 'Graduation (any stream)' },
+                    { label: 'Age Limit (General)', value: '21 – 40 years' },
+                    { label: 'Application Fee (Gen)', value: '₹125' },
+                    { label: '2025 Cycle Vacancies', value: '220 posts' },
+                    { label: 'Prelims Format', value: '150 MCQs, 200 marks, 2 hrs' },
+                    { label: 'CSAT', value: 'Qualifying (min. 33%)' },
+                    { label: 'Mains (Merit) Marks', value: '1,550 marks (8 papers)' },
+                    { label: 'Interview Marks', value: '100 marks' },
+                    { label: 'Final Total', value: '1,650 marks' },
+                  ].map((r) => (
+                    <div key={r.label} className="flex justify-between gap-2">
+                      <span className="text-surface-500">{r.label}</span>
+                      <span className="font-semibold text-surface-800 text-right">{r.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">Other State PSC Exams</p>
+                <div className="space-y-2">
+                  {[
+                    { name: 'BPSC CCE 2026',         slug: 'bpsc-cce' },
+                    { name: 'MPSC State Services',   slug: 'mpsc-rajyaseva' },
+                    { name: 'RPSC RAS 2026',         slug: 'rpsc-ras' },
+                    { name: 'MPPSC State Service',   slug: 'mppsc-state-service' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+
+              <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for UPPSC PCS 2026.</p>
                 <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
               </Link>
 
