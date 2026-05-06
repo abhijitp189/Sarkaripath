@@ -265,6 +265,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'upsc-nda') {
+    return {
+      title: 'UPSC NDA 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'UPSC NDA 2026: NDA I notification released Jan 2026, exam on 13 Apr 2026. NDA II notification expected Jun 2026. 406 vacancies. 12th pass (Maths/Physics for Navy/AF). Syllabus, exam pattern, SSB, salary ₹56,100+/month.',
+      keywords: 'UPSC NDA 2026, NDA notification 2026, NDA syllabus Hindi, NDA exam date 2026, NDA taiyari, national defence academy, NDA 1 2026, NDA 2 2026, defence sarkari naukri, एनडीए भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/upsc-nda/' },
+      other: { 'description:hi': 'UPSC NDA 2026 – NDA I अधिसूचना जनवरी 2026 में जारी, परीक्षा 13 अप्रैल 2026 को। NDA II अधिसूचना जून 2026 में अपेक्षित। 406 रिक्तियाँ। सिलेबस, SSB साक्षात्कार, वेतन ₹56,100+/माह।' },
+    };
+  }
+
   if (params.slug === 'rrb-alp') {
     return {
       title: 'RRB ALP 2026 – Syllabus, CBT 1 Result, Exam Pattern & Guide | TaiyarHo',
@@ -317,6 +327,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ibps-rrb-po') return <IbpsRrbPoPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
   if (brief && brief.slug === 'delhi-police-constable') return <DelhiPoliceConstablePage exam={brief} />;
+  if (brief && brief.slug === 'upsc-nda') return <UpscNdaPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
@@ -19312,6 +19323,831 @@ function RpfConstablePage({ exam }: { exam: any }) {
               <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
             </Link>
           </aside>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── UPSC NDA RICH PAGE ────────────────────────────────────────────────────────
+function UpscNdaPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Services' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'ssb',             label: 'SSB Interview' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'done')     return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    if (s === 'tbn')      return 'bg-amber-100 text-amber-700';
+    if (s === 'live')     return 'bg-red-100 text-red-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done')     return 'Completed';
+    if (s === 'upcoming') return 'Expected';
+    if (s === 'tbn')      return 'TBN';
+    if (s === 'live')     return 'Live Now';
+    return 'TBN';
+  };
+
+  const importantDates = [
+    { event: 'NDA I 2026 – Official Notification Released',          date: '8 January 2026',              status: 'done' },
+    { event: 'NDA I 2026 – Online Application Window',               date: '8 Jan – 28 Jan 2026',          status: 'done' },
+    { event: 'NDA I 2026 – Admit Card Available',                    date: '20 March 2026',               status: 'done' },
+    { event: 'NDA I 2026 – Written Exam Conducted',                  date: '13 April 2026',               status: 'done' },
+    { event: 'NDA I 2026 – Provisional Answer Key Released',         date: 'April 2026',                  status: 'done' },
+    { event: 'NDA I 2026 – Written Exam Result (Expected)',          date: 'June 2026 (TBN)',              status: 'tbn' },
+    { event: 'NDA I 2026 – SSB Interviews (Expected)',               date: 'July – October 2026 (TBN)',   status: 'tbn' },
+    { event: 'NDA I 2026 – Final Merit List (Expected)',             date: 'November 2026 (TBN)',          status: 'tbn' },
+    { event: '💡 NDA II 2026 – Notification Expected',               date: 'June 2026',                   status: 'upcoming' },
+    { event: 'NDA II 2026 – Application Window (Expected)',          date: 'June – July 2026',            status: 'upcoming' },
+    { event: 'NDA II 2026 – Written Exam (Expected)',                date: 'September 2026',              status: 'upcoming' },
+    { event: 'NDA II 2026 – SSB Interviews (Expected)',              date: 'November 2026 – Feb 2027',    status: 'upcoming' },
+    { event: 'NDA Joining (Course 156 / NDA I 2026)',                date: 'January 2027 (Expected)',     status: 'upcoming' },
+  ];
+
+  const vacancies = [
+    { service: 'Indian Army',      course156: '208', course157: 'TBN', training: 'National Defence Academy, Khadakwasla' },
+    { service: 'Indian Navy',      course156: '42',  course157: 'TBN', training: 'National Defence Academy, Khadakwasla' },
+    { service: 'Air Force (Flying)',course156: '92',  course157: 'TBN', training: 'National Defence Academy, Khadakwasla' },
+    { service: 'Air Force (GS)',   course156: '18',  course157: 'TBN', training: 'National Defence Academy, Khadakwasla' },
+    { service: 'Air Force (Electrical)', course156: '10', course157: 'TBN', training: 'National Defence Academy, Khadakwasla' },
+    { service: 'Naval Academy (10+2 Cadet Entry)', course156: '36', course157: 'TBN', training: 'Indian Naval Academy, Ezhimala (Kerala)' },
+  ];
+
+  const writtenPattern = [
+    { subject: 'Mathematics',           questions: 120, marks: 300, duration: '2.5 hrs', negative: '−0.833/wrong' },
+    { subject: 'General Ability Test (GAT)', questions: 150, marks: 600, duration: '2.5 hrs', negative: '−1.333/wrong' },
+  ];
+
+  const gatBreakdown = [
+    { part: 'Part A – English', marks: 200, topics: 'Grammar, Vocabulary, Comprehension, Para Jumbles, Fill in the Blanks' },
+    { part: 'Part B – GK / General Science', marks: 400, topics: 'Physics (25%), Chemistry (15%), General Science (10%), History (20%), Geography (20%), Current Affairs (10%)' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'Mathematics (Paper 1)',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Algebra – Complex Numbers, Quadratic Equations, Permutations & Combinations, Binomial Theorem',
+        'Matrices & Determinants – Types, Operations, Inverse, Cramer\'s Rule',
+        'Trigonometry – Identities, Heights & Distances, Inverse Trigonometric Functions',
+        'Analytical Geometry of 2D – Lines, Circles, Parabola, Ellipse, Hyperbola',
+        'Differential Calculus – Continuity, Differentiability, Maxima & Minima',
+        'Integral Calculus & DEs – Integration, Area, Differential Equations',
+        'Vector Algebra – Scalar & Vector Products, Work & Torque Applications',
+        'Statistics & Probability – Mean, Median, Mode, Variance, Probability, Binomial Distribution',
+      ],
+    },
+    {
+      subject: 'English (Part A of GAT)',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Grammar & Usage – Parts of Speech, Tenses, Active/Passive, Direct/Indirect',
+        'Vocabulary – Synonyms, Antonyms, Idioms & Phrases',
+        'Reading Comprehension – Unseen passages',
+        'Cohesion in Extended Language – Para Jumbles, Fill in the Blanks',
+        'Spotting Errors & Sentence Correction',
+      ],
+    },
+    {
+      subject: 'Physics (Part B – General Knowledge)',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Physical World, Units & Measurements',
+        'Kinematics, Laws of Motion, Work & Energy',
+        'Gravitation, Properties of Bulk Matter, Thermodynamics',
+        'Electrostatics, Current Electricity, Magnetic Effects',
+        'Electromagnetic Induction, Light – Reflection & Refraction',
+        'Modern Physics – Atomic Models, Nuclei, Semiconductors',
+        'Sound Waves, Natural Phenomena',
+      ],
+    },
+    {
+      subject: 'Chemistry (Part B – GK)',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Basic Concepts – Elements, Compounds, Chemical Reactions',
+        'States of Matter – Solids, Liquids, Gases, Atomic Structure',
+        'Periodic Classification of Elements',
+        'Acids, Bases & Salts, Chemical Bonding',
+        'Metals & Non-metals, Fuels & Combustion',
+        'Carbon Compounds, Food & Nutrition, Safety & Explosives',
+      ],
+    },
+    {
+      subject: 'General Knowledge – History, Geography, Polity, Current Affairs',
+      color: 'text-purple-700',
+      bg: 'bg-purple-50 border-purple-200',
+      topics: [
+        'History – Indian Freedom Movement, World History (French Revolution, WWI, WWII)',
+        'Geography – Physical & Economic Geography of India, Maps, Climate',
+        'Indian Polity – Constitution, Parliament, Fundamental Rights, Defence Forces',
+        'General Science – Biology basics, Health & Nutrition',
+        'Current Affairs – National & International events, Defence, Science & Tech',
+        'Social Studies – UN, International Organizations, Discoveries',
+      ],
+    },
+  ];
+
+  const ssbProcess = [
+    { stage: 'Stage 1 – Screening (Day 1)', details: 'Officer Intelligence Rating (OIR) test + Picture Perception & Description Test (PPDT). Only screened-in candidates continue for 4 more days.' },
+    { stage: 'Stage 2 – Psychological Tests (Day 2)', details: 'Thematic Apperception Test (TAT), Word Association Test (WAT), Situation Reaction Test (SRT), and Self Description (SD).' },
+    { stage: 'Stage 2 – GTO Tasks (Days 3–4)', details: 'Group Discussion, Group Planning Exercise, Progressive Group Task (PGT), Half Group Task, Individual Obstacles, Command Task, Final Group Task (FGT).' },
+    { stage: 'Stage 2 – Personal Interview (Day 3 or 4)', details: 'One-on-one interview with a Psychologist/GTO/IO panel. Assesses Officer Like Qualities (OLQs): Courage, Integrity, Leadership, Initiative, Confidence.' },
+    { stage: 'Conference (Day 5)', details: 'All three assessors (Psychologist, GTO, IO) discuss your performance. Recommended candidates proceed for medical.' },
+    { stage: 'Medical Examination', details: 'Conducted at Military Hospital. Strict standards: vision, height, weight, hearing. Arm/Navy/Air Force have different vision standards.' },
+  ];
+
+  const salaryBreakdown = [
+    { stage: 'Cadet Training (3 years at NDA + 1 year IMA/Naval Acad/AFA)', stipend: '₹56,100/month (as per 7th CPC, likely revised under 8th CPC)', note: 'Training period' },
+    { stage: 'After Commission – Lieutenant (Army) / Sub Lieutenant (Navy) / Flying Officer (AF)', stipend: 'Pay Level 10: ₹56,100 – ₹1,77,500/month + allowances', note: 'Starting rank' },
+    { stage: 'All-inclusive in-hand (incl. Military Service Pay, DA, HRA, Kit allowance)', stipend: '₹80,000 – ₹1,10,000/month', note: 'Effective take-home' },
+  ];
+
+  const studyPlan = [
+    {
+      month: 'Month 1–2',
+      title: 'Maths Foundation',
+      tasks: 'Cover Class 11–12 Maths thoroughly: Algebra, Trigonometry, Coordinate Geometry, and Calculus. Use NCERT + R.S. Aggarwal (NDA/NA). Target: 60 Maths questions daily. Physical fitness routine: 5 km run + push-ups/sit-ups.',
+    },
+    {
+      month: 'Month 3',
+      title: 'GAT – English & Science',
+      tasks: 'English: Grammar rules, vocabulary from Word Power Made Easy. Physics: Class 11–12 NCERT (all chapters). Chemistry: Class 9–12 NCERT basics. Give 1 GAT mock test per week. Track accuracy per subject.',
+    },
+    {
+      month: 'Month 4',
+      title: 'GAT – History, Geography, Current Affairs',
+      tasks: 'History: NCERT Class 12 + Indian Freedom Struggle. Geography: NCERT Class 11–12. Current Affairs: Read The Hindu / Indian Express daily. Maintain a GK diary for quick revision.',
+    },
+    {
+      month: 'Month 5',
+      title: 'Full Mock Tests + Weak Area Revision',
+      tasks: 'Give 2 full-length NDA mock tests per week (both papers in one sitting). Analyse errors. Target 50%+ in Maths and 60%+ in GAT. Revise Physics and History weekly. Start SSB reading (Arihant SSB Guide).',
+    },
+    {
+      month: 'Month 6',
+      title: 'Final Revision + SSB Personality',
+      tasks: 'Revise all formula sheets and GK notes. Give mock tests with strict time limits. Start SSB Personality Development: group discussions with friends, self-description writing, current affairs debates.',
+    },
+  ];
+
+  const books = [
+    { subject: 'Mathematics', title: 'Mathematics for NDA & NA', author: 'R.S. Aggarwal', freeLink: null },
+    { subject: 'Mathematics', title: 'NCERT Mathematics Class 11 & 12', author: 'NCERT', freeLink: 'https://ncert.nic.in/textbook.php' },
+    { subject: 'English', title: 'Word Power Made Easy', author: 'Norman Lewis', freeLink: null },
+    { subject: 'Physics', title: 'NCERT Physics Class 11 & 12', author: 'NCERT', freeLink: 'https://ncert.nic.in/textbook.php' },
+    { subject: 'Chemistry', title: 'NCERT Chemistry Class 11 & 12', author: 'NCERT', freeLink: 'https://ncert.nic.in/textbook.php' },
+    { subject: 'General Knowledge', title: "Lucent's General Knowledge", author: 'Lucent Publications', freeLink: null },
+    { subject: 'SSB Interview', title: 'Let\'s Crack SSB Interview', author: 'Arihant Publications', freeLink: null },
+    { subject: 'Previous Papers', title: 'NDA/NA Chapterwise-Sectionwise Solved Papers', author: 'Arihant', freeLink: null },
+  ];
+
+  const tips = [
+    { title: 'Maths is non-negotiable', body: 'The Maths paper has 120 questions for 300 marks. You need at least 40–50% to qualify. Start NCERT Class 11–12 Maths from Day 1 — do not skip this subject.' },
+    { title: 'Physical fitness starts on Day 1', body: 'NDA is not just a written exam. SSB interviews test your physical and mental stamina. Start running 5 km daily and basic exercises (push-ups, sit-ups) from the very first day of preparation.' },
+    { title: 'English in GAT is the easiest 200 marks', body: 'The 200-mark English section is straightforward — grammar, comprehension, and vocabulary. Consistent daily practice of 20–30 questions can push your GAT score significantly.' },
+    { title: 'NCERT is your backbone', body: 'Almost 70% of the GAT General Knowledge section is directly from Class 9–12 NCERTs (History, Geography, Physics, Chemistry, Biology). Cover these before going to any other reference book.' },
+    { title: 'SSB is a personality test, not a GK test', body: 'SSB interviews are assessed over 5 days. They look for Officer Like Qualities (OLQs) — leadership, initiative, team spirit, integrity. Start developing these from now: join a team sport, take leadership roles, practice group discussions.' },
+    { title: 'Apply twice a year', body: 'NDA is conducted twice a year — NDA I (April) and NDA II (September). You can appear for both cycles in the same year if you meet the age criteria. Plan your preparation to peak for April, then target September as a second attempt.' },
+    { title: 'Use the negative marking wisely', body: 'Maths: −0.833 per wrong answer. GAT: −1.333 per wrong. Accuracy matters more than speed. For questions you are genuinely unsure about, it is better to skip than guess randomly.' },
+  ];
+
+  const faqs = [
+    {
+      question: 'What is the age limit for UPSC NDA 2026?',
+      answer: 'Candidates must be between 16.5 and 19.5 years of age as on the first day of the month in which the course commences. For NDA I 2026, candidates born between 2 January 2007 and 1 January 2010 are eligible. Age limit is strictly as per the official notification — no relaxation is given for any category (OBC/SC/ST/PwBD).',
+    },
+    {
+      question: 'What is the educational qualification required for NDA 2026?',
+      answer: 'For Army wing: Class 12 (10+2) or equivalent from any stream. For Navy and Air Force wings: Class 12 with Physics and Mathematics as subjects from a recognised board. Candidates appearing in Class 12 or equivalent exam are also eligible to apply.',
+    },
+    {
+      question: 'How many times is NDA conducted in a year?',
+      answer: 'NDA is conducted twice a year by UPSC — NDA I (notification in January, exam in April) and NDA II (notification in June, exam in September). A candidate can appear in both cycles in the same year if they meet the age criteria.',
+    },
+    {
+      question: 'What is the salary of an NDA officer after training?',
+      answer: 'During the 3-year training at NDA, cadets receive a stipend of ₹56,100/month (7th CPC, expected upward revision under 8th CPC). After commissioning, a Lieutenant/Sub-Lieutenant/Flying Officer starts at Pay Level 10 (₹56,100–₹1,77,500/month) plus Military Service Pay (₹15,500/month), HRA, DA, and other allowances. The effective in-hand salary is approximately ₹80,000–₹1,10,000/month.',
+    },
+    {
+      question: 'Is there any age relaxation for SC/ST/OBC in NDA 2026?',
+      answer: 'No. Unlike most government exams, UPSC NDA does not provide any age relaxation for SC, ST, OBC, EWS, or PwBD candidates. The age limit of 16.5 to 19.5 years is uniform for all categories.',
+    },
+    {
+      question: 'Can girls apply for UPSC NDA 2026?',
+      answer: 'Yes. Following the Supreme Court order in 2021 and subsequent UPSC action, women candidates are now eligible to apply for NDA. They can join the Army, Navy, and Air Force through the NDA exam. The same age criteria and educational qualifications apply.',
+    },
+    {
+      question: 'What is the NDA 2026 total vacancies and where do cadets train?',
+      answer: 'NDA I 2026 has 406 total vacancies: Army (208), Navy (42), Air Force (120), and Naval Academy (36). All NDA cadets train at the National Defence Academy, Khadakwasla, Pune for 3 years. Naval Academy cadets train at INS Zamorin / Indian Naval Academy, Ezhimala, Kerala.',
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  };
+
+  return (
+    <>
+      <div className="bg-surface-50 min-h-screen">
+        <div className="container-main py-8">
+
+          {/* Breadcrumb */}
+          <nav className="text-sm text-surface-500 mb-6">
+            <Link href="/" className="hover:text-primary-500">Home</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams" className="hover:text-primary-500">Exams</Link>
+            <span className="mx-2">›</span>
+            <span className="text-surface-800">UPSC NDA 2026</span>
+          </nav>
+
+          {/* Page Header */}
+          <div className="mb-8">
+            <div className="flex flex-wrap gap-2 mb-3">
+              <span className="badge-primary">Defence</span>
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-purple-100 text-purple-700">Central Govt</span>
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-emerald-100 text-emerald-700">12th Pass</span>
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-blue-100 text-blue-700">Biannual</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
+              UPSC NDA 2026 – National Defence Academy & Naval Academy Exam
+            </h1>
+            <p className="text-surface-500 leading-relaxed max-w-3xl">
+              Complete guide for UPSC NDA 2026 — exam dates, syllabus, eligibility, SSB interview, vacancies, salary, and free preparation resources. NDA I 2026 written exam held 13 April 2026; NDA II 2026 expected September 2026.
+            </p>
+
+            {/* Fast-fact 4-grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+              {[
+                { label: 'NDA I 2026 Vacancies', value: '406 Posts', sub: 'Army + Navy + Air Force', color: 'text-emerald-600' },
+                { label: 'NDA I Written Exam', value: '13 Apr 2026', sub: 'Completed', color: 'text-surface-800' },
+                { label: 'NDA II Exam (Expected)', value: 'Sep 2026', sub: 'Notification: Jun 2026', color: 'text-blue-600' },
+                { label: 'Officer Salary', value: '₹80K–₹1.1L/mo', sub: 'After commissioning', color: 'text-emerald-600' },
+              ].map((item) => (
+                <div key={item.label} className="bg-white rounded-xl p-4 border border-surface-200 shadow-sm">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide font-heading">{item.label}</div>
+                  <div className={`font-heading font-bold mt-1 text-sm ${item.color}`}>{item.value}</div>
+                  <div className="text-xs text-surface-400 mt-0.5">{item.sub}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Two-column layout */}
+          <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+            {/* Main content */}
+            <main>
+
+              {/* 1. OVERVIEW */}
+              <section id="overview" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">1. What is UPSC NDA 2026?</h2>
+                <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-4 mb-5 flex gap-3">
+                  <span className="text-xl shrink-0">🔔</span>
+                  <div>
+                    <p className="text-sm font-semibold text-yellow-900 mb-1">💡 NDA I 2026 Written Exam Held — Result Expected June 2026</p>
+                    <p className="text-xs text-yellow-800">NDA I 2026 written exam was conducted on 13 April 2026. The result is expected in June 2026. SSB interviews for qualified candidates will begin July–October 2026. <strong>NDA II 2026 notification is expected in June 2026</strong> — start your preparation now for the September cycle.</p>
+                  </div>
+                </div>
+                <div className="card p-6 mb-5">
+                  <p className="text-surface-600 leading-relaxed mb-4">
+                    <strong>UPSC NDA (National Defence Academy & Naval Academy Examination)</strong> is a national-level entrance test conducted by the <strong>Union Public Service Commission (UPSC)</strong> twice a year. It is the premier pathway for school-leaving students to join the <strong>Indian Army, Navy, and Air Force</strong> as commissioned officers after undergoing training at the prestigious National Defence Academy, Khadakwasla, Pune.
+                  </p>
+                  <p className="text-surface-600 leading-relaxed mb-4">
+                    The selection process has two stages: a <strong>written examination</strong> (Mathematics + General Ability Test) and a <strong>5-day SSB (Services Selection Board) interview</strong>. Candidates who qualify both and clear the medical examination are admitted to a 3-year joint services training programme at NDA, followed by 1 year of pre-commissioning training at IMA (Army), INS Zamorin / Naval Academy (Navy), or Air Force Academy (Air Force).
+                  </p>
+                  <p className="text-surface-600 leading-relaxed">
+                    NDA is open to male and female candidates (women eligible since 2021 per Supreme Court order) who have passed or are appearing in Class 12. The age window is narrow — 16.5 to 19.5 years — making this one of the youngest entry points into the Indian Armed Forces as an officer.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {[
+                    { label: 'Conducting Body', value: 'Union Public Service Commission (UPSC)' },
+                    { label: 'Frequency', value: 'Biannual (NDA I & II)' },
+                    { label: 'Official Website', value: 'upsc.gov.in' },
+                    { label: 'Training Academy', value: 'NDA, Khadakwasla, Pune' },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                      <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 2. IMPORTANT DATES */}
+              <section id="important-dates" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">2. 📅 Important Dates – NDA 2026</h2>
+                <p className="text-sm text-surface-500 mb-5">
+                  NDA I 2026 written exam was held on 13 April 2026. Result and SSB dates are pending.
+                  💡 <strong>Key update:</strong> NDA II 2026 notification is expected in June 2026 — start preparing now for the September exam.
+                </p>
+                <div className="overflow-x-auto rounded-xl border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                          <td className="p-3 text-surface-600">{row.date}</td>
+                          <td className="p-3">
+                            <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                              {statusLabel(row.status)}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-3">⚠️ TBN = To Be Notified. All Expected/TBN dates are based on UPSC historical patterns and may change. Always verify on <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">upsc.gov.in</a>.</p>
+              </section>
+
+              {/* 3. ELIGIBILITY */}
+              <section id="eligibility" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. 🎓 Eligibility Criteria</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                  <div className="card p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">📋</span>
+                      <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
+                    </div>
+                    <p className="text-surface-600 text-sm leading-relaxed mb-3">
+                      Candidates must be <strong>16.5 to 19.5 years</strong> old as on 1st day of the course commencement month.
+                    </p>
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-xs text-red-800">
+                      <strong>⚠️ No age relaxation</strong> for any category — OBC, SC, ST, EWS, or PwBD. Age limit is strict for all.
+                    </div>
+                    <div className="mt-3 space-y-1">
+                      {[
+                        { label: 'NDA I 2026 (Born between)', value: '2 Jan 2007 – 1 Jan 2010' },
+                        { label: 'NDA II 2026 (Expected)', value: '2 Jul 2007 – 1 Jul 2010' },
+                      ].map((r) => (
+                        <div key={r.label} className="flex justify-between text-xs">
+                          <span className="text-surface-600">{r.label}</span>
+                          <span className="font-semibold text-surface-800">{r.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="card p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🎓</span>
+                      <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                    </div>
+                    <div className="space-y-3 text-sm">
+                      {[
+                        { wing: 'Army Wing', req: 'Class 12 (10+2) or equivalent — any stream', bg: 'bg-green-50 border-green-200 text-green-800' },
+                        { wing: 'Navy Wing', req: 'Class 12 with Physics AND Mathematics mandatory', bg: 'bg-blue-50 border-blue-200 text-blue-800' },
+                        { wing: 'Air Force Wing', req: 'Class 12 with Physics AND Mathematics mandatory', bg: 'bg-sky-50 border-sky-200 text-sky-800' },
+                        { wing: 'Naval Academy (10+2 Cadet)', req: 'Class 12 with Physics AND Mathematics mandatory', bg: 'bg-indigo-50 border-indigo-200 text-indigo-800' },
+                      ].map((w) => (
+                        <div key={w.wing} className={`rounded-lg p-3 border ${w.bg}`}>
+                          <strong>{w.wing}:</strong> {w.req}
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-xs text-surface-500 mt-3">Candidates appearing in Class 12 (final year) are also eligible to apply.</p>
+                  </div>
+
+                  <div className="card p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🪪</span>
+                      <h3 className="font-heading font-semibold text-surface-800">Nationality & Gender</h3>
+                    </div>
+                    <p className="text-surface-600 text-sm leading-relaxed mb-2">Must be a citizen of India. Subjects of Nepal and Bhutan are also eligible as per Government norms.</p>
+                    <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-xs text-emerald-800">
+                      <strong>Women eligible:</strong> Following the 2021 Supreme Court ruling, women candidates can now apply for NDA in all three wings (Army, Navy, Air Force).
+                    </div>
+                  </div>
+
+                  <div className="card p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">💪</span>
+                      <h3 className="font-heading font-semibold text-surface-800">Physical Standards</h3>
+                    </div>
+                    <p className="text-surface-600 text-sm leading-relaxed mb-2">Candidates must be physically and mentally fit as per military standards. Key requirements:</p>
+                    <ul className="text-sm text-surface-600 space-y-1">
+                      <li>• Height: Minimum 157 cm (Army/Air Force), 157 cm (Navy)</li>
+                      <li>• Weight: Proportionate to height and age</li>
+                      <li>• Vision: 6/6 corrected for Army; Air Force (Flying) requires 6/6 without glasses</li>
+                      <li>• Must not have flat foot, knock knee, or colour blindness</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              {/* 4. VACANCIES */}
+              <section id="vacancies" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. 📊 Vacancies & Services – NDA 2026</h2>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 mb-4">
+                  <strong>💡 NDA I 2026:</strong> Total 406 vacancies across all wings. NDA II 2026 vacancies will be announced in the notification expected June 2026. Historically, NDA II has similar vacancy counts.
+                </div>
+                <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Service / Wing</th>
+                        <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">NDA I 2026</th>
+                        <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">NDA II 2026</th>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Training Location</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancies.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-semibold text-surface-800">{row.service}</td>
+                          <td className="p-3 text-right text-emerald-700 font-semibold">{row.course156}</td>
+                          <td className="p-3 text-right text-amber-600 font-semibold">{row.course157}</td>
+                          <td className="p-3 text-surface-600 text-xs">{row.training}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-surface-300 bg-surface-100">
+                        <td className="p-3 font-bold text-surface-900">Total</td>
+                        <td className="p-3 text-right font-bold text-emerald-700">406</td>
+                        <td className="p-3 text-right font-bold text-amber-600">TBN</td>
+                        <td className="p-3"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-500">Naval Academy (10+2 Cadet Entry Scheme) cadets train at Indian Naval Academy, Ezhimala, Kerala — not at NDA Khadakwasla.</p>
+              </section>
+
+              {/* 5. SELECTION PROCESS */}
+              <section id="selection" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. 🗂️ Selection Process</h2>
+                <div className="space-y-4">
+                  {[
+                    { step: '1', title: 'Written Examination (Stage 1)', desc: 'Two papers: Mathematics (300 marks, 2.5 hrs) and General Ability Test (600 marks, 2.5 hrs). Conducted at UPSC exam centres across India. Total: 900 marks. Negative marking applies.', color: 'bg-blue-500' },
+                    { step: '2', title: 'SSB Interview (Stage 2)', desc: 'Services Selection Board (SSB) interview — 5 days. Includes psychological tests, Group Testing Officer (GTO) tasks, and personal interview. 900 marks. Only written exam qualifiers are called for SSB.', color: 'bg-purple-500' },
+                    { step: '3', title: 'Medical Examination', desc: 'Conducted at military hospitals (AFMSDs). Strict physical and medical standards must be met. Unfit candidates are granted one opportunity to appeal at a review medical board.', color: 'bg-emerald-500' },
+                    { step: '4', title: 'Final Merit List', desc: 'Based on combined written exam (900) + SSB interview (900) = 1800 marks. Candidates are allocated wings (Army/Navy/Air Force) based on merit preference and vacancy availability.', color: 'bg-orange-500' },
+                    { step: '5', title: 'Training at NDA / Naval Academy', desc: '3-year joint services training at NDA Khadakwasla (Army, Navy, Air Force). Naval Academy cadets train at Ezhimala. Followed by 1 year pre-commissioning training at respective service academy.', color: 'bg-red-500' },
+                  ].map((s) => (
+                    <div key={s.step} className="card p-5 flex gap-4">
+                      <div className={`w-9 h-9 ${s.color} rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm shrink-0`}>{s.step}</div>
+                      <div>
+                        <h3 className="font-heading font-semibold text-surface-800 mb-1">{s.title}</h3>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 6. EXAM PATTERN */}
+              <section id="exam-pattern" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. 📋 Exam Pattern – NDA Written Exam 2026</h2>
+                <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Subject</th>
+                        <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">Questions</th>
+                        <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">Total Marks</th>
+                        <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">Duration</th>
+                        <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">Negative Marking</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {writtenPattern.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-semibold text-surface-800">{row.subject}</td>
+                          <td className="p-3 text-right text-surface-700">{row.questions}</td>
+                          <td className="p-3 text-right font-semibold text-emerald-700">{row.marks}</td>
+                          <td className="p-3 text-right text-surface-600">{row.duration}</td>
+                          <td className="p-3 text-right text-red-600 font-medium">{row.negative}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-surface-300 bg-surface-100">
+                        <td className="p-3 font-bold text-surface-900">Total (Written)</td>
+                        <td className="p-3 text-right font-bold text-surface-900">270</td>
+                        <td className="p-3 text-right font-bold text-emerald-700">900</td>
+                        <td className="p-3 text-right font-bold text-surface-900">5 hrs</td>
+                        <td className="p-3"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">GAT (General Ability Test) Breakdown</h3>
+                <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Part</th>
+                        <th className="text-right p-3 text-xs font-semibold uppercase tracking-wide">Marks</th>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Major Topics</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {gatBreakdown.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-semibold text-surface-800">{row.part}</td>
+                          <td className="p-3 text-right font-semibold text-emerald-700">{row.marks}</td>
+                          <td className="p-3 text-xs text-surface-600">{row.topics}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {[
+                    { label: 'Minimum for Written Qualification', value: '~25% per paper + overall ~360–400/900', icon: '✅' },
+                    { label: 'Medium of Exam', value: 'English and Hindi (bilingual)', icon: '🌐' },
+                    { label: 'SSB Interview Marks', value: '900 marks (equal weight as Written)', icon: '🤝' },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                      <div className="text-2xl mb-2">{item.icon}</div>
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                      <div className="font-semibold text-sm text-surface-800 mt-1">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 7. SYLLABUS */}
+              <section id="syllabus" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">7. 📚 Detailed Syllabus – NDA 2026</h2>
+                <div className="space-y-3">
+                  {syllabus.map((s) => (
+                    <details key={s.subject} className={`card overflow-hidden border ${s.bg}`}>
+                      <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                        <span className={`font-bold ${s.color}`}>{s.subject}</span>
+                        <svg className="w-5 h-5 text-surface-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </summary>
+                      <div className="px-5 pb-5">
+                        <ul className="space-y-1">
+                          {s.topics.map((t) => (
+                            <li key={t} className="text-sm text-surface-700 flex gap-2">
+                              <span className="text-surface-400 shrink-0">▸</span>{t}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              {/* 8. SSB INTERVIEW */}
+              <section id="ssb" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-3">8. 🎯 SSB Interview – What to Expect</h2>
+                <p className="text-sm text-surface-500 mb-5">
+                  The SSB interview is a 5-day process conducted at Selection Centres across India. It carries 900 marks — equal to the entire written exam. The SSB assesses 15 Officer Like Qualities (OLQs) including leadership, initiative, intelligence, and integrity.
+                </p>
+                <div className="space-y-4">
+                  {ssbProcess.map((s) => (
+                    <div key={s.stage} className="card p-5">
+                      <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">{s.stage}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.details}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-5">
+                  <p className="text-sm text-primary-800"><strong>💡 Key Insight:</strong> Only about 25–35% of candidates who appear for SSB are recommended. Personality development, physical fitness, and genuine leadership qualities matter far more than rote preparation. Start developing these qualities during your written exam preparation itself.</p>
+                </div>
+              </section>
+
+              {/* 9. SALARY */}
+              <section id="salary" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. 💰 Salary, Allowances & Benefits</h2>
+                <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Stage</th>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Pay / Stipend</th>
+                        <th className="text-left p-3 text-xs font-semibold uppercase tracking-wide">Note</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryBreakdown.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.stage}</td>
+                          <td className="p-3 text-emerald-700 font-semibold">{row.stipend}</td>
+                          <td className="p-3 text-xs text-surface-500">{row.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Post-Commission Allowances & Perks</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { icon: '🏠', title: 'Free Accommodation', desc: 'Government accommodation (or HRA of 24%–27% of basic pay in lieu) at all postings.' },
+                    { icon: '🏥', title: 'Free Medical (ECHS)', desc: 'Free medical treatment for officer and family through ECHS hospitals throughout India.' },
+                    { icon: '🎓', title: 'Education Allowance', desc: 'Children Education Allowance for up to 2 children up to Class 12.' },
+                    { icon: '✈️', title: 'LTC & Travel', desc: 'Leave Travel Concession and free travel passes for family. Officers and family can travel free on Indian Railways (Air Force by Air).' },
+                    { icon: '⚔️', title: 'Military Service Pay', desc: 'Additional ₹15,500/month Military Service Pay on top of basic pay for all ranks.' },
+                    { icon: '🎖️', title: 'CSD Canteen & Club', desc: 'Access to CSD canteen for discounted goods. Exclusive Officers Mess and Service clubs at all stations.' },
+                  ].map((item) => (
+                    <div key={item.title} className="card p-4 flex gap-3">
+                      <span className="text-2xl shrink-0">{item.icon}</span>
+                      <div>
+                        <h4 className="font-heading font-semibold text-surface-800 text-sm">{item.title}</h4>
+                        <p className="text-xs text-surface-500 mt-1">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 10. STUDY PLAN */}
+              <section id="study-plan" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. 📅 NDA 2026 Preparation Roadmap (6-Month Plan)</h2>
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  <div className="space-y-4">
+                    {studyPlan.map((step, i) => (
+                      <div key={i} className="sm:pl-14 relative card p-5">
+                        <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-xs text-center leading-tight">
+                          {step.month.replace('Month ', 'M')}
+                        </div>
+                        <h3 className="font-heading font-semibold text-surface-800 mb-1">{step.month} — {step.title}</h3>
+                        <p className="text-sm text-surface-600 leading-relaxed">{step.tasks}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* 11. BOOKS */}
+              <section id="books" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. 📖 Best Books for NDA 2026</h2>
+                <div className="overflow-x-auto rounded-xl border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Author</th>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Free PDF</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {books.map((b, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 text-surface-500 text-xs font-medium">{b.subject}</td>
+                          <td className="p-3 font-medium text-surface-800">{b.title}</td>
+                          <td className="p-3 text-surface-600">{b.author}</td>
+                          <td className="p-3">
+                            {b.freeLink ? (
+                              <a href={b.freeLink} target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline text-xs">Download →</a>
+                            ) : <span className="text-surface-400 text-xs">—</span>}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              {/* 12. TIPS */}
+              <section id="tips" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. 💡 Expert Tips for NDA 2026</h2>
+                <div className="space-y-4">
+                  {tips.map((tip, i) => (
+                    <div key={i} className="card p-5 flex gap-4">
+                      <div className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center text-accent-600 font-heading font-bold text-sm shrink-0">
+                        {i + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</h3>
+                        <p className="text-sm text-surface-600 leading-relaxed">{tip.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 13. FAQs */}
+              <section id="faq" className="mb-12">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">13. ❓ Frequently Asked Questions – NDA 2026</h2>
+                <div className="space-y-3">
+                  {faqs.map((faq, i) => (
+                    <details key={i} className="card overflow-hidden">
+                      <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                        <span>{faq.question}</span>
+                        <svg className="w-5 h-5 text-surface-400 shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </summary>
+                      <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.answer}</div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+            </main>
+
+            {/* Sidebar */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-24 space-y-4">
+
+                {/* TOC */}
+                <div className="card p-5">
+                  <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</p>
+                  <nav className="space-y-1">
+                    {toc.map((item) => (
+                      <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 hover:pl-1 transition-all">
+                        {item.label}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+
+                {/* Official website */}
+                <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer" className="card p-5 block hover:border-primary-300 transition-colors">
+                  <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-2">Official Website</p>
+                  <p className="font-heading font-semibold text-primary-600 text-sm">upsc.gov.in →</p>
+                  <p className="text-xs text-surface-500 mt-1">Notifications, Admit Card, Results</p>
+                </a>
+
+                {/* Quick stats */}
+                <div className="card p-5">
+                  <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">NDA 2026 At a Glance</p>
+                  <div className="space-y-2 text-xs">
+                    {[
+                      { label: 'Minimum Qualification', value: '12th Pass' },
+                      { label: 'Age Window', value: '16.5 – 19.5 years' },
+                      { label: 'Application Fee', value: '₹100 (SC/ST/Son of JCO: Free)' },
+                      { label: 'NDA I 2026 Vacancies', value: '406 posts' },
+                      { label: 'Written Exam Marks', value: '900 (Maths 300 + GAT 600)' },
+                      { label: 'SSB Interview Marks', value: '900' },
+                      { label: 'Total Marks', value: '1800' },
+                      { label: 'Training Duration', value: '3 years (NDA) + 1 year (Service Academy)' },
+                    ].map((r) => (
+                      <div key={r.label} className="flex justify-between gap-2">
+                        <span className="text-surface-500">{r.label}</span>
+                        <span className="font-semibold text-surface-800 text-right">{r.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Related exams */}
+                <div className="card p-5">
+                  <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">Other Defence Exams</p>
+                  <div className="space-y-2">
+                    {[
+                      { name: 'UPSC CDS 2026', slug: 'upsc-cds' },
+                      { name: 'AFCAT 2026', slug: 'afcat' },
+                      { name: 'UPSC CAPF 2026', slug: 'upsc-capf' },
+                      { name: 'Army Agniveer 2026', slug: 'army-agniveer' },
+                    ].map((e) => (
+                      <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Eligibility checker */}
+                <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                  <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for NDA 2026.</p>
+                  <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+                </Link>
+
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
 
