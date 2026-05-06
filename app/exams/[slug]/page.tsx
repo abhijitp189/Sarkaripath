@@ -126,6 +126,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'delhi-police-constable') {
+    return {
+      title: 'Delhi Police Constable 2026 – Syllabus, Eligibility, Physical Test & Guide | TaiyarHo',
+      description: 'Delhi Police Constable 2026: SSC notification expected Sep 2026. 2025 cycle: 7,565 vacancies, CBT held Dec 2025–Jan 2026, result awaited (May 2026). Syllabus, exam pattern (100 Qs/90 min), physical test (PET/PMT), eligibility (12th pass, 18–25 yrs), salary ₹21,700–₹69,100.',
+      keywords: 'Delhi Police Constable 2026, Delhi Police Constable syllabus, Delhi Police bharti 2026, SSC Delhi Police taiyari, Delhi Police physical test, दिल्ली पुलिस कांस्टेबल भर्ती 2026, Delhi police constable exam pattern',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/delhi-police-constable/' },
+      other: { 'description:hi': 'दिल्ली पुलिस कांस्टेबल 2026 – SSC द्वारा अधिसूचना सितंबर 2026 में अपेक्षित। 2025 चक्र: 7,565 रिक्तियाँ, CBT दिसंबर 2025–जनवरी 2026 में हुई, परिणाम मई 2026 में। सिलेबस, PET/PMT शारीरिक मानक, पात्रता (12वीं पास, 18-25 वर्ष), वेतन ₹21,700–₹69,100।' },
+    };
+  }
+
   if (params.slug === 'ssc-chsl') {
     return {
       title: 'SSC CHSL 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -306,6 +316,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'army-agniveer') return <ArmyAgniveerPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-po') return <IbpsRrbPoPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
+  if (brief && brief.slug === 'delhi-police-constable') return <DelhiPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
@@ -17742,6 +17753,783 @@ function MaharashtraPoliceConstablePage({ exam }: { exam: any }) {
               <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for Maharashtra Police Constable.</p>
               <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
             </Link>
+          </aside>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── DELHI POLICE CONSTABLE RICH PAGE ───────────────────────────────────────
+function DelhiPoliceConstablePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies 2025–26' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern (CBT)' },
+    { id: 'physical',        label: 'Physical Test (PE&MT)' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Delhi Police Constable 2025 Official Notification Released',  date: '22 September 2025',               status: 'done' },
+    { event: 'Online Application Window',                                    date: '22 Sep – 31 Oct 2025',            status: 'done' },
+    { event: 'Admit Card for CBT Released',                                  date: 'November–December 2025',          status: 'done' },
+    { event: 'Computer-Based Test (CBT) Conducted',                         date: '18 Dec 2025 – 6 Jan 2026',        status: 'done' },
+    { event: 'Provisional Answer Key Released',                              date: '13 January 2026',                 status: 'done' },
+    { event: 'Answer Key Objection Window Closed',                           date: '16 January 2026',                 status: 'done' },
+    { event: '⚠️ CBT Result / Revised Vacancies (2025–26)',                 date: 'May 2026 (Expected)',              status: 'tbn' },
+    { event: 'Physical Endurance & Measurement Test (PE&MT)',               date: 'June–July 2026 (Expected)',       status: 'tbn' },
+    { event: 'Document Verification & Medical Examination',                  date: 'August–September 2026 (TBN)',     status: 'tbn' },
+    { event: 'Final Joining / Appointment',                                  date: 'To Be Notified (TBN)',            status: 'tbn' },
+    { event: '💡 Delhi Police Constable 2026 Notification (Next Cycle)',    date: 'September 2026 (As per SSC Calendar)', status: 'upcoming' },
+    { event: 'Delhi Police 2026 CBT Exam (Next Cycle)',                     date: 'November–December 2026 (Expected)', status: 'upcoming' },
+  ];
+
+  const cbtPattern = [
+    { subject: 'General Knowledge / Current Affairs', questions: 50, marks: 50, remarks: 'Highest weightage — focus here first' },
+    { subject: 'Reasoning Ability',                   questions: 25, marks: 25, remarks: 'Scoring — practice daily' },
+    { subject: 'Numerical Ability',                   questions: 15, marks: 15, remarks: 'Class 10 level Maths' },
+    { subject: 'Computer Awareness',                  questions: 10, marks: 10, remarks: 'Easy guaranteed marks' },
+  ];
+
+  const vacancyData = [
+    { post: 'Constable (Executive) – Male',   cat25: '5,069', revised26: '~5,069', payLevel: 'Level 3', payScale: '₹21,700 – ₹69,100' },
+    { post: 'Constable (Executive) – Female', cat25: '2,496', revised26: '~2,496', payLevel: 'Level 3', payScale: '₹21,700 – ₹69,100' },
+  ];
+
+  const physicalStandardsMale = [
+    { category: 'General / OBC / SC',                       height: '170 cm', chest: '81 cm (unexpanded) / 85 cm (expanded)' },
+    { category: 'Garhwali, Kumaoni, Gorkha, Dogra, Maratha, NE, J&K, ST, Ex-SM', height: '165 cm', chest: '76 cm (unexpanded) / 80 cm (expanded)' },
+  ];
+
+  const physicalStandardsFemale = [
+    { category: 'General / OBC / SC',                       height: '157 cm', note: 'No chest measurement required' },
+    { category: 'Hill areas, ST, Ex-SM daughters, Delhi Police personnel daughters', height: '152 cm', note: 'No chest measurement required' },
+  ];
+
+  const petMale = [
+    { event: 'Race (1,600 m)',    standard: 'Complete in 6 minutes', note: 'Must qualify race to attempt jumps' },
+    { event: 'Long Jump',         standard: 'Minimum 14 feet',       note: '3 chances given' },
+    { event: 'High Jump',         standard: 'Minimum 4 feet',        note: '3 chances given' },
+  ];
+
+  const petFemale = [
+    { event: 'Race (800 m)',      standard: 'Complete in 4 minutes', note: 'Must qualify race to attempt jumps' },
+    { event: 'Long Jump',         standard: 'Minimum 10 feet',       note: '3 chances given' },
+    { event: 'High Jump',         standard: 'Minimum 3 feet',        note: '3 chances given' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Pay Level 3)',     amount: '₹21,700', note: '7th CPC Pay Matrix' },
+    { component: 'Dearness Allowance (DA @55%)', amount: '~₹11,935', note: 'Revised Jan 2026' },
+    { component: 'House Rent Allowance (HRA)',  amount: '₹2,604 – ₹5,208', note: '12%–24% of Basic depending on city class' },
+    { component: 'Transport Allowance',         amount: '₹1,350 – ₹3,600', note: 'Based on posting location' },
+    { component: 'Uniform & Other Allowances',  amount: '₹1,000 – ₹2,000', note: 'Annual uniform grant + misc.' },
+    { component: 'Gross In-Hand (approx.)',     amount: '₹35,000 – ₹42,000', note: 'In Delhi posting (X city HRA)' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'General Knowledge & Current Affairs',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Current Affairs – Last 6–12 months (National & International)',
+        'Indian History – Ancient, Medieval, Modern, Freedom Struggle',
+        'Indian Geography – States, Rivers, Mountains, Climate',
+        'Indian Polity – Constitution, Fundamental Rights, Parliament, President',
+        'Indian Economy – Budget highlights, RBI, key government schemes',
+        'General Science – Physics, Chemistry, Biology (Class 10 level)',
+        'Delhi-specific Knowledge – Lt. Governor, CM, monuments, important days',
+        'Static GK – Sports, Awards, Books, Authors, Important Days',
+        'Environment & Ecology – basic concepts',
+      ],
+    },
+    {
+      subject: 'Reasoning Ability',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Analogies – Semantic and Figural',
+        'Classification – Odd One Out',
+        'Series Completion – Number, Letter, Figural',
+        'Coding and Decoding',
+        'Blood Relations and Direction Sense',
+        'Missing Number and Visual Memory',
+        'Venn Diagrams and Syllogisms',
+        'Matrix and Word Formation',
+        'Non-Verbal Reasoning – Figures, Patterns',
+        'Alphabetical and Number Series',
+      ],
+    },
+    {
+      subject: 'Numerical Ability (Quantitative Aptitude)',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Number System – HCF, LCM, Simplification',
+        'Percentage, Ratio & Proportion',
+        'Average, Mixture & Alligation',
+        'Profit & Loss, Discount',
+        'Simple Interest & Compound Interest',
+        'Time & Work, Pipes & Cisterns',
+        'Time, Speed & Distance',
+        'Basic Mensuration – Area, Perimeter',
+        'Data Interpretation – Table, Bar, Pie charts',
+      ],
+    },
+    {
+      subject: 'Computer Awareness',
+      color: 'text-purple-700',
+      bg: 'bg-purple-50 border-purple-200',
+      topics: [
+        'Basics of Computer – Hardware, Software, Input/Output Devices',
+        'Memory – RAM, ROM, Hard Disk, Storage Devices',
+        'MS Office – Word, Excel, PowerPoint basics',
+        'Internet – Browser, Email, Networking concepts',
+        'Operating System – Windows basics, shortcuts',
+        'Number Systems – Binary, Decimal, Hexadecimal',
+        'Common keyboard shortcuts and function keys',
+        'Computer Security basics – Virus, Antivirus, Firewall',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', title: 'Foundation + Physical Start', tasks: 'Start running 1.6 km daily (target 6 min). Cover Lucent GK chapters — History and Polity. Begin NCERT Science (Class 8–10). Practice 20 Reasoning questions daily. Basic Maths (Percentages, Profit & Loss).' },
+    { month: 'Month 2', title: 'Core Subjects + Fitness Build', tasks: 'GK: Geography, Economy, Current Affairs. Reasoning: daily 30 questions (coding-decoding, series). Maths: SI/CI, Time & Work, Speed & Distance. Computer Awareness — complete in 15 days. Long Jump & High Jump practice. Target 1.6 km in 7 min.' },
+    { month: 'Month 3', title: 'Mock Tests + Physical Standards', tasks: 'Full-length mock tests every 2 days (90 min / 100 Qs). Analyse weak GK topics and revise. Stay updated with current affairs (read daily). Target 1.6 km in 6 min. Practice long jump to 12 feet. Track accuracy — aim 75+ marks in mocks.' },
+    { month: 'Month 4', title: 'Final Revision + Peak Fitness', tasks: 'Revise all GK facts, formulas, and Computer notes. Attempt 15+ full mock tests. Target consistent 80+ marks. Ensure 1.6 km in under 6 min (male) or 800 m in under 4 min (female). Verify all eligibility documents including driving license.' },
+  ];
+
+  const books = [
+    { subject: 'General Knowledge', title: "Lucent's General Knowledge",                      author: 'Lucent Publications',         pdf: null },
+    { subject: 'Reasoning',         title: 'Verbal & Non-Verbal Reasoning',                   author: 'R.S. Aggarwal',               pdf: null },
+    { subject: 'Maths',             title: 'Fast Track Objective Arithmetic',                  author: 'Rajesh Verma (Arihant)',       pdf: null },
+    { subject: 'Computer',          title: 'Objective Computer Knowledge',                     author: 'Kiran Prakashan',             pdf: null },
+    { subject: 'Current Affairs',   title: 'Pratiyogita Darpan (Monthly)',                    author: 'Pratiyogita Darpan',          pdf: null },
+    { subject: 'All Subjects (PYQ)', title: 'SSC Delhi Police Constable Chapterwise PYQs',   author: 'Kiran Prakashan / Arihant',   pdf: null },
+  ];
+
+  const tips = [
+    { title: 'GK is 50% of the exam — treat it like your main subject', body: 'Half the paper is General Knowledge and Current Affairs. Candidates who crack Delhi Police invariably score 40–47 in GK. Spend at least 60% of your study time on GK — history, polity, economy, science, and current affairs. Lucent + newspaper reading is the proven combination.' },
+    { title: 'Merit = CBT only — Physical test is qualifying', body: 'The Physical Endurance & Measurement Test (PE&MT) does NOT add to your marks. The entire merit list is based on CBT score alone. However, failing the physical test means elimination — so both preparation tracks are mandatory, but CBT is what ranks you.' },
+    { title: 'Start physical training from Day 1', body: 'Running 1.6 km in 6 minutes (male) or 800 m in 4 minutes (female) is a specific athletic target that requires consistent training. If you start running only after the written result, you will have barely 4–6 weeks. Start today, build stamina gradually, and peak in the final month before PE&MT.' },
+    { title: 'Computer section = 10 easy marks in 10 minutes', body: 'With just 10 questions from Computer Awareness, this is the fastest-scoring section. Cover the complete syllabus in one focused week — MS Office, hardware basics, internet, number systems. These 10 marks can be the difference between selection and miss.' },
+    { title: 'Male candidates: get a valid driving license before applying', body: 'Delhi Police requires male candidates to possess a valid Light Motor Vehicle (LMV) driving license covering both motorcycle and car at the time of PE&MT. Apply for your DL well in advance — the process takes 4–6 weeks. Missing this can disqualify you even if you pass the exam.' },
+    { title: 'Follow ssc.gov.in — not coaching institutes — for official dates', body: 'Delhi Police Constable recruitment is conducted by SSC (ssc.gov.in), not by Delhi Police directly. All official notifications, admit cards, answer keys, and results are published on the SSC portal. Bookmark it. Do not rely on coaching institute forwarded information for official updates.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the Delhi Police Constable 2026 notification date?', a: 'As per the SSC Examination Calendar 2026, the Delhi Police Constable 2026 notification is expected in September 2026, with the CBT exam scheduled for November–December 2026. The 2025 cycle notification was released on 22 September 2025 for reference. Always check ssc.gov.in for the official announcement.' },
+    { q: 'What is the age limit for Delhi Police Constable?', a: 'The age limit is 18–25 years (general category). Relaxation: OBC +3 years (up to 28), SC/ST +5 years (up to 30). Special relaxation for sons/daughters of serving/retired Delhi Police personnel (up to age 29), sportspersons and divorced women (+5 years). Age is calculated as on the cut-off date in the official notification.' },
+    { q: 'What is the qualification for Delhi Police Constable?', a: 'Candidates must have passed 10+2 (Class 12) or equivalent from a recognised Board. Male candidates must additionally possess a valid Light Motor Vehicle (LMV) driving licence (covering both motorcycle and car) at the time of appearing in PE&MT.' },
+    { q: 'How many vacancies are there in Delhi Police Constable 2025?', a: 'For the 2025 cycle, a total of 7,565 vacancies were released for Constable (Executive) posts — comprising approximately 5,069 Male and 2,496 Female positions. SSC later revised some vacancy figures on 25 February 2026, but the Constable (Executive) count was adjusted to 7,201. For 2026 vacancies, wait for the official notification.' },
+    { q: 'What is the exam pattern for Delhi Police Constable?', a: 'The Computer-Based Test (CBT) has 100 multiple-choice questions worth 100 marks, to be attempted in 90 minutes. There is no sectional time limit. Subject distribution: GK/Current Affairs (50 marks), Reasoning (25 marks), Numerical Ability (15 marks), Computer Awareness (10 marks). Negative marking: −0.25 per wrong answer. Final merit is based solely on CBT score.' },
+    { q: 'What are the physical standards for Delhi Police Constable?', a: 'For male candidates (General): Height 170 cm, Chest 81 cm unexpanded / 85 cm expanded (minimum 4 cm expansion). Female candidates (General): Height 157 cm, no chest measurement. PET: Male — 1600 m in 6 min, Long Jump 14 ft, High Jump 4 ft. Female — 800 m in 4 min, Long Jump 10 ft, High Jump 3 ft. Physical tests are qualifying in nature and do not add to merit.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'done')     return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done')     return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">Delhi Police Constable 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Police</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">12th Pass Eligible</span>
+            <span className="bg-yellow-400/20 text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 Result: May 2026 (Expected)</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            Delhi Police Constable 2026 –<br className="hidden sm:block" /> Notification, Syllabus, Physical Test & Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            2025 cycle: 7,565 vacancies, CBT conducted 18 Dec 2025 – 6 Jan 2026, result expected May 2026. Next 2026 cycle notification expected September 2026. SSC-conducted exam for Constable (Executive) Male &amp; Female in Delhi Police. Class 12 pass eligible.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies (2025 Cycle)', value: '7,565' },
+              { label: '2026 Notification',      value: 'Sep 2026 (TBN)' },
+              { label: 'Min. Qualification',     value: '12th Pass' },
+              { label: 'In-Hand Salary',         value: '₹35K–₹42K/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── MAIN CONTENT ── */}
+          <div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is Delhi Police Constable 2026?</h2>
+
+              <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-4 mb-5 flex gap-3">
+                <span className="text-xl shrink-0">🔔</span>
+                <div>
+                  <p className="text-sm font-semibold text-yellow-900 mb-1">2025 Cycle CBT Result: Expected May 2026</p>
+                  <p className="text-xs text-yellow-800">The CBT for the 2025 cycle concluded on 6 Jan 2026. Provisional Answer Key was released on 13 Jan 2026. CBT result is now expected in May 2026, after which PE&amp;MT dates will be announced. The next 2026 cycle notification is expected in September 2026 as per the SSC Calendar.</p>
+                </div>
+              </div>
+
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-3">
+                  Delhi Police Constable (Executive) is one of the most sought-after police jobs in India — a central government role in the capital city, conducted by the <strong>Staff Selection Commission (SSC)</strong>. Constables are responsible for maintaining law and order, patrolling, traffic management, crowd control, and assisting senior officers across Delhi&apos;s 15 police districts.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-3">
+                  The post sits in <strong>Pay Level 3 (₹21,700 – ₹69,100)</strong> of the 7th CPC Pay Matrix. With DA at 55% (January 2026), the effective in-hand salary in Delhi (an &apos;X&apos; city) reaches <strong>₹35,000 – ₹42,000 per month</strong> — making it financially competitive. The job also comes with government quarter entitlement, medical benefits, and a secure pension under NPS.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  Recruitment happens through a <strong>two-stage process</strong>: a Computer-Based Test (CBT) followed by a Physical Endurance &amp; Measurement Test (PE&amp;MT). Final merit is determined entirely by CBT marks — the physical test is qualifying in nature. Over <strong>27 lakh candidates</strong> applied for the 2025 cycle, making it one of the most competitive police exams in North India.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { icon: '🏛️', label: 'Conducting Body', value: 'SSC (Staff Selection Commission)' },
+                  { icon: '📋', label: 'Post Name',        value: 'Constable (Executive) — Male & Female' },
+                  { icon: '🎓', label: 'Qualification',   value: '10+2 (12th Pass)' },
+                  { icon: '📋', label: 'Age Limit',       value: '18–25 Years' },
+                  { icon: '💰', label: 'Pay Scale',       value: 'Pay Level 3 (₹21,700–₹69,100)' },
+                  { icon: '📅', label: 'Exam Mode',       value: 'Computer-Based Test (CBT)' },
+                  { icon: '🌐', label: 'Official Website', value: 'ssc.gov.in / delhipolice.gov.in' },
+                  { icon: '📋', label: 'Application Fee', value: '₹100 (General) | Free (SC/ST/Female)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-lg mb-1">{item.icon}</div>
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-0.5">{item.label}</div>
+                    <div className="font-semibold text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">2. Important Dates (2025 Cycle &amp; 2026 Preview)</h2>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white font-heading text-xs">
+                      <th className="text-left p-3 pl-4">Event</th>
+                      <th className="text-left p-3">Date</th>
+                      <th className="text-left p-3 pr-4">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 pl-4 text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-700 font-medium whitespace-nowrap">{row.date}</td>
+                        <td className="p-3 pr-4">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mt-3">⚠️ Dates marked TBN are based on SSC&apos;s historical recruitment timeline and are not confirmed. Always verify at <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">ssc.gov.in</a>.</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { icon: '🪪', title: 'Nationality', body: 'Indian Citizen only. Candidates must be Indian nationals.' },
+                  { icon: '🎓', title: 'Education Qualification', body: 'Passed 10+2 (Class 12) or equivalent from a recognized Board/University. Graduates are also eligible.' },
+                  { icon: '📋', title: 'Age Limit (General)', body: '18 to 25 years. OBC: up to 28. SC/ST: up to 30. Delhi Police personnel wards: up to 29. Sportspersons & divorced women: +5 years.' },
+                  { icon: '🚗', title: 'Driving License (Male Only)', body: 'Male candidates must possess a valid LMV (Light Motor Vehicle) driving license covering both motorcycle and car at the time of PE&MT. Apply early — takes 4–6 weeks.' },
+                ].map((c) => (
+                  <div key={c.title} className="card p-5">
+                    <div className="text-xl mb-2">{c.icon}</div>
+                    <div className="font-heading font-semibold text-surface-800 mb-1">{c.title}</div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{c.body}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-800"><strong>💡 Medical Standards:</strong> Candidates must have 6/12 vision in both eyes without glasses, no colour blindness, no physical deformity or disability affecting duty performance, and must be mentally and physically sound. A Tattoo policy follows Indian Army norms — on inner forearm and traditional cultural sites is acceptable.</p>
+              </div>
+            </section>
+
+            {/* 4. VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. Vacancies 2025–26</h2>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white font-heading text-xs">
+                      <th className="text-left p-3 pl-4">Post</th>
+                      <th className="text-left p-3">2025 Vacancies</th>
+                      <th className="text-left p-3">Pay Level</th>
+                      <th className="text-left p-3 pr-4">Pay Scale</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyData.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 pl-4 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-700">{row.cat25}</td>
+                        <td className="p-3 text-surface-700">{row.payLevel}</td>
+                        <td className="p-3 pr-4 text-emerald-700 font-semibold">{row.payScale}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50">
+                      <td className="p-3 pl-4 font-bold text-surface-900">Total</td>
+                      <td className="p-3 font-bold text-surface-900">7,565</td>
+                      <td className="p-3"></td>
+                      <td className="p-3 pr-4"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                <p className="text-sm text-emerald-800"><strong>📊 Revised Vacancies (Feb 2026):</strong> SSC revised the vacancy count on 25 February 2026. The Constable (Executive) post was updated to 7,201 vacancies (slight reduction from 7,565). Only vacancy numbers were revised — eligibility, exam pattern, and selection process remained unchanged. For 2026 cycle vacancies, check the official notification at ssc.gov.in.</p>
+              </div>
+            </section>
+
+            {/* 5. SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. Selection Process</h2>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {[
+                  { step: '1', title: 'Computer-Based Test (CBT)', desc: '100 MCQs | 100 marks | 90 minutes | Negative marking: −0.25 per wrong answer. Final merit is based ONLY on CBT score. No sectional time limit.', highlight: true },
+                  { step: '2', title: 'Physical Measurement Test (PMT)', desc: 'Height and Chest (males only) are measured using digital equipment. Candidates must meet minimum standards before proceeding to the endurance test. This is qualifying — no marks.' },
+                  { step: '3', title: 'Physical Endurance Test (PET)', desc: 'Race (1600m for males, 800m for females) + Long Jump + High Jump. Must qualify race before attempting jumps. Each jump event gives 3 attempts. Qualifying in nature — no marks added.' },
+                  { step: '4', title: 'Document Verification (DV)', desc: 'Original certificates checked: 10+2 marksheet, identity proof, caste/category certificate (if applicable), domicile document, driving license (male candidates), NCC/sports certificates for bonus marks.' },
+                  { step: '5', title: 'Medical Examination', desc: 'Conducted by government medical officers. Tests vision (6/12 without glasses), colour vision, hearing, general physical fitness, absence of deformity or chronic illness. Mandatory for all qualified candidates.' },
+                ].map((s) => (
+                  <div key={s.step} className="sm:pl-14 relative mb-4">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl text-white font-heading font-bold text-sm flex items-center justify-center hidden sm:flex">{s.step}</div>
+                    <div className={`card p-5 ${s.highlight ? 'border-primary-300 bg-primary-50' : ''}`}>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.title} {s.highlight && <span className="badge-primary ml-2">Merit Stage</span>}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 6. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. Exam Pattern – Computer-Based Test (CBT)</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                {[
+                  { label: 'Total Questions', value: '100 MCQs' },
+                  { label: 'Total Marks',     value: '100' },
+                  { label: 'Duration',        value: '90 Minutes' },
+                  { label: 'Negative Marking', value: '−0.25 / wrong' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-surface-800 text-lg">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white font-heading text-xs">
+                      <th className="text-left p-3 pl-4">Subject</th>
+                      <th className="text-left p-3">Questions</th>
+                      <th className="text-left p-3">Marks</th>
+                      <th className="text-left p-3 pr-4">Remarks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cbtPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 pl-4 font-medium text-surface-800">{row.subject}</td>
+                        <td className="p-3 text-surface-700 font-semibold">{row.questions}</td>
+                        <td className="p-3 text-surface-700 font-semibold">{row.marks}</td>
+                        <td className="p-3 pr-4 text-surface-500 text-xs">{row.remarks}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50">
+                      <td className="p-3 pl-4 font-bold text-surface-900">Total</td>
+                      <td className="p-3 font-bold text-surface-900">100</td>
+                      <td className="p-3 font-bold text-surface-900">100</td>
+                      <td className="p-3 pr-4"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                <p className="text-sm text-primary-800"><strong>💡 Key Rule:</strong> There is NO sectional time limit — you have the full 90 minutes for all 100 questions. Attempt GK first (it is knowledge-based and fast), then Reasoning and Computer, and save Maths for the end. This strategy maximises your score.</p>
+              </div>
+            </section>
+
+            {/* 7. PHYSICAL TEST */}
+            <section id="physical" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">7. Physical Endurance &amp; Measurement Test (PE&amp;MT)</h2>
+              <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4 mb-6 flex gap-3">
+                <span className="text-xl shrink-0">⚠️</span>
+                <p className="text-sm text-surface-700"><strong>Important:</strong> PE&amp;MT is qualifying only — it does NOT contribute to the final merit list. However, failing any component eliminates you from recruitment. Shortlisting for PE&amp;MT is based on CBT cut-off scores (category-wise).</p>
+              </div>
+
+              <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">Physical Measurement Standards</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="card overflow-hidden">
+                  <div className="bg-blue-600 text-white text-xs font-semibold px-4 py-2">👨 Male Candidates</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100 text-xs font-heading"><th className="text-left p-2 pl-4">Category</th><th className="text-left p-2">Height</th><th className="text-left p-2 pr-3">Chest</th></tr></thead>
+                    <tbody>
+                      {physicalStandardsMale.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2 pl-4 text-surface-700 text-xs">{row.category}</td>
+                          <td className="p-2 font-semibold text-surface-800">{row.height}</td>
+                          <td className="p-2 pr-3 text-surface-600 text-xs">{row.chest}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="bg-pink-500 text-white text-xs font-semibold px-4 py-2">👩 Female Candidates</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100 text-xs font-heading"><th className="text-left p-2 pl-4">Category</th><th className="text-left p-2">Height</th><th className="text-left p-2 pr-3">Note</th></tr></thead>
+                    <tbody>
+                      {physicalStandardsFemale.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2 pl-4 text-surface-700 text-xs">{row.category}</td>
+                          <td className="p-2 font-semibold text-surface-800">{row.height}</td>
+                          <td className="p-2 pr-3 text-surface-500 text-xs">{row.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">Physical Endurance Test (PET)</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card overflow-hidden">
+                  <div className="bg-blue-600 text-white text-xs font-semibold px-4 py-2">👨 Male PET Standards</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100 text-xs font-heading"><th className="text-left p-2 pl-4">Event</th><th className="text-left p-2">Standard</th><th className="text-left p-2 pr-3">Note</th></tr></thead>
+                    <tbody>
+                      {petMale.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2 pl-4 font-medium text-surface-800 text-xs">{row.event}</td>
+                          <td className="p-2 text-emerald-700 font-semibold text-xs">{row.standard}</td>
+                          <td className="p-2 pr-3 text-surface-500 text-xs">{row.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="bg-pink-500 text-white text-xs font-semibold px-4 py-2">👩 Female PET Standards</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100 text-xs font-heading"><th className="text-left p-2 pl-4">Event</th><th className="text-left p-2">Standard</th><th className="text-left p-2 pr-3">Note</th></tr></thead>
+                    <tbody>
+                      {petFemale.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2 pl-4 font-medium text-surface-800 text-xs">{row.event}</td>
+                          <td className="p-2 text-emerald-700 font-semibold text-xs">{row.standard}</td>
+                          <td className="p-2 pr-3 text-surface-500 text-xs">{row.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 8. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. Detailed Syllabus (CBT)</h2>
+              <div className="space-y-3">
+                {syllabus.map((sub) => (
+                  <details key={sub.subject} className="card overflow-hidden group">
+                    <summary className={`flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none ${sub.bg}`}>
+                      <span className={sub.color}>{sub.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 pt-3">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-sm text-surface-600">
+                        {sub.topics.map((t) => <li key={t} className="flex gap-2"><span className="text-primary-400 shrink-0 mt-0.5">›</span>{t}</li>)}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 9. SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. Salary &amp; Benefits (7th CPC)</h2>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white font-heading text-xs">
+                      <th className="text-left p-3 pl-4">Pay Component</th>
+                      <th className="text-left p-3">Amount</th>
+                      <th className="text-left p-3 pr-4">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 pl-4 font-medium text-surface-800">{row.component}</td>
+                        <td className={`p-3 font-semibold ${i === salaryBreakdown.length - 1 ? 'text-emerald-700' : 'text-surface-700'}`}>{row.amount}</td>
+                        <td className="p-3 pr-4 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                  <p className="text-sm font-semibold text-emerald-800 mb-2">📦 Additional Perks</p>
+                  <ul className="text-sm text-emerald-800 space-y-1">
+                    <li>✓ Government quarter in Delhi (after waiting period)</li>
+                    <li>✓ CGHS medical coverage for self &amp; family</li>
+                    <li>✓ Uniform provided by Delhi Police</li>
+                    <li>✓ NPS pension benefits</li>
+                    <li>✓ Leave Travel Concession (LTC)</li>
+                    <li>✓ Children Education Allowance</li>
+                  </ul>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                  <p className="text-sm font-semibold text-blue-800 mb-2">📈 Promotion Ladder</p>
+                  <ul className="text-sm text-blue-800 space-y-1">
+                    <li>→ Constable (Executive) — Entry Level</li>
+                    <li>→ Head Constable (after ~6 years)</li>
+                    <li>→ ASI / Sub-Inspector (by departmental exam)</li>
+                    <li>→ Inspector (by promotion/LDCE)</li>
+                    <li>→ Senior positions based on merit</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* 10. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. 4-Month Study Plan</h2>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((s, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-4">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl text-white font-heading font-bold text-sm flex items-center justify-center hidden sm:flex">{i + 1}</div>
+                    <div className="card p-5">
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.month}: {s.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.tasks}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 11. BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. Best Books for Preparation</h2>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white font-heading text-xs">
+                      <th className="text-left p-3 pl-4">Subject</th>
+                      <th className="text-left p-3">Book Title</th>
+                      <th className="text-left p-3 pr-4">Author</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 pl-4 text-surface-600 font-semibold">{row.subject}</td>
+                        <td className="p-3 text-surface-800 font-medium">{row.title}</td>
+                        <td className="p-3 pr-4 text-surface-500">{row.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 12. FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. Free Preparation Resources</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '🌐', title: 'SSC Official Website', href: 'https://ssc.gov.in', desc: 'Official notifications, admit cards, answer keys, and results for Delhi Police Constable.' },
+                  { icon: '🌐', title: 'Delhi Police Official Website', href: 'https://delhipolice.gov.in', desc: 'PE&MT schedule, physical test venues, and joining-related updates from Delhi Police HQ.' },
+                  { icon: '📺', title: 'Exampur YouTube Channel', href: 'https://www.youtube.com/@Exampur__Official', desc: 'Free GK lectures, current affairs, and full paper analysis for Delhi Police in Hindi.' },
+                  { icon: '📺', title: 'Adda247 YouTube', href: 'https://www.youtube.com/@adabornindia', desc: 'Free reasoning, maths, and GK classes specifically for Delhi Police and SSC-level exams.' },
+                  { icon: '✍️', title: 'Testbook Free Mock Tests', href: 'https://testbook.com/delhi-police-constable', desc: 'Free full-length and section-wise mock tests matching the Delhi Police CBT pattern.' },
+                  { icon: '✍️', title: 'SSC Adda PYQ Practice', href: 'https://www.sscadda.com/delhi-police-constable-previous-year-papers/', desc: 'Previous year question papers with detailed solutions for Delhi Police Constable.' },
+                ].map((r) => (
+                  <a key={r.title} href={r.href} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition-colors">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl shrink-0">{r.icon}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors text-sm">{r.title}</div>
+                        <p className="text-xs text-surface-500 mt-1 leading-relaxed">{r.desc}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">13. Expert Preparation Tips</h2>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center font-heading font-bold text-sm shrink-0">{i + 1}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{tip.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 14. FAQs */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">14. Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      {faq.q}
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform shrink-0 ml-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</div>
+                <ol className="space-y-1.5 list-decimal list-inside">
+                  {toc.map((s) => (
+                    <li key={s.id} className="text-xs"><a href={`#${s.id}`} className="text-primary-500 hover:text-primary-700 hover:underline">{s.label}</a></li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Official links */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">🏛️ Official Websites</div>
+                <div className="space-y-2">
+                  <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">SSC Official Portal →</a>
+                  <a href="https://delhipolice.gov.in" target="_blank" rel="noopener noreferrer" className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">Delhi Police Official →</a>
+                </div>
+              </div>
+
+              {/* Key stats */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-3">📊 Quick Facts</div>
+                <div className="space-y-2 text-sm">
+                  {[
+                    { label: 'Total Questions', value: '100 MCQs' },
+                    { label: 'Total Marks', value: '100' },
+                    { label: 'Duration', value: '90 minutes' },
+                    { label: 'Negative Marking', value: '−0.25/wrong' },
+                    { label: 'Merit Based On', value: 'CBT only' },
+                    { label: 'Application Fee', value: '₹100 (Gen)' },
+                  ].map((s) => (
+                    <div key={s.label} className="flex justify-between">
+                      <span className="text-surface-600 text-xs">{s.label}</span>
+                      <span className="font-semibold text-surface-800 text-xs">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Related exams */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Police Exams</div>
+                <div className="space-y-1.5">
+                  {[
+                    { name: 'SSC GD Constable', slug: 'ssc-gd-constable' },
+                    { name: 'SSC CPO (SI)', slug: 'ssc-cpo' },
+                    { name: 'UP Police Constable', slug: 'up-police-constable' },
+                    { name: 'Bihar Police Constable', slug: 'bihar-police-constable' },
+                    { name: 'RPF Constable', slug: 'rpf-constable' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Eligibility checker */}
+              <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for Delhi Police Constable 2026.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+            </div>
           </aside>
         </div>
       </div>
