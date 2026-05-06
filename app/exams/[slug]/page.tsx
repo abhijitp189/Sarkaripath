@@ -136,6 +136,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'up-police-si') {
+    return {
+      title: 'UP Police SI 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'UP Police SI 2026: UPPRPB Sub Inspector recruitment guide. Exam held 14–15 Mar 2026. 3,638 vacancies. Check syllabus, exam pattern, eligibility (Graduate, 21–28 yrs), salary ₹35,400–₹1,12,400/month and free resources.',
+      keywords: 'UP Police SI 2026, UP Police Sub Inspector bharti, UPPRPB SI syllabus, UP Police SI taiyari, UP Police SI salary, UP Police SI eligibility, Uttar Pradesh Police SI 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/up-police-si/' },
+      other: { 'description:hi': 'UP Police SI 2026 – UPPRPB उप-निरीक्षक भर्ती। परीक्षा 14-15 मार्च 2026 को हुई। 3,638 रिक्तियाँ। सिलेबस, पात्रता (स्नातक, 21-28 वर्ष), वेतन ₹35,400–₹1,12,400/माह।' },
+    };
+  }
+
   if (params.slug === 'ssc-chsl') {
     return {
       title: 'SSC CHSL 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -328,6 +338,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
   if (brief && brief.slug === 'delhi-police-constable') return <DelhiPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'upsc-nda') return <UpscNdaPage exam={brief} />;
+  if (brief && brief.slug === 'up-police-si') return <UpPoliceSiPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
@@ -12358,6 +12369,743 @@ function RrbJePage({ exam }: { exam: any }) {
 /* ─────────────────────────────────────────────────────────────────────────
    SSC CHSL 2025-26 DETAILED PAGE
    ───────────────────────────────────────────────────────────────────────── */
+// ─── UP POLICE SI RICH PAGE ──────────────────────────────────────────────────
+function UpPoliceSiPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'physical',        label: 'Physical Standards' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'UPPRPB SI 2021 Cycle Notification Released',      date: '2021',                            status: 'done' },
+    { event: 'Application Window (2021 Cycle)',                  date: 'Sep–Oct 2021',                    status: 'done' },
+    { event: 'Written Exam (2021 Cycle) – Phase 1',             date: '14–15 March 2026',                status: 'done' },
+    { event: 'Answer Key Released (Written Exam)',               date: 'April 2026 (TBN)',                status: 'tbn' },
+    { event: 'Written Exam Result',                              date: 'May–Jun 2026 (TBN)',              status: 'tbn' },
+    { event: 'PST/PET Physical Test (2021 Cycle)',               date: 'To be notified (TBN)',            status: 'tbn' },
+    { event: 'Document Verification (2021 Cycle)',               date: 'To be notified (TBN)',            status: 'tbn' },
+    { event: '💡 UP Police SI 2026 Notification (Next Cycle)',   date: 'Expected: 2026 (TBN)',            status: 'upcoming' },
+    { event: 'UP Police SI 2026 Application (Expected)',         date: 'To be notified (TBN)',            status: 'upcoming' },
+    { event: 'UP Police SI 2026 Written Exam (Expected)',        date: 'To be notified (TBN)',            status: 'upcoming' },
+  ];
+
+  const writtenPattern = [
+    { section: 'General Hindi (सामान्य हिन्दी)',             questions: 40, marks: 100, note: 'Qualifying – 35% required' },
+    { section: 'Law / Constitution / General Knowledge',     questions: 40, marks: 100, note: 'Merit-based scoring' },
+    { section: 'Numerical & Mental Ability (Mental Aptitude)', questions: 40, marks: 100, note: 'Merit-based scoring' },
+    { section: 'Mental Aptitude / IQ / Reasoning Test',     questions: 40, marks: 100, note: 'Merit-based scoring' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'Sub-Inspector (Civil Police) – Male',      vac2021: '1,277', vac2026: 'TBN', payLevel: 'Pay Level 6', payScale: '₹35,400–₹1,12,400' },
+    { post: 'Sub-Inspector (Civil Police) – Female',    vac2021: '694',   vac2026: 'TBN', payLevel: 'Pay Level 6', payScale: '₹35,400–₹1,12,400' },
+    { post: 'Sub-Inspector (Platoon Commander) – PAC',  vac2021: '1,430', vac2026: 'TBN', payLevel: 'Pay Level 6', payScale: '₹35,400–₹1,12,400' },
+    { post: 'Sub-Inspector (Confidential) – Fire Service', vac2021: '237', vac2026: 'TBN', payLevel: 'Pay Level 6', payScale: '₹35,400–₹1,12,400' },
+  ];
+
+  const physicalMale = [
+    { attribute: 'Height', general: '168 cm', obc: '168 cm', sc_st: '160 cm' },
+    { attribute: 'Chest (Unexpanded)', general: '79 cm', obc: '79 cm', sc_st: '77 cm' },
+    { attribute: 'Chest (Expanded)', general: '84 cm', obc: '84 cm', sc_st: '82 cm' },
+    { attribute: '800m Run', general: '2 min 40 sec', obc: '2 min 40 sec', sc_st: '2 min 40 sec' },
+    { attribute: 'Long Jump', general: '3.65 m (3 chances)', obc: '3.65 m', sc_st: '3.65 m' },
+    { attribute: 'High Jump', general: '1.10 m (3 chances)', obc: '1.10 m', sc_st: '1.10 m' },
+  ];
+
+  const physicalFemale = [
+    { attribute: 'Height', general: '152 cm', obc: '152 cm', sc_st: '147 cm' },
+    { attribute: 'Weight', general: '40 kg (min)', obc: '40 kg', sc_st: '40 kg' },
+    { attribute: '800m Run', general: '3 min 30 sec', obc: '3 min 30 sec', sc_st: '3 min 30 sec' },
+    { attribute: 'Long Jump', general: '2.50 m (3 chances)', obc: '2.50 m', sc_st: '2.50 m' },
+    { attribute: 'High Jump', general: '0.90 m (3 chances)', obc: '0.90 m', sc_st: '0.90 m' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Pay Level 6)', amount: '₹35,400', note: '7th Pay Commission' },
+    { component: 'Dearness Allowance (DA @ 55%)', amount: '~₹19,470', note: 'Revised Jan 2026' },
+    { component: 'House Rent Allowance (HRA)', amount: '₹2,832–₹8,496', note: 'Depends on city (X/Y/Z)' },
+    { component: 'Transport Allowance', amount: '₹1,350–₹3,600', note: 'Plus DA on TA' },
+    { component: 'Gross Salary', amount: '~₹59,000–₹68,000', note: 'Before deductions' },
+    { component: 'In-Hand Salary (approx.)', amount: '₹48,000–₹58,000', note: 'After NPS, tax deductions' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'General Hindi (सामान्य हिन्दी)',
+      color: 'text-orange-700',
+      bg: 'bg-orange-50 border-orange-200',
+      topics: [
+        'हिन्दी वर्णमाला – स्वर, व्यंजन, उच्चारण',
+        'संधि – स्वर, व्यंजन, विसर्ग संधि',
+        'समास – तत्पुरुष, द्वंद्व, बहुव्रीहि आदि',
+        'विलोम शब्द, पर्यायवाची शब्द, अनेकार्थी शब्द',
+        'मुहावरे एवं लोकोक्तियाँ',
+        'वाक्य शुद्धि – अशुद्ध वाक्यों का संशोधन',
+        'रिक्त स्थान – उपयुक्त शब्द',
+        'वर्तनी एवं अर्थबोध',
+        'अपठित गद्यांश – बोध प्रश्न',
+        'पत्र लेखन, रिपोर्ट लेखन (मुख्य परीक्षा में)',
+      ],
+    },
+    {
+      subject: 'General Knowledge & Current Affairs',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Indian Constitution – Fundamental Rights, DPSP, Amendments',
+        'Indian Penal Code (IPC) – Key Sections (302, 307, 354, 376, 420, etc.)',
+        'Code of Criminal Procedure (CrPC) – Arrest, Bail, FIR basics',
+        'UP-specific Polity – Panchayati Raj, Local Bodies, State administration',
+        'Indian History – Freedom Struggle, Modern India',
+        'Geography – India and Uttar Pradesh physical features',
+        'Economy – Budget basics, Schemes of Government of India & UP',
+        'Current Affairs – National & International (last 6 months)',
+        'Science & Technology – Everyday science, IT basics',
+        'Awards, Sports, Books, Static GK',
+      ],
+    },
+    {
+      subject: 'Numerical & Mental Ability',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Number System – HCF, LCM, Fractions, Decimals',
+        'Percentage, Ratio & Proportion, Partnership',
+        'Profit & Loss, Discount, Simple & Compound Interest',
+        'Average, Age Problems, Mixture & Alligation',
+        'Time & Work, Time, Speed & Distance',
+        'Mensuration – Area, Volume (2D and 3D)',
+        'Data Interpretation – Tables, Bar charts, Pie charts',
+        'Statistics – Mean, Median, Mode basics',
+        'Basic Algebra – Linear equations',
+        'Trigonometry basics (Class 10 level)',
+      ],
+    },
+    {
+      subject: 'Mental Aptitude / IQ / Reasoning',
+      color: 'text-purple-700',
+      bg: 'bg-purple-50 border-purple-200',
+      topics: [
+        'Logical Reasoning – Analogies, Classification, Series',
+        'Coding-Decoding, Blood Relations, Direction Sense',
+        'Ranking, Seating Arrangement, Scheduling',
+        'Syllogisms, Statements & Conclusions',
+        'Number & Alphabet series',
+        'Clock & Calendar problems',
+        'Venn Diagrams, Cubes & Dice',
+        'Non-Verbal Reasoning – Pattern completion, Mirror image',
+        'Mental Ability – Perception, Memory, Problem Solving',
+        'Basic Computer Awareness (optional/general awareness)',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', title: 'Foundation: Hindi + GK', tasks: 'Complete Hindi grammar from Lucent — Sandhi, Samas, Muhavare, Vilom. Start Lucent GK — History, Polity, and IPC/CrPC basic sections. Target 30 Hindi questions daily and memorise 10 vocabulary words per day.' },
+    { month: 'Month 2', title: 'Core Maths + Reasoning', tasks: 'Cover all Quantitative Aptitude topics from R.S. Aggarwal — Percentage, P&L, SI/CI, Time & Work, Mensuration. Start Reasoning — complete Verbal section of R.S. Aggarwal. Daily practice of 40 questions (20 Maths + 20 Reasoning).' },
+    { month: 'Month 3', title: 'Law & Current Affairs', tasks: 'Study IPC and CrPC key sections systematically. Read UP-specific schemes and governance topics. Start daily current affairs — GK Today or Drishti IAS monthly PDF. Cover UP geography and economy.' },
+    { month: 'Month 4', title: 'Full Mock Tests', tasks: 'Give complete 160-question mock tests 3x per week. Analyse each mock — fix weak sections. Target: 120+/160 in every mock. Keep revising Hindi grammar and static GK daily. Start physical fitness training alongside.' },
+    { month: 'Month 5', title: 'Revision + Physical Prep', tasks: 'Final revision of all 4 subjects. Attempt 20+ full mock tests. Practise Hindi essay and letter writing (for mains if applicable). Intensify physical training: 800m run target under 2:40 for male, 3:30 for female. Practise long jump and high jump.' },
+  ];
+
+  const books = [
+    { subject: 'General Hindi', title: 'Samanya Hindi', author: 'Dr. Hardev Bahri (Arihant)', pdf: null },
+    { subject: 'General Hindi', title: 'Hindi Vyakaran (Kiran)', author: 'Kiran Prakashan', pdf: null },
+    { subject: 'General Knowledge', title: "Lucent's General Knowledge", author: 'Lucent Publications', pdf: null },
+    { subject: 'Law / IPC / CrPC', title: 'UP Police SI Legal GK', author: 'Arihant / Ghatna Chakra', pdf: null },
+    { subject: 'Maths & Reasoning', title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', pdf: null },
+    { subject: 'Maths & Reasoning', title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', pdf: null },
+    { subject: 'All-in-One PYQ', title: 'UP Police SI Chapterwise Solved Papers', author: 'Ghatna Chakra / Arihant', pdf: null },
+  ];
+
+  const tips = [
+    { title: 'Hindi is the make-or-break subject', body: 'With 40 questions and a separate 35% qualifying mark in Hindi, many candidates fail despite scoring well in other sections. Focus heavily on Hindi grammar — especially Sandhi, Samas, Muhavare, and Vilom. Do NOT neglect it.' },
+    { title: 'Know the IPC and CrPC cold', body: 'Law questions (IPC key sections, CrPC procedures, criminal justice basics) are unique to police exams and carry high weightage. Most coaching students skip this, creating a huge opportunity. Spend dedicated time on it.' },
+    { title: 'Start physical training from Day 1', body: 'PST/PET eliminates many written exam qualifiers who ignored fitness. The 800m run target (2:40 for males, 3:30 for females) requires weeks of training. Height and chest measurements are fixed — but run, jump, and stamina can be built.' },
+    { title: 'UP-specific GK is your differentiator', body: 'Questions on Uttar Pradesh — its schemes, districts, rivers, history, industries, and state government policies — are frequently asked. Most candidates study only national GK. Cover UP GK from a dedicated source like UP Samanya Gyan by Ghatna Chakra.' },
+    { title: 'Mock tests in Hindi medium', body: 'UP Police SI exams are primarily Hindi-medium. Practise mock tests in Hindi — the language, phrasing, and question patterns are different from English-medium SSC or banking exams. Use Testbook or Adda247 in Hindi.' },
+    { title: 'Time management: 160 questions in 120 minutes', body: 'That is roughly 45 seconds per question. Build speed by doing subject-wise timed drills. Aim: Reasoning in 22 min, Maths in 30 min, Hindi in 23 min, GK in 18 min (adjust to your strengths). Never get stuck on one question.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the UP Police SI 2026 notification date?', a: 'The 2021 recruitment cycle exam was conducted on 14–15 March 2026. Results and the next phase (PST/PET) are awaited. A fresh UP Police SI 2026 notification is expected to be released by UPPRPB after the 2021 cycle concludes. Keep checking uppbpb.gov.in for official updates. No confirmed date has been announced yet.' },
+    { q: 'What is the minimum qualification for UP Police SI?', a: 'Candidates must hold a Graduation degree (Bachelor\'s degree) from any recognised university. There is no specific stream requirement. Final year students whose results are pending may be eligible to apply — the notification specifies the cut-off date for qualification completion.' },
+    { q: 'What is the UP Police SI age limit?', a: 'The general age limit is 21–28 years (male) as of 1 July of the recruitment year. Female candidates: 21–28 years. OBC candidates get +3 years (21–31). SC/ST candidates get +5 years (21–33). Ex-Servicemen also get relaxation as per UP government rules. Age relaxation is subject to the official notification.' },
+    { q: 'How many vacancies are there in UP Police SI 2021 cycle?', a: 'The 2021 cycle has 3,638 vacancies across four categories: Sub-Inspector (Civil Police) Male – 1,277, SI (Civil Police) Female – 694, SI (Platoon Commander) PAC – 1,430, and SI (Confidential/Fire) – 237. The next cycle\'s vacancies have not been announced yet.' },
+    { q: 'What is the exam pattern for UP Police SI written exam?', a: 'The written exam has 160 objective questions (MCQs) for 400 marks in 120 minutes (2 hours). It covers 4 subjects: General Hindi (40Q/100M — qualifying with 35%), General Knowledge/Law/Constitution (40Q/100M), Numerical & Mental Ability (40Q/100M), and Mental Aptitude/IQ/Reasoning (40Q/100M). There is no negative marking.' },
+    { q: 'What is the UP Police SI in-hand salary in 2026?', a: 'UP Police SI belongs to Pay Level 6 (₹35,400–₹1,12,400) as per the 7th Pay Commission. With DA at 55% (effective January 2026) plus HRA and other allowances, the gross monthly salary is approximately ₹59,000–₹68,000. In-hand (after NPS deductions and taxes) ranges from ₹48,000–₹58,000 per month, depending on posting city.' },
+    { q: 'Is there negative marking in UP Police SI exam?', a: 'No. The UP Police SI written exam does NOT have negative marking. However, General Hindi has a separate qualifying requirement of 35% (35/100 marks). Candidates who score below this threshold in Hindi are disqualified regardless of their overall score.' },
+    { q: 'What physical standards are required for UP Police SI?', a: 'Male General/OBC candidates need height ≥168 cm, chest 79–84 cm, and must complete 800m run in 2:40, long jump 3.65m, high jump 1.10m. SC/ST males: height ≥160 cm, chest 77–82 cm. Female General/OBC/SC: height ≥152 cm (SC/ST ≥147 cm), weight ≥40 kg, 800m in 3:30, long jump 2.50m, high jump 0.90m.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">UP Police SI 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Police</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">State Govt – Uttar Pradesh</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Graduate Eligible</span>
+            <span className="bg-yellow-400/20 text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 Exam: 14–15 Mar 2026 (Done)</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            UP Police SI 2026 –<br className="hidden sm:block" /> Notification, Syllabus, Eligibility & Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            2021 cycle written exam held on 14–15 March 2026. 3,638 total vacancies across Civil Police, PAC, and other wings. Graduation required. In-hand salary ₹48K–₹58K/month. Next cycle notification expected in 2026.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies (2021 Cycle)', value: '3,638' },
+              { label: 'Written Exam',            value: '14–15 Mar 2026' },
+              { label: 'Min. Qualification',      value: 'Graduation' },
+              { label: 'In-Hand Salary',          value: '₹48K–₹58K/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <div className="grid grid-cols-2 gap-1">
+            {toc.map((item) => (
+              <a key={item.id} href={`#${item.id}`} className="text-sm text-primary-500 hover:text-primary-700 py-1">
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <main>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is UP Police SI 2026?</h2>
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 rounded-r-xl p-4 mb-5">
+                <p className="text-sm text-yellow-800 font-medium">🔔 2021 Cycle Written Exam Completed: 14–15 March 2026</p>
+                <p className="text-xs text-yellow-700 mt-1">Result and PST/PET dates are awaited. Next cycle (UP Police SI 2026) notification expected after this cycle completes.</p>
+              </div>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                The UP Police Sub Inspector (SI) exam is conducted by the Uttar Pradesh Police Recruitment and Promotion Board (UPPRPB) to recruit Sub Inspectors in the Civil Police, Provincial Armed Constabulary (PAC), and other wings. It is one of the most sought-after state government police jobs in India, offering job security, a respectable salary, and the authority to serve as a gazetted officer at the ground level.
+              </p>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                The selection process includes a written exam, Physical Standard Test (PST), Physical Efficiency Test (PET), document verification, and a medical examination. Graduation is the minimum required qualification. The post carries Pay Level 6 (₹35,400–₹1,12,400) under the 7th Pay Commission.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
+                {[
+                  { icon: '🏛️', label: 'Conducting Body', value: 'UPPRPB' },
+                  { icon: '📋', label: 'Exam Level', value: 'State (Uttar Pradesh)' },
+                  { icon: '🎓', label: 'Qualification', value: 'Any Graduation' },
+                  { icon: '📅', label: 'Frequency', value: 'Irregular (2–5 yrs)' },
+                  { icon: '📋', label: 'Exam Mode', value: 'Offline (OMR-based)' },
+                  { icon: '💰', label: 'Pay Level', value: 'Level 6 (7th CPC)' },
+                  { icon: '⏱️', label: 'Exam Duration', value: '2 Hours (120 min)' },
+                  { icon: '📝', label: 'Total Questions', value: '160 MCQs (400 marks)' },
+                ].map((c) => (
+                  <div key={c.label} className="card p-4">
+                    <div className="text-2xl mb-1">{c.icon}</div>
+                    <div className="text-xs text-surface-500 mb-0.5">{c.label}</div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm">{c.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">2. 📅 Important Dates – UP Police SI 2026</h2>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-50 border-b border-surface-200">
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Event</th>
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Date</th>
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className="border-b border-surface-100 last:border-0 hover:bg-surface-50">
+                        <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                        <td className="px-4 py-3 font-medium text-surface-800">{row.date}</td>
+                        <td className="px-4 py-3">
+                          <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mt-2">⚠️ All future dates are tentative. Always verify at <a href="https://uppbpb.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">uppbpb.gov.in</a> before taking action.</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. 🎓 Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  {
+                    icon: '🪪',
+                    title: 'Nationality',
+                    body: 'Citizen of India. Domicile of Uttar Pradesh is generally required for state quota posts.',
+                    bg: 'bg-blue-50 border-blue-200',
+                    iconBg: 'bg-blue-100',
+                  },
+                  {
+                    icon: '🎓',
+                    title: 'Educational Qualification',
+                    body: 'Bachelor\'s Degree (Graduation) in any discipline from a recognised university. No minimum percentage required. Final year students may apply (check notification).',
+                    bg: 'bg-emerald-50 border-emerald-200',
+                    iconBg: 'bg-emerald-100',
+                  },
+                  {
+                    icon: '📋',
+                    title: 'Age Limit',
+                    body: 'General (Male/Female): 21–28 years. OBC: 21–31 years (+3). SC/ST: 21–33 years (+5). Ex-Servicemen: as per UP Govt rules. Age calculated as of 1 July of recruitment year.',
+                    bg: 'bg-orange-50 border-orange-200',
+                    iconBg: 'bg-orange-100',
+                  },
+                  {
+                    icon: '⚧',
+                    title: 'Gender',
+                    body: 'Both Male and Female candidates are eligible. Separate vacancies are advertised for Male (Civil Police + PAC) and Female (Civil Police only). Transgender candidates may apply as per government rules.',
+                    bg: 'bg-purple-50 border-purple-200',
+                    iconBg: 'bg-purple-100',
+                  },
+                ].map((card) => (
+                  <div key={card.title} className={`rounded-xl border p-5 ${card.bg}`}>
+                    <div className={`inline-flex items-center justify-center w-9 h-9 rounded-lg text-lg mb-3 ${card.iconBg}`}>{card.icon}</div>
+                    <h3 className="font-heading font-semibold text-surface-800 mb-2">{card.title}</h3>
+                    <p className="text-sm text-surface-700 leading-relaxed">{card.body}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 4. VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. 📊 Vacancies & Posts</h2>
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-4">
+                <p className="text-sm text-primary-800">💡 The 2021 recruitment cycle has 3,638 total vacancies. This is the cycle whose written exam was held on 14–15 March 2026. The 2026 cycle vacancy details have not been announced.</p>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-50 border-b border-surface-200">
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Post Name</th>
+                      <th className="text-center px-4 py-3 font-heading font-semibold text-surface-700">2021 Vacancies</th>
+                      <th className="text-center px-4 py-3 font-heading font-semibold text-surface-700">2026 (Next Cycle)</th>
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Pay Scale</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyPosts.map((row, i) => (
+                      <tr key={i} className="border-b border-surface-100 last:border-0 hover:bg-surface-50">
+                        <td className="px-4 py-3 text-surface-700 font-medium">{row.post}</td>
+                        <td className="px-4 py-3 text-center font-bold text-primary-600">{row.vac2021}</td>
+                        <td className="px-4 py-3 text-center text-surface-500">{row.vac2026}</td>
+                        <td className="px-4 py-3 text-surface-700">{row.payScale}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-surface-50 font-bold">
+                      <td className="px-4 py-3 text-surface-800">Total</td>
+                      <td className="px-4 py-3 text-center text-primary-600">3,638</td>
+                      <td className="px-4 py-3 text-center text-surface-500">TBN</td>
+                      <td className="px-4 py-3 text-surface-700">Pay Level 6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 5. SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. 🔢 Selection Process</h2>
+              <div className="space-y-3">
+                {[
+                  { step: '01', title: 'Written Examination', desc: '160 MCQs (400 marks) in 120 minutes. OMR-based offline exam. Covers 4 subjects. No negative marking. General Hindi qualifying at 35%.', color: 'bg-blue-500' },
+                  { step: '02', title: 'Physical Standard Test (PST)', desc: 'Height, chest (male), weight (female) measurements checked as per category. Failure = disqualification.', color: 'bg-orange-500' },
+                  { step: '03', title: 'Physical Efficiency Test (PET)', desc: '800m run, long jump, and high jump for both male and female candidates. Mandatory qualifying round.', color: 'bg-emerald-500' },
+                  { step: '04', title: 'Document Verification', desc: 'Originals of educational certificates, caste certificate, domicile certificate, and other documents are verified.', color: 'bg-purple-500' },
+                  { step: '05', title: 'Medical Examination', desc: 'Medical fitness check — eyesight, physical fitness, absence of any disability or medical condition that prevents police duty.', color: 'bg-red-500' },
+                ].map((s) => (
+                  <div key={s.step} className="card flex items-start gap-4 p-4">
+                    <div className={`w-8 h-8 rounded-lg ${s.color} text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5`}>{s.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.title}</div>
+                      <p className="text-sm text-surface-600">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 6. PHYSICAL STANDARDS */}
+            <section id="physical" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. 🏃 Physical Standards (PST & PET)</h2>
+              <div className="bg-orange-50 border-l-4 border-orange-400 rounded-r-xl p-4 mb-5">
+                <p className="text-sm text-orange-800 font-medium">⚠️ Physical preparation is non-negotiable. Many candidates fail at PST/PET after clearing the written exam. Start training from Day 1.</p>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Male Candidates</h3>
+              <div className="card overflow-x-auto mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-50 border-b border-surface-200">
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Standard</th>
+                      <th className="text-center px-4 py-3 font-heading font-semibold text-surface-700">General / OBC</th>
+                      <th className="text-center px-4 py-3 font-heading font-semibold text-surface-700">SC / ST</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalMale.map((row, i) => (
+                      <tr key={i} className="border-b border-surface-100 last:border-0 hover:bg-surface-50">
+                        <td className="px-4 py-3 font-medium text-surface-700">{row.attribute}</td>
+                        <td className="px-4 py-3 text-center text-surface-800">{row.general}</td>
+                        <td className="px-4 py-3 text-center text-surface-800">{row.sc_st}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Female Candidates</h3>
+              <div className="card overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-50 border-b border-surface-200">
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Standard</th>
+                      <th className="text-center px-4 py-3 font-heading font-semibold text-surface-700">General / OBC</th>
+                      <th className="text-center px-4 py-3 font-heading font-semibold text-surface-700">SC / ST</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalFemale.map((row, i) => (
+                      <tr key={i} className="border-b border-surface-100 last:border-0 hover:bg-surface-50">
+                        <td className="px-4 py-3 font-medium text-surface-700">{row.attribute}</td>
+                        <td className="px-4 py-3 text-center text-surface-800">{row.general}</td>
+                        <td className="px-4 py-3 text-center text-surface-800">{row.sc_st}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 7. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">7. 📋 Exam Pattern</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                {[
+                  { label: 'Total Questions', value: '160' },
+                  { label: 'Total Marks', value: '400' },
+                  { label: 'Duration', value: '120 Minutes' },
+                  { label: 'Negative Marking', value: 'None ✅' },
+                ].map((s) => (
+                  <div key={s.label} className="bg-primary-50 border border-primary-200 rounded-xl p-4 text-center">
+                    <div className="font-heading font-bold text-primary-700 text-xl">{s.value}</div>
+                    <div className="text-xs text-surface-500 mt-1">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-50 border-b border-surface-200">
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Subject</th>
+                      <th className="text-center px-4 py-3 font-heading font-semibold text-surface-700">Questions</th>
+                      <th className="text-center px-4 py-3 font-heading font-semibold text-surface-700">Marks</th>
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {writtenPattern.map((row, i) => (
+                      <tr key={i} className={`border-b border-surface-100 last:border-0 hover:bg-surface-50 ${i === 0 ? 'bg-orange-50' : ''}`}>
+                        <td className="px-4 py-3 text-surface-700 font-medium">{row.section}</td>
+                        <td className="px-4 py-3 text-center font-bold text-surface-800">{row.questions}</td>
+                        <td className="px-4 py-3 text-center font-bold text-primary-600">{row.marks}</td>
+                        <td className="px-4 py-3 text-xs text-surface-500">{row.note}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-surface-50 font-bold border-t border-surface-200">
+                      <td className="px-4 py-3 text-surface-800">Total</td>
+                      <td className="px-4 py-3 text-center text-surface-800">160</td>
+                      <td className="px-4 py-3 text-center text-primary-600">400</td>
+                      <td className="px-4 py-3 text-xs text-orange-600">Hindi: 35% qualifying</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mt-3 text-sm text-orange-800">
+                ⚠️ <strong>Important:</strong> General Hindi is a <strong>qualifying paper</strong>. Candidates must score ≥ 35 marks out of 100 in Hindi, otherwise they are disqualified regardless of total marks. The merit list is based on the remaining 3 subjects (300 marks).
+              </div>
+            </section>
+
+            {/* 8. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. 📚 Detailed Syllabus</h2>
+              <div className="space-y-3">
+                {syllabus.map((sub, i) => (
+                  <details key={i} className={`rounded-xl border overflow-hidden ${sub.bg}`}>
+                    <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span className={`${sub.color}`}>{sub.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                        {sub.topics.map((t, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="text-emerald-500 mt-0.5 shrink-0">✓</span>
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 9. SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. 💰 Salary & Benefits</h2>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-emerald-800">💡 UP Police SI salary is based on Pay Level 6 of the 7th Pay Commission with DA at 55% (effective January 2026).</p>
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-50 border-b border-surface-200">
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Pay Component</th>
+                      <th className="text-right px-4 py-3 font-heading font-semibold text-surface-700">Amount</th>
+                      <th className="text-left px-4 py-3 font-heading font-semibold text-surface-700">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={`border-b border-surface-100 last:border-0 hover:bg-surface-50 ${row.component.includes('In-Hand') ? 'bg-emerald-50 font-bold' : ''}`}>
+                        <td className="px-4 py-3 text-surface-700">{row.component}</td>
+                        <td className="px-4 py-3 text-right font-semibold text-surface-800">{row.amount}</td>
+                        <td className="px-4 py-3 text-xs text-surface-500">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Other Benefits & Perks</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { icon: '🏥', title: 'Medical Benefits', body: 'Free medical treatment for self and dependents at government hospitals and empanelled facilities.' },
+                  { icon: '🏠', title: 'Government Quarters', body: 'Police accommodation (quarters) typically provided or HRA paid. Police lines housing in many districts.' },
+                  { icon: '📚', title: 'Children\'s Education', body: 'Children\'s education allowance and concessions available under UP government service rules.' },
+                  { icon: '⬆️', title: 'Promotion Path', body: 'SI → Inspector → DSP → SP → SSP → DIG → IG → ADG → DGP. Clear promotion ladder with departmental exams.' },
+                  { icon: '🛡️', title: 'Job Security', body: 'Permanent government job with pension (NPS), gratuity, and Leave Travel Concession (LTC).' },
+                  { icon: '⚡', title: 'Uniform Allowance', body: 'Separate uniform allowance provided annually. Police kit and equipment issued by the department.' },
+                ].map((b) => (
+                  <div key={b.title} className="card p-4 flex items-start gap-3">
+                    <div className="text-2xl shrink-0">{b.icon}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{b.title}</div>
+                      <p className="text-xs text-surface-600">{b.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. 🗓️ 5-Month Study Plan</h2>
+              <div className="space-y-4">
+                {studyPlan.map((phase, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="flex flex-col items-center">
+                      <div className="w-10 h-10 rounded-full bg-primary-500 text-white flex items-center justify-center font-heading font-bold text-xs shrink-0">{i + 1}</div>
+                      {i < studyPlan.length - 1 && <div className="w-0.5 bg-surface-200 flex-1 mt-2" />}
+                    </div>
+                    <div className="card p-4 mb-4 flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs font-semibold text-primary-600 bg-primary-50 px-2 py-0.5 rounded-full">{phase.month}</span>
+                        <span className="font-heading font-semibold text-surface-800">{phase.title}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{phase.tasks}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 11. BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. 📖 Best Books for UP Police SI 2026</h2>
+              <BooksTable books={books} />
+            </section>
+
+            {/* 12. TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. 💡 Expert Preparation Tips</h2>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center font-heading font-bold text-sm shrink-0">{i + 1}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{tip.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. FAQs */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">13. ❓ Frequently Asked Questions – UP Police SI 2026</h2>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </main>
+
+          {/* Sidebar */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</p>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 hover:pl-1 transition-all">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official website */}
+              <a href="https://uppbpb.gov.in" target="_blank" rel="noopener noreferrer" className="card p-5 block hover:border-primary-300 transition-colors">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-2">Official Website</p>
+                <p className="font-heading font-semibold text-primary-600 text-sm">uppbpb.gov.in →</p>
+                <p className="text-xs text-surface-500 mt-1">Notifications, Admit Card, Results</p>
+              </a>
+
+              {/* Quick stats */}
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">UP Police SI At a Glance</p>
+                <div className="space-y-2 text-xs">
+                  {[
+                    { label: 'Minimum Qualification', value: 'Graduation (Any)' },
+                    { label: 'Age Limit', value: '21–28 years (Gen)' },
+                    { label: 'Application Fee (Gen)', value: '₹400' },
+                    { label: 'Vacancies (2021 Cycle)', value: '3,638 posts' },
+                    { label: 'Written Marks', value: '400 (160 MCQs)' },
+                    { label: 'Exam Duration', value: '120 minutes' },
+                    { label: 'Negative Marking', value: 'None' },
+                    { label: 'Hindi Qualifying', value: '35% required' },
+                  ].map((r) => (
+                    <div key={r.label} className="flex justify-between gap-2">
+                      <span className="text-surface-500">{r.label}</span>
+                      <span className="font-semibold text-surface-800 text-right">{r.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Related exams */}
+              <div className="card p-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">Other Police Exams</p>
+                <div className="space-y-2">
+                  {[
+                    { name: 'UP Police Constable 2026', slug: 'up-police-constable' },
+                    { name: 'SSC CPO SI 2026',          slug: 'ssc-cpo' },
+                    { name: 'SSC GD Constable 2026',    slug: 'ssc-gd-constable' },
+                    { name: 'Delhi Police SI 2026',     slug: 'delhi-police-si' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Eligibility checker */}
+              <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for UP Police SI 2026.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
 function SscChslPage({ exam }: { exam: any }) {
   const toc = [
     { id: 'overview',        label: 'Overview' },
