@@ -1866,7 +1866,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
               <div className="space-y-2">
                 <Link href="/exams/ssc-cgl" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> SSC CGL Full Guide</Link>
                 <Link href="/exams" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> All SSC Exams</Link>
-                <Link href="/tools/age-calculator" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> Check Eligibility</Link>
+                <Link href="/tools/eligibility-checker/" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> Check Eligibility</Link>
                 <Link href="/blog" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> More Articles</Link>
               </div>
             </div>
@@ -1875,7 +1875,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
               <div className="text-2xl mb-2">🎯</div>
               <div className="font-heading font-bold text-sm mb-1">Eligible for CGL?</div>
               <div className="text-xs text-white/80 mb-3">Check if you qualify and which posts are open for you</div>
-              <Link href="/tools/age-calculator" className="block bg-white text-accent-600 font-semibold text-sm py-2 rounded-lg hover:bg-white/90 transition-colors">
+              <Link href="/tools/eligibility-checker/" className="block bg-white text-accent-600 font-semibold text-sm py-2 rounded-lg hover:bg-white/90 transition-colors">
                 Check Eligibility →
               </Link>
             </div>
@@ -2581,7 +2581,7 @@ function IbpsPOSalaryArticle({ post }: { post: any }) {
                 <Link href="/exams/sbi-po" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   SBI PO Salary Comparison →
                 </Link>
-                <Link href="/tools/age-calculator" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Check IBPS PO Eligibility →
                 </Link>
               </div>
@@ -2763,7 +2763,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
             </p>
             <p className="text-surface-700 leading-relaxed mb-4">
               Use our{' '}
-              <Link href="/tools/age-calculator" className="text-primary-500 hover:text-primary-600 underline">
+              <Link href="/tools/eligibility-checker/" className="text-primary-500 hover:text-primary-600 underline">
                 free Eligibility Checker tool
               </Link>{' '}
               to instantly verify whether you qualify for any of our{' '}
@@ -3152,7 +3152,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
               Enter your date of birth and category — our free tool instantly tells you which of our 100 listed exams you are eligible for.
             </p>
             <Link
-              href="/tools/age-calculator"
+              href="/tools/eligibility-checker/"
               className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-5 py-2.5 rounded-xl text-sm hover:bg-primary-50 transition-colors"
             >
               Open Eligibility Checker →
@@ -3183,7 +3183,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
             <div className="card p-5">
               <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Try Our Tools</div>
               <div className="space-y-2">
-                <Link href="/tools/age-calculator" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Free Eligibility Checker →
                 </Link>
                 <Link href="/exams" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
@@ -3894,7 +3894,7 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
             <p className="text-sm text-primary-700 mb-4">Check out our complete RRB NTPC guide with books, YouTube channels, mock tests — all free.</p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link href="/exams/rrb-ntpc" className="btn-primary text-sm">RRB NTPC Complete Guide →</Link>
-              <Link href="/tools/age-calculator" className="btn-outline text-sm">Check My Eligibility →</Link>
+              <Link href="/tools/eligibility-checker/" className="btn-outline text-sm">Check My Eligibility →</Link>
             </div>
           </div>
 
@@ -3957,7 +3957,7 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
             <div className="card p-5">
               <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Try Our Tools</div>
               <div className="space-y-2">
-                <Link href="/tools/age-calculator" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Free Eligibility Checker →
                 </Link>
                 <Link href="/exams" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
@@ -4594,7 +4594,7 @@ function HighestSalary12thArticle({ post }: { post: any }) {
               <Link href="/exams/ssc-cgl" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL Complete Guide →</Link>
               <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL 2026 →</Link>
               <Link href="/blog/ibps-po-salary-in-hand-2026" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 →</Link>
-              <Link href="/tools/age-calculator" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
+              <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
               <Link href="/exams" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
             </div>
           </div>

@@ -107,7 +107,7 @@ export default function EligibilityCheckerPage() {
         <nav className="text-sm text-surface-500 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-primary-500">Home</Link>
           <span className="mx-2">›</span>
-          <Link href="/tools/age-calculator" className="hover:text-primary-500">Tools</Link>
+          <Link href="/tools/eligibility-checker/" className="hover:text-primary-500">Tools</Link>
           <span className="mx-2">›</span>
           <span className="text-surface-800">Eligibility Checker 2026</span>
         </nav>

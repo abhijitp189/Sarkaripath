@@ -663,7 +663,7 @@ export default function ResourcesPage() {
             <Link href="/exams" className="btn-primary bg-accent-500 hover:bg-accent-600">
               Browse 100+ Exams →
             </Link>
-            <Link href="/tools/age-calculator" className="btn-outline border-white text-white hover:bg-white/10">
+            <Link href="/tools/eligibility-checker/" className="btn-outline border-white text-white hover:bg-white/10">
               Check My Eligibility
             </Link>
           </div>

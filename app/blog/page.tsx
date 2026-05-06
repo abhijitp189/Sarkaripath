@@ -460,7 +460,7 @@ export default function BlogPage() {
                   {[
                     { label: 'All 100 Exams', href: '/exams/' },
                     { label: 'Free Resources', href: '/resources/' },
-                    { label: 'Eligibility Checker', href: '/tools/age-calculator/' },
+                    { label: 'Eligibility Checker', href: '/tools/eligibility-checker/' },
                     { label: 'Preparation Guides', href: '/guides/' },
                   ].map((link) => (
                     <Link

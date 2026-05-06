@@ -1076,7 +1076,7 @@ function UpscIasPage({ exam }: { exam: any }) {
                 <span className="text-xs text-primary-500 font-medium mt-2 block">Visit upsc.gov.in →</span>
               </a>
               {/* Eligibility Tool */}
-              <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+              <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
                 <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
                 <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for UPSC CSE 2026.</p>
                 <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
@@ -1660,7 +1660,7 @@ function SscCglPage({ exam }: { exam: any }) {
               <p className="text-blue-100 text-sm mb-5">Everything you need is free on TaiyarHo — previous papers, guides, current affairs, eligibility checker.</p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Link href="/resources" className="bg-white text-primary-700 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Free Resources →</Link>
-                <Link href="/tools/age-calculator" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Eligibility</Link>
+                <Link href="/tools/eligibility-checker/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Eligibility</Link>
               </div>
             </div>
 
@@ -2232,7 +2232,7 @@ function SscGdPage({ exam }: { exam: any }) {
               <p className="text-blue-100 text-sm mb-5">Free resources, previous year papers, and eligibility checker — all free on TaiyarHo.</p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Link href="/resources" className="bg-white text-primary-700 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Free Resources →</Link>
-                <Link href="/tools/age-calculator" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Eligibility</Link>
+                <Link href="/tools/eligibility-checker/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Eligibility</Link>
               </div>
             </div>
 
@@ -6353,7 +6353,7 @@ function SscMtsPage({ exam }: { exam: any }) {
               <h3 className="font-heading font-bold text-xl mb-2">Prepare for SSC MTS 2026</h3>
               <p className="text-blue-100 text-sm mb-5 max-w-md mx-auto">The 2026 notification is expected in June–July 2026. Use this time to build your foundation now — those who start early top the merit list.</p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Link href="/tools/age-calculator" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
+                <Link href="/tools/eligibility-checker/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
                   Check Eligibility →
                 </Link>
                 <Link href="/resources" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
@@ -7226,7 +7226,7 @@ function SbiClerkPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-emerald-50 border-emerald-200">
                 <div className="font-heading font-semibold text-emerald-800 text-sm mb-2">Check Your Eligibility</div>
                 <p className="text-xs text-emerald-700 mb-3">Use our free tool to instantly check if you qualify for SBI Clerk 2026.</p>
-                <Link href="/tools/age-calculator" className="block text-center text-xs font-semibold bg-emerald-600 text-white px-3 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                <Link href="/tools/eligibility-checker/" className="block text-center text-xs font-semibold bg-emerald-600 text-white px-3 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
                   Check Eligibility →
                 </Link>
               </div>
@@ -8337,7 +8337,7 @@ function ArmyAgniveerPage({ exam }: { exam: any }) {
             <div className="card p-6 bg-primary-50 border-primary-200 text-center mb-6">
               <h3 className="font-heading font-bold text-primary-800 mb-2">Check If You Are Eligible</h3>
               <p className="text-sm text-primary-600 mb-4">Use our free eligibility checker to see if you qualify for Indian Army Agniveer.</p>
-              <Link href="/tools/age-calculator" className="btn-primary">Check Eligibility →</Link>
+              <Link href="/tools/eligibility-checker/" className="btn-primary">Check Eligibility →</Link>
             </div>
 
             <div className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
@@ -9214,7 +9214,7 @@ function IbpsRrbPoPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-orange-50 border-orange-200">
                 <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
                 <p className="text-xs text-orange-700 mb-3">Check your age, qualification, and category eligibility for IBPS RRB PO in seconds.</p>
-                <Link href="/tools/age-calculator" className="block text-center text-xs font-semibold bg-orange-500 text-white px-3 py-2 rounded-lg hover:bg-orange-600 transition-colors">
+                <Link href="/tools/eligibility-checker/" className="block text-center text-xs font-semibold bg-orange-500 text-white px-3 py-2 rounded-lg hover:bg-orange-600 transition-colors">
                   Check Eligibility Free →
                 </Link>
               </div>
@@ -9631,7 +9631,7 @@ function IbpsRrbClerkPage({ exam }: { exam: any }) {
                       </tbody>
                     </table>
                   </div>
-                  <p className="text-xs text-surface-400 mt-2">Use our <Link href="/tools/age-calculator" className="text-primary-500 underline">free Eligibility Checker</Link> to instantly verify your age eligibility.</p>
+                  <p className="text-xs text-surface-400 mt-2">Use our <Link href="/tools/eligibility-checker/" className="text-primary-500 underline">free Eligibility Checker</Link> to instantly verify your age eligibility.</p>
                 </div>
               </div>
             </section>
@@ -9998,7 +9998,7 @@ function IbpsRrbClerkPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-emerald-50 border-emerald-200">
                 <div className="font-heading font-semibold text-emerald-800 text-sm mb-2">Check Your Eligibility</div>
                 <p className="text-xs text-emerald-700 mb-3">Instantly check if you qualify for IBPS RRB Clerk 2026 — age, education, category.</p>
-                <Link href="/tools/age-calculator" className="block text-center text-xs font-semibold bg-emerald-600 text-white px-3 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                <Link href="/tools/eligibility-checker/" className="block text-center text-xs font-semibold bg-emerald-600 text-white px-3 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
                   Check Eligibility →
                 </Link>
               </div>
@@ -10687,7 +10687,7 @@ function RrbNtpcPage({ exam }: { exam: any }) {
                   { name: 'Exampur (YouTube)',         type: 'YouTube',   url: 'https://www.youtube.com/@Exampur__Official',     desc: 'Free daily live classes for Railway and SSC exams' },
                   { name: 'Testbook RRB NTPC',        type: 'Mock Tests',url: 'https://testbook.com/rrb-ntpc',                  desc: 'Free and paid mock tests with detailed analysis' },
                   { name: 'TaiyarHo Free Resources',  type: 'Guide',     url: '/resources',                                     desc: 'Curated free books, YouTube channels, and mock test links' },
-                  { name: 'Eligibility Checker Tool', type: 'Tool',      url: '/tools/age-calculator',                          desc: 'Check your age eligibility for RRB NTPC instantly' },
+                  { name: 'Eligibility Checker Tool', type: 'Tool',      url: '/tools/eligibility-checker/',                          desc: 'Check your age eligibility for RRB NTPC instantly' },
                 ].map((r, i) => (
                   <a key={i} href={r.url} target={r.url.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer"
                     className="card p-4 hover:border-primary-300 hover:shadow-md transition-all group">
@@ -10769,7 +10769,7 @@ function RrbNtpcPage({ exam }: { exam: any }) {
             <div className="card p-5 bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
               <p className="text-sm font-semibold text-surface-800 mb-3">🎯 Check Your Eligibility</p>
               <p className="text-xs text-surface-500 mb-4">Use our free eligibility checker to see if you qualify for RRB NTPC and 100+ other exams.</p>
-              <Link href="/tools/age-calculator" className="btn-primary text-sm w-full text-center block">
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block">
                 Open Eligibility Checker →
               </Link>
             </div>
@@ -11597,7 +11597,7 @@ function RrbAlpPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-orange-50 border-orange-200">
                 <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
                 <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
-                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+                <Link href="/tools/eligibility-checker/" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
               </div>
 
             </div>
@@ -12297,7 +12297,7 @@ function RrbJePage({ exam }: { exam: any }) {
                 </ul>
                 <div className="mt-5 pt-4 border-t border-surface-100 space-y-2">
                   <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary block text-center text-sm py-2.5">Official RRB Website ↗</a>
-                  <Link href="/tools/age-calculator" className="btn-outline block text-center text-sm py-2.5">Check Eligibility</Link>
+                  <Link href="/tools/eligibility-checker/" className="btn-outline block text-center text-sm py-2.5">Check Eligibility</Link>
                 </div>
               </div>
 
@@ -12321,7 +12321,7 @@ function RrbJePage({ exam }: { exam: any }) {
               <div className="card p-5 bg-orange-50 border-orange-200">
                 <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
                 <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to find out which railway and engineering exams you qualify for based on your age, qualification, and category.</p>
-                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+                <Link href="/tools/eligibility-checker/" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
               </div>
 
             </div>
@@ -13118,7 +13118,7 @@ function SscChslPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-orange-50 border-orange-200">
                 <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
                 <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
-                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+                <Link href="/tools/eligibility-checker/" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
               </div>
             </div>
           </aside>
@@ -13709,7 +13709,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
                   { name: 'SSC CGL Guide', slug: 'ssc-cgl' },
                   { name: 'SSC CHSL Guide', slug: 'ssc-chsl' },
                   { name: 'SSC GD Constable', slug: 'ssc-gd-constable' },
-                  { name: 'Check Eligibility', slug: '../tools/age-calculator' },
+                  { name: 'Check Eligibility', slug: '../tools/eligibility-checker/' },
                 ].map((e) => (
                   <Link key={e.slug} href={e.slug.startsWith('..') ? e.slug : `/exams/${e.slug}`} className="text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
                 ))}
@@ -13748,7 +13748,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
               </ul>
               <div className="mt-5 pt-4 border-t border-surface-100 space-y-2">
                 <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary block text-center text-sm py-2.5">Official Website ↗</a>
-                <Link href="/tools/age-calculator" className="btn-outline block text-center text-sm py-2.5">Check Eligibility</Link>
+                <Link href="/tools/eligibility-checker/" className="btn-outline block text-center text-sm py-2.5">Check Eligibility</Link>
               </div>
             </div>
 
@@ -13764,7 +13764,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
             <div className="card p-5 bg-orange-50 border-orange-200">
               <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
               <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
-              <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+              <Link href="/tools/eligibility-checker/" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
             </div>
           </aside>
 
@@ -14434,7 +14434,7 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
               <div className="card p-5 bg-orange-50 border-orange-200 mt-4">
                 <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
                 <p className="text-xs text-orange-700 mb-3">Use our free eligibility checker to instantly find out which exams you qualify for based on your age, qualification, and category.</p>
-                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+                <Link href="/tools/eligibility-checker/" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
               </div>
             </div>
           </aside>
@@ -15249,7 +15249,7 @@ function IbpsPoPage({ exam }: { exam: any }) {
             <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-6 text-center">
               <h3 className="text-lg font-heading font-bold text-white mb-2">Check Your IBPS PO Eligibility Now</h3>
               <p className="text-primary-100 text-sm mb-4">Enter your age, qualification, and category — our free tool tells you instantly which exams you qualify for.</p>
-              <Link href="/tools/age-calculator" className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-primary-50 transition-colors">
+              <Link href="/tools/eligibility-checker/" className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-primary-50 transition-colors">
                 Check Eligibility Free →
               </Link>
             </div>
@@ -15311,7 +15311,7 @@ function IbpsPoPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-orange-50 border-orange-200">
                 <p className="text-sm font-semibold text-orange-800 mb-2">✅ Am I Eligible?</p>
                 <p className="text-xs text-orange-700 mb-3">Check your eligibility for IBPS PO and 100 other government exams — free, instant.</p>
-                <Link href="/tools/age-calculator" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
+                <Link href="/tools/eligibility-checker/" className="text-xs font-semibold text-orange-700 hover:underline">Check Eligibility Free →</Link>
               </div>
             </div>
           </aside>
@@ -16165,7 +16165,7 @@ function SbiPoPage({ exam }: { exam: any }) {
                   <div className="flex justify-between"><span className="text-emerald-700">Notification</span><span className="font-bold text-amber-600">Oct–Nov (TBN)</span></div>
                 </div>
               </div>
-              <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+              <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
                 <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
                 <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for SBI PO.</p>
                 <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
@@ -16988,7 +16988,7 @@ function SscCpoPage({ exam }: { exam: any }) {
                 <Link href="/resources" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
                   Free Study Resources →
                 </Link>
-                <Link href="/tools/age-calculator" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
+                <Link href="/tools/eligibility-checker/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
                   Check Eligibility
                 </Link>
               </div>
@@ -17055,7 +17055,7 @@ function SscCpoPage({ exam }: { exam: any }) {
             </div>
 
             {/* Eligibility checker */}
-            <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+            <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
               <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
               <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for SSC CPO.</p>
               <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
@@ -17737,7 +17737,7 @@ function MaharashtraPoliceConstablePage({ exam }: { exam: any }) {
             </div>
 
             {/* Eligibility checker */}
-            <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+            <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
               <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
               <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for Maharashtra Police Constable.</p>
               <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
@@ -18482,7 +18482,7 @@ function RpfConstablePage({ exam }: { exam: any }) {
               </ul>
               <div className="mt-5 pt-4 border-t border-surface-100 space-y-2">
                 <a href="https://rpf.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary block text-center text-sm py-2.5">Official Website ↗</a>
-                <Link href="/tools/age-calculator" className="btn-outline block text-center text-sm py-2.5">Check Eligibility</Link>
+                <Link href="/tools/eligibility-checker/" className="btn-outline block text-center text-sm py-2.5">Check Eligibility</Link>
               </div>
             </div>
 
@@ -18518,7 +18518,7 @@ function RpfConstablePage({ exam }: { exam: any }) {
             </div>
 
             {/* Eligibility checker */}
-            <Link href="/tools/age-calculator" className="card p-5 block hover:border-primary-300 transition-colors">
+            <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
               <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
               <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to see if you qualify for RPF Constable 2026.</p>
               <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
