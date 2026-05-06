@@ -96,6 +96,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ssc-je') {
+    return {
+      title: 'SSC JE 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'SSC JE 2026: Notification expected June 2026. 500–1,500 vacancies for Civil, Electrical & Mechanical engineers in CPWD, CWC, MES. Diploma/Degree eligible. Age 18–32. Salary ₹35,400–₹1,12,400/month.',
+      keywords: 'SSC JE 2026, SSC Junior Engineer 2026, SSC JE notification, SSC JE syllabus, SSC JE Civil Electrical Mechanical, CPWD CWC MES recruitment, SSC JE taiyari, Junior Engineer sarkari naukri',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-je/' },
+      other: { 'description:hi': 'SSC JE 2026 – CPWD, CWC, MES में Civil, Electrical & Mechanical Junior Engineer के लिए 500–1,500 रिक्तियाँ। अधिसूचना जून 2026 में अपेक्षित। Diploma/Degree पात्र। आयु 18–32 वर्ष। वेतन ₹35,400–₹1,12,400/माह।' },
+    };
+  }
+
   if (params.slug === 'ssc-cpo') {
     return {
       title: 'SSC CPO 2026 – Notification, Syllabus, Eligibility & Guide | TaiyarHo',
@@ -349,6 +359,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'bihar-police-constable') return <BiharPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'mp-police-constable') return <MpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'ctet') return <CtetPage exam={brief} />;
+  if (brief && brief.slug === 'ssc-je') return <SscJePage exam={brief} />;
   if (brief && brief.slug === 'ssc-cpo') return <SscCpoPage exam={brief} />;
   if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
   if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
@@ -22428,6 +22439,776 @@ function UppscPcsPage({ exam }: { exam: any }) {
               <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
                 <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
                 <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for UPPSC PCS 2026.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── SSC JE 2026 RICH PAGE ─────────────────────────────────────────────────────
+function SscJePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Departments' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'SSC JE 2024 Paper I (CBT) Conducted',                date: '5–7 June 2024',               status: 'done' },
+    { event: 'SSC JE 2024 Paper I Answer Key Released',            date: '19 June 2024',                status: 'done' },
+    { event: 'SSC JE 2024 Paper I Result Declared',                date: '26 August 2024',              status: 'done' },
+    { event: 'SSC JE 2024 Paper II (Conventional) Conducted',      date: '29–30 September 2024',        status: 'done' },
+    { event: 'SSC JE 2024 Paper II Answer Key Released',           date: 'October 2024',                status: 'done' },
+    { event: 'SSC JE 2024 Final Result & Merit List',              date: 'January–February 2026',       status: 'done' },
+    { event: 'SSC JE 2024 Document Verification / Joining',       date: 'Ongoing (2026)',               status: 'done' },
+    { event: '💡 SSC JE 2026 Notification Expected',               date: 'June–July 2026',              status: 'upcoming' },
+    { event: 'SSC JE 2026 Application Window (Expected)',          date: 'July–August 2026',            status: 'upcoming' },
+    { event: 'SSC JE 2026 Paper I — CBT (Expected)',               date: 'October–November 2026 (TBN)', status: 'tbn' },
+    { event: 'SSC JE 2026 Paper II — Conventional (Expected)',     date: 'January–February 2027 (TBN)', status: 'tbn' },
+    { event: 'SSC JE 2026 Final Result (Expected)',                date: 'Mid 2027 (TBN)',              status: 'tbn' },
+  ];
+
+  const paper1Pattern = [
+    { section: 'General Intelligence & Reasoning',     questions: 50, marks: 50,  negative: '−0.25/wrong' },
+    { section: 'General Awareness',                    questions: 50, marks: 50,  negative: '−0.25/wrong' },
+    { section: 'Part A: General Engineering (Civil & Structural)', questions: 100, marks: 100, negative: '−0.25/wrong' },
+  ];
+  const paper1AltBranch = [
+    { section: 'Part A: General Engineering (Electrical)', questions: 100, marks: 100, negative: '−0.25/wrong' },
+    { section: 'Part B: General Engineering (Mechanical)', questions: 100, marks: 100, negative: '−0.25/wrong' },
+  ];
+
+  const paper2Pattern = [
+    { part: 'Part A – Civil & Structural Engineering', marks: 300, duration: '2 hours', type: 'Conventional (Descriptive)', note: 'For Civil Branch candidates' },
+    { part: 'Part B – Electrical Engineering',         marks: 300, duration: '2 hours', type: 'Conventional (Descriptive)', note: 'For Electrical Branch candidates' },
+    { part: 'Part C – Mechanical Engineering',         marks: 300, duration: '2 hours', type: 'Conventional (Descriptive)', note: 'For Mechanical Branch candidates' },
+  ];
+
+  const vacancyData = [
+    { dept: 'CPWD (Civil)', branch: 'Civil', posts2024: '~300', pay: 'Pay Level 6', scale: '₹35,400 – ₹1,12,400' },
+    { dept: 'CWC (Civil)',  branch: 'Civil', posts2024: '~150', pay: 'Pay Level 6', scale: '₹35,400 – ₹1,12,400' },
+    { dept: 'CPWD (Electrical)', branch: 'Electrical', posts2024: '~200', pay: 'Pay Level 6', scale: '₹35,400 – ₹1,12,400' },
+    { dept: 'MES (Civil)',  branch: 'Civil', posts2024: '~180', pay: 'Pay Level 6', scale: '₹35,400 – ₹1,12,400' },
+    { dept: 'MES (Electrical)', branch: 'Electrical', posts2024: '~120', pay: 'Pay Level 6', scale: '₹35,400 – ₹1,12,400' },
+    { dept: 'MES (Mechanical)', branch: 'Mechanical', posts2024: '~100', pay: 'Pay Level 6', scale: '₹35,400 – ₹1,12,400' },
+    { dept: 'Other Depts (Misc.)', branch: 'Civil/Elec', posts2024: '~100+', pay: 'Pay Level 6', scale: '₹35,400 – ₹1,12,400' },
+  ];
+
+  const salaryData = [
+    { component: 'Basic Pay (Pay Level 6)',  amount: '₹35,400' },
+    { component: 'Dearness Allowance (DA @ 55%)', amount: '~₹19,470' },
+    { component: 'HRA (8–24% of Basic — city-dependent)', amount: '₹2,832 – ₹8,496' },
+    { component: 'Transport Allowance (TA)', amount: '₹3,600 – ₹7,200' },
+    { component: 'Gross Pay (approx.)',      amount: '₹61,000 – ₹72,000' },
+    { component: 'In-Hand (after deductions)', amount: '~₹52,000 – ₹62,000' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'General Intelligence & Reasoning',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Analogies – Semantic & Figural',
+        'Series – Number, Letter & Figural',
+        'Coding-Decoding',
+        'Classification – Odd One Out',
+        'Blood Relations, Direction & Distance',
+        'Matrix, Venn Diagrams',
+        'Syllogisms & Data Sufficiency',
+        'Non-Verbal: Paper Folding, Embedded Figures',
+        'Word Formation, Ordering & Ranking',
+      ],
+    },
+    {
+      subject: 'General Awareness',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Current Affairs – Last 6–12 months',
+        'Indian History – Ancient, Medieval, Modern',
+        'Indian Geography – Physical, Rivers, States',
+        'Indian Polity – Constitution, Parliament',
+        'Indian Economy – Budget, Schemes, Inflation',
+        'General Science – Physics, Chemistry, Biology',
+        'Technology & Space (ISRO, defence tech)',
+        'Static GK – Awards, Books, Sports, Days',
+      ],
+    },
+    {
+      subject: 'Civil & Structural Engineering (Part A)',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Building Materials & Construction Technology',
+        'Estimating, Costing & Valuation',
+        'Surveying – Chain, Compass, Theodolite, Levelling',
+        'Soil Mechanics & Foundation Engineering',
+        'Hydraulics – Open Channel, Pipe Flow, Pumps',
+        'Irrigation Engineering – Canals, Weirs, Dams',
+        'Transportation Engineering – Roads, Railways',
+        'Environmental Engineering – Water Supply, Sewage',
+        'RCC Design & Steel Design (IS code)',
+        'Concrete Technology – Mix Design, Tests',
+        'Structural Analysis – Beams, Frames, Trusses',
+        'Theory of Structures – Bending Moment, Shear Force',
+      ],
+    },
+    {
+      subject: 'Electrical Engineering (Part B)',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Basic Concepts – Ohm\'s Law, KCL, KVL',
+        'Circuit Analysis – DC & AC Circuits',
+        'Magnetic Circuits & Electromagnetism',
+        'Transformers – Single & Three Phase',
+        'DC Machines – Generator & Motor',
+        'AC Machines – Induction Motor, Synchronous Motor',
+        'Electrical Measurements & Instruments',
+        'Power Systems – Transmission & Distribution',
+        'Basic Electronics – Diodes, Transistors',
+        'Electrical Estimation & Costing',
+        'Utilisation of Electrical Energy',
+        'Wiring Systems & Indian Electricity Rules',
+      ],
+    },
+    {
+      subject: 'Mechanical Engineering (Part C)',
+      color: 'text-rose-700',
+      bg: 'bg-rose-50 border-rose-200',
+      topics: [
+        'Engineering Mechanics – Statics, Dynamics',
+        'Strength of Materials – Stress, Strain, Columns',
+        'Theory of Machines – Kinematics, Governors',
+        'Engineering Thermodynamics – Laws, Cycles',
+        'Fluid Mechanics & Hydraulic Machines',
+        'Heat Transfer – Conduction, Convection, Radiation',
+        'Manufacturing Technology – Casting, Welding, Forging',
+        'Machine Design – Joints, Shafts, Couplings',
+        'Refrigeration & Air Conditioning',
+        'Metrology & Quality Control',
+        'Power Plant Engineering',
+        'Industrial Engineering & Production Management',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', title: 'Foundation – GI & GA', tasks: 'Complete reasoning fundamentals: coding-decoding, series, analogy, blood relations. Cover General Awareness: History, Polity, Geography from NCERT + Lucent GK. Target: 40/50 in GI and 35/50 in GA in mock tests.' },
+    { month: 'Month 2', title: 'Engineering Basics', tasks: 'Revise core engineering fundamentals for your branch. Civil: Fluid Mechanics, Soil Mechanics, Surveying. Electrical: Circuit Analysis, Machines. Mechanical: Thermodynamics, Strength of Materials. Use standard textbooks (R.K. Bansal, B.L. Theraja, R.S. Khurmi).' },
+    { month: 'Month 3', title: 'Engineering Advanced Topics', tasks: 'Cover advanced topics: Civil — RCC Design, Structural Analysis, Transportation. Electrical — Power Systems, Transformers. Mechanical — Theory of Machines, Manufacturing. Solve SSC JE previous year papers (2015–2024) for all branches.' },
+    { month: 'Month 4', title: 'Paper I Full Mocks', tasks: 'Give full 200-question Paper I mocks every alternate day. Target: 150+/200. Focus on time management — 2 hours for all 3 sections. Track accuracy per section. Strengthen weak engineering topics. Subscribe to daily current affairs for GA.' },
+    { month: 'Month 5', title: 'Paper II Preparation (Descriptive)', tasks: 'Practise Paper II descriptive answers. Write detailed solutions to numerical problems. Focus on IS code references for Civil, design problems for Electrical/Mechanical. Time yourself — 2 hours for 300 marks. Solve at least 10 previous year Paper II sets.' },
+    { month: 'Month 6', title: 'Revision & Final Preparation', tasks: 'Revise all formula sheets, diagrams, and IS codes. Give full-length Paper I + Paper II mocks. Focus on accuracy over speed. Current affairs revision for last 3 months. Keep a revision notebook for all important values, formulas, and codes.' },
+  ];
+
+  const books = [
+    { subject: 'Civil Engineering (Paper I & II)', title: 'SSC Junior Engineers Civil & Structural — Previous Year Papers', author: 'Kiran Prakashan', pdf: null },
+    { subject: 'Electrical Engineering (Paper I & II)', title: 'SSC Junior Engineers Electrical — Previous Year Papers', author: 'Kiran Prakashan / Arihant', pdf: null },
+    { subject: 'Mechanical Engineering (Paper I & II)', title: 'SSC Junior Engineers Mechanical — Previous Year Papers', author: 'Kiran Prakashan / Arihant', pdf: null },
+    { subject: 'Civil — Fluid Mechanics & Hydraulics', title: 'A Textbook of Fluid Mechanics & Hydraulic Machines', author: 'R.K. Bansal', pdf: null },
+    { subject: 'Civil — RCC Design', title: 'Limit State Design of Reinforced Concrete', author: 'P.C. Varghese', pdf: null },
+    { subject: 'Electrical — All Topics', title: 'A Textbook of Electrical Technology (Vol I & II)', author: 'B.L. Theraja', pdf: null },
+    { subject: 'Mechanical — Theory of Machines', title: 'Theory of Machines', author: 'R.S. Khurmi', pdf: null },
+    { subject: 'Reasoning & General Awareness', title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', pdf: null },
+    { subject: 'General Awareness', title: "Lucent's General Knowledge", author: 'Lucent Publications', pdf: null },
+  ];
+
+  const tips = [
+    { title: 'Paper I = 200 marks, Paper II = 300 marks — don\'t ignore Paper II', body: 'Most candidates over-prepare for Paper I (MCQ) and underestimate Paper II (descriptive). Yet Paper II carries 300 marks and determines final rank. Allocate at least 40% of your total study time to Paper II preparation, especially descriptive problem-solving.' },
+    { title: 'Choose your branch carefully — you cannot change it', body: 'SSC JE asks you to choose your engineering branch (Civil, Electrical, or Mechanical) at the application stage. This determines the Paper I Part A/B/C you take and the Paper II you write. Choose the branch where you hold your Diploma/Degree and are most confident.' },
+    { title: 'Previous year papers are gold — solve all papers from 2010 to 2024', body: 'SSC JE has a strong repetition pattern, especially in General Engineering. Topics like Fluid Mechanics, Transformers, Theory of Machines, and Soil Mechanics repeat in almost every cycle. Solving last 10 years of papers will give you 60–70% of the expected Paper I questions.' },
+    { title: 'Use GATE standard books for Paper II — SSC JE books alone are not enough', body: 'For Paper II (conventional/descriptive), SSC-specific books won\'t cut it. Use standard engineering textbooks (R.K. Bansal, B.L. Theraja, R.S. Khurmi) combined with GATE-level numerical practice. IS codes are especially important for Civil candidates in design problems.' },
+    { title: 'GA is free marks — don\'t miss them', body: 'General Awareness (50 marks) is the easiest section to score in, yet many engineering students neglect it. Daily 20-minute current affairs reading + Lucent GK revision can reliably fetch you 35–45/50. This can be the deciding margin in a competitive exam.' },
+    { title: 'Apply to multiple departments — CPWD, CWC, MES all have different work cultures', body: 'SSC JE vacancies span CPWD, CWC, MES, BRO, FARAKKA Barrage, and more. CPWD and MES are considered the best postings for growth. All are Pay Level 6. You don\'t choose the department — SSC allocates based on merit and preference order. Research each department before listing preferences.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the SSC JE 2026 notification date?', a: 'The SSC JE 2026 notification is expected in June–July 2026, based on SSC\'s Annual Calendar and past patterns. SSC typically releases JE once a year. The 2024 cycle notification was released in March 2024, with Paper I in June 2024 and Paper II in September 2024. Always check ssc.gov.in for the official announcement.' },
+    { q: 'What is the educational qualification for SSC JE 2026?', a: 'Candidates must have a Diploma in Engineering (Civil, Electrical, or Mechanical) OR a Degree in Engineering/Technology. Some departments like MES and CWC may require a B.E./B.Tech degree specifically — always verify the official notification for department-wise requirements. ITI alone does not qualify.' },
+    { q: 'What is the age limit for SSC JE?', a: 'The general age limit is 18–32 years. Age relaxation: OBC +3 years (up to 35), SC/ST +5 years (up to 37), PwBD +10 years, Ex-Servicemen as per government rules. Age is calculated as on the cut-off date specified in the official notification. For MES and some departments, the upper age limit may be 27–30 years for certain posts.' },
+    { q: 'What are the branches available in SSC JE?', a: 'SSC JE is conducted for three engineering branches: Civil & Structural Engineering, Electrical Engineering, and Mechanical Engineering. You select your branch at the time of application. Each branch has a separate Paper I (Part A/B/C) and Paper II. Most vacancies are typically in Civil, followed by Electrical, then Mechanical.' },
+    { q: 'Is SSC JE Paper II descriptive or objective?', a: 'SSC JE Paper II is conventional (descriptive/pen-and-paper format). It is a 300-mark written exam of 2 hours duration. Candidates write detailed answers, solve numerical problems, and draw diagrams. It covers in-depth engineering topics for the chosen branch and requires standard engineering textbook preparation, not just MCQ practice.' },
+    { q: 'What is the SSC JE in-hand salary in 2026?', a: 'SSC JE is a Pay Level 6 post (₹35,400 basic pay). With DA at 55% (effective January 2026), HRA, Transport Allowance, and other allowances, the gross pay is approximately ₹61,000–₹72,000/month. The estimated in-hand salary after NPS, CGHS, and CGEGIS deductions is approximately ₹52,000–₹62,000/month. The salary is comparable to SSC CGL Group B posts.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✓ Done';
+    if (s === 'upcoming') return '🔔 Upcoming';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">SSC JE 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">SSC</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Diploma / Degree in Engg.</span>
+            <span className="bg-yellow-400/20 text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 2026 Notification: Jun–Jul 2026</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            SSC JE 2026 –<br className="hidden sm:block" /> Junior Engineer Notification, Syllabus & Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            SSC JE recruits Junior Engineers in CPWD, CWC, MES & other central government departments. 2024 cycle final result declared in early 2026. SSC JE 2026 notification expected June–July 2026. Diploma or Degree in Civil, Electrical, or Mechanical eligible.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Expected Vacancies',    value: '500–1,500' },
+              { label: '2026 Notification',     value: 'Jun–Jul 2026' },
+              { label: 'Min. Qualification',    value: 'Diploma in Engg.' },
+              { label: 'In-Hand Salary',        value: '₹52K–₹62K/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── MAIN CONTENT ── */}
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is SSC JE 2026?</h2>
+              <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-4 mb-5 flex gap-3">
+                <span className="text-xl shrink-0">🔔</span>
+                <div>
+                  <p className="text-sm font-semibold text-yellow-900 mb-1">SSC JE 2026 Notification Expected: June–July 2026</p>
+                  <p className="text-xs text-yellow-800">The 2024 cycle is complete — final result and joining are underway. The 2026 cycle notification is expected June–July 2026. Paper I (CBT) is likely in October–November 2026. Start preparing now — competition is intense with over 5–8 lakh applicants per cycle.</p>
+                </div>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  <strong>SSC JE (Junior Engineer)</strong> is an annual national-level examination conducted by the <strong>Staff Selection Commission (SSC)</strong> to recruit Junior Engineers in civil, electrical, and mechanical engineering streams for central government departments including CPWD, CWC, MES, BRO, Farakka Barrage Project Authority, and others.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  SSC JE is one of the most sought-after engineering recruitment exams in India because it offers a Pay Level 6 government job (₹35,400 basic pay) to Diploma holders — making it accessible to candidates who have not completed a full B.E./B.Tech degree. The exam has two stages: <strong>Paper I (Computer Based Test)</strong> and <strong>Paper II (Conventional/Descriptive).</strong>
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  The three branches — <strong>Civil &amp; Structural, Electrical, and Mechanical</strong> — are conducted separately, and candidates must choose their branch at the application stage. CPWD and MES are the most preferred departments, offering diverse project exposure and faster promotions.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',  value: 'Staff Selection Commission (SSC)' },
+                  { label: 'Post',              value: 'Junior Engineer (JE)' },
+                  { label: 'Exam Frequency',    value: 'Annual' },
+                  { label: 'Official Website',  value: 'ssc.gov.in' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">2. 📅 Important Dates – SSC JE 2024–26</h2>
+              <p className="text-sm text-surface-500 mb-5">
+                The 2024 cycle concluded successfully — final results declared early 2026, joining underway.
+                💡 <strong>Key update:</strong> SSC JE 2026 notification is expected June–July 2026 with Paper I in October–November 2026. Begin preparation now.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ TBN = To Be Notified. Always verify on <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">ssc.gov.in</a> before taking any action.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. 🎓 Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed mb-3">
+                    Must hold a <strong>Diploma in Engineering</strong> (Civil, Electrical, or Mechanical) <em>or</em> a <strong>Degree in Engineering / Technology</strong> (B.E. / B.Tech) in the relevant discipline from a recognised institution.
+                  </p>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
+                    <strong>Note:</strong> Some departments (e.g. MES) may require a full Degree (B.E./B.Tech) for certain posts. Always check the department-wise qualification requirements in the official notification.
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      { cat: 'General / EWS', age: '18 – 32 years' },
+                      { cat: 'OBC (Non-Creamy Layer)', age: '18 – 35 years (+3 yrs)' },
+                      { cat: 'SC / ST', age: '18 – 37 years (+5 yrs)' },
+                      { cat: 'PwBD (General)', age: '18 – 42 years (+10 yrs)' },
+                      { cat: 'PwBD (OBC)', age: '18 – 45 years (+13 yrs)' },
+                      { cat: 'Ex-Servicemen', age: 'As per Govt. norms' },
+                    ].map((r) => (
+                      <div key={r.cat} className="flex justify-between text-xs">
+                        <span className="text-surface-600">{r.cat}</span>
+                        <span className="font-semibold text-surface-800">{r.age}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed">
+                    Must be a citizen of India. Subjects of Nepal/Bhutan and Tibetan refugees settled before 1 January 1962 may also be eligible per Government of India norms. Candidates of Indian origin settled abroad are also eligible in certain cases.
+                  </p>
+                </div>
+                <div className="card p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-lg">🔁</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Number of Attempts</h3>
+                  </div>
+                  <p className="text-surface-600 text-sm leading-relaxed">
+                    SSC JE has <strong>no restriction on the number of attempts</strong> — you can appear in every cycle as long as you meet the age limit. This is a significant advantage over exams like UPSC or State PSCs, which cap total attempts.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. 📊 Vacancies & Departments 2026</h2>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5 flex gap-3">
+                <span className="text-xl shrink-0">💡</span>
+                <p className="text-sm text-blue-900">
+                  <strong>2026 vacancies are yet to be notified (TBN).</strong> Based on the 2024 cycle (~1,365 posts) and historical trends, approximately 500–1,500 vacancies are expected. CPWD typically contributes the highest number of Civil posts; MES leads in Electrical and Mechanical.
+                </p>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Department</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Branch</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Posts (2024 Cycle)</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Pay Scale</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.dept}</td>
+                        <td className="p-3"><span className="badge-primary">{row.branch}</span></td>
+                        <td className="p-3 text-surface-700 font-semibold">{row.posts2024}</td>
+                        <td className="p-3 text-surface-600">{row.scale}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400">⚠️ Department-wise vacancy breakdowns vary cycle to cycle. The 2026 cycle detailed allocation will be available in the official notification on ssc.gov.in.</p>
+            </section>
+
+            {/* SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. 🗂️ Selection Process</h2>
+              <p className="text-surface-600 text-sm mb-5">SSC JE selection is a two-paper process — Paper I is the filter, Paper II is the decider. There is no interview.</p>
+              <div className="space-y-4">
+                {[
+                  { step: '01', title: 'Paper I – Computer Based Test (CBT)', color: 'bg-blue-50 border-blue-200', titleColor: 'text-blue-800', desc: '200 marks | 2 hours | Objective MCQ. Covers General Intelligence & Reasoning (50 marks), General Awareness (50 marks), and General Engineering Part A/B/C (100 marks) as per your branch. Qualifying in nature — shortlists candidates for Paper II.' },
+                  { step: '02', title: 'Paper II – Conventional (Descriptive)', color: 'bg-emerald-50 border-emerald-200', titleColor: 'text-emerald-800', desc: '300 marks | 2 hours | Pen-and-paper descriptive exam. In-depth engineering topics for your chosen branch (Civil, Electrical, or Mechanical). This is the merit-determining paper — your final rank is based on Paper II score (Paper I marks are not counted in the merit list).' },
+                  { step: '03', title: 'Document Verification (DV)', color: 'bg-amber-50 border-amber-200', titleColor: 'text-amber-800', desc: 'Shortlisted candidates from Paper II are called for Document Verification. Original certificates for educational qualification, age proof, category certificate (if applicable), and other documents are verified. No additional exam or interview.' },
+                  { step: '04', title: 'Medical Examination', color: 'bg-purple-50 border-purple-200', titleColor: 'text-purple-800', desc: 'Standard government medical fitness examination. Candidates must meet the basic physical and visual fitness standards. Requirements may vary slightly by department (e.g., MES has specific standards for field roles).' },
+                ].map((item) => (
+                  <div key={item.step} className={`card p-5 border ${item.color} flex gap-4`}>
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-heading font-bold text-sm shrink-0 bg-white ${item.titleColor}`}>{item.step}</div>
+                    <div>
+                      <h3 className={`font-heading font-semibold mb-1 ${item.titleColor}`}>{item.title}</h3>
+                      <p className="text-surface-600 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. 📋 Exam Pattern</h2>
+
+              {/* Paper I */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-lg">Paper I – Computer Based Test</h3>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4 text-sm text-blue-800">
+                <strong>Duration:</strong> 2 hours | <strong>Total Marks:</strong> 200 | <strong>Type:</strong> Objective MCQ | <strong>Negative Marking:</strong> −0.25 per wrong answer
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Section</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Negative</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {paper1Pattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-surface-800">{row.marks}</td>
+                        <td className="p-3 text-center text-rose-600 font-medium">{row.negative}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-surface-800 text-white">
+                      <td className="p-3 font-semibold">TOTAL</td>
+                      <td className="p-3 text-center font-bold">200</td>
+                      <td className="p-3 text-center font-bold">200</td>
+                      <td className="p-3 text-center text-surface-300 text-xs">−0.25 each</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 text-xs text-amber-800">
+                <strong>Important:</strong> For Part A, candidates choosing <em>Electrical</em> answer 100 questions on Electrical Engineering, and candidates choosing <em>Mechanical</em> answer 100 questions on Mechanical Engineering. Civil candidates attempt the Civil &amp; Structural Part A only. <strong>Paper I marks are NOT counted in the final merit list</strong> — they only determine Paper II eligibility.
+              </div>
+
+              {/* Paper II */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-lg">Paper II – Conventional (Descriptive)</h3>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-4 text-sm text-emerald-800">
+                <strong>Duration:</strong> 2 hours | <strong>Total Marks:</strong> 300 | <strong>Type:</strong> Pen-and-Paper Descriptive | <strong>Negative Marking:</strong> None
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Paper</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 font-semibold text-xs uppercase tracking-wide">Duration</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {paper2Pattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.part}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-700">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-600">{row.duration}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500">Paper II is the merit-determining stage. Final selection rank is based solely on Paper II marks. Higher Paper II score = better department preference.</p>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">7. 📚 Detailed Syllabus 2026</h2>
+              <p className="text-sm text-surface-500 mb-5">Click on each subject to expand the full topic list. Prepare GI &amp; GA regardless of branch. For engineering, focus only on your chosen branch.</p>
+              <div className="space-y-3">
+                {syllabus.map((sub) => (
+                  <details key={sub.subject} className={`card border rounded-xl overflow-hidden ${sub.bg}`}>
+                    <summary className={`flex items-center justify-between p-4 cursor-pointer font-heading font-semibold ${sub.color}`}>
+                      <span>{sub.subject}</span>
+                      <span className="text-xs text-surface-400">{sub.topics.length} topics ▾</span>
+                    </summary>
+                    <div className="px-4 pb-4">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mt-2">
+                        {sub.topics.map((t) => (
+                          <li key={t} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="text-emerald-500 mt-0.5 shrink-0">✓</span>{t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. 💰 Salary & Benefits 2026</h2>
+              <div className="card p-6 mb-5">
+                <div className="text-xs text-surface-400 uppercase tracking-wide mb-4">SSC JE Pay Level 6 — Salary Breakdown (DA @ 55%, Jan 2026)</div>
+                <div className="space-y-2">
+                  {salaryData.map((row, i) => (
+                    <div key={i} className={`flex justify-between items-center p-3 rounded-lg text-sm ${i === salaryData.length - 1 ? 'bg-emerald-50 border border-emerald-200' : 'bg-surface-50'}`}>
+                      <span className={`text-surface-600 ${i === salaryData.length - 1 ? 'font-semibold text-emerald-800' : ''}`}>{row.component}</span>
+                      <span className={`font-bold ${i === salaryData.length - 1 ? 'text-emerald-700 text-base' : 'text-surface-800'}`}>{row.amount}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Other Allowances & Perks</h3>
+                  <ul className="space-y-2 text-sm text-surface-600">
+                    {[
+                      'CGHS Medical Facility (cashless treatment)',
+                      'LTC (Leave Travel Concession)',
+                      'Children Education Allowance',
+                      'Central Government Group Insurance Scheme (CGEGIS)',
+                      'GPF / NPS pension contribution',
+                      'Performance-based promotions (JE → AE → EE)',
+                      'Subsidised canteen and accommodation (in CPWD/MES)',
+                    ].map((item) => (
+                      <li key={item} className="flex gap-2 items-start"><span className="text-emerald-500 shrink-0">✓</span>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Career Progression</h3>
+                  <div className="space-y-2">
+                    {[
+                      { role: 'Junior Engineer (JE)', level: 'Level 6', pay: '₹35,400' },
+                      { role: 'Assistant Engineer (AE)', level: 'Level 7', pay: '₹44,900' },
+                      { role: 'Executive Engineer (EE)', level: 'Level 10/11', pay: '₹56,100+' },
+                      { role: 'Superintending Engr.', level: 'Level 12', pay: '₹78,800+' },
+                      { role: 'Chief Engineer', level: 'Level 14', pay: '₹1,44,200+' },
+                    ].map((r) => (
+                      <div key={r.role} className="flex justify-between text-xs">
+                        <span className="text-surface-700 font-medium">{r.role}</span>
+                        <span className="text-emerald-600 font-semibold">{r.pay}/mo</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-surface-400 mt-3">Promotions through LDCE (Limited Departmental Competitive Exam) + time-scale after qualifying service.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. 🗓️ 6-Month Study Plan for SSC JE 2026</h2>
+              <p className="text-sm text-surface-500 mb-5">Designed for candidates preparing from scratch with 4–5 hours per day. Adjust based on your current engineering knowledge level.</p>
+              <div className="space-y-4">
+                {studyPlan.map((phase, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-20 shrink-0 text-center">
+                      <div className="bg-primary-100 text-primary-700 rounded-xl px-2 py-1 font-heading font-bold text-xs mb-1">{phase.month}</div>
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{phase.title}</h3>
+                      <p className="text-surface-600 text-sm leading-relaxed">{phase.tasks}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. 📖 Best Books for SSC JE 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Book</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                        <td className="p-3"><span className="badge-primary">{b.subject}</span></td>
+                        <td className="p-3 font-medium text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">All books available on Amazon/Flipkart and at major bookstores. Prefer the latest edition. For PYQs, Kiran Prakashan has the most comprehensive collection.</p>
+            </section>
+
+            {/* EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. 💡 Expert Tips to Crack SSC JE 2026</h2>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-9 h-9 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center font-heading font-bold text-sm shrink-0">{i + 1}</div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</h3>
+                      <p className="text-surface-600 text-sm leading-relaxed">{tip.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQs */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. ❓ Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden">
+                    <summary className="p-5 cursor-pointer font-heading font-semibold text-surface-800 flex justify-between items-center">
+                      <span>{faq.q}</span>
+                      <span className="text-surface-400 shrink-0 ml-3">▾</span>
+                    </summary>
+                    <div className="px-5 pb-5 text-surface-600 text-sm leading-relaxed border-t border-surface-100 pt-3">
+                      {faq.a}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* On This Page */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-400 mb-3">On This Page</div>
+                <ol className="space-y-1.5 list-decimal list-inside">
+                  {toc.map((s) => (
+                    <li key={s.id} className="text-xs">
+                      <a href={`#${s.id}`} className="text-primary-500 hover:text-primary-700 hover:underline">{s.label}</a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-400 mb-3">Official Website</div>
+                <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-between gap-2 bg-primary-50 hover:bg-primary-100 rounded-xl px-4 py-3 transition-colors group">
+                  <span className="font-heading font-semibold text-primary-700 text-sm">ssc.gov.in</span>
+                  <svg className="w-4 h-4 text-primary-500 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                <p className="text-xs text-surface-400 mt-2">Always verify notification dates and vacancy details on the official SSC portal.</p>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-400 mb-3">Quick Facts</div>
+                <div className="space-y-2 text-xs">
+                  {[
+                    { label: 'Exam Type', value: 'CBT + Conventional' },
+                    { label: 'Branches', value: 'Civil / Electrical / Mech' },
+                    { label: 'Paper I Marks', value: '200 (Qualifying)' },
+                    { label: 'Paper II Marks', value: '300 (Merit-based)' },
+                    { label: 'Negative Marking', value: '−0.25 (Paper I only)' },
+                    { label: 'Interview', value: 'None' },
+                    { label: 'Pay Level', value: 'Level 6 (₹35,400 basic)' },
+                    { label: 'Key Departments', value: 'CPWD, CWC, MES' },
+                  ].map((f) => (
+                    <div key={f.label} className="flex justify-between">
+                      <span className="text-surface-500">{f.label}</span>
+                      <span className="font-semibold text-surface-800 text-right max-w-[55%]">{f.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-400 mb-3">Related Exams</div>
+                <div className="space-y-2">
+                  {[
+                    { name: 'RRB JE 2026', slug: 'rrb-je' },
+                    { name: 'SSC CGL 2026', slug: 'ssc-cgl' },
+                    { name: 'SSC CHSL 2026', slug: 'ssc-chsl' },
+                    { name: 'UPSC ESE 2026', slug: 'upsc-ese' },
+                    { name: 'DRDO CEPTAM', slug: 'drdo-ceptam' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Eligibility Calculator */}
+              <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for SSC JE 2026.</p>
                 <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
               </Link>
 
