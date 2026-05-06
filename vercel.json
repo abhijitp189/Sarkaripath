@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/tools/age-calculator",
+      "destination": "/tools/eligibility-checker/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/age-calculator/",
+      "destination": "/tools/eligibility-checker/",
+      "permanent": true
+    }
+  ]
+}
