@@ -176,6 +176,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ssc-stenographer') {
+    return {
+      title: 'SSC Stenographer 2026 – Notification, Syllabus, Skill Test & Guide | TaiyarHo',
+      description: 'SSC Stenographer 2026 guide: notification expected Sep–Oct 2026. CBT pattern (200 marks), shorthand skill test (80/100 wpm), eligibility (12th pass, 18–30 yrs), vacancies, salary ₹38K–₹59K/month & free resources.',
+      keywords: 'SSC Stenographer 2026, SSC Steno notification 2026, SSC Steno syllabus Hindi, Stenographer Grade C D bharti, shorthand skill test, 12th pass government job 2026, SSC स्टेनोग्राफर 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-stenographer/' },
+      other: { 'description:hi': 'SSC स्टेनोग्राफर 2026 – अधिसूचना सितंबर–अक्टूबर 2026 में अपेक्षित। CBT (200 अंक), शॉर्टहैंड स्किल टेस्ट (80/100 wpm), पात्रता (12वीं पास, 18-30 वर्ष), वेतन ₹38K–₹59K/माह और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'bpsc-cce') {
     return {
       title: 'BPSC CCE 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -371,6 +381,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'upsc-nda') return <UpscNdaPage exam={brief} />;
   if (brief && brief.slug === 'up-police-si') return <UpPoliceSiPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
+  if (brief && brief.slug === 'ssc-stenographer') return <SscStenographerPage exam={brief} />;
   if (brief && brief.slug === 'uppsc-pcs') return <UppscPcsPage exam={brief} />;
   if (brief && brief.slug === 'bpsc-cce') return <BpscCcePage exam={brief} />;
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
@@ -23267,6 +23278,721 @@ function SscJePage({ exam }: { exam: any }) {
         </div>
       </div>
 
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── SSC STENOGRAPHER 2026 RICH PAGE ───────────────────────────────────────────
+function SscStenographerPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'skill-test',      label: 'Skill Test (Shorthand)' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Steno 2023 Final Result & Joining (Grade D)',        date: 'March–April 2025',          status: 'done' },
+    { event: 'Steno 2024 Official Notification Released',          date: '5 September 2024',          status: 'done' },
+    { event: 'Online Application Window (2024)',                    date: '5–25 September 2024',       status: 'done' },
+    { event: 'Steno 2024 CBT Exam (Grade C & D)',                  date: '10–11 February 2025',       status: 'done' },
+    { event: 'Steno 2024 Answer Key Released',                     date: '14 February 2025',          status: 'done' },
+    { event: 'Steno 2024 Result / Shortlist for Skill Test',       date: 'April 2025',                status: 'done' },
+    { event: 'Steno 2024 Skill Test (Shorthand) – Grade D',       date: 'June 2025',                 status: 'done' },
+    { event: 'Steno 2024 Skill Test (Shorthand) – Grade C',       date: 'June–July 2025',            status: 'done' },
+    { event: 'Steno 2024 Final Result & Document Verification',    date: 'September–October 2025',    status: 'done' },
+    { event: 'Steno 2024 Joining (Expected)',                       date: 'November 2025 – Jan 2026',  status: 'done' },
+    { event: '💡 SSC Stenographer 2026 Notification (Expected)',   date: 'September – October 2026',  status: 'upcoming' },
+    { event: 'Application Window 2026 (Expected)',                  date: 'October – November 2026',   status: 'upcoming' },
+    { event: 'CBT Exam 2026 (Expected)',                            date: 'January – February 2027',   status: 'upcoming' },
+    { event: 'Skill Test 2026 (Expected)',                          date: 'May – June 2027',           status: 'upcoming' },
+  ];
+
+  const cbtPattern = [
+    { section: 'General Intelligence & Reasoning', questions: 50, marks: 50, duration: '—', negative: '−0.25/wrong' },
+    { section: 'General Awareness',                 questions: 50, marks: 50, duration: '—', negative: '−0.25/wrong' },
+    { section: 'English Language & Comprehension', questions: 100, marks: 100, duration: '—', negative: '−0.25/wrong' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'Stenographer Grade C (Group B Non-Gazetted)', dept: 'Central Govt Ministries / Departments', payLevel: 'Pay Level 6', payScale: '₹35,400 – ₹1,12,400', vac2024: '~200', vac2026: 'TBN' },
+    { post: 'Stenographer Grade D (Group C)',               dept: 'Central Govt Ministries / Departments', payLevel: 'Pay Level 4', payScale: '₹25,500 – ₹81,100',   vac2024: '~1,200', vac2026: 'TBN' },
+  ];
+
+  const salaryBreakdown = [
+    { post: 'Grade D',  basic: '₹25,500', da: '~₹14,025', hra: '₹3,060–₹6,120', ta: '~₹3,600', gross: '~₹46,000–₹50,000', inhand: '₹38,000–₹43,000' },
+    { post: 'Grade C',  basic: '₹35,400', da: '~₹19,470', hra: '₹4,248–₹8,496', ta: '~₹3,600', gross: '~₹62,000–₹67,000', inhand: '₹54,000–₹59,000' },
+  ];
+
+  const skillTestSpec = [
+    { grade: 'Grade C', speed: '100 wpm', duration: '10 minutes', language: 'English / Hindi', tool: 'PAGASUS / Digital Steno Machine', penalty: 'No negative marks — pass/fail' },
+    { grade: 'Grade D', speed: '80 wpm',  duration: '10 minutes', language: 'English / Hindi', tool: 'PAGASUS / Digital Steno Machine', penalty: 'No negative marks — pass/fail' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'General Intelligence & Reasoning',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Analogies – Semantic, Symbolic & Figural',
+        'Classification & Odd One Out',
+        'Series – Number, Letter & Figural',
+        'Coding-Decoding (old & new pattern)',
+        'Blood Relations & Direction Sense',
+        'Problem Solving & Decision Making',
+        'Venn Diagrams & Syllogisms',
+        'Embedded Figures, Mirror & Water Images',
+        'Paper Folding / Cutting & Punching',
+        'Arithmetic Reasoning & Verbal-Logical Reasoning',
+      ],
+    },
+    {
+      subject: 'General Awareness',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Current Affairs – National & International (last 6 months)',
+        'Indian History – Ancient, Medieval & Modern',
+        'Indian Polity & Constitution',
+        'Geography – India & World',
+        'Indian Economy & Five-Year Plans',
+        'Science & Technology (Space, Defence, Biotech)',
+        'Environment & Ecology',
+        'Sports, Awards, Books & Authors',
+        'Important Days & Government Schemes 2026',
+        'Budget 2026-27 highlights',
+      ],
+    },
+    {
+      subject: 'English Language & Comprehension',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Reading Comprehension (2 passages, ~20 questions)',
+        'Cloze Test (Fill-in-the-blank paragraph)',
+        'Error Spotting & Sentence Correction',
+        'Para Jumbles (Sentence Rearrangement)',
+        'Fill in the Blanks (Single & Double)',
+        'Phrase / Sentence Improvement',
+        'Synonyms, Antonyms, One Word Substitution',
+        'Idioms & Phrases, Spelling Correction',
+        'Active / Passive Voice, Direct / Indirect Speech',
+        'Narration Change & Transformation of Sentences',
+      ],
+    },
+    {
+      subject: 'Shorthand Skill Test (qualifying)',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Grade D: 80 wpm dictation (10 min) → 50 min transcription',
+        'Grade C: 100 wpm dictation (10 min) → 40 min transcription',
+        'Passage is dictated by examiner at prescribed speed',
+        'Candidates must transcribe on computer (PAGASUS)',
+        'Accuracy of transcription is evaluated — errors counted',
+        'Max allowed error limit: ~5% of total words',
+        'No negative marking — purely qualifying (pass/fail)',
+        'Hindi medium steno: Kaithi/Devanagari shorthand forms',
+        'English medium steno: Pitman shorthand system',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { week: 'Month 1', focus: 'English Foundation', tasks: 'Master Grammar rules (Error Spotting, Voice, Narration). Complete RC techniques. Start Shorthand practice: 20 wpm daily drills.' },
+    { week: 'Month 2', focus: 'Reasoning & Current Affairs', tasks: 'Cover all Reasoning topics. Begin static GK (History, Polity, Geography). Shorthand speed target: 40 wpm.' },
+    { week: 'Month 3', focus: 'English — Advanced + Vocabulary', tasks: 'Cloze Test, Para Jumbles, Idioms practice. Monthly current affairs revision. Shorthand speed target: 60 wpm.' },
+    { week: 'Month 4', focus: 'General Awareness Deep Dive', tasks: 'Economy, Science & Technology, Govt Schemes 2026. Mock CBT — analyse weak areas. Shorthand speed: 80 wpm (Grade D target).' },
+    { week: 'Month 5', focus: 'Full Mock Tests + Skill Test Speed', tasks: 'Minimum 3 full CBT mocks/week. Shorthand daily 2-hour sessions. Grade C aspirants: push to 100 wpm.' },
+    { week: 'Month 6', focus: 'Revision & Final Polish', tasks: 'Revise notes, error logs from mocks. Topic-wise weak area re-practice. Shorthand accuracy drills — reduce transcription errors below 5%.' },
+  ];
+
+  const books = [
+    { title: 'A Mirror of Common Errors',    author: 'Dr. A.K. Singh',         subject: 'English',        why: 'Best book for error spotting & sentence correction for SSC Steno.' },
+    { title: 'Objective General English',    author: 'S.P. Bakshi',            subject: 'English',        why: 'Comprehensive vocabulary, RC & grammar resource trusted by lakhs.' },
+    { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning', why: 'Standard text for all SSC reasoning topics.' },
+    { title: 'Lucent\'s General Knowledge',  author: 'Binay Karna',            subject: 'General Awareness', why: 'Static GK bible — compact and highly relevant for SSC Steno GK section.' },
+    { title: 'Manorama Yearbook 2026',       author: 'Mammen Mathew (Ed.)',    subject: 'Current Affairs', why: 'Best single source for annual current affairs and infographics.' },
+    { title: 'SSC Stenographer Previous Year Papers', author: 'Kiran Prakashan', subject: 'Practice',    why: 'Last 20 years papers — understand actual difficulty and pattern.' },
+  ];
+
+  const tips = [
+    { title: 'English is the game-changer', body: 'With 100 marks out of 200 in the CBT, English single-handedly determines your rank. Invest at least 50% of your study time here — grammar, vocab, and comprehension.' },
+    { title: 'Start shorthand on Day 1', body: 'Candidates who delay shorthand practice almost always fail the Skill Test. Start basic speed drills from Month 1 itself — reach 80/100 wpm takes months of consistent practice.' },
+    { title: 'Grade D is a genuine stepping stone', body: 'Grade D is Group C with Level 4 pay. After joining, in-service promotions to Grade C (Level 6) happen within 4–6 years. Many officers started as Grade D.' },
+    { title: 'English medium vs Hindi medium', body: 'English Steno (Pitman system) has more practice material available online. Hindi Steno (Kaithi forms) has fewer resources — if you choose Hindi, source official SSC Steno Hindi guides.' },
+    { title: 'Solve minimum 20 previous papers', body: 'SSC Steno CBT has a predictable pattern. English comprehension and reasoning are high-scoring. GA is scoring if you revise the last 6 months of current affairs.' },
+    { title: 'Accuracy over speed in Skill Test', body: 'Many candidates reach the speed target but fail on transcription accuracy. Practice error-free transcription as much as speed. Below 5% error rate is your goal.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the age limit for SSC Stenographer 2026?', a: 'For Grade D: 18–27 years. For Grade C: 18–30 years. Age is calculated as of the closing date of the application. OBC candidates get +3 years, SC/ST get +5 years, and PwBD get +10 years relaxation. Ex-Servicemen also get relaxation as per government norms.' },
+    { q: 'What is the qualification required for SSC Stenographer?', a: 'Candidates must have passed Class 12 (or equivalent) from a recognized board. There is no minimum percentage requirement. Alongside the academic qualification, candidates must possess shorthand proficiency (80 wpm for Grade D, 100 wpm for Grade C) — this is tested in the Skill Test after CBT.' },
+    { q: 'What is the salary of SSC Stenographer Grade C and Grade D?', a: 'SSC Stenographer Grade D (Pay Level 4): Basic pay ₹25,500/month; in-hand salary approximately ₹38,000–₹43,000/month depending on city and allowances. SSC Stenographer Grade C (Pay Level 6): Basic pay ₹35,400/month; in-hand salary approximately ₹54,000–₹59,000/month. Both grades include DA, HRA, TA and other central government perks.' },
+    { q: 'How many vacancies are released for SSC Stenographer each year?', a: 'SSC Stenographer typically releases 1,000–3,000 vacancies annually across Grade C and Grade D. The 2024 cycle had approximately 1,400 vacancies (200 Grade C + ~1,200 Grade D). SSC 2026 vacancy count is yet to be notified (TBN).' },
+    { q: 'How is the Skill Test (Shorthand) conducted for SSC Stenographer?', a: 'The Skill Test is conducted at SSC Regional offices. An examiner dictates a passage at 80 wpm (Grade D) or 100 wpm (Grade C) for 10 minutes. Candidates transcribe the dictation on a computer using the PAGASUS software. Grade D gets 50 minutes for transcription; Grade C gets 40 minutes. The test is purely qualifying — it does not add to CBT marks — but failing it means disqualification.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <div className="bg-surface-50 min-h-screen">
+        <div className="container-main py-8">
+
+          {/* Breadcrumb */}
+          <nav className="text-sm text-surface-500 mb-6">
+            <Link href="/">Home</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams/">Exams</Link>
+            <span className="mx-2">›</span>
+            <span className="text-surface-700 font-medium">SSC Stenographer 2026</span>
+          </nav>
+
+          {/* Hero Header */}
+          <div className="mb-8">
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <span className="badge-primary">SSC</span>
+              <span className="badge-green">Central Government</span>
+              <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">12th Pass</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
+              SSC Stenographer 2026 – Notification, Syllabus, Skill Test & Complete Guide
+            </h1>
+            <p className="text-surface-500 leading-relaxed max-w-3xl">
+              Complete guide to SSC Stenographer Grade C &amp; D 2026 — notification dates, CBT exam pattern, shorthand skill test rules, eligibility, salary, and free study resources. Updated May 2026.
+            </p>
+          </div>
+
+          {/* Fast Fact 4-Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            {[
+              { icon: '📋', label: 'Vacancies 2026', value: 'TBN', sub: '~1,000–3,000 expected', color: 'text-accent-500' },
+              { icon: '📅', label: 'Notification', value: 'Sep–Oct 2026', sub: 'Expected', color: 'text-primary-500' },
+              { icon: '⏰', label: 'CBT Exam', value: 'Jan–Feb 2027', sub: 'Expected', color: 'text-indigo-500' },
+              { icon: '💰', label: 'Salary', value: '₹38K–₹59K', sub: 'In-hand / month', color: 'text-emerald-600' },
+            ].map((item, i) => (
+              <div key={i} className="card p-4 text-center">
+                <div className="text-2xl mb-1">{item.icon}</div>
+                <div className={`text-lg font-heading font-bold ${item.color}`}>{item.value}</div>
+                <div className="text-xs font-semibold text-surface-600 mt-0.5">{item.label}</div>
+                <div className="text-xs text-surface-400 mt-0.5">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* 💡 Key Update Banner */}
+          <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-10 flex gap-3">
+            <span className="text-xl">💡</span>
+            <div>
+              <div className="font-heading font-semibold text-primary-700 text-sm mb-1">2026 Key Update</div>
+              <p className="text-sm text-primary-800">SSC Stenographer 2024 cycle joining is wrapping up. The <strong>2026 notification is expected in September–October 2026</strong>. English section carries 100 out of 200 marks in CBT — the single biggest scoring opportunity. Shorthand Skill Test is qualifying and must be cleared to get the final merit.</p>
+            </div>
+          </div>
+
+          {/* Two-column layout */}
+          <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+            {/* Main Content */}
+            <div>
+
+              {/* 1. OVERVIEW */}
+              <section id="overview" className="mb-12">
+                <SectionHeading num="1" title="What is SSC Stenographer 2026?" />
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  SSC Stenographer is a <strong>central government recruitment exam</strong> conducted annually by the Staff Selection Commission (SSC). It recruits Stenographers for Grade C (Group B Non-Gazetted, Pay Level 6) and Grade D (Group C, Pay Level 4) positions in various central government ministries, departments, and subordinate offices across India.
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-6">
+                  The selection process has two stages: a Computer-Based Test (CBT) and a Shorthand Skill Test. The CBT covers General Intelligence &amp; Reasoning, General Awareness, and English Language &amp; Comprehension. Candidates who qualify the CBT are called for the Skill Test, which is purely qualifying.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { icon: '🪪', label: 'Conducting Body', value: 'Staff Selection Commission (SSC)' },
+                    { icon: '📋', label: 'Post Level', value: 'Grade C (Group B) + Grade D (Group C)' },
+                    { icon: '🎓', label: 'Minimum Qualification', value: '12th Pass (any stream)' },
+                    { icon: '📋', label: 'Age Limit', value: '18–27 (Grade D) | 18–30 (Grade C)' },
+                    { icon: '📅', label: 'Exam Frequency', value: 'Annual' },
+                    { icon: '💰', label: 'Salary (In-Hand)', value: '₹38K–₹43K (D) | ₹54K–₹59K (C)' },
+                    { icon: '🌐', label: 'Official Website', value: 'ssc.gov.in' },
+                    { icon: '📍', label: 'Job Location', value: 'All India (Central Govt postings)' },
+                  ].map((item, i) => (
+                    <div key={i} className="card p-4 flex items-start gap-3">
+                      <span className="text-xl flex-shrink-0">{item.icon}</span>
+                      <div>
+                        <div className="text-xs text-surface-400 font-semibold uppercase tracking-wide">{item.label}</div>
+                        <div className="text-sm font-medium text-surface-800 mt-0.5">{item.value}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 2. IMPORTANT DATES */}
+              <section id="important-dates" className="mb-12">
+                <SectionHeading num="2" title="SSC Stenographer 2026 Important Dates" />
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 flex gap-2 text-sm text-amber-800">
+                  <span>⚠️</span>
+                  <span>SSC Stenographer 2026 notification has <strong>not been released yet</strong>. All 2026 dates below are expected based on previous cycles. Confirm on <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">ssc.gov.in</a> before applying.</span>
+                </div>
+                <div className="overflow-x-auto rounded-xl border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                        <th className="p-3 font-semibold text-xs uppercase tracking-wide text-right whitespace-nowrap">Date / Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 text-surface-700">{row.event}</td>
+                          <td className="p-3 text-right font-medium whitespace-nowrap">
+                            {row.status === 'done' ? (
+                              <span className="text-emerald-600">{row.date}</span>
+                            ) : row.status === 'upcoming' ? (
+                              <span className="text-primary-600">{row.date}</span>
+                            ) : (
+                              <span className="text-amber-600 font-semibold">{row.date}</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-2">✅ Green = Completed &nbsp;|&nbsp; 🔵 Blue = Expected/Upcoming &nbsp;|&nbsp; ⚠️ Amber = To Be Notified (TBN)</p>
+              </section>
+
+              {/* 3. ELIGIBILITY */}
+              <section id="eligibility" className="mb-12">
+                <SectionHeading num="3" title="SSC Stenographer 2026 Eligibility Criteria" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                  {[
+                    { icon: '🪪', title: 'Nationality', body: 'Indian citizen (or eligible categories as notified by GOI — including Nepal/Bhutan subjects and Tibetan refugees as per rules).' },
+                    { icon: '🎓', title: 'Educational Qualification', body: '12th Pass (or equivalent) from a recognized board. No minimum percentage is required. All streams (Arts, Science, Commerce) are eligible.' },
+                    { icon: '📋', title: 'Age Limit — Grade D', body: '18 to 27 years. OBC: up to 30 | SC/ST: up to 32 | PwBD: up to 37 | Ex-SM: relaxation as per norms.' },
+                    { icon: '📋', title: 'Age Limit — Grade C', body: '18 to 30 years. OBC: up to 33 | SC/ST: up to 35 | PwBD: up to 40 | Ex-SM: relaxation as per norms.' },
+                    { icon: '📝', title: 'Shorthand Proficiency', body: 'Mandatory. Grade D: 80 wpm. Grade C: 100 wpm. Proficiency is tested in the Skill Test (after CBT) — not required at application stage.' },
+                    { icon: '🌐', title: 'Language Medium', body: 'Candidates can choose English or Hindi as their shorthand medium at the time of application. The choice cannot be changed later.' },
+                  ].map((item, i) => (
+                    <div key={i} className="card p-4 flex gap-3">
+                      <span className="text-xl flex-shrink-0 mt-0.5">{item.icon}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.title}</div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{item.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-800">
+                  <strong>💡 Good to know:</strong> Students in their 12th board exam year can also apply — the qualification must be completed before the Skill Test stage. No higher degree required.
+                </div>
+              </section>
+
+              {/* 4. VACANCIES */}
+              <section id="vacancies" className="mb-12">
+                <SectionHeading num="4" title="SSC Stenographer 2026 Vacancies & Posts" />
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  Vacancies are notified by SSC in the official notification. Historically, SSC Stenographer releases <strong>1,000–3,000 vacancies per cycle</strong>. The 2024 cycle had approximately 1,400 total vacancies. The 2026 vacancy count is not yet announced.
+                </p>
+                <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase tracking-wide">Pay Level</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase tracking-wide">Pay Scale</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase tracking-wide">Vac. 2024</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase tracking-wide">Vac. 2026</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyPosts.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 text-surface-700 font-medium">{row.post}</td>
+                          <td className="p-3 text-center text-surface-600">{row.payLevel}</td>
+                          <td className="p-3 text-center text-surface-600 whitespace-nowrap">{row.payScale}</td>
+                          <td className="p-3 text-center font-semibold text-emerald-600">{row.vac2024}</td>
+                          <td className="p-3 text-center font-semibold text-amber-600">{row.vac2026}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="overflow-x-auto rounded-xl border border-surface-200">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100 text-surface-700">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase">Year</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase">Grade C</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase">Grade D</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        ['2020', '~250', '~2,000', '~2,250'],
+                        ['2022', '~200', '~1,100', '~1,300'],
+                        ['2023', '~250', '~900',   '~1,150'],
+                        ['2024', '~200', '~1,200', '~1,400'],
+                        ['2026', 'TBN',  'TBN',    'TBN'],
+                      ].map(([yr, c, d, total], i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i === 4 ? 'bg-amber-50 font-semibold' : i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 text-surface-700 font-semibold">{yr}</td>
+                          <td className="p-3 text-center text-surface-600">{c}</td>
+                          <td className="p-3 text-center text-surface-600">{d}</td>
+                          <td className={`p-3 text-center font-bold ${i === 4 ? 'text-amber-600' : 'text-emerald-600'}`}>{total}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              {/* 5. SELECTION PROCESS */}
+              <section id="selection" className="mb-12">
+                <SectionHeading num="5" title="SSC Stenographer 2026 Selection Process" />
+                <p className="text-surface-600 leading-relaxed mb-6">
+                  SSC Stenographer has a <strong>two-stage selection process</strong>. There are no Prelims/Mains — just a single CBT followed by a Skill Test. Document Verification is done after the final merit list.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-start">
+                  {[
+                    { step: 'Stage 1', title: 'Computer-Based Test (CBT)', desc: '200 marks | 2 hours | Online | Negative marking (−0.25/wrong). Covers Reasoning, GA, and English. Determines rank for Skill Test shortlisting.', badge: 'Marks counted', badgeColor: 'bg-primary-100 text-primary-700' },
+                    { step: 'Stage 2', title: 'Skill Test (Shorthand)', desc: 'Qualifying only. Grade D: 80 wpm (10 min dictation, 50 min transcription). Grade C: 100 wpm (10 min dictation, 40 min transcription). Conducted on PAGASUS software.', badge: 'Pass/Fail only', badgeColor: 'bg-amber-100 text-amber-700' },
+                    { step: 'Stage 3', title: 'Document Verification', desc: 'Post final merit list. Candidates verify originals: 12th marksheet, category certificate, photo ID, and shorthand certificate (if any). Joining follows.', badge: 'Final step', badgeColor: 'bg-emerald-100 text-emerald-700' },
+                  ].map((s, i) => (
+                    <div key={i} className="card p-5">
+                      <div className="text-xs font-semibold text-surface-400 uppercase tracking-wide mb-1">{s.step}</div>
+                      <div className="font-heading font-bold text-surface-800 mb-2">{s.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed mb-3">{s.desc}</p>
+                      <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${s.badgeColor}`}>{s.badge}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 6. EXAM PATTERN */}
+              <section id="exam-pattern" className="mb-12">
+                <SectionHeading num="6" title="SSC Stenographer 2026 CBT Exam Pattern" />
+                <p className="text-surface-600 leading-relaxed mb-5">
+                  The Computer-Based Test (CBT) is <strong>200 marks in 2 hours</strong>. There is a negative marking of −0.25 marks for every wrong answer. The English section alone carries 50% of total marks — making it the most critical section.
+                </p>
+                <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Section</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase tracking-wide">Questions</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase tracking-wide">Marks</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase tracking-wide">Negative Marking</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cbtPattern.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 text-surface-700 font-medium">{row.section}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className={`p-3 text-center font-bold ${row.marks === 100 ? 'text-primary-600' : 'text-surface-700'}`}>{row.marks}</td>
+                          <td className="p-3 text-center text-red-600 font-medium">{row.negative}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-surface-300 bg-surface-100 font-bold">
+                        <td className="p-3 text-surface-800">Total</td>
+                        <td className="p-3 text-center text-surface-800">200</td>
+                        <td className="p-3 text-center text-primary-600">200</td>
+                        <td className="p-3 text-center text-surface-500 font-normal text-xs">2 hours</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                  {[
+                    { label: 'Mode', value: 'Online (Computer-Based)' },
+                    { label: 'Duration', value: '2 hours (120 minutes)' },
+                    { label: 'Language', value: 'English & Hindi (bilingual)' },
+                    { label: 'Question Type', value: 'Multiple Choice (MCQ)' },
+                    { label: 'Negative Marking', value: '−0.25 per wrong answer' },
+                    { label: 'Qualifying', value: 'Tier-wise cutoffs apply' },
+                  ].map((item, i) => (
+                    <div key={i} className="card p-3 flex justify-between items-center gap-2">
+                      <span className="text-surface-500 text-xs">{item.label}</span>
+                      <span className="font-semibold text-surface-800 text-xs text-right">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 7. SKILL TEST */}
+              <section id="skill-test" className="mb-12">
+                <SectionHeading num="7" title="Skill Test – Shorthand (Qualifying)" />
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The Shorthand Skill Test is the defining stage that separates SSC Steno from other SSC exams. It is <strong>purely qualifying</strong> — passing it is mandatory to get on the final merit list, but its marks are not added to the CBT score.
+                </p>
+                <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-xs uppercase">Grade</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase">Speed</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase">Dictation</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase">Transcription Time</th>
+                        <th className="p-3 text-center font-semibold text-xs uppercase">Software</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {skillTestSpec.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-semibold text-surface-800">{row.grade}</td>
+                          <td className="p-3 text-center font-bold text-accent-600">{row.speed}</td>
+                          <td className="p-3 text-center text-surface-600">{row.duration}</td>
+                          <td className="p-3 text-center text-surface-600">{row.grade === 'Grade C' ? '40 minutes' : '50 minutes'}</td>
+                          <td className="p-3 text-center text-surface-600">{row.tool}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="card p-4 border-l-4 border-amber-400">
+                    <div className="font-heading font-semibold text-surface-800 mb-2">⚠️ What happens if you fail the Skill Test?</div>
+                    <p className="text-sm text-surface-600 leading-relaxed">Failing the Skill Test means disqualification — even if your CBT rank is among the top candidates. There is no second attempt within the same cycle. You must appear in the next cycle.</p>
+                  </div>
+                  <div className="card p-4 border-l-4 border-emerald-400">
+                    <div className="font-heading font-semibold text-surface-800 mb-2">✅ How to pass the Skill Test?</div>
+                    <p className="text-sm text-surface-600 leading-relaxed">Keep your transcription error rate below ~5% of total words. Accuracy matters more than just speed. Practice 2 hours of shorthand daily for at least 4–5 months before the exam.</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* 8. SYLLABUS */}
+              <section id="syllabus" className="mb-12">
+                <SectionHeading num="8" title="SSC Stenographer 2026 Detailed Syllabus" />
+                <p className="text-surface-600 leading-relaxed mb-5">
+                  The CBT syllabus covers three sections. English carries double the questions of each other section — treat it as the highest priority.
+                </p>
+                <div className="space-y-3">
+                  {syllabus.map((sub, i) => (
+                    <details key={i} className={`card border ${sub.bg} rounded-xl overflow-hidden group`}>
+                      <summary className="flex items-center justify-between p-4 cursor-pointer list-none">
+                        <span className={`font-heading font-semibold ${sub.color}`}>{sub.subject}</span>
+                        <span className="text-surface-400 group-open:rotate-180 transition-transform text-sm">▼</span>
+                      </summary>
+                      <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                        {sub.topics.map((t, j) => (
+                          <div key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
+                            <span>{t}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              {/* 9. SALARY */}
+              <section id="salary" className="mb-12">
+                <SectionHeading num="9" title="SSC Stenographer 2026 Salary & Benefits" />
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  SSC Stenographer salaries are governed by the 7th Pay Commission. DA is revised every quarter — values below reflect the current 55% DA rate (May 2026). HRA varies by city tier (X/Y/Z). In-hand salary is post all deductions (NPS, CGHS, CGEGIS).
+                </p>
+                <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-900 text-white">
+                      <tr>
+                        {['Post', 'Basic Pay', 'DA (55%)', 'HRA', 'Transport Allowance', 'Gross', 'In-Hand'].map(h => (
+                          <th key={h} className="p-3 text-center font-semibold text-xs uppercase tracking-wide first:text-left">{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryBreakdown.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                          <td className="p-3 font-semibold text-surface-800">{row.post}</td>
+                          <td className="p-3 text-center text-surface-600">{row.basic}</td>
+                          <td className="p-3 text-center text-surface-600">{row.da}</td>
+                          <td className="p-3 text-center text-surface-600">{row.hra}</td>
+                          <td className="p-3 text-center text-surface-600">{row.ta}</td>
+                          <td className="p-3 text-center font-medium text-surface-700">{row.gross}</td>
+                          <td className="p-3 text-center font-bold text-emerald-600">{row.inhand}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="card p-4 bg-emerald-50 border-emerald-200">
+                    <div className="font-heading font-semibold text-emerald-800 mb-2">Additional Benefits</div>
+                    <ul className="text-sm text-emerald-700 space-y-1">
+                      {['CGHS medical coverage (self + family)', 'Leave Travel Concession (LTC) every 4 years', 'NPS pension (employer contributes 14%)', 'CGEGIS life insurance', 'Subsidized canteen, sports facilities', 'Study leave for higher education'].map((b, i) => (
+                        <li key={i} className="flex items-start gap-2"><span>✓</span><span>{b}</span></li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="card p-4 bg-primary-50 border-primary-200">
+                    <div className="font-heading font-semibold text-primary-800 mb-2">Career Progression</div>
+                    <ul className="text-sm text-primary-700 space-y-1">
+                      {['Grade D → Grade C: in-service promotion (~4–6 yrs)', 'Grade C → PA (Personal Assistant): promotion post', 'LDCE (Limited Departmental Competitive Exam) for faster promotion', 'Scope for posting in prestigious ministries (PMO, MEA, Finance)', 'Central Secretariat Service (CSS) promotions available'].map((b, i) => (
+                        <li key={i} className="flex items-start gap-2"><span>→</span><span>{b}</span></li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              {/* 10. STUDY PLAN */}
+              <section id="study-plan" className="mb-12">
+                <SectionHeading num="10" title="6-Month Study Plan for SSC Stenographer 2026" />
+                <div className="space-y-3">
+                  {studyPlan.map((item, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="flex-shrink-0 w-16 text-right">
+                        <span className="inline-block bg-primary-500 text-white text-xs font-bold px-2 py-1 rounded-full">{item.week}</span>
+                      </div>
+                      <div className="flex-1 card p-4 border-l-4 border-primary-200">
+                        <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.focus}</div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{item.tasks}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 11. BOOKS */}
+              <section id="books" className="mb-12">
+                <SectionHeading num="11" title="Best Books for SSC Stenographer 2026" />
+                <BooksTable books={books} />
+              </section>
+
+              {/* 12. TIPS */}
+              <section id="tips" className="mb-12">
+                <SectionHeading num="12" title="Expert Tips for SSC Stenographer 2026" />
+                <div className="space-y-4">
+                  {tips.map((tip, i) => (
+                    <div key={i} className="card p-5 flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-100 text-accent-600 flex items-center justify-center font-heading font-bold text-sm">{i + 1}</div>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{tip.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 13. FAQs */}
+              <section id="faq" className="mb-12">
+                <SectionHeading num="13" title="SSC Stenographer 2026 – FAQs" />
+                <div className="space-y-3">
+                  {faqs.map((faq, i) => (
+                    <details key={i} className="card overflow-hidden group">
+                      <summary className="flex items-start justify-between p-4 cursor-pointer list-none gap-3">
+                        <span className="font-heading font-semibold text-surface-800 text-sm leading-snug">{faq.q}</span>
+                        <span className="text-surface-400 flex-shrink-0 group-open:rotate-180 transition-transform text-sm mt-0.5">▼</span>
+                      </summary>
+                      <div className="px-4 pb-4 text-sm text-surface-600 leading-relaxed border-t border-surface-100 pt-3">{faq.a}</div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+            </div>
+
+            {/* Sidebar */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-24 space-y-4">
+
+                {/* TOC */}
+                <div className="card p-5">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-3">On This Page</div>
+                  <nav className="space-y-1">
+                    {toc.map(item => (
+                      <a key={item.id} href={`#${item.id}`} className="block text-xs text-surface-500 hover:text-primary-500 py-1 border-b border-surface-100 last:border-0 transition-colors">
+                        {item.label}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+
+                {/* Official Website */}
+                <div className="card p-4 bg-primary-50 border-primary-200">
+                  <div className="font-heading font-semibold text-primary-800 text-sm mb-1">🌐 Official Website</div>
+                  <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="text-xs text-primary-600 underline font-medium">ssc.gov.in</a>
+                  <p className="text-xs text-primary-700 mt-2">Always verify exam dates and notifications from the official SSC portal before applying.</p>
+                </div>
+
+                {/* Key Facts */}
+                <div className="card p-4">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-3">📊 Quick Facts</div>
+                  <div className="space-y-2 text-xs">
+                    {[
+                      ['CBT Marks', '200'],
+                      ['Duration', '2 Hours'],
+                      ['Negative Marking', '−0.25/wrong'],
+                      ['English Weightage', '50% of CBT'],
+                      ['Skill Test Speed (D)', '80 wpm'],
+                      ['Skill Test Speed (C)', '100 wpm'],
+                      ['Transcription Time (D)', '50 min'],
+                      ['Transcription Time (C)', '40 min'],
+                    ].map(([k, v], i) => (
+                      <div key={i} className="flex justify-between items-center border-b border-surface-100 pb-1.5 last:border-0">
+                        <span className="text-surface-500">{k}</span>
+                        <span className="font-semibold text-surface-700">{v}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Related Exams */}
+                <div className="card p-4">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-3">📋 Related SSC Exams</div>
+                  <div className="space-y-2">
+                    {[
+                      { name: 'SSC CHSL 2026', slug: 'ssc-chsl' },
+                      { name: 'SSC MTS 2026', slug: 'ssc-mts' },
+                      { name: 'SSC CGL 2026', slug: 'ssc-cgl' },
+                      { name: 'SSC CPO 2026', slug: 'ssc-cpo' },
+                    ].map(e => (
+                      <Link key={e.slug} href={`/exams/${e.slug}/`} className="flex items-center justify-between text-xs text-surface-600 hover:text-primary-500 py-1 border-b border-surface-100 last:border-0 group transition-colors">
+                        <span>{e.name}</span>
+                        <span className="group-hover:translate-x-1 transition-transform">→</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Eligibility Tool */}
+                <Link href="/tools/eligibility-checker/" className="card p-4 block hover:border-primary-300 transition-colors">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                  <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for SSC Stenographer 2026.</p>
+                  <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+                </Link>
+
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </>
   );
