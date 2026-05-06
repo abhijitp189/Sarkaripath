@@ -255,6 +255,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'iaf-agniveer') {
+    return {
+      title: 'IAF Agniveer Vayu 2026 – Eligibility, Exam Pattern, Salary & Guide | TaiyarHo',
+      description: 'IAF Agniveer Vayu 2026 complete guide: 3,000–5,000 vacancies, online exam pattern, phase 2 tests, eligibility (12th/Diploma, 17.5–21 yrs), salary ₹30,000–₹40,000/month, Seva Nidhi ₹11.71 lakh.',
+      keywords: 'IAF Agniveer Vayu 2026, Agniveer Vayu taiyari, Indian Air Force bharti, IAF agniveer syllabus Hindi, agniveer vayu exam pattern, वायु सेना अग्निवीर 2026, Agnipath IAF guide',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/iaf-agniveer/' },
+      other: { 'description:hi': 'IAF Agniveer Vayu 2026 – 3,000–5,000 रिक्तियाँ। ऑनलाइन परीक्षा पैटर्न, Phase 2 टेस्ट, पात्रता (12वीं/डिप्लोमा, 17.5–21 वर्ष), वेतन ₹30,000–₹40,000/माह और सेवा निधि ₹11.71 लाख की पूरी जानकारी।' },
+    };
+  }
+
   if (params.slug === 'rrb-ntpc') {
     return {
       title: 'RRB NTPC 2026 – Syllabus, Exam Date, Vacancies & Guide | TaiyarHo',
@@ -375,6 +385,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
   if (brief && brief.slug === 'ugc-net') return <UgcNetPage exam={brief} />;
   if (brief && brief.slug === 'army-agniveer') return <ArmyAgniveerPage exam={brief} />;
+  if (brief && brief.slug === 'iaf-agniveer') return <IafAgniveerPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-po') return <IbpsRrbPoPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
   if (brief && brief.slug === 'delhi-police-constable') return <DelhiPoliceConstablePage exam={brief} />;
@@ -23991,6 +24002,614 @@ function SscStenographerPage({ exam }: { exam: any }) {
             </aside>
 
           </div>
+        </div>
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── IAF AGNIVEER VAYU PAGE ───────────────────────────────────────────────────
+function IafAgniveerPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'trades',          label: 'Trades & Vacancies' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Online Exam Pattern' },
+    { id: 'phase2',          label: 'Phase 2 Tests' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'after-4-years',   label: 'After 4 Years' },
+    { id: 'study-plan',      label: 'Preparation Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released',    date: 'Expected: June 2026',           status: 'tbn' },
+    { event: 'Online Application Opens',          date: 'Expected: June 2026',           status: 'tbn' },
+    { event: 'Last Date to Apply',                date: 'To Be Notified (TBN)',          status: 'tbn' },
+    { event: 'Admit Card Download',               date: 'To Be Notified (TBN)',          status: 'tbn' },
+    { event: 'Phase 1 – Online Written Exam',     date: 'Expected: Aug – Sep 2026',      status: 'tbn' },
+    { event: 'Phase 2 – PFT & Adaptability Tests', date: 'After Phase 1 Result – TBN',  status: 'tbn' },
+    { event: 'Medical Examination',               date: 'After Phase 2 – TBN',           status: 'tbn' },
+    { event: 'Document Verification',             date: 'After Medical – TBN',           status: 'tbn' },
+    { event: 'Final Merit & Joining',             date: 'To Be Notified (TBN)',          status: 'tbn' },
+  ];
+
+  const trades = [
+    { trade: 'Science Subjects with Maths (STM)', eligibility: '12th PCM with 50% aggregate (Maths & Physics mandatory), 50% English', posts: 'Technical Vayu Sainik' },
+    { trade: 'Science Subjects without Maths (STNM)', eligibility: '12th (PCBio) or (PCBio+Maths) with 50% aggregate, 50% English; or 3-yr Diploma in relevant engineering', posts: 'Technical Vayu Sainik' },
+    { trade: 'Other than Science Subjects (O/STM)', eligibility: '12th (any stream) with 50% aggregate, 50% English', posts: 'Non-Technical Vayu Sainik' },
+  ];
+
+  const examPattern = [
+    { subject: 'English',             qs: 20, marks: 20, time: 'Common for all' },
+    { subject: 'Reasoning & Military Aptitude', qs: 30, marks: 30, time: 'Common for all' },
+    { subject: 'Physics (STM/STNM only)', qs: 25, marks: 25, time: 'Science streams' },
+    { subject: 'Mathematics (STM only)', qs: 25, marks: 25, time: 'STM stream' },
+    { subject: 'General Knowledge (O/STM)', qs: 25, marks: 25, time: 'Non-science stream' },
+  ];
+
+  const salaryTable = [
+    { year: 'Year 1', gross: '₹30,000', deduction: '₹9,000', inHand: '~₹21,000', annualPkg: '₹4.76 Lakh' },
+    { year: 'Year 2', gross: '₹33,000', deduction: '₹9,900', inHand: '~₹23,100', annualPkg: '₹5.24 Lakh' },
+    { year: 'Year 3', gross: '₹36,500', deduction: '₹10,950', inHand: '~₹25,550', annualPkg: '₹5.80 Lakh' },
+    { year: 'Year 4', gross: '₹40,000', deduction: '₹12,000', inHand: '~₹28,000', annualPkg: '₹6.92 Lakh' },
+  ];
+
+  const books = [
+    { subject: 'English',                title: 'Objective English for Competitive Exams', author: 'S.P. Bakshi (Arihant)', freeLink: '' },
+    { subject: 'Mathematics (STM)',      title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal (S. Chand)', freeLink: '' },
+    { subject: 'Physics (STM/STNM)',     title: 'NCERT Physics (Class 11 & 12)', author: 'NCERT', freeLink: 'https://ncert.nic.in/textbook.php' },
+    { subject: 'Reasoning & Aptitude',   title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', freeLink: '' },
+    { subject: 'General Knowledge',      title: "Lucent's General Knowledge", author: 'Lucent Publications', freeLink: '' },
+    { subject: 'Previous Papers',        title: 'IAF Agniveer Vayu Previous Year Papers', author: 'Arihant / Oswaal', freeLink: '' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the age limit for IAF Agniveer Vayu 2026?',
+      a: 'Candidates must be between 17.5 years and 21 years of age on the date of enrolment. Age relaxation is applicable as per government norms for SC/ST and OBC categories. Always check the official notification at agnipathvayu.cdac.in for the exact cut-off dates.',
+    },
+    {
+      q: 'What is the educational qualification required for IAF Agniveer Vayu?',
+      a: 'For the Science with Maths (STM) trade: 12th PCM with 50% aggregate and 50% in English. For Science without Maths (STNM): 12th PCBio with 50% aggregate or a 3-year Diploma in relevant engineering. For Other Subjects (O/STM): 12th (any stream) with 50% aggregate and 50% in English.',
+    },
+    {
+      q: 'How many vacancies are expected in IAF Agniveer Vayu 2026?',
+      a: 'Approximately 3,000 to 5,000 vacancies are expected per cycle, based on previous recruitment cycles. The exact number will be announced in the official 2026 notification at agnipathvayu.cdac.in.',
+    },
+    {
+      q: 'What is the selection process for IAF Agniveer Vayu?',
+      a: 'The process has two phases. Phase 1 is an online written exam (CBT) covering English, Reasoning, and subject-specific papers. Phase 2 includes a Physical Fitness Test (PFT), Adaptability Test 1 (written group task), Adaptability Test 2 (practical), and Medical Examination. Candidates must clear both phases to make the final merit list.',
+    },
+    {
+      q: 'What is the Seva Nidhi package for IAF Agniveer Vayu?',
+      a: 'After completing 4 years of service, Agniveers receive a tax-free Seva Nidhi payout of approximately ₹11.71 lakh. This consists of the Agniveer\'s own contribution (30% of monthly package) plus an equal matching contribution from the government, along with accrued interest. No pension or gratuity is applicable.',
+    },
+    {
+      q: 'Can females apply for IAF Agniveer Vayu 2026?',
+      a: 'Yes, female candidates are eligible to apply for IAF Agniveer Vayu. The Indian Air Force has been inducting women Agniveers since the first cycle. Both male and female candidates follow the same written exam pattern; physical fitness standards differ slightly by gender. Refer to the official notification for female-specific physical standards.',
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-amber-100 text-amber-700';
+  };
+  const statusLabel = (s: string) => s === 'done' ? 'Completed' : s === 'upcoming' ? 'Upcoming' : 'TBN';
+
+  return (
+    <>
+      <div className="container-main py-10">
+        {/* Breadcrumb */}
+        <nav className="text-sm text-surface-500 mb-6">
+          <Link href="/" className="hover:text-primary-500">Home</Link><span className="mx-2">›</span>
+          <Link href="/exams" className="hover:text-primary-500">Exams</Link><span className="mx-2">›</span>
+          <span className="text-surface-800">IAF Agniveer Vayu 2026</span>
+        </nav>
+
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── Main Content ── */}
+          <div>
+            {/* Page Header */}
+            <div className="mb-8" id="overview">
+              <div className="flex flex-wrap gap-2 mb-3">
+                <span className="badge badge-primary">Defence</span>
+                <span className="badge badge-green">Central Govt</span>
+                <span className="badge bg-surface-100 text-surface-600">Biannual</span>
+                <span className="badge bg-red-100 text-red-700">Agnipath Scheme</span>
+                <span className="badge bg-sky-100 text-sky-700">✈️ Indian Air Force</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">IAF Agniveer Vayu 2026 – Complete Preparation Guide</h1>
+              <p className="text-surface-500 leading-relaxed text-lg">
+                Join the Indian Air Force for a 4-year engagement under the Agnipath Scheme. Open to 12th pass (PCM / PCBio / any stream) and Diploma holders. Expected 3,000–5,000 vacancies for the 2026 cycle across Technical and Non-Technical trades.
+              </p>
+              <a href="https://agnipathvayu.cdac.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium">Official Website: agnipathvayu.cdac.in →</a>
+            </div>
+
+            {/* Hero Highlight Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+              {[
+                { label: '📋 Expected Vacancies',   value: '3,000 – 5,000' },
+                { label: '📅 Exam (Expected)',        value: 'Aug – Sep 2026' },
+                { label: '🔔 Notification',           value: 'Jun 2026 (Expected)' },
+                { label: '💰 Monthly Package',        value: '₹30,000 – ₹40,000' },
+              ].map((item) => (
+                <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                  <div className="font-semibold text-surface-800 text-sm">{item.value}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* 💡 Update Callout */}
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-10 text-sm text-blue-800">
+              <strong>💡 Key Update 2026:</strong> The IAF Agniveer Vayu 2026 cycle notification is expected in <strong>June 2026</strong>. The 2024 (02/2024) cycle enrolled candidates in December 2024. Application windows typically stay open for 3–4 weeks. The selection process now includes Phase 1 (online CBT) followed by Phase 2 (PFT + Adaptability Tests + Medical). Always check <a href="https://agnipathvayu.cdac.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">agnipathvayu.cdac.in</a> for the official notification.
+            </div>
+
+            {/* ── 1. Important Dates ── */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="1" title="📅 Important Dates – IAF Agniveer Vayu 2026" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Event</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Date</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                          <td className="px-4 py-3 text-surface-800 font-medium">{row.date}</td>
+                          <td className="px-4 py-3">
+                            <span className={`text-xs px-2 py-1 rounded-full font-semibold ${statusColor(row.status)}`}>
+                              {statusLabel(row.status)}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ All 2026 dates are estimated based on previous cycles. TBN = To Be Notified. Verify at agnipathvayu.cdac.in before applying.</p>
+            </section>
+
+            {/* ── 2. Eligibility ── */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="2" title="🎓 Eligibility Criteria" />
+              <div className="card p-6 space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🪪 Nationality</div>
+                    <div className="font-semibold text-surface-800">Indian Citizen (Male & Female)</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Age Limit</div>
+                    <div className="font-semibold text-surface-800">17.5 – 21 years on date of enrolment</div>
+                    <div className="text-xs text-surface-500 mt-1">Check exact date-of-birth range in official notification</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Marital Status</div>
+                    <div className="font-semibold text-surface-800">Must be unmarried at time of enrolment</div>
+                    <div className="text-xs text-surface-500 mt-1">Marriage not permitted during 4-year service</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🎓 Minimum Qualification</div>
+                    <div className="font-semibold text-surface-800">12th Pass / 3-Year Diploma (trade-specific)</div>
+                    <div className="text-xs text-surface-500 mt-1">Minimum 50% marks in aggregate + 50% English</div>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-surface-100">
+                  <h3 className="font-semibold text-surface-800 mb-3 text-sm">Age Relaxation</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">SC / ST</span><div className="font-bold text-surface-700 mt-1">+3 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">OBC (NCL)</span><div className="font-bold text-surface-700 mt-1">+2 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">J&amp;K Domicile</span><div className="font-bold text-surface-700 mt-1">+5 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">Ex-Servicemen Wards</span><div className="font-bold text-surface-700 mt-1">As per rules</div></div>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2">* No age relaxation is applicable under the Agnipath scheme for most standard categories beyond the above. Verify at agnipathvayu.cdac.in.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 3. Trades & Vacancies ── */}
+            <section id="trades" className="mb-12">
+              <SectionHeading num="3" title="✈️ Trades, Eligibility & Vacancies" />
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Trade Group</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Educational Qualification</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Vayu Sainik Type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {trades.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-medium text-surface-800">{row.trade}</td>
+                          <td className="px-4 py-3 text-surface-600">{row.eligibility}</td>
+                          <td className="px-4 py-3 text-surface-700">{row.posts}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-800 mb-4">
+                <strong>✅ Expected Vacancies 2026:</strong> 3,000–5,000 posts across all trade groups. IAF recruits biannually; exact vacancy split by trade is published with the official notification. Candidates may apply for only one trade group per cycle.
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                <strong>⚠️ Subject & Marks Check:</strong> Both 50% aggregate AND 50% marks specifically in English are mandatory. Candidates with any one condition met but not the other are ineligible. Verify your marksheet before applying.
+              </div>
+            </section>
+
+            {/* ── 4. Selection Process ── */}
+            <section id="selection" className="mb-12">
+              <SectionHeading num="4" title="Selection Process" />
+              <div className="card p-6">
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {['Phase 1: Online Exam (CBT)', 'Phase 1 Result & Shortlist', 'Phase 2: PFT (Physical)', 'Phase 2: Adaptability Test 1', 'Phase 2: Adaptability Test 2', 'Medical Examination', 'Document Verification', 'Final Merit & Enrolment'].map((stage, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      {i > 0 && <svg className="w-4 h-4 text-surface-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>}
+                      <span className="bg-primary-50 text-primary-700 px-3 py-2 rounded-lg text-sm font-medium">{stage}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-3 text-sm text-surface-700">
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>Phase 1 is a computer-based online test conducted at CDAC exam centres across India.</div>
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>Phase 1 shortlisted candidates are invited to an IAF Selection Test Centre (AFSTC) for Phase 2.</div>
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>Adaptability Test 1 is a written group task assessing cognitive flexibility and situational judgment.</div>
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>Adaptability Test 2 is a practical interactive task. Medical examination is the final qualifying stage.</div>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 5. Online Exam Pattern ── */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="📋 Phase 1 – Online Exam Pattern" />
+              <p className="text-sm text-surface-500 mb-4">The online exam duration is <strong>60 minutes</strong> for non-science streams and <strong>85 minutes</strong> for science streams. All questions are MCQ. Negative marking applies: each wrong answer deducts ¼ mark.</p>
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Subject / Paper</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Questions</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Marks</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Applicable For</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {examPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-700">{row.subject}</td>
+                          <td className="px-4 py-3 text-center text-surface-800 font-medium">{row.qs}</td>
+                          <td className="px-4 py-3 text-center text-surface-800 font-medium">{row.marks}</td>
+                          <td className="px-4 py-3 text-surface-600">{row.time}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-surface-50 border border-surface-200 rounded-xl p-4 text-sm text-surface-700">
+                <strong>📌 Quick Note:</strong> STM candidates attempt English + Reasoning + Physics + Maths (4 papers). STNM candidates attempt English + Reasoning + Physics (3 papers). O/STM candidates attempt English + Reasoning + GK (3 papers). A <strong>cut-off is applied separately for each paper</strong> — you must clear all papers individually. Refer to official notification for exact paper composition.
+              </div>
+            </section>
+
+            {/* ── 6. Phase 2 Tests ── */}
+            <section id="phase2" className="mb-12">
+              <SectionHeading num="6" title="🏃 Phase 2 – Physical Fitness & Tests" />
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical Fitness Test (PFT) – Male Candidates</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-100">
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-700">Activity</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-700">Standard / Timing</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-700">Nature</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { act: '1.6 km Run', std: 'Within 8 minutes', nature: 'Qualifying' },
+                          { act: '10 Push-ups', std: 'Full range of motion', nature: 'Qualifying' },
+                          { act: '10 Sit-ups', std: 'Correct technique', nature: 'Qualifying' },
+                          { act: '20 Squats (Uthe-Baithe)', std: 'Full depth', nature: 'Qualifying' },
+                        ].map((r, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="px-3 py-2 font-medium text-surface-800">{r.act}</td>
+                            <td className="px-3 py-2 text-surface-600">{r.std}</td>
+                            <td className="px-3 py-2"><span className="badge bg-amber-100 text-amber-700">{r.nature}</span></td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical Fitness Test (PFT) – Female Candidates</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-100">
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-700">Activity</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-700">Standard / Timing</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-700">Nature</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { act: '1.6 km Run', std: 'Within 10 minutes', nature: 'Qualifying' },
+                          { act: '5 Push-ups', std: 'Full range of motion', nature: 'Qualifying' },
+                          { act: '10 Sit-ups', std: 'Correct technique', nature: 'Qualifying' },
+                          { act: '20 Squats (Uthe-Baithe)', std: 'Full depth', nature: 'Qualifying' },
+                        ].map((r, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="px-3 py-2 font-medium text-surface-800">{r.act}</td>
+                            <td className="px-3 py-2 text-surface-600">{r.std}</td>
+                            <td className="px-3 py-2"><span className="badge bg-amber-100 text-amber-700">{r.nature}</span></td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                    <div className="font-semibold text-blue-800 mb-2">📝 Adaptability Test 1</div>
+                    <p className="text-blue-700">A written group task assessing situational judgment, problem-solving ability, and adaptability to IAF environment. Qualifying in nature.</p>
+                  </div>
+                  <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
+                    <div className="font-semibold text-purple-800 mb-2">🎯 Adaptability Test 2</div>
+                    <p className="text-purple-700">A practical interactive task assessing group coordination, communication, and adaptability. Conducted on the same day as AT-1. Qualifying in nature.</p>
+                  </div>
+                </div>
+                <p className="text-xs text-surface-400">⚠️ Physical standards may vary slightly by cycle. Always verify at the official AFSTC letter sent to shortlisted candidates.</p>
+              </div>
+            </section>
+
+            {/* ── 7. Salary ── */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="7" title="💰 Salary, Package & Benefits" />
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Year</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Gross Package</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Seva Nidhi (30%)</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">In-Hand Salary</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Annual CTC</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryTable.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-semibold text-surface-800">{row.year}</td>
+                          <td className="px-4 py-3 text-center text-surface-700">{row.gross}</td>
+                          <td className="px-4 py-3 text-center text-red-600">{row.deduction}</td>
+                          <td className="px-4 py-3 text-center font-bold text-emerald-600">{row.inHand}</td>
+                          <td className="px-4 py-3 text-center text-surface-700">{row.annualPkg}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                  <div className="font-semibold text-emerald-800 mb-2">✅ Seva Nidhi (After 4 Years)</div>
+                  <div className="text-2xl font-heading font-bold text-emerald-700 mb-1">~₹11.71 Lakh</div>
+                  <div className="text-xs text-emerald-600">Tax-free lump sum. Your 30% + equal govt contribution + interest. No pension or gratuity.</div>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                  <div className="font-semibold text-blue-800 mb-2">🛡️ Life Insurance (Non-Contributory)</div>
+                  <div className="text-2xl font-heading font-bold text-blue-700 mb-1">₹48 Lakh</div>
+                  <div className="text-xs text-blue-600">Cover during active service. Family receives full sum in case of unfortunate demise.</div>
+                </div>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Other Benefits & Allowances</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-surface-600">
+                  {[
+                    '✈️ Risk & Hardship Allowance (based on deployment)',
+                    '🍽️ Ration/Messing facilities at Air Force Station',
+                    '👗 Uniform & Dress Allowance',
+                    '🏥 Medical facilities at AF Hospitals',
+                    '🛒 CSD Canteen access (subsidised rates)',
+                    '📄 30 days annual leave per year',
+                    '🚆 Travel Allowance during official duties',
+                    '🎓 Recognition of service for further education & jobs',
+                  ].map((b, i) => (
+                    <div key={i} className="flex items-start gap-2"><span className="mt-0.5 flex-shrink-0">{b.split(' ')[0]}</span><span>{b.split(' ').slice(1).join(' ')}</span></div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── 8. After 4 Years ── */}
+            <section id="after-4-years" className="mb-12">
+              <SectionHeading num="8" title="After 4 Years – Career Pathways" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5 border-emerald-300">
+                  <div className="text-2xl mb-2">🎖️</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Regular IAF Enrolment (25%)</h3>
+                  <p className="text-sm text-surface-600">Top 25% performers by merit and medical fitness are considered for regular IAF enrolment. Full career of 15–20 years, higher pay scales, pension, and promotion opportunities up to Sergeant and beyond.</p>
+                </div>
+                <div className="card p-5 border-blue-300">
+                  <div className="text-2xl mb-2">💰</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Seva Nidhi + Civilian Career (75%)</h3>
+                  <p className="text-sm text-surface-600">Receive ₹11.71 lakh tax-free Seva Nidhi, a detailed service certificate, and IAF-recognized technical skills certification. Priority in many state government jobs.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">👮</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">CAPF Priority Hiring</h3>
+                  <p className="text-sm text-surface-600">IAF Agniveer completers receive priority consideration and age relaxation for CISF, CRPF, BSF, ITBP, SSB, and Assam Rifles recruitment. Strong employment pipeline after service.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🏢</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Private Sector & Higher Studies</h3>
+                  <p className="text-sm text-surface-600">Several aviation, defence, and manufacturing companies actively recruit Agniveer completers. Many also pursue B.Tech / Diploma via IGNOU or lateral entry programs using their Air Force technical experience.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 9. Preparation Plan ── */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="9" title="🗓️ 90-Day Preparation Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {[
+                    'Month 1 – Foundations: Build subject basics. For STM: NCERT Physics (Class 11–12) + R.S. Aggarwal Maths. For O/STM: Lucent\'s GK + vocabulary building. All streams: Wren & Martin English grammar + Reasoning basics. Run 800 m daily to start building stamina.',
+                    'Month 2 – Targeted Practice: Begin MCQ practice topic-by-topic with 50–80 questions per day. Focus heavily on areas with high weightage. Start timed full-paper mocks (60–85 min). Increase run to 1.6 km; add push-ups and sit-ups daily.',
+                    'Month 3 – Mock Tests & Speed: Solve 5 full mock tests per week. Analyse wrong answers daily. Aim to clear all subject cut-offs in each mock. Run 1.6 km under 8 min (male) / 10 min (female). 10+ push-ups and 10+ sit-ups without rest.',
+                    'Final 2 Weeks – Revision & Rest: Stop new topics. Revise notes, attempt 2 mocks per day focusing on accuracy. Maintain physical fitness routine but avoid overexertion. Get a full night\'s sleep in the 3 days before the exam.',
+                  ].map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm z-10">{i + 1}</div>
+                      <div className="card p-5"><p className="text-surface-700 leading-relaxed text-sm">{step}</p></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── 10. Books ── */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="10" title="📚 Recommended Books" />
+              <BooksTable books={books} />
+              <p className="text-xs text-surface-400 mt-3">IAF Agniveer-specific previous year papers are available from Arihant and Oswaal. NCERT Physics is the single most important resource for STM candidates.</p>
+            </section>
+
+            {/* ── 11. FAQ ── */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="11" title="❓ Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer flex items-center justify-between font-heading font-semibold text-surface-800 hover:text-primary-500 transition-colors list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Internal Links */}
+            <div className="card p-6 bg-surface-50 mb-6">
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related Defence Exams</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                {[
+                  { name: 'Indian Army Agniveer 2026', slug: 'army-agniveer' },
+                  { name: 'Indian Navy Agniveer SSR/MR', slug: 'navy-agniveer' },
+                  { name: 'UPSC NDA 2026', slug: 'upsc-nda' },
+                  { name: 'RPF Constable 2026', slug: 'rpf-constable' },
+                  { name: 'SSC GD Constable 2026', slug: 'ssc-gd-constable' },
+                  { name: 'BSF Head Constable', slug: 'bsf-head-constable' },
+                ].map(e => (
+                  <Link key={e.slug} href={`/exams/${e.slug}/`} className="flex items-center justify-between text-xs text-surface-600 hover:text-primary-500 py-1 border-b border-surface-100 last:border-0 group transition-colors">
+                    <span>{e.name}</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* ── Sidebar ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 border-b border-surface-100 last:border-0 transition-colors">
+                      {s.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <a href="https://agnipathvayu.cdac.in" target="_blank" rel="noopener noreferrer" className="card p-5 block hover:border-primary-300 transition-colors group">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1 group-hover:text-primary-500">🌐 Official Website</div>
+                <p className="text-xs text-surface-500 mb-2">Apply online, download admit card, check results.</p>
+                <span className="text-xs text-primary-500 font-medium">agnipathvayu.cdac.in →</span>
+              </a>
+
+              {/* Key Facts */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">✈️ Key Facts 2026</div>
+                <div className="space-y-2 text-xs">
+                  {[
+                    { icon: '📋', label: 'Vacancies', value: '3,000 – 5,000' },
+                    { icon: '📅', label: 'Exam (Est.)', value: 'Aug – Sep 2026' },
+                    { icon: '🎓', label: 'Min. Edu.', value: '12th / Diploma (50%)' },
+                    { icon: '📋', label: 'Age Limit', value: '17.5 – 21 years' },
+                    { icon: '💰', label: 'Yr 1 In-Hand', value: '~₹21,000/month' },
+                    { icon: '✅', label: 'Seva Nidhi', value: '~₹11.71 Lakh' },
+                    { icon: '🌐', label: 'Conducting Body', value: 'Indian Air Force' },
+                    { icon: '🔗', label: 'Apply At', value: 'agnipathvayu.cdac.in' },
+                  ].map((f, i) => (
+                    <div key={i} className="flex items-start justify-between gap-2">
+                      <span className="text-surface-400">{f.icon} {f.label}</span>
+                      <span className="font-semibold text-surface-700 text-right">{f.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Eligibility Checker */}
+              <Link href="/tools/eligibility-checker/" className="card p-4 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for IAF Agniveer Vayu 2026.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+            </div>
+          </aside>
+
         </div>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
