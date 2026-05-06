@@ -2597,7 +2597,7 @@ function IbpsPOSalaryArticle({ post }: { post: any }) {
 function AgeLimit2026Article({ post }: { post: any }) {
   const toc = [
     { id: 'overview', label: 'Overview & Key Numbers' },
-    { id: 'logic', label: 'How Age Relaxation Works' },
+    { id: 'logic', label: 'Age Relaxation Meaning' },
     { id: 'table', label: 'Exam-wise Age Limit Table' },
     { id: 'upsc', label: 'UPSC CSE Age Limit' },
     { id: 'ssc', label: 'SSC Age Limits' },
@@ -2611,6 +2611,22 @@ function AgeLimit2026Article({ post }: { post: any }) {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What does age relaxation mean in government exams?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Age relaxation means that reserved category candidates (OBC, SC/ST, PwBD, Ex-Servicemen) are allowed to apply for a government exam even if they exceed the maximum age limit set for General/EWS candidates. The government increases (relaxes) the upper age limit for these categories — for example, OBC gets +3 years, SC/ST gets +5 years, and PwBD gets +10 years added to the base upper age limit.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the meaning of age relaxation in sarkari exams?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Age relaxation in sarkari (government) exams means an increase in the maximum permissible age for specific categories of candidates. If the upper age limit for a General candidate is 30 years, an OBC candidate with age relaxation can apply up to 33 years, and an SC/ST candidate up to 35 years. It is a constitutional provision to ensure equal opportunity for backward and marginalized communities.',
+        },
+      },
       {
         '@type': 'Question',
         name: 'What is the age limit for SSC CGL 2026?',
@@ -2684,7 +2700,8 @@ function AgeLimit2026Article({ post }: { post: any }) {
                   Updated {post.updatedDate}
                 </span>
                 <span className="bg-amber-400/20 text-amber-300 text-xs px-2.5 py-1 rounded font-semibold">Preparation</span>
-                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Age Limit</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Age Relaxation Meaning</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Age Limit 2026</span>
                 <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">OBC SC ST</span>
               </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
@@ -2760,8 +2777,26 @@ function AgeLimit2026Article({ post }: { post: any }) {
           {/* SECTION: Logic */}
           <section id="logic" className="mb-12">
             <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">
-              🧮 How Age Relaxation Works
+              🧮 Age Relaxation Meaning — What Does It Mean?
             </h2>
+            <div className="bg-primary-50 border border-primary-200 rounded-xl p-5 mb-6">
+              <p className="font-heading font-bold text-primary-700 text-base mb-2">
+                📖 Age Relaxation Meaning (Simple Definition)
+              </p>
+              <p className="text-surface-700 leading-relaxed">
+                <strong>Age relaxation</strong> means that certain categories of candidates — such as OBC,
+                SC/ST, PwBD (persons with disabilities), and Ex-Servicemen — are <strong>allowed to apply
+                for a government exam even if they are older than the maximum age limit</strong> set for
+                General/EWS candidates. In simple terms, the government "relaxes" (increases) the upper
+                age limit specifically for these reserved categories to give them a fair opportunity.
+              </p>
+              <p className="text-surface-700 leading-relaxed mt-3">
+                <strong>Example:</strong> If SSC CGL's maximum age is 32 years for General candidates, an
+                OBC candidate can still apply up to 35 years (32 + 3 years relaxation). An SC/ST candidate
+                can apply up to 37 years (32 + 5 years relaxation). This extra allowance in years is called
+                "age relaxation."
+              </p>
+            </div>
             <p className="text-surface-700 leading-relaxed mb-4">
               Your maximum eligible age is simply the General (UR) upper age limit for that exam{' '}
               <strong>plus</strong> your specific category relaxation. This is consistent across virtually
@@ -3073,6 +3108,14 @@ function AgeLimit2026Article({ post }: { post: any }) {
             </h2>
             <div className="space-y-4">
               {[
+                {
+                  q: 'What does age relaxation mean in government exams?',
+                  a: 'Age relaxation means the government allows reserved category candidates (OBC, SC/ST, PwBD, Ex-Servicemen) to apply even if they are older than the standard maximum age. For example, if the upper age limit is 30 years for General candidates, an OBC candidate gets +3 years (can apply up to 33), and an SC/ST candidate gets +5 years (can apply up to 35). This extra allowance in years is called "age relaxation."',
+                },
+                {
+                  q: 'What is the meaning of age relaxation in sarkari exams?',
+                  a: 'Age relaxation in sarkari exams means an increase in the maximum permissible age for specific categories. It is a constitutional provision to ensure equal opportunity. The relaxation is added on top of the General/EWS upper age limit: OBC gets +3 years, SC/ST gets +5 years, PwBD gets +10 years, and Ex-Servicemen get 3 years + actual service period.',
+                },
                 {
                   q: 'What is the age limit for SSC CGL 2026?',
                   a: 'The SSC CGL age limit is 18–32 years for General/EWS candidates. OBC candidates get +3 years (up to 35), SC/ST get +5 years (up to 37), and PwBD (General) get +10 years (up to 42). The cut-off date is August 1 of the exam year.',
