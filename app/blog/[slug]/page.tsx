@@ -52,6 +52,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <HighestSalary12thArticle post={post} />;
   }
 
+  if (post.slug === 'best-telegram-channels-govt-exams-2026') {
+    return <TelegramChannelsArticle post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -4596,6 +4600,448 @@ function HighestSalary12thArticle({ post }: { post: any }) {
               <Link href="/blog/ibps-po-salary-in-hand-2026" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 →</Link>
               <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
               <Link href="/exams" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── TELEGRAM CHANNELS 2026 ARTICLE ─────────────────────────────────────────
+function TelegramChannelsArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'why-telegram', label: 'Why Telegram in 2026?' },
+    { id: 'upsc-channels', label: 'UPSC Civil Services' },
+    { id: 'ssc-channels', label: 'SSC Exams (CGL, CHSL, GD)' },
+    { id: 'banking-channels', label: 'Banking & Insurance' },
+    { id: 'railway-channels', label: 'Railway (RRB NTPC, Group D)' },
+    { id: 'defence-channels', label: 'Defence (NDA, CDS, Agniveer)' },
+    { id: 'state-psc-channels', label: 'State PSC & Police' },
+    { id: 'current-affairs', label: 'Current Affairs Channels' },
+    { id: 'how-to-spot-fakes', label: 'How to Spot Fake Channels' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const upscChannels = [
+    { name: 'Insights IAS Official', focus: 'Daily quizzes, Insta-Static series, GS notes', subscribers: '5 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'Drishti IAS Official', focus: 'Mains topic deep-dives in Hindi & English', subscribers: '8 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'OnlyIAS Official', focus: 'Hindu Editorial PDF summaries, Answer Writing', subscribers: '4 lakh+', rating: '⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'ForumIAS Official', focus: 'Prelims-focused daily MCQs, UPSC news', subscribers: '3 lakh+', rating: '⭐⭐⭐⭐', type: 'Daily MCQ' },
+    { name: 'StudyIQ IAS Official', focus: 'Video summaries, current affairs shortcuts', subscribers: '10 lakh+', rating: '⭐⭐⭐⭐', type: 'Video Links' },
+  ];
+
+  const sscChannels = [
+    { name: 'RBE – Shubham Jain', focus: 'Data-driven shift analysis, difficulty ratings', subscribers: '6 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Analysis' },
+    { name: 'Parmar SSC Official', focus: 'Static GK, Science PDFs, SSC tricks', subscribers: '5 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'Aditya Ranjan Maths', focus: 'Chapter-wise PDF sheets, calculation tricks', subscribers: '4 lakh+', rating: '⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'SSC Adda247 Official', focus: 'Mock tests, quizzes, CGL/CHSL notifications', subscribers: '9 lakh+', rating: '⭐⭐⭐⭐', type: 'Mocks + Alerts' },
+    { name: 'Pinnacle SSC CGL', focus: 'Tier 2 Maths & English practice sets', subscribers: '2 lakh+', rating: '⭐⭐⭐⭐', type: 'Practice Sets' },
+  ];
+
+  const bankingChannels = [
+    { name: 'AffairsCloud Official', focus: 'GA capsule PDFs, Banking Awareness, Current Affairs', subscribers: '7 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'PracticeMock Official', focus: 'Weekly All-India free live mock tests', subscribers: '4 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free Mocks' },
+    { name: 'Oliveboard Official', focus: 'Daily GK updates, IBPS/SBI alerts', subscribers: '5 lakh+', rating: '⭐⭐⭐⭐', type: 'Alerts + GK' },
+    { name: 'RBI Grade B Special', focus: 'ESI, FM, Phase 2 preparation guidance', subscribers: '1.5 lakh+', rating: '⭐⭐⭐⭐', type: 'Niche Prep' },
+    { name: 'IBPS Guide Official', focus: 'Reasoning, Quant shortcuts, English tricks', subscribers: '3 lakh+', rating: '⭐⭐⭐⭐', type: 'Tricks + PDF' },
+  ];
+
+  const railwayChannels = [
+    { name: 'Railway Adda247', focus: 'RRB NTPC 2026 & Group D focused notes', subscribers: '8 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'RRB NTPC Official Prep', focus: 'CBT-1 & CBT-2 syllabus coverage, PYQs', subscribers: '3 lakh+', rating: '⭐⭐⭐⭐', type: 'PYQ PDFs' },
+    { name: 'Winners Institute PDF', focus: 'Best for MP-region railway and Vyapam exams', subscribers: '2 lakh+', rating: '⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'Sarkari Exam Alert', focus: 'Railway, SSC, and state exam notification alerts', subscribers: '4 lakh+', rating: '⭐⭐⭐', type: 'Alerts' },
+  ];
+
+  const defenceChannels = [
+    { name: 'Adda247 Defence', focus: 'NDA, CDS, AFCAT preparation material', subscribers: '6 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'SSBCrack Official', focus: 'SSB interview tips, psychology tests, GTO tasks', subscribers: '5 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Interview Prep' },
+    { name: 'NDA/NA Guide', focus: 'Maths and GAT (paper 1 & 2) previous year sets', subscribers: '2 lakh+', rating: '⭐⭐⭐⭐', type: 'PYQ PDFs' },
+    { name: 'Agniveer Prep Official', focus: '2026 Agniveer exam dates, syllabus PDFs', subscribers: '3 lakh+', rating: '⭐⭐⭐⭐', type: 'Alerts + PDF' },
+  ];
+
+  const statePscChannels = [
+    { name: 'Study for Civil Services (SCS)', focus: 'UPPSC, BPSC, state PSC material', subscribers: '4 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'BPSC Official Prep', focus: 'Bihar PSC PT + Mains capsules in Hindi', subscribers: '3 lakh+', rating: '⭐⭐⭐⭐', type: 'Hindi PDFs' },
+    { name: 'MPPSC & Vyapam', focus: 'Madhya Pradesh specific GK, MP Police', subscribers: '2 lakh+', rating: '⭐⭐⭐⭐', type: 'State GK' },
+    { name: 'Rajasthan Police Prep', focus: 'Rajasthan GK, constable and SI exam material', subscribers: '2.5 lakh+', rating: '⭐⭐⭐', type: 'State GK' },
+  ];
+
+  const currentAffairsChannels = [
+    { name: 'The Hindu Analysis', focus: 'Daily editorial summaries, important PIB news', subscribers: '6 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Editorial PDF' },
+    { name: 'Vajiram & Ravi', focus: 'Monthly current affairs compilations', subscribers: '4 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Monthly PDF' },
+    { name: 'GK Today Official', focus: 'Daily GK, banking awareness, govt schemes', subscribers: '5 lakh+', rating: '⭐⭐⭐⭐', type: 'Daily GK' },
+    { name: 'PIB in Hindi', focus: 'Official Press Information Bureau in Hindi', subscribers: '3 lakh+', rating: '⭐⭐⭐⭐', type: 'Official News' },
+  ];
+
+  const ChannelTable = ({ channels, id }: { channels: typeof upscChannels; id: string }) => (
+    <div id={id} className="overflow-x-auto mb-8">
+      <table className="w-full text-sm border-collapse">
+        <thead>
+          <tr className="bg-surface-800 text-white">
+            <th className="text-left px-4 py-3 font-heading font-semibold rounded-tl-xl">Channel Name</th>
+            <th className="text-left px-4 py-3 font-heading font-semibold hidden sm:table-cell">What You Get</th>
+            <th className="text-left px-4 py-3 font-heading font-semibold hidden md:table-cell">Subscribers</th>
+            <th className="text-left px-4 py-3 font-heading font-semibold">Type</th>
+            <th className="text-left px-4 py-3 font-heading font-semibold rounded-tr-xl">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          {channels.map((ch, i) => (
+            <tr key={ch.name} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+              <td className="px-4 py-3 font-semibold text-surface-800 border-b border-surface-100">{ch.name}</td>
+              <td className="px-4 py-3 text-surface-600 border-b border-surface-100 hidden sm:table-cell">{ch.focus}</td>
+              <td className="px-4 py-3 text-surface-600 border-b border-surface-100 hidden md:table-cell">{ch.subscribers}</td>
+              <td className="px-4 py-3 border-b border-surface-100">
+                <span className="badge-primary text-xs">{ch.type}</span>
+              </td>
+              <td className="px-4 py-3 text-surface-600 border-b border-surface-100 text-xs">{ch.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+
+  const SectionH2 = ({ num, icon, title }: { num: string; icon: string; title: string }) => (
+    <div className="flex items-center gap-3 mb-5">
+      <div className="w-9 h-9 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 font-heading font-bold text-sm flex-shrink-0">
+        {num}
+      </div>
+      <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">
+        <span className="mr-2">{icon}</span>{title}
+      </h2>
+    </div>
+  );
+
+  const faqs = [
+    {
+      q: 'Are these Telegram channels free in 2026?',
+      a: 'Yes. All channels listed by TaiyarHo.in provide free daily content — PDFs, news digests, quizzes. Some promote paid courses in the side, but their core study material is 100% free.',
+    },
+    {
+      q: 'How many Telegram channels should I join for SSC CGL?',
+      a: 'Stick to 2–3 maximum. Joining 10+ channels creates information overload — you spend more time managing notifications than actually studying. Pick one for daily GK, one for Maths shortcuts, and one for notifications.',
+    },
+    {
+      q: 'How do I identify a fake Telegram channel?',
+      a: 'Check three things: (1) Is the channel verified by the official teacher\'s YouTube or website? (2) Does the subscriber count match the official platform? (3) Are they asking money to "share leaked papers"? If yes to the last one, it\'s a scam — block and report.',
+    },
+    {
+      q: 'Which is the best Telegram channel for UPSC current affairs 2026?',
+      a: 'Drishti IAS Official and Insights IAS Official are the gold standard for UPSC current affairs. Both provide high-quality daily PDFs covering The Hindu, PIB, and monthly compilation magazines.',
+    },
+    {
+      q: 'Can I use Telegram channels as my only study source?',
+      a: 'No. Telegram channels are excellent supplements for current affairs, alerts, and quick revision PDFs — but they cannot replace standard textbooks (NCERT, Laxmikant, etc.) or structured mock test platforms. Use them as a daily habit, not as your primary prep tool.',
+    },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Best Telegram Channels for Govt Exams 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        {/* MAIN CONTENT */}
+        <article>
+          {/* Dark Gradient Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
+                  Preparation
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-green-500/20 border border-green-500/40 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">
+                  ✅ 2026 Verified
+                </span>
+                <span className="text-white/50 text-xs">{post.publishedDate} · {post.readTime}</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                Best Telegram Channels for Govt Exams{' '}
+                <span className="text-blue-400">2026 – Verified Master Directory</span>
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed mb-5">
+                No paywalls, no spam. Only the highest-quality free Telegram channels for UPSC, SSC, Banking, Railway, Defence, and State PSC exams — each personally vetted by TaiyarHo&apos;s editorial team for 2026.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['UPSC Telegram', 'SSC CGL 2026', 'Banking Prep', 'Free PDFs', 'Zero Spam'].map(tag => (
+                  <span key={tag} className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Key Metrics Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            {[
+              { label: 'Categories Covered', value: '7', sub: 'UPSC to State PSC' },
+              { label: 'Channels Listed', value: '27+', sub: 'All verified 2026' },
+              { label: 'Min. Subscribers', value: '1 Lakh+', sub: 'Quality threshold' },
+              { label: 'Cost to Access', value: '₹0', sub: 'Free forever' },
+            ].map(m => (
+              <div key={m.label} className="card p-4 text-center">
+                <p className="text-xs text-surface-500 font-medium mb-1">{m.label}</p>
+                <p className="text-xl font-heading font-bold text-primary-600">{m.value}</p>
+                <p className="text-xs text-surface-400">{m.sub}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Why Telegram Section */}
+          <section id="why-telegram" className="mb-12">
+            <SectionH2 num="1" icon="📱" title="Why Telegram Still Rules in 2026" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              In 2026, Telegram remains the single fastest distribution channel for exam-critical content. When RRB releases a new NTPC notification at 11 PM, your Telegram channel notifies you within minutes — long before any website updates. That&apos;s a real edge in a competitive environment.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Unlike YouTube or Instagram, Telegram allows educators to share PDFs, Excel sheets, and audio files instantly without algorithmic interference. A channel with 5 lakh subscribers delivers your PDF directly to all 5 lakh devices. No &quot;reach&quot; issues, no paywalls.
+            </p>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-4">
+              <p className="text-primary-800 font-medium leading-relaxed">
+                <span className="font-bold">📌 TaiyarHo Rule:</span> Join a maximum of 2–3 channels per exam category. Joining 15 channels creates notification overload — you end up reading updates instead of studying. Quality over quantity.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+              {[
+                { icon: '⚡', title: 'Instant Notifications', desc: 'Exam dates, admit cards, results — you know before anyone else' },
+                { icon: '📂', title: 'Free PDF Library', desc: 'Access years of notes, PYQs, and summary sheets without spending ₹1' },
+                { icon: '🗂️', title: 'Pinned Resources', desc: 'Channel admins pin the most important files so nothing gets lost in the feed' },
+              ].map(f => (
+                <div key={f.title} className="card p-4">
+                  <div className="text-2xl mb-2">{f.icon}</div>
+                  <h3 className="font-heading font-semibold text-surface-800 text-sm mb-1">{f.title}</h3>
+                  <p className="text-xs text-surface-500 leading-relaxed">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* UPSC Section */}
+          <section className="mb-12">
+            <SectionH2 num="2" icon="🏛️" title="UPSC Civil Services Telegram Channels 2026" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              UPSC preparation is a long-term journey of 12–18 months. The channels below consistently deliver high-quality, examination-relevant material — from daily editorials to Mains answer writing frameworks.
+            </p>
+            <ChannelTable channels={upscChannels} id="upsc-channels" />
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+              <p className="text-emerald-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">✅ 2026 UPSC Note:</span> With UPSC Prelims 2026 scheduled for May 25, these channels are now in peak-frequency mode — expect daily quizzes, revision PDFs, and post-paper shift analyses.
+              </p>
+            </div>
+          </section>
+
+          {/* SSC Section */}
+          <section className="mb-12">
+            <SectionH2 num="3" icon="📝" title="SSC Exams Telegram Channels 2026 (CGL, CHSL, GD)" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              SSC exams are highly competitive with 30–50 lakh applicants per year. The channels below are known for data-driven shift analysis, which helps you track the exact difficulty trend across CGL Tier 1 and CHSL shifts.
+            </p>
+            <ChannelTable channels={sscChannels} id="ssc-channels" />
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+              <p className="text-primary-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">📌 Quick Note:</span> SSC CGL 2026 Tier 1 notification dropped on April 30, 2026. Subscribe to <strong>SSC Adda247</strong> and <strong>RBE – Shubham Jain</strong> immediately to track date changes, exam centre lists, and cut-off predictions.
+              </p>
+            </div>
+          </section>
+
+          {/* Banking Section */}
+          <section className="mb-12">
+            <SectionH2 num="4" icon="🏦" title="Banking & Insurance Telegram Channels 2026" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Banking exams like IBPS PO, SBI PO, and RBI Grade B require consistent current affairs preparation. The channels below are your go-to for daily GA capsules, Banking Awareness PDFs, and free mock test links.
+            </p>
+            <ChannelTable channels={bankingChannels} id="banking-channels" />
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+              <p className="text-emerald-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">✅ 2026 Update:</span> IBPS PO 2026 notification is expected in July 2026. <strong>AffairsCloud</strong> and <strong>Oliveboard</strong> will release dedicated GA capsules aligned with the new exam pattern as soon as the official notification drops.
+              </p>
+            </div>
+          </section>
+
+          {/* Railway Section */}
+          <section className="mb-12">
+            <SectionH2 num="5" icon="🚂" title="Railway Exam Telegram Channels 2026 (RRB NTPC, Group D)" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Railway exams attract the largest candidate base in India. RRB NTPC 2026 is expected to announce vacancy for over 11,000 posts. These channels will be your fastest source for official notifications, admit cards, and city-wise exam schedules.
+            </p>
+            <ChannelTable channels={railwayChannels} id="railway-channels" />
+          </section>
+
+          {/* Defence Section */}
+          <section className="mb-12">
+            <SectionH2 num="6" icon="🎖️" title="Defence Exam Telegram Channels 2026 (NDA, CDS, Agniveer)" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Defence exams have a unique two-stage structure — written test followed by SSB interview. The channels below cover both: written exam PDFs and SSB preparation material, which is rarely available for free anywhere else.
+            </p>
+            <ChannelTable channels={defenceChannels} id="defence-channels" />
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+              <p className="text-primary-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">📌 SSBCrack Tip:</span> SSBCrack Official is the only channel with consistent, free Psychological Aptitude Test (PAT) and Officer Intelligence Rating (OIR) practice content. If you are preparing for NDA or CDS, this channel is non-negotiable.
+              </p>
+            </div>
+          </section>
+
+          {/* State PSC Section */}
+          <section className="mb-12">
+            <SectionH2 num="7" icon="🗺️" title="State PSC & Police Telegram Channels 2026" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              State PSC exams are often overlooked in national prep communities. These channels fill that gap — providing state-specific GK, Hindi-medium study material, and region-specific exam pattern analysis that national channels miss.
+            </p>
+            <ChannelTable channels={statePscChannels} id="state-psc-channels" />
+          </section>
+
+          {/* Current Affairs Section */}
+          <section className="mb-12">
+            <SectionH2 num="8" icon="📰" title="Current Affairs Channels for All Exams 2026" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              No matter which exam you are targeting, current affairs is a common section. These channels cut through the noise and deliver only exam-relevant news — so you spend 20 minutes daily instead of 2 hours.
+            </p>
+            <ChannelTable channels={currentAffairsChannels} id="current-affairs" />
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+              <p className="text-emerald-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">✅ TaiyarHo Recommendation:</span> For 2026, subscribe to <strong>Vajiram &amp; Ravi</strong> for monthly PDF compilation (covers UPSC + Banking GA), and <strong>GK Today Official</strong> for daily 5-minute current affairs digests. Together, these two channels cover 80% of what any exam will test.
+              </p>
+            </div>
+          </section>
+
+          {/* How to Spot Fakes */}
+          <section id="how-to-spot-fakes" className="mb-12">
+            <SectionH2 num="9" icon="⚠️" title="How to Identify Fake Telegram Channels in 2026" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Fake channels are a serious problem. Impersonators clone verified channels like &quot;RBE – Shubham Jain&quot; or &quot;Drishti IAS&quot; to sell pirated courses or harvest phone numbers. Here&apos;s your 5-step verification checklist before joining any channel.
+            </p>
+            <div className="space-y-3 mb-6">
+              {[
+                { num: '01', flag: 'Check the Official Link', desc: 'Never search a channel name in Telegram. Always click the link directly from the teacher\'s verified YouTube channel description or their official website.' },
+                { num: '02', flag: 'Subscriber Count vs. Post Views', desc: 'A genuine channel with 5 lakh subscribers should have 20,000–50,000 post views. If a "5 lakh subscriber" channel gets only 500 views, it\'s a fake inflated with bots.' },
+                { num: '03', flag: 'Avoid "Leaked Paper" Promises', desc: 'Any channel promising "100% confirmed leaked paper," "sure shot cut-off," or "paid material for free" is a scam. Real educators never promise or share leaked content.' },
+                { num: '04', flag: 'Check the Telegram Username', desc: 'Fake channels often have tiny typos in usernames — e.g., @drshtiiias instead of @drishtiias. Compare character by character with the official link.' },
+                { num: '05', flag: 'No Payment Requests for Basics', desc: 'Legitimate free channels NEVER ask you to pay to access their channel itself. Paid course promotions are okay, but if they want money to "unlock" the channel, exit immediately.' },
+              ].map(step => (
+                <div key={step.num} className="card p-4 flex gap-4 items-start">
+                  <div className="w-9 h-9 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center font-heading font-bold text-sm flex-shrink-0">{step.num}</div>
+                  <div>
+                    <p className="font-heading font-semibold text-surface-800 mb-1">{step.flag}</p>
+                    <p className="text-sm text-surface-600 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4">
+              <p className="text-accent-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">⚠️ Warning:</span> After joining a channel from this list, use our <Link href="/tools/eligibility-checker/" className="text-primary-600 underline font-semibold">Eligibility Checker Tool</Link> to instantly verify if you qualify for any exam you see announced. Don&apos;t waste time preparing for an exam you&apos;re not eligible for.
+              </p>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section id="faq" className="mb-12">
+            <SectionH2 num="10" icon="❓" title="Frequently Asked Questions" />
+            <div className="space-y-3">
+              {faqs.map((faq) => (
+                <details key={faq.q} className="card overflow-hidden group">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                    <span>{faq.q}</span>
+                    <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-4 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* CTA Banner */}
+          <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-6 text-white mb-8">
+            <h3 className="font-heading font-bold text-lg mb-2">Found your Telegram channels? Now check your eligibility.</h3>
+            <p className="text-primary-100 text-sm mb-4">Before you start preparing, confirm you actually meet the age and qualification requirements for your target exam.</p>
+            <Link href="/tools/eligibility-checker/" className="inline-flex items-center gap-2 bg-white text-primary-700 font-heading font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-primary-50 transition">
+              Use Free Eligibility Checker →
+            </Link>
+          </div>
+
+          {/* JSON-LD FAQ Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: faqs.map(f => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              }),
+            }}
+          />
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="mt-10 lg:mt-0 space-y-5">
+          {/* TOC */}
+          <div className="card p-5 sticky top-24">
+            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</div>
+            <nav className="space-y-1.5">
+              {toc.map(item => (
+                <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-600 hover:translate-x-1 transition-all duration-150 leading-snug">
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Quick Category Box */}
+          <div className="card p-5">
+            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Channels by Category</div>
+            <div className="space-y-2 text-sm">
+              {[
+                { label: '🏛️ UPSC', val: '5 channels' },
+                { label: '📝 SSC', val: '5 channels' },
+                { label: '🏦 Banking', val: '5 channels' },
+                { label: '🚂 Railway', val: '4 channels' },
+                { label: '🎖️ Defence', val: '4 channels' },
+                { label: '🗺️ State PSC', val: '4 channels' },
+                { label: '📰 Current Affairs', val: '4 channels' },
+              ].map(s => (
+                <div key={s.label} className="flex justify-between items-center">
+                  <span className="text-surface-600">{s.label}</span>
+                  <span className="font-semibold text-primary-600">{s.val}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Tools CTA */}
+          <div className="card p-5 bg-primary-50 border-primary-200">
+            <div className="text-xs font-semibold text-primary-600 uppercase tracking-wider mb-2">Free Tool</div>
+            <p className="text-sm font-semibold text-surface-800 mb-2">Check Your Exam Eligibility</p>
+            <p className="text-xs text-surface-500 mb-3">Enter age + qualification → get a list of all govt exams you qualify for in 2026.</p>
+            <Link href="/tools/eligibility-checker/" className="btn-primary text-xs py-2 px-4 block text-center">
+              Open Eligibility Checker →
+            </Link>
+          </div>
+
+          {/* Related Links */}
+          <div className="card p-5">
+            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related Guides</div>
+            <div className="space-y-2">
+              <Link href="/blog/government-exam-preparation-beginners-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Govt Exam Prep for Beginners →</Link>
+              <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Age Limit & Relaxation Guide →</Link>
+              <Link href="/blog/highest-salary-government-exam-after-12th-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Highest Salary Exams After 12th →</Link>
+              <Link href="/exams/" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
+              <Link href="/resources/" className="block text-sm text-primary-600 hover:underline leading-snug">Free Resources Hub →</Link>
             </div>
           </div>
         </aside>
