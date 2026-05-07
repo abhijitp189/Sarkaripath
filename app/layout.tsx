@@ -250,6 +250,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             crossOrigin="anonymous"
           />
         )}
+        {/* WebSite schema — tells Google the official site name is "TaiyarHo" */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'TaiyarHo',
+              alternateName: 'TaiyarHo.in',
+              url: 'https://www.taiyarho.in',
+              description: 'Free comprehensive guide for Indian government exam preparation. Syllabus, study plans, best books, free resources for UPSC, SSC, Banking, Railway and all sarkari exams.',
+              inLanguage: ['en-IN', 'hi-IN'],
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://www.taiyarho.in/exams?q={search_term_string}',
+                },
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
       </head>
       <body className="min-h-screen flex flex-col">
         <Navbar />
