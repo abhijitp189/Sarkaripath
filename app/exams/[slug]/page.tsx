@@ -2397,22 +2397,45 @@ function DetailedExamPage({ exam }: { exam: any }) {
 
   return (
     <>
-      <div className="container-main py-10">
-        <nav className="text-sm text-surface-500 mb-6">
-          <Link href="/" className="hover:text-primary-500">Home</Link><span className="mx-2">›</span>
-          <Link href="/exams" className="hover:text-primary-500">Exams</Link><span className="mx-2">›</span>
-          <span className="text-surface-800">{exam.shortName}</span>
-        </nav>
+      {/* ── Blue Gradient Hero Banner ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">{exam.shortName}</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">{exam.category}</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">{exam.level}</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            {exam.title} – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            {exam.description}
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies', value: exam.avgVacancies.split('(')[0].trim() },
+              { label: 'Conducting Body', value: exam.conductingBody },
+              { label: 'Frequency', value: exam.frequency.split('(')[0].trim() },
+              { label: 'Salary Range', value: exam.salaryRange.split('(')[0].trim() },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white text-sm">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
+      <div className="container-main py-10">
         <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
           <div>
-            <div className="mb-8">
-              <div className="flex flex-wrap gap-2 mb-3"><span className="badge badge-primary">{exam.category}</span><span className="badge badge-green">{exam.level}</span></div>
-              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">{exam.title}</h1>
-              <p className="text-surface-500 leading-relaxed">{exam.description}</p>
-              <a href={exam.officialWebsite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium">Official Website →</a>
-            </div>
-
             <div id="overview" className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
               {[{ label: 'Conducting Body', value: exam.conductingBody }, { label: 'Frequency', value: exam.frequency.split('(')[0].trim() }, { label: 'Vacancies', value: exam.avgVacancies }, { label: 'Salary Range', value: exam.salaryRange.split('(')[0].trim() }].map((item) => (
                 <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
@@ -7369,36 +7392,46 @@ function UgcNetPage({ exam }: { exam: any }) {
 
   return (
     <>
-      <div className="container-main py-10">
-        {/* Breadcrumb */}
-        <nav className="text-sm text-surface-500 mb-6">
-          <Link href="/" className="hover:text-primary-500">Home</Link>
-          <span className="mx-2">›</span>
-          <Link href="/exams" className="hover:text-primary-500">Exams</Link>
-          <span className="mx-2">›</span>
-          <span className="text-surface-800">UGC NET</span>
-        </nav>
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">UGC NET</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Teaching</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 Notification Out</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            UGC NET 2026 – Complete Guide<br className="hidden sm:block" /> (June Session)
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            UGC NET is India&apos;s most prestigious eligibility test for Assistant Professor and Junior Research Fellowship (JRF). Conducted by NTA twice a year across 85 subjects. June 2026 notification released — applications open now.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Conducting Body', value: 'NTA (for UGC)' },
+              { label: 'Frequency', value: 'Twice a Year' },
+              { label: 'Subjects', value: '85 Subjects' },
+              { label: 'JRF Fellowship', value: '₹37,000/month' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white text-sm">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
+      <div className="container-main py-10">
         <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
           {/* ── MAIN CONTENT ── */}
           <div>
-            {/* Page Header */}
-            <div className="mb-8">
-              <div className="flex flex-wrap gap-2 mb-3">
-                <span className="badge badge-primary">Teaching</span>
-                <span className="badge badge-green">Central</span>
-                <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 rounded-full px-2.5 py-0.5 text-xs font-medium">🔔 Notification Out</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
-                UGC NET 2026 – Complete Guide (June Session)
-              </h1>
-              <p className="text-surface-500 leading-relaxed">
-                UGC NET (National Eligibility Test) is India's most prestigious national exam for eligibility as <strong>Assistant Professor</strong> and for the award of <strong>Junior Research Fellowship (JRF)</strong> in Indian universities and colleges. Conducted by NTA twice a year (June &amp; December), UGC NET is the gateway to a career in academia and research across 85 subjects. The June 2026 notification has been released on 29 April 2026 — applications are now open.
-              </p>
-              <a href="https://ugcnet.nta.nic.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium">
-                Official Website: ugcnet.nta.nic.in →
-              </a>
-            </div>
 
             {/* ── SECTION 1: OVERVIEW STATS ── */}
             <div id="overview" className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
@@ -8015,14 +8048,41 @@ function ArmyAgniveerPage({ exam }: { exam: any }) {
 
   return (
     <>
-      <div className="container-main py-10">
-        {/* Breadcrumb */}
-        <nav className="text-sm text-surface-500 mb-6">
-          <Link href="/" className="hover:text-primary-500">Home</Link><span className="mx-2">›</span>
-          <Link href="/exams" className="hover:text-primary-500">Exams</Link><span className="mx-2">›</span>
-          <span className="text-surface-800">Indian Army Agniveer</span>
-        </nav>
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link><span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link><span className="mx-1 opacity-50">›</span>
+            <span className="text-white">Indian Army Agniveer</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Defence</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-red-400/20 text-red-200 text-xs font-semibold px-3 py-1 rounded-full">Agnipath Scheme</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            Indian Army Agniveer 2026<br className="hidden sm:block" /> – Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            Join the Indian Army for a 4-year tenure under the Agnipath Scheme. Open to 8th, 10th, and 12th pass candidates across various trades. Over 25,000 vacancies for the 2026 cycle.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies', value: '25,000+' },
+              { label: 'CEE Exam Window', value: '1–16 Jun 2026' },
+              { label: 'Apply Last Date', value: '10 Apr 2026' },
+              { label: 'Monthly Package', value: '₹30,000–₹40,000' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white text-sm">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
+      <div className="container-main py-10">
         {/* Mobile TOC */}
         <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
           <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
@@ -8036,23 +8096,8 @@ function ArmyAgniveerPage({ exam }: { exam: any }) {
         <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
           {/* ── Main Content ── */}
           <div>
-            {/* Page Header */}
-            <div className="mb-8" id="overview">
-              <div className="flex flex-wrap gap-2 mb-3">
-                <span className="badge badge-primary">Defence</span>
-                <span className="badge badge-green">Central Govt</span>
-                <span className="badge bg-surface-100 text-surface-600">Biannual</span>
-                <span className="badge bg-red-100 text-red-700">Agnipath Scheme</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">Indian Army Agniveer 2026 – Complete Guide</h1>
-              <p className="text-surface-500 leading-relaxed text-lg">
-                Join the Indian Army for a 4-year tenure under the Agnipath Scheme. Open to candidates who have passed 8th, 10th, or 12th class across various trades. Over 25,000 vacancies announced for the 2026 cycle.
-              </p>
-              <a href="https://joinindianarmy.nic.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium">Official Website: joinindianarmy.nic.in →</a>
-            </div>
-
             {/* Hero Highlight Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12" id="overview">
               {[
                 { label: '📋 Vacancies',           value: '25,000+' },
                 { label: '📅 CEE Exam Window',      value: '1 – 16 Jun 2026' },
@@ -11148,39 +11193,43 @@ function RrbAlpPage({ exam }: { exam: any }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <div className="container-main py-10">
-        {/* Breadcrumb */}
-        <nav className="text-sm text-surface-500 mb-6">
-          <Link href="/" className="hover:text-primary-500">Home</Link>
-          <span className="mx-2">›</span>
-          <Link href="/exams" className="hover:text-primary-500">Exams</Link>
-          <span className="mx-2">›</span>
-          <span className="text-surface-800">RRB ALP</span>
-        </nav>
-
-        {/* Page Header */}
-        <div className="mb-8">
-          <div className="flex flex-wrap gap-2 mb-3">
-            <span className="badge-primary">Railway</span>
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-100 text-orange-700">Central Govt</span>
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">Technical Post</span>
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">RRB ALP</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Railway</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Technical Post</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
-            RRB ALP 2026 – Assistant Loco Pilot Complete Guide
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            RRB ALP 2026 – Assistant Loco Pilot<br className="hidden sm:block" /> Complete Guide
           </h1>
-          <p className="text-surface-500 leading-relaxed max-w-3xl">
-            RRB ALP (CEN 01/2024) is one of the largest railway technical recruitments with 27,943 vacancies for Assistant Loco Pilot and Technician posts across all 21 Railway Recruitment Board zones. CBT 1 was conducted in February 2026. CBT 2 is expected in mid-2026.
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            One of the largest railway technical recruitments — 27,943 vacancies for Assistant Loco Pilot and Technician posts across all 21 RRB zones. CBT 1 done in Feb 2026; CBT 2 expected mid-2026.
           </p>
-          <a
-            href="https://www.indianrailways.gov.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium inline-block"
-          >
-            🌐 Official Website: indianrailways.gov.in →
-          </a>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Conducting Body', value: 'Railway Recruitment Boards' },
+              { label: 'Total Vacancies', value: '27,943 Posts' },
+              { label: 'CBT 1 Exam', value: 'Feb 2026 (Done)' },
+              { label: 'Salary Range', value: '₹19,900–₹63,200/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white text-sm">{item.value}</div>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
 
+      <div className="container-main py-10">
         {/* Overview Stats Strip */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
           {[
@@ -20440,49 +20489,45 @@ function UpscNdaPage({ exam }: { exam: any }) {
 
   return (
     <>
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">UPSC NDA 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Defence</span>
+            <span className="bg-purple-400/20 text-purple-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">12th Pass</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Biannual</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            UPSC NDA 2026 – National Defence<br className="hidden sm:block" /> Academy Exam Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            Join the Indian Army, Navy, and Air Force as a commissioned officer. NDA I 2026 written exam held on 13 April 2026. NDA II 2026 notification expected June 2026 — prepare now.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'NDA I Vacancies', value: '406 Posts' },
+              { label: 'NDA I Written Exam', value: '13 Apr 2026 (Done)' },
+              { label: 'NDA II Exam', value: 'Sep 2026 (exp.)' },
+              { label: 'Officer Salary', value: '₹80K–₹1.1L/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white text-sm">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="bg-surface-50 min-h-screen">
         <div className="container-main py-8">
-
-          {/* Breadcrumb */}
-          <nav className="text-sm text-surface-500 mb-6">
-            <Link href="/" className="hover:text-primary-500">Home</Link>
-            <span className="mx-2">›</span>
-            <Link href="/exams" className="hover:text-primary-500">Exams</Link>
-            <span className="mx-2">›</span>
-            <span className="text-surface-800">UPSC NDA 2026</span>
-          </nav>
-
-          {/* Page Header */}
-          <div className="mb-8">
-            <div className="flex flex-wrap gap-2 mb-3">
-              <span className="badge-primary">Defence</span>
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-purple-100 text-purple-700">Central Govt</span>
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-emerald-100 text-emerald-700">12th Pass</span>
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-blue-100 text-blue-700">Biannual</span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
-              UPSC NDA 2026 – National Defence Academy & Naval Academy Exam
-            </h1>
-            <p className="text-surface-500 leading-relaxed max-w-3xl">
-              Complete guide for UPSC NDA 2026 — exam dates, syllabus, eligibility, SSB interview, vacancies, salary, and free preparation resources. NDA I 2026 written exam held 13 April 2026; NDA II 2026 expected September 2026.
-            </p>
-
-            {/* Fast-fact 4-grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
-              {[
-                { label: 'NDA I 2026 Vacancies', value: '406 Posts', sub: 'Army + Navy + Air Force', color: 'text-emerald-600' },
-                { label: 'NDA I Written Exam', value: '13 Apr 2026', sub: 'Completed', color: 'text-surface-800' },
-                { label: 'NDA II Exam (Expected)', value: 'Sep 2026', sub: 'Notification: Jun 2026', color: 'text-blue-600' },
-                { label: 'Officer Salary', value: '₹80K–₹1.1L/mo', sub: 'After commissioning', color: 'text-emerald-600' },
-              ].map((item) => (
-                <div key={item.label} className="bg-white rounded-xl p-4 border border-surface-200 shadow-sm">
-                  <div className="text-xs text-surface-400 uppercase tracking-wide font-heading">{item.label}</div>
-                  <div className={`font-heading font-bold mt-1 text-sm ${item.color}`}>{item.value}</div>
-                  <div className="text-xs text-surface-400 mt-0.5">{item.sub}</div>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Two-column layout */}
           <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
@@ -23478,32 +23523,44 @@ function SscStenographerPage({ exam }: { exam: any }) {
 
   return (
     <>
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams/" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">SSC Stenographer 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">SSC</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Government</span>
+            <span className="bg-amber-400/20 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full">12th Pass</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            SSC Stenographer 2026 – Syllabus,<br className="hidden sm:block" /> Skill Test & Complete Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            Complete guide to SSC Stenographer Grade C &amp; D 2026 — notification dates, CBT exam pattern, shorthand skill test rules, eligibility, salary, and free study resources.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies 2026', value: '~1,000–3,000 expected' },
+              { label: 'Notification', value: 'Sep–Oct 2026' },
+              { label: 'CBT Exam', value: 'Jan–Feb 2027 (exp.)' },
+              { label: 'Salary', value: '₹38,000–₹59,000/mo' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white text-sm">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="bg-surface-50 min-h-screen">
         <div className="container-main py-8">
-
-          {/* Breadcrumb */}
-          <nav className="text-sm text-surface-500 mb-6">
-            <Link href="/">Home</Link>
-            <span className="mx-2">›</span>
-            <Link href="/exams/">Exams</Link>
-            <span className="mx-2">›</span>
-            <span className="text-surface-700 font-medium">SSC Stenographer 2026</span>
-          </nav>
-
-          {/* Hero Header */}
-          <div className="mb-8">
-            <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="badge-primary">SSC</span>
-              <span className="badge-green">Central Government</span>
-              <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">12th Pass</span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
-              SSC Stenographer 2026 – Notification, Syllabus, Skill Test & Complete Guide
-            </h1>
-            <p className="text-surface-500 leading-relaxed max-w-3xl">
-              Complete guide to SSC Stenographer Grade C &amp; D 2026 — notification dates, CBT exam pattern, shorthand skill test rules, eligibility, salary, and free study resources. Updated May 2026.
-            </p>
-          </div>
 
           {/* Fast Fact 4-Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
@@ -24134,14 +24191,42 @@ function NavyAgniveerPage({ exam }: { exam: any }) {
 
   return (
     <>
-      <div className="container-main py-10">
-        {/* Breadcrumb */}
-        <nav className="text-sm text-surface-500 mb-6">
-          <Link href="/" className="hover:text-primary-500">Home</Link><span className="mx-2">›</span>
-          <Link href="/exams" className="hover:text-primary-500">Exams</Link><span className="mx-2">›</span>
-          <span className="text-surface-800">Navy Agniveer SSR/MR 2026</span>
-        </nav>
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link><span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link><span className="mx-1 opacity-50">›</span>
+            <span className="text-white">Navy Agniveer SSR/MR 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Defence</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-red-400/20 text-red-200 text-xs font-semibold px-3 py-1 rounded-full">Agnipath Scheme</span>
+            <span className="bg-cyan-400/20 text-cyan-200 text-xs font-semibold px-3 py-1 rounded-full">⚓ Indian Navy</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            Navy Agniveer SSR/MR 2026<br className="hidden sm:block" /> – Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            Join the Indian Navy for a 4-year engagement under the Agnipath Scheme. Open to 12th pass (PCM) for SSR and 10th pass for MR. Expected 2,000–3,000 vacancies for the 2026 cycle.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Expected Vacancies', value: '2,000–3,000' },
+              { label: 'Exam (Expected)', value: 'Aug–Sep 2026' },
+              { label: 'Notification', value: 'May–Jun 2026 (Est.)' },
+              { label: 'Monthly Package', value: '₹30,000–₹40,000' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white text-sm">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
+      <div className="container-main py-10">
         {/* Mobile TOC */}
         <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
           <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
@@ -24155,24 +24240,8 @@ function NavyAgniveerPage({ exam }: { exam: any }) {
         <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
           {/* ── Main Content ── */}
           <div>
-            {/* Page Header */}
-            <div className="mb-8" id="overview">
-              <div className="flex flex-wrap gap-2 mb-3">
-                <span className="badge badge-primary">Defence</span>
-                <span className="badge badge-green">Central Govt</span>
-                <span className="badge bg-surface-100 text-surface-600">Biannual</span>
-                <span className="badge bg-red-100 text-red-700">Agnipath Scheme</span>
-                <span className="badge bg-cyan-100 text-cyan-700">⚓ Indian Navy</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">Navy Agniveer SSR/MR 2026 – Complete Preparation Guide</h1>
-              <p className="text-surface-500 leading-relaxed text-lg">
-                Join the Indian Navy for a 4-year engagement under the Agnipath Scheme. Open to 12th pass (PCM) candidates for SSR and 10th pass candidates for MR. Expected 2,000–3,000 vacancies for the 2026 cycle across operational, technical, and domestic trades.
-              </p>
-              <a href="https://joinindiannavy.gov.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium">Official Website: joinindiannavy.gov.in →</a>
-            </div>
-
             {/* Hero Highlight Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12" id="overview">
               {[
                 { label: '📋 Expected Vacancies',   value: '2,000 – 3,000' },
                 { label: '📅 Exam (Expected)',        value: 'Aug – Sep 2026' },
@@ -24755,14 +24824,42 @@ function IafAgniveerPage({ exam }: { exam: any }) {
 
   return (
     <>
-      <div className="container-main py-10">
-        {/* Breadcrumb */}
-        <nav className="text-sm text-surface-500 mb-6">
-          <Link href="/" className="hover:text-primary-500">Home</Link><span className="mx-2">›</span>
-          <Link href="/exams" className="hover:text-primary-500">Exams</Link><span className="mx-2">›</span>
-          <span className="text-surface-800">IAF Agniveer Vayu 2026</span>
-        </nav>
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link><span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link><span className="mx-1 opacity-50">›</span>
+            <span className="text-white">IAF Agniveer Vayu 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Defence</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-red-400/20 text-red-200 text-xs font-semibold px-3 py-1 rounded-full">Agnipath Scheme</span>
+            <span className="bg-sky-400/20 text-sky-200 text-xs font-semibold px-3 py-1 rounded-full">✈️ Indian Air Force</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            IAF Agniveer Vayu 2026<br className="hidden sm:block" /> – Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            Join the Indian Air Force for a 4-year engagement under the Agnipath Scheme. Open to 12th pass (PCM/PCBio/any stream) and Diploma holders. Expected 3,000–5,000 vacancies for the 2026 cycle.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Expected Vacancies', value: '3,000–5,000' },
+              { label: 'Exam (Expected)', value: 'Aug–Sep 2026' },
+              { label: 'Notification', value: 'Jun 2026 (Expected)' },
+              { label: 'Monthly Package', value: '₹30,000–₹40,000' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white text-sm">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
+      <div className="container-main py-10">
         {/* Mobile TOC */}
         <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
           <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
@@ -24776,24 +24873,8 @@ function IafAgniveerPage({ exam }: { exam: any }) {
         <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
           {/* ── Main Content ── */}
           <div>
-            {/* Page Header */}
-            <div className="mb-8" id="overview">
-              <div className="flex flex-wrap gap-2 mb-3">
-                <span className="badge badge-primary">Defence</span>
-                <span className="badge badge-green">Central Govt</span>
-                <span className="badge bg-surface-100 text-surface-600">Biannual</span>
-                <span className="badge bg-red-100 text-red-700">Agnipath Scheme</span>
-                <span className="badge bg-sky-100 text-sky-700">✈️ Indian Air Force</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">IAF Agniveer Vayu 2026 – Complete Preparation Guide</h1>
-              <p className="text-surface-500 leading-relaxed text-lg">
-                Join the Indian Air Force for a 4-year engagement under the Agnipath Scheme. Open to 12th pass (PCM / PCBio / any stream) and Diploma holders. Expected 3,000–5,000 vacancies for the 2026 cycle across Technical and Non-Technical trades.
-              </p>
-              <a href="https://agnipathvayu.cdac.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium">Official Website: agnipathvayu.cdac.in →</a>
-            </div>
-
             {/* Hero Highlight Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12" id="overview">
               {[
                 { label: '📋 Expected Vacancies',   value: '3,000 – 5,000' },
                 { label: '📅 Exam (Expected)',        value: 'Aug – Sep 2026' },
