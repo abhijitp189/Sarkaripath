@@ -325,6 +325,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'upsssc-pet') {
+    return {
+      title: 'UPSSSC PET 2026 – Notification, Syllabus, Result & Complete Guide | TaiyarHo',
+      description: 'UPSSSC PET 2026: Notification expected Aug–Sep 2026. Gateway exam for all Group C posts in UP. 10th pass eligible, age 18–40 yrs. Check syllabus (15 subjects, 100 marks), exam pattern, cut-offs, result and free preparation resources.',
+      keywords: 'UPSSSC PET 2026, UPSSSC PET syllabus, UPSSSC PET notification 2026, UPSSSC PET taiyari, UPSSSC PET result, UP PET exam 2026, UPSSSC PET Hindi, यूपीएसएसएससी पीईटी 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/upsssc-pet/' },
+      other: { 'description:hi': 'UPSSSC PET 2026 – उत्तर प्रदेश में ग्रुप C सरकारी नौकरी का प्रवेश द्वार। अधिसूचना अगस्त–सितंबर 2026 (अपेक्षित)। 10वीं पास पात्र, आयु 18–40 वर्ष। 15 विषय, 100 अंक, 2 घंटे। सिलेबस, परीक्षा पैटर्न, कट-ऑफ और मुफ्त तैयारी संसाधन।' },
+    };
+  }
+
   if (params.slug === 'rpf-constable') {
     return {
       title: 'RPF Constable 2026 – Vacancy, Salary, Syllabus, PET/PMT & Complete Guide | TaiyarHo',
@@ -383,6 +393,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rrb-alp') return <RrbAlpPage exam={brief} />;
   if (detailed && detailed.slug === 'ibps-po') return <IbpsPoPage exam={detailed} />;
   if (detailed && detailed.slug === 'sbi-po') return <SbiPoPage exam={detailed} />;
+  if (brief && brief.slug === 'upsssc-pet') return <UpssscPetPage exam={brief} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'rajasthan-police-constable') return <RajasthanPoliceConstablePage exam={brief} />;
@@ -25332,6 +25343,980 @@ function IafAgniveerPage({ exam }: { exam: any }) {
             </div>
           </aside>
 
+        </div>
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// UPSSSC PET 2026 – Full Detailed Page
+// ─────────────────────────────────────────────────────────────────────────────
+function UpssscPetPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancy-history', label: 'Vacancy / Cycle History' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'cutoff',          label: 'Previous Year Cut-offs' },
+    { id: 'after-pet',       label: 'After PET – Posts & Salary' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'UPSSSC PET 2022 Exam Held',              date: '15 & 16 October 2022',         status: 'released' },
+    { event: 'UPSSSC PET 2022 Result Released',         date: 'March 2023',                   status: 'released' },
+    { event: 'UPSSSC PET 2023 Notification Released',   date: 'June 2023',                    status: 'released' },
+    { event: 'UPSSSC PET 2023 Application Last Date',   date: 'July 2023',                    status: 'released' },
+    { event: 'UPSSSC PET 2023 Exam Held',               date: '28 & 29 October 2023',         status: 'released' },
+    { event: 'UPSSSC PET 2023 Result Released',         date: 'January 2024',                 status: 'released' },
+    { event: 'UPSSSC PET 2024 Notification Released',   date: 'July 2024',                    status: 'released' },
+    { event: 'UPSSSC PET 2024 Exam Held',               date: 'October 2024',                 status: 'released' },
+    { event: 'UPSSSC PET 2024 Result Released',         date: 'December 2024',                status: 'released' },
+    { event: '🆕 UPSSSC PET 2026 – Notification',      date: 'Aug–Sep 2026 (Expected)',       status: 'tbn' },
+    { event: 'UPSSSC PET 2026 – Application Window',    date: 'Sep–Oct 2026 (Expected)',       status: 'tbn' },
+    { event: 'UPSSSC PET 2026 – Admit Card',            date: 'Nov 2026 (Expected)',           status: 'tbn' },
+    { event: 'UPSSSC PET 2026 – Exam Date',             date: 'Nov–Dec 2026 (Expected)',       status: 'tbn' },
+    { event: 'UPSSSC PET 2026 – Result',                date: 'Jan–Feb 2027 (Expected)',       status: 'tbn' },
+  ];
+
+  const cycleHistory = [
+    { year: 'PET 2021',      exam: 'Sep 2021',          result: 'Jan 2022',    applicants: '~20 Lakh',  scoreValid: '1 Year' },
+    { year: 'PET 2022',      exam: 'Oct 2022',          result: 'Mar 2023',    applicants: '~28 Lakh',  scoreValid: '1 Year' },
+    { year: 'PET 2023',      exam: 'Oct 2023',          result: 'Jan 2024',    applicants: '~32 Lakh',  scoreValid: '1 Year' },
+    { year: 'PET 2024',      exam: 'Oct 2024',          result: 'Dec 2024',    applicants: '~35 Lakh',  scoreValid: '1 Year' },
+    { year: 'PET 2026 (upcoming)', exam: 'Nov–Dec 2026 (TBN)', result: 'Jan–Feb 2027 (TBN)', applicants: '35–40 Lakh (Est.)', scoreValid: '1 Year' },
+  ];
+
+  const syllabusSubjects = [
+    {
+      num: '01', subject: 'Indian History',
+      color: 'bg-amber-50 border-amber-200', labelColor: 'text-amber-700',
+      marks: 5,
+      topics: [
+        'Indus Valley Civilisation',
+        'Vedic Culture & Mahajanapadas',
+        'Maurya Empire (Chandragupta, Ashoka)',
+        'Gupta Era – Golden Age of India',
+        'Medieval India – Sultanate & Mughal Period',
+        'Bhakti & Sufi Movement',
+        'Maratha Empire',
+        'British Rule – 1857 Revolt, Major Acts',
+        'Indian National Movement (1885–1947)',
+        'Important Personalities of Freedom Struggle',
+      ],
+    },
+    {
+      num: '02', subject: 'Indian National Movement',
+      color: 'bg-orange-50 border-orange-200', labelColor: 'text-orange-700',
+      marks: 5,
+      topics: [
+        '1857 First War of Independence',
+        'Formation of INC & Moderate Phase',
+        'Bal-Pal-Lal (Extremist Phase)',
+        'Swadeshi Movement & Partition of Bengal (1905)',
+        'Lucknow Pact 1916',
+        'Non-Cooperation Movement 1920',
+        'Civil Disobedience Movement & Salt March 1930',
+        'Quit India Movement 1942',
+        'Subhash Chandra Bose & INA',
+        'Independence & Partition 1947',
+      ],
+    },
+    {
+      num: '03', subject: 'Geography',
+      color: 'bg-green-50 border-green-200', labelColor: 'text-green-700',
+      marks: 5,
+      topics: [
+        'Solar System & Earth',
+        'Latitudes, Longitudes & Time Zones',
+        'Continents & Oceans',
+        'Rivers, Mountains & Plateaus of India',
+        'Climate of India – Monsoon, Seasons',
+        'Soil Types & Agriculture',
+        'Natural Resources & Minerals',
+        'Wildlife Sanctuaries & National Parks',
+        'UP Geography – Districts, Rivers, Climate',
+        'World Geography – Capitals, Countries',
+      ],
+    },
+    {
+      num: '04', subject: 'Indian Economy',
+      color: 'bg-blue-50 border-blue-200', labelColor: 'text-blue-700',
+      marks: 5,
+      topics: [
+        'Planning in India – Five Year Plans',
+        'GDP, GNP, NNP & National Income',
+        'Inflation & Monetary Policy (RBI)',
+        'Agriculture – Green Revolution, MSP',
+        'Banking System – Commercial & Cooperative',
+        'Government Budget – Revenue & Capital',
+        'GST – Basics & Slabs',
+        'Poverty, Unemployment & HDI',
+        'Trade Policy & WTO',
+        'UP Economy – Key Industries & Agriculture',
+      ],
+    },
+    {
+      num: '05', subject: 'Indian Constitution & Public Administration',
+      color: 'bg-purple-50 border-purple-200', labelColor: 'text-purple-700',
+      marks: 5,
+      topics: [
+        'Constituent Assembly & Drafting',
+        'Preamble – Objectives & Keywords',
+        'Fundamental Rights (Art. 12–35)',
+        'Directive Principles (Art. 36–51)',
+        'Fundamental Duties (Art. 51A)',
+        'Union & State Executives (President, PM, Governor)',
+        'Parliament – Lok Sabha & Rajya Sabha',
+        'Judiciary – Supreme Court & High Courts',
+        'Panchayati Raj (73rd Amendment)',
+        'Urban Local Bodies (74th Amendment)',
+      ],
+    },
+    {
+      num: '06', subject: 'General Science',
+      color: 'bg-teal-50 border-teal-200', labelColor: 'text-teal-700',
+      marks: 5,
+      topics: [
+        'Physics – Motion, Force, Work & Energy',
+        'Light, Sound & Electricity',
+        'Chemistry – Matter, Acids, Bases & Salts',
+        'Metals & Non-Metals, Chemical Reactions',
+        'Biology – Cell, Tissues & Organ Systems',
+        'Human Diseases & Vitamins',
+        'Nutrition – Food & Digestive System',
+        'Environment – Ecology & Biodiversity',
+        'Scientific Inventions & Discoveries',
+        'Technology in Everyday Life',
+      ],
+    },
+    {
+      num: '07', subject: 'Elementary Mathematics',
+      color: 'bg-red-50 border-red-200', labelColor: 'text-red-700',
+      marks: 5,
+      topics: [
+        'Number System – LCM, HCF, Factors',
+        'Simplification & BODMAS',
+        'Percentage, Profit & Loss',
+        'Simple & Compound Interest',
+        'Ratio & Proportion',
+        'Average, Mixture & Alligation',
+        'Time, Speed & Distance',
+        'Time & Work, Pipe & Cistern',
+        'Mensuration – Area & Volume',
+        'Statistics – Mean, Median, Mode',
+      ],
+    },
+    {
+      num: '08', subject: 'General Hindi',
+      color: 'bg-yellow-50 border-yellow-200', labelColor: 'text-yellow-700',
+      marks: 5,
+      topics: [
+        'अपठित गद्यांश (Unseen Passage)',
+        'संधि एवं संधि विच्छेद',
+        'समास (Compound Words)',
+        'विलोम शब्द (Antonyms)',
+        'पर्यायवाची शब्द (Synonyms)',
+        'मुहावरे एवं लोकोक्तियाँ',
+        'वर्तनी शुद्धि (Spelling Correction)',
+        'तत्सम, तद्भव, देशज, विदेशी शब्द',
+        'लिंग, वचन, कारक',
+        'काल (Tense) एवं वाच्य (Voice)',
+      ],
+    },
+    {
+      num: '09', subject: 'General English',
+      color: 'bg-sky-50 border-sky-200', labelColor: 'text-sky-700',
+      marks: 5,
+      topics: [
+        'Reading Comprehension (Unseen Passage)',
+        'Tense (Simple, Continuous, Perfect)',
+        'Active & Passive Voice',
+        'Direct & Indirect Speech',
+        'Articles, Prepositions & Conjunctions',
+        'Synonyms & Antonyms',
+        'Vocabulary – One Word Substitution',
+        'Sentence Correction',
+        'Fill in the Blanks',
+        'Spelling Errors',
+      ],
+    },
+    {
+      num: '10', subject: 'Reasoning & Mental Ability',
+      color: 'bg-indigo-50 border-indigo-200', labelColor: 'text-indigo-700',
+      marks: 5,
+      topics: [
+        'Analogy (Word & Number)',
+        'Series – Alphabet, Number, Mixed',
+        'Classification & Odd One Out',
+        'Coding-Decoding',
+        'Blood Relations',
+        'Direction & Distance',
+        'Ranking & Order',
+        'Calendar & Clock',
+        'Non-Verbal Reasoning – Figures',
+        'Venn Diagrams & Syllogism',
+      ],
+    },
+    {
+      num: '11', subject: 'General Awareness',
+      color: 'bg-emerald-50 border-emerald-200', labelColor: 'text-emerald-700',
+      marks: 10,
+      topics: [
+        'National & International Current Affairs (Last 6 months)',
+        'Important National Days & Events',
+        'Sports – National & International Awards 2025–26',
+        'Science & Technology Recent Developments',
+        'Books & Authors, New Appointments',
+        'Summits, Conferences & Agreements',
+        'Schemes of Government of India (2023–26)',
+        'Environment & Climate Change (COP)',
+        'Defence & Security News',
+        'UP-specific Current Affairs & State News',
+      ],
+    },
+    {
+      num: '12', subject: 'Apathit Hindi Gadyansh',
+      color: 'bg-pink-50 border-pink-200', labelColor: 'text-pink-700',
+      marks: 10,
+      topics: [
+        '2 passages of 5 questions each = 10 marks',
+        'Focus on comprehension of passage',
+        'Questions on main idea, tone & inference',
+        'Vocabulary in context',
+        'Author\'s intention or conclusion',
+        'Passages from social/environmental/literary themes',
+      ],
+    },
+    {
+      num: '13', subject: 'Apathit English Gadyansh',
+      color: 'bg-cyan-50 border-cyan-200', labelColor: 'text-cyan-700',
+      marks: 10,
+      topics: [
+        '2 passages of 5 questions each = 10 marks',
+        'Comprehension-based MCQs',
+        'True/False or Direct Answer type',
+        'Vocabulary (Antonym/Synonym of underlined word)',
+        'Main idea / title of passage',
+        'Passages from science, civic or economic themes',
+      ],
+    },
+    {
+      num: '14', subject: 'Graph Interpretation',
+      color: 'bg-violet-50 border-violet-200', labelColor: 'text-violet-700',
+      marks: 10,
+      topics: [
+        '2 graphs with 5 questions each = 10 marks',
+        'Bar Graph – Comparison, % increase/decrease',
+        'Line Graph – Trend analysis',
+        'Pie Chart – Proportion & degree calculation',
+        'Table Graph – Row/column calculations',
+        'Mixed Graph – Two data sets',
+        'Calculation: Total, Average, Ratio, Percentage change',
+      ],
+    },
+    {
+      num: '15', subject: 'Table Interpretation',
+      color: 'bg-rose-50 border-rose-200', labelColor: 'text-rose-700',
+      marks: 10,
+      topics: [
+        '2 tables with 5 questions each = 10 marks',
+        'Simple data tables – Reading values accurately',
+        'Two-variable tables – Comparative analysis',
+        'Missing data, maximum/minimum identification',
+        'Percentage, ratio & proportion calculations',
+        'Average, total & difference-based questions',
+      ],
+    },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', pet2021: '~65–70', pet2022: '~60–65', pet2023: '~58–63', pet2024: '~57–62' },
+    { category: 'OBC',           pet2021: '~58–63', pet2022: '~53–58', pet2023: '~51–56', pet2024: '~50–55' },
+    { category: 'SC',            pet2021: '~45–50', pet2022: '~41–46', pet2023: '~39–44', pet2024: '~38–43' },
+    { category: 'ST',            pet2021: '~40–45', pet2022: '~37–42', pet2023: '~35–40', pet2024: '~34–39' },
+  ];
+
+  const postsAfterPet = [
+    { post: 'Lekhpal (Revenue Patwari)', ministry: 'Revenue & Land Records, UP', payLevel: 'Pay Level 3', basicPay: '₹21,700–₹69,100/month', vacancies2024: '~7,882' },
+    { post: 'Junior Assistant / Clerk', ministry: 'Various State Departments', payLevel: 'Pay Level 2', basicPay: '₹19,900–₹63,200/month', vacancies2024: 'Varies' },
+    { post: 'VDO (Village Development Officer)', ministry: 'Panchayati Raj, UP', payLevel: 'Pay Level 5', basicPay: '₹29,200–₹92,300/month', vacancies2024: '~3,000' },
+    { post: 'Forest Guard', ministry: 'Forest Department, UP', payLevel: 'Pay Level 3', basicPay: '₹21,700–₹69,100/month', vacancies2024: 'Notified Separately' },
+    { post: 'Supply Inspector', ministry: 'Food & Civil Supplies, UP', payLevel: 'Pay Level 6', basicPay: '₹35,400–₹1,12,400/month', vacancies2024: 'Notified Separately' },
+    { post: 'Group C Posts (Various)', ministry: 'Multiple Departments, UP', payLevel: 'Level 2–6', basicPay: '₹19,900–₹1,12,400/month', vacancies2024: '10,000+ annually' },
+  ];
+
+  const studyPlan = [
+    {
+      week: 'Month 1',
+      title: 'Foundation: History, Geography & Polity',
+      tasks: [
+        'Indian History: Complete Class 6–10 NCERT books first (2 weeks)',
+        'Geography: India & World – NCERT Class 9–10 (1 week)',
+        'Indian Constitution: Basics of Preamble, FRs, DPSPs (1 week)',
+        'Daily: 30 min General Hindi grammar practice',
+      ],
+    },
+    {
+      week: 'Month 2',
+      title: 'Core Subjects: Economy, Science & Maths',
+      tasks: [
+        'Indian Economy: NCERT Class 9–10 + UP Economy focus (1 week)',
+        'General Science: Class 8–10 NCERT (1 week)',
+        'Maths: Percentage, SI/CI, Profit/Loss, Time-Work (2 weeks)',
+        'Daily: 20 questions from previous year papers',
+      ],
+    },
+    {
+      week: 'Month 3',
+      title: 'Language & Reasoning',
+      tasks: [
+        'Hindi: Vyakaran (Sandhi, Samas, Vilom, Paryayvachi) – all 3 weeks mixed with daily practice',
+        'English: Tense, Voice, Narration, Comprehension (1 week)',
+        'Reasoning: Series, Analogy, Coding-Decoding, Blood Relations (2 weeks)',
+        'Daily: 1 full passage reading with comprehension',
+      ],
+    },
+    {
+      week: 'Month 4',
+      title: 'Data & Current Affairs + Full Mock Tests',
+      tasks: [
+        'Graph & Table Interpretation: 25 questions/day from previous papers',
+        'Current Affairs: Last 6 months – read monthly compilation PDF',
+        'Weekly: 2 full mock tests (100 Q / 2 hrs each)',
+        'Final 2 weeks: Revise weak topics only, no new material',
+      ],
+    },
+  ];
+
+  const books = [
+    { subject: 'General Hindi',         title: 'Samanya Hindi',                       author: 'Dr. Hardev Bahri',         pdf: null },
+    { subject: 'General English',        title: 'Wren & Martin – High School Grammar',  author: 'P.C. Wren & H. Martin',    pdf: null },
+    { subject: 'Indian History',         title: 'Modern Indian History',               author: 'Vipin Chandra',            pdf: 'https://archive.org/details/modern-history-by-vipin-chandra' },
+    { subject: 'Indian Polity',          title: 'Indian Polity (Laxmikanth)',           author: 'M. Laxmikanth',            pdf: null },
+    { subject: 'Geography',             title: 'Geography of India',                   author: 'Majid Husain',             pdf: null },
+    { subject: 'General Science',        title: 'Lucent\'s General Science',            author: 'Lucent Publications',      pdf: null },
+    { subject: 'Mathematics',           title: 'Rakesh Yadav Class Notes Maths',       author: 'Rakesh Yadav',             pdf: null },
+    { subject: 'Reasoning',             title: 'A Modern Approach to Verbal Reasoning', author: 'R.S. Aggarwal',           pdf: null },
+    { subject: 'Current Affairs',       title: 'Monthly Current Affairs Capsule',       author: 'GK Today / Affairscloud', pdf: 'https://www.gktoday.in/current-affairs/' },
+    { subject: 'UPSSSC PET Practice',   title: 'UPSSSC PET Previous Year Papers',      author: 'Arihant / Kiran',          pdf: null },
+  ];
+
+  const resources = [
+    { name: 'UPSSSC Official Website', type: 'website', url: 'https://upsssc.gov.in', description: 'Official notifications, admit cards, results and answer keys.' },
+    { name: 'Khan GS Research Centre – UPSSSC PET', type: 'youtube', url: 'https://www.youtube.com/@KhanGSResearchCentre', description: 'Free Hindi lectures on History, Polity, Science for PET.' },
+    { name: 'Study91 (Nitin Sir)', type: 'youtube', url: 'https://www.youtube.com/@Study91', description: 'Detailed UP PET subject-wise classes in Hindi. Very popular.' },
+    { name: 'GK Today Current Affairs', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily current affairs and monthly PDF compilations.' },
+    { name: 'Testbook UPSSSC PET Mocks', type: 'website', url: 'https://testbook.com/upsssc-pet', description: 'Free and paid mock tests matching actual PET pattern.' },
+    { name: 'Unacademy UPSSSC PET', type: 'youtube', url: 'https://www.youtube.com/@unacademy', description: 'Free live classes and doubt sessions for all PET subjects.' },
+  ];
+
+  const tips = [
+    { icon: '📊', tip: 'Graph & Table = 20 Marks – Don\'t Ignore', body: 'Sections 14 and 15 (Graph & Table Interpretation) together carry 20 marks but are often skipped. Practice 20–25 DI questions daily from last year\'s papers — it\'s the fastest way to add marks.' },
+    { icon: '📰', tip: 'Current Affairs: Last 6 Months Is Enough', body: '10 marks in Section 11 come purely from the last 6 months of national and UP-level news. Make a short 2-page handwritten notes sheet of key appointments, awards and schemes before the exam.' },
+    { icon: '📝', tip: 'PET Score Is Valid for Only 1 Year', body: 'Your UPSSSC PET score is valid for exactly one year from the date of result. Plan which UPSSSC post you want to apply for immediately after results, so your score isn\'t wasted.' },
+    { icon: '🔄', tip: 'Attempt Every Question — No Negative Marking', body: 'UPSSSC PET has NO negative marking. There is absolutely no reason to leave any question blank. If unsure, mark the most logical option and move on.' },
+    { icon: '🎯', tip: 'Section-Wise Target: 70+ Out of 100', body: 'A score of 70+ is typically safe for General category for most subsequent recruitments. Aim for 8–9 correct in every 10-mark subject rather than trying to ace one and neglect others.' },
+    { icon: '🌐', tip: 'Master UP-Specific GK', body: 'Questions on UP districts, rivers, schemes (UP Lekhpal, UP Ration, UP Bhumi), UP Chief Minister\'s initiatives, and state capitals appear every year. Dedicate one dedicated week to UP-specific GK before the exam.' },
+  ];
+
+  const faqs = [
+    { q: 'What is UPSSSC PET and why is it important?', a: 'UPSSSC PET (Preliminary Eligibility Test) is a mandatory gateway exam conducted by the UP Subordinate Services Selection Commission. Passing PET is compulsory to be eligible for any subsequent UPSSSC recruitment like Lekhpal, VDO, Junior Assistant, etc. It is held once a year and your score is valid for 1 year.' },
+    { q: 'Who is eligible for UPSSSC PET 2026?', a: 'Candidates must have passed Class 10 (High School) from a recognised board. Age limit is 18–40 years (general). Relaxation: OBC +3 years, SC/ST +5 years. Domicile of Uttar Pradesh is required for most posts, though PET itself is open to all Indian citizens.' },
+    { q: 'What is the exam pattern for UPSSSC PET 2026?', a: 'UPSSSC PET consists of 100 MCQ questions of 100 marks to be completed in 2 hours (120 minutes). There are 15 subjects/sections. Crucially, there is NO negative marking, which means you should attempt all 100 questions.' },
+    { q: 'Is there negative marking in UPSSSC PET?', a: 'No. UPSSSC PET does not have negative marking. Every correct answer carries 1 mark and there is no deduction for wrong answers. Attempt all 100 questions without hesitation.' },
+    { q: 'How long is the UPSSSC PET score valid?', a: 'Your PET score/rank is valid for 1 year from the date of result declaration. Within this 1-year window, you must apply for specific UPSSSC main recruitment examinations (like Lekhpal, VDO etc.) using your PET score.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <div className="bg-surface-50 min-h-screen pb-16">
+        <div className="container-main py-6 sm:py-10">
+
+          {/* BREADCRUMB */}
+          <nav className="text-sm text-surface-500 mb-6">
+            <Link href="/" className="hover:text-primary-500">Home</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams" className="hover:text-primary-500">Exams</Link>
+            <span className="mx-2">›</span>
+            <span className="text-surface-800">UPSSSC PET 2026</span>
+          </nav>
+
+          {/* HERO HEADER */}
+          <div className="mb-8">
+            <div className="flex flex-wrap gap-2 mb-3">
+              <span className="badge-primary">State PSC</span>
+              <span className="bg-yellow-100 text-yellow-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">State Level</span>
+              <span className="bg-emerald-100 text-emerald-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">Annual</span>
+              <span className="bg-red-100 text-red-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">No Negative Marking</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
+              UPSSSC PET 2026 – Complete Guide
+            </h1>
+            <p className="text-surface-500 leading-relaxed max-w-3xl">
+              The Preliminary Eligibility Test (PET) is your mandatory entry ticket to all Group C government jobs in Uttar Pradesh. Conducted by UPSSSC, it covers 15 subjects in a single 2-hour paper with no negative marking. Clear PET 2026, and you unlock access to Lekhpal, VDO, Forest Guard and dozens more UP sarkari posts.
+            </p>
+          </div>
+
+          {/* 4-CARD FAST FACTS */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            {[
+              { icon: '📅', label: 'Exam Date 2026',    value: 'Nov–Dec 2026', sub: 'To Be Notified (TBN)', color: 'border-t-4 border-amber-400' },
+              { icon: '🎓', label: 'Qualification',      value: '10th Pass',    sub: 'Minimum eligibility',  color: 'border-t-4 border-primary-400' },
+              { icon: '📋', label: 'Exam Pattern',       value: '100 Qs / 100 Marks', sub: '2 Hours | No –ve Marking', color: 'border-t-4 border-emerald-400' },
+              { icon: '💰', label: 'Posts After PET',    value: '₹19,900–₹1,12,400/mo', sub: 'Lekhpal, VDO, Clerk & more', color: 'border-t-4 border-violet-400' },
+            ].map((c, i) => (
+              <div key={i} className={`card p-4 ${c.color}`}>
+                <div className="text-xl mb-1">{c.icon}</div>
+                <div className="text-xs text-surface-400 uppercase tracking-wide font-heading">{c.label}</div>
+                <div className="font-heading font-bold text-surface-800 text-sm mt-1">{c.value}</div>
+                <div className="text-xs text-surface-500 mt-0.5">{c.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* 2-COLUMN LAYOUT */}
+          <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+            {/* ── MAIN CONTENT ── */}
+            <div>
+
+              {/* 1. OVERVIEW */}
+              <section id="overview" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">1</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is UPSSSC PET 2026?</h2>
+                </div>
+                <div className="card p-6 mb-4">
+                  <p className="text-sm text-surface-700 leading-relaxed mb-3">
+                    UPSSSC PET (Preliminary Eligibility Test) is a <strong>pre-screening written exam</strong> made mandatory by the Uttar Pradesh Subordinate Services Selection Commission since 2021. Any candidate wishing to apply for Group C posts under UPSSSC must clear this test first — it is not a recruitment exam by itself, but a <strong>gateway score</strong> that qualifies you for subsequent main exams.
+                  </p>
+                  <p className="text-sm text-surface-700 leading-relaxed mb-3">
+                    The exam tests 15 subjects in 100 MCQ questions over 2 hours. There is <strong>no negative marking</strong>, making it a high-scoring opportunity if you prepare systematically. UPSSSC releases a merit list of qualified candidates; only those who meet the cut-off for a specific recruitment are called for that exam's next stage.
+                  </p>
+                  <p className="text-sm text-surface-700 leading-relaxed">
+                    💡 <strong>Key fact:</strong> Your PET score is valid for <strong>1 year</strong> from result date. During this window, you can apply for multiple UPSSSC main recruitment exams (Lekhpal, VDO, Junior Assistant, etc.) without reappearing for PET.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { icon: '🏛️', label: 'Conducting Body',  value: 'UPSSSC (Lucknow)' },
+                    { icon: '📋', label: 'Exam Type',        value: 'Preliminary Eligibility Test' },
+                    { icon: '🔢', label: 'Total Questions',  value: '100 MCQ (1 mark each)' },
+                    { icon: '⏱️', label: 'Duration',         value: '2 Hours (120 minutes)' },
+                    { icon: '➖', label: 'Negative Marking', value: 'NONE – Attempt All!' },
+                    { icon: '📅', label: 'Frequency',        value: 'Annual (once per year)' },
+                    { icon: '🗓️', label: 'Score Validity',   value: '1 Year from Result Date' },
+                    { icon: '🌐', label: 'Official Site',    value: 'upsssc.gov.in' },
+                  ].map((item, i) => (
+                    <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200 flex items-center gap-3">
+                      <span className="text-lg flex-shrink-0">{item.icon}</span>
+                      <div>
+                        <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                        <div className="font-heading font-semibold text-surface-800 text-sm mt-0.5">{item.value}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 2. IMPORTANT DATES */}
+              <section id="important-dates" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">2</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Important Dates – 2026 Timeline</h2>
+                </div>
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
+                  ⚠️ UPSSSC PET 2026 notification has not been officially released yet. Dates marked "Expected" or "TBN" are based on past patterns. Always verify at <strong>upsssc.gov.in</strong> before applying.
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">Event</th>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">Date</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {importantDates.map((d, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                            <td className="p-3 font-medium text-surface-800">{d.event}</td>
+                            <td className="p-3 text-surface-600">{d.date}</td>
+                            <td className="p-3 text-center">
+                              {d.status === 'released'
+                                ? <span className="badge-green">✅ Done</span>
+                                : <span className="bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⚠️ TBN</span>
+                              }
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              {/* 3. ELIGIBILITY */}
+              <section id="eligibility" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">3</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria 2026</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    { icon: '🪪', title: 'Nationality', body: 'Indian citizen. Domicile of Uttar Pradesh is required for most UPSSSC posts (though PET itself is open to all Indians).' },
+                    { icon: '🎓', title: 'Educational Qualification', body: 'Minimum 10th Pass (High School) from a recognised Board. Graduates/PG candidates are also eligible — no upper bar on qualification.' },
+                    { icon: '📋', title: 'Age Limit (General)', body: 'Minimum 18 years. Maximum 40 years as on 1 July of the notification year. Age is counted as on the date specified in the PET notification.' },
+                    { icon: '➕', title: 'Age Relaxation', body: 'OBC: +3 years | SC/ST: +5 years | PwBD: +15 years | Ex-Serviceman: as per UP Govt. rules. Relaxation applies only to UP domicile categories.' },
+                  ].map((e, i) => (
+                    <div key={i} className="card p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xl">{e.icon}</span>
+                        <h3 className="font-heading font-semibold text-surface-800 text-sm">{e.title}</h3>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{e.body}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mt-4 text-sm text-primary-800">
+                  💡 <strong>No Registration Fee for SC/ST:</strong> UPSSSC PET application is free for SC/ST/PwBD candidates domiciled in UP. General/OBC fee is ₹25 only — one of the cheapest exams to apply for.
+                </div>
+              </section>
+
+              {/* 4. CYCLE HISTORY */}
+              <section id="vacancy-history" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">4</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">PET Cycle History (2021–2026)</h2>
+                </div>
+                <p className="text-sm text-surface-600 mb-4">UPSSSC PET has been conducted annually since 2021. Each year the number of applicants has grown, reflecting UP government's push for more Group C recruitments.</p>
+                <div className="card overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">Cycle</th>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">Exam Date</th>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">Result</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">Applicants</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">Score Valid</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {cycleHistory.map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                            <td className="p-3 font-semibold text-surface-800">{row.year}</td>
+                            <td className="p-3 text-surface-600">{row.exam}</td>
+                            <td className="p-3 text-surface-600">{row.result}</td>
+                            <td className="p-3 text-center font-bold text-primary-600">{row.applicants}</td>
+                            <td className="p-3 text-center text-surface-600">{row.scoreValid}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              {/* 5. EXAM PATTERN */}
+              <section id="exam-pattern" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">5</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">UPSSSC PET 2026 Exam Pattern</h2>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                  {[
+                    { label: 'Total Questions', value: '100',       sub: 'All MCQ (1 mark each)', bg: 'bg-primary-50 border-primary-200' },
+                    { label: 'Total Marks',      value: '100',       sub: 'Each correct = 1 mark',  bg: 'bg-emerald-50 border-emerald-200' },
+                    { label: 'Duration',         value: '2 Hours',   sub: '120 minutes total',      bg: 'bg-amber-50 border-amber-200' },
+                  ].map((s, i) => (
+                    <div key={i} className={`card p-5 border ${s.bg} text-center`}>
+                      <div className="text-3xl font-heading font-bold text-surface-800">{s.value}</div>
+                      <div className="text-sm font-heading font-semibold text-surface-700 mt-1">{s.label}</div>
+                      <div className="text-xs text-surface-500 mt-1">{s.sub}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5 text-sm text-emerald-800">
+                  ✅ <strong>No Negative Marking!</strong> Every unanswered question is a wasted opportunity — attempt all 100 questions. Even a random guess gives you a 25% chance of scoring.
+                </div>
+
+                <div className="card overflow-hidden">
+                  <div className="bg-surface-50 border-b border-surface-200 p-3 text-xs text-surface-500 font-heading font-medium">
+                    Subject-wise marks distribution (15 subjects | 100 total marks)
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">S.No</th>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">Subject</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          ['01', 'Indian History',                        '5'],
+                          ['02', 'Indian National Movement',              '5'],
+                          ['03', 'Geography (India + World)',             '5'],
+                          ['04', 'Indian Economy',                        '5'],
+                          ['05', 'Indian Constitution & Public Admin',    '5'],
+                          ['06', 'General Science',                       '5'],
+                          ['07', 'Elementary Mathematics (Up to 8th)',    '5'],
+                          ['08', 'General Hindi',                         '5'],
+                          ['09', 'General English (Up to 8th)',           '5'],
+                          ['10', 'Reasoning & Mental Ability',            '5'],
+                          ['11', 'General Awareness (Current Affairs)',   '10'],
+                          ['12', 'Hindi Apathit Gadyansh (2 passages)',   '10'],
+                          ['13', 'English Apathit Gadyansh (2 passages)', '10'],
+                          ['14', 'Graph Interpretation (2 graphs)',       '10'],
+                          ['15', 'Table Interpretation (2 tables)',       '10'],
+                        ].map(([num, subject, marks], i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                            <td className="p-3 text-surface-500 font-heading font-semibold">{num}</td>
+                            <td className="p-3 text-surface-800">{subject}</td>
+                            <td className="p-3 text-center">
+                              <span className={`font-heading font-bold text-sm ${parseInt(marks) >= 10 ? 'text-primary-600' : 'text-surface-700'}`}>{marks}</span>
+                            </td>
+                          </tr>
+                        ))}
+                        <tr className="bg-primary-50 border-t-2 border-primary-200">
+                          <td className="p-3 font-heading font-bold text-surface-900" colSpan={2}>Total</td>
+                          <td className="p-3 text-center font-heading font-bold text-primary-600 text-base">100</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              {/* 6. SYLLABUS */}
+              <section id="syllabus" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">6</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus – All 15 Subjects</h2>
+                </div>
+                <div className="space-y-3">
+                  {syllabusSubjects.map((s, i) => (
+                    <details key={i} className={`card border ${s.color} group overflow-hidden`}>
+                      <summary className="p-4 cursor-pointer list-none flex items-center gap-3">
+                        <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-heading font-bold flex-shrink-0 ${s.labelColor} bg-white border border-current/20`}>{s.num}</span>
+                        <span className={`flex-1 font-heading font-semibold text-sm ${s.labelColor}`}>{s.subject}</span>
+                        <span className="text-xs font-heading font-bold text-surface-500 bg-white px-2 py-0.5 rounded-full border border-surface-200">{s.marks} marks</span>
+                        <svg className="w-4 h-4 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </summary>
+                      <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {s.topics.map((t, j) => (
+                          <div key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="text-primary-400 mt-1 flex-shrink-0">→</span>{t}
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              {/* 7. CUTOFFS */}
+              <section id="cutoff" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">7</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year Cut-offs (Out of 100)</h2>
+                </div>
+                <div className="bg-surface-50 rounded-xl p-4 border border-surface-200 mb-4 text-sm text-surface-600">
+                  ⚠️ <strong>Note:</strong> Cut-offs vary for each subsequent recruitment (Lekhpal, VDO, etc.) using PET scores. The figures below are approximate <strong>PET merit list cut-offs</strong> to qualify for further recruitments. Category-specific recruitment cut-offs may differ.
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">Category</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">PET 2021</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">PET 2022</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">PET 2023</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">PET 2024</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {cutoffData.map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                            <td className="p-3 font-semibold text-surface-800">{row.category}</td>
+                            <td className="p-3 text-center text-surface-600">{row.pet2021}</td>
+                            <td className="p-3 text-center text-surface-600">{row.pet2022}</td>
+                            <td className="p-3 text-center text-surface-600">{row.pet2023}</td>
+                            <td className="p-3 text-center font-bold text-primary-600">{row.pet2024}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              {/* 8. AFTER PET – POSTS */}
+              <section id="after-pet" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">8</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">After PET – Posts You Can Apply For</h2>
+                </div>
+                <p className="text-sm text-surface-600 mb-4">Once you clear UPSSSC PET, your score remains valid for 1 year and you can apply for these major Group C recruitment exams without reappearing for PET:</p>
+                <div className="card overflow-hidden mb-4">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">Post</th>
+                          <th className="text-left p-3 text-xs font-heading font-semibold uppercase tracking-wide">Department</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">Pay Level</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">Salary</th>
+                          <th className="text-center p-3 text-xs font-heading font-semibold uppercase tracking-wide">Vacancies 2024</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {postsAfterPet.map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                            <td className="p-3 font-semibold text-surface-800">{row.post}</td>
+                            <td className="p-3 text-surface-600 text-xs">{row.ministry}</td>
+                            <td className="p-3 text-center"><span className="badge-primary">{row.payLevel}</span></td>
+                            <td className="p-3 text-center font-semibold text-emerald-600 text-xs">{row.basicPay}</td>
+                            <td className="p-3 text-center text-xs text-surface-600">{row.vacancies2024}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 text-sm text-primary-800">
+                  💡 <strong>Strategy Tip:</strong> Target Lekhpal or VDO as your primary goal after PET — both have large vacancies (5,000–10,000 combined) and offer stable government jobs with good pay and UP posting. Decide your target post before PET so your preparation for the main exam starts alongside PET prep.
+                </div>
+              </section>
+
+              {/* 9. HOW TO APPLY */}
+              <section id="how-to-apply" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">9</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for UPSSSC PET 2026</h2>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { step: 1, title: 'Register on UPSSSC Portal',     body: 'Visit upsssc.gov.in. Click "Apply" → "New Registration". Enter your name, mobile number and email. You will receive an OTP. Verify and create a password. Save your Registration Number.' },
+                    { step: 2, title: 'Fill Application Form',          body: 'Login with your credentials. Fill personal details, educational qualification, category, gender and UP domicile details accurately. Cross-check everything before proceeding — corrections are only allowed in the correction window.' },
+                    { step: 3, title: 'Upload Photo & Signature',       body: 'Upload a recent colour passport-size photo (20–50 KB, JPEG) and your handwritten signature (10–20 KB, JPEG). Dimensions: Photo 3.5×4.5 cm, Signature 3.5×1.5 cm.' },
+                    { step: 4, title: 'Pay Application Fee',            body: 'General/OBC: ₹25 | SC/ST/PwBD (UP domicile): ₹0. Payment via SBI Net Banking, Debit/Credit Card or SBI Challan. Keep payment receipt for records.' },
+                    { step: 5, title: 'Submit & Print',                 body: 'Submit the form and download/print the confirmation page. Store it safely along with your payment receipt. Your application ID will be needed for admit card and all future correspondence.' },
+                  ].map((s) => (
+                    <div key={s.step} className="card p-5 flex gap-4">
+                      <div className="w-8 h-8 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm flex-shrink-0">{s.step}</div>
+                      <div>
+                        <h3 className="font-heading font-semibold text-surface-800 mb-1 text-sm">{s.title}</h3>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4">
+                  <a href="https://upsssc.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+                    🌐 Apply at upsssc.gov.in
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                </div>
+              </section>
+
+              {/* 10. STUDY PLAN */}
+              <section id="study-plan" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">10</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">4-Month Study Plan for UPSSSC PET 2026</h2>
+                </div>
+                <div className="relative space-y-5">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  {studyPlan.map((phase, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="text-xs font-heading font-bold text-primary-500 uppercase tracking-wide mb-1">{phase.week}</div>
+                        <h3 className="font-heading font-semibold text-surface-800 mb-3">{phase.title}</h3>
+                        <ul className="space-y-1.5">
+                          {phase.tasks.map((task, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                              <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>{task}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 11. BOOKS */}
+              <section id="books" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">11</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for UPSSSC PET 2026</h2>
+                </div>
+                <BooksTable books={books} />
+              </section>
+
+              {/* 12. FREE RESOURCES */}
+              <section id="resources" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">12</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Study Resources</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {resources.map((r, i) => (
+                    <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition-colors">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-xl">{r.type === 'youtube' ? '📺' : '🌐'}</span>
+                        <span className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors text-sm">{r.name}</span>
+                        <span className={`ml-auto text-xs px-2 py-0.5 rounded-full font-heading font-medium ${r.type === 'youtube' ? 'bg-red-100 text-red-600' : 'bg-blue-100 text-blue-600'}`}>
+                          {r.type === 'youtube' ? 'YouTube' : 'Website'}
+                        </span>
+                      </div>
+                      <p className="text-xs text-surface-500 leading-relaxed">{r.description}</p>
+                    </a>
+                  ))}
+                </div>
+              </section>
+
+              {/* 13. TIPS */}
+              <section id="tips" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">13</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips to Crack UPSSSC PET 2026</h2>
+                </div>
+                <div className="space-y-3">
+                  {tips.map((t, i) => (
+                    <div key={i} className="card p-5 flex gap-4">
+                      <span className="text-2xl flex-shrink-0">{t.icon}</span>
+                      <div>
+                        <h3 className="font-heading font-semibold text-surface-800 mb-1 text-sm">{t.tip}</h3>
+                        <p className="text-sm text-surface-600 leading-relaxed">{t.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 14. FAQ */}
+              <section id="faq" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">14</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">UPSSSC PET 2026 – Frequently Asked Questions</h2>
+                </div>
+                <div className="space-y-3">
+                  {faqs.map((faq, i) => (
+                    <details key={i} className="card group overflow-hidden">
+                      <summary className="p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-500 transition-colors list-none flex items-start justify-between gap-3">
+                        <span className="text-sm">{faq.q}</span>
+                        <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </summary>
+                      <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+            </div>
+
+            {/* ── STICKY SIDEBAR ── */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-6 space-y-5">
+
+                {/* TOC */}
+                <div className="card p-5">
+                  <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 ON THIS PAGE</div>
+                  <nav className="space-y-1">
+                    {toc.map((item) => (
+                      <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 hover:pl-1 transition-all">
+                        {item.label}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+
+                {/* OFFICIAL SITE */}
+                <a href="https://upsssc.gov.in" target="_blank" rel="noopener noreferrer" className="card p-5 block hover:border-primary-300 transition-colors">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-2">🌐 Official UPSSSC Website</div>
+                  <p className="text-xs text-surface-500 mb-3">Get official notifications, admit cards, answer keys and results directly from UPSSSC.</p>
+                  <span className="text-xs text-primary-500 font-heading font-medium">upsssc.gov.in →</span>
+                </a>
+
+                {/* KEY FACTS */}
+                <div className="card p-5">
+                  <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">⚡ PET QUICK FACTS</div>
+                  <div className="space-y-2.5">
+                    {[
+                      { label: 'Qualification',    value: '10th Pass' },
+                      { label: 'Age (General)',    value: '18–40 years' },
+                      { label: 'Total Marks',      value: '100 (1 hr 100 Q)' },
+                      { label: 'Negative Marking', value: '❌ None' },
+                      { label: 'Score Validity',   value: '1 Year' },
+                      { label: 'Application Fee',  value: '₹25 (Gen/OBC)' },
+                      { label: 'Language',         value: 'Hindi & English' },
+                      { label: 'Mode',             value: 'OMR Offline' },
+                    ].map((f, i) => (
+                      <div key={i} className="flex items-start justify-between gap-2 text-xs">
+                        <span className="text-surface-400">{f.label}</span>
+                        <span className="font-heading font-semibold text-surface-700 text-right">{f.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* POSTS AFTER PET */}
+                <div className="card p-5">
+                  <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">🎯 POSTS AFTER PET</div>
+                  <div className="space-y-2">
+                    {[
+                      { name: 'UPSSSC Lekhpal',          href: '/exams/upsssc-pet/' },
+                      { name: 'VDO (Village Dev Officer)',  href: '/exams/upsssc-pet/' },
+                      { name: 'Junior Assistant / Clerk', href: '/exams/upsssc-pet/' },
+                      { name: 'Forest Guard',             href: '/exams/upsssc-pet/' },
+                    ].map((p, i) => (
+                      <Link key={i} href={p.href} className="block text-sm text-primary-600 hover:text-primary-700 py-0.5">
+                        → {p.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* ELIGIBILITY CHECKER */}
+                <Link href="/tools/eligibility-checker/" className="card p-4 block hover:border-primary-300 transition-colors">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                  <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to check if you qualify for UPSSSC PET 2026.</p>
+                  <span className="text-xs text-primary-500 font-heading font-medium mt-2 block">Open Calculator →</span>
+                </Link>
+
+              </div>
+            </aside>
+
+          </div>
         </div>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
