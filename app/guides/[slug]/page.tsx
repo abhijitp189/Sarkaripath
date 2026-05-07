@@ -23,7 +23,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-start-government-exam-preparation': 'Complete beginner\'s roadmap to government exam preparation in 2026. Which exam to choose, 12-month study plan, free resources, daily timetables, and the mistakes that fail 90% of aspirants. From zero to selection.',
     'how-to-fill-government-job-application-form': 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo & signature upload specs, fee payment, common mistakes to avoid, and correction window details.',
     'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
-    'age-limit-relaxation-government-jobs': '"Age relaxation" means extra years added to the upper age limit for your category. OBC gets +3 years, SC/ST +5 years, PwBD +10–15 years, Ex-Servicemen +5 years. Full exam-wise table for UPSC, SSC, IBPS & Railway 2026.',
+    'age-limit-relaxation-government-jobs': 'Updated for May 2026 with Amit Shah\'s 5-year relief announcement. OBC gets +3 years, SC/ST +5 years, PwBD +10–15 years. Exam-wise age limit table for UPSC, SSC CGL, IBPS, SBI PO & Railway 2026.',
     'study-plan-working-professionals': 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, 14-hour weekend strategy, best apps for micro-learning, and how to manage burnout as a working aspirant.',
     'documents-needed-government-job': 'Complete 2026 checklist of documents needed for government job applications and document verification. Covers ID proof, educational certificates, OBC/SC/ST/EWS reservation documents, NOC, and pro tips to avoid rejection in SSC, IBPS, UPSC, SBI, and Railway exams.',
   };
@@ -1995,7 +1995,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
           <div className="bg-gradient-to-br from-primary-500 to-primary-800 rounded-2xl p-8 mb-10 text-white">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="bg-white/20 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">{guide.category}</span>
-              <span className="text-white/70 text-xs">Updated April 2026</span>
+              <span className="text-white/70 text-xs">Updated May 2026</span>
               <span className="text-white/50 text-xs">•</span>
               <span className="text-white/70 text-xs">{guide.readTime}</span>
             </div>
@@ -2020,6 +2020,17 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
             </div>
           </div>
 
+          {/* 2026 Key Update Alert */}
+          <div className="bg-amber-50 border border-amber-300 rounded-xl p-5 mb-8 flex gap-3">
+            <span className="text-2xl flex-shrink-0">💡</span>
+            <div>
+              <p className="font-heading font-bold text-amber-800 text-sm mb-1">2026 Key Update — One-Time 5-Year Age Relief for SSC Candidates</p>
+              <p className="text-sm text-amber-900 leading-relaxed">
+                Union Home Minister Amit Shah has announced a <strong>one-time age relaxation of up to 5 years</strong> for SSC candidates who crossed the age limit due to recent recruitment delays and administrative irregularities. This special relief is intended for aspirants affected by exam postponements and recruitment scams. Ensure you check the official 2026 SSC notification for the <strong>&ldquo;One-Time Relief&rdquo;</strong> checkbox when applying.
+              </p>
+            </div>
+          </div>
+
           {/* Section 1 — How Age Limits Work */}
           <GSection id="how-age-works" title="How Age Limits Work in Government Exams">
             <p className="text-surface-600 leading-relaxed mb-4">
@@ -2028,7 +2039,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
               {[
                 { exam: 'UPSC / SSC exams', cutoff: '1st August of the exam year', note: 'E.g., for UPSC CSE 2026: age as on 01-08-2026' },
-                { exam: 'SSC CGL / CHSL', cutoff: '1st January of the exam year', note: 'E.g., for SSC CGL 2026: age as on 01-01-2026' },
+                { exam: 'SSC CGL / CHSL 2026', cutoff: '1st August 2026 (Tentative)', note: 'SSC typically uses Aug 1 when notification is released after July. Verify in official notification.' },
                 { exam: 'Banking (IBPS / SBI)', cutoff: '1st of the notification month', note: 'Exact date mentioned in the CRP notification' },
               ].map(item => (
                 <div key={item.exam} className="card p-4">
@@ -2082,6 +2093,15 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
               </table>
             </div>
             <p className="text-xs text-surface-400">* &ldquo;Effective Max Age&rdquo; shown for 30 yrs (Banking) / 32 yrs (SSC/UPSC) base limits. Railway NTPC base is 33 yrs so add relaxation accordingly. Always check the official notification for the exact upper age limit of the specific post.</p>
+            <div className="mt-4 bg-primary-50 border border-primary-200 rounded-xl p-4 flex items-center justify-between gap-4">
+              <div>
+                <p className="font-heading font-semibold text-primary-800 text-sm">🔧 Check Your Personal Eligibility Instantly</p>
+                <p className="text-xs text-primary-700 mt-0.5">Enter your age, category &amp; qualification — get a list of all govt exams you qualify for in 2026.</p>
+              </div>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs py-2 px-4 flex-shrink-0 whitespace-nowrap">
+                Open Tool →
+              </Link>
+            </div>
           </GSection>
 
           {/* Section 3 — OBC */}
@@ -2334,15 +2354,15 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
                 <tbody>
                   {[
                     ['UPSC CSE (IAS)', '21', '32', '35', '37', '1st August'],
-                    ['SSC CGL', '18', '27–32 (post-wise)', '30–35', '32–37', '1st January'],
-                    ['SSC CHSL', '18', '27', '30', '32', '1st January'],
+                    ['SSC CGL 2026', '18', '27–32 (post-wise)', '30–35', '32–37', '01-08-2026 (Tentative)'],
+                    ['SSC CHSL 2026', '18', '27', '30', '32', '01-08-2026 (Tentative)'],
                     ['SSC MTS', '18', '25', '28', '30', '1st August'],
                     ['IBPS PO (CRP PO)', '20', '30', '33', '35', '1st of notification month'],
                     ['IBPS Clerk (CRP Clerk)', '20', '28', '31', '33', '1st of notification month'],
-                    ['SBI PO', '21', '30', '33', '35', '1st April'],
+                    ['SBI PO', '21', '30', '33', '35', '1st April 2026'],
                     ['SBI Clerk', '20', '28', '31', '33', '1st April'],
-                    ['RRB NTPC (Graduate)', '18', '33', '36', '38', '1st January of notification year'],
-                    ['RRB NTPC (Undergraduate)', '18', '30', '33', '35', '1st January of notification year'],
+                    ['RRB NTPC 2026 (Graduate)', '18', '33', '36', '38', '01-01-2026'],
+                    ['RRB NTPC 2026 (Undergraduate)', '18', '30', '33', '35', '01-01-2026'],
                     ['RRB Group D', '18', '33', '36', '38', '1st July of notification year'],
                     ['SSC CPO (SI/ASI)', '20', '25', '28', '30', '1st August'],
                     ['SSC GD Constable', '18', '23', '26', '28', 'As per notification'],
@@ -2360,6 +2380,15 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
               </table>
             </div>
             <p className="text-xs text-surface-400 mt-3">Sources: UPSC CSE Notification, SSC CGL Notification, IBPS CRP PO/MT Notification, SBI PO Notification, RRB NTPC Notification (various cycles). All figures are for central government exams. State PSC exams have separate age limits. Always verify from the official notification PDF before applying.</p>
+            <div className="mt-4 bg-red-50 border border-red-200 rounded-xl p-4 flex gap-3">
+              <span className="text-xl flex-shrink-0">📌</span>
+              <div>
+                <p className="font-heading font-semibold text-red-800 text-sm mb-1">2026 Note — RRB &ldquo;3-Year Extra&rdquo; Relaxation Has Expired</p>
+                <p className="text-sm text-red-900 leading-relaxed">
+                  The 3-year &ldquo;Covid-compensation&rdquo; relaxation that was active in 2024–25 RRB recruitment cycles is <strong>not currently active</strong> for 2026 notifications unless specifically mentioned in the new official PDF. The standard RRB NTPC age limits are back to normal: <strong>33 years for Graduate posts</strong> and <strong>30 years for UG posts</strong> (General category).
+                </p>
+              </div>
+            </div>
           </GSection>
 
           {/* Section 10 — Documents */}

@@ -514,6 +514,7 @@ export const exams: Exam[] = [
       { category: 'OBC', relaxation: '+3 years' },
       { category: 'SC/ST', relaxation: '+5 years' },
       { category: 'PwBD', relaxation: '+10 years (General), +13 (OBC), +15 (SC/ST)' },
+      { category: '2026 Note', relaxation: 'The 3-year Covid-era relaxation from 2024–25 cycles has expired. Standard limits apply: 33 yrs (Grad), 30 yrs (UG). Verify in the current notification on rrbcdg.gov.in.' },
     ],
     qualification: '12th Pass (for some posts) to Graduation (for most posts). Varies by post – check notification for specific requirements.',
     examStages: [

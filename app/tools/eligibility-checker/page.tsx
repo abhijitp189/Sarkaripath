@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: 'How is age calculated for government exam eligibility in 2026?',
-    answer: 'Most central government exams use 1st August of the exam year as the age cut-off date. For SSC CGL 2026, the cut-off is 1st January 2026. For IBPS PO and SBI PO, it is the date mentioned in the official notification. This tool uses 1st August as the standard default reference date.',
+    answer: 'Most central government exams use 1st August of the exam year as the age cut-off date. For SSC CGL 2026, the cut-off is tentatively <strong>1st August 2026</strong> — SSC typically uses Aug 1 when the notification is released after July (the 2026 notification was released in March). For IBPS PO and SBI PO, it is the date mentioned in the official notification. This tool uses 1st August as the standard default reference date.',
   },
   {
     question: 'Do OBC, SC/ST candidates get age relaxation in government exams in 2026?',

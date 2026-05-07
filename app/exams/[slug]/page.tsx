@@ -335,6 +335,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rpf-si') {
+    return {
+      title: 'RPF SI 2026 – Vacancy, Syllabus, PET/PMT, Salary & Complete Guide | TaiyarHo',
+      description: 'RPF Sub-Inspector 2026: Notification TBN. Graduate eligible, age 20–28 yrs. Salary ₹35,400–₹1,12,400/month (Pay Level 6). CBT 120 Qs (90 min), PET/PMT physical standards, full syllabus and preparation guide.',
+      keywords: 'RPF SI 2026, RPF Sub Inspector 2026, rpf si vacancy 2026, rpf si notification 2026, rpf si syllabus, rpf si salary, rpf si age limit, rpf si physical test, Railway Protection Force SI, आरपीएफ सब-इंस्पेक्टर 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rpf-si/' },
+      other: { 'description:hi': 'RPF Sub-Inspector 2026 – अधिसूचना जल्द। स्नातक पात्र, आयु 20–28 वर्ष। वेतन ₹35,400–₹1,12,400/माह (Pay Level 6)। CBT 120 प्रश्न (90 मिनट), PET/PMT शारीरिक मानक, पूरा सिलेबस और तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'rpf-constable') {
     return {
       title: 'RPF Constable 2026 – Vacancy, Salary, Syllabus, PET/PMT & Complete Guide | TaiyarHo',
@@ -342,6 +352,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       keywords: 'RPF Constable 2026, rpf constable vacancy 2026, rpf constable notification 2026, rpf constable training 2026, RPF Constable salary, rpf constable age limit 2026, Railway Protection Force Constable, आरपीएफ कांस्टेबल भर्ती 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/rpf-constable/' },
       other: { 'description:hi': 'RPF Constable 2026 – नई अधिसूचना जल्द। 10वीं पास पात्र, आयु 18–25 वर्ष। वेतन ₹21,700–₹69,100/माह। CBT 120 प्रश्न, PET/PMT मानक, ट्रेनिंग विवरण और पूरी गाइड।' },
+    };
+  }
+
+  if (params.slug === 'upsc-cds') {
+    return {
+      title: 'UPSC CDS 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'UPSC CDS 2026: CDS I exam on 13 Apr 2026 (done). CDS II notification expected Sep 2026. ~339–400 vacancies for IMA, INA, AFA & OTA. Graduate eligible. Age 19–25 yrs. Written + SSB Interview. Salary ₹56,100+/month.',
+      keywords: 'UPSC CDS 2026, CDS exam 2026, CDS syllabus Hindi, CDS 1 2026, CDS 2 2026, combined defence services, IMA INA AFA OTA, CDS taiyari, CDS sarkari naukri, army officer bharti 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/upsc-cds/' },
+      other: { 'description:hi': 'UPSC CDS 2026 – CDS I परीक्षा 13 अप्रैल 2026 को हो चुकी। CDS II अधिसूचना सितम्बर 2026 में अपेक्षित। ~339–400 रिक्तियाँ (IMA, INA, AFA, OTA)। स्नातक पात्र। आयु 19–25 वर्ष। लिखित परीक्षा + SSB साक्षात्कार। वेतन ₹56,100+/माह।' },
     };
   }
 
@@ -420,6 +440,8 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'rpf-constable') return <RpfConstablePage exam={brief} />;
+  if (brief && brief.slug === 'rpf-si') return <RpfSiPage exam={brief} />;
+  if (brief && brief.slug === 'upsc-cds') return <UpscCdsPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -10573,6 +10595,12 @@ function RrbNtpcPage({ exam }: { exam: any }) {
                       </tbody>
                     </table>
                   </div>
+                  <div className="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3 flex gap-2">
+                    <span className="text-base flex-shrink-0">📌</span>
+                    <p className="text-xs text-amber-900 leading-relaxed">
+                      <strong>2026 Note:</strong> The 3-year &ldquo;Covid-compensation&rdquo; relaxation from 2024–25 cycles is <strong>not active</strong> for 2026 notifications unless specifically mentioned in the new PDF. Standard limits apply: <strong>33 yrs (Grad)</strong> and <strong>30 yrs (UG)</strong> for General category.
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -16589,7 +16617,7 @@ function SbiPoPage({ exam }: { exam: any }) {
                     <span className="text-lg">📋</span>
                     <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
                   </div>
-                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>21 years</strong> | Maximum: <strong>30 years</strong> (as of the cut-off date in the notification)</p>
+                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>21 years</strong> | Maximum: <strong>30 years</strong> (as of <strong>1st April 2026</strong> — the official cut-off date for the upcoming cycle)</p>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead className="bg-surface-50 border border-surface-200">
@@ -26320,6 +26348,1643 @@ function UpssscPetPage({ exam }: { exam: any }) {
         </div>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── RPF SI 2026 RICH PAGE ────────────────────────────────────────────────────
+function RpfSiPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'physical',        label: 'Physical Standards & PET' },
+    { id: 'vacancies',       label: 'Vacancy History' },
+    { id: 'exam-pattern',    label: 'Exam Pattern (CBT)' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'cutoff',          label: 'Previous Year Cut-offs' },
+    { id: 'salary',          label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'RPF SI 2024 Notification Released',           date: 'April 2024',           status: 'released' },
+    { event: 'RPF SI 2024 Online Application Opens',        date: '15 April 2024',         status: 'released' },
+    { event: 'RPF SI 2024 Application Last Date',           date: '14 May 2024',           status: 'released' },
+    { event: 'RPF SI 2024 CBT (Computer Based Test)',       date: 'Sep – Nov 2024',        status: 'released' },
+    { event: 'RPF SI 2024 CBT Result',                      date: 'December 2024',         status: 'released' },
+    { event: 'RPF SI 2024 PET / PMT',                       date: 'Jan – Feb 2025',        status: 'released' },
+    { event: 'RPF SI 2024 Document Verification',           date: 'March – April 2025',    status: 'released' },
+    { event: 'RPF SI 2024 Final Merit List',                date: 'May 2025',              status: 'released' },
+    { event: '⚠️ RPF SI 2026 – Notification',               date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: '⚠️ RPF SI 2026 – Online Application',         date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: '⚠️ RPF SI 2026 – CBT Exam',                   date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: '⚠️ RPF SI 2026 – PET / PMT',                  date: 'To Be Notified (TBN)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'RPF SI 2018',            vacancies: '1,120', cbt: '2018', remarks: 'Last large-scale recruitment' },
+    { year: 'RPF SI 2024',            vacancies: '452',   cbt: 'Sep–Nov 2024', remarks: 'Latest completed cycle' },
+    { year: 'RPF SI 2026 (upcoming)', vacancies: '500–2,000 (Expected)', cbt: 'TBN', remarks: 'Notification awaited' },
+  ];
+
+  const cbtPattern = [
+    { subject: 'General Awareness',             questions: 50, marks: 50 },
+    { subject: 'Arithmetic',                    questions: 35, marks: 35 },
+    { subject: 'General Intelligence & Reasoning', questions: 35, marks: 35 },
+  ];
+
+  const physicalMaleSI = [
+    { test: 'Height',        general: '165 cm',         scSt: '160 cm',  remarks: 'Min. requirement' },
+    { test: 'Chest',         general: '80–85 cm',       scSt: '76.2–81.2 cm', remarks: '5 cm expansion mandatory' },
+    { test: 'Weight',        general: 'Proportionate',  scSt: 'Proportionate', remarks: 'To height & age' },
+  ];
+
+  const physicalFemaleSI = [
+    { test: 'Height',        general: '157 cm',        scSt: '152 cm',  remarks: 'Min. requirement' },
+    { test: 'Weight',        general: '48 kg',         scSt: '45 kg',   remarks: 'Min. requirement' },
+  ];
+
+  const petMale = [
+    { event: '1600 m Run',    standard: 'Complete in 6 min 30 sec',    attempts: 'Single attempt' },
+    { event: 'Long Jump',     standard: '14 feet (4.27 m)',            attempts: '3 chances' },
+    { event: 'High Jump',     standard: '4 feet (1.22 m)',             attempts: '3 chances' },
+  ];
+
+  const petFemale = [
+    { event: '800 m Run',     standard: 'Complete in 4 min',           attempts: 'Single attempt' },
+    { event: 'Long Jump',     standard: '9 feet (2.74 m)',             attempts: '3 chances' },
+    { event: 'High Jump',     standard: '3 feet (0.91 m)',             attempts: '3 chances' },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS (Male)',   cbt2024: '~72–76', cbt2018: '~68–72' },
+    { category: 'OBC (Male)',             cbt2024: '~68–72', cbt2018: '~63–67' },
+    { category: 'SC (Male)',              cbt2024: '~58–62', cbt2018: '~54–58' },
+    { category: 'ST (Male)',              cbt2024: '~52–56', cbt2018: '~48–52' },
+    { category: 'General / EWS (Female)',  cbt2024: '~65–70', cbt2018: '~60–65' },
+    { category: 'OBC (Female)',            cbt2024: '~60–65', cbt2018: '~55–60' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Pay Level 6, Cell 1)',                         amount: '₹35,400/month' },
+    { component: 'Dearness Allowance (DA) @ ~57% of Basic (Jan 2026)',      amount: '~₹20,178/month' },
+    { component: 'House Rent Allowance – X City (24% of Basic)',            amount: '₹8,496/month' },
+    { component: 'House Rent Allowance – Y City (16% of Basic)',            amount: '₹5,664/month' },
+    { component: 'Transport Allowance (TPTA) + Other Allowances',           amount: '~₹3,600–₹5,400/month' },
+    { component: 'Railway Pass (Free travel on Indian Railways)',            amount: 'In-kind perk' },
+    { component: 'Estimated Gross In-Hand (X City)',                        amount: '~₹65,000–₹72,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Sub-Inspector (SI)',        grade: 'Level 6',  pay: '₹35,400–₹1,12,400',  note: 'Entry after training' },
+    { level: 'Inspector',                 grade: 'Level 7',  pay: '₹44,900–₹1,42,400',  note: '~5 yrs (DPC)' },
+    { level: 'Inspector (Senior)',        grade: 'Level 8',  pay: '₹47,600–₹1,51,100',  note: '~10 yrs' },
+    { level: 'Dy. Security Commissioner', grade: 'Level 10', pay: '₹56,100–₹1,77,500',  note: 'Gazetted Officer' },
+    { level: 'Security Commissioner',     grade: 'Level 11', pay: '₹67,700–₹2,08,700',  note: 'Senior IPS-equivalent' },
+    { level: 'Principal Chief Security Commissioner', grade: 'Level 13', pay: '₹1,23,100–₹2,15,900', note: 'Top RPF position' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🌐 General Awareness (50 Marks)',
+      topics: [
+        'Current Affairs – National & International (last 6 months)',
+        'History of India – Ancient, Medieval, Modern & Freedom Struggle',
+        'Geography – Physical & Political (India + World)',
+        'Indian Polity & Constitution – Features, Amendments, Bodies',
+        'Indian Economy – Budget highlights, GDP, poverty, schemes',
+        'Science & Technology – Physics, Chemistry, Biology (basic)',
+        'Environment & Ecology – Conservation, Climate Change, SDGs',
+        'Sports – Major tournaments, India\'s performance, awards',
+        'Awards & Honours – Padma, Bharat Ratna, Nobel, Arjuna',
+        'Important Days, Personalities & Appointments',
+        'Railways – Indian Railways structure, zones, initiatives, Vande Bharat',
+        'RPF / RPSF – History, functions, recent operations, jurisdiction',
+      ],
+    },
+    {
+      subject: '🔢 Arithmetic (35 Marks)',
+      topics: [
+        'Number System, BODMAS, Simplification',
+        'Decimals, Fractions & HCF/LCM',
+        'Percentage, Average & Ratio-Proportion',
+        'Profit & Loss, Discount',
+        'Simple Interest & Compound Interest',
+        'Time, Speed & Distance – Trains, Boats & Streams',
+        'Time & Work, Pipe & Cistern',
+        'Mensuration – Areas & Volumes (2D and 3D)',
+        'Algebra – Basic equations',
+        'Data Interpretation – Bar, Pie, Table (basic level)',
+      ],
+    },
+    {
+      subject: '🧩 General Intelligence & Reasoning (35 Marks)',
+      topics: [
+        'Number Series, Alphabet Series',
+        'Analogies (Number, Letter, Semantic)',
+        'Classification / Odd One Out',
+        'Coding-Decoding',
+        'Blood Relations',
+        'Direction & Distance',
+        'Ranking & Arrangement',
+        'Seating Arrangement (linear & circular, basic)',
+        'Syllogisms (2-statement)',
+        'Statement & Conclusions / Assumptions',
+        'Venn Diagrams (basic)',
+        'Mirror & Water Images, Paper Folding, Embedded Figures',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Arithmetic Foundation', detail: 'Cover Number Systems, Percentage, Ratio, Profit & Loss, and SI/CI. Solve 20–30 Arithmetic questions daily. Start reading a daily newspaper (The Hindu or Dainik Jagran) for 15 minutes every morning — builds both General Awareness and reading habit. Finish Lucent\'s GK Chapter 1 (History) in parallel.' },
+    { month: 'Month 2', focus: 'Reasoning + Advanced Arithmetic', detail: 'Complete all Reasoning topics — Series, Analogies, Coding-Decoding, Blood Relations, and Directions first. Move to Seating Arrangement and Syllogisms. For Arithmetic: tackle Time-Work, Speed-Distance, and Mensuration. Practice 1 topic mock daily.' },
+    { month: 'Month 3', focus: 'General Awareness – Static GK', detail: 'This is the highest-scoring section at 50 marks. Complete Lucent\'s GK: History, Geography, Polity, Economy, and Science. Make a one-page cheat sheet per chapter. Study Indian Railways structure, RPF\'s role, important zones, and recent railway initiatives — these are frequently asked and often ignored.' },
+    { month: 'Month 4', focus: 'Current Affairs + Mock Tests Start', detail: 'Cover last 6 months of Current Affairs using monthly PDF capsules (Adda247, GK Today). Read about government schemes, sports news, appointments, and awards. Start taking 1 full CBT mock per week. Analyse your weak spots — don\'t repeat mock tests without analysis.' },
+    { month: 'Month 5', focus: 'Revision + Physical Preparation', detail: 'Final revision of all three subjects. Focus heavily on General Awareness — it\'s where toppers gain the most ground. Simultaneously, begin physical preparation: daily 1600 m run with a timer, practice long jump and high jump. Don\'t start physical prep only after CBT — PET comes quickly after results.' },
+    { month: 'Month 6', focus: 'Full-Speed Mocks + PET Readiness', detail: 'Take 2–3 full CBT mocks per week. Target 80–90 out of 120. Analyse every mock. Ensure you\'re meeting PET standards: run 1600 m consistently under 6:30 (male) or 800 m under 4:00 (female). Keep current affairs current — read daily capsules till exam day.' },
+  ];
+
+  const books = [
+    { title: 'Lucent\'s General Knowledge',              author: 'Dr. Binay Karna',         subject: 'General Awareness (GK)' },
+    { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Arithmetic' },
+    { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' },
+    { title: 'RPF Sub-Inspector Previous Year Papers',   author: 'Kiran Publications',      subject: 'Previous Year Papers' },
+    { title: 'RPF/RPSF SI Practice Sets 2026',           author: 'Arihant Experts',         subject: 'Full Mock Tests' },
+    { title: 'Current Affairs Monthly Capsule',          author: 'Adda247 / GK Today',      subject: 'Current Affairs (GK)' },
+    { title: 'Fast Track Objective Arithmetic',          author: 'Rajesh Verma (Arihant)',  subject: 'Arithmetic (Quick Revision)' },
+  ];
+
+  const freeResources = [
+    { name: 'RPF Official Careers Portal',           type: 'website', url: 'https://www.rpf.indianrailways.gov.in', description: 'Primary source for notifications, admit cards, CBT result PDFs, and PET schedule — always check here first.' },
+    { name: 'Indian Railways Official',              type: 'website', url: 'https://indianrailways.gov.in',          description: 'Stay updated on Indian Railways news, initiatives (Vande Bharat, Kavach) — frequently tested in GA.' },
+    { name: 'Adda247 on YouTube',                    type: 'youtube', url: 'https://www.youtube.com/@Adda247',       description: 'Free daily RPF SI classes, current affairs capsules and full mock analysis.' },
+    { name: 'StudyIQ Education',                     type: 'youtube', url: 'https://www.youtube.com/@StudyIQeducation', description: 'Best free channel for GA/GK, Current Affairs, and Railways-specific content for RPF preparation.' },
+    { name: 'Testbook RPF SI Free Mocks',            type: 'website', url: 'https://testbook.com/rpf-si',            description: 'Free full-length and sectional CBT mocks with analysis matching RPF SI exam pattern.' },
+    { name: 'GK Today Daily Current Affairs',        type: 'website', url: 'https://www.gktoday.in',                 description: 'Free daily GK capsules, monthly current affairs PDFs, and Railways GK quizzes.' },
+    { name: 'Oliveboard RPF Mocks',                  type: 'website', url: 'https://www.oliveboard.in',              description: 'Free RPF SI mock tests with AI-based weak-spot analysis.' },
+    { name: 'Telegram – Adda247 Official',           type: 'telegram', url: 'https://t.me/Adda247Official',          description: 'Free daily current affairs PDFs, Railway exam updates, and RPF SI study material.' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'General Awareness (50 marks) is the single biggest differentiator in RPF SI. Top candidates score 42–48 in GA while weaker ones score 25–30. Make GA your highest priority — not Arithmetic. Spend at least 40% of your study time on GA and Current Affairs.' },
+    { icon: '🏋️', tip: 'Start physical preparation from Day 1 — not after CBT results. PET comes within 4–6 weeks of CBT result. Many candidates who clear CBT fail PET because they didn\'t prepare physically. Run 1600 m daily and practice long jump and high jump thrice a week.' },
+    { icon: '🚂', tip: 'RPF/Railways-specific GK is asked every year and often ignored by candidates. Study: RPF\'s role, RPSF, RPF Operations (anti-human trafficking, Meri Saheli), Indian Railways zones (18 zones), headquarter cities, Vande Bharat, Kavach TCAS, and major railway stations. These are easy marks.' },
+    { icon: '⏱️', tip: 'Time management in CBT is critical: 90 minutes, 120 questions — roughly 45 seconds per question. Never spend more than 60 seconds on any single question. Attempt GA first (fastest for well-prepared candidates), then Reasoning, then Arithmetic. Mark doubtful questions and return.' },
+    { icon: '📏', tip: 'Know the exact physical standards before you apply. Measure your height and chest (for males) at a clinic. If you\'re borderline on the chest measurement — train specifically for chest expansion. Candidates lose in PMT on a 1–2 cm shortfall that physical training could have fixed.' },
+    { icon: '📰', tip: 'Current Affairs in RPF SI focuses heavily on government schemes, India-specific developments, sports results, and awards from the last 6 months. International news is minimal. Study monthly PDF capsules from GK Today or Adda247 — one capsule per month takes 2–3 hours and covers the entire month.' },
+    { icon: '🎖️', tip: 'RPF SI is a uniformed gazetted service — the interview / DV panel notices confidence, appearance, and awareness about the job. Know what RPF does, current crime issues on railways, and India\'s security scenario. Many candidates arrive for DV without knowing basic RPF facts — don\'t be one of them.' },
+    { icon: '🔄', tip: 'No negative marking in RPF SI CBT — attempt ALL 120 questions. Never leave any blank. For unknown questions, eliminate 1–2 obviously wrong options and guess from the remaining. Even a blind guess from 2 options gives 50% accuracy — this can add 5–10 marks to your total.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the RPF SI 2026 notification date?', a: 'As of May 2026, RPF SI 2026 notification is To Be Notified (TBN). The last cycle (RPF SI 2024) was notified in April 2024. RPF recruitments are irregular — not annual. Bookmark rpf.indianrailways.gov.in for official updates. The 2026 cycle is expected to be notified by the Ministry of Railways once vacancies are confirmed.' },
+    { q: 'How many vacancies are expected in RPF SI 2026?', a: 'Based on historical trends — 1,120 vacancies (2018) and 452 vacancies (2024) — the 2026 cycle is expected to have 500–2,000 vacancies depending on departmental requirements. The exact count is announced with the official notification.' },
+    { q: 'What is the salary of RPF SI 2026?', a: 'RPF SI is placed at Pay Level 6 (₹35,400 – ₹1,12,400) under the 7th Pay Commission. Starting basic pay is ₹35,400/month. With Dearness Allowance (~57% as of January 2026), HRA (10–24% based on city), Transport Allowance, and free railway pass benefits, the estimated gross in-hand salary is approximately ₹65,000–₹72,000/month in an X-class city. DA is revised every 6 months.' },
+    { q: 'Is RPF SI a gazetted post?', a: 'RPF SI is initially a non-gazetted Group B post. However, upon promotion to Inspector level, it becomes a gazetted post. Sub-Inspectors in RPF/RPSF hold significant authority — they are empowered to arrest, detain, and prosecute offenders under the Railway Property (Unlawful Possession) Act, 1966, and the Railways Act.' },
+    { q: 'What is the selection process for RPF SI 2026?', a: 'The selection process has 4 stages: (1) CBT – Computer Based Test (120 questions, 90 minutes, no negative marking); (2) PET – Physical Efficiency Test (run, long jump, high jump — qualifying); (3) PMT – Physical Measurement Test (height, chest, weight — qualifying); (4) DV – Document Verification + Medical Examination. Only CBT marks count for final merit; PET and PMT are pass/fail.' },
+    { q: 'Can female candidates apply for RPF SI?', a: 'Yes. Female candidates can apply for RPF SI with a reservation of 50% of vacancies reserved for female candidates in each category. Female physical standards are different: Height 157 cm (General/OBC) / 152 cm (SC/ST), weight minimum 48 kg. PET for females: 800 m run in 4 minutes, long jump 9 feet, high jump 3 feet. Age limit is 20–28 years (same as male).' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">RPF SI 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🚂 Railway</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ 2026 Notification: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            RPF Sub-Inspector 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            RPF SI 2026 notification is <strong>To Be Notified (TBN)</strong>. The Railway Protection Force (RPF) recruits Sub-Inspectors for railway security under the Ministry of Railways. Selection via CBT → PET → PMT → DV. Graduate degree required. Age 20–28 years. Pay Level 6 salary approximately <strong>₹65,000–₹72,000/month</strong> gross (X-city, 2026 DA rates).
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '500–2,000', sub: '2026 (TBN)' },
+              { label: 'CBT Exam Date',      value: 'TBN 2026',  sub: 'Notification awaited' },
+              { label: 'Min. Qualification', value: 'Graduate',  sub: 'Any stream' },
+              { label: 'Gross Salary',        value: '~₹65,000–72,000', sub: 'per month (X-city)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-blue-100">
+            💡 <strong>2026 Update:</strong> The RPF SI 2024 cycle (452 vacancies) is complete. The next RPF SI cycle is expected in 2026 — notification TBN. Candidates who clear CBT should begin physical preparation <strong>immediately</strong> — PET comes within 4–6 weeks of result.
+          </div>
+        </div>
+      </div>
+
+      {/* ── BODY ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* ── MAIN CONTENT ── */}
+          <div className="min-w-0">
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is RPF SI 2026?</h2>
+              </div>
+              <div className="card p-6 mb-4">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>Railway Protection Force (RPF) Sub-Inspector (SI)</strong> is a Group B (non-gazetted) Central Government uniformed post under the Ministry of Railways. RPF SIs are responsible for protecting railway property, passengers, and passenger area assets. They are empowered under the Railway Property (Unlawful Possession) Act, 1966, and play a frontline role in anti-trafficking, anti-trespassing, and passenger security operations.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  RPF SIs work in both <strong>RPF (Railway Protection Force)</strong> and <strong>RPSF (Railway Protection Special Force)</strong>. RPSF SIs are deployed for specialized tasks including escort duty on trains, VIP protection, and anti-Naxal operations in sensitive railway areas.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  The selection is merit-based through a <strong>Computer Based Test (CBT)</strong>, followed by a qualifying Physical Efficiency Test (PET) and Physical Measurement Test (PMT), and a final Document Verification. <strong>Only CBT marks form the final merit list</strong> — PET and PMT are pass/fail.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducted By',     value: 'Ministry of Railways / RPF',    icon: '🏛️' },
+                  { label: 'Pay Level',        value: 'Level 6 (₹35,400–₹1,12,400)', icon: '💰' },
+                  { label: 'Age Limit',        value: '20–28 years (Gen)',             icon: '📋' },
+                  { label: 'Qualification',    value: 'Any Graduate',                  icon: '🎓' },
+                  { label: 'Exam Mode',        value: 'Computer Based Test (CBT)',     icon: '💻' },
+                  { label: 'Neg. Marking',     value: '❌ None',                       icon: '✅' },
+                  { label: 'Total Questions',  value: '120 Questions / 90 Minutes',    icon: '📝' },
+                  { label: 'Job Type',         value: 'Permanent (Pensionable)',        icon: '🎖️' },
+                ].map((f) => (
+                  <div key={f.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-lg mb-1">{f.icon}</div>
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{f.label}</div>
+                    <div className="font-heading font-semibold text-sm text-surface-800 mt-1">{f.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Important Dates 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-5 py-3 font-heading text-sm">Event</th>
+                      <th className="text-left px-5 py-3 font-heading text-sm">Date / Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-5 py-3 font-body text-surface-700">{row.event}</td>
+                        <td className="px-5 py-3 font-body">
+                          {row.status === 'tbn'
+                            ? <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">{row.date}</span>
+                            : <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">{row.date}</span>
+                          }
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2 pl-1">📅 Dates marked TBN are not yet official. Always verify at <a href="https://www.rpf.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">rpf.indianrailways.gov.in</a>.</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  {
+                    title: '🪪 Nationality', icon: '🇮🇳',
+                    items: ['Indian citizen', 'Subject of Nepal or Bhutan (with Govt. certificate)', 'Tibetan refugee (settled before 1 Jan 1962)', 'PIO from specific countries (with eligibility cert.)', 'Loyalty declaration required for non-Indian applicants'],
+                  },
+                  {
+                    title: '🎓 Educational Qualification', icon: '🎓',
+                    items: ['Minimum: Bachelor\'s Degree from a recognized University', 'Any stream eligible (Arts, Science, Commerce, Engineering)', 'Final year appearing candidates: NOT eligible', 'Degree must be completed by the notification cut-off date', 'Distance / correspondence degree: accepted if UGC-recognized'],
+                  },
+                  {
+                    title: '📋 Age Limit (as of notification cut-off date)', icon: '📋',
+                    items: ['General / EWS: 20–28 years', 'OBC (NCL): 20–31 years (+3 years relaxation)', 'SC / ST: 20–33 years (+5 years relaxation)', 'PwBD (General): 20–38 years (+10 years)', 'Ex-Servicemen: as per Government norms', 'No upper age relaxation for General candidates beyond 28'],
+                  },
+                  {
+                    title: '⚠️ Other Conditions', icon: '⚠️',
+                    items: ['Must clear PET and PMT as per physical standards', 'Medical fitness required – no colour blindness', 'No criminal conviction / case pending', 'Must have valid documents at Document Verification (DV)', 'Female candidates: 50% of vacancies reserved per category'],
+                  },
+                ].map((block) => (
+                  <div key={block.title} className="card p-5">
+                    <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">{block.title}</h3>
+                    <ul className="space-y-1.5">
+                      {block.items.map((item, j) => (
+                        <li key={j} className="flex gap-2 text-sm text-surface-600">
+                          <span className="text-primary-400 mt-0.5 shrink-0">›</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 4. PHYSICAL STANDARDS */}
+            <section id="physical" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Physical Standards (PMT) & PET</h2>
+              </div>
+
+              <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 mb-5 text-sm text-amber-800">
+                ⚠️ PET and PMT are <strong>qualifying stages only</strong> — they do not add marks to the merit list. However, failing either means disqualification regardless of your CBT score. <strong>Start physical preparation from Day 1.</strong>
+              </div>
+
+              {/* Physical Measurement */}
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">PMT – Physical Measurement Test</h3>
+              <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                <div className="card overflow-hidden">
+                  <div className="bg-primary-700 text-white px-5 py-2.5 text-sm font-heading font-semibold">👨 Male Candidates (SI)</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100"><th className="text-left px-4 py-2 font-heading text-xs text-surface-600">Standard</th><th className="px-4 py-2 font-heading text-xs text-surface-600 text-center">Gen / OBC</th><th className="px-4 py-2 font-heading text-xs text-surface-600 text-center">SC / ST*</th></tr></thead>
+                    <tbody>
+                      {physicalMaleSI.map((r, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-2.5 text-surface-700 font-heading font-medium">{r.test}</td>
+                          <td className="px-4 py-2.5 text-center text-surface-700">{r.general}</td>
+                          <td className="px-4 py-2.5 text-center text-surface-700">{r.scSt}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <p className="text-xs text-surface-400 px-4 py-2">*Also applicable to candidates from hilly areas, Garhwal, Kumaon, Gorkha, Dogra, Marathas, etc.</p>
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="bg-emerald-700 text-white px-5 py-2.5 text-sm font-heading font-semibold">👩 Female Candidates (SI)</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100"><th className="text-left px-4 py-2 font-heading text-xs text-surface-600">Standard</th><th className="px-4 py-2 font-heading text-xs text-surface-600 text-center">Gen / OBC</th><th className="px-4 py-2 font-heading text-xs text-surface-600 text-center">SC / ST*</th></tr></thead>
+                    <tbody>
+                      {physicalFemaleSI.map((r, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-2.5 text-surface-700 font-heading font-medium">{r.test}</td>
+                          <td className="px-4 py-2.5 text-center text-surface-700">{r.general}</td>
+                          <td className="px-4 py-2.5 text-center text-surface-700">{r.scSt}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <p className="text-xs text-surface-400 px-4 py-2">*Also applicable to candidates from hilly/tribal areas.</p>
+                </div>
+              </div>
+
+              {/* PET */}
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">PET – Physical Efficiency Test</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="card overflow-hidden">
+                  <div className="bg-primary-700 text-white px-5 py-2.5 text-sm font-heading font-semibold">👨 Male PET Standards</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100"><th className="text-left px-4 py-2 font-heading text-xs text-surface-600">Event</th><th className="px-4 py-2 font-heading text-xs text-surface-600 text-center">Standard</th><th className="px-4 py-2 font-heading text-xs text-surface-600 text-center">Attempts</th></tr></thead>
+                    <tbody>
+                      {petMale.map((r, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-2.5 text-surface-700 font-heading font-medium">{r.event}</td>
+                          <td className="px-4 py-2.5 text-center text-surface-700">{r.standard}</td>
+                          <td className="px-4 py-2.5 text-center text-surface-500 text-xs">{r.attempts}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="bg-emerald-700 text-white px-5 py-2.5 text-sm font-heading font-semibold">👩 Female PET Standards</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100"><th className="text-left px-4 py-2 font-heading text-xs text-surface-600">Event</th><th className="px-4 py-2 font-heading text-xs text-surface-600 text-center">Standard</th><th className="px-4 py-2 font-heading text-xs text-surface-600 text-center">Attempts</th></tr></thead>
+                    <tbody>
+                      {petFemale.map((r, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-2.5 text-surface-700 font-heading font-medium">{r.event}</td>
+                          <td className="px-4 py-2.5 text-center text-surface-700">{r.standard}</td>
+                          <td className="px-4 py-2.5 text-center text-surface-500 text-xs">{r.attempts}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 5. VACANCY HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancy History</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-5 py-3 font-heading text-sm">Cycle</th>
+                      <th className="text-center px-5 py-3 font-heading text-sm">Vacancies</th>
+                      <th className="text-center px-5 py-3 font-heading text-sm">CBT Period</th>
+                      <th className="text-left px-5 py-3 font-heading text-sm hidden sm:table-cell">Remarks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-5 py-3 font-heading font-semibold text-surface-800">{row.year}</td>
+                        <td className="px-5 py-3 text-center text-emerald-700 font-semibold">{row.vacancies}</td>
+                        <td className="px-5 py-3 text-center text-surface-600">{row.cbt}</td>
+                        <td className="px-5 py-3 text-surface-500 text-xs hidden sm:table-cell">{row.remarks}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2 pl-1">RPF SI is NOT an annual exam — recruitment cycles are irregular and depend on Ministry of Railways vacancy planning.</p>
+            </section>
+
+            {/* 6. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern – CBT</h2>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-4 mb-5">
+                {[
+                  { label: 'Total Questions', value: '120', icon: '📝' },
+                  { label: 'Total Marks',     value: '120', icon: '🎯' },
+                  { label: 'Duration',        value: '90 Minutes', icon: '⏱️' },
+                  { label: 'Question Type',   value: 'MCQ (4 options)', icon: '✅' },
+                  { label: 'Negative Marking', value: 'None ❌',  icon: '🚫' },
+                  { label: 'Language',        value: '15 languages', icon: '🌐' },
+                ].map((f) => (
+                  <div key={f.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200 flex items-center gap-3">
+                    <span className="text-2xl">{f.icon}</span>
+                    <div>
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{f.label}</div>
+                      <div className="font-heading font-bold text-surface-800">{f.value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-5 py-3 font-heading text-sm">Subject</th>
+                      <th className="text-center px-5 py-3 font-heading text-sm">Questions</th>
+                      <th className="text-center px-5 py-3 font-heading text-sm">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cbtPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-5 py-3 font-body text-surface-700 font-medium">{row.subject}</td>
+                        <td className="px-5 py-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="px-5 py-3 text-center text-emerald-700 font-semibold">{row.marks}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50 border-t-2 border-primary-200">
+                      <td className="px-5 py-3 font-heading font-bold text-surface-900">Total</td>
+                      <td className="px-5 py-3 text-center font-heading font-bold text-surface-900">120</td>
+                      <td className="px-5 py-3 text-center font-heading font-bold text-emerald-700">120</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-4 text-sm text-primary-800">
+                💡 <strong>No negative marking</strong> — attempt ALL 120 questions. CBT merit is used for final selection; PET/PMT are qualifying only.
+              </div>
+            </section>
+
+            {/* 7. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((section) => (
+                  <details key={section.subject} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{section.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 grid sm:grid-cols-2 gap-x-6 gap-y-1">
+                      {section.topics.map((topic, j) => (
+                        <div key={j} className="flex gap-2 text-sm text-surface-600 py-0.5">
+                          <span className="text-primary-400 shrink-0 mt-0.5">›</span>
+                          <span>{topic}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 8. CUTOFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year CBT Cut-offs</h2>
+              </div>
+              <div className="card overflow-hidden mb-3">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-5 py-3 font-heading text-sm">Category</th>
+                      <th className="text-center px-5 py-3 font-heading text-sm">CBT 2024 (out of 120)</th>
+                      <th className="text-center px-5 py-3 font-heading text-sm">CBT 2018 (out of 120)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-5 py-3 text-surface-700 font-medium">{row.category}</td>
+                        <td className="px-5 py-3 text-center text-emerald-700 font-semibold">{row.cbt2024}</td>
+                        <td className="px-5 py-3 text-center text-surface-600">{row.cbt2018}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 pl-1">~Approximate cut-offs — official cut-offs are declared with merit list. Aim for 90+ out of 120 for a safe margin in General category.</p>
+            </section>
+
+            {/* 9. SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Salary & Career Growth</h2>
+              </div>
+
+              <div className="card p-6 mb-5">
+                <h3 className="text-base font-heading font-semibold text-surface-800 mb-4">💰 Salary Breakdown (RPF SI, 2026)</h3>
+                <div className="space-y-2">
+                  {salaryBreakdown.map((row, i) => (
+                    <div key={i} className={`flex items-start justify-between gap-4 py-2.5 px-3 rounded-lg text-sm ${i === salaryBreakdown.length - 1 ? 'bg-emerald-50 border border-emerald-200' : 'bg-surface-50'}`}>
+                      <span className="text-surface-600">{row.component}</span>
+                      <span className={`font-heading font-semibold shrink-0 ${i === salaryBreakdown.length - 1 ? 'text-emerald-700 text-base' : 'text-surface-800'}`}>{row.amount}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-3">DA revised every 6 months (Jan & July) by the Central Government. RPF follows 7th Pay Commission (CPC) unlike banking which follows IBA Bipartite Settlements.</p>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="text-base font-heading font-semibold text-surface-800 mb-4">📈 RPF Career Progression</h3>
+                <div className="space-y-3">
+                  {careerPath.map((step, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center text-white font-heading font-bold text-xs shrink-0">{i + 1}</div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="font-heading font-semibold text-surface-800 text-sm">{step.level}</span>
+                          <span className="badge-primary">{step.grade}</span>
+                          {i === 3 && <span className="badge-green">Gazetted Officer</span>}
+                        </div>
+                        <div className="flex gap-3 text-xs text-surface-500 mt-0.5">
+                          <span>{step.pay}</span>
+                          <span>·</span>
+                          <span>{step.note}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-primary-50 rounded-xl p-4 mt-4 text-sm text-primary-800">
+                  💡 Promotions in RPF are through <strong>Departmental Promotion Committee (DPC)</strong> based on seniority and performance. The journey from Sub-Inspector to Inspector typically takes 5–8 years.
+                </div>
+              </div>
+            </section>
+
+            {/* 10. HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for RPF SI 2026</h2>
+              </div>
+              <div className="card p-6">
+                <div className="space-y-4">
+                  {[
+                    { step: '1', title: 'Watch for Notification', desc: 'Check rpf.indianrailways.gov.in and indianrailways.gov.in regularly. Enable job alerts on Sarkari Result or Adda247 Telegram for instant notification.' },
+                    { step: '2', title: 'Register Online (SECRWA Portal)', desc: 'RPF applications are submitted through the official online portal. Keep scanned photo, signature, and documents ready. Fill all details carefully — errors at this stage cause rejection later.' },
+                    { step: '3', title: 'Pay Application Fee', desc: 'General / OBC: ₹500 | SC / ST / Ex-SM / Female: ₹250. Payment via Net Banking, Debit/Credit Card, or UPI. Fee is non-refundable.' },
+                    { step: '4', title: 'Download Admit Card', desc: 'CBT admit card is available on the RPF portal ~10–15 days before the exam. Carry it with a valid photo ID (Aadhaar / Voter ID / Passport) to the exam centre.' },
+                    { step: '5', title: 'Appear for CBT → PET / PMT → DV', desc: 'CBT results are declared zone-wise. Shortlisted candidates (usually 10× vacancies) are called for PET/PMT. DV follows after PET/PMT.' },
+                  ].map((s) => (
+                    <div key={s.step} className="flex gap-4">
+                      <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 font-heading font-bold text-sm shrink-0 mt-0.5">{s.step}</div>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 mb-1">{s.title}</div>
+                        <p className="text-sm text-surface-600">{s.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 11. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">6-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((s, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-xs">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="font-heading font-bold text-primary-600 text-sm">{s.month}</span>
+                          <span className="text-surface-300">·</span>
+                          <span className="font-heading font-semibold text-surface-800 text-sm">{s.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 12. BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for RPF SI 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-5 py-3 font-heading text-sm">Subject</th>
+                      <th className="text-left px-5 py-3 font-heading text-sm">Book Title</th>
+                      <th className="text-left px-5 py-3 font-heading text-sm hidden sm:table-cell">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((book, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-5 py-3"><span className="badge-primary">{book.subject}</span></td>
+                        <td className="px-5 py-3 text-surface-700 font-medium">{book.title}</td>
+                        <td className="px-5 py-3 text-surface-500 hidden sm:table-cell">{book.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 13. FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources for RPF SI</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r) => (
+                  <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{r.type === 'youtube' ? '📺' : r.type === 'telegram' ? '📱' : '🌐'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors">{r.name}</div>
+                        <p className="text-sm text-surface-500 mt-1">{r.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 14. TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Preparation Tips</h2>
+              </div>
+              <div className="space-y-3">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-xl shrink-0">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 15. FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">15</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180 shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>{/* end main */}
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">📋 On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Site */}
+              <a href="https://www.rpf.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-2">🌐 Official Website</div>
+                <div className="font-heading font-semibold text-primary-600 text-sm">rpf.indianrailways.gov.in</div>
+                <p className="text-xs text-surface-400 mt-1">Check notifications, admit cards and results here</p>
+              </a>
+
+              {/* Key Numbers */}
+              <div className="card p-5">
+                <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">📊 Quick Stats</div>
+                <div className="space-y-2">
+                  {[
+                    { label: 'Pay Level',      value: 'Level 6' },
+                    { label: 'Gross Salary',   value: '~₹65,000–72,000/mo' },
+                    { label: 'Age (General)',   value: '20–28 years' },
+                    { label: 'CBT Questions',  value: '120 Qs / 90 min' },
+                    { label: 'Neg. Marking',   value: '❌ None' },
+                    { label: 'Application Fee', value: '₹500 (Gen/OBC)' },
+                    { label: 'Female Quota',   value: '50% of each cat.' },
+                  ].map((f, i) => (
+                    <div key={i} className="flex items-start justify-between gap-2 text-xs">
+                      <span className="text-surface-400">{f.label}</span>
+                      <span className="font-heading font-semibold text-surface-700 text-right">{f.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">🔗 Related Exams</div>
+                <div className="space-y-2">
+                  {[
+                    { name: 'RPF Constable 2026', slug: 'rpf-constable' },
+                    { name: 'RRB NTPC 2026',      slug: 'rrb-ntpc' },
+                    { name: 'RRB Group D 2026',    slug: 'rrb-group-d' },
+                    { name: 'SSC CPO (Delhi Police SI)', slug: 'ssc-cpo' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-600 hover:text-primary-700 py-0.5">
+                      → {e.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Eligibility Checker */}
+              <Link href="/tools/age-calculator/" className="card p-4 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age & Eligibility Calculator to check if you qualify for RPF SI 2026.</p>
+                <span className="text-xs text-primary-500 font-heading font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── UPSC CDS 2026 RICH PAGE ─────────────────────────────────────────────────
+function UpscCdsPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies History' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'cutoff',          label: 'Previous Year Cut-offs' },
+    { id: 'ssb-interview',   label: 'SSB Interview Process' },
+    { id: 'salary',          label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'CDS I 2026 Notification Released',        date: '22 October 2025',            status: 'released' },
+    { event: 'CDS I 2026 Application Last Date',        date: '11 November 2025',           status: 'released' },
+    { event: 'CDS I 2026 Written Exam',                 date: '13 April 2026',              status: 'released' },
+    { event: 'CDS I 2026 Written Result',               date: 'June–July 2026 (Expected)',  status: 'tbn' },
+    { event: 'CDS I 2026 SSB Interview Rounds',         date: 'Aug–Dec 2026 (Expected)',    status: 'tbn' },
+    { event: 'CDS I 2026 Final Merit List & Joining',   date: 'Early 2027 (Expected)',      status: 'tbn' },
+    { event: 'CDS II 2026 Notification',                date: 'September 2026 (Expected)',  status: 'tbn' },
+    { event: 'CDS II 2026 Written Exam',                date: 'November 2026 (Expected)',   status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'CDS II 2023', total: '~459', imaIna: '132+32', afa: '32', ota: '263' },
+    { year: 'CDS I 2024',  total: '~457', imaIna: '100+32', afa: '32', ota: '293' },
+    { year: 'CDS II 2024', total: '~342', imaIna: '100+32', afa: '32', ota: '178' },
+    { year: 'CDS I 2025',  total: '~459', imaIna: '100+32', afa: '32', ota: '295' },
+    { year: 'CDS I 2026',  total: '~339', imaIna: '100+32', afa: '32', ota: '175' },
+    { year: 'CDS II 2026 (upcoming)', total: 'TBN', imaIna: 'TBN', afa: 'TBN', ota: 'TBN' },
+  ];
+
+  const patternIMA = [
+    { paper: 'English',                 questions: 120, marks: 120, duration: '2 hrs' },
+    { paper: 'General Knowledge',       questions: 120, marks: 120, duration: '2 hrs' },
+    { paper: 'Elementary Mathematics',  questions: 100, marks: 100, duration: '2 hrs' },
+  ];
+
+  const patternOTA = [
+    { paper: 'English',           questions: 120, marks: 120, duration: '2 hrs' },
+    { paper: 'General Knowledge', questions: 120, marks: 120, duration: '2 hrs' },
+  ];
+
+  const cutoffData = [
+    { academy: 'IMA (Written)',         w2024: '~149/340', w2023: '~141/340', f2024: '~251/640', f2023: '~244/640' },
+    { academy: 'INA (Written)',         w2024: '~149/340', w2023: '~141/340', f2024: '~255/640', f2023: '~248/640' },
+    { academy: 'AFA (Written)',         w2024: '~149/340', w2023: '~141/340', f2024: '~257/640', f2023: '~249/640' },
+    { academy: 'OTA Men (Written)',     w2024: '~82/240',  w2023: '~75/240',  f2024: '~149/450', f2023: '~142/450' },
+    { academy: 'OTA Women (Written)',   w2024: '~82/240',  w2023: '~75/240',  f2024: '~145/450', f2023: '~139/450' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay – Lieutenant (Pay Level 10)',               amount: '₹56,100/month' },
+    { component: 'Military Service Pay (MSP)',                          amount: '₹15,500/month' },
+    { component: 'Dearness Allowance (DA) on Basic + MSP',             amount: '~₹18,400/month' },
+    { component: 'House Rent Allowance / Free Govt. Accommodation',    amount: '₹6,700–₹13,500/month' },
+    { component: 'Transport Allowance (TPTA)',                          amount: '₹3,600–₹7,200/month' },
+    { component: 'Flying Allowance (AFA officers only)',               amount: '₹25,000–₹43,000/month extra' },
+    { component: 'Estimated Gross In-hand (Lt., non-flying)',          amount: '~₹90,000–₹1,00,000/month' },
+  ];
+
+  const careerPath = [
+    { rank: 'Lieutenant',              years: '0–2 yrs',   level: 'Level 10',  pay: '₹56,100–₹1,77,500' },
+    { rank: 'Captain',                 years: '2–5 yrs',   level: 'Level 10B', pay: '₹61,300–₹1,93,900' },
+    { rank: 'Major',                   years: '5–13 yrs',  level: 'Level 11',  pay: '₹69,400–₹2,07,200' },
+    { rank: 'Lieutenant Colonel',      years: '13–19 yrs', level: 'Level 12A', pay: '₹1,21,200–₹2,12,400' },
+    { rank: 'Colonel',                 years: '19–25 yrs', level: 'Level 13',  pay: '₹1,30,600–₹2,15,900' },
+    { rank: 'Brigadier / Maj General', years: '25+ yrs',   level: 'Level 13A+',pay: '₹1,39,600+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📖 English (120 Marks) — All Academies',
+      forOTA: true,
+      topics: [
+        'Spotting Errors – grammar, usage, syntax',
+        'Sentence Improvement and Sentence Ordering',
+        'Fill in the Blanks (vocabulary in context)',
+        'Synonyms and Antonyms in context',
+        'Reading Comprehension (1–2 passages)',
+        'Idioms and Phrases',
+        'Direct and Indirect Speech (narration)',
+        'Active and Passive Voice',
+        'Cloze Test',
+        'Para Jumbles (Ordering of Sentences)',
+      ],
+    },
+    {
+      subject: '🌍 General Knowledge (120 Marks) — All Academies',
+      forOTA: true,
+      topics: [
+        'Current Affairs – National and International (last 6 months)',
+        'History of India – Ancient, Medieval, Modern, Freedom Struggle',
+        'Indian Polity and Constitution – features, amendments, bodies',
+        'Geography – India and World (physical, economic, climate)',
+        'Indian Economy – basic concepts, policies, budget highlights',
+        'Physics – matter, light, sound, electricity',
+        'Chemistry – elements, compounds, reactions',
+        'Biology – human body, diseases, nutrition',
+        'Defence and Military History – battles, milestones, HQ',
+        'Sports, Awards, Books, Personalities, Important Days',
+      ],
+    },
+    {
+      subject: '🔢 Elementary Mathematics (100 Marks) — IMA / INA / AFA only',
+      forOTA: false,
+      topics: [
+        'Arithmetic – Number System, LCM/HCF, Fractions, Percentages',
+        'Ratio and Proportion, Averages, Simple and Compound Interest',
+        'Profit and Loss, Time and Work, Time Speed Distance',
+        'Algebra – Factorization, Linear and Quadratic Equations',
+        'Logarithms, Sets and Set Theory',
+        'Geometry – Lines, Angles, Triangles, Circles, Quadrilaterals',
+        'Mensuration – Area and Volume (2D and 3D)',
+        'Trigonometry – Identities, Heights and Distances',
+        'Statistics – Mean, Median, Mode, Bar diagrams, Pie charts',
+        'Matrices – basic operations and determinants',
+      ],
+    },
+  ];
+
+  const ssbStages = [
+    { icon: '🧠', stage: 'Day 1 – Screening', detail: 'Officer Intelligence Rating (OIR) Test (Verbal + Non-Verbal) and Picture Perception and Description Test (PPDT). Screened-in candidates proceed; others are sent back on the same day.' },
+    { icon: '🗒️', stage: 'Day 2 – Psychology Tests', detail: 'Thematic Apperception Test (TAT), Word Association Test (WAT), Situation Reaction Test (SRT), and Self-Description Test (SD). Tests personality, Officer Like Qualities (OLQs), and self-awareness.' },
+    { icon: '🤝', stage: 'Days 3–4 – GTO Tasks', detail: 'Group Discussion (GD), Group Planning Exercise (GPE), Progressive Group Task (PGT), Half Group Task (HGT), Individual Obstacles, Command Task, Final Group Task, and Lecturette.' },
+    { icon: '🎤', stage: 'Days 3–4 – Personal Interview', detail: '45–60 minute one-on-one interview by a Senior Assessor. Covers personal background, hobbies, current affairs, motivation to join defence, and OLQ assessment. Honesty is key.' },
+    { icon: '⭐', stage: 'Day 5 – Conference', detail: 'Final assessment conference where IO, GTO, and Psychologist share scores. Result announced same day — Recommended (R) or Not Recommended (NR). Recommended candidates go for medical examination.' },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'English Grammar Foundation', detail: 'Revise grammar rules: tenses, articles, prepositions, voice, narration. Do 30 error-spotting and sentence-improvement drills daily. Start reading The Hindu or Indian Express every morning for 15 minutes. CDS English is tricky but very scorable with daily practice.' },
+    { month: 'Month 2', focus: 'Mathematics Foundation', detail: 'Revise NCERT Class 9–12 Maths: Arithmetic, Algebra, Geometry, Trigonometry. CDS Maths is Class 10–12 standard but questions are cleverly framed. Target 60–70% accuracy by Month 2 end. Solve previous year CDS Maths papers to understand the question style.' },
+    { month: 'Month 3', focus: 'GK – History, Polity, Geography', detail: 'Cover NCERT History (Class 6–12), Indian Polity by Laxmikanth, and NCERT Geography. These three form about 60% of GK. Make short notes for quick revision. Study 3–4 chapters daily and revise weekly.' },
+    { month: 'Month 4', focus: 'GK – Science, Economy, Current Affairs', detail: 'Physics, Chemistry, Biology from NCERT Class 8–10. Basic Economics and Budget highlights. Start a daily current affairs habit using free apps. Defence news and appointments are very frequently asked in CDS GK.' },
+    { month: 'Month 5', focus: 'Full Mock Tests and Revision', detail: 'Start full-length CDS mock tests. Target 2 mocks per week. Analyse wrong answers carefully — most mistakes are in GK and Maths. Revise weak areas. Build English vocabulary from previous year papers.' },
+    { month: 'Month 6', focus: 'Final Revision and SSB Awareness', detail: 'Revise all subjects using short notes. Daily practice for English and Maths. Start preparing for SSB: read about Officer Like Qualities (OLQs), watch SSB YouTube videos, practise WAT and TAT writing. Physical fitness: running, push-ups, pull-ups — start 6 months before SSB.' },
+  ];
+
+  const books = [
+    { subject: 'All-in-One',        title: 'Pathfinder CDS Examination Conducted by UPSC',          author: 'Arihant Experts' },
+    { subject: 'Previous Papers',   title: 'CDS Chapterwise-Sectionwise Solved Papers',              author: 'Arihant Publications' },
+    { subject: 'English',           title: 'Objective General English',                              author: 'S.P. Bakshi (Arihant)' },
+    { subject: 'Mathematics',       title: 'NCERT Mathematics Class 9 and 10',                       author: 'NCERT' },
+    { subject: 'General Knowledge', title: 'Indian Polity',                                          author: 'M. Laxmikanth' },
+    { subject: 'History',           title: 'A Brief History of Modern India',                        author: 'Rajiv Ahir (Spectrum)' },
+    { subject: 'Geography',         title: 'Certificate Physical and Human Geography',               author: 'G.C. Leong' },
+    { subject: 'SSB Interview',     title: 'SSB Interview: The Complete Guide',                      author: 'Maj Gen (Retd.) J.K. Chopra' },
+  ];
+
+  const freeResources = [
+    { name: 'UPSC Official CDS Page',        type: 'website', url: 'https://upsc.gov.in',                          description: 'Official notifications, syllabus PDFs, previous year papers, and admit cards.' },
+    { name: 'SSBCrack YouTube',               type: 'youtube', url: 'https://www.youtube.com/@SSBCrackOfficial',    description: 'Best free resource for SSB interview prep — GTO, Psychology, WAT, TAT explained by experts.' },
+    { name: 'StudyIQ Defence on YouTube',     type: 'youtube', url: 'https://www.youtube.com/@studyiqeducation',    description: 'Free daily current affairs and CDS GK classes.' },
+    { name: 'Adda247 CDS on YouTube',         type: 'youtube', url: 'https://www.youtube.com/@Adda247',             description: 'Free CDS classes for English, GK, and Mathematics with mock test solutions.' },
+    { name: 'Testbook CDS Free Mocks',        type: 'website', url: 'https://testbook.com/upsc-cds',                description: 'Free full-length CDS mock tests and previous year papers with analytics.' },
+    { name: 'NCERT Free eBooks (Class 9–12)', type: 'website', url: 'https://ncert.nic.in/textbook.php',            description: 'Free NCERT textbooks — the most important source for CDS GK and Mathematics.' },
+    { name: 'Sainik Samachar (Official)',     type: 'website', url: 'https://sainiksamachar.nic.in',                description: 'Official defence magazine — great for current defence affairs and service news.' },
+    { name: 'SSBCrack.com',                   type: 'website', url: 'https://ssbcrack.com',                         description: 'Free SSB prep articles, GK notes, success stories, and community for defence aspirants.' },
+  ];
+
+  const tips = [
+    { icon: '📋', tip: 'Negative marking is one-third mark per wrong answer. Never guess randomly. If you can eliminate two options, attempt — otherwise skip. Accuracy over attempts. Skipping a time-consuming Maths question and securing English and GK marks is often the smarter call.' },
+    { icon: '📰', tip: 'GK carries the highest weight and is the most dynamic section. CDS regularly asks about recent appointments (Chiefs of Army/Navy/Air Force), exercise names, missile tests, budget defence allocations, and India-centric geography. Build a 6-month daily reading habit.' },
+    { icon: '🔢', tip: 'CDS Maths is Class 10–12 level — not higher. But questions are cleverly designed. Solve the last 10 years of CDS Maths papers to spot repeated topics. Trigonometry, Mensuration, and Statistics carry the highest weight. Even 50–60 out of 100 adds significant marks.' },
+    { icon: '🤝', tip: 'SSB carries 300 marks vs 340 for the written exam (for IMA). A strong SSB score can compensate for an average written score. Develop genuine leadership, communication, and teamwork — not scripted answers. Interviewers see thousands of candidates and detect rehearsed responses instantly.' },
+    { icon: '💪', tip: 'Start physical fitness training from Day 1 of preparation. SSB does not have a formal PFT, but fitness influences stamina, confidence, and bearing during the 5-day process. Run 2–3 km daily, add push-ups and pull-ups. You want to arrive at SSB fit and sharp, not gasping.' },
+    { icon: '🔁', tip: 'CDS is held twice a year. If you miss CDS I, CDS II is only 6 months away. Many successful officers cleared CDS on their second or third attempt. Each attempt gives better understanding of the exam and SSB. Never let one NR (Not Recommended) at SSB discourage you.' },
+    { icon: '🌐', tip: 'For SSB interview, know your PIQ (Personal Information Questionnaire) deeply. Everything on your PIQ is fair game for the interviewer. They look for consistency between what you wrote and what you say. Be honest — never inflate or invent experiences.' },
+    { icon: '📝', tip: 'OTA aspirants only need English and GK — no Maths. This makes CDS more accessible for arts and commerce graduates. OTA Men also has a higher age ceiling of 25 years vs 24 for IMA/INA/AFA, giving an extra year of preparation time.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the UPSC CDS I 2026 exam date?', a: 'UPSC CDS I 2026 written examination was held on 13 April 2026. The result is expected in June–July 2026. UPSC CDS II 2026 notification is expected in September 2026 with the exam in November 2026. Check upsc.gov.in for the latest schedule.' },
+    { q: 'What is the age limit for UPSC CDS 2026?', a: 'Age limits vary by academy: IMA and INA — 19 to 24 years. AFA — 20 to 24 years. OTA (Men and Women) — 19 to 25 years. Age is calculated as of 1st January of the year in which the course is to commence. There is NO age relaxation for any category in CDS.' },
+    { q: 'What qualification is required for CDS 2026?', a: 'IMA: Degree from a recognised university (any stream). INA: B.E./B.Tech in Engineering. AFA: Degree with Physics and Mathematics at 10+2 level. OTA (Men and Women): Degree from a recognised university (any stream). Female candidates are eligible only for OTA.' },
+    { q: 'What is the CDS salary after commissioning?', a: 'On joining as a Lieutenant, basic pay starts at Rs 56,100/month (Pay Level 10). Adding Military Service Pay (Rs 15,500/month), DA, HRA, and other allowances, the estimated gross is approximately Rs 90,000–1,00,000/month. AFA flying officers get an additional Flying Allowance of Rs 25,000–43,000/month.' },
+    { q: 'Is there negative marking in CDS 2026?', a: 'Yes. Each correct answer carries 1 mark. Each wrong answer deducts 0.33 marks (one-third). Unattempted questions carry no penalty. This applies to all papers — English, GK, and Mathematics. Attempt a question only if you are reasonably confident or can eliminate at least two options.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* HERO */}
+      <div className="bg-gradient-to-br from-primary-900 via-primary-700 to-primary-800 text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">UPSC CDS 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🎖️ Defence</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-green-500/25 border border-green-400/30 rounded-full px-3 py-1 text-xs font-medium text-green-200">✅ CDS I 2026: Exam Done (13 Apr)</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ CDS II 2026: Sep 2026 (Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            UPSC CDS 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            CDS recruits Commissioned Officers for the <strong>Indian Military Academy (IMA)</strong>, Naval Academy (INA), Air Force Academy (AFA) and Officers&apos; Training Academy (OTA). CDS I 2026 exam was held on <strong>13 April 2026</strong>. CDS II 2026 notification expected <strong>September 2026</strong>. Graduate required. Age 19–25 years.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Vacancies (CDS I 2026)', value: '~339',         sub: 'IMA+INA+AFA+OTA' },
+              { label: 'Written Exam Date',      value: '13 Apr 2026',  sub: 'CDS I (completed)' },
+              { label: 'CDS II Notification',    value: 'Sep 2026',     sub: 'Expected' },
+              { label: 'Starting Salary',        value: '₹56,100+',    sub: '+ MSP ₹15,500/mo' },
+            ].map((s, i) => (
+              <div key={i} className="bg-white/10 rounded-xl p-3 border border-white/20">
+                <div className="text-xs text-blue-200 font-medium mb-1">{s.label}</div>
+                <div className="text-lg sm:text-2xl font-heading font-bold leading-tight">{s.value}</div>
+                <div className="text-xs text-blue-300 mt-0.5">{s.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-3 text-xs text-blue-200">
+            <span>📅 Biannual (twice/year)</span>
+            <span>🎓 Graduation required</span>
+            <span>📋 Age: 19–25 yrs</span>
+            <span>🪪 Unmarried Indian nationals only</span>
+          </div>
+        </div>
+      </div>
+
+      {/* MAIN CONTENT */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* LEFT COLUMN */}
+          <div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="What is UPSC CDS 2026?" />
+              <p className="text-surface-700 leading-relaxed mb-4">
+                Combined Defence Services (CDS) Examination is conducted by the <strong>Union Public Service Commission (UPSC)</strong> twice a year to recruit Commissioned Officers for the three wings of the Indian Armed Forces. It is one of the most prestigious routes to a defence career open to graduates.
+              </p>
+              <p className="text-surface-700 leading-relaxed mb-5">
+                Successful candidates join a training academy — IMA Dehradun, INA Ezhimala, AFA Dundigal, or OTA Chennai — for a 1–2 year training programme before being commissioned as officers. Female candidates are eligible exclusively for OTA.
+              </p>
+
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-5">
+                <div className="font-heading font-semibold text-primary-800 mb-1">💡 CDS 2026 Key Update</div>
+                <p className="text-sm text-primary-700">UPSC CDS I 2026 written exam was held on <strong>13 April 2026</strong>. Result expected June–July 2026. CDS II 2026 notification is expected in <strong>September 2026</strong>. No OTA Women vacancies were notified for CDS I 2026 — watch CDS II 2026 for those.</p>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { icon: '🏛️', label: 'Conducting Body',  value: 'UPSC' },
+                  { icon: '📅', label: 'Frequency',        value: 'Twice/Year' },
+                  { icon: '📋', label: 'Selection Stages', value: 'Written + SSB Interview' },
+                  { icon: '⚠️', label: 'Negative Marking', value: '1/3 per wrong answer' },
+                  { icon: '💻', label: 'Apply Online At',  value: 'upsconline.nic.in' },
+                  { icon: '📄', label: 'Papers (IMA/AFA)', value: '3 Papers, 340 Marks' },
+                  { icon: '📄', label: 'Papers (OTA)',     value: '2 Papers, 240 Marks' },
+                  { icon: '💍', label: 'Marital Status',   value: 'Unmarried at entry' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{c.icon} {c.label}</div>
+                    <div className="font-heading font-semibold text-sm text-surface-800">{c.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="Important Dates 2026" />
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left px-4 py-3 font-heading text-xs uppercase tracking-wide">Date</th>
+                      <th className="px-4 py-3 font-heading text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                        <td className="px-4 py-3 text-surface-800 font-heading font-semibold">{row.date}</td>
+                        <td className="px-4 py-3 text-center">
+                          {row.status === 'released'
+                            ? <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-heading font-semibold px-2 py-0.5 rounded-full">✅ Done</span>
+                            : <span className="inline-block bg-amber-100 text-amber-700 text-xs font-heading font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>
+                          }
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">TBN = To Be Notified. CDS II 2026 dates are estimates based on historical patterns. Always verify on upsc.gov.in.</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria 2026" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { icon: '🪪', label: 'Nationality',       value: 'Indian Citizen (or subject of Bhutan/Nepal under specific conditions)' },
+                  { icon: '💍', label: 'Marital Status',    value: 'Must be unmarried at the time of joining the academy' },
+                  { icon: '🎓', label: 'IMA and OTA',       value: 'Degree from a recognised university (any stream)' },
+                  { icon: '⚓', label: 'Naval Academy',     value: 'B.E. / B.Tech degree in Engineering' },
+                  { icon: '✈️', label: 'Air Force Academy', value: 'Degree with Physics AND Mathematics at 10+2 level' },
+                  { icon: '👩', label: 'Female Candidates', value: 'Eligible for OTA only. Must be unmarried, widow, or divorcee without encumbrances' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.icon} {item.label}</div>
+                    <div className="font-heading font-semibold text-sm text-surface-800 leading-snug">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card overflow-hidden mb-4">
+                <div className="bg-surface-800 text-white px-4 py-3">
+                  <h3 className="font-heading font-semibold text-sm">📋 Age Limits by Academy</h3>
+                </div>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-100">
+                      <th className="text-left px-4 py-2 font-heading text-xs uppercase text-surface-600">Academy</th>
+                      <th className="text-left px-4 py-2 font-heading text-xs uppercase text-surface-600">Age Range</th>
+                      <th className="text-left px-4 py-2 font-heading text-xs uppercase text-surface-600">Gender</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { academy: 'Indian Military Academy (IMA)',  age: '19–24 years', gender: 'Male' },
+                      { academy: 'Indian Naval Academy (INA)',      age: '19–24 years', gender: 'Male' },
+                      { academy: 'Air Force Academy (AFA)',         age: '20–24 years', gender: 'Male' },
+                      { academy: "Officers' Training Academy (OTA)", age: '19–25 years', gender: 'Male and Female' },
+                    ].map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-heading font-semibold text-surface-800">{row.academy}</td>
+                        <td className="px-4 py-3 text-emerald-700 font-heading font-semibold">{row.age}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.gender}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4">
+                <p className="text-sm text-amber-800"><strong>Important:</strong> There is <strong>NO age relaxation</strong> of any kind (OBC, SC, ST, PwBD) for CDS. The age limit is absolute.</p>
+              </div>
+            </section>
+
+            {/* 4. VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="Vacancy History" />
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading text-xs uppercase tracking-wide">Cycle</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Total</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">IMA + INA</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">AFA</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">OTA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i === vacancyHistory.length - 1 ? 'bg-primary-50 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-heading font-semibold text-surface-800">{row.year}</td>
+                        <td className="px-3 py-3 text-center text-emerald-700 font-heading font-bold">{row.total}</td>
+                        <td className="px-3 py-3 text-center text-surface-600">{row.imaIna}</td>
+                        <td className="px-3 py-3 text-center text-surface-600">{row.afa}</td>
+                        <td className="px-3 py-3 text-center text-surface-600">{row.ota}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 5. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="Exam Pattern 2026" />
+
+              <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">For IMA / INA / AFA — 3 Papers, 340 Marks Total</h3>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading text-xs uppercase tracking-wide">Paper</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Qs</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Duration</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {patternIMA.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-heading font-semibold text-surface-800">{row.paper}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="px-3 py-3 text-center text-emerald-700 font-heading font-bold">{row.marks}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{row.duration}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50">
+                      <td className="px-4 py-3 font-heading font-bold text-primary-800">Total</td>
+                      <td className="px-3 py-3 text-center font-heading font-bold text-primary-700">340</td>
+                      <td className="px-3 py-3 text-center font-heading font-bold text-primary-700">340</td>
+                      <td className="px-3 py-3 text-center text-primary-700">6 hrs</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">For OTA — 2 Papers, 240 Marks Total</h3>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading text-xs uppercase tracking-wide">Paper</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Qs</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Duration</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {patternOTA.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-heading font-semibold text-surface-800">{row.paper}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="px-3 py-3 text-center text-emerald-700 font-heading font-bold">{row.marks}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{row.duration}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50">
+                      <td className="px-4 py-3 font-heading font-bold text-primary-800">Total</td>
+                      <td className="px-3 py-3 text-center font-heading font-bold text-primary-700">240</td>
+                      <td className="px-3 py-3 text-center font-heading font-bold text-primary-700">240</td>
+                      <td className="px-3 py-3 text-center text-primary-700">4 hrs</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+                <div className="font-heading font-semibold text-emerald-800 mb-1">Final Merit Calculation</div>
+                <p className="text-sm text-emerald-700">Final merit = Written Exam marks + SSB Interview marks. SSB carries <strong>300 marks</strong> for IMA/INA/AFA (Total 640) and <strong>200 marks</strong> for OTA (Total 450). Negative marking: <strong>1/3 per wrong answer</strong> in all papers.</p>
+              </div>
+            </section>
+
+            {/* 6. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="Detailed Syllabus 2026" />
+              <div className="space-y-3">
+                {syllabus.map((sub, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50 transition-colors">
+                      <span className="flex items-center gap-3">
+                        <span className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold flex-shrink-0">{i + 1}</span>
+                        {sub.subject}
+                      </span>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        {!sub.forOTA && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-heading hidden sm:inline">IMA/INA/AFA only</span>}
+                        <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </div>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                        {sub.topics.map((t, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="text-primary-400 mt-0.5 flex-shrink-0">▸</span>{t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 7. CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <SectionHeading num="7" title="Previous Year Cut-offs" />
+              <div className="card overflow-hidden mb-3">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading text-xs uppercase tracking-wide">Academy</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Written 2024</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Written 2023</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Final 2024</th>
+                      <th className="text-center px-3 py-3 font-heading text-xs uppercase tracking-wide">Final 2023</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-heading font-semibold text-surface-800">{row.academy}</td>
+                        <td className="px-3 py-3 text-center text-primary-700 font-heading font-semibold">{row.w2024}</td>
+                        <td className="px-3 py-3 text-center text-surface-600">{row.w2023}</td>
+                        <td className="px-3 py-3 text-center text-emerald-700 font-heading font-semibold">{row.f2024}</td>
+                        <td className="px-3 py-3 text-center text-surface-600">{row.f2023}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400">Cut-offs are approximate. Final cut-off is out of 640 (IMA/INA/AFA) or 450 (OTA). A strong SSB score can compensate for an average written score.</p>
+            </section>
+
+            {/* 8. SSB INTERVIEW */}
+            <section id="ssb-interview" className="mb-12">
+              <SectionHeading num="8" title="SSB Interview Process (5 Days)" />
+              <p className="text-surface-700 leading-relaxed mb-5">SSB is a comprehensive 5-day personality and leadership assessment that evaluates <strong>15 Officer Like Qualities (OLQs)</strong>. It carries 300 marks for IMA/INA/AFA and 200 marks for OTA.</p>
+              <div className="space-y-4">
+                {ssbStages.map((s, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{s.icon}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.stage}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 9. SALARY */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="9" title="Salary & Career Growth" />
+              <p className="text-surface-700 leading-relaxed mb-4">CDS officers are paid under the <strong>7th Pay Commission</strong>. On commissioning as Lieutenant, pay is Level 10 (Rs 56,100/month) plus Military Service Pay (MSP) of Rs 15,500/month for all officers.</p>
+              <div className="card overflow-hidden mb-5">
+                <div className="bg-surface-800 text-white px-4 py-3">
+                  <h3 className="font-heading font-semibold text-sm">💰 Salary Breakdown — Lieutenant (On Joining)</h3>
+                </div>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-100">
+                      <th className="text-left px-4 py-2 font-heading text-xs uppercase text-surface-600">Component</th>
+                      <th className="text-right px-4 py-2 font-heading text-xs uppercase text-surface-600">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={i === salaryBreakdown.length - 1 ? 'bg-emerald-50' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{row.component}</td>
+                        <td className={`px-4 py-3 text-right font-heading font-semibold ${i === salaryBreakdown.length - 1 ? 'text-emerald-700 text-base' : 'text-surface-800'}`}>{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">📈 Career Progression</h3>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading text-xs uppercase tracking-wide">Rank</th>
+                      <th className="text-left px-3 py-3 font-heading text-xs uppercase tracking-wide">Timeline</th>
+                      <th className="text-left px-3 py-3 font-heading text-xs uppercase tracking-wide">Pay Level</th>
+                      <th className="text-left px-3 py-3 font-heading text-xs uppercase tracking-wide">Basic Pay</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {careerPath.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-heading font-semibold text-surface-800">{row.rank}</td>
+                        <td className="px-3 py-3 text-surface-600">{row.years}</td>
+                        <td className="px-3 py-3 text-primary-700 font-heading font-semibold">{row.level}</td>
+                        <td className="px-3 py-3 text-emerald-700 font-heading font-semibold">{row.pay}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 10. HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="10" title="How to Apply for CDS 2026" />
+              <div className="space-y-3">
+                {[
+                  { n: '1', title: 'Visit UPSC Official Website', desc: 'Go to upsconline.nic.in. Do NOT use any third-party site — only the official UPSC portal is valid for applications.' },
+                  { n: '2', title: 'Complete One Time Registration (OTR)', desc: 'New candidates must register at upsconline.nic.in/otrs/. You need a valid email, mobile number, and scanned photo and signature.' },
+                  { n: '3', title: 'Fill the CDS Application Form', desc: 'Select the CDS notification, fill personal details, educational qualification, and choose academy preference. Double-check all entries before submitting.' },
+                  { n: '4', title: 'Pay Application Fee', desc: 'Rs 200 for General and OBC candidates. SC, ST, and female candidates are exempt. Payment via SBI Net Banking, Challan, or card.' },
+                  { n: '5', title: 'Download Confirmation and Admit Card', desc: 'Save the confirmation page. Admit card is released on upsc.gov.in about 3 weeks before the exam. Carry it with a valid photo ID to the exam hall.' },
+                ].map((item, i) => (
+                  <div key={i} className="card p-4 flex gap-4">
+                    <div className="w-8 h-8 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm flex-shrink-0">{item.n}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-0.5">{item.title}</div>
+                      <p className="text-sm text-surface-600">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 11. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="11" title="6-Month Study Plan for CDS 2026" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((item, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-5">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-xs">{i + 1}</div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="badge-primary">{item.month}</span>
+                        <span className="font-heading font-semibold text-surface-800">{item.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 12. BOOKS */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="12" title="Best Books for CDS 2026" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* 13. FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="13" title="Free Resources for CDS Preparation" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res, i) => {
+                  const icons: Record<string, string> = { youtube: '📺', website: '🌐', telegram: '📱', pdf: '📄' };
+                  return (
+                    <a key={i} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition-all">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-lg">{icons[res.type] ?? '🔗'}</span>
+                        <span className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors">{res.name}</span>
+                      </div>
+                      <p className="text-sm text-surface-500">{res.description}</p>
+                    </a>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* 14. TIPS */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="14" title="Expert Tips for CDS 2026" />
+              <div className="space-y-3">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 15. FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="15" title="Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50 transition-colors">
+                      {faq.q}
+                      <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-3 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              <div className="card p-5">
+                <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">📋 On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-600 py-0.5 transition-colors">{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer" className="card p-4 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🏛️ Official UPSC Website</div>
+                <p className="text-xs text-surface-500 mb-2">Notifications, admit cards, results, and previous year papers.</p>
+                <span className="text-xs text-primary-500 font-heading font-medium">upsc.gov.in →</span>
+              </a>
+
+              <div className="card p-5">
+                <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">⚡ Quick Facts</div>
+                <div className="space-y-2">
+                  {[
+                    { label: 'Conducting Body',  value: 'UPSC' },
+                    { label: 'Frequency',        value: 'Twice/Year' },
+                    { label: 'IMA/INA Age',      value: '19–24 years' },
+                    { label: 'OTA Age',          value: '19–25 years' },
+                    { label: 'Written (IMA)',    value: '340 Marks' },
+                    { label: 'Written (OTA)',    value: '240 Marks' },
+                    { label: 'SSB Marks',        value: '300 (IMA) / 200 (OTA)' },
+                    { label: 'Starting Salary',  value: '₹56,100 + MSP ₹15,500' },
+                    { label: 'App. Fee',         value: '₹200 | Free (SC/ST/F)' },
+                  ].map((f, i) => (
+                    <div key={i} className="flex items-start justify-between gap-2 text-xs">
+                      <span className="text-surface-400">{f.label}</span>
+                      <span className="font-heading font-semibold text-surface-700 text-right">{f.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="card p-5">
+                <div className="text-xs font-heading font-semibold uppercase tracking-wide text-surface-500 mb-3">🔗 Related Exams</div>
+                <div className="space-y-2">
+                  {[
+                    { name: 'UPSC NDA 2026',      slug: 'upsc-nda' },
+                    { name: 'UPSC CAPF AC 2026',  slug: 'upsc-capf' },
+                    { name: 'AFCAT 2026',         slug: 'afcat' },
+                    { name: 'Army Agniveer 2026', slug: 'army-agniveer' },
+                    { name: 'Navy Agniveer 2026', slug: 'navy-agniveer' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-600 hover:text-primary-700 py-0.5">→ {e.name}</Link>
+                  ))}
+                </div>
+              </div>
+
+              <Link href="/tools/age-calculator/" className="card p-4 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age and Eligibility Calculator to check if you qualify for CDS 2026.</p>
+                <span className="text-xs text-primary-500 font-heading font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
     </>
   );
 }
