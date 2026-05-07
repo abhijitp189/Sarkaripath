@@ -58,31 +58,31 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'rajasthan-police-constable') {
     return {
-      title: 'Rajasthan Police Constable 2026 – Syllabus, Eligibility & Guide | TaiyarHo',
-      description: 'Rajasthan Police Constable 2026: ~4,000 vacancies expected Jun–Jul 2026. Check syllabus, exam pattern (150 Qs, 150 marks, -0.25 negative marking), PET/PST standards, CET requirement, eligibility, age limit 18–23 yrs, salary and free resources.',
-      keywords: 'Rajasthan Police Constable 2026, Raj Police bharti 2026, राजस्थान पुलिस कांस्टेबल भर्ती 2026, Rajasthan Police syllabus Hindi, सरकारी नौकरी राजस्थान',
+      title: 'Rajasthan Police Constable 2026 – Age Limit, Eligibility, Syllabus & Guide | TaiyarHo',
+      description: 'Rajasthan Police Constable 2026: Age limit General 18–23 yrs, OBC 18–26, SC/ST 18–28. ~4,000 vacancies. CET mandatory. Syllabus 150 Qs, -0.25 negative marking. PET/PST standards & complete guide.',
+      keywords: 'Rajasthan Police Constable 2026, raj police constable age limit, rajasthan police obc age limit, rajasthan police sc st age limit, rajasthan police eligibility 2026, rajasthan police constable syllabus, raj police bharti 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/rajasthan-police-constable/' },
-      other: { 'description:hi': 'राजस्थान पुलिस कांस्टेबल 2026 – ~4,000 रिक्तियाँ जून–जुलाई 2026 में अपेक्षित। सिलेबस, परीक्षा पैटर्न (150 प्रश्न, 150 अंक), PET/PST मानक, CET अनिवार्यता, आयु सीमा 18–23 वर्ष और निःशुल्क संसाधन देखें।' },
+      other: { 'description:hi': 'राजस्थान पुलिस कांस्टेबल 2026 – आयु सीमा: General 18–23, OBC 18–26, SC/ST 18–28 वर्ष। ~4,000 रिक्तियाँ। CET अनिवार्य। सिलेबस 150 प्रश्न, -0.25 नकारात्मक अंकन। PET/PST मानक और पूरी गाइड।' },
     };
   }
 
   if (params.slug === 'bihar-police-constable') {
     return {
-      title: 'Bihar Police Constable 2026 – Syllabus, Eligibility & Guide | TaiyarHo',
-      description: 'Bihar Police Constable 2026 (CSBC): 19,838 vacancies. Check syllabus, exam pattern (100 Qs, 100 marks), PET/PST physical standards, eligibility, age limit 18–25 yrs, salary ₹21,700–₹69,100 and free study resources.',
-      keywords: 'Bihar Police Constable 2026, Bihar Police taiyari, CSBC bharti, बिहार पुलिस कांस्टेबल परीक्षा, Bihar Police syllabus Hindi, सरकारी नौकरी बिहार',
+      title: 'Bihar Police Constable 2026 – Eligibility, Selection Process, Syllabus & Guide | TaiyarHo',
+      description: 'Bihar Police Constable 2026 (CSBC): 19,838 vacancies. 12th pass eligible, age 18–25 yrs. Selection: Written (100 Qs) → PET/PST → Medical. No negative marking. Salary ₹21,700–₹69,100/month.',
+      keywords: 'Bihar Police Constable 2026, bihar police eligibility, bihar police selection process, CSBC bharti, बिहार पुलिस कांस्टेबल 2026, bihar police constable syllabus, bihar police 12th pass',
       alternates: { canonical: 'https://www.taiyarho.in/exams/bihar-police-constable/' },
-      other: { 'description:hi': 'Bihar Police Constable 2026 (CSBC) – 19,838 रिक्तियाँ। सिलेबस, परीक्षा पैटर्न (100 प्रश्न, 100 अंक), PET/PST मानक, आयु सीमा 18-25 वर्ष, वेतन ₹21,700–₹69,100 और मुफ्त संसाधन।' },
+      other: { 'description:hi': 'Bihar Police Constable 2026 (CSBC) – 19,838 रिक्तियाँ। 12वीं पास पात्र, आयु 18–25 वर्ष। चयन: लिखित (100 प्रश्न) → PET/PST → मेडिकल। नकारात्मक अंकन नहीं। वेतन ₹21,700–₹69,100/माह।' },
     };
   }
 
   if (params.slug === 'mp-police-constable') {
     return {
-      title: 'MP Police Constable 2026 – Syllabus, Eligibility, Exam Date & Guide | TaiyarHo',
-      description: 'MP Police Constable 2026 (MPESB): Exam tentatively Oct 2026. 10th/8th pass eligible. 100+100 marks (written + PET). No negative marking. Check syllabus, physical standards, age limit 18–33 yrs, salary ₹19,500–₹62,000 and free resources.',
-      keywords: 'MP Police Constable 2026, MP Police bharti 2026, MPESB constable exam, मध्यप्रदेश पुलिस कांस्टेबल 2026, MP Police syllabus Hindi, सरकारी नौकरी MP',
+      title: 'MP Police Constable 2026 – Eligibility, Syllabus, Age Limit & Complete Guide | TaiyarHo',
+      description: 'MP Police Constable 2026 (MPESB): 10th pass eligible, age 18–33 yrs. No negative marking. 100 marks written + 100 marks PET. Syllabus, physical standards, salary ₹19,500–₹62,000 & complete preparation guide.',
+      keywords: 'MP Police Constable 2026, mp police constable eligibility, mp constable syllabus 2026, MPESB constable exam, मध्यप्रदेश पुलिस कांस्टेबल 2026, mp police general age limit, mp police 10th pass',
       alternates: { canonical: 'https://www.taiyarho.in/exams/mp-police-constable/' },
-      other: { 'description:hi': 'MP Police Constable 2026 (MPESB) – परीक्षा अक्टूबर 2026 अपेक्षित। 10वीं पास पात्र। 100+100 अंक (लिखित + PET)। सिलेबस, शारीरिक मानक, आयु सीमा 18–33 वर्ष, वेतन ₹19,500–₹62,000।' },
+      other: { 'description:hi': 'MP Police Constable 2026 (MPESB) – 10वीं पास पात्र, आयु 18–33 वर्ष। नकारात्मक अंकन नहीं। लिखित 100 अंक + PET 100 अंक। सिलेबस, शारीरिक मानक, वेतन ₹19,500–₹62,000 और पूरी गाइड।' },
     };
   }
 
@@ -108,11 +108,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'ssc-cpo') {
     return {
-      title: 'SSC CPO 2026 – Notification, Syllabus, Eligibility & Guide | TaiyarHo',
-      description: 'SSC CPO 2026 notification expected 31 May 2026. ~3,000–5,000 SI vacancies in Delhi Police & CAPFs. Eligibility: Graduation, Age 20–25. Exam pattern, PET/PST, salary ₹35,400–₹1,12,400/month.',
-      keywords: 'SSC CPO 2026, SSC CPO notification, SSC CPO syllabus, Delhi Police SI 2026, CAPF Sub Inspector, SSC CPO taiyari, sarkari naukri 2026, Sub Inspector bharti',
+      title: 'SSC CPO 2026 – SI is Group B (Non-Gazetted), Age 20–25, Salary & Complete Guide | TaiyarHo',
+      description: 'SSC CPO 2026: Sub Inspector is a Group B Non-Gazetted post. Age 20–25 yrs (relaxation for OBC/SC/ST). Salary ₹35,400–₹1,12,400/month. ~3,000–5,000 SI vacancies in Delhi Police & CAPFs. Notification expected 31 May 2026.',
+      keywords: 'SSC CPO 2026, si is group b or c, sub inspector group b, ssc cpo age limit 2026, Delhi Police SI 2026, CAPF Sub Inspector, ssc cpo minimum height, SSC CPO salary 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-cpo/' },
-      other: { 'description:hi': 'SSC CPO 2026 – दिल्ली पुलिस और CAPF में Sub Inspector के लिए 3,000–5,000 रिक्तियाँ। अधिसूचना 31 मई 2026 को अपेक्षित। सिलेबस, PET/PST, पात्रता, वेतन ₹35,400–₹1,12,400/माह और मुफ्त संसाधन।' },
+      other: { 'description:hi': 'SSC CPO 2026 – Sub Inspector Group B (Non-Gazetted) पद। आयु 20–25 वर्ष (OBC/SC/ST को छूट)। वेतन ₹35,400–₹1,12,400/माह। दिल्ली पुलिस और CAPF में 3,000–5,000 रिक्तियाँ। अधिसूचना 31 मई 2026।' },
     };
   }
 
@@ -128,11 +128,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'maharashtra-police-constable') {
     return {
-      title: 'Maharashtra Police Constable 2026 – Syllabus, Eligibility, PET & Guide | TaiyarHo',
-      description: 'Maharashtra Police Constable 2026: 15,631 vacancies for Shipai, SRPF & Driver posts. PET/PST: Jan–Feb 2026. Written Exam: Mar–Apr 2026. 12th pass eligible. Salary ₹30K–₹35K/month.',
-      keywords: 'Maharashtra Police Constable 2026, Maharashtra Police Bharti, महाराष्ट्र पोलीस भरती 2026, mahapolice constable syllabus, पोलीस शिपाई भरती, state police sarkari naukri Maharashtra',
+      title: 'Maharashtra Police Constable 2026 – Salary, Eligibility, Syllabus & PET Details | TaiyarHo',
+      description: 'Maharashtra Police Constable 2026: Salary ₹30,000–₹35,000/month. 15,631 vacancies (Shipai, SRPF, Driver). 12th pass eligible, age 18–28 yrs. Height, PET/PST standards, syllabus (100 Qs) & complete guide.',
+      keywords: 'Maharashtra Police Constable 2026, Maharashtra Police Bharti, महाराष्ट्र पोलीस भरती 2026, mahapolice constable syllabus, पोलीस शिपाई भरती, maharashtra police constable salary, police bharti eligibility maharashtra, state police sarkari naukri Maharashtra',
       alternates: { canonical: 'https://www.taiyarho.in/exams/maharashtra-police-constable/' },
-      other: { 'description:hi': 'महाराष्ट्र पोलीस कांस्टेबल 2026 – 15,631 रिक्तियाँ। लिखित परीक्षा मार्च–अप्रैल 2026। सिलेबस (100 प्रश्न, 100 अंक), PET/PST शारीरिक मानक, आयु सीमा 18-28 वर्ष, वेतन ₹30,000–₹35,000/माह।' },
+      other: { 'description:hi': 'महाराष्ट्र पोलीस कांस्टेबल 2026 – वेतन ₹30,000–₹35,000/माह। 15,631 रिक्तियाँ। 12वीं पास पात्र, आयु 18-28 वर्ष। ऊंचाई मानक, PET/PST, सिलेबस (100 प्रश्न, 100 अंक) और पूरी गाइड।' },
     };
   }
 
@@ -198,8 +198,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'ibps-rrb-po') {
     return {
-      title: 'IBPS RRB PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
-      description: 'IBPS RRB PO 2026 (CRP RRBs XV): Prelims 21–22 Nov, Mains 20 Dec 2026. 3,000–5,000 vacancies in 43 Rural Banks. Check syllabus, exam pattern, eligibility (Graduate, 18–30 yrs), salary ₹80,437/month and free preparation resources.',
+      title: 'IBPS RRB PO 2026 – Salary ₹80,437/month, Vacancies, Syllabus & Complete Guide | TaiyarHo',
+      description: 'IBPS RRB PO 2026 (CRP RRBs XV): Salary ₹80,437/month. 3,000–5,000 vacancies in 43 Rural Banks. Prelims Nov, Mains Dec 2026. Graduate eligible, age 18–30 yrs. Syllabus, exam pattern & free resources.',
       keywords: 'IBPS RRB PO 2026, RRB Officer Scale I taiyari, gramin bank PO bharti, IBPS RRB PO syllabus Hindi, ग्रामीण बैंक PO भर्ती 2026, banking sarkari naukri 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ibps-rrb-po/' },
       other: { 'description:hi': 'IBPS RRB PO 2026 – 43 ग्रामीण बैंकों में Officer Scale I के लिए 3,000–5,000 रिक्तियाँ। Prelims 21-22 नवंबर, Mains 20 दिसंबर 2026। सिलेबस, पात्रता, आयु 18-30 वर्ष, वेतन ₹80,437/माह और मुफ्त संसाधन।' },
@@ -327,11 +327,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'rpf-constable') {
     return {
-      title: 'RPF Constable 2026 – Notification, Syllabus, PET/PMT & Complete Guide | TaiyarHo',
-      description: 'RPF Constable 2026: New notification expected. 10th pass eligible. Check CBT syllabus, exam pattern (120 Qs), PET/PMT physical standards, eligibility (age 18–25), salary ₹21,700–₹69,100/month and free preparation resources.',
-      keywords: 'RPF Constable 2026, RPF Constable taiyari, Railway Protection Force Constable syllabus, RPF Constable PET PMT, RPF Constable salary, railway constable sarkari naukri 2026, आरपीएफ कांस्टेबल भर्ती 2026',
+      title: 'RPF Constable 2026 – Vacancy, Salary, Syllabus, PET/PMT & Complete Guide | TaiyarHo',
+      description: 'RPF Constable 2026: New notification expected soon. 10th pass eligible, age 18–25 yrs. Salary ₹21,700–₹69,100/month. CBT 120 Qs, PET/PMT physical standards, training details & full preparation guide.',
+      keywords: 'RPF Constable 2026, rpf constable vacancy 2026, rpf constable notification 2026, rpf constable training 2026, RPF Constable salary, rpf constable age limit 2026, Railway Protection Force Constable, आरपीएफ कांस्टेबल भर्ती 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/rpf-constable/' },
-      other: { 'description:hi': 'RPF Constable 2026 – 10वीं पास उम्मीदवारों के लिए रेलवे सुरक्षा बल में कांस्टेबल भर्ती। CBT (120 प्रश्न), PET/PMT शारीरिक मानक, आयु सीमा 18–25 वर्ष, वेतन ₹21,700–₹69,100/माह।' },
+      other: { 'description:hi': 'RPF Constable 2026 – नई अधिसूचना जल्द। 10वीं पास पात्र, आयु 18–25 वर्ष। वेतन ₹21,700–₹69,100/माह। CBT 120 प्रश्न, PET/PMT मानक, ट्रेनिंग विवरण और पूरी गाइड।' },
     };
   }
 

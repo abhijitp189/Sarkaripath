@@ -14,7 +14,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-start-government-exam-preparation': 'Government Exam Preparation for Beginners 2026 – Step-by-Step Roadmap | TaiyarHo',
     'how-to-fill-government-job-application-form': 'How to Fill Government Job Application Forms – Step by Step Guide (2026) | TaiyarHo',
     'best-free-resources-government-exams': 'Best Free Resources for Government Exam Preparation (2026) – 50+ Verified Links | TaiyarHo',
-    'age-limit-relaxation-government-jobs': 'Age Limit & Relaxation for Government Jobs (2026) – Complete Guide for OBC, SC/ST, EWS, PwBD, Ex-Servicemen | TaiyarHo',
+    'age-limit-relaxation-government-jobs': 'Age Relaxation in Govt Jobs 2026: OBC, SC/ST, PwBD, EWS – Meaning & Full Rules | TaiyarHo',
     'study-plan-working-professionals': 'Government Exam Preparation for Working Professionals 2026 – Study Plan, Schedule & Strategy | TaiyarHo',
     'documents-needed-government-job': 'Documents Required for Government Job 2026 – Complete Checklist for Application & Document Verification | TaiyarHo',
   };
@@ -23,7 +23,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-start-government-exam-preparation': 'Complete beginner\'s roadmap to government exam preparation in 2026. Which exam to choose, 12-month study plan, free resources, daily timetables, and the mistakes that fail 90% of aspirants. From zero to selection.',
     'how-to-fill-government-job-application-form': 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo & signature upload specs, fee payment, common mistakes to avoid, and correction window details.',
     'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
-    'age-limit-relaxation-government-jobs': 'Complete 2026 guide to age limits and relaxation rules for Indian government exams. Covers OBC (+3 yrs), SC/ST (+5 yrs), PwBD (+10–15 yrs), Ex-Servicemen, and EWS rules for UPSC, SSC CGL, IBPS PO, SBI PO, and RRB NTPC — with a quick-check table and common mistakes to avoid.',
+    'age-limit-relaxation-government-jobs': '"Age relaxation" means extra years added to the upper age limit for your category. OBC gets +3 years, SC/ST +5 years, PwBD +10–15 years, Ex-Servicemen +5 years. Full exam-wise table for UPSC, SSC, IBPS & Railway 2026.',
     'study-plan-working-professionals': 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, 14-hour weekend strategy, best apps for micro-learning, and how to manage burnout as a working aspirant.',
     'documents-needed-government-job': 'Complete 2026 checklist of documents needed for government job applications and document verification. Covers ID proof, educational certificates, OBC/SC/ST/EWS reservation documents, NOC, and pro tips to avoid rejection in SSC, IBPS, UPSC, SBI, and Railway exams.',
   };

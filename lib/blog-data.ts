@@ -17,8 +17,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'ibps-po-salary-in-hand-2026',
     title: 'IBPS PO Salary In Hand 2026: CTC, Allowances & Perks Explained',
-    metaTitle: 'IBPS PO Salary In Hand 2026: CTC, Allowances & Perks Explained | TaiyarHo',
-    metaDescription: 'IBPS PO salary in hand 2026 — exact figures for basic pay, DA, HRA, allowances, deductions & hidden perks. Based on 12th Bipartite Settlement.',
+    metaTitle: 'IBPS PO Salary In Hand 2026: ₹52,000–₹55,000/month After All Deductions | TaiyarHo',
+    metaDescription: 'IBPS PO actual in-hand salary 2026: ₹52,000–₹55,000/month. Basic ₹36,000 + DA + HRA + allowances − deductions. City-wise breakup, CTC vs in-hand, and hidden perks explained.',
     category: 'Banking',
     tags: ['IBPS PO', 'Bank PO Salary 2026', 'IBPS PO In-Hand Salary', '12th Bipartite Settlement', 'Bank PO Allowances'],
     publishedDate: 'April 30, 2026',
@@ -45,8 +45,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'government-exam-age-limit-obc-sc-st-relaxation-2026',
     title: 'Government Exam Age Limit with OBC, SC, ST Relaxation 2026 – Full List',
-    metaTitle: 'Govt Exam Age Limit 2026: OBC, SC, ST Relaxation Full List | TaiyarHo',
-    metaDescription: 'Complete 2026 guide to government exam age limits — UPSC, SSC, Banking, Railway. Category-wise OBC (+3), SC/ST (+5), PwBD (+10) relaxation tables. Updated.',
+    metaTitle: 'Govt Exam Age Limit 2026: OBC +3, SC/ST +5, PwBD +10 – Category-wise Table | TaiyarHo',
+    metaDescription: 'What does "age relaxation" mean? OBC gets +3 years, SC/ST gets +5, PwBD gets +10. Full category-wise age limit table for UPSC, SSC, Banking & Railway 2026. Check your exact age cutoff.',
     category: 'Preparation',
     tags: ['Age Relaxation Meaning', 'Age Relaxation Means', 'Age Limit 2026', 'OBC Age Relaxation', 'SC ST Age Relaxation', 'What is Age Relaxation', 'UPSC Age Limit', 'SSC CGL Age Limit', 'Government Exam Age Limit'],
     publishedDate: 'May 1, 2026',
