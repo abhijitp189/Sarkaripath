@@ -4559,47 +4559,49 @@ function HighestSalary12thArticle({ post }: { post: any }) {
         </article>
 
         {/* SIDEBAR */}
-        <aside className="mt-10 lg:mt-0 space-y-5">
-          {/* TOC */}
-          <div className="card p-5 sticky top-24">
-            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</div>
-            <nav className="space-y-1.5">
-              {toc.map(item => (
-                <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-600 hover:translate-x-1 transition-all duration-150 leading-snug">
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Quick Salary Box */}
-          <div className="card p-5">
-            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Quick Salary Summary</div>
-            <div className="space-y-2 text-sm">
-              {[
-                { label: 'NDA', val: '₹1 Lakh+', color: 'text-orange-600' },
-                { label: 'SSC CHSL DEO A', val: '₹50,000', color: 'text-primary-600' },
-                { label: 'RBI Attendant', val: '₹46,000', color: 'text-green-600' },
-                { label: 'Agniveer Tech', val: '₹40,000', color: 'text-surface-700' },
-                { label: 'SSC GD Constable', val: '₹38,000', color: 'text-surface-700' },
-              ].map(s => (
-                <div key={s.label} className="flex justify-between items-center">
-                  <span className="text-surface-600">{s.label}</span>
-                  <span className={`font-bold ${s.color}`}>{s.val}</span>
-                </div>
-              ))}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-5">
+            {/* TOC */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</div>
+              <nav className="space-y-1.5">
+                {toc.map(item => (
+                  <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-600 hover:translate-x-1 transition-all duration-150 leading-snug">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
             </div>
-          </div>
 
-          {/* Related Links */}
-          <div className="card p-5">
-            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related</div>
-            <div className="space-y-2">
-              <Link href="/exams/ssc-cgl" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL Complete Guide →</Link>
-              <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL 2026 →</Link>
-              <Link href="/blog/ibps-po-salary-in-hand-2026" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 →</Link>
-              <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
-              <Link href="/exams" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
+            {/* Quick Salary Box */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Quick Salary Summary</div>
+              <div className="space-y-2 text-sm">
+                {[
+                  { label: 'NDA', val: '₹1 Lakh+', color: 'text-orange-600' },
+                  { label: 'SSC CHSL DEO A', val: '₹50,000', color: 'text-primary-600' },
+                  { label: 'RBI Attendant', val: '₹46,000', color: 'text-green-600' },
+                  { label: 'Agniveer Tech', val: '₹40,000', color: 'text-surface-700' },
+                  { label: 'SSC GD Constable', val: '₹38,000', color: 'text-surface-700' },
+                ].map(s => (
+                  <div key={s.label} className="flex justify-between items-center">
+                    <span className="text-surface-600">{s.label}</span>
+                    <span className={`font-bold ${s.color}`}>{s.val}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Related Links */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related</div>
+              <div className="space-y-2">
+                <Link href="/exams/ssc-cgl" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL Complete Guide →</Link>
+                <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL 2026 →</Link>
+                <Link href="/blog/ibps-po-salary-in-hand-2026" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 →</Link>
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
+                <Link href="/exams" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
+              </div>
             </div>
           </div>
         </aside>
@@ -4989,18 +4991,19 @@ function TelegramChannelsArticle({ post }: { post: any }) {
         </article>
 
         {/* SIDEBAR */}
-        <aside className="mt-10 lg:mt-0 space-y-5">
-          {/* TOC */}
-          <div className="card p-5 sticky top-24">
-            <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</div>
-            <nav className="space-y-1.5">
-              {toc.map(item => (
-                <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-600 hover:translate-x-1 transition-all duration-150 leading-snug">
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </div>
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-5">
+            {/* TOC */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</div>
+              <nav className="space-y-1.5">
+                {toc.map(item => (
+                  <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-600 hover:translate-x-1 transition-all duration-150 leading-snug">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
 
           {/* Quick Category Box */}
           <div className="card p-5">
@@ -5043,6 +5046,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
               <Link href="/exams/" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
               <Link href="/resources/" className="block text-sm text-primary-600 hover:underline leading-snug">Free Resources Hub →</Link>
             </div>
+          </div>
           </div>
         </aside>
       </div>
