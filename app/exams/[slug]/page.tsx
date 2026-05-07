@@ -255,6 +255,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'navy-agniveer') {
+    return {
+      title: 'Navy Agniveer SSR/MR 2026 – Eligibility, INET, Salary & Guide | TaiyarHo',
+      description: 'Indian Navy Agniveer SSR/MR 2026 complete guide: 2,000–3,000 vacancies, INET exam pattern, SSR (12th PCM) & MR (10th pass) eligibility, age 17.5–21 yrs, salary ₹30,000–₹40,000/month, Seva Nidhi ₹11.71 lakh.',
+      keywords: 'Navy Agniveer SSR MR 2026, Indian Navy Agniveer taiyari, नौसेना अग्निवीर 2026, Navy Agniveer exam pattern, INET syllabus, Agnipath Navy guide, navy sarkari naukri',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/navy-agniveer/' },
+      other: { 'description:hi': 'Indian Navy Agniveer SSR/MR 2026 – 2,000–3,000 रिक्तियाँ। INET परीक्षा पैटर्न, पात्रता (SSR: 12वीं PCM, MR: 10वीं), आयु 17.5–21 वर्ष, वेतन ₹30,000–₹40,000/माह और सेवा निधि ₹11.71 लाख की पूरी जानकारी।' },
+    };
+  }
+
   if (params.slug === 'iaf-agniveer') {
     return {
       title: 'IAF Agniveer Vayu 2026 – Eligibility, Exam Pattern, Salary & Guide | TaiyarHo',
@@ -385,6 +395,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
   if (brief && brief.slug === 'ugc-net') return <UgcNetPage exam={brief} />;
   if (brief && brief.slug === 'army-agniveer') return <ArmyAgniveerPage exam={brief} />;
+  if (brief && brief.slug === 'navy-agniveer') return <NavyAgniveerPage exam={brief} />;
   if (brief && brief.slug === 'iaf-agniveer') return <IafAgniveerPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-po') return <IbpsRrbPoPage exam={brief} />;
   if (brief && brief.slug === 'ibps-rrb-clerk') return <IbpsRrbClerkPage exam={brief} />;
@@ -24010,6 +24021,636 @@ function SscStenographerPage({ exam }: { exam: any }) {
 }
 
 // ─── IAF AGNIVEER VAYU PAGE ───────────────────────────────────────────────────
+// ─── NAVY AGNIVEER RICH PAGE ──────────────────────────────────────────────────
+function NavyAgniveerPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'posts',           label: 'SSR & MR Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'INET Exam Pattern' },
+    { id: 'physical',        label: 'Physical Standards' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'after-4-years',   label: 'After 4 Years' },
+    { id: 'study-plan',      label: 'Preparation Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released',   date: 'Expected: May – Jun 2026',     status: 'tbn' },
+    { event: 'Online Application Opens',          date: 'Expected: Jun 2026',           status: 'tbn' },
+    { event: 'Last Date to Apply',                date: 'To Be Notified (TBN)',         status: 'tbn' },
+    { event: 'Admit Card Download',               date: 'To Be Notified (TBN)',         status: 'tbn' },
+    { event: 'INET (Online Written Exam)',         date: 'Expected: Aug – Sep 2026',    status: 'tbn' },
+    { event: 'Physical Fitness Test (PFT)',        date: 'After INET Result – TBN',     status: 'tbn' },
+    { event: 'Medical Examination',               date: 'After PFT – TBN',             status: 'tbn' },
+    { event: 'Document Verification',             date: 'After Medical – TBN',         status: 'tbn' },
+    { event: 'Final Merit List & Joining',         date: 'To Be Notified (TBN)',        status: 'tbn' },
+  ];
+
+  const posts = [
+    {
+      post: 'Agniveer SSR (Senior Secondary Recruit)',
+      qualification: '12th Pass with Physics & Maths. Minimum 50% aggregate and 50% in English.',
+      trades: 'Seamanship, Communications, Operations (S&C), IT, Electrical, Mechanical, Stores',
+      vacancies: '~1,500 – 2,000 per cycle',
+    },
+    {
+      post: 'Agniveer MR (Matric Recruit)',
+      qualification: '10th Pass with minimum 45% marks. Recognised State/Central Board.',
+      trades: 'Chef, Hygienist, Steward',
+      vacancies: '~500 – 1,000 per cycle',
+    },
+  ];
+
+  const inetPattern = [
+    { subject: 'English',                    qs: 25, marks: 25, applicableTo: 'SSR & MR' },
+    { subject: 'Science & Maths',            qs: 25, marks: 25, applicableTo: 'SSR only' },
+    { subject: 'General Knowledge',          qs: 25, marks: 25, applicableTo: 'SSR & MR' },
+    { subject: 'Maths / GK (MR Paper)',      qs: 25, marks: 25, applicableTo: 'MR only' },
+  ];
+
+  const salaryTable = [
+    { year: 'Year 1', gross: '₹30,000', sevaNidhi: '₹9,000 (30%)', inHand: '~₹21,000', annualPkg: '₹4.76 Lakh' },
+    { year: 'Year 2', gross: '₹33,000', sevaNidhi: '₹9,900 (30%)', inHand: '~₹23,100', annualPkg: '₹5.24 Lakh' },
+    { year: 'Year 3', gross: '₹36,500', sevaNidhi: '₹10,950 (30%)', inHand: '~₹25,550', annualPkg: '₹5.80 Lakh' },
+    { year: 'Year 4', gross: '₹40,000', sevaNidhi: '₹12,000 (30%)', inHand: '~₹28,000', annualPkg: '₹6.92 Lakh' },
+  ];
+
+  const books = [
+    { subject: 'Mathematics (SSR)',     title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal (S. Chand)', freeLink: '' },
+    { subject: 'Science (SSR)',         title: 'NCERT Physics & Chemistry (Class 11–12)', author: 'NCERT', freeLink: 'https://ncert.nic.in/textbook.php' },
+    { subject: 'English',               title: 'Objective English for Competitive Exams', author: 'S.P. Bakshi (Arihant)', freeLink: '' },
+    { subject: 'General Knowledge',     title: "Lucent's General Knowledge", author: 'Lucent Publications', freeLink: '' },
+    { subject: 'Reasoning & Aptitude',  title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', freeLink: '' },
+    { subject: 'Previous Papers',       title: 'Navy Agniveer SSR/MR Previous Year Papers', author: 'Arihant / Oswaal', freeLink: '' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the age limit for Navy Agniveer SSR/MR 2026?',
+      a: 'Candidates must be between 17.5 years and 21 years of age on the date of enrolment. The exact date-of-birth range (e.g. born between DD/MM/2005 and DD/MM/2008) will be specified in the official notification. Always verify at joinindiannavy.gov.in before applying.',
+    },
+    {
+      q: 'What is the difference between Navy Agniveer SSR and MR?',
+      a: 'SSR (Senior Secondary Recruit) requires 12th pass with Physics and Maths and serves in technical/operational trades like Communications, Electrical, and IT. MR (Matric Recruit) requires only 10th pass and serves in domestic trades like Chef, Hygienist, and Steward. SSR has a higher written exam (INET) difficulty level.',
+    },
+    {
+      q: 'What is INET and how is it conducted for Navy Agniveer 2026?',
+      a: 'INET stands for Indian Navy Entrance Test. It is an online (CBT) exam conducted at designated centres. For SSR: English + Science & Maths + General Knowledge (75 questions, 60 min). For MR: English + GK (50 questions, 30 min). Negative marking applies at −0.25 per wrong answer. Results are declared online.',
+    },
+    {
+      q: 'How many vacancies are expected in Navy Agniveer 2026?',
+      a: 'Based on previous cycles, approximately 2,000–3,000 vacancies are expected across SSR and MR posts. The Indian Navy recruits twice a year. Exact vacancy numbers are announced in the official notification at joinindiannavy.gov.in.',
+    },
+    {
+      q: 'What is the Seva Nidhi payout for Indian Navy Agniveer?',
+      a: "After completing 4 years of service, Agniveers receive a tax-free Seva Nidhi lump sum of approximately ₹11.71 lakh. This includes the Agniveer's own 30% monthly contribution plus an equal matching contribution from the Government of India, along with accrued interest. No pension or gratuity is payable.",
+    },
+    {
+      q: 'Can females apply for Indian Navy Agniveer SSR/MR 2026?',
+      a: 'Currently, the Indian Navy Agniveer scheme is open to male candidates only for both SSR and MR posts. This is different from the IAF Agniveer Vayu scheme, which accepts both male and female candidates. Always check the latest official notification at joinindiannavy.gov.in for any policy updates.',
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-amber-100 text-amber-700';
+  };
+  const statusLabel = (s: string) => s === 'done' ? 'Completed' : s === 'upcoming' ? 'Upcoming' : 'TBN';
+
+  return (
+    <>
+      <div className="container-main py-10">
+        {/* Breadcrumb */}
+        <nav className="text-sm text-surface-500 mb-6">
+          <Link href="/" className="hover:text-primary-500">Home</Link><span className="mx-2">›</span>
+          <Link href="/exams" className="hover:text-primary-500">Exams</Link><span className="mx-2">›</span>
+          <span className="text-surface-800">Navy Agniveer SSR/MR 2026</span>
+        </nav>
+
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── Main Content ── */}
+          <div>
+            {/* Page Header */}
+            <div className="mb-8" id="overview">
+              <div className="flex flex-wrap gap-2 mb-3">
+                <span className="badge badge-primary">Defence</span>
+                <span className="badge badge-green">Central Govt</span>
+                <span className="badge bg-surface-100 text-surface-600">Biannual</span>
+                <span className="badge bg-red-100 text-red-700">Agnipath Scheme</span>
+                <span className="badge bg-cyan-100 text-cyan-700">⚓ Indian Navy</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">Navy Agniveer SSR/MR 2026 – Complete Preparation Guide</h1>
+              <p className="text-surface-500 leading-relaxed text-lg">
+                Join the Indian Navy for a 4-year engagement under the Agnipath Scheme. Open to 12th pass (PCM) candidates for SSR and 10th pass candidates for MR. Expected 2,000–3,000 vacancies for the 2026 cycle across operational, technical, and domestic trades.
+              </p>
+              <a href="https://joinindiannavy.gov.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary-500 hover:text-primary-600 mt-3 font-medium">Official Website: joinindiannavy.gov.in →</a>
+            </div>
+
+            {/* Hero Highlight Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+              {[
+                { label: '📋 Expected Vacancies',   value: '2,000 – 3,000' },
+                { label: '📅 Exam (Expected)',        value: 'Aug – Sep 2026' },
+                { label: '🔔 Notification',           value: 'May – Jun 2026 (Est.)' },
+                { label: '💰 Monthly Package',        value: '₹30,000 – ₹40,000' },
+              ].map((item) => (
+                <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                  <div className="font-semibold text-surface-800 text-sm">{item.value}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* 💡 Key Update Callout */}
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-10 text-sm text-blue-800">
+              <strong>💡 Key Update 2026:</strong> The Navy Agniveer 2026 notification is expected in <strong>May–June 2026</strong>. The Navy conducts two recruitment cycles per year. The previous cycle (Feb/Mar 2025 intake) was notified in late 2024 and the INET was held in early 2025. Apply only at the official website — <a href="https://joinindiannavy.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">joinindiannavy.gov.in</a>. Beware of unofficial websites charging application fees.
+            </div>
+
+            {/* ── 1. Important Dates ── */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="1" title="📅 Important Dates – Navy Agniveer 2026" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Event</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Date</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                          <td className="px-4 py-3 text-surface-800 font-medium">{row.date}</td>
+                          <td className="px-4 py-3">
+                            <span className={`text-xs px-2 py-1 rounded-full font-semibold ${statusColor(row.status)}`}>
+                              {statusLabel(row.status)}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ All 2026 dates are estimated based on previous cycles. TBN = To Be Notified. Verify at joinindiannavy.gov.in before applying.</p>
+            </section>
+
+            {/* ── 2. Eligibility ── */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="2" title="🎓 Eligibility Criteria" />
+              <div className="card p-6 space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🪪 Nationality</div>
+                    <div className="font-semibold text-surface-800">Indian Male Citizens only</div>
+                    <div className="text-xs text-surface-500 mt-1">Both SSR & MR are currently open to male candidates only</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Age Limit</div>
+                    <div className="font-semibold text-surface-800">17.5 – 21 years on date of enrolment</div>
+                    <div className="text-xs text-surface-500 mt-1">Exact date-of-birth cut-off in official notification</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Marital Status</div>
+                    <div className="font-semibold text-surface-800">Must be unmarried at time of enrolment</div>
+                    <div className="text-xs text-surface-500 mt-1">Marriage not permitted during 4-year service period</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🎓 Qualification (SSR)</div>
+                    <div className="font-semibold text-surface-800">12th Pass – Physics & Maths mandatory</div>
+                    <div className="text-xs text-surface-500 mt-1">Min. 50% aggregate + 50% in English (subject to notification)</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200 sm:col-span-2">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🎓 Qualification (MR)</div>
+                    <div className="font-semibold text-surface-800">10th Pass from recognised State/Central Board</div>
+                    <div className="text-xs text-surface-500 mt-1">Minimum 45% marks overall. For Chef/Hygienist/Steward trades only.</div>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-surface-100">
+                  <h3 className="font-semibold text-surface-800 mb-3 text-sm">Age Relaxation</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">SC / ST</span><div className="font-bold text-surface-700 mt-1">+3 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">OBC (NCL)</span><div className="font-bold text-surface-700 mt-1">+2 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">J&amp;K Domicile</span><div className="font-bold text-surface-700 mt-1">+5 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">Ex-Servicemen Ward</span><div className="font-bold text-surface-700 mt-1">As per rules</div></div>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2">* Verify exact relaxation norms for the 2026 cycle at joinindiannavy.gov.in. Categories and extent may vary by notification.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 3. SSR & MR Posts ── */}
+            <section id="posts" className="mb-12">
+              <SectionHeading num="3" title="⚓ SSR & MR Posts, Trades & Vacancies" />
+              <div className="space-y-4 mb-4">
+                {posts.map((p, i) => (
+                  <div key={i} className="card p-5">
+                    <h3 className="font-heading font-semibold text-surface-800 mb-2">{p.post}</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                      <div>
+                        <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Qualification</div>
+                        <div className="text-surface-700">{p.qualification}</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">⚙️ Trades</div>
+                        <div className="text-surface-700">{p.trades}</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Vacancies (Est.)</div>
+                        <div className="font-semibold text-surface-800">{p.vacancies}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                <strong>⚠️ Trade Allocation:</strong> Candidates do not get to choose their trade at the time of application. Trade is allocated by the Navy based on merit, vacancies, and the results of the medical/fitness examination. Higher merit increases your chances of getting a preferred trade.
+              </div>
+            </section>
+
+            {/* ── 4. Selection Process ── */}
+            <section id="selection" className="mb-12">
+              <SectionHeading num="4" title="Selection Process" />
+              <div className="card p-6">
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {['INET (Online Written Test)', 'PFT (Physical Fitness Test)', 'Medical Examination', 'Document Verification', 'Final Merit & Enrolment'].map((stage, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      {i > 0 && <svg className="w-4 h-4 text-surface-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>}
+                      <span className="bg-primary-50 text-primary-700 px-3 py-2 rounded-lg text-sm font-medium">{stage}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-3 text-sm text-surface-700">
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>INET is conducted online at designated exam centres across India. Shortlisting is purely on INET merit.</div>
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>Shortlisted INET candidates are called for PFT at designated Navy Recruiting Organisations (NROs).</div>
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>PFT qualifiers undergo a thorough medical examination at a Navy Medical Centre. All stages are qualifying.</div>
+                  <div className="flex items-start gap-2"><svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>Final merit is based only on INET scores. PFT and Medical are qualifying/pass-fail. Original documents must match exactly with application details.</div>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 5. INET Exam Pattern ── */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="📋 INET – Online Exam Pattern 2026" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 text-sm">
+                  <div className="font-semibold text-cyan-800 mb-1">⚓ SSR Paper</div>
+                  <div className="text-cyan-700">75 Questions | 60 Minutes | MCQ</div>
+                  <div className="text-xs text-cyan-600 mt-1">English (25) + Science & Maths (25) + GK (25)</div>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm">
+                  <div className="font-semibold text-blue-800 mb-1">👨‍🍳 MR Paper</div>
+                  <div className="text-blue-700">50 Questions | 30 Minutes | MCQ</div>
+                  <div className="text-xs text-blue-600 mt-1">English (25) + Maths / GK (25)</div>
+                </div>
+              </div>
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Subject</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Questions</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Marks</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Applicable For</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {inetPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-700">{row.subject}</td>
+                          <td className="px-4 py-3 text-center text-surface-800 font-medium">{row.qs}</td>
+                          <td className="px-4 py-3 text-center text-surface-800 font-medium">{row.marks}</td>
+                          <td className="px-4 py-3 text-surface-600">{row.applicableTo}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                  <div className="font-semibold text-red-800 mb-1">⚠️ Negative Marking</div>
+                  <p className="text-red-700">Each wrong answer: <strong>−0.25 marks</strong>. Unattempted questions: no deduction. Plan your attempts carefully.</p>
+                </div>
+                <div className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                  <div className="font-semibold text-surface-800 mb-1">📌 Section Cut-offs</div>
+                  <p className="text-surface-600">Sectional cut-offs apply. You must clear each subject individually. Overall high score alone is not sufficient.</p>
+                </div>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                  <div className="font-semibold text-emerald-800 mb-1">🌐 Language</div>
+                  <p className="text-emerald-700">INET is conducted in <strong>English only</strong> (bilingual for MR GK section in some cycles). Confirm in official notification.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 6. Physical Standards ── */}
+            <section id="physical" className="mb-12">
+              <SectionHeading num="6" title="🏃 Physical Fitness Test (PFT) Standards" />
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical Fitness Test – Male Candidates</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-100">
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-700">Activity</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-700">Standard / Timing</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-700">Nature</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { act: '1.6 km Run', std: 'Within 7 minutes', nature: 'Qualifying' },
+                          { act: '20 Squats (Uthe-Baithe)', std: 'Full depth, correct form', nature: 'Qualifying' },
+                          { act: '10 Push-ups', std: 'Full range of motion', nature: 'Qualifying' },
+                        ].map((r, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="px-3 py-2 font-medium text-surface-800">{r.act}</td>
+                            <td className="px-3 py-2 text-surface-600">{r.std}</td>
+                            <td className="px-3 py-2"><span className="badge bg-amber-100 text-amber-700">{r.nature}</span></td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Physical / Medical Standards</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    {[
+                      { label: '📏 Height', value: 'Minimum 157 cm (5\'2\"). Taller is preferred.' },
+                      { label: '⚖️ Weight', value: 'Proportionate to height as per Navy medical tables.' },
+                      { label: '👁️ Vision (SSR)', value: '6/6 (good eye) and 6/9 (other eye). No colour blindness.' },
+                      { label: '👁️ Vision (MR)', value: '6/6 (good eye) and 6/36 (other eye). No colour blindness.' },
+                      { label: '🦷 Dental', value: 'Good dental health. No missing front teeth.' },
+                      { label: '👂 Hearing', value: 'Normal hearing. No history of chronic ear disease.' },
+                    ].map((s, i) => (
+                      <div key={i} className="bg-surface-50 rounded-xl p-3 border border-surface-200">
+                        <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{s.label}</div>
+                        <div className="text-surface-700 font-medium">{s.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-surface-400 mt-3">⚠️ Medical standards are strict for serving aboard naval vessels. Tattoos below elbow/neck may cause disqualification. Verify complete medical norms in the official notification.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 7. Salary ── */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="7" title="💰 Salary, Package & Benefits" />
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Year</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Gross Package</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Seva Nidhi (30%)</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">In-Hand Salary</th>
+                        <th className="text-center px-4 py-3 font-heading font-semibold">Annual CTC</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryTable.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-semibold text-surface-800">{row.year}</td>
+                          <td className="px-4 py-3 text-center text-surface-700">{row.gross}</td>
+                          <td className="px-4 py-3 text-center text-red-600">{row.sevaNidhi}</td>
+                          <td className="px-4 py-3 text-center font-bold text-emerald-600">{row.inHand}</td>
+                          <td className="px-4 py-3 text-center text-surface-700">{row.annualPkg}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                  <div className="font-semibold text-emerald-800 mb-2">✅ Seva Nidhi (After 4 Years)</div>
+                  <div className="text-2xl font-heading font-bold text-emerald-700 mb-1">~₹11.71 Lakh</div>
+                  <div className="text-xs text-emerald-600">Tax-free lump sum. Your 30% + equal govt contribution + interest. No pension.</div>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                  <div className="font-semibold text-blue-800 mb-2">🛡️ Life Insurance (Non-Contributory)</div>
+                  <div className="text-2xl font-heading font-bold text-blue-700 mb-1">₹48 Lakh</div>
+                  <div className="text-xs text-blue-600">Cover during active service. Full sum payable to nominee in case of demise.</div>
+                </div>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Other Benefits & Allowances</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-surface-600">
+                  {[
+                    '⚓ Risk & Hardship Allowance (deployment-based)',
+                    '🍽️ Free meals (Ration) at Naval establishments',
+                    '👗 Uniform & Kit Allowance provided',
+                    '🏥 Medical facilities at Naval Hospitals',
+                    '🛒 CSD Canteen access (subsidised rates)',
+                    '📄 30 days annual leave per year',
+                    '🚢 Sea allowance during ship deployments',
+                    '🎓 Navy-recognised skill certificate on completion',
+                  ].map((b, i) => (
+                    <div key={i} className="flex items-start gap-2"><span className="mt-0.5 flex-shrink-0">{b.split(' ')[0]}</span><span>{b.split(' ').slice(1).join(' ')}</span></div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── 8. After 4 Years ── */}
+            <section id="after-4-years" className="mb-12">
+              <SectionHeading num="8" title="After 4 Years – Career Pathways" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5 border-emerald-300">
+                  <div className="text-2xl mb-2">🎖️</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Regular Navy Enrolment (25%)</h3>
+                  <p className="text-sm text-surface-600">Top 25% performers based on merit, conduct, and medical fitness are considered for regular Indian Navy enrolment. Full career with pension, Pay Level 3 (₹21,700 base), promotion up to Petty Officer and beyond.</p>
+                </div>
+                <div className="card p-5 border-blue-300">
+                  <div className="text-2xl mb-2">💰</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Seva Nidhi + Civilian Career (75%)</h3>
+                  <p className="text-sm text-surface-600">Receive ₹11.71 lakh tax-free, a Navy service certificate, and skill certification. Many companies in maritime, defence manufacturing, and shipping sectors specifically hire Navy Agniveer completers.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">👮</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">CAPF Priority Hiring</h3>
+                  <p className="text-sm text-surface-600">Government has mandated priority consideration and age relaxation for Agniveer completers in CISF, CRPF, BSF, ITBP, SSB, and Assam Rifles. Coast Guard and Merchant Navy are also popular pathways.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🚢</div>
+                  <h3 className="font-heading font-semibold text-surface-800 mb-2">Merchant Navy & Maritime</h3>
+                  <p className="text-sm text-surface-600">SSR completers with technical trade experience are highly valued by Merchant Navy companies. Some pursue a Merchant Navy rating certificate via lateral recognition of their Naval training, opening global shipping career options.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 9. Preparation Plan ── */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="9" title="🗓️ 90-Day Preparation Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {[
+                    "Month 1 – Foundations: SSR candidates: start NCERT Physics & Chemistry (Class 11–12) — cover 2 chapters daily. Maths: R.S. Aggarwal Chapters 1–15 (Algebra, Trigonometry, Mensuration). MR candidates: focus on Maths (Class 10 NCERT) and GK (Lucent's). All streams: Wren & Martin English grammar basics + vocabulary (Word Power Made Easy). Run 800m daily.",
+                    'Month 2 – Targeted Practice: Begin MCQ topic-practice with 50–80 questions per day across all subjects. For SSR: special focus on Physics formulas and numerical problems. For MR: daily GK capsule (30 points) + GK mock sections. Start timed tests for individual sections. Increase run to 1.6 km and start push-ups/squats.',
+                    'Month 3 – Full Mock Tests: Solve 5 full-length INET mock tests per week. Analyse wrong answers per subject — create an error log. Target: clear each subject cut-off in every mock. Run 1.6 km under 7 minutes. Complete 20 squats and 10 push-ups without rest.',
+                    "Final 2 Weeks – Revision & Rest: Stop new topics. Revise formula sheets, GK notes, and vocabulary lists. Take 2 mocks daily focusing on accuracy and time. Maintain physical fitness but avoid overexertion. Get adequate sleep — aim for 7+ hours in the last 3 days before the exam.",
+                  ].map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm z-10">{i + 1}</div>
+                      <div className="card p-5"><p className="text-surface-700 leading-relaxed text-sm">{step}</p></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── 10. Books ── */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="10" title="📚 Recommended Books" />
+              <BooksTable books={books} />
+              <p className="text-xs text-surface-400 mt-3">Navy Agniveer SSR/MR-specific previous year papers from Arihant and Oswaal are the best practice resource. NCERT Physics (11–12) is the most important book for SSR candidates.</p>
+            </section>
+
+            {/* ── 11. FAQ ── */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="11" title="❓ Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card group">
+                    <summary className="p-5 cursor-pointer flex items-center justify-between font-heading font-semibold text-surface-800 hover:text-primary-500 transition-colors list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Internal Links */}
+            <div className="card p-6 bg-surface-50 mb-6">
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related Defence Exams</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                {[
+                  { name: 'Indian Army Agniveer 2026', slug: 'army-agniveer' },
+                  { name: 'IAF Agniveer Vayu 2026', slug: 'iaf-agniveer' },
+                  { name: 'UPSC NDA 2026', slug: 'upsc-nda' },
+                  { name: 'Indian Coast Guard Navik GD', slug: 'coast-guard-navik-gd' },
+                  { name: 'RPF Constable 2026', slug: 'rpf-constable' },
+                  { name: 'SSC GD Constable 2026', slug: 'ssc-gd-constable' },
+                ].map(e => (
+                  <Link key={e.slug} href={`/exams/${e.slug}/`} className="flex items-center justify-between text-xs text-surface-600 hover:text-primary-500 py-1 border-b border-surface-100 last:border-0 group transition-colors">
+                    <span>{e.name}</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Eligibility CTA */}
+            <div className="card p-6 bg-primary-50 border-primary-200 text-center mb-6">
+              <h3 className="font-heading font-bold text-primary-800 mb-2">Check If You Are Eligible</h3>
+              <p className="text-sm text-primary-600 mb-4">Use our free eligibility checker to see if you qualify for Navy Agniveer SSR/MR 2026.</p>
+              <Link href="/tools/eligibility-checker/" className="btn-primary">Check Eligibility →</Link>
+            </div>
+
+            <div className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+              <strong>Disclaimer:</strong> All information is sourced from official notifications and reputable sources. Dates marked TBN are estimated. Always verify at joinindiannavy.gov.in before applying. TaiyarHo is not affiliated with the Indian Navy.
+            </div>
+          </div>
+
+          {/* ── Sidebar ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 border-b border-surface-100 last:border-0 transition-colors">
+                      {s.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <a href="https://joinindiannavy.gov.in" target="_blank" rel="noopener noreferrer" className="card p-5 block hover:border-primary-300 transition-colors group">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1 group-hover:text-primary-500">🌐 Official Website</div>
+                <p className="text-xs text-surface-500 mb-2">Apply online, download admit card, check results.</p>
+                <span className="text-xs text-primary-500 font-medium">joinindiannavy.gov.in →</span>
+              </a>
+
+              {/* Key Facts */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">⚓ Key Facts 2026</div>
+                <div className="space-y-2 text-xs">
+                  {[
+                    { icon: '📋', label: 'Vacancies', value: '2,000 – 3,000' },
+                    { icon: '📅', label: 'Exam (Est.)', value: 'Aug – Sep 2026' },
+                    { icon: '🎓', label: 'SSR Edu.', value: '12th PCM (50%)' },
+                    { icon: '🎓', label: 'MR Edu.', value: '10th Pass (45%)' },
+                    { icon: '📋', label: 'Age Limit', value: '17.5 – 21 years' },
+                    { icon: '💰', label: 'Yr 1 In-Hand', value: '~₹21,000/month' },
+                    { icon: '✅', label: 'Seva Nidhi', value: '~₹11.71 Lakh' },
+                    { icon: '🌐', label: 'Conducting Body', value: 'Indian Navy' },
+                  ].map((f, i) => (
+                    <div key={i} className="flex items-start justify-between gap-2">
+                      <span className="text-surface-400">{f.icon} {f.label}</span>
+                      <span className="font-semibold text-surface-700 text-right">{f.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Eligibility Checker */}
+              <Link href="/tools/eligibility-checker/" className="card p-4 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to see if you qualify for Navy Agniveer SSR/MR 2026.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    </>
+  );
+}
+
+// ─── IAF AGNIVEER RICH PAGE ───────────────────────────────────────────────────
 function IafAgniveerPage({ exam }: { exam: any }) {
   const toc = [
     { id: 'overview',        label: 'Overview' },
