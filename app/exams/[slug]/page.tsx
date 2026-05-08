@@ -305,6 +305,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rbi-assistant') {
+    return {
+      title: 'RBI Assistant 2026 – Notification, Syllabus, Salary & Complete Guide | TaiyarHo',
+      description: 'RBI Assistant 2026: Notification expected Oct–Nov 2026. 450–950 vacancies. Check Prelims & Mains syllabus, exam pattern, LPT details, eligibility (Graduate 50%, 20–28 yrs), salary ~₹44,000–₹47,000/month (gross, metro) and free preparation resources.',
+      keywords: 'RBI Assistant 2026, RBI Assistant notification 2026, RBI Assistant syllabus, RBI Assistant salary, RBI Assistant taiyari, Reserve Bank Assistant bharti, bank job 2026, RBI भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rbi-assistant/' },
+      other: { 'description:hi': 'RBI Assistant 2026 – अधिसूचना अक्टूबर–नवंबर 2026 (अपेक्षित)। 450–950 रिक्तियाँ। सिलेबस, परीक्षा पैटर्न (प्रारंभिक + मुख्य + LPT), पात्रता (स्नातक 50%, 20–28 वर्ष), वेतन ~₹44,000–₹47,000/माह और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'sbi-po') {
     return {
       title: 'SBI PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -413,6 +423,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rrb-alp') return <RrbAlpPage exam={brief} />;
   if (detailed && detailed.slug === 'ibps-po') return <IbpsPoPage exam={detailed} />;
   if (detailed && detailed.slug === 'sbi-po') return <SbiPoPage exam={detailed} />;
+  if (brief && brief.slug === 'rbi-assistant') return <RbiAssistantPage exam={brief} />;
   if (brief && brief.slug === 'upsssc-pet') return <UpssscPetPage exam={brief} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
   if (brief && brief.slug === 'up-police-constable') return <UpPoliceConstablePage exam={brief} />;
@@ -27977,6 +27988,926 @@ function UpscCdsPage({ exam }: { exam: any }) {
               <Link href="/tools/age-calculator/" className="card p-4 block hover:border-primary-300 transition-colors">
                 <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
                 <p className="text-xs text-surface-500">Use our free Age and Eligibility Calculator to check if you qualify for CDS 2026.</p>
+                <span className="text-xs text-primary-500 font-heading font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RBI ASSISTANT 2026 – Detailed Page Component
+// ─────────────────────────────────────────────────────────────────────────────
+function RbiAssistantPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies History' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'cutoff',          label: 'Previous Year Cut-offs' },
+    { id: 'salary',          label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'RBI Assistant 2023 Notification Released',    date: 'December 2022',         status: 'released' },
+    { event: 'RBI Assistant 2023 Online Application Opens', date: 'December 2022',         status: 'released' },
+    { event: 'RBI Assistant 2023 Application Last Date',    date: 'January 2023',          status: 'released' },
+    { event: 'RBI Assistant 2023 Prelims Exam',             date: 'February 2023',         status: 'released' },
+    { event: 'RBI Assistant 2023 Mains Exam',               date: 'March 2023',            status: 'released' },
+    { event: 'RBI Assistant 2023 LPT / Final Result',       date: 'May–June 2023',         status: 'released' },
+    { event: '🆕 RBI Assistant 2026 – Notification',        date: 'Oct–Nov 2026 (Expected)', status: 'tbn' },
+    { event: 'RBI Assistant 2026 – Online Application',     date: 'Oct–Nov 2026 (Expected)', status: 'tbn' },
+    { event: 'RBI Assistant 2026 – Prelims Exam',           date: 'Jan–Feb 2027 (Expected)',  status: 'tbn' },
+    { event: 'RBI Assistant 2026 – Mains Exam',             date: 'March 2027 (Expected)',    status: 'tbn' },
+    { event: 'RBI Assistant 2026 – LPT & Final Result',     date: 'May 2027 (Expected)',      status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'RBI Assistant 2020', vacancies: '926',               prelims: 'Feb 2020',    mains: 'March 2020' },
+    { year: 'RBI Assistant 2021', vacancies: '950',               prelims: 'Nov 2021',    mains: 'Dec 2021' },
+    { year: 'RBI Assistant 2022', vacancies: 'Not Conducted',     prelims: '—',           mains: '—' },
+    { year: 'RBI Assistant 2023', vacancies: '450',               prelims: 'Feb 2023',    mains: 'March 2023' },
+    { year: 'RBI Assistant 2026 (upcoming)', vacancies: '450–950 (Expected)', prelims: 'Jan–Feb 2027 (Expected)', mains: 'March 2027 (Expected)' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'English Language',   questions: 30,  marks: 30,  time: '20 min' },
+    { subject: 'Numerical Ability',  questions: 35,  marks: 35,  time: '20 min' },
+    { subject: 'Reasoning Ability',  questions: 35,  marks: 35,  time: '20 min' },
+  ];
+
+  const mainsPattern = [
+    { subject: 'Reasoning Ability',    questions: 40, marks: 40, time: '30 min' },
+    { subject: 'English Language',     questions: 40, marks: 40, time: '30 min' },
+    { subject: 'Numerical Ability',    questions: 40, marks: 40, time: '30 min' },
+    { subject: 'General Awareness',    questions: 40, marks: 40, time: '25 min' },
+    { subject: 'Computer Knowledge',   questions: 40, marks: 40, time: '20 min' },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', prelims2023: '~70.50', mains2023: '~133/200', prelims2021: '~67.25', mains2021: '~130/200' },
+    { category: 'OBC',           prelims2023: '~64.00', mains2023: '~121/200', prelims2021: '~61.50', mains2021: '~118/200' },
+    { category: 'SC',            prelims2023: '~55.75', mains2023: '~107/200', prelims2021: '~53.00', mains2021: '~104/200' },
+    { category: 'ST',            prelims2023: '~50.25', mains2023: '~97/200',  prelims2021: '~47.50', mains2021: '~94/200' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (starting, RBI\'s own pay scale)',             amount: '₹20,700/month' },
+    { component: 'Dearness Allowance (DA) – revised quarterly',           amount: '~₹12,000–₹14,000/month' },
+    { component: 'House Rent Allowance (HRA) – Metro (varies by city)',   amount: '₹3,000–₹5,500/month' },
+    { component: 'City Compensatory Allowance (CCA)',                     amount: '₹540–₹1,260/month' },
+    { component: 'Special Allowance / Grade Allowance',                   amount: '~₹2,500–₹4,000/month' },
+    { component: 'Gross Estimated In-Hand (Metro, at joining)',            amount: '~₹44,000–₹47,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Assistant (Clerical Cadre)',   grade: 'Grade A – Clerical', years: '0–3 yrs (Probation + Confirmation)', payband: '₹20,700 onwards' },
+    { level: 'Senior Assistant',             grade: 'Grade A',            years: '3–8 yrs',                            payband: 'Higher increment slab' },
+    { level: 'Assistant Manager (Grade B)',  grade: 'Grade B',            years: 'Via internal DEPR/DSIM exam or promotion', payband: '₹35,150 onwards' },
+    { level: 'Manager (Grade B / C)',        grade: 'Grade B–C',          years: '10–18 yrs',                          payband: '₹42,020 onwards' },
+    { level: 'Assistant General Manager',   grade: 'Grade D',            years: '18–25 yrs',                          payband: '₹76,010 onwards' },
+    { level: 'General Manager / ED / DG',   grade: 'Grade E–F',          years: '25+ yrs',                            payband: '₹1,00,000+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🔢 Numerical Ability',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Number Series – Missing number and wrong number patterns',
+        'Simplification & Approximation (BODMAS, fractions, surds)',
+        'Percentage, Average, Ratio & Proportion',
+        'Profit & Loss, Simple Interest & Compound Interest',
+        'Time & Work, Pipes & Cistern',
+        'Speed, Distance & Time – Trains, Boats & Streams',
+        'Data Interpretation – Bar graph, Pie chart, Line graph, Table, Caselet',
+        'Quadratic Equations & Quantity Comparison',
+        'Partnership, Mixture & Alligation, Permutation & Combination',
+        'Mensuration (2D and 3D), Probability',
+      ],
+    },
+    {
+      subject: '🧩 Reasoning Ability',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Puzzles – Floor, Box, Month, Day, Scheduling, Comparison',
+        'Seating Arrangement – Linear (single/double row), Circular, Square',
+        'Syllogisms (positive, negative, "only a few" patterns)',
+        'Coding-Decoding (new pattern based on shifted alphabet logic)',
+        'Blood Relations, Direction & Distance',
+        'Inequality (Direct and Coded forms)',
+        'Input-Output Machine problems',
+        'Order & Ranking, Alphanumeric Series',
+        'Data Sufficiency (2 and 3-statement), Critical Reasoning',
+        'Verbal Reasoning – Statement & Assumption, Cause & Effect',
+      ],
+    },
+    {
+      subject: '📝 English Language',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Reading Comprehension (1–2 long passages with vocabulary questions)',
+        'Cloze Test – word-based and phrase-based patterns',
+        'Error Spotting – Grammatical and contextual errors',
+        'Para Jumbles and Sentence Rearrangement',
+        'Phrase/Word Replacement and Double Fillers',
+        'Match the Column and Inference-based questions',
+        'Vocabulary – Synonyms, Antonyms, Idioms & Phrases in context',
+        'Word Usage and Contextual Meaning',
+      ],
+    },
+    {
+      subject: '🏦 General Awareness (Mains only)',
+      prelims: false,
+      mains: true,
+      topics: [
+        'RBI – History, functions, departments, key officials, Monetary Policy Committee',
+        'Monetary Policy Tools – Repo Rate, Reverse Repo, CRR, SLR, MSF, Bank Rate',
+        'Banking Awareness – NPA, Basel III, CRAR, Priority Sector Lending norms',
+        'Financial Institutions – NABARD, NHB, SIDBI, SEBI, IRDAI, PFRDA',
+        'Government Schemes – PMJDY, MUDRA, Stand Up India, PMEGP, DBT',
+        'Union Budget highlights – fiscal deficit, tax proposals, banking sector',
+        'Capital Markets – NSE, BSE, Sensex, Nifty, mutual funds basics',
+        'Current Affairs – last 6 months (national, international, economy)',
+        'Awards, Appointments, Sports, Important Days, International Summits',
+        'Indian Economy – GDP, inflation, FDI/FPI, current account balance',
+      ],
+    },
+    {
+      subject: '💻 Computer Knowledge (Mains only)',
+      prelims: false,
+      mains: true,
+      topics: [
+        'Computer fundamentals – hardware components, CPU, RAM, ROM, storage',
+        'Operating Systems – Windows, Linux basics, file management',
+        'MS Office – Word, Excel (formulas, functions), PowerPoint',
+        'Internet concepts – browsers, email, search engines, networking basics',
+        'Networking – LAN, WAN, Wi-Fi, IP address, DNS, HTTP/HTTPS',
+        'Database Management basics – DBMS, SQL fundamentals',
+        'Cybersecurity – malware, phishing, firewalls, encryption basics',
+        'Number Systems – Binary, Octal, Hexadecimal conversions',
+        'Keyboard shortcuts, Computer abbreviations, generations of computers',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Numerical Ability Foundation', detail: 'Cover all arithmetic: Percentage, SI/CI, Ratio, Profit & Loss, Time & Work, Speed & Distance. Solve 30 arithmetic problems daily under timed conditions. RBI Prelims cut-offs for Numerical Ability tend to be high — treat this section as your primary scoring subject. Begin morning reading of RBI\'s monetary policy announcements for background awareness.' },
+    { month: 'Month 2', focus: 'DI + Reasoning Puzzles', detail: 'Data Interpretation is moderate in RBI Prelims but can be tricky. Focus on Tabular, Bar, and Caselet-type DI. Reasoning: master all puzzle and seating arrangement types. Linear (single/double row), Circular, and Month-Year puzzles form 60–70% of Reasoning marks. Accuracy here is non-negotiable — attempt only what you can solve fully.' },
+    { month: 'Month 3', focus: 'English + Reasoning Advanced', detail: 'English: read 2 Reading Comprehension passages daily, focusing on inference and vocabulary. Practice Cloze Tests and Para Jumbles every day. For Reasoning: Syllogisms, Coding-Decoding (new pattern), Blood Relations, and Input-Output. Start sectional mock tests — 1 per subject per week to identify weak areas.' },
+    { month: 'Month 4', focus: 'Banking & RBI Awareness', detail: 'This is the RBI-specific month. Learn RBI\'s history, all departments, current Governor and Deputy Governors, Monetary Policy Committee members, and recent RBI circulars. Master repo rate, CRR, SLR, MSF, and liquidity management tools. Government financial schemes, Union Budget highlights, and current affairs from the last 4 months. Computer Knowledge is quick — 2–3 weeks of focused study is enough for full marks.' },
+    { month: 'Month 5', focus: 'Full Mocks + LPT Language Prep', detail: 'Take 2–3 Prelims full mocks per week. Analyse every wrong answer — do not just move on. Revise Banking Awareness and Current Affairs twice. For LPT (Language Proficiency Test): start practising reading and writing in your local state language if you are not already fluent. The LPT is qualifying (pass/fail) but neglecting it can cost you the final selection.' },
+  ];
+
+  const books = [
+    { title: 'Quantitative Aptitude for Competitive Examinations',   author: 'R.S. Aggarwal',              subject: 'Numerical Ability' },
+    { title: 'Fast Track Objective Arithmetic',                       author: 'Rajesh Verma (Arihant)',     subject: 'Numerical Ability (Quick Revision)' },
+    { title: 'A New Approach to Reasoning Verbal & Non-Verbal',      author: 'B.S. Sijwali & Indu Sijwali', subject: 'Reasoning' },
+    { title: 'Objective English for Competitive Exams',              author: 'Hari Mohan Prasad',          subject: 'English' },
+    { title: 'Word Power Made Easy',                                  author: 'Norman Lewis',               subject: 'English Vocabulary' },
+    { title: 'Banking & Financial Awareness',                        author: 'Arihant Publications',       subject: 'Banking / RBI Awareness' },
+    { title: 'RBI Assistant Practice Sets (30 Full Mocks)',          author: 'Adda247 / Disha',            subject: 'Full Mock Practice' },
+    { title: 'Objective Computer Awareness',                         author: 'Arihant / Kiran',            subject: 'Computer Knowledge' },
+  ];
+
+  const freeResources = [
+    { name: 'RBI Official Recruitment Page',          type: 'website', url: 'https://www.rbi.org.in/Scripts/Opportunities.aspx',      description: 'Official RBI recruitment portal — always check here first for notifications, admit cards, and results.' },
+    { name: 'Adda247 Banking on YouTube',             type: 'youtube', url: 'https://www.youtube.com/@Adda247',                        description: 'Free daily classes for RBI Assistant Prelims and Mains — Quant, Reasoning, English, GA.' },
+    { name: 'Oliveboard RBI Assistant Free Mocks',   type: 'website', url: 'https://www.oliveboard.in/rbi-assistant/',                 description: 'Free full-length and sectional mock tests matching the RBI Assistant exam pattern.' },
+    { name: 'Mrunal Patel – Economy & RBI Policy',   type: 'youtube', url: 'https://www.youtube.com/@TheMrunalPatel',                 description: 'Best free resource to understand RBI monetary policy, banking awareness and economy for Mains.' },
+    { name: 'GK Today Banking Awareness',             type: 'website', url: 'https://www.gktoday.in',                                 description: 'Free daily current affairs, banking awareness capsules and monthly revision PDFs.' },
+    { name: 'Testbook RBI Assistant Mocks',           type: 'website', url: 'https://testbook.com/rbi-assistant',                     description: 'Free full-length and sectional practice tests for RBI Assistant.' },
+    { name: 'RBI YouTube Channel',                    type: 'youtube', url: 'https://www.youtube.com/@reservebankofindia',            description: 'Official RBI channel — watch Governor press conferences and monetary policy statements for authentic GA material.' },
+    { name: 'Unacademy Banking',                      type: 'youtube', url: 'https://www.youtube.com/@UnacademyBanking',              description: 'Free classes covering all sections of RBI Assistant Prelims and Mains by top educators.' },
+  ];
+
+  const tips = [
+    { icon: '🗺️', tip: 'Apply for the RBI regional office in the state whose local language you know. The Language Proficiency Test (LPT) tests your ability to read, write, and understand the local state language (e.g., Marathi for Mumbai, Gujarati for Ahmedabad, Tamil for Chennai). Failing LPT disqualifies you even after clearing Prelims + Mains — choose your state strategically.' },
+    { icon: '🎯', tip: 'Prelims sectional cut-offs are strict. A high overall score does not save you if one section is weak. Aim for at least 80% accuracy in each section. In the exam, tackle English first (20 min is short), then Reasoning, then Numerical Ability. Never leave any section incomplete due to time mismanagement.' },
+    { icon: '🏦', tip: 'RBI-specific awareness is the differentiator in Mains. Generic banking awareness alone is insufficient. Learn RBI\'s Governor, Deputy Governors by name, the Monetary Policy Committee members, the six monetary policy instruments, and recent RBI circulars and reports. Read RBI\'s Annual Report summary and Monetary Policy Statements.' },
+    { icon: '💻', tip: 'Computer Knowledge in Mains is the easiest scoring section. Dedicate only 2–3 weeks to it. Focus on MS Office shortcuts, networking basics, cybersecurity terminology, and number system conversions. Most questions are definitional — memorise key abbreviations and terms to score near-full marks quickly.' },
+    { icon: '📊', tip: 'Mains cut-offs for RBI Assistant are significantly higher than IBPS Clerk. The competition is intense despite fewer vacancies. Target at least 140–150 out of 200 in Mains for a safe selection rank. Practice timed full Mains mock tests from Month 4 onwards and analyse every mock rigorously.' },
+    { icon: '📅', tip: 'RBI Assistant notification typically releases in October–November. Watch rbi.org.in closely and set browser bookmarks. Vacancies are announced with the notification PDF — read it fully. Pay attention to the state-wise vacancy distribution and apply for the state where you are proficient in the local language.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the RBI Assistant 2026 notification date?', a: 'As of May 2026, RBI has not released the 2026 Assistant notification. Based on historical patterns (December 2022 for the 2023 cycle), the RBI Assistant 2026 notification is expected in October–November 2026. Check rbi.org.in/Scripts/Opportunities.aspx regularly. All 2026 dates on this page are estimates — always verify from the official source.' },
+    { q: 'How many vacancies are expected in RBI Assistant 2026?', a: 'RBI Assistant vacancies vary each year — 950 in 2021, 450 in 2023. The 2026 cycle is expected to have 450–950 vacancies based on this trend, distributed across 27–28 RBI regional offices/branches in India. The exact number is announced with the official notification PDF.' },
+    { q: 'What is the RBI Assistant 2026 salary?', a: 'RBI Assistant starting basic pay is approximately ₹20,700/month under RBI\'s own pay scale (RBI does not follow IBA bipartite settlements). With Dearness Allowance, House Rent Allowance, City Compensatory Allowance, and other perks, the gross in-hand is approximately ₹44,000–₹47,000/month at metro postings at joining. After increments over time, it can reach ₹63,000–₹65,000/month (basic ₹45,950, maximum of the scale). Additionally, RBI provides subsidised housing or Staff Quarters, medical benefits, and LTC — making the total compensation package superior to most IBA bank clerk posts.' },
+    { q: 'What is the Language Proficiency Test (LPT) in RBI Assistant?', a: 'The Language Proficiency Test (LPT) is a qualifying round conducted after Mains results. Candidates must demonstrate proficiency in the official/local language of the state where they applied (e.g., Marathi for Maharashtra, Tamil for Tamil Nadu, Gujarati for Gujarat). The test is pass/fail — it does not add to merit marks. Failing LPT means disqualification even if you rank high in Mains. The test typically involves reading a passage aloud in the local language, writing a short paragraph, and basic comprehension. Candidates who completed their 10th or 12th in the local medium are usually well-prepared.' },
+    { q: 'What is the difference between RBI Assistant and IBPS Clerk?', a: 'RBI Assistant is a premium clerical post in India\'s central bank (Reserve Bank of India), while IBPS Clerk covers 11 public sector banks. Key differences: (1) Salary — RBI Assistant gross is ~₹44,000–₹47,000/month, compared to IBPS Clerk gross of ~₹28,000–₹32,000/month. (2) Work culture — RBI has structured working hours, better work-life balance, and more professional development. (3) Vacancies — RBI releases 450–950 vacancies; IBPS Clerk releases 5,000–10,000. (4) LPT — RBI has an additional Language Proficiency Test round that IBPS does not. (5) Exam difficulty — RBI Assistant cut-offs tend to be higher due to fewer vacancies and more aware applicants. Overall, RBI Assistant is considered one of the best non-officer banking jobs in India.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">RBI Assistant 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏦 Banking</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ Notification: TBN (Expected Oct–Nov 2026)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            RBI Assistant 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            RBI Assistant 2026 notification expected <strong>Oct–Nov 2026</strong> with 450–950 vacancies in India&apos;s central bank. 3-stage selection: Prelims → Mains → Language Proficiency Test (LPT). Graduation with 50% required. Age 20–28 years. Gross salary <strong>~₹44,000–₹47,000/month</strong> (metro) — one of the best-paying clerical posts in India.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '450–950',           sub: '(2026 est.)' },
+              { label: 'Prelims Exam Date',  value: 'Jan–Feb 2027',      sub: '(Expected)' },
+              { label: 'Min. Qualification', value: 'Graduate (50%)',    sub: 'Any discipline' },
+              { label: 'Gross Salary',       value: '~₹44,000–₹47,000', sub: 'per month (metro)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> The RBI Assistant 2026 notification has <strong>not yet been released</strong>. Based on the 2023 cycle (notified Dec 2022), the 2026 notification is expected in <strong>October–November 2026</strong>. All dates marked &quot;Expected&quot; are estimates. Always verify from <a href="https://www.rbi.org.in/Scripts/Opportunities.aspx" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">rbi.org.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is RBI Assistant 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>RBI Assistant exam</strong> is conducted by the <strong>Reserve Bank of India (RBI)</strong> — India&apos;s central bank — to recruit clerical staff (Assistants) for its offices across the country. Unlike other clerical banking jobs, RBI Assistants work directly in the central bank that regulates India&apos;s entire monetary system, making this one of the most prestigious non-officer government banking posts available.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  RBI has approximately <strong>32 offices and sub-offices</strong> across India including Mumbai, Delhi, Kolkata, Chennai, Hyderabad, Bengaluru, Ahmedabad, Pune, and more. Assistants are posted regionally and must be proficient in the local language of their posting state — tested through a <strong>Language Proficiency Test (LPT)</strong> after Mains.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  Despite being a clerical post, RBI Assistant offers significantly <strong>higher pay than IBA-scheduled bank clerks</strong>, superior job security, a structured career path to officer grades through internal exams, and a professional work environment in India&apos;s most important financial institution.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',    value: 'Reserve Bank of India (RBI)' },
+                  { label: 'Selection Stages',   value: 'Prelims → Mains → LPT' },
+                  { label: 'Post Type',          value: 'Clerical Cadre (Assistant)' },
+                  { label: 'Posting Location',   value: 'Regional offices across India' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Important Dates 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Event</th>
+                        <th className="text-left p-3 font-heading font-semibold">Date</th>
+                        <th className="text-left p-3 font-heading font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                          <td className="p-3 text-surface-700">{row.event}</td>
+                          <td className="p-3 text-surface-700 font-medium">{row.date}</td>
+                          <td className="p-3">
+                            {row.status === 'released' ? (
+                              <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">✓ Done</span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⚠️ TBN</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ All 2026 dates are estimates based on historical RBI exam cycles. Always verify from <a href="https://www.rbi.org.in/Scripts/Opportunities.aspx" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">rbi.org.in</a> for official dates.</p>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">Candidate must be a citizen of India. Citizens of Nepal, Bhutan, and certain categories of Tibetan refugees and migrants of Indian origin may also be eligible — refer to the official RBI notification PDF for complete details.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit (as of notification cut-off date)</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>20 years</strong> | Maximum: <strong>28 years</strong></p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50 border border-surface-200">
+                        <tr>
+                          <th className="text-left p-2 font-semibold text-surface-700">Category</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Relaxation</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Max Age</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / EWS',       rel: 'No relaxation',        max: '28 years' },
+                          { cat: 'OBC (Non-Creamy Layer)', rel: '+3 years',           max: '31 years' },
+                          { cat: 'SC / ST',             rel: '+5 years',              max: '33 years' },
+                          { cat: 'PwBD (General)',       rel: '+10 years',            max: '38 years' },
+                          { cat: 'PwBD (OBC)',           rel: '+13 years',            max: '41 years' },
+                          { cat: 'PwBD (SC/ST)',         rel: '+15 years',            max: '43 years' },
+                          { cat: 'Ex-Servicemen',        rel: 'As per Govt. norms',   max: 'As applicable' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                            <td className="p-2 text-surface-700">{row.cat}</td>
+                            <td className="p-2 text-primary-600 font-medium">{row.rel}</td>
+                            <td className="p-2 text-surface-700">{row.max}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">
+                    <strong>Bachelor&apos;s degree in any discipline</strong> with a minimum of <strong>50% marks</strong> (aggregate) from a university recognised by the Government of India. SC/ST/PwBD/Ex-Servicemen candidates require only <strong>45% marks</strong> (or pass class).
+                  </p>
+                  <div className="mt-3 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
+                    🎓 <strong>Important:</strong> The 50% minimum marks requirement is RBI&apos;s key differentiator from other clerical bank exams (IBPS Clerk does not have a minimum marks condition). Final-year students awaiting results may apply subject to producing graduation proof by joining date.
+                  </div>
+                  <div className="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm text-amber-800">
+                    🗺️ <strong>Local Language Condition:</strong> Candidates must be proficient in the official language of the state where they apply. This is verified through the Language Proficiency Test (LPT) after Mains. Apply only for states where you know the local language.
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCY HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies History</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Cycle</th>
+                        <th className="text-left p-3 font-heading font-semibold">Vacancies</th>
+                        <th className="text-left p-3 font-heading font-semibold">Prelims</th>
+                        <th className="text-left p-3 font-heading font-semibold">Mains</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {vacancyHistory.map((row, i) => (
+                        <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                          <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                          <td className="p-3 text-emerald-600 font-semibold">{row.vacancies}</td>
+                          <td className="p-3 text-surface-600">{row.prelims}</td>
+                          <td className="p-3 text-surface-600">{row.mains}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">RBI does not conduct the Assistant exam every year — some years are skipped based on staffing needs.</p>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern</h2>
+              </div>
+
+              {/* Prelims */}
+              <div className="mb-6">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">📋 Phase 1 – Preliminary Examination (Online)</h3>
+                <div className="card overflow-hidden mb-3">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-3 font-heading font-semibold">Section</th>
+                          <th className="text-left p-3 font-heading font-semibold">Questions</th>
+                          <th className="text-left p-3 font-heading font-semibold">Marks</th>
+                          <th className="text-left p-3 font-heading font-semibold">Time</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {prelimsPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                            <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                            <td className="p-3 text-surface-700">{row.questions}</td>
+                            <td className="p-3 text-surface-700">{row.marks}</td>
+                            <td className="p-3 text-surface-700">{row.time}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-primary-50 border-t-2 border-primary-200">
+                          <td className="p-3 font-heading font-bold text-surface-900">Total</td>
+                          <td className="p-3 font-bold text-surface-900">100</td>
+                          <td className="p-3 font-bold text-surface-900">100</td>
+                          <td className="p-3 font-bold text-surface-900">60 min (composite)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {[
+                    { label: 'Negative Marking', value: '0.25 marks deducted per wrong answer' },
+                    { label: 'Sectional Cut-offs', value: 'Yes — must clear each section separately' },
+                    { label: 'Qualifying Nature', value: 'Marks used for shortlisting to Mains' },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                      <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mains */}
+              <div className="mb-6">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">📋 Phase 2 – Main Examination (Online)</h3>
+                <div className="card overflow-hidden mb-3">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-3 font-heading font-semibold">Section</th>
+                          <th className="text-left p-3 font-heading font-semibold">Questions</th>
+                          <th className="text-left p-3 font-heading font-semibold">Marks</th>
+                          <th className="text-left p-3 font-heading font-semibold">Time</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {mainsPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                            <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                            <td className="p-3 text-surface-700">{row.questions}</td>
+                            <td className="p-3 text-surface-700">{row.marks}</td>
+                            <td className="p-3 text-surface-700">{row.time}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-primary-50 border-t-2 border-primary-200">
+                          <td className="p-3 font-heading font-bold text-surface-900">Total</td>
+                          <td className="p-3 font-bold text-surface-900">200</td>
+                          <td className="p-3 font-bold text-surface-900">200</td>
+                          <td className="p-3 font-bold text-surface-900">135 min (composite)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+                  💡 <strong>Mains is the deciding stage.</strong> Final merit list is based purely on Mains marks. Prelims score is used only for shortlisting. Sectional cut-offs apply in Mains too — do not neglect any subject.
+                </div>
+              </div>
+
+              {/* LPT */}
+              <div>
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">📋 Phase 3 – Language Proficiency Test (LPT)</h3>
+                <div className="card p-5">
+                  <p className="text-sm text-surface-700 leading-relaxed mb-3">
+                    LPT is a <strong>qualifying (pass/fail) test</strong> conducted after Mains shortlisting. Candidates must demonstrate proficiency in the <strong>official language of the state where they applied</strong>. For example: Marathi for Maharashtra, Tamil for Tamil Nadu, Gujarati for Gujarat, Bengali for West Bengal, and so on.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {[
+                      { label: 'Nature', value: 'Qualifying – Pass/Fail only' },
+                      { label: 'Marks Added', value: 'No — does not add to merit' },
+                      { label: 'Exemption', value: 'If 10th/12th passed in local language medium' },
+                    ].map((item) => (
+                      <div key={item.label} className="bg-surface-50 rounded-lg p-3 border border-surface-200">
+                        <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                        <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((sub) => (
+                  <details key={sub.subject} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      <div className="flex items-center gap-3">
+                        <span>{sub.subject}</span>
+                        <div className="flex gap-1">
+                          {sub.prelims && <span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full font-body">Prelims</span>}
+                          {sub.mains && <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-body">Mains</span>}
+                        </div>
+                      </div>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 border-t border-surface-100">
+                      <ul className="mt-3 space-y-1.5">
+                        {sub.topics.map((t) => (
+                          <li key={t} className="flex items-start gap-2 text-sm text-surface-600">
+                            <span className="text-primary-500 mt-0.5 flex-shrink-0">•</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year Cut-offs</h2>
+              </div>
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Category</th>
+                        <th className="text-left p-3 font-heading font-semibold">Prelims 2023</th>
+                        <th className="text-left p-3 font-heading font-semibold">Mains 2023</th>
+                        <th className="text-left p-3 font-heading font-semibold">Prelims 2021</th>
+                        <th className="text-left p-3 font-heading font-semibold">Mains 2021</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {cutoffData.map((row, i) => (
+                        <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                          <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                          <td className="p-3 text-surface-700">{row.prelims2023}</td>
+                          <td className="p-3 text-emerald-600 font-semibold">{row.mains2023}</td>
+                          <td className="p-3 text-surface-700">{row.prelims2021}</td>
+                          <td className="p-3 text-surface-600">{row.mains2021}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                ⚠️ <strong>Note:</strong> These are approximate cut-off figures compiled from candidate reports — RBI does not officially publish section-wise or overall Prelims cut-offs. Actual cut-offs vary by state/region, vacancies, and difficulty level of that year&apos;s paper. Use these as a benchmark, not as guaranteed thresholds.
+              </div>
+            </section>
+
+            {/* SECTION 8: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Salary &amp; Career Growth</h2>
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <div className="bg-surface-800 text-white px-5 py-3">
+                  <h3 className="font-heading font-semibold text-sm">💰 RBI Assistant Salary Breakdown (Metro City, at Joining)</h3>
+                </div>
+                <div className="divide-y divide-surface-100">
+                  {salaryBreakdown.map((row, i) => (
+                    <div key={i} className={`flex justify-between items-center px-5 py-3 text-sm ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                      <span className="text-surface-700">{row.component}</span>
+                      <span className={`font-semibold ${i === salaryBreakdown.length - 1 ? 'text-emerald-600 text-base' : 'text-surface-800'}`}>{row.amount}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-5 mb-5">
+                <h3 className="font-heading font-semibold text-emerald-800 mb-3">🏆 Additional Benefits (Non-Monetary Perks)</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-emerald-800">
+                  {[
+                    '🏠 Staff Quarters / Subsidised Leased Housing at most RBI offices',
+                    '🏥 Full Medical Benefits for employee and dependant family',
+                    '✈️ Leave Travel Concession (LTC) for home town and travel',
+                    '📚 Children\'s Education Allowance for school-going children',
+                    '💰 Contributory Provident Fund (CPF) with RBI&apos;s generous contribution',
+                    '🎓 Study Leave for higher education / professional qualifications',
+                    '🏖️ Earned Leave, Sick Leave, Casual Leave with carry-forward benefits',
+                    '🔒 Pension scheme (New Pension System) for post-2004 joiners',
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <span className="text-xs leading-5">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="card overflow-hidden">
+                <div className="bg-surface-800 text-white px-5 py-3">
+                  <h3 className="font-heading font-semibold text-sm">📈 Career Growth Path – RBI Assistant to Senior Management</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50 border-b border-surface-200">
+                        <th className="text-left p-3 font-heading font-semibold text-surface-700">Level</th>
+                        <th className="text-left p-3 font-heading font-semibold text-surface-700">Grade</th>
+                        <th className="text-left p-3 font-heading font-semibold text-surface-700">Typical Timeline</th>
+                        <th className="text-left p-3 font-heading font-semibold text-surface-700">Basic Pay</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {careerPath.map((row, i) => (
+                        <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                          <td className="p-3 font-medium text-surface-800">{row.level}</td>
+                          <td className="p-3 text-primary-600 font-medium">{row.grade}</td>
+                          <td className="p-3 text-surface-600">{row.years}</td>
+                          <td className="p-3 text-emerald-600 font-semibold">{row.payband}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">RBI Assistants can appear for the JAIIB/CAIIB exams (conducted by IIBF) and internal promotion tests to move into officer cadre (Grade B). Promotions are merit and seniority based.</p>
+            </section>
+
+            {/* SECTION 9: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {[
+                  { step: 1, title: 'Check Official Notification', detail: 'Visit rbi.org.in → Opportunities → Current Vacancies. Download and read the full notification PDF carefully — note state-wise vacancies, eligibility cut-offs, and important dates.' },
+                  { step: 2, title: 'Verify Language Eligibility', detail: 'Select the state/region where you are proficient in the local language. Applying to a state whose language you don\'t know is a common and costly mistake — you will fail LPT even after clearing Mains.' },
+                  { step: 3, title: 'Register Online', detail: 'Apply at opportunities.rbi.org.in. Register using your email ID and mobile number. Keep scanned copies of your photograph (passport size, white background) and signature ready in the correct format.' },
+                  { step: 4, title: 'Fill the Application Form', detail: 'Enter personal details, educational qualifications, state preference, and category. Double-check all entries — corrections after submission are generally not permitted.' },
+                  { step: 5, title: 'Pay Application Fee', detail: 'General/OBC/EWS: ₹450 (approximate) | SC/ST/PwBD: ₹50 (approximate). Pay via net banking, debit/credit card, or UPI. Keep payment receipt as proof.' },
+                  { step: 6, title: 'Download Admit Card & Prepare', detail: 'Admit cards are released 2–3 weeks before the exam on the RBI website. Download and print your admit card. Carry it along with a valid photo ID to the exam centre.' },
+                ].map((item) => (
+                  <div key={item.step} className="sm:pl-14 relative mb-4">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-sm shadow-md">{item.step}</div>
+                    <div className="card p-5">
+                      <h3 className="font-heading font-semibold text-surface-800 mb-2">{item.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 10: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">5-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((item, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-5">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-sm shadow-md">{i + 1}</div>
+                    <div className="card p-5">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-xs font-heading font-semibold bg-primary-100 text-primary-700 px-2.5 py-0.5 rounded-full">{item.month}</span>
+                        <span className="font-heading font-semibold text-surface-800">{item.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 11: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for RBI Assistant 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Subject</th>
+                        <th className="text-left p-3 font-heading font-semibold">Book Title</th>
+                        <th className="text-left p-3 font-heading font-semibold">Author</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {books.map((b, i) => (
+                        <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                          <td className="p-3 font-medium text-primary-600">{b.subject}</td>
+                          <td className="p-3 text-surface-800">{b.title}</td>
+                          <td className="p-3 text-surface-500">{b.author}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 12: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Preparation Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r) => (
+                  <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition-all">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span>{r.type === 'youtube' ? '📺' : r.type === 'telegram' ? '📱' : '🌐'}</span>
+                      <span className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors">{r.name}</span>
+                    </div>
+                    <p className="text-sm text-surface-500">{r.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips &amp; Strategy</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((item, i) => (
+                  <div key={i} className="card p-5 flex items-start gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{item.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{item.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 border-t border-surface-100">
+                      <p className="mt-3 text-sm text-surface-600 leading-relaxed">{faq.a}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-4 uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <a href="https://www.rbi.org.in/Scripts/Opportunities.aspx" target="_blank" rel="noopener noreferrer" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🔗 Official RBI Recruitment Page</div>
+                <p className="text-xs text-surface-500 mb-3">Check notifications, admit cards, and results directly from RBI.</p>
+                <span className="text-xs text-primary-500 font-heading font-medium">Visit rbi.org.in →</span>
+              </a>
+
+              {/* Key Facts */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-4">📊 Quick Facts</h3>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Conducting Body',  value: 'Reserve Bank of India' },
+                    { label: 'Vacancies (est.)', value: '450–950' },
+                    { label: 'Exam Mode',        value: 'Online (CBT)' },
+                    { label: 'Age Limit',        value: '20–28 years' },
+                    { label: 'Min. Qual.',       value: 'Graduate (50%)' },
+                    { label: 'Gross Salary',     value: '~₹44,000–₹47,000/mo' },
+                    { label: 'Negative Marking', value: '0.25 per wrong answer' },
+                    { label: 'Selection',        value: 'Prelims → Mains → LPT' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex justify-between text-xs">
+                      <span className="text-surface-500">{item.label}</span>
+                      <span className="text-surface-800 font-semibold text-right max-w-[55%]">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">Related Banking Exams</h3>
+                <div className="space-y-1">
+                  {[
+                    { name: 'SBI PO 2026',         slug: 'sbi-po' },
+                    { name: 'IBPS PO 2026',        slug: 'ibps-po' },
+                    { name: 'IBPS Clerk 2026',     slug: 'ibps-clerk' },
+                    { name: 'SBI Clerk 2026',      slug: 'sbi-clerk' },
+                    { name: 'RBI Grade B 2026',    slug: 'rbi-grade-b' },
+                    { name: 'NABARD Grade A 2026', slug: 'nabard-grade-a' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-600 hover:text-primary-700 py-0.5">→ {e.name}</Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Eligibility Checker CTA */}
+              <Link href="/tools/age-calculator/" className="card p-4 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to check if you qualify for RBI Assistant 2026.</p>
                 <span className="text-xs text-primary-500 font-heading font-medium mt-2 block">Open Calculator →</span>
               </Link>
 
