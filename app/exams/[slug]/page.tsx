@@ -337,11 +337,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   if (params.slug === 'kvs-prt-tgt-pgt') {
     return {
-      title: 'KVS PRT TGT PGT 2026 – Notification, Eligibility, Salary & Complete Guide | TaiyarHo',
-      description: 'KVS Recruitment 2026: 13,000+ vacancies expected for PRT, TGT & PGT posts. CTET mandatory. Salary ₹35,400–₹1,51,100/month. Age 18–40 yrs. Check exam pattern, syllabus, selection process & free preparation resources.',
-      keywords: 'KVS PRT TGT PGT 2026, KVS recruitment 2026, Kendriya Vidyalaya teacher vacancy, KVS teacher salary, KVS syllabus 2026, KVS notification 2026, KVS exam pattern, KVS CTET mandatory, KVS taiyari, केवीएस शिक्षक भर्ती 2026',
+      title: 'KVS PRT TGT PGT 2025-26 – 9,921 Vacancies, Two-Tier Pattern, Eligibility & Complete Guide | TaiyarHo',
+      description: 'KVS Recruitment 2025-26: 9,921 confirmed vacancies (PRT 3,630 | TGT 3,069 | PGT 1,606). New Two-Tier CBT pattern with negative marking. B.Ed NOT eligible for PRT. CTET mandatory. Salary ₹35,400–₹1,51,100/month. Complete prep guide.',
+      keywords: 'KVS PRT TGT PGT 2025 2026, KVS recruitment 9921 vacancies, KVS two tier exam pattern, KVS negative marking, Kendriya Vidyalaya teacher vacancy, KVS CBSE Joint Recruitment, KVS NVS recruitment, KVS teacher salary, KVS syllabus 2025, केवीएस शिक्षक भर्ती 2025',
       alternates: { canonical: 'https://www.taiyarho.in/exams/kvs-prt-tgt-pgt/' },
-      other: { 'description:hi': 'KVS शिक्षक भर्ती 2026 – PRT, TGT और PGT पदों के लिए 13,000+ रिक्तियाँ (अपेक्षित)। CTET अनिवार्य। वेतन ₹35,400–₹1,51,100/माह। आयु 18–40 वर्ष। परीक्षा पैटर्न, सिलेबस और मुफ्त संसाधन।' },
+      other: { 'description:hi': 'KVS शिक्षक भर्ती 2025-26 – 9,921 पदों की पुष्टि (PRT 3,630 | TGT 3,069 | PGT 1,606)। नया Two-Tier CBT पैटर्न, नेगेटिव मार्किंग। PRT के लिए B.Ed मान्य नहीं। CTET अनिवार्य। वेतन ₹35,400–₹1,51,100/माह।' },
     };
   }
 
@@ -31601,9 +31601,11 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
     { event: 'KVS 2022-23 Written Test (CBT) – PRT/TGT/PGT', date: 'February – March 2023', status: 'released' },
     { event: 'KVS 2022-23 Interview / Demo Lesson (TGT/PGT)', date: 'August – October 2023', status: 'released' },
     { event: 'KVS 2022-23 Final Result & Joining', date: 'November 2023 – March 2024', status: 'released' },
-    { event: '🆕 KVS Recruitment 2025-26 – Notification', date: 'To Be Notified (TBN)', status: 'tbn' },
-    { event: 'KVS 2025-26 – Online Application Opens', date: 'TBN', status: 'tbn' },
-    { event: 'KVS 2025-26 – CBT (Written Test)', date: 'TBN', status: 'tbn' },
+    { event: '🆕 KVS Notification 01/2025 Released (Joint KVS+NVS Drive)', date: 'Late 2025', status: 'released' },
+    { event: 'KVS 2025-26 Revised Vacancy List Published (9,921 posts)', date: 'December 2025', status: 'released' },
+    { event: 'KVS 2025-26 – Online Application Window', date: 'Refer kvsangathan.nic.in', status: 'released' },
+    { event: 'KVS 2025-26 – Tier 1 CBT (Screening Test)', date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: 'KVS 2025-26 – Tier 2 CBT (Subject-Specific Test)', date: 'TBN (after Tier 1 results)', status: 'tbn' },
     { event: 'KVS 2025-26 – Interview / Demo Lesson (TGT/PGT)', date: 'TBN', status: 'tbn' },
     { event: 'KVS 2025-26 – Final Result & Joining', date: 'TBN', status: 'tbn' },
   ];
@@ -31612,27 +31614,28 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
     { year: 'KVS 2018-19', prt: '4,167', tgt: '3,176', pgt: '1,000+', total: '~8,339+', status: 'Completed' },
     { year: 'KVS 2022-23', prt: '6,414', tgt: '4,473', pgt: '2,517', total: '13,404', status: 'Completed' },
     { year: 'KVS 2024-25 (PGT only)', prt: '—', tgt: '—', pgt: '~1,400', total: '~1,400', status: 'Completed' },
-    { year: 'KVS 2025-26 (upcoming)', prt: 'TBN', tgt: 'TBN', pgt: 'TBN', total: 'TBN (est. 8,000–15,000)', status: 'Upcoming' },
+    { year: 'KVS 2025-26 (Notification 01/2025)', prt: '3,630', tgt: '3,069', pgt: '1,606', total: '9,921', status: 'Active' },
   ];
 
-  const prtPattern = [
-    { part: 'Part I', subject: 'General English', qs: 20, marks: 20 },
-    { part: 'Part I', subject: 'General Hindi', qs: 20, marks: 20 },
-    { part: 'Part II', subject: 'General Knowledge & Current Affairs', qs: 40, marks: 40 },
-    { part: 'Part II', subject: 'Reasoning Ability', qs: 20, marks: 20 },
-    { part: 'Part II', subject: 'Computer Literacy', qs: 10, marks: 10 },
-    { part: 'Part II', subject: 'Pedagogy (Teaching Methodology)', qs: 10, marks: 10 },
-    { part: 'Part III', subject: 'Subject-Specific Content & Pedagogy (Primary level)', qs: 60, marks: 60 },
+  // NEW TWO-TIER SYSTEM (KVS 2025-26)
+  const tier1Pattern = [
+    { section: 'General English', qs: 20, marks: 20 },
+    { section: 'General Hindi', qs: 20, marks: 20 },
+    { section: 'General Knowledge & Current Affairs', qs: 30, marks: 30 },
+    { section: 'Reasoning Ability', qs: 20, marks: 20 },
+    { section: 'Computer Literacy', qs: 10, marks: 10 },
   ];
 
-  const tgtPgtPattern = [
-    { part: 'Part I', subject: 'General English', qs: 20, marks: 20 },
-    { part: 'Part I', subject: 'General Hindi', qs: 20, marks: 20 },
-    { part: 'Part II', subject: 'General Knowledge & Current Affairs', qs: 40, marks: 40 },
-    { part: 'Part II', subject: 'Reasoning Ability', qs: 20, marks: 20 },
-    { part: 'Part II', subject: 'Computer Literacy', qs: 10, marks: 10 },
-    { part: 'Part II', subject: 'Pedagogy (Teaching Methodology)', qs: 10, marks: 10 },
-    { part: 'Part III', subject: 'Subject Content (Honours/PG level)', qs: 80, marks: 80 },
+  const prtTier2Pattern = [
+    { section: 'Pedagogy & Teaching Methodology (MCQ)', type: 'Objective', qs: 10, marks: 10 },
+    { section: 'Subject Content – Primary Level (Classes 1–5) (MCQ)', type: 'Objective', qs: 50, marks: 50 },
+    { section: 'Subject & Pedagogy – Descriptive Section', type: 'Descriptive', qs: 10, marks: 40 },
+  ];
+
+  const tgtPgtTier2Pattern = [
+    { section: 'Pedagogy & Teaching Methodology (MCQ)', type: 'Objective', qs: 10, marks: 10 },
+    { section: 'Subject Content – Graduation / PG Level (MCQ)', type: 'Objective', qs: 50, marks: 50 },
+    { section: 'Subject & Pedagogy – Descriptive Section', type: 'Descriptive', qs: 10, marks: 40 },
   ];
 
   const salaryTable = [
@@ -31723,7 +31726,7 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
     { month: 'Month 3', focus: 'Subject Content (PRT/TGT/PGT)', detail: 'This is your most critical month — subject content forms 60 marks (PRT) or 80 marks (TGT/PGT). PRT candidates: revise Class 1–8 content across all subjects including EVS, Mathematics, and Language. TGT/PGT candidates: revise graduation-level content for your chosen subject thoroughly. Make topic-wise notes from NCERT + standard reference book for your subject.' },
     { month: 'Month 4', focus: 'Pedagogy (Teaching Methodology)', detail: 'Pedagogy carries 10 marks but is a differentiator — many candidates neglect it. Study NCERT pedagogy manuals, NCF 2005, and NEP 2020 thoroughly. Learn child development theories (Piaget, Vygotsky, Kohlberg) and teaching methods. Prepare for CTET if not already qualified — CTET Paper 1 (PRT) or Paper 2 (TGT) is mandatory for selection. Practice 15 pedagogy MCQs daily.' },
     { month: 'Month 5', focus: 'Computer Literacy + Current Affairs', detail: 'Computer section has 10 marks — 2 weeks of focused study is enough for full marks. Cover MS Office basics, Internet, Networking, and Educational Technology. Current Affairs: Start daily revision of last 6–12 months. Use Lucent\'s GK + monthly current affairs booklets (Pratiyogita Darpan or Arihant). Take full-section GK mock tests.' },
-    { month: 'Month 6', focus: 'Full Mocks + Interview/Demo Prep (TGT/PGT)', detail: 'Take 2–3 full-length KVS mock tests per week. Analyse each mock deeply — understand error patterns. TGT/PGT candidates: Prepare your Demo Lesson (10–15 minutes on a topic from your subject). Practice teaching out loud. Prepare for interview questions on your subject, NEP 2020, NCF, and KVS history/mission. Final week: revision only.' },
+    { month: 'Month 6', focus: 'Full Mocks (Tier 1 + Tier 2) + Interview/Demo Prep', detail: 'Take 2–3 full-length Tier 1 mock tests per week — focus on speed since you have 100Q in 120 mins with negative marking. Analyse each mock for error patterns; avoid random guessing. Once shortlisted for Tier 2, shift focus entirely to subject content depth and the descriptive section. TGT/PGT candidates: Prepare your Demo Lesson (10–15 minutes on a topic from your subject). Practice teaching out loud. Prepare for interview questions on NEP 2020, NCF 2005, your subject, and KVS mission. Final week: revision only.' },
   ];
 
   const books = [
@@ -31756,18 +31759,27 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
     { icon: '🏫', tip: 'For TGT/PGT, the Demo Lesson (10–15 minutes) is a significant scoring opportunity. Judges evaluate your communication, knowledge of the topic, teaching aids used, and student engagement. Practise teaching out loud at home at least 15–20 times before the interview. Choose a topic you are deeply comfortable with.' },
     { icon: '📅', tip: 'KVS recruitment cycles are irregular — there was no major notification from 2018-19 until 2022-23. Don\'t wait for the notification to start preparing. Candidates who prepare 9–12 months in advance are consistently among the top scorers. Use the waiting period to clear CTET and strengthen subject content.' },
     { icon: '🌐', tip: 'KVS has over 1,200 schools across India, including abroad (Moscow, Kathmandu, Tehran, Teheran). Kendriya Vidyalayas serve children of Central Government employees and defence personnel. Knowing the KVS mission, growth history, and organisational structure helps you in interviews — and also during Demo Lessons.' },
-    { icon: '📋', tip: 'Age relaxation applies: SC/ST get +5 years, OBC (NCL) get +3 years, PwBD get +10 years. Ex-servicemen and widows of defence personnel also get relaxations as per government rules. The maximum age limit is 30 years (PRT), 35 years (TGT), and 40 years (PGT) for General/EWS before relaxation.' },
-    { icon: '🔄', tip: 'Current Affairs for KVS focuses heavily on Education Ministry news — NEP implementations, new Navodaya/KVS school openings, PM\'s education initiatives, and national/state award winners in education. Scan Education Ministry press releases monthly in addition to general current affairs.' },
+    { icon: '📋', tip: 'Age relaxation applies: SC/ST get +5 years, OBC (NCL) get +3 years, PwBD get +10 years. <strong>Women candidates (all categories) get an additional 10-year relaxation</strong> for teaching posts. Ex-servicemen and widows of defence personnel also get relaxations as per government rules. The maximum age limit is 30 years (PRT), 35 years (TGT), and 40 years (PGT) for General/EWS before relaxation.' },
+    { icon: '⚠️', tip: '<strong>Negative marking is NOW applicable</strong> in the 2025-26 cycle. Tier 1 carries −1/3 mark per wrong MCQ answer; Tier 2 carries −1/4 mark per wrong MCQ answer. Do NOT attempt questions you are unsure of. Candidates who scored well in previous cycles (no negative marking) will need to recalibrate their strategy — accuracy matters more than speed.' },
+    { icon: '🔗', tip: '<strong>This was a Joint Recruitment Drive</strong> conducted by CBSE simultaneously for both KVS and NVS (Navodaya Vidyalaya Samiti). The same Tier 1 paper is common, and candidates can apply for both organisations. If you are also eligible for NVS, consider applying there too — it significantly increases your chances of securing a central government teaching post.' },
   ];
 
   const faqs = [
     {
-      q: 'What is the KVS Recruitment 2026 notification date?',
-      a: 'As of May 2026, KVS has not released an official notification for 2025-26 recruitment. The last major recruitment was in 2022-23 (13,404 posts). KVS recruits based on its internal requirement projections and government approval. Monitor kvsangathan.nic.in regularly for updates. The notification is listed as TBN (To Be Notified) — do not rely on unofficial sources with predicted dates.',
+      q: 'What is the KVS Recruitment 2025-26 notification status?',
+      a: 'KVS Notification 01/2025 has been released. The revised vacancy list (December 2025) confirms 9,921 posts: PRT 3,630, TGT 3,069, and PGT 1,606. This is a Joint Recruitment Drive conducted by CBSE for both KVS and NVS simultaneously. Exam dates for Tier 1 and Tier 2 are to be notified on examinationservices.nic.in. Monitor kvsangathan.nic.in for official updates.',
+    },
+    {
+      q: 'What is the new Two-Tier exam pattern for KVS 2025-26?',
+      a: 'The 2025-26 cycle introduced a Two-Tier CBT system replacing the previous single-paper format. Tier 1 is a 100-mark screening test (100 MCQs, 2 hours, common for all posts) covering English, Hindi, GK, Reasoning, and Computer Literacy. Negative marking of 1/3 per wrong answer applies. Candidates are shortlisted for Tier 2 in a 1:10 ratio. Tier 2 is a 100-mark subject-specific test (60 Objective + 10 Descriptive questions, 2.5 hours) with 1/4 negative marking for MCQs. TGT/PGT candidates additionally face an Interview + Demo Lesson.',
     },
     {
       q: 'Is CTET mandatory for KVS PRT and TGT posts?',
-      a: 'Yes. CTET (Central Teacher Eligibility Test) is a mandatory qualifying condition for KVS PRT (Primary Teacher) and TGT (Trained Graduate Teacher) posts. For PRT, you must have cleared CTET Paper 1. For TGT, CTET Paper 2 is required. For PGT posts, CTET is not mandatory. State TET certificates are NOT accepted for KVS — only CTET (conducted by CBSE) is valid.',
+      a: 'Yes. CTET (Central Teacher Eligibility Test) is a mandatory qualifying condition for KVS PRT (Primary Teacher) and TGT (Trained Graduate Teacher) posts. For PRT, you must have cleared CTET Paper 1. For TGT, CTET Paper 2 is required. For PGT posts, CTET is not mandatory. State TET certificates are NOT accepted for KVS — only CTET (conducted by CBSE) is valid. CTET certificates are now valid for lifetime.',
+    },
+    {
+      q: 'Can B.Ed holders apply for KVS PRT (Primary Teacher) posts?',
+      a: 'No. As per NCTE (National Council for Teacher Education) Regulations and the Supreme Court ruling of 2023, B.Ed holders are NOT eligible for PRT (Primary Teacher) posts. KVS strictly follows NCTE norms. For PRT, the mandatory qualification is 12th pass with at least 50% marks AND a 2-year Diploma in Elementary Education (D.El.Ed) or B.El.Ed. Candidates who hold only B.Ed (and not D.El.Ed/B.El.Ed) cannot apply for PRT. This is a critical change from older KVS cycles.',
     },
     {
       q: 'What is the salary for KVS PRT, TGT and PGT in 2026?',
@@ -31775,11 +31787,11 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
     },
     {
       q: 'Is there an interview for KVS PRT posts?',
-      a: 'For KVS PRT (Primary Teacher), the selection is based solely on the Written Test (CBT) — there is no interview round. For TGT and PGT posts, the selection process includes both the Written Test (CBT) and an Interview + Demo Lesson round. The written test marks and interview marks are combined for the final merit list for TGT/PGT posts.',
+      a: 'No. Under the new Two-Tier system, KVS PRT (Primary Teacher) selection is based on Tier 1 (screening) and Tier 2 (subject-specific test with descriptive component) — there is no interview or demo lesson for PRT posts. For TGT and PGT posts, the selection process includes Tier 1, Tier 2, and an Interview + Demo Lesson round. The Tier 2 marks and interview marks are combined for the final merit list for TGT/PGT posts.',
     },
     {
-      q: 'What is the age limit for KVS PRT, TGT and PGT?',
-      a: 'The maximum age limit is: PRT – 30 years, TGT – 35 years, PGT – 40 years. These limits are for General/EWS candidates. Relaxations apply: OBC (NCL) +3 years, SC/ST +5 years, PwBD +10 years. Ex-servicemen and other categories get relaxations as per Central Government rules. There is no minimum age specified beyond 18 years. Age is calculated as of the cut-off date mentioned in the official notification.',
+      q: 'Is there negative marking in KVS exam 2025-26?',
+      a: 'Yes — this is a key change from previous KVS cycles. In 2025-26, negative marking has been introduced: Tier 1 carries a penalty of 1/3 mark (0.33 marks) for each wrong MCQ answer. Tier 2 carries a penalty of 1/4 mark (0.25 marks) for each wrong objective (MCQ) answer. The descriptive section in Tier 2 has no negative marking. Candidates must plan their attempt strategy carefully — avoid random guessing.',
     },
   ];
 
@@ -31819,13 +31831,13 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
           </h1>
 
           <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
-            Kendriya Vidyalaya Sangathan (KVS) recruits <strong>Primary Teachers (PRT)</strong>, <strong>Trained Graduate Teachers (TGT)</strong>, and <strong>Post Graduate Teachers (PGT)</strong> for its 1,200+ schools across India. CTET qualification is mandatory. Last cycle had <strong>13,404 vacancies</strong>. Salary <strong>₹35,400–₹1,51,100/month</strong> (7th CPC) with full Central Government benefits.
+            Kendriya Vidyalaya Sangathan (KVS) recruits <strong>Primary Teachers (PRT)</strong>, <strong>Trained Graduate Teachers (TGT)</strong>, and <strong>Post Graduate Teachers (PGT)</strong> for its 1,200+ schools across India. The <strong>2025-26 cycle (Notification 01/2025)</strong> has <strong>9,921 confirmed vacancies</strong> (PRT 3,630 | TGT 3,069 | PGT 1,606), conducted jointly with NVS by CBSE. New <strong>Two-Tier CBT</strong> format with negative marking. Salary <strong>₹35,400–₹1,51,100/month</strong> (7th CPC).
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
             {[
-              { label: 'Expected Vacancies', value: '8,000–15,000', sub: '(2025-26 est.)' },
-              { label: 'Min. Qualification', value: 'B.Ed + CTET', sub: 'CTET mandatory' },
+              { label: 'Confirmed Vacancies', value: '9,921', sub: '(2025-26 Notif. 01/2025)' },
+              { label: 'PRT Qualification', value: '12th + D.El.Ed', sub: 'B.Ed NOT eligible for PRT' },
               { label: 'Age Limit', value: '18–40 years', sub: 'Post-dependent' },
               { label: 'Salary (PGT, metro)', value: '~₹88,000–₹92,000', sub: 'per month gross' },
             ].map((item) => (
@@ -31838,8 +31850,9 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
           </div>
 
           <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
-            💡 <strong>Key Update May 2026:</strong> KVS 2025-26 notification is <strong>yet to be released</strong>. DA for Central Government employees revised to <strong>55%</strong> effective January 2026. CTET remains mandatory for PRT &amp; TGT. Monitor{' '}
-            <a href="https://kvsangathan.nic.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">kvsangathan.nic.in</a> for official updates.
+            💡 <strong>Key Update 2025-26:</strong> KVS Notification 01/2025 has been released. <strong>9,921 vacancies confirmed</strong> (PRT 3,630 | TGT 3,069 | PGT 1,606). New <strong>Two-Tier CBT pattern</strong> introduced with <strong>negative marking</strong> (1/3rd for Tier 1, 1/4th for Tier 2). <strong>B.Ed holders are NOT eligible for PRT</strong> posts as per NCTE/Supreme Court 2023 ruling. Monitor{' '}
+            <a href="https://kvsangathan.nic.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">kvsangathan.nic.in</a> &amp;{' '}
+            <a href="https://examinationservices.nic.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">examinationservices.nic.in</a> for exam dates.
           </div>
         </div>
       </div>
@@ -31860,7 +31873,7 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
                   <strong>Kendriya Vidyalaya Sangathan (KVS)</strong> is an autonomous organisation under the <strong>Ministry of Education, Government of India</strong>. It operates a network of over <strong>1,253 Kendriya Vidyalayas</strong> across India and abroad — including schools in Moscow, Kathmandu, Tehran, Tashkent, and Kathmandu — primarily serving children of Central Government employees and defence/paramilitary personnel.
                 </p>
                 <p className="text-surface-700 leading-relaxed mb-4">
-                  KVS recruits teachers across three levels: <strong>PRT (Primary Teacher)</strong> for Classes 1–5, <strong>TGT (Trained Graduate Teacher)</strong> for Classes 6–10, and <strong>PGT (Post Graduate Teacher)</strong> for Classes 11–12. Each post has different educational qualifications, subject requirements, and salary scales. The recruitment is conducted through a centralised Computer-Based Test (CBT) followed by an Interview and Demo Lesson for TGT/PGT posts.
+                  KVS recruits teachers across three levels: <strong>PRT (Primary Teacher)</strong> for Classes 1–5, <strong>TGT (Trained Graduate Teacher)</strong> for Classes 6–10, and <strong>PGT (Post Graduate Teacher)</strong> for Classes 11–12. Each post has different educational qualifications, subject requirements, and salary scales. The 2025-26 cycle introduced a <strong>Two-Tier Computer-Based Test (CBT)</strong> system — Tier 1 is a 100-mark screening test, and Tier 2 is a subject-specific test (Objective + Descriptive). TGT/PGT posts additionally require an Interview and Demo Lesson. The 2025-26 drive was conducted jointly with Navodaya Vidyalaya Samiti (NVS) by CBSE.
                 </p>
                 <p className="text-surface-700 leading-relaxed">
                   KVS is one of India&apos;s most sought-after teaching jobs — offering <strong>Central Government salary with 7th CPC pay scales</strong>, excellent job security, a 6-week summer vacation, and the prestige of teaching in a nationally-recognised school chain. The 2022-23 recruitment saw over <strong>30 lakh applications</strong> for 13,404 posts.
@@ -31930,10 +31943,11 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
                     badge: 'bg-primary-100 text-primary-700',
                     points: [
                       '🎓 Senior Secondary (12th pass) with at least 50% marks',
-                      '📜 2-year Diploma in Elementary Education (D.El.Ed) OR B.El.Ed OR B.Ed with Special Education',
+                      '📜 2-year Diploma in Elementary Education (D.El.Ed) OR B.El.Ed — mandatory for PRT',
+                      '🚫 <strong>B.Ed (Bachelor of Education) holders are NOT eligible for PRT</strong> as per NCTE Regulations and the Supreme Court ruling of 2023. Only D.El.Ed/B.El.Ed is accepted.',
                       '📋 CTET Paper 1 (Class 1–5) – MANDATORY qualifying certificate (conducted by CBSE)',
                       '🪪 Indian Nationality',
-                      '📅 Age: Maximum 30 years (General/EWS) | OBC: 33 yrs | SC/ST: 35 yrs | PwBD: 40 yrs',
+                      '📅 Age: Maximum 30 years (General/EWS) | OBC: 33 yrs | SC/ST: 35 yrs | PwBD: 40 yrs | Women (all categories): +10 years additional relaxation',
                     ],
                   },
                   {
@@ -31945,7 +31959,7 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
                       '📜 B.Ed (Bachelor of Education) degree from a recognised university',
                       '📋 CTET Paper 2 (Class 6–8) – MANDATORY qualifying certificate',
                       '🪪 Indian Nationality',
-                      '📅 Age: Maximum 35 years (General/EWS) | OBC: 38 yrs | SC/ST: 40 yrs | PwBD: 45 yrs',
+                      '📅 Age: Maximum 35 years (General/EWS) | OBC: 38 yrs | SC/ST: 40 yrs | PwBD: 45 yrs | Women (all categories): +10 years additional relaxation',
                     ],
                   },
                   {
@@ -31957,7 +31971,7 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
                       '📜 B.Ed (Bachelor of Education) – required for most PGT subjects',
                       '📋 CTET is NOT mandatory for PGT posts',
                       '🪪 Indian Nationality',
-                      '📅 Age: Maximum 40 years (General/EWS) | OBC: 43 yrs | SC/ST: 45 yrs | PwBD: 50 yrs',
+                      '📅 Age: Maximum 40 years (General/EWS) | OBC: 43 yrs | SC/ST: 45 yrs | PwBD: 50 yrs | Women (all categories): +10 years additional relaxation',
                     ],
                   },
                 ].map((item) => (
@@ -32004,88 +32018,131 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
                         <td className="p-3 text-surface-700">{row.tgt}</td>
                         <td className="p-3 text-surface-700">{row.pgt}</td>
                         <td className="p-3 hidden sm:table-cell">
-                          <span className={`font-semibold ${row.status === 'Upcoming' ? 'text-amber-600' : 'text-emerald-600'}`}>{row.total}</span>
+                          <span className={`font-semibold ${row.status === 'Upcoming' ? 'text-amber-600' : row.status === 'Active' ? 'text-primary-600' : 'text-emerald-600'}`}>{row.total}</span>
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-surface-400 pl-1">Note: KVS does not follow a fixed annual recruitment calendar. Vacancies depend on internal requirement projections and government approval. The 2025-26 cycle is expected but not yet confirmed.</p>
+              <p className="text-xs text-surface-400 pl-1">✅ KVS Notification 01/2025 confirmed <strong>9,921 vacancies</strong> (PRT: 3,630 | TGT: 3,069 | PGT: 1,606) in December 2025. This was a Joint Recruitment Drive conducted alongside NVS by CBSE. Source: KVS Revised Vacancy List, Dec 2025.</p>
             </section>
 
             {/* 5. EXAM PATTERN */}
             <section id="exam-pattern" className="mb-12">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
-                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern</h2>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern (New Two-Tier System)</h2>
+              </div>
+
+              {/* Selection Process Overview */}
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-5 text-sm text-surface-700">
+                <p className="font-heading font-semibold text-primary-700 mb-2">📋 KVS 2025-26 Selection Process Overview</p>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <span className="bg-primary-100 text-primary-700 rounded-full px-3 py-1 font-medium">① Tier 1: Screening CBT (100 Marks, 2 hrs)</span>
+                  <span className="text-surface-400">→</span>
+                  <span className="bg-emerald-100 text-emerald-700 rounded-full px-3 py-1 font-medium">② Tier 2: Subject-Specific CBT (100 Marks, 2.5 hrs)</span>
+                  <span className="text-surface-400">→</span>
+                  <span className="bg-amber-100 text-amber-700 rounded-full px-3 py-1 font-medium">③ Interview + Demo Lesson (TGT/PGT only)</span>
+                </div>
+                <p className="mt-2 text-xs text-surface-500">Shortlisting ratio: Top <strong>1:10</strong> candidates from Tier 1 merit are called for Tier 2. Tier 1 marks are used for shortlisting only — final merit is based on Tier 2 + Interview scores.</p>
               </div>
 
               <div className="space-y-6">
-                {/* PRT Pattern */}
+                {/* TIER 1 */}
                 <div>
-                  <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">📗 PRT Written Test Pattern (180 Marks | 3 Hours)</h3>
+                  <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">🔵 Tier 1 – Screening Test (All Posts: PRT / TGT / PGT)</h3>
                   <div className="card overflow-hidden">
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-surface-800 text-white font-heading">
-                          <th className="text-left p-3 font-semibold">Part</th>
-                          <th className="text-left p-3 font-semibold">Subject</th>
+                          <th className="text-left p-3 font-semibold">Section</th>
                           <th className="text-right p-3 font-semibold">Questions</th>
                           <th className="text-right p-3 font-semibold">Marks</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {prtPattern.map((row, i) => (
+                        {tier1Pattern.map((row, i) => (
                           <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
-                            <td className="p-3 text-xs font-semibold text-primary-600">{row.part}</td>
-                            <td className="p-3 text-surface-700">{row.subject}</td>
+                            <td className="p-3 text-surface-700">{row.section}</td>
+                            <td className="p-3 text-right text-surface-800 font-medium">{row.qs}</td>
+                            <td className="p-3 text-right text-emerald-600 font-semibold">{row.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-primary-50 font-semibold">
+                          <td className="p-3 text-primary-700">Total</td>
+                          <td className="p-3 text-right text-primary-700">100</td>
+                          <td className="p-3 text-right text-primary-700">100</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-1.5 pl-1">⚠️ <strong>Negative marking: −1/3 mark per wrong answer.</strong> Duration: 2 hours. All MCQ format. Common for all posts (PRT, TGT, PGT). Shortlisting to Tier 2 is 1:10 per post.</p>
+                </div>
+
+                {/* TIER 2 */}
+                <div>
+                  <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">🟢 Tier 2 – Subject-Specific Test (PRT)</h3>
+                  <div className="card overflow-hidden">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white font-heading">
+                          <th className="text-left p-3 font-semibold">Section</th>
+                          <th className="text-left p-3 font-semibold">Type</th>
+                          <th className="text-right p-3 font-semibold">Questions</th>
+                          <th className="text-right p-3 font-semibold">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {prtTier2Pattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 text-surface-700">{row.section}</td>
+                            <td className="p-3 text-xs font-semibold text-primary-600">{row.type}</td>
                             <td className="p-3 text-right text-surface-800 font-medium">{row.qs}</td>
                             <td className="p-3 text-right text-emerald-600 font-semibold">{row.marks}</td>
                           </tr>
                         ))}
                         <tr className="bg-primary-50 font-semibold">
                           <td className="p-3 text-primary-700" colSpan={2}>Total</td>
-                          <td className="p-3 text-right text-primary-700">180</td>
-                          <td className="p-3 text-right text-primary-700">180</td>
+                          <td className="p-3 text-right text-primary-700">70</td>
+                          <td className="p-3 text-right text-primary-700">100</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <p className="text-xs text-surface-400 mt-1.5 pl-1">No negative marking. All MCQ format. Duration: 3 hours. No interview for PRT.</p>
+                  <p className="text-xs text-surface-400 mt-1.5 pl-1">⚠️ <strong>Negative marking: −1/4 mark per wrong answer (MCQ section only).</strong> Duration: 2.5 hours. No interview for PRT — Tier 2 is the final stage.</p>
                 </div>
 
-                {/* TGT/PGT Pattern */}
                 <div>
-                  <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">📘 TGT / PGT Written Test Pattern (200 Marks | 3 Hours)</h3>
+                  <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">🟢 Tier 2 – Subject-Specific Test (TGT / PGT)</h3>
                   <div className="card overflow-hidden">
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-surface-800 text-white font-heading">
-                          <th className="text-left p-3 font-semibold">Part</th>
-                          <th className="text-left p-3 font-semibold">Subject</th>
+                          <th className="text-left p-3 font-semibold">Section</th>
+                          <th className="text-left p-3 font-semibold">Type</th>
                           <th className="text-right p-3 font-semibold">Questions</th>
                           <th className="text-right p-3 font-semibold">Marks</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {tgtPgtPattern.map((row, i) => (
+                        {tgtPgtTier2Pattern.map((row, i) => (
                           <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
-                            <td className="p-3 text-xs font-semibold text-primary-600">{row.part}</td>
-                            <td className="p-3 text-surface-700">{row.subject}</td>
+                            <td className="p-3 text-surface-700">{row.section}</td>
+                            <td className="p-3 text-xs font-semibold text-primary-600">{row.type}</td>
                             <td className="p-3 text-right text-surface-800 font-medium">{row.qs}</td>
                             <td className="p-3 text-right text-emerald-600 font-semibold">{row.marks}</td>
                           </tr>
                         ))}
                         <tr className="bg-primary-50 font-semibold">
-                          <td className="p-3 text-primary-700" colSpan={2}>Total (Written)</td>
-                          <td className="p-3 text-right text-primary-700">200</td>
-                          <td className="p-3 text-right text-primary-700">200</td>
+                          <td className="p-3 text-primary-700" colSpan={2}>Total</td>
+                          <td className="p-3 text-right text-primary-700">70</td>
+                          <td className="p-3 text-right text-primary-700">100</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <p className="text-xs text-surface-400 mt-1.5 pl-1">No negative marking. After written test: Interview (60 marks) + Demo Lesson (for TGT/PGT). Final merit = Written + Interview.</p>
+                  <p className="text-xs text-surface-400 mt-1.5 pl-1">⚠️ <strong>Negative marking: −1/4 mark per wrong MCQ answer.</strong> Duration: 2.5 hours. After Tier 2: Interview + Demo Lesson (60 marks). Final merit = Tier 2 + Interview combined score.</p>
                 </div>
               </div>
             </section>
