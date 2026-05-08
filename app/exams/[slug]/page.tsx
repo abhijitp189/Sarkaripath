@@ -335,6 +335,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'kvs-prt-tgt-pgt') {
+    return {
+      title: 'KVS PRT TGT PGT 2026 – Notification, Eligibility, Salary & Complete Guide | TaiyarHo',
+      description: 'KVS Recruitment 2026: 13,000+ vacancies expected for PRT, TGT & PGT posts. CTET mandatory. Salary ₹35,400–₹1,51,100/month. Age 18–40 yrs. Check exam pattern, syllabus, selection process & free preparation resources.',
+      keywords: 'KVS PRT TGT PGT 2026, KVS recruitment 2026, Kendriya Vidyalaya teacher vacancy, KVS teacher salary, KVS syllabus 2026, KVS notification 2026, KVS exam pattern, KVS CTET mandatory, KVS taiyari, केवीएस शिक्षक भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/kvs-prt-tgt-pgt/' },
+      other: { 'description:hi': 'KVS शिक्षक भर्ती 2026 – PRT, TGT और PGT पदों के लिए 13,000+ रिक्तियाँ (अपेक्षित)। CTET अनिवार्य। वेतन ₹35,400–₹1,51,100/माह। आयु 18–40 वर्ष। परीक्षा पैटर्न, सिलेबस और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'lic-aao') {
     return {
       title: 'LIC AAO 2026 – Notification, Syllabus, Salary & Complete Guide | TaiyarHo',
@@ -485,6 +495,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rpf-si') return <RpfSiPage exam={brief} />;
   if (brief && brief.slug === 'upsc-cds') return <UpscCdsPage exam={brief} />;
   if (brief && brief.slug === 'lic-aao') return <LicAaoPage exam={brief} />;
+  if (brief && brief.slug === 'kvs-prt-tgt-pgt') return <KvsPrtTgtPgtPage exam={brief} />;
   if (brief && brief.slug === 'mppsc-state-service') return <MppscStatePage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
@@ -31549,6 +31560,832 @@ function BiharPoliceSIPage({ exam }: { exam: any }) {
                     { name: 'UP Police SI 2026',            slug: 'up-police-si' },
                     { name: 'SSC CPO SI 2026',              slug: 'ssc-cpo' },
                     { name: 'UP Police Constable 2026',     slug: 'up-police-constable' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-500 hover:text-primary-600 hover:underline py-0.5">
+                      → {e.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── KVS PRT/TGT/PGT 2026 RICH PAGE ─────────────────────────────────────────
+function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies History' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'KVS Recruitment 2022-23 Notification', date: 'December 2022', status: 'released' },
+    { event: 'KVS 2022-23 Online Application Window', date: 'December 2022 – January 2023', status: 'released' },
+    { event: 'KVS 2022-23 Written Test (CBT) – PRT/TGT/PGT', date: 'February – March 2023', status: 'released' },
+    { event: 'KVS 2022-23 Interview / Demo Lesson (TGT/PGT)', date: 'August – October 2023', status: 'released' },
+    { event: 'KVS 2022-23 Final Result & Joining', date: 'November 2023 – March 2024', status: 'released' },
+    { event: '🆕 KVS Recruitment 2025-26 – Notification', date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: 'KVS 2025-26 – Online Application Opens', date: 'TBN', status: 'tbn' },
+    { event: 'KVS 2025-26 – CBT (Written Test)', date: 'TBN', status: 'tbn' },
+    { event: 'KVS 2025-26 – Interview / Demo Lesson (TGT/PGT)', date: 'TBN', status: 'tbn' },
+    { event: 'KVS 2025-26 – Final Result & Joining', date: 'TBN', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'KVS 2018-19', prt: '4,167', tgt: '3,176', pgt: '1,000+', total: '~8,339+', status: 'Completed' },
+    { year: 'KVS 2022-23', prt: '6,414', tgt: '4,473', pgt: '2,517', total: '13,404', status: 'Completed' },
+    { year: 'KVS 2024-25 (PGT only)', prt: '—', tgt: '—', pgt: '~1,400', total: '~1,400', status: 'Completed' },
+    { year: 'KVS 2025-26 (upcoming)', prt: 'TBN', tgt: 'TBN', pgt: 'TBN', total: 'TBN (est. 8,000–15,000)', status: 'Upcoming' },
+  ];
+
+  const prtPattern = [
+    { part: 'Part I', subject: 'General English', qs: 20, marks: 20 },
+    { part: 'Part I', subject: 'General Hindi', qs: 20, marks: 20 },
+    { part: 'Part II', subject: 'General Knowledge & Current Affairs', qs: 40, marks: 40 },
+    { part: 'Part II', subject: 'Reasoning Ability', qs: 20, marks: 20 },
+    { part: 'Part II', subject: 'Computer Literacy', qs: 10, marks: 10 },
+    { part: 'Part II', subject: 'Pedagogy (Teaching Methodology)', qs: 10, marks: 10 },
+    { part: 'Part III', subject: 'Subject-Specific Content & Pedagogy (Primary level)', qs: 60, marks: 60 },
+  ];
+
+  const tgtPgtPattern = [
+    { part: 'Part I', subject: 'General English', qs: 20, marks: 20 },
+    { part: 'Part I', subject: 'General Hindi', qs: 20, marks: 20 },
+    { part: 'Part II', subject: 'General Knowledge & Current Affairs', qs: 40, marks: 40 },
+    { part: 'Part II', subject: 'Reasoning Ability', qs: 20, marks: 20 },
+    { part: 'Part II', subject: 'Computer Literacy', qs: 10, marks: 10 },
+    { part: 'Part II', subject: 'Pedagogy (Teaching Methodology)', qs: 10, marks: 10 },
+    { part: 'Part III', subject: 'Subject Content (Honours/PG level)', qs: 80, marks: 80 },
+  ];
+
+  const salaryTable = [
+    { post: 'PRT (Primary Teacher)', level: 'Level 6', basic: '₹35,400/month', da55: '₹19,470/month', hraMet: '₹9,558/month', grossMet: '~₹68,000–₹72,000/month', payband: '₹35,400–₹1,12,400' },
+    { post: 'TGT (Trained Graduate Teacher)', level: 'Level 7', basic: '₹44,900/month', da55: '₹24,695/month', hraMet: '₹12,123/month', grossMet: '~₹83,000–₹87,000/month', payband: '₹44,900–₹1,42,400' },
+    { post: 'PGT (Post Graduate Teacher)', level: 'Level 8', basic: '₹47,600/month', da55: '₹26,180/month', hraMet: '₹12,852/month', grossMet: '~₹88,000–₹92,000/month', payband: '₹47,600–₹1,51,100' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📝 General English (All Posts)',
+      topics: [
+        'Reading Comprehension (unseen passages)',
+        'Vocabulary – Synonyms, Antonyms, One-Word Substitution',
+        'Grammar – Tenses, Articles, Prepositions, Voice, Narration',
+        'Sentence Rearrangement & Para Jumbles',
+        'Error Detection & Correction',
+        'Fill in the Blanks (Grammar & Vocabulary)',
+        'Idioms, Phrases & Proverbs',
+      ],
+    },
+    {
+      subject: '📖 General Hindi (All Posts)',
+      topics: [
+        'हिंदी व्याकरण – संधि, समास, उपसर्ग, प्रत्यय',
+        'पर्यायवाची, विलोम, मुहावरे, लोकोक्तियाँ',
+        'अपठित गद्यांश',
+        'शब्द-ज्ञान, वर्तनी की अशुद्धियाँ',
+        'वाक्य शुद्धि एवं रिक्त स्थान पूर्ति',
+      ],
+    },
+    {
+      subject: '🌐 General Knowledge & Current Affairs (All Posts)',
+      topics: [
+        'Indian History – Ancient, Medieval, Modern',
+        'Indian & World Geography – Physical, Social, Economic',
+        'Indian Polity & Constitution – Articles, Amendments, Institutions',
+        'Indian Economy – Budget, GDP, Schemes, Banking Basics',
+        'Science & Technology – General awareness',
+        'Current Affairs – Last 6–12 months national & international',
+        'Awards, Books & Authors, Sports, Important Days',
+        'Environment & Ecology basics',
+      ],
+    },
+    {
+      subject: '🧩 Reasoning Ability (All Posts)',
+      topics: [
+        'Analogies (Verbal & Non-Verbal)',
+        'Series Completion (Number, Letter, Figure)',
+        'Classification, Coding-Decoding',
+        'Blood Relations, Direction & Distance',
+        'Syllogisms, Logical Venn Diagrams',
+        'Mathematical Operations, Inequalities',
+        'Sitting Arrangement, Input-Output',
+        'Non-Verbal Reasoning – Figures, Mirror Image, Paper Folding',
+      ],
+    },
+    {
+      subject: '💻 Computer Literacy (All Posts)',
+      topics: [
+        'Basics of Computers – Hardware, Software, Input/Output devices',
+        'MS Office – Word, Excel, PowerPoint',
+        'Internet & Email – Browsers, Search engines, Email etiquette',
+        'Operating Systems – Windows basics',
+        'Networking Basics – LAN, WAN, IP address concepts',
+        'Cybersecurity – Virus, Firewall, Data safety basics',
+        'Educational Technology tools & Learning Management Systems',
+      ],
+    },
+    {
+      subject: '🎓 Pedagogy / Teaching Methodology (All Posts)',
+      topics: [
+        'Theories of Learning – Behaviourism, Constructivism, Cognitivism',
+        'Child Development & Psychology',
+        'Teaching Methods – Inductive, Deductive, Play-way, Activity-based',
+        'Inclusive Education – Principles, NCF 2005, NEP 2020',
+        'Assessment & Evaluation – Formative, Summative, CCE',
+        'Classroom Management & Motivation techniques',
+        'Right to Education (RTE) Act 2009 – Key provisions',
+        'Bloom\'s Taxonomy – Cognitive, Affective, Psychomotor domains',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'General Knowledge Foundation', detail: 'Start with Indian History (Ancient to Modern), Geography (physical + political), and Polity (Constitution, Articles, Amendments). Read one NCERT per day from Class 6–10 series. Simultaneously start reading a Hindi newspaper daily for 15 minutes — this builds both Current Affairs and Hindi language skills. Make handwritten notes on each NCERT chapter.' },
+    { month: 'Month 2', focus: 'English + Hindi + Reasoning', detail: 'English: Complete Word Power Made Easy (1–3 chapters/day). Practice Grammar through previous year papers. Hindi: Practice Vyakaran (grammar) topics with Lucent\'s Hindi Vyakaran. Reasoning: Start with basic topics — Analogies, Series, Coding-Decoding. Aim for 30 reasoning questions daily. Take sectional mock tests every weekend.' },
+    { month: 'Month 3', focus: 'Subject Content (PRT/TGT/PGT)', detail: 'This is your most critical month — subject content forms 60 marks (PRT) or 80 marks (TGT/PGT). PRT candidates: revise Class 1–8 content across all subjects including EVS, Mathematics, and Language. TGT/PGT candidates: revise graduation-level content for your chosen subject thoroughly. Make topic-wise notes from NCERT + standard reference book for your subject.' },
+    { month: 'Month 4', focus: 'Pedagogy (Teaching Methodology)', detail: 'Pedagogy carries 10 marks but is a differentiator — many candidates neglect it. Study NCERT pedagogy manuals, NCF 2005, and NEP 2020 thoroughly. Learn child development theories (Piaget, Vygotsky, Kohlberg) and teaching methods. Prepare for CTET if not already qualified — CTET Paper 1 (PRT) or Paper 2 (TGT) is mandatory for selection. Practice 15 pedagogy MCQs daily.' },
+    { month: 'Month 5', focus: 'Computer Literacy + Current Affairs', detail: 'Computer section has 10 marks — 2 weeks of focused study is enough for full marks. Cover MS Office basics, Internet, Networking, and Educational Technology. Current Affairs: Start daily revision of last 6–12 months. Use Lucent\'s GK + monthly current affairs booklets (Pratiyogita Darpan or Arihant). Take full-section GK mock tests.' },
+    { month: 'Month 6', focus: 'Full Mocks + Interview/Demo Prep (TGT/PGT)', detail: 'Take 2–3 full-length KVS mock tests per week. Analyse each mock deeply — understand error patterns. TGT/PGT candidates: Prepare your Demo Lesson (10–15 minutes on a topic from your subject). Practice teaching out loud. Prepare for interview questions on your subject, NEP 2020, NCF, and KVS history/mission. Final week: revision only.' },
+  ];
+
+  const books = [
+    { title: 'KVS PRT/TGT/PGT Complete Guide', author: 'Arihant Publications', subject: 'All Sections (combined)' },
+    { title: 'Lucent\'s General Knowledge', author: 'Lucent Publications', subject: 'General Knowledge' },
+    { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English Vocabulary' },
+    { title: 'Objective General English', author: 'S.P. Bakshi (Arihant)', subject: 'English Grammar' },
+    { title: 'Sampoorna Hindi Vyakaran', author: 'Dr. Hardev Bahri', subject: 'Hindi Grammar' },
+    { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali & Indu Sijwali', subject: 'Reasoning' },
+    { title: 'NCF 2005 + NEP 2020 (official documents)', author: 'Ministry of Education, GOI', subject: 'Pedagogy & Policy' },
+    { title: 'Child Development & Pedagogy', author: 'Disha Experts', subject: 'Pedagogy (CTET-based)' },
+    { title: 'Subject-Specific Reference (NCERT Class 1–12)', author: 'NCERT (free PDF)', subject: 'Subject Content' },
+  ];
+
+  const freeResources = [
+    { name: 'KVS Official Careers Portal', type: 'website', url: 'https://kvsangathan.nic.in', description: 'Official notification, admit card, results and all recruitment circulars. Always your primary source.' },
+    { name: 'CTET Official Site (CBSE)', type: 'website', url: 'https://ctet.nic.in', description: 'CTET qualification is mandatory for PRT (Paper 1) and TGT (Paper 2). Register, check syllabus and results here.' },
+    { name: 'Adda247 Teaching Exams (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Free daily classes for KVS, CTET, and DSSSB — covers Pedagogy, GK, Reasoning and Subject Content.' },
+    { name: 'Let\'s LEARN (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@LetsLearnIndia', description: 'In-depth free lectures for KVS TGT/PGT subject content — Hindi, English, Social Science, Science.' },
+    { name: 'Teachoo (NCF / NEP)', type: 'website', url: 'https://teachoo.com', description: 'Excellent free resource for Maths and Science NCERT content — useful for both PRT/TGT subject preparation.' },
+    { name: 'NCERT Official (Free PDFs)', type: 'website', url: 'https://ncert.nic.in/textbook.php', description: 'Download all NCERT Class 1–12 textbooks free. Subject content for KVS is NCERT-based — this is non-negotiable.' },
+    { name: 'Testbook KVS Free Mock Tests', type: 'website', url: 'https://testbook.com/kvs', description: 'Free full-length KVS PRT/TGT/PGT mock tests with detailed solutions and rank insights.' },
+    { name: 'Gradeup / BYJU\'s Exam Prep', type: 'website', url: 'https://byjusexamprep.com/kvs', description: 'Topic-wise quizzes, pedagogy notes, and free GK capsules for KVS exam preparation.' },
+  ];
+
+  const tips = [
+    { icon: '📚', tip: 'CTET qualification is a hard prerequisite for PRT (Paper 1) and TGT (Paper 2) — no CTET means no selection, even if you score 200/200 in the written test. If you haven\'t cleared CTET yet, register for the next cycle immediately. CTET is conducted twice a year by CBSE.' },
+    { icon: '🎯', tip: 'Part III (Subject Content) accounts for 60 marks (PRT) or 80 marks (TGT/PGT) — it is the biggest section and also where most candidates score poorly. Treat it as your primary focus: 40–50% of your study time should go here. NCERT textbooks are the foundation; read every chapter for your subject from Class 1 to 12.' },
+    { icon: '🎓', tip: 'NEP 2020 and NCF 2005 are no longer optional reading — KVS has increased their weightage in Pedagogy sections since 2022. KVS\'s own Vision and Mission is closely aligned with NEP goals. Read both documents thoroughly and know the key recommendations, reforms, and structural changes proposed.' },
+    { icon: '🏫', tip: 'For TGT/PGT, the Demo Lesson (10–15 minutes) is a significant scoring opportunity. Judges evaluate your communication, knowledge of the topic, teaching aids used, and student engagement. Practise teaching out loud at home at least 15–20 times before the interview. Choose a topic you are deeply comfortable with.' },
+    { icon: '📅', tip: 'KVS recruitment cycles are irregular — there was no major notification from 2018-19 until 2022-23. Don\'t wait for the notification to start preparing. Candidates who prepare 9–12 months in advance are consistently among the top scorers. Use the waiting period to clear CTET and strengthen subject content.' },
+    { icon: '🌐', tip: 'KVS has over 1,200 schools across India, including abroad (Moscow, Kathmandu, Tehran, Teheran). Kendriya Vidyalayas serve children of Central Government employees and defence personnel. Knowing the KVS mission, growth history, and organisational structure helps you in interviews — and also during Demo Lessons.' },
+    { icon: '📋', tip: 'Age relaxation applies: SC/ST get +5 years, OBC (NCL) get +3 years, PwBD get +10 years. Ex-servicemen and widows of defence personnel also get relaxations as per government rules. The maximum age limit is 30 years (PRT), 35 years (TGT), and 40 years (PGT) for General/EWS before relaxation.' },
+    { icon: '🔄', tip: 'Current Affairs for KVS focuses heavily on Education Ministry news — NEP implementations, new Navodaya/KVS school openings, PM\'s education initiatives, and national/state award winners in education. Scan Education Ministry press releases monthly in addition to general current affairs.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the KVS Recruitment 2026 notification date?',
+      a: 'As of May 2026, KVS has not released an official notification for 2025-26 recruitment. The last major recruitment was in 2022-23 (13,404 posts). KVS recruits based on its internal requirement projections and government approval. Monitor kvsangathan.nic.in regularly for updates. The notification is listed as TBN (To Be Notified) — do not rely on unofficial sources with predicted dates.',
+    },
+    {
+      q: 'Is CTET mandatory for KVS PRT and TGT posts?',
+      a: 'Yes. CTET (Central Teacher Eligibility Test) is a mandatory qualifying condition for KVS PRT (Primary Teacher) and TGT (Trained Graduate Teacher) posts. For PRT, you must have cleared CTET Paper 1. For TGT, CTET Paper 2 is required. For PGT posts, CTET is not mandatory. State TET certificates are NOT accepted for KVS — only CTET (conducted by CBSE) is valid.',
+    },
+    {
+      q: 'What is the salary for KVS PRT, TGT and PGT in 2026?',
+      a: 'KVS follows the 7th Central Pay Commission (CPC) pay scales. PRT is at Pay Level 6 with a basic of ₹35,400/month. TGT is at Pay Level 7 (₹44,900/month basic). PGT is at Pay Level 8 (₹47,600/month basic). With DA at 55% (effective Jan 2026) + HRA (metro 27%) + Transport Allowance, the gross monthly salary is approximately ₹68,000–₹72,000 for PRT, ₹83,000–₹87,000 for TGT, and ₹88,000–₹92,000 for PGT in metro cities.',
+    },
+    {
+      q: 'Is there an interview for KVS PRT posts?',
+      a: 'For KVS PRT (Primary Teacher), the selection is based solely on the Written Test (CBT) — there is no interview round. For TGT and PGT posts, the selection process includes both the Written Test (CBT) and an Interview + Demo Lesson round. The written test marks and interview marks are combined for the final merit list for TGT/PGT posts.',
+    },
+    {
+      q: 'What is the age limit for KVS PRT, TGT and PGT?',
+      a: 'The maximum age limit is: PRT – 30 years, TGT – 35 years, PGT – 40 years. These limits are for General/EWS candidates. Relaxations apply: OBC (NCL) +3 years, SC/ST +5 years, PwBD +10 years. Ex-servicemen and other categories get relaxations as per Central Government rules. There is no minimum age specified beyond 18 years. Age is calculated as of the cut-off date mentioned in the official notification.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">KVS PRT/TGT/PGT 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">📚 Teaching</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ Notification: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            KVS PRT/TGT/PGT 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            Kendriya Vidyalaya Sangathan (KVS) recruits <strong>Primary Teachers (PRT)</strong>, <strong>Trained Graduate Teachers (TGT)</strong>, and <strong>Post Graduate Teachers (PGT)</strong> for its 1,200+ schools across India. CTET qualification is mandatory. Last cycle had <strong>13,404 vacancies</strong>. Salary <strong>₹35,400–₹1,51,100/month</strong> (7th CPC) with full Central Government benefits.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '8,000–15,000', sub: '(2025-26 est.)' },
+              { label: 'Min. Qualification', value: 'B.Ed + CTET', sub: 'CTET mandatory' },
+              { label: 'Age Limit', value: '18–40 years', sub: 'Post-dependent' },
+              { label: 'Salary (PGT, metro)', value: '~₹88,000–₹92,000', sub: 'per month gross' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> KVS 2025-26 notification is <strong>yet to be released</strong>. DA for Central Government employees revised to <strong>55%</strong> effective January 2026. CTET remains mandatory for PRT &amp; TGT. Monitor{' '}
+            <a href="https://kvsangathan.nic.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">kvsangathan.nic.in</a> for official updates.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is KVS Recruitment 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  <strong>Kendriya Vidyalaya Sangathan (KVS)</strong> is an autonomous organisation under the <strong>Ministry of Education, Government of India</strong>. It operates a network of over <strong>1,253 Kendriya Vidyalayas</strong> across India and abroad — including schools in Moscow, Kathmandu, Tehran, Tashkent, and Kathmandu — primarily serving children of Central Government employees and defence/paramilitary personnel.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  KVS recruits teachers across three levels: <strong>PRT (Primary Teacher)</strong> for Classes 1–5, <strong>TGT (Trained Graduate Teacher)</strong> for Classes 6–10, and <strong>PGT (Post Graduate Teacher)</strong> for Classes 11–12. Each post has different educational qualifications, subject requirements, and salary scales. The recruitment is conducted through a centralised Computer-Based Test (CBT) followed by an Interview and Demo Lesson for TGT/PGT posts.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  KVS is one of India&apos;s most sought-after teaching jobs — offering <strong>Central Government salary with 7th CPC pay scales</strong>, excellent job security, a 6-week summer vacation, and the prestige of teaching in a nationally-recognised school chain. The 2022-23 recruitment saw over <strong>30 lakh applications</strong> for 13,404 posts.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Kendriya Vidyalaya Sangathan (KVS)' },
+                  { label: 'Under Ministry', value: 'Ministry of Education, GOI' },
+                  { label: 'Total KVS Schools', value: '1,253+ (incl. overseas)' },
+                  { label: 'Probation Period', value: '2 Years' },
+                ].map((c) => (
+                  <div key={c.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{c.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{c.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Important Dates 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white font-heading">
+                      <th className="text-left p-3 font-semibold">Event</th>
+                      <th className="text-left p-3 font-semibold">Date</th>
+                      <th className="text-left p-3 font-semibold hidden sm:table-cell">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.event}</td>
+                        <td className="p-3 font-medium text-surface-800">{row.date}</td>
+                        <td className="p-3 hidden sm:table-cell">
+                          {row.status === 'released' ? (
+                            <span className="badge-green">✓ Done</span>
+                          ) : (
+                            <span className="inline-flex items-center bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⚠️ TBN</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2 pl-1">⚠️ All 2025-26 dates are To Be Notified (TBN). KVS recruitment is irregular — no fixed annual cycle. Source: kvsangathan.nic.in</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+              <div className="space-y-4">
+                {[
+                  {
+                    post: 'PRT – Primary Teacher (Classes 1–5)',
+                    color: 'border-primary-400 bg-primary-50',
+                    badge: 'bg-primary-100 text-primary-700',
+                    points: [
+                      '🎓 Senior Secondary (12th pass) with at least 50% marks',
+                      '📜 2-year Diploma in Elementary Education (D.El.Ed) OR B.El.Ed OR B.Ed with Special Education',
+                      '📋 CTET Paper 1 (Class 1–5) – MANDATORY qualifying certificate (conducted by CBSE)',
+                      '🪪 Indian Nationality',
+                      '📅 Age: Maximum 30 years (General/EWS) | OBC: 33 yrs | SC/ST: 35 yrs | PwBD: 40 yrs',
+                    ],
+                  },
+                  {
+                    post: 'TGT – Trained Graduate Teacher (Classes 6–10)',
+                    color: 'border-emerald-400 bg-emerald-50',
+                    badge: 'bg-emerald-100 text-emerald-700',
+                    points: [
+                      '🎓 Bachelor\'s Degree (Graduation) in the relevant subject with at least 50% marks',
+                      '📜 B.Ed (Bachelor of Education) degree from a recognised university',
+                      '📋 CTET Paper 2 (Class 6–8) – MANDATORY qualifying certificate',
+                      '🪪 Indian Nationality',
+                      '📅 Age: Maximum 35 years (General/EWS) | OBC: 38 yrs | SC/ST: 40 yrs | PwBD: 45 yrs',
+                    ],
+                  },
+                  {
+                    post: 'PGT – Post Graduate Teacher (Classes 11–12)',
+                    color: 'border-amber-400 bg-amber-50',
+                    badge: 'bg-amber-100 text-amber-700',
+                    points: [
+                      '🎓 Post-Graduation (Master\'s degree) in the relevant subject with at least 50% marks',
+                      '📜 B.Ed (Bachelor of Education) – required for most PGT subjects',
+                      '📋 CTET is NOT mandatory for PGT posts',
+                      '🪪 Indian Nationality',
+                      '📅 Age: Maximum 40 years (General/EWS) | OBC: 43 yrs | SC/ST: 45 yrs | PwBD: 50 yrs',
+                    ],
+                  },
+                ].map((item) => (
+                  <div key={item.post} className={`card p-5 border-l-4 ${item.color}`}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className={`text-xs font-heading font-semibold rounded-full px-3 py-1 ${item.badge}`}>{item.post}</span>
+                    </div>
+                    <ul className="space-y-1.5">
+                      {item.points.map((p, j) => (
+                        <li key={j} className="text-sm text-surface-700">{p}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-surface-700">
+                💡 <strong>CTET Validity:</strong> CTET certificate is now valid for <strong>lifetime</strong> (changed from 7 years in 2021). Once you clear CTET, you never need to reappear. Check your eligibility using our{' '}
+                <Link href="/tools/eligibility-checker/" className="text-primary-600 underline">Eligibility Checker tool</Link>.
+              </div>
+            </section>
+
+            {/* 4. VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies History</h2>
+              </div>
+              <div className="card overflow-hidden mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white font-heading">
+                      <th className="text-left p-3 font-semibold">Recruitment Year</th>
+                      <th className="text-left p-3 font-semibold">PRT</th>
+                      <th className="text-left p-3 font-semibold">TGT</th>
+                      <th className="text-left p-3 font-semibold">PGT</th>
+                      <th className="text-left p-3 font-semibold hidden sm:table-cell">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 text-surface-700">{row.prt}</td>
+                        <td className="p-3 text-surface-700">{row.tgt}</td>
+                        <td className="p-3 text-surface-700">{row.pgt}</td>
+                        <td className="p-3 hidden sm:table-cell">
+                          <span className={`font-semibold ${row.status === 'Upcoming' ? 'text-amber-600' : 'text-emerald-600'}`}>{row.total}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 pl-1">Note: KVS does not follow a fixed annual recruitment calendar. Vacancies depend on internal requirement projections and government approval. The 2025-26 cycle is expected but not yet confirmed.</p>
+            </section>
+
+            {/* 5. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern</h2>
+              </div>
+
+              <div className="space-y-6">
+                {/* PRT Pattern */}
+                <div>
+                  <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">📗 PRT Written Test Pattern (180 Marks | 3 Hours)</h3>
+                  <div className="card overflow-hidden">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white font-heading">
+                          <th className="text-left p-3 font-semibold">Part</th>
+                          <th className="text-left p-3 font-semibold">Subject</th>
+                          <th className="text-right p-3 font-semibold">Questions</th>
+                          <th className="text-right p-3 font-semibold">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {prtPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 text-xs font-semibold text-primary-600">{row.part}</td>
+                            <td className="p-3 text-surface-700">{row.subject}</td>
+                            <td className="p-3 text-right text-surface-800 font-medium">{row.qs}</td>
+                            <td className="p-3 text-right text-emerald-600 font-semibold">{row.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-primary-50 font-semibold">
+                          <td className="p-3 text-primary-700" colSpan={2}>Total</td>
+                          <td className="p-3 text-right text-primary-700">180</td>
+                          <td className="p-3 text-right text-primary-700">180</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-1.5 pl-1">No negative marking. All MCQ format. Duration: 3 hours. No interview for PRT.</p>
+                </div>
+
+                {/* TGT/PGT Pattern */}
+                <div>
+                  <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">📘 TGT / PGT Written Test Pattern (200 Marks | 3 Hours)</h3>
+                  <div className="card overflow-hidden">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white font-heading">
+                          <th className="text-left p-3 font-semibold">Part</th>
+                          <th className="text-left p-3 font-semibold">Subject</th>
+                          <th className="text-right p-3 font-semibold">Questions</th>
+                          <th className="text-right p-3 font-semibold">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {tgtPgtPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 text-xs font-semibold text-primary-600">{row.part}</td>
+                            <td className="p-3 text-surface-700">{row.subject}</td>
+                            <td className="p-3 text-right text-surface-800 font-medium">{row.qs}</td>
+                            <td className="p-3 text-right text-emerald-600 font-semibold">{row.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-primary-50 font-semibold">
+                          <td className="p-3 text-primary-700" colSpan={2}>Total (Written)</td>
+                          <td className="p-3 text-right text-primary-700">200</td>
+                          <td className="p-3 text-right text-primary-700">200</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-1.5 pl-1">No negative marking. After written test: Interview (60 marks) + Demo Lesson (for TGT/PGT). Final merit = Written + Interview.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* 6. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((s, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none list-none">
+                      <span>{s.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-1.5">
+                        {s.topics.map((t, j) => (
+                          <li key={j} className="text-sm text-surface-700 flex gap-2">
+                            <span className="text-primary-400 mt-0.5">•</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+              <div className="mt-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 text-sm text-surface-700">
+                💡 <strong>Subject-Specific Syllabus:</strong> Part III (Subject Content) varies by post and subject — English, Hindi, Mathematics, Science, Social Science, Sanskrit, etc. Always download the official notification&apos;s syllabus annexure from <a href="https://kvsangathan.nic.in" target="_blank" rel="noopener noreferrer" className="text-primary-600 underline">kvsangathan.nic.in</a> for your specific post/subject.
+              </div>
+            </section>
+
+            {/* 7. SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Salary & Benefits 2026</h2>
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white font-heading">
+                      <th className="text-left p-3 font-semibold">Post</th>
+                      <th className="text-left p-3 font-semibold hidden sm:table-cell">Pay Level</th>
+                      <th className="text-left p-3 font-semibold">Basic Pay</th>
+                      <th className="text-left p-3 font-semibold hidden sm:table-cell">DA (55%)</th>
+                      <th className="text-left p-3 font-semibold">Gross (Metro)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryTable.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600 hidden sm:table-cell">{row.level}</td>
+                        <td className="p-3 text-surface-700">{row.basic}</td>
+                        <td className="p-3 text-surface-700 hidden sm:table-cell">{row.da55}</td>
+                        <td className="p-3 font-semibold text-emerald-600">{row.grossMet}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">📦 Additional Benefits</h3>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-emerald-500">✓</span> Medical Benefits – CGHS (Central Government Health Scheme)</li>
+                    <li className="flex gap-2"><span className="text-emerald-500">✓</span> Leave Travel Concession (LTC) – India-wide travel</li>
+                    <li className="flex gap-2"><span className="text-emerald-500">✓</span> Children Education Allowance – up to 2 children</li>
+                    <li className="flex gap-2"><span className="text-emerald-500">✓</span> NPS (National Pension Scheme) with employer contribution</li>
+                    <li className="flex gap-2"><span className="text-emerald-500">✓</span> 6-week Summer Vacation (May–June) with full pay</li>
+                    <li className="flex gap-2"><span className="text-emerald-500">✓</span> 2-week Winter Break (December) with full pay</li>
+                    <li className="flex gap-2"><span className="text-emerald-500">✓</span> In-service professional development and training programs</li>
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">📈 Career Progression</h3>
+                  <div className="space-y-2">
+                    {[
+                      { role: 'PRT → Senior PRT', detail: 'After 5–8 years (Merit-based)' },
+                      { role: 'TGT → Senior TGT', detail: 'After 5–8 years' },
+                      { role: 'TGT → PGT (LDCE)', detail: 'Limited Departmental Competitive Exam' },
+                      { role: 'PGT → Vice Principal', detail: 'After 10+ years + exam' },
+                      { role: 'Vice Principal → Principal', detail: 'After 5+ years as VP' },
+                    ].map((item, i) => (
+                      <div key={i} className="flex justify-between text-sm border-b border-surface-100 pb-2 last:border-0 last:pb-0">
+                        <span className="font-medium text-surface-800">{item.role}</span>
+                        <span className="text-surface-500 text-xs mt-0.5">{item.detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-3 pl-1">DA @ 55% effective January 2026. HRA varies: metro 27%, urban 18%, other 9%. All figures are gross estimates. Actual in-hand will be ~15% lower after NPS and income tax deductions.</p>
+            </section>
+
+            {/* 8. HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {[
+                    { step: '1', title: 'Check Notification', detail: 'Monitor kvsangathan.nic.in regularly. When released, download the official notification PDF. Read all pages carefully — eligibility, post-specific requirements, and document checklist.' },
+                    { step: '2', title: 'Verify CTET Eligibility', detail: 'Confirm your CTET certificate is valid for the post you are applying to (Paper 1 for PRT, Paper 2 for TGT). If you have not cleared CTET, register for the upcoming CTET cycle at ctet.nic.in before applying to KVS.' },
+                    { step: '3', title: 'Register Online', detail: 'Visit recruitment.kvs.gov.in (or the link in the notification). Create a new registration using your mobile number and email. Keep them active throughout the process.' },
+                    { step: '4', title: 'Fill Application & Upload Documents', detail: 'Enter personal, educational, and CTET details. Upload passport-size photo (JPG, under 100KB) and signature (JPG, under 50KB). Upload qualification certificates as required.' },
+                    { step: '5', title: 'Pay Application Fee', detail: 'General/OBC/EWS: ₹1,500 | SC/ST/PwBD/Female candidates: No fee (as per last notification). Pay via Net Banking, Debit/Credit card, or UPI. Save the fee receipt.' },
+                    { step: '6', title: 'Download Admit Card', detail: 'Admit card is released on the official website 1–2 weeks before the CBT. Download and take a colour printout. Carry with a valid photo ID to the exam centre.' },
+                  ].map((s) => (
+                    <div key={s.step} className="sm:pl-14 relative card p-5">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{s.step}</div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.title}</div>
+                      <p className="text-sm text-surface-600">{s.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 9. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">6-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((s, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-5">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs font-heading font-semibold text-primary-600 bg-primary-50 rounded-full px-2.5 py-0.5">{s.month}</span>
+                        <span className="font-heading font-semibold text-surface-800">{s.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 10. BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for KVS 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white font-heading">
+                      <th className="text-left p-3 font-semibold">Subject</th>
+                      <th className="text-left p-3 font-semibold">Book Title</th>
+                      <th className="text-left p-3 font-semibold hidden sm:table-cell">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-xs font-semibold text-primary-600 whitespace-nowrap">{b.subject}</td>
+                        <td className="p-3 text-surface-800 font-medium">{b.title}</td>
+                        <td className="p-3 text-surface-500 hidden sm:table-cell">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 11. FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{r.type === 'youtube' ? '📺' : '🌐'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.name}</div>
+                        <div className="text-xs text-surface-500 mt-1 leading-relaxed">{r.description}</div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 12. TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips for KVS 2026</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{t.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none list-none">
+                      <span>{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-0.5 transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4 text-sm uppercase tracking-wide">Quick Facts</h3>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Conducting Body', value: 'KVS (MoE, GOI)' },
+                    { label: 'Posts', value: 'PRT / TGT / PGT' },
+                    { label: 'Last Vacancies', value: '13,404 (2022-23)' },
+                    { label: 'CTET Required', value: 'PRT & TGT only' },
+                    { label: 'Negative Marking', value: 'None' },
+                    { label: 'Probation', value: '2 years' },
+                    { label: 'Official Site', value: '' },
+                    { label: 'Eligibility Checker', value: '' },
+                  ].map((item) =>
+                    item.label === 'Official Site' ? (
+                      <div key={item.label}>
+                        <a href="https://kvsangathan.nic.in" target="_blank" rel="noopener noreferrer" className="block text-center text-sm text-primary-500 hover:text-primary-600 font-medium border border-primary-200 rounded-lg py-2 hover:bg-primary-50 transition-colors">
+                          🔗 kvsangathan.nic.in ↗
+                        </a>
+                      </div>
+                    ) : item.label === 'Eligibility Checker' ? (
+                      <div key={item.label}>
+                        <Link href="/tools/eligibility-checker/" className="block text-center text-sm text-primary-500 hover:text-primary-600 font-medium border border-primary-200 rounded-lg py-2 hover:bg-primary-50 transition-colors">
+                          ✅ Check Your Eligibility
+                        </Link>
+                      </div>
+                    ) : (
+                      <div key={item.label} className="flex justify-between text-sm">
+                        <span className="text-surface-500">{item.label}</span>
+                        <span className="text-surface-800 font-medium text-right ml-2">{item.value}</span>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4 text-sm uppercase tracking-wide">Related Exams</h3>
+                <div className="space-y-2">
+                  {[
+                    { name: 'CTET 2026',         slug: 'ctet' },
+                    { name: 'UGC NET 2026',       slug: 'ugc-net' },
+                    { name: 'NVS Teacher 2026',   slug: 'nvs-teacher' },
+                    { name: 'DSSSB TGT/PGT 2026', slug: 'dsssb' },
+                    { name: 'UPSC NDA 2026',       slug: 'upsc-nda' },
                   ].map((e) => (
                     <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-500 hover:text-primary-600 hover:underline py-0.5">
                       → {e.name}
