@@ -156,6 +156,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'bihar-police-si') {
+    return {
+      title: 'Bihar Police SI 2026 – Syllabus, Eligibility, Physical Test & Guide | TaiyarHo',
+      description: 'Bihar Police SI (Daroga) 2026 (BPSSC): Graduate eligible, age 20–37 yrs. Selection: Prelims (200 marks) → Mains (400 marks) → PET/PST → Medical. Salary ₹35,400–₹1,12,400/month. Complete guide with syllabus, physical standards and free resources.',
+      keywords: 'Bihar Police SI 2026, Bihar Police Daroga 2026, BPSSC SI bharti, bihar police si syllabus, bihar police si age limit, bihar police si physical test, बिहार पुलिस दरोगा 2026, bihar police si salary',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/bihar-police-si/' },
+      other: { 'description:hi': 'बिहार पुलिस SI (दरोगा) 2026 (BPSSC) – स्नातक पात्र, आयु 20–37 वर्ष। चयन: प्रारंभिक (200 अंक) → मुख्य (400 अंक) → PET/PST → मेडिकल। वेतन ₹35,400–₹1,12,400/माह। सिलेबस, शारीरिक मानक और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'uppsc-pcs') {
     return {
       title: 'UPPSC PCS 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -464,6 +474,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'delhi-police-constable') return <DelhiPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'upsc-nda') return <UpscNdaPage exam={brief} />;
   if (brief && brief.slug === 'up-police-si') return <UpPoliceSiPage exam={brief} />;
+  if (brief && brief.slug === 'bihar-police-si') return <BiharPoliceSIPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
   if (brief && brief.slug === 'ssc-stenographer') return <SscStenographerPage exam={brief} />;
   if (brief && brief.slug === 'uppsc-pcs') return <UppscPcsPage exam={brief} />;
@@ -30627,6 +30638,917 @@ function MppscStatePage({ exam }: { exam: any }) {
                     { name: 'UPSC IAS 2026', slug: 'upsc-ias' },
                     { name: 'MPSC State Service', slug: 'mpsc-state-service' },
                     { name: 'RPSC RAS 2026', slug: 'rpsc-ras' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-500 hover:text-primary-600 hover:underline py-0.5">
+                      → {e.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── BIHAR POLICE SI 2026 RICH PAGE ──────────────────────────────────────────
+function BiharPoliceSIPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',       label: 'Overview' },
+    { id: 'dates',          label: 'Important Dates 2026' },
+    { id: 'eligibility',    label: 'Eligibility Criteria' },
+    { id: 'vacancies',      label: 'Vacancy History' },
+    { id: 'selection',      label: 'Selection Process' },
+    { id: 'physical',       label: 'Physical Standards (PET/PST)' },
+    { id: 'exam-pattern',   label: 'Exam Pattern' },
+    { id: 'syllabus',       label: 'Detailed Syllabus' },
+    { id: 'salary',         label: 'Salary & Benefits' },
+    { id: 'how-to-apply',   label: 'How to Apply' },
+    { id: 'study-plan',     label: 'Study Plan' },
+    { id: 'books',          label: 'Best Books' },
+    { id: 'resources',      label: 'Free Resources' },
+    { id: 'tips',           label: 'Expert Tips' },
+    { id: 'faq',            label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'BPSSC SI 2020 Cycle – Notification Released',         date: 'October 2020',              status: 'done' },
+    { event: 'BPSSC SI 2020 – Application Window',                  date: 'Oct–Nov 2020',               status: 'done' },
+    { event: 'BPSSC SI 2020 – Prelims Exam',                        date: 'December 2023',              status: 'done' },
+    { event: 'BPSSC SI 2020 – Mains Exam',                          date: 'August 2024',                status: 'done' },
+    { event: 'BPSSC SI 2020 – Mains Result',                        date: 'February 2025',              status: 'done' },
+    { event: 'BPSSC SI 2020 – PET/PST Physical Test',               date: 'Ongoing (2025)',             status: 'done' },
+    { event: 'BPSSC SI 2020 – Document Verification & Medical',     date: 'To Be Notified (TBN)',       status: 'tbn' },
+    { event: '💡 Bihar Police SI 2026 – New Notification (Next Cycle)', date: 'Expected: 2026 (TBN)',  status: 'upcoming' },
+    { event: 'Bihar Police SI 2026 – Application Opens (Expected)', date: 'To Be Notified (TBN)',       status: 'upcoming' },
+    { event: 'Bihar Police SI 2026 – Prelims Exam (Expected)',       date: 'To Be Notified (TBN)',       status: 'upcoming' },
+    { event: 'Bihar Police SI 2026 – Mains Exam (Expected)',         date: 'To Be Notified (TBN)',       status: 'upcoming' },
+  ];
+
+  const vacancyHistory = [
+    { cycle: 'BPSSC SI 2010 (Central/Prohib.)', vacancies: '880',                posts: 'Civil SI + Prohibition SI',           remark: 'Completed' },
+    { cycle: 'BPSSC SI 2014',                   vacancies: '1,717',              posts: 'Civil Police SI (Daroga)',             remark: 'Completed' },
+    { cycle: 'BPSSC SI 2017',                   vacancies: '1,669',              posts: 'Civil Police SI',                     remark: 'Completed' },
+    { cycle: 'BPSSC SI 2020',                   vacancies: '2,446',              posts: 'SI Civil + Wireless + Lady SI',       remark: 'Selection in progress (2025)' },
+    { cycle: 'Bihar Police SI 2026 (Expected)', vacancies: '2,000–4,000 (TBN)', posts: 'Civil SI + Wireless SI (expected)',   remark: 'Not yet notified' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'General Knowledge & Current Affairs',  questions: 40, marks: 80,  note: 'General Awareness, Bihar GK, Static GK' },
+    { subject: 'General Science',                       questions: 25, marks: 50,  note: 'Physics, Chemistry, Biology (Class 10 level)' },
+    { subject: 'Social Studies (History/Geography/Civics)', questions: 20, marks: 40, note: 'India & Bihar focus' },
+    { subject: 'Mathematics',                           questions: 10, marks: 20,  note: 'Arithmetic & basic Maths' },
+    { subject: 'Mental Ability & Reasoning',            questions: 5,  marks: 10,  note: 'Logical & analytical reasoning' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper 1 – General Hindi',                       marks: 100, duration: '2 hours',  type: 'MCQ (50 Qs)', note: 'Qualifying in nature' },
+    { paper: 'Paper 2 – General Studies',                     marks: 100, duration: '2 hours',  type: 'MCQ (50 Qs)', note: 'Merit-based' },
+    { paper: 'Paper 3 – Language (Hindi/Urdu/Bangla)',        marks: 100, duration: '2 hours',  type: 'MCQ (50 Qs)', note: 'Any one opted language' },
+    { paper: 'Paper 4 – Optional Subject',                    marks: 100, duration: '2 hours',  type: 'MCQ (50 Qs)', note: 'Choose from list below' },
+  ];
+
+  const physicalMale = [
+    { attribute: 'Height',           general: '165 cm', obc_ebc: '165 cm', sc_st: '160 cm' },
+    { attribute: 'Chest (Unexpanded)', general: '81 cm', obc_ebc: '81 cm', sc_st: '79 cm' },
+    { attribute: 'Chest (Expanded)',  general: '86 cm', obc_ebc: '86 cm', sc_st: '84 cm' },
+    { attribute: '1.6 km Run',        general: '6 min 30 sec', obc_ebc: '6 min 30 sec', sc_st: '6 min 30 sec' },
+    { attribute: 'Long Jump',         general: '3.65 m (3 chances)', obc_ebc: '3.65 m', sc_st: '3.65 m' },
+    { attribute: 'High Jump',         general: '1.20 m (3 chances)', obc_ebc: '1.20 m', sc_st: '1.20 m' },
+    { attribute: 'Shot Put (7.26 kg)',general: '4.50 m (3 chances)', obc_ebc: '4.50 m', sc_st: '4.50 m' },
+  ];
+
+  const physicalFemale = [
+    { attribute: 'Height',           general: '155 cm', obc_ebc: '155 cm', sc_st: '150 cm' },
+    { attribute: 'Weight',           general: '48 kg (min)', obc_ebc: '48 kg', sc_st: '45 kg' },
+    { attribute: '1 km Run',         general: '6 min',  obc_ebc: '6 min',  sc_st: '6 min' },
+    { attribute: 'Long Jump',        general: '2.50 m (3 chances)', obc_ebc: '2.50 m', sc_st: '2.50 m' },
+    { attribute: 'High Jump',        general: '0.90 m (3 chances)', obc_ebc: '0.90 m', sc_st: '0.90 m' },
+    { attribute: 'Shot Put (4 kg)',  general: '3.75 m (3 chances)', obc_ebc: '3.75 m', sc_st: '3.75 m' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Pay Level 6 – 7th Pay Commission)', amount: '₹35,400/month',      note: 'Starting basic pay' },
+    { component: 'Dearness Allowance (DA @ 55% – Jan 2026)',      amount: '~₹19,470/month',     note: 'Revised Jan 2026' },
+    { component: 'House Rent Allowance (HRA)',                     amount: '₹2,832–₹8,496/month',note: 'Depends on city class (X/Y/Z)' },
+    { component: 'Transport Allowance',                            amount: '₹1,350–₹3,600/month',note: 'Plus DA on TA' },
+    { component: 'Other Allowances (Misc.)',                       amount: '~₹2,000–₹4,000/month',note: 'Special Duty Allowance, etc.' },
+    { component: 'Gross Estimated Salary',                         amount: '~₹61,000–₹71,000/month', note: 'Before deductions' },
+    { component: 'In-Hand Salary (approx.)',                       amount: '₹50,000–₹60,000/month',  note: 'After NPS, Professional Tax' },
+    { component: 'Maximum Pay Scale',                              amount: '₹1,12,400/month',    note: 'After all increments' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📰 General Knowledge & Current Affairs',
+      bg: 'bg-blue-50 border-blue-200',
+      color: 'text-blue-700',
+      topics: [
+        'Bihar History – Ancient, Medieval & Modern (special focus)',
+        'Indian Freedom Struggle – Key events, leaders, movements',
+        'Indian Constitution – Fundamental Rights, DPSP, Important Articles',
+        'Bihar Government & Administration – Chief Minister, Cabinet, Raj Bhavan',
+        'Important Government Schemes – State & Central (especially Bihar-focused)',
+        'Geography of India & Bihar – Rivers, Mountains, Districts, Wildlife',
+        'Indian Economy – GDP, Union Budget basics, Five-Year Plans overview',
+        'Current Affairs – National & International (last 6 months)',
+        'Awards & Honours – National, International, Bihar State awards',
+        'Sports, Books, Science & Technology – Static GK and recent developments',
+        'Bihar Police & Law Enforcement – BPSSC, CSBC, IPC, CrPC basics',
+      ],
+    },
+    {
+      subject: '🔬 General Science',
+      bg: 'bg-emerald-50 border-emerald-200',
+      color: 'text-emerald-700',
+      topics: [
+        'Physics – Motion, Force, Work & Energy, Light, Sound, Electricity',
+        'Chemistry – Atoms & Molecules, Chemical Reactions, Acids/Bases/Salts, Metals & Non-metals',
+        'Biology – Cell Structure, Nutrition, Respiration, Reproduction, Disease & Health',
+        'Environmental Science – Ecosystem, Biodiversity, Pollution, Conservation',
+        'Everyday Science – How common things work, Scientific inventions',
+        'Human Body – Major organs, their functions and related diseases',
+        'Agriculture in Bihar – Major crops, farming techniques, irrigation',
+      ],
+    },
+    {
+      subject: '📚 Social Studies (History, Geography & Civics)',
+      bg: 'bg-purple-50 border-purple-200',
+      color: 'text-purple-700',
+      topics: [
+        'Ancient India – Indus Valley, Vedic Age, Maurya & Gupta Empires',
+        'Medieval India – Sultanate, Mughal Empire, Bhakti & Sufi movements',
+        'Modern India – British Rule, Revolt of 1857, Gandhi & Freedom Movement',
+        'Bihar in History – Nalanda, Vikramshila, Champaran Satyagraha',
+        'Indian Geography – Physical features, climate, rivers, soils',
+        'Bihar Geography – Districts, rivers (Ganga, Gandak, Kosi), relief',
+        'Indian Polity – Parliament, President, PM, Judiciary, Election Commission',
+        'Local Self-Government – Panchayati Raj in Bihar, 73rd & 74th Amendments',
+      ],
+    },
+    {
+      subject: '🔢 Mathematics',
+      bg: 'bg-orange-50 border-orange-200',
+      color: 'text-orange-700',
+      topics: [
+        'Number System – Natural, Whole, Integers, HCF, LCM, Divisibility',
+        'Percentage, Ratio & Proportion, Partnership',
+        'Profit & Loss, Discount, Simple & Compound Interest',
+        'Average, Age Problems, Mixture & Alligation',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time – Trains, Boats & Streams',
+        'Mensuration – Area & Perimeter (2D), Volume & Surface Area (3D)',
+        'Data Interpretation – Tables, Bar Graphs, Pie Charts',
+        'Basic Algebra – Linear Equations (1 & 2 variables)',
+        'Basic Trigonometry – Class 10 level (sin, cos, tan, identities)',
+      ],
+    },
+    {
+      subject: '🧩 Mental Ability & Reasoning',
+      bg: 'bg-red-50 border-red-200',
+      color: 'text-red-700',
+      topics: [
+        'Analogies – Word, Number, Alphabetical patterns',
+        'Classification & Odd One Out',
+        'Series – Number, Alphabet, Mixed series',
+        'Coding-Decoding',
+        'Blood Relations, Direction Sense',
+        'Ranking & Order, Seating Arrangement',
+        'Syllogisms – Statements & Conclusions',
+        'Clock & Calendar problems',
+        'Venn Diagrams',
+        'Non-Verbal Reasoning – Mirror image, Pattern Completion',
+      ],
+    },
+    {
+      subject: '📝 General Hindi (Mains Paper 1)',
+      bg: 'bg-pink-50 border-pink-200',
+      color: 'text-pink-700',
+      topics: [
+        'हिन्दी वर्णमाला – स्वर, व्यंजन, उच्चारण स्थान',
+        'संधि (स्वर, व्यंजन, विसर्ग) एवं समास',
+        'विलोम शब्द, पर्यायवाची, अनेकार्थी शब्द',
+        'मुहावरे एवं लोकोक्तियाँ',
+        'वाक्य शुद्धि, वर्तनी की अशुद्धियाँ',
+        'रिक्त स्थान – उपयुक्त शब्द',
+        'अपठित गद्यांश एवं पद्यांश',
+        'हिन्दी व्याकरण – क्रिया, कारक, काल, वचन, लिंग',
+        'पत्र लेखन, निबन्ध लेखन',
+        'बिहार की भाषाएँ – भोजपुरी, मैथिली, मगही (सामान्य ज्ञान)',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', focus: 'GK Foundation + Bihar Special', detail: 'Start with Bihar History, Geography and Polity — this is where Bihar Police SI sets itself apart from other state police exams. Prepare a dedicated Bihar notebook. Revise Indian Freedom Struggle and key Constitutional Articles. Read one Bihar-focused GK book cover to cover. Begin daily 15-minute current affairs reading.' },
+    { month: 'Month 3', focus: 'General Science + Maths', detail: 'Cover Class 9–10 Science systematically — NCERT textbooks are ideal for this stage. For Maths, master Percentage, Ratio, Profit-Loss and Time-Work first — these form the backbone of both Prelims and daily life problems. Solve 30 Maths questions daily with a timer.' },
+    { month: 'Month 4', focus: 'Reasoning + Social Studies', detail: 'Reasoning requires pattern recognition, not memorisation — solve previous papers for type familiarity. For Social Studies, use NCERT History (8–10) and NCERT Geography (9–10). Make a timeline of Indian and Bihar history. Study Indian Polity using M. Laxmikanth\'s class 10–12 material (not the full book).' },
+    { month: 'Month 5', focus: 'Hindi (Mains) + Mock Tests', detail: 'Hindi Paper carries 100 marks in Mains and is qualifying — don\'t underestimate it. Cover Sandhi, Samas, Muhavare and Vilom from a standard grammar book. Write 2 essays per week on social and Bihar-specific topics. Start taking full-length Prelims mock tests — analyse every mistake before moving on.' },
+    { month: 'Month 6', focus: 'Physical Preparation + Revision', detail: 'PET/PST comes after Prelims, but physical fitness cannot be built in 2 weeks — start training from Month 1 alongside academics. Focus on 1.6 km run timing and shot put technique if these are weak areas. Revise Bihar GK and Current Affairs weekly. Attempt 3–4 full mock tests this month and analyse each thoroughly.' },
+  ];
+
+  const books = [
+    { subject: 'Bihar GK',         title: 'Bihar at a Glance (Patna-based publication)',  author: 'Various / Arihant', pdf: '' },
+    { subject: 'GK / Current Affairs', title: 'Lucent\'s General Knowledge',              author: 'Dr. Binay Karna et al.',  pdf: '' },
+    { subject: 'General Science',  title: 'NCERT Science (Class 9 & 10)',                 author: 'NCERT',             pdf: 'https://ncert.nic.in/textbook.php' },
+    { subject: 'Mathematics',      title: 'Quantitative Aptitude for Competitive Exams',  author: 'R.S. Aggarwal',     pdf: '' },
+    { subject: 'Reasoning',        title: 'Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', pdf: '' },
+    { subject: 'Hindi',            title: 'Samanya Hindi (सामान्य हिन्दी)',              author: 'Dr. Hardev Bahri / Lucent\'s', pdf: '' },
+    { subject: 'Indian Polity',    title: 'NCERT Civics (Class 9–10) + M. Laxmikanth (Part)', author: 'NCERT / M. Laxmikanth', pdf: 'https://ncert.nic.in/textbook.php' },
+    { subject: 'Practice Sets',    title: 'BPSSC SI Previous Year Question Papers',       author: 'Arihant / Youth Competition Times', pdf: '' },
+  ];
+
+  const freeResources = [
+    { name: 'BPSSC Official Website', type: 'website', url: 'https://bpssc.bih.nic.in', description: 'Official source for Bihar Police SI notifications, admit cards, results and syllabus PDFs.' },
+    { name: 'Bihar Police Official Site', type: 'website', url: 'https://biharpolice.bih.nic.in', description: 'Bihar Police department updates, news and recruitment information.' },
+    { name: 'Adda247 Bihar Police SI on YouTube', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Free Bihar Police SI exam classes in Hindi — GK, Reasoning, Hindi and Maths.' },
+    { name: 'StudyIQ GK & Bihar Special', type: 'youtube', url: 'https://www.youtube.com/@StudyIQ', description: 'Bihar-focused GK, current affairs and exam-prep videos in Hindi.' },
+    { name: 'NCERT Free Textbooks', type: 'website', url: 'https://ncert.nic.in/textbook.php', description: 'Class 9–10 Science and Social Studies NCERT PDFs — free and essential for Bihar Police SI.' },
+    { name: 'Testbook Bihar Police SI Mock Tests', type: 'website', url: 'https://testbook.com/bihar-police-si', description: 'Free and paid full-length Bihar Police SI mock tests with detailed analysis.' },
+    { name: 'GK Today Current Affairs', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily current affairs capsules, Bihar GK, and monthly revision PDFs.' },
+    { name: 'Unacademy Bihar Police Prep', type: 'youtube', url: 'https://www.youtube.com/@Unacademy', description: 'Free live classes by top educators for Bihar Police SI exam preparation.' },
+  ];
+
+  const tips = [
+    { icon: '🏠', tip: 'Bihar GK is your biggest differentiator — most candidates from outside Bihar underestimate it. Prepare at least 200 Bihar-specific facts: history, geography, economy, culture, personalities and government schemes. Bihar GK can easily give you 15–20 marks extra in Prelims.' },
+    { icon: '🎯', tip: 'Prelims has negative marking of −0.2 per wrong answer. Attempt only those questions you are confident about. A score of 130–140 out of 200 is typically enough to clear Prelims — don\'t sacrifice accuracy for speed in the first hour.' },
+    { icon: '📝', tip: 'Hindi Paper in Mains is qualifying — you must pass it regardless of your overall score. Don\'t treat it lightly. Spend at least 30 minutes daily on Hindi grammar and essay writing from Month 3 onwards.' },
+    { icon: '💪', tip: 'Start physical training on Day 1 — not after Prelims. The PET/PST physical test is eliminating for many written-cleared candidates who ignored fitness. For males, the 1.6 km run in 6:30 minutes and shot put are the hardest events — train specifically for these.' },
+    { icon: '📅', tip: 'The BPSSC SI cycle is historically slow — the 2020 notification cycle took until 2025 to complete selection. Plan for a 2–3 year journey and keep appearing for other state police and government exams simultaneously. Don\'t put all your preparation eggs in one basket.' },
+    { icon: '💡', tip: 'Read the Bihar Government\'s key welfare schemes — Mukhyamantri Kanya Utthan Yojana, Har Ghar Bijli, Bihar Laghu Udyami Yojana, Jal Jeevan Hariyali — these appear in GK papers every cycle. Keep a dedicated \'Bihar Schemes\' quick-revision sheet.' },
+    { icon: '🔄', tip: 'Solve at least 3 previous year BPSSC SI question papers in exam conditions. This gives you a realistic sense of difficulty, topic weightage and time management. Most candidates who prepare without previous papers are surprised by the actual question style on exam day.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the BPSSC Bihar Police SI 2026 notification date?', a: 'As of May 2026, the BPSSC Bihar Police SI 2026 official notification has not been released. The 2020 cycle selection is still in progress (PET/PST and medical ongoing in 2025). The 2026 new cycle notification is expected later in 2026 or early 2027 based on BPSSC\'s historical cycle. Check bpssc.bih.nic.in regularly for the official announcement.' },
+    { q: 'What is the age limit for Bihar Police SI 2026?', a: 'For the General/EWS category: Male 20–37 years, Female 20–40 years. Age relaxations: OBC/EBC candidates get +1 year (male: up to 38, female: up to 41). SC/ST candidates get +5 years. Ex-Servicemen get relaxation as per Bihar Government rules. The age is calculated as of the cut-off date mentioned in each year\'s official notification. Always verify from the official BPSSC notification PDF.' },
+    { q: 'What is the educational qualification for Bihar Police SI?', a: 'A candidate must hold a Graduation degree (Bachelor\'s) from a university recognised by the Government of India. There is no minimum percentage requirement — any discipline is acceptable. Final-year graduation students may apply conditionally, subject to confirming degree completion before document verification.' },
+    { q: 'What is the Bihar Police SI salary per month in 2026?', a: 'Bihar Police Sub Inspector (Daroga) is placed in Pay Level 6 (7th Pay Commission), with basic pay of ₹35,400/month. With Dearness Allowance (revised to ~55% in January 2026), HRA, Transport Allowance and other benefits, the gross estimated salary is ₹61,000–₹71,000/month. In-hand (take-home) is approximately ₹50,000–₹60,000/month after NPS and professional tax deductions. The maximum scale can reach ₹1,12,400/month after increments and promotions.' },
+    { q: 'What are the physical standards for Bihar Police SI PET/PST?', a: 'For male candidates (General/OBC/EBC): Height 165 cm, Chest 81–86 cm, 1.6 km run in 6 min 30 sec, Long Jump 3.65 m, High Jump 1.20 m, Shot Put (7.26 kg) 4.50 m. For female candidates (General/OBC/EBC): Height 155 cm, Weight minimum 48 kg, 1 km run in 6 minutes, Long Jump 2.50 m, High Jump 0.90 m, Shot Put (4 kg) 3.75 m. SC/ST candidates get relaxation in Height and Chest. These are qualifying — must pass all events to proceed.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">Bihar Police SI 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🚔 Police</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">State Government (Bihar)</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: TBN (2026 Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            Bihar Police SI 2026<br className="hidden sm:block" /> – Complete Guide (Daroga)
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            Bihar Police Sub Inspector (Daroga) recruitment by <strong>BPSSC</strong> (Bihar Police Subordinate Services Commission). 4-stage selection: Prelims → Mains → PET/PST → Medical. Graduate required, age 20–37 years. Gross salary <strong>~₹61,000–₹71,000/month</strong> with 7th Pay Commission benefits.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '2,000–4,000', sub: '2026 cycle (TBN)' },
+              { label: 'Notification', value: 'TBN 2026', sub: 'Not yet released' },
+              { label: 'Min. Qualification', value: 'Any Graduation', sub: 'Recognized university' },
+              { label: 'Gross Salary', value: '~₹61,000–₹71,000', sub: 'per month (est.)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> BPSSC SI 2020 cycle selection (PET/PST) is ongoing in 2025. The <strong>2026 new notification</strong> is expected later in 2026 or early 2027. All upcoming dates are <strong>TBN</strong>. Verify at <a href="https://bpssc.bih.nic.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">bpssc.bih.nic.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is Bihar Police SI (Daroga) 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>Bihar Police Sub Inspector (SI)</strong>, commonly known as <strong>Daroga</strong>, is a <strong>Group C gazetted post</strong> in the Bihar Police department. SI is the first officer-level rank in the Bihar Police hierarchy, supervising Constables and reporting directly to the Inspector. An SI leads a police outpost or is posted at a police station.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  Recruitment is conducted by the <strong>Bihar Police Subordinate Services Commission (BPSSC)</strong>, Patna. BPSSC also recruits for Wireless Operator Sub Inspector and Lady Sub Inspector positions in the same cycle. The exam is held at the state level and is one of Bihar&apos;s most competitive state government recruitments, with lakhs of applications for a few thousand posts.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  The selection process is rigorous — four stages including a written Prelims, detailed Mains, a Physical Efficiency Test (PET/PST), and a Medical Examination. Candidates must excel in both academics and physical fitness to secure a posting.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'BPSSC, Patna' },
+                  { label: 'Post Type', value: 'Group C Gazetted' },
+                  { label: 'Selection Stages', value: 'Prelims → Mains → PET/PST → Medical' },
+                  { label: 'Exam Level', value: 'State (Bihar)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 Bihar Police SI 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> Bihar Police SI 2026 notification has not yet been released as of May 2026. The table below shows confirmed dates from the 2020 cycle and expected 2026 timelines. Always verify at <a href="https://bpssc.bih.nic.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">bpssc.bih.nic.in</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'done'     && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'upcoming' && <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">🔵 Expected</span>}
+                          {row.status === 'tbn'      && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria for Bihar Police SI 2026</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">Must be a citizen of India and a <strong>domicile of Bihar</strong>. Only Bihar domicile candidates (permanent residents) are eligible for Bihar Police SI. Proof of domicile must be submitted during document verification.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50 border border-surface-200">
+                        <tr>
+                          <th className="text-left p-2 font-semibold text-surface-700">Category</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Male</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Female</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / EWS',       male: '20–37 years', female: '20–40 years' },
+                          { cat: 'OBC / EBC (Bihar)',   male: '20–38 years (+1)', female: '20–41 years (+1)' },
+                          { cat: 'SC / ST',              male: '20–42 years (+5)', female: '20–45 years (+5)' },
+                          { cat: 'Disabled (PwBD)',      male: 'As per rules',   female: 'As per rules' },
+                          { cat: 'Ex-Servicemen',        male: 'Relaxation applicable', female: 'As per Bihar Govt. rules' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                            <td className="p-2 text-surface-700 font-medium">{row.cat}</td>
+                            <td className="p-2 text-primary-600">{row.male}</td>
+                            <td className="p-2 text-primary-600">{row.female}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2">Age calculated as of the cut-off date in the official notification. Always verify from the BPSSC notification PDF.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed"><strong>Graduation (Bachelor&apos;s degree)</strong> in any discipline from a university recognised by the Government of India. No minimum percentage specified. Final-year students may apply conditionally, subject to producing final result proof at the time of document verification.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📊 Bihar Police SI Vacancy History</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Cycle</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Vacancies</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Posts</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Remark</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.cycle}</td>
+                        <td className="p-3 text-emerald-600 font-semibold">{row.vacancies}</td>
+                        <td className="p-3 text-surface-600">{row.posts}</td>
+                        <td className="p-3 text-surface-500">{row.remark}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-surface-500 mt-3">⚠️ BPSSC SI cycles are irregular — gaps of 3–5 years between notification releases are common. Expect 2,000–4,000 vacancies in the next cycle based on historical trend.</p>
+            </section>
+
+            {/* SECTION 5: SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🗂️ Selection Process</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {[
+                  { step: '01', title: 'Preliminary Examination (PT)', desc: 'Online/Offline MCQ test of 200 marks (100 questions × 2 marks each). Duration: 2 hours. Negative marking of −0.2 marks per wrong answer. Based on merit, candidates shortlisted for Mains.', color: 'bg-blue-500' },
+                  { step: '02', title: 'Mains Written Examination', desc: '4 papers × 100 marks = 400 marks. Duration: 2 hours per paper. Includes General Hindi (qualifying), General Studies, Language paper and Optional subject. No negative marking in Mains.', color: 'bg-emerald-500' },
+                  { step: '03', title: 'PET / PST (Physical Test)', desc: 'Physical Efficiency Test (running, long jump, high jump, shot put) and Physical Standard Test (height, chest/weight measurement). Qualifying in nature — all events must be cleared. No marks added to merit.', color: 'bg-orange-500' },
+                  { step: '04', title: 'Medical Examination', desc: 'Detailed medical fitness examination as per Bihar Police standards. Tests eyesight, hearing, general fitness and absence of disqualifying conditions. Must pass to proceed to final selection.', color: 'bg-purple-500' },
+                  { step: '05', title: 'Document Verification & Final Merit', desc: 'Verification of original certificates (education, caste, domicile, age proof). Final merit list based on Mains performance only. Prelims is only qualifying — its marks are NOT added to merit.', color: 'bg-red-500' },
+                ].map((s, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-4">
+                    <div className={`absolute left-0 top-3 w-10 h-10 ${s.color} rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex`}>{s.step}</div>
+                    <div className="card p-5">
+                      <h3 className="font-heading font-semibold text-surface-900 mb-2">{s.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 6: PHYSICAL STANDARDS */}
+            <section id="physical" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💪 Physical Standards (PET/PST)</h2>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-5 text-sm text-primary-800">
+                💡 <strong>Key point:</strong> PET/PST is <strong>qualifying only</strong> — you must pass all events, but these marks are NOT added to your final merit. However, many candidates who clear the written exam fail at PET. Start physical training from day one of your preparation.
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Male Candidates</h3>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Attribute</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">General/OBC/EBC</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">SC/ST</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalMale.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.attribute}</td>
+                        <td className="p-3 text-surface-700">{row.general}</td>
+                        <td className="p-3 text-surface-700">{row.sc_st}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Female Candidates</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Attribute</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">General/OBC/EBC</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">SC/ST</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {physicalFemale.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.attribute}</td>
+                        <td className="p-3 text-surface-700">{row.general}</td>
+                        <td className="p-3 text-surface-700">{row.sc_st}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 7: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📋 Exam Pattern</h2>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">Stage 1</span>
+                Preliminary Examination
+              </h3>
+              <div className="bg-surface-50 rounded-xl p-4 mb-2 text-sm text-surface-600">
+                <strong>Total: 100 Questions | 200 Marks | 2 Hours | −0.2 negative marking per wrong answer</strong>
+              </div>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Focus</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prelimsPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.subject}</td>
+                        <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-600">{row.marks}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-100">
+                      <td className="p-3 font-heading font-bold text-surface-900">Total</td>
+                      <td className="p-3 text-center font-heading font-bold text-surface-900">100</td>
+                      <td className="p-3 text-center font-heading font-bold text-emerald-700">200</td>
+                      <td className="p-3"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">Stage 2</span>
+                Mains Examination
+              </h3>
+              <div className="bg-surface-50 rounded-xl p-4 mb-2 text-sm text-surface-600">
+                <strong>Total: 400 Marks (4 Papers × 100 marks) | 2 Hours each | No Negative Marking in Mains</strong>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Paper</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Duration</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Type</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mainsPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.paper}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-600">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-600">{row.duration}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.type}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-4 bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-800">
+                📌 <strong>Optional Subject Choices (Paper 4):</strong> Humanities, Science, Mathematics, Commerce, Agriculture, Engineering or any subject approved by BPSSC. Check the official notification PDF for the complete approved list.
+              </div>
+            </section>
+
+            {/* SECTION 8: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((section, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className={`flex items-center justify-between p-5 cursor-pointer ${section.bg} border-b border-surface-100`}>
+                      <h3 className={`font-heading font-semibold ${section.color}`}>{section.subject}</h3>
+                      <svg className="w-5 h-5 transition-transform group-open:rotate-180 text-surface-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <ul className="px-5 pb-5 pt-4 space-y-1.5">
+                      {section.topics.map((t, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                          <span className="text-primary-400 mt-0.5 flex-shrink-0">▸</span>
+                          <span>{t}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 9: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary & Benefits</h2>
+              </div>
+              <div className="overflow-x-auto mb-5">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Component</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Amount</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'} ${i >= salaryBreakdown.length - 2 ? 'font-semibold' : ''}`}>
+                        <td className="p-3 text-surface-800">{row.component}</td>
+                        <td className={`p-3 ${i >= salaryBreakdown.length - 2 ? 'text-emerald-600 font-bold' : 'text-surface-700'}`}>{row.amount}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Career Progression</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { level: 'Sub Inspector (Daroga)', pay: 'Pay Level 6 – ₹35,400–₹1,12,400', years: 'Entry Level' },
+                  { level: 'Inspector',              pay: 'Pay Level 7 – ₹44,900–₹1,42,400', years: 'Promotion (5–10 yrs)' },
+                  { level: 'DSP (Deputy SP)',         pay: 'Pay Level 11 – ₹67,700–₹2,08,700', years: '10–15 yrs or BPSC direct' },
+                  { level: 'SP / ASP',               pay: 'Pay Level 12/13 – ₹78,800+',       years: 'Senior Officer Level' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.years}</div>
+                    <div className="font-heading font-semibold text-surface-900 mt-1 text-sm">{item.level}</div>
+                    <div className="text-emerald-600 font-semibold text-sm mt-0.5">{item.pay}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-5 bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+                🎁 <strong>Additional Benefits:</strong> Government accommodation (if available), medical facilities for self and dependents, leave travel concession, pension under NPS (National Pension System), gratuity, and Bihar Police canteen access. Uniform allowance provided annually.
+              </div>
+            </section>
+
+            {/* SECTION 10: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📝 How to Apply – Bihar Police SI 2026</h2>
+              </div>
+              <div className="card p-6">
+                {[
+                  { step: 1, title: 'Visit Official BPSSC Website', desc: 'Go to bpssc.bih.nic.in and click on "Apply Online" for the Bihar Police SI 2026 notification.' },
+                  { step: 2, title: 'Register with Mobile & Email', desc: 'Create a new account using your valid mobile number and email address. Keep these active throughout the recruitment process.' },
+                  { step: 3, title: 'Fill Application Form', desc: 'Enter personal, educational and category details accurately. Double-check your name, date of birth and qualification as entered in your mark sheet.' },
+                  { step: 4, title: 'Upload Documents', desc: 'Upload scanned copies of your recent photograph (passport size), signature and required certificates in the specified format (JPEG/PNG, within size limits).' },
+                  { step: 5, title: 'Pay Application Fee', desc: 'General/OBC: ₹700 (expected). SC/ST of Bihar: ₹180 (expected). Fee paid online via Net Banking, Debit/Credit card. Fees are non-refundable.' },
+                  { step: 6, title: 'Submit & Download Confirmation', desc: 'Review your form, submit and download the confirmation receipt. Take a printout for your records. Note your application number.' },
+                ].map((s) => (
+                  <div key={s.step} className="flex gap-4 mb-5 last:mb-0">
+                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 font-bold text-sm flex-shrink-0 mt-0.5">{s.step}</div>
+                    <div>
+                      <h4 className="font-heading font-semibold text-surface-800 mb-1 text-sm">{s.title}</h4>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ Application fees and exact steps are based on previous BPSSC cycles. Verify exact fee and process from the 2026 official notification.</p>
+            </section>
+
+            {/* SECTION 11: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🗓️ 6-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((s, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-4">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex">{i + 1}</div>
+                    <div className="card p-5">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="badge-primary">{s.month}</span>
+                        <span className="font-heading font-semibold text-surface-900 text-sm">{s.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 12: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📖 Best Books for Bihar Police SI</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="p-3 font-heading font-semibold text-xs uppercase tracking-wide text-left">Subject</th>
+                      <th className="p-3 font-heading font-semibold text-xs uppercase tracking-wide text-left">Book Title</th>
+                      <th className="p-3 font-heading font-semibold text-xs uppercase tracking-wide text-left">Author</th>
+                      <th className="p-3 font-heading font-semibold text-xs uppercase tracking-wide text-left">Free PDF</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-600 text-xs font-medium">{b.subject}</td>
+                        <td className="p-3 text-surface-800 font-medium">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                        <td className="p-3">
+                          {b.pdf ? <a href={b.pdf} target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline text-xs font-medium">Free PDF ↗</a> : <span className="text-surface-300">—</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 13: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🌐 Free Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xl">{r.type === 'youtube' ? '📺' : r.type === 'telegram' ? '📱' : '🌐'}</span>
+                      <span className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.name}</span>
+                    </div>
+                    <p className="text-sm text-surface-500">{r.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🧠 Expert Tips for Bihar Police SI</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{t.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 15: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">15</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">❓ Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600">
+                      <span>{f.q}</span>
+                      <svg className="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2 text-surface-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 hover:pl-2 transition-all">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4 text-sm uppercase tracking-wide">Quick Facts</h3>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Exam Name', value: 'Bihar Police SI (Daroga)' },
+                    { label: 'Conducting Body', value: 'BPSSC, Patna' },
+                    { label: 'Post Type', value: 'Group C Gazetted' },
+                    { label: 'Qualification', value: 'Any Graduation' },
+                    { label: 'Age (General Male)', value: '20–37 years' },
+                    { label: 'Age (General Female)', value: '20–40 years' },
+                    { label: 'Prelims Marks', value: '200 (100 Qs × 2)' },
+                    { label: 'Mains Marks', value: '400 (4 Papers)' },
+                    { label: 'Negative Marking (PT)', value: '−0.2 per wrong' },
+                    { label: 'Basic Pay', value: '₹35,400/month' },
+                    { label: 'Official Site', value: '' },
+                    { label: 'Eligibility Checker', value: '' },
+                  ].map((item) =>
+                    item.label === 'Official Site' ? (
+                      <div key={item.label}>
+                        <a href="https://bpssc.bih.nic.in" target="_blank" rel="noopener noreferrer" className="block text-center text-sm text-primary-500 hover:text-primary-600 font-medium border border-primary-200 rounded-lg py-2 hover:bg-primary-50 transition-colors">
+                          🔗 bpssc.bih.nic.in ↗
+                        </a>
+                      </div>
+                    ) : item.label === 'Eligibility Checker' ? (
+                      <div key={item.label}>
+                        <Link href="/tools/eligibility-checker/" className="block text-center text-sm text-primary-500 hover:text-primary-600 font-medium border border-primary-200 rounded-lg py-2 hover:bg-primary-50 transition-colors">
+                          ✅ Check Your Eligibility
+                        </Link>
+                      </div>
+                    ) : (
+                      <div key={item.label} className="flex justify-between text-sm">
+                        <span className="text-surface-500">{item.label}</span>
+                        <span className="text-surface-800 font-medium text-right ml-2">{item.value}</span>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4 text-sm uppercase tracking-wide">Related Exams</h3>
+                <div className="space-y-2">
+                  {[
+                    { name: 'Bihar Police Constable 2026', slug: 'bihar-police-constable' },
+                    { name: 'BPSC CCE 2026',               slug: 'bpsc-cce' },
+                    { name: 'UP Police SI 2026',            slug: 'up-police-si' },
+                    { name: 'SSC CPO SI 2026',              slug: 'ssc-cpo' },
+                    { name: 'UP Police Constable 2026',     slug: 'up-police-constable' },
                   ].map((e) => (
                     <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-500 hover:text-primary-600 hover:underline py-0.5">
                       → {e.name}
