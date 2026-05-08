@@ -31,80 +31,71 @@ export const metadata: Metadata = {
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-surface-200">
-      <nav className="container-main flex items-center justify-between h-16">
-        {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0">
-          <img src="/logo.svg" alt="TaiyarHo" className="h-14 w-auto" />
-        </Link>
+    <header className="sticky top-0 z-50">
+      {/* ── Row 1: Logo + Utilities ── */}
+      <div className="bg-white/90 backdrop-blur-lg border-b border-surface-200">
+        <div className="container-main flex items-center justify-between h-14">
+          {/* Logo */}
+          <Link href="/" className="flex items-center shrink-0">
+            <img src="/logo.svg" alt="TaiyarHo" className="h-12 w-auto" />
+          </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-0.5">
-          {/* Primary links — always visible */}
-          <ExamsMegaMenu />
-          <NavLink href="/current-affairs">Current Affairs</NavLink>
-          <NavLink href="/blog">Blog</NavLink>
-
-          {/* More dropdown — secondary links */}
-          <MoreMenu />
-
-          {/* Utilities */}
-          <div className="ml-2 flex items-center gap-1.5">
+          {/* Desktop utilities */}
+          <div className="hidden md:flex items-center gap-2">
             <UniversalSearch />
             <GoogleTranslate />
           </div>
-        </div>
 
-        {/* Mobile nav */}
-        <div className="md:hidden flex items-center gap-1.5">
-          <UniversalSearch />
-          <MobileMenuButton />
+          {/* Mobile: search + hamburger */}
+          <div className="md:hidden flex items-center gap-1.5">
+            <UniversalSearch />
+            <MobileMenuButton />
+          </div>
         </div>
-      </nav>
+      </div>
+
+      {/* ── Row 2: All nav links (desktop only) ── */}
+      <div className="hidden md:block bg-primary-600 shadow-sm">
+        <nav className="container-main flex items-center justify-center gap-0.5 h-10">
+          <ExamsMegaMenu variant="dark" />
+          <NavLink href="/current-affairs" dark>Current Affairs</NavLink>
+          <NavLink href="/blog" dark>Blog</NavLink>
+          <NavLink href="/guides" dark>Guides</NavLink>
+          <NavLink href="/exam-calendar" dark>Exam Calendar</NavLink>
+          <NavLink href="/resources" dark>Resources</NavLink>
+          {/* Eligibility Checker — pill CTA */}
+          <Link
+            href="/tools/eligibility-checker"
+            className="ml-2 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-heading font-semibold bg-accent-500 text-white hover:bg-accent-600 transition-colors whitespace-nowrap"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Eligibility Checker
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({ href, children, dark }: { href: string; children: React.ReactNode; dark?: boolean }) {
+  if (dark) {
+    return (
+      <Link
+        href={href}
+        className="px-3 py-1 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/15 transition-all duration-150 whitespace-nowrap"
+      >
+        {children}
+      </Link>
+    );
+  }
   return (
     <Link
       href={href}
       className="px-3 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-primary-500 hover:bg-primary-50 transition-all duration-200 whitespace-nowrap"
     >
       {children}
-    </Link>
-  );
-}
-
-/** Secondary links tucked into a "More ▾" dropdown */
-function MoreMenu() {
-  return (
-    <details className="relative group">
-      <summary className="list-none cursor-pointer flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-surface-600 hover:text-primary-500 hover:bg-primary-50 transition-all duration-200 select-none">
-        More
-        <svg className="w-3.5 h-3.5 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-        </svg>
-      </summary>
-      <div className="absolute left-0 top-full mt-2 w-52 bg-white rounded-xl shadow-xl border border-surface-200 py-1.5 z-50">
-        <MoreMenuLink href="/guides" icon="📖">Guides</MoreMenuLink>
-        <MoreMenuLink href="/exam-calendar" icon="📅">Exam Calendar</MoreMenuLink>
-        <MoreMenuLink href="/resources" icon="📚">Resources</MoreMenuLink>
-        <div className="my-1 border-t border-surface-100" />
-        <MoreMenuLink href="/tools/eligibility-checker" icon="✅">Eligibility Checker</MoreMenuLink>
-      </div>
-    </details>
-  );
-}
-
-function MoreMenuLink({ href, icon, children }: { href: string; icon: string; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-surface-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
-    >
-      <span className="text-base leading-none">{icon}</span>
-      <span className="font-medium">{children}</span>
     </Link>
   );
 }

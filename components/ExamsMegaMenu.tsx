@@ -19,7 +19,7 @@ const FEATURED_PER_CATEGORY: Record<string, string[]> = {
 // Build a slug→exam lookup once
 const examBySlug = Object.fromEntries(allExams.map((e) => [e.slug, e]));
 
-export default function ExamsMegaMenu() {
+export default function ExamsMegaMenu({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
   const [open, setOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('UPSC');
   const containerRef = useRef<HTMLDivElement>(null);
@@ -59,10 +59,14 @@ export default function ExamsMegaMenu() {
       {/* Trigger button */}
       <button
         onClick={() => setOpen((o) => !o)}
-        className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-          open
-            ? 'text-primary-600 bg-primary-50'
-            : 'text-surface-600 hover:text-primary-500 hover:bg-primary-50'
+        className={`flex items-center gap-1 px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 ${
+          variant === 'dark'
+            ? open
+              ? 'text-white bg-white/20'
+              : 'text-white/90 hover:text-white hover:bg-white/15'
+            : open
+              ? 'text-primary-600 bg-primary-50'
+              : 'text-surface-600 hover:text-primary-500 hover:bg-primary-50'
         }`}
         aria-expanded={open}
         aria-haspopup="true"
