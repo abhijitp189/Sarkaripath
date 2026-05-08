@@ -315,6 +315,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'mppsc-state-service') {
+    return {
+      title: 'MPPSC State Service 2026 – Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'MPPSC State Service 2026: 3-stage selection (Prelims → Mains → Interview). 300–500 vacancies for Deputy Collector, DSP & more. Graduate eligible, age 21–40 yrs. Salary ₹56,100–₹1,77,500/month. Full syllabus, exam pattern & free resources.',
+      keywords: 'MPPSC State Service 2026, MPPSC SSE 2026, MPPSC syllabus, MPPSC taiyari, MPPSC eligibility, MPPSC exam pattern, MP Deputy Collector, Madhya Pradesh PSC 2026, MPPSC परीक्षा तैयारी, MP sarkari naukri',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/mppsc-state-service/' },
+      other: { 'description:hi': 'MPPSC राज्य सेवा परीक्षा 2026 – 3 चरण (प्रारंभिक → मुख्य → साक्षात्कार)। 300–500 रिक्तियाँ – डिप्टी कलेक्टर, DSP व अन्य पद। स्नातक पात्र, आयु 21–40 वर्ष। वेतन ₹56,100–₹1,77,500/माह। पूरा सिलेबस और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'lic-aao') {
     return {
       title: 'LIC AAO 2026 – Notification, Syllabus, Salary & Complete Guide | TaiyarHo',
@@ -464,6 +474,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rpf-si') return <RpfSiPage exam={brief} />;
   if (brief && brief.slug === 'upsc-cds') return <UpscCdsPage exam={brief} />;
   if (brief && brief.slug === 'lic-aao') return <LicAaoPage exam={brief} />;
+  if (brief && brief.slug === 'mppsc-state-service') return <MppscStatePage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -29697,6 +29708,929 @@ function LicAaoPage({ exam }: { exam: any }) {
                     { name: 'NABARD Grade A 2026', slug: 'nabard-grade-a' },
                   ].map((e) => (
                     <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-600 hover:text-primary-700 py-0.5">→ {e.name}</Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── MPPSC STATE SERVICE 2026 RICH PAGE ──────────────────────────────────────
+function MppscStatePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'cutoff',          label: 'Previous Cut-offs' },
+    { id: 'salary',          label: 'Salary & Career Growth' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'MPPSC SSE 2021 Final Result Declared',           date: '2023',                              status: 'done' },
+    { event: 'MPPSC SSE 2022 Prelims Held',                    date: '22 May 2022',                       status: 'done' },
+    { event: 'MPPSC SSE 2022 Mains Held',                      date: 'Feb–Mar 2023',                      status: 'done' },
+    { event: 'MPPSC SSE 2022 Interview & Final Result',        date: '2024',                              status: 'done' },
+    { event: 'MPPSC SSE 2023 Notification Released',           date: 'September 2023',                    status: 'done' },
+    { event: 'MPPSC SSE 2023 Prelims Held',                    date: '21 May 2023',                       status: 'done' },
+    { event: 'MPPSC SSE 2023 Mains Held',                      date: 'February–March 2024',               status: 'done' },
+    { event: 'MPPSC SSE 2023 Interview & Result',              date: '2024–2025',                         status: 'done' },
+    { event: 'MPPSC SSE 2024 Notification Released',           date: 'March 2024',                        status: 'done' },
+    { event: 'MPPSC SSE 2024 Prelims Held',                    date: '26 May 2024',                       status: 'done' },
+    { event: 'MPPSC SSE 2024 Mains (Expected)',                date: 'February–March 2025',               status: 'done' },
+    { event: 'MPPSC SSE 2024 Interview & Final Result',        date: '2025–2026',                         status: 'tbn' },
+    { event: '🆕 MPPSC SSE 2025 Notification (Expected)',      date: 'April – June 2026 (TBN)',           status: 'tbn' },
+    { event: 'MPPSC SSE 2025 Prelims (Expected)',              date: 'May – July 2026 (TBN)',             status: 'tbn' },
+    { event: 'MPPSC SSE 2025 Mains (Expected)',                date: 'Early 2027 (TBN)',                  status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'SSE 2019', vacancies: '~330', prelims: 'Jan 2020', mains: '2020–21' },
+    { year: 'SSE 2020', vacancies: '~283', prelims: 'Jul 2021', mains: '2022' },
+    { year: 'SSE 2021', vacancies: '~251', prelims: 'May 2022', mains: '2023' },
+    { year: 'SSE 2022', vacancies: '~227', prelims: 'May 2022', mains: 'Feb–Mar 2023' },
+    { year: 'SSE 2023', vacancies: '~240', prelims: 'May 2023', mains: 'Feb–Mar 2024' },
+    { year: 'SSE 2024', vacancies: '~263', prelims: 'May 2024', mains: 'Feb–Mar 2025' },
+    { year: 'SSE 2025 (upcoming)', vacancies: '300–500 (Expected)', prelims: 'Mid 2026 (TBN)', mains: 'Early 2027 (TBN)' },
+  ];
+
+  const groupAPosts = [
+    { post: 'Deputy Collector (SDM)', department: 'Revenue Department', payLevel: 'State Pay Level 13', payScale: '₹56,100 – ₹1,77,500' },
+    { post: 'Deputy Superintendent of Police (DSP)', department: 'Home Department', payLevel: 'State Pay Level 13', payScale: '₹56,100 – ₹1,77,500' },
+    { post: 'District Registrar / Sub Registrar', department: 'Registration Department', payLevel: 'State Pay Level 11', payScale: '₹44,900 – ₹1,42,400' },
+    { post: 'Commercial Tax Officer', department: 'Commercial Tax Dept', payLevel: 'State Pay Level 12', payScale: '₹48,000 – ₹1,51,100' },
+    { post: 'Block Development Officer (BDO)', department: 'Panchayat & Rural Dev', payLevel: 'State Pay Level 11', payScale: '₹44,900 – ₹1,42,400' },
+    { post: 'Chief Municipal Officer', department: 'Urban Administration', payLevel: 'State Pay Level 11', payScale: '₹44,900 – ₹1,42,400' },
+    { post: 'Employment Officer', department: 'Labour Department', payLevel: 'State Pay Level 10', payScale: '₹33,800 – ₹1,06,000' },
+  ];
+
+  const groupBPosts = [
+    { post: 'Nayab Tehsildar', department: 'Revenue', payLevel: 'State Pay Level 10', payScale: '₹33,800 – ₹1,06,000' },
+    { post: 'Assistant Director', department: 'Various Departments', payLevel: 'State Pay Level 10', payScale: '₹33,800 – ₹1,06,000' },
+    { post: 'Excise Sub Inspector', department: 'Excise Department', payLevel: 'State Pay Level 7', payScale: '₹25,300 – ₹80,500' },
+  ];
+
+  const prelims = [
+    { paper: 'Paper I – General Studies', qs: 100, marks: 200, time: '2 hours', note: 'Merit-based; negative marking (−1/3 per wrong answer)' },
+    { paper: 'Paper II – General Aptitude Test (CSAT)', qs: 100, marks: 200, time: '2 hours', note: 'Qualifying only – min. 33% (66 marks) required; marks NOT counted in merit' },
+  ];
+
+  const mains = [
+    { paper: 'Paper I – General Hindi', marks: 300, type: 'Descriptive', note: 'Qualifying (min. 40% = 120 marks required); NOT counted in merit' },
+    { paper: 'Paper II – Essay Writing (Hindi)', marks: 100, type: 'Descriptive (3 essays)', note: 'Merit-based' },
+    { paper: 'Paper III – General Studies I', marks: 300, type: 'Descriptive', note: 'History, Art & Culture, Geography of India & World' },
+    { paper: 'Paper IV – General Studies II', marks: 300, type: 'Descriptive', note: 'Constitution, Polity, Governance, International Relations' },
+    { paper: 'Paper V – General Studies III', marks: 200, type: 'Descriptive', note: 'Science & Technology, Economy, Env & Ecology, Disaster Mgmt' },
+    { paper: 'Paper VI – General Studies IV', marks: 200, type: 'Descriptive', note: 'Ethics, Integrity, Aptitude + Madhya Pradesh GK' },
+  ];
+
+  const interview = { marks: 175, note: 'Personality Test conducted by MPPSC Board. Evaluates leadership, decision-making, communication, and awareness of MP affairs.' };
+
+  const ageRelaxation = [
+    { category: 'General (Male)', limit: '21 – 40 years' },
+    { category: 'General (Female)', limit: '21 – 40 years' },
+    { category: 'OBC (NCL) – MP Domicile', limit: '21 – 45 years (+5)' },
+    { category: 'SC / ST – MP Domicile', limit: '21 – 45 years (+5)' },
+    { category: 'PwBD (General)', limit: '+10 years relaxation' },
+    { category: 'PwBD (OBC)', limit: '+13 years relaxation' },
+    { category: 'PwBD (SC/ST)', limit: '+15 years relaxation' },
+    { category: 'Ex-Servicemen (MP Domicile)', limit: '+5 years (subject to rules)' },
+    { category: 'MP Govt Employees (Regular)', limit: 'Up to 5 years additional' },
+  ];
+
+  const cutoffs = [
+    { category: 'General (UR)', prelims2022: '~93–96', prelims2023: '~91–94', mains2023: '~900–950/1400', final2023: 'TBN' },
+    { category: 'OBC', prelims2022: '~88–92', prelims2023: '~86–90', mains2023: '~850–900/1400', final2023: 'TBN' },
+    { category: 'SC', prelims2022: '~78–83', prelims2023: '~76–81', mains2023: '~800–850/1400', final2023: 'TBN' },
+    { category: 'ST', prelims2022: '~72–77', prelims2023: '~70–76', mains2023: '~760–820/1400', final2023: 'TBN' },
+    { category: 'EWS', prelims2022: '~88–91', prelims2023: '~87–90', mains2023: '~870–920/1400', final2023: 'TBN' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay – Deputy Collector / DSP (Pay Level 13)', amount: '₹56,100/month' },
+    { component: 'Dearness Allowance (DA) @ ~55% of Basic (MP State revised 2025)', amount: '~₹30,855/month' },
+    { component: 'House Rent Allowance (HRA) – 8–16% of Basic (varies by city)', amount: '₹4,488 – ₹8,976/month' },
+    { component: 'Travelling & Other Allowances', amount: '₹3,000 – ₹6,000/month' },
+    { component: 'Medical Allowance (CGHS-equivalent)', amount: 'Available (family included)' },
+    { component: 'Estimated Gross CTC – Deputy Collector (Bhopal/Indore posting)', amount: '~₹95,000 – ₹1,10,000/month' },
+    { component: 'Estimated In-Hand (post deductions)', amount: '~₹80,000 – ₹95,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Nayab Tehsildar / Entry Group B', scale: 'Pay Level 10', years: '0–3 yrs', note: 'Revenue & field work, sub-divisional administration' },
+    { level: 'Deputy Collector (SDM)', scale: 'Pay Level 13', years: '3–10 yrs', note: 'Sub-divisional head, land records, law & order' },
+    { level: 'Additional Collector', scale: 'Pay Level 14', years: '10–15 yrs', note: 'District-level senior administration' },
+    { level: 'District Collector', scale: 'Pay Level 15', years: '15–20 yrs', note: 'District chief executive, IAS promotion likely' },
+    { level: 'Commissioner / Secretary', scale: 'Pay Level 16+', years: '20+ yrs', note: 'Division-level or State Secretariat posting' },
+  ];
+
+  const syllabus = [
+    {
+      paper: 'General Studies I – History, Geography & Culture',
+      bg: 'bg-indigo-50 border-indigo-200',
+      color: 'text-indigo-700',
+      topics: [
+        'Indian History: Ancient, Medieval, and Modern (including Freedom Struggle)',
+        'Post-independence events and national integration',
+        'History & Culture of Madhya Pradesh (art, architecture, tribes, fairs & festivals)',
+        'World History – Important events 18th to 20th century',
+        'Physical Geography of India and World (rivers, mountains, climate, soils)',
+        'Geography of Madhya Pradesh – rivers, forests, minerals, districts',
+        'Human Geography – population, urbanisation, migration',
+        'Indian Society – features, diversity, women\'s role, globalisation effects',
+        'Art and Culture – classical dance, music, literature, UNESCO heritage sites',
+      ],
+    },
+    {
+      paper: 'General Studies II – Polity, Governance & International Relations',
+      bg: 'bg-emerald-50 border-emerald-200',
+      color: 'text-emerald-700',
+      topics: [
+        'Indian Constitution – historical underpinnings, features, amendments',
+        'Union and State government structure, Parliament and State Legislature',
+        'Judiciary – Supreme Court, High Courts, tribunals',
+        'Panchayati Raj and Urban Local Bodies (73rd & 74th Amendments)',
+        'Governance – transparency, accountability, RTI, good governance',
+        'Government schemes and policies (PMGSY, MGNREGS, Aadhaar, PMJDY)',
+        'Madhya Pradesh-specific schemes and governance initiatives',
+        'International Relations – India\'s foreign policy, bilateral and multilateral bodies',
+        'UN System, SAARC, BRICS, SCO, G20',
+        'Role of civil services in democracy and administration',
+      ],
+    },
+    {
+      paper: 'General Studies III – Economy, Science & Environment',
+      bg: 'bg-amber-50 border-amber-200',
+      color: 'text-amber-700',
+      topics: [
+        'Indian Economy – planning, GDP, inflation, fiscal & monetary policy',
+        'Economy of Madhya Pradesh – agriculture, industry, MSME, trade',
+        'Budget and Finance – Union Budget highlights, State Budget of MP',
+        'Banking and Financial Sector – RBI, NABARD, microfinance, insurance',
+        'Science & Technology – space, defence, biotechnology, nano-tech',
+        'IT and digital India – e-governance, Aadhaar, digital payments',
+        'Environment & Ecology – biodiversity, climate change, pollution, waste management',
+        'National parks and wildlife sanctuaries of MP (Kanha, Bandhavgarh, Pench)',
+        'Disaster Management – types, preparedness, NDRF, State Disaster Authority',
+        'Agriculture – crop types, MSP, irrigation, land reforms, MP agriculture',
+      ],
+    },
+    {
+      paper: 'General Studies IV – Ethics, Aptitude & MP General Knowledge',
+      bg: 'bg-rose-50 border-rose-200',
+      color: 'text-rose-700',
+      topics: [
+        'Ethics in public administration – integrity, probity, transparency',
+        'Aptitude for civil service – motivations, attitude, foundational values',
+        'Emotional intelligence in administration',
+        'Case studies in administrative ethics (decision-making scenarios)',
+        'Madhya Pradesh General Knowledge – geography, history, economy, culture',
+        'Chief Ministers, Governors & important personalities of MP',
+        'MP state symbols – State Animal (Barasingha), State Bird (Indian Paradise Flycatcher), etc.',
+        'Recent events in Madhya Pradesh – schemes, awards, government decisions',
+        'Tribal affairs of MP – ST communities, their culture and welfare schemes',
+        'Sports & Games – MP-based achievements, national/international events',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    {
+      month: 'Month 1–2',
+      focus: 'History & Geography Foundation',
+      detail: 'Begin with Modern Indian History (Spectrum by Rajiv Ahir) and Indian Geography (NCERT 6–12). Dedicate 2 hours daily to Madhya Pradesh-specific topics – this is where MPPSC SSE differentiates itself from UPSC. Make a separate MP notebook. Read MP current affairs from PatrikaBhaskar or Dainik Bhaskar daily (15 minutes).',
+    },
+    {
+      month: 'Month 3–4',
+      focus: 'Polity, Governance & International Relations',
+      detail: 'Read Laxmikant\'s Indian Polity (essential). Focus on Panchayati Raj chapters since MPPSC GS II gives heavy weightage to local governance and MP Panchayat system. Study Madhya Pradesh Panchayat Act and urban bodies structure. Cover India\'s foreign policy and bilateral relations in parallel.',
+    },
+    {
+      month: 'Month 5–6',
+      focus: 'Economy, Science & Environment',
+      detail: 'Economy: use Ramesh Singh\'s Indian Economy. For MP Economy, cover MP Economic Survey (available on MP planning commission website – free PDF). Science: NCERT 8–10 is sufficient for basics; focus on current science & technology events. Environment: study NCERTs + Down to Earth magazine for environment ecology.',
+    },
+    {
+      month: 'Month 7–8',
+      focus: 'Ethics, MP GK & Prelims Mock Tests',
+      detail: 'Ethics (GS IV) – use Lexicon for Ethics (Chronicle Publications) + practice case studies daily. MP GK: memorise all important facts (districts, rivers, folk arts, tribal communities, CM list, important schemes). Start Prelims mock tests from Month 7 – take one full mock test per week, analyse wrong answers rigorously.',
+    },
+    {
+      month: 'Month 9–10',
+      focus: 'Answer Writing & Mains Preparation',
+      detail: 'If Prelims result is positive, shift fully to Mains. Practice answer writing daily – 3 descriptive answers per day. For Essay (Paper II), practice one full essay per week on MP/India themes. Hindi Paper I: focus on grammar, summary writing, and comprehension. Join a test series for MPPSC Mains if budget allows.',
+    },
+    {
+      month: 'Month 11–12',
+      focus: 'Full Mock Tests & Interview Preparation',
+      detail: 'Take 2 full Mains-pattern mock tests per month. Revise MP GK and current affairs heavily before Mains. For Interview: prepare a Personal Information Form (PIF) carefully. Know your district well, current issues in MP, your educational background. Practice with mock interviews – MPPSC panel tests personality and administrative temperament.',
+    },
+  ];
+
+  const books = [
+    { subject: 'History', title: 'A Brief History of Modern India', author: 'Rajiv Ahir (Spectrum)' },
+    { subject: 'History', title: 'India\'s Ancient Past', author: 'R.S. Sharma (NIOS)' },
+    { subject: 'Geography', title: 'Geography of India', author: 'Majid Husain (for mains depth)' },
+    { subject: 'Polity', title: 'Indian Polity', author: 'M. Laxmikant' },
+    { subject: 'Economy', title: 'Indian Economy', author: 'Ramesh Singh' },
+    { subject: 'Environment', title: 'Environment for Civil Services', author: 'Majid Husain' },
+    { subject: 'Ethics', title: 'Lexicon for Ethics, Integrity & Aptitude', author: 'Chronicle Publications' },
+    { subject: 'MP GK', title: 'Madhya Pradesh General Knowledge (MP GK)', author: 'Arihant / Prabhat Publications' },
+    { subject: 'MP GK', title: 'MPPSC Special MP GK Digest', author: 'Youth Competition Times / Drishti IAS' },
+    { subject: 'Current Affairs', title: 'Monthly Current Affairs + MP Current Affairs', author: 'Drishti IAS / Vision IAS (Free PDFs)' },
+  ];
+
+  const freeResources = [
+    { name: 'MPPSC Official Website', type: 'website', url: 'https://mppsc.mp.gov.in', description: 'Official notifications, admit cards, results, and complete syllabus PDF.' },
+    { name: 'Drishti IAS – MPPSC Section', type: 'website', url: 'https://www.drishtiias.com/mppsc', description: 'Free MPPSC study material, MP current affairs, and free notes in Hindi & English.' },
+    { name: 'MP Govt Planning Commission', type: 'website', url: 'https://mpplanningcommission.nic.in', description: 'Free MP Economic Survey PDFs – essential for MPPSC Economy section.' },
+    { name: 'StudyIQ MPPSC on YouTube', type: 'youtube', url: 'https://www.youtube.com/@StudyIQEducation', description: 'Free MPPSC classes covering GS, MP GK, and current affairs in Hindi.' },
+    { name: 'Drishti IAS YouTube', type: 'youtube', url: 'https://www.youtube.com/@DrishtiIASStudios', description: 'Best free source for MPPSC/UPSC GS foundation classes in Hindi.' },
+    { name: 'Vision IAS Monthly Current Affairs', type: 'website', url: 'https://www.visionias.in/resources/monthly-magazine', description: 'Free monthly current affairs magazine (national + state) — essential for Mains.' },
+    { name: 'MPPSC Wallah – PW', type: 'youtube', url: 'https://www.youtube.com/@PWonlythebest', description: 'Free MPPSC specific batches and free live classes by PW educators.' },
+  ];
+
+  const tips = [
+    { icon: '🗺️', tip: 'Madhya Pradesh GK is what separates MPPSC toppers from also-rans. Allocate at least 25–30% of your study time to MP-specific topics — history, geography, tribes, culture, economy, schemes, and current events. Most candidates underestimate this and lose crucial marks.' },
+    { icon: '📝', tip: 'MPPSC Mains is fully descriptive — answer writing practice is non-negotiable. Start writing 3 answers daily from Month 7 onwards. Use sub-headings, bullet points, and data wherever possible. Answers with diagrams/maps for Geography score higher.' },
+    { icon: '🏆', tip: 'The CSAT Paper II (Prelims) is qualifying at 33%. Do not spend more than 2–3 weeks on it. However, do not ignore it either — many well-prepared candidates miss the cutoff by 1–2 marks. A few focused practice sets are enough.' },
+    { icon: '📅', tip: 'MPPSC SSE has been known for delays between stages. Use the gap between Prelims and Mains result productively — start Mains prep from Day 1 of Prelims prep. Never wait for results to begin Mains preparation.' },
+    { icon: '🌐', tip: 'For the Interview, know your district, tehsil, and the current issues in your home district inside-out. MPPSC interview panels often ask about local administrative issues, MP governance, and current state events. Being a proud local candidate helps.' },
+    { icon: '💡', tip: 'For GS IV (Ethics), case studies are trickier than theory. Read actual IAS and IPS officers\' decisions in real administrative scenarios from newspapers. Practice writing structured, balanced answers showing both administrative and human sides.' },
+    { icon: '📖', tip: 'Hindi Paper I (General Hindi, 300 marks, qualifying) requires consistent practice. Focus on Vyakaran (grammar), Nibandh (essay), Patra Lekhan (letter writing), and Sandhi-Samas. 30 minutes daily from Month 1 is much better than cramming before Mains.' },
+    { icon: '🎯', tip: 'Target 110–120 correct in Prelims Paper I (out of 200 marks, 100 questions) for a safe General category score. Avoid wild guessing — negative marking at −1/3 per wrong answer can significantly reduce your net score.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the MPPSC State Service Exam 2025–26 notification date?',
+      a: 'MPPSC SSE 2025 notification has not been officially released as of May 2026. Based on MPPSC\'s recent annual cycle (2022, 2023, 2024 notifications released between March–September), the 2025 cycle notification is expected in mid-2026. Check mppsc.mp.gov.in regularly for official announcements.',
+    },
+    {
+      q: 'What posts are offered under MPPSC State Service Exam?',
+      a: 'MPPSC State Service Exam offers Group A and Group B State Service posts. Key Group A posts include Deputy Collector (SDM), Deputy Superintendent of Police (DSP), District Registrar, Commercial Tax Officer, and Block Development Officer. Group B posts include Nayab Tehsildar, Sub-Registrar, and Assistant Director in various departments. The final list varies by notification cycle.',
+    },
+    {
+      q: 'Is optional subject required for MPPSC State Service Mains?',
+      a: 'No. MPPSC removed the optional subject from the State Service Main Examination in the new revised pattern. The Mains now consists of 6 papers: General Hindi (qualifying), Essay, General Studies I, II, III, and IV. No optional subject is required. This applies to SSE 2022 onwards. Always verify the latest pattern from the official notification on mppsc.mp.gov.in.',
+    },
+    {
+      q: 'What is the age limit for MPPSC State Service 2026?',
+      a: 'The age limit for MPPSC State Service is 21–40 years for General (UR) category candidates. Relaxations for MP domicile holders: OBC (NCL) +5 years (up to 45), SC/ST +5 years (up to 45), PwBD +10 years. Ex-Servicemen get +5 years. MP Government employees on regular posts get up to 5 additional years. Age is calculated as per the notification cut-off date.',
+    },
+    {
+      q: 'Is domicile of Madhya Pradesh mandatory for MPPSC?',
+      a: 'For most posts, a valid MP domicile certificate is required for category-based reservations (OBC, SC, ST) and for applying against reserved vacancies. General category candidates from other states may apply for unreserved vacancies but cannot claim category benefits. MPPSC notifications specify domicile conditions clearly — always check the official notification for your specific category.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">MPPSC State Service 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Madhya Pradesh Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: Mid 2026 (Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            MPPSC State Service 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            MPPSC SSE 2025–26 notification expected <strong>mid-2026</strong> with <strong>300–500 vacancies</strong> for Deputy Collector, DSP, and 30+ other Group A &amp; B posts. 3-stage selection: Prelims → Mains → Interview. Graduate degree required. Age 21–40 years. Salary <strong>₹56,100–₹1,77,500/month</strong>.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '300–500', sub: 'Group A & B posts' },
+              { label: 'Prelims Exam Date', value: 'Mid 2026', sub: '(Expected – TBN)' },
+              { label: 'Min. Qualification', value: 'Any Graduate', sub: 'From recognized university' },
+              { label: 'Top Post Salary', value: '₹56,100–₹1,77,500', sub: 'Deputy Collector (per month)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>May 2026 Update:</strong> MPPSC SSE 2024 Mains results are expected by mid-2026. The <strong>SSE 2025 notification</strong> is anticipated once the 2024 cycle concludes. All upcoming dates are estimated — always verify from <a href="https://mppsc.mp.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">mppsc.mp.gov.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is MPPSC State Service Exam 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>MPPSC State Service Examination (SSE)</strong> is the most prestigious state-level competitive exam in <strong>Madhya Pradesh</strong>, conducted annually by the <strong>Madhya Pradesh Public Service Commission (MPPSC)</strong>. It recruits officers for <strong>Group A and Group B posts</strong> across MP Government departments — the most coveted being the <strong>Deputy Collector</strong> and <strong>Deputy Superintendent of Police</strong>.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  MPPSC SSE is often called the &quot;UPSC of Madhya Pradesh.&quot; The exam pattern closely mirrors UPSC Civil Services — with Preliminary, Main (descriptive), and Interview stages — but with a strong focus on <strong>Madhya Pradesh-specific GK</strong>, history, geography, culture, and state governance schemes. This MP-centric syllabus is the biggest differentiator from central government exams.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  Clearing MPPSC SSE and joining as a <strong>Deputy Collector</strong> makes you a district-level administrative officer with significant executive powers — overseeing revenue, law and order, disaster management, and public welfare in your sub-division. With time and seniority, promotion to <strong>District Collector</strong> and potential absorption into the <strong>IAS</strong> becomes possible.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Madhya Pradesh PSC (MPPSC)' },
+                  { label: 'Selection Stages', value: 'Prelims + Mains + Interview' },
+                  { label: 'Exam Frequency', value: 'Annual (once per year)' },
+                  { label: 'MP Domicile', value: 'Required for reserved categories' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 MPPSC State Service 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> MPPSC SSE 2025 dates are not yet officially announced as of May 2026. Upcoming dates below are estimated based on MPPSC&apos;s historical annual cycle. Always verify from <a href="https://mppsc.mp.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">mppsc.mp.gov.in</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white font-heading">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold">Event</th>
+                      <th className="text-left px-4 py-3 font-semibold">Date / Status</th>
+                      <th className="px-4 py-3 font-semibold text-center">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((d, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{d.event}</td>
+                        <td className="px-4 py-3 text-surface-600">{d.date}</td>
+                        <td className="px-4 py-3 text-center">
+                          {d.status === 'done' && <span className="badge-green">✅ Done</span>}
+                          {d.status === 'tbn' && <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">⚠️ TBN</span>}
+                          {d.status === 'upcoming' && <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">🆕 Upcoming</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria</h2>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { icon: '🪪', label: 'Nationality', value: 'Indian Citizen. MP Domicile certificate required for reserved category benefits and certain posts.' },
+                  { icon: '🎓', label: 'Educational Qualification', value: 'Graduation in any discipline from a UGC-recognized university. Final-year students may apply provisionally (must complete degree before joining).' },
+                  { icon: '📋', label: 'Age Limit (General/UR)', value: '21 to 40 years. Age is calculated as on the date specified in each notification (usually 1st January of the exam year).' },
+                  { icon: '💰', label: 'Application Fee', value: 'General/OBC: ₹500 | SC/ST (MP Domicile): ₹250 | PwBD: ₹250. Fee paid online via official MPPSC portal.' },
+                ].map((item) => (
+                  <div key={item.label} className="card p-5">
+                    <div className="text-2xl mb-2">{item.icon}</div>
+                    <div className="font-heading font-semibold text-surface-800 mb-1">{item.label}</div>
+                    <p className="text-sm text-surface-600">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="card overflow-hidden">
+                <div className="bg-surface-800 text-white px-5 py-3 font-heading font-semibold text-sm">Age Relaxation by Category (MP Domicile)</div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-100">
+                      <tr>
+                        <th className="text-left px-4 py-2 text-surface-600 font-semibold">Category</th>
+                        <th className="text-left px-4 py-2 text-surface-600 font-semibold">Age Limit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ageRelaxation.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-2.5 text-surface-700 font-medium">{row.category}</td>
+                          <td className="px-4 py-2.5 text-surface-700">{row.limit}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES & POSTS */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies History &amp; Key Posts</h2>
+              </div>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white font-heading">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold">Cycle</th>
+                      <th className="text-left px-4 py-3 font-semibold">Vacancies</th>
+                      <th className="text-left px-4 py-3 font-semibold">Prelims Date</th>
+                      <th className="text-left px-4 py-3 font-semibold">Mains Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700 font-medium">{row.year}</td>
+                        <td className="px-4 py-3 text-surface-700">{row.vacancies}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.prelims}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.mains}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="text-lg font-heading font-semibold text-surface-900 mb-3">Group A Posts (Gazetted)</h3>
+              <div className="overflow-x-auto mb-5">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-primary-600 text-white font-heading">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold">Post</th>
+                      <th className="text-left px-4 py-3 font-semibold">Department</th>
+                      <th className="text-left px-4 py-3 font-semibold">Pay Scale</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {groupAPosts.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700 font-medium">{row.post}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.department}</td>
+                        <td className="px-4 py-3 text-emerald-700 font-semibold">{row.payScale}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="text-lg font-heading font-semibold text-surface-900 mb-3">Group B Posts</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-600 text-white font-heading">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold">Post</th>
+                      <th className="text-left px-4 py-3 font-semibold">Department</th>
+                      <th className="text-left px-4 py-3 font-semibold">Pay Scale</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {groupBPosts.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700 font-medium">{row.post}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.department}</td>
+                        <td className="px-4 py-3 text-emerald-700 font-semibold">{row.payScale}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 5: SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Selection Process</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {[
+                  { num: '1', title: 'Preliminary Examination', desc: 'Objective MCQ test with 2 papers. Paper I (General Studies, 200 marks) is merit-based. Paper II (CSAT/General Aptitude, 200 marks) is qualifying — you need minimum 33% (66 marks) to be considered, but its marks are NOT added to merit. Negative marking: −1/3 per wrong answer in Paper I.' },
+                  { num: '2', title: 'Main Examination', desc: 'Descriptive written exam with 6 papers (approx. 1,400 marks for merit). Paper I (General Hindi, 300 marks) is qualifying — need 40% (120 marks) to be eligible. Papers II–VI (Essay + GS I to IV) are merit-based. No optional subject in the new MPPSC pattern (revised 2022 onwards).' },
+                  { num: '3', title: 'Interview (Personality Test)', desc: 'Conducted by MPPSC Board in Bhopal. Carries 175 marks. Tests personality, analytical ability, leadership, decision-making, awareness of current events, and suitability for civil service. Final merit = Mains marks + Interview marks.' },
+                ].map((step, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-6">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">{step.num}</div>
+                    <div className="card p-5">
+                      <h3 className="font-heading font-semibold text-surface-900 mb-2">Stage {step.num}: {step.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 6: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern 2026</h2>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 mt-2">Stage 1: Preliminary Examination</h3>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white font-heading">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold">Paper</th>
+                      <th className="text-center px-4 py-3 font-semibold">Questions</th>
+                      <th className="text-center px-4 py-3 font-semibold">Marks</th>
+                      <th className="text-center px-4 py-3 font-semibold">Time</th>
+                      <th className="text-left px-4 py-3 font-semibold">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prelims.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700 font-medium">{row.paper}</td>
+                        <td className="px-4 py-3 text-center text-surface-700">{row.qs}</td>
+                        <td className="px-4 py-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                        <td className="px-4 py-3 text-center text-surface-600">{row.time}</td>
+                        <td className="px-4 py-3 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50 font-semibold">
+                      <td className="px-4 py-3 text-surface-800">Total</td>
+                      <td className="px-4 py-3 text-center text-surface-800">200</td>
+                      <td className="px-4 py-3 text-center text-primary-600">400</td>
+                      <td className="px-4 py-3 text-center text-surface-800">4 hours</td>
+                      <td className="px-4 py-3 text-surface-500 text-xs">Only Paper I marks count for merit</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Stage 2: Main Examination</h3>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white font-heading">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold">Paper</th>
+                      <th className="text-center px-4 py-3 font-semibold">Marks</th>
+                      <th className="text-center px-4 py-3 font-semibold">Type</th>
+                      <th className="text-left px-4 py-3 font-semibold">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mains.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700 font-medium">{row.paper}</td>
+                        <td className="px-4 py-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                        <td className="px-4 py-3 text-center text-surface-600">{row.type}</td>
+                        <td className="px-4 py-3 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50 font-semibold">
+                      <td className="px-4 py-3 text-surface-800">Total (Merit Papers II–VI)</td>
+                      <td className="px-4 py-3 text-center text-primary-600">~1,400</td>
+                      <td className="px-4 py-3 text-center text-surface-800">Descriptive</td>
+                      <td className="px-4 py-3 text-surface-500 text-xs">Paper I (Hindi) is qualifying only</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <div className="font-heading font-semibold text-emerald-800 mb-1">Stage 3: Interview (Personality Test)</div>
+                <p className="text-sm text-emerald-700">{interview.note} <strong>Interview marks: {interview.marks}.</strong> Final merit = Mains marks (Papers II–VI) + Interview marks.</p>
+              </div>
+            </section>
+
+            {/* SECTION 7: DETAILED SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus</h2>
+              </div>
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-5 text-sm text-primary-800">
+                💡 <strong>MPPSC-specific tip:</strong> Each GS paper has a dedicated Madhya Pradesh component. Allocate 30–35% of your study time for each paper to MP-specific topics. This is where state-level aspirants have a natural advantage over UPSC-pattern coaching.
+              </div>
+              <div className="space-y-4">
+                {syllabus.map((s, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className={`flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 ${s.bg} border-b ${s.bg.includes('border') ? '' : 'border-surface-200'}`}>
+                      <span className={s.color}>{s.paper}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 pt-4">
+                      <ul className="space-y-2">
+                        {s.topics.map((t, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 8: CUTOFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year Cut-offs</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
+                ⚠️ Cut-off data below is approximate, based on available analysis and candidates&apos; self-reported scores. Official MPPSC cut-offs are not always published. Treat as <strong>directional benchmarks only</strong>.
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white font-heading">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold">Category</th>
+                      <th className="text-center px-4 py-3 font-semibold">Prelims 2022 (out of 200)</th>
+                      <th className="text-center px-4 py-3 font-semibold">Prelims 2023 (out of 200)</th>
+                      <th className="text-center px-4 py-3 font-semibold">Mains 2023 (out of ~1,400)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffs.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700 font-medium">{row.category}</td>
+                        <td className="px-4 py-3 text-center text-surface-700">{row.prelims2022}</td>
+                        <td className="px-4 py-3 text-center text-surface-700">{row.prelims2023}</td>
+                        <td className="px-4 py-3 text-center font-semibold text-primary-600">{row.mains2023}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 9: SALARY & CAREER */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary &amp; Career Growth</h2>
+              </div>
+              <div className="card overflow-hidden mb-6">
+                <div className="bg-surface-800 text-white px-5 py-3 font-heading font-semibold text-sm">Deputy Collector / DSP – Salary Breakdown (Estimated, 2025–26)</div>
+                <div className="divide-y divide-surface-100">
+                  {salaryBreakdown.map((row, i) => (
+                    <div key={i} className={`flex justify-between px-5 py-3 text-sm ${i === salaryBreakdown.length - 1 ? 'bg-emerald-50 font-semibold' : ''}`}>
+                      <span className="text-surface-700">{row.component}</span>
+                      <span className={i === salaryBreakdown.length - 1 ? 'text-emerald-700' : 'text-primary-600 font-medium'}>{row.amount}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-900 mb-4">Career Progression Path</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-primary-600 text-white font-heading">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold">Level</th>
+                      <th className="text-left px-4 py-3 font-semibold">Pay Scale</th>
+                      <th className="text-left px-4 py-3 font-semibold">Timeline</th>
+                      <th className="text-left px-4 py-3 font-semibold">Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {careerPath.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700 font-medium">{row.level}</td>
+                        <td className="px-4 py-3 text-emerald-700 font-semibold">{row.scale}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.years}</td>
+                        <td className="px-4 py-3 text-surface-600 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5 mt-5 bg-primary-50 border-primary-200">
+                <p className="text-sm text-primary-800"><strong>🚀 IAS Promotion:</strong> Senior MPPSC officers who clear the DPC (Departmental Promotion Committee) screening can be absorbed into the <strong>Indian Administrative Service (IAS)</strong> through the Select List. This is a powerful long-term career incentive for high-performing state service officers.</p>
+              </div>
+            </section>
+
+            {/* SECTION 10: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">12-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((step, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-6">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex leading-tight text-center">{i + 1}</div>
+                    <div className="card p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="badge-primary font-semibold">{step.month}</span>
+                        <span className="font-heading font-semibold text-surface-900">{step.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{step.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 11: BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for MPPSC 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white font-heading">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-semibold">Subject</th>
+                      <th className="text-left px-4 py-3 font-semibold">Book Title</th>
+                      <th className="text-left px-4 py-3 font-semibold">Author</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3"><span className="badge-primary">{b.subject}</span></td>
+                        <td className="px-4 py-3 text-surface-800 font-medium">{b.title}</td>
+                        <td className="px-4 py-3 text-surface-600">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 12: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xl">{r.type === 'youtube' ? '📺' : '🌐'}</span>
+                      <span className="font-heading font-semibold text-surface-800 group-hover:text-primary-500">{r.name}</span>
+                    </div>
+                    <p className="text-sm text-surface-500">{r.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Preparation Tips</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed border-t border-surface-100 pt-4">
+                      {faq.a}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 hover:pl-2 transition-all border-l-2 border-transparent hover:border-primary-400 pl-2">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-primary-900 mb-3 text-sm">🔗 Official Resources</h3>
+                <a href="https://mppsc.mp.gov.in" target="_blank" rel="noopener noreferrer" className="block w-full btn-primary text-center py-2.5 rounded-xl text-sm mb-3">
+                  Visit mppsc.mp.gov.in →
+                </a>
+                <p className="text-xs text-primary-700">For notifications, admit cards, results, and official syllabus PDF.</p>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4 text-sm uppercase tracking-wide">Quick Facts</h3>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Exam Level', value: 'State (Madhya Pradesh)' },
+                    { label: 'Conducting Body', value: 'MPPSC, Indore' },
+                    { label: 'Mode', value: 'Offline (Pen & Paper)' },
+                    { label: 'Medium', value: 'Hindi / English' },
+                    { label: 'Negative Marking', value: '−1/3 (Prelims Paper I only)' },
+                    { label: 'Interview Marks', value: '175' },
+                    { label: 'Eligibility Checker', value: '' },
+                  ].map((item) =>
+                    item.label === 'Eligibility Checker' ? (
+                      <div key={item.label}>
+                        <Link href="/tools/eligibility-checker/" className="block text-center text-sm text-primary-500 hover:text-primary-600 font-medium border border-primary-200 rounded-lg py-2 hover:bg-primary-50 transition-colors">
+                          ✅ Check Your Eligibility
+                        </Link>
+                      </div>
+                    ) : (
+                      <div key={item.label} className="flex justify-between text-sm">
+                        <span className="text-surface-500">{item.label}</span>
+                        <span className="text-surface-800 font-medium text-right ml-2">{item.value}</span>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4 text-sm uppercase tracking-wide">Related Exams</h3>
+                <div className="space-y-2">
+                  {[
+                    { name: 'UPPSC PCS 2026', slug: 'uppsc-pcs' },
+                    { name: 'BPSC CCE 2026', slug: 'bpsc-cce' },
+                    { name: 'UPSC IAS 2026', slug: 'upsc-ias' },
+                    { name: 'MPSC State Service', slug: 'mpsc-state-service' },
+                    { name: 'RPSC RAS 2026', slug: 'rpsc-ras' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-500 hover:text-primary-600 hover:underline py-0.5">
+                      → {e.name}
+                    </Link>
                   ))}
                 </div>
               </div>
