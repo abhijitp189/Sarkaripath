@@ -315,6 +315,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'lic-aao') {
+    return {
+      title: 'LIC AAO 2026 – Notification, Syllabus, Salary & Complete Guide | TaiyarHo',
+      description: 'LIC AAO 2026: Notification expected August 2026. 841 vacancies in 2025 cycle. Prelims (70 marks, 60 min), Mains (300 marks), Interview. Salary ₹1,07,222/month in-hand. Eligibility: Graduate, 21–30 yrs. Full syllabus, exam pattern & free resources.',
+      keywords: 'LIC AAO 2026, LIC AAO notification 2026, LIC AAO syllabus, LIC AAO salary, LIC AAO taiyari, LIC AAO exam pattern, LIC Assistant Administrative Officer, insurance exam 2026, एलआईसी एएओ भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/lic-aao/' },
+      other: { 'description:hi': 'LIC AAO 2026 – अधिसूचना अगस्त 2026 (अपेक्षित)। 841 रिक्तियाँ (2025 चक्र)। प्रारंभिक (70 अंक), मुख्य (300 अंक), साक्षात्कार। इन-हैंड वेतन ~₹1,07,222/माह। पात्रता: स्नातक, 21–30 वर्ष। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'sbi-po') {
     return {
       title: 'SBI PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -453,6 +463,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rpf-constable') return <RpfConstablePage exam={brief} />;
   if (brief && brief.slug === 'rpf-si') return <RpfSiPage exam={brief} />;
   if (brief && brief.slug === 'upsc-cds') return <UpscCdsPage exam={brief} />;
+  if (brief && brief.slug === 'lic-aao') return <LicAaoPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -28910,6 +28921,785 @@ function RbiAssistantPage({ exam }: { exam: any }) {
                 <p className="text-xs text-surface-500">Use our free Age &amp; Eligibility Calculator to check if you qualify for RBI Assistant 2026.</p>
                 <span className="text-xs text-primary-500 font-heading font-medium mt-2 block">Open Calculator →</span>
               </Link>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── LIC AAO RICH PAGE ───────────────────────────────────────────────────────
+function LicAaoPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies History' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'cutoff', label: 'Previous Year Cut-offs' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'LIC AAO 2025 Official Notification Released', date: '16 August 2025', status: 'released' },
+    { event: 'LIC AAO 2025 Online Application Opens', date: '16 August 2025', status: 'released' },
+    { event: 'LIC AAO 2025 Application Last Date', date: '8 September 2025', status: 'released' },
+    { event: 'LIC AAO 2025 Prelims Exam', date: '3 & 7 October 2025', status: 'released' },
+    { event: 'LIC AAO 2025 Prelims Result', date: '29 October 2025', status: 'released' },
+    { event: 'LIC AAO 2025 Mains Exam', date: '8 November 2025', status: 'released' },
+    { event: 'LIC AAO Mains Result (Generalist)', date: '4 February 2026', status: 'released' },
+    { event: 'LIC AAO 2025–26 Interview Round', date: 'February–April 2026', status: 'released' },
+    { event: 'LIC AAO 2025–26 Final Result & Joining', date: 'May–June 2026 (Expected)', status: 'tbn' },
+    { event: '🆕 LIC AAO 2026 – New Notification', date: 'August 2026 (Expected)', status: 'tbn' },
+    { event: 'LIC AAO 2026 – Online Application', date: 'August–September 2026 (Expected)', status: 'tbn' },
+    { event: 'LIC AAO 2026 – Prelims Exam', date: 'October 2026 (Expected)', status: 'tbn' },
+    { event: 'LIC AAO 2026 – Mains Exam', date: 'November–December 2026 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'LIC AAO 2016', vacancies: '~700 (Specialist + AE)', prelims: 'Mar 2016', mains: 'Apr 2016' },
+    { year: 'LIC AAO 2019', vacancies: '590', prelims: 'Mar 2019', mains: 'Jun 2019' },
+    { year: 'LIC AAO 2021–22', vacancies: '~568', prelims: 'Nov 2021', mains: 'Feb 2022' },
+    { year: 'LIC AAO 2023', vacancies: '300 (Generalist)', prelims: 'Feb 2023', mains: 'Mar 2023' },
+    { year: 'LIC AAO 2025', vacancies: '841 (350 Gen + 410 Specialist + 81 AE)', prelims: 'Oct 2025', mains: 'Nov 2025' },
+    { year: 'LIC AAO 2026 (upcoming)', vacancies: 'To Be Notified (TBN)', prelims: 'Oct 2026 (Expected)', mains: 'Nov–Dec 2026 (Expected)' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'Reasoning Ability', questions: 35, marks: 35, time: '20 min', note: 'Counted for ranking' },
+    { subject: 'Quantitative Aptitude', questions: 35, marks: 35, time: '20 min', note: 'Counted for ranking' },
+    { subject: 'English Language', questions: 30, marks: 30, time: '20 min', note: 'Qualifying only – not ranked' },
+  ];
+
+  const mainsPattern = [
+    { subject: 'Reasoning', questions: 30, marks: 90, time: '40 min' },
+    { subject: 'Data Analysis & Interpretation', questions: 30, marks: 90, time: '40 min' },
+    { subject: 'General Knowledge & Current Affairs', questions: 30, marks: 60, time: '20 min' },
+    { subject: 'Insurance & Financial Market Awareness', questions: 30, marks: 60, time: '20 min' },
+    { subject: 'Descriptive Paper (Essay + Letter)', questions: 2, marks: 25, time: '30 min' },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', prelims2023: '~47/70', mains2023: '~223/300', final2023: '~281/360', prelims2021: '~40/70', mains2021: '~210/300' },
+    { category: 'OBC', prelims2023: '~43/70', mains2023: '~210/300', final2023: '~265/360', prelims2021: '~37/70', mains2021: '~197/300' },
+    { category: 'SC', prelims2023: '~36/70', mains2023: '~190/300', final2023: '~240/360', prelims2021: '~31/70', mains2021: '~175/300' },
+    { category: 'ST', prelims2023: '~30/70', mains2023: '~170/300', final2023: '~215/360', prelims2021: '~27/70', mains2021: '~158/300' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (with 4 advance increments) — 2025 Wage Revision', amount: '₹88,635/month' },
+    { component: 'Dearness Allowance (DA) @ 15.38% of Basic Pay', amount: '~₹13,635/month' },
+    { component: 'Cadre Special Allowance', amount: '₹8,900/month' },
+    { component: 'House Rent Allowance (HRA) – Metro Cities', amount: '~₹6,204/month' },
+    { component: 'Transport Allowance', amount: '₹3,300/month' },
+    { component: 'Gross Estimated In-Hand (A-Class City)', amount: '~₹1,26,000/month' },
+    { component: 'Net In-Hand (after all deductions)', amount: '~₹1,07,222/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Assistant Administrative Officer (AAO)', scale: 'Class I', years: '0–3 yrs (Probation + Training)', payband: '₹88,635–₹1,69,025' },
+    { level: 'Administrative Officer (AO)', scale: 'Class I (Sr.)', years: '3–7 yrs', payband: 'Higher Scale' },
+    { level: 'Assistant Administrative Manager (AAM)', scale: 'Class I (Sr.)', years: '7–12 yrs', payband: 'Higher Scale' },
+    { level: 'Administrative Manager (AM)', scale: 'Class II', years: '12–17 yrs', payband: 'Higher Scale' },
+    { level: 'Divisional Manager / Branch Manager', scale: 'Class III', years: '17–22 yrs', payband: 'Higher Scale' },
+    { level: 'Zonal Manager / Senior DM', scale: 'Class IV–V', years: '22+ yrs', payband: '₹1,50,000+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🧩 Reasoning Ability',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Puzzles – Floor-based, Box, Month-Year-Day, Scheduling, Comparison',
+        'Seating Arrangement – Linear, Circular, Square, Double row',
+        'Syllogisms (Direct and Reverse / Possibility pattern)',
+        'Coding-Decoding (new pattern – word-based and number-based)',
+        'Blood Relations, Direction & Distance',
+        'Inequality (Direct & Coded)',
+        'Input-Output Machine (shifting / arrangement patterns)',
+        'Order & Ranking, Alphanumeric Series',
+        'Data Sufficiency (Reasoning)',
+        'Critical Reasoning (Mains only) – Assumption, Conclusion, Course of Action',
+      ],
+    },
+    {
+      subject: '🔢 Quantitative Aptitude / Data Analysis & Interpretation',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Number Series (Missing & Wrong number patterns)',
+        'Simplification & Approximation',
+        'Percentage, Average, Ratio & Proportion',
+        'Profit & Loss, Simple & Compound Interest, Partnership',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time – Trains, Boats & Streams',
+        'Permutation, Combination & Probability',
+        'Data Interpretation – Bar, Pie, Line, Tabular, Caselet, Mixed',
+        'Quadratic Equations, Data Sufficiency',
+        'Mensuration – Area, Volume of 2D & 3D shapes',
+      ],
+    },
+    {
+      subject: '📝 English Language',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Reading Comprehension (2–3 passages, inference-based questions)',
+        'Cloze Test (blank-based, sentence-based pattern)',
+        'Error Spotting (word-level and clause-level)',
+        'Sentence Rearrangement, Para Jumbles',
+        'Phrase Replacement, Double Fillers, Triple Fillers',
+        'Vocabulary – Synonyms, Antonyms, Word Usage in Context',
+        'Descriptive Paper (Mains only, qualifying): Essay Writing (15 marks) + Letter Writing (10 marks)',
+      ],
+    },
+    {
+      subject: '🏦 Insurance & Financial Market Awareness',
+      prelims: false,
+      mains: true,
+      topics: [
+        'LIC – History, products, schemes, current CMD & MD, subsidiaries, market share',
+        'IRDAI – Role, regulations, guidelines, insurance penetration data',
+        'Types of Insurance – Life, Non-life, Health, Reinsurance, Microinsurance',
+        'Insurance terminology – Sum Assured, Premium, Surrender Value, Bonus, Maturity',
+        'Key Policies – Jeevan Anand, Jeevan Umang, Money Back, Term Plans, ULIPs',
+        'Banking Awareness – RBI, Repo Rate, CRR, SLR, NABARD, SEBI, NHB, IRDAI',
+        'Capital Markets – NSE/BSE, Sensex, Nifty, Mutual Funds, debt instruments',
+        'Government schemes – PM Jeevan Jyoti, PM Suraksha Bima, Atal Pension Yojana',
+        'Recent Union Budget – key highlights, fiscal deficit, insurance allocation',
+        'PMFBY (Crop Insurance), PMSBY, health insurance schemes',
+      ],
+    },
+    {
+      subject: '🌐 General Knowledge & Current Affairs',
+      prelims: false,
+      mains: true,
+      topics: [
+        'Current Affairs – last 6 months, national and international events',
+        'Important Days, National Appointments, International Summits',
+        'Awards & Honours – Bharat Ratna, Padma Awards, international prizes',
+        'Static GK – Countries/capitals/currencies, Indian geography, history, polity',
+        'Indian Constitution – Articles, Schedules, Amendments, bodies',
+        'Science & Technology – Space missions (ISRO), AI/tech, defence developments',
+        'Sports – Major tournaments, winners, India records',
+        'Economy – GDP, inflation, Union Budget highlights, FDI, Make in India',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Quant & Reasoning Foundation', detail: 'Start with Number Series, Simplification, Percentage, Ratio, SI/CI — the arithmetic backbone of every banking/insurance exam. For Reasoning, master all Puzzle and Seating Arrangement types — these form 60–70% of the Reasoning section. Practice 25–30 questions daily from each section with a timer. Begin reading a business newspaper (Economic Times or Financial Express) for 15 minutes every morning — this seeds your Insurance Awareness.' },
+    { month: 'Month 2', focus: 'Advanced Quant (DI) + English Start', detail: 'Data Interpretation is the heaviest scorer in LIC AAO Mains. Practice all DI types — Bar, Pie, Line, Tabular, Caselet, and Mixed. LIC AAO DI is moderately hard; focus on speed and approximation shortcuts. For English, do 2 Reading Comprehension passages daily plus Cloze Tests and Error Spotting. Start Descriptive Writing — one essay per week on insurance or economy topics.' },
+    { month: 'Month 3', focus: 'Insurance Awareness + GK Building', detail: 'This is your LIC-specific month. Study LIC\'s history (est. 1956), current CMD/MD, key policies (Jeevan Anand, Money Back, ULIPs), market share, and subsidiaries. Learn IRDAI regulations, types of insurance, and key schemes (PMJJBY, PMSBY, PMFBY). Read RBI monetary policy summaries. Maintain a monthly current affairs capsule — use Adda247 or Oliveboard free PDFs.' },
+    { month: 'Month 4', focus: 'Mains Sections + Descriptive Practice', detail: 'Take up advanced Reasoning — Critical Reasoning (Mains only), complex multi-row puzzles, and Input-Output machines. Descriptive Writing: one formal letter and one essay per week. Topics to focus on: insurance reforms, digital insurance, climate risk, financial inclusion, AI in insurance. Take one sectional mock per section every week to benchmark. Review your monthly current affairs capsule twice.' },
+    { month: 'Month 5', focus: 'Full Prelims Mocks + Mains Pattern', detail: 'Prelims is qualifying — aim for 55–60/70. Take 2–3 full Prelims mocks per week. Analyse each mock for error patterns and time management. Shift to Mains-level practice — advanced DI, longer RC passages, Insurance/GK deep dives. Take one full Mains mock this month. Track which sections drain time and recalibrate your strategy.' },
+    { month: 'Month 6', focus: 'Final Revision + Interview Prep', detail: 'Revise Insurance Awareness and Current Affairs twice in this month. Take 3 Prelims mocks per week and 1 Mains mock per week. Prepare for the interview: know LIC\'s product portfolio, recent LIC IPO, CMD interview, LIC\'s revenue and market share. Read 1–2 pages of LIC annual report highlights. Practise expressing career goals — why LIC, why AAO, what value you bring.' },
+  ];
+
+  const books = [
+    { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Quant' },
+    { title: 'Data Interpretation & Data Sufficiency', author: 'Arihant Publications', subject: 'DI (Mains)' },
+    { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali & Indu Sijwali', subject: 'Reasoning' },
+    { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English Vocabulary' },
+    { title: 'Objective English for Competitive Exams', author: 'Hari Mohan Prasad', subject: 'English' },
+    { title: 'Insurance Awareness for LIC AAO', author: 'Adda247 / Disha Publications', subject: 'Insurance Awareness' },
+    { title: 'LIC AAO 20 Practice Sets', author: 'Disha Publications', subject: 'Full Mock Tests' },
+    { title: 'Descriptive English for Banking/Insurance Exams', author: 'S.P. Bakshi (Arihant)', subject: 'Descriptive Paper' },
+  ];
+
+  const freeResources = [
+    { name: 'LIC Careers Official Page', type: 'website', url: 'https://licindia.in/home/careers', description: 'Official source for LIC AAO notifications, admit cards, result PDFs and interview schedule.' },
+    { name: 'Adda247 Insurance Exams (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Daily free classes on Insurance Awareness, Current Affairs and full-section LIC AAO coverage.' },
+    { name: 'Oliveboard LIC AAO Free Mocks', type: 'website', url: 'https://www.oliveboard.in/lic-aao/', description: 'Free full-length Prelims and Mains mocks calibrated to LIC AAO exam pattern.' },
+    { name: 'Mrunal Patel (Economy & Finance)', type: 'youtube', url: 'https://www.youtube.com/@TheMrunalPatel', description: 'Best free resource for Banking/Economy Awareness and high-level DI — directly applicable to Mains.' },
+    { name: 'IRDAI Official Website', type: 'website', url: 'https://www.irdai.gov.in', description: 'Official insurance regulator — essential for understanding Insurance Awareness questions in Mains.' },
+    { name: 'GK Today Daily Current Affairs', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily current affairs updates, monthly revision PDFs and insurance awareness capsules.' },
+    { name: 'Testbook LIC AAO Free Practice', type: 'website', url: 'https://testbook.com/lic-aao', description: 'Free full-length mocks, previous year papers and section-wise tests for LIC AAO.' },
+    { name: 'Unacademy Banking & Insurance', type: 'youtube', url: 'https://www.youtube.com/@UnacademyBanking', description: 'Free LIC AAO live classes covering Insurance Awareness, GK, and complete sectional strategies.' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'Prelims marks are NOT counted in the final merit list — it is qualifying only. Focus on clearing the cut-off (aim for 55–60/70) rather than maximising the score. Save your energy and deep preparation for Mains, which is what determines your selection.' },
+    { icon: '🛡️', tip: 'Insurance & Financial Market Awareness is the subject that separates LIC AAO from all other banking exams. 30 questions, 60 marks — and most competitors neglect it. Spend at least 30 minutes daily reading LIC product details, IRDAI regulations, and key government insurance schemes.' },
+    { icon: '📊', tip: 'Data Analysis & Interpretation carries 90 marks in Mains — the highest of any section. LIC AAO DI is moderately difficult with Caselet and Mixed DI being common. Practice DI daily from Month 2 and develop approximation speed — exact calculation is rarely needed.' },
+    { icon: '📝', tip: 'The Descriptive Paper (Essay + Letter, 25 marks) is qualifying in Mains — but only those who clear the objective cutoff get their descriptive evaluated. Prepare 8–10 topics: insurance sector reforms, IRDAI regulations, digital insurance, LIC IPO impact, climate risk & insurance, financial inclusion.' },
+    { icon: '🏢', tip: 'Know LIC deeply. Interview panels always ask: LIC CMD and MD names, subsidiaries (LIC Housing Finance, LIC Cards, LIC Mutual Fund), the LIC IPO (May 2022 — India\'s largest ever), market share in India\'s life insurance sector (~65%), and LIC\'s key products.' },
+    { icon: '💡', tip: 'No negative marking for Generalist AAO Prelims — this is different from IBPS PO which has 0.25 penalty. Attempt all 70 scored questions. In Mains Objective, there is also no negative marking for Generalist posts — attempt all 120 Qs strategically.' },
+    { icon: '🔄', tip: '4 dedicated hours daily for 5–6 months is sufficient to crack LIC AAO with a good rank. Build a structured schedule: 1 hour Quant, 1 hour Reasoning, 45 min English, 45 min Insurance+GK, 30 min Current Affairs reading. Take at least 2 mocks per week from Month 3 onwards.' },
+    { icon: '📱', tip: 'For current affairs, subscribe to Oliveboard or Adda247 on Telegram — they release free monthly PDFs. Spend 15 minutes every morning scanning headlines from Economic Times. Insurance circulars on the IRDAI website are worth a monthly review for Mains preparation.' },
+  ];
+
+  const faqs = [
+    { q: 'When will LIC AAO 2026 notification be released?', a: 'Based on past cycles, LIC AAO 2026 notification is expected in August 2026. LIC typically releases its AAO recruitment notification once a year. The 2025 cycle notification came out on 16 August 2025. Candidates should watch licindia.in/home/careers for the official announcement. As of May 2026, the next cycle\'s notification is TBN (To Be Notified).' },
+    { q: 'How many vacancies were there in LIC AAO 2025?', a: 'LIC AAO 2025 had 841 total vacancies — 350 for Generalist AAO, 410 for Specialist posts (CA, CS, Actuarial, Legal, IT, Rajbhasha), and 81 for Assistant Engineers (Civil/Electrical). This was significantly more than the 300 Generalist-only vacancies in 2023, making the 2025 cycle highly competitive.' },
+    { q: 'What is the LIC AAO 2025 salary after wage revision?', a: 'After the 2025 Wage Revision, LIC AAO basic pay starts at ₹88,635/month (with 4 advance increments). The pay scale is ₹88,635 – 4,385(14) – 1,50,025 – 4,750(4) – 1,69,025. Including DA (~15.38%), Cadre Special Allowance (₹8,900), HRA, and Transport, the gross in-hand salary in A-class cities is approximately ₹1,26,000/month. After deductions (income tax, PF, GIS), the net in-hand pay is approximately ₹1,07,222/month.' },
+    { q: 'Is there negative marking in LIC AAO exam?', a: 'For Generalist AAO posts, there is NO negative marking in either Prelims or Mains — making it a significant advantage over IBPS PO (which has 0.25 penalty). However, for Specialist AAO and AE (Assistant Engineer) posts, there is a penalty of 1/4 mark for each wrong answer in the Objective Test. Always check the official notification for the cycle you are applying to.' },
+    { q: 'What is the LIC AAO Prelims exam pattern?', a: 'LIC AAO Prelims has 100 questions across 3 sections: Reasoning Ability (35Q, 35M, 20 min), Quantitative Aptitude (35Q, 35M, 20 min), and English Language (30Q, 30M, 20 min). Total duration: 60 minutes. Total marks for ranking: 70 (English is qualifying only and not counted). There is sectional timing — you cannot switch between sections. Prelims marks are NOT counted in the final merit list; only Mains + Interview determine selection.' },
+    { q: 'How is the LIC AAO final merit list prepared?', a: 'The LIC AAO final merit list is based only on Mains Objective (300 marks) + Interview (60 marks) = 360 marks total. Prelims marks are not included. The Descriptive Paper in Mains (25 marks, Essay + Letter) is qualifying in nature — it is evaluated only for candidates who clear the Mains Objective cutoff, but its marks are not counted for ranking either. Selection is purely based on the 360-mark combined score of Mains + Interview, subject to a qualifying minimum in the interview (30 marks for General/OBC/EWS, 27 for SC/ST).' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white font-medium">LIC AAO 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="badge-primary bg-blue-700 text-blue-100 text-xs px-3 py-1 rounded-full font-heading font-semibold">Banking / Insurance</span>
+            <span className="badge-primary bg-blue-800 text-blue-200 text-xs px-3 py-1 rounded-full font-heading font-semibold">Central Government</span>
+            <span className="bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-heading font-semibold">Class I Officer</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-3">
+            LIC AAO 2026 – Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base leading-relaxed max-w-2xl mb-6">
+            India&apos;s largest insurer recruits Class I Administrative Officers. With a revised salary of <strong className="text-white">~₹1,07,222/month in-hand</strong>, a prestigious career in LIC, and pension benefits — LIC AAO is one of the most sought-after insurance sector exams.
+          </p>
+
+          {/* Fast-fact grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { icon: '📋', label: 'Vacancies 2025', value: '841 Posts' },
+              { icon: '📅', label: '2026 Notification', value: 'Aug 2026 (TBN)' },
+              { icon: '💰', label: 'In-Hand Salary', value: '~₹1,07,222/mo' },
+              { icon: '🎓', label: 'Eligibility', value: 'Any Graduate' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur rounded-xl p-3 border border-white/20">
+                <div className="text-xl mb-1">{item.icon}</div>
+                <div className="text-xs text-blue-200 font-heading">{item.label}</div>
+                <div className="text-white font-heading font-bold text-sm mt-0.5">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-8">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* LEFT COLUMN */}
+          <div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="What is LIC AAO 2026?" />
+              <p className="text-surface-600 leading-relaxed mb-4">
+                LIC AAO (Assistant Administrative Officer) is a <strong>Class I Gazetted Officer</strong> recruitment conducted by the Life Insurance Corporation of India — India&apos;s largest insurer with over 65% market share in the life insurance sector. Established in 1956, LIC manages assets exceeding ₹40 lakh crore and operates through 2,000+ branch offices across India.
+              </p>
+              <p className="text-surface-600 leading-relaxed mb-6">
+                The AAO position covers Generalist and Specialist streams (CA, CS, Actuarial, Legal, IT, Rajbhasha) along with Assistant Engineer posts. The exam is conducted once a year and is highly competitive — the 2025 cycle saw over 7 lakh applications for 841 posts.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Life Insurance Corporation of India' },
+                  { label: 'Post Level', value: 'Class I Gazetted Officer' },
+                  { label: 'Age Limit', value: '21–30 years (relaxations apply)' },
+                  { label: 'Exam Mode', value: 'Online (CBT) + Descriptive' },
+                  { label: 'Selection Stages', value: 'Prelims → Mains → Interview → Medical' },
+                  { label: 'Basic Pay (2025)', value: '₹88,635/month (revised)' },
+                  { label: 'Official Website', value: 'licindia.in' },
+                  { label: 'Application Fee', value: '₹700 (Gen/EWS/OBC) | ₹85 (SC/ST/PwBD)' },
+                ].map((item) => (
+                  <InfoCard key={item.label} label={item.label} value={item.value} />
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="Important Dates 2025–26 & 2026 (Expected)" />
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Event</th>
+                      <th className="text-left p-3 font-heading">Date</th>
+                      <th className="text-left p-3 font-heading">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.event}</td>
+                        <td className="p-3 text-surface-800 font-medium">{row.date}</td>
+                        <td className="p-3">
+                          {row.status === 'released' ? (
+                            <span className="badge-green text-xs px-2 py-0.5">✓ Released</span>
+                          ) : (
+                            <span className="text-xs bg-amber-100 text-amber-700 rounded-full px-2 py-0.5 font-heading font-semibold">⚠ TBN</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mt-2">💡 All 2026 dates are tentative based on LIC&apos;s historical recruitment calendar. Always verify at licindia.in/home/careers.</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria 2026" />
+              <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 mb-6">
+                {[
+                  { label: '🪪 Nationality', value: 'Indian Citizen (or equivalent per LIC norms)' },
+                  { label: '🎓 Qualification (Generalist)', value: "Bachelor's degree in any discipline from a recognised university" },
+                  { label: '🎓 Qualification (CA)', value: "Graduate + ICAI Final Exam passed + Associate membership" },
+                  { label: '🎓 Qualification (Legal)', value: "LLB/LLM + 3 years' bar experience" },
+                  { label: '🎓 Qualification (IT)', value: 'B.Tech/MCA/MSc (CS/IT/Electronics) from recognised university' },
+                  { label: '🎓 Qualification (AE)', value: "B.Tech/B.E. Civil/Electrical + 3 years' experience in multi-storied projects" },
+                  { label: '📋 Age Limit', value: '21 – 30 years (age as on cut-off date in official notification)' },
+                  { label: '📋 Age Relaxation', value: 'OBC: +3 yrs | SC/ST: +5 yrs | PwBD: +10 yrs | ECO/SSCO: +5 yrs | LIC Employees: +5 yrs (additional)' },
+                ].map((item) => (
+                  <InfoCard key={item.label} label={item.label} value={item.value} />
+                ))}
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                <p className="text-sm text-primary-700 font-medium">💡 Key Note</p>
+                <p className="text-sm text-surface-600 mt-1">Final-year graduation students may apply if they can provide proof of graduation by the date specified in the official notification. Candidates can apply for only one post (Generalist or one Specialist stream). There is no attempt limit for LIC AAO.</p>
+              </div>
+            </section>
+
+            {/* 4. VACANCIES HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="LIC AAO Vacancies History" />
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Year</th>
+                      <th className="text-left p-3 font-heading">Total Vacancies</th>
+                      <th className="text-left p-3 font-heading">Prelims</th>
+                      <th className="text-left p-3 font-heading">Mains</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 text-emerald-600 font-semibold">{row.vacancies}</td>
+                        <td className="p-3 text-surface-600">{row.prelims}</td>
+                        <td className="p-3 text-surface-600">{row.mains}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 5. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="LIC AAO Exam Pattern 2026" />
+
+              <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 mb-5">
+                <p className="text-sm font-medium text-amber-800">⚠️ Key Rule: Prelims marks are NOT counted in the final merit list. Only Mains (300) + Interview (60) = 360 marks determine your selection.</p>
+              </div>
+
+              {/* Phase 1 */}
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-base mb-1">Phase 1 – Preliminary Examination</h3>
+                <p className="text-xs text-surface-500 mb-3">Objective type | Online | 60 minutes | Qualifying only (marks not counted for ranking)</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-2.5 font-heading">Section</th>
+                        <th className="text-center p-2.5 font-heading">Questions</th>
+                        <th className="text-center p-2.5 font-heading">Marks</th>
+                        <th className="text-center p-2.5 font-heading">Time</th>
+                        <th className="text-left p-2.5 font-heading">Note</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {prelimsPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2.5 font-medium text-surface-800">{row.subject}</td>
+                          <td className="p-2.5 text-center text-surface-700">{row.questions}</td>
+                          <td className="p-2.5 text-center text-surface-700">{row.marks}</td>
+                          <td className="p-2.5 text-center text-surface-700">{row.time}</td>
+                          <td className="p-2.5 text-xs text-surface-500">{row.note}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 font-semibold">
+                        <td className="p-2.5 text-primary-800">Total</td>
+                        <td className="p-2.5 text-center text-primary-800">100</td>
+                        <td className="p-2.5 text-center text-primary-800">70 (ranked)</td>
+                        <td className="p-2.5 text-center text-primary-800">60 min</td>
+                        <td className="p-2.5 text-xs text-primary-600">No negative marking (Generalist)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Phase 2 */}
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-base mb-1">Phase 2 – Main Examination</h3>
+                <p className="text-xs text-surface-500 mb-3">Objective (120 min) + Descriptive (30 min) | Online | Marks counted for merit list</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-2.5 font-heading">Section</th>
+                        <th className="text-center p-2.5 font-heading">Questions</th>
+                        <th className="text-center p-2.5 font-heading">Marks</th>
+                        <th className="text-center p-2.5 font-heading">Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {mainsPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2.5 font-medium text-surface-800">{row.subject}</td>
+                          <td className="p-2.5 text-center text-surface-700">{row.questions}</td>
+                          <td className="p-2.5 text-center text-surface-700">{row.marks}</td>
+                          <td className="p-2.5 text-center text-surface-700">{row.time}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 font-semibold">
+                        <td className="p-2.5 text-primary-800">Total (Objective)</td>
+                        <td className="p-2.5 text-center text-primary-800">120</td>
+                        <td className="p-2.5 text-center text-primary-800">300</td>
+                        <td className="p-2.5 text-center text-primary-800">120 min</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-500 mt-2">Note: Descriptive marks (25) are qualifying in nature — not counted for ranking. Evaluated only if you clear the objective cutoff.</p>
+              </div>
+
+              {/* Phase 3 */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-base mb-3">Phase 3 – Personal Interview</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {[
+                    { label: 'Interview Marks', value: '60 marks' },
+                    { label: 'Qualifying Minimum', value: '30 (Gen/OBC/EWS) | 27 (SC/ST)' },
+                    { label: 'Final Merit Basis', value: 'Mains (300) + Interview (60) = 360' },
+                  ].map((item) => (
+                    <InfoCard key={item.label} label={item.label} value={item.value} />
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 6. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="Detailed Syllabus (Generalist AAO)" />
+              <div className="space-y-3">
+                {syllabus.map((s) => (
+                  <details key={s.subject} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{s.subject}</span>
+                      <div className="flex gap-2 items-center">
+                        {s.prelims && <span className="text-xs bg-blue-100 text-blue-700 rounded-full px-2 py-0.5">Prelims</span>}
+                        {s.mains && <span className="text-xs bg-emerald-100 text-emerald-700 rounded-full px-2 py-0.5">Mains</span>}
+                        <svg className="w-4 h-4 text-surface-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-5 space-y-1.5">
+                        {s.topics.map((t) => (
+                          <li key={t} className="text-sm text-surface-600">{t}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 7. CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <SectionHeading num="7" title="Previous Year Cut-offs" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading">Category</th>
+                        <th className="text-center p-3 font-heading">Prelims 2023 (/70)</th>
+                        <th className="text-center p-3 font-heading">Mains 2023 (/300)</th>
+                        <th className="text-center p-3 font-heading">Final 2023 (/360)</th>
+                        <th className="text-center p-3 font-heading">Prelims 2021 (/70)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cutoffData.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                          <td className="p-3 text-center text-surface-700">{row.prelims2023}</td>
+                          <td className="p-3 text-center text-surface-700">{row.mains2023}</td>
+                          <td className="p-3 text-center text-emerald-600 font-semibold">{row.final2023}</td>
+                          <td className="p-3 text-center text-surface-500">{row.prelims2021}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-500 mt-2">⚠️ These are approximate cut-off figures based on published data and expert analysis. Actual cut-offs vary each cycle based on vacancies and paper difficulty.</p>
+            </section>
+
+            {/* 8. SALARY */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="8" title="LIC AAO Salary & Career Growth (2025 Revised)" />
+              <div className="card overflow-hidden mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Salary Component</th>
+                      <th className="text-right p-3 font-heading">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.component}</td>
+                        <td className={`p-3 text-right font-semibold ${i >= salaryBreakdown.length - 2 ? 'text-emerald-600' : 'text-surface-800'}`}>{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
+                <p className="text-sm font-heading font-semibold text-emerald-800 mb-1">🏆 Additional Perks & Benefits</p>
+                <ul className="text-sm text-emerald-700 space-y-1 list-disc ml-4">
+                  <li>Defined Pension Scheme (rare in the current era — most PSBs have switched to NPS)</li>
+                  <li>LIC Housing Finance loan at preferential rates</li>
+                  <li>Group Insurance and Medical Benefits</li>
+                  <li>Leave Travel Concession (LTC)</li>
+                  <li>Gratuity and Group Insurance Scheme (GIS)</li>
+                  <li>Loan benefits for housing, vehicle, and personal needs</li>
+                  <li>Guarantee Bond: 4-year service commitment (₹5 lakh penalty for early resignation)</li>
+                </ul>
+              </div>
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Career Growth Ladder</h3>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Post</th>
+                      <th className="text-left p-3 font-heading">Scale</th>
+                      <th className="text-left p-3 font-heading">Typical Timeline</th>
+                      <th className="text-left p-3 font-heading">Pay Band</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {careerPath.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.level}</td>
+                        <td className="p-3 text-surface-600">{row.scale}</td>
+                        <td className="p-3 text-surface-600">{row.years}</td>
+                        <td className="p-3 text-emerald-600 font-medium">{row.payband}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 9. HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="9" title="How to Apply for LIC AAO 2026" />
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Visit Official Website', desc: 'Go to licindia.in → Careers section → Click the LIC AAO Recruitment 2026 notification link (active only after notification release in Aug 2026).' },
+                  { step: '2', title: 'New Registration', desc: 'Click "New Registration" and enter your name, date of birth, email ID, and mobile number. Note your Registration Number and Password carefully.' },
+                  { step: '3', title: 'Fill Application Form', desc: 'Log in and fill in personal details, educational qualifications, category, and post preference (Generalist or one Specialist stream). You can apply for only one post.' },
+                  { step: '4', title: 'Upload Documents', desc: 'Upload scanned copies of recent passport-size photograph, signature, left thumb impression, and handwritten declaration as per size specifications in the notification.' },
+                  { step: '5', title: 'Pay Application Fee', desc: 'General/EWS/OBC: ₹700 | SC/ST/PwBD: ₹85. Payment via Net Banking, Debit/Credit Card, UPI. Fee is non-refundable.' },
+                  { step: '6', title: 'Submit & Download', desc: 'Preview all details, submit the form, and download the PDF confirmation. Save your Registration Number and Password for admit card download.' },
+                ].map((item) => (
+                  <div key={item.step} className="card p-5 flex gap-4">
+                    <div className="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 font-heading font-bold text-sm shrink-0">{item.step}</div>
+                    <div>
+                      <p className="font-heading font-semibold text-surface-800 text-sm">{item.title}</p>
+                      <p className="text-sm text-surface-600 mt-0.5">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="10" title="6-Month Study Plan for LIC AAO 2026" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((item, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-xs">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-xs font-heading font-semibold bg-primary-100 text-primary-700 rounded-full px-2 py-0.5">{item.month}</span>
+                          <span className="font-heading font-semibold text-surface-800 text-sm">{item.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 11. BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="11" title="Best Books for LIC AAO 2026" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* 12. FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="12" title="Free Resources for LIC AAO 2026" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r) => (
+                  <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl">{r.type === 'youtube' ? '📺' : r.type === 'pdf' ? '📄' : '🌐'}</span>
+                      <div>
+                        <p className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.name}</p>
+                        <p className="text-xs text-surface-500 mt-1">{r.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. TIPS */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="13" title="Expert Tips to Crack LIC AAO 2026" />
+              <div className="space-y-3">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-9 h-9 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center text-xl shrink-0">{t.icon}</div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 14. FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="14" title="LIC AAO 2026 – Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{f.q}</span>
+                      <svg className="w-4 h-4 text-surface-400 shrink-0 ml-3 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* RIGHT SIDEBAR */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-xs text-surface-500 hover:text-primary-500 py-0.5 transition-colors">{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <a href="https://licindia.in/home/careers" target="_blank" rel="noopener noreferrer" className="card p-4 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🔗 Official LIC Careers</div>
+                <p className="text-xs text-surface-500">licindia.in/home/careers — Official notifications, admit cards & results.</p>
+                <span className="text-xs text-primary-500 font-heading font-medium mt-2 block">Visit Official Site →</span>
+              </a>
+
+              {/* Eligibility checker CTA */}
+              <Link href="/tools/eligibility-checker/" className="card p-4 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Eligibility Checker to see if you qualify for LIC AAO 2026.</p>
+                <span className="text-xs text-primary-500 font-heading font-medium mt-2 block">Open Checker →</span>
+              </Link>
+
+              {/* Quick facts */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">Quick Facts</h3>
+                <div className="space-y-2">
+                  {[
+                    { label: 'Vacancies 2025', value: '841 Posts' },
+                    { label: '2026 Notification', value: 'Aug 2026 (TBN)' },
+                    { label: 'Basic Pay', value: '₹88,635/month' },
+                    { label: 'In-Hand Salary', value: '~₹1,07,222/month' },
+                    { label: 'Age Limit', value: '21–30 years' },
+                    { label: 'Qualification', value: 'Any Graduate' },
+                    { label: 'Negative Marking', value: 'None (Generalist)' },
+                    { label: 'Final Merit', value: 'Mains + Interview (360M)' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex justify-between text-xs">
+                      <span className="text-surface-500">{item.label}</span>
+                      <span className="text-surface-800 font-semibold text-right max-w-[55%]">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Related exams */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">Related Banking & Insurance Exams</h3>
+                <div className="space-y-1">
+                  {[
+                    { name: 'SBI PO 2026', slug: 'sbi-po' },
+                    { name: 'IBPS PO 2026', slug: 'ibps-po' },
+                    { name: 'SBI Clerk 2026', slug: 'sbi-clerk' },
+                    { name: 'IBPS Clerk 2026', slug: 'ibps-clerk' },
+                    { name: 'RBI Grade B 2026', slug: 'rbi-grade-b' },
+                    { name: 'NABARD Grade A 2026', slug: 'nabard-grade-a' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-sm text-primary-600 hover:text-primary-700 py-0.5">→ {e.name}</Link>
+                  ))}
+                </div>
+              </div>
 
             </div>
           </aside>
