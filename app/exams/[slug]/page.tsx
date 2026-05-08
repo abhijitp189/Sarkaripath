@@ -298,10 +298,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (params.slug === 'rrb-group-d') {
     return {
       title: 'RRB Group D 2026 – Eligibility, Syllabus & Vacancy | TaiyarHo',
-      description: 'RRB Group D 2026: 32,438 vacancies (CEN-08/2024) for 10th pass candidates. CBT expected 2026. Check syllabus, PET details, eligibility (18–33 yrs), salary ₹22,500–₹26,000/mo & free resources.',
-      keywords: 'RRB Group D 2026, Railway Group D taiyari, RRB Group D syllabus Hindi, रेलवे ग्रुप D परीक्षा, 10th pass railway job, रेलवे भर्ती 2026',
+      description: 'RRB Group D 2026: 22,195 vacancies (CEN 09/2025) for 10th pass candidates. Age limit 18–36 yrs (one-time relaxation). Check syllabus, PET details, eligibility, salary & free resources.',
+      keywords: 'RRB Group D 2026, Railway Group D taiyari, RRB Group D syllabus Hindi, रेलवे ग्रुप D परीक्षा, 10th pass railway job, रेलवे भर्ती 2026, CEN 09/2025',
       alternates: { canonical: 'https://www.taiyarho.in/exams/rrb-group-d/' },
-      other: { 'description:hi': 'RRB Group D 2026 – 10वीं पास उम्मीदवारों के लिए 32,438 रिक्तियाँ। CBT परीक्षा 2026 में होगी। सिलेबस, PET विवरण, पात्रता (18-33 वर्ष), वेतन ₹22,500–₹26,000/माह।' },
+      other: { 'description:hi': 'RRB Group D 2026 – 10वीं पास उम्मीदवारों के लिए 22,195 रिक्तियाँ (CEN 09/2025)। आयु सीमा 18-36 वर्ष (एक बार की छूट)। सिलेबस, PET विवरण, पात्रता और मुफ्त संसाधन।' },
     };
   }
 
@@ -14127,16 +14127,18 @@ function RrbGroupDPage({ exam }: { exam: any }) {
   ];
 
   const importantDates = [
-    { event: 'CEN-08/2024 Official Notification Released',    date: 'January 2025',            status: 'done' },
-    { event: 'Online Application Window',                      date: 'January – February 2025', status: 'done' },
-    { event: 'Application Fee Payment Deadline',              date: 'February 2025',           status: 'done' },
-    { event: 'Application Correction Window',                 date: 'February – March 2025',   status: 'done' },
-    { event: 'CBT Admit Card Release',                        date: 'To be notified (TBN)',    status: 'tbn' },
-    { event: 'Computer Based Test (CBT)',                     date: 'Expected 2026 (TBN)',     status: 'tbn' },
-    { event: 'CBT Result & PET Call Letter',                  date: 'To be notified (TBN)',    status: 'tbn' },
-    { event: 'Physical Efficiency Test (PET)',                 date: 'To be notified (TBN)',    status: 'tbn' },
-    { event: 'Document Verification (DV)',                    date: 'To be notified (TBN)',    status: 'tbn' },
-    { event: 'Medical Examination & Appointment',             date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'CEN-08/2024 Official Notification Released',        date: 'January 2025',            status: 'done' },
+    { event: 'CEN-08/2024 Application Window',                    date: 'January – February 2025', status: 'done' },
+    { event: 'CEN 09/2025 Official Notification Released',        date: 'January 2026',            status: 'done' },
+    { event: 'CEN 09/2025 Online Application Window',             date: 'January – March 2026',    status: 'done' },
+    { event: 'CEN 09/2025 Application Deadline (Extended)',       date: 'March 9, 2026',           status: 'done' },
+    { event: 'Application Fee Payment & Correction Window',       date: 'Closed',                  status: 'done' },
+    { event: 'CBT Admit Card Release (CEN 09/2025)',              date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Computer Based Test (CBT) — CEN 09/2025',          date: 'Expected 2026 (TBN)',     status: 'tbn' },
+    { event: 'CBT Result & PET Call Letter',                      date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Physical Efficiency Test (PET)',                    date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Document Verification (DV) & Medical Examination', date: 'To be notified (TBN)',    status: 'tbn' },
+    { event: 'Next Cycle Notification Expected',                  date: 'October 2026',            status: 'upcoming' },
   ];
 
   const examPattern = [
@@ -14157,12 +14159,12 @@ function RrbGroupDPage({ exam }: { exam: any }) {
   ];
 
   const ageRelaxations = [
-    { category: 'General / EWS', relaxation: 'No relaxation', effectiveAge: '18–33 years' },
-    { category: 'OBC (Non-Creamy Layer)', relaxation: '+3 years', effectiveAge: '18–36 years' },
-    { category: 'SC / ST', relaxation: '+5 years', effectiveAge: '18–38 years' },
-    { category: 'PwBD (General/EWS)', relaxation: '+10 years', effectiveAge: '18–43 years' },
-    { category: 'PwBD (OBC-NCL)', relaxation: '+13 years', effectiveAge: '18–46 years' },
-    { category: 'PwBD (SC/ST)', relaxation: '+15 years', effectiveAge: '18–48 years' },
+    { category: 'General / EWS', relaxation: '+3 years (one-time CEN 09/2025)', effectiveAge: '18–36 years' },
+    { category: 'OBC (Non-Creamy Layer)', relaxation: '+6 years (3 base + 3 one-time)', effectiveAge: '18–39 years' },
+    { category: 'SC / ST', relaxation: '+8 years (5 base + 3 one-time)', effectiveAge: '18–41 years' },
+    { category: 'PwBD (General/EWS)', relaxation: '+13 years (10 base + 3 one-time)', effectiveAge: '18–46 years' },
+    { category: 'PwBD (OBC-NCL)', relaxation: '+16 years (13 base + 3 one-time)', effectiveAge: '18–49 years' },
+    { category: 'PwBD (SC/ST)', relaxation: '+18 years (15 base + 3 one-time)', effectiveAge: '18–51 years' },
     { category: 'Ex-Servicemen', relaxation: 'Service rendered + 3 years', effectiveAge: 'Varies' },
   ];
 
@@ -14280,18 +14282,18 @@ function RrbGroupDPage({ exam }: { exam: any }) {
             RRB Group D 2026 –<br />Complete Guide: Eligibility, Syllabus &amp; Vacancy
           </h1>
           <p className="text-blue-100 text-base md:text-lg leading-relaxed max-w-3xl mb-6">
-            CEN-08/2024 notification released January 2025 with <strong className="text-white">32,438 vacancies</strong> for Track Maintainer, Helper &amp; Assistant posts across Indian Railways. 10th pass or ITI qualified. CBT exam expected in 2026 — date to be announced by your regional RRB.
+            CEN 09/2025 notification released January 2026 with <strong className="text-white">22,195 vacancies</strong> for Track Maintainer, Helper &amp; Assistant posts across Indian Railways. 10th pass or ITI qualified. Age limit 18–36 years (one-time 3-year relaxation for this cycle).
           </p>
           <div className="bg-emerald-900/40 border border-emerald-400/30 rounded-xl px-4 py-3 mb-8 max-w-3xl text-sm text-emerald-100">
-            💡 <strong>Key Update for 2026:</strong> CEN-08/2024 with 32,438 vacancies is the active cycle. Application window closed. Admit cards and CBT exam dates are awaited. Check{' '}
+            💡 <strong>Key Update — May 2026:</strong> CEN 09/2025 (22,195 vacancies) is the active cycle. Application window closed March 9, 2026. Admit cards and CBT exam dates are awaited. Note: Aadhaar-based biometric authentication is now mandatory at the CBT centre. Check{' '}
             <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="underline text-emerald-200">rrbcdg.gov.in</a> for real-time updates.
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: 'Total Vacancies (CEN-08/2024)', value: '32,438' },
+              { label: 'Total Vacancies (CEN 09/2025)', value: '22,195' },
               { label: 'CBT Exam Date', value: 'TBN 2026 ⚠️' },
               { label: 'Min. Qualification', value: '10th Pass' },
-              { label: 'In-Hand Salary', value: '₹22.5K–₹26K/mo' },
+              { label: 'Expected In-Hand Salary', value: '₹32K–₹35K/mo' },
             ].map((s) => (
               <div key={s.label} className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4">
                 <div className="text-blue-200 text-xs font-semibold uppercase tracking-wide mb-1">{s.label}</div>
@@ -14329,22 +14331,22 @@ function RrbGroupDPage({ exam }: { exam: any }) {
                   With vacancies routinely in the tens of thousands, RRB Group D is one of the <strong>largest entry-level government recruitment drives in India</strong> — ideal for 10th pass and ITI-qualified candidates seeking stable employment with Indian Railways perks including free rail passes, medical facilities, and pension benefits.
                 </p>
                 <p className="text-surface-700 leading-relaxed">
-                  The active cycle is <strong>CEN-08/2024</strong>, released January 2025, with <strong>32,438 vacancies</strong> across all 21 RRBs. A previous cycle (CEN-RRC-01/2019) had 1,03,769 vacancies, giving you an idea of the scale of this exam.
+                  Starting from 2024, RRB has moved to an <strong>annual recruitment cycle</strong>. The current cycle is <strong>CEN 09/2025</strong>, released January 2026, with <strong>22,195 vacancies</strong> across all 21 RRBs. Application closed March 9, 2026. CBT dates are awaited.
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <InfoCard label="Conducting Body" value="Railway Recruitment Boards (RRBs) / Railway Recruitment Cells (RRCs)" />
-                <InfoCard label="Exam Frequency" value="Every 2–4 years (irregular, based on Railway needs)" />
-                <InfoCard label="Active Cycle Vacancies" value="32,438 (CEN-08/2024)" highlight />
+                <InfoCard label="Exam Frequency" value="Annual (from 2024); next cycle expected Oct 2026" />
+                <InfoCard label="Active Cycle Vacancies" value="22,195 (CEN 09/2025)" highlight />
                 <InfoCard label="Official Website" value="rrbcdg.gov.in" />
               </div>
             </section>
 
             {/* 2. IMPORTANT DATES */}
             <section id="important-dates" className="mb-12">
-              <SectionHeading num="2" title="📅 RRB Group D Important Dates (CEN-08/2024)" />
+              <SectionHeading num="2" title="📅 RRB Group D Important Dates (CEN 09/2025)" />
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
-                ⚠️ <strong>TBN = To Be Notified.</strong> CBT and PET dates have not been officially announced yet. Bookmark{' '}
+                ⚠️ <strong>TBN = To Be Notified.</strong> CBT and PET dates for CEN 09/2025 have not been officially announced yet. Bookmark{' '}
                 <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="underline">rrbcdg.gov.in</a> and this page for live updates.
               </div>
               <div className="card overflow-hidden">
@@ -14377,7 +14379,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
               </div>
 
               <div className="card p-6 mb-4">
-                <p className="font-semibold text-surface-700 text-sm mb-3">📋 Age Limit (as on cut-off date in the CEN-08/2024 notification)</p>
+                <p className="font-semibold text-surface-700 text-sm mb-3">📋 Age Limit (as on cut-off date in the CEN 09/2025 notification)</p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead><tr className="bg-surface-50">
@@ -14396,7 +14398,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
                     </tbody>
                   </table>
                 </div>
-                <p className="text-xs text-surface-400 mt-3">Note: For specific cycles, Railways may grant a one-time upper-age relaxation. Always verify in the official notification on rrbcdg.gov.in.</p>
+                <p className="text-xs text-surface-400 mt-3">Note: CEN 09/2025 includes a one-time 3-year upper-age relaxation for all categories. Standard upper age for General is 33 years. Always verify in the official notification on rrbcdg.gov.in.</p>
               </div>
 
               <div className="card p-6">
@@ -14415,9 +14417,9 @@ function RrbGroupDPage({ exam }: { exam: any }) {
 
             {/* 4. VACANCIES */}
             <section id="vacancies" className="mb-12">
-              <SectionHeading num="4" title="Vacancies & Posts (CEN-08/2024)" />
+              <SectionHeading num="4" title="Vacancies & Posts (CEN 09/2025)" />
               <div className="bg-primary-50 border border-primary-100 rounded-lg px-5 py-3 mb-4 text-sm font-semibold text-primary-700">
-                Total Vacancies: <strong>32,438</strong> across all 21 RRBs nationally
+                Total Vacancies: <strong>22,195</strong> across all 21 RRBs nationally (CEN 09/2025, January 2026)
               </div>
               <div className="card overflow-hidden mb-3">
                 <div className="overflow-x-auto">
@@ -14441,7 +14443,7 @@ function RrbGroupDPage({ exam }: { exam: any }) {
                   </table>
                 </div>
               </div>
-              <p className="text-xs text-surface-400">Exact post-wise vacancy breakdown varies by RRB region. Refer to the official CEN-08/2024 notification PDF for zonal and category-wise vacancy details.</p>
+              <p className="text-xs text-surface-400">Exact post-wise vacancy breakdown varies by RRB region. Refer to the official CEN 09/2025 notification PDF for zonal and category-wise vacancy details.</p>
             </section>
 
             {/* 5. SELECTION PROCESS */}
@@ -14579,6 +14581,9 @@ function RrbGroupDPage({ exam }: { exam: any }) {
             {/* 9. SALARY */}
             <section id="salary" className="mb-12">
               <SectionHeading num="9" title="💰 Salary & Benefits" />
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5 text-sm text-blue-800">
+                🏛️ <strong>8th Pay Commission (2026):</strong> The 8th Pay Commission was implemented in early 2026. While the exact fitment factor is being finalised, the projected revised Level 1 basic pay is approximately <strong>₹32,940/month</strong>, raising expected in-hand salary to <strong>₹32,000–₹35,000/month</strong>. Final numbers will be confirmed by late 2026.
+              </div>
               <div className="card overflow-hidden mb-5">
                 <table className="w-full text-sm">
                   <thead><tr className="bg-surface-50">
@@ -14588,16 +14593,17 @@ function RrbGroupDPage({ exam }: { exam: any }) {
                   <tbody>
                     {[
                       { label: 'Pay Matrix Level', value: 'Level 1 (7th CPC Pay Matrix)' },
-                      { label: 'Basic Pay', value: '₹18,000 per month' },
+                      { label: 'Basic Pay (7th CPC)', value: '₹18,000 per month' },
+                      { label: 'Projected Basic Pay (8th CPC)', value: '~₹32,940 per month (projected)' },
                       { label: 'Dearness Allowance (DA)', value: '~55% of Basic Pay (revised bi-annually)' },
                       { label: 'House Rent Allowance (HRA)', value: '8–24% of Basic Pay (depends on posting city)' },
                       { label: 'Transport Allowance', value: '₹900–₹3,600/month (depends on city & pay level)' },
-                      { label: 'In-Hand Salary (Approx.)', value: '₹22,500 – ₹26,000/month (varies by posting)' },
+                      { label: 'Expected In-Hand Salary (8th CPC)', value: '₹32,000 – ₹35,000/month (projected)' },
                       { label: 'Maximum Pay Scale (Level 1)', value: '₹56,900' },
                     ].map((r, i) => (
                       <tr key={i} className="border-t border-surface-100">
                         <td className="p-4 text-surface-600">{r.label}</td>
-                        <td className={`p-4 ${r.label.includes('In-Hand') ? 'font-bold text-emerald-600' : 'text-surface-800'}`}>{r.value}</td>
+                        <td className={`p-4 ${r.label.includes('Expected In-Hand') ? 'font-bold text-emerald-600' : 'text-surface-800'}`}>{r.value}</td>
                       </tr>
                     ))}
                   </tbody>
