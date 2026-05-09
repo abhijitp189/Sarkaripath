@@ -66,6 +66,15 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'afcat') {
+    return {
+      title: 'AFCAT 2026 – Eligibility, Syllabus, Exam Pattern & Complete Guide | TaiyarHo',
+      description: 'AFCAT 2026 (Air Force Common Admission Test): Flying, Technical & Ground Duty branches. Graduate eligible, age 20–26 yrs. 100 Qs, 300 marks. AFCAT 2 2026 expected August 2026. Salary ₹56,100–₹1,77,500/month.',
+      keywords: 'AFCAT 2026, AFCAT syllabus, AFCAT eligibility, Air Force officer exam, AFCAT Flying Branch, AFCAT Technical Branch, AFCAT Ground Duty, AFSB interview, AFCAT preparation 2026, Indian Air Force officer recruitment',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/afcat/' },
+    };
+  }
+
   if (params.slug === 'tnpsc-group-2') {
     return {
       title: 'TNPSC Group 2 2026 – Notification, Eligibility, Syllabus, Salary & Guide | TaiyarHo',
@@ -507,6 +516,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'kvs-prt-tgt-pgt') return <KvsPrtTgtPgtPage exam={brief} />;
   if (brief && brief.slug === 'mppsc-state-service') return <MppscStatePage exam={brief} />;
   if (brief && brief.slug === 'tnpsc-group-2') return <TNPSCGroup2Page exam={brief} />;
+  if (brief && brief.slug === 'afcat') return <AfcatPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -33220,6 +33230,850 @@ function TNPSCGroup2Page({ exam }: { exam: any }) {
                   <Link href="/exams/tnpsc-group-1" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 TNPSC Group 1 Guide</Link>
                   <Link href="/exams/tnpsc-group-4" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 TNPSC Group 4 Guide</Link>
                   <Link href="/exams/uppsc-pcs" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 UPPSC PCS Guide</Link>
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── AFCAT RICH PAGE ──────────────────────────────────────────────────────────
+function AfcatPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'branches', label: 'Branches & Vacancies' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'afsb', label: 'AFSB Interview Process' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'AFCAT 1 2026 – Notification Released', date: 'December 2025', status: 'released' },
+    { event: 'AFCAT 1 2026 – Online Application Opens', date: 'December 2025', status: 'released' },
+    { event: 'AFCAT 1 2026 – Application Last Date', date: 'January 2026', status: 'released' },
+    { event: 'AFCAT 1 2026 – Admit Card Released', date: 'January 2026', status: 'released' },
+    { event: 'AFCAT 1 2026 – Online Exam', date: 'February 2026', status: 'released' },
+    { event: 'AFCAT 1 2026 – Result Declared', date: 'March–April 2026', status: 'released' },
+    { event: 'AFCAT 1 2026 – AFSB Interviews', date: 'April–June 2026', status: 'upcoming' },
+    { event: 'AFCAT 2 2026 – Notification Expected', date: 'June 2026 (Expected)', status: 'tbn' },
+    { event: 'AFCAT 2 2026 – Application Window', date: 'June–July 2026 (Expected)', status: 'tbn' },
+    { event: 'AFCAT 2 2026 – Admit Card', date: 'July 2026 (Expected)', status: 'tbn' },
+    { event: 'AFCAT 2 2026 – Online Exam', date: 'August 2026 (Expected)', status: 'tbn' },
+    { event: 'AFCAT 2 2026 – Result', date: 'September 2026 (Expected)', status: 'tbn' },
+    { event: 'AFCAT 2 2026 – AFSB Interviews', date: 'October–December 2026 (Expected)', status: 'tbn' },
+  ];
+
+  const branches = [
+    { name: 'Flying Branch', gender: 'Men & Women', qualification: 'Graduation with Physics & Maths at 10+2 (min 60%)', age: '20–24 years', ektRequired: false, colour: 'bg-blue-50 border-blue-200', textColour: 'text-blue-800', badge: 'bg-blue-100 text-blue-700' },
+    { name: 'Technical Branch – Mechanical', gender: 'Men & Women', qualification: 'BE/B.Tech (Mech/Aero/Civil/Structural/Metallurgy/Industrial Engg or similar, min 60%)', age: '20–26 years', ektRequired: true, colour: 'bg-emerald-50 border-emerald-200', textColour: 'text-emerald-800', badge: 'bg-emerald-100 text-emerald-700' },
+    { name: 'Technical Branch – Electronics & Communication', gender: 'Men & Women', qualification: 'BE/B.Tech (Electronics / Telecomm / Electrical / Instrumentation / CS / IT / Comp Engg, min 60%)', age: '20–26 years', ektRequired: true, colour: 'bg-purple-50 border-purple-200', textColour: 'text-purple-800', badge: 'bg-purple-100 text-purple-700' },
+    { name: 'Ground Duty (Non-Technical) – Admin & Logistics', gender: 'Men & Women', qualification: 'Any Graduation (min 60%) or Post Graduation', age: '20–26 years', ektRequired: false, colour: 'bg-amber-50 border-amber-200', textColour: 'text-amber-800', badge: 'bg-amber-100 text-amber-700' },
+    { name: 'Ground Duty – Accounts', gender: 'Men & Women', qualification: 'B.Com (min 60%)', age: '20–26 years', ektRequired: false, colour: 'bg-amber-50 border-amber-200', textColour: 'text-amber-800', badge: 'bg-amber-100 text-amber-700' },
+    { name: 'Ground Duty – Education', gender: 'Men & Women', qualification: 'Post Graduation in relevant subject + B.Ed (min 50%)', age: '20–26 years', ektRequired: false, colour: 'bg-amber-50 border-amber-200', textColour: 'text-amber-800', badge: 'bg-amber-100 text-amber-700' },
+    { name: 'Ground Duty – Meteorology', gender: 'Men & Women', qualification: 'Post Graduation in Physics/Maths/Statistics/Meteorology/Environmental Science (min 55%)', age: '20–26 years', ektRequired: false, colour: 'bg-amber-50 border-amber-200', textColour: 'text-amber-800', badge: 'bg-amber-100 text-amber-700' },
+  ];
+
+  const examPattern = [
+    { subject: 'General Awareness', questions: 25, marks: 75, type: 'AFCAT', desc: 'History, Civics, Geography, Basic Science, Defence/Aviation, Sports, GK' },
+    { subject: 'Verbal Ability in English', questions: 25, marks: 75, type: 'AFCAT', desc: 'Comprehension, Error Detection, Sentence Completion, Synonyms/Antonyms, Idioms' },
+    { subject: 'Numerical Ability', questions: 15, marks: 45, type: 'AFCAT', desc: 'Decimal fractions, Time & Work, Averages, Profit & Loss, Simple & Compound Interest, Time & Distance' },
+    { subject: 'Reasoning & Military Aptitude', questions: 35, marks: 105, type: 'AFCAT', desc: 'Verbal Reasoning, Spatial Ability, Non-Verbal Reasoning, Pattern Completion, Figure Matching' },
+  ];
+
+  const ektPattern = [
+    { subject: 'EKT – Mechanical Engineering', questions: 45, marks: 135, type: 'EKT', desc: 'Thermodynamics, Fluid Mechanics, Strength of Materials, Mfg Processes, Engineering Mathematics' },
+    { subject: 'EKT – Electronics & Communication', questions: 45, marks: 135, type: 'EKT', desc: 'Electronic Devices, Analog/Digital Circuits, Signals & Systems, Microprocessors, Control Systems' },
+    { subject: 'EKT – Computer Science', questions: 45, marks: 135, type: 'EKT', desc: 'Data Structures, Algorithms, Operating Systems, Database, Computer Networks, Programming' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🌍 General Awareness',
+      topics: [
+        'History – Ancient, Medieval & Modern India + World',
+        'Geography – Physical, Economic, Social (India & World)',
+        'Civics & Indian Polity – Constitution, Governance',
+        'Basic Science – Physics, Chemistry, Biology',
+        'Defence & Aviation News – IAF, Army, Navy, DRDO',
+        'Sports – National & International recent events',
+        'Current Affairs – National & International (last 12 months)',
+        'Awards, Days, Books & Authors, Famous Personalities',
+      ],
+    },
+    {
+      subject: '✍️ Verbal Ability in English',
+      topics: [
+        'Reading Comprehension (2–3 passages)',
+        'Error Detection in Sentences (Grammar)',
+        'Sentence Completion / Fill in the Blanks',
+        'Synonyms, Antonyms & Analogies',
+        'Testing of Vocabulary & Idioms/Phrases',
+        'Completion of Passage (Cloze Test)',
+        'Sentence Rearrangement (Jumbled Sentences)',
+        'One Word Substitution',
+      ],
+    },
+    {
+      subject: '🔢 Numerical Ability',
+      topics: [
+        'Decimal Fractions & LCM/HCF',
+        'Simple Interest & Compound Interest',
+        'Average, Ratio & Proportion',
+        'Percentage & Profit/Loss',
+        'Time & Work / Pipes & Cisterns',
+        'Time, Speed & Distance / Trains & Boats',
+        'Area, Volume & Perimeter (Mensuration)',
+        'Algebra, Linear Equations',
+      ],
+    },
+    {
+      subject: '🧠 Reasoning & Military Aptitude',
+      topics: [
+        'Verbal Reasoning – Blood Relations, Series Completion, Coding-Decoding',
+        'Non-Verbal Reasoning – Pattern Completion, Mirror Images, Figure Analogies',
+        'Spatial Ability – Spatial Visualisation, Figure Completion',
+        'Mathematical Reasoning – Logical Deduction, Statements & Conclusions',
+        'Military Aptitude – Map Reading, Tactical Reasoning',
+        'Pattern Classification & Matrix Problems',
+        'Sequencing & Series Problems',
+        'Alphabet & Number Series',
+      ],
+    },
+  ];
+
+  const afsbProcess = [
+    { step: 1, phase: 'Stage 1 (Day 1)', title: 'Screening Tests', desc: 'Officer Intelligence Rating (OIR) Test – a paper-based intelligence test. Followed by Picture Perception and Description Test (PPDT) – candidates write a story based on an image and discuss it in a group. Only qualified candidates proceed to Stage 2.' },
+    { step: 2, phase: 'Stage 2 (Day 2–4)', title: 'Psychological Tests', desc: 'Thematic Apperception Test (TAT), Word Association Test (WAT), Situation Reaction Test (SRT), and Self Description Test (SD). Assesses personality, mental adaptability, and suitability for a commissioned officer role.' },
+    { step: 3, phase: 'Stage 2 (Day 2–4)', title: 'Group Testing Officers (GTO) Tasks', desc: 'Group Discussion, Group Planning Exercise (GPE), Progressive Group Task (PGT), Group Obstacle Race, Half Group Task (HGT), Individual Obstacles, Command Task, Final Group Task (FGT), Lecturette.' },
+    { step: 4, phase: 'Stage 2 (Day 4–5)', title: 'Personal Interview', desc: 'In-depth interview by an Interviewing Officer (IO) based on your filled PIQ form. Tests leadership potential, motivation for joining IAF, general awareness, and personality. Typically 45–90 minutes.' },
+    { step: 5, phase: 'Stage 2 (Day 5)', title: 'Conference', desc: 'All assessors (Psychologist, GTO, IO, and President AFSB) collectively review your performance. A final recommendation is made. Result announced on the same day — Recommended / Not Recommended.' },
+    { step: 6, phase: 'Post AFSB', title: 'Medical Examination', desc: 'Recommended candidates undergo a thorough Medical Examination at Air Force Medical Centres. Flying Branch candidates have the most stringent medical criteria including specific visual standards (6/6 uncorrected for pilots).' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Flying Officer – Level 10, 7th CPC)', amount: '₹56,100/month' },
+    { component: 'Military Service Pay (MSP) – All Officers', amount: '₹15,500/month' },
+    { component: 'Dearness Allowance (DA) @ 55% of Basic Pay', amount: '~₹30,855/month' },
+    { component: 'House Rent Allowance (HRA) – varies by posting city', amount: '₹4,500–₹13,464/month' },
+    { component: 'Transport Allowance (TPTA)', amount: '₹3,600–₹7,200/month' },
+    { component: 'Flying Allowance (Flying Branch only, per IAF rates)', amount: '₹25,000+/month' },
+    { component: 'Estimated Gross In-Hand (Flying Officer, metro city)', amount: '~₹1,20,000–₹1,35,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Flying Officer', rankCode: 'Plt Off → FO', years: '0–2 yrs', payLevel: 'Level 10', basic: '₹56,100–₹1,77,500' },
+    { level: 'Flight Lieutenant', rankCode: 'Flt Lt', years: '2–6 yrs', payLevel: 'Level 10B', basic: '₹61,300–₹1,93,900' },
+    { level: 'Squadron Leader', rankCode: 'Sqn Ldr', years: '6–13 yrs', payLevel: 'Level 11', basic: '₹69,400–₹2,07,200' },
+    { level: 'Wing Commander', rankCode: 'Wg Cdr', years: '13–18 yrs', payLevel: 'Level 12A', basic: '₹1,21,200–₹2,12,400' },
+    { level: 'Group Captain', rankCode: 'Gp Capt', years: '18–26 yrs', payLevel: 'Level 13', basic: '₹1,30,600–₹2,15,900' },
+    { level: 'Air Commodore / Air Marshal', rankCode: 'AVM / AM', years: '26+ yrs', payLevel: 'Level 14–18', basic: '₹1,44,200–₹2,50,000' },
+  ];
+
+  const howToApplySteps = [
+    { step: 1, title: 'Register at afcat.cdac.in', detail: 'Visit the official AFCAT portal. Create a new account using your email ID and mobile number. Keep your Aadhaar, 10th/12th/graduation marksheets and passport-size photo ready before starting the application.' },
+    { step: 2, title: 'Fill the Online Application Form', detail: 'Select the branch (Flying / Technical / Ground Duty). Enter your personal details, educational qualifications, and choose your AFCAT exam centre preference. Apply for EKT separately if applying for the Technical Branch.' },
+    { step: 3, title: 'Upload Documents & Photograph', detail: 'Upload a recent passport-size photograph (JPEG, 10–50 KB, white background), your signature (JPEG, 10–40 KB), and mark sheets as required. Ensure all scans are clear and within size limits.' },
+    { step: 4, title: 'Pay Application Fee', detail: 'Pay the application fee online via Net Banking / Debit Card / Credit Card / UPI. Fee is ₹250 for AFCAT + ₹250 for EKT (Technical Branch). SC/ST candidates are usually exempt — verify in the official notification.' },
+    { step: 5, title: 'Print Confirmation Page', detail: 'After successful submission, download and print the application confirmation. Note your roll number — you\'ll need it to download the admit card. Keep the form safely for the AFSB documentation stage.' },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Foundation & GA', detail: 'Cover 10+2 level Physics/Maths (for Numerical Ability). Start General Awareness from standard reference — focus on IAF history, defence current affairs. Daily newspaper habit (The Hindu / Hindustan Times) for current events.' },
+    { month: 'Month 2', focus: 'English & Reasoning', detail: 'English: Grammar rules, vocabulary building (Word Power Made Easy), practice comprehension passages daily. Reasoning: start non-verbal (figures, patterns) and verbal reasoning. Complete 1 mock test at end of month.' },
+    { month: 'Month 3', focus: 'Full Syllabus + Mocks', detail: 'Revise all four AFCAT sections. Start solving previous year AFCAT papers (2018–2025). Aim for 2 full-length timed mock tests per week. Identify weak areas and revise them intensively.' },
+    { month: 'Month 4 (EKT candidates)', focus: 'EKT Specialisation', detail: 'Technical Branch aspirants spend this month on their Engineering Knowledge Test subject — cover core engineering subjects from GATE-level material. AFCAT + EKT mocks together (2h 45min combined). Aim for 65%+ score in mocks.' },
+  ];
+
+  const books = [
+    { title: 'AFCAT Online Entrance Exam', author: 'Arihant Experts', subject: 'Complete Guide' },
+    { title: 'AFCAT – Air Force Common Admission Test', author: 'R. Gupta', subject: 'Complete Guide' },
+    { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English Vocabulary' },
+    { title: 'A Modern Approach to Verbal Reasoning', author: 'R. S. Aggarwal', subject: 'Reasoning' },
+    { title: 'Objective Mathematics for SSC/Defence', author: 'R. S. Aggarwal', subject: 'Numerical Ability' },
+    { title: 'Manorama Yearbook 2026', author: 'Manorama Group', subject: 'General Awareness' },
+    { title: 'AFCAT Previous Year Papers (Solved)', author: 'GK Publications', subject: 'Practice' },
+    { title: 'Aircraft and Their History (IAF)', author: 'IAF Publications', subject: 'Aviation GK' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'Crack Stage 1 AFSB first', body: 'The OIR + PPDT screening eliminates 50–70% of candidates on Day 1 itself. Practice mental ability tests timed and practise storytelling with a structured narrative (character, conflict, resolution) for PPDT.' },
+    { icon: '📰', tip: 'Defence news is non-negotiable', body: 'AFCAT GA is heavily loaded with IAF/Defence current affairs. Follow the official IAF social handles and read one national newspaper daily. Maintain a monthly diary of key events, missile tests, inductions, and exercise names.' },
+    { icon: '⏱️', tip: 'Manage your time in the exam hall', body: 'AFCAT is 100 questions in 120 minutes = 72 seconds per question. Do General Awareness and English first (quick marks), then Reasoning, and tackle Numerical last. Never spend more than 90 seconds on any single question.' },
+    { icon: '🧮', tip: 'Negative marking = smart skipping', body: 'Each wrong answer costs 1 mark (3 marks awarded per correct answer). Attempting a question where you have no clue statistically hurts your score. Skip if you cannot eliminate at least 2 options confidently.' },
+    { icon: '🪖', tip: 'Prepare for AFSB from Day 1', body: 'The AFSB is not something you can cram 2 weeks before. Read about Officer Like Qualities (OLQs), practise GT tasks concepts, read leadership books, and stay physically fit. IAF looks for well-rounded personalities.' },
+    { icon: '🏋️', tip: 'Physical fitness matters for the long game', body: 'While there is no PFT at the AFCAT stage, AFSB has an outdoor GTO day with physical tasks. More importantly, joining training at Dundigal is physically demanding. Build a daily PT/running habit from preparation day 1.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the AFCAT 2026 exam date?', a: 'AFCAT 1 2026 was held in February 2026. AFCAT 2 2026 is expected in August 2026 with notification expected in June 2026. AFCAT is conducted biannually — Cycle 1 around February and Cycle 2 around August. Visit afcat.cdac.in for confirmed dates.' },
+    { q: 'What is the age limit for AFCAT 2026?', a: 'For Flying Branch: 20–24 years as on the date of commencement of the course. For Technical Branch and Ground Duty (Non-Technical) Branch: 20–26 years. Age relaxations as per Government norms for SC/ST/OBC/PwBD candidates may apply — check the official AFCAT notification.' },
+    { q: 'What is the AFCAT salary in 2026?', a: 'A Flying Officer (entry level) receives Level 10 basic pay of ₹56,100/month plus Military Service Pay (MSP) of ₹15,500/month. With DA (55% as of 2026), HRA, Transport Allowance, and Flying Allowance (for Flying Branch), the total gross in-hand in a metro posting is approximately ₹1,20,000–₹1,35,000/month. Rank increases come with significant salary jumps.' },
+    { q: 'What is AFSB Interview and how should I prepare?', a: 'AFSB (Air Force Selection Board) is a 5-day residential assessment at one of four boards (Mysore, Varanasi, Gandhinagar, Dehradun). It has two stages: Stage 1 (OIR + PPDT screening, Day 1) and Stage 2 (Psychological tests, GTO tasks, Personal Interview, Conference). Prepare by practising PPDT stories, improving group discussion skills, reading about IAF history/operations, and building leadership qualities. Physical fitness is assessed indirectly through GTO outdoor tasks.' },
+    { q: 'Can women apply for AFCAT Flying Branch?', a: 'Yes. Women are eligible for the Flying Branch (Fighter, Transport & Helicopter streams) as well as Technical and Ground Duty branches. Fighter stream is now open to women — there are serving women fighter pilots in the IAF. The physical and medical standards for women pilots are the same as men except for height and some specific medical criteria defined in the AFCAT notification.' },
+    { q: 'What is EKT and who needs to appear for it?', a: 'EKT stands for Engineering Knowledge Test. It is mandatory for candidates applying for the Technical Branch (both Mechanical and Electronics & Communication streams). EKT consists of 45 questions (150 marks) in 45 minutes based on the candidate\'s engineering specialisation. AFCAT and EKT are conducted on the same day — first AFCAT (2 hours), then EKT (45 minutes). You need to qualify both independently for Technical Branch selection.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">AFCAT 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🎖️ Defence</span>
+            <span className="inline-flex items-center gap-1.5 bg-sky-500/25 border border-sky-400/30 rounded-full px-3 py-1 text-xs font-medium text-sky-200">Indian Air Force</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">✈️ Biannual Exam</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            AFCAT 2026 – Complete<br className="hidden sm:block" /> Guide to Air Force Officer Entry
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            AFCAT 2 2026 expected in <strong>August 2026</strong>. Entry into the Indian Air Force as a commissioned officer in <strong>Flying, Technical & Ground Duty branches</strong>. Graduate eligible, age 20–26 years (20–24 for Flying). Gross salary <strong>~₹1,20,000–₹1,35,000/month</strong> (Flying Officer, metro posting).
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '250–350 per cycle', sub: 'All branches combined' },
+              { label: 'AFCAT 2 2026 Exam', value: 'August 2026', sub: '(Expected / TBN)' },
+              { label: 'Min. Qualification', value: 'Any Graduation', sub: 'With min. 60%' },
+              { label: 'Starting Salary', value: '~₹1,20,000+', sub: 'per month (incl. allowances)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> AFCAT 1 2026 exam was held in February 2026 and results have been declared. AFSB interviews for AFCAT 1 2026 qualified candidates are ongoing (April–June 2026). <strong>AFCAT 2 2026 notification is expected in June 2026.</strong> Verify all dates at{' '}
+            <a href="https://afcat.cdac.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">afcat.cdac.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is AFCAT 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>Air Force Common Admission Test (AFCAT)</strong> is a national-level entrance examination conducted by the <strong>Indian Air Force (IAF)</strong> twice a year to recruit Commissioned Officers in Flying, Technical, and Ground Duty branches. Administered online by <strong>CDAC</strong> on behalf of IAF, AFCAT is one of India&apos;s most prestigious defence examinations.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  Successful candidates are granted a <strong>Permanent Commission (PC)</strong> or <strong>Short Service Commission (SSC)</strong> depending on branch and gender. Flying Branch officers serve a minimum of 14 years (SSC) while Technical and Ground Duty officers have both PC and SSC options available. All selected officers undergo rigorous training at <strong>Air Force Academy, Dundigal, Hyderabad</strong>.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  What makes AFCAT unique among defence exams is its <strong>biannual frequency</strong> — giving aspirants two opportunities per year — and the <strong>EKT (Engineering Knowledge Test)</strong> for Technical Branch that tests domain expertise alongside the common aptitude paper.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Indian Air Force (CDAC)' },
+                  { label: 'Commission Type', value: 'PC / SSC' },
+                  { label: 'Training Location', value: 'AFA Dundigal, Hyderabad' },
+                  { label: 'Frequency', value: 'Biannual (Feb & Aug)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 AFCAT 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> AFCAT 1 2026 dates are confirmed; AFCAT 2 2026 dates are expected based on the historical biannual pattern. Always verify from <a href="https://afcat.cdac.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">afcat.cdac.in</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released' && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'upcoming' && <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">🔵 Ongoing</span>}
+                          {row.status === 'tbn' && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 AFCAT 2026 Eligibility Criteria</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">Candidate must be a <strong>citizen of India</strong>. Subjects of Nepal, Bhutan, and Tibetan refugees who migrated to India before 1 January 1962 may also be eligible — refer to the official notification for specific provisions.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit (as on date of commencement of course)</h3>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <div className="bg-blue-50 border border-blue-200 rounded-xl p-3">
+                      <div className="font-semibold text-blue-800 mb-1">✈️ Flying Branch</div>
+                      <div className="text-blue-700"><strong>20–24 years</strong></div>
+                      <div className="text-xs text-blue-600 mt-1">Stricter age ceiling due to pilot training requirements</div>
+                    </div>
+                    <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3">
+                      <div className="font-semibold text-emerald-800 mb-1">🔧 Technical & Ground Duty</div>
+                      <div className="text-emerald-700"><strong>20–26 years</strong></div>
+                      <div className="text-xs text-emerald-600 mt-1">Age relaxation for SC/ST/OBC/PwBD as per Govt norms</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <div className="bg-surface-50 border border-surface-200 rounded-xl p-3">
+                      <div className="font-semibold text-surface-800 mb-1">✈️ Flying Branch</div>
+                      <p className="text-surface-600 text-xs">Graduation in any stream with minimum <strong>60% marks</strong> OR BE/B.Tech. Mandatory: <strong>Physics & Maths at 10+2 level</strong>.</p>
+                    </div>
+                    <div className="bg-surface-50 border border-surface-200 rounded-xl p-3">
+                      <div className="font-semibold text-surface-800 mb-1">🔧 Technical Branch</div>
+                      <p className="text-surface-600 text-xs">BE/B.Tech in a relevant Engineering discipline with <strong>min 60% marks</strong>. EKT is mandatory.</p>
+                    </div>
+                    <div className="bg-surface-50 border border-surface-200 rounded-xl p-3">
+                      <div className="font-semibold text-surface-800 mb-1">📁 Ground Duty – Admin/Logistics</div>
+                      <p className="text-surface-600 text-xs">Any Graduation with minimum <strong>60% aggregate marks</strong>. Masters degree also acceptable.</p>
+                    </div>
+                    <div className="bg-surface-50 border border-surface-200 rounded-xl p-3">
+                      <div className="font-semibold text-surface-800 mb-1">🌤️ Ground Duty – Meteorology</div>
+                      <p className="text-surface-600 text-xs">Post Graduation in Physics/Maths/Statistics/Meteorology/Environmental Science (min <strong>55%</strong>).</p>
+                    </div>
+                  </div>
+                  <div className="mt-3 bg-primary-50 border border-primary-200 rounded-xl p-3 text-xs text-primary-800">
+                    📌 <strong>Quick Note:</strong> Candidates in final year of qualifying degree may also apply provisionally, subject to producing certificates before the course commencement date. Check the notification carefully.
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">💪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Physical & Medical Standards</h3>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                    {[
+                      { param: 'Height (Men)', flying: '162.5 cm', gd: '157.5 cm' },
+                      { param: 'Height (Women)', flying: '152 cm', gd: '152 cm' },
+                      { param: 'Vision (Flying)', flying: '6/6 uncorrected', gd: 'N/A' },
+                      { param: 'Vision (GD/Tech)', flying: 'N/A', gd: '6/9 correctable to 6/6' },
+                    ].map((row) => (
+                      <div key={row.param} className="bg-surface-50 border border-surface-200 rounded-xl p-3 text-center">
+                        <div className="font-semibold text-surface-700 mb-1">{row.param}</div>
+                        <div className="text-surface-600">{row.flying !== 'N/A' ? row.flying : row.gd}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-surface-500 mt-3">Full medical standards are in the official AFCAT notification. Candidates with permanent body tattoos should read the tattoo policy in the notification carefully.</p>
+                </div>
+                <div className="card p-4 border-l-4 border-primary-500 bg-primary-50">
+                  <p className="text-sm text-primary-800">✅ <strong>Check Your Eligibility:</strong> Use our free tool to instantly verify your age, qualification, and category eligibility for AFCAT 2026.</p>
+                  <Link href="/tools/eligibility-checker" className="inline-block mt-2 text-xs font-medium text-primary-600 underline hover:text-primary-700">Open Eligibility Checker →</Link>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: BRANCHES & VACANCIES */}
+            <section id="branches" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎖️ Branches & Vacancies 2026</h2>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-blue-800">ℹ️ <strong>Note:</strong> AFCAT does not publish branch-wise vacancy breakdowns in advance. Total vacancies across all branches per cycle have historically been in the range of 250–350. The exact split is announced in the official notification.</p>
+              </div>
+              <div className="space-y-4">
+                {branches.map((b, i) => (
+                  <div key={i} className={`card p-5 border ${b.colour}`}>
+                    <div className="flex items-start justify-between gap-3 flex-wrap">
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${b.badge}`}>{b.name}</span>
+                          <span className="text-xs text-surface-500">{b.gender}</span>
+                        </div>
+                        <div className={`text-sm leading-relaxed ${b.textColour}`}><strong>Qualification:</strong> {b.qualification}</div>
+                        <div className={`text-sm mt-1 ${b.textColour}`}><strong>Age:</strong> {b.age}</div>
+                      </div>
+                      {b.ektRequired && (
+                        <span className="bg-purple-100 text-purple-700 text-xs font-semibold px-2 py-1 rounded-full flex-shrink-0">EKT Required</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 card p-5 bg-gradient-to-br from-primary-50 to-blue-50 border-primary-100">
+                <div className="font-heading font-semibold text-surface-800 mb-2">💰 Vacancy History (All Branches Combined)</div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-white/70">
+                      <th className="text-left p-3 font-semibold text-surface-700 text-xs uppercase">Cycle</th>
+                      <th className="text-center p-3 font-semibold text-surface-700 text-xs uppercase">Approx Vacancies</th>
+                      <th className="text-center p-3 font-semibold text-surface-700 text-xs uppercase">Exam Month</th>
+                    </tr></thead>
+                    <tbody>
+                      {[
+                        { cycle: 'AFCAT 1 2023', vac: '~258', month: 'Feb 2023' },
+                        { cycle: 'AFCAT 2 2023', vac: '~304', month: 'Aug 2023' },
+                        { cycle: 'AFCAT 1 2024', vac: '~284', month: 'Feb 2024' },
+                        { cycle: 'AFCAT 2 2024', vac: '~312', month: 'Aug 2024' },
+                        { cycle: 'AFCAT 1 2025', vac: '~296', month: 'Feb 2025' },
+                        { cycle: 'AFCAT 2 2025', vac: '~318', month: 'Aug 2025' },
+                        { cycle: 'AFCAT 1 2026', vac: '~280–320', month: 'Feb 2026' },
+                        { cycle: 'AFCAT 2 2026 (Expected)', vac: 'TBN', month: 'Aug 2026' },
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-white/50' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.cycle}</td>
+                          <td className="p-3 text-center text-surface-700">{row.vac}</td>
+                          <td className="p-3 text-center text-surface-600">{row.month}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-500 mt-3">⚠️ Vacancy numbers above are approximate and sourced from historical AFCAT notifications. Verify exact vacancies from the official notification at afcat.cdac.in.</p>
+              </div>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📋 AFCAT 2026 Exam Pattern</h2>
+              </div>
+
+              {/* AFCAT Paper */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                <span className="bg-primary-100 text-primary-700 text-xs font-bold px-2 py-1 rounded-lg">Paper 1</span>
+                AFCAT (All Candidates)
+              </h3>
+              <div className="card p-5 mb-4">
+                <div className="grid grid-cols-3 gap-4 mb-4">
+                  <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-primary-700">100</div>
+                    <div className="text-xs text-primary-600 font-medium mt-1">Total Questions</div>
+                  </div>
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-emerald-700">300</div>
+                    <div className="text-xs text-emerald-600 font-medium mt-1">Total Marks</div>
+                  </div>
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-blue-700">2 hrs</div>
+                    <div className="text-xs text-blue-600 font-medium mt-1">Duration</div>
+                  </div>
+                </div>
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800 mb-4">
+                  ⚠️ <strong>Negative Marking:</strong> 3 marks for correct answer. <strong>1 mark deducted</strong> for wrong answer. No marks for unattempted questions.
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Key Topics</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {examPattern.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                          <td className="p-3 text-center text-primary-700 font-semibold">{row.questions}</td>
+                          <td className="p-3 text-center text-emerald-700 font-semibold">{row.marks}</td>
+                          <td className="p-3 text-surface-600 text-xs">{row.desc}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-surface-800 text-white">
+                        <td className="p-3 font-semibold">Total</td>
+                        <td className="p-3 text-center font-bold">100</td>
+                        <td className="p-3 text-center font-bold">300</td>
+                        <td className="p-3 text-xs opacity-75">Online (CBT Mode)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* EKT Paper */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded-lg">Paper 2</span>
+                EKT – Engineering Knowledge Test (Technical Branch Only)
+              </h3>
+              <div className="card p-5">
+                <div className="grid grid-cols-3 gap-4 mb-4">
+                  <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-purple-700">45</div>
+                    <div className="text-xs text-purple-600 font-medium mt-1">Questions</div>
+                  </div>
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-emerald-700">150</div>
+                    <div className="text-xs text-emerald-600 font-medium mt-1">Marks</div>
+                  </div>
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-blue-700">45 min</div>
+                    <div className="text-xs text-blue-600 font-medium mt-1">Duration</div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  {ektPattern.map((row, i) => (
+                    <div key={i} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                      <div className="font-semibold text-surface-800 mb-1 text-sm">{row.subject}</div>
+                      <div className="text-xs text-surface-600">{row.desc}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-500 mt-3">📌 EKT is held on the same day as AFCAT, immediately after. AFCAT (2 hours) → EKT (45 minutes). You must clear both papers to be considered for Technical Branch selection.</p>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 AFCAT 2026 Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-4">
+                {syllabus.map((section, i) => (
+                  <details key={i} className="card group" open={i === 0}>
+                    <summary className="p-5 cursor-pointer flex items-center justify-between font-heading font-semibold text-surface-800 hover:text-primary-500 transition-colors list-none">
+                      <span className="flex items-center gap-3">
+                        <span className="w-6 h-6 bg-primary-50 rounded-md flex items-center justify-center text-primary-500 text-xs font-bold">{i + 1}</span>
+                        <span>{section.subject}</span>
+                      </span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {section.topics.map((topic, j) => (
+                        <div key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                          <svg className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" /></svg>
+                          {topic}
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: AFSB INTERVIEW */}
+            <section id="afsb" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎯 AFSB Interview Process (Stage 2)</h2>
+              </div>
+              <div className="card p-5 mb-5 bg-primary-50 border-primary-200">
+                <p className="text-sm text-primary-800 leading-relaxed">The <strong>Air Force Selection Board (AFSB)</strong> interview is a 5-day residential assessment held at one of four boards: <strong>Mysore (No. 1), Varanasi (No. 2), Gandhinagar (No. 3), or Dehradun (No. 4)</strong>. Qualifying AFCAT earns you an AFSB call letter — but the AFSB is where the real selection happens.</p>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block"></div>
+                <div className="space-y-5">
+                  {afsbProcess.map((item, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-sm">{item.step}</div>
+                      <div className="card p-5">
+                        <div className="flex items-start justify-between gap-3 flex-wrap mb-2">
+                          <h3 className="font-heading font-semibold text-surface-800">{item.title}</h3>
+                          <span className="text-xs bg-surface-100 text-surface-600 px-2 py-0.5 rounded-full flex-shrink-0">{item.phase}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-5 bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                <p className="text-sm text-emerald-800"><strong>✅ Officer Like Qualities (OLQs):</strong> IAF assessors evaluate 15 OLQs including Effective Intelligence, Reasoning Ability, Organising Ability, Power of Expression, Social Adaptability, Cooperation, Sense of Responsibility, Initiative, Self-Confidence, Speed of Decision, Ability to Influence the Group, Liveliness, Determination, Courage, and Stamina. All tests (Psych, GTO, Interview) collectively assess these qualities.</p>
+              </div>
+            </section>
+
+            {/* SECTION 8: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 AFCAT 2026 Salary & Benefits</h2>
+              </div>
+              <div className="card overflow-hidden mb-6">
+                <div className="bg-emerald-600 text-white p-4">
+                  <div className="text-sm font-medium opacity-90">AFCAT Flying Officer – Estimated Gross In-Hand (Metro City, 2026)</div>
+                  <div className="text-3xl font-heading font-bold mt-1">~₹1,20,000 – ₹1,35,000 <span className="text-lg font-normal opacity-75">/month</span></div>
+                  <div className="text-xs opacity-75 mt-1">Flying Branch (incl. Flying Allowance). Ground Duty branches: ~₹95,000–₹1,10,000/month</div>
+                </div>
+                <table className="w-full text-sm">
+                  <tbody className="divide-y divide-surface-100">
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}>
+                        <td className="p-3 text-surface-700">{row.component}</td>
+                        <td className="p-3 text-right font-semibold text-emerald-600">{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-4">IAF Officer Career Progression & Pay</h3>
+              <div className="space-y-2">
+                {careerPath.map((row, i) => (
+                  <div key={i} className="flex items-center gap-4 card p-4">
+                    <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 font-bold text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-surface-800 text-sm">{row.level}</div>
+                      <div className="text-xs text-surface-500">{row.years} · {row.rankCode}</div>
+                    </div>
+                    <div className="text-right text-xs font-medium text-emerald-600 flex-shrink-0">{row.basic}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 card p-4 bg-primary-50 border-primary-200">
+                <p className="text-xs text-primary-800"><strong>Additional Benefits:</strong> Free furnished accommodation or HRA, cashless medical for self and family (ECHS), subsidised canteen (CSD), leave travel concessions, children&apos;s education allowance, group insurance, pension (PCDA rules), and a prestigious Air Force officers&apos; mess lifestyle. Flying Branch officers also earn additional <strong>Flying Allowance</strong> proportional to flying hours.</p>
+              </div>
+            </section>
+
+            {/* SECTION 9: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for AFCAT 2026</h2>
+              </div>
+              <div className="card p-6">
+                <div className="space-y-4">
+                  {howToApplySteps.map((s) => (
+                    <div key={s.step} className="flex gap-4">
+                      <div className="w-7 h-7 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">{s.step}</div>
+                      <div>
+                        <div className="font-semibold text-surface-800 mb-1">{s.title}</div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 pt-4 border-t border-surface-200">
+                  <a href="https://afcat.cdac.in" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 text-sm">
+                    Apply at afcat.cdac.in
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">AFCAT 4-Month Study Plan 2026</h2>
+              </div>
+              <div className="space-y-4">
+                {studyPlan.map((month, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-16 h-16 bg-primary-600 text-white rounded-xl flex items-center justify-center font-heading font-bold text-xs text-center leading-tight flex-shrink-0">
+                      {month.month.split(' ').map((w, j) => <span key={j} className="block">{w}</span>)}
+                    </div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{month.focus}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{month.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 11: BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for AFCAT 2026</h2>
+              </div>
+              <BooksTable books={books} />
+            </section>
+
+            {/* SECTION 12: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources for AFCAT 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '🌐', title: 'Official AFCAT Portal', desc: 'Notifications, admit cards, results and sample papers at afcat.cdac.in', url: 'https://afcat.cdac.in' },
+                  { icon: '📺', title: 'IAF AFCAT Official YouTube', desc: 'Official IAF YouTube channel with AFCAT guidance videos and exam pattern walkthroughs', url: 'https://www.youtube.com/@IndianAirForce' },
+                  { icon: '📺', title: 'Defence Adda247 – AFCAT', desc: 'Free AFCAT video lectures, mock tests, and daily current affairs on YouTube', url: 'https://www.youtube.com/@DefenceAdda247' },
+                  { icon: '📺', title: 'Unacademy AFCAT Preparation', desc: 'Free AFCAT classes on Reasoning, English, GA, and Numerical Ability on YouTube', url: 'https://www.youtube.com/@unacademy' },
+                  { icon: '📄', title: 'Previous Year AFCAT Papers', desc: 'Download AFCAT 2018–2025 official question papers with answer keys from afcat.cdac.in', url: 'https://afcat.cdac.in' },
+                  { icon: '🌐', title: 'Oliveboard AFCAT Free Mocks', desc: 'Free AFCAT mock tests with detailed performance analysis and rank on Oliveboard', url: 'https://www.oliveboard.in/afcat/' },
+                ].map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{r.icon}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.title}</div>
+                        <p className="text-xs text-surface-500 mt-1 leading-relaxed">{r.desc}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips to Crack AFCAT 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {tips.map((item, i) => (
+                  <div key={i} className="card p-5">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 mb-1">{item.tip}</div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{item.body}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">FAQs – AFCAT 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600">
+                      <span className="pr-4">{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 border-t border-surface-100">
+                      <p className="text-sm text-surface-600 leading-relaxed pt-3">{f.a}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* DISCLAIMER */}
+            <div className="card p-5 bg-surface-50 mb-8">
+              <p className="text-xs text-surface-500 leading-relaxed">
+                <strong className="text-surface-600">Disclaimer:</strong> All information on this page is for general guidance only. Vacancy numbers, dates, exam patterns, and eligibility criteria are sourced from official IAF/AFCAT notifications and may change. Always verify the latest details at{' '}
+                <a href="https://afcat.cdac.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">afcat.cdac.in</a>{' '}
+                before applying. TaiyarHo is not affiliated with the Indian Air Force or any government body.
+              </p>
+            </div>
+
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((t) => (
+                    <a key={t.id} href={`#${t.id}`} className="text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-1.5 rounded-md transition-colors block">{t.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* OFFICIAL WEBSITE */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Official Website</div>
+                <a href="https://afcat.cdac.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all hover:underline">afcat.cdac.in →</a>
+                <div className="mt-3 space-y-2 text-xs text-surface-500">
+                  <div>📋 Vacancies: ~250–350 per cycle</div>
+                  <div>📅 AFCAT 2: August 2026 (TBN)</div>
+                  <div>🎓 Qualification: Graduation (60%)</div>
+                  <div>💰 Salary: ~₹1,20,000+/month</div>
+                  <div>✈️ Training: AFA Dundigal, Hyd</div>
+                </div>
+              </div>
+
+              {/* QUICK LINKS */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Exams</div>
+                <div className="space-y-2">
+                  <Link href="/tools/eligibility-checker" className="block text-sm text-primary-600 hover:text-primary-700 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">✅ Check Your Eligibility →</Link>
+                  <Link href="/exams/upsc-nda" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 UPSC NDA Guide</Link>
+                  <Link href="/exams/upsc-cds" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 UPSC CDS Guide</Link>
+                  <Link href="/exams/iaf-agniveer" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 IAF Agniveer Guide</Link>
+                  <Link href="/exams/navy-agniveer" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 Navy Agniveer Guide</Link>
                 </div>
               </div>
 
