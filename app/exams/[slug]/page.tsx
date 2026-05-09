@@ -59,10 +59,19 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (params.slug === 'rajasthan-police-constable') {
     return {
       title: 'Rajasthan Police Constable 2026 – Age Limit, Eligibility, Syllabus & Guide | TaiyarHo',
-      description: 'Rajasthan Police Constable 2026: Age limit General 18–23 yrs, OBC 18–26, SC/ST 18–28. ~4,000 vacancies. CET mandatory. Syllabus 150 Qs, -0.25 negative marking. PET/PST standards & complete guide.',
+      description: 'Rajasthan Police Constable 2026: Age limit General 18–23 yrs, OBC/MBC Men 28 yrs, Women 33 yrs, SC/ST Men 28 yrs, Women 33 yrs. ~4,000 vacancies. CET mandatory. Salary ₹20,800–₹65,900. Complete guide.',
       keywords: 'Rajasthan Police Constable 2026, raj police constable age limit, rajasthan police obc age limit, rajasthan police sc st age limit, rajasthan police eligibility 2026, rajasthan police constable syllabus, raj police bharti 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/rajasthan-police-constable/' },
-      other: { 'description:hi': 'राजस्थान पुलिस कांस्टेबल 2026 – आयु सीमा: General 18–23, OBC 18–26, SC/ST 18–28 वर्ष। ~4,000 रिक्तियाँ। CET अनिवार्य। सिलेबस 150 प्रश्न, -0.25 नकारात्मक अंकन। PET/PST मानक और पूरी गाइड।' },
+      other: { 'description:hi': 'राजस्थान पुलिस कांस्टेबल 2026 – आयु सीमा: General 18–23, OBC/MBC पुरुष 28, महिला 33, SC/ST पुरुष 28, महिला 33 वर्ष। ~4,000 रिक्तियाँ। CET अनिवार्य। वेतन ₹20,800–₹65,900।' },
+    };
+  }
+
+  if (params.slug === 'tnpsc-group-2') {
+    return {
+      title: 'TNPSC Group 2 2026 – Notification, Eligibility, Syllabus, Salary & Guide | TaiyarHo',
+      description: 'TNPSC Group 2 2026: Sub Registrar, Municipal Commissioner, AHO & 30+ posts. Graduate eligible, age 18–32 yrs. Prelims + Mains + Interview. Salary ₹36,900–₹1,17,600. Complete preparation guide.',
+      keywords: 'TNPSC Group 2 2026, TNPSC Group 2 notification 2026, TNPSC Group 2 syllabus, TNPSC Group 2 eligibility, TNPSC Group 2 salary, tnpsc group 2 age limit, tnpsc 2026 apply online',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/tnpsc-group-2/' },
     };
   }
 
@@ -497,6 +506,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'lic-aao') return <LicAaoPage exam={brief} />;
   if (brief && brief.slug === 'kvs-prt-tgt-pgt') return <KvsPrtTgtPgtPage exam={brief} />;
   if (brief && brief.slug === 'mppsc-state-service') return <MppscStatePage exam={brief} />;
+  if (brief && brief.slug === 'tnpsc-group-2') return <TNPSCGroup2Page exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -14809,8 +14819,10 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
   const ageLimit = [
     { category: 'General – Male', min: '18 years', max: '23 years' },
     { category: 'General – Female', min: '18 years', max: '23 years' },
-    { category: 'OBC / MBC (Non-Creamy Layer) – Rajasthan Domicile', min: '18 years', max: '26 years' },
-    { category: 'SC / ST – Rajasthan Domicile', min: '18 years', max: '28 years' },
+    { category: 'OBC / MBC / EWS – Male (Rajasthan Domicile)', min: '18 years', max: '28 years' },
+    { category: 'OBC / MBC / EWS – Female (Rajasthan Domicile)', min: '18 years', max: '33 years' },
+    { category: 'SC / ST – Male (Rajasthan Domicile)', min: '18 years', max: '28 years' },
+    { category: 'SC / ST – Female (Rajasthan Domicile)', min: '18 years', max: '33 years' },
     { category: 'Widow / Divorcee (All categories)', min: '18 years', max: '35 years' },
     { category: 'Ex-Serviceman', min: '–', max: 'Service period + 3 years' },
   ];
@@ -14899,7 +14911,7 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
     { q: 'Is CET mandatory for Rajasthan Police Constable 2026?', a: 'Yes. Candidates must have a valid CET (Common Eligibility Test) Senior Secondary Level score from RSSB to apply for Rajasthan Police Constable. The CET acts as a preliminary screening — only CET-qualified candidates can appear for the main written exam and physical tests.' },
     { q: 'What is the age limit for Rajasthan Police Constable?', a: 'The minimum age is 18 years and maximum age is 23 years for General category candidates. OBC/MBC (Rajasthan domicile) get relaxation up to 26 years, and SC/ST candidates get relaxation up to 28 years. Widows and divorcees can apply up to 35 years.' },
     { q: 'Is there negative marking in Rajasthan Police Constable written exam?', a: 'Yes. There is negative marking of 0.25 marks (1/4 mark) for every wrong answer. Unlike Bihar Police Constable which has no negative marking, candidates must be careful and avoid blind guessing in this exam.' },
-    { q: 'What is the salary of a Rajasthan Police Constable?', a: 'Selected candidates receive a basic pay of ₹14,600 per month during the probation/training period under Pay Matrix Level 5. After confirmation, the gross salary including HRA, DA, and other allowances is approximately ₹21,700–₹69,100 per month as per the 7th Pay Commission.' },
+    { q: 'What is the salary of a Rajasthan Police Constable?', a: 'Selected candidates receive a basic pay of ₹14,600 per month during the probation/training period under Pay Matrix Level 5. After confirmation, the pay matrix range is ₹20,800 – ₹65,900/month (Level 5, 7th Pay Commission). With HRA, DA, and other allowances, the gross in-hand salary is typically ₹25,000–₹30,000/month depending on posting location.' },
   ];
 
   const faqSchema = {
@@ -14993,7 +15005,7 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
                 {[
                   { label: 'Conducting Body', value: 'Rajasthan Police HQ' },
                   { label: 'Post Type', value: 'State Govt, Group C' },
-                  { label: 'Pay Scale', value: '₹14,600 – ₹69,100' },
+                  { label: 'Pay Scale', value: '₹20,800 – ₹65,900' },
                   { label: 'Qualification', value: '12th Pass + CET' },
                 ].map((item) => (
                   <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
@@ -15039,7 +15051,7 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
                 {[
                   { label: '🪪 Nationality', value: 'Must be a citizen of India. Domicile of Rajasthan is required for reserved category age relaxations and some quota benefits.' },
                   { label: '🎓 Educational Qualification', value: 'Class 12 (Senior Secondary / 10+2) pass from a recognised board, AND a valid CET (Senior Secondary Level) score from RSSB. CET is mandatory.' },
-                  { label: '💳 Application Fee', value: 'General / OBC (Creamy Layer): ₹600 | SC / ST / OBC (Non-Creamy Layer) of Rajasthan: ₹400. Payment via Rajasthan E-Mitra, Debit Card, Credit Card, or Net Banking.' },
+                  { label: '💳 Application Fee', value: 'General / OBC (Creamy Layer) / EWS: ₹600 | SC / ST / OBC (Non-Creamy Layer) / PwD: ₹400. Apply via Rajasthan SSO Portal (sso.rajasthan.gov.in) using OTR (One Time Registration). E-Mitra kiosks, Debit Card, Credit Card, and Net Banking also accepted.' },
                   { label: '📋 Age Reference Date', value: 'Age is typically calculated as on 1 January of the recruitment year. For 2026 cycle, exact cut-off date will be in the official notification. General candidates: 18–23 years. Relaxation available for OBC, SC/ST, widows, and ex-servicemen.' },
                 ].map((item) => (
                   <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
@@ -15201,6 +15213,16 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
                 <p className="text-sm text-blue-800"><strong>💡 Tip:</strong> Male candidates must cover <strong>5 km in just 25 minutes</strong> — that is a pace of 5 min/km, requiring serious training. Candidates get only one attempt. Start your running practice immediately after applying and build up gradually over 2–3 months.</p>
               </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-4">
+                <p className="text-sm text-amber-800 font-semibold mb-2">📋 Proficiency Test (Post-specific – 30 Marks)</p>
+                <p className="text-sm text-amber-800 mb-2">A <strong>30-mark Proficiency Test</strong> is required <em>only</em> for the following posts:</p>
+                <ul className="text-sm text-amber-800 space-y-1 ml-3">
+                  <li>• <strong>Constable Driver</strong> – Driving skill test</li>
+                  <li>• <strong>Constable Band</strong> – Musical instrument proficiency</li>
+                  <li>• <strong>Mounted Constable</strong> – Horse-riding proficiency</li>
+                </ul>
+                <p className="text-sm text-amber-800 mt-2"><strong>Constable GD (General Duty)</strong> and <strong>Constable Telecom Operator</strong> posts do <em>not</em> have a Proficiency Test — their final merit is based only on the written exam marks.</p>
+              </div>
             </section>
 
             {/* SYLLABUS */}
@@ -15231,7 +15253,7 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
                 {[
                   { label: 'Basic Pay (Probation/Training)', value: '₹14,600/month', sub: 'Pay Matrix Level 5' },
-                  { label: 'Gross Salary (after confirmation)', value: '₹21,700 – ₹69,100/month', sub: 'Incl. HRA, DA & allowances' },
+                  { label: 'Gross Salary (after confirmation)', value: '₹20,800 – ₹65,900/month', sub: 'Level 5, Incl. HRA, DA & allowances' },
                   { label: 'Additional Benefits', value: 'Uniform, Pension, Medical', sub: 'As per Rajasthan Govt norms' },
                 ].map((item) => (
                   <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
@@ -15242,7 +15264,7 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
                 ))}
               </div>
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                <p className="text-sm text-blue-800"><strong>💡 Note:</strong> The initial pay during training/probation is ₹14,600. After successful completion of training and confirmation, the pay scale is revised to ₹21,700–₹69,100/month (Level 5, 7th Pay Commission), plus Dearness Allowance, House Rent Allowance, and other government perquisites.</p>
+                <p className="text-sm text-blue-800"><strong>💡 Note:</strong> The initial pay during training/probation is ₹14,600. After successful completion of training and confirmation, the pay scale under Pay Matrix Level 5 (7th Pay Commission) ranges from ₹20,800 – ₹65,900/month. With Dearness Allowance, House Rent Allowance, and other government allowances, the in-hand salary after training is typically ₹25,000–₹30,000/month depending on posting city.</p>
               </div>
             </section>
 
@@ -15256,7 +15278,7 @@ function RajasthanPoliceConstablePage({ exam }: { exam: any }) {
                     { step: '2', title: 'Visit the Official Website', desc: 'Go to police.rajasthan.gov.in and look for the active recruitment notification under the Recruitment section.' },
                     { step: '3', title: 'Register / Log In', desc: 'Create a new account using your Aadhaar ID or Driving License number. Note down your login credentials for future use.' },
                     { step: '4', title: 'Fill the Application Form', desc: 'Enter all personal, educational, and category details carefully. Upload your passport photo and signature as per the specified size and format.' },
-                    { step: '5', title: 'Pay the Application Fee', desc: 'Pay ₹600 (General) or ₹400 (SC/ST/OBC-NCL) via Rajasthan E-Mitra, Debit Card, Credit Card, or Net Banking.' },
+                    { step: '5', title: 'Pay the Application Fee', desc: 'Pay ₹600 (General/OBC Creamy Layer) or ₹400 (SC/ST/OBC-NCL/PwD) via Rajasthan SSO Portal (sso.rajasthan.gov.in) through OTR (One Time Registration). Net Banking, Debit Card, Credit Card, and E-Mitra kiosks are also accepted.' },
                     { step: '6', title: 'Submit & Download Confirmation', desc: 'Review all details before final submission. Download and save your application confirmation receipt for future reference.' },
                   ].map((item) => (
                     <li key={item.step} className="flex gap-4">
@@ -32454,6 +32476,750 @@ function KvsPrtTgtPgtPage({ exam }: { exam: any }) {
                       → {e.name}
                     </Link>
                   ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── TNPSC GROUP 2 RICH PAGE ───────────────────────────────────────────────────
+function TNPSCGroup2Page({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Posts & Vacancies' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'TNPSC Group 2 & 2A 2024–25 Notification Released', date: '28 October 2024', status: 'released' },
+    { event: 'Online Application Opens', date: '28 October 2024', status: 'released' },
+    { event: 'Last Date to Apply Online', date: '27 November 2024', status: 'released' },
+    { event: 'Hall Ticket Download', date: 'To be notified', status: 'tbn' },
+    { event: 'Preliminary Exam (Computer Based Test)', date: 'Expected Early 2026', status: 'upcoming' },
+    { event: 'Preliminary Result', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Main Exam Date', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Main Exam Result', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Interview / Oral Test (Group 2 posts only)', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'Final Selection & Certificate Verification', date: 'To be notified (TBN)', status: 'tbn' },
+  ];
+
+  const posts = [
+    { post: 'Sub-Registrar / Jr. Cooperative Auditor', dept: 'Registration Dept / Cooperative', type: 'Group 2 (Interview)' },
+    { post: 'Municipal Commissioner Grade III', dept: 'Municipal Administration', type: 'Group 2 (Interview)' },
+    { post: 'Deputy Commercial Tax Officer', dept: 'Commercial Taxes', type: 'Group 2 (Interview)' },
+    { post: 'Child Development Project Officer', dept: 'Social Welfare', type: 'Group 2 (Interview)' },
+    { post: 'Assistant Inspector of Labour / Factories', dept: 'Labour Dept', type: 'Group 2 (Interview)' },
+    { post: 'Revenue Officer / Junior Employment Officer', dept: 'Revenue / Employment', type: 'Group 2A (Non-Interview)' },
+    { post: 'Audit Inspector / Account Officer', dept: 'Finance / AG Office', type: 'Group 2A (Non-Interview)' },
+    { post: 'Personal Assistant (PA to Govt Officers)', dept: 'Secretariat', type: 'Group 2A (Non-Interview)' },
+    { post: 'TOTAL (2024–25 Cycle)', dept: '–', type: 'All Posts Combined', vacancies: '~1,979 posts' },
+  ];
+
+  const ageLimit = [
+    { category: 'SCs, STs (all applicants)', min: '18 years', max: '37 years', note: '+5 yrs over OC limit' },
+    { category: 'MBC / DNC (all applicants)', min: '18 years', max: '35 years', note: '+3 yrs over OC limit' },
+    { category: 'BC / BC (Muslim)', min: '18 years', max: '35 years', note: '+3 yrs over OC limit' },
+    { category: 'OC (Open Competition) – All', min: '18 years', max: '32 years', note: 'Base limit' },
+    { category: 'Widows, Destitute Women', min: '18 years', max: 'No upper limit', note: 'Special provision' },
+    { category: 'Differently-Abled (PwD)', min: '18 years', max: '42 years', note: 'As per Govt order' },
+    { category: 'Ex-Servicemen', min: '–', max: 'Service period + 3 years', note: 'Govt rule' },
+  ];
+
+  const examPatternPrelims = [
+    { subject: 'General Studies (GS)', questions: 75, marks: 75, note: 'History, Polity, Geography, Science, Economy' },
+    { subject: 'Aptitude & Mental Ability (AMAB)', questions: 25, marks: 25, note: 'Logical reasoning, quantitative aptitude' },
+    { subject: 'General Tamil / General English', questions: 100, marks: 100, note: 'Tamil (or) English Language paper (same paper)' },
+  ];
+
+  const examPatternMains = [
+    { paper: 'Paper I – General Studies', marks: 150, duration: '3 hrs', note: 'History, Geography, Polity, Economy, Science, Current Affairs' },
+    { paper: 'Paper II – General Tamil / General English', marks: 150, duration: '3 hrs', note: 'Tamil or English language and literature (candidate choice)' },
+  ];
+
+  const syllabusSections = [
+    {
+      subject: '📜 History & Culture of India (and Tamil Nadu)',
+      topics: [
+        'Ancient, Medieval and Modern Indian history',
+        'National movement – key events and leaders',
+        'Tamil Nadu history – Sangam age, Cholas, Vijayanagara, etc.',
+        'Social and cultural history of Tamil Nadu',
+        'Art, architecture, literature, and religions of India',
+        'Indian constitution – Preamble, Fundamental Rights, DPSP',
+        'Important constitutional amendments',
+      ],
+    },
+    {
+      subject: '🌏 Geography (India & Tamil Nadu)',
+      topics: [
+        'Physical geography – landforms, rivers, climate',
+        'Tamil Nadu geography – districts, rivers, forests',
+        'Economic geography – agriculture, industries, trade',
+        'Natural resources and environment',
+        'Social geography – population, census data',
+        'Map-based questions',
+      ],
+    },
+    {
+      subject: '🏛️ Indian Polity & Governance',
+      topics: [
+        'Constitution of India – structure and features',
+        'Union and State governments – powers and functions',
+        'Parliament and State Legislature',
+        'Judiciary – Supreme Court, High Courts',
+        'Local self-government – Panchayat Raj, Municipalities',
+        'Elections and election commission',
+        'Constitutional bodies and commissions',
+      ],
+    },
+    {
+      subject: '💰 Indian Economy & Development',
+      topics: [
+        'Basic economic concepts – GDP, GNP, inflation',
+        'Indian economic planning and Five-Year Plans',
+        'Agriculture – crops, irrigation, Green Revolution',
+        'Industries – types, industrial policy, SEZs',
+        'Banking and financial institutions',
+        'Poverty, unemployment, and human development',
+        'Tamil Nadu economy – industries, trade, agriculture',
+      ],
+    },
+    {
+      subject: '🔬 General Science & Technology',
+      topics: [
+        'Physics basics – motion, force, energy, sound, light',
+        'Chemistry – matter, reactions, acids, bases',
+        'Biology – cell, life processes, genetics, ecology',
+        'Human health, diseases, and nutrition',
+        'Science and technology developments in India',
+        'Space technology – ISRO missions',
+        'Environmental science and pollution',
+      ],
+    },
+    {
+      subject: '📰 Current Events & GK',
+      topics: [
+        'National and international current affairs',
+        'Sports, awards, and important personalities',
+        'Government schemes and programmes',
+        'Important days and events',
+        'India and Tamil Nadu in news',
+        'Science and technology news',
+      ],
+    },
+    {
+      subject: '🧮 Aptitude & Mental Ability (AMAB)',
+      topics: [
+        'Number series and sequences',
+        'Simplification, fractions, decimals',
+        'Time and work, time and distance',
+        'Percentages, profit and loss, simple interest',
+        'Data interpretation and sufficiency',
+        'Logical reasoning and blood relations',
+        'Coding-decoding and direction sense',
+        'Clock, calendar, and ranking problems',
+      ],
+    },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Released';
+    if (s === 'upcoming') return '🔔 Expected';
+    return 'TBN';
+  };
+
+  const studyPlan = [
+    { month: 'Month 1–2', title: 'Build Foundation', tasks: 'Study Tamil Nadu & Indian History. Read NCERT 6–10 for Science and Geography. Start AMAB basics (number systems, simplification). Target 4–5 hours/day.' },
+    { month: 'Month 3–4', title: 'Cover Core Subjects', tasks: 'Complete Indian Polity (Lakshmikanth), Economy basics, and General Science. Begin Tamil Nadu GK (districts, rivers, industries). Continue AMAB with time and work, percentages.' },
+    { month: 'Month 5–6', title: 'Current Affairs & Revision', tasks: 'Daily newspaper reading (The Hindu). Revise all subjects. Focus on Tamil Nadu-specific current affairs, government schemes. Practice AMAB reasoning and data interpretation.' },
+    { month: 'Month 7–8', title: 'Mock Tests & Analysis', tasks: 'Attempt 3–4 full-length prelims mock tests per week. Analyse mistakes and revisit weak areas. Focus on time management (200 questions in 3 hours = 54 seconds/question).' },
+    { month: 'Month 9+', title: 'Mains Preparation (if cleared prelims)', tasks: 'Deepen Paper I preparation with essay-type answers and fact-heavy revision. Practice Paper II (Tamil/English) writing. Target 10 full mains mocks before exam date.' },
+  ];
+
+  const tips = [
+    { tip: 'Tamil Nadu GK is a dealbreaker', body: 'A significant portion of the TNPSC exam is TN-specific. Questions on TN history, rivers, districts, industries, culture, and schemes are very frequent. Dedicated Tamil Nadu GK preparation can make you outperform candidates who only study general topics.' },
+    { tip: 'Understand Group 2 vs Group 2A difference', body: 'Group 2 posts have an interview (oral test) worth 40 marks, while Group 2A posts are non-interview. Both require the same Prelims and Mains exams. Apply for both simultaneously — the combined notification covers all posts together.' },
+    { tip: 'AMAB section is fully scorable', body: 'The Aptitude & Mental Ability (AMAB) section has 25 questions in prelims and is very formula-based. Most questions come from standard topics: time-work, percentages, number series, and logical reasoning. Scoring 23–25/25 is achievable with just 4–6 weeks of focused practice.' },
+    { tip: 'One-year current affairs is enough', body: "TNPSC current affairs focuses on the 12 months before the exam. Don't study current affairs from 3 years ago — it's not asked. Read The Hindu or a monthly current affairs magazine and focus on national + Tamil Nadu specific events." },
+    { tip: 'Negative marking applies — be selective', body: "The prelims has negative marking of 1/3 mark for each wrong answer. Never guess blindly. If you can eliminate 2 options out of 4, attempting it is mathematically profitable. If you can't eliminate any, skip the question." },
+  ];
+
+  const faqs = [
+    { q: 'What is the difference between TNPSC Group 2 and Group 2A?', a: 'Both are part of the same combined recruitment notification and share the same Prelims and Mains exam. The key difference is that Group 2 posts (like Sub-Registrar, Municipal Commissioner) have an Interview/Oral Test worth 40 marks after Mains, while Group 2A posts (like Revenue Officer, Personal Assistant) do not have an interview — their final selection is based solely on Mains marks. Candidates can apply for both simultaneously in one application.' },
+    { q: 'What is the educational qualification required for TNPSC Group 2 2026?', a: 'The minimum educational qualification for TNPSC Group 2 and Group 2A is a Bachelor\'s degree (Graduation) in any discipline from a recognised university. For a few specific posts like Personal Assistant, typing proficiency in Tamil and English may also be required. 12th pass candidates are not eligible.' },
+    { q: 'What is the age limit for TNPSC Group 2?', a: 'The age limit varies by category. Open Competition (OC) candidates must be 18–32 years. BC/BC(Muslim) candidates get an upper age relaxation of 3 years (up to 35). MBC/DNC candidates also get 3 years extra (up to 35). SC/ST candidates get 5 years extra (up to 37). Destitute widows and differently-abled candidates have special relaxations. Age is calculated as of 1 July of the recruitment year.' },
+    { q: 'What is the exam pattern for TNPSC Group 2 Prelims 2026?', a: 'The Preliminary exam is a Computer Based Test (CBT) of 200 questions and 300 marks, to be completed in 3 hours. It consists of Part A: General Studies (75 questions, 75 marks), Part B: Aptitude & Mental Ability (25 questions, 25 marks), and Part C: General Tamil or General English (100 questions, 100 marks). There is negative marking of 1/3 mark for every wrong answer. The prelims is only a screening test — these marks are not counted in the final merit.' },
+    { q: 'What is the salary of TNPSC Group 2 officers?', a: 'Salary varies by post. Most Group 2 posts fall in Pay Level 16 of Tamil Nadu Pay Commission, with a basic pay starting at ₹36,900/month and a pay range of ₹36,900 – ₹1,17,600/month. With DA, HRA, medical benefits, and other allowances, the gross monthly salary is typically ₹55,000–₹70,000/month depending on posting city. Group 2A posts are in similar or slightly lower pay levels depending on the specific post.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const books = [
+    { subject: 'Tamil Nadu History & Culture', title: 'Tamil Nadu History – Samacheer Kalvi + Arihant TN Special', author: 'Arihant / State Board', pdf: '' },
+    { subject: 'Indian Polity', title: 'Indian Polity', author: 'M. Lakshmikanth', pdf: '' },
+    { subject: 'Indian Economy', title: 'Indian Economy', author: 'Ramesh Singh', pdf: '' },
+    { subject: 'General Science', title: 'NCERT Science (6–10)', author: 'NCERT', pdf: 'https://ncert.nic.in/textbook.php' },
+    { subject: 'Aptitude & Mental Ability', title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal', pdf: '' },
+    { subject: 'TNPSC Comprehensive Guide', title: 'TNPSC Group II & IIA Combined Exam Guide', author: 'Sura / Karpagam Publications', pdf: '' },
+    { subject: 'General Tamil', title: 'General Tamil for TNPSC', author: 'Karpagam / Guide Publications', pdf: '' },
+    { subject: 'Current Affairs', title: 'The Hindu Daily + Monthly Current Affairs Magazine', author: 'The Hindu / Various', pdf: '' },
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* HERO BANNER – Blue gradient per Guide/State PSC convention */}
+      <div className="bg-gradient-to-br from-primary-900 via-primary-700 to-primary-500 text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">TNPSC Group 2 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🏛️ State PSC</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Tamil Nadu</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">📋 Notification: Oct 2024</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            TNPSC Group 2 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            TNPSC Group 2 & 2A 2024–25 notification released October 2024 with ~1,979 vacancies for Sub-Registrar, Municipal Commissioner, Revenue Officer, PA and 30+ other posts. Graduate eligible. Prelims CBT → Mains → Interview (Group 2 only). Negative marking applies.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Total Vacancies', value: '~1,979 Posts' },
+              { label: 'Prelims Exam', value: 'Expected 2026' },
+              { label: 'Min. Qualification', value: 'Graduation' },
+              { label: 'Starting Salary', value: '₹36,900/month' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">1. What is TNPSC Group 2 2026?</h2>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  <strong>TNPSC Group 2 & Group 2A</strong> is a combined recruitment examination conducted by the <strong>Tamil Nadu Public Service Commission (TNPSC)</strong> for filling vacancies in Tamil Nadu State Government services. It is one of the most sought-after state government exams in Tamil Nadu, offering positions ranging from Sub-Registrar and Municipal Commissioner (Group 2 – Interview posts) to Revenue Officer and Personal Assistant (Group 2A – Non-Interview posts).
+                </p>
+                <p className="text-surface-600 leading-relaxed mb-4">
+                  The latest notification was released on <strong>28 October 2024</strong> for approximately <strong>1,979 posts</strong> across multiple departments. The selection process for Group 2 posts has <strong>three stages</strong>: Preliminary Exam → Main Exam → Interview/Oral Test. For Group 2A posts, there are only <strong>two stages</strong>: Preliminary Exam → Main Exam (no interview).
+                </p>
+                <p className="text-surface-600 leading-relaxed">
+                  The exam is conducted in <strong>Tamil and English</strong> — candidates can choose their medium. The preliminary exam is a Computer Based Test (CBT) of 200 questions (300 marks, 3 hours). There is <strong>negative marking of 1/3 for every wrong answer</strong> in both Prelims and Mains. Prelims marks are used only for shortlisting — they are not added to the final merit.
+                </p>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-blue-800">
+                  <strong>💡 Key Update for 2026:</strong> The 2024–25 combined notification (October 2024) covers ~1,979 posts across Group 2 and Group 2A. TNPSC shifted to Computer Based Testing (CBT) for Prelims from the 2022–23 cycle onwards. Main exam is still pen-and-paper (OMR/descriptive as applicable). Always verify the latest status at <strong>tnpsc.gov.in</strong>.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'TNPSC (Tamil Nadu PSC)' },
+                  { label: 'State', value: 'Tamil Nadu' },
+                  { label: 'Post Type', value: 'State Govt (Group B & C)' },
+                  { label: 'Qualification', value: 'Any Degree (Graduation)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">2. 📅 Important Dates – TNPSC Group 2 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded ${statusColor(row.status)}`}>{statusLabel(row.status)}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ TBN = To Be Notified. Always verify dates at tnpsc.gov.in. Application window for the 2024–25 notification is now closed.</p>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">3. Eligibility Criteria</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { label: '🪪 Nationality', value: 'Must be a citizen of India. Tamil Nadu domicile is required for reservation benefits. Candidates from other states can apply for OC (Open Competition) seats only.' },
+                  { label: '🎓 Educational Qualification', value: 'Any Bachelor\'s Degree from a recognised university. Some posts additionally require Tamil proficiency (studied Tamil up to SSLC/HSC or passed a TNPSC Tamil proficiency test). Computer literacy is required for some posts like Personal Assistant.' },
+                  { label: '📋 Age Limit', value: 'OC: 18–32 yrs. BC/BC-Muslim: up to 35 yrs. MBC/DNC: up to 35 yrs. SC/ST: up to 37 yrs. Destitute Widows: no upper limit. Age calculated as on 1 July of the recruitment year.' },
+                  { label: '💳 Application Fee', value: 'Registration Fee: ₹150. Exam Fee: ₹100 (General) | ₹0 (SC/ST/Destitute Widows/differently-abled/ex-servicemen who have served 3+ years). Total: ₹250 for General, ₹150 for fee-exempt categories.' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-medium text-sm text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">📋 Age Limit – Category-wise</h3>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Min. Age</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Max. Age</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {ageLimit.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-600">{row.min}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.max}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <p className="text-sm text-amber-800"><strong>⚠️ Important:</strong> Age relaxations for reserved categories (BC/MBC/SC/ST) apply only to Tamil Nadu domicile candidates. Candidates from other states are treated as OC (Open Competition) for age limit purposes. Always verify your eligibility in the official notification before applying.</p>
+              </div>
+            </section>
+
+            {/* POSTS & VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">4. Posts & Vacancies</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Post Name</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Department</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {posts.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'} ${i === posts.length - 1 ? 'font-bold bg-primary-50' : ''}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-600">{row.dept}</td>
+                        <td className="p-3">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${row.type.includes('Interview') && !row.type.includes('Non') ? 'bg-primary-100 text-primary-700' : row.type.includes('Non-Interview') ? 'bg-surface-100 text-surface-600' : 'bg-emerald-100 text-emerald-700'}`}>
+                            {row.type}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-800"><strong>📌 Note:</strong> The 2024–25 combined notification covers approximately 1,979 posts. The exact post-wise and category-wise vacancy break-up is available in the official notification PDF on tnpsc.gov.in. Reservation for SC, ST, MBC, BC candidates applies as per Tamil Nadu government policy.</p>
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">5. Exam Pattern</h2>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-lg">Stage 1 – Preliminary Exam (CBT)</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                {[
+                  { label: 'Mode', value: 'Online CBT' },
+                  { label: 'Questions', value: '200 MCQs' },
+                  { label: 'Total Marks', value: '300 Marks' },
+                  { label: 'Duration', value: '3 Hours' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-primary-50 rounded-xl p-4 border border-primary-100 text-center">
+                    <div className="text-xs text-primary-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-primary-700">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Subject / Section</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Covers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {examPatternPrelims.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.questions}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.marks}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-primary-50">
+                      <td className="p-3 font-bold text-surface-900">TOTAL</td>
+                      <td className="p-3 font-bold text-surface-900">200</td>
+                      <td className="p-3 font-bold text-surface-900">300</td>
+                      <td className="p-3"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-lg">Stage 2 – Main Exam (Pen & Paper)</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                {[
+                  { label: 'Mode', value: 'Pen & Paper' },
+                  { label: 'Papers', value: '2 Papers' },
+                  { label: 'Total Marks', value: '300 Marks' },
+                  { label: 'Duration', value: '3 hrs each' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-emerald-50 rounded-xl p-4 border border-emerald-100 text-center">
+                    <div className="text-xs text-emerald-500 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-emerald-700">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Paper</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Duration</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Syllabus</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {examPatternMains.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.paper}</td>
+                        <td className="p-3 text-surface-600 font-semibold">{row.marks}</td>
+                        <td className="p-3 text-surface-600">{row.duration}</td>
+                        <td className="p-3 text-surface-500 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-emerald-50">
+                      <td className="p-3 font-bold text-surface-900">TOTAL</td>
+                      <td className="p-3 font-bold text-surface-900">300</td>
+                      <td className="p-3 font-bold text-surface-900">–</td>
+                      <td className="p-3"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-lg">Stage 3 – Interview / Oral Test (Group 2 Only)</h3>
+              <div className="card p-5 mb-4">
+                <p className="text-surface-600 text-sm leading-relaxed">The Interview/Oral Test is conducted only for <strong>Group 2 posts (Interview posts)</strong> — not for Group 2A posts. It carries <strong>40 marks</strong>. The final merit for Group 2 posts = Mains marks + Interview marks. Candidates who clear the Mains cutoff are called for the interview based on post-wise merit lists.</p>
+              </div>
+
+              <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                <p className="text-sm text-red-800"><strong>⚠️ Negative Marking in Both Prelims & Mains:</strong> A penalty of <strong>1/3 mark</strong> (0.33 mark) is deducted for every wrong answer in both the Preliminary and Main exams. Prelims marks are only used for shortlisting and not added to final merit. Main exam marks + Interview marks (Group 2) form the final merit.</p>
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">6. Detailed Syllabus – TNPSC Group 2 2026</h2>
+              <div className="space-y-4">
+                {syllabusSections.map((sec, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600">
+                      <span>{sec.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 border-t border-surface-100">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 mt-3">
+                        {sec.topics.map((t, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                            <span className="text-primary-400 mt-0.5">•</span>{t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-4">
+                <p className="text-sm text-amber-800"><strong>🎯 High-Weightage Area:</strong> Tamil Nadu History, Culture, and Geography consistently carry the highest marks in TNPSC Group 2 exams. This is where TN-domicile candidates have a natural edge. Cover Samacheer Kalvi books (6–12) for Tamil Nadu-specific content alongside standard reference books.</p>
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">7. 💰 Salary & Benefits</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                {[
+                  { label: 'Basic Pay (Starting)', value: '₹36,900/month', sub: 'Pay Level 16 – TN Pay Commission' },
+                  { label: 'Pay Matrix Range', value: '₹36,900 – ₹1,17,600', sub: 'Varies by post and level' },
+                  { label: 'Gross Salary (Approx.)', value: '₹55,000 – ₹70,000', sub: 'Incl. DA, HRA & allowances' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-bold text-surface-800">{item.value}</div>
+                    <div className="text-xs text-surface-400 mt-0.5">{item.sub}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-900 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Benefit / Allowance</th>
+                      <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { label: 'Basic Pay', value: '₹36,900/month (starting, Pay Level 16)' },
+                      { label: 'Dearness Allowance (DA)', value: 'Revised twice a year by TN Government' },
+                      { label: 'House Rent Allowance (HRA)', value: '8%–16% of basic pay (depends on city tier)' },
+                      { label: 'Travel Allowance (TA)', value: 'As per posting city and grade' },
+                      { label: 'Medical Benefits', value: 'Government hospital treatment for self and family' },
+                      { label: 'Pension', value: 'Contributory Pension Scheme (CPS/NPS) for new recruits' },
+                      { label: 'Gross Salary (Approx.)', value: '₹55,000–₹70,000/month (post-training, Chennai posting)' },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.label}</td>
+                        <td className={`p-3 ${row.label.includes('Gross') ? 'font-bold text-emerald-600' : 'text-surface-600'}`}>{row.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400">Actual salary varies by posting city, DA revision, and post-specific pay level. Group 2 interview posts generally start at higher pay levels than Group 2A non-interview posts.</p>
+            </section>
+
+            {/* HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8. How to Apply</h2>
+              <div className="card p-6 mb-4">
+                <ol className="space-y-3">
+                  {[
+                    { step: '1', title: 'Register on TNPSC One Time Registration (OTR)', desc: 'Go to tnpsc.gov.in and complete the One Time Registration (OTR) if you haven\'t already. Note your OTR ID and password. This is mandatory before applying for any TNPSC exam.' },
+                    { step: '2', title: 'Check the Active Notification', desc: 'Look for the TNPSC Group 2 & 2A combined notification under the "Apply Online" section. Read the official notification PDF carefully before applying.' },
+                    { step: '3', title: 'Fill the Online Application Form', desc: 'Log in using your OTR credentials and fill in the application form. Enter educational qualification, category details, and post preferences. Upload your photo and signature as per specifications.' },
+                    { step: '4', title: 'Select Post Preference', desc: 'You can apply for both Group 2 (Interview) and Group 2A (Non-Interview) posts simultaneously in the same application. Indicate your medium (Tamil or English) for the exam.' },
+                    { step: '5', title: 'Pay the Application Fee', desc: 'Registration fee: ₹150. Exam fee: ₹100 (General) | ₹0 (SC/ST/Destitute Widows/PwD/Ex-Servicemen with 3+ years of service). Payment via Net Banking, Debit Card, Credit Card, or Meeseva/CSC centres.' },
+                    { step: '6', title: 'Submit & Save Confirmation', desc: 'Review all details before final submission — corrections after submission are not allowed. Download and save your application confirmation and Hall Ticket when released.' },
+                  ].map((s) => (
+                    <li key={s.step} className="flex gap-4">
+                      <div className="w-8 h-8 shrink-0 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center font-heading font-bold text-sm">{s.step}</div>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 mb-0.5">{s.title}</div>
+                        <div className="text-sm text-surface-600">{s.desc}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                <p className="text-sm text-emerald-800"><strong>✅ Important:</strong> Note that the application window for the 2024–25 combined notification has closed. Watch tnpsc.gov.in for the next recruitment notification. Candidates who missed this cycle can register on OTR now so they are ready when the next notification is released.</p>
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">9. 9-Month Study Plan</h2>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((phase, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="bg-primary-100 text-primary-600 text-xs font-semibold px-2 py-0.5 rounded-full">{phase.month}</span>
+                          <span className="font-heading font-semibold text-surface-800">{phase.title}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{phase.tasks}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">10. Best Books for TNPSC Group 2 2026</h2>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading text-sm">Subject</th>
+                      <th className="text-left p-3 font-heading text-sm">Book Title</th>
+                      <th className="text-left p-3 font-heading text-sm">Author / Publisher</th>
+                      <th className="text-left p-3 font-heading text-sm">Free PDF</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                        <td className="p-3 font-medium text-surface-700">{row.subject}</td>
+                        <td className="p-3 text-surface-800">{row.title}</td>
+                        <td className="p-3 text-surface-600">{row.author}</td>
+                        <td className="p-3">{row.pdf ? <a href={row.pdf} target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline text-xs">Download →</a> : <span className="text-surface-400">—</span>}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">💡 Samacheer Kalvi (State Board) books for classes 6–12 are the most important resource for TNPSC — especially for Tamil Nadu History, Geography, and Science. Many are available free at textbooks.online.tn.gov.in.</p>
+            </section>
+
+            {/* EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">11. Expert Tips for TNPSC Group 2 2026</h2>
+              <div className="space-y-4">
+                {tips.map((item, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-9 h-9 shrink-0 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center font-heading font-bold">{i + 1}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{item.tip}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQs */}
+            <section id="faq" className="mb-12">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">12. FAQs – TNPSC Group 2 2026</h2>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600">
+                      <span className="pr-4">{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 border-t border-surface-100">
+                      <p className="text-sm text-surface-600 leading-relaxed pt-3">{f.a}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* DISCLAIMER */}
+            <div className="card p-5 bg-surface-50 mb-8">
+              <p className="text-xs text-surface-500 leading-relaxed">
+                <strong className="text-surface-600">Disclaimer:</strong> All information on this page is for general guidance only. Vacancy numbers, dates, exam patterns, and eligibility criteria are sourced from official TNPSC notifications and may change. Always verify the latest details at{' '}
+                <a href="https://tnpsc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 underline">tnpsc.gov.in</a>{' '}
+                before applying. TaiyarHo is not affiliated with TNPSC or any government body.
+              </p>
+            </div>
+
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((t) => (
+                    <a key={t.id} href={`#${t.id}`} className="text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-1.5 rounded-md transition-colors block">{t.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* OFFICIAL WEBSITE */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Official Website</div>
+                <a href="https://tnpsc.gov.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all hover:underline">tnpsc.gov.in →</a>
+                <div className="mt-3 space-y-2 text-xs text-surface-500">
+                  <div>📋 Total Posts: ~1,979 (2024–25)</div>
+                  <div>📅 Notification: 28 Oct 2024</div>
+                  <div>🎓 Qualification: Graduation</div>
+                  <div>💰 Salary: ₹36,900–₹1,17,600</div>
+                  <div>📍 State: Tamil Nadu</div>
+                </div>
+              </div>
+
+              {/* QUICK LINKS */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Tools</div>
+                <div className="space-y-2">
+                  <Link href="/tools/eligibility-checker" className="block text-sm text-primary-600 hover:text-primary-700 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">✅ Check Your Eligibility →</Link>
+                  <Link href="/exams/tnpsc-group-1" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 TNPSC Group 1 Guide</Link>
+                  <Link href="/exams/tnpsc-group-4" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 TNPSC Group 4 Guide</Link>
+                  <Link href="/exams/uppsc-pcs" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 UPPSC PCS Guide</Link>
                 </div>
               </div>
 
