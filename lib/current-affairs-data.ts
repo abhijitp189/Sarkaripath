@@ -14,6 +14,139 @@ export interface CurrentAffairsPost {
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
   {
+    slug: 'weekly-current-affairs-may-4-10-2026',
+    title: 'Weekly Current Affairs: May 4–10, 2026 — Press Freedom Index, SC Judges Bill & Kerala Election Results',
+    dateRange: 'May 4–10, 2026',
+    publishedDate: 'May 11, 2026',
+    category: 'National',
+    excerpt:
+      "This week: India slips to 157th in World Press Freedom Index, Cabinet clears SC Judges Amendment Bill (33→37), UDF sweeps Kerala with 102 seats ending LDF's decade-long rule, NSE launches Electronic Gold Receipts, and RBI appoints new Deputy Governor.",
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    keyPoints: [
+      'India ranked 157th (down from 151st) in the 2026 World Press Freedom Index by Reporters Without Borders (RSF). Norway retained 1st place; Eritrea last.',
+      'Cabinet approved Supreme Court (Number of Judges) Amendment Bill, 2026 — increasing SC judge strength from 33 to 37 (excluding CJI), first increase since 2019.',
+      "UDF swept Kerala Assembly Elections with 102 seats, ending the LDF's decade-long rule. BJP-NDA won a third straight term in Assam. Both results declared May 4.",
+      'India and Vietnam elevated ties to "Enhanced Comprehensive Strategic Partnership" during President To Lam\'s visit (May 5–7); new trade target $25 billion by 2030.',
+      'NSE launched the Electronic Gold Receipt (EGR) segment on May 4, 2026 — SEBI-regulated, dematerialised gold ownership, T+1 settlement.',
+      'Rohit Jain appointed RBI Deputy Governor (effective May 3, 2026), succeeding T. Rabi Sankar.',
+      'Cabinet approved "Mission for Cotton Productivity" (₹5,659.22 Cr outlay, 2026–27 to 2030–31) — target: lint yield from 440 to 755 kg/ha.',
+      "RBI repatriated ~104 tonnes of gold from the UK; ~77% of India's gold reserves now held domestically.",
+      'IIT Delhi study: fully mitigating SO₂ emissions from coal plants could prevent ~1,24,564 deaths annually in India.',
+      'R. Vaishali won the FIDE Women\'s Candidates 2026 in Cyprus — official challenger for World Women\'s Chess Championship.',
+    ],
+    quizQuestions: [
+      {
+        question: "India's rank in the 2026 World Press Freedom Index published by RSF is:",
+        options: ['147th', '151st', '157th', '162nd'],
+        answer: '157th',
+      },
+      {
+        question: 'The Supreme Court (Number of Judges) Amendment Bill, 2026 proposes to increase SC judge strength (excluding CJI) to:',
+        options: ['35', '36', '37', '40'],
+        answer: '37',
+      },
+      {
+        question: 'Which alliance won the 2026 Kerala Assembly Elections with 102 seats?',
+        options: ['LDF', 'BJP-NDA', 'UDF', 'AAP-Congress'],
+        answer: 'UDF',
+      },
+      {
+        question: 'Rohit Jain succeeded which outgoing Deputy Governor at the RBI?',
+        options: ['M. D. Patra', 'T. Rabi Sankar', 'M. Rajeshwar Rao', 'Swaminathan J.'],
+        answer: 'T. Rabi Sankar',
+      },
+    ],
+    content: `
+## National Affairs
+
+**World Press Freedom Index 2026 — India at 157th**
+India slipped to 157th place out of 180 countries in the 2026 World Press Freedom Index, published by Reporters Without Borders (RSF) on April 30, 2026. This is a decline of 6 positions from 151st in 2025. Norway retained the top position; Eritrea ranked last. The index evaluates five indicators: political, economic, legal, social, and security environments for journalists. RSF described India's media as being in an "unofficial state of emergency," citing concentrated media ownership and pressure on independent journalism.
+
+*Why it matters for exams: International Rankings — frequently asked in UPSC GS Paper 2, SSC CGL GA, IBPS PO, and State PSC prelims.*
+
+---
+
+**Supreme Court (Number of Judges) Amendment Bill, 2026**
+The Union Cabinet approved a bill to increase the sanctioned strength of Supreme Court judges from 33 to 37 (not counting the Chief Justice of India). This is the first such increase since 2019. The move aims to address a backlog of over 92,000 pending cases. Article 124(1) of the Constitution empowers Parliament to determine the number of Supreme Court judges by law.
+
+*Why it matters: Indian Polity — UPSC Prelims GS2, SSC CPO, RRB NTPC, and all Banking exams.*
+
+---
+
+**Kerala & Assam Assembly Election Results (May 4, 2026)**
+The Congress-led United Democratic Front (UDF) swept the Kerala Assembly Elections with 102 seats out of 140 — ending the Left Democratic Front's decade-long rule and delivering the most decisive UDF mandate since 1977. In Assam, the BJP-led NDA secured a third consecutive term in the 126-seat assembly. Both sets of results were declared on May 4, 2026.
+
+*Why it matters: Indian Polity and Current Events — State elections are important for UPSC, SSC CGL GA, and all State PSC examinations.*
+
+---
+
+## International Affairs
+
+**India-Vietnam "Enhanced Comprehensive Strategic Partnership"**
+During President To Lam's visit to India (May 5–7, 2026), both nations elevated their bilateral ties to an "Enhanced Comprehensive Strategic Partnership." A new bilateral trade target of $25 billion by 2030 was established. The year 2026 marks the 10th anniversary of the initial Comprehensive Strategic Partnership signed in 2016.
+
+**INS Sagardhwani — Sagar Maitri Mission SM-5**
+The Indian Navy's oceanographic research vessel INS Sagardhwani arrived at Cam Ranh, Vietnam on May 5, 2026, as part of the Sagar Maitri (SM-5) initiative — promoting scientific cooperation in ocean research among Indian Ocean Region (IOR) countries.
+
+**Exercise CINBAX-II (India–Cambodia)**
+The 2nd edition of the bilateral military exercise between India and Cambodia commenced on May 4, 2026. India was represented by the Maratha Light Infantry regiment.
+
+*Why it matters: International Relations and Defence — relevant for UPSC GS2, NDA, CDS, and CAPF examinations.*
+
+---
+
+## Economy & Finance
+
+**NSE Launches Electronic Gold Receipts (EGR)**
+The National Stock Exchange (NSE) launched the Electronic Gold Receipt (EGR) segment on May 4, 2026. EGRs are SEBI-regulated, dematerialised securities representing physical gold ownership stored in SEBI-accredited vaults. They are tradeable in smaller denominations with a T+1 settlement cycle — providing a transparent, exchange-traded alternative to physical gold investment.
+
+**Rohit Jain Appointed RBI Deputy Governor**
+Rohit Jain, formerly Executive Director at the RBI, assumed charge as Deputy Governor effective May 3, 2026, for a three-year term. He succeeds T. Rabi Sankar, who retired after his extended tenure. Jain will oversee key departments including Financial Markets Regulation, Foreign Exchange, Fintech, and Payment Systems.
+
+**RBI Repatriates ~104 Tonnes of Gold**
+Reports confirmed on May 7, 2026 that India repatriated approximately 104 tonnes of gold from the United Kingdom. With this, around 77% of India's total gold reserves are now held domestically — reflecting the RBI's ongoing strategy of reducing dependence on foreign vaults.
+
+**Bank Credit Growth at 15.9% in FY26**
+Scheduled Commercial Banks recorded non-food credit growth of 15.9% in FY 2025–26 — a strong indicator of industrial activity and consumer demand, supporting Viksit Bharat growth targets.
+
+**Mission for Cotton Productivity (₹5,659 Crore)**
+The Cabinet approved the "Mission for Cotton Productivity" for 2026–27 to 2030–31, with a total outlay of ₹5,659.22 crore. It targets an increase in cotton production to 498 lakh bales and aims to raise lint productivity from 440 kg/ha to 755 kg/ha by 2031. The mission aligns with the government's 5F vision: Farm to Fibre to Factory to Fashion to Foreign.
+
+*Why it matters: Economy and Agriculture — key for UPSC GS3, SSC CGL, IBPS PO Mains, and SBI PO.*
+
+---
+
+## Environment & Science
+
+**IIT Delhi Study: SO₂ Emissions and Health Impact**
+A new IIT Delhi study estimates that fully mitigating sulphur dioxide (SO₂) emissions from coal-fired power plants could prevent approximately 1,24,564 deaths annually in India. SO₂ reacts in the atmosphere to form secondary PM2.5 particulates — a major public health hazard particularly across northern India.
+
+**AMOC Could Slow by 59% by 2100**
+New research indicates the Atlantic Meridional Overturning Circulation (AMOC) — the ocean "conveyor belt" that regulates global temperatures — could slow by up to 59% by 2100 due to climate change, with serious implications for global weather patterns and sea level rise.
+
+**Rusty-Spotted Cat Sighted in Aravallis**
+Researchers confirmed the first photographic evidence of the Rusty-spotted cat (Prionailurus rubiginosus) in the Aravalli scrublands near Delhi. It is one of the world's smallest wild cat species, native only to India, Sri Lanka, and parts of Nepal.
+
+**Caracals Spotted in Rajasthan's Shahgarh Region**
+Rare caracals were sighted in the Shahgarh region of Rajasthan in the first week of May 2026. Caracals are listed under Schedule I of the Wildlife (Protection) Act, 1972 — the highest level of legal protection in India.
+
+*Why it matters: Environment and Ecology — vital for UPSC Prelims GS Paper 3, SSC CGL, RRB NTPC, and Banking GK sections.*
+
+---
+
+## Appointments & Sports
+
+**R. Vaishali Wins FIDE Women's Candidates 2026**
+Indian Grandmaster R. Vaishali won the FIDE Women's Candidates Tournament held in Cyprus, becoming the official challenger for the World Women's Chess Championship 2026.
+
+**BNSS — Sentence Remission Powers (Section 473)**
+Discussions on Section 473 of the Bharatiya Nagarik Suraksha Sanhita (BNSS) — formerly Section 432 of the CrPC — clarified that state governments hold the power to remit sentences "at any time." However, Section 475 (formerly Section 433A CrPC) mandates that life convicts in capital cases must serve a minimum of 14 years before eligibility for release.
+
+*Why it matters: Legal/Constitutional GK — relevant for UPSC, SSC CPO, and State PSC law sections.*
+    `,
+  },
+  {
     slug: 'weekly-current-affairs-april-27-may-4-2026',
     title: "Weekly Roundup: Census 2027, Ladakh's New Districts & Army Appointments",
     dateRange: 'April 27 – May 4, 2026',
