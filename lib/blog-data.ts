@@ -15,6 +15,19 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: '8th-pay-commission-salary-calculator-2026',
+    title: '8th Pay Commission Salary Calculator 2026 – Estimate Your New Basic Pay',
+    metaTitle: '8th Pay Commission Salary Calculator 2026 – Fitment Factor & New Basic Pay | TaiyarHo',
+    metaDescription: 'Calculate your expected 8th Pay Commission salary for 2026. Interactive calculator with all 14 pay levels, fitment factor options (1.92× to 3.83×), HRA & DA reset explained. Updated May 2026.',
+    category: 'SSC',
+    tags: ['8th Pay Commission', '8th CPC Salary 2026', 'Fitment Factor 2026', '8th CPC Calculator', 'Government Salary Hike', 'DA Reset 8th CPC', 'Central Government Salary'],
+    publishedDate: 'May 11, 2026',
+    updatedDate: 'May 11, 2026',
+    readTime: '12 min read',
+    author: 'TaiyarHo Editorial',
+    excerpt: 'Stop falling for YouTube clickbait. Use TaiyarHo\'s interactive 8th Pay Commission calculator to see your exact expected salary across all fitment factor scenarios — with verified May 2026 status updates.',
+  },
+  {
     slug: 'ibps-po-salary-in-hand-2026',
     title: 'IBPS PO Salary In Hand 2026: CTC, Allowances & Perks Explained',
     metaTitle: 'IBPS PO Salary In Hand 2026: ₹52,000–₹55,000/month After All Deductions | TaiyarHo',

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { blogPosts, getBlogPostBySlug } from '@/lib/blog-data';
+import PayCommissionCalculator from '@/components/PayCommissionCalculator';
 
 export function generateStaticParams() {
   return blogPosts.map(p => ({ slug: p.slug }));
@@ -54,6 +55,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   if (post.slug === 'best-telegram-channels-govt-exams-2026') {
     return <TelegramChannelsArticle post={post} />;
+  }
+
+  if (post.slug === '8th-pay-commission-salary-calculator-2026') {
+    return <PayCommissionArticle post={post} />;
   }
 
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
@@ -5047,6 +5052,527 @@ function TelegramChannelsArticle({ post }: { post: any }) {
               <Link href="/resources/" className="block text-sm text-primary-600 hover:underline leading-snug">Free Resources Hub →</Link>
             </div>
           </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── 8TH PAY COMMISSION SALARY CALCULATOR ARTICLE ────────────────────────────
+function PayCommissionArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'status-2026', label: 'May 2026 Status: What is Confirmed?' },
+    { id: 'fitment-factor', label: 'The Fitment Factor Debate' },
+    { id: 'da-reset', label: 'How DA Will Reset' },
+    { id: 'calculator', label: 'Interactive Salary Calculator' },
+    { id: 'pay-matrix', label: 'Pay Level-wise Salary Table' },
+    { id: 'which-exams', label: 'Which Exams Are Covered?' },
+    { id: 'timeline', label: 'Implementation Timeline' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'When will the 8th Pay Commission salary be implemented?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The target effective date is January 1, 2026, with arrears paid retrospectively. As of May 2026, the commission is still in the consultation/field-visit phase. The final report is expected by late 2026.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the expected Fitment Factor for the 8th Pay Commission?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The final Fitment Factor is To Be Notified (TBN). Expert estimates range from 1.92× (conservative) to 2.86× (most likely). Employee unions have demanded 3.83×. The 7th CPC used a fitment factor of 2.57×.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does the 8th Pay Commission apply to bank employees like IBPS PO or SBI PO?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. Bank employees follow the Bipartite Settlement (BPS) system, not the Central Pay Commission. The 8th CPC applies only to Central Government employees — SSC, Railway, UPSC IAS/IPS/IFS, and Defence services.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What happens to the current 60% Dearness Allowance (DA) when the 8th CPC is implemented?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The existing 60% DA is fully absorbed into the new, higher Basic Pay. After implementation, the DA counter resets to 0%. Your HRA is also recalculated based on the new higher basic. You do not "lose" the DA — it gets merged into your basic pay.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Will employees receive arrears from January 1, 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Since the target implementation date is January 1, 2026, all arrears from that date will be paid in a lump sum once the final report is accepted by the government — similar to how the 7th CPC arrears were paid.',
+        },
+      },
+    ],
+  };
+
+  // Pay matrix table data
+  const payMatrix = [
+    { level: 'Level 1', post: 'MTS, Peon', basic: 18000 },
+    { level: 'Level 2', post: 'MTS Higher Grade', basic: 19900 },
+    { level: 'Level 3', post: 'LDC, Postal Asst', basic: 21700 },
+    { level: 'Level 4', post: 'DEO, Typist', basic: 25500 },
+    { level: 'Level 5', post: 'UDC, Clerk Grade', basic: 29200 },
+    { level: 'Level 6', post: 'Inspector (SSC CGL Gr B)', basic: 35400 },
+    { level: 'Level 7', post: 'Assistant, Sub-Inspector', basic: 44900 },
+    { level: 'Level 8', post: 'ASO, Senior Assistant', basic: 47600 },
+    { level: 'Level 9', post: 'Section Officer (SO)', basic: 53100 },
+    { level: 'Level 10', post: 'IAS/IPS Entry (Group A)', basic: 56100 },
+    { level: 'Level 11', post: 'Senior Grade / Dy. SP', basic: 67700 },
+    { level: 'Level 12', post: 'Deputy Director', basic: 78800 },
+    { level: 'Level 13', post: 'Director / Sr. PPS', basic: 123100 },
+    { level: 'Level 14', post: 'Joint Secretary / IG', basic: 144200 },
+  ];
+
+  const formatInr = (n: number) => '₹' + Math.round(n).toLocaleString('en-IN');
+
+  return (
+    <div className="container-main py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">8th Pay Commission Calculator 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10">
+        {/* ── MAIN CONTENT ── */}
+        <article>
+          {/* Dark Gradient Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-primary-500 rounded-full opacity-10 -translate-y-1/3 translate-x-1/3" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent-500 rounded-full opacity-5 translate-y-1/2 -translate-x-1/4" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-accent-500/20 border border-accent-500/40 text-accent-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse" />
+                  Updated May 2026
+                </span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded-full">8th Pay Commission</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded-full">Interactive Calculator</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                8th Pay Commission Salary Calculator 2026 —{' '}
+                <span className="text-accent-300 italic">The Real Numbers</span>
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed mb-5">
+                Stop falling for YouTube clickbait. Here are the 100% officially verified facts about the 8th CPC rollout, the Fitment Factor debate, and an interactive tool to estimate your actual expected salary — updated for May 2026.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+                <span>📅 {post.publishedDate}</span>
+                <span>⏱ {post.readTime}</span>
+                <span>✅ Based on official notifications only</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 4-Grid Key Metrics */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            {[
+              { icon: '📅', label: 'Effective Date', value: 'Jan 1, 2026', sub: 'Target (Arrears if delayed)' },
+              { icon: '📈', label: 'Current DA', value: '60%', sub: 'As of Jan 2026' },
+              { icon: '⚖️', label: 'Fitment Factor', value: '⚠️ TBN', sub: 'Expected: 1.92×–2.86×', warn: true },
+              { icon: '📋', label: 'Commission Status', value: 'Consultation', sub: 'Field visits May–Jun 2026' },
+            ].map((m, i) => (
+              <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+                <span className="text-2xl block mb-1">{m.icon}</span>
+                <span className="block text-xs text-surface-400 uppercase tracking-wide font-semibold mb-1">{m.label}</span>
+                <span className={`block font-heading font-bold text-sm ${m.warn ? 'text-amber-600' : 'text-surface-900'}`}>{m.value}</span>
+                <span className="block text-xs text-surface-400 mt-0.5">{m.sub}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Section 1 — May 2026 Status */}
+          <section id="status-2026" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold flex-shrink-0">1</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">May 2026 Status: What is Officially Confirmed?</h2>
+            </div>
+
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-5">
+              <p className="text-sm font-semibold text-primary-700">✅ 2026 Key Update</p>
+              <p className="text-sm text-primary-700 mt-1">The 8th Pay Commission was officially constituted on <strong>November 3, 2025</strong>, under chairperson Justice Ranjana Prakash Desai. The commission is currently conducting field visits (Telangana and J&K scheduled for May–June 2026) and the deadline for employee unions to submit memorandums to NC-JCM was officially extended to <strong>May 31, 2026</strong>.</p>
+            </div>
+
+            <p className="text-surface-700 leading-relaxed mb-4">
+              If you are preparing for SSC CGL, RRB NTPC, or UPSC in 2026, understanding your future salary is powerful motivation — and a valid interview topic. However, the internet is flooded with fake "finalized" salary slabs. At TaiyarHo, we only publish facts.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The government has approved a 2% DA hike bringing the current DA to <strong>60% effective January 1, 2026</strong>. The 8th CPC is still gathering feedback from stakeholders. No final salary figures, pay matrices, or fitment factors have been approved by the government as of this update.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { icon: '✅', color: 'emerald', title: 'Officially Confirmed', items: ['Commission constituted (Nov 3, 2025)', 'Justice Ranjana Prakash Desai as Chair', 'Effective date target: Jan 1, 2026', 'Current DA: 60% (Jan 2026)', 'Field consultations ongoing'] },
+                { icon: '⚠️', color: 'amber', title: 'NOT Yet Confirmed', items: ['Final Fitment Factor', 'New Pay Matrix / Salary Slabs', 'Revised HRA & TA rates', 'CGHS contribution rates', 'NPS employer contribution changes'] },
+              ].map((col, i) => (
+                <div key={i} className={`card p-5 ${i === 0 ? 'border-emerald-200 bg-emerald-50' : 'border-amber-200 bg-amber-50'}`}>
+                  <p className={`text-sm font-heading font-semibold mb-3 ${i === 0 ? 'text-emerald-700' : 'text-amber-700'}`}>{col.icon} {col.title}</p>
+                  <ul className="space-y-1.5">
+                    {col.items.map(item => (
+                      <li key={item} className={`text-sm ${i === 0 ? 'text-emerald-700' : 'text-amber-700'} flex items-start gap-2`}>
+                        <span className="mt-0.5">•</span>{item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section 2 — Fitment Factor */}
+          <section id="fitment-factor" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold flex-shrink-0">2</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">The Fitment Factor Debate — 3 Scenarios</h2>
+            </div>
+
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The Fitment Factor is the exact multiplier that converts your current 7th CPC Basic Pay into the new 8th CPC Basic Pay. Since it is officially <strong>TBN (To Be Notified)</strong>, you must understand all three scenarios sitting on the Commission&apos;s desk right now.
+            </p>
+
+            <div className="overflow-x-auto mb-5">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="px-4 py-3 text-left font-heading text-sm">Pay Commission</th>
+                    <th className="px-4 py-3 text-center font-heading text-sm">Fitment Factor</th>
+                    <th className="px-4 py-3 text-center font-heading text-sm">% Increase</th>
+                    <th className="px-4 py-3 text-center font-heading text-sm">Min. Basic Pay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['5th CPC (1997)', '—', '~20.6%', '₹2,550'],
+                    ['6th CPC (2006)', '1.86×', '54%', '₹7,000'],
+                    ['7th CPC (2016)', '2.57×', '+14.29%', '₹18,000'],
+                    ['8th CPC — Conservative', '1.92×', '~14%', '₹34,560', true],
+                    ['8th CPC — Most Likely', '2.86×', '~11.4% real', '₹51,480', true],
+                    ['8th CPC — Union Demand', '3.83×', '~49%', '₹68,940', true],
+                  ].map((row, i) => (
+                    <tr key={i} className={`${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'} ${row[4] ? 'border-l-2 border-primary-300' : ''}`}>
+                      <td className="px-4 py-2.5 font-body text-surface-800">{row[0]}</td>
+                      <td className="px-4 py-2.5 text-center font-body text-surface-700">{row[1]}</td>
+                      <td className="px-4 py-2.5 text-center font-body text-surface-700">{row[2]}</td>
+                      <td className={`px-4 py-2.5 text-center font-semibold ${row[4] ? 'text-primary-700' : 'text-surface-700'}`}>{row[3]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                { ff: '1.92×', label: 'Conservative Estimate', color: 'amber', detail: 'Assumes government maintains fiscal restraint. Similar real-value increase to 7th CPC after accounting for current inflation. Minimum basic: ₹34,560.', tag: 'Low Scenario' },
+                { ff: '2.86×', label: 'Most Likely Range', color: 'primary', detail: 'Factoring in 60% DA absorption and CPI trends, most analysts project 2.57×–2.86×. Under 2.86×, SSC CGL Level 6 Inspector\'s basic jumps from ₹35,400 to ₹1,01,244.', tag: '★ Analysts Estimate' },
+                { ff: '3.83×', label: 'Union Demand', color: 'emerald', detail: 'NC-JCM and major federations formally demanded 3.83× in their May 2026 memorandums. Approved minimum salary would jump to ₹69,000. Government approval is unlikely at this scale.', tag: 'High Scenario' },
+              ].map((s, i) => (
+                <div key={i} className={`card p-5 ${i === 1 ? 'border-primary-300 bg-primary-50' : ''}`}>
+                  <div className={`text-2xl font-heading font-bold mb-1 ${i === 0 ? 'text-amber-600' : i === 1 ? 'text-primary-700' : 'text-emerald-600'}`}>{s.ff}</div>
+                  <div className="font-heading font-semibold text-surface-900 text-sm mb-1">{s.label}</div>
+                  <span className={`text-xs badge-primary mb-3 inline-block ${i === 1 ? 'bg-primary-200 text-primary-700' : ''}`}>{s.tag}</span>
+                  <p className="text-xs text-surface-600 leading-relaxed">{s.detail}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section 3 — DA Reset */}
+          <section id="da-reset" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold flex-shrink-0">3</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How Dearness Allowance (DA) Will Reset</h2>
+            </div>
+
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Many aspirants are confused about what happens to the 60% DA they see in salary slips today. Here is exactly what will happen when 8th CPC is implemented.
+            </p>
+
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mb-5">
+              <p className="text-sm font-semibold text-emerald-700">📌 Key Fact: You Don&apos;t Lose the DA</p>
+              <p className="text-sm text-emerald-700 mt-1">The current 60% DA is <strong>absorbed into the new Basic Pay</strong>. When the government announces the new pay matrix, it already factors in the prevailing DA. Your Basic Pay goes up massively; the DA counter simply restarts at 0%.</p>
+            </div>
+
+            <div className="overflow-x-auto mb-5">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="px-4 py-3 text-left font-heading text-sm">Component</th>
+                    <th className="px-4 py-3 text-center font-heading text-sm">7th CPC (Today)</th>
+                    <th className="px-4 py-3 text-center font-heading text-sm">8th CPC Day 1</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Basic Pay (Level 6)', '₹35,400', '₹1,01,244 (2.86×)'],
+                    ['Dearness Allowance', '60% = ₹21,240', '0% = ₹0 (Resets)'],
+                    ['HRA — X Class City', '₹10,620 (30%)', '₹24,299 (24%)'],
+                    ['HRA — Y Class City', '₹7,080 (20%)', '₹16,199 (16%)'],
+                    ['HRA — Z Class City', '₹3,540 (10%)', '₹8,099 (8%)'],
+                    ['TA (Level 6, TPTA city)', '~₹5,760', '~₹9,000+ (TBN)'],
+                  ].map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-2.5 font-body text-surface-800">{row[0]}</td>
+                      <td className="px-4 py-2.5 text-center text-surface-600">{row[1]}</td>
+                      <td className="px-4 py-2.5 text-center font-semibold text-primary-700">{row[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4">
+              <p className="text-sm font-semibold text-accent-700">⚠️ Important Note on HRA</p>
+              <p className="text-sm text-accent-700 mt-1">Under the 7th CPC, HRA rates step up when DA crosses 25% and 50%. Currently at 60% DA, you receive the highest HRA tier (X=30%). After 8th CPC implementation, DA resets to 0%, so HRA drops back to the base rate (X=24%) — but your new Basic Pay is so much higher that the absolute HRA amount still increases significantly.</p>
+            </div>
+          </section>
+
+          {/* Section 4 — Calculator */}
+          <section id="calculator" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold flex-shrink-0">4</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Interactive 8th CPC Salary Calculator</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-5">
+              Select your Pay Level, choose a Fitment Factor scenario, and see your estimated 8th CPC salary breakdown instantly. All figures are estimates — final numbers are TBN.
+            </p>
+            <PayCommissionCalculator />
+          </section>
+
+          {/* Section 5 — Pay Level Table */}
+          <section id="pay-matrix" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold flex-shrink-0">5</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Pay Level-wise Expected Basic Pay Comparison</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The table below shows the expected minimum Basic Pay across all common pay levels under three fitment factor scenarios. Gross salary will be significantly higher after adding HRA, TA, and DA.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="px-3 py-3 text-left font-heading text-xs">Level</th>
+                    <th className="px-3 py-3 text-left font-heading text-xs hidden sm:table-cell">Common Posts</th>
+                    <th className="px-3 py-3 text-right font-heading text-xs">7th CPC Basic</th>
+                    <th className="px-3 py-3 text-right font-heading text-xs">1.92×</th>
+                    <th className="px-3 py-3 text-right font-heading text-xs">2.57×</th>
+                    <th className="px-3 py-3 text-right font-heading text-xs text-accent-300">2.86×</th>
+                    <th className="px-3 py-3 text-right font-heading text-xs">3.83×</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {payMatrix.map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-3 py-2.5 font-heading font-semibold text-surface-800 text-xs">{row.level}</td>
+                      <td className="px-3 py-2.5 text-surface-500 text-xs hidden sm:table-cell">{row.post}</td>
+                      <td className="px-3 py-2.5 text-right text-surface-700">{formatInr(row.basic)}</td>
+                      <td className="px-3 py-2.5 text-right text-amber-700">{formatInr(row.basic * 1.92)}</td>
+                      <td className="px-3 py-2.5 text-right text-blue-700">{formatInr(row.basic * 2.57)}</td>
+                      <td className="px-3 py-2.5 text-right font-semibold text-primary-700">{formatInr(row.basic * 2.86)}</td>
+                      <td className="px-3 py-2.5 text-right text-emerald-700">{formatInr(row.basic * 3.83)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400 mt-2">* Table shows minimum Basic Pay at each level. Actual basic pay in higher increments will be proportionally higher.</p>
+          </section>
+
+          {/* Section 6 — Which Exams */}
+          <section id="which-exams" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold flex-shrink-0">6</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Which Government Exams Fall Under 8th Pay Commission?</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-5">
+              This is one of the most commonly misunderstood points. The 8th Pay Commission applies <strong>only to Central Government employees</strong>. It does NOT apply to bank employees, who follow a separate system.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4 mb-5">
+              <div className="card p-5 border-emerald-200 bg-emerald-50">
+                <p className="font-heading font-semibold text-emerald-700 text-sm mb-3">✅ Covered by 8th CPC</p>
+                <div className="space-y-2">
+                  {[
+                    { exam: 'SSC CGL', levels: 'Levels 4–8 (Inspector to ASO)', link: '/exams/ssc-cgl/' },
+                    { exam: 'SSC CHSL', levels: 'Levels 2–4 (LDC, DEO)', link: '/exams/ssc-chsl/' },
+                    { exam: 'RRB NTPC', levels: 'Levels 2–7 (Clerk to Station Master)', link: '/exams/rrb-ntpc/' },
+                    { exam: 'UPSC IAS/IPS/IFS', levels: 'Level 10 (₹56,100 entry)', link: '/exams/upsc-ias/' },
+                    { exam: 'SSC GD Constable', levels: 'Level 3 (₹21,700)', link: '/exams/ssc-gd-constable/' },
+                    { exam: 'NDA / CDS / AFCAT', levels: 'Defence services pay scales', link: '/exams/nda/' },
+                    { exam: 'DRDO / ISRO / BARC', levels: 'Scientific Grade B onwards', link: '/exams/drdo-scientist/' },
+                  ].map(item => (
+                    <div key={item.exam} className="flex items-start justify-between gap-2">
+                      <div>
+                        <Link href={item.link} className="text-sm font-semibold text-emerald-800 hover:underline">{item.exam}</Link>
+                        <p className="text-xs text-emerald-600">{item.levels}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="card p-5 border-red-200 bg-red-50">
+                <p className="font-heading font-semibold text-red-700 text-sm mb-3">❌ NOT Covered (Separate Pay System)</p>
+                <div className="space-y-2">
+                  {[
+                    { exam: 'IBPS PO / Clerk / RRB', system: 'Bipartite Settlement (BPS)', link: '/exams/ibps-po/' },
+                    { exam: 'SBI PO / Clerk', system: 'SBI Board-approved pay scales', link: '/exams/sbi-po/' },
+                    { exam: 'RBI Grade B / Officer', system: 'RBI internal pay structure', link: '/exams/' },
+                    { exam: 'LIC AAO / ADO', system: 'Insurance industry settlement', link: '/exams/' },
+                    { exam: 'NABARD Grade A', system: 'NABARD internal pay scales', link: '/exams/' },
+                    { exam: 'State PSC Employees', system: 'State Pay Commissions (not 8th CPC)', link: '/exams/' },
+                  ].map(item => (
+                    <div key={item.exam} className="flex items-start gap-2">
+                      <div>
+                        <Link href={item.link} className="text-sm font-semibold text-red-700 hover:underline">{item.exam}</Link>
+                        <p className="text-xs text-red-500">{item.system}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+              <p className="text-sm font-semibold text-primary-700">📌 Quick Note for Banking Aspirants</p>
+              <p className="text-sm text-primary-700 mt-1">IBPS PO and SBI PO salaries just got a massive hike via the 12th Bipartite Settlement — in-hand pay is now ₹52,000–₹55,000/month. This is a completely separate development from the 8th Pay Commission. See our detailed <Link href="/blog/ibps-po-salary-in-hand-2026/" className="underline font-semibold">IBPS PO Salary 2026 guide</Link>.</p>
+            </div>
+          </section>
+
+          {/* Section 7 — Timeline */}
+          <section id="timeline" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold flex-shrink-0">7</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">8th Pay Commission Implementation Timeline</h2>
+            </div>
+            <div className="relative">
+              <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+              {[
+                { date: 'Sep–Oct 2025', event: 'Government announces formation of 8th Pay Commission', done: true },
+                { date: 'Nov 3, 2025', event: 'Commission officially constituted — Justice Ranjana Prakash Desai appointed as Chair', done: true },
+                { date: 'Jan 1, 2026', event: 'Target effective date for new pay scales. Current DA = 60%', done: true },
+                { date: 'May–Jun 2026', event: 'Field consultations ongoing (Telangana, J&K). NC-JCM memorandum deadline: May 31, 2026', done: false, current: true },
+                { date: 'Late 2026 (est.)', event: 'Commission submits final report to government', done: false },
+                { date: '2026–27 (est.)', event: 'Government approves final pay matrix. Arrears from Jan 1, 2026 paid in lump sum', done: false },
+              ].map((step, i) => (
+                <div key={i} className="sm:pl-14 relative card p-5 mb-4">
+                  <div className={`sm:absolute left-0 top-4 w-10 h-10 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex ${step.current ? 'bg-accent-500' : step.done ? 'bg-emerald-500' : 'bg-surface-300'}`}>
+                    {step.done ? '✓' : step.current ? '→' : String(i + 1)}
+                  </div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className={`text-xs font-heading font-semibold px-2 py-0.5 rounded-full ${step.current ? 'bg-accent-100 text-accent-700' : step.done ? 'bg-emerald-100 text-emerald-700' : 'bg-surface-100 text-surface-500'}`}>
+                      {step.date}
+                    </span>
+                    {step.current && <span className="text-xs bg-accent-500 text-white px-2 py-0.5 rounded-full">You Are Here</span>}
+                  </div>
+                  <p className="text-sm text-surface-700">{step.event}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section 8 — FAQs */}
+          <section id="faq" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold flex-shrink-0">8</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+            </div>
+            {faqSchema.mainEntity.map((faq, i) => (
+              <details key={i} className="card overflow-hidden mb-3">
+                <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600 transition-colors list-none">
+                  <span>{faq.name}</span>
+                  <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-3 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </summary>
+                <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.acceptedAnswer.text}</div>
+              </details>
+            ))}
+          </section>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-6 text-white text-center">
+            <p className="font-heading font-bold text-xl mb-2">Taiyar Ho? 🚀</p>
+            <p className="text-primary-200 text-sm mb-4">While the Fitment Factor is still being decided, your preparation doesn&apos;t have to wait. Check which exams you qualify for right now — 100% free.</p>
+            <Link href="/tools/eligibility-checker/" className="inline-block bg-white text-primary-700 font-heading font-semibold px-6 py-2.5 rounded-full hover:bg-primary-50 transition-colors text-sm">
+              Check Your Eligibility →
+            </Link>
+          </div>
+        </article>
+
+        {/* ── SIDEBAR ── */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            {/* TOC */}
+            <div className="card p-5">
+              <p className="text-xs font-heading font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</p>
+              <nav className="space-y-1">
+                {toc.map(item => (
+                  <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 leading-snug transition-colors">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            {/* Key Status Card */}
+            <div className="card p-5 bg-amber-50 border-amber-200">
+              <p className="text-xs font-semibold text-amber-700 uppercase tracking-wider mb-3">⚠️ Current Status</p>
+              <div className="space-y-2">
+                {[
+                  { label: 'Effective Date', value: 'Jan 1, 2026 (target)' },
+                  { label: 'Fitment Factor', value: 'TBN (est. 1.92×–2.86×)' },
+                  { label: 'DA Reset', value: '60% → 0% on Day 1' },
+                  { label: 'Arrears', value: 'From Jan 1, 2026' },
+                ].map(item => (
+                  <div key={item.label} className="flex justify-between text-xs">
+                    <span className="text-amber-600">{item.label}</span>
+                    <span className="font-semibold text-amber-800">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Eligibility CTA */}
+            <div className="card p-5 bg-primary-50 border-primary-200">
+              <div className="text-xs font-semibold text-primary-600 uppercase tracking-wider mb-2">Free Tool</div>
+              <p className="text-sm font-semibold text-surface-800 mb-2">Check Your Exam Eligibility</p>
+              <p className="text-xs text-surface-500 mb-3">Find all central govt exams you qualify for based on age & qualification.</p>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs py-2 px-4 block text-center">
+                Open Eligibility Checker →
+              </Link>
+            </div>
+
+            {/* Related */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related Articles</div>
+              <div className="space-y-2">
+                <Link href="/blog/ibps-po-salary-in-hand-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 (In-Hand) →</Link>
+                <Link href="/blog/highest-salary-government-exam-after-12th-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Highest Salary Exams After 12th →</Link>
+                <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL — Which is Better? →</Link>
+                <Link href="/exams/ssc-cgl/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL 2026 Complete Guide →</Link>
+                <Link href="/exams/rrb-ntpc/" className="block text-sm text-primary-600 hover:underline leading-snug">RRB NTPC 2026 Complete Guide →</Link>
+              </div>
+            </div>
           </div>
         </aside>
       </div>
