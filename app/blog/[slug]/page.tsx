@@ -1232,7 +1232,7 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
             dateModified: '2026-04-27',
             author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
             publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/blog/government-exam-preparation-beginners-2026' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/blog/government-exam-preparation-beginners-2026/' },
           }),
         }}
       />
@@ -3967,7 +3967,7 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
                 <Link href="/exams" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Browse All 100 Exams →
                 </Link>
-                <Link href="/blog/ssc-cgl-2026-syllabus-complete-guide" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/blog/ssc-cgl-2026-syllabus-complete-guide/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   SSC CGL Syllabus Guide →
                 </Link>
                 <Link href="/resources" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
@@ -4597,8 +4597,8 @@ function HighestSalary12thArticle({ post }: { post: any }) {
               <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related</div>
               <div className="space-y-2">
                 <Link href="/exams/ssc-cgl" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL Complete Guide →</Link>
-                <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL 2026 →</Link>
-                <Link href="/blog/ibps-po-salary-in-hand-2026" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 →</Link>
+                <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL 2026 →</Link>
+                <Link href="/blog/ibps-po-salary-in-hand-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 →</Link>
                 <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
                 <Link href="/exams" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
               </div>
