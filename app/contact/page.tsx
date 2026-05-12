@@ -35,16 +35,15 @@ export default function ContactPage() {
               How to Reach Us
             </h2>
             <p>
-              The best way to contact us is by emailing us directly. We typically respond within
-              2–3 working days.
+              The best way to contact us is by emailing us directly.
             </p>
             <div className="mt-4 bg-surface-50 border border-surface-200 rounded-xl p-4">
               <p className="text-xs text-surface-400 uppercase tracking-wide font-heading mb-1">Email</p>
               <a
-                href="mailto:contact@taiyarho.in"
+                href="mailto:taiyarho1@gmail.com"
                 className="text-primary-500 hover:underline font-semibold"
               >
-                contact@taiyarho.in
+                taiyarho1@gmail.com
               </a>
             </div>
           </section>
@@ -96,16 +95,7 @@ export default function ContactPage() {
             </ul>
           </section>
 
-          <section>
-            <h2 className="text-xl font-heading font-bold text-surface-900 mb-3">
-              Response Time
-            </h2>
-            <p>
-              We aim to respond to all emails within 2–3 working days. For urgent matters
-              related to incorrect exam information, we prioritise those and typically respond
-              faster.
-            </p>
-          </section>
+
 
         </div>
       </div>

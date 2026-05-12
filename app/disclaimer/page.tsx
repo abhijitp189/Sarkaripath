@@ -25,7 +25,7 @@ export default function DisclaimerPage() {
           Disclaimer
         </h1>
         <p className="text-surface-500 text-lg mb-2">
-          Last updated: May 2026
+          Last updated: May 12, 2026
         </p>
         <p className="text-surface-500 mb-8">
           Please read this disclaimer carefully before using <strong>taiyarho.in</strong>.
