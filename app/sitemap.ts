@@ -56,6 +56,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    // ── Policy / info pages ────────────────────────────────────────────────
+    {
+      url: `${BASE_URL}/about/`,
+      lastModified: new Date('2026-05-12'),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/contact/`,
+      lastModified: new Date('2026-05-12'),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/privacy-policy/`,
+      lastModified: new Date('2026-05-12'),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/disclaimer/`,
+      lastModified: new Date('2026-05-12'),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
   ];
 
   // ── Dynamic exam pages ─────────────────────────────────────────────────────
@@ -69,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Dynamic blog posts ─────────────────────────────────────────────────────
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}/`,
-    lastModified: new Date(),
+    lastModified: new Date(post.updatedDate),
     changeFrequency: 'monthly' as const,
     priority: 0.9,
   }));
