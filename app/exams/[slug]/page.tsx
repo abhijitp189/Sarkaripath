@@ -403,6 +403,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rsmssb-patwari') {
+    return {
+      title: 'RSMSSB Patwari 2026 – Notification, Syllabus, Eligibility & Salary | TaiyarHo',
+      description: 'RSMSSB Patwari 2026: Notification TBN. 3,000–5,000 vacancies expected. Graduate + Computer Certificate required. Age 18–40 yrs. Single paper 300 marks. Salary ₹20,800–₹66,000/month. Full syllabus, exam pattern & free preparation guide.',
+      keywords: 'RSMSSB Patwari 2026, Rajasthan Patwari 2026, RSMSSB Patwari notification, Patwari bharti 2026, Rajasthan Patwari syllabus, Patwari salary, rsmssb.rajasthan.gov.in, पटवारी भर्ती 2026, राजस्थान पटवारी परीक्षा',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rsmssb-patwari/' },
+      other: { 'description:hi': 'RSMSSB पटवारी 2026 – अधिसूचना जल्द अपेक्षित। 3,000–5,000 रिक्तियाँ अपेक्षित। स्नातक + कंप्यूटर सर्टिफिकेट जरूरी। आयु 18–40 वर्ष। 300 अंक की एकल परीक्षा। वेतन ₹20,800–₹66,000/माह। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'rpf-si') {
     return {
       title: 'RPF SI 2026 – Vacancy, Syllabus, PET/PMT, Salary & Complete Guide | TaiyarHo',
@@ -517,6 +527,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'mppsc-state-service') return <MppscStatePage exam={brief} />;
   if (brief && brief.slug === 'tnpsc-group-2') return <TNPSCGroup2Page exam={brief} />;
   if (brief && brief.slug === 'afcat') return <AfcatPage exam={brief} />;
+  if (brief && brief.slug === 'rsmssb-patwari') return <RsmssbPatwariPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -34074,6 +34085,784 @@ function AfcatPage({ exam }: { exam: any }) {
                   <Link href="/exams/upsc-cds" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 UPSC CDS Guide</Link>
                   <Link href="/exams/iaf-agniveer" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 IAF Agniveer Guide</Link>
                   <Link href="/exams/navy-agniveer" className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">🔗 Navy Agniveer Guide</Link>
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── RSMSSB PATWARI 2026 RICH PAGE ────────────────────────────────────────────
+function RsmssbPatwariPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',         label: 'Overview' },
+    { id: 'important-dates',  label: 'Important Dates 2026' },
+    { id: 'eligibility',      label: 'Eligibility Criteria' },
+    { id: 'vacancies',        label: 'Vacancy History' },
+    { id: 'exam-pattern',     label: 'Exam Pattern' },
+    { id: 'syllabus',         label: 'Detailed Syllabus' },
+    { id: 'cutoff',           label: 'Previous Cut-offs' },
+    { id: 'salary',           label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',     label: 'How to Apply' },
+    { id: 'study-plan',       label: 'Study Plan' },
+    { id: 'books',            label: 'Best Books' },
+    { id: 'resources',        label: 'Free Resources' },
+    { id: 'tips',             label: 'Expert Tips' },
+    { id: 'faq',              label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'RSMSSB Patwari 2016 Exam',                   date: 'October 2016',          status: 'released' },
+    { event: 'RSMSSB Patwari 2021 Notification',            date: 'October 2021',          status: 'released' },
+    { event: 'RSMSSB Patwari 2021 Exam',                    date: 'January 2022',          status: 'released' },
+    { event: 'RSMSSB Patwari 2021 Result',                  date: 'May 2022',              status: 'released' },
+    { event: 'RSMSSB Patwari 2023 Notification',            date: 'September 2023',        status: 'released' },
+    { event: 'RSMSSB Patwari 2023 Application Closes',      date: 'October 2023',          status: 'released' },
+    { event: 'RSMSSB Patwari 2023 Exam (Phase 1)',          date: 'February–March 2024',   status: 'released' },
+    { event: 'RSMSSB Patwari 2023 Result',                  date: 'Mid-2024',              status: 'released' },
+    { event: '🆕 RSMSSB Patwari 2026 – Notification',      date: 'TBN (To Be Notified)',  status: 'tbn' },
+    { event: 'RSMSSB Patwari 2026 – Online Application',   date: 'TBN',                   status: 'tbn' },
+    { event: 'RSMSSB Patwari 2026 – Written Exam',         date: 'TBN',                   status: 'tbn' },
+    { event: 'RSMSSB Patwari 2026 – Result & DV',          date: 'TBN',                   status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'Patwari 2016',            vacancies: '~4,400',               exam: 'October 2016' },
+    { year: 'Patwari 2021',            vacancies: '5,378',                exam: 'January 2022' },
+    { year: 'Patwari 2023',            vacancies: '3,896',                exam: 'Feb–Mar 2024' },
+    { year: 'Patwari 2026 (upcoming)', vacancies: '3,000–5,000 (Expected)', exam: 'TBN' },
+  ];
+
+  const examPattern = [
+    { subject: 'General Knowledge of Rajasthan',  questions: 75,  marks: 150, time: 'Single Paper' },
+    { subject: 'Mental Ability & Reasoning Test', questions: 25,  marks: 50,  time: '—' },
+    { subject: 'Basic Numerical Efficiency',      questions: 15,  marks: 30,  time: '—' },
+    { subject: 'Basic Computer Knowledge',        questions: 20,  marks: 40,  time: '—' },
+    { subject: 'Hindi Language',                  questions: 15,  marks: 30,  time: '—' },
+  ];
+
+  const cutoffData = [
+    { category: 'General (UR)',        cutoff2023: '~135–145 / 300', cutoff2021: '~140–150 / 300' },
+    { category: 'OBC (NCL)',           cutoff2023: '~125–135 / 300', cutoff2021: '~130–140 / 300' },
+    { category: 'SC',                  cutoff2023: '~110–120 / 300', cutoff2021: '~115–125 / 300' },
+    { category: 'ST',                  cutoff2023: '~100–110 / 300', cutoff2021: '~105–115 / 300' },
+    { category: 'EWS',                 cutoff2023: '~130–140 / 300', cutoff2021: 'N/A' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Pay Matrix Level 5, Rajasthan Govt)',         amount: '₹20,800/month' },
+    { component: 'Dearness Allowance (DA) – Rajasthan State Rate',        amount: '~₹3,744–₹4,576/month' },
+    { component: 'House Rent Allowance (HRA) – 8% to 16% of basic',      amount: '₹1,664–₹3,328/month' },
+    { component: 'Other Allowances (TA, Medical, etc.)',                   amount: '~₹1,500–₹2,500/month' },
+    { component: 'Estimated Gross In-Hand (Fresh Patwari)',                amount: '~₹28,000–₹35,000/month' },
+    { component: 'Maximum Pay (Top of Pay Scale, Level 5)',                amount: '₹66,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Patwari',           grade: 'Pay Level 5',  years: '0–5 yrs',  payband: '₹20,800–₹66,000' },
+    { level: 'Kanungo / Girdawar', grade: 'Pay Level 6',  years: '5–10 yrs', payband: '₹35,400–₹1,12,400' },
+    { level: 'Naib Tehsildar',    grade: 'Pay Level 7',  years: '10–15 yrs',payband: '₹44,900–₹1,42,400' },
+    { level: 'Tehsildar',         grade: 'Pay Level 9',  years: '15–20 yrs',payband: '₹53,100–₹1,67,800' },
+    { level: 'Deputy Collector',  grade: 'RAS Cadre',    years: '20+ yrs',  payband: '₹67,700+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🏛️ General Knowledge of Rajasthan',
+      topics: [
+        'History of Rajasthan – Ancient (Indus Valley sites, early kingdoms), Medieval (Rajput dynasties, battles), Modern (freedom struggle, 1857 revolt)',
+        'Historical monuments, forts and palaces of Rajasthan',
+        'Geography – rivers (Chambal, Banas, Luni), mountains (Aravalli range), lakes (Sambhar, Pichola), wildlife sanctuaries and national parks',
+        'Districts, tehsils, natural regions of Rajasthan',
+        'Economy – agriculture, industries, handicrafts, MSME, tourism',
+        'Rajasthan Polity – Raj Sabha, Vidhan Sabha, Governor, Chief Minister, RPSC, RSMSSB',
+        'Art & Culture – music, dance (Ghoomar, Kalbelia), folk art (Phad, Pichwai), literature',
+        'Fairs & festivals – Pushkar Mela, Teej, Gangaur, Urs',
+        'Current Affairs of Rajasthan – state government schemes, appointments, awards',
+        'Important Government schemes – Mukhyamantri Chiranjeevi Yojana, Indira Gandhi Free Smartphone Yojana, PM Awas Yojana',
+      ],
+    },
+    {
+      subject: '🧩 Mental Ability & Reasoning Test',
+      topics: [
+        'Analogies (word-based and number-based)',
+        'Similarities and Differences',
+        'Space Visualization and Spatial Reasoning',
+        'Number Series – missing term, odd one out',
+        'Blood Relations',
+        'Directions and Distance',
+        'Coding-Decoding (letter and number-based)',
+        'Problem Solving and Decision Making',
+        'Syllogisms',
+        'Ranking and Arrangement',
+      ],
+    },
+    {
+      subject: '🔢 Basic Numerical Efficiency',
+      topics: [
+        'Number System – natural numbers, integers, fractions, decimals',
+        'Simplification and Approximation (BODMAS)',
+        'Percentage and its applications',
+        'Ratio & Proportion and Partnership',
+        'Profit & Loss',
+        'Simple Interest and Compound Interest',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time',
+        'Basic Mensuration – area, perimeter of square, rectangle, circle',
+        'Average and its applications',
+      ],
+    },
+    {
+      subject: '💻 Basic Computer Knowledge',
+      topics: [
+        'Computer Fundamentals – history, characteristics, types of computers',
+        'Hardware – CPU, memory (RAM, ROM, HDD), input/output devices',
+        'Software – system software, application software, open source',
+        'Operating Systems – Windows basics, file management',
+        'MS Office – Word (formatting, tables), Excel (formulas, charts), PowerPoint (slides)',
+        'Internet – web browser, search engines, email, URL, HTTP/HTTPS',
+        'Networking basics – LAN, WAN, Wi-Fi, Bluetooth',
+        'Cyber Security – password safety, malware, phishing awareness',
+        'E-governance – CSC, DigiLocker, e-Mitra (Rajasthan)',
+        'Computer shortcuts and operating basics',
+      ],
+    },
+    {
+      subject: '📖 Hindi Language (हिंदी भाषा)',
+      topics: [
+        'Shudh Vartani – correct spelling of common words',
+        'Vilom Shabd – antonyms',
+        'Paryayvachi Shabd – synonyms',
+        'Vakya Shuddhi – sentence correction',
+        'Ling (gender) and Vachan (number) – singular and plural forms',
+        'Karak (case) and Vibhakti (declension)',
+        'Muhavare aur Lokoktiyan – idioms and proverbs',
+        'Sandhi and Samas – joining of words and compound words',
+        'Tatsam, Tadbhav, Deshaj, and Videshi Shabd',
+        'Comprehension-based questions (Apathit Gadyansh)',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { week: 'Week 1–2', focus: 'Rajasthan GK Foundation',    detail: 'Start with the history and geography of Rajasthan — these two topics alone form 50–60% of the GK section. Use Laxmi Narain Natani\'s Rajasthan GK book. Read one chapter a day with bullet-point notes. Focus on facts: rivers, forts, dynasties, and dates. Make a one-page "Rajasthan at a Glance" sheet.' },
+    { week: 'Week 3–4', focus: 'Rajasthan GK Completion',     detail: 'Cover Economy, Polity, Art & Culture, Festivals, and Current Affairs of Rajasthan. Subscribe to Sankalp Civil Services or Rajasthan GK YouTube channels for free daily updates. Read Rajasthan Patrika newspaper headlines daily — many Patwari questions come directly from state news.' },
+    { week: 'Week 5–6', focus: 'Reasoning + Numerical',       detail: 'Reasoning: 1 hour daily — focus on series, coding-decoding, blood relations, analogies. Numerical: 1 hour daily — arithmetic (% , profit/loss, SI/CI, ratio, time-work). Use R.S. Aggarwal for both. Aim for 80–90% accuracy in these sections — they are the scoring difference-makers.' },
+    { week: 'Week 7',   focus: 'Computer Knowledge',          detail: 'Computer Knowledge can be mastered in 7–10 days with focused study. Cover MS Office, internet basics, hardware/software fundamentals, and e-Mitra (Rajasthan\'s e-governance platform). Attempt 20–30 computer MCQs daily. Do not skip e-governance — it frequently appears in state-level exams.' },
+    { week: 'Week 8',   focus: 'Hindi Grammar',               detail: 'Hindi needs consistent daily practice, not cramming. 30–45 minutes daily on Shudh Vartani, Vilom, Paryayvachi, and Muhavare. Attempt 20 Hindi MCQs per day from previous papers. Practice Vakya Shuddhi carefully — errors are common in MCQs even for fluent Hindi speakers.' },
+    { week: 'Week 9–10', focus: 'Revision + Mock Tests',      detail: 'Take 2–3 full-length Patwari mock tests per week (available free on Testbook and Adda247). Analyse every mock — find which Rajasthan GK topics you are losing marks on. Revise your notes, not the entire book. Final week: only light revision and confidence-building. Sleep well the night before the exam.' },
+  ];
+
+  const books = [
+    { subject: 'Rajasthan GK',    title: 'Rajasthan Ek Parichay',                       author: 'Laxmi Narain Natani' },
+    { subject: 'Rajasthan GK',    title: 'Rajasthan General Knowledge',                  author: 'Mahaveer Jain' },
+    { subject: 'Rajasthan GK',    title: 'RSMSSB Patwari Complete Guide',                author: 'Kiran Publications' },
+    { subject: 'Reasoning',       title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal' },
+    { subject: 'Mathematics',     title: 'Quantitative Aptitude for Competitive Exams',  author: 'R.S. Aggarwal' },
+    { subject: 'Computer',        title: 'Computer Fundamentals & Cyber Security',       author: 'P.K. Sinha' },
+    { subject: 'Hindi',           title: 'Samanya Hindi (Competitive Exams)',            author: 'Hardev Bahri / Unique Publication' },
+    { subject: 'Previous Papers', title: 'RSMSSB Patwari Previous Year Papers (Solved)', author: 'Arihant / Youth Competition Times' },
+  ];
+
+  const freeResources = [
+    { name: 'RSMSSB Official Careers Portal',          type: 'website', url: 'https://rsmssb.rajasthan.gov.in',             description: 'Official source for notifications, admit cards, results, and answer keys. Bookmark this.' },
+    { name: 'Sankalp Civil Services (YouTube)',         type: 'youtube', url: 'https://www.youtube.com/@SankalpIAS',          description: 'Best free YouTube channel for Rajasthan GK — history, geography, polity and current affairs in Hindi.' },
+    { name: 'Adda247 Rajasthan State Exams',           type: 'website', url: 'https://www.adda247.com/rajasthan-jobs/',       description: 'Free mock tests, daily quizzes, Rajasthan GK capsules, and study material for Patwari exam.' },
+    { name: 'Testbook RSMSSB Patwari Free Mocks',      type: 'website', url: 'https://testbook.com/rsmssb-patwari',          description: 'Full-length Patwari mock tests and section-wise practice with detailed solutions.' },
+    { name: 'RajasthanGK YouTube (Dr. Dinesh Gehlot)', type: 'youtube', url: 'https://www.youtube.com/@RajasthanGKMaster',   description: 'In-depth free classes on Rajasthan history, culture, festivals and geography for state exam aspirants.' },
+    { name: 'Youth Competition Times (YCT) Online',    type: 'website', url: 'https://www.yctbooks.com',                     description: 'Free Patwari-specific daily practice sets, Rajasthan current affairs, and previous year question banks.' },
+    { name: 'Telegram – Rajasthan GK Daily',           type: 'telegram', url: 'https://t.me/rajasthangkdaily',               description: 'Join for free daily Rajasthan GK MCQs, current affairs updates, and exam alerts.' },
+    { name: 'e-Mitra Rajasthan (for Computer GK)',     type: 'website', url: 'https://emitra.rajasthan.gov.in',              description: 'Understand Rajasthan\'s e-governance platform first-hand — frequently tested in Computer Knowledge section.' },
+  ];
+
+  const tips = [
+    { icon: '🏛️', tip: 'Rajasthan GK is 50% of the paper. Do not spread yourself thin — focus deeply on History, Geography, Art & Culture, and Economy of Rajasthan. Read a dedicated Rajasthan GK book cover-to-cover at least twice. State-specific GK is your biggest advantage or weakness in this exam.' },
+    { icon: '📰', tip: 'Read Rajasthan Patrika (state\'s biggest Hindi newspaper) headlines daily for 15 minutes. RSMSSB frequently draws current affairs questions directly from state government announcements, appointments, and schemes. This one habit can earn you 5–10 extra marks.' },
+    { icon: '⚠️', tip: 'Negative marking is real — 1/3 marks deducted per wrong answer. Do not attempt questions you are unsure about. In Rajasthan GK, skip if you cannot eliminate at least 2 options. In Reasoning and Maths, solve first and mark if confident — do not guess blindly.' },
+    { icon: '💻', tip: 'Computer Knowledge is a section most aspirants ignore — and it shows in cut-offs. Cover MS Office, internet basics, e-Mitra, and DigiLocker in just 7–10 days. These 20 questions (40 marks) are relatively easy and can be the difference between selection and rejection.' },
+    { icon: '📖', tip: 'Hindi section\'s Shudh Vartani (correct spelling) questions are tricky even for native speakers. Keep a personal list of commonly misspelled Hindi words and revise it daily. Practice 20 MCQs daily from previous papers — pattern recognition matters more than grammar theory here.' },
+    { icon: '🎯', tip: 'The Patwari exam is conducted offline (OMR-based). Practice filling OMR sheets correctly — darken circles fully, do not overwrite. Carry a black/blue ballpoint pen (not gel, which may smear). Read exam instructions carefully — students lose marks due to OMR errors, not knowledge gaps.' },
+    { icon: '🗓️', tip: 'Monitor rsmssb.rajasthan.gov.in and the official Rajasthan recruitment portal at recruitment.rajasthan.gov.in weekly. RSMSSB notifications go live quickly and application windows are typically only 2–4 weeks. Missing the application deadline means waiting for the next cycle (often 2–3 years away).' },
+    { icon: '🔄', tip: 'Previous year papers are your best mock tests. RSMSSB often repeats questions or uses very similar patterns — especially in Rajasthan History, Geographical terms, and Shudh Vartani. Solve all available 2016, 2021, and 2023 papers with a timer to build speed and exam temperament.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the RSMSSB Patwari 2026 notification date?',
+      a: 'As of May 2026, RSMSSB has not released the Patwari 2026 notification. The last exam was conducted in February–March 2024 for 3,896 posts. Based on the previous cycle (approximately every 2–3 years), a new notification is expected in 2026, but the date is To Be Notified (TBN). Monitor rsmssb.rajasthan.gov.in regularly for official updates.',
+    },
+    {
+      q: 'What are the eligibility criteria for RSMSSB Patwari 2026?',
+      a: 'Candidates must hold a Bachelor\'s degree from a recognized university AND a Basic Computer Knowledge certificate. Accepted computer certificates include: O Level Certificate from NIELIT (DOEACC), Computer Certificate from Rajasthan State Government Department of Personnel, or a Diploma/Certificate in Computer Science from a recognized university or board. Age limit: 18–40 years for General candidates; OBC (Rajasthan) up to 43–45 years; SC/ST up to 45 years.',
+    },
+    {
+      q: 'What is the RSMSSB Patwari exam pattern and total marks?',
+      a: 'The Patwari exam is a single offline paper of 300 marks with 150 questions to be attempted in 3 hours. Distribution: Rajasthan GK (75 questions, 150 marks), Mental Ability & Reasoning (25 questions, 50 marks), Basic Numerical Efficiency (15 questions, 30 marks), Computer Knowledge (20 questions, 40 marks), Hindi Language (15 questions, 30 marks). Negative marking: 1/3 mark deducted per wrong answer.',
+    },
+    {
+      q: 'What is the salary of an RSMSSB Patwari?',
+      a: 'A fresh RSMSSB Patwari is placed at Pay Level 5 under the Rajasthan Government Pay Matrix, starting at ₹20,800/month basic pay. With DA (Rajasthan state rate), HRA, and other allowances, the total gross in-hand salary for a fresh Patwari is approximately ₹28,000–₹35,000/month. The maximum pay in the scale is ₹66,000/month.',
+    },
+    {
+      q: 'What does a Patwari do after selection?',
+      a: 'A Patwari is a government revenue officer posted at the village (gram panchayat) level. Key responsibilities include: maintaining land records (Khasra, Khatauni, Jamabandi), conducting Girdawari (crop inspection reports), issuing income, caste, and domicile certificates, and assisting the Tehsildar in land surveys and record management. Patwaris work under the Revenue Department of Rajasthan and can be promoted to Kanungo, Naib Tehsildar, and Tehsildar over their career.',
+    },
+    {
+      q: 'How many vacancies are expected in RSMSSB Patwari 2026?',
+      a: 'Based on the historical trend — ~4,400 in 2016, 5,378 in 2021, 3,896 in 2023 — the RSMSSB Patwari 2026 cycle is expected to advertise 3,000–5,000 vacancies. The exact number will be announced with the official notification. Rajasthan has a large revenue department with regular retirement-based vacancies.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">RSMSSB Patwari 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🌾 State PSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Rajasthan State Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ Notification: TBN 2026</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            RSMSSB Patwari 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            RSMSSB Patwari 2026 notification expected soon for <strong>3,000–5,000 vacancies</strong> across Rajasthan. Single written paper of 300 marks covering Rajasthan GK, Reasoning, Computer, Maths &amp; Hindi. Qualification: <strong>Graduate + Computer Certificate</strong>. Age 18–40 years. Starting salary <strong>~₹28,000–₹35,000/month</strong>.
+          </p>
+
+          {/* Fast-fact grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { icon: '📋', label: 'Vacancies 2026',  value: '3,000–5,000 (Expected)' },
+              { icon: '📅', label: 'Exam Date 2026',   value: 'TBN' },
+              { icon: '🎓', label: 'Qualification',    value: 'Graduate + Computer' },
+              { icon: '💰', label: 'Starting Salary',  value: '~₹28,000–₹35,000/mo' },
+            ].map((f) => (
+              <div key={f.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4">
+                <div className="text-xl sm:text-2xl mb-1">{f.icon}</div>
+                <div className="text-xs text-blue-200 font-medium mb-0.5">{f.label}</div>
+                <div className="text-sm sm:text-base font-heading font-semibold text-white">{f.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* Left column */}
+          <div>
+
+            {/* ── 1. OVERVIEW ── */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="What is RSMSSB Patwari 2026?" />
+              <div className="card p-6">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  RSMSSB Patwari is a state-level recruitment conducted by the <strong>Rajasthan Subordinate and Ministerial Services Selection Board (RSMSSB)</strong> to fill the post of Patwari (Revenue Officer) across all districts of Rajasthan. A Patwari is a frontline government officer posted at the village or gram panchayat level, responsible for maintaining land records, issuing certificates, and supporting the revenue administration of the state.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The exam is conducted irregularly — approximately every 2–3 years — and attracts over 10–15 lakh applicants for a few thousand posts, making it one of the most competitive state government exams in Rajasthan. The last recruitment cycle (2023) was for 3,896 posts with an exam held in February–March 2024.
+                </p>
+                <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-4">
+                  <p className="text-sm text-primary-800 font-semibold mb-1">💡 Why RSMSSB Patwari?</p>
+                  <p className="text-sm text-primary-700">Patwari is a prestigious, permanent, and pensionable state government job with job security, fixed working hours, and clear career advancement through promotion to Kanungo, Naib Tehsildar, and Tehsildar. It is one of the most sought-after entry-level government positions in Rajasthan.</p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-2">
+                  {[
+                    { label: 'Conducting Body',   value: 'RSMSSB' },
+                    { label: 'Exam Level',        value: 'State (Rajasthan)' },
+                    { label: 'Total Marks',       value: '300 marks' },
+                    { label: 'Exam Duration',     value: '3 Hours' },
+                    { label: 'Question Type',     value: 'MCQ (OMR-based)' },
+                    { label: 'Selection Stages',  value: 'Written Exam + DV' },
+                    { label: 'Language',          value: 'Hindi & English' },
+                    { label: 'Negative Marking',  value: '1/3 per wrong answer' },
+                  ].map((c) => (
+                    <div key={c.label} className="bg-surface-50 rounded-xl p-3 border border-surface-200">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{c.label}</div>
+                      <div className="font-semibold mt-1 text-sm text-surface-800">{c.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── 2. IMPORTANT DATES ── */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="Important Dates 2026" />
+              <div className="card overflow-hidden">
+                <div className="bg-amber-50 border-b border-amber-200 px-5 py-3">
+                  <p className="text-sm text-amber-800 font-medium">⚠️ RSMSSB Patwari 2026 notification is yet to be released. All 2026 dates are TBN (To Be Notified). Historical 2021 and 2023 dates are confirmed.</p>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="px-4 py-3 text-left font-heading">Event</th>
+                        <th className="px-4 py-3 text-left font-heading">Date</th>
+                        <th className="px-4 py-3 text-left font-heading">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((d, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-800">{d.event}</td>
+                          <td className="px-4 py-3 text-surface-700">{d.date}</td>
+                          <td className="px-4 py-3">
+                            {d.status === 'released'
+                              ? <span className="badge-green">✓ Done</span>
+                              : <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⏳ TBN</span>
+                            }
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 3. ELIGIBILITY ── */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🎓</span>
+                    <span className="font-heading font-semibold text-surface-800">Educational Qualification</span>
+                  </div>
+                  <ul className="text-sm text-surface-700 space-y-2">
+                    <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">✓</span><span><strong>Bachelor&apos;s degree</strong> from a recognized university, AND</span></li>
+                    <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">✓</span><span><strong>O Level Certificate</strong> from NIELIT (DOEACC), OR</span></li>
+                    <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">✓</span><span><strong>Computer Certificate</strong> issued by Rajasthan Govt Dept. of Personnel, OR</span></li>
+                    <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">✓</span><span><strong>Computer Diploma/Certificate</strong> from a recognized board or university</span></li>
+                  </ul>
+                  <div className="mt-3 bg-primary-50 rounded-lg p-3">
+                    <p className="text-xs text-primary-700">💡 Both the degree AND the computer certificate are mandatory. Candidates with only one of the two are not eligible.</p>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">📋</span>
+                    <span className="font-heading font-semibold text-surface-800">Age Limit</span>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    {[
+                      { cat: 'General (UR)',          age: '18–40 years' },
+                      { cat: 'OBC (Non-Creamy Layer)', age: 'Up to 43 years' },
+                      { cat: 'OBC (Creamy Layer)',     age: 'Up to 43 years' },
+                      { cat: 'SC / ST (Rajasthan)',   age: 'Up to 45 years' },
+                      { cat: 'PwBD',                  age: '+10 years relaxation' },
+                      { cat: 'Widow / Divorcee',       age: 'No upper limit (Rajasthan Govt policy)' },
+                    ].map((r) => (
+                      <div key={r.cat} className="flex justify-between items-center py-1.5 border-b border-surface-100 last:border-0">
+                        <span className="text-surface-700">{r.cat}</span>
+                        <span className="font-semibold text-surface-800 text-right">{r.age}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-3 bg-amber-50 rounded-lg p-3">
+                    <p className="text-xs text-amber-700">⚠️ Age calculated as on 1st January of the recruitment year (as per official notification).</p>
+                  </div>
+                </div>
+                <div className="card p-5 sm:col-span-2">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🪪</span>
+                    <span className="font-heading font-semibold text-surface-800">Other Requirements</span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                    {[
+                      { label: 'Nationality',      value: 'Indian Citizen (Rajasthan Domicile required)' },
+                      { label: 'Gender',           value: 'Male and Female both eligible' },
+                      { label: 'Rajasthan Domicile', value: 'Required for reserved category benefits' },
+                    ].map((r) => (
+                      <div key={r.label} className="bg-surface-50 rounded-lg p-3 border border-surface-200">
+                        <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{r.label}</div>
+                        <div className="text-surface-800 font-medium">{r.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 4. VACANCY HISTORY ── */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="Vacancy History" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="px-4 py-3 text-left font-heading">Cycle</th>
+                        <th className="px-4 py-3 text-left font-heading">Total Vacancies</th>
+                        <th className="px-4 py-3 text-left font-heading">Exam Held</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyHistory.map((v, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-medium text-surface-800">{v.year}</td>
+                          <td className="px-4 py-3 text-emerald-700 font-semibold">{v.vacancies}</td>
+                          <td className="px-4 py-3 text-surface-600">{v.exam}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="px-5 py-3 bg-emerald-50 border-t border-emerald-100">
+                  <p className="text-sm text-emerald-800">💡 Rajasthan has consistently released 3,500–5,500 Patwari vacancies per cycle. The 2026 cycle is expected to maintain this range based on departmental retirement patterns.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 5. EXAM PATTERN ── */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="Exam Pattern 2026" />
+              <div className="card overflow-hidden mb-4">
+                <div className="bg-primary-700 text-white px-5 py-3">
+                  <p className="font-heading font-semibold text-sm">Single Written Paper — 150 Questions | 300 Marks | 3 Hours | Offline (OMR)</p>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="px-4 py-3 text-left font-heading">Subject</th>
+                        <th className="px-4 py-3 text-center font-heading">Questions</th>
+                        <th className="px-4 py-3 text-center font-heading">Marks</th>
+                        <th className="px-4 py-3 text-center font-heading">Marks/Question</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {examPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-800 font-medium">{row.subject}</td>
+                          <td className="px-4 py-3 text-center text-surface-700">{row.questions}</td>
+                          <td className="px-4 py-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                          <td className="px-4 py-3 text-center text-surface-600">2 marks</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 border-t-2 border-primary-200">
+                        <td className="px-4 py-3 font-heading font-bold text-surface-900">Total</td>
+                        <td className="px-4 py-3 text-center font-bold text-surface-900">150</td>
+                        <td className="px-4 py-3 text-center font-bold text-primary-600">300</td>
+                        <td className="px-4 py-3 text-center font-bold text-surface-700">3 Hours</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-amber-50 border-l-4 border-amber-500 rounded-r-xl p-4">
+                <p className="text-sm text-amber-800 font-semibold mb-1">⚠️ Negative Marking</p>
+                <p className="text-sm text-amber-700">1/3 of the marks assigned to that question are deducted for each wrong answer. For a 2-mark question, getting it wrong costs you 0.67 marks. Do not guess randomly — skip if you cannot confidently eliminate at least 2 wrong options.</p>
+              </div>
+            </section>
+
+            {/* ── 6. SYLLABUS ── */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="Detailed Syllabus 2026" />
+              <div className="space-y-3">
+                {syllabus.map((s, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      <span>{s.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-1.5">
+                        {s.topics.map((t, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="text-primary-500 mt-1 shrink-0">•</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+              <div className="mt-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                <p className="text-sm text-primary-800 font-semibold mb-1">💡 Weightage Tip</p>
+                <p className="text-sm text-primary-700">Rajasthan GK carries 50% of the total marks (150/300). Candidates who master Rajasthan History, Geography, and Current Affairs consistently top the merit list. Prioritize this section above all others.</p>
+              </div>
+            </section>
+
+            {/* ── 7. CUT-OFFS ── */}
+            <section id="cutoff" className="mb-12">
+              <SectionHeading num="7" title="Previous Year Cut-offs" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="px-4 py-3 text-left font-heading">Category</th>
+                        <th className="px-4 py-3 text-center font-heading">Patwari 2023 (out of 300)</th>
+                        <th className="px-4 py-3 text-center font-heading">Patwari 2021 (out of 300)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cutoffData.map((r, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-medium text-surface-800">{r.category}</td>
+                          <td className="px-4 py-3 text-center text-primary-600 font-semibold">{r.cutoff2023}</td>
+                          <td className="px-4 py-3 text-center text-surface-600">{r.cutoff2021}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="px-5 py-3 bg-surface-50 border-t border-surface-200">
+                  <p className="text-xs text-surface-500">Note: Cut-off figures are approximate, compiled from multiple sources. Official answer keys and final cut-offs are published by RSMSSB. Cut-offs vary by year, difficulty level, and number of vacancies.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 8. SALARY ── */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="8" title="Salary & Career Growth" />
+              <div className="card overflow-hidden mb-5">
+                <div className="bg-emerald-600 text-white px-5 py-3">
+                  <p className="font-heading font-semibold text-sm">Pay Level 5 — Rajasthan State Government Pay Matrix (7th Pay Commission Equivalent)</p>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="px-4 py-3 text-left font-heading">Component</th>
+                        <th className="px-4 py-3 text-right font-heading">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryBreakdown.map((r, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-700">{r.component}</td>
+                          <td className={`px-4 py-3 text-right font-semibold ${i === salaryBreakdown.length - 1 ? 'text-emerald-600 text-base' : 'text-surface-800'}`}>{r.amount}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-4">📈 Career Progression</p>
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  {careerPath.map((c, i) => (
+                    <div key={i} className="sm:pl-14 relative mb-4 last:mb-0">
+                      <div className="hidden sm:flex absolute left-0 top-3 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="card p-4">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div>
+                            <p className="font-heading font-semibold text-surface-800">{c.level}</p>
+                            <p className="text-xs text-surface-500 mt-0.5">{c.grade} · {c.years}</p>
+                          </div>
+                          <span className="text-sm font-semibold text-emerald-600">{c.payband}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+                  <p className="text-sm text-emerald-800">💡 A Patwari with a passion for the revenue administration can also appear for the <strong>Rajasthan Administrative Service (RAS/RTS) exam</strong> for faster career advancement, and ambitious candidates can eventually reach the Deputy Collector or Collector level.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 9. HOW TO APPLY ── */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="9" title="How to Apply" />
+              <div className="card p-6">
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                  <p className="text-sm text-amber-800 font-semibold">⚠️ Applications for RSMSSB Patwari 2026 have not opened yet. The following steps apply to each recruitment cycle.</p>
+                </div>
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  {[
+                    { step: '1', title: 'Check the Official Notification',     detail: 'Visit rsmssb.rajasthan.gov.in regularly. Notifications are also published on recruitment.rajasthan.gov.in. Download the PDF notification and read it fully — especially eligibility, dates, and fee details.' },
+                    { step: '2', title: 'Verify Your Eligibility',             detail: 'Confirm you hold both a Bachelor\'s degree AND a valid computer certificate (O Level / DOEACC / recognized board). Check the age as of the cut-off date specified in the notification.' },
+                    { step: '3', title: 'Register on the SSO Portal',          detail: 'Create or log in to your Rajasthan SSO (Single Sign-On) account at sso.rajasthan.gov.in. This is the gateway for all Rajasthan government exam applications.' },
+                    { step: '4', title: 'Fill the Online Application Form',   detail: 'Fill all personal, educational, and category details carefully. Upload photograph (JPG, ≤100KB), signature (JPG, ≤50KB), and any required certificate scans as per notification specifications.' },
+                    { step: '5', title: 'Pay the Application Fee',            detail: 'Fee payment via Credit Card, Debit Card, Net Banking, or e-Mitra kiosk. Fee categories vary — General: ~₹450, OBC: ~₹350, SC/ST/EWS: ~₹250 (subject to change in 2026 notification).' },
+                    { step: '6', title: 'Submit and Download Confirmation',   detail: 'Submit the form and download the filled application PDF. Save it — you will need it for document verification after selection. No offline applications are accepted.' },
+                  ].map((s) => (
+                    <div key={s.step} className="sm:pl-14 relative mb-5 last:mb-0">
+                      <div className="hidden sm:flex absolute left-0 top-3 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{s.step}</div>
+                      <div className="card p-4">
+                        <p className="font-heading font-semibold text-surface-800 mb-1">{s.title}</p>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── 10. STUDY PLAN ── */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="10" title="10-Week Study Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((s, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-5 last:mb-0">
+                    <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-xs text-center leading-tight">{i + 1}</div>
+                    <div className="card p-5">
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <span className="badge-primary">{s.week}</span>
+                        <span className="font-heading font-semibold text-surface-800">{s.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── 11. BOOKS ── */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="11" title="Best Books for RSMSSB Patwari 2026" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* ── 12. FREE RESOURCES ── */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="12" title="Free Preparation Resources" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r) => (
+                  <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl shrink-0">
+                        {r.type === 'youtube' ? '📺' : r.type === 'telegram' ? '📱' : '🌐'}
+                      </span>
+                      <div>
+                        <p className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors">{r.name}</p>
+                        <p className="text-sm text-surface-500 mt-1 leading-relaxed">{r.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* ── 13. TIPS ── */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="13" title="Expert Tips to Crack RSMSSB Patwari 2026" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center text-lg shrink-0">{t.icon}</div>
+                      <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── 14. FAQS ── */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="14" title="Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      <span>{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>{/* end left column */}
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">On This Page</p>
+                <nav className="space-y-1">
+                  {toc.map((t) => (
+                    <a key={t.id} href={`#${t.id}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-3 py-1.5 transition-colors">
+                      {t.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official site */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm">🔗 Official Website</p>
+                <a href="https://rsmssb.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm w-full text-center block">
+                  rsmssb.rajasthan.gov.in ↗
+                </a>
+                <a href="https://recruitment.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="btn-outline text-sm w-full text-center block mt-2">
+                  Rajasthan Recruitment Portal ↗
+                </a>
+              </div>
+
+              {/* Eligibility checker CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <p className="font-heading font-semibold text-primary-800 mb-1 text-sm">🎯 Check Your Eligibility</p>
+                <p className="text-xs text-primary-600 mb-3">Enter your age and qualification to see if you qualify for Patwari 2026.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block">
+                  Use Free Tool →
+                </Link>
+              </div>
+
+              {/* Key facts */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm">📋 Quick Facts</p>
+                <div className="space-y-2 text-sm">
+                  {[
+                    { label: 'Exam Mode',      value: 'Offline (OMR)' },
+                    { label: 'Total Marks',    value: '300' },
+                    { label: 'Duration',       value: '3 Hours' },
+                    { label: 'Min. Age',       value: '18 years' },
+                    { label: 'Max. Age (Gen)', value: '40 years' },
+                    { label: 'Application',    value: 'Online via SSO' },
+                  ].map((f) => (
+                    <div key={f.label} className="flex justify-between items-center py-1.5 border-b border-surface-100 last:border-0">
+                      <span className="text-surface-500">{f.label}</span>
+                      <span className="font-semibold text-surface-800">{f.value}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
