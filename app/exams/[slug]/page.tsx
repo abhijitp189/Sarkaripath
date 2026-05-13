@@ -423,6 +423,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'wbcs-executive') {
+    return {
+      title: 'WBCS Executive 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'WBCS Executive 2026: West Bengal Civil Service exam by WBPSC. Notification expected 2026. Graduate eligible, age 21–36 yrs. 3-stage: Prelims → Mains → Interview. Salary ₹44,900–₹2,09,200/month. Full syllabus, exam pattern & free preparation guide.',
+      keywords: 'WBCS Executive 2026, WBCS 2026 notification, WBCS syllabus 2026, WBCS eligibility, WBCS salary, WBPSC 2026, West Bengal Civil Service 2026, WBCS age limit, WBCS exam date 2026, ডব্লিউবিসিএস 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/wbcs-executive/' },
+      other: { 'description:hi': 'WBCS Executive 2026 – पश्चिम बंगाल लोक सेवा आयोग। स्नातक पात्र, आयु 21–36 वर्ष। 3 चरण: प्रारंभिक → मुख्य → साक्षात्कार। वेतन ₹44,900–₹2,09,200/माह। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'rpf-si') {
     return {
       title: 'RPF SI 2026 – Vacancy, Syllabus, PET/PMT, Salary & Complete Guide | TaiyarHo',
@@ -539,6 +549,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'afcat') return <AfcatPage exam={brief} />;
   if (brief && brief.slug === 'rsmssb-patwari') return <RsmssbPatwariPage exam={brief} />;
   if (brief && brief.slug === 'rpsc-ras') return <RpscRasPage exam={brief} />;
+  if (brief && brief.slug === 'wbcs-executive') return <WbcsExecutivePage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -35699,6 +35710,901 @@ function RpscRasPage({ exam }: { exam: any }) {
                     { name: 'BPSC CCE 2026',       slug: 'bpsc-cce' },
                     { name: 'RSMSSB Patwari 2026', slug: 'rsmssb-patwari' },
                     { name: 'UPSC IAS 2026',       slug: 'upsc-ias' },
+                  ].map((exam) => (
+                    <Link key={exam.slug} href={`/exams/${exam.slug}/`}
+                          className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
+                      → {exam.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── WBCS EXECUTIVE 2026 RICH PAGE ─────────────────────────────────────────────
+function WbcsExecutivePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',         label: 'Overview' },
+    { id: 'important-dates',  label: 'Important Dates 2026' },
+    { id: 'eligibility',      label: 'Eligibility Criteria' },
+    { id: 'vacancies',        label: 'Vacancy History' },
+    { id: 'exam-pattern',     label: 'Exam Pattern' },
+    { id: 'syllabus',         label: 'Detailed Syllabus' },
+    { id: 'cutoff',           label: 'Previous Cut-offs' },
+    { id: 'salary',           label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',     label: 'How to Apply' },
+    { id: 'study-plan',       label: 'Study Plan' },
+    { id: 'books',            label: 'Best Books' },
+    { id: 'resources',        label: 'Free Resources' },
+    { id: 'tips',             label: 'Expert Tips' },
+    { id: 'faq',              label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'WBCS (Exe.) 2023 Notification Released',        date: 'December 2022',       status: 'released' },
+    { event: 'WBCS (Exe.) 2023 Preliminary Exam',             date: 'February 2023',        status: 'released' },
+    { event: 'WBCS (Exe.) 2023 Main Exam',                    date: 'July–August 2023',     status: 'released' },
+    { event: 'WBCS (Exe.) 2023 Personality Test/Interview',   date: '2024',                 status: 'released' },
+    { event: 'WBCS (Exe.) 2024 Notification',                 date: 'Late 2024',            status: 'released' },
+    { event: 'WBCS (Exe.) 2024 Preliminary Exam',             date: 'February 2025',        status: 'released' },
+    { event: 'WBCS (Exe.) 2024 Main Exam',                    date: 'Mid 2025',             status: 'released' },
+    { event: '🆕 WBCS (Exe.) 2025 Notification',              date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: 'WBCS (Exe.) 2025 Preliminary Exam',             date: 'Early 2026 (Expected)', status: 'tbn' },
+    { event: 'WBCS (Exe.) 2025 Main Exam',                    date: 'Mid 2026 (Expected)',  status: 'tbn' },
+    { event: 'WBCS (Exe.) 2025 Personality Test/Interview',   date: 'Late 2026 (Expected)', status: 'tbn' },
+    { event: 'WBCS (Exe.) 2025 Final Result',                 date: '2027 (Expected)',       status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'WBCS 2019',          vacancies: '~427',      prelims: 'Jan 2019',   mains: 'Sep 2019'   },
+    { year: 'WBCS 2020',          vacancies: '~250',      prelims: 'Feb 2020',   mains: '2021'       },
+    { year: 'WBCS 2021',          vacancies: '~294',      prelims: 'Jan 2022',   mains: 'Aug 2022'   },
+    { year: 'WBCS 2022',          vacancies: '~400+',     prelims: 'Jan 2023',   mains: 'Sep 2023'   },
+    { year: 'WBCS 2023',          vacancies: '~450',      prelims: 'Feb 2023',   mains: 'Jul 2023'   },
+    { year: 'WBCS 2025 (upcoming)', vacancies: '200–500 (Expected)', prelims: 'Early 2026 (Est.)', mains: 'Mid 2026 (Est.)' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'Bengali / Hindi / Urdu / Nepali / Santali (any one)', questions: 30, marks: 30  },
+    { subject: 'English',                                              questions: 30, marks: 30  },
+    { subject: 'General Studies (History, Geography, Polity, Eco)',    questions: 100, marks: 100 },
+    { subject: 'Arithmetic & Test of Reasoning',                       questions: 40, marks: 40  },
+  ];
+
+  const mainsGroups = [
+    { paper: 'Paper I – Bengali / Hindi / Urdu / Nepali / Santali',          marks: 200, nature: 'Conventional' },
+    { paper: 'Paper II – English',                                             marks: 200, nature: 'Conventional' },
+    { paper: 'Paper III – General Studies I (Ind. History, WB History, Geo)', marks: 200, nature: 'Conventional' },
+    { paper: 'Paper IV – General Studies II (Sc & Tech, Env, Economy)',        marks: 200, nature: 'Conventional' },
+    { paper: 'Paper V – Constitution, Pols. Theory, WB Governance',            marks: 200, nature: 'Conventional' },
+    { paper: 'Paper VI – Optional Subject I',                                  marks: 200, nature: 'Conventional' },
+    { paper: 'Paper VII – Optional Subject II',                                marks: 200, nature: 'Conventional' },
+    { paper: 'Paper VIII – Optional Subject III',                              marks: 200, nature: 'Conventional' },
+    { paper: 'Personality Test (Interview)',                                    marks: 200, nature: 'Viva Voce'   },
+  ];
+
+  const optionalSubjects = [
+    'Agriculture', 'Animal Husbandry & Veterinary Science', 'Bengali', 'Botany', 'Chemistry',
+    'Civil Engineering', 'Commerce & Accountancy', 'Computer Science', 'Economics',
+    'Education', 'Electrical Engineering', 'English', 'Geography', 'Geology',
+    'Hindi', 'History', 'Law', 'Mathematics', 'Mechanical Engineering',
+    'Medical Science', 'Philosophy', 'Physics', 'Political Science', 'Psychology',
+    'Public Administration', 'Sanskrit', 'Sociology', 'Statistics', 'Urdu', 'Zoology',
+  ];
+
+  const cutoffData = [
+    { category: 'General',   prelims2023: '~110/200', mains2023: 'TBN', prelims2022: '~107/200', mains2022: 'TBN' },
+    { category: 'OBC-A',     prelims2023: '~100/200', mains2023: 'TBN', prelims2022: '~97/200',  mains2022: 'TBN' },
+    { category: 'OBC-B',     prelims2023: '~105/200', mains2023: 'TBN', prelims2022: '~100/200', mains2022: 'TBN' },
+    { category: 'SC',        prelims2023: '~90/200',  mains2023: 'TBN', prelims2022: '~87/200',  mains2022: 'TBN' },
+    { category: 'ST',        prelims2023: '~80/200',  mains2023: 'TBN', prelims2022: '~75/200',  mains2022: 'TBN' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Pay Level as per 6th ROPA 2019 – Group A Officers)', amount: '₹44,900–₹1,42,400/month' },
+    { component: 'Dearness Allowance (DA) – as revised periodically',             amount: 'As per WB Govt. notification' },
+    { component: 'House Rent Allowance (HRA)',                                     amount: 'Varies by posting location' },
+    { component: 'Medical Allowance & Other Benefits',                             amount: 'As per service rules' },
+    { component: 'Total Estimated CTC (including allowances)',                     amount: '₹70,000–₹1,50,000+/month' },
+    { component: 'Senior IAS-equivalent posts (through WBCS promotion)',           amount: '₹1,44,200–₹2,18,200/month' },
+  ];
+
+  const careerPath = [
+    { level: 'SDO / BDO / SDPO (Entry Level)',               scale: 'Group A',   years: '0–5 yrs',   payband: '₹44,900–₹1,42,400' },
+    { level: 'Deputy Magistrate / Dy. SP',                    scale: 'Group A',   years: '5–10 yrs',  payband: '₹56,100–₹1,77,500' },
+    { level: 'Additional District Magistrate / Add. SP',       scale: 'Group A',   years: '10–15 yrs', payband: '₹67,700–₹2,08,700' },
+    { level: 'District Magistrate / Superintendent of Police', scale: 'Group A+', years: '15–20 yrs', payband: '₹78,800–₹2,09,200' },
+    { level: 'Divisional Commissioner / DIG',                  scale: 'Senior',   years: '20+ yrs',   payband: '₹1,44,200+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📜 History & Culture',
+      topics: [
+        'Indian History – Ancient, Medieval, Modern (with special focus on Bengal Renaissance)',
+        'History of West Bengal – colonial period, partition, independence movement',
+        'Bengal Renaissance – Ram Mohan Roy, Bankim Chandra, Rabindranath Tagore, Swami Vivekananda',
+        'World History – major events, 20th century wars, Cold War, decolonisation',
+        'Indian Cultural heritage – art, architecture, music, dance, literature',
+        'Important freedom movement events, leaders and their contributions',
+      ],
+    },
+    {
+      subject: '🌍 Geography',
+      topics: [
+        'Physical Geography of India and West Bengal – rivers, mountains, climate zones',
+        'Economic Geography – agriculture, industries, minerals, transport networks',
+        'Human Geography – population, urbanisation, migration trends in WB',
+        'World Geography – continents, oceans, major geographical features',
+        'Environmental Geography – climate change, natural disasters, WB-specific ecology',
+        'Map reading and interpretation',
+      ],
+    },
+    {
+      subject: '⚖️ Indian Polity, Constitution & Governance',
+      topics: [
+        'Constitution of India – fundamental rights, DPSP, fundamental duties',
+        'Parliamentary system – Union and State Legislature, Rajya Sabha, Lok Sabha',
+        'President, PM, Governor, CM – powers and constitutional roles',
+        'Judiciary – Supreme Court, High Courts, Subordinate Courts, judicial review',
+        'Local Self Governance – Panchayati Raj, Urban Local Bodies, 73rd & 74th Amendment',
+        'West Bengal governance – State legislature, WB cabinet, administrative structure',
+        'Public Administration, RTI, anti-corruption institutions, CAG, CVC',
+        'Constitutional amendments, emergency provisions',
+      ],
+    },
+    {
+      subject: '💰 Economy & Economic Development',
+      topics: [
+        'Indian Economy – national income, GDP, growth and development concepts',
+        'Planning in India – Five Year Plans, NITI Aayog, SDGs',
+        'Money, Banking & Finance – RBI, monetary policy, repo/CRR/SLR, inflation',
+        'West Bengal economy – agriculture, tea, jute, fisheries, IT/ITES sector',
+        'Government schemes – MGNREGA, PM Awas Yojana, Duare Sarkar (WB), Lakshmir Bhandar (WB)',
+        'Union Budget – key concepts, revenue/capital expenditure, fiscal deficit',
+        'International trade, WTO, FDI, balance of payments basics',
+      ],
+    },
+    {
+      subject: '🔬 Science, Technology & Environment',
+      topics: [
+        'General Science – Physics, Chemistry, Biology basics applicable in everyday life',
+        'Science & Technology in India – ISRO, DRDO, nuclear energy, space missions',
+        'IT and Computer Science – internet, cybersecurity, digital India initiatives',
+        'Environment – biodiversity, climate change, Paris Agreement, COP summits',
+        'Ecology – ecosystems of West Bengal, Sundarbans, mangroves',
+        'Health – communicable diseases, government health programmes, COVID lessons',
+        'Agricultural Science – crop varieties, fertilisers, irrigation, WB agriculture',
+      ],
+    },
+    {
+      subject: '🧩 Arithmetic & Reasoning',
+      topics: [
+        'Number System, HCF & LCM, Simplification',
+        'Percentage, Profit & Loss, Simple & Compound Interest',
+        'Ratio & Proportion, Averages, Time & Work, Speed & Distance',
+        'Data Interpretation – tables, bar graphs, pie charts',
+        'Logical Reasoning – syllogisms, blood relations, direction sense',
+        'Series – number series, alphabet series',
+        'Coding-Decoding, Analogies, Classification',
+      ],
+    },
+    {
+      subject: '📝 English & Bengali Language',
+      topics: [
+        'Comprehension passages (English)',
+        'Grammar – tenses, voice, narration, prepositions, articles',
+        'Vocabulary – synonyms, antonyms, one-word substitutions, idioms & phrases',
+        'Essay writing in English and Bengali (Mains)',
+        'Letter and application writing (Mains)',
+        'Bengali prose and grammar (for Paper I, Mains)',
+        'Translation – Bengali to English and vice versa (Mains)',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', focus: 'History, Geography & WB Focus', detail: 'Start with NCERT books (Class 6–12) for Indian History and Geography. Simultaneously build a dedicated West Bengal notes folder — Bengal Renaissance, WB geography, WB governance. These WB-specific questions appear repeatedly in both Prelims and Mains. Read a Bengali newspaper daily for 20 minutes for language practice and current affairs.' },
+    { month: 'Month 3–4', focus: 'Polity, Economy & Arithmetic', detail: 'Cover Indian Constitution thoroughly — Laxmikant is the go-to book. For Economy, use Ramesh Singh + Duare Sarkar and other WB state schemes alongside national schemes. Arithmetic and Reasoning: practice 20–30 questions daily. WBCS Prelims arithmetic is moderate difficulty but time-consuming if foundations are weak.' },
+    { month: 'Month 5–6', focus: 'Science, Technology & Optional Subject Start', detail: 'General Science for Prelims can be covered in 3–4 weeks with a focus on application-based questions. Begin your 3 optional subjects (for Mains). Choose subjects where you have a graduation background — this gives a 60–70% head start. Public Administration, Geography, and History are popular choices for WBCS.' },
+    { month: 'Month 7–8', focus: 'Optional Subjects Deep Dive + Mains Writing', detail: 'Complete all 3 optional subjects. Simultaneously, practise answer writing. WBCS Mains is entirely descriptive — 200-mark papers. Write at least 2 full answers daily. Join an answer-writing group or WBPSC coaching for structured feedback. Learn Bengali essay writing if you have chosen Bengali as Paper I.' },
+    { month: 'Month 9–10', focus: 'Mock Tests + Revision', detail: 'Start Prelims mock tests — take 1 full mock every 3 days. Analyse every result thoroughly. Revise History and Geography once a week. Keep a current affairs notebook and update it weekly with WB, national, and international developments. Revise all WB government schemes with their launch dates.' },
+    { month: 'Month 11–12', focus: 'Final Sprint + Interview Preparation', detail: 'Final 2 months before Prelims — daily mocks, rapid revision of weak areas, current affairs from the last 12 months. After Prelims, shift focus entirely to Mains answer writing. For Interview, prepare thoroughly on WB administration, your optional subjects, and a 2-minute self-introduction that highlights your WB connection and administrative aspirations.' },
+  ];
+
+  const books = [
+    { title: 'Spectrum\'s A Brief History of Modern India',              author: 'Rajiv Ahir',              subject: 'Modern History' },
+    { title: 'Indian Polity',                                             author: 'M. Laxmikant',            subject: 'Polity' },
+    { title: 'Indian Economy',                                            author: 'Ramesh Singh',             subject: 'Economy' },
+    { title: 'Certificate Physical and Human Geography',                  author: 'G.C. Leong',              subject: 'Geography' },
+    { title: 'West Bengal – Objective GK & GS',                          author: 'Arihant / ABC Publications', subject: 'West Bengal Focus' },
+    { title: 'WBCS Previous Year Solved Papers (10 Years)',               author: 'Arihant / MBD Publications', subject: 'Practice & Pattern' },
+    { title: 'Quantitative Aptitude for Competitive Exams',               author: 'R.S. Aggarwal',           subject: 'Arithmetic' },
+    { title: 'General Science for Competitive Exams',                     author: 'Lucent Publications',     subject: 'Science' },
+  ];
+
+  const freeResources = [
+    { name: 'WBPSC Official Website',         type: 'website',  url: 'https://wbpsc.gov.in',                description: 'Official WBCS notifications, admit cards, syllabi, and results — primary source for all updates.' },
+    { name: 'Arambh App / Wbpscupsc.com',     type: 'website',  url: 'https://wbpscupsc.com',               description: 'WBCS-specific free study material, previous year papers and current affairs for WB state exams.' },
+    { name: 'Studymate / Mosaic WBCS on YouTube', type: 'youtube', url: 'https://www.youtube.com/@MosaicWBCS', description: 'Free WBCS Prelims and Mains classes in Bengali and English — covers History, Polity, Geography.' },
+    { name: 'Drishti IAS – WBPSC Section',    type: 'website',  url: 'https://www.drishtiias.com/state-pcs/wb', description: 'Free WBCS study material, WB-specific current affairs, and free notes in Hindi & English.' },
+    { name: 'WBCS Free Mock Tests – Testbook', type: 'website', url: 'https://testbook.com/wbcs',            description: 'Free Prelims mock tests in Bengali and English, with detailed solution explanations.' },
+    { name: 'Vision IAS Current Affairs',      type: 'website',  url: 'https://www.visionias.in/current-affairs/', description: 'Monthly current affairs compilations useful for both WBCS Prelims GS and Mains.' },
+    { name: 'The Hindu / Anandabazar Patrika', type: 'website',  url: 'https://www.thehindu.com',            description: 'Read The Hindu for national affairs + Anandabazar Patrika for WB-specific current affairs daily.' },
+    { name: 'Adda247 Bengali Channel',         type: 'youtube',  url: 'https://www.youtube.com/@Adda247Bengali', description: 'Free daily classes for WBCS, WBSSC, and other WB state exams in Bengali medium.' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'WBCS Prelims has 200 questions in 150 minutes — time management is critical. Allocate no more than 30 seconds per question. Skip and return — do not get stuck. Your GS section (100 questions) is the scoring backbone; History, Polity and WB-specific questions appear most frequently.' },
+    { icon: '🗺️', tip: 'West Bengal-specific content is WBCS\'s unique differentiator from UPSC. Dedicate at least 15–20% of your study time to WB history (Bengal Renaissance, Partition), WB geography (Sundarbans, major rivers, districts), WB governance, and state government schemes like Duare Sarkar and Lakshmir Bhandar.' },
+    { icon: '📝', tip: 'WBCS Mains is entirely descriptive. Writing speed and structure are as important as content. Practice writing structured answers (Introduction → Body with 3–4 points → Conclusion) regularly. A well-structured 400-word answer scores better than an unstructured 600-word answer in WBCS.' },
+    { icon: '📚', tip: 'Choose your 3 optional subjects wisely. Subjects like Public Administration, Geography, History, and Political Science have predictable syllabi and ample study material. If your graduation is in Science or Engineering, subjects like Physics, Chemistry, Mathematics, or Computer Science can give you a significant scoring advantage.' },
+    { icon: '🗞️', tip: 'WBCS current affairs questions lean towards West Bengal, national politics, and government schemes. Maintain a weekly current affairs notebook. Focus on: WB cabinet decisions, Chief Minister\'s schemes, national economic data (GDP, inflation), and important scientific/space achievements.' },
+    { icon: '🗣️', tip: 'The Personality Test (Interview) carries 200 marks — same as each Mains paper. It is not just a formality. Prepare a clear self-introduction covering your educational background, optional subjects, district of origin (and its administration), and why you want to serve in the West Bengal Civil Service.' },
+    { icon: '🔄', tip: 'WBCS exam cycles can be long (18–24 months from notification to final result). Maintain consistency over the full preparation period. Aspirants who burnout after 6 months are at a disadvantage. Build sustainable daily habits: 6–7 hours of focused study is more effective than 12-hour sporadic sessions.' },
+    { icon: '💡', tip: 'Bengali language proficiency is important even for English-medium candidates. Paper I (Bengali/Hindi/Urdu/Nepali/Santali) is compulsory in Mains. Bengali candidates should practise essay writing, comprehension, and grammar in their chosen language from Month 5 onwards alongside GS preparation.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the WBCS Executive 2026 notification date?',
+      a: 'As of May 2026, the WBCS (Executive) 2025–26 notification has not been officially released by WBPSC. Based on historical cycles, the notification is expected in late 2025 or early 2026 for the Preliminary Exam to be held in early 2026. Always monitor wbpsc.gov.in for the official announcement, as WBPSC does not follow a fixed calendar release date.',
+    },
+    {
+      q: 'What is the age limit for WBCS Executive 2026?',
+      a: 'The standard age limit for WBCS (Executive) is 21–36 years for General/Unreserved candidates. Age relaxations: OBC-A and OBC-B (+3 years = up to 39 years), SC/ST of West Bengal (+5 years = up to 41 years), PwBD candidates (+10 years = up to 46 years), Ex-Servicemen as per government norms. The age is calculated as of the cut-off date specified in the official notification.',
+    },
+    {
+      q: 'What is the WBCS Executive salary in 2026?',
+      a: 'WBCS (Executive) officers (Group A) are placed in the pay matrix under the West Bengal Government\'s 6th ROPA 2019. Entry-level posts such as BDO, SDO, and SDPO carry a basic pay of ₹44,900–₹1,42,400/month. With Dearness Allowance (DA), HRA, and other allowances, the total take-home in entry-level posts is approximately ₹70,000–₹1,00,000/month depending on the posting location. Senior Group A posts can go up to ₹2,09,200/month.',
+    },
+    {
+      q: 'What are the services under WBCS Executive?',
+      a: 'WBCS (Executive) covers multiple Group A and Group B services of the West Bengal Government, including: West Bengal Civil Service (Exe.) – postings as BDO, SDO, Deputy Magistrate; West Bengal Police Service – postings as SDPO, Sub-Divisional Police Officer; West Bengal Revenue Service; West Bengal Co-operative Service; West Bengal Commercial Tax Service; West Bengal Labour Service; and others. The specific allocation depends on merit rank and the vacancy notification.',
+    },
+    {
+      q: 'How many optional subjects are there in WBCS Mains?',
+      a: 'WBCS (Executive) Mains has 3 optional subject papers (Paper VI, VII, VIII), each carrying 200 marks. Candidates must choose 1 optional subject from the list of 30 subjects notified by WBPSC — but each subject has 3 papers. Optional subjects include Public Administration, Geography, History, Political Science, Bengali, English, Economics, Mathematics, and many more. Candidates must choose a subject where they have sufficient background, as the content is at post-graduation level.',
+    },
+    {
+      q: 'Is WBCS harder than UPSC CSE?',
+      a: 'WBCS (Executive) is generally considered less competitive than UPSC CSE in terms of national competition but is a highly prestigious state service exam in its own right. Key differences: WBCS Prelims is shorter (200 Qs, 150 min vs UPSC\'s 2 papers), WBCS Mains has 3 optionals (vs UPSC\'s 2), and the interview carries 200 marks (same weight as Mains papers). The syllabus has significant overlap with UPSC CSE, particularly in History, Polity, and Economy — meaning UPSC aspirants often attempt WBCS simultaneously.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">WBCS Executive 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">West Bengal Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            WBCS Executive 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            WBCS (Executive) 2025–26 notification expected soon from WBPSC. Annual exam for <strong>200–500 vacancies</strong> across Group A &amp; B services — BDO, SDO, SDPO and more. 3-stage selection: Prelims → Mains → Personality Test. Graduate eligible. Age 21–36 years. Salary <strong>₹44,900–₹2,09,200/month</strong> under WB 6th ROPA 2019.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies',    value: '200–500',              sub: '(2025 cycle est.)' },
+              { label: 'Prelims Exam Date',     value: 'Early 2026',           sub: '(Expected)' },
+              { label: 'Min. Qualification',    value: 'Any Graduate',         sub: 'Degree required' },
+              { label: 'Starting Salary',       value: '₹44,900+/month',      sub: 'plus allowances' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> WBCS (Exe.) 2025 notification is awaited. The 2024 cycle (Prelims Feb 2025) is currently in progress. All upcoming 2025 cycle dates are estimated based on WBPSC&apos;s historical pattern. Always verify from <a href="https://wbpsc.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">wbpsc.gov.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is WBCS Executive 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>West Bengal Civil Service (Executive) Examination</strong> — commonly known as WBCS — is conducted annually by the <strong>West Bengal Public Service Commission (WBPSC)</strong> to recruit officers for various Group A and Group B services of the West Bengal state government. It is widely considered the <strong>most prestigious state-level civil service exam in West Bengal</strong>, analogous to the UPSC CSE at the national level.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  Selected officers are posted as <strong>Block Development Officers (BDO)</strong>, <strong>Sub-Divisional Officers (SDO)</strong>, <strong>Sub-Divisional Police Officers (SDPO)</strong>, and officers in the West Bengal Revenue, Commercial Tax, Labour, and Co-operative Services. The exam covers administration, law enforcement, revenue collection, and rural development functions across all districts of West Bengal.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  With approximately <strong>200–500 vacancies per cycle</strong> and several lakh applicants, WBCS (Exe.) is a highly competitive exam. However, aspirants with a strong foundation in UPSC CSE subjects — History, Polity, Geography, and Economy — have a significant natural advantage, as the syllabi overlap considerably.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',     value: 'WBPSC (West Bengal PSC)' },
+                  { label: 'Selection Stages',    value: 'Prelims + Mains + Personality Test' },
+                  { label: 'Joining As',          value: 'BDO / SDO / SDPO & others' },
+                  { label: 'Total Mains Marks',   value: '1,800 (Papers + Interview)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 WBCS Executive 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> WBCS (Exe.) 2025 dates are not yet officially announced as of May 2026. The table below shows confirmed historical dates and expected upcoming dates based on WBPSC&apos;s annual pattern. Always verify from <a href="https://wbpsc.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">wbpsc.gov.in</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released'  && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'upcoming'  && <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">🔵 Upcoming</span>}
+                          {row.status === 'tbn'       && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria for WBCS Executive 2026</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">
+                    Candidates must be a citizen of India. Citizens of Nepal, Bhutan, and persons of Indian origin who have migrated from certain countries may also be eligible — refer to the official notification for details. Candidates must be a <strong>resident of West Bengal</strong> or be willing to serve in West Bengal.
+                  </p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>21 years</strong> | Maximum: <strong>36 years</strong> (General/UR — as of the cut-off date in the notification)</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50 border border-surface-200">
+                        <tr>
+                          <th className="text-left p-2 font-semibold text-surface-700">Category</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Relaxation</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Max Age</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / EWS (UR)',     rel: 'No relaxation',    max: '36 years' },
+                          { cat: 'OBC-A (WB)',             rel: '+3 years',          max: '39 years' },
+                          { cat: 'OBC-B (WB)',             rel: '+3 years',          max: '39 years' },
+                          { cat: 'SC (WB)',                rel: '+5 years',          max: '41 years' },
+                          { cat: 'ST (WB)',                rel: '+5 years',          max: '41 years' },
+                          { cat: 'PwBD (General)',         rel: '+10 years',         max: '46 years' },
+                          { cat: 'Ex-Servicemen',          rel: 'As per Govt. norms', max: 'As applicable' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                            <td className="p-2 text-surface-700">{row.cat}</td>
+                            <td className="p-2 text-primary-600 font-medium">{row.rel}</td>
+                            <td className="p-2 text-surface-700">{row.max}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">
+                    <strong>Graduation in any discipline</strong> from a university recognised by the Government of India or WBPSC-approved institutions. Final-year students awaiting results may apply but must produce proof of passing by the date of joining.
+                  </p>
+                  <div className="mt-3 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
+                    🎓 <strong>Language Requirement:</strong> Candidates must have passed at least one examination with <strong>Bengali</strong> as a subject, OR must possess a proficiency in Bengali certified by the WBPSC, to be eligible for certain service allocations.
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg">💡</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Check Your Eligibility</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 mb-3">Use TaiyarHo&apos;s free eligibility checker to instantly verify if you qualify for WBCS Executive based on your age, qualification, and category.</p>
+                  <Link href="/tools/eligibility-checker/" className="btn-primary text-sm inline-block">
+                    Check Eligibility Free →
+                  </Link>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCY HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📊 WBCS Executive Vacancy History</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Year</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Approx. Vacancies</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.vacancies}</td>
+                        <td className="p-3 text-surface-600">{row.prelims}</td>
+                        <td className="p-3 text-surface-600">{row.mains}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">* Vacancy data sourced from WBPSC official notifications. Figures are approximate and may include both Group A and Group B posts.</p>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📋 WBCS Executive 2026 Exam Pattern</h2>
+              </div>
+
+              {/* Prelims */}
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-1 text-lg">Stage 1 — Preliminary Examination</h3>
+                <p className="text-sm text-surface-500 mb-4">Objective MCQ | 200 Questions | 200 Marks | 150 Minutes | Negative marking: ¼ mark per wrong answer</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Section</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {prelimsPattern.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 text-surface-800 font-medium">{row.subject}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-surface-300 bg-surface-100">
+                        <td className="p-3 font-bold text-surface-900">Total</td>
+                        <td className="p-3 text-center font-bold text-surface-900">200</td>
+                        <td className="p-3 text-center font-bold text-primary-600">200</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm text-amber-800">
+                  ⚠️ <strong>Negative Marking:</strong> 0.25 marks deducted per wrong answer in Prelims. There is no negative marking in Mains papers.
+                </div>
+              </div>
+
+              {/* Mains */}
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-1 text-lg">Stage 2 — Main Examination</h3>
+                <p className="text-sm text-surface-500 mb-4">Descriptive (Conventional) | 9 Papers (including Personality Test) | Total 1,800 Marks | 3 hours per paper</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Paper</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {mainsGroups.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 text-surface-800 font-medium">{row.paper}</td>
+                          <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                          <td className="p-3 text-center text-surface-500 text-xs">{row.nature}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-surface-300 bg-surface-100">
+                        <td className="p-3 font-bold text-surface-900">Grand Total</td>
+                        <td className="p-3 text-center font-bold text-primary-600">1,800</td>
+                        <td className="p-3"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Stage 3 */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-1 text-lg">Stage 3 — Personality Test (Interview)</h3>
+                <p className="text-sm text-surface-600 leading-relaxed">
+                  The Personality Test carries <strong>200 marks</strong> and is conducted by a WBPSC interview board. Unlike UPSC CSE where the interview carries only 275 marks, WBCS gives the Personality Test the same weight as a Mains paper — making it a crucial stage. The board evaluates intellectual ability, personality, current affairs awareness, West Bengal administration knowledge, and administrative aptitude.
+                </p>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📖 WBCS Executive 2026 Detailed Syllabus</h2>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-blue-800">The WBCS syllabus is broadly divided into: <strong>General Studies</strong> (Prelims + Mains GS Papers), <strong>Language Papers</strong> (Bengali/Hindi/etc. + English), and <strong>3 Optional Subject Papers</strong>. Below is the comprehensive topic breakdown for Prelims GS and Mains GS.</p>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((section, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{section.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-2">
+                        {section.topics.map((topic, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="text-primary-500 mt-0.5 shrink-0">›</span>
+                            <span>{topic}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+
+              {/* Optional Subjects */}
+              <div className="card p-5 mt-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Optional Subjects (Choose 1 — 3 Papers of 200 Marks Each)</h3>
+                <div className="flex flex-wrap gap-2">
+                  {optionalSubjects.map((sub, i) => (
+                    <span key={i} className="bg-primary-50 text-primary-700 text-xs font-medium px-2.5 py-1 rounded-full border border-primary-100">{sub}</span>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-3">* Final list of optional subjects may vary — always check the official WBCS notification on wbpsc.gov.in.</p>
+              </div>
+            </section>
+
+            {/* SECTION 7: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📉 Previous Year Cut-off Marks</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> WBPSC does not officially publish Mains cut-offs. Prelims cut-offs below are approximate, community-sourced data. Treat these as reference only. Official Prelims results are published on wbpsc.gov.in.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims 2023 (est.)</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains 2023</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims 2022 (est.)</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains 2022</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-semibold text-surface-800">{row.category}</td>
+                        <td className="p-3 text-center text-primary-600 font-medium">{row.prelims2023}</td>
+                        <td className="p-3 text-center text-surface-500">{row.mains2023}</td>
+                        <td className="p-3 text-center text-primary-600 font-medium">{row.prelims2022}</td>
+                        <td className="p-3 text-center text-surface-500">{row.mains2022}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">Cut-offs are out of 200 (Prelims). Mains cut-offs are not officially published by WBPSC.</p>
+            </section>
+
+            {/* SECTION 8: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 WBCS Executive Salary & Career Growth</h2>
+              </div>
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Salary Breakdown (6th ROPA 2019)</h3>
+                <div className="space-y-2">
+                  {salaryBreakdown.map((row, i) => (
+                    <div key={i} className={`flex items-start justify-between gap-4 p-3 rounded-lg text-sm ${i === salaryBreakdown.length - 1 ? 'bg-emerald-50 border border-emerald-200' : 'bg-surface-50'}`}>
+                      <span className="text-surface-700">{row.component}</span>
+                      <span className={`font-semibold shrink-0 ${i === salaryBreakdown.length - 1 ? 'text-emerald-700' : 'text-surface-800'}`}>{row.amount}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Career Progression Path</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Post Level</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Group</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Approx. Years</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Pay Range</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {careerPath.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 font-medium text-surface-800">{row.level}</td>
+                          <td className="p-3 text-center text-surface-600">{row.scale}</td>
+                          <td className="p-3 text-center text-surface-500">{row.years}</td>
+                          <td className="p-3 text-center text-emerald-700 font-semibold">{row.payband}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 9: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🖥️ How to Apply for WBCS Executive 2026</h2>
+              </div>
+              <div className="card p-5">
+                <ol className="space-y-4">
+                  {[
+                    { step: '1', text: 'Monitor wbpsc.gov.in for the official WBCS (Exe.) 2025–26 notification. Download the PDF and read eligibility conditions carefully before applying.' },
+                    { step: '2', text: 'Register on the WBPSC Online Application Portal. Use a valid email ID and mobile number — OTP verification is required.' },
+                    { step: '3', text: 'Fill in all personal, educational, and category details accurately. Ensure your details match your official documents (Class 10 certificate, graduation degree, category certificate).' },
+                    { step: '4', text: 'Upload scanned copies of your photograph (passport size) and signature in the specified format (usually JPEG, under 50KB).' },
+                    { step: '5', text: 'Pay the application fee online. General/OBC: ~₹210 (historical); SC/ST/PwBD of WB: ~₹60. Fee amount is confirmed in the official notification.' },
+                    { step: '6', text: 'Submit the application and download the confirmation page/receipt. Keep a printout and the login credentials safely for admit card download later.' },
+                  ].map((item) => (
+                    <li key={item.step} className="flex gap-4">
+                      <div className="shrink-0 w-8 h-8 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center text-sm font-bold font-heading">{item.step}</div>
+                      <p className="text-sm text-surface-700 leading-relaxed pt-1">{item.text}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </section>
+
+            {/* SECTION 10: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 12-Month WBCS Executive Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((item, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-xs text-center leading-tight">
+                        {i + 1}
+                      </div>
+                      <div className="card p-5">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-xs font-heading font-bold text-primary-600 uppercase tracking-wide">{item.month}</span>
+                          <span className="text-xs text-surface-400">|</span>
+                          <span className="text-sm font-heading font-semibold text-surface-800">{item.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 11: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 Best Books for WBCS Executive 2026</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((book, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-primary-600 font-medium">{book.subject}</td>
+                        <td className="p-3 text-surface-800 font-medium">{book.title}</td>
+                        <td className="p-3 text-surface-500">{book.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 12: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🌐 Free Resources for WBCS Executive</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res, i) => (
+                  <a key={i} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{res.type === 'youtube' ? '📺' : '🌐'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{res.name}</div>
+                        <div className="text-xs text-surface-500 mt-1 leading-relaxed">{res.description}</div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💡 Expert Tips for WBCS Executive 2026</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="shrink-0 w-10 h-10 bg-accent-50 text-accent-600 rounded-xl flex items-center justify-center text-xl">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">❓ WBCS Executive 2026 FAQs</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180 shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Official Website</h3>
+                <a href="https://wbpsc.gov.in" target="_blank" rel="noopener noreferrer" className="block w-full btn-primary text-center py-2.5 rounded-xl text-sm mb-3">
+                  Visit wbpsc.gov.in →
+                </a>
+                <p className="text-xs text-surface-400">For official notifications, admit cards, results, and syllabus PDFs.</p>
+              </div>
+
+              {/* Eligibility Checker */}
+              <div className="bg-primary-50 border border-primary-200 rounded-2xl p-5">
+                <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm">🎯 Check Your Eligibility</h3>
+                <p className="text-xs text-primary-700 mb-3 leading-relaxed">Find out instantly if you qualify for WBCS Executive based on your age, qualification &amp; category.</p>
+                <Link href="/tools/eligibility-checker/" className="block w-full btn-primary text-center py-2 rounded-xl text-sm">
+                  Check Now Free →
+                </Link>
+              </div>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related State PSC Exams</h3>
+                <div className="space-y-1">
+                  {[
+                    { name: 'UPSC IAS 2026',           slug: 'upsc-ias' },
+                    { name: 'UPPSC PCS 2026',           slug: 'uppsc-pcs' },
+                    { name: 'BPSC CCE 2026',            slug: 'bpsc-cce' },
+                    { name: 'RPSC RAS 2026',            slug: 'rpsc-ras' },
+                    { name: 'MPPSC State Service',      slug: 'mppsc-state-service' },
+                    { name: 'TNPSC Group 2 2026',       slug: 'tnpsc-group-2' },
                   ].map((exam) => (
                     <Link key={exam.slug} href={`/exams/${exam.slug}/`}
                           className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
