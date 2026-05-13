@@ -413,6 +413,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rpsc-ras') {
+    return {
+      title: 'RPSC RAS/RTS 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'RPSC RAS 2026: Rajasthan Administrative Service exam. 733 vacancies in 2023 cycle. Graduate eligible, age 21–40 yrs (relaxation for OBC/SC/ST). 3-stage selection: Prelims → Mains → Interview. Salary ₹44,900–₹2,09,200/month. Full syllabus, exam pattern & free guide.',
+      keywords: 'RPSC RAS 2026, Rajasthan Administrative Service 2026, RPSC RAS notification 2026, RPSC RAS syllabus, RAS eligibility, RPSC RAS salary, RPSC RAS age limit, rpsc.rajasthan.gov.in, RAS RTS परीक्षा 2026, राजस्थान प्रशासनिक सेवा',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rpsc-ras/' },
+      other: { 'description:hi': 'RPSC RAS/RTS 2026 – राजस्थान प्रशासनिक सेवा। स्नातक पात्र, आयु 21–40 वर्ष। 3 चरण: प्रारंभिक → मुख्य → साक्षात्कार। वेतन ₹44,900–₹2,09,200/माह। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'rpf-si') {
     return {
       title: 'RPF SI 2026 – Vacancy, Syllabus, PET/PMT, Salary & Complete Guide | TaiyarHo',
@@ -528,6 +538,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'tnpsc-group-2') return <TNPSCGroup2Page exam={brief} />;
   if (brief && brief.slug === 'afcat') return <AfcatPage exam={brief} />;
   if (brief && brief.slug === 'rsmssb-patwari') return <RsmssbPatwariPage exam={brief} />;
+  if (brief && brief.slug === 'rpsc-ras') return <RpscRasPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -34862,6 +34873,833 @@ function RsmssbPatwariPage({ exam }: { exam: any }) {
                       <span className="text-surface-500">{f.label}</span>
                       <span className="font-semibold text-surface-800">{f.value}</span>
                     </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── RPSC RAS/RTS 2026 PAGE ────────────────────────────────────────────────
+function RpscRasPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',         label: 'Overview' },
+    { id: 'important-dates',  label: 'Important Dates 2026' },
+    { id: 'eligibility',      label: 'Eligibility Criteria' },
+    { id: 'vacancies',        label: 'Vacancies History' },
+    { id: 'exam-pattern',     label: 'Exam Pattern' },
+    { id: 'syllabus',         label: 'Detailed Syllabus' },
+    { id: 'services',         label: 'Services & Posts' },
+    { id: 'cutoff',           label: 'Previous Year Cut-offs' },
+    { id: 'salary',           label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',     label: 'How to Apply' },
+    { id: 'study-plan',       label: 'Study Plan' },
+    { id: 'books',            label: 'Best Books' },
+    { id: 'resources',        label: 'Free Resources' },
+    { id: 'tips',             label: 'Expert Tips' },
+    { id: 'faq',              label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'RPSC RAS 2023 Notification Released',            date: 'June 2023',                      status: 'released' },
+    { event: 'RPSC RAS 2023 Online Application Last Date',     date: 'July 2023',                      status: 'released' },
+    { event: 'RPSC RAS 2023 Prelims Exam (Conducted)',         date: '1 October 2023',                 status: 'released' },
+    { event: 'RPSC RAS 2023 Prelims Result',                   date: 'December 2023',                  status: 'released' },
+    { event: 'RPSC RAS 2023 Mains Exam',                       date: 'October 2024',                   status: 'released' },
+    { event: 'RPSC RAS 2023 Mains Result',                     date: 'March 2025',                     status: 'released' },
+    { event: 'RPSC RAS 2023 Interview',                        date: 'May–June 2025',                  status: 'released' },
+    { event: 'RPSC RAS 2023 Final Result',                     date: 'July–August 2025 (Expected)',     status: 'tbn' },
+    { event: '🆕 RPSC RAS 2025 – Official Notification',       date: 'Late 2025 / Early 2026 (TBN)',    status: 'tbn' },
+    { event: 'RPSC RAS 2025 – Online Application Window',      date: 'TBN',                            status: 'tbn' },
+    { event: 'RPSC RAS 2025 – Preliminary Examination',        date: '2026 (TBN)',                     status: 'tbn' },
+    { event: 'RPSC RAS 2025 – Main Examination',               date: '2026–27 (TBN)',                  status: 'tbn' },
+    { event: 'RPSC RAS 2025 – Interview & Final Result',       date: 'TBN',                            status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'RAS 2018',   vacancies: '980',      prelims: 'Aug 2018',  mains: 'Jun–Jul 2021' },
+    { year: 'RAS 2021',   vacancies: '988',      prelims: 'Oct 2021',  mains: 'Jul 2023' },
+    { year: 'RAS 2023',   vacancies: '733',      prelims: 'Oct 2023',  mains: 'Oct 2024' },
+    { year: 'RAS 2025 (upcoming)', vacancies: '600–1,000 (Expected)', prelims: '2026 (TBN)', mains: 'TBN' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'General Knowledge & General Science', questions: 150, marks: 200, time: '3 Hours' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper I', subject: 'General Studies I (History, Art, Culture, Geography, Natural Resources)', marks: 200, time: '3 Hrs' },
+    { paper: 'Paper II', subject: 'General Studies II (Polity, Administration, Economy, Science & Technology)', marks: 200, time: '3 Hrs' },
+    { paper: 'Paper III', subject: 'General Studies III (Rajasthan Economy, History, Culture, Polity)', marks: 200, time: '3 Hrs' },
+    { paper: 'Paper IV', subject: 'General Hindi & General English', marks: 200, time: '3 Hrs' },
+    { paper: 'Interview', subject: 'Personality Test / Viva Voce', marks: 100, time: '—' },
+  ];
+
+  const cutoffData = [
+    { category: 'General (Male)',   prelims2023: '~95/200', mains2023: '~490/900' },
+    { category: 'General (Female)', prelims2023: '~88/200', mains2023: '~470/900' },
+    { category: 'OBC (Male)',       prelims2023: '~88/200', mains2023: '~465/900' },
+    { category: 'OBC (Female)',     prelims2023: '~83/200', mains2023: '~450/900' },
+    { category: 'SC',               prelims2023: '~80/200', mains2023: '~430/900' },
+    { category: 'ST',               prelims2023: '~75/200', mains2023: '~415/900' },
+    { category: 'EWS',              prelims2023: '~88/200', mains2023: '~460/900' },
+  ];
+
+  const servicesAndPosts = [
+    { service: 'Rajasthan Administrative Service (RAS)',    posts: 'Sub-Divisional Magistrate (SDM), Tehsildar, BDO, District Supply Officer' },
+    { service: 'Rajasthan Taxation Service (RTS)',          posts: 'Commercial Taxes Officer (CTO), State Tax Officer' },
+    { service: 'Rajasthan Police Service (RPS)',            posts: 'Deputy Superintendent of Police (DSP)' },
+    { service: 'Rajasthan Accounts Service',                posts: 'Accounts Officer / Senior Accounts Officer' },
+    { service: 'Rajasthan Co-operative Service',            posts: 'Co-operative Development Officer' },
+    { service: 'Rajasthan Forest Service',                  posts: 'Range Forest Officer (RFO)' },
+    { service: 'Other Allied Services',                     posts: 'Various Group A & B posts across 23+ departments' },
+  ];
+
+  const salaryBreakdown = [
+    { grade: 'SDM / Tehsildar (Pay Matrix Level 14)', basic: '₹56,100–₹1,77,500/month', ta: '₹7,200–₹9,000', hra: '18% of basic (Non-metro)' },
+    { grade: 'BDO / District Officer (Level 11–13)', basic: '₹44,900–₹1,42,400/month', ta: '₹6,000–₹7,200', hra: '18% of basic' },
+    { grade: 'Deputy SP / RTS Officer (Level 10–12)', basic: '₹56,100–₹1,77,500/month', ta: '₹7,200', hra: '18% of basic' },
+    { grade: 'IAS-equivalent after promotion (DM)', basic: '₹1,44,200–₹2,18,200/month', ta: '₹15,750', hra: 'As applicable' },
+  ];
+
+  const careerPath = [
+    { level: 'Rajasthan Administrative Service (RAS)',    scale: 'Group A', years: 'On joining', payband: '₹44,900–₹1,77,500' },
+    { level: 'Sub-Divisional Magistrate / Tehsildar',     scale: 'Group A', years: '0–5 yrs', payband: '₹56,100–₹1,77,500' },
+    { level: 'Additional Collector / CEO Zila Parishad', scale: 'Group A (Sr)', years: '8–12 yrs', payband: '₹78,800–₹2,09,200' },
+    { level: 'District Collector (if promoted to IAS)',  scale: 'IAS Cadre', years: '15–20 yrs', payband: '₹1,23,100–₹2,18,200' },
+    { level: 'Divisional Commissioner / Spl. Secretary', scale: 'IAS Senior', years: '20+ yrs', payband: '₹1,44,200–₹2,18,200' },
+    { level: 'Chief Secretary / ACS (State)',            scale: 'Apex Scale', years: '30+ yrs', payband: '₹2,25,000 (fixed)' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🏛️ History, Art & Culture (Prelims + Mains Paper I)',
+      topics: [
+        'Indian History — Ancient, Medieval, Modern (Freedom Movement focus)',
+        'Rajasthan History: Major dynasties (Mewar, Marwar, Dhundhar, Jaipur)',
+        'Post-independence India: Key events, Indian Constitution framing',
+        'Rajasthan Art & Architecture: Forts, Palaces, Miniature Painting, Haveli tradition',
+        'Rajasthan Fairs & Festivals: Pushkar, Teej, Gangaur, Jaisalmer Desert Festival',
+        'Folk Music, Dance: Ghoomar, Kalbelia, Bhavai, Katputli, Maand music',
+        'Rajasthani Literature: Prithviraj Raso, Veli Krisan Rukamani Ri, famous poets',
+      ],
+    },
+    {
+      subject: '🌍 Geography & Natural Resources (Prelims + Mains Paper I)',
+      topics: [
+        'Physical geography of India: Climate zones, soil types, river systems',
+        'Rajasthan Geography: Desert, Aravalli Range, Eastern Plains, Hadoti Plateau',
+        'Rajasthan Rivers: Chambal, Banas, Luni, Ghaggar, Banas, Mahi',
+        'Natural resources of Rajasthan: Minerals (marble, granite, zinc, copper, silver)',
+        'Wildlife sanctuaries & National Parks: Ranthambore, Sariska, Keoladeo, Desert NP',
+        'Rajasthan Water Projects: Indira Gandhi Canal, Bisalpur, Ramgarh, Jawahar Sagar',
+        'Climate, Agriculture: Bajra, Jowar, Mustard, Cotton; agro-climatic zones',
+      ],
+    },
+    {
+      subject: '🏛️ Indian & Rajasthan Polity & Administration (Mains Paper II)',
+      topics: [
+        'Indian Constitution: Preamble, Fundamental Rights, DPSPs, Fundamental Duties',
+        'Parliament: Lok Sabha, Rajya Sabha, Joint Sessions, Money Bills',
+        'Executive: President, PM, Union Cabinet, role & powers',
+        'Judiciary: Supreme Court, High Courts, Judicial Review, PIL',
+        'Rajasthan Polity: Governor, CM, Rajasthan Legislative Assembly',
+        'Panchayati Raj in Rajasthan: Three-tier structure, DUDA, gram sabha',
+        "Administrative structures: Revenue administration, Collector's role, district governance",
+        'Public Policy & e-Governance: Jan Aadhaar, Rajasthan Jan Soochna Portal, Bhamashah',
+      ],
+    },
+    {
+      subject: '💰 Economy & Development (Mains Paper II & III)',
+      topics: [
+        'Indian Economy: National Income, GDP, Fiscal policy, Monetary policy (RBI)',
+        'Five Year Plans, NITI Aayog, SDGs, poverty estimates',
+        'Rajasthan Economy: Agriculture, industry, tourism sectors',
+        'Flagship schemes: PM Kisan, MNREGS, Rajasthan Mission on Livelihood',
+        'Budget basics: Revenue, capital, Union & Rajasthan state budget',
+        'Banking & Finance: Nationalised banks, RBI, cooperative banks, Jan Dhan',
+        'Agricultural economics: MSP, crop insurance (PMFBY), water conservation schemes',
+        'Rajasthan Industrial Policy, MSME development, RIICO, investments',
+      ],
+    },
+    {
+      subject: '🔬 Science & Technology + Current Affairs (Prelims + Mains Paper II)',
+      topics: [
+        'Basic Physics, Chemistry, Biology — Class 10–12 level',
+        'Space & Defence: ISRO missions, DRDO, recent defence acquisitions',
+        'IT & e-Governance: Digital India, Aadhaar, cyber security basics',
+        'Health: National Health Mission, COVID learnings, Ayushman Bharat',
+        'Agriculture & Technology: Precision farming, drip irrigation, GM crops policy',
+        'Environment & Climate: Paris Agreement, COP summits, Rajasthan Solar Policy',
+        'Current Affairs: Last 18–24 months national + international + Rajasthan-specific',
+        'Awards, appointments, important days, summits, books',
+      ],
+    },
+    {
+      subject: '✍️ General Hindi & General English (Mains Paper IV)',
+      topics: [
+        'Hindi: Comprehension passage, essay writing, précis, grammar — tatsam/tadbhav, sandhi, samas',
+        'Hindi essay topics: Social issues, Rajasthan development, environment',
+        'Hindi letter writing: Official and semi-official formats',
+        'English: Comprehension passage, essay, précis, letter/application writing',
+        'English Grammar: Tenses, active-passive, direct-indirect, vocabulary',
+        'Translation: Hindi to English & English to Hindi paragraph',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', focus: 'History, Art & Culture Foundation', detail: 'Start with Rajasthan-specific history — the dynasties of Mewar, Marwar, and Jaipur are asked directly in Prelims. Pair this with NCERT Class 6–12 Indian History. Make a list of all important Rajasthan fairs, dance forms, folk instruments, and folk deities. These small-detail questions are point-makers in Prelims.' },
+    { month: 'Month 3–4', focus: 'Geography & Polity', detail: 'Rajasthan Geography is extremely high-weight. Map every district, river, national park, and mineral deposit. For Polity, complete Laxmikanth (Indian Polity) once — it covers 70% of Polity questions. Focus on Rajasthan-specific administrative structures: Panchayati Raj, Revenue Administration, and the role of the Collector.' },
+    { month: 'Month 5–6', focus: 'Economy, Science & Current Affairs', detail: 'Rajasthan Economy questions focus on the state budget, flagship schemes, MSME, and tourism. For Science, Class 10–12 NCERT textbooks are sufficient. Current Affairs: read Rajasthan Patrika or Dainik Bhaskar summaries + one national newspaper. Cover last 18 months comprehensively for both India and Rajasthan-specific events.' },
+    { month: 'Month 7–8', focus: 'Hindi–English Paper + Mock Tests Begin', detail: 'Paper IV (Hindi & English) is scoring if practised. Write one essay and one précis weekly in both languages. Improve vocabulary and grammar through daily exercises. Start taking full Prelims mock tests — 1 per week with detailed review. Identify weak areas and revise.' },
+    { month: 'Month 9–10', focus: 'Intensive Mains Writing Practice', detail: 'Mains answers for RAS must be structured: introduction, body with subheadings, conclusion. Practise answer writing for all four papers. For Paper III (Rajasthan focus), create a subject-wise note on every major topic. Take sectional mains tests and join an offline/online answer-writing group if possible.' },
+    { month: 'Month 11–12', focus: 'Full Revision + Interview Prep', detail: 'Revise all subjects using your short notes. Take 3–4 full Prelims mocks per week in the final month. For Interview: prepare a detailed DAF (Detailed Application Form) knowledge — interview panels always ask about your home district, Rajasthan current affairs, and Rajasthan culture. Practise mock interviews.' },
+  ];
+
+  const books = [
+    { title: 'Rajasthan General Knowledge', author: 'Lucent / Lakshya Publications', subject: 'Rajasthan GK (Prelims)' },
+    { title: 'Indian Polity', author: 'M. Laxmikanth', subject: 'Polity' },
+    { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy' },
+    { title: 'Certificate Physical & Human Geography', author: 'G.C. Leong', subject: 'Geography' },
+    { title: 'NCERT History (Class 6–12)', author: 'NCERT', subject: 'History' },
+    { title: 'Rajasthan History, Art & Culture', author: 'Dr. Hari Singh / Rajveer Singh', subject: 'Rajasthan Culture' },
+    { title: 'General Science (Class 9–12)', author: 'NCERT', subject: 'Science & Technology' },
+    { title: 'Rajasthan Sar Sangreh (Hindi)', author: 'Suresh Sharma / SL Nair', subject: 'Rajasthan Complete GK' },
+    { title: 'English Grammar & Composition', author: 'Wren & Martin', subject: 'English (Paper IV)' },
+    { title: 'Previous Year Papers RAS Prelims & Mains', author: 'Arihant / Kiran Publications', subject: 'Practice Papers' },
+  ];
+
+  const freeResources = [
+    { name: 'RPSC Official Website', type: 'website', url: 'https://rpsc.rajasthan.gov.in', description: 'Official notifications, admit cards, results, and syllabus PDFs from the Rajasthan PSC.' },
+    { name: 'Rajasthan Govt Recruitment Portal', type: 'website', url: 'https://recruitment.rajasthan.gov.in', description: 'Single window for all Rajasthan govt jobs including RAS notifications via SSO login.' },
+    { name: 'Unacademy RAS Preparation', type: 'youtube', url: 'https://www.youtube.com/@unacademy', description: 'Free RAS-specific live sessions, previous year analysis, and Rajasthan GK by top educators.' },
+    { name: 'Study91 (Nitin Sir) – Rajasthan GK', type: 'youtube', url: 'https://www.youtube.com/@Study91official', description: 'Extremely popular Hindi-medium channel for Rajasthan GK, History and Culture topics.' },
+    { name: 'Rajasthan GK by Khan Sir', type: 'youtube', url: 'https://www.youtube.com/@KhanGlobalStudies', description: 'Simplified Rajasthan current affairs and GK in engaging Hindi — great for prelims quick revision.' },
+    { name: 'DRISHTI IAS (Rajasthan Focus)', type: 'website', url: 'https://www.drishtiias.com/state-pcs/rajasthan-ras', description: 'Free RAS study material, current affairs, and exam strategy by a trusted UPSC-RAS brand.' },
+    { name: 'Rajasthan Patrika e-Paper', type: 'website', url: 'https://rajasthanpatrika.patrika.com', description: 'Read the Rajasthan Patrika daily for state current affairs — essential for both Prelims and Mains.' },
+    { name: 'Testbook RAS Free Mocks', type: 'website', url: 'https://testbook.com/rpsc-ras', description: 'Free full-length RAS Prelims mock tests with detailed analysis and Rajasthan GK practice sets.' },
+  ];
+
+  const tips = [
+    { icon: '🗺️', tip: 'Rajasthan GK forms 40–50% of RAS Prelims. Geography (districts, rivers, minerals, wildlife), Culture (dance, festivals, folk deities), and Rajasthan History are standalone scoring sections. Allocate at least one-third of your preparation time here — no UPSC aspirant can skip it.' },
+    { icon: '📋', tip: 'RAS Mains has 4 papers worth 800 marks + 100 marks Interview = 900 total. A single Mains paper can make or break your result. Structure every Mains answer with a crisp introduction, bullet-point body, and a one-line conclusion. RPSC examiners reward organised, readable answers.' },
+    { icon: '✍️', tip: 'Paper IV (Hindi + English) is the most neglected and most scoring paper. Most candidates underestimate it. Practise one essay in Hindi and one passage in English every week from Month 1. Many candidates miss the merit list by 5–10 marks — this paper is where those marks are recovered.' },
+    { icon: '🎯', tip: 'RAS Prelims is negative-marking based (1/3rd deduction). Do not attempt questions you are unsure about. Aim for 120–130 solid attempts out of 150, with 85–90% accuracy. Blind guessing costs more than it gains in RPSC.' },
+    { icon: '📰', tip: 'Rajasthan Current Affairs (last 18–24 months) is essential — state government schemes, appointments, sports achievements, budget highlights. Read Rajasthan Patrika daily and keep a running note on Rajasthan-specific developments. It directly contributes 15–20 questions in Prelims.' },
+    { icon: '🗣️', tip: 'The Interview (100 marks) has changed many final rankings. Know your DAF thoroughly. Boards frequently ask about your home district\'s geography, history, economy, and current problems. Prepare for situational administrative questions: "What will you do as SDM if…?" Practise with a mentor or in groups.' },
+    { icon: '⏱️', tip: 'RAS cycle is long — Prelims to final result can take 2–3 years. Stay mentally prepared for the wait and use that time to prepare simultaneously for UPSC Prelims, which shares 60% syllabus. Dual preparation maximises your ROI on study time.' },
+    { icon: '🔁', tip: 'Revise Rajasthan GK at least 4–5 times before Prelims. Facts like river lengths, mineral locations, folk dances, and dynasty years need repetition to stick. Make a compact Rajasthan GK booklet of 40–50 pages for final week revision.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the RPSC RAS 2026 notification date?', a: 'As of May 2026, RPSC has not released the official RAS 2025/2026 notification. The RAS 2023 cycle (notification June 2023) is still in progress — Mains was held in October 2024 and the Interview round is underway. A new RAS 2025 notification is expected in late 2025 or early 2026. Always check rpsc.rajasthan.gov.in for official updates.' },
+    { q: 'How many vacancies are there in RPSC RAS 2026?', a: 'RPSC RAS vacancies vary each cycle: 980 (RAS 2018), 988 (RAS 2021), 733 (RAS 2023). The 2025 cycle is expected to have 600–1,000 vacancies covering RAS, RTS, RPS, and allied services. The exact vacancy count is announced with each official notification.' },
+    { q: 'What is the age limit for RPSC RAS 2026?', a: 'The standard age limit for RPSC RAS is 21–40 years for General/Unreserved candidates. Age relaxations: OBC/EBC Non-Creamy Layer: +5 years (up to 45). SC/ST/General-Female of Rajasthan: +5 years (up to 45). Widows/divorced women: no upper age limit. Note: Rajasthan domicile is required for reserved category age benefits.' },
+    { q: 'What is the RPSC RAS exam pattern?', a: 'RPSC RAS has 3 stages: (1) Prelims: 150 MCQ questions, 200 marks, 3 hours, negative marking (1/3rd). Topics: GK & General Science. (2) Mains: 4 descriptive papers × 200 marks each = 800 marks, 3 hours each. Topics: GS I (History, Geography), GS II (Polity, Economy), GS III (Rajasthan focus), Paper IV (Hindi + English). (3) Interview/Personality Test: 100 marks. Total: 900 marks.' },
+    { q: 'What is the salary of an RAS officer in 2026?', a: 'An RAS officer\'s salary depends on the post allotted. SDM/Tehsildar posts fall in Pay Matrix Level 11–14 with basic pay ₹44,900–₹1,77,500/month. With Dearness Allowance (DA), HRA, TA, and other allowances, the effective in-hand salary for a fresh RAS officer (SDM grade) is approximately ₹65,000–₹85,000/month. Senior RAS officers promoted to the IAS cadre can earn ₹1.5–₹2.5 lakh/month.' },
+    { q: 'Is Rajasthan domicile required for RPSC RAS?', a: 'RPSC RAS is primarily a state cadre exam. Rajasthan domicile is mandatory for reserved category benefits (OBC/SC/ST age relaxations and reservation). General category candidates without Rajasthan domicile can still apply but must meet the unreserved eligibility norms. All permanent appointments are posted within Rajasthan.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">RPSC RAS/RTS 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">Rajasthan Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">📋 Next Notification: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            RPSC RAS/RTS 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            The <strong>Rajasthan Administrative Service (RAS/RTS)</strong> is conducted by the <strong>Rajasthan Public Service Commission (RPSC)</strong> to appoint Group A & B officers for 23+ state services including SDM, Tehsildar, DSP, and BDO. Graduate degree required. Age <strong>21–40 years</strong>. 3-stage selection: Prelims → Mains → Interview. Starting salary <strong>₹44,900–₹1,77,500/month</strong> with promotion to IAS cadre possible.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Last Cycle Vacancies', value: '733',              sub: '(RAS 2023)' },
+              { label: 'Prelims Date',          value: 'TBN',             sub: '(Next cycle)' },
+              { label: 'Min. Qualification',    value: 'Any Graduate',    sub: 'Any discipline' },
+              { label: 'Starting Salary',       value: '₹44,900+/month', sub: '+ DA, HRA, TA' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Status May 2026:</strong> RAS 2023 Interview is currently in progress. A new <strong>RAS 2025 notification is expected by late 2025 / early 2026</strong>. No official 2025 dates have been released yet. All future dates on this page are estimates based on RPSC&apos;s historical cycle. Verify from{' '}
+            <a href="https://rpsc.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">rpsc.rajasthan.gov.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is RPSC RAS/RTS 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>Rajasthan Administrative Service (RAS) and Rajasthan Taxation Service (RTS)</strong> exam — commonly called <strong>RAS/RTS</strong> — is conducted by the <strong>Rajasthan Public Service Commission (RPSC)</strong> to recruit officers for the state&apos;s administrative machinery. It is Rajasthan&apos;s equivalent of the UPSC Civil Services exam and is considered one of the most prestigious state-level examinations in India.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  A selected RAS officer is appointed to posts such as <strong>Sub-Divisional Magistrate (SDM), Tehsildar, Block Development Officer (BDO), Deputy Superintendent of Police (DSP)</strong>, and senior officers in 23+ Rajasthan state services. The exam covers a single combined Prelims, followed by Mains and Interview, with the final allocation of service/post based on merit and preference.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  RAS officers serve Rajasthan&apos;s 7.5 crore population across 50 districts. High-performing RAS officers are eligible for <strong>induction into the Indian Administrative Service (IAS)</strong> cadre after several years of exemplary service — making RAS a long-term career with national impact potential.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',   value: 'RPSC (Ajmer)' },
+                  { label: 'Exam Frequency',    value: 'Annual (approx.)' },
+                  { label: 'Total Stages',      value: 'Prelims + Mains + Interview' },
+                  { label: 'Domicile Required', value: 'Rajasthan (for reservation)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 RPSC RAS 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> A new RAS cycle (2025 or 2026) has not been officially announced as of May 2026. The table below shows confirmed 2023 cycle dates and estimated future dates. Always verify from <a href="https://rpsc.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">rpsc.rajasthan.gov.in</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released'  && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'upcoming'  && <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">🔵 Upcoming</span>}
+                          {row.status === 'tbn'       && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { icon: '🪪', label: 'Nationality', value: 'Indian Citizen (Rajasthan domicile required for reserved categories)' },
+                  { icon: '🎓', label: 'Educational Qualification', value: "Bachelor's Degree in any discipline from a recognised university" },
+                  { icon: '📋', label: 'Age Limit (General)', value: '21 to 40 years (as of 1 January of notification year)' },
+                  { icon: '📋', label: 'Age Relaxation – OBC/EBC NCL', value: 'Up to 45 years (+5 years)' },
+                  { icon: '📋', label: 'Age Relaxation – SC/ST Raj.', value: 'Up to 45 years (+5 years for Rajasthan residents)' },
+                  { icon: '📋', label: 'Age Relaxation – General Women (Raj.)', value: 'Up to 45 years (+5 years for women of Rajasthan)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4 flex gap-3">
+                    <span className="text-xl mt-0.5">{item.icon}</span>
+                    <div>
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                      <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-primary-800">
+                <strong>💡 Important:</strong> There is <strong>no minimum percentage</strong> requirement for the qualifying degree. Final year students may be eligible to apply (subject to degree completion before joining). The number of allowed attempts is not capped under RPSC rules — candidates can appear until they exceed the upper age limit.
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💼 Vacancies History</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Cycle</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Vacancies</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.vacancies}</td>
+                        <td className="p-3 text-surface-600">{row.prelims}</td>
+                        <td className="p-3 text-surface-600">{row.mains}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📝 Exam Pattern</h2>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Stage 1 — Preliminary Examination</h3>
+              <div className="overflow-x-auto mb-5">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Duration</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prelimsPattern.map((row, i) => (
+                      <tr key={i} className="border-t border-surface-100 bg-white">
+                        <td className="p-3 text-surface-800 font-medium">{row.subject}</td>
+                        <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-700">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-600">{row.time}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 mb-6">
+                <strong>⚠️ Negative Marking:</strong> 1/3rd mark deducted per wrong answer. Prelims is qualifying only — marks are <em>not</em> counted in the final merit list. Aim for <strong>120–130 well-calculated attempts</strong> out of 150.
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Stage 2 — Main Examination (Descriptive)</h3>
+              <div className="overflow-x-auto mb-5">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Paper</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mainsPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-semibold text-primary-700">{row.paper}</td>
+                        <td className="p-3 text-surface-800">{row.subject}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-700">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-600">{row.time}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-50">
+                      <td colSpan={2} className="p-3 font-bold text-surface-900">Total</td>
+                      <td className="p-3 text-center font-bold text-surface-900">900</td>
+                      <td className="p-3 text-center text-surface-500">—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 Detailed Syllabus</h2>
+              </div>
+              <p className="text-surface-500 text-sm mb-5">Click any subject to expand the full topic list.</p>
+              <div className="space-y-3">
+                {syllabus.map((sub) => (
+                  <details key={sub.subject} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{sub.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-5 space-y-1.5">
+                        {sub.topics.map((t) => (
+                          <li key={t} className="text-sm text-surface-600">{t}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: SERVICES & POSTS */}
+            <section id="services" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🏛️ Services & Posts Under RAS</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Service</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Key Posts</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {servicesAndPosts.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-semibold text-primary-700">{row.service}</td>
+                        <td className="p-3 text-surface-700">{row.posts}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 8: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📊 Previous Year Cut-offs</h2>
+              </div>
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-5 text-sm text-primary-800">
+                <strong>💡 Note:</strong> RAS cut-offs are approximate and sourced from candidate communities and coaching institutes. Official category-wise Prelims cut-offs are not always published by RPSC. Use these as directional benchmarks, not guarantees.
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims 2023 (est.)</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains 2023 (est.)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-center text-surface-700">{row.prelims2023}</td>
+                        <td className="p-3 text-center font-semibold text-primary-700">{row.mains2023}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 9: SALARY & CAREER */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary & Career Growth</h2>
+              </div>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Grade / Post</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Basic Pay (Pay Matrix)</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">TA (approx.)</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">HRA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.grade}</td>
+                        <td className="p-3 font-semibold text-emerald-700">{row.basic}</td>
+                        <td className="p-3 text-surface-600">{row.ta}</td>
+                        <td className="p-3 text-surface-600">{row.hra}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">📈 Career Progression Path</h3>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {careerPath.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-sm">
+                        {i + 1}
+                      </div>
+                      <div className="card p-4">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div>
+                            <p className="font-heading font-semibold text-surface-900">{step.level}</p>
+                            <p className="text-xs text-surface-400 mt-0.5">{step.scale} · {step.years}</p>
+                          </div>
+                          <span className="text-sm font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-1">{step.payband}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🖥️ How to Apply for RPSC RAS 2026</h2>
+              </div>
+              <div className="card p-6 mb-4">
+                <ol className="space-y-4">
+                  {[
+                    { step: '1', text: 'Visit the Rajasthan SSO Portal at sso.rajasthan.gov.in and log in with your SSO ID. If you do not have an SSO ID, register using your Aadhaar card or Jan Aadhaar card.' },
+                    { step: '2', text: 'Navigate to the RPSC section under the recruitment portal and find the RAS 2025/2026 advertisement. Download and read the official notification PDF carefully before applying.' },
+                    { step: '3', text: 'Fill in the online application form with personal details, educational qualification, district preference, and category. Upload scanned photograph (JPG, 50–100 KB) and signature (JPG, 20–50 KB) as per specified dimensions.' },
+                    { step: '4', text: 'Pay the application fee online: General/OBC – ₹600; SC/ST/PwBD – ₹400; TSP/Non-TSP as per latest notification. Payment is via net banking, debit card, or UPI through the SSO portal.' },
+                    { step: '5', text: 'Submit the application and download the confirmation page. Keep a printout for future reference — you will need it for admit card download and document verification.' },
+                  ].map((item) => (
+                    <li key={item.step} className="flex gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-700 rounded-lg flex items-center justify-center font-heading font-bold text-sm">{item.step}</span>
+                      <p className="text-surface-700 text-sm leading-relaxed pt-1">{item.text}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-800">
+                <strong>✅ Tip:</strong> Keep your Jan Aadhaar number and SSO ID ready. The SSO portal is the single gateway for all Rajasthan government job applications. Create your SSO ID well in advance — don&apos;t wait for the last day of the application window.
+              </div>
+            </section>
+
+            {/* SECTION 11: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🗓️ 12-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-xs text-center leading-tight">
+                        {i + 1}
+                      </div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className="font-heading font-semibold text-surface-900">{step.month}</span>
+                          <span className="badge-primary">{step.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{step.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 12: BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📖 Best Books for RPSC RAS 2026</h2>
+              </div>
+              <BooksTable books={books} />
+            </section>
+
+            {/* SECTION 13: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🌐 Free Preparation Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res) => (
+                  <a key={res.name} href={res.url} target="_blank" rel="noopener noreferrer"
+                     className="card p-5 group hover:border-primary-300 transition">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{res.type === 'youtube' ? '📺' : '🌐'}</span>
+                      <div>
+                        <p className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition text-sm">{res.name}</p>
+                        <p className="text-xs text-surface-500 mt-1">{res.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💡 Expert Tips for RPSC RAS</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <span className="text-2xl flex-shrink-0">{tip.icon}</span>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 15: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">15</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">❓ Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq) => (
+                  <details key={faq.q} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span className="pr-4 text-sm sm:text-base">{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm">📋 On This Page</p>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`}
+                       className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm">🔗 Official Websites</p>
+                <a href="https://rpsc.rajasthan.gov.in" target="_blank" rel="noopener noreferrer"
+                   className="btn-primary text-sm w-full text-center block mb-2">
+                  rpsc.rajasthan.gov.in ↗
+                </a>
+                <a href="https://sso.rajasthan.gov.in" target="_blank" rel="noopener noreferrer"
+                   className="btn-outline text-sm w-full text-center block">
+                  SSO Portal (Apply Here) ↗
+                </a>
+              </div>
+
+              {/* Eligibility checker CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <p className="font-heading font-semibold text-primary-800 mb-1 text-sm">🎯 Check Your Eligibility</p>
+                <p className="text-xs text-primary-600 mb-3">Enter your age and qualification to see if you qualify for RPSC RAS 2026.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block">
+                  Use Free Tool →
+                </Link>
+              </div>
+
+              {/* Key facts */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm">📋 Quick Facts</p>
+                <div className="space-y-2 text-sm">
+                  {[
+                    { label: 'Exam Mode (Prelims)',  value: 'Offline (OMR)' },
+                    { label: 'Exam Mode (Mains)',    value: 'Descriptive/Written' },
+                    { label: 'Prelims Marks',        value: '200 (150 Qs)' },
+                    { label: 'Mains Total',          value: '800 marks (4 papers)' },
+                    { label: 'Interview',            value: '100 marks' },
+                    { label: 'Grand Total',          value: '900 marks' },
+                    { label: 'Negative Marking',     value: '1/3rd (Prelims only)' },
+                    { label: 'Language',             value: 'Hindi + English' },
+                  ].map((f) => (
+                    <div key={f.label} className="flex justify-between items-center py-1.5 border-b border-surface-100 last:border-0">
+                      <span className="text-surface-500 text-xs">{f.label}</span>
+                      <span className="font-semibold text-surface-800 text-xs text-right ml-2">{f.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Related exams */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm">🔗 Related State PSC Exams</p>
+                <div className="space-y-1">
+                  {[
+                    { name: 'UPPSC PCS 2026',      slug: 'uppsc-pcs' },
+                    { name: 'MPPSC State Service', slug: 'mppsc-state-service' },
+                    { name: 'BPSC CCE 2026',       slug: 'bpsc-cce' },
+                    { name: 'RSMSSB Patwari 2026', slug: 'rsmssb-patwari' },
+                    { name: 'UPSC IAS 2026',       slug: 'upsc-ias' },
+                  ].map((exam) => (
+                    <Link key={exam.slug} href={`/exams/${exam.slug}/`}
+                          className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
+                      → {exam.name}
+                    </Link>
                   ))}
                 </div>
               </div>
