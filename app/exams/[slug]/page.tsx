@@ -107,10 +107,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (params.slug === 'ctet') {
     return {
       title: 'CTET 2026 – Syllabus, Eligibility, Exam Date, Pattern & Complete Guide | TaiyarHo',
-      description: 'CTET July 2026 exam on 5 July 2026. Check complete syllabus for Paper 1 & Paper 2, eligibility criteria, exam pattern (150 MCQs, no negative marking), application dates, qualifying marks and free preparation resources.',
+      description: 'CTET September 2026 exam on 6 September 2026. Apply online May 11 – June 10, 2026. Check complete syllabus for Paper 1 & Paper 2, eligibility criteria, exam pattern (150 MCQs, no negative marking, OMR-based), qualifying marks and free preparation resources.',
       keywords: 'CTET 2026, CTET taiyari, CTET syllabus Hindi, CTET परीक्षा तैयारी, teacher eligibility test, शिक्षक पात्रता परीक्षा, sarkari teacher job',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ctet/' },
-      other: { 'description:hi': 'CTET 2026 परीक्षा 5 जुलाई 2026 को होगी। Paper 1 और Paper 2 का पूरा सिलेबस, पात्रता मानदंड, परीक्षा पैटर्न (150 MCQ, कोई नकारात्मक अंकन नहीं) और मुफ्त तैयारी सामग्री देखें।' },
+      other: { 'description:hi': 'CTET 2026 परीक्षा 6 सितंबर 2026 को होगी। आवेदन 11 मई – 10 जून 2026 तक। Paper 1 और Paper 2 का पूरा सिलेबस, पात्रता मानदंड, परीक्षा पैटर्न (150 MCQ, OMR आधारित, कोई नकारात्मक अंकन नहीं) और मुफ्त तैयारी सामग्री देखें।' },
     };
   }
 
@@ -5037,19 +5037,20 @@ function CtetPage({ exam }: { exam: any }) {
     { id: 'faq', label: 'FAQs' },
   ];
 
-  // July 2026 cycle (most current) + Feb 2026 cycle reference
+  // September 2026 cycle (most current) + Feb 2026 cycle reference
   const importantDates = [
     { event: 'CTET Feb 2026 – Notification Released', date: '27 November 2025', status: 'released' },
     { event: 'CTET Feb 2026 – Application Window', date: '27 Nov – 18 Dec 2025', status: 'released' },
     { event: 'CTET Feb 2026 – Exam Date', date: '7 & 8 February 2026', status: 'released' },
     { event: 'CTET Feb 2026 – Result Declared', date: 'March 2026', status: 'released' },
-    { event: 'CTET July 2026 – Notification Released', date: '5 March 2026', status: 'released' },
-    { event: 'CTET July 2026 – Application Opens', date: '5 March 2026', status: 'released' },
-    { event: 'CTET July 2026 – Last Date to Apply', date: '2 April 2026', status: 'released' },
-    { event: 'CTET July 2026 – Admit Card', date: 'Mid-June 2026 (Expected)', status: 'upcoming' },
-    { event: 'CTET July 2026 – Exam Date', date: '5 July 2026 (Sunday)', status: 'upcoming' },
-    { event: 'CTET July 2026 – Answer Key', date: 'Within 2–3 weeks of exam (TBN)', status: 'tbn' },
-    { event: 'CTET July 2026 – Result', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'CTET Sep 2026 – Notification Released', date: '11 May 2026', status: 'released' },
+    { event: 'CTET Sep 2026 – Application Opens', date: '11 May 2026', status: 'released' },
+    { event: 'CTET Sep 2026 – Last Date to Apply', date: '10 June 2026', status: 'upcoming' },
+    { event: 'CTET Sep 2026 – Correction Window', date: '15–18 June 2026', status: 'upcoming' },
+    { event: 'CTET Sep 2026 – Admit Card', date: 'August 2026 (Expected)', status: 'tbn' },
+    { event: 'CTET Sep 2026 – Exam Date', date: '6 September 2026 (Sunday)', status: 'upcoming' },
+    { event: 'CTET Sep 2026 – Answer Key', date: 'Within 2–3 weeks of exam (TBN)', status: 'tbn' },
+    { event: 'CTET Sep 2026 – Result', date: 'To be notified (TBN)', status: 'tbn' },
     { event: 'CTET Dec 2026 – Notification', date: 'Oct–Nov 2026 (Expected)', status: 'tbn' },
   ];
 
@@ -5228,8 +5229,8 @@ function CtetPage({ exam }: { exam: any }) {
 
   const faqs = [
     { q: 'What is CTET and who conducts it?', a: 'CTET (Central Teacher Eligibility Test) is a national-level eligibility exam conducted by CBSE (Central Board of Secondary Education). It is a mandatory qualification for anyone seeking teaching posts in central government schools like KVS, NVS, and Army Public Schools for Classes I to VIII.' },
-    { q: 'When is the CTET July 2026 exam date?', a: 'CTET July 2026 is confirmed and scheduled for 5 July 2026 (Sunday). The notification was officially released on 5 March 2026. Paper II (Classes 6–8) will be held from 9:30 AM to 12:00 Noon, and Paper I (Classes 1–5) from 2:00 PM to 4:30 PM.' },
-    { q: 'Can I apply for CTET July 2026 now?', a: 'No. The CTET July 2026 application window was open from 5 March to 2 April 2026 and is now closed. Candidates who have successfully registered should focus on exam preparation. The next cycle (December 2026) is expected to open for applications around October–November 2026.' },
+    { q: 'When is the CTET September 2026 exam date?', a: 'CTET September 2026 is officially scheduled for 6 September 2026 (Sunday), as per the notification released on 11 May 2026. Paper II (Classes 6–8) is typically held in the morning shift (9:30 AM to 12:00 Noon) and Paper I (Classes 1–5) in the afternoon shift (2:00 PM to 4:30 PM). Timing will be confirmed in the admit card.' },
+    { q: 'Can I apply for CTET September 2026 now?', a: 'Yes! The CTET September 2026 application window is open from 11 May to 10 June 2026 at ctet.nic.in. A correction window will also be available from 15 to 18 June 2026 for editing submitted applications. Do not miss the deadline.' },
     { q: 'Is there negative marking in CTET?', a: 'No. CTET has no negative marking for wrong answers. Both Paper I and Paper II consist of 150 MCQs worth 150 marks, with no deductions for incorrect responses. You should attempt all questions.' },
     { q: 'What are the qualifying marks in CTET?', a: 'General / EWS candidates must score at least 60% (90 out of 150). OBC, SC, ST, and PwD candidates need at least 55% (82 out of 150). Candidates qualifying this threshold receive a CTET Eligibility Certificate.' },
     { q: 'Is the CTET certificate valid for life?', a: 'Yes. As per the CBSE amendment effective June 2021, the CTET qualification certificate is now valid for lifetime. Previously it was valid for only 7 years. A single qualifying score is sufficient for all future teaching job applications.' },
@@ -5265,18 +5266,18 @@ function CtetPage({ exam }: { exam: any }) {
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">📚 Teaching</span>
             <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">CBSE / Central Govt</span>
-            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">📝 Exam: 5 July 2026</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">📝 Exam: 6 Sep 2026</span>
             <span className="bg-purple-400/20 text-purple-200 text-xs font-semibold px-3 py-1 rounded-full">🎓 Lifetime Validity</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
             CTET 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
           </h1>
           <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
-            CTET July 2026 exam confirmed for 5 July 2026. Mandatory eligibility test conducted by CBSE for teaching posts in KVS, NVS & Army schools. 150 MCQs, no negative marking, lifetime valid certificate.
+            CTET September 2026 exam confirmed for 6 September 2026. Apply online from May 11 to June 10, 2026 at ctet.nic.in. Mandatory eligibility test conducted by CBSE for teaching posts in KVS, NVS & Army schools. 150 MCQs, no negative marking, offline OMR-based, lifetime valid certificate.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              { label: 'Exam Date', value: '5 July 2026' },
+              { label: 'Exam Date', value: '6 Sep 2026' },
               { label: 'Total Questions', value: '150 MCQs' },
               { label: 'Negative Marking', value: 'None' },
               { label: 'Certificate Validity', value: 'Lifetime' },
@@ -5324,9 +5325,8 @@ function CtetPage({ exam }: { exam: any }) {
                   { label: 'Conducting Body', value: 'CBSE' },
                   { label: 'Exam Level', value: 'National' },
                   { label: 'Frequency', value: 'Twice a year' },
-                  { label: 'Mode', value: 'Offline (Pen & Paper)' },
+                  { label: 'Mode', value: 'Offline (OMR-based)' },
                   { label: 'Total Marks', value: '150 per paper' },
-                  { label: 'Duration', value: '2 hours 30 minutes' },
                   { label: 'No. of Papers', value: 'Paper I & Paper II' },
                   { label: 'Negative Marking', value: 'None' },
                   { label: 'Certificate Validity', value: 'Lifetime (since 2021)' },
@@ -5341,7 +5341,7 @@ function CtetPage({ exam }: { exam: any }) {
             <section id="important-dates">
               <SectionHeading num="2" title="CTET 2026 Important Dates" />
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
-                ⚠️ <strong>Note:</strong> CTET July 2026 application window (5 Mar – 2 Apr 2026) is now <strong>closed</strong>. If you did not apply, the next opportunity is the <strong>December 2026 cycle</strong>, expected around October–November 2026. Focus on preparation now!
+                ⚠️ <strong>Application Open:</strong> CTET September 2026 registration is open from <strong>11 May to 10 June 2026</strong> at ctet.nic.in. A correction window will be available from <strong>15–18 June 2026</strong>. Apply now!
               </div>
               <div className="card overflow-hidden">
                 <div className="overflow-x-auto">
@@ -5368,6 +5368,9 @@ function CtetPage({ exam }: { exam: any }) {
                     </tbody>
                   </table>
                 </div>
+              </div>
+              <div className="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+                🏙️ <strong>New for 2026 – Random Exam City Allocation:</strong> CBSE has introduced a <strong>Random Exam City Allocation</strong> process for the September 2026 cycle. Candidates will be allotted exam centres randomly and will <strong>not</strong> be able to choose their preferred city. The allocated city will be communicated through the admit card. Plan your travel accordingly.
               </div>
             </section>
 
@@ -5687,7 +5690,7 @@ function CtetPage({ exam }: { exam: any }) {
             <div className="card p-5 bg-primary-50 border-primary-200">
               <div className="text-xs font-semibold uppercase tracking-wide text-primary-600 mb-3">📌 Key Facts</div>
               <ul className="space-y-2 text-sm text-surface-700">
-                <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>Exam: 5 July 2026</li>
+                <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>Exam: 6 September 2026</li>
                 <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>150 MCQs, 150 Marks</li>
                 <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>No Negative Marking</li>
                 <li className="flex items-center gap-2"><span className="text-emerald-500">✓</span>Qualifying: 60% (Gen), 55% (Reserved)</li>
@@ -5699,13 +5702,14 @@ function CtetPage({ exam }: { exam: any }) {
 
             {/* Exam Timeline */}
             <div className="card p-5">
-              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📅 July 2026 Timeline</div>
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📅 Sep 2026 Timeline</div>
               <div className="space-y-3 text-sm">
                 {[
-                  { event: 'Notification', date: '5 Mar 2026', done: true },
-                  { event: 'Application Closes', date: '2 Apr 2026', done: true },
-                  { event: 'Admit Card', date: 'Mid-June 2026', done: false },
-                  { event: 'Exam Day', date: '5 July 2026', done: false },
+                  { event: 'Notification', date: '11 May 2026', done: true },
+                  { event: 'Apply Online', date: 'Till 10 Jun 2026', done: false },
+                  { event: 'Correction Window', date: '15–18 Jun 2026', done: false },
+                  { event: 'Admit Card', date: 'August 2026', done: false },
+                  { event: 'Exam Day', date: '6 Sep 2026', done: false },
                   { event: 'Result', date: 'TBN', done: false },
                 ].map((step) => (
                   <div key={step.event} className="flex items-center gap-3">
@@ -5724,7 +5728,7 @@ function CtetPage({ exam }: { exam: any }) {
             {/* CTA */}
             <div className="card p-5 bg-gradient-to-br from-[#0a1e4f] to-[#1a56db] text-white">
               <div className="text-sm font-semibold mb-2">🎯 Start CTET Preparation</div>
-              <p className="text-blue-100 text-xs mb-4">Exam on 5 July 2026 – start your preparation today!</p>
+              <p className="text-blue-100 text-xs mb-4">Exam on 6 Sep 2026 – apply now and start preparing!</p>
               <Link href="/resources" className="block text-center bg-white text-primary-600 font-semibold text-sm py-2 rounded-lg hover:bg-blue-50 transition-colors">
                 Free Study Resources →
               </Link>
