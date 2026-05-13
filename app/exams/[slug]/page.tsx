@@ -483,6 +483,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'tnpsc-group-4') {
+    return {
+      title: 'TNPSC Group 4 2026 – Syllabus, Eligibility, VAO, Junior Assistant & Exam Date',
+      description: 'TNPSC Group 4 2026: Complete guide for VAO, Junior Assistant, Typist, Bill Collector posts. Syllabus, exam pattern, eligibility, cut-offs, salary & free resources.',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/tnpsc-group-4/' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -546,6 +554,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'kvs-prt-tgt-pgt') return <KvsPrtTgtPgtPage exam={brief} />;
   if (brief && brief.slug === 'mppsc-state-service') return <MppscStatePage exam={brief} />;
   if (brief && brief.slug === 'tnpsc-group-2') return <TNPSCGroup2Page exam={brief} />;
+  if (brief && brief.slug === 'tnpsc-group-4') return <TnpscGroup4Page exam={brief} />;
   if (brief && brief.slug === 'afcat') return <AfcatPage exam={brief} />;
   if (brief && brief.slug === 'rsmssb-patwari') return <RsmssbPatwariPage exam={brief} />;
   if (brief && brief.slug === 'rpsc-ras') return <RpscRasPage exam={brief} />;
@@ -36609,6 +36618,787 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
                     <Link key={exam.slug} href={`/exams/${exam.slug}/`}
                           className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
                       → {exam.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── TNPSC GROUP 4 RICH PAGE ─────────────────────────────────────────────────
+function TnpscGroup4Page({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',         label: 'Overview' },
+    { id: 'important-dates',  label: 'Important Dates 2026' },
+    { id: 'eligibility',      label: 'Eligibility Criteria' },
+    { id: 'posts-vacancies',  label: 'Posts & Vacancies' },
+    { id: 'exam-pattern',     label: 'Exam Pattern' },
+    { id: 'syllabus',         label: 'Detailed Syllabus' },
+    { id: 'cutoff',           label: 'Previous Year Cut-offs' },
+    { id: 'salary',           label: 'Salary & Benefits' },
+    { id: 'how-to-apply',     label: 'How to Apply' },
+    { id: 'study-plan',       label: 'Study Plan' },
+    { id: 'books',            label: 'Best Books' },
+    { id: 'resources',        label: 'Free Resources' },
+    { id: 'tips',             label: 'Expert Tips' },
+    { id: 'faq',              label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'TNPSC Group 4 2022-23 Notification Released',   date: 'November 2022',            status: 'released' },
+    { event: 'TNPSC Group 4 2022-23 Application Last Date',   date: 'December 2022',            status: 'released' },
+    { event: 'TNPSC Group 4 2022-23 Written Exam',            date: '22 January 2023',          status: 'released' },
+    { event: 'TNPSC Group 4 2022-23 Result',                  date: 'April 2023',               status: 'released' },
+    { event: 'TNPSC Group 4 2023-24 Notification Released',   date: 'September 2023',           status: 'released' },
+    { event: 'TNPSC Group 4 2023-24 Written Exam',            date: '3 March 2024',             status: 'released' },
+    { event: 'TNPSC Group 4 2023-24 Result & Certificate Verification', date: 'July–August 2024', status: 'released' },
+    { event: '🆕 TNPSC Group 4 2025–26 Notification',        date: 'Expected Mid-2026 (TBN)',  status: 'tbn' },
+    { event: 'TNPSC Group 4 2025–26 Application Opens',       date: 'TBN',                      status: 'tbn' },
+    { event: 'TNPSC Group 4 2025–26 Written Exam',            date: 'Expected Late 2026 (TBN)', status: 'tbn' },
+    { event: 'TNPSC Group 4 2025–26 Result',                  date: 'TBN',                      status: 'tbn' },
+  ];
+
+  const posts = [
+    { post: 'Village Administrative Officer (VAO)',       dept: 'Revenue Department',           qualification: '10th Pass', payLevel: 'Pay Level 8' },
+    { post: 'Junior Assistant',                           dept: 'Various Govt Departments',     qualification: '10th/12th Pass', payLevel: 'Pay Level 5' },
+    { post: 'Typist',                                     dept: 'Various Govt Departments',     qualification: '12th Pass + Typewriting', payLevel: 'Pay Level 5' },
+    { post: 'Bill Collector',                             dept: 'Municipality / Town Panchayat', qualification: '10th Pass',   payLevel: 'Pay Level 5' },
+    { post: 'Field Surveyor',                             dept: 'Survey & Settlement Dept',     qualification: '10th Pass',   payLevel: 'Pay Level 6' },
+    { post: 'Draftsman Grade III',                        dept: 'Public Works Department',      qualification: 'Diploma (Civil)', payLevel: 'Pay Level 7' },
+    { post: 'Junior Draughtsman',                         dept: 'Various Departments',          qualification: 'Diploma',     payLevel: 'Pay Level 7' },
+    { post: 'Wood Work & Upholstery Instructor',          dept: 'ITI / Polytechnic',            qualification: 'Diploma / ITI', payLevel: 'Pay Level 7' },
+  ];
+
+  const ageLimit = [
+    { category: 'OC (Open Competition) – General',   min: '18 years', max: '32 years', note: 'Base limit' },
+    { category: 'BC / BC (Muslim)',                   min: '18 years', max: '35 years', note: '+3 years over OC limit' },
+    { category: 'MBC / DNC',                          min: '18 years', max: '35 years', note: '+3 years over OC limit' },
+    { category: 'SC / SCA / ST',                      min: '18 years', max: '37 years', note: '+5 years over OC limit' },
+    { category: 'Differently-Abled (PwD)',            min: '18 years', max: '42 years', note: 'As per Govt order' },
+    { category: 'Widows / Destitute Women',           min: '18 years', max: 'No upper limit', note: 'Special provision' },
+    { category: 'Ex-Servicemen',                      min: '–',        max: 'Military service + 3 yrs', note: 'Govt rule' },
+    { category: 'Sportspersons (Govt recognised)',    min: '18 years', max: '40 years (OC)', note: 'Special relaxation' },
+  ];
+
+  const examPattern = [
+    { subject: 'General Studies (GS)',                    questions: 75,  marks: 150, note: 'History, Geography, Polity, Science, Economy, Current Affairs, TN GK' },
+    { subject: 'General Tamil / General English',         questions: 100, marks: 100, note: 'Candidate chooses Tamil OR English (single language paper)' },
+    { subject: 'Aptitude & Mental Ability (AMAB)',        questions: 25,  marks: 50,  note: 'Logical reasoning, numerical ability, basic maths' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🏛️ General Studies (GS)',
+      topics: [
+        'Unit I – History of India: Indus Valley Civilisation, Vedic Period, Mauryan, Gupta, Delhi Sultanate, Mughal Empire, Bhakti & Sufi movements, Maratha, Colonial period, Freedom Movement',
+        'Unit II – Culture & Heritage: Temples of TN, Carnatic music, Bharatanatyam, arts and crafts, UNESCO heritage sites, important Tamil personalities',
+        'Unit III – Indian Polity: Constitution, Fundamental Rights & Duties, DPSP, Parliament & State Legislature, President, Governor, Judiciary, Panchayati Raj, 73rd & 74th Amendments',
+        'Unit IV – Indian Geography: Physical features, rivers, climate, soil types, agriculture, minerals, industries, human & economic geography',
+        'Unit V – Tamil Nadu Geography & Economy: Districts, rivers, dams, forest resources, industries, MSME, agriculture – crops & production',
+        'Unit VI – Indian Economy: Five Year Plans, NITI Aayog, taxation, banking & RBI, budget, poverty & welfare schemes, Make in India, Digital India',
+        'Unit VII – General Science: Physics (optics, motion, electricity), Chemistry (acids/bases, carbon compounds), Biology (nutrition, respiration, genetics, disease)',
+        'Unit VIII – Environment & Ecology: Biodiversity, climate change, pollution, renewable energy, conservation, National Parks in Tamil Nadu',
+        'Unit IX – Current Events: National and international events (last 12 months), TN government schemes, awards, sports, science & technology updates',
+        'Unit X – Aptitude (within GS): Series completion, analogy, coding-decoding, blood relations, direction sense, time & work, percentage, HCF/LCM, average',
+      ],
+    },
+    {
+      subject: '📖 General Tamil (for Tamil-medium candidates)',
+      topics: [
+        'Tamil Language: Eluththu (letters), Sol (words), Pori & Punarithi, Idai Eluththu, Mozhi Payilchi',
+        'Tamil Literature: Sangam literature (Purananuru, Ainkurunuru), Silappathikaram, Kamba Ramayanam, Thirukkural, Manimekalai',
+        'Tamil Grammar: Seyyuliyal, Iyal, Isai, Naadam, Eluththatikaram, Collatikaram',
+        'Modern Tamil Literature: Short stories, novels, poetry of 20th & 21st century Tamil writers',
+        'Applied Tamil: Letter writing, essay, comprehension, vocabulary, antonyms/synonyms in Tamil',
+      ],
+    },
+    {
+      subject: '📝 General English (for English-medium candidates)',
+      topics: [
+        'Grammar: Parts of speech, tenses, articles, prepositions, conjunctions, active/passive voice, direct/indirect speech',
+        'Vocabulary: Synonyms, antonyms, one-word substitution, idioms, phrases',
+        'Comprehension: Reading passages with question-answer, finding main idea, inference',
+        'Composition: Letter writing (formal/informal), essay writing, précis writing',
+        'Error Detection: Spotting grammatical errors, fill in the blanks, sentence correction',
+      ],
+    },
+    {
+      subject: '🔢 Aptitude & Mental Ability (AMAB)',
+      topics: [
+        'Logical Reasoning: Statements & conclusions, syllogisms, coding-decoding, blood relations, direction & distance',
+        'Data Interpretation: Tables, bar charts, pie charts, line graphs',
+        'Number Series: Missing number, wrong number in series',
+        'Arithmetic: Percentages, ratio & proportion, average, simple & compound interest, profit & loss, time & work, time speed distance',
+        'Geometry & Mensuration: Area, perimeter, volume of basic shapes',
+        'Mental Ability: Pattern recognition, analogy, classification, matrix-based problems',
+      ],
+    },
+  ];
+
+  const cutoffData = [
+    { category: 'OC (General)',     exam2024: '~190–200 / 300', exam2023: '~185–195 / 300', exam2022: '~180–192 / 300', note: 'VAO cut-off highest' },
+    { category: 'BC',               exam2024: '~178–188 / 300', exam2023: '~172–184 / 300', exam2022: '~168–180 / 300', note: '' },
+    { category: 'MBC / DNC',        exam2024: '~165–176 / 300', exam2023: '~160–172 / 300', exam2022: '~155–168 / 300', note: '' },
+    { category: 'SC / SCA',         exam2024: '~150–163 / 300', exam2023: '~144–158 / 300', exam2022: '~138–152 / 300', note: '' },
+    { category: 'ST',               exam2024: '~138–150 / 300', exam2023: '~132–145 / 300', exam2022: '~125–140 / 300', note: '' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay – Pay Level 5 (Junior Assistant / Typist / Bill Collector)', amount: '₹19,500/month' },
+    { component: 'Basic Pay – Pay Level 6 (Field Surveyor)', amount: '₹21,700/month' },
+    { component: 'Basic Pay – Pay Level 7 (Draftsman / Draughtsman)', amount: '₹25,300/month' },
+    { component: 'Basic Pay – Pay Level 8 (VAO)', amount: '₹29,200/month' },
+    { component: 'Dearness Allowance (DA) – approx. 38.0% of Basic Pay (Jan 2026)', amount: 'Varies by post' },
+    { component: 'House Rent Allowance (HRA) – Chennai metro: 24% | Others: 8–16%', amount: 'Varies by posting city' },
+    { component: 'Other Allowances (Transport, Medical, etc.)', amount: '₹1,500–₹3,000/month' },
+    { component: 'Gross Estimated In-Hand – Junior Assistant (Chennai)', amount: '~₹32,000–₹38,000/month' },
+    { component: 'Gross Estimated In-Hand – VAO (Chennai)', amount: '~₹45,000–₹52,000/month' },
+  ];
+
+  const studyPlan = [
+    {
+      month: 'Month 1',
+      focus: 'GS Foundation – History & Polity',
+      detail: 'Cover Indian history from Indus Valley to Independence with a focus on Tamil Nadu context. Use Samacheer Kalvi textbooks (6th–10th standard) as the primary source — TNPSC sets 40–50% of questions directly from these books. Study Indian Constitution basics: Fundamental Rights, Preamble, DPSP, Parliament, Panchayati Raj. Read for 2–3 hours daily.',
+    },
+    {
+      month: 'Month 2',
+      focus: 'Geography + Tamil/English Language',
+      detail: 'Cover Indian and TN geography: physical features, rivers (especially TN rivers — Cauvery, Palar, Vaigai), agriculture, forests. Study General Tamil grammar (Eluththu, Sol, Mozhi Payilchi) or General English grammar depending on your medium. Practice Tamil literature (Thirukkural, Sangam) or English comprehension daily.',
+    },
+    {
+      month: 'Month 3',
+      focus: 'Science + TN Culture + AMAB',
+      detail: 'Cover General Science thoroughly — TNPSC tests Class 6–10 science concepts. Focus on Physics (optics, electricity), Chemistry (acids/bases, carbon compounds), Biology (human body, diseases). Start AMAB: number series, coding-decoding, blood relations. AMAB carries 50 marks — do not ignore it. Practice 25 AMAB questions daily.',
+    },
+    {
+      month: 'Month 4',
+      focus: 'Economy + Environment + Current Affairs',
+      detail: 'Study Indian and TN economy: Five Year Plans, NITI Aayog, poverty schemes, budget highlights. Environment: biodiversity, climate change, National Parks. Begin current affairs — focus on TN government news, national appointments, welfare schemes launched in last 6–12 months. Read "The Hindu" or follow free Telegram channels for daily updates.',
+    },
+    {
+      month: 'Month 5',
+      focus: 'Revision + Mock Tests',
+      detail: 'Revise all GS units using your notes. Solve 2 full-length mock tests per week (200 questions, 3 hours). Analyse every mock carefully — identify which units are weak. Revise Samacheer Kalvi books for high-yield chapters. Focus on TN-specific GK: dams, districts, Governors, Chief Ministers, wildlife sanctuaries.',
+    },
+    {
+      month: 'Month 6',
+      focus: 'Final Revision + Previous Year Papers',
+      detail: 'Solve previous year TNPSC Group 4 papers from 2018–2024. These are the single most effective practice resource. Notice recurring question patterns. Revise weak areas identified in mock tests. Brush up on current affairs for the last 3 months. Focus on accuracy over speed — TNPSC Group 4 has no negative marking (confirm in the official notification), so attempt all 200 questions.',
+    },
+  ];
+
+  const books = [
+    { subject: 'GS – History, Polity, Geography, Science', title: 'Samacheer Kalvi Textbooks (6th–10th Std)', author: 'Tamil Nadu Govt (Free PDF – textbooksonline.tn.gov.in)' },
+    { subject: 'Tamil / English Language', title: 'Samacheer Kalvi Tamil / English (6th–12th Std)', author: 'Tamil Nadu Govt (Free PDF)' },
+    { subject: 'General Studies (Comprehensive)', title: 'TNPSC Group 4 Study Material (Tamil & English)', author: 'Sura Publications' },
+    { subject: 'AMAB – Aptitude & Mental Ability', title: 'Analytical Reasoning & Mental Ability for TNPSC', author: 'Sura Books / Standard Publications' },
+    { subject: 'Previous Year Papers (Essential)', title: 'TNPSC Group IV Previous Year Papers (2018–2024)', author: 'Available on tnpsc.gov.in (Official)' },
+    { subject: 'Current Affairs (TN focus)', title: 'Monthly Current Affairs Capsule for TNPSC', author: 'Sura / Winmeen / Natraj Publications' },
+    { subject: 'Full Mock Tests', title: 'TNPSC Group 4 Practice Sets – 30 Tests', author: 'Disha / Sura / Arihant' },
+  ];
+
+  const freeResources = [
+    { name: 'TNPSC Official Website', type: 'website', url: 'https://www.tnpsc.gov.in', description: 'Official notifications, previous year question papers, model questions, hall ticket download, results — the single most important resource.' },
+    { name: 'TN Textbooks Online (Free PDFs)', type: 'website', url: 'https://www.textbooksonline.tn.gov.in', description: 'Free official Samacheer Kalvi textbooks (6th–12th) in PDF — covers 40–50% of TNPSC Group 4 GS questions directly.' },
+    { name: 'Winmeen TNPSC YouTube', type: 'youtube', url: 'https://www.youtube.com/@winmeen', description: 'Free TNPSC Group 4 coaching videos in Tamil — GS, AMAB, and language paper tips by experienced educators.' },
+    { name: 'TNPSC Thervupettagam (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@TNPSCThervupettagam', description: 'Tamil-medium free classes for Group 1, 2, and 4 — one of the top TNPSC YouTube channels in Tamil Nadu.' },
+    { name: 'Adda247 Tamil – TNPSC Channel', type: 'youtube', url: 'https://www.youtube.com/@Adda247Tamil', description: 'Free daily classes for TNPSC Group 4 in Tamil — covers current affairs, AMAB, and GK topics.' },
+    { name: 'TNPSC Previous Year Question Papers', type: 'pdf', url: 'https://www.tnpsc.gov.in/previous-questions.html', description: 'Official previous year question papers for Group 4 from tnpsc.gov.in — the most accurate exam preparation resource available.' },
+    { name: 'Winmeen Online Mock Tests', type: 'website', url: 'https://www.winmeen.com', description: 'Free and paid TNPSC Group 4 mock tests in Tamil. Free tier includes chapter-wise tests and previous year papers.' },
+    { name: 'TN e-District (Current Affairs)', type: 'website', url: 'https://edistrict.tn.gov.in', description: 'Reference for Tamil Nadu government schemes, welfare programmes, and district-level developments useful for current affairs.' },
+  ];
+
+  const tips = [
+    { icon: '📚', tip: 'Samacheer Kalvi textbooks are the most important resource for TNPSC Group 4. Around 40–60 questions in each exam are directly or indirectly based on Class 6–10 Samacheer books. Download free PDFs from textbooksonline.tn.gov.in and read them cover to cover at least twice.' },
+    { icon: '📄', tip: 'Solve all previous year TNPSC Group 4 papers from 2018 to 2024. These are freely available on tnpsc.gov.in. TNPSC frequently repeats questions or tests the same concept in different wording — recognising these patterns is a major scoring advantage.' },
+    { icon: '🎯', tip: 'No negative marking in TNPSC Group 4 (verify in the official notification for your cycle). If there is no penalty, attempt all 200 questions. Even guessing a topic you partly remember gives you a 25% chance of getting it right, and the expected gain is positive.' },
+    { icon: '🏛️', tip: 'Tamil Nadu-specific GK is heavily tested. Know your state: all districts, important rivers (Cauvery, Vaigai, Tamiraparani, Palar), dams (Mettur, Papanasam), wildlife sanctuaries, UNESCO sites like Brihadeeswarar Temple, and current Chief Minister/Governor.' },
+    { icon: '📋', tip: 'AMAB (Aptitude & Mental Ability) carries 50 marks out of 300 — roughly 1 in 6 marks. Many candidates ignore this section, which gives serious aspirants an edge. Practise 25 AMAB questions daily from Month 3 onwards to score 40+ in this section reliably.' },
+    { icon: '📰', tip: 'For current affairs, focus on Tamil Nadu news: new government schemes (CM Announces), welfare programmes (Dravidam model), recent Sports/Awards (TN players), and Centre–State policy news. Reading "The Hindu" Tamil edition or following Winmeen Telegram for 15 minutes daily is sufficient.' },
+    { icon: '🌐', tip: 'TNPSC Group 4 notifications come irregularly — sometimes annually, sometimes every 18–24 months. Keep the official website tnpsc.gov.in bookmarked. Enable browser notifications or follow TNPSC on its official Telegram channel so you don\'t miss the announcement.' },
+    { icon: '💡', tip: 'General Tamil or General English carries 100 marks (100 questions) — more than any individual GS unit. A strong language score is a major differentiator. Grammar questions (especially Tamil Eluththu, Mozhi Payilchi, or English tenses/voice) are highly predictable. Master grammar first, then literature.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is TNPSC Group 4 2026 – when is the notification expected?',
+      a: 'As of May 2026, TNPSC has not released the official Group 4 2025–26 notification. Based on the previous cycle (TNPSC Group 4 2023–24, exam held in March 2024), the next cycle notification is expected in mid-2026. Keep checking tnpsc.gov.in regularly for the official announcement. All 2026 dates are currently TBN (To Be Notified).',
+    },
+    {
+      q: 'What are the posts under TNPSC Group 4?',
+      a: 'TNPSC Group 4 (Combined Civil Services Examination Group IV) recruits for clerical and field-level posts across Tamil Nadu government departments. Major posts include Village Administrative Officer (VAO), Junior Assistant, Typist, Bill Collector, Field Surveyor, Draftsman Grade III, and Junior Draughtsman. Qualification and pay level vary by post — most require 10th pass, while Typist posts require 12th pass + typewriting certificate. VAO is typically the most sought-after post due to field authority and higher pay.',
+    },
+    {
+      q: 'What is the qualification for TNPSC Group 4?',
+      a: 'Most TNPSC Group 4 posts require a minimum of 10th Pass (Secondary School Leaving Certificate). Typist posts additionally require a Typewriting Higher Certificate (Tamil or English). Field Surveyor posts may require a 10th pass with relevant experience. Draftsman posts require a Diploma in Civil Engineering or related field. Always check the official notification for the exact qualification requirements of each specific post in your cycle.',
+    },
+    {
+      q: 'What is the exam pattern for TNPSC Group 4?',
+      a: 'TNPSC Group 4 written exam consists of 200 objective-type (MCQ) questions for a total of 300 marks, with a duration of 3 hours. The paper is divided into: General Studies – 75 questions (150 marks), General Tamil or General English – 100 questions (100 marks), Aptitude & Mental Ability (AMAB) – 25 questions (50 marks). There is typically no negative marking, but confirm this in the official notification for your cycle. The exam is conducted as a Computer Based Test (CBT) or OMR-based test depending on the cycle.',
+    },
+    {
+      q: 'What is the TNPSC Group 4 salary in 2026?',
+      a: 'Pay varies by post and location. For the most common post — Junior Assistant — the starting basic pay is ₹19,500/month (Pay Level 5, TN Pay Commission). Village Administrative Officer (VAO) starts at ₹29,200/month (Pay Level 8). With Dearness Allowance (~38% in 2026), HRA (24% in Chennai), transport allowance, and other perks, the gross in-hand salary is approximately ₹32,000–₹38,000/month for Junior Assistant and ₹45,000–₹52,000/month for VAO in Chennai. Salary revisions happen periodically — check the official TN Pay Commission notification for latest figures.',
+    },
+    {
+      q: 'Is there negative marking in TNPSC Group 4?',
+      a: 'In most recent TNPSC Group 4 cycles, there has been NO negative marking. However, this is confirmed in each official notification. Always read the notification\'s exam scheme carefully before assuming no penalty. If no negative marking is confirmed, the strategy is to attempt all 200 questions since attempting an unknown answer carries a positive expected value (25% chance of being correct with 4 options). Do not leave questions blank in a no-penalty exam.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const typeIcons: Record<string, string> = { youtube: '📺', website: '🌐', pdf: '📄', telegram: '📱', drive: '📁' };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO (Blue gradient — same as SBI PO) ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">TNPSC Group 4 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC – Tamil Nadu</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">State Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: TBN – 2026 (Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            TNPSC Group 4 2026 –<br className="hidden sm:block" /> VAO, Junior Assistant &amp; Complete Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            TNPSC Group 4 (CCSE IV) recruits <strong>VAO, Junior Assistant, Typist, Bill Collector</strong> and other clerical posts across Tamil Nadu government departments. 200 MCQ questions, 300 marks, no interview. Minimum qualification: <strong>10th Pass</strong>. Salary: <strong>₹32,000–₹52,000/month</strong> gross (Chennai, 2026 rates).
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies',   value: '5,000 – 10,000+', sub: '(2026 cycle, TBN)' },
+              { label: 'Exam Date',            value: 'TBN – Late 2026',  sub: '(Expected)' },
+              { label: 'Min. Qualification',   value: '10th Pass',        sub: 'For most posts' },
+              { label: 'Gross Salary (VAO)',   value: '₹45,000–₹52,000', sub: 'per month (Chennai)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>2026 Update:</strong> TNPSC Group 4 2023–24 cycle concluded in 2024. The next cycle notification is expected in <strong>mid-2026</strong>. All upcoming dates are TBN — monitor{' '}
+            <a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">tnpsc.gov.in</a> for official updates.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1 – OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is TNPSC Group 4 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>TNPSC Group 4 Combined Civil Services Examination (CCSE IV)</strong> is conducted by the <strong>Tamil Nadu Public Service Commission</strong> to recruit candidates for clerical and field-level posts in Tamil Nadu state government departments. It is one of the <strong>largest and most accessible state government exams</strong> in India, with 5,000–10,000+ vacancies per cycle, attracting 10–20 lakh applicants.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  What makes TNPSC Group 4 unique is its <strong>10th pass eligibility</strong> for most posts, making it accessible to a very large segment of aspirants. There is <strong>no interview round</strong> — selection is entirely based on the written exam score and certificate verification. This transparency makes it one of the most trusted state recruitment examinations.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  The <strong>Village Administrative Officer (VAO)</strong> post is the most competitive under Group 4, carrying field authority and a higher pay scale. Junior Assistant is the largest in terms of vacancies. With a systematic 4–6 month preparation plan using Samacheer Kalvi textbooks and TNPSC previous papers, this exam is genuinely achievable for dedicated aspirants.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',    value: 'Tamil Nadu Public Service Commission (TNPSC)' },
+                  { label: 'Exam Type',          value: 'State Level – Written Exam Only (No Interview)' },
+                  { label: 'Selection Process',  value: 'Written Test → Certificate Verification' },
+                  { label: 'Service after joining', value: 'Tamil Nadu State Government' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2 – IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 TNPSC Group 4 2026 – Important Dates</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Event</th>
+                      <th className="text-left px-4 py-3 font-heading">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                        <td className={`px-4 py-3 font-semibold ${row.status === 'tbn' ? 'text-amber-600' : row.status === 'upcoming' ? 'text-primary-600' : 'text-surface-800'}`}>
+                          {row.status === 'tbn' && <span className="mr-1">⚠️</span>}
+                          {row.date}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ = To Be Notified. All 2026 dates are estimates. Verify from <a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">tnpsc.gov.in</a>.</p>
+            </section>
+
+            {/* SECTION 3 – ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria</h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="card p-5">
+                  <div className="text-primary-600 font-heading font-semibold text-sm uppercase tracking-wide mb-3">🪪 Nationality</div>
+                  <p className="text-surface-700 text-sm leading-relaxed">Must be a citizen of India. Some posts require being a citizen of Tamil Nadu (resident for a specified period) — check the official notification for specific residency requirements per post.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-primary-600 font-heading font-semibold text-sm uppercase tracking-wide mb-3">🎓 Educational Qualification</div>
+                  <p className="text-surface-700 text-sm leading-relaxed">10th Pass (SSLC) for most posts including Junior Assistant, Bill Collector, Field Surveyor, VAO. 12th Pass + Typewriting Higher Certificate (Tamil/English) for Typist posts. Diploma in Civil Engineering for Draftsman Grade III.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-primary-600 font-heading font-semibold text-sm uppercase tracking-wide mb-3">📋 Age Limit (as on cut-off date)</div>
+                  <div className="space-y-2">
+                    {ageLimit.map((row, i) => (
+                      <div key={i} className="flex justify-between text-sm border-b border-surface-100 pb-2 last:border-0">
+                        <span className="text-surface-700">{row.category}</span>
+                        <span className="font-semibold text-surface-800 text-right">{row.min === '–' ? '' : `${row.min} – `}{row.max}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="text-primary-600 font-heading font-semibold text-sm uppercase tracking-wide mb-3">📝 Additional Eligibility Notes</div>
+                  <ul className="text-sm text-surface-700 space-y-2 list-disc ml-4">
+                    <li>Candidates must know Tamil (read/write) — it is a mandatory language requirement for most Group 4 posts</li>
+                    <li>Medical fitness as per TNPSC norms (certificate required at joining)</li>
+                    <li>No criminal record; must be of good character (certificate from Village Administrative Officer / Gazetted Officer)</li>
+                    <li>Typewriting speed requirement for Typist posts: 40 WPM (Tamil) or 50 WPM (English) Higher Grade</li>
+                    <li>Age is calculated as on the closing date for applications (as specified in official notification)</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4 – POSTS & VACANCIES */}
+            <section id="posts-vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Posts, Vacancies &amp; Pay Levels</h2>
+              </div>
+              <div className="card overflow-hidden mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Post Name</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Department</th>
+                      <th className="text-left px-4 py-3 font-heading">Qualification</th>
+                      <th className="text-left px-4 py-3 font-heading">Pay Level</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {posts.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-800 font-medium">{row.post}</td>
+                        <td className="px-4 py-3 text-surface-600 hidden sm:table-cell">{row.dept}</td>
+                        <td className="px-4 py-3 text-surface-600">{row.qualification}</td>
+                        <td className="px-4 py-3 font-semibold text-emerald-700">{row.payLevel}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-primary-800">
+                💡 <strong>Vacancy Note:</strong> TNPSC Group 4 vacancies vary significantly each cycle. The 2022-23 cycle had ~6,244 posts and the 2023-24 cycle had ~6,090 posts. The 2026 cycle vacancies will be announced with the official notification and can range from 4,000 to 10,000+ posts depending on departmental requirements.
+              </div>
+            </section>
+
+            {/* SECTION 5 – EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern 2026</h2>
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <div className="bg-surface-800 text-white px-4 py-3">
+                  <p className="font-heading font-semibold text-sm">Written Examination (OMR / CBT) – 200 Questions | 300 Marks | 3 Hours</p>
+                </div>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-100">
+                      <th className="text-left px-4 py-3 font-heading text-surface-700">Subject</th>
+                      <th className="text-center px-4 py-3 font-heading text-surface-700">Questions</th>
+                      <th className="text-center px-4 py-3 font-heading text-surface-700">Marks</th>
+                      <th className="text-left px-4 py-3 font-heading text-surface-700 hidden sm:table-cell">Topics</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {examPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-800 font-medium">{row.subject}</td>
+                        <td className="px-4 py-3 text-center font-semibold text-primary-600">{row.questions}</td>
+                        <td className="px-4 py-3 text-center font-semibold text-emerald-700">{row.marks}</td>
+                        <td className="px-4 py-3 text-surface-600 text-xs hidden sm:table-cell">{row.note}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50 font-semibold">
+                      <td className="px-4 py-3 text-primary-800">Total</td>
+                      <td className="px-4 py-3 text-center text-primary-800">200</td>
+                      <td className="px-4 py-3 text-center text-primary-800">300</td>
+                      <td className="px-4 py-3 hidden sm:table-cell"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm">
+                  <p className="font-heading font-semibold text-emerald-800 mb-2">✅ Key Facts</p>
+                  <ul className="text-emerald-700 space-y-1 list-disc ml-4">
+                    <li>Single paper – no separate Prelims and Mains</li>
+                    <li>Typically no negative marking (confirm in official notification)</li>
+                    <li>Medium: Tamil or English (candidate&apos;s choice)</li>
+                    <li>No interview round – merit list purely based on written score</li>
+                  </ul>
+                </div>
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm">
+                  <p className="font-heading font-semibold text-amber-800 mb-2">⚠️ Important Note</p>
+                  <p className="text-amber-700">TNPSC revised its exam pattern in 2023. For VAO and some posts, the pattern may include a 2-tier process. Always read the official notification carefully for the exact scheme applicable to each post in the 2026 cycle.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 6 – SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((item, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      <span>{item.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-2">
+                        {item.topics.map((t, j) => (
+                          <li key={j} className="text-sm text-surface-600 flex gap-2">
+                            <span className="text-primary-400 mt-0.5 shrink-0">▸</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7 – CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year Cut-offs (out of 300)</h2>
+              </div>
+              <div className="card overflow-hidden mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Category</th>
+                      <th className="text-center px-4 py-3 font-heading">2023–24 (est.)</th>
+                      <th className="text-center px-4 py-3 font-heading hidden sm:table-cell">2022–23 (est.)</th>
+                      <th className="text-center px-4 py-3 font-heading hidden md:table-cell">2021–22 (est.)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-800 font-medium">{row.category}</td>
+                        <td className="px-4 py-3 text-center font-semibold text-primary-700">{row.exam2024}</td>
+                        <td className="px-4 py-3 text-center text-surface-700 hidden sm:table-cell">{row.exam2023}</td>
+                        <td className="px-4 py-3 text-center text-surface-600 hidden md:table-cell">{row.exam2022}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400">Cut-offs shown are approximate estimates based on community analysis and may vary by post (VAO cut-offs are typically 5–10 marks higher than the general Group 4 cut-off). Official cut-offs are published by TNPSC on tnpsc.gov.in post-result.</p>
+            </section>
+
+            {/* SECTION 8 – SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary &amp; Benefits 2026</h2>
+              </div>
+              <div className="card overflow-hidden mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Salary Component</th>
+                      <th className="text-right px-4 py-3 font-heading">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{row.component}</td>
+                        <td className={`px-4 py-3 text-right font-semibold ${row.component.startsWith('Gross') ? 'text-emerald-700 text-base' : 'text-surface-800'}`}>{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { icon: '🏥', title: 'Medical Benefits', desc: 'Government Health Insurance Scheme (GHIS) for employee and immediate family members.' },
+                  { icon: '👶', title: 'Leave &amp; Maternity', desc: 'Earned Leave, Casual Leave, Medical Leave. 180 days paid maternity leave for women employees.' },
+                  { icon: '🏠', title: 'Pension &amp; Gratuity', desc: 'Tamil Nadu Government Servants Contributory Pension Scheme (NPS-equivalent). Gratuity on retirement.' },
+                ].map((b) => (
+                  <div key={b.title} className="card p-5">
+                    <div className="text-2xl mb-2">{b.icon}</div>
+                    <div className="font-heading font-semibold text-surface-800 mb-1" dangerouslySetInnerHTML={{ __html: b.title }} />
+                    <p className="text-sm text-surface-600">{b.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 9 – HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for TNPSC Group 4</h2>
+              </div>
+              <div className="card p-6">
+                <p className="text-surface-600 text-sm mb-5">Applications are submitted online via the TNPSC ONE-TIME REGISTRATION (OTR) portal. Steps below are based on the standard TNPSC application process:</p>
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  {[
+                    { step: '1', title: 'Register on TNPSC One-Time Registration Portal', detail: 'Visit tnpsc.gov.in → "One Time Registration". Create your profile with personal details, educational qualifications, photo, and signature. This OTR ID is used for all future TNPSC applications.' },
+                    { step: '2', title: 'Apply for TNPSC Group 4 Notification', detail: 'Log in to your OTR account → select the active Group 4 notification → verify pre-filled details → select your preferred post and preferred exam centre (district).' },
+                    { step: '3', title: 'Pay Application Fee', detail: 'Application fee: ₹150 (General) | SC/ST and Other Backward Classes (first application in a year) may be exempt — check official notification. Payment via Net Banking, Debit/Credit Card, or Common Service Centre.' },
+                    { step: '4', title: 'Upload Photo & Signature', detail: 'Passport-size photo: JPEG, max 80 KB, white background. Signature: JPEG, max 40 KB, on white paper with black/blue ink. Both must be recent.' },
+                    { step: '5', title: 'Submit & Take Printout', detail: 'Review all details carefully before final submission. Download and print the confirmation page. Keep it safe — you will need it for certificate verification.' },
+                  ].map((item) => (
+                    <div key={item.step} className="sm:pl-14 relative mb-5 last:mb-0">
+                      <div className="absolute left-0 top-1 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">{item.step}</div>
+                      <div className="card p-4">
+                        <p className="font-heading font-semibold text-surface-800 mb-1">{item.title}</p>
+                        <p className="text-sm text-surface-600">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10 – STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">6-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((item, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-5 last:mb-0">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex">{item.month.replace('Month ', 'M')}</div>
+                    <div className="card p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="badge-primary">{item.month}</span>
+                        <span className="font-heading font-semibold text-surface-800">{item.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 11 – BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for TNPSC Group 4</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Subject</th>
+                      <th className="text-left px-4 py-3 font-heading">Book Title</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-600 text-xs">{b.subject}</td>
+                        <td className="px-4 py-3 text-surface-800 font-medium">{b.title}</td>
+                        <td className="px-4 py-3 text-surface-600 hidden sm:table-cell">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 12 – FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Preparation Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{typeIcons[r.type] ?? '🔗'}</span>
+                      <div>
+                        <p className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors">{r.name}</p>
+                        <p className="text-sm text-surface-500 mt-1">{r.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13 – TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Preparation Tips</h2>
+              </div>
+              <div className="space-y-3">
+                {tips.map((item, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-xl shrink-0">{item.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{item.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14 – FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((item, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      <span>{item.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 ml-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{item.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>{/* end main column */}
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">On This Page</p>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website Card */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">Official Website</p>
+                <a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center block text-sm py-2.5">
+                  🌐 tnpsc.gov.in →
+                </a>
+                <p className="text-xs text-surface-400 mt-2 text-center">Check notifications, apply online &amp; download results</p>
+              </div>
+
+              {/* Eligibility Checker Card */}
+              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
+                <p className="font-heading font-semibold text-emerald-800 mb-2 text-sm">✅ Check Your Eligibility</p>
+                <p className="text-xs text-emerald-700 mb-3">Find out if you qualify for TNPSC Group 4 and other exams instantly.</p>
+                <Link href="/tools/eligibility-checker/" className="block text-center text-sm font-medium bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl py-2.5 transition-colors">
+                  Use Eligibility Checker →
+                </Link>
+              </div>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <p className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">Related TN Exams</p>
+                <div className="space-y-1">
+                  {[
+                    { name: 'TNPSC Group 1 2026',   slug: 'tnpsc-group-1' },
+                    { name: 'TNPSC Group 2 2026',   slug: 'tnpsc-group-2' },
+                    { name: 'UPSC IAS 2026',         slug: 'upsc-ias' },
+                    { name: 'SSC CGL 2026',          slug: 'ssc-cgl' },
+                    { name: 'SSC CHSL 2026',         slug: 'ssc-chsl' },
+                    { name: 'SSC MTS 2026',          slug: 'ssc-mts' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
+                      → {e.name}
                     </Link>
                   ))}
                 </div>
