@@ -373,6 +373,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'lic-ado') {
+    return {
+      title: 'LIC ADO 2026 – Notification, Vacancies, Syllabus, Salary & Guide | TaiyarHo',
+      description: 'LIC ADO 2026: ~9,000+ vacancies expected. Prelims (June 2026 est.), Mains (August 2026 est.), Interview. Gross salary ₹56,000–₹68,000/month. Graduate eligible, age 21–30 yrs. Complete syllabus, exam pattern, Insurance Awareness topics & free resources.',
+      keywords: 'LIC ADO 2026, LIC ADO notification 2026, LIC ADO syllabus, LIC ADO salary, LIC ADO taiyari, LIC ADO exam pattern, LIC Apprentice Development Officer, insurance exam 2026, एलआईसी एडीओ भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/lic-ado/' },
+      other: { 'description:hi': 'LIC ADO 2026 – ~9,000+ रिक्तियाँ अपेक्षित। प्रारंभिक परीक्षा जून 2026 (अपेक्षित), मुख्य परीक्षा अगस्त 2026 (अपेक्षित)। सकल वेतन ₹56,000–₹68,000/माह। स्नातक पात्र, आयु 21–30 वर्ष। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'sbi-po') {
     return {
       title: 'SBI PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -551,6 +561,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rpf-si') return <RpfSiPage exam={brief} />;
   if (brief && brief.slug === 'upsc-cds') return <UpscCdsPage exam={brief} />;
   if (brief && brief.slug === 'lic-aao') return <LicAaoPage exam={brief} />;
+  if (brief && brief.slug === 'lic-ado') return <LicAdoPage exam={brief} />;
   if (brief && brief.slug === 'kvs-prt-tgt-pgt') return <KvsPrtTgtPgtPage exam={brief} />;
   if (brief && brief.slug === 'mppsc-state-service') return <MppscStatePage exam={brief} />;
   if (brief && brief.slug === 'tnpsc-group-2') return <TNPSCGroup2Page exam={brief} />;
@@ -37396,6 +37407,958 @@ function TnpscGroup4Page({ exam }: { exam: any }) {
                     { name: 'SSC CGL 2026',          slug: 'ssc-cgl' },
                     { name: 'SSC CHSL 2026',         slug: 'ssc-chsl' },
                     { name: 'SSC MTS 2026',          slug: 'ssc-mts' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
+                      → {e.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── LIC ADO 2026 RICH PAGE ───────────────────────────────────────────────────
+function LicAdoPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: '1. Overview' },
+    { id: 'important-dates', label: '2. Important Dates 2026' },
+    { id: 'eligibility',     label: '3. Eligibility Criteria' },
+    { id: 'vacancies',       label: '4. Vacancies History' },
+    { id: 'categories',      label: '5. Recruitment Categories' },
+    { id: 'exam-pattern',    label: '6. Exam Pattern' },
+    { id: 'syllabus',        label: '7. Detailed Syllabus' },
+    { id: 'cutoff',          label: '8. Previous Cut-offs' },
+    { id: 'salary',          label: '9. Salary & Career' },
+    { id: 'how-to-apply',    label: '10. How to Apply' },
+    { id: 'study-plan',      label: '11. Study Plan' },
+    { id: 'books',           label: '12. Best Books' },
+    { id: 'resources',       label: '13. Free Resources' },
+    { id: 'tips',            label: '14. Expert Tips' },
+    { id: 'faq',             label: '15. FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'LIC ADO 2023 Notification Released',        date: '20 January 2023',       status: 'released' },
+    { event: 'LIC ADO 2023 Online Application Opens',     date: '20 January 2023',       status: 'released' },
+    { event: 'LIC ADO 2023 Application Last Date',        date: '10 February 2023',      status: 'released' },
+    { event: 'LIC ADO 2023 Prelims Exam',                 date: '12 March 2023',         status: 'released' },
+    { event: 'LIC ADO 2023 Prelims Result',               date: '10 April 2023',         status: 'released' },
+    { event: 'LIC ADO 2023 Mains Exam',                   date: '23 April 2023',         status: 'released' },
+    { event: 'LIC ADO 2023 Interview',                    date: 'July–August 2023',      status: 'released' },
+    { event: 'LIC ADO 2023 Final Result & Joining',       date: 'September–October 2023', status: 'released' },
+    { event: '🆕 LIC ADO 2026 Notification',              date: 'To Be Notified (TBN)',  status: 'tbn' },
+    { event: 'LIC ADO 2026 Online Application',           date: 'TBN (Expected Apr–May 2026)', status: 'tbn' },
+    { event: 'LIC ADO 2026 Prelims Exam',                 date: 'June 2026 (Expected)',  status: 'tbn' },
+    { event: 'LIC ADO 2026 Mains Exam',                   date: 'August 2026 (Expected)', status: 'tbn' },
+    { event: 'LIC ADO 2026 Interview',                    date: 'October 2026 (Expected)', status: 'tbn' },
+    { event: 'LIC ADO 2026 Final Result & Joining',       date: 'November–December 2026 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'LIC ADO 2016',           total: '~5,000',   prelims: '2016',  mains: '2016' },
+    { year: 'LIC ADO 2019',           total: '8,581',    prelims: 'March 2019',  mains: 'April 2019' },
+    { year: 'LIC ADO 2023',           total: '9,394',    prelims: 'March 2023',  mains: 'April 2023' },
+    { year: 'LIC ADO 2026 (Expected)',total: '~8,000–10,000 (TBN)', prelims: 'June 2026 (est.)', mains: 'Aug 2026 (est.)' },
+  ];
+
+  const zoneVacancies2023 = [
+    { zone: 'East Central Zone (ECZ)',  vacancies: '1,031' },
+    { zone: 'Eastern Zone (EZ)',         vacancies: '1,047' },
+    { zone: 'North Central Zone (NCZ)',  vacancies: '1,033' },
+    { zone: 'Northern Zone (NZ)',        vacancies: '1,052' },
+    { zone: 'Southern Zone (SZ)',        vacancies: '1,384' },
+    { zone: 'South Central Zone (SCZ)', vacancies: '1,408' },
+    { zone: 'Western Zone (WZ)',         vacancies: '1,553' },
+    { zone: 'Central Zone (CZ)',         vacancies: '886' },
+  ];
+
+  const prelimsPattern = [
+    { section: 'Reasoning Ability',   questions: 40, marks: 40,  time: '30 min', note: 'Counted for ranking' },
+    { section: 'Numerical Ability',   questions: 35, marks: 35,  time: '20 min', note: 'Counted for ranking' },
+    { section: 'English Language',    questions: 25, marks: 25,  time: '15 min', note: 'Qualifying only — not counted for ranking' },
+  ];
+
+  const mainsPatternOpen = [
+    { section: 'Reasoning Ability',                       questions: 40, marks: 40,  note: '' },
+    { section: 'Numerical Ability',                       questions: 40, marks: 40,  note: '' },
+    { section: 'General Knowledge & Current Affairs',     questions: 40, marks: 40,  note: '' },
+    { section: 'English Language',                        questions: 30, marks: 30,  note: 'Qualifying only' },
+    { section: 'Insurance & Financial Marketing Awareness', questions: 50, marks: 50, note: 'Most important section' },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', prelims2023: '~52–55', mains2023: '~85–95 / 160', prelims2019: '~48–53', mains2019: '~80–92 / 160' },
+    { category: 'OBC',           prelims2023: '~47–50', mains2023: '~78–88 / 160', prelims2019: '~44–48', mains2019: '~74–83 / 160' },
+    { category: 'SC',            prelims2023: '~40–44', mains2023: '~68–78 / 160', prelims2019: '~37–42', mains2019: '~62–72 / 160' },
+    { category: 'ST',            prelims2023: '~34–38', mains2023: '~58–68 / 160', prelims2019: '~32–38', mains2019: '~55–65 / 160' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (PDO Scale, ₹35,650–₹56,500)',         amount: '₹35,650/month' },
+    { component: 'Dearness Allowance (DA) — revised quarterly',    amount: '~₹8,500–₹10,000/month' },
+    { component: 'House Rent Allowance (HRA) — A Class City',      amount: '₹3,565–₹4,280/month' },
+    { component: 'City Compensatory Allowance (CCA)',               amount: '₹750–₹1,500/month' },
+    { component: 'Conveyance, Special & Other Allowances',          amount: '~₹3,000–₹5,000/month' },
+    { component: 'Performance Incentives (variable)',               amount: 'Additional — based on business targets' },
+    { component: 'Gross In-Hand (A Class City, est.)',              amount: '~₹56,000–₹68,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'ADO (Apprentice Development Officer)',    period: 'Year 0 (Training)',   stipend: '~₹34,503/month (stipend)' },
+    { level: 'PDO (Probationary Development Officer)', period: '3 yrs after joining', pay: '₹35,650 basic + allowances' },
+    { level: 'Development Officer (DO)',               period: '5–8 yrs',             pay: 'Scale advancement + incentives' },
+    { level: 'Senior Development Officer (SDO)',       period: '8–12 yrs',            pay: 'Higher scale + branch target bonus' },
+    { level: 'Branch Manager / SDO Grade I',           period: '12–18 yrs',           pay: 'Managerial grade — LIC Grade 1 officer' },
+    { level: 'Divisional / Zonal Office Roles',        period: '18+ yrs',             pay: 'Senior Grade 1–3 officer cadre' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🔢 Numerical Ability',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Number System, Simplification & Approximation',
+        'Percentage, Ratio & Proportion, Average',
+        'Profit & Loss, Simple & Compound Interest',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time — Trains & Boats',
+        'Data Interpretation — Bar, Pie, Line, Tabular (Mains level is harder)',
+        'Quadratic Equations, Number Series',
+        'Permutation, Combination & Probability',
+        'Mensuration — Area, Volume, Perimeter',
+        'HCF & LCM, Problems on Ages',
+      ],
+    },
+    {
+      subject: '🧩 Reasoning Ability',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Puzzles — Floor-based, Box, Month-Year, Scheduling, Comparison',
+        'Seating Arrangement — Linear, Circular, Double Row',
+        'Syllogisms (Direct & Reverse pattern)',
+        'Coding-Decoding (new pattern)',
+        'Blood Relations, Direction & Distance',
+        'Inequalities (Direct & Coded)',
+        'Input-Output, Order & Ranking',
+        'Alphanumeric Series, Data Sufficiency',
+        'Statement & Assumption, Statement & Conclusion',
+        'Analytical Reasoning, Cause & Effect',
+      ],
+    },
+    {
+      subject: '📝 English Language',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Reading Comprehension (1–2 passages)',
+        'Cloze Test — Fill in the blanks',
+        'Error Spotting & Sentence Correction',
+        'Sentence Rearrangement / Para Jumbles',
+        'Para Connectors, Para Completion',
+        'Double & Triple Fillers',
+        'Vocabulary — Synonyms, Antonyms in context',
+        'Note: English is qualifying only — marks NOT counted for ranking',
+      ],
+    },
+    {
+      subject: '📰 General Knowledge & Current Affairs (Mains Only)',
+      prelims: false,
+      mains: true,
+      topics: [
+        'Current Affairs — last 6 months national & international',
+        'Indian Economy — GDP, inflation, budget highlights, fiscal policy',
+        'RBI — Monetary Policy, Repo Rate, Reverse Repo, CRR, SLR',
+        'Government Schemes — PMFBY, PMJJBY, PMSBY, PM Jan Dhan, Bima Sakhi',
+        'Banking Awareness — NPA, CRAR, Priority Sector Lending, Basel Norms',
+        'Awards, Appointments, Important Days, International Organisations',
+        'Science & Technology — basic current developments',
+        'Sports, Environment, and Static GK (Indian History, Geography)',
+      ],
+    },
+    {
+      subject: '🏛️ Insurance & Financial Marketing Awareness (Mains Only — 50 Marks)',
+      prelims: false,
+      mains: true,
+      topics: [
+        'LIC — History, products, subsidiaries (LIC Housing Finance, LIC Cards), YONO LIC app',
+        'Life Insurance — Term, Endowment, Whole Life, ULIP, Pension Plans',
+        'General Insurance — Motor, Health, Fire, Marine, Crop Insurance',
+        'Insurance Regulation — IRDAI, Insurance Ombudsman, Bancassurance',
+        'Insurance Schemes — PMFBY, PMJJBY (₹2 lakh), PMSBY (₹2 lakh), PMMY',
+        'ULIP (Unit Linked Insurance Plan) — features, charges, NAV',
+        'Reinsurance — concept, GIC Re, international reinsurers',
+        'Financial Market — Primary & Secondary markets, NSE, BSE, Sensex, Nifty',
+        'Capital Markets — Equity, Debt, Mutual Funds, IPO, FPO, SEBI',
+        'Insurance Terms — Actuary, Underwriting, Surrender Value, Premium, Claims',
+        'Abbreviations in Insurance — IRDAI, IRDA, GIC, LIC, ESIC, NIA',
+        'FSDC — Financial Stability and Development Council',
+        'Foreign Exchange Market, International Financial Organisations (IMF, World Bank)',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Quant + Reasoning Foundation', detail: 'Arithmetic: Percentage, SI/CI, Ratio, Profit & Loss. Reasoning: Basic Puzzles and Seating Arrangements. Build speed — LIC ADO prelims has tight sectional timers (30/20/15 min). Solve 50 questions daily with strict time limits from Day 1. Start scanning insurance news for 10 minutes each morning.' },
+    { month: 'Month 2', focus: 'Advanced Quant + Reasoning + English Start', detail: 'DI: bar, pie, tabular, line charts. Mains DI requires deeper analysis — practice calculation shortcuts. Reasoning: Syllogisms, Coding-Decoding, Input-Output, Blood Relations. English: 1 RC passage daily + 1 cloze test. Build reading habit — the English section is qualifying, but clearing it quickly saves time.' },
+    { month: 'Month 3', focus: 'Insurance & Financial Awareness — Core Month', detail: 'This section is worth 50 marks in Mains and is unique to LIC ADO. Learn LIC\'s product portfolio, IRDAI regulations, insurance schemes (PMJJBY, PMSBY, PMFBY), and financial market basics. Read IRDAI annual report summaries and insurance-focused current affairs daily. Spend 1.5–2 hours on this section every day this month.' },
+    { month: 'Month 4', focus: 'GK + Current Affairs + Full Syllabus Revision', detail: 'Cover 6 months of current affairs using Adda247 or Oliveboard monthly PDFs. RBI monetary policy, Union Budget key highlights, government financial schemes. Revise Insurance & Financial Awareness. Start prelims mock tests: 1 sectional mock per subject every week. Track time per section — you must finish each prelims section in the allotted time.' },
+    { month: 'Month 5', focus: 'Mains Pattern + Interview Preparation Begins', detail: 'Take 2 full Mains-level mocks per week. Analyse wrong answers — Insurance Awareness is where most marks are won or lost. Prepare for interview: study LIC\'s current leadership, financials, recent product launches, and your own application details. Practice speaking confidently about why you want to be an ADO.' },
+    { month: 'Month 6', focus: 'Mock Tests + Final Revision', detail: 'Take 3–4 full-length Prelims mocks per week. Push your Reasoning and Numerical accuracy to 85%+. Revise Insurance Awareness twice. For interview: practice mock interviews with someone, stay current on LIC news and IRDAI circulars. Keep a calm, positive mindset — the LIC interview is about personality and communication, not just knowledge.' },
+  ];
+
+  const books = [
+    { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal',              subject: 'Numerical Ability' },
+    { title: 'A New Approach to Reasoning',                        author: 'B.S. Sijwali & Indu Sijwali', subject: 'Reasoning' },
+    { title: 'Objective English for Competitive Exams',            author: 'Hari Mohan Prasad',           subject: 'English' },
+    { title: 'Insurance & Financial Market Awareness',             author: 'Arihant Publications',        subject: 'Insurance Awareness' },
+    { title: 'LIC ADO Previous Year Question Papers',              author: 'Adda247 / Disha',             subject: 'Practice Tests' },
+    { title: 'Banking Awareness & General Awareness',              author: 'Arihant / BSC Publication',   subject: 'GK & Current Affairs' },
+    { title: 'Word Power Made Easy',                               author: 'Norman Lewis',                subject: 'English Vocabulary' },
+    { title: 'LIC ADO 20 Practice Sets',                          author: 'Kiran Prakashan',             subject: 'Full Mock Tests' },
+  ];
+
+  const freeResources = [
+    { name: 'LIC India Official Careers',     type: 'website',  url: 'https://licindia.in/home/careers',              description: 'Official source for LIC ADO notifications, admit cards, results, and zone-wise vacancy PDFs.' },
+    { name: 'Adda247 Insurance on YouTube',   type: 'youtube',  url: 'https://www.youtube.com/@Adda247',              description: 'Free LIC ADO classes, insurance awareness, and current affairs daily updates.' },
+    { name: 'Oliveboard LIC ADO Free Mocks',  type: 'website',  url: 'https://www.oliveboard.in/lic-ado/',            description: 'Free full-length LIC ADO Prelims + Mains mocks with AI-based analysis.' },
+    { name: 'IRDAI Official Website',         type: 'website',  url: 'https://irdai.gov.in',                          description: 'Primary source for insurance regulations, IRDAI circulars, and annual reports — essential for Mains.' },
+    { name: 'Unacademy Insurance Exams',      type: 'youtube',  url: 'https://www.youtube.com/@UnacademyBanking',     description: 'Free LIC ADO Prelims and Mains preparation classes by top educators.' },
+    { name: 'GK Today Daily Current Affairs', type: 'website',  url: 'https://www.gktoday.in',                        description: 'Free daily current affairs, insurance awareness capsules, and monthly revision PDFs.' },
+    { name: 'Testbook LIC ADO Free Tests',    type: 'website',  url: 'https://testbook.com/lic-ado',                  description: 'Free sectional and full-length mocks for LIC ADO Prelims and Mains.' },
+    { name: 'LIC Housing Finance & LIC HFL', type: 'website',  url: 'https://www.lichousing.com',                    description: 'Know LIC\'s largest subsidiary — a common interview and awareness question.' },
+  ];
+
+  const tips = [
+    { icon: '🏛️', tip: 'Insurance & Financial Awareness is the game-changer. This 50-mark section is unique to LIC ADO and most candidates under-prepare for it. Start this from Month 1 — not Month 4. Cover IRDAI regulations, LIC product portfolio, and government insurance schemes (PMJJBY, PMSBY) in detail. This is where toppers separate from the crowd.' },
+    { icon: '⏱️', tip: 'Prelims has strict sectional timing: 30 min for Reasoning, 20 min for Numerical, 15 min for English. Practice under this time pressure daily from Week 1. If you can\'t complete a section in the allotted time, you lose that section entirely — this is more critical than in IBPS where timing is flexible.' },
+    { icon: '🔢', tip: 'English is qualifying only — don\'t spend too much time polishing it. Clear the cutoff (typically 7–10 marks) and move on. Use the time saved to maximise your Reasoning and Numerical scores, which are the ranking factors in Prelims.' },
+    { icon: '📋', tip: 'LIC ADO is not an annual exam — it is conducted based on LIC\'s manpower requirement. The 2023 cycle came after a 4-year gap (since 2019). This means fewer coaching materials and previous year papers are available. Use the 2023 and 2019 papers extensively — they reflect the actual difficulty pattern.' },
+    { icon: '🤝', tip: 'The ADO role is fundamentally a field sales and agent management role. At every interview, be prepared to explain why you are suited for a people-facing, target-driven career. Research LIC\'s current MD & Chairman, recent financial performance, and major policy launches. Know why LIC is unique compared to private insurers.' },
+    { icon: '🗺️', tip: 'Apply for your home zone or preferred zone — LIC posting is zone-specific. Understand the zone-wise vacancy distribution before applying. Popular zones (Western, Southern) have more competition. Niche zones (Central, North Central) may offer a relatively better ratio of vacancies to applicants.' },
+    { icon: '📰', tip: 'Current Affairs for LIC ADO must include insurance-sector news: IRDAI circulars, new insurance products, LIC IPO updates (LIC listed in May 2022), bancassurance partnerships, and international reinsurance. Read Insurance Alerts (IRDAI) and The Hindu or Economic Times for this.' },
+    { icon: '🎯', tip: 'In Mains, marks in English (qualifying) are NOT counted for shortlisting for interview. Only Mains objective marks count for interview shortlisting, and Mains + Interview marks determine the final merit list. Maximise your Insurance Awareness, GK/CA, and Reasoning/Numerical scores in Mains — these 4 areas decide your rank.' },
+  ];
+
+  const faqs = [
+    { q: 'When will LIC ADO 2026 notification be released?', a: 'As of May 2026, LIC has not released the ADO 2026 notification. Based on the previous cycle (2023 notification in January 2023) and LIC\'s irregular recruitment pattern, the 2026 notification is expected in the first half of 2026. Prelims may be held in June 2026 and Mains in August 2026 (tentative). Monitor licindia.in/home/careers for official updates.' },
+    { q: 'What is LIC ADO\'s expected vacancy count in 2026?', a: 'LIC ADO 2023 had 9,394 vacancies — the largest recruitment in recent LIC history. For 2026, the exact number is not declared (TBN) but is expected to be in the 8,000–10,000 range based on LIC\'s ongoing expansion into rural markets and Bima Sakhi Yojana rollout. Zone-wise breakdowns will be in the official notification PDF.' },
+    { q: 'What is the difference between Open Market, Agent, and Employee categories?', a: 'Open Market Category: For graduates with no prior LIC connection. They must appear in both Prelims and Mains. Agent Category: For LIC agents with minimum 3 years of service. They skip Prelims and appear only in Mains (separate pattern). Employee Category: For confirmed LIC Class III employees with minimum 5 years. They also skip Prelims and take a single Mains exam. Open Market is the largest and most competitive category.' },
+    { q: 'What is the LIC ADO salary after confirmation?', a: 'During the ADO apprenticeship, a consolidated stipend of approximately ₹34,503/month is paid. After 3 years, upon confirmation as a Probationary Development Officer (PDO), the basic pay is ₹35,650/month under LIC\'s pay scale. With DA, HRA (A class city), CCA, and other allowances, total gross monthly emoluments are approximately ₹56,000–₹68,000. Additionally, ADOs earn performance-based incentives for meeting business targets, which can significantly increase take-home pay.' },
+    { q: 'Is Insurance Awareness important for LIC ADO?', a: 'It is the single most critical section of the Mains exam, carrying 50 marks out of 160 total ranking marks. This section alone determines whether you get shortlisted for the interview. Topics include LIC\'s product portfolio, IRDAI regulations, government insurance schemes (PMJJBY, PMSBY, PMFBY), reinsurance, Bancassurance, ULIP, and financial market awareness. Most bank exam aspirants under-prepare for this section — spending 40–45% of Mains prep time on it is the right strategy.' },
+    { q: 'Is LIC ADO a good career compared to bank PO?', a: 'LIC ADO offers unique advantages: higher performance-based incentives (can exceed ₹1 lakh/month for top performers), strong job security as a Central Government enterprise, direct agency management experience that builds leadership skills, and a clear promotion path to Development Officer, SDO, and Branch Manager. The starting gross salary (₹56,000–₹68,000) is lower than SBI PO (₹72,500–₹76,000), but LIC ADO\'s incentive structure can close or exceed this gap quickly for high performers. The role is more field-oriented and target-driven compared to a bank PO\'s branch operations role.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">LIC ADO 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ Insurance</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government (LIC)</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ Notification: TBN 2026</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            LIC ADO 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            LIC ADO (Apprentice Development Officer) 2026 notification is expected soon. The last cycle (2023) had{' '}
+            <strong>9,394 vacancies</strong> across 8 zones. 3-stage selection: Prelims → Mains → Interview. Any graduate eligible, age 21–30 years.
+            Gross salary <strong>₹56,000–₹68,000/month</strong> + performance incentives after confirmation.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '~9,000+', sub: '(2026 est. TBN)' },
+              { label: 'Prelims Exam Date',  value: 'June 2026', sub: '(Expected)' },
+              { label: 'Min. Qualification', value: 'Any Graduate', sub: 'Degree required' },
+              { label: 'Gross Salary',       value: '~₹56K–₹68K', sub: 'per month + incentives' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> LIC ADO 2026 notification is yet to be released. The previous cycle was in 2023 (9,394 vacancies). LIC recruitment is <strong>not annual</strong> — it is announced based on manpower needs. Watch{' '}
+            <a href="https://licindia.in/home/careers" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">licindia.in/home/careers</a> for the official notification.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is LIC ADO 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>LIC ADO (Apprentice Development Officer) exam</strong> is conducted by the <strong>Life Insurance Corporation of India (LIC)</strong> to recruit Apprentice Development Officers responsible for recruiting, training, and managing LIC insurance agents in their assigned territory. LIC is <strong>India&apos;s largest insurance company</strong>, established in 1956 and listed on the BSE/NSE since May 2022.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  An ADO&apos;s primary role is <strong>agency management and business development</strong> — building a network of insurance agents, driving sales targets, and expanding LIC&apos;s market presence. The role is field-intensive with a performance-based incentive structure that rewards high performers significantly over the fixed salary.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  LIC ADO is a <strong>Central Government job</strong> with career progression to Development Officer, Senior Development Officer, and Branch Manager. With 9,394 vacancies in the 2023 cycle, it is one of the largest insurance sector recruitments in India.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',    value: 'Life Insurance Corporation of India (LIC)' },
+                  { label: 'Selection Stages',   value: 'Prelims + Mains + Interview' },
+                  { label: 'Joining as',         value: 'Apprentice Development Officer (ADO)' },
+                  { label: 'Confirmed Post',     value: 'Probationary Development Officer (PDO)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 LIC ADO 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> LIC ADO 2026 official dates are not yet announced (TBN as of May 2026). The table below shows confirmed 2023 dates and projected 2026 estimates. LIC ADO is <strong>not an annual exam</strong> — always verify from{' '}<a href="https://licindia.in/home/careers" target="_blank" rel="noopener noreferrer" className="underline font-medium">licindia.in/home/careers</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released'  && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'upcoming'  && <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">🔵 Upcoming</span>}
+                          {row.status === 'tbn'       && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria for LIC ADO 2026</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">Must be a citizen of India. Citizens of Nepal, Bhutan, and certain Tibetan refugee/migrant categories may also be eligible — refer to the official LIC ADO notification for complete details.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit (Open Market Category)</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>21 years</strong> | Maximum: <strong>30 years</strong> (as of the cut-off date in the official notification)</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50 border border-surface-200">
+                        <tr>
+                          <th className="text-left p-2 font-semibold text-surface-700">Category</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Relaxation</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Max Age</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / EWS',           rel: 'No relaxation',      max: '30 years' },
+                          { cat: 'OBC (Non-Creamy Layer)',   rel: '+3 years',           max: '33 years' },
+                          { cat: 'SC / ST',                  rel: '+5 years',           max: '35 years' },
+                          { cat: 'PwBD (General)',           rel: '+10 years',          max: '40 years' },
+                          { cat: 'PwBD (OBC)',               rel: '+13 years',          max: '43 years' },
+                          { cat: 'PwBD (SC/ST)',             rel: '+15 years',          max: '45 years' },
+                          { cat: 'Ex-Servicemen',            rel: 'As per Govt norms',  max: 'As applicable' },
+                          { cat: 'Confirmed LIC Employees',  rel: '+5 years',           max: '35 years (Gen)' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                            <td className="p-2 text-surface-700">{row.cat}</td>
+                            <td className="p-2 text-primary-600 font-medium">{row.rel}</td>
+                            <td className="p-2 text-surface-700">{row.max}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">
+                    <strong>Bachelor&apos;s degree in any discipline</strong> from a university recognised by the Government of India, OR{' '}
+                    <strong>Fellowship of the Insurance Institute of India (III), Mumbai</strong>. Final-year students are <strong>not eligible</strong> — the degree must be in hand at the time of application.
+                  </p>
+                  <div className="mt-3 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
+                    🎓 <strong>Unlike banking exams:</strong> LIC ADO does not allow final-year applicants. Your graduation result must be declared and the degree must be in hand before you apply. Check the official notification PDF for the exact cut-off date.
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">LIC ADO Vacancy History &amp; 2026 Outlook</h2>
+              </div>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Cycle</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Total Vacancies</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.total}</td>
+                        <td className="p-3 text-surface-600">{row.prelims}</td>
+                        <td className="p-3 text-surface-600">{row.mains}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Zone-wise LIC ADO Vacancies (2023 Cycle — Reference)</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-primary-600 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Zone</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Vacancies (2023)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {zoneVacancies2023.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800">{row.zone}</td>
+                        <td className="p-3 font-semibold text-primary-600">{row.vacancies}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-50">
+                      <td className="p-3 font-bold text-surface-900">Total</td>
+                      <td className="p-3 font-bold text-emerald-700">9,394</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mt-2">* Zone-wise vacancies for 2026 will be released with the official notification PDF on licindia.in.</p>
+            </section>
+
+            {/* SECTION 5: RECRUITMENT CATEGORIES */}
+            <section id="categories" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">LIC ADO Recruitment Categories</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  {
+                    title: 'Open Market Category',
+                    icon: '🌐',
+                    color: 'bg-blue-50 border-blue-200',
+                    hdr: 'text-blue-900',
+                    desc: 'For fresh graduates with no prior LIC connection. Most competitive category.',
+                    eligibility: 'Any graduate, age 21–30 yrs',
+                    process: 'Prelims → Mains → Interview',
+                    stages: 3,
+                  },
+                  {
+                    title: 'LIC Agent Category',
+                    icon: '🤝',
+                    color: 'bg-emerald-50 border-emerald-200',
+                    hdr: 'text-emerald-900',
+                    desc: 'For active LIC agents. Prelims is waived — directly appear in Mains (different pattern).',
+                    eligibility: 'Active LIC agent, min. 3 years service',
+                    process: 'Mains Only → Interview',
+                    stages: 2,
+                  },
+                  {
+                    title: 'LIC Employee Category',
+                    icon: '🏢',
+                    color: 'bg-purple-50 border-purple-200',
+                    hdr: 'text-purple-900',
+                    desc: 'For confirmed LIC Class III employees. Also Prelims-exempt with a single Mains exam.',
+                    eligibility: 'Confirmed LIC Class III employee, min. 5 years',
+                    process: 'Mains Only → Interview',
+                    stages: 2,
+                  },
+                ].map((cat) => (
+                  <div key={cat.title} className={`card p-5 ${cat.color}`}>
+                    <div className="text-2xl mb-2">{cat.icon}</div>
+                    <h3 className={`font-heading font-semibold ${cat.hdr} mb-2`}>{cat.title}</h3>
+                    <p className="text-sm text-surface-700 mb-3 leading-relaxed">{cat.desc}</p>
+                    <div className="text-xs text-surface-600 space-y-1">
+                      <div><strong>Eligibility:</strong> {cat.eligibility}</div>
+                      <div><strong>Process:</strong> {cat.process}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 6: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📋 LIC ADO 2026 Exam Pattern</h2>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Phase 1 — Preliminary Examination (Open Market Only)</h3>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 mb-4 text-sm text-blue-800">
+                <strong>⚡ Key Rule:</strong> English Language is <strong>qualifying only</strong> — marks are NOT counted for ranking. Only Reasoning + Numerical marks (75 total) determine your shortlist for Mains. Aim for 80%+ in these two sections.
+              </div>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Section</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Duration</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Ranking</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prelimsPattern.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-700">{row.time}</td>
+                        <td className="p-3 text-xs text-surface-600">{row.note}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-50">
+                      <td className="p-3 font-bold text-surface-900">Total</td>
+                      <td className="p-3 text-center font-bold text-surface-900">100</td>
+                      <td className="p-3 text-center font-bold text-emerald-700">75 (for ranking)</td>
+                      <td className="p-3 text-center font-bold text-surface-900">65 min</td>
+                      <td className="p-3 text-xs text-surface-500">Online CBT | No negative marking</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Phase 2 — Main Examination (Open Market Category)</h3>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-4 text-sm text-amber-800">
+                <strong>⚠️ Mains Scoring:</strong> Only Mains marks count for interview shortlisting. English (qualifying) is excluded. <strong>Negative marking applies in Mains: −0.25 for each wrong answer.</strong> Interview carries 40 marks; final merit = Mains + Interview.
+              </div>
+              <div className="overflow-x-auto mb-4">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Section</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mainsPatternOpen.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                        <td className="p-3 text-xs text-surface-600">{row.note}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-surface-300 bg-surface-50">
+                      <td className="p-3 font-bold text-surface-900">Total</td>
+                      <td className="p-3 text-center font-bold text-surface-900">200</td>
+                      <td className="p-3 text-center font-bold text-emerald-700">160 (for ranking)</td>
+                      <td className="p-3 text-xs text-surface-500">Composite 120 min | −0.25 penalty</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h4 className="font-heading font-semibold text-emerald-800 mb-2 text-sm">📊 Final Merit List Formula</h4>
+                <p className="text-sm text-emerald-800">Shortlisted for Interview based on: <strong>Mains marks only (160)</strong></p>
+                <p className="text-sm text-emerald-800 mt-1">Final merit: <strong>Mains Marks (160) + Interview Marks (40) = 200 total</strong></p>
+                <p className="text-xs text-emerald-600 mt-2">Approx. 3–4× the number of vacancies are called for interview per zone per category.</p>
+              </div>
+            </section>
+
+            {/* SECTION 7: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 LIC ADO 2026 Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-4">
+                {syllabus.map((sub, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer select-none">
+                      <div className="flex items-center gap-3">
+                        <span className="font-heading font-semibold text-surface-800">{sub.subject}</span>
+                        <div className="flex gap-1">
+                          {sub.prelims && <span className="badge-primary text-xs">Prelims</span>}
+                          {sub.mains   && <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-emerald-100 text-emerald-700">Mains</span>}
+                        </div>
+                      </div>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 ml-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-5 space-y-1 text-sm text-surface-700">
+                        {sub.topics.map((t, j) => <li key={j}>{t}</li>)}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 8: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year Cut-offs</h2>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 mb-4 text-sm text-blue-800">
+                ℹ️ Cut-offs are reported based on widely observed trends from 2023 and 2019 cycles. LIC does not always publish official cut-off scores separately. Verify from official results when released.
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims 2023 (75)</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains 2023 (160)</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims 2019 (75)</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains 2019 (160)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-center text-primary-600 font-semibold">{row.prelims2023}</td>
+                        <td className="p-3 text-center text-primary-600 font-semibold">{row.mains2023}</td>
+                        <td className="p-3 text-center text-surface-600">{row.prelims2019}</td>
+                        <td className="p-3 text-center text-surface-600">{row.mains2019}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 9: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 LIC ADO Salary &amp; Career Growth</h2>
+              </div>
+              <div className="card p-5 mb-5">
+                <p className="text-sm text-surface-600 leading-relaxed mb-3">
+                  During the apprenticeship period (as ADO), candidates receive a consolidated monthly stipend of approximately <strong>₹34,503/month</strong> (including HRA and admission allowances). After 3 years and confirmation as a <strong>Probationary Development Officer (PDO)</strong>, the structured pay scale kicks in with a basic of ₹35,650/month.
+                </p>
+                <p className="text-sm text-surface-600 leading-relaxed">
+                  <strong>LIC follows its own pay scale</strong> — not IBA Bipartite Settlement (which governs bank employees) and not the Central Pay Commission (which governs IAS/IPS/Railway staff). LIC salaries are governed by LIC&apos;s internal wage settlement. Performance-based incentives are a major income source for high-performing ADOs.
+                </p>
+              </div>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Salary Component (PDO — after confirmation)</th>
+                      <th className="text-right p-3 font-heading font-semibold text-xs uppercase tracking-wide">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-700">{row.component}</td>
+                        <td className={`p-3 text-right font-semibold ${row.component.includes('Gross') ? 'text-emerald-700' : 'text-surface-800'}`}>{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-4 text-base">LIC ADO Career Progression</h3>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {careerPath.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm shrink-0">{i + 1}</div>
+                      <div className="card p-4">
+                        <div className="flex flex-wrap items-center gap-2 mb-1">
+                          <span className="font-heading font-semibold text-surface-800">{step.level}</span>
+                          <span className="badge-primary">{step.period}</span>
+                        </div>
+                        <p className="text-sm text-emerald-700 font-medium">{step.pay || step.stipend}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for LIC ADO 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Visit LIC India Official Website',                  desc: 'Go to licindia.in → Careers section. Wait for the LIC ADO 2026 notification to be published — check regularly as no advance notice is given.' },
+                  { step: '2', title: 'Select Your Zone',                                   desc: 'LIC ADO applications are zone-specific. Choose the zone you want to be posted in — posting is within the applied zone only. You can typically apply for one zone per application.' },
+                  { step: '3', title: 'Complete Online Registration',                       desc: 'Enter personal details, education, contact information. A Registration Number and Password will be generated — note these carefully. Do not register multiple times.' },
+                  { step: '4', title: 'Upload Documents & Pay Application Fee',             desc: 'Upload your recent photograph (size as specified) and signature. Pay the application fee online (₹700 for Gen/EWS/OBC; ₹85 for SC/ST/PwBD — fee may change, check notification). SC/ST/PwBD candidates are usually exempt from the full fee.' },
+                  { step: '5', title: 'Select Exam City & Submit',                         desc: 'Choose your preferred exam centre city. Verify all details before final submission. Download and print the application confirmation for future reference.' },
+                  { step: '6', title: 'Download Admit Card',                               desc: 'Admit cards are released 2–3 weeks before the exam on licindia.in. Carry it along with a valid photo ID (Aadhaar, PAN, Voter ID, Driving Licence) to the exam centre.' },
+                ].map((s) => (
+                  <div key={s.step} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 bg-primary-100 text-primary-700 rounded-xl flex items-center justify-center font-heading font-bold text-sm shrink-0">{s.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{s.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5">
+                <a href="https://licindia.in/home/careers" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block px-6 py-3 text-sm">
+                  🌐 Apply on LIC Official Website →
+                </a>
+              </div>
+            </section>
+
+            {/* SECTION 11: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 LIC ADO 2026 – 6-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-5">
+                  {studyPlan.map((item, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm shrink-0">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className="font-heading font-bold text-surface-900">{item.month}</span>
+                          <span className="badge-primary">{item.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-700 leading-relaxed">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 12: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📖 Best Books for LIC ADO 2026</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Author</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3"><span className="badge-primary">{b.subject}</span></td>
+                        <td className="p-3 font-medium text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 13: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🆓 Free Resources for LIC ADO 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-lg">{r.type === 'youtube' ? '📺' : '🌐'}</span>
+                      <span className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.name}</span>
+                    </div>
+                    <p className="text-xs text-surface-500 leading-relaxed">{r.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Preparation Tips for LIC ADO 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {tips.map((item, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-xl shrink-0">{item.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{item.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 15: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">15</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((item, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      <span>{item.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 ml-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{item.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>{/* end main column */}
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">📋 On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((s) => (
+                    <a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{s.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="font-heading font-semibold text-primary-800 text-sm mb-2">🏛️ Official LIC Careers</div>
+                <a href="https://licindia.in/home/careers" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all">licindia.in/careers →</a>
+                <p className="text-xs text-primary-500 mt-1">Notifications, admit cards, zone-wise vacancy PDFs</p>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <div className="font-heading font-semibold text-emerald-800 text-sm mb-3">⚡ Quick Facts</div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between"><span className="text-emerald-700">ADO Stipend</span><span className="font-bold text-emerald-800">~₹34,503/mo</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">PDO Gross (A City)</span><span className="font-bold text-emerald-800">~₹56K–₹68K</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">Age Limit</span><span className="font-bold text-emerald-800">21–30 yrs</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">Qualification</span><span className="font-bold text-emerald-800">Any Graduate</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">Mains Marks</span><span className="font-bold text-emerald-800">160 + 40 (Int)</span></div>
+                  <div className="flex justify-between"><span className="text-emerald-700">Notification</span><span className="font-bold text-amber-600">TBN 2026</span></div>
+                </div>
+              </div>
+
+              {/* Eligibility Checker */}
+              <Link href="/tools/eligibility-checker/" className="card p-5 block hover:border-primary-300 transition-colors">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-1">🧮 Check Your Eligibility</div>
+                <p className="text-xs text-surface-500">Use our free Eligibility Calculator to see if you qualify for LIC ADO.</p>
+                <span className="text-xs text-primary-500 font-medium mt-2 block">Open Calculator →</span>
+              </Link>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">Related Insurance &amp; Banking Exams</div>
+                <div className="space-y-1">
+                  {[
+                    { name: 'LIC AAO 2026',     slug: 'lic-aao' },
+                    { name: 'IBPS PO 2026',     slug: 'ibps-po' },
+                    { name: 'SBI PO 2026',      slug: 'sbi-po' },
+                    { name: 'NIACL AO 2026',    slug: 'niacl-ao' },
+                    { name: 'IBPS RRB PO 2026', slug: 'ibps-rrb-po' },
+                    { name: 'RBI Grade B 2026', slug: 'rbi-grade-b' },
                   ].map((e) => (
                     <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
                       → {e.name}
