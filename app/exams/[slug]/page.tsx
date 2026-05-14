@@ -383,6 +383,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'rbi-grade-b') {
+    return {
+      title: 'RBI Grade B 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'RBI Grade B 2026: Notification expected Feb–Mar 2026. 250–350 vacancies (General DR + DEPR + DSIM). Phase I, Phase II & Interview. Graduate with 60% required. Age 21–30 yrs. Gross salary ₹1,10,000–₹1,30,000/month. Full syllabus, exam pattern & free preparation guide.',
+      keywords: 'RBI Grade B 2026, RBI Grade B notification 2026, RBI Grade B syllabus, RBI Grade B salary, RBI Grade B taiyari, RBI officer bharti 2026, Reserve Bank of India Grade B exam, आरबीआई ग्रेड बी 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/rbi-grade-b/' },
+      other: { 'description:hi': 'RBI Grade B 2026 – भारतीय रिज़र्व बैंक में 250–350 रिक्तियाँ। अधिसूचना फरवरी–मार्च 2026 (अपेक्षित)। स्नातक 60% अंक आवश्यक। आयु 21–30 वर्ष। चरण I, चरण II और साक्षात्कार। सकल वेतन ₹1,10,000–₹1,30,000/माह। पूरा सिलेबस और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'sbi-po') {
     return {
       title: 'SBI PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -529,6 +539,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rrb-alp') return <RrbAlpPage exam={brief} />;
   if (detailed && detailed.slug === 'ibps-po') return <IbpsPoPage exam={detailed} />;
   if (detailed && detailed.slug === 'sbi-po') return <SbiPoPage exam={detailed} />;
+  if (brief && brief.slug === 'rbi-grade-b') return <RbiGradeBPage exam={brief} />;
   if (brief && brief.slug === 'rbi-assistant') return <RbiAssistantPage exam={brief} />;
   if (brief && brief.slug === 'upsssc-pet') return <UpssscPetPage exam={brief} />;
   if (detailed) return <DetailedExamPage exam={detailed} />;
@@ -38359,6 +38370,923 @@ function LicAdoPage({ exam }: { exam: any }) {
                     { name: 'NIACL AO 2026',    slug: 'niacl-ao' },
                     { name: 'IBPS RRB PO 2026', slug: 'ibps-rrb-po' },
                     { name: 'RBI Grade B 2026', slug: 'rbi-grade-b' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
+                      → {e.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+function RbiGradeBPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies & Streams' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'cutoff', label: 'Previous Year Cut-offs' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'RBI Grade B 2025 Notification Released', date: 'March 2025', status: 'released' },
+    { event: 'RBI Grade B 2025 Online Application Opens', date: 'March 2025', status: 'released' },
+    { event: 'RBI Grade B 2025 Application Last Date', date: 'April 2025', status: 'released' },
+    { event: 'RBI Grade B 2025 Phase I Exam', date: 'June 2025', status: 'released' },
+    { event: 'RBI Grade B 2025 Phase I Result', date: 'July 2025', status: 'released' },
+    { event: 'RBI Grade B 2025 Phase II Exam', date: 'August–September 2025', status: 'released' },
+    { event: 'RBI Grade B 2025 Phase II Result', date: 'October 2025', status: 'released' },
+    { event: 'RBI Grade B 2025 Interview', date: 'November–December 2025', status: 'released' },
+    { event: 'RBI Grade B 2025 Final Result & Joining', date: 'January–February 2026', status: 'released' },
+    { event: '🆕 RBI Grade B 2026 – Notification', date: 'February–March 2026 (Expected)', status: 'tbn' },
+    { event: 'RBI Grade B 2026 – Online Application', date: 'March 2026 (Expected)', status: 'tbn' },
+    { event: 'RBI Grade B 2026 – Phase I Exam', date: 'May–June 2026 (Expected)', status: 'tbn' },
+    { event: 'RBI Grade B 2026 – Phase II Exam', date: 'August 2026 (Expected)', status: 'tbn' },
+    { event: 'RBI Grade B 2026 – Interview', date: 'October–November 2026 (Expected)', status: 'tbn' },
+    { event: 'RBI Grade B 2026 – Final Result', date: 'December 2026 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'RBI Grade B 2021', general: '146', depr: '28', dsim: '28', total: '202' },
+    { year: 'RBI Grade B 2022', general: '161', depr: '30', dsim: '27', total: '218' },
+    { year: 'RBI Grade B 2023', general: '291', depr: '32', dsim: '30', total: '353' },
+    { year: 'RBI Grade B 2024', general: '94', depr: '26', dsim: '21', total: '141' },
+    { year: 'RBI Grade B 2025', general: '129', depr: '37', dsim: '23', total: '189' },
+    { year: 'RBI Grade B 2026 (expected)', general: '120–180 (Est.)', depr: '30–40 (Est.)', dsim: '20–30 (Est.)', total: '200–300 (Est.)' },
+  ];
+
+  const phase1Pattern = [
+    { subject: 'General Awareness', questions: 80, marks: 80, time: '25 min' },
+    { subject: 'English Language', questions: 30, marks: 30, time: '25 min' },
+    { subject: 'Quantitative Aptitude', questions: 30, marks: 30, time: '25 min' },
+    { subject: 'Reasoning Ability', questions: 60, marks: 60, time: '45 min' },
+  ];
+
+  const phase2Pattern = [
+    { paper: 'Paper I – Economic & Social Issues (ESI)', mode: 'Objective + Descriptive', marks: 100, time: '3 Hours' },
+    { paper: 'Paper II – English (Writing Skills)', mode: 'Descriptive Only', marks: 100, time: '90 Min' },
+    { paper: 'Paper III – Finance & Management (F&M)', mode: 'Objective + Descriptive', marks: 100, time: '3 Hours' },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', phase1_2025: '~103/200', phase2_2025: '~170/300', phase1_2024: '~108/200', phase2_2024: '~165/300' },
+    { category: 'OBC', phase1_2025: '~98/200', phase2_2025: '~160/300', phase1_2024: '~102/200', phase2_2024: '~155/300' },
+    { category: 'SC', phase1_2025: '~87/200', phase2_2025: '~140/300', phase1_2024: '~90/200', phase2_2024: '~135/300' },
+    { category: 'ST', phase1_2025: '~80/200', phase2_2025: '~128/300', phase1_2024: '~82/200', phase2_2024: '~125/300' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Scale B – starting, revised 2023–24)', amount: '₹35,150/month' },
+    { component: 'Special Allowance (25% of Basic Pay)', amount: '₹8,787/month' },
+    { component: 'Dearness Allowance (DA) @ current rate', amount: '~₹25,000–₹30,000/month' },
+    { component: 'House Rent Allowance (HRA) – Metro', amount: '₹10,000–₹16,000/month' },
+    { component: 'City Compensatory Allowance (CCA)', amount: '₹1,500–₹3,000/month' },
+    { component: 'Grade Allowance, Transport & Other Perks', amount: '~₹8,000–₹12,000/month' },
+    { component: 'Gross Estimated In-Hand (Metro posting)', amount: '~₹1,10,000–₹1,30,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Officer Grade B (Probationary)', scale: 'Grade B', years: '0–2 yrs (Probation)', pay: '₹35,150–₹62,400 (Basic)' },
+    { level: 'Officer Grade B (Confirmed)', scale: 'Grade B', years: '2–6 yrs', pay: '₹35,150–₹62,400 (Basic)' },
+    { level: 'Officer Grade C (Asst. Manager)', scale: 'Grade C', years: '6–12 yrs', pay: '₹63,840–₹78,230 (Basic)' },
+    { level: 'Manager (Grade D)', scale: 'Grade D', years: '12–18 yrs', pay: '₹76,010–₹89,890 (Basic)' },
+    { level: 'Asst. General Manager (Grade E)', scale: 'Grade E', years: '18–24 yrs', pay: '₹94,190–₹1,05,950 (Basic)' },
+    { level: 'General Manager / Executive Director', scale: 'Grade F/G', years: '24+ yrs', pay: '₹1,10,000+ (Basic)' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📰 Economic & Social Issues (ESI) – Phase II Paper I',
+      topics: [
+        'Growth and Development – Measurement of Growth, National Income and per capita income',
+        'Poverty Alleviation and Employment Generation in India',
+        'Sustainable Development and Environmental Issues',
+        'Economic Reforms in India since 1991 – Liberalisation, Privatisation, Globalisation',
+        'India\'s trade policy, Balance of Payments, WTO and trade negotiations',
+        'Monetary and Fiscal Policies – RBI\'s role, tools of monetary policy',
+        'Inflation – Types, Causes, Effects and Control',
+        'Banking sector reforms, Financial inclusion, Priority sector lending',
+        'Capital market and money market in India, SEBI, stock exchanges',
+        'Indian Agriculture – Green Revolution, land reforms, crop insurance',
+        'Demographics, Human Development Index, social indicators',
+        'Current events – Union Budget, Economic Survey, major policy announcements',
+      ],
+    },
+    {
+      subject: '💰 Finance & Management (F&M) – Phase II Paper III',
+      topics: [
+        'Financial System – RBI, Banks, NBFCs, Insurance, Capital Markets',
+        'Financial Markets – Money Market, Bond Market, Forex Market, Derivatives',
+        'Risk Management – Credit risk, Market risk, Operational risk, Basel norms',
+        'Banking Regulation – RBI Act, Banking Regulation Act, FEMA',
+        'International Finance – IMF, World Bank, ADB, SWIFT, Nostro/Vostro',
+        'Basics of Accounting – Balance Sheet, P&L, Ratio Analysis',
+        'Organisational Behaviour – Motivation theories, leadership, group dynamics',
+        'Management Functions – Planning, Organising, Staffing, Directing, Controlling',
+        'HR Management – Recruitment, Training, Performance Management',
+        'Corporate Governance – Board structure, audit committees, ethics',
+        'Project Management – PERT/CPM, Risk, Quality management basics',
+        'Communication skills – Written communication, presentations, report writing',
+      ],
+    },
+    {
+      subject: '📋 General Awareness (Phase I + current affairs filter for Phase II)',
+      topics: [
+        'Banking & Financial Awareness – Current affairs about RBI, banks, SEBI, IRDAI',
+        'Indian Economy – GDP data, inflation rates, monetary policy decisions',
+        'RBI Circulars, Guidelines, Press Releases (last 6 months)',
+        'Government schemes (Pradhan Mantri yojanas, MSME, agriculture)',
+        'International Affairs – G20, IMF/World Bank reports, global economy',
+        'Awards, persons in news, appointments (Finance Ministry, RBI Board)',
+        'Books & Authors – especially Economics and Finance books',
+        'Static GK – Headquarters of banks, insurance companies, regulators',
+        'Financial terminology – Repo rate, CRR, SLR, MCLR, Prompt Corrective Action',
+      ],
+    },
+    {
+      subject: '🧮 Quantitative Aptitude & Reasoning (Phase I)',
+      topics: [
+        'Data Interpretation – Bar, Pie, Line, Table, Caselet, Mixed DI',
+        'Number Series (missing/wrong number), Quadratic Equations',
+        'Arithmetic – Percentage, Average, Profit/Loss, SI/CI, Time & Work, Ratio',
+        'Logical Reasoning – Syllogism, Blood Relations, Direction Sense',
+        'Puzzles & Seating Arrangement (linear, circular, floor-based)',
+        'Coding-Decoding, Alphanumeric Series',
+        'Input-Output, Inequalities, Statement-Conclusion',
+      ],
+    },
+    {
+      subject: '✍️ English Language & Writing Skills (Phase I + Phase II Paper II)',
+      topics: [
+        'Reading Comprehension – Economy/Finance theme passages',
+        'Error Detection, Sentence Correction, Cloze Test',
+        'Parajumbles, Vocabulary in Context (Phase I)',
+        'Essay Writing – Economic, social, and current affairs topics (Phase II)',
+        'Precis Writing – Summarising RBI circulars and policy documents',
+        'Letter Writing – Official correspondence style (Phase II)',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    {
+      month: 'Month 1–2',
+      title: 'Foundation – Concepts & GA Kickoff',
+      tasks: [
+        'Complete QA basics: Arithmetic, number series, DI fundamentals',
+        'Reasoning: Puzzles, seating arrangement, syllogism daily practice',
+        'Start ESI textbook (NCERT Economy + Ramesh Singh Indian Economy)',
+        'Begin reading RBI Annual Report and Monetary Policy Reports',
+        'Start daily GA: Read Economic Times + The Hindu (30 min) + Adda247 daily dose',
+        'English: RC practice (3 passages/day from Hindu editorial), grammar drills',
+      ],
+    },
+    {
+      month: 'Month 3–4',
+      title: 'Intermediate – ESI & F&M Deep Dive',
+      tasks: [
+        'Complete ESI syllabus with note-making; revise every 2 weeks',
+        'Start Finance: Banking regulation, RBI functions, financial markets',
+        'Management: Organisational behaviour, HR management concepts',
+        'Take 2 Phase I sectional mocks per week; analyse weak areas',
+        'Maintain a current affairs notebook – monthly PDF revision',
+        'Essay practice: 1 economy/finance essay per week',
+      ],
+    },
+    {
+      month: 'Month 5',
+      title: 'Advanced – Phase II Focus & Mock Tests',
+      tasks: [
+        'Complete F&M syllabus including Basel norms, derivatives, corporate governance',
+        'Full Phase I mock tests: Target 110+/200 overall for General category',
+        'Phase II mock attempts – full 3-hour ESI and F&M papers',
+        'Descriptive writing: Practise precis of RBI press releases',
+        'Revise all static GK: RBI board members, bank HQs, financial ratios',
+        'Start interview preparation: Current RBI policies, personal finance, career goals',
+      ],
+    },
+    {
+      month: 'Month 6',
+      title: 'Revision & Exam Readiness',
+      tasks: [
+        'Full mock test series: minimum 10 Phase I + 5 Phase II full tests',
+        'Last 6 months current affairs intensive revision',
+        'Revise ESI and F&M notes (not re-reading — revising summaries)',
+        'Mock interviews with peers or online groups',
+        'Analyse topper strategies on YouTube for Phase II descriptive',
+        'Document preparation: Certificates, mark sheets, graduation degree',
+      ],
+    },
+  ];
+
+  const tips = [
+    { icon: '🏦', tip: 'RBI Grade B Phase I is only qualifying — final merit is based entirely on Phase II (300 marks) + Interview (75 marks). Many candidates over-invest in Phase I at the cost of Phase II depth. Clear Phase I confidently, but allocate 70% of your preparation time to ESI, F&M, and English writing.' },
+    { icon: '📰', tip: 'General Awareness (80 marks in Phase I) separates toppers from averages. RBI-specific GA is critical — study RBI Annual Report, Monetary Policy Reports, RBI Press Releases (last 12 months), and Financial Stability Reports. RBI questions are NOT general banking awareness; they are central banking focused.' },
+    { icon: '✍️', tip: 'Phase II Paper II (English — Descriptive) is 100 marks in just 90 minutes. Practice writing 600-word essays and 250-word precis under timed conditions. RBI often gives topics from economy, monetary policy, or current social issues. Structure your essays: Introduction → 3 body paragraphs → Conclusion.' },
+    { icon: '📊', tip: 'Finance & Management is the most technical paper. Candidates from non-finance backgrounds should spend extra time on Basel III norms, NBFC regulation, derivatives (forwards, futures, options, swaps basics), RBI\'s balance sheet, and monetary transmission mechanism. ICAI study material and M.Y. Khan\'s Financial Services are valuable resources.' },
+    { icon: '🎯', tip: 'RBI Grade B vacancies are small (150–350 per year total across all streams). Every mark counts. Avoid skipping any ESI or F&M topic — RBI has surprised candidates with questions on topics like cooperative banking, FEMA, payment systems, and climate finance risk.' },
+    { icon: '📱', tip: 'Join Telegram channels like "RBI Grade B Preparation", "Finance & Economy Daily" and Oliveboard RBI Grade B group. Free daily PDFs, monthly CA compilations, and past exam discussions are invaluable. RBI Grade B has a small, tight community — connect with serious aspirants for peer motivation.' },
+    { icon: '🔄', tip: 'Previous year Phase II papers (especially 2019–2024) are your best practice material. RBI reuses question themes — ESI topics like climate finance, financial inclusion metrics, and India\'s external sector have appeared repeatedly. Solve 3 years of previous papers under exam conditions before attempting mock tests.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the RBI Grade B 2026 notification date?', a: 'RBI Grade B 2026 notification is expected in February–March 2026 based on the historical annual cycle. RBI typically releases the notification early in the calendar year. Phase I is expected in May–June 2026. Check rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2009 (RBI Opportunities section) regularly for the official announcement.' },
+    { q: 'How many vacancies are expected in RBI Grade B 2026?', a: 'Based on recent trends — 202 (2021), 218 (2022), 353 (2023), 141 (2024), 189 (2025) — RBI Grade B 2026 is expected to have approximately 200–300 vacancies across all streams (General DR + DEPR + DSIM). Vacancies fluctuate based on RBI\'s operational requirements and retirements. The exact number is announced with the official notification.' },
+    { q: 'What is the RBI Grade B 2026 salary?', a: 'RBI Grade B officers follow RBI\'s own pay scale (not IBA Bipartite Settlement). The basic pay scale is ₹35,150–₹62,400/month (Scale B). With DA, Special Allowance (25% of basic), HRA (Metro), CCA, and other benefits, the gross in-hand salary is approximately ₹1,10,000–₹1,30,000/month in metro cities. RBI also provides furnished accommodation (or HRA), medical facilities, pension, and annual increments. The total Cost-to-Company (CTC) including all benefits is approximately ₹20–24 lakh per annum.' },
+    { q: 'What is the minimum qualification for RBI Grade B 2026?', a: 'For the General DR stream: A minimum 60% aggregate marks in Bachelor\'s degree from a recognised university (50% for SC/ST/PwBD candidates). Final year students who will complete graduation by the interview stage may also apply. For DEPR (Economics stream): Master\'s degree in Economics with 55% marks OR equivalent. For DSIM (Statistics stream): Master\'s in Statistics/Mathematical Statistics/Mathematical Economics with 55% marks OR equivalent. Always verify the exact qualification criteria from the official notification as RBI updates these requirements.' },
+    { q: 'What is the difference between RBI Grade B General DR, DEPR, and DSIM?', a: 'General DR (Direct Recruitment) is for graduates with 60% marks — officers join general banking supervision and regulatory departments. DEPR (Department of Economic and Policy Research) requires an Economics Master\'s degree — officers work on monetary policy research, economic analysis, and policy recommendations. DSIM (Department of Statistics and Information Management) requires a Statistics/Math Master\'s — officers handle data analytics, financial surveys, and statistical reporting. DEPR and DSIM are specialist streams with a separate Phase II paper (Economics/Statistics instead of F&M). Salaries and growth paths are the same across all three streams.' },
+    { q: 'Is Phase I score counted in the final RBI Grade B merit list?', a: 'No. Phase I of RBI Grade B is purely a screening/qualifying exam. The final merit list is prepared based on Phase II marks (300 marks total: ESI 100 + English 100 + F&M 100) and Interview (75 marks) — a combined total of 375 marks. This means a candidate scoring just enough to clear Phase I can still rank higher than a Phase I topper if they excel in Phase II and Interview. This makes Phase II preparation the true battleground for RBI Grade B selection.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const books: { subject: string; title: string; author: string; link?: string }[] = [
+    { subject: 'Economic & Social Issues', title: 'Indian Economy', author: 'Ramesh Singh', link: 'https://www.amazon.in/s?k=Ramesh+Singh+Indian+Economy' },
+    { subject: 'Economic & Social Issues', title: 'Indian Economy (For Civil Services)', author: 'Nitin Singhania', link: 'https://www.amazon.in/s?k=Nitin+Singhania+Indian+Economy' },
+    { subject: 'Finance & Management', title: 'Financial Management', author: 'I.M. Pandey', link: 'https://www.amazon.in/s?k=IM+Pandey+Financial+Management' },
+    { subject: 'Finance & Management', title: 'Indian Financial System', author: 'M.Y. Khan', link: 'https://www.amazon.in/s?k=MY+Khan+Indian+Financial+System' },
+    { subject: 'Finance & Management', title: 'Principles of Management', author: 'Harold Koontz', link: 'https://www.amazon.in/s?k=Harold+Koontz+Principles+of+Management' },
+    { subject: 'General Awareness', title: 'Manorama Yearbook (latest edition)', author: 'Mammen Mathew', link: 'https://www.amazon.in/s?k=Manorama+Yearbook+2026' },
+    { subject: 'English Writing', title: 'Word Power Made Easy', author: 'Norman Lewis', link: 'https://www.amazon.in/s?k=Word+Power+Made+Easy+Norman+Lewis' },
+    { subject: 'Phase I Practice', title: 'RBI Grade B Phase I Exam Guide', author: 'Arihant Experts', link: 'https://www.amazon.in/s?k=Arihant+RBI+Grade+B+exam+guide' },
+  ];
+
+  const resources = [
+    { icon: '🌐', type: 'website', name: 'Oliveboard RBI Grade B', url: 'https://www.oliveboard.in/rbi-grade-b/', description: 'Free Phase I & II mock tests, ESI/F&M study notes, and live courses specifically designed for RBI Grade B.' },
+    { icon: '🌐', type: 'website', name: 'Testbook RBI Grade B', url: 'https://testbook.com/rbi-grade-b', description: 'Free full-length Phase I mock tests, sectional tests for ESI and F&M, and previous year paper analysis.' },
+    { icon: '🌐', type: 'website', name: 'RBI Official – Study Material', url: 'https://www.rbi.org.in', description: 'RBI Annual Report, Monetary Policy Reports, Financial Stability Reports, and press releases — primary source for GA and Phase II.' },
+    { icon: '📺', type: 'youtube', name: 'Study IQ Education', url: 'https://www.youtube.com/@StudyIQEducation', description: 'Free video lectures on ESI (Economic & Social Issues) and current affairs relevant to RBI Grade B Phase II.' },
+    { icon: '📺', type: 'youtube', name: 'Adda247 – RBI Grade B', url: 'https://www.youtube.com/@Adda247', description: 'Daily current affairs, banking awareness, and free Phase I practice sessions for RBI Grade B.' },
+    { icon: '📱', type: 'website', name: 'Cracku RBI Grade B', url: 'https://cracku.in/rbi-grade-b', description: 'Free sectional tests for Phase I and topic-wise ESI & F&M practice questions with detailed solutions.' },
+  ];
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">RBI Grade B 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏦 Central Banking</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: Feb–Mar 2026 (Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            RBI Grade B 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            RBI Grade B 2026 notification expected in <strong>February–March 2026</strong> with ~200–300 vacancies across General DR, DEPR &amp; DSIM streams. 3-stage selection: Phase I → Phase II → Interview. Graduate with <strong>60% marks</strong> required. Age 21–30 years. Gross salary <strong>₹1,10,000–₹1,30,000/month</strong>. India&apos;s most prestigious banking exam.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '200–300', sub: '(All streams, 2026 est.)' },
+              { label: 'Phase I Exam Date', value: 'May–Jun 2026', sub: '(Expected)' },
+              { label: 'Min. Qualification', value: 'Graduate 60%', sub: 'Recognised university' },
+              { label: 'Gross Salary', value: '~₹1.1–1.3 Lakh', sub: 'per month (metro)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update 2026:</strong> Phase I is only qualifying — final merit is based on <strong>Phase II (300 marks) + Interview (75 marks)</strong> only. RBI Grade B has the <strong>smallest vacancy pool</strong> among major banking exams (~150–350/year), making every mark in Phase II critical. Always verify from <a href="https://www.rbi.org.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">rbi.org.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is RBI Grade B 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>RBI Grade B Officer exam</strong> is conducted annually by the <strong>Reserve Bank of India (RBI)</strong> — India&apos;s central bank — to recruit Class II officers across its regulatory, research, and statistical departments. RBI is not a commercial bank; it is India&apos;s monetary authority responsible for <strong>monetary policy, banking supervision, foreign exchange management, and currency issuance</strong>. An RBI Grade B officer is, therefore, not a typical banker — they are a regulator, researcher, and policymaker.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  RBI Grade B officers are posted across RBI&apos;s <strong>31 offices and sub-offices</strong> across India, with key postings in Mumbai (headquarters), Delhi, Chennai, Kolkata, and regional offices. The work involves drafting banking regulations, conducting monetary policy research, overseeing foreign exchange operations, and supervising commercial banks — career profiles unmatched by any other banking exam in India.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  What makes RBI Grade B uniquely challenging is its <strong>Phase II examination</strong>: three 100-mark papers on Economic &amp; Social Issues, English (Descriptive Writing), and Finance &amp; Management — with <strong>Phase I serving only as a qualifying filter</strong>. With 20–25 lakh banking exam aspirants competing for just 150–350 vacancies annually, RBI Grade B has one of the <strong>most elite selection ratios</strong> in Indian banking.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Reserve Bank of India (RBI)' },
+                  { label: 'Selection Stages', value: 'Phase I + Phase II + Interview' },
+                  { label: 'Joining Designation', value: 'Officer Grade B (Class II)' },
+                  { label: 'Probation Period', value: '2 Years' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 RBI Grade B 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> RBI Grade B 2026 official dates have not been announced as of May 2026. The table below shows 2025 confirmed dates and expected 2026 dates based on RBI&apos;s historical recruitment cycle. Always verify from <a href="https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2009" target="_blank" rel="noopener noreferrer" className="underline font-medium">rbi.org.in (Opportunities)</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released' && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'upcoming' && <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">🔵 Upcoming</span>}
+                          {row.status === 'tbn' && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria for RBI Grade B 2026</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">Candidate must be a citizen of India. Citizens of Nepal, Bhutan, and certain categories of Tibetan refugees/migrants of Indian origin may also apply — refer to the official RBI notification for full details.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit (General DR Stream)</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>21 years</strong> | Maximum: <strong>30 years</strong> (as of the official cut-off date in the notification)</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50 border border-surface-200">
+                        <tr>
+                          <th className="text-left p-2 font-semibold text-surface-700">Category</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Relaxation</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Max Age</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / EWS', rel: 'No relaxation', max: '30 years' },
+                          { cat: 'OBC (Non-Creamy Layer)', rel: '+3 years', max: '33 years' },
+                          { cat: 'SC / ST', rel: '+5 years', max: '35 years' },
+                          { cat: 'PwBD (General)', rel: '+10 years', max: '40 years' },
+                          { cat: 'PwBD (OBC)', rel: '+13 years', max: '43 years' },
+                          { cat: 'PwBD (SC/ST)', rel: '+15 years', max: '45 years' },
+                          { cat: 'Ex-Servicemen', rel: 'As per Govt. norms', max: 'As applicable' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                            <td className="p-2 text-surface-700">{row.cat}</td>
+                            <td className="p-2 text-primary-600 font-medium">{row.rel}</td>
+                            <td className="p-2 text-surface-700">{row.max}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {[
+                      { stream: 'General DR', req: 'Bachelor\'s degree (any discipline) with minimum 60% marks in aggregate. For SC/ST/PwBD: 50% marks. Final year graduates appearing in their degree exam may also apply.' },
+                      { stream: 'DEPR (Economics)', req: 'Master\'s degree in Economics / Applied Economics / Business Economics / Econometrics with minimum 55% marks OR equivalent. Age limit: 21–30 years (same as General).' },
+                      { stream: 'DSIM (Statistics)', req: 'Master\'s degree in Statistics / Mathematical Statistics / Mathematical Economics / Econometrics / Applied Statistics with minimum 55% marks OR equivalent. Age limit: 21–30 years.' },
+                    ].map((item, i) => (
+                      <div key={i} className="bg-surface-50 rounded-lg p-3 border border-surface-200">
+                        <div className="font-semibold text-primary-700 text-sm mb-1">{item.stream}</div>
+                        <p className="text-sm text-surface-600">{item.req}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-surface-500 mt-3">✅ Use the <Link href="/tools/eligibility-checker/" className="text-primary-500 underline">TaiyarHo Eligibility Checker</Link> to verify your eligibility instantly.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📊 Vacancies History & Streams</h2>
+              </div>
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-primary-800"><strong>💡 Key Fact:</strong> RBI Grade B has 3 streams — General DR (largest), DEPR (Economics research), and DSIM (Statistics). Each stream has a separate Phase II paper. A candidate applies to only one stream per cycle.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Year</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">General DR</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">DEPR</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">DSIM</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'} ${i === vacancyHistory.length - 1 ? 'bg-primary-50 font-semibold' : ''}`}>
+                        <td className="p-3 text-surface-800">{row.year}</td>
+                        <td className="p-3 text-center text-surface-600">{row.general}</td>
+                        <td className="p-3 text-center text-surface-600">{row.depr}</td>
+                        <td className="p-3 text-center text-surface-600">{row.dsim}</td>
+                        <td className="p-3 text-center text-emerald-700 font-semibold">{row.total}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📝 RBI Grade B Exam Pattern 2026</h2>
+              </div>
+
+              {/* Phase I */}
+              <div className="card p-5 mb-5">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="bg-primary-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">Phase I</span>
+                  <h3 className="font-heading font-semibold text-surface-800">Phase I – Online Objective (Qualifying Only)</h3>
+                </div>
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4 text-sm text-amber-800">
+                  ⚠️ <strong>Phase I is qualifying only.</strong> Marks are NOT counted in final merit. Only Phase II + Interview marks determine selection. Negative marking: 0.25 marks per wrong answer.
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border border-surface-200">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Section</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Questions</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Marks</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Time</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {phase1Pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                          <td className="p-3 text-surface-800 font-medium">{row.subject}</td>
+                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                          <td className="p-3 text-center text-surface-600">{row.marks}</td>
+                          <td className="p-3 text-center text-surface-600">{row.time}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 border-t-2 border-primary-200">
+                        <td className="p-3 font-bold text-surface-900">Total</td>
+                        <td className="p-3 text-center font-bold text-surface-900">200</td>
+                        <td className="p-3 text-center font-bold text-surface-900">200</td>
+                        <td className="p-3 text-center font-bold text-surface-900">2 Hours</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Phase II */}
+              <div className="card p-5 mb-5">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="bg-emerald-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">Phase II</span>
+                  <h3 className="font-heading font-semibold text-surface-800">Phase II – Written Examination (Merit-Based)</h3>
+                </div>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3 mb-4 text-sm text-emerald-800">
+                  ✅ <strong>Phase II determines selection.</strong> Combined with Interview (75 marks), Phase II (300 marks) forms the final merit list. Papers include both Objective and Descriptive components on the same day.
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-50 border border-surface-200">
+                      <tr>
+                        <th className="text-left p-3 font-semibold text-surface-700">Paper</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Mode</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Marks</th>
+                        <th className="text-center p-3 font-semibold text-surface-700">Duration</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {phase2Pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                          <td className="p-3 text-surface-800 font-medium">{row.paper}</td>
+                          <td className="p-3 text-center text-surface-600 text-xs">{row.mode}</td>
+                          <td className="p-3 text-center text-surface-600">{row.marks}</td>
+                          <td className="p-3 text-center text-surface-600">{row.time}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 border-t-2 border-primary-200">
+                        <td className="p-3 font-bold text-surface-900">Phase II Total</td>
+                        <td className="p-3 text-center text-surface-600 text-xs">—</td>
+                        <td className="p-3 text-center font-bold text-surface-900">300</td>
+                        <td className="p-3 text-center text-surface-600 text-xs">—</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Interview */}
+              <div className="card p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Phase III</span>
+                  <h3 className="font-heading font-semibold text-surface-800">Interview – 75 Marks</h3>
+                </div>
+                <p className="text-sm text-surface-600 leading-relaxed">Candidates shortlisted from Phase II appear for a personal interview conducted by an RBI panel. The interview assesses general and banking awareness, understanding of RBI&apos;s functions, personality, communication skills, and suitability for a regulatory career. Final merit = Phase II (300) + Interview (75) = <strong>375 marks total.</strong></p>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 Detailed Syllabus – RBI Grade B 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((section, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50 transition-colors list-none">
+                      <span>{section.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-1.5">
+                        {section.topics.map((topic, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                            <span className="text-primary-500 mt-0.5 flex-shrink-0">›</span>
+                            {topic}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📈 Previous Year Cut-offs (General DR)</h2>
+              </div>
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-primary-800"><strong>💡 Note:</strong> Cut-offs are approximate and sourced from candidate discussions and coaching centre analyses. Phase I cut-offs are qualifying thresholds; Phase II cut-offs represent final merit cutoffs for interview shortlisting. Always refer to official RBI results for confirmed data.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Phase I 2025</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Phase II 2025</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Phase I 2024</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Phase II 2024</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.category}</td>
+                        <td className="p-3 text-center text-surface-600">{row.phase1_2025}</td>
+                        <td className="p-3 text-center text-primary-600 font-medium">{row.phase2_2025}</td>
+                        <td className="p-3 text-center text-surface-600">{row.phase1_2024}</td>
+                        <td className="p-3 text-center text-surface-600">{row.phase2_2024}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 8: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 RBI Grade B Salary & Career Growth 2026</h2>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-emerald-800"><strong>✅ Important:</strong> RBI follows its own pay structure — <strong>NOT the IBA Bipartite Settlement</strong> or the Central Pay Commission. RBI&apos;s salary revisions happen independently, resulting in higher compensation than most public sector banks. The figures below reflect the latest RBI pay structure.</p>
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Salary Component</th>
+                      <th className="text-right p-3 font-heading font-semibold text-xs uppercase tracking-wide">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'} ${i === salaryBreakdown.length - 1 ? 'bg-emerald-50 font-semibold' : ''}`}>
+                        <td className={`p-3 ${i === salaryBreakdown.length - 1 ? 'text-emerald-800' : 'text-surface-700'}`}>{row.component}</td>
+                        <td className={`p-3 text-right font-medium ${i === salaryBreakdown.length - 1 ? 'text-emerald-700 text-base' : 'text-surface-700'}`}>{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Career Progression Path</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Designation</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Grade</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Typical Timeline</th>
+                      <th className="text-right p-3 font-heading font-semibold text-xs uppercase tracking-wide">Pay Band (Basic)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {careerPath.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'} ${i === 0 ? 'bg-primary-50' : ''}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.level}</td>
+                        <td className="p-3 text-center text-primary-600 font-semibold">{row.scale}</td>
+                        <td className="p-3 text-center text-surface-600">{row.years}</td>
+                        <td className="p-3 text-right text-emerald-700 font-medium">{row.pay}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-5">
+                {[
+                  { icon: '🏠', label: 'Accommodation', desc: 'Furnished residential quarters at leased accommodation OR HRA up to Metro rates.' },
+                  { icon: '🏥', label: 'Medical Benefits', desc: 'Comprehensive medical for self, spouse, dependent children & parents under RBI\'s medical scheme.' },
+                  { icon: '📈', label: 'Pension & Gratuity', desc: 'RBI pension scheme (defined benefit), Gratuity, and Provident Fund for long-term financial security.' },
+                ].map((b, i) => (
+                  <div key={i} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-2xl mb-2">{b.icon}</div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{b.label}</div>
+                    <p className="text-xs text-surface-500">{b.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 9: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🖥️ How to Apply for RBI Grade B 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Visit the Official RBI Opportunities Page', desc: 'Go to rbi.org.in → "Opportunities@RBI" section. Watch for the Grade B 2026 notification link (expected Feb–March 2026).' },
+                  { step: '2', title: 'Register Online', desc: 'Click on "Apply Online" within the notification. Register with a valid email ID and mobile number to get your provisional registration number.' },
+                  { step: '3', title: 'Fill Application Form', desc: 'Enter personal details, educational qualifications, category, and preferred exam centre. Select the correct stream (General DR / DEPR / DSIM) carefully — it cannot be changed after submission.' },
+                  { step: '4', title: 'Upload Documents', desc: 'Upload a scanned passport-size photograph (20–50 KB), signature (10–20 KB), and ID proof as per specifications mentioned in the notification.' },
+                  { step: '5', title: 'Pay Application Fee', desc: 'Fee for General/OBC/EWS: ₹850 (including intimation charges). SC/ST/PwBD: ₹100 (intimation charges only). Payment via net banking, debit/credit card.' },
+                  { step: '6', title: 'Submit & Download Confirmation', desc: 'Review all details, submit, and download/save the registration confirmation page. RBI does not send physical acknowledgement — keep the PDF safe.' },
+                ].map((item) => (
+                  <div key={item.step} className="card p-4 flex gap-4">
+                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 font-bold text-sm flex-shrink-0">{item.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 text-sm">{item.title}</div>
+                      <p className="text-sm text-surface-600 mt-0.5">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 10: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🗓️ 6-Month RBI Grade B Study Plan 2026</h2>
+              </div>
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-5 text-sm text-primary-800">
+                💡 <strong>Strategy tip:</strong> RBI Grade B demands deeper conceptual knowledge than SBI PO or IBPS PO. Allocate 60% of your time to ESI and F&M (Phase II papers), 20% to GA, and 20% to Phase I skills. Daily newspaper reading and RBI publication study is non-negotiable.
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block"></div>
+                <div className="space-y-5">
+                  {studyPlan.map((phase, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-xs text-center leading-tight">M{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="font-heading font-semibold text-surface-800 mb-1">{phase.month} — {phase.title}</div>
+                        <ul className="space-y-1 mt-2">
+                          {phase.tasks.map((task, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                              <span className="text-primary-500 mt-0.5 flex-shrink-0">✓</span>
+                              {task}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 11: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 Best Books for RBI Grade B 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Author</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Link</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-700 font-medium">{b.subject}</td>
+                        <td className="p-3 text-surface-800">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                        <td className="p-3 text-center">
+                          {b.link ? <a href={b.link} target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline text-xs">Amazon →</a> : <span className="text-surface-400">—</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 12: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎁 Free Resources for RBI Grade B 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {resources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xl">{r.icon}</span>
+                      <span className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.name}</span>
+                    </div>
+                    <p className="text-sm text-surface-500">{r.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💡 Expert Tips to Crack RBI Grade B 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{t.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">❓ Frequently Asked Questions – RBI Grade B 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50 transition-colors list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
+                      → {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">Official RBI Website</div>
+                <a href="https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2009" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center block text-sm py-2.5">
+                  Apply on rbi.org.in ↗
+                </a>
+                <p className="text-xs text-surface-400 mt-2 text-center">Always apply from the official RBI website only.</p>
+              </div>
+
+              {/* Eligibility Checker CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="font-heading font-semibold text-primary-800 text-sm mb-2">Check Your Eligibility</div>
+                <p className="text-xs text-primary-600 mb-3">Enter your age, qualification, and category to instantly check if you qualify for RBI Grade B 2026.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary w-full text-center block text-sm py-2.5">
+                  Use Eligibility Checker →
+                </Link>
+              </div>
+
+              {/* Related Exams */}
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">Related Banking Exams</div>
+                <div className="space-y-1">
+                  {[
+                    { name: 'SBI PO 2026', slug: 'sbi-po' },
+                    { name: 'IBPS PO 2026', slug: 'ibps-po' },
+                    { name: 'NABARD Grade A 2026', slug: 'nabard-grade-a' },
+                    { name: 'SEBI Grade A 2026', slug: 'sebi-grade-a' },
+                    { name: 'RBI Assistant 2026', slug: 'rbi-assistant' },
+                    { name: 'IBPS RRB PO 2026', slug: 'ibps-rrb-po' },
                   ].map((e) => (
                     <Link key={e.slug} href={`/exams/${e.slug}/`} className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition">
                       → {e.name}
