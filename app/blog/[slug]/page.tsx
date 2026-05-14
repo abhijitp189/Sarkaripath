@@ -61,6 +61,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <PayCommissionArticle post={post} />;
   }
 
+  if (post.slug === 'bank-5-day-work-week-2026-notification-status') {
+    return <Bank5DayWorkWeekArticle post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -5571,6 +5575,438 @@ function PayCommissionArticle({ post }: { post: any }) {
                 <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL — Which is Better? →</Link>
                 <Link href="/exams/ssc-cgl/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL 2026 Complete Guide →</Link>
                 <Link href="/exams/rrb-ntpc/" className="block text-sm text-primary-600 hover:underline leading-snug">RRB NTPC 2026 Complete Guide →</Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── BANK 5-DAY WORK WEEK 2026 ARTICLE ──────────────────────────────────────
+function Bank5DayWorkWeekArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'status', label: 'Current Status (May 2026)' },
+    { id: 'aiboc', label: "Today's Breaking: AIBOC Letter" },
+    { id: 'history', label: 'History & 12th BPS Background' },
+    { id: 'timings', label: 'How Bank Timings Will Change' },
+    { id: 'salary', label: 'Bank Salary Update 2026' },
+    { id: 'impact', label: 'Impact on SBI PO & IBPS PO' },
+    { id: 'saturday', label: 'Which Saturdays Are Holidays Now?' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Bank 5-Day Work Week 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-accent-500/20 border border-accent-500/40 text-accent-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse" />
+                  Updated May 14, 2026
+                </span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Banking</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">5-Day Work Week</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">AIBOC 2026</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                Bank 5-Day Work Week 2026 —{' '}
+                <span className="text-accent-300 italic">Notification Status & Saturday Holiday Truth</span>
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed mb-5">
+                Thousands of bank employees and SBI PO / IBPS PO aspirants are waiting for &quot;all Saturdays off.&quot; As of May 14, 2026, it has <strong className="text-white">NOT been implemented</strong> — but AIBOC has written to PM Modi today urging personal intervention.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+                <span>📅 {post.publishedDate}</span>
+                <span>⏱ {post.readTime}</span>
+                <span>✅ Based on official notifications only</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 4-metric strip */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+            {[
+              { label: 'Official Status', value: 'Pending', sub: 'Govt approval awaited' },
+              { label: 'Current Rule', value: '2nd & 4th', sub: 'Saturdays off only' },
+              { label: 'Proposed Rule', value: 'All Sat', sub: 'Off — pending approval' },
+              { label: 'Latest Update', value: 'May 14', sub: 'AIBOC letter to PM Modi' },
+            ].map(f => (
+              <div key={f.label} className="card p-4 text-center">
+                <div className="text-xs text-surface-400 uppercase tracking-wide font-semibold">{f.label}</div>
+                <div className="text-lg font-heading font-bold text-accent-500 mt-1">{f.value}</div>
+                <div className="text-xs text-surface-400 mt-0.5">{f.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <Callout type="warning" title="⚠️ Disclaimer">
+            No official 2026 notification has been released by the Government of India regarding the start date of the 5-day work week. Any specific date you see on social media or YouTube is <strong>currently unconfirmed</strong>. TaiyarHo will publish the verified link the moment an official gazette notification is released.
+          </Callout>
+
+          {/* Mobile TOC */}
+          <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+            <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 In This Article</div>
+            <ol className="space-y-1.5 list-decimal list-inside">
+              {toc.map(item => (
+                <li key={item.id}><a href={`#${item.id}`} className="text-sm text-primary-500 hover:underline">{item.label}</a></li>
+              ))}
+            </ol>
+          </div>
+
+          {/* Section 1 — Current Status */}
+          <section id="status" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold font-heading">1</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Current Status of the 5-Day Work Week (May 14, 2026)</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              As of today, May 14, 2026, the 5-day work week for Indian banks has <strong>not yet been officially implemented</strong>. The current rule remains: bank branches are closed on the 2nd and 4th Saturdays of every month, plus all Sundays and gazetted holidays.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              While the <strong>12th Bipartite Settlement (BPS)</strong> and the <strong>9th Joint Note</strong> (signed in March 2024) both included a formal agreement for a 5-day work week, the final notification from the Ministry of Finance is still pending. The settlement agreement and the government implementation are two separate steps — and the second one has not happened yet.
+            </p>
+            <div className="card overflow-hidden mb-5">
+              <div className="bg-surface-800 text-white px-5 py-3 text-sm font-heading font-semibold">Quick Facts — Status as of May 14, 2026</div>
+              <div className="divide-y divide-surface-100">
+                {[
+                  ['Feature', 'Current Status'],
+                  ['Official Implementation', 'Awaiting Government Approval'],
+                  ['Current Holiday Rule', '2nd & 4th Saturdays off'],
+                  ['Proposed New Rule', 'All Saturdays off'],
+                  ['Signed Agreement', '12th BPS + 9th Joint Note (March 2024)'],
+                  ['Finance Ministry Notification', 'Pending'],
+                  ['Latest Development', 'AIBOC letter to PM Modi (May 14, 2026)'],
+                ].map(([label, value], i) => (
+                  <div key={i} className={`flex gap-4 px-5 py-3 text-sm ${i === 0 ? 'bg-surface-50 font-semibold text-surface-600' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                    <span className="w-52 shrink-0 text-surface-500">{label}</span>
+                    <span className="text-surface-800 font-medium">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <Callout type="info" title="📌 What Is the 3rd Saturday Rule?">
+              Currently banks are open on the 1st, 3rd, and 5th Saturdays of every month. The upcoming Saturday — <strong>May 17, 2026</strong> — is the 3rd Saturday. As per current rules, bank branches will be <strong>OPEN</strong> on that day.
+            </Callout>
+          </section>
+
+          {/* Section 2 — AIBOC */}
+          <section id="aiboc" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold font-heading">2</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Today&apos;s Breaking: AIBOC Writes to PM Modi</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              On <strong>May 14, 2026</strong>, the All India Bank Officers&apos; Confederation (AIBOC) wrote an urgent letter to Prime Minister Narendra Modi, seeking his personal intervention to expedite the approval of the 5-day work week for bank employees.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The letter emphasises that the 5-day work week was already agreed upon in the 12th Bipartite Settlement and the 9th Joint Note. AIBOC argues that over <strong>15 lakh bank employees</strong> are waiting for this benefit, which is essential for better work-life balance and long-term productivity in the sector.
+            </p>
+            <Callout type="tip" title="✅ What AIBOC's Letter Means for Aspirants">
+              AIBOC writing to the PM signals that union pressure is intensifying — but it also confirms that the notification has <strong>not</strong> been issued yet. This is not a rumour; it is a formal escalation. Watch the official Finance Ministry gazette for the actual announcement.
+            </Callout>
+            <p className="text-surface-700 leading-relaxed">
+              In previous cycles, similar union letters have taken weeks to months before resulting in gazette notifications. There is no confirmed date as of today — any date you see on social media is speculation.
+            </p>
+          </section>
+
+          {/* Section 3 — History */}
+          <section id="history" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold font-heading">3</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">History & 12th Bipartite Settlement Background</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The demand for a 5-day work week in Indian banking has existed for decades. Here is a timeline of how the current situation came about:
+            </p>
+            <div className="space-y-3 mb-5">
+              {[
+                { year: 'Pre-2015', event: 'Banks worked 6 days a week — all Saturdays were working days.' },
+                { year: '2015', event: '2nd and 4th Saturdays declared holidays via a government notification. 1st, 3rd, and 5th Saturdays remained working.' },
+                { year: 'March 2024', event: '12th Bipartite Settlement (BPS) signed between IBA and bank unions. The settlement included a clause agreeing on a 5-day work week — pending government notification.' },
+                { year: 'March 2024', event: '9th Joint Note also signed, confirming the 5-day work week agreement between Indian Banks\' Association (IBA) and officers\' unions.' },
+                { year: '2024–2026', event: 'Finance Ministry notification awaited. Multiple union letters sent. No official date set.' },
+                { year: 'May 14, 2026', event: 'AIBOC escalates with a letter to PM Modi urging personal intervention.' },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-4 card p-4">
+                  <div className="w-24 shrink-0 text-xs font-heading font-bold text-primary-600 bg-primary-50 rounded-lg px-2 py-1 text-center self-start">{item.year}</div>
+                  <p className="text-sm text-surface-700 leading-relaxed">{item.event}</p>
+                </div>
+              ))}
+            </div>
+            <Callout type="info" title="📌 IBA vs Government Notification">
+              Many people confuse IBA&apos;s settlement with government approval. The IBA (Indian Banks&apos; Association) represents bank managements in wage settlements. A change to banking holidays requires a separate notification from the Ministry of Finance — which is still pending.
+            </Callout>
+          </section>
+
+          {/* Section 4 — Timings */}
+          <section id="timings" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold font-heading">4</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How Will Bank Timings Change?</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              If the 5-day work week is approved, bank employees will not simply &quot;get extra days off&quot; without compensation. Daily working hours are expected to increase to offset the lost Saturdays.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4 mb-5">
+              <div className="card p-5 border-l-4 border-surface-300">
+                <div className="text-xs text-surface-400 uppercase tracking-wide font-semibold mb-2">Current Arrangement</div>
+                <ul className="space-y-2 text-sm text-surface-700">
+                  <li>• Working days: Monday to Saturday (exc. 2nd & 4th Sat)</li>
+                  <li>• Daily hours: Approx. 7 hours (branch timing ~10am–5pm)</li>
+                  <li>• Monthly working Saturdays: 3 (1st, 3rd, and 5th)</li>
+                </ul>
+              </div>
+              <div className="card p-5 border-l-4 border-emerald-500">
+                <div className="text-xs text-emerald-600 uppercase tracking-wide font-semibold mb-2">Proposed Arrangement (TBN)</div>
+                <ul className="space-y-2 text-sm text-surface-700">
+                  <li>• Working days: Monday to Friday only</li>
+                  <li>• Daily hours: +40 minutes extra per day (expected)</li>
+                  <li>• Monthly working Saturdays: 0</li>
+                </ul>
+              </div>
+            </div>
+            <Callout type="warning" title="⚠️ Notification Status: TBN">
+              The exact new daily timing has not been officially notified. The &quot;40 minutes extra&quot; figure is based on IBA-union discussions and industry reports. Official timings will be confirmed in the Finance Ministry gazette notification.
+            </Callout>
+          </section>
+
+          {/* Section 5 — Salary */}
+          <section id="salary" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold font-heading">5</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Bank PO Salary Update 2026 (12th BPS Active)</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              While the 5-day work week notification is still pending, salary revisions under the <strong>12th Bipartite Settlement are fully active</strong>. Bank PO salaries have seen a significant revision for the 2026 cycle.
+            </p>
+            <div className="card overflow-hidden mb-5">
+              <div className="bg-surface-800 text-white px-5 py-3 text-sm font-heading font-semibold">Bank PO Salary Structure — 2026 (12th BPS)</div>
+              <div className="divide-y divide-surface-100">
+                {[
+                  ['Component', 'Amount / Rate'],
+                  ['Basic Pay (Starting)', '₹48,480'],
+                  ['Dearness Allowance (DA)', '25.70% — effective May 1, 2026'],
+                  ['HRA (Metro cities)', '~₹9,000–₹10,500/month'],
+                  ['Special Allowance', 'Revised under 12th BPS'],
+                  ['In-Hand Salary (Metro)', '₹72,000 – ₹75,000/month (approx.)'],
+                  ['CTC (Total Package)', '₹14–₹17 lakh/year (approx.)'],
+                ].map(([label, value], i) => (
+                  <div key={i} className={`flex gap-4 px-5 py-3 text-sm ${i === 0 ? 'bg-surface-50 font-semibold text-surface-600' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                    <span className="w-52 shrink-0 text-surface-500">{label}</span>
+                    <span className={`font-medium ${i > 0 && label === 'In-Hand Salary (Metro)' ? 'text-emerald-600' : 'text-surface-800'}`}>{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <Callout type="tip" title="💰 DA Revision Note">
+              The Dearness Allowance is revised every quarter. The current DA of 25.70% is effective from May 1, 2026. This is separate from the 8th Pay Commission revision, which applies only to central government (non-bank) employees.
+            </Callout>
+          </section>
+
+          {/* Section 6 — Impact */}
+          <section id="impact" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold font-heading">6</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Impact on SBI PO & IBPS PO Aspirants</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              If you are preparing for <Link href="/exams/sbi-po/" className="text-primary-500 hover:underline">SBI PO 2026</Link> or <Link href="/exams/ibps-po/" className="text-primary-500 hover:underline">IBPS PO 2026</Link>, here is what the 5-day work week news means for you specifically:
+            </p>
+            <div className="space-y-3">
+              {[
+                { icon: '✅', title: 'Salary is already revised', desc: 'The 12th BPS salary revisions are in effect now. You will join at the revised pay scale regardless of the 5-day week decision.' },
+                { icon: '📅', title: 'Work-life balance improves (when approved)', desc: 'Once the notification is issued, you will get all Saturdays off. This is a meaningful benefit — but there is no confirmed date yet.' },
+                { icon: '⚠️', title: 'Do not delay preparation waiting for this', desc: 'The 5-day week notification has no bearing on SBI PO or IBPS PO exam dates. Both exams will proceed as per their official calendars.' },
+                { icon: '🎓', title: 'Check eligibility now', desc: 'Use the TaiyarHo Eligibility Checker to verify your age and qualification for SBI PO and IBPS PO before applying.' },
+              ].map((item, i) => (
+                <div key={i} className="card p-5 flex gap-4">
+                  <div className="text-2xl shrink-0">{item.icon}</div>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 mb-1">{item.title}</div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5">
+              <Link href="/tools/eligibility-checker/" className="btn-primary inline-block">Check Your Eligibility for Bank PO →</Link>
+            </div>
+          </section>
+
+          {/* Section 7 — Saturday rule */}
+          <section id="saturday" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold font-heading">7</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Which Saturdays Are Bank Holidays Right Now?</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Under the current 2015 rule that is still in force, bank branches observe the following Saturday schedule:
+            </p>
+            <div className="card overflow-hidden mb-5">
+              <div className="bg-surface-800 text-white px-5 py-3 text-sm font-heading font-semibold">Current Saturday Holiday Rule (Still Active)</div>
+              <div className="divide-y divide-surface-100">
+                {[
+                  ['1st Saturday', 'WORKING DAY', false],
+                  ['2nd Saturday', 'HOLIDAY ✓', true],
+                  ['3rd Saturday', 'WORKING DAY', false],
+                  ['4th Saturday', 'HOLIDAY ✓', true],
+                  ['5th Saturday', 'WORKING DAY', false],
+                ].map(([sat, status, isHoliday], i) => (
+                  <div key={i} className={`flex items-center justify-between px-5 py-3 text-sm ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                    <span className="text-surface-700 font-medium">{sat as string}</span>
+                    <span className={`font-semibold ${isHoliday ? 'text-emerald-600' : 'text-surface-500'}`}>{status as string}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-2">
+              <strong>May 2026 Saturday check:</strong>
+            </p>
+            <ul className="list-disc ml-6 space-y-1 text-surface-700 text-sm mb-4">
+              <li>May 3 — 1st Saturday → <strong>Open</strong></li>
+              <li>May 10 — 2nd Saturday → <strong>Holiday</strong></li>
+              <li>May 17 — 3rd Saturday → <strong>Open</strong></li>
+              <li>May 24 — 4th Saturday → <strong>Holiday</strong></li>
+              <li>May 31 — 5th Saturday → <strong>Open</strong></li>
+            </ul>
+            <Callout type="tip" title="💡 Digital Services Always On">
+              UPI, NEFT, RTGS, IMPS, ATMs, and mobile banking services remain active 24/7 regardless of branch holidays. Only branch-based services are affected on holidays.
+            </Callout>
+          </section>
+
+          {/* FAQs */}
+          <section id="faq" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold font-heading">8</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+            </div>
+            <div className="space-y-3">
+              {[
+                {
+                  q: 'Is the bank 5-day work week officially approved in 2026?',
+                  a: 'No. As of May 14, 2026, the Finance Ministry notification has not been issued. The 12th BPS and 9th Joint Note agreed on the change, but government approval is a separate step that is still pending.',
+                },
+                {
+                  q: 'Are banks open this Saturday (May 17, 2026)?',
+                  a: 'Yes. May 17 is the 3rd Saturday of May 2026. Under current rules, banks will be open on this day.',
+                },
+                {
+                  q: 'Will UPI and ATMs work on bank holidays?',
+                  a: 'Yes. All digital banking services — UPI, NEFT, RTGS, IMPS, ATMs, and mobile banking apps — remain active 24/7, including on Saturdays, Sundays, and gazetted holidays.',
+                },
+                {
+                  q: 'What is the expected date for the 5-day work week to start?',
+                  a: 'There is no confirmed date. The implementation date is To Be Notified (TBN). TaiyarHo will update this page as soon as the official Finance Ministry gazette notification is released.',
+                },
+                {
+                  q: 'Does the 5-day work week affect SBI PO or IBPS PO salaries?',
+                  a: 'No. The salary revisions under the 12th Bipartite Settlement are already in effect — basic pay starts at ₹48,480, with in-hand salary of approximately ₹72,000–₹75,000/month in metro cities. The work-week change is a separate administrative matter.',
+                },
+              ].map((item, i) => (
+                <details key={i} className="card overflow-hidden group">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                    <span>{item.q}</span>
+                    <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{item.a}</div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* JSON-LD FAQ */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: [
+                  {
+                    '@type': 'Question',
+                    name: 'Is the bank 5-day work week officially approved in 2026?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'No. As of May 14, 2026, the Finance Ministry notification has not been issued. The 12th BPS and 9th Joint Note agreed on the change, but government approval is still pending.' },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Are banks open this Saturday (May 17, 2026)?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'Yes. May 17 is the 3rd Saturday of May 2026. Under current rules, banks will be open on this day.' },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'What is the expected date for the 5-day work week?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'There is no confirmed date. The implementation date is To Be Notified (TBN). Check the official Finance Ministry gazette for the verified notification.' },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Will UPI and ATMs work on bank holidays?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'Yes. All digital banking services remain active 24/7 regardless of branch holidays.' },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Does the 5-day work week affect SBI PO or IBPS PO salaries?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'No. Salary revisions under the 12th Bipartite Settlement are already in effect. The work-week change is a separate administrative matter.' },
+                  },
+                ],
+              }),
+            }}
+          />
+        </article>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">IN THIS ARTICLE</div>
+              <ol className="space-y-2">
+                {toc.map(item => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm text-surface-600 hover:text-primary-500 leading-snug block">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="card p-5 bg-amber-50 border-amber-200">
+              <div className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">⚠️ CURRENT STATUS</div>
+              <div className="space-y-2 text-sm">
+                {[
+                  ['Implementation', 'Pending Govt Approval'],
+                  ['Current Rule', '2nd & 4th Sat off'],
+                  ['May 17 (Sat)', 'OPEN — 3rd Saturday'],
+                  ['AIBOC Letter', 'Sent May 14, 2026'],
+                ].map(([label, val]) => (
+                  <div key={label} className="flex justify-between">
+                    <span className="text-surface-500 text-xs">{label}</span>
+                    <span className="font-semibold text-surface-800 text-xs text-right">{val}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">RELATED EXAMS</div>
+              <div className="space-y-2">
+                <Link href="/exams/ibps-po/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO 2026 Complete Guide →</Link>
+                <Link href="/exams/sbi-po/" className="block text-sm text-primary-600 hover:underline leading-snug">SBI PO 2026 Complete Guide →</Link>
+                <Link href="/blog/ibps-po-salary-in-hand-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary In-Hand 2026 →</Link>
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Bank PO Eligibility →</Link>
               </div>
             </div>
           </div>
