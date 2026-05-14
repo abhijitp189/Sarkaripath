@@ -463,6 +463,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'delhi-police-hc') {
+    return {
+      title: 'Delhi Police Head Constable 2026 – Vacancy, Syllabus, Typing Test & Salary | TaiyarHo',
+      description: 'Delhi Police HC (Ministerial) 2026: 500–1,500 vacancies expected. 12th pass eligible, age 18–25 yrs. CBT 100 Qs, PE&MT physical test, Typing Test (40 wpm English/35 wpm Hindi). Salary ₹25,500–₹81,100/month.',
+      keywords: 'Delhi Police Head Constable 2026, Delhi Police HC Ministerial 2026, delhi police hc vacancy 2026, delhi police hc syllabus, delhi police head constable salary, delhi police hc typing test, delhi police hc age limit, delhipolice.gov.in bharti 2026, दिल्ली पुलिस हेड कांस्टेबल 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/delhi-police-hc/' },
+      other: { 'description:hi': 'दिल्ली पुलिस हेड कांस्टेबल (मिनिस्टीरियल) 2026 – 500–1,500 रिक्तियाँ अपेक्षित। 12वीं पास पात्र, आयु 18–25 वर्ष। CBT 100 प्रश्न, PE&MT, टाइपिंग टेस्ट (40 wpm अंग्रेजी/35 wpm हिंदी)। वेतन ₹25,500–₹81,100/माह।' },
+    };
+  }
+
   if (params.slug === 'rpf-constable') {
     return {
       title: 'RPF Constable 2026 – Vacancy, Salary, Syllabus, PET/PMT & Complete Guide | TaiyarHo',
@@ -581,6 +591,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rsmssb-patwari') return <RsmssbPatwariPage exam={brief} />;
   if (brief && brief.slug === 'rpsc-ras') return <RpscRasPage exam={brief} />;
   if (brief && brief.slug === 'wbcs-executive') return <WbcsExecutivePage exam={brief} />;
+  if (brief && brief.slug === 'delhi-police-hc') return <DelhiPoliceHcPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -39292,6 +39303,786 @@ function RbiGradeBPage({ exam }: { exam: any }) {
                     </Link>
                   ))}
                 </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── DELHI POLICE HEAD CONSTABLE (MINISTERIAL) PAGE ──────────────────────────
+function DelhiPoliceHcPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies History' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'CBT Exam Pattern' },
+    { id: 'physical',        label: 'Physical Test (PE&MT)' },
+    { id: 'typing-test',     label: 'Typing & Computer Test' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'cutoff',          label: 'Previous Cut-offs' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Delhi Police HC (Min) 2022 Notification',              date: '16 April 2022',               status: 'done' },
+    { event: 'Application Closes (2022 cycle)',                       date: '16 May 2022',                 status: 'done' },
+    { event: 'CBT Conducted (2022 cycle)',                            date: 'October–November 2022',       status: 'done' },
+    { event: 'PE&MT / Document Verification (2022 cycle)',            date: '2023–2024',                   status: 'done' },
+    { event: 'Final Joining – 2022 Batch',                            date: '2024–2025',                   status: 'done' },
+    { event: '⚠️ Delhi Police HC (Min) 2026 – Official Notification', date: 'To Be Notified (TBN)',        status: 'tbn' },
+    { event: 'Online Application Starts',                             date: 'TBN – delhipolice.gov.in',    status: 'tbn' },
+    { event: 'Application Last Date',                                 date: 'TBN',                         status: 'tbn' },
+    { event: 'Admit Card Release',                                    date: 'TBN',                         status: 'tbn' },
+    { event: 'Computer Based Test (CBT)',                             date: 'TBN',                         status: 'tbn' },
+    { event: 'CBT Result / Shortlist',                                date: 'TBN',                         status: 'tbn' },
+    { event: 'Physical Endurance & Measurement Test (PE&MT)',         date: 'TBN',                         status: 'tbn' },
+    { event: 'Typing Test & Computer Test',                           date: 'TBN',                         status: 'tbn' },
+    { event: 'Medical Examination & Document Verification',           date: 'TBN',                         status: 'tbn' },
+    { event: 'Final Merit List & Joining',                            date: 'TBN',                         status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: '2016 Recruitment',   vacancies: '649',          status: 'Completed' },
+    { year: '2019 Recruitment',   vacancies: '649',          status: 'Completed' },
+    { year: '2022 Recruitment',   vacancies: '835',          status: 'Completed' },
+    { year: '2026 (Expected)',     vacancies: '500–1,500',    status: 'TBN – Expected' },
+  ];
+
+  const cbtPattern = [
+    { subject: 'General Knowledge / Current Affairs',       questions: 25, marks: 25 },
+    { subject: 'Reasoning / Mental Ability',                questions: 25, marks: 25 },
+    { subject: 'Numerical Aptitude',                        questions: 25, marks: 25 },
+    { subject: 'English Language',                          questions: 25, marks: 25 },
+  ];
+
+  const selectionSteps = [
+    { step: 1, title: 'Computer Based Test (CBT)',          detail: '100 questions, 100 marks, 90 minutes. All MCQs. Objective screening round. No negative marking (verify from official notification).' },
+    { step: 2, title: 'Physical Endurance & Measurement Test (PE&MT)', detail: 'Height, Chest (for males), and Endurance Run (1 mile/1.6 km). Qualifying in nature — pass/fail. Only CBT-qualified candidates appear.' },
+    { step: 3, title: 'Typing Test',                        detail: 'English: 40 wpm OR Hindi: 35 wpm on computer. Duration: 10 minutes each. Qualifying — no marks added to merit. Must be able to type on standard QWERTY keyboard (English) or Mangal/Kruti Dev (Hindi).' },
+    { step: 4, title: 'Computer Proficiency Test',          detail: 'Basic knowledge of MS Word, MS Excel, and internet. Qualifying in nature. Tests basic office computing skills relevant to the ministerial/clerical role.' },
+    { step: 5, title: 'Detailed Document Verification',     detail: 'Original certificates verified: 10th marksheet (DOB proof), 12th certificate, category certificate (if applicable), domicile, character certificate.' },
+    { step: 6, title: 'Medical Examination',                detail: 'Comprehensive medical fitness check by a Medical Board. Vision, hearing, orthopaedic fitness, and general health assessed. Must meet prescribed standards.' },
+  ];
+
+  const physicalStandards = [
+    { gender: 'Male (General/OBC/SC)',  height: '170 cm',  chest: '81–85 cm (min 4 cm expansion)',  run: '1.6 km in 8 minutes' },
+    { gender: 'Male (ST / Hilly Areas)', height: '165 cm', chest: '78–82 cm (min 4 cm expansion)', run: '1.6 km in 8 minutes' },
+    { gender: 'Female (General/OBC/SC)', height: '157 cm', chest: 'N/A',                            run: '1.6 km in 10 minutes' },
+    { gender: 'Female (ST / Hilly Areas)', height: '155 cm', chest: 'N/A',                          run: '1.6 km in 10 minutes' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📚 General Knowledge / Current Affairs',
+      topics: [
+        'Indian History – Ancient, Medieval, Modern & Freedom Struggle',
+        'Indian Geography – Physical, Economic, Social & Delhi-specific facts',
+        'Indian Polity – Constitution, Parliament, Fundamental Rights & Duties',
+        'Indian Economy – Budget basics, Five-Year Plans, economic schemes',
+        'Science & Technology – Everyday science, space, defence, inventions',
+        'Current Affairs – National & international events (last 6 months)',
+        'Delhi-specific GK – Delhi Government, tourism, culture, famous places',
+        'Sports & Awards – National Sports Awards, Arjuna, Bharat Ratna, Padma',
+        'Important Days, Books & Authors, National Symbols',
+      ],
+    },
+    {
+      subject: '🧩 Reasoning / Mental Ability',
+      topics: [
+        'Analogies – Word, Letter and Number-based',
+        'Similarities & Differences, Odd One Out',
+        'Space Visualization, Visual Memory, Figure Classification',
+        'Coding-Decoding (simple pattern)',
+        'Blood Relations, Direction & Distance',
+        'Ranking & Ordering, Alphabet Series',
+        'Arithmetical Reasoning, Number Series (missing/wrong)',
+        'Syllogisms (basic – All, Some, No)',
+        'Non-verbal Reasoning – Mirror Images, Paper Folding, Counting Figures',
+      ],
+    },
+    {
+      subject: '🔢 Numerical Aptitude',
+      topics: [
+        'Number System – LCM, HCF, BODMAS, Decimals, Fractions',
+        'Simplification & Approximation',
+        'Percentage, Profit & Loss, Discount',
+        'Simple Interest & Compound Interest',
+        'Average, Ratio & Proportion, Partnership',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time – Trains, Boats & Streams',
+        'Mensuration – Area, Volume (2D & 3D shapes)',
+        'Data Interpretation – Basic tables, bar charts, pie charts',
+      ],
+    },
+    {
+      subject: '📝 English Language',
+      topics: [
+        'Reading Comprehension (short passages)',
+        'Grammar – Tenses, Articles, Prepositions, Voice, Narration',
+        'Error Spotting & Sentence Correction',
+        'Fill in the Blanks (vocabulary-based)',
+        'Synonyms & Antonyms, One-word Substitution',
+        'Idioms & Phrases',
+        'Sentence Rearrangement (Para Jumbles)',
+        'Spelling Correction, Cloze Test (basic level)',
+      ],
+    },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', cbt2022: '~68–72', cbt2019: '~65–70', remarks: 'High competition; accuracy matters' },
+    { category: 'OBC',           cbt2022: '~62–66', cbt2019: '~60–64', remarks: '3-yr relaxation in age only' },
+    { category: 'SC',            cbt2022: '~55–60', cbt2019: '~52–57', remarks: '5-yr relaxation in age only' },
+    { category: 'ST',            cbt2022: '~48–54', cbt2019: '~45–52', remarks: '5-yr relaxation in age only' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Pay Level 4, 7th CPC – Entry)',                  amount: '₹25,500/month' },
+    { component: 'Dearness Allowance (DA) @ ~50% of Basic (effective Jan 2026 est.)', amount: '~₹12,750/month' },
+    { component: 'House Rent Allowance (HRA) – X City (Delhi)',               amount: '₹6,120/month (24% of Basic)' },
+    { component: 'Transport Allowance (TA) + DA on TA',                       amount: '~₹3,600+/month' },
+    { component: 'Police Risk Allowance, Uniform Allowance & Others',         amount: '~₹2,000–3,000/month' },
+    { component: '💰 Estimated Gross In-Hand (Delhi, entry level)',             amount: '~₹49,000–₹52,000/month' },
+    { component: '⚠️ Expected Basic after 8th Pay Commission (from Jan 2026)', amount: '₹ TBN – Fitment factor pending' },
+  ];
+
+  const careerPath = [
+    { level: 'Head Constable (Ministerial)',  scale: 'Pay Level 4',  service: '0–5 yrs',   pay: '₹25,500–₹81,100' },
+    { level: 'ASI (Ministerial)',             scale: 'Pay Level 5',  service: '5–10 yrs',  pay: '₹29,200–₹92,300' },
+    { level: 'SI (Ministerial)',              scale: 'Pay Level 6',  service: '10–15 yrs', pay: '₹35,400–₹1,12,400' },
+    { level: 'Inspector (Ministerial)',       scale: 'Pay Level 7',  service: '15–20 yrs', pay: '₹44,900–₹1,42,400' },
+    { level: 'Gazetted Officer (via LDCE)',   scale: 'Pay Level 10+', service: 'Merit-based', pay: '₹56,100+' },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'GK Foundation + Reasoning Basics', detail: 'Start with NCERT History (Class 6–10), Geography (Class 6–10), and Polity (Class 9–10). Read 1 chapter daily. For Reasoning: master Analogies, Series, Coding-Decoding, and Blood Relations. Practice 30 Reasoning questions daily. Delhi-specific GK — note famous landmarks, current LG/CM, Delhi Metro facts.' },
+    { month: 'Month 2', focus: 'Numerical Aptitude + Advanced Reasoning', detail: 'Cover all arithmetic topics: Percentage, Profit-Loss, SI/CI, Time-Work, Speed-Distance. Practice daily from RS Aggarwal. Reasoning: move to Syllogisms, Ranking, Direction, Non-Verbal (Figures). Take 1 subject-wise mock per week. Target: 90%+ accuracy in Reasoning and 80%+ in Maths.' },
+    { month: 'Month 3', focus: 'English + Current Affairs', detail: 'English grammar: focus on Error Spotting, Fill-in-the-Blanks, and Comprehension. Learn 10 new words daily (synonyms + antonyms). Start daily newspaper reading — The Hindu or Hindustan Times. Follow a monthly Current Affairs PDF (Adda247 or GK Today). Delhi news is especially important for this exam.' },
+    { month: 'Month 4', focus: 'Full Mock Tests + Typing Practice', detail: 'Take 1 full CBT mock daily. Analyse every mistake. Start typing practice in parallel — target 40 wpm in English and 35 wpm in Hindi using free tools like Typing.com or IndiaTyping.com. Practice typing 20–30 minutes daily. Revision of all subjects: 2 hours/day.' },
+  ];
+
+  const books = [
+    { title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal',              subject: 'Numerical Aptitude' },
+    { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal',       subject: 'Reasoning' },
+    { title: 'Lucent\'s General Knowledge',                       author: 'Dr. Binay Karna',       subject: 'General Knowledge' },
+    { title: 'Objective English for Competitive Exams',           author: 'Hari Mohan Prasad',     subject: 'English' },
+    { title: 'Delhi Police HC (Min) Previous Year Papers',        author: 'Arihant / Kiran Prakashan', subject: 'Practice Papers' },
+    { title: 'Current Affairs Monthly Magazine',                  author: 'Pratiyogita Darpan',    subject: 'Current Affairs' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'CBT is the only competitive stage — PE&MT and Typing Test are qualifying (pass/fail). So your entire rank is determined by CBT performance. Aim for 80+ out of 100. Every mark matters because the competition is intense with 5–10 lakh applicants for ~1,000 posts.' },
+    { icon: '⌨️', tip: 'Do NOT underestimate the Typing Test. Many candidates who score well in CBT get eliminated because they start typing practice too late. Start typing practice from Day 1 — 20–30 minutes daily for 3–4 months is enough to reach 40 wpm comfortably. Use IndiaTyping.com for free Hindi typing practice.' },
+    { icon: '📍', tip: 'Delhi-specific GK is an edge most candidates ignore. Know the current Lt. Governor, Chief Minister, Deputy CM, Delhi Police Commissioner, important metro stations/lines, Delhi government schemes, and famous landmarks. This alone can give you 3–5 extra marks in the GK section.' },
+    { icon: '📰', tip: 'Current Affairs carries 25 marks in GK. Read a newspaper (or free app summary) for 15 minutes every day. Prioritise: Government schemes, Appointments (new ministers, CJI, Army Chief), Awards, Sports, and Science & Tech. Monthly PDFs from Adda247 or Testbook are free and sufficient.' },
+    { icon: '🏃', tip: 'Start physical preparation alongside academics. The 1-mile (1.6 km) run in 8 minutes (males) / 10 minutes (females) seems easy but many sedentary candidates fail it. Start running 3–4 times a week from Month 1. Height and chest (males) are fixed — ensure you meet standards before applying.' },
+    { icon: '🔄', tip: '3 hours of focused daily preparation for 4 months is enough to clear this exam. Divide: 1.5 hrs academics + 30 mins current affairs + 30 mins mock test analysis + 20 mins typing. Consistency beats intensity. The exam is 10th–12th level in difficulty.' },
+  ];
+
+  const faqs = [
+    { q: 'What is Delhi Police Head Constable (Ministerial) 2026 notification date?', a: 'As of May 2026, the Delhi Police HC (Ministerial) 2026 notification has not been released. The notification is published on delhipolice.gov.in and recruitment.delhipolice.gov.in. The last cycle was in 2022 (835 vacancies). The 2026 cycle is expected but TBN — bookmark delhipolice.gov.in for updates.' },
+    { q: 'What is the eligibility for Delhi Police Head Constable Ministerial?', a: 'Candidates must be Indian citizens aged 18–25 years (with relaxation: OBC +3 yrs, SC/ST +5 yrs, Ex-Servicemen as per norms). Minimum qualification: 12th Pass (Senior Secondary) from a recognized Board. They must also have typing speed of at least 40 wpm in English OR 35 wpm in Hindi on computer. Physical standards must be met for PE&MT.' },
+    { q: 'What is the salary of Delhi Police Head Constable?', a: 'Delhi Police HC (Min) falls under Pay Level 4 of the 7th Pay Commission: Basic Pay ₹25,500 – ₹81,100/month. With Dearness Allowance (~50% est. Jan 2026), HRA (24% for Delhi/X city), Transport Allowance, and Police Risk Allowance, the gross in-hand is approximately ₹49,000–₹52,000/month. The 8th Pay Commission recommendations (expected from January 2026 onwards) are pending and may revise the basic pay — figures are TBN.' },
+    { q: 'Is there negative marking in Delhi Police HC (Min) CBT?', a: 'The 2022 notification did not prescribe negative marking for Delhi Police HC (Min) CBT. However, exam rules can change cycle-to-cycle. Always verify from the official notification for the 2026 cycle on delhipolice.gov.in before assuming no negative marking.' },
+    { q: 'What is the difference between Delhi Police Constable and Head Constable (Min)?', a: 'Delhi Police Constable (Executive) is a field/patrol role requiring 10th pass; age limit 18–25 yrs; selection via CBT + PET + Medical. Delhi Police Head Constable (Ministerial) is a clerical/administrative desk role requiring 12th pass + typing speed; selection via CBT + PE&MT + Typing Test + Computer Test. HC (Min) has a higher pay level (Level 4 vs Level 3 for Constable Executive) and is a desk job — no armed duty. Both are conducted by Delhi Police directly, not SSC.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">Delhi Police HC 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🚔 Police</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government (Delhi)</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ Notification: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            Delhi Police Head Constable<br className="hidden sm:block" /> (Ministerial) 2026 – Complete Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            Delhi Police HC (Ministerial) is a <strong>clerical/administrative post</strong> in Delhi Police under the Ministry of Home Affairs. 4-stage selection: CBT → PE&MT → Typing Test → Computer Test. 12th pass eligible. Age <strong>18–25 years</strong>. Gross salary <strong>~₹49,000–₹52,000/month</strong> in Delhi.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '500–1,500',     sub: '(2026 est.)' },
+              { label: 'CBT Exam Date',       value: 'TBN',           sub: 'After notification' },
+              { label: 'Min. Qualification',  value: '12th Pass',     sub: '+ Typing speed req.' },
+              { label: 'Gross Salary',        value: '~₹49K–₹52K',    sub: 'per month (Delhi)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> The 2026 notification is yet to be released. The last cycle was in 2022 (835 vacancies). Monitor <a href="https://delhipolice.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">delhipolice.gov.in</a> for the official announcement. The 8th Pay Commission salary revision is pending — existing pay scale (Level 4) remains applicable until official gazette notification.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is Delhi Police HC (Ministerial) 2026?</h2>
+              </div>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                Delhi Police Head Constable (Ministerial) is a <strong>Group C, non-gazetted, non-ministerial government post</strong> in the Delhi Police force, which operates under the Ministry of Home Affairs. Unlike Executive Constables (who do field/patrol duty), Head Constables (Ministerial) work in an <strong>office/administrative role</strong> — handling records, correspondence, data entry, and clerical functions at police stations and district offices.
+              </p>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                The post requires a 12th Pass qualification and a minimum typing speed of 40 wpm in English or 35 wpm in Hindi. Selection involves a Computer Based Test (CBT) followed by physical standards check (PE&MT), a typing test, and a computer proficiency test. The role offers a <strong>permanent government job in Delhi</strong> with all Central Government benefits and career progression from HC to ASI to SI to Inspector level.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
+                {[
+                  { label: 'Conducting Body',      value: 'Delhi Police (MHA)' },
+                  { label: 'Post Type',            value: 'Clerical / Admin' },
+                  { label: 'Pay Level (7th CPC)',  value: 'Level 4 (₹25,500+)' },
+                  { label: 'Job Location',         value: 'Delhi (All Districts)' },
+                ].map((c) => (
+                  <div key={c.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{c.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{c.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Important Dates 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Event</th>
+                        <th className="text-left p-3 font-heading font-semibold">Date</th>
+                        <th className="text-left p-3 font-heading font-semibold hidden sm:table-cell">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 text-surface-800">{row.event}</td>
+                          <td className="p-3 font-medium text-surface-800">{row.date}</td>
+                          <td className="p-3 hidden sm:table-cell">
+                            {row.status === 'done' && <span className="badge-green">✓ Done</span>}
+                            {row.status === 'tbn'  && <span className="badge-primary">⚠️ TBN</span>}
+                            {row.status === 'upcoming' && <span className="inline-flex items-center bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">📅 Upcoming</span>}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ All 2026 dates are To Be Notified (TBN). Source: delhipolice.gov.in — always verify from the official notification PDF.</p>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '🪪', label: 'Nationality',       value: 'Indian Citizen (only)' },
+                  { icon: '📋', label: 'Age Limit',          value: '18–25 years (as on cut-off date)' },
+                  { icon: '🎓', label: 'Education',          value: '12th Pass (Senior Secondary) from any recognized Board' },
+                  { icon: '⌨️', label: 'Typing Speed',       value: 'English 40 wpm OR Hindi 35 wpm on computer' },
+                  { icon: '📏', label: 'Physical Standards', value: 'Height, Chest (M), Run — see PE&MT section below' },
+                  { icon: '📜', label: 'Character',          value: 'No criminal conviction / FIR pending' },
+                ].map((c) => (
+                  <div key={c.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{c.icon} {c.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{c.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card p-5 mt-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-900 mb-3">📋 Age Relaxation (Upper Age Limit)</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-100">
+                        <th className="text-left p-2.5 font-heading font-semibold text-surface-700">Category</th>
+                        <th className="text-left p-2.5 font-heading font-semibold text-surface-700">Relaxation</th>
+                        <th className="text-left p-2.5 font-heading font-semibold text-surface-700">Effective Age Limit</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-surface-100">
+                      {[
+                        { cat: 'General / EWS',      rel: 'None',    age: '25 years' },
+                        { cat: 'OBC',                rel: '+3 years', age: '28 years' },
+                        { cat: 'SC / ST',             rel: '+5 years', age: '30 years' },
+                        { cat: 'PwBD (General/EWS)',  rel: '+10 years', age: '35 years' },
+                        { cat: 'Ex-Servicemen',       rel: 'As per Govt. norms', age: 'Up to 45 years (typically)' },
+                        { cat: 'Widows / Divorced Women (Govt. norms)', rel: '+5 to +10 years', age: 'Category-dependent' },
+                      ].map((r, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2.5 text-surface-800">{r.cat}</td>
+                          <td className="p-2.5 font-medium text-primary-600">{r.rel}</td>
+                          <td className="p-2.5 text-surface-700">{r.age}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies History</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Recruitment Cycle</th>
+                        <th className="text-left p-3 font-heading font-semibold">Total Vacancies</th>
+                        <th className="text-left p-3 font-heading font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyHistory.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                          <td className="p-3 text-surface-800">{row.vacancies}</td>
+                          <td className="p-3">
+                            {row.status === 'Completed' ? (
+                              <span className="badge-green">✓ Completed</span>
+                            ) : (
+                              <span className="badge-primary">⚠️ TBN</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-sm text-surface-500 mt-3">Delhi Police HC (Min) is recruited irregularly — typically every 2–3 years based on departmental requirement. The last cycle (2022) advertised 835 vacancies. The 2026 cycle is anticipated but not confirmed.</p>
+            </section>
+
+            {/* SECTION 5: SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Selection Process</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {selectionSteps.map((s) => (
+                    <div key={s.step} className="sm:pl-14 relative card p-5">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-sm">{s.step}</div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{s.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 6: CBT EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">CBT Exam Pattern</h2>
+              </div>
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Subject</th>
+                        <th className="text-center p-3 font-heading font-semibold">Questions</th>
+                        <th className="text-center p-3 font-heading font-semibold">Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cbtPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 text-surface-800">{row.subject}</td>
+                          <td className="p-3 text-center font-medium text-surface-800">{row.questions}</td>
+                          <td className="p-3 text-center font-medium text-surface-800">{row.marks}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 font-semibold">
+                        <td className="p-3 text-primary-700">Total</td>
+                        <td className="p-3 text-center text-primary-700">100</td>
+                        <td className="p-3 text-center text-primary-700">100</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-3">
+                {[
+                  { label: 'Total Duration',     value: '90 Minutes' },
+                  { label: 'Exam Mode',           value: 'Computer Based Test (CBT)' },
+                  { label: 'Negative Marking',    value: 'Verify from official notification' },
+                ].map((c) => (
+                  <div key={c.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{c.label}</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">{c.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: PHYSICAL TEST */}
+            <section id="physical" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Physical Endurance & Measurement Test (PE&MT)</h2>
+              </div>
+              <p className="text-surface-600 text-sm mb-4 leading-relaxed">PE&MT is a <strong>qualifying (pass/fail) stage</strong> — no marks are added to the final merit. Only candidates who clear the CBT are called for PE&MT. Failing PE&MT means elimination regardless of CBT score.</p>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Category</th>
+                        <th className="text-left p-3 font-heading font-semibold">Height</th>
+                        <th className="text-left p-3 font-heading font-semibold hidden sm:table-cell">Chest (Males)</th>
+                        <th className="text-left p-3 font-heading font-semibold">Run (1.6 km)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {physicalStandards.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 font-medium text-surface-800">{row.gender}</td>
+                          <td className="p-3 text-surface-800">{row.height}</td>
+                          <td className="p-3 text-surface-600 hidden sm:table-cell text-xs">{row.chest}</td>
+                          <td className="p-3 text-surface-800">{row.run}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ Physical standards may be revised per notification. Always verify from the official Delhi Police notification PDF.</p>
+            </section>
+
+            {/* SECTION 8: TYPING & COMPUTER TEST */}
+            <section id="typing-test" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Typing Test & Computer Proficiency Test</h2>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4 mb-5">
+                <div className="card p-5 border-l-4 border-primary-500">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3">⌨️ Typing Test</h3>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li>• <strong>English:</strong> 40 words per minute (wpm)</li>
+                    <li>• <strong>Hindi:</strong> 35 words per minute (wpm)</li>
+                    <li>• Duration: 10 minutes per language test</li>
+                    <li>• Mode: On computer (QWERTY keyboard for English; Mangal/Kruti Dev for Hindi)</li>
+                    <li>• Nature: <strong>Qualifying only</strong> (pass/fail — not counted in merit)</li>
+                    <li>• Candidate can choose either English or Hindi</li>
+                  </ul>
+                </div>
+                <div className="card p-5 border-l-4 border-emerald-500">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3">💻 Computer Proficiency Test</h3>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li>• MS Word – creating, editing documents</li>
+                    <li>• MS Excel – basic spreadsheet, formulae</li>
+                    <li>• Internet & Email – basic browsing</li>
+                    <li>• Nature: <strong>Qualifying only</strong></li>
+                    <li>• Difficulty: Basic (Class 10–12 level IT)</li>
+                    <li>• Preparation: NIELIT CCC course content is sufficient</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-surface-700">
+                💡 <strong>Tip:</strong> The Typing Test is the most common reason candidates get eliminated after clearing the CBT. Start typing practice from Day 1 of your preparation. Free resources: <strong>IndiaTyping.com</strong> (Hindi), <strong>Typing.com</strong> (English). Aim for 45–50 wpm with accuracy to have a safe buffer on exam day.
+              </div>
+            </section>
+
+            {/* SECTION 9: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus – CBT</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((sec, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{sec.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-1.5">
+                        {sec.topics.map((t, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                            <span className="text-primary-400 mt-0.5 shrink-0">›</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 10: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year CBT Cut-offs</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Category</th>
+                        <th className="text-center p-3 font-heading font-semibold">CBT 2022 (~)</th>
+                        <th className="text-center p-3 font-heading font-semibold">CBT 2019 (~)</th>
+                        <th className="text-left p-3 font-heading font-semibold hidden sm:table-cell">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cutoffData.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                          <td className="p-3 text-center text-emerald-600 font-semibold">{row.cbt2022}</td>
+                          <td className="p-3 text-center text-surface-600">{row.cbt2019}</td>
+                          <td className="p-3 text-surface-500 text-xs hidden sm:table-cell">{row.remarks}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">~ Approximate/indicative figures based on community-reported data. Official cut-offs are published by Delhi Police on delhipolice.gov.in after result declaration. Target 75+ out of 100 for safe qualification across all categories.</p>
+            </section>
+
+            {/* SECTION 11: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Salary & Career Growth</h2>
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Salary Component</th>
+                        <th className="text-right p-3 font-heading font-semibold">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryBreakdown.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 text-surface-700">{row.component}</td>
+                          <td className={`p-3 text-right font-semibold ${row.component.startsWith('💰') ? 'text-emerald-600 text-base' : 'text-surface-800'}`}>{row.amount}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-900 mb-3">📈 Career Progression</h3>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Designation</th>
+                        <th className="text-left p-3 font-heading font-semibold">Pay Level</th>
+                        <th className="text-left p-3 font-heading font-semibold hidden sm:table-cell">Approx. Timeline</th>
+                        <th className="text-left p-3 font-heading font-semibold">Pay Band (7th CPC)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {careerPath.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 font-medium text-surface-800">{row.level}</td>
+                          <td className="p-3 text-surface-700">{row.scale}</td>
+                          <td className="p-3 text-surface-500 hidden sm:table-cell text-xs">{row.service}</td>
+                          <td className="p-3 text-emerald-600 font-semibold">{row.pay}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-sm text-surface-500 mt-3">Additional benefits: EPF + Gratuity, Delhi Police Welfare Fund, subsidised medical, children education allowance, LTC (Leave Travel Concession), and pension under NPS.</p>
+            </section>
+
+            {/* SECTION 12: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">4-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((s, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-5">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl hidden sm:flex items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="badge-primary">{s.month}</span>
+                        <span className="font-heading font-semibold text-surface-800">{s.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 13: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for Delhi Police HC (Min) 2026</h2>
+              </div>
+              <BooksTable books={books} />
+            </section>
+
+            {/* SECTION 14: EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips to Clear Delhi Police HC (Min)</h2>
+              </div>
+              <div className="space-y-3">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-xl shrink-0">{t.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 15: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">15</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions (FAQs)</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180 shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* Table of Contents */}
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-900 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-900 mb-3 text-sm uppercase tracking-wide">Official Website</h3>
+                <a href="https://delhipolice.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-500 hover:text-primary-600 font-medium transition-colors">
+                  <span>🌐</span> delhipolice.gov.in
+                  <svg className="w-3 h-3 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+                <p className="text-xs text-surface-400 mt-2">Check here for official notification, apply link &amp; admit card</p>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-bold text-surface-900 mb-3 text-sm uppercase tracking-wide">Quick Facts</h3>
+                <ul className="space-y-2 text-sm text-surface-700">
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold shrink-0">✓</span> Desk job – no armed patrol duty</li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold shrink-0">✓</span> Permanent Central Govt post</li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold shrink-0">✓</span> Gross salary ~₹49K–₹52K/month</li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold shrink-0">✓</span> 12th Pass eligible</li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold shrink-0">✓</span> Age limit: 18–25 yrs</li>
+                  <li className="flex gap-2"><span className="text-emerald-500 font-bold shrink-0">✓</span> Posting in Delhi (local job)</li>
+                </ul>
+              </div>
+
+              {/* Eligibility Checker CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-bold text-surface-900 mb-2 text-sm">Check Your Eligibility</h3>
+                <p className="text-xs text-surface-600 mb-3">Use our free tool to instantly check if you qualify for Delhi Police HC and 100+ other exams.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block py-2">
+                  Check Eligibility →
+                </Link>
               </div>
 
             </div>
