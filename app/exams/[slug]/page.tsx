@@ -114,6 +114,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'dsssb-tgt-pgt-prt') {
+    return {
+      title: 'DSSSB TGT PGT PRT 2026 – Vacancy, Syllabus, Eligibility & Salary | TaiyarHo',
+      description: 'DSSSB Teacher Recruitment 2026: PRT, TGT & PGT posts in Delhi government schools. CTET mandatory. Age 18–32 yrs. Salary ₹35,400–₹1,51,100/month. Complete syllabus, exam pattern, two-tier CBT, eligibility & free preparation guide.',
+      keywords: 'DSSSB TGT PGT PRT 2026, DSSSB teacher recruitment 2026, DSSSB TGT vacancy 2026, DSSSB PGT syllabus, DSSSB PRT notification, dsssb.delhi.gov.in bharti, Delhi teacher sarkari naukri, DSSSB exam pattern, डीएसएसएसबी शिक्षक भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/dsssb-tgt-pgt-prt/' },
+      other: { 'description:hi': 'DSSSB TGT/PGT/PRT 2026 – दिल्ली सरकारी स्कूलों में शिक्षक भर्ती। CTET अनिवार्य। आयु 18–32 वर्ष। वेतन ₹35,400–₹1,51,100/माह। पूरा सिलेबस, परीक्षा पैटर्न, Two-Tier CBT और मुफ्त तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'ssc-je') {
     return {
       title: 'SSC JE 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -592,6 +602,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rpsc-ras') return <RpscRasPage exam={brief} />;
   if (brief && brief.slug === 'wbcs-executive') return <WbcsExecutivePage exam={brief} />;
   if (brief && brief.slug === 'delhi-police-hc') return <DelhiPoliceHcPage exam={brief} />;
+  if (brief && brief.slug === 'dsssb-tgt-pgt-prt') return <DssbTgtPgtPrtPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -40088,6 +40099,821 @@ function DelhiPoliceHcPage({ exam }: { exam: any }) {
             </div>
           </aside>
 
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── DSSSB TGT/PGT/PRT RICH PAGE ─────────────────────────────────────────────
+function DssbTgtPgtPrtPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancy History' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'DSSSB Teaching Posts Notification (2021 Advt No. 05/2021)', date: 'November 2021', status: 'released' },
+    { event: 'DSSSB 2021 TGT Written Examination (Various Subjects)', date: 'September 2022 – January 2023', status: 'released' },
+    { event: 'DSSSB 2021 PGT Written Examination (Various Subjects)', date: 'October 2023 – March 2024', status: 'released' },
+    { event: 'DSSSB 2021 PRT/TGT/PGT Final Results (ongoing)', date: 'Rolling through 2024–2025', status: 'released' },
+    { event: 'DSSSB 2024 Advt. 03/2024 – Various posts (incl. Teaching)', date: 'Released 2024', status: 'released' },
+    { event: 'DSSSB 2024 Online Application Window', date: 'Refer dsssb.delhi.gov.in', status: 'released' },
+    { event: '🆕 DSSSB 2026 Teaching Posts Notification', date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: 'DSSSB 2026 – Online Application Window', date: 'TBN', status: 'tbn' },
+    { event: 'DSSSB 2026 – Tier-I CBT (Screening Test)', date: 'TBN (typically 3–5 months after notification)', status: 'tbn' },
+    { event: 'DSSSB 2026 – Tier-II CBT (Subject-Specific Test, TGT/PGT)', date: 'TBN', status: 'tbn' },
+    { event: 'DSSSB 2026 – Final Result & Document Verification', date: 'TBN', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'DSSSB 2019-20 (Advt 01/2019)', prt: '4,366', tgt: '4,231', pgt: '1,217', total: '~9,814', status: 'Completed' },
+    { year: 'DSSSB 2021 (Advt 05/2021)', prt: '3,248', tgt: '3,556', pgt: '1,412', total: '~8,216', status: 'Results rolling' },
+    { year: 'DSSSB 2024 (Advt 03/2024)', prt: 'TBN', tgt: 'TBN', pgt: 'TBN', total: 'TBN (various posts)', status: 'Active' },
+    { year: 'DSSSB 2026 (upcoming)', prt: 'TBN', tgt: 'TBN', pgt: 'TBN', total: 'TBN', status: 'Expected' },
+  ];
+
+  const prtPattern = [
+    { section: 'General Awareness', qs: 20, marks: 20, notes: 'History, Geography, Polity, Science, Current Affairs' },
+    { section: 'General Intelligence & Reasoning', qs: 20, marks: 20, notes: 'Verbal & Non-Verbal Reasoning' },
+    { section: 'Arithmetic & Numerical Ability', qs: 20, marks: 20, notes: 'Class 10 level Maths' },
+    { section: 'Hindi Language & Comprehension', qs: 20, marks: 20, notes: 'Grammar, Comprehension, Vocabulary' },
+    { section: 'English Language & Comprehension', qs: 20, marks: 20, notes: 'Grammar, Comprehension, Vocabulary' },
+    { section: 'Primary Education Content & Pedagogy', qs: 100, marks: 100, notes: 'Subject content (Class 1–5) + Teaching methodology' },
+  ];
+
+  const tgtTier1Pattern = [
+    { section: 'General Awareness', qs: 20, marks: 20, notes: 'Common screening section' },
+    { section: 'General Intelligence & Reasoning', qs: 20, marks: 20, notes: 'Common screening section' },
+    { section: 'Arithmetic & Numerical Ability', qs: 20, marks: 20, notes: 'Common screening section' },
+    { section: 'Hindi Language & Comprehension', qs: 20, marks: 20, notes: 'Common screening section' },
+    { section: 'English Language & Comprehension', qs: 20, marks: 20, notes: 'Common screening section' },
+  ];
+
+  const tgtTier2Pattern = [
+    { section: 'Subject Knowledge (Class 6–10 level + B.Sc./B.A. level)', qs: 140, marks: 140, notes: 'Subject-specific (Maths, Science, English, Hindi, Social, etc.)' },
+    { section: 'Subject Pedagogy & Teaching Methodology', qs: 60, marks: 60, notes: 'NCTE norms, child development, classroom methods' },
+  ];
+
+  const pgtTier1Pattern = [
+    { section: 'General Awareness', qs: 20, marks: 20, notes: 'Common screening section' },
+    { section: 'General Intelligence & Reasoning', qs: 20, marks: 20, notes: 'Common screening section' },
+    { section: 'Arithmetic & Numerical Ability', qs: 20, marks: 20, notes: 'Common screening section' },
+    { section: 'Hindi Language & Comprehension', qs: 20, marks: 20, notes: 'Common screening section' },
+    { section: 'English Language & Comprehension', qs: 20, marks: 20, notes: 'Common screening section' },
+  ];
+
+  const pgtTier2Pattern = [
+    { section: 'Subject Knowledge (Graduation/Post-Graduation level)', qs: 160, marks: 160, notes: 'Subject-specific depth (Physics, Chemistry, Maths, History, etc.)' },
+    { section: 'Subject Pedagogy & Teaching Methodology', qs: 40, marks: 40, notes: 'Senior secondary-level pedagogy' },
+  ];
+
+  const salaryTable = [
+    { post: 'PRT (Primary Teacher)', level: 'Pay Level 6', basic: '₹35,400/month', da: '~₹19,470/month (DA ~55%)', hraMetro: '₹8,496/month (HRA 24%)', gross: '~₹67,000–₹72,000/month', payband: '₹35,400–₹1,12,400' },
+    { post: 'TGT (Trained Graduate Teacher)', level: 'Pay Level 7', basic: '₹44,900/month', da: '~₹24,695/month (DA ~55%)', hraMetro: '₹10,776/month (HRA 24%)', gross: '~₹83,000–₹88,000/month', payband: '₹44,900–₹1,42,400' },
+    { post: 'PGT (Post Graduate Teacher)', level: 'Pay Level 8', basic: '₹47,600/month', da: '~₹26,180/month (DA ~55%)', hraMetro: '₹11,424/month (HRA 24%)', gross: '~₹88,000–₹93,000/month', payband: '₹47,600–₹1,51,100' },
+  ];
+
+  const eligibilityTable = [
+    {
+      post: 'PRT (Primary Teacher)',
+      qualification: 'Senior Secondary (12th) with at least 50% marks + 2-year D.El.Ed (Diploma in Elementary Education)',
+      ctet: 'CTET Paper I mandatory',
+      age: '18–32 years',
+      extra: 'B.Ed alone NOT accepted for PRT (Supreme Court 2023 ruling)',
+    },
+    {
+      post: 'TGT (Trained Graduate Teacher)',
+      qualification: 'Graduation with at least 50% marks in the relevant subject + B.Ed (1-year or 2-year)',
+      ctet: 'CTET Paper II mandatory',
+      age: '18–32 years',
+      extra: 'Subject-specific graduation required (e.g., B.Sc. for TGT Science, B.A. History for TGT Social)',
+    },
+    {
+      post: 'PGT (Post Graduate Teacher)',
+      qualification: 'Post-Graduation (M.A./M.Sc./M.Com.) in the relevant subject with at least 50% marks + B.Ed',
+      ctet: 'CTET not mandatory for PGT',
+      age: '18–36 years',
+      extra: 'Subject-specific PG required (e.g., M.Sc. Physics for PGT Physics)',
+    },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🌐 General Awareness (All Posts – 20 Qs)',
+      topics: [
+        'Indian History – Ancient, Medieval, Modern (with special focus on Delhi history)',
+        'Indian & World Geography – Physical, Political, Economic',
+        'Indian Polity & Constitution – Articles, Amendments, DPSP, Fundamental Rights',
+        'Indian Economy – Budget, Five Year Plans, Government Schemes, GST basics',
+        'Science & Technology – General science (Physics, Chemistry, Biology basics)',
+        'Current Affairs – National & International (last 6–12 months)',
+        'Environment & Ecology – National Parks, Wildlife, Climate Agreements',
+        'Awards, Sports, Important Days, Books & Authors, Summits',
+        'Delhi-specific GK – Government of NCT of Delhi, Delhi geography, heritage sites',
+      ],
+    },
+    {
+      subject: '🧩 General Intelligence & Reasoning (All Posts – 20 Qs)',
+      topics: [
+        'Analogies – Verbal & Non-Verbal',
+        'Series Completion – Number, Letter, Figure',
+        'Classification, Odd One Out',
+        'Coding-Decoding (old and new pattern)',
+        'Blood Relations, Direction & Distance',
+        'Syllogisms, Logical Venn Diagrams',
+        'Mathematical Operations, Order & Ranking',
+        'Sitting Arrangement (linear & circular)',
+        'Non-Verbal Reasoning – Mirror/Water Image, Paper Folding, Figure Matrix',
+      ],
+    },
+    {
+      subject: '🔢 Arithmetic & Numerical Ability (All Posts – 20 Qs)',
+      topics: [
+        'Number System – LCM, HCF, fractions, decimals, BODMAS',
+        'Percentage, Profit & Loss, Discount',
+        'Simple Interest, Compound Interest, Partnership',
+        'Ratio & Proportion, Average, Mixture & Alligation',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time, Trains, Boats & Streams',
+        'Mensuration – Area, Volume of 2D & 3D shapes',
+        'Data Interpretation – Tables, Bar, Pie, Line charts',
+        'Simplification & Approximation',
+      ],
+    },
+    {
+      subject: '📖 Hindi & English Language (All Posts – 20+20 Qs)',
+      topics: [
+        'Hindi – व्याकरण (Vyakaran): संधि, समास, उपसर्ग, प्रत्यय, कारक',
+        'Hindi – पर्यायवाची, विलोम, मुहावरे, लोकोक्तियाँ, अनेकार्थी शब्द',
+        'Hindi – अपठित गद्यांश, वाक्य शुद्धि, रिक्त स्थान पूर्ति',
+        'English – Reading Comprehension (unseen passage)',
+        'English – Grammar: Tenses, Active/Passive Voice, Reported Speech, Prepositions',
+        'English – Vocabulary: Synonyms, Antonyms, One-word substitution',
+        'English – Error Detection & Sentence Correction',
+        'English – Fill in the Blanks (Grammar + Vocabulary)',
+      ],
+    },
+    {
+      subject: '🎓 Pedagogy & Subject Content – PRT (100 Qs Tier-I only)',
+      topics: [
+        'Child Development & Psychology (Class 1–5 age group: 6–11 years)',
+        'Theories of Learning: Piaget, Vygotsky, Kohlberg, Bruner',
+        'Inclusive Education – NEP 2020, RTE Act 2009, NCF 2005',
+        'Assessment & Evaluation: Formative, Summative, CCE',
+        'Primary Mathematics: Number system, Operations, Shapes, Measurement, Data handling',
+        'Environmental Studies (EVS): My Family, Food, Shelter, Water, Animals, Plants, Travel',
+        'Language Development in primary children',
+        'Teaching-Learning Materials (TLMs) for primary classes',
+        'Activity-based learning, Project method, Story-telling techniques',
+      ],
+    },
+    {
+      subject: '📚 Pedagogy & Subject Content – TGT (200 Qs Tier-II)',
+      topics: [
+        'Pedagogy: Adolescent psychology (11–14 yrs), learning theories, Bloom\'s Taxonomy',
+        'Classroom management, discipline, motivation techniques',
+        'Subject Content (Graduation level): varies by specialisation chosen',
+        'TGT Maths: Algebra, Geometry, Trigonometry, Statistics, Coordinate Geometry',
+        'TGT Science: Physics (Motion, Electricity, Light), Chemistry (Acids/Bases, Carbon), Biology (Cell, Life Processes)',
+        'TGT English: Literature comprehension, Grammar, Writing, Language skills (BA level)',
+        'TGT Hindi: साहित्य, गद्य-पद्य, व्याकरण (B.A. level)',
+        'TGT Social Science: History (Medieval to Modern), Political Science, Economics, Geography',
+        'Assessment, curriculum design, and lesson planning at upper primary level',
+      ],
+    },
+    {
+      subject: '🏫 Pedagogy & Subject Content – PGT (200 Qs Tier-II)',
+      topics: [
+        'Pedagogy: Senior Secondary-level teaching strategies, constructivist approach',
+        'NEP 2020 – Four-stage schooling structure, FLN, vocationalisation',
+        'Subject Content (Post-Graduation level): varies by specialisation',
+        'PGT Physics: Mechanics, Thermodynamics, Electromagnetism, Optics, Modern Physics',
+        'PGT Chemistry: Organic, Inorganic, Physical Chemistry (M.Sc. level)',
+        'PGT Maths: Calculus, Algebra, Differential Equations, Linear Algebra, Statistics',
+        'PGT History: Ancient, Medieval, Modern India; World History (M.A. level)',
+        'PGT Political Science: Indian Polity, Comparative Politics, IR, Political Theory',
+        'Curriculum planning, formative & summative assessment, exam paper design',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Foundation: GK + Reasoning', detail: 'Start with Indian History, Geography, and Polity using NCERT Class 6–10 books. Read one chapter daily and make concise notes. Simultaneously, solve 20 Reasoning questions daily — Analogies, Series, Coding-Decoding. Current Affairs: subscribe to a daily GK app (GK Today, Adda247) and spend 15 minutes every morning. These GK foundations take time to build — start early.' },
+    { month: 'Month 2', focus: 'Arithmetic + Hindi + English', detail: 'Arithmetic: Cover all Class 10-level topics systematically. Practice 30 problems daily with a timer — speed and accuracy matter equally. English: Grammar revision + 1 comprehension passage daily. Hindi: Revise Vyakaran (Sandhi, Samas, Muhavare) daily with 15-20 MCQs. Take one sectional mock per week for each language section.' },
+    { month: 'Month 3', focus: 'Subject Content – Core Month', detail: 'This is the most critical month. Subject content (Tier-I for PRT or Tier-II for TGT/PGT) carries the highest marks. PRT candidates: Revise all Class 1–8 NCERT content, especially EVS, Maths, and Language. TGT candidates: Revise graduation-level content for your subject (standard reference books + NCERT Class 6–12). PGT candidates: Study post-graduation level content systematically from university textbooks. Make chapter-wise notes.' },
+    { month: 'Month 4', focus: 'Pedagogy (Teaching Methodology)', detail: 'Pedagogy is where many candidates lose marks due to neglect. Study NCF 2005, NEP 2020 Key Points, RTE Act 2009 clauses, and child development theories (Piaget, Vygotsky, Kohlberg, Bruner). Learn about Bloom\'s Taxonomy, Formative/Summative Assessment, Inclusive Education, and TLMs. PRT candidates: Also revise CTET Paper 1 pedagogy notes — many questions overlap. Take 20 pedagogy MCQs daily from mock papers.' },
+    { month: 'Month 5', focus: 'Delhi-Specific GK + Mock Tests', detail: 'DSSSB occasionally asks Delhi-specific questions — know Delhi\'s geography, historical significance (Qutub Minar, Humayun\'s Tomb, Red Fort), government structure (Lt. Governor, CM, MLA constituencies), Delhi\'s economy and initiatives. Take 2 full Tier-I mock tests per week. Analyse every mock deeply — focus on wrong answers, not just scores. For TGT/PGT: Start Tier-II subject mocks simultaneously.' },
+    { month: 'Month 6', focus: 'Full Mock Tests + Final Revision', detail: 'Take 3+ full-length Tier-I mock tests per week. Target 170+/200 in Tier-I. Revise GK through Lucent\'s GK + 3-month current affairs booklet. For Tier-II aspirants: Do 2 full Tier-II subject mocks per week. Final 2 weeks: Revision only — no new topics. Build stamina for a 3–4 hour exam sitting. Stay updated on DSSSB official notification at dsssb.delhi.gov.in.' },
+  ];
+
+  const books = [
+    { title: 'DSSSB TGT/PGT/PRT Guide (All-in-One)', author: 'Arihant Publications', subject: 'All Sections' },
+    { title: 'Lucent\'s General Knowledge', author: 'Lucent Publications', subject: 'General Awareness' },
+    { title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal', subject: 'Arithmetic' },
+    { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali & Indu Sijwali', subject: 'Reasoning' },
+    { title: 'Objective General English', author: 'S.P. Bakshi (Arihant)', subject: 'English' },
+    { title: 'Sampoorna Hindi Vyakaran', author: 'Dr. Hardev Bahri', subject: 'Hindi' },
+    { title: 'Child Development & Pedagogy', author: 'Disha Experts', subject: 'Pedagogy (PRT/TGT)' },
+    { title: 'NCF 2005 & NEP 2020 (Official Documents)', author: 'Ministry of Education, GOI', subject: 'Pedagogy & Policy' },
+    { title: 'NCERT Textbooks Class 1–12 (All Subjects)', author: 'NCERT (Free PDF at ncert.nic.in)', subject: 'Subject Content' },
+    { title: 'Previous Year DSSSB Papers (Last 10 Years)', author: 'Kiran Publications / Arihant', subject: 'Practice & Pattern' },
+  ];
+
+  const freeResources = [
+    { name: 'DSSSB Official Website', type: 'website', url: 'https://dsssb.delhi.gov.in', description: 'Official notifications, exam calendars, admit cards, results and cut-off marks. Your primary source for all DSSSB updates.' },
+    { name: 'CTET Official Site (CBSE)', type: 'website', url: 'https://ctet.nic.in', description: 'CTET certification is mandatory for PRT and TGT. Register, check schedule, and download certificates here.' },
+    { name: 'Adda247 Teaching Exams (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Free daily live classes for DSSSB, CTET, KVS — Pedagogy, GK, Reasoning, Arithmetic and Subject Content.' },
+    { name: 'Study IQ Education (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@StudyIQEducation', description: 'Comprehensive free lectures covering DSSSB syllabus topics, current affairs, and teaching methodology.' },
+    { name: 'NCERT Official PDFs', type: 'website', url: 'https://ncert.nic.in/textbook.php', description: 'Free download of all NCERT Class 1–12 textbooks. Essential source for PRT, TGT, and PGT subject content preparation.' },
+    { name: 'Testbook DSSSB Free Mocks', type: 'website', url: 'https://testbook.com/dsssb', description: 'Free full-length DSSSB Tier-I and Tier-II mock tests with performance analysis and detailed solutions.' },
+    { name: 'GK Today (Current Affairs)', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily current affairs digests, monthly capsules and quizzes — essential for the General Awareness section.' },
+    { name: 'Telegram: DSSSB Preparation Channels', type: 'website', url: 'https://telegram.org', description: 'Search "DSSSB 2026" on Telegram for free study material PDFs, daily quiz sets and free mock test links shared by educators.' },
+  ];
+
+  const tips = [
+    { icon: '📜', tip: 'CTET is a hard prerequisite for PRT and TGT posts — no CTET = no selection, even if you score full marks in the written test. If you haven\'t cleared it yet, register immediately for the next CTET cycle at ctet.nic.in. CTET is held twice a year and the certificate is now valid for lifetime.' },
+    { icon: '🎯', tip: 'The Tier-I screening test is where most candidates are eliminated. Only 1:10 or 1:15 qualified candidates from Tier-I are called for Tier-II. You need 170+/200 in Tier-I to stay competitive. Focus on accuracy over speed — there is a negative marking of ¼ mark per wrong answer.' },
+    { icon: '📚', tip: 'Subject Content is the highest-scoring section in both Tier-I (PRT: 100 marks) and Tier-II (TGT/PGT: 140–160 marks). Treat NCERT textbooks as your primary study material — 60–70% of questions are directly concept-based from Class 1–12 NCERTs. Read every chapter, not just summaries.' },
+    { icon: '⚠️', tip: '<strong>B.Ed holders cannot apply for PRT posts.</strong> As per the Supreme Court ruling (2023) and NCTE regulations, only D.El.Ed (2-year) or B.El.Ed (4-year integrated) holders are eligible for PRT. This is a critical eligibility rule that many candidates miss. Check the official notification carefully before applying.' },
+    { icon: '📋', tip: 'DSSSB sends appointment letters in batches, months or years after the written exam. Join the DSSSB Results Tracking community on Telegram to stay updated on your post\'s status. The 2021 cycle results are still rolling out in 2025. Patience is essential — keep your documents (educational certificates, CTET certificate, photo ID) ready for document verification at any time.' },
+    { icon: '🏙️', tip: 'Delhi government teachers are paid under the 7th Pay Commission with Delhi State Dearness Allowance (DA) revisions. The gross salary in Delhi is higher than many state government teaching posts because Delhi\'s DA and HRA structure is particularly favourable. PRT starts at ~₹67,000/month gross — a strong package for a teaching career.' },
+    { icon: '📅', tip: 'DSSSB recruitment is irregular — major notifications come every 2–3 years. Don\'t wait for the notification to appear before starting preparation. Candidates who prepare 9–12 months before the notification are consistently in the top percentiles. Use the current gap to clear CTET, strengthen subject content, and build mock-test stamina.' },
+    { icon: '🔗', tip: 'Apply for both DSSSB and KVS (Kendriya Vidyalaya Sangathan) simultaneously when both cycles are active. Both recruit PRT, TGT, and PGT. KVS is a joint drive with NVS in 2025-26. Diversifying your central government teaching job applications significantly improves your chances of securing a posting in Delhi.' },
+  ];
+
+  const faqs = [
+    { q: 'What is DSSSB and which posts does it recruit for teaching?', a: 'DSSSB (Delhi Subordinate Services Selection Board) is the recruitment body for the Government of NCT of Delhi. For teaching, it recruits PRT (Primary Teacher for Classes 1–5), TGT (Trained Graduate Teacher for Classes 6–10), and PGT (Post Graduate Teacher for Classes 11–12) in Delhi government schools under the Directorate of Education. Posts are available across subjects including Maths, Science, English, Hindi, Social Science, Sanskrit, and others.' },
+    { q: 'When is DSSSB Teacher Recruitment 2026 notification expected?', a: 'As of May 2026, DSSSB has not released a fresh major teaching notification for 2026. The 2021 cycle (Advt 05/2021) results are still being released for some posts. A new notification is expected, but no official date has been announced — it is marked as TBN (To Be Notified). Monitor dsssb.delhi.gov.in for official updates. Previous major cycles came in 2019 and 2021, suggesting a new cycle is likely due.' },
+    { q: 'Is CTET mandatory for DSSSB PRT, TGT and PGT?', a: 'CTET Paper I is mandatory for PRT (Primary Teacher) posts and CTET Paper II is mandatory for TGT (Trained Graduate Teacher) posts. For PGT (Post Graduate Teacher) posts, CTET is not required. In some older DSSSB notifications, Delhi TET (State TET) was also accepted for TGT, but CTET is the preferred and universally accepted qualification. Always verify from the specific DSSSB notification.' },
+    { q: 'What is the DSSSB exam pattern for PRT, TGT, and PGT?', a: 'PRT: Single One-Tier test of 200 marks (100 MCQs) — General Awareness, Reasoning, Arithmetic, Hindi, English (20 Qs each) + Subject Content & Pedagogy (100 Qs). Duration: 2 hours. Negative marking: ¼ mark per wrong answer. TGT: Two-Tier system — Tier-I is a 100-mark screening test (100 MCQs, 2 hours, common sections); Tier-II is 200 marks covering subject content (140 Qs) and pedagogy (60 Qs). PGT: Same Two-Tier structure — Tier-I 100 marks + Tier-II 200 marks with subject knowledge (160 Qs) and pedagogy (40 Qs). Both tiers have ¼ negative marking.' },
+    { q: 'What is the salary for DSSSB teachers in 2026?', a: 'DSSSB teachers are paid as per the 7th Pay Commission scales: PRT (Pay Level 6) gets a basic pay of ₹35,400/month with gross in-hand approximately ₹67,000–₹72,000/month in Delhi (includes DA ~55% and HRA 24% for metro). TGT (Pay Level 7) earns a basic of ₹44,900 with gross ~₹83,000–₹88,000/month. PGT (Pay Level 8) earns a basic of ₹47,600 with gross ~₹88,000–₹93,000/month. Additional benefits include Delhi government allowances, medical facilities, and pension under NPS.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Released';
+    if (s === 'upcoming') return '🔔 Scheduled';
+    return 'TBN';
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── Hero Banner ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1 opacity-50">›</span>
+            <span className="text-white">DSSSB TGT/PGT/PRT 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">🏫 Teaching</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Delhi State Govt</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">📋 Next Notification: TBN</span>
+            <span className="bg-purple-400/20 text-purple-200 text-xs font-semibold px-3 py-1 rounded-full">CTET Mandatory (PRT & TGT)</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            DSSSB TGT/PGT/PRT 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            DSSSB (Delhi Subordinate Services Selection Board) recruits PRT, TGT &amp; PGT teachers for Delhi government schools. Next notification is TBN for 2026. CTET Paper I mandatory for PRT, CTET Paper II for TGT. Two-Tier CBT for TGT/PGT. Salary <strong>₹35,400–₹1,51,100/month</strong> (Pay Level 6–8, 7th CPC).
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Expected Vacancies', value: 'TBN 2026', sub: '~8,000–14,000 (trend)' },
+              { label: 'Exam Type', value: 'CBT (MCQ)', sub: 'Tier-I & Tier-II' },
+              { label: 'CTET Required', value: 'Yes (PRT/TGT)', sub: 'Not required for PGT' },
+              { label: 'PGT Gross Salary', value: '~₹88,000–₹93,000', sub: 'per month (Delhi)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> DSSSB 2026 notification is yet to be released (TBN). Results for the 2021 cycle (Advt 05/2021) are still being announced for some posts. <strong>B.Ed alone is NOT valid for PRT</strong> — only D.El.Ed/B.El.Ed holders are eligible per the Supreme Court 2023 ruling. Always verify at <a href="https://dsssb.delhi.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">dsssb.delhi.gov.in</a>.
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <div className="grid grid-cols-2 gap-1">
+            {toc.map((item) => (
+              <a key={item.id} href={`#${item.id}`} className="text-sm text-primary-600 hover:text-primary-700 hover:underline py-0.5">{item.label}</a>
+            ))}
+          </div>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── Main Content ── */}
+          <div>
+            {/* 1. Overview */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="Overview – DSSSB Teaching Recruitment 2026" />
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                {[
+                  { label: 'Conducting Body', value: 'DSSSB, Govt. of NCT Delhi' },
+                  { label: 'Post Types', value: 'PRT / TGT / PGT' },
+                  { label: 'Category', value: 'State Government' },
+                  { label: 'Official Website', value: 'dsssb.delhi.gov.in' },
+                  { label: 'Exam Mode', value: 'Computer Based Test (CBT)' },
+                  { label: 'Neg. Marking', value: '¼ mark per wrong answer' },
+                  { label: 'Frequency', value: 'Irregular (every 2–3 yrs)' },
+                  { label: 'Selection', value: 'Tier-I + Tier-II CBT' },
+                ].map((c) => <InfoCard key={c.label} label={c.label} value={c.value} />)}
+              </div>
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <p className="text-sm text-surface-700 leading-relaxed">
+                  DSSSB (Delhi Subordinate Services Selection Board) is the central recruitment authority for Grade C and Grade D posts in the Government of National Capital Territory (NCT) of Delhi. For teaching, DSSSB recruits <strong>PRT (Primary Teachers)</strong> for Classes 1–5, <strong>TGT (Trained Graduate Teachers)</strong> for Classes 6–10, and <strong>PGT (Post Graduate Teachers)</strong> for Classes 11–12 in Delhi government schools under the Directorate of Education, MCD, and other government bodies.
+                </p>
+                <p className="text-sm text-surface-700 leading-relaxed mt-3">
+                  Previous major recruitment drives in 2019 (14,000+ posts) and 2021 (8,000+ posts) confirm DSSSB as one of the largest state-level teaching employers in India. Delhi government school teachers receive competitive salaries with Delhi-specific DA and HRA benefits, making these among the most sought-after state government teaching positions.
+                </p>
+              </div>
+            </section>
+
+            {/* 2. Important Dates */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="Important Dates 2026" />
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Event</th>
+                      <th className="text-left px-4 py-3 font-heading">Date</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                        <td className="px-4 py-3 text-surface-800 font-medium">{row.date}</td>
+                        <td className="px-4 py-3 hidden sm:table-cell">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>{statusLabel(row.status)}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mt-2">⚠️ All 2026 dates are To Be Notified (TBN). Always confirm from <a href="https://dsssb.delhi.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">dsssb.delhi.gov.in</a>.</p>
+            </section>
+
+            {/* 3. Eligibility */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria" />
+              <div className="space-y-4">
+                {eligibilityTable.map((row) => (
+                  <div key={row.post} className="card p-5">
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <h3 className="text-lg font-heading font-semibold text-surface-900">{row.post}</h3>
+                      <span className="badge-primary">{row.age}</span>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                      <div>
+                        <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🎓 Qualification</div>
+                        <div className="text-surface-700">{row.qualification}</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 CTET Requirement</div>
+                        <div className="text-surface-700 font-medium">{row.ctet}</div>
+                      </div>
+                    </div>
+                    <div className="mt-3 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 text-xs text-amber-800">
+                      ⚠️ {row.extra}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-5 mt-4 bg-surface-50">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3 text-base">Age Relaxation</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+                  {[
+                    { cat: 'OBC (Non-Creamy Layer)', relax: '+3 years' },
+                    { cat: 'SC / ST', relax: '+5 years' },
+                    { cat: 'PwBD (All categories)', relax: '+10 years' },
+                    { cat: 'Ex-Servicemen', relax: 'As per Govt. rules' },
+                  ].map((r) => (
+                    <div key={r.cat} className="bg-white rounded-lg border border-surface-200 px-3 py-2 text-center">
+                      <div className="text-xs text-surface-500 mb-1">{r.cat}</div>
+                      <div className="font-semibold text-emerald-600">{r.relax}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-500 mt-3">📌 Nationality: Indian citizens only. Domicile requirement may apply for some posts — verify from the official notification.</p>
+              </div>
+            </section>
+
+            {/* 4. Vacancy History */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="Vacancy History" />
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Cycle</th>
+                      <th className="text-center px-3 py-3 font-heading">PRT</th>
+                      <th className="text-center px-3 py-3 font-heading">TGT</th>
+                      <th className="text-center px-3 py-3 font-heading">PGT</th>
+                      <th className="text-center px-3 py-3 font-heading">Total</th>
+                      <th className="text-left px-3 py-3 font-heading hidden sm:table-cell">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{row.prt}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{row.tgt}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{row.pgt}</td>
+                        <td className="px-3 py-3 text-center font-semibold text-primary-600">{row.total}</td>
+                        <td className="px-3 py-3 hidden sm:table-cell">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${row.status === 'Completed' ? 'bg-emerald-100 text-emerald-700' : row.status === 'Active' ? 'bg-blue-100 text-blue-700' : 'bg-surface-100 text-surface-500'}`}>{row.status}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mt-2">Figures are approximate based on official notifications. DSSSB recruits irregularly — major cycles come every 2–3 years.</p>
+            </section>
+
+            {/* 5. Exam Pattern */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="Exam Pattern (Tier-I & Tier-II)" />
+
+              {/* PRT */}
+              <h3 className="text-base font-heading font-semibold text-surface-900 mb-3 mt-4">🏫 PRT (Primary Teacher) – One Tier (200 Marks)</h3>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Section</th>
+                      <th className="text-center px-3 py-3 font-heading">Questions</th>
+                      <th className="text-center px-3 py-3 font-heading">Marks</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prtPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{row.section}</td>
+                        <td className="px-3 py-3 text-center font-medium text-surface-800">{row.qs}</td>
+                        <td className="px-3 py-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                        <td className="px-4 py-3 text-xs text-surface-500 hidden sm:table-cell">{row.notes}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-surface-100 font-bold">
+                      <td className="px-4 py-3 text-surface-800">Total</td>
+                      <td className="px-3 py-3 text-center text-surface-800">200</td>
+                      <td className="px-3 py-3 text-center text-primary-700">200</td>
+                      <td className="px-4 py-3 text-xs text-surface-600 hidden sm:table-cell">Duration: 2 hours | Negative marking: ¼ mark</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* TGT */}
+              <h3 className="text-base font-heading font-semibold text-surface-900 mb-3 mt-6">📗 TGT (Trained Graduate Teacher) – Two Tier</h3>
+              <div className="grid sm:grid-cols-2 gap-4 mb-5">
+                <div className="card overflow-hidden">
+                  <div className="bg-primary-600 text-white text-sm font-heading font-semibold px-4 py-2">Tier-I – Screening (100 Marks, 2 hrs)</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100"><th className="text-left px-4 py-2 font-heading text-xs text-surface-600">Section</th><th className="text-center px-3 py-2 font-heading text-xs text-surface-600">Qs / Marks</th></tr></thead>
+                    <tbody>
+                      {tgtTier1Pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-2 text-surface-700 text-xs">{row.section}</td>
+                          <td className="px-3 py-2 text-center text-xs font-semibold text-primary-600">{row.qs}/{row.marks}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="bg-emerald-600 text-white text-sm font-heading font-semibold px-4 py-2">Tier-II – Subject Test (200 Marks, 3 hrs)</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100"><th className="text-left px-4 py-2 font-heading text-xs text-surface-600">Section</th><th className="text-center px-3 py-2 font-heading text-xs text-surface-600">Qs / Marks</th></tr></thead>
+                    <tbody>
+                      {tgtTier2Pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-2 text-surface-700 text-xs">{row.section}</td>
+                          <td className="px-3 py-2 text-center text-xs font-semibold text-emerald-600">{row.qs}/{row.marks}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* PGT */}
+              <h3 className="text-base font-heading font-semibold text-surface-900 mb-3 mt-6">📘 PGT (Post Graduate Teacher) – Two Tier</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="card overflow-hidden">
+                  <div className="bg-primary-600 text-white text-sm font-heading font-semibold px-4 py-2">Tier-I – Screening (100 Marks, 2 hrs)</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100"><th className="text-left px-4 py-2 font-heading text-xs text-surface-600">Section</th><th className="text-center px-3 py-2 font-heading text-xs text-surface-600">Qs / Marks</th></tr></thead>
+                    <tbody>
+                      {pgtTier1Pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-2 text-surface-700 text-xs">{row.section}</td>
+                          <td className="px-3 py-2 text-center text-xs font-semibold text-primary-600">{row.qs}/{row.marks}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="bg-emerald-600 text-white text-sm font-heading font-semibold px-4 py-2">Tier-II – Subject Test (200 Marks, 3 hrs)</div>
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-surface-100"><th className="text-left px-4 py-2 font-heading text-xs text-surface-600">Section</th><th className="text-center px-3 py-2 font-heading text-xs text-surface-600">Qs / Marks</th></tr></thead>
+                    <tbody>
+                      {pgtTier2Pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-2 text-surface-700 text-xs">{row.section}</td>
+                          <td className="px-3 py-2 text-center text-xs font-semibold text-emerald-600">{row.qs}/{row.marks}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="mt-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-surface-700">
+                📌 <strong>Important:</strong> Tier-I shortlisting ratio is typically 1:10 to 1:15 (per vacancy). Only candidates scoring above the cutoff in Tier-I qualify for Tier-II. Negative marking of ¼ applies to both tiers. Final merit is based on Tier-II marks only (Tier-I is only for screening).
+              </div>
+            </section>
+
+            {/* 6. Syllabus */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="Detailed Syllabus" />
+              <div className="space-y-3">
+                {syllabus.map((item) => (
+                  <details key={item.subject} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800">
+                      <span>{item.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-5 space-y-1 text-sm text-surface-600">
+                        {item.topics.map((t) => <li key={t}>{t}</li>)}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 7. Salary */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="7" title="Salary & Benefits (7th Pay Commission)" />
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Post</th>
+                      <th className="text-left px-3 py-3 font-heading hidden sm:table-cell">Pay Level</th>
+                      <th className="text-left px-3 py-3 font-heading">Basic Pay</th>
+                      <th className="text-left px-3 py-3 font-heading hidden md:table-cell">DA (est. ~55%)</th>
+                      <th className="text-left px-3 py-3 font-heading">Gross (Delhi)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryTable.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-medium text-surface-800">{row.post}</td>
+                        <td className="px-3 py-3 text-surface-600 hidden sm:table-cell">{row.level}</td>
+                        <td className="px-3 py-3 text-surface-700">{row.basic}</td>
+                        <td className="px-3 py-3 text-surface-600 hidden md:table-cell">{row.da}</td>
+                        <td className="px-3 py-3 font-semibold text-emerald-600">{row.gross}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5 bg-emerald-50 border-emerald-200">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm">Additional Benefits</h3>
+                  <ul className="text-sm text-surface-700 space-y-1.5">
+                    <li>✅ National Pension System (NPS) – 10% employee + 14% government contribution</li>
+                    <li>✅ Medical facilities under CGHS / Delhi Govt. health schemes</li>
+                    <li>✅ Leave Travel Concession (LTC) – twice in 4 years</li>
+                    <li>✅ Children Education Allowance (up to 2 children)</li>
+                    <li>✅ Job security + regular increments + promotion path</li>
+                    <li>✅ Government holiday list + summer/winter vacations for teaching staff</li>
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm">Career Progression</h3>
+                  <div className="space-y-2 text-sm">
+                    {[
+                      { stage: 'PRT (Level 6)', next: '→ Senior PRT / Promotion to TGT' },
+                      { stage: 'TGT (Level 7)', next: '→ Senior TGT / Head Teacher / PGT' },
+                      { stage: 'PGT (Level 8)', next: '→ Senior PGT / Vice-Principal' },
+                      { stage: 'Vice-Principal', next: '→ Principal (Level 12)' },
+                      { stage: 'Principal', next: '→ Zonal Officer / DDE (Level 13+)' },
+                    ].map((c) => (
+                      <div key={c.stage} className="flex items-center gap-2">
+                        <span className="w-36 text-xs text-surface-600 shrink-0">{c.stage}</span>
+                        <span className="text-xs text-primary-600 font-medium">{c.next}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-xl p-4 text-sm text-surface-700">
+                💡 <strong>8th Pay Commission Note:</strong> The 8th Pay Commission was approved in January 2025 and is expected to be implemented from 1 January 2026. The revised pay matrix and fitment factor (expected 2.28–2.86x) will significantly increase basic pay for all central/Delhi government employees including DSSSB teachers. Exact revised pay scales will be notified by the government upon implementation.
+              </div>
+            </section>
+
+            {/* 8. How to Apply */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="8" title="How to Apply" />
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Visit Official Website', detail: 'Go to dsssb.delhi.gov.in. Click on "Recruitment" → find the active notification for TGT/PGT/PRT. Read the notification PDF carefully, especially the eligibility conditions, post codes, and application deadline.' },
+                  { step: '2', title: 'Complete CTET Before Applying (PRT/TGT)', detail: 'Ensure you have a valid CTET certificate — Paper I for PRT and Paper II for TGT. CTET certificates are now lifetime valid (since 2021 amendment). If you don\'t have CTET, register at ctet.nic.in for the upcoming cycle immediately before the DSSSB deadline.' },
+                  { step: '3', title: 'Register on the Application Portal', detail: 'Create a new account on the DSSSB online application portal with your name, mobile number, and email. Note your registration ID and password carefully.' },
+                  { step: '4', title: 'Fill the Application Form', detail: 'Select the correct post code for your subject and post type (PRT/TGT/PGT). Fill in personal details, educational qualifications, and CTET Roll Number (for PRT/TGT). Double-check all entries — no changes are allowed after final submission.' },
+                  { step: '5', title: 'Upload Documents', detail: 'Upload a recent passport-size photo (JPEG, under 50KB) and scanned signature as per the specifications in the notification. Sizes and formats are strict — prepare in advance.' },
+                  { step: '6', title: 'Pay Application Fee', detail: 'General/OBC candidates: ₹100 (approximate — verify from notification). SC/ST/PwBD/Ex-Servicemen/Women candidates: Exempt from fee as per DSSSB norms. Pay via Net Banking, Debit Card, or Credit Card through the online portal.' },
+                  { step: '7', title: 'Submit & Save Confirmation', detail: 'Submit the application and save the Confirmation Page with your Application Number. Do NOT close the browser before saving. Keep a printout for records — you will need the Application Number for Admit Card download.' },
+                ].map((s) => (
+                  <div key={s.step} className="relative card p-5 sm:pl-14">
+                    <div className="hidden sm:flex absolute left-4 top-5 w-7 h-7 bg-primary-500 rounded-lg items-center justify-center text-white font-heading font-bold text-sm">{s.step}</div>
+                    <div className="font-heading font-semibold text-surface-900 mb-1">{s.title}</div>
+                    <div className="text-sm text-surface-600">{s.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 9. Study Plan */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="9" title="6-Month Study Plan" />
+              <div className="relative space-y-4">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((m, i) => (
+                  <div key={m.month} className="relative sm:pl-14 card p-5">
+                    <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="font-heading font-bold text-surface-900">{m.month}</span>
+                      <span className="badge-primary">{m.focus}</span>
+                    </div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{m.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. Books */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="10" title="Best Books for DSSSB Preparation" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* 11. Free Resources */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="11" title="Free Resources" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r) => (
+                  <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{r.type === 'youtube' ? '📺' : r.type === 'telegram' ? '📱' : '🌐'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.name}</div>
+                        <div className="text-xs text-surface-500 mt-1">{r.description}</div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 12. Tips */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="12" title="Expert Tips to Crack DSSSB" />
+              <div className="space-y-3">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{t.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.tip }} />
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="13" title="Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800">
+                      <span className="pr-4">{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── Sidebar ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+              {/* TOC */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-surface-50 rounded-lg px-2 py-1.5 transition-colors">{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Official Website</div>
+                <a href="https://dsssb.delhi.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium">
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  dsssb.delhi.gov.in
+                </a>
+                <a href="https://ctet.nic.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium mt-2">
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  ctet.nic.in (CTET)
+                </a>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Quick Stats</div>
+                <div className="space-y-2 text-sm">
+                  {[
+                    { label: 'PRT Salary (Gross)', value: '~₹67,000–₹72,000/mo' },
+                    { label: 'TGT Salary (Gross)', value: '~₹83,000–₹88,000/mo' },
+                    { label: 'PGT Salary (Gross)', value: '~₹88,000–₹93,000/mo' },
+                    { label: 'PRT Age Limit', value: '18–32 years' },
+                    { label: 'TGT Age Limit', value: '18–32 years' },
+                    { label: 'PGT Age Limit', value: '18–36 years' },
+                    { label: 'Neg. Marking', value: '¼ mark per wrong ans' },
+                  ].map((s) => (
+                    <div key={s.label} className="flex justify-between items-center">
+                      <span className="text-surface-500 text-xs">{s.label}</span>
+                      <span className="font-semibold text-surface-800 text-xs text-right">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Eligibility Checker CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-bold text-surface-900 mb-2 text-sm">Check Your Eligibility</h3>
+                <p className="text-xs text-surface-600 mb-3">Use our free tool to instantly check if you qualify for DSSSB and 100+ other government exams.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block py-2">
+                  Check Eligibility →
+                </Link>
+              </div>
+
+            </div>
+          </aside>
         </div>
       </div>
     </>
