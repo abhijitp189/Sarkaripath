@@ -75,12 +75,12 @@ export default function HomePage() {
             </div>
 
             {/* Right — Hero illustration */}
-            <div className="hidden lg:flex items-center justify-end">
+            <div className="hidden lg:flex items-center justify-end overflow-visible">
               <img
                 src="/students.png"
                 alt="Students preparing for government exams"
                 className="object-contain"
-                style={{ maxHeight: '580px', width: '110%', mixBlendMode: 'screen' }}
+                style={{ maxHeight: '640px', width: '120%', marginRight: '-2rem' }}
               />
             </div>
           </div>
