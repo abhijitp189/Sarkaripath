@@ -79,8 +79,8 @@ export default function HomePage() {
               <img
                 src="/students.png"
                 alt="Students preparing for government exams"
-                className="object-contain drop-shadow-2xl"
-                style={{ maxHeight: '520px', width: '100%' }}
+                className="object-contain"
+                style={{ maxHeight: '580px', width: '110%', mixBlendMode: 'screen' }}
               />
             </div>
           </div>
