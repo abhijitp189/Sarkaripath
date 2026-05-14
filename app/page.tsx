@@ -75,10 +75,10 @@ export default function HomePage() {
                   <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                   100% Free – No Login Required
                 </div>
-                <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-tight mb-5 text-white">
+                <h1 className="text-4xl sm:text-5xl font-heading font-bold mb-5 text-white" style={{ lineHeight: '1.25' }}>
                   Your Complete Guide
-                  <br className="hidden sm:block" />
-                  to <AnimatedExamText />
+                  <br />
+                  <span className="block mt-3">to <AnimatedExamText /></span>
                 </h1>
                 <p className="text-base sm:text-lg leading-relaxed mb-7 max-w-xl" style={{ color: 'rgba(255,255,255,0.92)' }}>
                   Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all major government exams. Everything in one place.
