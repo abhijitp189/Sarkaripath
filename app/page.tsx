@@ -39,14 +39,31 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800 text-white">
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800 text-white" style={{ minHeight: '540px' }}>
+        {/* Decorative blobs */}
+        <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl" />
         </div>
-        <div className="container-main relative py-16 sm:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-6 items-center">
 
+        {/* Students image — absolutely positioned from right edge, anchored to bottom */}
+        <div className="absolute right-0 bottom-0 hidden lg:block pointer-events-none" style={{ width: '50%', height: '115%' }}>
+          <img
+            src="/students.png"
+            alt="Students preparing for government exams"
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              right: '-1%',
+              height: '100%',
+              width: 'auto',
+              maxWidth: 'none',
+            }}
+          />
+        </div>
+
+        <div className="container-main relative py-16 sm:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             {/* Left — Text */}
             <div>
               <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-5">
@@ -73,16 +90,8 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-
-            {/* Right — Hero illustration */}
-            <div className="hidden lg:flex items-center justify-end overflow-visible">
-              <img
-                src="/students.png"
-                alt="Students preparing for government exams"
-                className="object-contain"
-                style={{ maxHeight: '640px', width: '120%', marginRight: '-2rem' }}
-              />
-            </div>
+            {/* Right — spacer so text stays in left half */}
+            <div className="hidden lg:block" />
           </div>
 
           {/* Quick Stats — animated count-up */}
