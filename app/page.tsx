@@ -56,7 +56,9 @@ export default function HomePage() {
               <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-tight mb-5">
                 Your Complete Guide to{' '}
                 <br className="hidden sm:block" />
-                <AnimatedExamText />
+                <span className="block mt-2">
+                  <AnimatedExamText />
+                </span>
               </h1>
               <p className="text-base sm:text-lg text-primary-100 leading-relaxed mb-7 max-w-xl">
                 Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all major government exams. Everything in one place.
@@ -73,12 +75,12 @@ export default function HomePage() {
             </div>
 
             {/* Right — Hero illustration */}
-            <div className="hidden lg:flex items-center justify-center">
+            <div className="hidden lg:flex items-center justify-end">
               <img
-                src="/hero-illustration.svg"
-                alt="Student preparing for government exam"
-                className="w-full object-contain drop-shadow-2xl animate-hero-float"
-                style={{ maxHeight: '460px' }}
+                src="/students.png"
+                alt="Students preparing for government exams"
+                className="object-contain drop-shadow-2xl"
+                style={{ maxHeight: '520px', width: '100%' }}
               />
             </div>
           </div>
