@@ -99,12 +99,13 @@ export function CountingStats() {
       {STATS.map((stat, i) => (
         <div
           key={stat.label}
-          className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center"
+          className="rounded-xl p-4 text-center"
+          style={{ background: 'rgba(10,30,79,0.65)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.15)' }}
         >
-          <div className="text-2xl sm:text-3xl font-heading font-bold">
+          <div className="text-2xl sm:text-3xl font-heading font-bold text-white">
             {counts[i]}{stat.suffix}
           </div>
-          <div className="text-sm text-primary-200 mt-1">{stat.label}</div>
+          <div className="text-sm mt-1 font-medium" style={{ color: 'rgba(255,255,255,0.85)' }}>{stat.label}</div>
         </div>
       ))}
     </div>

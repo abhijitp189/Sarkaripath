@@ -76,11 +76,9 @@ export default function HomePage() {
                   100% Free – No Login Required
                 </div>
                 <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-tight mb-5 text-white">
-                  Your Complete Guide to{' '}
+                  Your Complete Guide
                   <br className="hidden sm:block" />
-                  <span className="block mt-2">
-                    <AnimatedExamText />
-                  </span>
+                  to <AnimatedExamText />
                 </h1>
                 <p className="text-base sm:text-lg leading-relaxed mb-7 max-w-xl" style={{ color: 'rgba(255,255,255,0.92)' }}>
                   Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all major government exams. Everything in one place.
