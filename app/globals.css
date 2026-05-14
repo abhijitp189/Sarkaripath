@@ -58,6 +58,15 @@
   animation: fadeInUp 0.5s ease-out forwards;
 }
 
+/* Hero illustration gentle float */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-14px); }
+}
+.animate-hero-float {
+  animation: heroFloat 4s ease-in-out infinite;
+}
+
 /* Accordion animation */
 .accordion-content {
   max-height: 0;

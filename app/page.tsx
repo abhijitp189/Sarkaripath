@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { exams, examCategories, guides, allExams } from '@/lib/exams-data';
 import { blogPosts } from '@/lib/blog-data';
+import { AnimatedExamText, CountingStats } from '@/components/HeroAnimations';
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.taiyarho.in/' },
@@ -54,7 +55,8 @@ export default function HomePage() {
               </div>
               <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-tight mb-5">
                 Your Complete Guide to{' '}
-                <span className="text-accent-300">Government Exams</span>
+                <br className="hidden sm:block" />
+                <AnimatedExamText />
               </h1>
               <p className="text-base sm:text-lg text-primary-100 leading-relaxed mb-7 max-w-xl">
                 Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all major government exams. Everything in one place.
@@ -75,26 +77,14 @@ export default function HomePage() {
               <img
                 src="/hero-illustration.svg"
                 alt="Student preparing for government exam"
-                className="w-full object-contain drop-shadow-2xl"
+                className="w-full object-contain drop-shadow-2xl animate-hero-float"
                 style={{ maxHeight: '460px' }}
               />
             </div>
           </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12">
-            {[
-              { value: '100', label: 'Exams Covered' },
-              { value: '200+', label: 'Free Resources' },
-              { value: '28+', label: 'States' },
-              { value: '0', label: 'Cost to You' },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                <div className="text-2xl sm:text-3xl font-heading font-bold">{stat.value}</div>
-                <div className="text-sm text-primary-200 mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+          {/* Quick Stats — animated count-up */}
+          <CountingStats />
         </div>
       </section>
 
