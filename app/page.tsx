@@ -63,38 +63,37 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Left-to-right gradient overlay — keeps text readable */}
-        <div
-          className="absolute inset-0 hidden lg:block pointer-events-none"
-          style={{ background: 'linear-gradient(to right, rgba(26,86,219,1) 35%, rgba(26,86,219,0.85) 50%, rgba(26,86,219,0.3) 70%, transparent 85%)' }}
-        />
-
         <div className="container-main relative py-16 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-            {/* Left — Text */}
+            {/* Left — Text with glass card */}
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-5">
-                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                100% Free – No Login Required
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-tight mb-5">
-                Your Complete Guide to{' '}
-                <br className="hidden sm:block" />
-                <span className="block mt-2">
-                  <AnimatedExamText />
-                </span>
-              </h1>
-              <p className="text-base sm:text-lg text-primary-100 leading-relaxed mb-7 max-w-xl">
-                Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all major government exams. Everything in one place.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/exams" className="inline-flex items-center px-7 py-3.5 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] text-sm">
-                  Explore All Exams
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-                </Link>
-                <Link href="/tools/eligibility-checker" className="inline-flex items-center px-7 py-3.5 border-2 border-white/30 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all text-sm">
-                  Check Your Eligibility
-                </Link>
+              <div
+                className="rounded-2xl p-7 sm:p-8"
+                style={{ background: 'rgba(10,30,79,0.55)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.12)' }}
+              >
+                <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-4 py-1.5 text-sm font-medium mb-5">
+                  <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                  100% Free – No Login Required
+                </div>
+                <h1 className="text-4xl sm:text-5xl font-heading font-bold leading-tight mb-5 text-white">
+                  Your Complete Guide to{' '}
+                  <br className="hidden sm:block" />
+                  <span className="block mt-2">
+                    <AnimatedExamText />
+                  </span>
+                </h1>
+                <p className="text-base sm:text-lg leading-relaxed mb-7 max-w-xl" style={{ color: 'rgba(255,255,255,0.92)' }}>
+                  Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all major government exams. Everything in one place.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link href="/exams" className="inline-flex items-center px-7 py-3.5 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] text-sm">
+                    Explore All Exams
+                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                  </Link>
+                  <Link href="/tools/eligibility-checker" className="inline-flex items-center px-7 py-3.5 border-2 border-white/40 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all text-sm">
+                    Check Your Eligibility
+                  </Link>
+                </div>
               </div>
             </div>
             {/* Right — spacer */}
