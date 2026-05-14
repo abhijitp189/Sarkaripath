@@ -39,22 +39,23 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800 text-white" style={{ minHeight: '540px' }}>
+      <section className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800 text-white overflow-hidden" style={{ minHeight: '520px' }}>
+
         {/* Decorative blobs */}
-        <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl" />
         </div>
 
-        {/* Students image — absolutely positioned from right edge, anchored to bottom */}
-        <div className="absolute right-0 bottom-0 hidden lg:block pointer-events-none" style={{ width: '50%', height: '115%' }}>
+        {/* Students image — right side, bottom-anchored, clipped by section overflow-hidden */}
+        <div className="absolute right-0 bottom-0 hidden lg:block pointer-events-none" style={{ width: '55%', height: '108%' }}>
           <img
             src="/students.png"
             alt="Students preparing for government exams"
             style={{
               position: 'absolute',
               bottom: 0,
-              right: '-1%',
+              right: 0,
               height: '100%',
               width: 'auto',
               maxWidth: 'none',
@@ -62,10 +63,16 @@ export default function HomePage() {
           />
         </div>
 
+        {/* Left-to-right gradient overlay — keeps text readable */}
+        <div
+          className="absolute inset-0 hidden lg:block pointer-events-none"
+          style={{ background: 'linear-gradient(to right, rgba(26,86,219,1) 35%, rgba(26,86,219,0.85) 50%, rgba(26,86,219,0.3) 70%, transparent 85%)' }}
+        />
+
         <div className="container-main relative py-16 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             {/* Left — Text */}
-            <div>
+            <div className="relative z-10">
               <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-5">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                 100% Free – No Login Required
@@ -90,11 +97,11 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            {/* Right — spacer so text stays in left half */}
+            {/* Right — spacer */}
             <div className="hidden lg:block" />
           </div>
 
-          {/* Quick Stats — animated count-up */}
+          {/* Quick Stats */}
           <CountingStats />
         </div>
       </section>
