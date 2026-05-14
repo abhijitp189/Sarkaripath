@@ -36711,7 +36711,7 @@ function TnpscGroup4Page({ exam }: { exam: any }) {
 
   const examPattern = [
     { subject: 'General Studies (GS)',                    questions: 75,  marks: 150, note: 'History, Geography, Polity, Science, Economy, Current Affairs, TN GK' },
-    { subject: 'General Tamil / General English',         questions: 100, marks: 100, note: 'Candidate chooses Tamil OR English (single language paper)' },
+    { subject: 'General Tamil (Tamil Eligibility-cum-Scoring Test)',         questions: 100, marks: 100, note: 'Exclusively Tamil — General English option was removed from 2022 onwards' },
     { subject: 'Aptitude & Mental Ability (AMAB)',        questions: 25,  marks: 50,  note: 'Logical reasoning, numerical ability, basic maths' },
   ];
 
@@ -36742,13 +36742,11 @@ function TnpscGroup4Page({ exam }: { exam: any }) {
       ],
     },
     {
-      subject: '📝 General English (for English-medium candidates)',
+      subject: '📝 General English (⚠️ Removed from TNPSC Group 4 since 2022)',
       topics: [
-        'Grammar: Parts of speech, tenses, articles, prepositions, conjunctions, active/passive voice, direct/indirect speech',
-        'Vocabulary: Synonyms, antonyms, one-word substitution, idioms, phrases',
-        'Comprehension: Reading passages with question-answer, finding main idea, inference',
-        'Composition: Letter writing (formal/informal), essay writing, précis writing',
-        'Error Detection: Spotting grammatical errors, fill in the blanks, sentence correction',
+        '⚠️ Important: As per TNPSC reforms effective from the 2022 cycle, the General English option has been removed from TNPSC Group 4. Part A (Language Paper) is now exclusively the Tamil Eligibility-cum-Scoring Test for all candidates.',
+        'All candidates — regardless of their medium of study — must attempt the Tamil paper. There is no longer an option to choose English as the language paper for this exam.',
+        'Candidates who studied in English medium should focus their preparation entirely on General Tamil. Use Samacheer Kalvi Tamil textbooks (6th–10th standard) available free at textbooksonline.tn.gov.in.',
       ],
     },
     {
@@ -36846,7 +36844,7 @@ function TnpscGroup4Page({ exam }: { exam: any }) {
     { icon: '📋', tip: 'AMAB (Aptitude & Mental Ability) carries 50 marks out of 300 — roughly 1 in 6 marks. Many candidates ignore this section, which gives serious aspirants an edge. Practise 25 AMAB questions daily from Month 3 onwards to score 40+ in this section reliably.' },
     { icon: '📰', tip: 'For current affairs, focus on Tamil Nadu news: new government schemes (CM Announces), welfare programmes (Dravidam model), recent Sports/Awards (TN players), and Centre–State policy news. Reading "The Hindu" Tamil edition or following Winmeen Telegram for 15 minutes daily is sufficient.' },
     { icon: '🌐', tip: 'TNPSC Group 4 notifications come irregularly — sometimes annually, sometimes every 18–24 months. Keep the official website tnpsc.gov.in bookmarked. Enable browser notifications or follow TNPSC on its official Telegram channel so you don\'t miss the announcement.' },
-    { icon: '💡', tip: 'General Tamil or General English carries 100 marks (100 questions) — more than any individual GS unit. A strong language score is a major differentiator. Grammar questions (especially Tamil Eluththu, Mozhi Payilchi, or English tenses/voice) are highly predictable. Master grammar first, then literature.' },
+    { icon: '💡', tip: 'General Tamil (the language paper) carries 100 marks (100 questions) — more than any individual GS unit. Note: Since the 2022 reforms, General English has been removed. All candidates must attempt Tamil, making strong Tamil grammar preparation non-negotiable. Grammar topics (Eluththu, Sol, Mozhi Payilchi, tense equivalents) are highly predictable. Master grammar first, then move to Tamil literature.' },
   ];
 
   const faqs = [
@@ -36864,7 +36862,7 @@ function TnpscGroup4Page({ exam }: { exam: any }) {
     },
     {
       q: 'What is the exam pattern for TNPSC Group 4?',
-      a: 'TNPSC Group 4 written exam consists of 200 objective-type (MCQ) questions for a total of 300 marks, with a duration of 3 hours. The paper is divided into: General Studies – 75 questions (150 marks), General Tamil or General English – 100 questions (100 marks), Aptitude & Mental Ability (AMAB) – 25 questions (50 marks). There is typically no negative marking, but confirm this in the official notification for your cycle. The exam is conducted as a Computer Based Test (CBT) or OMR-based test depending on the cycle.',
+      a: 'TNPSC Group 4 written exam consists of 200 objective-type (MCQ) questions for a total of 300 marks, with a duration of 3 hours. The paper is divided into: General Studies – 75 questions (150 marks), General Tamil (Tamil Eligibility-cum-Scoring Test) – 100 questions (100 marks), Aptitude & Mental Ability (AMAB) – 25 questions (50 marks). Important: Since the 2022 reforms, General English has been removed from the exam. The language paper is now exclusively Tamil for all candidates. There is typically no negative marking, but confirm this in the official notification for your cycle. The exam is conducted as a Computer Based Test (CBT) or OMR-based test depending on the cycle.',
     },
     {
       q: 'What is the TNPSC Group 4 salary in 2026?',
@@ -37037,6 +37035,7 @@ function TnpscGroup4Page({ exam }: { exam: any }) {
                   <div className="text-primary-600 font-heading font-semibold text-sm uppercase tracking-wide mb-3">📝 Additional Eligibility Notes</div>
                   <ul className="text-sm text-surface-700 space-y-2 list-disc ml-4">
                     <li>Candidates must know Tamil (read/write) — it is a mandatory language requirement for most Group 4 posts</li>
+                    <li><strong>PSTM Reservation (20%):</strong> Candidates who completed their 10th, 12th, or Diploma/Degree through Tamil medium are eligible for a <strong>20% reservation</strong> in vacancies under the Persons Studied in Tamil Medium (PSTM) category. This is a critical advantage — ensure you apply for PSTM benefit if eligible and submit the required Tamil-medium study certificate at the time of certificate verification.</li>
                     <li>Medical fitness as per TNPSC norms (certificate required at joining)</li>
                     <li>No criminal record; must be of good character (certificate from Village Administrative Officer / Gazetted Officer)</li>
                     <li>Typewriting speed requirement for Typist posts: 40 WPM (Tamil) or 50 WPM (English) Higher Grade</li>
@@ -37244,9 +37243,9 @@ function TnpscGroup4Page({ exam }: { exam: any }) {
                 <div className="relative">
                   <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
                   {[
-                    { step: '1', title: 'Register on TNPSC One-Time Registration Portal', detail: 'Visit tnpsc.gov.in → "One Time Registration". Create your profile with personal details, educational qualifications, photo, and signature. This OTR ID is used for all future TNPSC applications.' },
+                    { step: '1', title: 'Register on TNPSC One-Time Registration Portal', detail: 'Visit tnpsc.gov.in → "One Time Registration". Create your profile with personal details, educational qualifications, photo, and signature. One-Time Registration (OTR) fee: ₹150 (paid once by new users — not per exam). This OTR ID is used for all future TNPSC applications. Existing registered candidates skip this fee.' },
                     { step: '2', title: 'Apply for TNPSC Group 4 Notification', detail: 'Log in to your OTR account → select the active Group 4 notification → verify pre-filled details → select your preferred post and preferred exam centre (district).' },
-                    { step: '3', title: 'Pay Application Fee', detail: 'Application fee: ₹150 (General) | SC/ST and Other Backward Classes (first application in a year) may be exempt — check official notification. Payment via Net Banking, Debit/Credit Card, or Common Service Centre.' },
+                    { step: '3', title: 'Pay Exam Application Fee', detail: 'Exam application fee: ₹100 (General) per notification cycle. SC/ST and Other Backward Classes (first application in a year) may be exempt — check official notification. Payment via Net Banking, Debit/Credit Card, or Common Service Centre. Note: This ₹100 is separate from the one-time OTR registration fee of ₹150.' },
                     { step: '4', title: 'Upload Photo & Signature', detail: 'Passport-size photo: JPEG, max 80 KB, white background. Signature: JPEG, max 40 KB, on white paper with black/blue ink. Both must be recent.' },
                     { step: '5', title: 'Submit & Take Printout', detail: 'Review all details carefully before final submission. Download and print the confirmation page. Keep it safe — you will need it for certificate verification.' },
                   ].map((item) => (
