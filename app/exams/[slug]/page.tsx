@@ -541,6 +541,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'mpsc-rajyaseva') {
+    return {
+      title: 'MPSC Rajyaseva 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'MPSC Rajyaseva 2026: Prelims on 31 May 2026. 79–385 vacancies for Deputy Collector, DSP & more. Graduate eligible, age 19–38 yrs. Salary ₹56,100–₹1,77,500/month (7th Pay Commission). Full syllabus, exam pattern & free resources.',
+      keywords: 'MPSC Rajyaseva 2026, MPSC State Services 2026, MPSC syllabus 2026, MPSC exam date, MPSC taiyari, Maharashtra PSC, Deputy Collector vacancy 2026, MPSC परीक्षा, महाराष्ट्र राज्यसेवा 2026, MPSC eligibility, MPSC salary, sarkari naukri Maharashtra',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/mpsc-rajyaseva/' },
+      other: { 'description:hi': 'MPSC राज्यसेवा 2026 – प्रारंभिक परीक्षा 31 मई 2026। 79–385 रिक्तियाँ – डिप्टी कलेक्टर, DSP व अन्य पद। स्नातक पात्र, आयु 19–38 वर्ष। वेतन ₹56,100–₹1,77,500/माह। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त संसाधन।' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -614,6 +624,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'delhi-police-hc') return <DelhiPoliceHcPage exam={brief} />;
   if (brief && brief.slug === 'nvs-teaching') return <NvsTeachingPage exam={brief} />;
   if (brief && brief.slug === 'dsssb-tgt-pgt-prt') return <DssbTgtPgtPrtPage exam={brief} />;
+  if (brief && brief.slug === 'mpsc-rajyaseva') return <MpscRajyasevaPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -41934,6 +41945,808 @@ function NvsTeachingPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-primary-50 border-primary-200">
                 <h3 className="font-heading font-bold text-surface-900 mb-2 text-sm">Check Your Eligibility</h3>
                 <p className="text-xs text-surface-600 mb-3">Use our free tool to instantly check if you qualify for NVS and 100+ other government exams.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block py-2">
+                  Check Eligibility →
+                </Link>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── MPSC RAJYASEVA 2026 RICH PAGE ────────────────────────────────────────────
+function MpscRajyasevaPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies & Posts' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'cutoff', label: 'Previous Cut-offs' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'MPSC Rajyaseva 2025 Mains Exam', date: '5, 18, 19, 26 Apr & 2 May 2026', status: 'released' },
+    { event: 'MPSC Rajyaseva 2026 Notification (79 Posts)', date: '31 December 2025', status: 'released' },
+    { event: 'MPSC Rajyaseva 2026 Application Opens', date: '31 December 2025', status: 'released' },
+    { event: 'MPSC Rajyaseva 2026 Application Last Date', date: '20 January 2026', status: 'released' },
+    { event: '🆕 MPSC Rajyaseva 2026 Prelims Exam', date: '31 May 2026', status: 'upcoming' },
+    { event: 'MPSC Rajyaseva 2026 Prelims Result', date: 'July 2026 (Expected)', status: 'tbn' },
+    { event: 'MPSC Rajyaseva 2026 Mains Exam', date: '3, 17, 18, 24 October 2026 (Expected)', status: 'tbn' },
+    { event: 'MPSC Rajyaseva 2026 Mains Result', date: 'February 2027 (Expected)', status: 'tbn' },
+    { event: 'MPSC Rajyaseva 2026 Interview', date: 'April–May 2027 (Expected)', status: 'tbn' },
+    { event: 'MPSC Rajyaseva 2026 Final Result', date: 'June–July 2027 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: '2022', vacancies: '228', prelims: 'Apr 2022', mains: 'Oct–Nov 2022' },
+    { year: '2023', vacancies: '360', prelims: 'Jul 2023', mains: 'Jan–Feb 2024' },
+    { year: '2024', vacancies: '302', prelims: 'Apr 2024', mains: 'Sep–Oct 2024' },
+    { year: '2025', vacancies: '385', prelims: 'Sep 2025', mains: 'Apr–May 2026' },
+    { year: '2026 (ongoing)', vacancies: '79 (announced) + more cycles expected', prelims: '31 May 2026', mains: 'Oct 2026 (Expected)' },
+  ];
+
+  const posts = [
+    { post: 'Deputy Collector', class: 'Class A (Group A)', department: 'Revenue', payLevel: '10–12', basicPay: '₹56,100 – ₹1,12,400' },
+    { post: 'Deputy Superintendent of Police (DSP)', class: 'Class A (Group A)', department: 'Police', payLevel: '10–12', basicPay: '₹56,100 – ₹1,12,400' },
+    { post: 'Assistant Commissioner of State Tax', class: 'Class A (Group A)', department: 'State Taxes', payLevel: '10–12', basicPay: '₹56,100 – ₹1,12,400' },
+    { post: 'Block Development Officer (BDO)', class: 'Class A (Group A)', department: 'Rural Dev', payLevel: '10', basicPay: '₹56,100 – ₹1,00,400' },
+    { post: 'Assistant Regional Transport Officer', class: 'Class A (Group A)', department: 'Transport', payLevel: '10', basicPay: '₹56,100 – ₹1,00,400' },
+    { post: 'Tahsildar', class: 'Class A (Group A)', department: 'Revenue', payLevel: '10', basicPay: '₹56,100 – ₹1,00,400' },
+    { post: 'Chief Officer (Municipality)', class: 'Class A (Group A)', department: 'Municipal', payLevel: '10', basicPay: '₹56,100 – ₹1,00,400' },
+    { post: 'Assistant Director (Finance & Accounts)', class: 'Class B (Group B)', department: 'Finance', payLevel: '7–9', basicPay: '₹38,600 – ₹1,22,800' },
+    { post: 'Deputy CEO / Group Development Officer', class: 'Class B (Group B)', department: 'Zila Parishad', payLevel: '7–9', basicPay: '₹38,600 – ₹1,22,800' },
+    { post: 'Industries Officer', class: 'Class B (Group B)', department: 'Industries', payLevel: '7–9', basicPay: '₹38,600 – ₹1,22,800' },
+  ];
+
+  const prelimsPattern = [
+    { paper: 'Paper 1 – General Studies', questions: 100, marks: 200, time: '2 hours', type: 'Objective (MCQ)', note: 'Marks counted for Prelims merit' },
+    { paper: 'Paper 2 – CSAT (Aptitude Test)', questions: 80, marks: 200, time: '2 hours', type: 'Objective (MCQ)', note: 'Qualifying: min 33% required' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper A – Marathi Language', marks: 300, type: 'Descriptive', nature: 'Qualifying (min 25%)', topics: 'Essay, Translation, Précis, Grammar, Comprehension' },
+    { paper: 'Paper B – English Language', marks: 300, type: 'Descriptive', nature: 'Qualifying (min 25%)', topics: 'Essay, Translation, Précis, Grammar, Comprehension' },
+    { paper: 'Paper 1 – Essay', marks: 250, type: 'Descriptive', nature: 'Merit', topics: 'Two essays: one from Sec A, one from Sec B (Marathi or English)' },
+    { paper: 'Paper 2 – GS I (History, Geography, Society)', marks: 250, type: 'Descriptive', nature: 'Merit', topics: 'Indian & Maharashtra History, Physical/Human Geography, Indian Society' },
+    { paper: 'Paper 3 – GS II (Governance, Polity, IR)', marks: 250, type: 'Descriptive', nature: 'Merit', topics: 'Constitution, Polity, Panchayati Raj, Social Justice, International Relations' },
+    { paper: 'Paper 4 – GS III (Economy, Technology, Environment)', marks: 250, type: 'Descriptive', nature: 'Merit', topics: 'Economic Dev, Agriculture, Technology, Biodiversity, Disaster Management' },
+    { paper: 'Paper 5 – GS IV (Ethics, Integrity, Aptitude)', marks: 250, type: 'Descriptive', nature: 'Merit', topics: 'Ethics, Human Interface, Attitude, Emotional Intelligence, Case Studies' },
+    { paper: 'Optional Paper I', marks: 250, type: 'Descriptive', nature: 'Merit', topics: 'Any 1 subject from 26 options (e.g., History, Geography, Public Administration, Sociology, etc.)' },
+    { paper: 'Optional Paper II', marks: 250, type: 'Descriptive', nature: 'Merit', topics: 'Same optional subject (2nd paper)' },
+  ];
+
+  const syllabusData = [
+    {
+      subject: '📜 General Studies I – History, Geography & Society',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Indian History with special focus on Maharashtra',
+        'Modern Indian History: National Movement, Socio-religious Reforms in Maharashtra (Phule, Ambedkar, Savarkar)',
+        'Post-independence India & Maharashtra State Formation',
+        'World Geography & Indian Geography (Maharashtra terrain, rivers, climate)',
+        'Indian Society, Diversity, Social Empowerment',
+        'Role of Women in Maharashtra society',
+      ],
+    },
+    {
+      subject: '⚖️ General Studies II – Governance, Polity & IR',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Indian Constitution with special reference to Maharashtra',
+        'Panchayati Raj, Urban Local Bodies (Zila Parishad, Municipal Councils)',
+        'Parliament, State Legislature, Governor\u2019s powers',
+        'Government Policies, Social Sector Schemes',
+        'International Relations & Regional Organizations',
+        'India–Maharashtra bilateral relations with neighboring states',
+      ],
+    },
+    {
+      subject: '🌱 General Studies III – Economy, Environment & Technology',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Maharashtra Economy: Agriculture, Industry, Services Sector',
+        'Economic Planning, Budget, NITI Aayog, Finance Commission',
+        'Science & Technology, Space, Defence, IT in Maharashtra',
+        'Biodiversity, Environment, Climate Change',
+        'Disaster Management (floods, drought common in Maharashtra)',
+        'Infrastructure: Roads, Railways, Ports (JNPT, Mumbai Port)',
+      ],
+    },
+    {
+      subject: '🧠 General Studies IV – Ethics & Integrity',
+      prelims: false,
+      mains: true,
+      topics: [
+        'Ethics, Values, Moral Philosophy',
+        'Attitude, Aptitude, Emotional Intelligence',
+        'Public Service Values & Ethics in Governance',
+        'Integrity, Probity, Corruption in Government',
+        'Case Studies: Maharashtra-specific administrative dilemmas',
+        'Mahatma Phule, Ambedkar, Shivaji\u2019s administrative philosophy',
+      ],
+    },
+    {
+      subject: '🔢 CSAT – Aptitude & Comprehension (Prelims Paper 2)',
+      prelims: true,
+      mains: false,
+      topics: [
+        'Comprehension (passages in Marathi & English)',
+        'Logical Reasoning & Analytical Ability',
+        'Decision Making & Problem Solving',
+        'General Mental Ability',
+        'Basic Numeracy (Class X level: percentages, ratios, averages, time-speed)',
+        'Data Interpretation (tables, bar charts, pie charts)',
+      ],
+    },
+    {
+      subject: '🗣️ Marathi & English Language (Mains)',
+      prelims: false,
+      mains: true,
+      topics: [
+        'Essay writing in Marathi / English',
+        'Translation: English → Marathi and Marathi → English',
+        'Précis writing',
+        'Grammar: Idioms, Phrases, Synonyms, Antonyms, Error correction',
+        'Comprehension passages in Marathi and English',
+        'Note: Marathi proficiency is mandatory for all Rajyaseva aspirants',
+      ],
+    },
+  ];
+
+  const cutoffData = [
+    { year: '2024 Prelims', general: '~104–110 / 200', obc: '~96–102', scSt: '~85–92', note: 'Out of Paper 1 only (200 marks)' },
+    { year: '2023 Prelims', general: '~98–106 / 200', obc: '~90–98', scSt: '~78–87', note: 'Cut-off varies by exam year' },
+    { year: '2024 Mains + Interview', general: '~900–950 / 2025', obc: '~840–890', scSt: '~780–830', note: 'Final merit (Mains + Interview combined)' },
+    { year: '2023 Mains + Interview', general: '~870–920 / 2025', obc: '~810–860', scSt: '~750–800', note: 'Approximate; check official MPSC website' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay – Class A (Pay Level 10, e.g., Deputy Collector)', amount: '₹56,100/month' },
+    { component: 'Dearness Allowance (DA) @ 50% of Basic', amount: '~₹28,050/month' },
+    { component: 'House Rent Allowance (HRA) – 24% (Mumbai/Pune) or 16% (other cities)', amount: '₹8,976–₹13,464/month' },
+    { component: 'Travel Allowance (TA) + Other Allowances', amount: '₹3,000–₹8,000/month' },
+    { component: 'Gross In-Hand – Class A (Metro posting)', amount: '~₹85,000 – ₹1,40,000+/month' },
+    { component: 'Basic Pay – Class B (Pay Level 7, e.g., Assistant Director)', amount: '₹44,900/month' },
+    { component: 'Gross In-Hand – Class B', amount: '~₹60,000 – ₹90,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Deputy Collector / DSP / AST Commissioner', scale: 'Class A, Level 10', years: 'Entry (after joining)', payband: '₹56,100–₹1,00,400' },
+    { level: 'Additional Collector / SP', scale: 'Class A, Level 11–12', years: '5–10 years', payband: '₹67,700–₹1,12,400' },
+    { level: 'District Collector / Superintendent of Police', scale: 'Class A, Level 13', years: '10–18 years', payband: '₹1,23,100–₹1,51,100' },
+    { level: 'Divisional Commissioner / DIG', scale: 'Class A, Level 14', years: '18–25 years', payband: '₹1,44,200–₹1,72,800' },
+    { level: 'Principal Secretary / DGP', scale: 'Class A, Level 15–17', years: '25+ years', payband: '₹1,82,200–₹2,25,000+' },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', focus: 'Foundation — Maharashtra Focus', detail: 'Start with NCERT History (6–12) and then Maharashtra-specific history: Maratha Empire, Social Reform movements (Phule, Ambedkar), and Maharashtra State formation. Read Indian Polity (Laxmikanth) in parallel. These two subjects together account for 35–40% of the Prelims Paper 1. Make Maharashtra-specific notes from day one.' },
+    { month: 'Month 3–4', focus: 'Geography + Economy + Environment', detail: 'Cover Maharashtra geography thoroughly: rivers (Godavari, Krishna, Koyna), districts, dams, agriculture zones, and agro-climatic regions. Combine with Indian geography. For Economy, cover the Maharashtra Economic Survey and Union Budget together. Yojana magazine (Marathi/English edition) is excellent for Economy + Environment combined.' },
+    { month: 'Month 5–6', focus: 'CSAT + Current Affairs + Mock Tests', detail: 'Start CSAT Paper 2 preparation: 90 minutes daily on Reasoning, Numeracy, and Comprehension. You must clear 33% (66 marks) in Paper 2 to have Paper 1 counted. Begin reading Lokmat / Maharashtra Times / The Hindu for current affairs. Start taking full-length Prelims mock tests (3 per week). Analyze every mock to eliminate weak areas.' },
+    { month: 'Month 7–9', focus: 'Mains Writing + GS Papers', detail: 'Shift to Mains preparation: practice 2 descriptive answers daily. Learn UPSC-level answer writing — introduction, structured body, Maharashtra example, conclusion with forward-looking statement. Cover GS II (Polity) and GS III (Economy) with Mains depth. Start optional subject from Month 8. One full Mains paper per week for practice.' },
+    { month: 'Month 10–12', focus: 'Optional Subject + Revision + Ethics', detail: 'Dedicate 60% of daily time to optional subject. Ethics (GS IV) requires case study practice — prepare 8–10 Maharashtra-specific administrative dilemmas. Revise entire GS syllabus once. 2 full Mains mock tests per month. Write essay drafts on Maharashtra development themes: Jal Yukta Shivar, drought, migration, tribal rights.' },
+  ];
+
+  const books = [
+    { title: 'MPSC Rajyaseva Combined Guide (Marathi/English)', author: 'Unique Publications / Unique Academy', subject: 'Comprehensive Guide' },
+    { title: 'Indian Polity', author: 'M. Laxmikanth', subject: 'Polity (GS II)' },
+    { title: 'Maharashtra – Geography, History & Economy', author: 'Rajhans Prakashan / Swati Publications', subject: 'Maharashtra-specific' },
+    { title: 'Indian History for Civil Services', author: 'Spectrum – Rajiv Ahir', subject: 'History (GS I)' },
+    { title: 'Certificate Physical & Human Geography', author: 'Goh Cheng Leong', subject: 'Geography (GS I)' },
+    { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy (GS III)' },
+    { title: 'Ethics, Integrity & Aptitude', author: 'G. Subba Rao & P.N. Roy Chowdhury', subject: 'Ethics (GS IV)' },
+    { title: 'MPSC Previous Year Question Papers', author: 'Samarth Publications', subject: 'Practice & Pattern' },
+  ];
+
+  const freeResources = [
+    { name: 'MPSC Official Website', type: 'website', url: 'https://mpsc.gov.in', description: 'Official notifications, syllabus, admit cards, results and exam calendar — primary source for all updates.' },
+    { name: 'StudyIQ MPSC on YouTube', type: 'youtube', url: 'https://www.youtube.com/@StudyIQeducation', description: 'Free MPSC Rajyaseva classes on GS, Maharashtra History, Current Affairs and Prelims strategy.' },
+    { name: 'Clear IAS – State PSC Resources', type: 'website', url: 'https://www.clearias.com', description: 'Free UPSC/PSC resources, polity notes, GS summaries — also useful for MPSC Mains.' },
+    { name: 'Drishti IAS MPSC Resources', type: 'website', url: 'https://www.drishtiias.com/state-pcs/mpsc-syllabus', description: 'Detailed MPSC syllabus breakdown, exam pattern analysis, and current affairs for Maharashtra.' },
+    { name: 'Adda247 MPSC Channel', type: 'youtube', url: 'https://www.youtube.com/@adda247marathi', description: 'Marathi-medium free classes, mock tests, and daily current affairs specifically for MPSC aspirants.' },
+    { name: 'Maharashtra Government Official Portal', type: 'website', url: 'https://www.maharashtra.gov.in', description: 'Maharashtra government schemes, reports, and official data — essential for GS III and current affairs.' },
+    { name: 'Testbook MPSC Free Tests', type: 'website', url: 'https://testbook.com/mpsc-state-service', description: 'Free full-length MPSC Prelims mock tests with ranking, analysis, and solution explanations.' },
+    { name: 'Unacademy MPSC', type: 'youtube', url: 'https://www.youtube.com/@UnacademyMPSC', description: 'Free MPSC preparation videos covering Prelims and Mains topics in Marathi and English.' },
+  ];
+
+  const tips = [
+    { icon: '🗺️', tip: 'Maharashtra is the heart of MPSC Rajyaseva. Every GS paper has "with special reference to Maharashtra" in the syllabus. History, Geography, Economy, Polity — all need a Maharashtra lens. Aspirants who cover Maharashtra deeply outscore general GS toppers consistently.' },
+    { icon: '📋', tip: 'CSAT Paper 2 is deceptively important. You MUST score 33% (66 out of 200 marks) — failing CSAT means Paper 1 marks are NOT counted, regardless of how well you did. Give CSAT at least 30 minutes of daily practice throughout your preparation.' },
+    { icon: '🔄', tip: 'MPSC now uses a UPSC-aligned descriptive Mains pattern (9 papers). Answer writing practice is non-negotiable from Month 6 onward. Write at least 2 answers daily. Practice in both Marathi and English. Clarity of expression matters as much as content.' },
+    { icon: '📰', tip: 'Current affairs in MPSC are 50% Maharashtra-specific. Read Lokmat or Maharashtra Times daily alongside national newspapers. Focus on Maharashtra government schemes, CM-launched programs, districts in news, and state economic data. This is your edge over candidates who read only national news.' },
+    { icon: '🎯', tip: 'The Optional subject (26 choices) carries 500 marks (250 × 2) — the highest single subject weightage in Mains. Choose an optional you genuinely know well or one that overlaps with GS (Public Administration and Sociology overlap heavily with GS II and IV).' },
+    { icon: '📅', tip: 'MPSC runs multiple recruitment cycles in parallel (2025 Mains happening while 2026 Prelims approaches). Stay updated on the official exam calendar at mpsc.gov.in. Missing a notification or application deadline is a full year wasted.' },
+    { icon: '💡', tip: 'Ethics case studies in Paper 5 (GS IV) should use Maharashtra examples: Jal Yukt Shivar, drought in Marathwada, tribal migration in Nashik, urban slum rehabilitation in Mumbai. Real Maharashtra examples demonstrate administrative awareness and score higher than textbook answers.' },
+    { icon: '🌐', tip: 'Marathi proficiency is mandatory — you must read, write, and speak Marathi to qualify. Papers A and B (Marathi and English language) require 25% each to qualify. Practice Marathi essay writing and translation from Month 2 itself, not as an afterthought before the exam.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the MPSC Rajyaseva 2026 Prelims exam date?', a: 'The MPSC Rajyaseva 2026 Prelims Exam is scheduled for 31 May 2026, as per the official MPSC Exam Calendar 2026 released on October 17, 2025. The Mains Exam is expected in October 2026 (tentatively 3rd, 17th, 18th, and 24th October 2026). Always check mpsc.gov.in for any date revisions.' },
+    { q: 'How many vacancies are announced in MPSC Rajyaseva 2026?', a: 'For the 2026 recruitment cycle, MPSC has announced 79 vacancies for Group A and B posts (notification released 31 December 2025). In addition, another notification in February 2026 announced 139 more posts. MPSC typically releases multiple notifications in a cycle, so total vacancies may be higher. For context, the 2025 cycle had 385 vacancies.' },
+    { q: 'What is the age limit for MPSC Rajyaseva 2026?', a: 'The age limit for MPSC Rajyaseva is 19–38 years for Open/General category candidates (as of February 1, 2026 cut-off for most posts). Age relaxations: OBC (+3 years = up to 41), SC/ST (+5 years = up to 43), PwBD (+10 years), Ex-Servicemen (as per government norms). Final-year graduation students are eligible to apply for Prelims but must complete their degree before the Mains exam.' },
+    { q: 'What is the MPSC Rajyaseva exam pattern 2026?', a: 'MPSC Rajyaseva has three stages: (1) Prelims – 2 objective papers, 400 marks total (Paper 1: GS 200 marks, Paper 2: CSAT 200 marks, qualifying with min 33%); (2) Mains – 9 descriptive papers, 1750 marks for merit (2 qualifying language papers + 7 merit papers); (3) Interview – 275 marks. The new Mains pattern from 2026 is UPSC-aligned and fully descriptive. Negative marking of 1/4 mark applies in Prelims Paper 1.' },
+    { q: 'What is the salary of MPSC Rajyaseva officers?', a: 'MPSC Rajyaseva officers are paid per the 7th Pay Commission. Class A posts (Deputy Collector, DSP, etc.) have a basic pay of ₹56,100 – ₹1,77,500/month with gross in-hand salary of approximately ₹85,000 – ₹1,40,000+ per month including DA (50% of basic), HRA (24% in Mumbai/Pune), and other allowances. Class B posts (Assistant Director, BDO) have basic pay of ₹38,600 – ₹1,22,800 with in-hand ₹60,000 – ₹90,000/month. All officers also receive pension, medical coverage, and government accommodation or HRA.' },
+    { q: 'Is Marathi language mandatory for MPSC Rajyaseva?', a: 'Yes, Marathi proficiency is mandatory. All Rajyaseva applicants must be able to read, write, and speak Marathi fluently. The Mains exam includes Paper A (Marathi Language, 300 marks) which candidates must pass with a minimum of 25%. The Prelims paper is available in both Marathi and English, except for questions specifically testing English comprehension. Candidates from outside Maharashtra must have passed Marathi at the SSC (Class 10) level or equivalent.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const typeIcons: Record<string, string> = {
+    website: '🌐',
+    youtube: '📺',
+    pdf: '📄',
+    telegram: '📱',
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">MPSC Rajyaseva 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Maharashtra Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📅 Prelims: 31 May 2026</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            MPSC Rajyaseva 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            Maharashtra&apos;s most prestigious state civil services exam. <strong>Prelims on 31 May 2026</strong> with 79–385 vacancies for posts like Deputy Collector, DSP &amp; BDO. 3-stage selection: Prelims → Mains → Interview. Graduate eligible, age 19–38 years. Gross salary <strong>₹85,000–₹1,40,000+/month</strong> (Class A, 7th Pay Commission).
+          </p>
+
+          {/* Fast-fact highlight grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-2">
+            {[
+              { icon: '📋', label: 'Vacancies 2026', value: '79–385 (Multiple Cycles)', highlight: false },
+              { icon: '📅', label: 'Prelims Date', value: '31 May 2026', highlight: true },
+              { icon: '⏰', label: 'Apply Deadline', value: '20 Jan 2026 (Closed)', highlight: false },
+              { icon: '💰', label: 'Gross Salary', value: '₹85,000–₹1,40,000+', highlight: false },
+            ].map((item) => (
+              <div key={item.label} className={`rounded-xl p-3 border ${item.highlight ? 'bg-amber-500/20 border-amber-400/40' : 'bg-white/10 border-white/20'}`}>
+                <div className="text-lg mb-1">{item.icon}</div>
+                <div className="text-xs text-blue-200 font-medium">{item.label}</div>
+                <div className="text-sm font-heading font-bold text-white mt-0.5">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-8">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* Main column */}
+          <main>
+
+            {/* 1. Overview */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="What is MPSC Rajyaseva 2026?" />
+              <p className="text-surface-700 leading-relaxed mb-4">
+                The Maharashtra Public Service Commission (MPSC) Rajyaseva Pariksha — officially the <strong>Maharashtra Civil Services Gazetted Combined Examination</strong> — is the gateway to Class A and Class B gazetted officer positions in the Maharashtra government. It is the state-level equivalent of the UPSC Civil Services Examination, and is considered one of the most competitive exams in Maharashtra.
+              </p>
+              <p className="text-surface-700 leading-relaxed mb-5">
+                Selected candidates are posted as <strong>Deputy Collectors, Deputy Superintendents of Police (DSP), Block Development Officers, Assistant Commissioners</strong> and other prestigious administrative posts across Maharashtra&apos;s 36 districts. The 2026 cycle has already announced 79 vacancies with more notifications expected.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <InfoCard label="Conducting Body" value="Maharashtra PSC (MPSC)" />
+                <InfoCard label="Exam Level" value="State Level" />
+                <InfoCard label="Selection Stages" value="Prelims → Mains → Interview" />
+                <InfoCard label="Frequency" value="Annual (multiple cycles)" />
+                <InfoCard label="Post Level" value="Class A & Class B (Gazetted)" />
+                <InfoCard label="Official Website" value="mpsc.gov.in" />
+                <InfoCard label="Medium" value="Marathi & English" highlight />
+                <InfoCard label="Average Vacancies" value="200–400 / year" />
+              </div>
+            </section>
+
+            {/* 2. Important Dates */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="MPSC Rajyaseva 2026 Important Dates" />
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Event</th>
+                      <th className="text-left px-4 py-3 font-heading">Date</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                        <td className="px-4 py-3 font-medium text-surface-900">{row.date}</td>
+                        <td className="px-4 py-3 hidden sm:table-cell">
+                          {row.status === 'released' && <span className="badge-green">Released</span>}
+                          {row.status === 'upcoming' && <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⏳ Upcoming</span>}
+                          {row.status === 'tbn' && <span className="inline-flex items-center gap-1 bg-surface-100 text-surface-500 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ TBN = To Be Notified. Dates marked Expected are based on the official MPSC Exam Calendar 2026. Always verify at mpsc.gov.in.</p>
+            </section>
+
+            {/* 3. Eligibility */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="MPSC Rajyaseva 2026 Eligibility Criteria" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🪪</div>
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2">Nationality</h3>
+                  <p className="text-sm text-surface-700">Indian citizen. Maharashtra domicile is required for reserved category reservations but is not mandatory for Open category posts.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🎓</div>
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2">Educational Qualification</h3>
+                  <p className="text-sm text-surface-700">Bachelor&apos;s degree from any recognized university in any stream. Final-year graduation students may apply for Prelims but must complete the degree before the Mains exam.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">📋</div>
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2">Age Limit (as of 1 Feb 2026)</h3>
+                  <div className="space-y-1.5 text-sm text-surface-700">
+                    {[
+                      { cat: 'Open / General / EWS', age: '19 – 38 years' },
+                      { cat: 'OBC (Non-Creamy Layer)', age: '19 – 41 years (+3)' },
+                      { cat: 'SC / ST', age: '19 – 43 years (+5)' },
+                      { cat: 'PwBD (Persons with Disability)', age: 'Up to 48 years (+10)' },
+                      { cat: 'Ex-Servicemen', age: 'As per Maharashtra govt norms' },
+                    ].map((row) => (
+                      <div key={row.cat} className="flex justify-between items-center py-1 border-b border-surface-100 last:border-0">
+                        <span>{row.cat}</span>
+                        <span className="font-medium text-surface-900">{row.age}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🗣️</div>
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2">Language Requirement</h3>
+                  <p className="text-sm text-surface-700 mb-2">Marathi language proficiency is <strong>mandatory</strong> for all posts. Candidates must be able to read, write, and speak Marathi fluently.</p>
+                  <p className="text-sm text-surface-700">Candidates not from Maharashtra must have passed Marathi at SSC (Class 10) level or equivalent. Mains Paper A (Marathi, 300 marks) must be cleared with 25% minimum.</p>
+                </div>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                <p className="text-sm text-primary-800">💡 <strong>Application fee:</strong> General – ₹524 | SC/ST/PwD – ₹324 (subject to notification; check mpsc.gov.in for each cycle). Payment via online modes only.</p>
+              </div>
+            </section>
+
+            {/* 4. Vacancies */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="MPSC Rajyaseva 2026 Vacancies & Posts" />
+              <div className="card overflow-hidden mb-5">
+                <div className="px-5 py-3 bg-surface-50 border-b border-surface-200">
+                  <h3 className="font-heading font-semibold text-surface-800 text-sm">Vacancy History (Rajyaseva)</h3>
+                </div>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Year</th>
+                      <th className="text-left px-4 py-3 font-heading">Vacancies</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Prelims</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Mains</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-medium text-surface-900">{row.year}</td>
+                        <td className="px-4 py-3 text-emerald-700 font-semibold">{row.vacancies}</td>
+                        <td className="px-4 py-3 text-surface-600 hidden sm:table-cell">{row.prelims}</td>
+                        <td className="px-4 py-3 text-surface-600 hidden sm:table-cell">{row.mains}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-900 mb-3">Key Posts & Pay Scales</h3>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Post</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Class</th>
+                      <th className="text-left px-4 py-3 font-heading">Basic Pay</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {posts.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-medium text-surface-900">{row.post}</td>
+                        <td className="px-4 py-3 text-surface-600 hidden sm:table-cell">
+                          <span className={`inline-block text-xs font-heading font-semibold rounded-full px-2 py-0.5 ${row.class.includes('Group A') ? 'bg-primary-100 text-primary-700' : 'bg-amber-100 text-amber-700'}`}>{row.class}</span>
+                        </td>
+                        <td className="px-4 py-3 text-emerald-700 font-semibold">{row.basicPay}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 5. Exam Pattern */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="MPSC Rajyaseva 2026 Exam Pattern" />
+
+              <h3 className="text-base font-heading font-semibold text-surface-900 mb-3">Stage 1 – Preliminary Examination (Screening)</h3>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Paper</th>
+                      <th className="text-center px-4 py-3 font-heading">Questions</th>
+                      <th className="text-center px-4 py-3 font-heading">Marks</th>
+                      <th className="text-center px-4 py-3 font-heading">Time</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prelimsPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-medium text-surface-900">{row.paper}</td>
+                        <td className="px-4 py-3 text-center text-surface-700">{row.questions}</td>
+                        <td className="px-4 py-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                        <td className="px-4 py-3 text-center text-surface-700">{row.time}</td>
+                        <td className="px-4 py-3 hidden sm:table-cell">
+                          <span className={`text-xs font-heading font-semibold rounded-full px-2 py-0.5 ${row.note.includes('Qualifying') ? 'bg-amber-100 text-amber-700' : 'bg-primary-100 text-primary-700'}`}>{row.note}</span>
+                        </td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50">
+                      <td className="px-4 py-3 font-heading font-bold text-surface-900">Total</td>
+                      <td className="px-4 py-3 text-center font-heading font-bold">180</td>
+                      <td className="px-4 py-3 text-center font-heading font-bold text-primary-700">400</td>
+                      <td className="px-4 py-3 text-center font-heading font-bold">4 hours</td>
+                      <td className="px-4 py-3 hidden sm:table-cell"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 mb-5">
+                <p className="text-sm text-amber-800">⚠️ <strong>Negative Marking:</strong> 1/4 mark deducted for each wrong answer in Paper 1 (GS). No negative marking in Paper 2 (CSAT). Paper 2 is qualifying only — must score min 33% (66/200). Paper 2 marks are NOT added to final Prelims merit.</p>
+              </div>
+
+              <h3 className="text-base font-heading font-semibold text-surface-900 mb-3">Stage 2 – Main Examination (New 2026 Pattern – Descriptive)</h3>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Paper</th>
+                      <th className="text-center px-4 py-3 font-heading">Marks</th>
+                      <th className="text-left px-4 py-3 font-heading hidden sm:table-cell">Nature</th>
+                      <th className="text-left px-4 py-3 font-heading hidden md:table-cell">Topics (brief)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mainsPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-medium text-surface-900">{row.paper}</td>
+                        <td className="px-4 py-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                        <td className="px-4 py-3 hidden sm:table-cell">
+                          <span className={`text-xs font-heading font-semibold rounded-full px-2 py-0.5 ${row.nature === 'Merit' ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>{row.nature}</span>
+                        </td>
+                        <td className="px-4 py-3 text-surface-600 hidden md:table-cell text-xs">{row.topics}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50">
+                      <td className="px-4 py-3 font-heading font-bold text-surface-900">Total Merit Marks</td>
+                      <td className="px-4 py-3 text-center font-heading font-bold text-primary-700">1,750</td>
+                      <td className="px-4 py-3 hidden sm:table-cell"></td>
+                      <td className="px-4 py-3 hidden md:table-cell"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-base font-heading font-semibold text-surface-900 mb-3">Stage 3 – Interview / Personality Test</h3>
+              <div className="card p-5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <InfoCard label="Interview Marks" value="275 marks" highlight />
+                  <InfoCard label="Conducted By" value="MPSC Board (Pune)" />
+                  <InfoCard label="Final Merit Based On" value="Mains (1,750) + Interview (275) = 2,025" />
+                </div>
+                <p className="text-sm text-surface-700 mt-4">The interview assesses personality, administrative aptitude, decision-making ability, knowledge of Maharashtra, and suitability for civil services. Duration is typically 20–30 minutes. Candidates must show awareness of current affairs, Maharashtra governance, and their chosen optional subject.</p>
+              </div>
+            </section>
+
+            {/* 6. Syllabus */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="MPSC Rajyaseva 2026 Detailed Syllabus" />
+              <div className="space-y-3">
+                {syllabusData.map((s, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600 transition-colors">
+                      <span>{s.subject}</span>
+                      <div className="flex items-center gap-2">
+                        {s.prelims && <span className="text-xs font-heading font-semibold bg-primary-100 text-primary-700 rounded-full px-2 py-0.5">Prelims</span>}
+                        {s.mains && <span className="text-xs font-heading font-semibold bg-emerald-100 text-emerald-700 rounded-full px-2 py-0.5">Mains</span>}
+                        <svg className="w-4 h-4 transition-transform group-open:rotate-180 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-5 space-y-1">
+                        {s.topics.map((t, j) => (
+                          <li key={j} className="text-sm text-surface-600">{t}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mt-4">
+                <p className="text-sm text-emerald-800">💡 <strong>Maharashtra Focus:</strong> All GS papers explicitly mention &quot;with special reference to Maharashtra.&quot; Aspirants should prepare Maharashtra-specific examples for every topic — history, geography, economy, governance, and environment.</p>
+              </div>
+            </section>
+
+            {/* 7. Cut-offs */}
+            <section id="cutoff" className="mb-12">
+              <SectionHeading num="7" title="Previous Year Cut-offs (Approximate)" />
+              <div className="card overflow-hidden mb-3">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Stage & Year</th>
+                      <th className="text-center px-4 py-3 font-heading">General/EWS</th>
+                      <th className="text-center px-4 py-3 font-heading">OBC</th>
+                      <th className="text-center px-4 py-3 font-heading">SC/ST</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-medium text-surface-900">{row.year}</td>
+                        <td className="px-4 py-3 text-center font-semibold text-primary-600">{row.general}</td>
+                        <td className="px-4 py-3 text-center text-surface-700">{row.obc}</td>
+                        <td className="px-4 py-3 text-center text-surface-700">{row.scSt}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400">⚠️ Cut-offs are approximate and vary by post, category, and number of vacancies. Official cut-offs are published by MPSC after results. Always verify at mpsc.gov.in.</p>
+            </section>
+
+            {/* 8. Salary */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="8" title="MPSC Rajyaseva Salary & Career Growth" />
+              <div className="card overflow-hidden mb-5">
+                <div className="px-5 py-3 bg-surface-50 border-b border-surface-200">
+                  <h3 className="font-heading font-semibold text-surface-800 text-sm">Salary Breakdown (7th Pay Commission)</h3>
+                </div>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading">Component</th>
+                      <th className="text-right px-4 py-3 font-heading">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{row.component}</td>
+                        <td className={`px-4 py-3 text-right font-semibold ${row.amount.includes('85,000') || row.amount.includes('60,000') ? 'text-emerald-600' : 'text-surface-800'}`}>{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-base font-heading font-semibold text-surface-900 mb-3">Career Progression (Class A Officers)</h3>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {careerPath.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="card p-4">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                          <span className="font-heading font-semibold text-surface-900 text-sm">{step.level}</span>
+                          <span className="text-xs text-surface-400">{step.years}</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="badge-primary">{step.scale}</span>
+                          <span className="text-xs text-emerald-600 font-semibold">{step.payband}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mt-5">
+                <p className="text-sm text-emerald-800">💰 <strong>Benefits include:</strong> Pension (Defined Benefit for pre-2005 recruits; NPS thereafter), government accommodation or HRA, medical coverage for self and family, study leave, vehicle allowance, and TA/DA for official travel. MPSC officers are among the most secure and respected government servants in Maharashtra.</p>
+              </div>
+            </section>
+
+            {/* 9. How to Apply */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="9" title="How to Apply for MPSC Rajyaseva 2026" />
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Register on MPSC Portal', desc: 'Visit mpsc.gov.in → click "Online Application" → create a new account with your email ID and mobile number. Keep your Aadhaar/ID number handy.' },
+                  { step: '2', title: 'Fill the Application Form', desc: 'Log in and fill personal details, educational qualifications, domicile information, and category. Select the post preference order carefully — this impacts your allotment.' },
+                  { step: '3', title: 'Upload Documents', desc: 'Upload a recent passport-size photograph (JPG, under 50KB), your signature (JPG, under 20KB), and any category certificate if applicable (SC/ST/OBC/PwBD).' },
+                  { step: '4', title: 'Pay Application Fee', desc: 'General: ₹524 | SC/ST/PwD: ₹324. Pay via debit card, credit card, net banking, or UPI. Retain the payment receipt.' },
+                  { step: '5', title: 'Submit & Download Confirmation', desc: 'Review all details before final submission. Download the confirmation page and Application ID. No corrections are allowed after submission.' },
+                ].map((item) => (
+                  <div key={item.step} className="card p-5 flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 font-heading font-bold text-sm flex-shrink-0">{item.step}</div>
+                    <div>
+                      <h4 className="font-heading font-semibold text-surface-900 mb-1 text-sm">{item.title}</h4>
+                      <p className="text-sm text-surface-600">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-4">
+                <p className="text-sm text-primary-800">💡 <strong>Note:</strong> The 2026 notification (79 posts) application window was 31 Dec 2025 – 20 Jan 2026 and has closed. Watch mpsc.gov.in for additional 2026 cycle notifications expected in mid-2026.</p>
+              </div>
+            </section>
+
+            {/* 10. Study Plan */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="10" title="12-Month MPSC Rajyaseva Study Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className="font-heading font-bold text-surface-900">{step.month}</span>
+                          <span className="badge-primary">{step.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{step.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 11. Books */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="11" title="Best Books for MPSC Rajyaseva 2026" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* 12. Free Resources */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="12" title="Free MPSC Preparation Resources" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r) => (
+                  <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl flex-shrink-0">{typeIcons[r.type] ?? '🔗'}</span>
+                      <div>
+                        <h3 className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors text-sm">{r.name}</h3>
+                        <p className="text-xs text-surface-500 mt-1 leading-relaxed">{r.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. Tips */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="13" title="Expert MPSC Rajyaseva Preparation Tips" />
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex items-start gap-4">
+                    <div className="w-10 h-10 bg-accent-100 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 14. FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="14" title="MPSC Rajyaseva 2026 – Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600 transition-colors">
+                      <span>{faq.q}</span>
+                      <svg className="w-4 h-4 flex-shrink-0 ml-3 transition-transform group-open:rotate-180 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </main>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-900 mb-3 text-sm">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-xs text-surface-500 hover:text-primary-500 py-1 transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official website */}
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-900 mb-2 text-sm">Official Website</h3>
+                <a href="https://mpsc.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm w-full text-center block py-2.5">
+                  Visit mpsc.gov.in →
+                </a>
+                <p className="text-xs text-surface-400 mt-2 text-center">Check notifications, admit cards &amp; results</p>
+              </div>
+
+              {/* Quick facts */}
+              <div className="card p-5 bg-primary-50 border-primary-100">
+                <h3 className="font-heading font-bold text-surface-900 mb-3 text-sm">2026 Quick Facts</h3>
+                <div className="space-y-2 text-xs text-surface-700">
+                  <div className="flex justify-between"><span className="text-surface-500">Prelims Date</span><span className="font-semibold">31 May 2026</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Vacancies</span><span className="font-semibold">79+ (Multiple)</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Prelims Marks</span><span className="font-semibold">400 (2 Papers)</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Mains Marks</span><span className="font-semibold">1,750 (9 Papers)</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Interview</span><span className="font-semibold">275 Marks</span></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Total Merit</span><span className="font-semibold">2,025 Marks</span></div>
+                </div>
+              </div>
+
+              {/* Eligibility checker CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-bold text-surface-900 mb-2 text-sm">Check Your Eligibility</h3>
+                <p className="text-xs text-surface-600 mb-3">Use our free tool to instantly check if you qualify for MPSC Rajyaseva and 100+ other government exams.</p>
                 <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block py-2">
                   Check Eligibility →
                 </Link>
