@@ -48,7 +48,7 @@ export default function HomePage() {
         </div>
 
         {/* Students image — right side, bottom-anchored, clipped by section overflow-hidden */}
-        <div className="absolute right-0 bottom-0 hidden lg:block pointer-events-none" style={{ width: '55%', height: '96%' }}>
+        <div className="absolute right-0 bottom-0 hidden lg:block pointer-events-none" style={{ width: '55%', height: '100%' }}>
           <img
             src="/students.png"
             alt="Students preparing for government exams"
