@@ -37821,7 +37821,7 @@ function LicAdoPage({ exam }: { exam: any }) {
 
           <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
             LIC ADO (Apprentice Development Officer) 2026 notification is expected soon. The last cycle (2023) had{' '}
-            <strong>9,394 vacancies</strong> across 8 zones. 3-stage selection: Prelims → Mains → Interview. Any graduate eligible, age 21–30 years.
+            <strong>9,394 vacancies</strong> across 8 zones. 4-stage selection: Prelims → Mains → Interview → Medical Test. Any graduate eligible, age 21–30 years.
             Gross salary <strong>₹56,000–₹68,000/month</strong> + performance incentives after confirmation.
           </p>
 
@@ -37872,7 +37872,7 @@ function LicAdoPage({ exam }: { exam: any }) {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
                   { label: 'Conducting Body',    value: 'Life Insurance Corporation of India (LIC)' },
-                  { label: 'Selection Stages',   value: 'Prelims + Mains + Interview' },
+                  { label: 'Selection Stages',   value: 'Prelims + Mains + Interview + Medical' },
                   { label: 'Joining as',         value: 'Apprentice Development Officer (ADO)' },
                   { label: 'Confirmed Post',     value: 'Probationary Development Officer (PDO)' },
                 ].map((item) => (
@@ -37981,6 +37981,25 @@ function LicAdoPage({ exam }: { exam: any }) {
                   <div className="mt-3 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
                     🎓 <strong>Unlike banking exams:</strong> LIC ADO does not allow final-year applicants. Your graduation result must be declared and the degree must be in hand before you apply. Check the official notification PDF for the exact cut-off date.
                   </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">💳</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Application Fee</h3>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="bg-surface-50 border border-surface-200 rounded-lg p-3">
+                      <div className="text-xs text-surface-500 uppercase tracking-wide mb-1">General / OBC / EWS</div>
+                      <div className="text-lg font-heading font-bold text-primary-600">₹750</div>
+                      <div className="text-xs text-surface-500 mt-1">Full application fee</div>
+                    </div>
+                    <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                      <div className="text-xs text-surface-500 uppercase tracking-wide mb-1">SC / ST / PwBD</div>
+                      <div className="text-lg font-heading font-bold text-emerald-600">₹100</div>
+                      <div className="text-xs text-surface-500 mt-1">Intimation charges only</div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-surface-500 mt-3">Payment accepted online via Net Banking, Debit Card, or Credit Card. Fee details may vary — always confirm in the official LIC ADO notification PDF.</p>
                 </div>
               </div>
             </section>
@@ -38172,6 +38191,26 @@ function LicAdoPage({ exam }: { exam: any }) {
                 <p className="text-sm text-emerald-800 mt-1">Final merit: <strong>Mains Marks (160) + Interview Marks (40) = 200 total</strong></p>
                 <p className="text-xs text-emerald-600 mt-2">Approx. 3–4× the number of vacancies are called for interview per zone per category.</p>
               </div>
+
+              {/* Medical Examination */}
+              <div className="mt-4 card p-5 bg-blue-50 border-blue-200">
+                <h4 className="font-heading font-semibold text-blue-800 mb-2 flex items-center gap-2">
+                  <span>🏥</span> Phase 4 — Medical Examination (Final Stage)
+                </h4>
+                <p className="text-sm text-blue-800 leading-relaxed">
+                  Candidates who clear the Interview are called for a <strong>mandatory Medical Examination</strong> conducted by LIC-authorised doctors. Since the ADO role is <strong>field-intensive</strong> — involving daily travel, agent visits, and outdoor business development — candidates must meet the prescribed medical fitness standards. Only candidates who pass the medical test proceed to final appointment and joining.
+                </p>
+              </div>
+
+              {/* Agent/Employee Exemption Note */}
+              <div className="mt-4 card p-5 bg-amber-50 border-amber-200">
+                <h4 className="font-heading font-semibold text-amber-800 mb-2 flex items-center gap-2">
+                  <span>⚡</span> Prelims Exemption — Agent & Employee Categories
+                </h4>
+                <p className="text-sm text-amber-800 leading-relaxed">
+                  <strong>LIC Agents</strong> (minimum 3 years of active service) and <strong>LIC Class III Employees</strong> (minimum 5 years of confirmed service) are <strong>exempt from the Preliminary Examination</strong>. They appear directly in the Mains exam (which has a slightly different pattern for these categories), followed by Interview and Medical Test. This exemption significantly reduces their preparation burden compared to the Open Market category.
+                </p>
+              </div>
             </section>
 
             {/* SECTION 7: SYLLABUS */}
@@ -38303,7 +38342,7 @@ function LicAdoPage({ exam }: { exam: any }) {
                   { step: '1', title: 'Visit LIC India Official Website',                  desc: 'Go to licindia.in → Careers section. Wait for the LIC ADO 2026 notification to be published — check regularly as no advance notice is given.' },
                   { step: '2', title: 'Select Your Zone',                                   desc: 'LIC ADO applications are zone-specific. Choose the zone you want to be posted in — posting is within the applied zone only. You can typically apply for one zone per application.' },
                   { step: '3', title: 'Complete Online Registration',                       desc: 'Enter personal details, education, contact information. A Registration Number and Password will be generated — note these carefully. Do not register multiple times.' },
-                  { step: '4', title: 'Upload Documents & Pay Application Fee',             desc: 'Upload your recent photograph (size as specified) and signature. Pay the application fee online (₹700 for Gen/EWS/OBC; ₹85 for SC/ST/PwBD — fee may change, check notification). SC/ST/PwBD candidates are usually exempt from the full fee.' },
+                  { step: '4', title: 'Upload Documents & Pay Application Fee',             desc: 'Upload your recent photograph (size as specified) and signature. Pay the application fee online: ₹750 for General / OBC / EWS candidates; ₹100 (intimation charges only) for SC / ST / PwBD candidates. Payment accepted via Net Banking, Debit Card, or Credit Card.' },
                   { step: '5', title: 'Select Exam City & Submit',                         desc: 'Choose your preferred exam centre city. Verify all details before final submission. Download and print the application confirmation for future reference.' },
                   { step: '6', title: 'Download Admit Card',                               desc: 'Admit cards are released 2–3 weeks before the exam on licindia.in. Carry it along with a valid photo ID (Aadhaar, PAN, Voter ID, Driving Licence) to the exam centre.' },
                 ].map((s) => (
