@@ -403,6 +403,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'nvs-teaching') {
+    return {
+      title: 'NVS Teaching Recruitment 2026 – 5,841 Vacancies, PGT TGT Syllabus & Guide | TaiyarHo',
+      description: 'NVS Recruitment 2025-26: 5,841 vacancies (PGT 1,513 | TGT 3,191 + others). Joint CBSE drive. Tier 1 held Jan 2026, Tier 2 Mar 2026. Results expected Jul 2026. Next cycle TBN. B.Ed + CTET required. Salary ₹44,900–₹1,51,100/month. Free guide.',
+      keywords: 'NVS teaching recruitment 2026, NVS TGT PGT vacancy 2026, NVS recruitment 5841, navodaya vidyalaya teacher bharti, NVS syllabus 2026, NVS exam pattern, NVS salary, NVS eligibility, nvs-teaching, नवोदय विद्यालय शिक्षक भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/nvs-teaching/' },
+      other: { 'description:hi': 'NVS शिक्षक भर्ती 2025-26 – 5,841 पद (PGT 1,513 | TGT 3,191+)। CBSE द्वारा संयुक्त परीक्षा। Tier 1: जनवरी 2026 (हो चुकी), Tier 2: मार्च 2026 (हो चुकी)। परिणाम जुलाई 2026 अपेक्षित। अगला चक्र TBN। वेतन ₹44,900–₹1,51,100/माह।' },
+    };
+  }
+
   if (params.slug === 'sbi-po') {
     return {
       title: 'SBI PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -602,6 +612,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'rpsc-ras') return <RpscRasPage exam={brief} />;
   if (brief && brief.slug === 'wbcs-executive') return <WbcsExecutivePage exam={brief} />;
   if (brief && brief.slug === 'delhi-police-hc') return <DelhiPoliceHcPage exam={brief} />;
+  if (brief && brief.slug === 'nvs-teaching') return <NvsTeachingPage exam={brief} />;
   if (brief && brief.slug === 'dsssb-tgt-pgt-prt') return <DssbTgtPgtPrtPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
@@ -40914,6 +40925,900 @@ function DssbTgtPgtPrtPage({ exam }: { exam: any }) {
 
             </div>
           </aside>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── NVS TEACHING RICH PAGE ────────────────────────────────────────────────────
+function NvsTeachingPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: '🆕 NVS Notification 01/2025 Released (Joint KVS+NVS Drive)', date: '13 November 2025', status: 'released' },
+    { event: 'Online Application Window Opens', date: '14 November 2025', status: 'released' },
+    { event: 'Application Correction Window Closes', date: '15 December 2025', status: 'released' },
+    { event: 'Tier 1 CBT Exam (All Posts – Common Paper)', date: '10–11 January 2026', status: 'released' },
+    { event: 'NVS TGT Tier 2 City Intimation Slip Released', date: 'March 2026', status: 'released' },
+    { event: 'NVS TGT Tier 2 Written Exam', date: '29 March 2026', status: 'released' },
+    { event: 'NVS PGT Tier 2 Written Exam', date: 'January–February 2026', status: 'released' },
+    { event: 'Tier 2 Answer Key & Objections', date: 'April 2026 (TBN)', status: 'tbn' },
+    { event: 'Final Results (Merit List)', date: 'July 2026 (Expected)', status: 'tbn' },
+    { event: 'Interview / Demo Lesson (PGT/TGT)', date: 'After Result – TBN', status: 'tbn' },
+    { event: 'Joining & Posting', date: '2026–27 Academic Session (TBN)', status: 'tbn' },
+    { event: '⚡ NVS Contractual Recruitment 2026-27 (Region-wise)', date: 'April–May 2026 (Ongoing)', status: 'released' },
+    { event: 'Next NVS Regular Recruitment Cycle (2026-27)', date: 'To Be Notified (TBN)', status: 'tbn' },
+  ];
+
+  const vacancyData = [
+    { post: 'Post Graduate Teacher (PGT)', code: 'PGT', vacancies: '1,513', ageLimit: '40 years', qualification: "Master's Degree + B.Ed", payLevel: 'Level 8', basicPay: '₹47,600/month' },
+    { post: 'Trained Graduate Teacher (TGT)', code: 'TGT', vacancies: '3,191', ageLimit: '35 years', qualification: "Bachelor's Degree + B.Ed + CTET Paper 2", payLevel: 'Level 7', basicPay: '₹44,900/month' },
+    { post: 'Principal', code: 'PRIN', vacancies: '230', ageLimit: '50 years', qualification: "Master's Degree + B.Ed + 5 yrs experience", payLevel: 'Level 12', basicPay: '₹78,800/month' },
+    { post: 'Vice Principal', code: 'VP', vacancies: '202', ageLimit: '45 years', qualification: "Master's Degree + B.Ed + 3 yrs experience", payLevel: 'Level 10', basicPay: '₹56,100/month' },
+    { post: 'Misc. Teaching Staff (Female Staff, PET, Art, Music)', code: 'MISC', vacancies: '~350', ageLimit: '35 years', qualification: "Graduate + B.Ed / Relevant diploma", payLevel: 'Level 6', basicPay: '₹35,400/month' },
+    { post: 'Non-Teaching (JSA, MTS, Lab Attendant etc.)', code: 'NTS', vacancies: '~355', ageLimit: '27 years', qualification: '10th/12th/Graduate (varies by post)', payLevel: 'Level 1–4', basicPay: '₹18,000–₹25,500/month' },
+  ];
+
+  const vacancyHistory = [
+    { cycle: 'NVS 2015-16', pgt: '~800', tgt: '~2,200', misc: '~500', total: '~3,500', status: 'Completed' },
+    { cycle: 'NVS 2019-20', pgt: '~1,100', tgt: '~2,800', misc: '~600', total: '~4,500', status: 'Completed' },
+    { cycle: 'NVS 2022-23', pgt: '~1,200', tgt: '~2,700', misc: '~500', total: '~4,400', status: 'Completed' },
+    { cycle: 'NVS 2025-26 (Notification 01/2025)', pgt: '1,513', tgt: '3,191', misc: '~350', total: '5,841', status: 'Active' },
+  ];
+
+  const tier1Pattern = [
+    { section: 'General English', qs: 20, marks: 20 },
+    { section: 'General Hindi', qs: 20, marks: 20 },
+    { section: 'General Knowledge & Current Affairs', qs: 30, marks: 30 },
+    { section: 'Reasoning Ability', qs: 20, marks: 20 },
+    { section: 'Computer Literacy', qs: 10, marks: 10 },
+  ];
+
+  const pgtTier2Pattern = [
+    { section: 'Pedagogy & Teaching Methodology (MCQ)', type: 'Objective', qs: 10, marks: 10, note: 'NEP 2020, NCF 2005, child psychology' },
+    { section: 'Domain Subject Content – PG Level (MCQ)', type: 'Objective', qs: 80, marks: 80, note: 'Master\'s degree level subject content' },
+    { section: 'Language Competency Test (Qualifying)', type: 'Qualifying', qs: 15, marks: 15, note: 'Must pass; marks not added to merit' },
+  ];
+
+  const tgtTier2Pattern = [
+    { section: 'Pedagogy & Teaching Methodology (MCQ)', type: 'Objective', qs: 10, marks: 10, note: 'Child development, teaching methods' },
+    { section: 'Domain Subject Content – Graduation Level (MCQ)', type: 'Objective', qs: 80, marks: 80, note: "Bachelor's degree level subject content" },
+    { section: 'Language Competency Test (Qualifying)', type: 'Qualifying', qs: 15, marks: 15, note: 'Must pass; marks not added to merit' },
+  ];
+
+  const pgtSubjects = [
+    'Hindi', 'English', 'Mathematics', 'Physics', 'Chemistry', 'Biology',
+    'History', 'Geography', 'Economics', 'Commerce', 'Computer Science / IT', 'Physical Education (Male & Female)',
+  ];
+
+  const tgtSubjects = [
+    'Hindi', 'English', 'Mathematics', 'Science', 'Social Science', 'Sanskrit',
+    'Computer Science', 'Physical Education (Male & Female)',
+    'Art Teacher', 'Music Teacher', 'Third Language Teacher', 'Special Educator',
+  ];
+
+  const salaryTable = [
+    { post: 'PGT (Post Graduate Teacher)', level: 'Level 8', basic: '₹47,600/month', da55: '₹26,180/month', hraCity: '₹12,852/month', gross: '~₹92,000–₹98,000/month', payband: '₹47,600–₹1,51,100' },
+    { post: 'TGT (Trained Graduate Teacher)', level: 'Level 7', basic: '₹44,900/month', da55: '₹24,695/month', hraCity: '₹12,123/month', gross: '~₹86,000–₹90,000/month', payband: '₹44,900–₹1,42,400' },
+    { post: 'Vice Principal', level: 'Level 10', basic: '₹56,100/month', da55: '₹30,855/month', hraCity: '₹15,147/month', gross: '~₹1,08,000–₹1,12,000/month', payband: '₹56,100–₹1,77,500' },
+    { post: 'Principal', level: 'Level 12', basic: '₹78,800/month', da55: '₹43,340/month', hraCity: '₹21,276/month', gross: '~₹1,52,000–₹1,58,000/month', payband: '₹78,800–₹2,09,200' },
+    { post: 'Misc. Teaching (Female Staff, PET, Art, Music)', level: 'Level 6', basic: '₹35,400/month', da55: '₹19,470/month', hraCity: '₹9,558/month', gross: '~₹68,000–₹74,000/month', payband: '₹35,400–₹1,12,400' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '📝 General English (Tier 1 – All Posts)',
+      topics: [
+        'Reading Comprehension – unseen passages with vocabulary & inference questions',
+        'Grammar – Tenses, Articles, Prepositions, Subject-Verb Agreement, Voice & Narration',
+        'Error Detection & Sentence Correction',
+        'Vocabulary – Synonyms, Antonyms, One-Word Substitution, Idioms & Phrases',
+        'Para Jumbles & Sentence Rearrangement',
+        'Fill in the Blanks (Grammar & Vocabulary)',
+        'Cloze Test (passage with blanks)',
+      ],
+    },
+    {
+      subject: '📖 General Hindi (Tier 1 – All Posts)',
+      topics: [
+        'हिंदी व्याकरण – संधि, समास, उपसर्ग, प्रत्यय, कारक',
+        'पर्यायवाची, विलोम, मुहावरे, लोकोक्तियाँ',
+        'अपठित गद्यांश (Reading Comprehension)',
+        'वाक्य शुद्धि, वर्तनी की अशुद्धियाँ, रिक्त स्थान पूर्ति',
+        'शब्द-ज्ञान, एक शब्द अनेक अर्थ, अनेक शब्दों के लिए एक शब्द',
+      ],
+    },
+    {
+      subject: '🌐 General Knowledge & Current Affairs (Tier 1 – All Posts)',
+      topics: [
+        'Indian History – Ancient, Medieval, Modern; Freedom Movement',
+        'Indian & World Geography – Physical, Social, Economic Geography',
+        'Indian Polity & Constitution – Key Articles, Amendments, Schedules, Institutions',
+        'Indian Economy – Budget, Five-Year Plans, Government Schemes, GDP basics',
+        'Science & Technology – Space (ISRO), Defence, NEP 2020, Digital India',
+        'Current Affairs – Last 6–12 months national & international events',
+        'Awards, Books & Authors, Sports, Important Days & Appointments',
+        'Environment & Ecology, Biodiversity, Climate Change basics',
+      ],
+    },
+    {
+      subject: '🧩 Reasoning Ability (Tier 1 – All Posts)',
+      topics: [
+        'Analogies (Verbal & Non-Verbal)',
+        'Series – Number, Letter & Figure Completion',
+        'Classification, Coding-Decoding, Blood Relations',
+        'Direction & Distance, Order & Ranking',
+        'Logical Venn Diagrams, Syllogisms',
+        'Mathematical Operations, Inequalities',
+        'Non-Verbal Reasoning – Mirror Image, Paper Folding, Embedded Figures',
+        'Matrix, Word Formation, Cube & Dice problems',
+      ],
+    },
+    {
+      subject: '💻 Computer Literacy (Tier 1 – All Posts)',
+      topics: [
+        'Basics – Hardware, Software, Input/Output Devices, Storage Media',
+        'MS Office – Word, Excel, PowerPoint (common functions)',
+        'Internet & Email – Browsers, Search Engines, Email Etiquette',
+        'Operating Systems – Windows basics, File Management',
+        'Networking – LAN, WAN, IP Address, Wi-Fi concepts',
+        'Cybersecurity – Virus, Firewall, Data Privacy, Phishing',
+        'Educational Technology – ICT in classrooms, Learning Management Systems',
+      ],
+    },
+    {
+      subject: '🎓 Pedagogy & Teaching Methodology (Tier 2 – PGT & TGT)',
+      topics: [
+        'Theories of Learning – Behaviourism (Skinner), Constructivism (Piaget, Vygotsky), Cognitivism',
+        'Child Development & Psychology – Stages of development, Learning disabilities',
+        'Teaching Methods – Inductive, Deductive, Discovery, Activity-Based, Play-Way',
+        'Inclusive Education – Principles, Special Needs, NCF 2005, NEP 2020 mandates',
+        'Assessment & Evaluation – Formative, Summative, CCE, Learning Outcomes',
+        "Bloom's Taxonomy – Cognitive, Affective, Psychomotor domains",
+        'Classroom Management, Motivation, Group Dynamics',
+        'Right to Education (RTE) Act 2009 – Key Provisions & Implications',
+        'National Education Policy (NEP) 2020 – Key Structural Reforms & 5+3+3+4 Framework',
+      ],
+    },
+    {
+      subject: '📚 Domain Subject Content (Tier 2 – PGT: PG Level | TGT: Graduation Level)',
+      topics: [
+        'Exact topics depend on your applied subject (Maths, Science, English, Hindi, History, etc.)',
+        'PGT: Master\'s degree syllabus of the relevant subject (advanced concepts)',
+        'TGT: Bachelor\'s degree syllabus of the relevant subject (standard concepts)',
+        'NCERT textbooks (Class 6–12) form the primary base for TGT subject content',
+        'NVS previous year question papers are the best guide for exact question patterns',
+        'Language Competency Test (qualifying): Tests language proficiency; does NOT count in final merit',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'GK Foundation + Hindi/English Basics', detail: 'Start with NCERT textbooks (Class 6–10) for History, Geography, Science, and Polity. Read one chapter per day and make brief notes. Simultaneously start a Hindi newspaper for 15 minutes daily — this dual-benefits Current Affairs and Hindi grammar. Practice 10 English grammar questions daily from any competitive English book. Build a habit of checking navodaya.gov.in and cbse.gov.in for updates.' },
+    { month: 'Month 2', focus: 'Reasoning + Computer Literacy', detail: 'Reasoning: master all foundational topics — Analogies, Series, Coding-Decoding, Classification. Target 25–30 Reasoning questions daily with accuracy, not speed. Computer Literacy section is just 10 marks — two weeks of focused study (MS Office, Internet basics, Networking fundamentals) is sufficient for full marks. Take one Tier 1 sectional mock per week and review every wrong answer.' },
+    { month: 'Month 3', focus: 'Domain Subject Content – Phase 1 (PGT/TGT)', detail: 'This is the most critical section — 80 marks out of 100 in Tier 2. TGT candidates: revise entire bachelor\'s degree syllabus systematically. PGT candidates: revise master\'s degree level content. For both: NCERT textbooks (Class 6–12) are the non-negotiable foundation for subject content. Make chapter-wise notes. Focus on conceptual understanding, not rote memorisation.' },
+    { month: 'Month 4', focus: 'Pedagogy (Teaching Methodology)', detail: 'Pedagogy carries 10 marks but is a differentiator — many candidates neglect it. Study child development theories (Piaget, Vygotsky, Kohlberg), teaching methods, and inclusive education principles. Read NEP 2020 and NCF 2005 official documents — NVS interviews heavily reference both. If you haven\'t cleared CTET (mandatory for TGT), register for the next CBSE CTET cycle immediately. Practice 15 Pedagogy MCQs daily using CTET-prep books.' },
+    { month: 'Month 5', focus: 'Domain Subject Content – Phase 2 + Current Affairs', detail: 'Continue deep-diving into subject content. For Science TGT/PGT: practise numerical problems. For Social Science/History TGT: master maps, timelines, and key events. Current Affairs: start intensive revision of the last 6–12 months. Use monthly GK capsules (Pratiyogita Darpan or Arihant) plus daily online quizzes. Start connecting GK with Pedagogy — NEP 2020 connects to both sections.' },
+    { month: 'Month 6', focus: 'Full Mocks + Interview/Demo Prep', detail: 'Take 2–3 full Tier 1 mock tests per week — aim for 85+/100. Analyse every mock error pattern. Shift to full Tier 2 mocks in final weeks. For those shortlisted for Interview/Demo Lesson: prepare a 10–15 minute demo on a topic from your subject. Practice teaching out loud at home 15–20 times. Prepare answers on NEP 2020, NVS mission, your subject, and inclusive education. Final week: revision only, no new topics.' },
+  ];
+
+  const books = [
+    { title: 'NVS TGT/PGT Complete Guide', author: 'Arihant Publications', subject: 'All Sections (combined)' },
+    { title: 'NVS TGT/PGT Solved Papers', author: 'Disha Experts', subject: 'Previous Year Papers' },
+    { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'General Knowledge' },
+    { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English Vocabulary' },
+    { title: 'Objective General English', author: 'S.P. Bakshi (Arihant)', subject: 'English Grammar' },
+    { title: 'Sampoorna Hindi Vyakaran', author: 'Dr. Hardev Bahri', subject: 'Hindi Grammar' },
+    { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali & Indu Sijwali', subject: 'Reasoning' },
+    { title: 'NCF 2005 + NEP 2020 (Official Documents)', author: 'Ministry of Education, GOI', subject: 'Pedagogy & Policy (Free)' },
+    { title: 'Child Development & Pedagogy (CTET-based)', author: 'Disha Experts', subject: 'Pedagogy' },
+    { title: 'NCERT Textbooks Class 6–12', author: 'NCERT (Free PDF)', subject: 'Domain Subject Content' },
+  ];
+
+  const freeResources = [
+    { name: 'NVS Official Website', type: 'website', url: 'https://navodaya.gov.in', description: 'Primary source for all NVS notifications, admit cards, results, and contractual vacancy updates.' },
+    { name: 'CBSE Official Website (Joint Exams)', type: 'website', url: 'https://cbse.gov.in', description: 'CBSE conducts the joint KVS+NVS Tier 1 and Tier 2 exams — check here for exam schedules and official notices.' },
+    { name: 'Adda247 Teaching Exams (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Free daily classes for NVS TGT/PGT, KVS, CTET — covers Pedagogy, GK, Reasoning, and Subject Content.' },
+    { name: "Let's LEARN India (YouTube)", type: 'youtube', url: 'https://www.youtube.com/@LetsLearnIndia', description: 'In-depth free lectures for NVS TGT/PGT subject content — Hindi, English, Science, Social Science.' },
+    { name: 'CTET Official Site (CBSE)', type: 'website', url: 'https://ctet.nic.in', description: 'CTET Paper 2 is mandatory for TGT. Check exam dates, syllabus, and results. Register for the next CTET cycle if not yet cleared.' },
+    { name: 'NCERT Free Textbooks', type: 'website', url: 'https://ncert.nic.in/textbook.php', description: 'Download all NCERT Class 1–12 textbooks free. Domain subject content for NVS is NCERT-based — non-negotiable.' },
+    { name: 'Testbook NVS Free Mock Tests', type: 'website', url: 'https://testbook.com/nvs', description: 'Free full-length NVS TGT/PGT mock tests with detailed solutions, rank analysis, and previous year papers.' },
+    { name: 'GK Today NVS Study Material', type: 'website', url: 'https://www.gktoday.in', description: 'Free GK and Current Affairs quizzes, daily updates, and revision capsules useful for NVS Tier 1 preparation.' },
+  ];
+
+  const tips = [
+    { icon: '🎓', tip: 'CTET Paper 2 is a hard prerequisite for TGT posts — no CTET means no selection even with a perfect score in Tier 2. If you haven\'t cleared CTET yet, register for the next CBSE CTET cycle (held twice a year) immediately. CTET scores are now valid lifetime. For PGT posts, CTET is not mandatory, but the Pedagogy section in Tier 2 overlaps heavily with CTET content.' },
+    { icon: '📚', tip: 'Domain Subject Content (Tier 2) carries 80 out of 100 marks — it is the biggest differentiator between selected and rejected candidates. NCERT textbooks (Class 6–12) are the non-negotiable foundation. Read every chapter for your subject, make notes, and solve NCERT exercises. PGT candidates should also revise their master\'s degree notes for higher-order conceptual questions.' },
+    { icon: '🏫', tip: 'NVS is a residential school system — all Jawahar Navodaya Vidyalayas are boarding schools primarily in rural areas. Selected teachers receive free accommodation on campus and subsidised meals. This is a lifestyle choice — be fully prepared for residential campus life, especially if you are relocating away from your home state.' },
+    { icon: '🤝', tip: 'The 2025-26 recruitment was a Joint Drive — both KVS and NVS shared the same Tier 1 paper conducted by CBSE. If you applied to both, your Tier 1 performance was evaluated simultaneously. Future cycles may continue this model. Always check both navodaya.gov.in and kvsangathan.nic.in when a new notification is released.' },
+    { icon: '📅', tip: 'NVS recruitment cycles are irregular with gaps of 2–4 years between major notifications. Don\'t wait for the next notification to start preparing. The Contractual Recruitment (Samvida) cycle happens annually region-wise and is a great way to gain classroom experience in JNVs while waiting for the regular cycle. Check NVS regional offices for contractual openings.' },
+    { icon: '⚠️', tip: '<strong>Negative marking applies:</strong> Tier 1 carries −1/4 mark per wrong MCQ answer; Tier 2 similarly has negative marking. Do NOT attempt questions you are unsure about. In Tier 1, a score of 65–70/100 with high accuracy is more competitive than 80/100 with random guesses. The Language Competency Test in Tier 2 is qualifying — you must pass it, but marks do not count toward your final merit.' },
+    { icon: '💡', tip: 'NEP 2020 is central to both the Pedagogy section and the Interview. Know the 5+3+3+4 framework, the emphasis on mother-tongue instruction, competency-based education, and the 10+2 to 12-year schooling structure change. NVS interviewers consistently ask about NEP 2020 implementation, especially for PGT and Vice-Principal posts.' },
+    { icon: '🎭', tip: 'The Demo Lesson for TGT/PGT interviews is a 10–15 minute micro-teaching session on a topic from your subject. Choose a topic where you can use classroom engagement techniques — questions to students, real-life examples, blackboard work. Avoid reading from notes. Practise out loud at home 15–20 times. Interview panels evaluate your communication, subject depth, and teaching aptitude simultaneously.' },
+    { icon: '🌐', tip: 'NVS has 661+ Jawahar Navodaya Vidyalayas across 27 states and 8 UTs, serving Class 6–12 students predominantly from rural and semi-urban backgrounds. Teaching here is a true mission — 75% of seats are reserved for rural students. If you are passionate about transforming education in underserved India, NVS offers a career that aligns purpose with profession.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the status of NVS Recruitment 2025-26?',
+      a: 'NVS Notification 01/2025 was released on 13 November 2025 by CBSE as a Joint KVS+NVS drive, announcing 5,841 NVS vacancies. Tier 1 CBT was conducted on 10–11 January 2026. TGT Tier 2 was held on 29 March 2026. PGT Tier 2 was held earlier in January–February 2026. Final results are expected in July 2026. The next regular recruitment cycle for NVS is yet to be notified. For immediate openings, NVS Contractual Recruitment 2026-27 (region-wise) is ongoing — check navodaya.gov.in.',
+    },
+    {
+      q: 'Is CTET mandatory for NVS TGT posts?',
+      a: 'Yes. CTET Paper 2 qualification is mandatory for TGT (Trained Graduate Teacher) posts in NVS. No CTET means ineligibility, regardless of your Tier 1 or Tier 2 scores. CTET is now valid for a lifetime (CBSE removed the 7-year validity in 2021). For PGT (Post Graduate Teacher) posts, CTET is not mandatory, but the Pedagogy section in Tier 2 heavily overlaps with CTET content.',
+    },
+    {
+      q: 'What is the NVS TGT/PGT salary in 2026?',
+      a: "NVS TGT salary is ₹44,900/month basic pay (Pay Level 7), with DA at ~55% (as of 2026) adding ₹24,695/month, plus HRA and other allowances — total gross is approximately ₹86,000–₹90,000/month. NVS PGT salary is ₹47,600/month basic (Pay Level 8), totalling approximately ₹92,000–₹98,000/month gross. Additionally, residential teachers receive free on-campus accommodation and subsidised meals, which significantly adds to the effective compensation.",
+    },
+    {
+      q: 'What is the age limit for NVS PGT and TGT recruitment?',
+      a: 'The maximum age limit for NVS TGT is 35 years and for NVS PGT is 40 years, as of the cut-off date in the official notification. Age relaxations apply: OBC (NCL) +3 years, SC/ST +5 years, PwBD +10 years, Women candidates (all categories) get an additional 5 years relaxation for teaching posts. Ex-servicemen get relaxation as per government norms.',
+    },
+    {
+      q: 'How is the NVS Tier 2 final merit calculated?',
+      a: 'The final merit for Principal, Vice Principal, PGT, and TGT posts is calculated as: 85% weightage from Tier 2 written exam marks + 15% weightage from Interview/Demo Lesson marks. The Language Competency Test in Tier 2 is qualifying in nature — candidates must pass it, but its marks are NOT added to the final merit. For non-teaching posts like JSA, final selection is based solely on Tier 2 marks.',
+    },
+    {
+      q: 'What subjects can I apply for in NVS TGT and PGT?',
+      a: 'NVS PGT subjects include: Hindi, English, Mathematics, Physics, Chemistry, Biology, History, Geography, Economics, Commerce, Computer Science/IT, and Physical Education (Male & Female). NVS TGT subjects include: Hindi, English, Mathematics, Science, Social Science, Sanskrit, Computer Science, Physical Education (Male & Female), Art Teacher, Music Teacher, Third Language Teacher, and Special Educator. Check the official notification for exact vacancy numbers per subject.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">NVS Teaching Recruitment 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏫 Teaching</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚡ Results: July 2026 (Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            NVS Teaching Recruitment 2026<br className="hidden sm:block" /> – Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            Navodaya Vidyalaya Samiti (NVS) Notification 01/2025 announced <strong>5,841 vacancies</strong> (PGT 1,513 | TGT 3,191 + others) via a Joint CBSE drive. Tier 1 held Jan 2026, Tier 2 completed Mar 2026. Results expected <strong>July 2026</strong>. Next regular cycle TBN. NVS Contractual 2026-27 ongoing.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Total Vacancies 2025-26', value: '5,841', sub: 'NVS-specific posts' },
+              { label: 'Tier 2 Exam Date', value: 'Mar 29, 2026', sub: 'TGT Tier 2 (done)' },
+              { label: 'CTET Required?', value: 'Yes (TGT)', sub: 'Paper 2 mandatory' },
+              { label: 'TGT Gross Salary', value: '~₹86,000–₹90,000', sub: 'per month + free accom.' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300 mt-0.5">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <a href="https://navodaya.gov.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-primary-700 font-heading font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-blue-50 transition-colors">
+              🌐 Official NVS Website
+            </a>
+            <Link href="/tools/eligibility-checker/" className="inline-flex items-center gap-2 bg-white/15 border border-white/30 text-white font-heading font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-white/25 transition-colors">
+              ✅ Check Your Eligibility
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* LEFT COLUMN */}
+          <div className="space-y-0">
+
+            {/* 1. Overview */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="What is NVS Teaching Recruitment 2026?" />
+              <p className="text-surface-700 leading-relaxed mb-4">
+                Navodaya Vidyalaya Samiti (NVS) is an autonomous organisation under the Ministry of Education, Government of India, that runs the <strong>661+ Jawahar Navodaya Vidyalayas (JNVs)</strong> across 27 states and 8 Union Territories. These are fully residential, co-educational schools from Class 6 to 12, primarily serving talented students from rural backgrounds — <strong>75% of seats are reserved for rural students</strong>.
+              </p>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                NVS recruits teaching staff — PGT (Classes 11–12), TGT (Classes 6–10), and Miscellaneous Teaching posts — along with non-teaching staff including Principal, Vice Principal, and administrative roles. In 2025-26, NVS partnered with KVS (Kendriya Vidyalaya Sangathan) for a <strong>Joint Recruitment Drive</strong> conducted by CBSE, announcing <strong>5,841 NVS-specific vacancies</strong>.
+              </p>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-4">
+                <p className="text-sm text-surface-700"><strong>💡 2026 Update:</strong> The 2025-26 regular cycle (Notification 01/2025) has completed Tier 1 (Jan 2026) and Tier 2 (Mar 2026). Final results are expected in <strong>July 2026</strong>. The next regular recruitment cycle has not been notified yet. Meanwhile, <strong>NVS Contractual Recruitment 2026-27</strong> (region-wise, for PGT, TGT, and support staff on contract basis) is ongoing across multiple NVS regions.</p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: '🏫 Organisation', value: 'Navodaya Vidyalaya Samiti (NVS)' },
+                  { label: '📋 Notification', value: '01/2025 (Joint KVS+NVS)' },
+                  { label: '📅 Tier 1 Date', value: 'Jan 10-11, 2026 (Done)' },
+                  { label: '🎓 Min. Qualification', value: "Graduate + B.Ed (TGT)" },
+                  { label: '🪪 Nationality', value: 'Indian Citizen' },
+                  { label: '📋 Age Limit', value: '18–40 yrs (varies by post)' },
+                  { label: '💰 TGT Salary', value: '₹44,900–₹1,42,400/month' },
+                  { label: '🌐 Official Site', value: 'navodaya.gov.in' },
+                ].map((c) => (
+                  <InfoCard key={c.label} label={c.label} value={c.value} />
+                ))}
+              </div>
+            </section>
+
+            {/* 2. Important Dates */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="Important Dates 2026" />
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading font-semibold">Event</th>
+                      <th className="text-left px-4 py-3 font-heading font-semibold">Date / Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((d, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{d.event}</td>
+                        <td className="px-4 py-3">
+                          <span className={`font-semibold text-xs px-2 py-0.5 rounded-full ${
+                            d.status === 'released' ? 'bg-emerald-100 text-emerald-700' :
+                            d.status === 'upcoming' ? 'bg-blue-100 text-blue-700' :
+                            'bg-amber-100 text-amber-700'
+                          }`}>{d.date}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4 mt-4">
+                <p className="text-sm text-surface-700"><strong>⚠️ Note:</strong> All upcoming dates marked TBN are based on NVS historical patterns and official communication timelines. Always verify final dates on <strong>navodaya.gov.in</strong> and <strong>cbse.gov.in</strong> before taking action.</p>
+              </div>
+            </section>
+
+            {/* 3. Eligibility */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria" />
+              <div className="space-y-4">
+                {/* Nationality */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2"><span>🪪</span> Nationality</h3>
+                  <p className="text-sm text-surface-700">Candidates must be Indian citizens. Subject to the provisions of the Citizenship Act, 1955, persons who have migrated from Pakistan, Myanmar, Sri Lanka, Kenya, Uganda, Tanzania, Zambia, Malawi, Zaire, Ethiopia, or Vietnam with the intention of settling permanently in India may also be eligible — as per Government of India rules.</p>
+                </div>
+                {/* Age Limits */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2"><span>📋</span> Age Limits (as on notification cut-off date)</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-100">
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-800">Post</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-800">Min Age</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-800">Max Age</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-800">OBC (+3)</th>
+                          <th className="text-left px-3 py-2 font-heading font-semibold text-surface-800">SC/ST (+5)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { post: 'PGT', min: '21 yrs', max: '40 yrs', obc: '43 yrs', scst: '45 yrs' },
+                          { post: 'TGT', min: '21 yrs', max: '35 yrs', obc: '38 yrs', scst: '40 yrs' },
+                          { post: 'Principal', min: '35 yrs', max: '50 yrs', obc: '53 yrs', scst: '55 yrs' },
+                          { post: 'Vice Principal', min: '30 yrs', max: '45 yrs', obc: '48 yrs', scst: '50 yrs' },
+                          { post: 'Misc. Teaching Staff', min: '18 yrs', max: '35 yrs', obc: '38 yrs', scst: '40 yrs' },
+                        ].map((r, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="px-3 py-2 font-semibold text-surface-800">{r.post}</td>
+                            <td className="px-3 py-2 text-surface-700">{r.min}</td>
+                            <td className="px-3 py-2 text-surface-700">{r.max}</td>
+                            <td className="px-3 py-2 text-surface-600">{r.obc}</td>
+                            <td className="px-3 py-2 text-surface-600">{r.scst}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-500 mt-3">Additional relaxations: PwBD +10 years; Women candidates +5 years (teaching posts); Ex-Servicemen as per Government norms.</p>
+                </div>
+                {/* Educational Qualifications */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2"><span>🎓</span> Educational Qualifications</h3>
+                  <div className="space-y-3">
+                    {[
+                      { post: 'PGT (Post Graduate Teacher)', qual: "Master's Degree in the relevant subject with minimum 50% marks + B.Ed degree. CTET not mandatory but preferred.", note: 'For Computer Science PGT: MCA / M.Sc. (IT) / M.Sc. (Computer Science) or relevant Master\'s degree.' },
+                      { post: 'TGT (Trained Graduate Teacher)', qual: "Bachelor's Degree in the relevant subject with minimum 50% marks + B.Ed + CTET Paper 2 (mandatory).", note: 'CTET Paper 2 certification is a hard requirement for TGT. No CTET = not eligible.' },
+                      { post: 'Principal', qual: "Master's Degree with 50%+ + B.Ed + minimum 5 years teaching experience in a recognised school.", note: 'Preference given to candidates with administrative/residential school experience.' },
+                      { post: 'Vice Principal', qual: "Master's Degree + B.Ed + minimum 3 years teaching experience as TGT/PGT.", note: '' },
+                      { post: 'Misc. Teaching (Female Staff, PET, Art Teacher, Music Teacher)', qual: 'Graduate degree + B.Ed / relevant diploma/degree in the specific stream (e.g., BPEd for PET, BFA for Art, B.Mus. for Music).', note: '' },
+                    ].map((q, i) => (
+                      <div key={i} className="bg-surface-50 rounded-xl p-4">
+                        <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{q.post}</div>
+                        <div className="text-sm text-surface-700">{q.qual}</div>
+                        {q.note && <div className="text-xs text-primary-600 mt-1">💡 {q.note}</div>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* 4. Vacancies */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="Vacancies & Posts (2025-26)" />
+              <div className="card overflow-hidden mb-6">
+                <div className="bg-surface-800 text-white px-4 py-3">
+                  <span className="font-heading font-semibold text-sm">NVS Notification 01/2025 – Post-wise Vacancies</span>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-100">
+                        <th className="text-left px-4 py-3 font-heading font-semibold text-surface-800">Post</th>
+                        <th className="text-center px-3 py-3 font-heading font-semibold text-surface-800">Vacancies</th>
+                        <th className="text-center px-3 py-3 font-heading font-semibold text-surface-800">Age Limit</th>
+                        <th className="text-left px-3 py-3 font-heading font-semibold text-surface-800">Pay Level</th>
+                        <th className="text-left px-3 py-3 font-heading font-semibold text-surface-800">Basic Pay</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyData.map((v, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-semibold text-surface-800">{v.post}</td>
+                          <td className="px-3 py-3 text-center font-bold text-primary-600">{v.vacancies}</td>
+                          <td className="px-3 py-3 text-center text-surface-700">{v.ageLimit}</td>
+                          <td className="px-3 py-3 text-surface-700">{v.payLevel}</td>
+                          <td className="px-3 py-3 text-surface-700">{v.basicPay}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 border-t-2 border-primary-200">
+                        <td className="px-4 py-3 font-heading font-bold text-surface-900">TOTAL (NVS)</td>
+                        <td className="px-3 py-3 text-center font-heading font-bold text-primary-700">5,841</td>
+                        <td colSpan={3} className="px-3 py-3 text-xs text-surface-500">Joint drive with KVS (CBSE Notification 01/2025)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Vacancy History */}
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Vacancy History</h3>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading font-semibold">Recruitment Cycle</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">PGT</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">TGT</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Misc/Others</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Total</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((v, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-semibold text-surface-800">{v.cycle}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{v.pgt}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{v.tgt}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{v.misc}</td>
+                        <td className="px-3 py-3 text-center font-bold text-surface-800">{v.total}</td>
+                        <td className="px-3 py-3 text-center">
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${v.status === 'Active' ? 'bg-emerald-100 text-emerald-700' : 'bg-surface-100 text-surface-600'}`}>{v.status}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 5. Exam Pattern */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="Exam Pattern (Two-Tier + Interview)" />
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mb-6">
+                <p className="text-sm text-surface-700"><strong>Selection Process:</strong> Tier 1 CBT (Common Paper) → Tier 2 CBT (Subject-Specific) → Interview/Demo Lesson → Final Merit. Final Merit = <strong>85% Tier 2 marks + 15% Interview marks</strong>. Negative marking: <strong>−¼ mark per wrong MCQ</strong> in both tiers. Language Competency Test (Tier 2) is qualifying only — does not count in merit.</p>
+              </div>
+
+              {/* Tier 1 */}
+              <h3 className="font-heading font-semibold text-surface-900 mb-3 text-base">Tier 1 – Common Screening Test (All Posts)</h3>
+              <p className="text-sm text-surface-600 mb-3">Duration: 2 hours | Total: 100 Questions | 100 Marks | Mode: CBT | Negative Marking: −¼ per wrong answer</p>
+              <div className="card overflow-hidden mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading font-semibold">Section</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Questions</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tier1Pattern.map((r, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{r.section}</td>
+                        <td className="px-3 py-3 text-center font-semibold text-surface-800">{r.qs}</td>
+                        <td className="px-3 py-3 text-center font-semibold text-surface-800">{r.marks}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-surface-100 font-semibold">
+                      <td className="px-4 py-3 font-heading font-bold text-surface-900">Total</td>
+                      <td className="px-3 py-3 text-center font-heading font-bold text-surface-900">100</td>
+                      <td className="px-3 py-3 text-center font-heading font-bold text-surface-900">100</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Tier 2 PGT */}
+              <h3 className="font-heading font-semibold text-surface-900 mb-3 text-base">Tier 2 – PGT (Post Graduate Teacher)</h3>
+              <p className="text-sm text-surface-600 mb-3">Duration: 3 hours | Total: 100 + 15 (qualifying) | Mode: CBT | Final Merit: 85% Tier 2 + 15% Interview</p>
+              <div className="card overflow-hidden mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading font-semibold">Section</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Type</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Questions</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {pgtTier2Pattern.map((r, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{r.section}</td>
+                        <td className="px-3 py-3 text-center">
+                          <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${r.type === 'Qualifying' ? 'bg-amber-100 text-amber-700' : 'bg-primary-100 text-primary-700'}`}>{r.type}</span>
+                        </td>
+                        <td className="px-3 py-3 text-center font-semibold text-surface-800">{r.qs}</td>
+                        <td className="px-3 py-3 text-center font-semibold text-surface-800">{r.marks}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Tier 2 TGT */}
+              <h3 className="font-heading font-semibold text-surface-900 mb-3 text-base">Tier 2 – TGT (Trained Graduate Teacher)</h3>
+              <p className="text-sm text-surface-600 mb-3">Duration: 3 hours | Total: 100 + 15 (qualifying) | Mode: CBT | Final Merit: 85% Tier 2 + 15% Interview</p>
+              <div className="card overflow-hidden mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading font-semibold">Section</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Type</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Questions</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tgtTier2Pattern.map((r, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 text-surface-700">{r.section}</td>
+                        <td className="px-3 py-3 text-center">
+                          <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${r.type === 'Qualifying' ? 'bg-amber-100 text-amber-700' : 'bg-primary-100 text-primary-700'}`}>{r.type}</span>
+                        </td>
+                        <td className="px-3 py-3 text-center font-semibold text-surface-800">{r.qs}</td>
+                        <td className="px-3 py-3 text-center font-semibold text-surface-800">{r.marks}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Available Subjects */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">PGT Subjects</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {pgtSubjects.map((s) => (
+                      <span key={s} className="badge-primary">{s}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">TGT Subjects</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {tgtSubjects.map((s) => (
+                      <span key={s} className="badge-primary">{s}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* 6. Syllabus */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="Detailed Syllabus" />
+              <div className="space-y-3">
+                {syllabus.map((s, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{s.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-5 space-y-1.5 text-sm text-surface-700">
+                        {s.topics.map((t, j) => <li key={j}>{t}</li>)}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 7. Salary */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="7" title="Salary & Benefits 2026" />
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mb-5">
+                <p className="text-sm text-surface-700"><strong>💰 8th Pay Commission Note:</strong> NVS follows Central Government Pay Scales under the 7th Pay Commission (7th CPC). The 8th Pay Commission has been constituted and its recommendations are expected by 2026-27. Any revised pay scales will be implemented retrospectively from January 2026. All salary figures below are based on current 7th CPC + 55% DA (as of mid-2026).</p>
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left px-4 py-3 font-heading font-semibold">Post</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Pay Level</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Basic Pay</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">DA (55%)</th>
+                      <th className="text-center px-3 py-3 font-heading font-semibold">Gross (Approx.)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryTable.map((s, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="px-4 py-3 font-semibold text-surface-800">{s.post}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{s.level}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{s.basic}</td>
+                        <td className="px-3 py-3 text-center text-surface-700">{s.da55}</td>
+                        <td className="px-3 py-3 text-center font-bold text-emerald-700">{s.gross}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3">Additional Benefits (Residential School)</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '🏠', title: 'Free Accommodation', desc: 'Fully furnished on-campus residential quarters provided free to all NVS staff. This adds ~₹12,000–₹25,000/month in effective compensation.' },
+                  { icon: '🍽️', title: 'Subsidised Meals', desc: 'Subsidised mess facility at all JNVs. Teachers eat on campus at minimal cost throughout the working year.' },
+                  { icon: '🏥', title: 'Medical Benefits (CGHS)', desc: 'Entitled to Central Government Health Scheme (CGHS) benefits for self and family — cashless treatment at empanelled hospitals.' },
+                  { icon: '🏖️', title: 'Leave & LTC', desc: 'Earned Leave, Casual Leave, Medical Leave, Maternity/Paternity Leave, and Leave Travel Concession (LTC) as per Central Government rules.' },
+                  { icon: '📈', title: 'Pension (NPS)', desc: 'New Pension Scheme (NPS) with 10% employee + 14% Government contribution. Gratuity and retirement benefits apply.' },
+                  { icon: '📚', title: 'In-Service Training', desc: 'Mandatory and voluntary training programmes by NVS/CBSE, including subject-specific refreshers, leadership development, and digital education workshops.' },
+                ].map((b) => (
+                  <div key={b.title} className="card p-5">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{b.icon}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{b.title}</div>
+                        <div className="text-xs text-surface-600">{b.desc}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 8. How to Apply */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="8" title="How to Apply" />
+              <p className="text-surface-700 text-sm mb-4">Applications for NVS Regular Recruitment are submitted online through the official CBSE/NVS portal. The 2025-26 application window is now closed. For the next regular cycle, follow these steps when it opens:</p>
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Visit the Official Portal', desc: 'Go to navodaya.gov.in or cbse.gov.in. Look for "NVS Recruitment Notification" and click the official application link.' },
+                  { step: '2', title: 'Register with a Valid Email ID & Mobile', desc: 'Create a login with a unique email ID and mobile number. Keep these active throughout the recruitment process — all communications come here.' },
+                  { step: '3', title: 'Fill the Application Form', desc: 'Enter your personal details, educational qualifications, subject choice, category, and work experience accurately. Cross-check with your certificates before submitting.' },
+                  { step: '4', title: 'Upload Documents', desc: 'Upload: recent passport-size photograph (20–50 KB, JPG), signature (10–20 KB, JPG), and educational certificates as specified. Use the Testbook Cropping Tool if photo dimensions are tricky.' },
+                  { step: '5', title: 'Pay Application Fee', desc: 'General/OBC candidates: ₹1,000 (approx.). SC/ST/PwBD/Women/Ex-SM: usually exempted. Pay via net banking, credit/debit card, or UPI. Fee varies by notification — check official notice.' },
+                  { step: '6', title: 'Submit & Download Confirmation', desc: 'Submit the form and download the confirmation page with your application number. Take a printout and save the PDF — you will need it for the admit card and future reference.' },
+                  { step: '7', title: '⚡ For Contractual Posts (Samvida 2026-27)', desc: 'NVS Contractual posts are notified region-wise. Visit the respective NVS regional office websites (Lucknow, Chandigarh, Patna, Hyderabad, Pune, etc.) or navodaya.gov.in for region-specific application links and walk-in interview schedules.' },
+                ].map((s) => (
+                  <div key={s.step} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 font-heading font-bold text-sm flex-shrink-0">{s.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1 text-sm">{s.title}</div>
+                      <div className="text-sm text-surface-600">{s.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 9. Study Plan */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="9" title="6-Month Study Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((s, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-6">
+                    <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="card p-5">
+                      <div className="font-heading font-bold text-primary-600 text-xs uppercase tracking-wide mb-1">{s.month}</div>
+                      <div className="font-heading font-semibold text-surface-900 mb-2">{s.focus}</div>
+                      <div className="text-sm text-surface-600 leading-relaxed">{s.detail}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. Best Books */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="10" title="Best Books for NVS TGT/PGT 2026" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* 11. Free Resources */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="11" title="Free Resources" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r) => (
+                  <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-lg">{r.type === 'youtube' ? '📺' : r.type === 'telegram' ? '📱' : '🌐'}</span>
+                      <span className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.name}</span>
+                    </div>
+                    <p className="text-xs text-surface-500">{r.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 12. Expert Tips */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="12" title="Expert Tips to Crack NVS 2026" />
+              <div className="space-y-3">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center text-sm flex-shrink-0">{t.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.tip }} />
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="13" title="FAQs – NVS Teaching Recruitment 2026" />
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>{/* END LEFT COLUMN */}
+
+          {/* RIGHT SIDEBAR */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* On This Page */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">On This Page</div>
+                <nav className="space-y-1">
+                  {toc.map((t) => (
+                    <a key={t.id} href={`#${t.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 transition-colors">{t.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Official Websites</div>
+                <a href="https://navodaya.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium mb-2">
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  navodaya.gov.in (NVS)
+                </a>
+                <a href="https://cbse.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium mb-2">
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  cbse.gov.in (Joint Exam)
+                </a>
+                <a href="https://ctet.nic.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium">
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  ctet.nic.in (CTET)
+                </a>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="card p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Quick Stats</div>
+                <div className="space-y-2 text-sm">
+                  {[
+                    { label: 'Total Vacancies', value: '5,841' },
+                    { label: 'PGT Vacancies', value: '1,513' },
+                    { label: 'TGT Vacancies', value: '3,191' },
+                    { label: 'TGT Age Limit', value: 'Max 35 years' },
+                    { label: 'PGT Age Limit', value: 'Max 40 years' },
+                    { label: 'CTET Required (TGT)', value: 'Paper 2 (Yes)' },
+                    { label: 'Neg. Marking', value: '−¼ per wrong ans' },
+                    { label: 'Tier 1 Done', value: 'Jan 10–11, 2026' },
+                    { label: 'TGT Tier 2 Done', value: 'Mar 29, 2026' },
+                    { label: 'Results Expected', value: 'July 2026' },
+                  ].map((s) => (
+                    <div key={s.label} className="flex justify-between items-center">
+                      <span className="text-surface-500 text-xs">{s.label}</span>
+                      <span className="font-semibold text-surface-800 text-xs text-right">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Related Exam */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">Related Teaching Exams</div>
+                <div className="space-y-2">
+                  {[
+                    { name: 'KVS PRT/TGT/PGT', slug: 'kvs-prt-tgt-pgt', note: 'Joint Drive with NVS' },
+                    { name: 'CTET', slug: 'ctet', note: 'Mandatory for TGT' },
+                    { name: 'DSSSB TGT/PGT/PRT', slug: 'dsssb-tgt-pgt-prt', note: 'Delhi govt schools' },
+                    { name: 'UGC NET', slug: 'ugc-net', note: 'For college teaching' },
+                  ].map((r) => (
+                    <Link key={r.slug} href={`/exams/${r.slug}/`} className="flex items-center justify-between group hover:bg-emerald-100 rounded-lg p-2 -mx-2 transition-colors">
+                      <div>
+                        <div className="text-sm font-medium text-surface-800 group-hover:text-primary-600">{r.name}</div>
+                        <div className="text-xs text-surface-500">{r.note}</div>
+                      </div>
+                      <svg className="w-4 h-4 text-surface-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Eligibility Checker CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-bold text-surface-900 mb-2 text-sm">Check Your Eligibility</h3>
+                <p className="text-xs text-surface-600 mb-3">Use our free tool to instantly check if you qualify for NVS and 100+ other government exams.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block py-2">
+                  Check Eligibility →
+                </Link>
+              </div>
+
+            </div>
+          </aside>
+
         </div>
       </div>
     </>
