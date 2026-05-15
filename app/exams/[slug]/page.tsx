@@ -35816,14 +35816,14 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
     { event: 'WBCS (Exe.) 2023 Preliminary Exam',             date: 'February 2023',        status: 'released' },
     { event: 'WBCS (Exe.) 2023 Main Exam',                    date: 'July–August 2023',     status: 'released' },
     { event: 'WBCS (Exe.) 2023 Personality Test/Interview',   date: '2024',                 status: 'released' },
-    { event: 'WBCS (Exe.) 2024 Notification',                 date: 'Late 2024',            status: 'released' },
-    { event: 'WBCS (Exe.) 2024 Preliminary Exam',             date: 'February 2025',        status: 'released' },
-    { event: 'WBCS (Exe.) 2024 Main Exam',                    date: 'Mid 2025',             status: 'released' },
+    { event: 'WBCS (Exe.) 2024 Notification (Advt. 08/2024)',  date: 'Late 2024',            status: 'released' },
+    { event: '🔵 WBCS (Exe.) 2024 Preliminary Exam',          date: 'June 14, 2026',        status: 'upcoming' },
+    { event: 'WBCS (Exe.) 2024 Main Exam',                    date: 'Late 2026 (Expected)', status: 'tbn' },
     { event: '🆕 WBCS (Exe.) 2025 Notification',              date: 'To Be Notified (TBN)', status: 'tbn' },
-    { event: 'WBCS (Exe.) 2025 Preliminary Exam',             date: 'Early 2026 (Expected)', status: 'tbn' },
-    { event: 'WBCS (Exe.) 2025 Main Exam',                    date: 'Mid 2026 (Expected)',  status: 'tbn' },
-    { event: 'WBCS (Exe.) 2025 Personality Test/Interview',   date: 'Late 2026 (Expected)', status: 'tbn' },
-    { event: 'WBCS (Exe.) 2025 Final Result',                 date: '2027 (Expected)',       status: 'tbn' },
+    { event: 'WBCS (Exe.) 2025 Preliminary Exam',             date: 'Early 2027 (Expected)', status: 'tbn' },
+    { event: 'WBCS (Exe.) 2025 Main Exam',                    date: 'Mid 2027 (Expected)',  status: 'tbn' },
+    { event: 'WBCS (Exe.) 2025 Personality Test/Interview',   date: 'Late 2027 (Expected)', status: 'tbn' },
+    { event: 'WBCS (Exe.) 2025 Final Result',                 date: '2028 (Expected)',       status: 'tbn' },
   ];
 
   const vacancyHistory = [
@@ -35835,11 +35835,18 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
     { year: 'WBCS 2025 (upcoming)', vacancies: '200–500 (Expected)', prelims: 'Early 2026 (Est.)', mains: 'Mid 2026 (Est.)' },
   ];
 
-  const prelimsPattern = [
+  const prelimsPaperI = [
     { subject: 'Bengali / Hindi / Urdu / Nepali / Santali (any one)', questions: 30, marks: 30  },
     { subject: 'English',                                              questions: 30, marks: 30  },
     { subject: 'General Studies (History, Geography, Polity, Eco)',    questions: 100, marks: 100 },
     { subject: 'Arithmetic & Test of Reasoning',                       questions: 40, marks: 40  },
+  ];
+
+  const prelimsPaperII = [
+    { subject: 'General Mental Ability',     questions: 25, marks: 25 },
+    { subject: 'English Comprehension',      questions: 25, marks: 25 },
+    { subject: 'Elementary Mathematics',     questions: 25, marks: 25 },
+    { subject: 'General Reasoning',          questions: 25, marks: 25 },
   ];
 
   const mainsGroups = [
@@ -35872,7 +35879,7 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
   ];
 
   const salaryBreakdown = [
-    { component: 'Basic Pay (Pay Level as per 6th ROPA 2019 – Group A Officers)', amount: '₹44,900–₹1,42,400/month' },
+    { component: 'Basic Pay (Pay Level 16 as per 6th ROPA 2019 – Group A & B Officers)', amount: '₹56,100–₹1,77,500/month' },
     { component: 'Dearness Allowance (DA) – as revised periodically',             amount: 'As per WB Govt. notification' },
     { component: 'House Rent Allowance (HRA)',                                     amount: 'Varies by posting location' },
     { component: 'Medical Allowance & Other Benefits',                             amount: 'As per service rules' },
@@ -35881,7 +35888,7 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
   ];
 
   const careerPath = [
-    { level: 'SDO / BDO / SDPO (Entry Level)',               scale: 'Group A',   years: '0–5 yrs',   payband: '₹44,900–₹1,42,400' },
+    { level: 'SDO / BDO / SDPO (Entry Level)',               scale: 'Group A',   years: '0–5 yrs',   payband: '₹56,100–₹1,77,500' },
     { level: 'Deputy Magistrate / Dy. SP',                    scale: 'Group A',   years: '5–10 yrs',  payband: '₹56,100–₹1,77,500' },
     { level: 'Additional District Magistrate / Add. SP',       scale: 'Group A',   years: '10–15 yrs', payband: '₹67,700–₹2,08,700' },
     { level: 'District Magistrate / Superintendent of Police', scale: 'Group A+', years: '15–20 yrs', payband: '₹78,800–₹2,09,200' },
@@ -36023,11 +36030,11 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
     },
     {
       q: 'What is the age limit for WBCS Executive 2026?',
-      a: 'The standard age limit for WBCS (Executive) is 21–36 years for General/Unreserved candidates. Age relaxations: OBC-A and OBC-B (+3 years = up to 39 years), SC/ST of West Bengal (+5 years = up to 41 years), PwBD candidates (+10 years = up to 46 years), Ex-Servicemen as per government norms. The age is calculated as of the cut-off date specified in the official notification.',
+      a: 'The age limit for WBCS (Executive) varies by group. For <strong>Group B</strong> posts: 20–36 years for General/Unreserved candidates. For <strong>Group D</strong> posts: 21–39 years for General/Unreserved candidates. Age relaxations apply on top of the respective upper limits: OBC-A and OBC-B (+3 years), SC/ST of West Bengal (+5 years), PwBD candidates (+10 years), Ex-Servicemen as per government norms. The age is calculated as of the cut-off date specified in the official notification.',
     },
     {
       q: 'What is the WBCS Executive salary in 2026?',
-      a: 'WBCS (Executive) officers (Group A) are placed in the pay matrix under the West Bengal Government\'s 6th ROPA 2019. Entry-level posts such as BDO, SDO, and SDPO carry a basic pay of ₹44,900–₹1,42,400/month. With Dearness Allowance (DA), HRA, and other allowances, the total take-home in entry-level posts is approximately ₹70,000–₹1,00,000/month depending on the posting location. Senior Group A posts can go up to ₹2,09,200/month.',
+      a: 'WBCS (Executive) officers (Group A & B) are placed in the pay matrix under the West Bengal Government\'s 6th ROPA 2019. Entry-level posts such as BDO, SDO, and SDPO carry a starting basic pay of ₹56,100/month (Level 16). With Dearness Allowance (DA), HRA, and other allowances, the total take-home in entry-level posts is approximately ₹80,000–₹1,20,000/month depending on the posting location. Senior Group A posts can go up to ₹2,09,200/month.',
     },
     {
       q: 'What are the services under WBCS Executive?',
@@ -36071,7 +36078,7 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC</span>
             <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">West Bengal Government</span>
-            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: TBN</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 2024 Prelims: June 14, 2026</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
@@ -36079,15 +36086,15 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
           </h1>
 
           <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
-            WBCS (Executive) 2025–26 notification expected soon from WBPSC. Annual exam for <strong>200–500 vacancies</strong> across Group A &amp; B services — BDO, SDO, SDPO and more. 3-stage selection: Prelims → Mains → Personality Test. Graduate eligible. Age 21–36 years. Salary <strong>₹44,900–₹2,09,200/month</strong> under WB 6th ROPA 2019.
+            WBCS (Executive) 2025–26 notification expected soon from WBPSC. Annual exam for <strong>200–500 vacancies</strong> across Group A &amp; B services — BDO, SDO, SDPO and more. 3-stage selection: Prelims → Mains → Personality Test. Graduate eligible. Age 21–36 years (Group B) / 21–39 years (Group D). Salary <strong>₹56,100–₹2,09,200/month</strong> under WB 6th ROPA 2019.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
             {[
               { label: 'Expected Vacancies',    value: '200–500',              sub: '(2025 cycle est.)' },
-              { label: 'Prelims Exam Date',     value: 'Early 2026',           sub: '(Expected)' },
+              { label: 'Prelims Exam Date',     value: 'June 14, 2026',        sub: '(2024 Advt. 08/2024)' },
               { label: 'Min. Qualification',    value: 'Any Graduate',         sub: 'Degree required' },
-              { label: 'Starting Salary',       value: '₹44,900+/month',      sub: 'plus allowances' },
+              { label: 'Starting Salary',       value: '₹56,100+/month',      sub: 'plus allowances' },
             ].map((item) => (
               <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
                 <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
@@ -36098,7 +36105,7 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
           </div>
 
           <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
-            💡 <strong>Key Update May 2026:</strong> WBCS (Exe.) 2025 notification is awaited. The 2024 cycle (Prelims Feb 2025) is currently in progress. All upcoming 2025 cycle dates are estimated based on WBPSC&apos;s historical pattern. Always verify from <a href="https://wbpsc.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">wbpsc.gov.in</a>.
+            💡 <strong>Key Update May 2026:</strong> WBCS (Exe.) 2024 Preliminary Exam (Advt. 08/2024) is scheduled for <strong>June 14, 2026</strong>. WBCS (Exe.) 2025 notification is yet to be released. Always verify from <a href="https://wbpsc.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">wbpsc.gov.in</a>.
           </div>
         </div>
       </div>
@@ -36196,30 +36203,32 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
                     <span className="text-lg">📋</span>
                     <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
                   </div>
-                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>21 years</strong> | Maximum: <strong>36 years</strong> (General/UR — as of the cut-off date in the notification)</p>
+                  <p className="text-sm text-surface-600 mb-3">Age limits vary by group. <strong>Group B:</strong> Minimum 20 years | Maximum 36 years. <strong>Group D:</strong> Minimum 21 years | Maximum 39 years. (General/UR candidates, as of the cut-off date in the notification)</p>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead className="bg-surface-50 border border-surface-200">
                         <tr>
                           <th className="text-left p-2 font-semibold text-surface-700">Category</th>
                           <th className="text-left p-2 font-semibold text-surface-700">Relaxation</th>
-                          <th className="text-left p-2 font-semibold text-surface-700">Max Age</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Max Age (Group B)</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Max Age (Group D)</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-surface-100">
                         {[
-                          { cat: 'General / EWS (UR)',     rel: 'No relaxation',    max: '36 years' },
-                          { cat: 'OBC-A (WB)',             rel: '+3 years',          max: '39 years' },
-                          { cat: 'OBC-B (WB)',             rel: '+3 years',          max: '39 years' },
-                          { cat: 'SC (WB)',                rel: '+5 years',          max: '41 years' },
-                          { cat: 'ST (WB)',                rel: '+5 years',          max: '41 years' },
-                          { cat: 'PwBD (General)',         rel: '+10 years',         max: '46 years' },
-                          { cat: 'Ex-Servicemen',          rel: 'As per Govt. norms', max: 'As applicable' },
+                          { cat: 'General / EWS (UR)',     rel: 'No relaxation',    grpB: '36 years', grpD: '39 years' },
+                          { cat: 'OBC-A (WB)',             rel: '+3 years',          grpB: '39 years', grpD: '42 years' },
+                          { cat: 'OBC-B (WB)',             rel: '+3 years',          grpB: '39 years', grpD: '42 years' },
+                          { cat: 'SC (WB)',                rel: '+5 years',          grpB: '41 years', grpD: '44 years' },
+                          { cat: 'ST (WB)',                rel: '+5 years',          grpB: '41 years', grpD: '44 years' },
+                          { cat: 'PwBD (General)',         rel: '+10 years',         grpB: '46 years', grpD: '49 years' },
+                          { cat: 'Ex-Servicemen',          rel: 'As per Govt. norms', grpB: 'As applicable', grpD: 'As applicable' },
                         ].map((row, i) => (
                           <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
                             <td className="p-2 text-surface-700">{row.cat}</td>
                             <td className="p-2 text-primary-600 font-medium">{row.rel}</td>
-                            <td className="p-2 text-surface-700">{row.max}</td>
+                            <td className="p-2 text-surface-700">{row.grpB}</td>
+                            <td className="p-2 text-surface-700">{row.grpD}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -36235,8 +36244,37 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
                     <strong>Graduation in any discipline</strong> from a university recognised by the Government of India or WBPSC-approved institutions. Final-year students awaiting results may apply but must produce proof of passing by the date of joining.
                   </p>
                   <div className="mt-3 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
-                    🎓 <strong>Language Requirement:</strong> Candidates must have passed at least one examination with <strong>Bengali</strong> as a subject, OR must possess a proficiency in Bengali certified by the WBPSC, to be eligible for certain service allocations.
+                    🗣️ <strong>Bengali Language Requirement:</strong> Candidates must be able to <strong>read, write, and speak Bengali</strong>. This is mandatory for all applicants, <em>except</em> those whose mother tongue is <strong>Nepali</strong>. Candidates who did not study Bengali in school must obtain a proficiency certificate from WBPSC or a recognised institution to be eligible for service allocations in West Bengal.
                   </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">💳</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Application Fee</h3>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50 border border-surface-200">
+                        <tr>
+                          <th className="text-left p-2 font-semibold text-surface-700">Category</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Fee</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / OBC',                   fee: '₹210' },
+                          { cat: 'SC / ST of West Bengal',          fee: 'Nil' },
+                          { cat: 'PwD of West Bengal',              fee: 'Nil' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                            <td className="p-2 text-surface-700">{row.cat}</td>
+                            <td className="p-2 font-semibold text-emerald-700">{row.fee}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2">* Fee is paid online at the time of application. Always verify the exact amount from the official notification at wbpsc.gov.in as it may be revised.</p>
                 </div>
                 <div className="card p-5">
                   <div className="flex items-center gap-2 mb-2">
@@ -36292,34 +36330,80 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
               {/* Prelims */}
               <div className="card p-5 mb-5">
                 <h3 className="font-heading font-semibold text-surface-800 mb-1 text-lg">Stage 1 — Preliminary Examination</h3>
-                <p className="text-sm text-surface-500 mb-4">Objective MCQ | 200 Questions | 200 Marks | 150 Minutes | Negative marking: ¼ mark per wrong answer</p>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead className="bg-surface-800 text-white">
-                      <tr>
-                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Section</th>
-                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
-                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {prelimsPattern.map((row, i) => (
-                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
-                          <td className="p-3 text-surface-800 font-medium">{row.subject}</td>
-                          <td className="p-3 text-center text-surface-600">{row.questions}</td>
-                          <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                <p className="text-sm text-surface-500 mb-4">Objective MCQ | 2 Papers | 150 Minutes each | Negative marking: ¼ mark per wrong answer in Paper I</p>
+
+                {/* Paper I */}
+                <div className="mb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="bg-primary-100 text-primary-700 text-xs font-bold font-heading px-2 py-0.5 rounded-full">Paper I</span>
+                    <span className="text-sm font-heading font-semibold text-surface-700">General Studies — 200 Marks (Merit-based)</span>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Section</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
                         </tr>
-                      ))}
-                      <tr className="border-t-2 border-surface-300 bg-surface-100">
-                        <td className="p-3 font-bold text-surface-900">Total</td>
-                        <td className="p-3 text-center font-bold text-surface-900">200</td>
-                        <td className="p-3 text-center font-bold text-primary-600">200</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {prelimsPaperI.map((row, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                            <td className="p-3 text-surface-800 font-medium">{row.subject}</td>
+                            <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                            <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="border-t-2 border-surface-300 bg-surface-100">
+                          <td className="p-3 font-bold text-surface-900">Total</td>
+                          <td className="p-3 text-center font-bold text-surface-900">200</td>
+                          <td className="p-3 text-center font-bold text-primary-600">200</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
+
+                {/* Paper II */}
+                <div className="mb-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="bg-amber-100 text-amber-700 text-xs font-bold font-heading px-2 py-0.5 rounded-full">Paper II</span>
+                    <span className="text-sm font-heading font-semibold text-surface-700">CSAT (Civil Services Aptitude Test) — 200 Marks</span>
+                    <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">Qualifying Only</span>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Section</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {prelimsPaperII.map((row, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                            <td className="p-3 text-surface-800 font-medium">{row.subject}</td>
+                            <td className="p-3 text-center text-surface-600">{row.questions}</td>
+                            <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="border-t-2 border-surface-300 bg-surface-100">
+                          <td className="p-3 font-bold text-surface-900">Total</td>
+                          <td className="p-3 text-center font-bold text-surface-900">100</td>
+                          <td className="p-3 text-center font-bold text-primary-600">200</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="mt-2 bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-sm text-emerald-800">
+                    ✅ <strong>Paper II is qualifying in nature.</strong> Candidates must score the minimum qualifying marks in Paper II, but its marks are <strong>not counted</strong> for the Prelims merit list. Only Paper I marks determine who advances to Mains.
+                  </div>
+                </div>
+
                 <div className="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm text-amber-800">
-                  ⚠️ <strong>Negative Marking:</strong> 0.25 marks deducted per wrong answer in Prelims. There is no negative marking in Mains papers.
+                  ⚠️ <strong>Negative Marking:</strong> 0.25 marks deducted per wrong answer in Prelims Paper I. There is no negative marking in Mains papers.
                 </div>
               </div>
 
@@ -36498,7 +36582,7 @@ function WbcsExecutivePage({ exam }: { exam: any }) {
                     { step: '2', text: 'Register on the WBPSC Online Application Portal. Use a valid email ID and mobile number — OTP verification is required.' },
                     { step: '3', text: 'Fill in all personal, educational, and category details accurately. Ensure your details match your official documents (Class 10 certificate, graduation degree, category certificate).' },
                     { step: '4', text: 'Upload scanned copies of your photograph (passport size) and signature in the specified format (usually JPEG, under 50KB).' },
-                    { step: '5', text: 'Pay the application fee online. General/OBC: ~₹210 (historical); SC/ST/PwBD of WB: ~₹60. Fee amount is confirmed in the official notification.' },
+                    { step: '5', text: 'Pay the application fee online. General/OBC: ₹210. SC/ST of West Bengal and PwD of West Bengal: Nil (no fee). Payment is accepted via net banking, debit/credit card, or UPI.' },
                     { step: '6', text: 'Submit the application and download the confirmation page/receipt. Keep a printout and the login credentials safely for admit card download later.' },
                   ].map((item) => (
                     <li key={item.step} className="flex gap-4">
