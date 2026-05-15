@@ -551,6 +551,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'drdo-ceptam') {
+    return {
+      title: 'DRDO CEPTAM 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'DRDO CEPTAM 2026: Notification expected soon. 1,000–3,000+ vacancies for Technician A, STA B, Admin posts across DRDO labs. 10th/ITI/Diploma/Graduate eligible. Age 18–28 yrs. Tier I CBT + Tier II/Skill Test. Salary ₹18,000–₹1,12,400/month. Free guide.',
+      keywords: 'DRDO CEPTAM 2026, DRDO CEPTAM notification 2026, DRDO technician bharti 2026, DRDO STA B 2026, DRDO CEPTAM syllabus, DRDO CEPTAM salary, drdo.gov.in vacancy 2026, DRDO recruitment 2026, डीआरडीओ भर्ती 2026, DRDO CEPTAM taiyari',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/drdo-ceptam/' },
+      other: { 'description:hi': 'DRDO CEPTAM 2026 – रक्षा अनुसंधान एवं विकास संगठन में 1,000–3,000+ रिक्तियाँ। Technician A, STA B, Admin पदों के लिए। 10वीं/ITI/डिप्लोमा/स्नातक पात्र। आयु 18–28 वर्ष। Tier I CBT + Tier II/कौशल परीक्षा। वेतन ₹18,000–₹1,12,400/माह।' },
+    };
+  }
+
   if (params.slug === 'mpsc-rajyaseva') {
     return {
       title: 'MPSC Rajyaseva 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -636,6 +646,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'dsssb-tgt-pgt-prt') return <DssbTgtPgtPrtPage exam={brief} />;
   if (brief && brief.slug === 'mpsc-rajyaseva') return <MpscRajyasevaPage exam={brief} />;
   if (brief && brief.slug === 'kerala-psc-kas') return <KeralaKasPage exam={brief} />;
+  if (brief && brief.slug === 'drdo-ceptam') return <DrdoCeptamPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -43598,6 +43609,699 @@ function KeralaKasPage({ exam }: { exam: any }) {
                     { label: 'Mains Papers', value: '6 papers (900 marks)' },
                     { label: 'Language', value: 'Malayalam / English' },
                     { label: 'Apply Via', value: 'Thulasi Portal (OTR)' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex justify-between text-xs border-b border-surface-100 pb-2 last:border-0 last:pb-0">
+                      <span className="text-surface-500">{item.label}</span>
+                      <span className="font-semibold text-surface-800 text-right ml-2">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── DRDO CEPTAM 2026 RICH PAGE ───────────────────────────────────────────────
+function DrdoCeptamPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancy History' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Pay Structure' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'DRDO CEPTAM 10 Notification Released',   date: '26 November 2023',       status: 'released' },
+    { event: 'CEPTAM 10 Online Application Opens',     date: '26 November 2023',       status: 'released' },
+    { event: 'CEPTAM 10 Application Last Date',        date: '22 January 2024',        status: 'released' },
+    { event: 'CEPTAM 10 Tier I CBT (Technician A)',    date: 'August 2024',            status: 'released' },
+    { event: 'CEPTAM 10 Tier I CBT (STA B / Admin)',   date: 'September 2024',         status: 'released' },
+    { event: 'CEPTAM 10 Tier II / Skill Test',         date: 'November–December 2024', status: 'released' },
+    { event: 'CEPTAM 10 Final Result',                 date: 'March 2025',             status: 'released' },
+    { event: '🆕 DRDO CEPTAM 11 – Notification',      date: 'To Be Notified (TBN)',   status: 'tbn' },
+    { event: 'CEPTAM 11 – Online Application',         date: 'TBN',                    status: 'tbn' },
+    { event: 'CEPTAM 11 – Tier I CBT',                 date: 'TBN',                    status: 'tbn' },
+    { event: 'CEPTAM 11 – Tier II / Skill Test',       date: 'TBN',                    status: 'tbn' },
+    { event: 'CEPTAM 11 – Final Result',               date: 'TBN',                    status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { cycle: 'CEPTAM 7',  year: '2013', vacancies: '~1,702', posts: 'Technician A, STA B' },
+    { cycle: 'CEPTAM 8',  year: '2018', vacancies: '~1,817', posts: 'Technician A, STA B, Admin' },
+    { cycle: 'CEPTAM 9',  year: '2021', vacancies: '~1,817', posts: 'Technician A, STA B, Admin' },
+    { cycle: 'CEPTAM 10', year: '2023–24', vacancies: '~3,117', posts: 'Technician A (2,007) + STA B / Admin (~1,110)' },
+    { cycle: 'CEPTAM 11', year: '2026 (Expected)', vacancies: '1,000–3,000+ (Est.)', posts: 'Technician A, STA B, Admin' },
+  ];
+
+  const tier1Pattern = [
+    { subject: 'General Intelligence & Reasoning',  questions: 25, marks: 25 },
+    { subject: 'General Awareness',                  questions: 15, marks: 15 },
+    { subject: 'Quantitative Aptitude / Numerical Ability', questions: 15, marks: 15 },
+    { subject: 'English Language',                   questions: 10, marks: 10 },
+    { subject: 'General Science (for Technician A)', questions: 35, marks: 35 },
+  ];
+
+  const sta_b_pattern = [
+    { subject: 'General Intelligence & Reasoning',   questions: 25, marks: 25 },
+    { subject: 'General Awareness',                  questions: 20, marks: 20 },
+    { subject: 'Quantitative Aptitude',              questions: 15, marks: 15 },
+    { subject: 'English Language',                   questions: 20, marks: 20 },
+    { subject: 'Subject Knowledge (Science/CS/Admin)', questions: 20, marks: 20 },
+  ];
+
+  const payScales = [
+    { post: 'Technician A', level: 'Pay Level 3', payBand: '₹21,700 – ₹69,100', gross: '~₹30,000–35,000/month*' },
+    { post: 'STA B (Science)',    level: 'Pay Level 6', payBand: '₹35,400 – ₹1,12,400', gross: '~₹50,000–55,000/month*' },
+    { post: 'STA B (IT/Admin)',   level: 'Pay Level 6', payBand: '₹35,400 – ₹1,12,400', gross: '~₹50,000–55,000/month*' },
+    { post: 'Admin & Allied (Group B)', level: 'Pay Level 6', payBand: '₹35,400 – ₹1,12,400', gross: '~₹50,000–55,000/month*' },
+  ];
+
+  const books = [
+    { subject: 'Reasoning',       title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal',    freeLink: '' },
+    { subject: 'Quantitative Aptitude', title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', freeLink: '' },
+    { subject: 'General Science', title: 'Lucent\'s General Science',                           author: 'Lucent Publications', freeLink: '' },
+    { subject: 'English',         title: 'Objective General English',                           author: 'S.P. Bakshi',      freeLink: '' },
+    { subject: 'General Awareness', title: 'Manorama Year Book 2026',                          author: 'Manorama',         freeLink: '' },
+    { subject: 'ITI/Diploma Subjects', title: 'DRDO CEPTAM Technician A Guide',               author: 'Arihant Experts',  freeLink: '' },
+  ];
+
+  const resources = [
+    { icon: '📺', title: 'DRDO CEPTAM Preparation – YouTube',       desc: 'Free video lectures on Reasoning, GS & Science', url: 'https://youtube.com' },
+    { icon: '🌐', title: 'Official DRDO Website',                    desc: 'drdo.gov.in – official notifications & admit cards', url: 'https://drdo.gov.in' },
+    { icon: '🌐', title: 'CEPTAM Official Portal',                   desc: 'ceptam.drdo.gov.in – apply & track recruitment status', url: 'https://www.ceptam.drdo.gov.in' },
+    { icon: '📱', title: 'Previous Year Papers – Telegram',          desc: 'DRDO CEPTAM PYQs & mock tests community', url: 'https://t.me' },
+  ];
+
+  const tips = [
+    { num: '1', title: 'Master ITI/Diploma Trade Subject First', body: 'For Technician A posts, your trade subject (Fitter, Electrician, Electronics, etc.) carries 35 marks in Tier I. A strong trade foundation can set you apart from competitors who focus only on GS.' },
+    { num: '2', title: 'Solve CEPTAM 9 & 10 PYQs Thoroughly', body: 'DRDO repeats question patterns across cycles. Solving CEPTAM 9 and CEPTAM 10 papers reveals the exact difficulty level and topics. Aim for at least 2 full mock tests per week in the final month.' },
+    { num: '3', title: 'Build a Current Affairs Habit for GK', body: 'The General Awareness section in Tier I covers science-related news, defence acquisitions, DRDO milestones, and national current affairs. Read a newspaper or a monthly GK digest daily — even 15 minutes counts.' },
+    { num: '4', title: 'Prepare for the Skill Test Alongside Tier I', body: 'Many candidates neglect the Tier II skill/trade test until Tier I results come out — losing weeks of preparation time. Start practising trade skills and workshop tasks in parallel with CBT prep.' },
+    { num: '5', title: 'Target DRDO Lab Preference Strategically', body: 'CEPTAM allows you to indicate lab/city preferences during application. Research labs relevant to your trade (e.g., DRDL for missiles, CAIR for AI, ISRO-adjacent labs) and align preferences with your long-term career goals.' },
+  ];
+
+  const faqs = [
+    { q: 'What is DRDO CEPTAM and what posts does it recruit for?', a: 'DRDO CEPTAM (Centre for Personnel Talent Management) is the centralised recruitment body of the Defence Research & Development Organisation (DRDO). It conducts recruitment for Technician A (Group C), Senior Technical Assistant B (STA B, Group B), and Administrative posts across 50+ DRDO labs and establishments spread across India.' },
+    { q: 'What is the age limit for DRDO CEPTAM 2026?', a: 'For Technician A posts: 18–28 years. For STA B (Science/IT/Admin) posts: 18–28 years. Age relaxation: OBC +3 years, SC/ST +5 years, PwBD +10 years, Ex-Servicemen as per rules. Age is calculated as on the closing date of the online application.' },
+    { q: 'What qualifications are needed for DRDO CEPTAM?', a: 'Technician A posts require a 10th Pass + ITI certificate (National Trade Certificate) in the relevant trade. STA B (Science/IT) posts require a 3-year Diploma in the relevant Engineering/Science discipline. Administrative STA B posts typically require a Graduate degree. Always verify the exact qualification for the specific post code in the official notification.' },
+    { q: 'How many stages are there in DRDO CEPTAM selection?', a: 'DRDO CEPTAM follows a 2-tier selection: Tier I is a Computer-Based Test (CBT) covering General Intelligence & Reasoning, General Awareness, Quantitative Aptitude, English, and domain/science subjects. Shortlisted candidates appear for Tier II — which is a Skill/Trade Test or a higher-level CBT depending on the post. Final merit is based on Tier II performance.' },
+    { q: 'What is the salary for DRDO CEPTAM Technician A?', a: 'DRDO Technician A is a Group C post in Pay Level 3 (₹21,700 – ₹69,100 per month as basic pay). With DA (Dearness Allowance), HRA (House Rent Allowance), and other allowances, the gross in-hand salary is approximately ₹30,000–₹35,000 per month depending on the posting city. The 8th Pay Commission recommendations (expected 2026) may further revise this.' },
+  ];
+
+  const faqSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  });
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
+
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">DRDO CEPTAM 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🛡️ Defence</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ CEPTAM 11 Notification: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            DRDO CEPTAM 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            DRDO CEPTAM 11 notification is awaited in <strong>2026</strong> with expected <strong>1,000–3,000+ vacancies</strong> for Technician A, STA B, and Administrative posts across 50+ DRDO labs. 2-tier selection: CBT Tier I → Skill/Trade Test Tier II. Salary from <strong>₹21,700 to ₹1,12,400/month</strong> based on post.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies',  value: '1,000–3,000+',         sub: 'CEPTAM 11 (est.)' },
+              { label: 'Tier I CBT Date',     value: 'To Be Notified',        sub: '(TBN – CEPTAM 11)' },
+              { label: 'Min. Qualification',  value: '10th + ITI',            sub: 'for Technician A' },
+              { label: 'Salary Range',        value: '₹21,700–₹1,12,400',    sub: 'per month (basic)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>2026 Update:</strong> DRDO CEPTAM 10 concluded in 2024–25 with ~3,117 vacancies. <strong>CEPTAM 11</strong> notification has not been released as of May 2026. Monitor <a href="https://www.ceptam.drdo.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">ceptam.drdo.gov.in</a> for official updates.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* ── LEFT COLUMN ── */}
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is DRDO CEPTAM 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  <strong>DRDO CEPTAM</strong> (Centre for Personnel Talent Management) is the dedicated recruitment wing of the <strong>Defence Research and Development Organisation (DRDO)</strong> — India&apos;s premier defence R&D agency under the Ministry of Defence. DRDO operates 50+ laboratories and establishments across the country engaged in aerospace, missiles, electronics, naval systems, armaments, cybersecurity, and more.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  CEPTAM conducts centralised, periodic recruitment for <strong>Group B (Gazetted)</strong> and <strong>Group C (Non-Gazetted)</strong> civilian scientific and technical posts. The major recruitment drives — called CEPTAM cycles — happen every 2–4 years and cover <strong>Technician A (Grade C)</strong>, <strong>Senior Technical Assistant B (STA B)</strong>, and various Administrative posts.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  Working in DRDO means contributing directly to India&apos;s defence self-reliance — from Tejas fighter jets and Agni missiles to electronic warfare and CBRN protection systems. It offers <strong>permanent Central Government employment</strong>, excellent pay, research-stimulating work culture, and pan-India posting across iconic defence labs.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',   value: 'DRDO – CEPTAM' },
+                  { label: 'Post Categories',   value: 'Group B & Group C' },
+                  { label: 'Selection Process', value: 'Tier I CBT + Tier II Skill Test' },
+                  { label: 'Posting',           value: 'Pan-India (50+ DRDO labs)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 DRDO CEPTAM 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> CEPTAM 11 dates are not yet officially announced. The table below shows confirmed CEPTAM 10 (2023–25) dates and the upcoming CEPTAM 11 status. Always verify from <a href="https://www.ceptam.drdo.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">ceptam.drdo.gov.in</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.event}</td>
+                        <td className="p-3 text-surface-700 font-medium">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released'
+                            ? <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full px-2.5 py-0.5">✔ Done</span>
+                            : <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold rounded-full px-2.5 py-0.5">⏳ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">🪪 Nationality</h3>
+                  <p className="text-sm text-surface-700">Candidates must be a Citizen of India. Citizens of Nepal / Bhutan and Tibetan refugees settled in India before 1 January 1962 may also apply as per Government of India norms.</p>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">📋 Age Limit</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-100">
+                          <th className="text-left p-2 font-heading text-surface-700 text-xs uppercase">Post</th>
+                          <th className="text-left p-2 font-heading text-surface-700 text-xs uppercase">Min Age</th>
+                          <th className="text-left p-2 font-heading text-surface-700 text-xs uppercase">Max Age</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { post: 'Technician A (Group C)',     min: '18 yrs', max: '28 yrs' },
+                          { post: 'STA B / Admin (Group B)',    min: '18 yrs', max: '28 yrs' },
+                        ].map((r, i) => (
+                          <tr key={i} className="border-t border-surface-100">
+                            <td className="p-2 text-surface-700">{r.post}</td>
+                            <td className="p-2 text-surface-700">{r.min}</td>
+                            <td className="p-2 text-surface-700">{r.max}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-500 mt-3">Age relaxation: OBC +3 yrs | SC/ST +5 yrs | PwBD +10 yrs | Ex-Servicemen as per DoP&T rules. Age reckoned as on closing date of application.</p>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">🎓 Educational Qualification</h3>
+                  <div className="space-y-3">
+                    {[
+                      { post: 'Technician A', qual: '10th Pass (Matriculation) + ITI (National Trade Certificate) in relevant trade. Minimum 50% in ITI for general; 45% for SC/ST.' },
+                      { post: 'STA B (Science/Electronics/IT)', qual: '3-year Diploma in Engineering (relevant discipline) from a recognised Institution. Minimum 60% marks.' },
+                      { post: 'STA B (Admin & Allied)', qual: 'Graduate degree in relevant discipline OR Diploma as specified per post code. Check specific post requirements in the official notification.' },
+                    ].map((item) => (
+                      <div key={item.post} className="flex gap-3 bg-surface-50 rounded-lg p-3">
+                        <div className="mt-0.5 text-primary-500">✦</div>
+                        <div>
+                          <div className="font-heading font-semibold text-surface-800 text-sm">{item.post}</div>
+                          <div className="text-xs text-surface-600 mt-0.5">{item.qual}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-3 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-3">
+                    <p className="text-xs text-primary-700">💡 <strong>Tip:</strong> Qualifications vary by post code. Always cross-check your exact trade/discipline eligibility in the official CEPTAM notification PDF before applying.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCY HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancy History</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Cycle</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Year</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Vacancies</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Posts Covered</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-semibold text-surface-800">{row.cycle}</td>
+                        <td className="p-3 text-surface-700">{row.year}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.vacancies}</td>
+                        <td className="p-3 text-surface-600 text-xs">{row.posts}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mt-3">CEPTAM 11 vacancy numbers are an estimate based on historical trends. Official vacancies will be declared in the CEPTAM 11 notification.</p>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern</h2>
+              </div>
+
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Tier I – Computer Based Test (CBT)</h3>
+                <p className="text-sm text-surface-600 mb-4">All candidates appear for Tier I. The paper is objective-type (MCQ) with <strong>no negative marking</strong>. Duration: <strong>90 minutes</strong>. Mode: Online CBT.</p>
+
+                <p className="text-xs font-heading font-semibold text-surface-500 uppercase tracking-wide mb-2">Technician A Posts (Group C)</p>
+                <div className="overflow-x-auto mb-4">
+                  <table className="w-full text-sm border border-surface-200 rounded-lg overflow-hidden">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-2.5 font-heading text-xs uppercase">Subject</th>
+                        <th className="text-center p-2.5 font-heading text-xs uppercase">Questions</th>
+                        <th className="text-center p-2.5 font-heading text-xs uppercase">Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tier1Pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2.5 text-surface-700">{row.subject}</td>
+                          <td className="p-2.5 text-center text-surface-700">{row.questions}</td>
+                          <td className="p-2.5 text-center font-semibold text-surface-800">{row.marks}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 border-t-2 border-primary-200">
+                        <td className="p-2.5 font-heading font-bold text-surface-900">Total</td>
+                        <td className="p-2.5 text-center font-bold text-surface-900">100</td>
+                        <td className="p-2.5 text-center font-bold text-surface-900">100</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p className="text-xs font-heading font-semibold text-surface-500 uppercase tracking-wide mb-2">STA B / Admin Posts (Group B)</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border border-surface-200 rounded-lg overflow-hidden">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-2.5 font-heading text-xs uppercase">Subject</th>
+                        <th className="text-center p-2.5 font-heading text-xs uppercase">Questions</th>
+                        <th className="text-center p-2.5 font-heading text-xs uppercase">Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {sta_b_pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2.5 text-surface-700">{row.subject}</td>
+                          <td className="p-2.5 text-center text-surface-700">{row.questions}</td>
+                          <td className="p-2.5 text-center font-semibold text-surface-800">{row.marks}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 border-t-2 border-primary-200">
+                        <td className="p-2.5 font-heading font-bold text-surface-900">Total</td>
+                        <td className="p-2.5 text-center font-bold text-surface-900">100</td>
+                        <td className="p-2.5 text-center font-bold text-surface-900">100</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Tier II – Skill / Trade Test</h3>
+                <p className="text-sm text-surface-600 mb-3">Candidates shortlisted from Tier I (usually top 3–5× vacancies) appear for Tier II. The nature of Tier II depends on the post:</p>
+                <div className="space-y-2">
+                  {[
+                    { post: 'Technician A', tier2: 'Practical/Skill Test in the relevant ITI trade (e.g., Fitter, Electrician, Electronics). Qualifying in nature for some posts; merit-based for others.' },
+                    { post: 'STA B (Science/IT)', tier2: 'Higher-level CBT or Written Test covering domain-specific advanced topics (Physics, Chemistry, Computer Science, etc.).' },
+                    { post: 'Admin Posts', tier2: 'Skill Test (Typing/Stenography/Data Entry) or a Written Test depending on the specific post code.' },
+                  ].map((item) => (
+                    <div key={item.post} className="flex gap-3 bg-surface-50 rounded-lg p-3 text-sm">
+                      <span className="text-primary-500 mt-0.5 shrink-0">✦</span>
+                      <div><span className="font-semibold text-surface-800">{item.post}: </span><span className="text-surface-600">{item.tier2}</span></div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-500 mt-3">Final merit list is prepared based on Tier II performance (Tier I is only qualifying/shortlisting). No interview for Group C posts; Group B Admin posts may have a document verification stage.</p>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus – DRDO CEPTAM 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  {
+                    subject: 'General Intelligence & Reasoning',
+                    topics: 'Analogy, Series (Number/Letter/Figure), Classification, Coding-Decoding, Blood Relations, Direction Sense, Sitting Arrangement, Venn Diagrams, Syllogism, Non-Verbal Reasoning (Mirror Images, Paper Folding), Embedded Figures, Pattern Completion',
+                  },
+                  {
+                    subject: 'General Awareness / Current Affairs',
+                    topics: 'Defence & DRDO milestones, National/International Current Affairs, Science & Technology news, Geography, History, Indian Polity & Constitution, Economy basics, Static GK (Books, Awards, Sports, Important Days)',
+                  },
+                  {
+                    subject: 'Quantitative Aptitude / Numerical Ability',
+                    topics: 'Number System, Simplification, HCF & LCM, Percentage, Profit & Loss, Ratio & Proportion, Average, Time & Work, Speed-Distance-Time, Simple & Compound Interest, Basic Algebra, Geometry basics, Data Interpretation',
+                  },
+                  {
+                    subject: 'English Language',
+                    topics: 'Reading Comprehension, Vocabulary (Synonyms/Antonyms), Fill in the Blanks, Error Spotting, Sentence Rearrangement, Cloze Test, Phrase/Idiom Meaning, One-word Substitution',
+                  },
+                  {
+                    subject: 'General Science (Technician A)',
+                    topics: 'Physics: Motion, Force, Work/Energy, Light, Sound, Electricity, Magnetism. Chemistry: Matter, Acids/Bases/Salts, Chemical Reactions, Metals & Non-metals. Biology: Cell, Tissues, Life Processes, Human Systems. Plus trade-specific theory aligned to ITI syllabus (Fitter/Electrician/Electronics/Mechanical/IT etc.)',
+                  },
+                  {
+                    subject: 'Subject Knowledge (STA B)',
+                    topics: 'Engineering discipline-specific questions (Physics, Chemistry, Computer Science, Electronics, Mechanical, Civil, etc.) at Diploma/Graduate level. Syllabus is equivalent to the relevant 3-year Diploma or B.Sc/B.E curriculum.',
+                  },
+                ].map((item, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{item.subject}</span>
+                      <svg className="w-5 h-5 text-primary-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed border-t border-surface-100 pt-3">{item.topics}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary & Pay Structure</h2>
+              </div>
+              <div className="overflow-x-auto mb-5">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Post</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Pay Level (7th CPC)</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Pay Band</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Approx. Gross</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {payScales.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-semibold text-surface-800">{row.post}</td>
+                        <td className="p-3 text-surface-700">{row.level}</td>
+                        <td className="p-3 text-surface-700">{row.payBand}</td>
+                        <td className="p-3 text-emerald-700 font-semibold">{row.gross}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Allowances & Benefits</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { label: 'Dearness Allowance (DA)', value: 'Revised periodically by GoI (~55% of Basic as of 2025)' },
+                    { label: 'House Rent Allowance (HRA)', value: '8–27% of Basic (X/Y/Z city classification)' },
+                    { label: 'Transport Allowance', value: '₹1,350–₹7,200/month + DA thereon' },
+                    { label: 'NPS (New Pension Scheme)', value: '10% employee + 14% employer contribution' },
+                    { label: 'Medical Benefits', value: 'CGHS / DRDO dispensary coverage' },
+                    { label: '8th Pay Commission', value: 'Recommendations expected 2026 — may revise all pay scales upward' },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-surface-50 rounded-lg p-3 text-xs">
+                      <div className="font-semibold text-surface-700 mb-0.5">{item.label}</div>
+                      <div className="text-surface-500">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-3">*Gross salary is indicative for metro/X-class city posting. Actual in-hand varies by city, DA rate, and individual deductions. 8th Pay Commission recommendations are pending as of May 2026.</p>
+              </div>
+            </section>
+
+            {/* SECTION 8: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for DRDO CEPTAM</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {[
+                    { step: '1', title: 'Check Official Notification', desc: 'Visit ceptam.drdo.gov.in or drdo.gov.in and download the CEPTAM 11 notification PDF. Read it fully — post codes, qualification, age, and fees differ per post.' },
+                    { step: '2', title: 'Register / Login at CEPTAM Portal', desc: 'Create a new account or log in at the CEPTAM recruitment portal. Keep your Aadhaar, mobile number, and email ready for OTR (One-Time Registration).' },
+                    { step: '3', title: 'Fill Application Form Online', desc: 'Enter personal details, educational qualifications, post code preference, and lab preferences. Double-check all entries before submission.' },
+                    { step: '4', title: 'Upload Documents', desc: 'Upload a recent passport-size photograph, signature, and mark sheets/certificates in the prescribed format and file size.' },
+                    { step: '5', title: 'Pay Application Fee', desc: 'General/OBC candidates pay ₹100 (fee may vary per notification). SC/ST/PwBD/Women candidates are usually exempted. Pay online via Net Banking/Debit/Credit Card/UPI.' },
+                    { step: '6', title: 'Submit & Download Confirmation', desc: 'Submit the application and download/print the filled form and payment confirmation for your records. Admit cards are released separately on the portal before the exam.' },
+                  ].map((item) => (
+                    <div key={item.step} className="sm:pl-14 relative">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">{item.step}</div>
+                      <div className="card p-5">
+                        <div className="font-heading font-semibold text-surface-800 mb-1">{item.title}</div>
+                        <div className="text-sm text-surface-600">{item.desc}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-5 bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                <p className="text-sm text-emerald-800">🌐 <strong>Official Portal:</strong> <a href="https://www.ceptam.drdo.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">ceptam.drdo.gov.in</a> — bookmark this and check regularly for CEPTAM 11 notification.</p>
+              </div>
+            </section>
+
+            {/* SECTION 9: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">3-Month Study Plan for DRDO CEPTAM</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {[
+                    { step: '1', period: 'Month 1 – Foundation & Trade Subject', desc: 'Build your basics in Reasoning and Quantitative Aptitude. Complete the ITI trade theory/General Science chapters — this is your strongest differentiator. Spend 70% of time on domain subject, 30% on aptitude.' },
+                    { step: '2', period: 'Month 2 – GK + English + Full Syllabus Revision', desc: 'Complete General Awareness and English sections. Cover important static GK (DRDO achievements, defence current affairs, science & tech news). Revise all aptitude and reasoning topics. Start attempting chapter-wise online mock tests.' },
+                    { step: '3', period: 'Month 3 – Mock Tests, PYQs & Skill Test Prep', desc: 'Solve at least 15–20 full-length mock tests simulating real CEPTAM exam conditions. Analyse every mistake. Simultaneously, start preparing for Tier II skill/trade test — do not leave it for after Tier I results.' },
+                  ].map((item) => (
+                    <div key={item.step} className="sm:pl-14 relative">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">{item.step}</div>
+                      <div className="card p-5">
+                        <div className="font-heading font-semibold text-surface-800 mb-1">{item.period}</div>
+                        <div className="text-sm text-surface-600">{item.desc}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for DRDO CEPTAM 2026</h2>
+              </div>
+              <BooksTable books={books} />
+            </section>
+
+            {/* SECTION 11: RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {resources.map((res) => (
+                  <a key={res.title} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="text-2xl mb-2">{res.icon}</div>
+                    <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500">{res.title}</div>
+                    <div className="text-sm text-surface-500 mt-1">{res.desc}</div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 12: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Preparation Tips</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((tip) => (
+                  <div key={tip.num} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 shrink-0 bg-accent-100 rounded-lg flex items-center justify-center text-accent-600 font-heading font-bold text-sm">{tip.num}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</div>
+                      <div className="text-sm text-surface-600 leading-relaxed">{tip.body}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((item, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{item.q}</span>
+                      <svg className="w-5 h-5 text-primary-500 shrink-0 ml-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed border-t border-surface-100 pt-3">{item.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 py-1 transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website Card */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Official Resources</h3>
+                <div className="space-y-2">
+                  <a href="https://www.ceptam.drdo.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium">
+                    <span>🌐</span> ceptam.drdo.gov.in
+                  </a>
+                  <a href="https://drdo.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium">
+                    <span>🛡️</span> drdo.gov.in
+                  </a>
+                </div>
+              </div>
+
+              {/* Eligibility Checker Promo */}
+              <div className="bg-primary-50 border border-primary-200 rounded-2xl p-5">
+                <h3 className="font-heading font-semibold text-primary-900 mb-2 text-sm">Am I Eligible?</h3>
+                <p className="text-xs text-primary-700 mb-3">Use our free tool to check your eligibility for DRDO CEPTAM and 100+ other government exams.</p>
+                <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center block">
+                  Check Eligibility Free →
+                </Link>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Quick Facts</h3>
+                <div className="space-y-2">
+                  {[
+                    { label: 'Conducting Body', value: 'DRDO – CEPTAM' },
+                    { label: 'Ministry',         value: 'Ministry of Defence' },
+                    { label: 'Post Group',       value: 'Group B & C (Civilian)' },
+                    { label: 'No. of Labs',      value: '50+ DRDO labs' },
+                    { label: 'Negative Marking', value: 'No (Tier I CBT)' },
+                    { label: 'Medium',           value: 'English & Hindi' },
+                    { label: 'Apply Via',        value: 'ceptam.drdo.gov.in' },
                   ].map((item) => (
                     <div key={item.label} className="flex justify-between text-xs border-b border-surface-100 pb-2 last:border-0 last:pb-0">
                       <span className="text-surface-500">{item.label}</span>
