@@ -503,6 +503,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'upsc-capf') {
+    return {
+      title: 'UPSC CAPF 2026 – AC Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'UPSC CAPF 2026 (Assistant Commandant): ~300–400 vacancies in BSF, CRPF, CISF, ITBP, SSB. Notification expected June 2026. Graduate eligible, age 20–25 yrs. Written + PET/Medical + Interview. Salary ₹85,000–₹95,000/month (gross in-hand).',
+      keywords: 'UPSC CAPF 2026, CAPF AC 2026, CAPF Assistant Commandant, CAPF syllabus 2026, CAPF eligibility, BSF CRPF CISF ITBP SSB officer, CAPF notification 2026, CAPF taiyari, central armed police forces officer, CAPF परीक्षा 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/upsc-capf/' },
+      other: { 'description:hi': 'UPSC CAPF 2026 (Assistant Commandant) – BSF, CRPF, CISF, ITBP, SSB में ~300–400 रिक्तियाँ। अधिसूचना जून 2026 में अपेक्षित। स्नातक पात्र, आयु 20–25 वर्ष। लिखित + PET/Medical + साक्षात्कार। वेतन ₹85,000–₹95,000/माह (सकल)।' },
+    };
+  }
+
   if (params.slug === 'upsc-cds') {
     return {
       title: 'UPSC CDS 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -640,6 +650,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
   if (brief && brief.slug === 'rpf-constable') return <RpfConstablePage exam={brief} />;
   if (brief && brief.slug === 'rpf-si') return <RpfSiPage exam={brief} />;
+  if (brief && brief.slug === 'upsc-capf') return <UpscCapfPage exam={brief} />;
   if (brief && brief.slug === 'upsc-cds') return <UpscCdsPage exam={brief} />;
   if (brief && brief.slug === 'lic-aao') return <LicAaoPage exam={brief} />;
   if (brief && brief.slug === 'lic-ado') return <LicAdoPage exam={brief} />;
@@ -44972,6 +44983,830 @@ function CoastGuardNavikGdPage({ exam }: { exam: any }) {
             </div>
           </aside>
 
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── UPSC CAPF ASSISTANT COMMANDANT RICH PAGE ────────────────────────────────
+function UpscCapfPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Forces' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'pet-medical',     label: 'PET & Medical Standards' },
+    { id: 'interview',       label: 'Interview Process' },
+    { id: 'salary',          label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'CAPF AC 2024 Notification Released',       date: '14 June 2024',                     status: 'released' },
+    { event: 'CAPF AC 2024 Written Exam (Paper I & II)', date: '4 August 2024',                    status: 'released' },
+    { event: 'CAPF AC 2024 Written Result',              date: 'October 2024',                     status: 'released' },
+    { event: 'CAPF AC 2024 PET/Medical',                 date: 'December 2024 – February 2025',    status: 'released' },
+    { event: 'CAPF AC 2024 Interview/Personality Test',  date: 'March–April 2025',                 status: 'released' },
+    { event: 'CAPF AC 2024 Final Result',                date: 'June–July 2025',                   status: 'released' },
+    { event: 'CAPF AC 2025 Notification',                date: 'June 2025',                        status: 'released' },
+    { event: 'CAPF AC 2025 Written Exam',                date: '3 August 2025',                    status: 'released' },
+    { event: 'CAPF AC 2025 Written Result',              date: 'October–November 2025',            status: 'released' },
+    { event: 'CAPF AC 2025 PET/Medical',                 date: 'December 2025 – March 2026',       status: 'released' },
+    { event: 'CAPF AC 2025 Interview',                   date: 'April–June 2026 (Ongoing)',        status: 'upcoming' },
+    { event: 'CAPF AC 2026 Notification (Expected)',     date: 'June 2026 (Expected)',              status: 'tbn' },
+    { event: 'CAPF AC 2026 Written Exam (Expected)',     date: 'August 2026 (Expected)',            status: 'tbn' },
+    { event: 'CAPF AC 2026 Last Date to Apply',          date: 'July 2026 (Expected)',              status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'CAPF AC 2021', bsf: 88,  crpf: 46,  cisf: 33, itbp: 28, ssb: 24, total: 219 },
+    { year: 'CAPF AC 2022', bsf: 76,  crpf: 45,  cisf: 32, itbp: 28, ssb: 23, total: 204 },
+    { year: 'CAPF AC 2023', bsf: 105, crpf: 52,  cisf: 40, itbp: 33, ssb: 26, total: 256 },
+    { year: 'CAPF AC 2024', bsf: 109, crpf: 55,  cisf: 51, itbp: 36, ssb: 29, total: 280 },
+    { year: 'CAPF AC 2025', bsf: 112, crpf: 60,  cisf: 52, itbp: 36, ssb: 30, total: 290 },
+    { year: 'CAPF AC 2026', bsf: 'TBN', crpf: 'TBN', cisf: 'TBN', itbp: 'TBN', ssb: 'TBN', total: '~300–350 (Expected)' },
+  ];
+
+  const examPattern = [
+    {
+      paper: 'Paper I',
+      subject: 'General Ability & Intelligence',
+      marks: 250,
+      duration: '2 hrs',
+      type: 'Objective (MCQ)',
+      negMarking: '1/3rd per wrong answer',
+      topics: 'General Ability, Mental Ability, Quantitative Aptitude, English, Current Affairs',
+    },
+    {
+      paper: 'Paper II',
+      subject: 'General Studies, Essay & Comprehension',
+      marks: 200,
+      duration: '3 hrs',
+      type: 'Descriptive (written)',
+      negMarking: 'None (descriptive)',
+      topics: 'Essay (80 marks) + Comprehension Passages (60 marks) + Précis Writing (60 marks)',
+    },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🧠 Paper I – General Ability & Intelligence (250 Marks)',
+      topics: [
+        'General Mental Ability – Series, Analogies, Coding-Decoding, Blood Relations, Direction Sense',
+        'Quantitative Aptitude – Number System, Percentages, Profit & Loss, Time-Speed-Distance, Work & Time',
+        'Elementary Mathematics – Algebra, Geometry, Mensuration, Trigonometry',
+        'English Language – Reading Comprehension, Grammar, Vocabulary, Sentence Correction',
+        'General Knowledge & Current Affairs – National and international events (last 6 months)',
+        'Social Studies – History of India, Freedom Struggle, Indian Polity and Constitution',
+        'Indian Economy – Planning, Policies, Schemes, Budget highlights',
+        'Physical Geography – World and India, Climate, Rivers, Mountains',
+        'Science & Technology – Inventions, Space, Defence, Biology basics',
+        'Environment & Ecology – Biodiversity, Climate change, Conservation policies',
+      ],
+    },
+    {
+      subject: '✍️ Paper II – General Studies, Essay & Comprehension (200 Marks)',
+      topics: [
+        'Essay Writing – 800–1,000 words on socio-political, defence, or national issues (80 marks)',
+        'Reading Comprehension – 2 passages with analytical questions (60 marks)',
+        'Précis Writing – Summarise a given passage into one-third its length (60 marks)',
+        'Contemporary National Issues – security, environment, governance, society',
+        'Internal Security Challenges – Naxalism, terrorism, border security, cyber threats',
+        'India\'s Defence Posture – Army, Navy, Air Force roles, CAPF in internal security',
+        'Writing Style – clarity, coherence, structure; Paper II is evaluated by experienced IPS/IFS officers',
+      ],
+    },
+  ];
+
+  const petStandards = [
+    { event: 'Race (1.6 km run)', male: '6 min 30 sec', female: '4 min (800 m run)', note: 'Qualifying; no marks' },
+    { event: 'Long Jump', male: '3.5 metres (3 chances)', female: '3.0 metres (3 chances)', note: 'Qualifying' },
+    { event: 'High Jump', male: '1.2 metres (3 chances)', female: '0.9 metres (3 chances)', note: 'Qualifying' },
+    { event: 'Shot Put (7.26 kg)', male: '4.5 metres', female: 'N/A', note: 'Qualifying; males only' },
+  ];
+
+  const heightStandards = [
+    { category: 'Male – General, OBC, SC', minHeight: '165 cm', chest: '81 cm (unexpanded) / 86 cm (expanded)' },
+    { category: 'Male – ST', minHeight: '162.5 cm', chest: '79 cm / 84 cm' },
+    { category: 'Male – Hilly/North-Eastern/Island regions', minHeight: '162.5 cm', chest: '80 cm / 85 cm' },
+    { category: 'Female – General, OBC, SC', minHeight: '157 cm', chest: 'N/A' },
+    { category: 'Female – ST', minHeight: '154 cm', chest: 'N/A' },
+  ];
+
+  const interviewStages = [
+    { icon: '📋', stage: 'Personal Interview', detail: 'A structured one-on-one interview by a board of senior officers (typically DIG/IG level). Covers your personal background, academic career, current affairs, motivation for joining paramilitary forces, and leadership qualities. Lasts 30–45 minutes.' },
+    { icon: '🧠', stage: 'Personality Assessment', detail: 'The board assesses Officer Like Qualities (OLQs): decision-making, communication, mental alertness, integrity, and leadership potential. They review your PIQ (Personal Information Questionnaire) submitted earlier and probe answers.' },
+    { icon: '🌍', stage: 'Current Affairs Discussion', detail: 'Expect questions on internal security issues (Naxalism, border tensions, cyber threats), recent government policies, CAPF roles in major operations, state police-paramilitary coordination, and national events of the past 6 months.' },
+    { icon: '📊', stage: 'Marks Allocation', detail: 'Interview carries 150 marks. Written total = 450 marks. Grand Total = 600 marks. Final merit is based on the aggregate. This means even a 10–15 mark difference in interview can shift your rank significantly — treat the interview as seriously as the written paper.' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay – Assistant Commandant (Pay Level 10)',         amount: '₹56,100/month' },
+    { component: 'Dearness Allowance (DA) – ~55% of Basic',                amount: '~₹30,900/month' },
+    { component: 'House Rent Allowance / Government Accommodation',        amount: '₹7,000–₹14,000/month (or quarters)' },
+    { component: 'Transport Allowance (TPTA)',                             amount: '₹3,600–₹7,200/month' },
+    { component: 'Special Duty Allowance (border/remote posting)',         amount: '₹7,500–₹12,000/month (if applicable)' },
+    { component: 'Ration Money / Uniform Allowance',                       amount: '₹3,000–₹5,000/month' },
+    { component: 'Estimated Gross In-hand (Metro posting)',                amount: '~₹90,000–₹1,05,000/month' },
+    { component: '8th Pay Commission (effective 2026)',                    amount: 'Expected fitment factor 1.92× — significant basic pay revision' },
+  ];
+
+  const careerPath = [
+    { rank: 'Assistant Commandant',  years: '0–4 yrs',   level: 'Level 10',  pay: '₹56,100–₹1,77,500' },
+    { rank: 'Deputy Commandant',     years: '4–8 yrs',   level: 'Level 11',  pay: '₹67,700–₹2,08,700' },
+    { rank: 'Second-in-Command',     years: '8–14 yrs',  level: 'Level 12',  pay: '₹78,800–₹2,09,200' },
+    { rank: 'Commandant',            years: '14–20 yrs', level: 'Level 13',  pay: '₹1,23,100–₹2,15,900' },
+    { rank: 'Deputy Inspector General (DIG)', years: '20–25 yrs', level: 'Level 13A', pay: '₹1,31,100–₹2,16,600' },
+    { rank: 'Inspector General (IG)', years: '25–30 yrs', level: 'Level 14', pay: '₹1,44,200–₹2,18,200' },
+    { rank: 'Additional Director General (ADG)', years: '30+ yrs', level: 'Level 15', pay: '₹1,82,200–₹2,24,100' },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Paper I Foundation – GK & Current Affairs', detail: 'Build the foundation of General Knowledge: NCERT History (Class 6–12), Indian Polity by Laxmikanth (Chapters 1–25), and NCERT Geography (Class 9–11). Subscribe to one current affairs source (The Hindu or PIB daily). CAPF regularly asks about CAPF operations, national security, and recent appointments.' },
+    { month: 'Month 2', focus: 'Paper I – Quantitative Aptitude & Mental Ability', detail: 'Cover all Quant topics — Percentages, Profit & Loss, Time-Speed-Distance, Averages, Ratio & Proportion, Simple & Compound Interest. Mental Ability: practice series, coding-decoding, blood relations, direction sense daily. Target 25+ correct in this section for a good aggregate.' },
+    { month: 'Month 3', focus: 'Paper I – English & Remaining GK', detail: 'English Grammar: Error spotting, sentence improvement, vocabulary, comprehension. Solve RC passages daily. For GK: Indian Economy (budget 2025–26 highlights, schemes), Science & Technology (space, defence), Environment & Ecology. Cover at least one NCERT Science textbook (Class 8–10).' },
+    { month: 'Month 4', focus: 'Paper II – Essay & Comprehension Writing', detail: 'Paper II is the differentiator — most candidates underestimate it. Practice writing one 800-word essay daily on topics like internal security, Naxalism, border disputes, governance, environment. Score the essay yourself for structure, vocabulary, and argument quality. Practice précis writing (reduce a 300-word passage to 100 words) every alternate day.' },
+    { month: 'Month 5', focus: 'Mock Tests + Weak Area Revision', detail: 'Attempt 2 full CAPF mock tests per week. Analyse every wrong answer. Common mistakes: random guessing in Paper I (negative marking), weak essay structure in Paper II. Revise current affairs of the last 6 months comprehensively. Practice physical fitness daily — PET is qualifying but failure eliminates you.' },
+    { month: 'Month 6', focus: 'Final Revision + Interview Prep', detail: 'Complete revision of all subjects using short notes. Daily current affairs reading (especially internal security, CAPF operations, recent appointments). Start interview preparation: know your biodata deeply, practice Group Discussion (GD) with peers, read about the force you want to join (BSF mission, CRPF operations, etc.). Physical prep: maintain PET standards — run 1.6 km under 6 min 30 sec daily.' },
+  ];
+
+  const books = [
+    { subject: 'All-in-One',         title: 'UPSC CAPF Assistant Commandant Solved Papers',    author: 'Arihant Publications' },
+    { subject: 'All-in-One',         title: 'CAPF (AC) 17 Years\' Solved Papers',               author: 'Upkar Prakashan' },
+    { subject: 'Paper II – Essay',   title: 'General Studies Paper 2 for CAPF',                author: 'Arihant / Upkar' },
+    { subject: 'Polity',             title: 'Indian Polity',                                   author: 'M. Laxmikanth' },
+    { subject: 'History',            title: 'A Brief History of Modern India',                 author: 'Rajiv Ahir (Spectrum)' },
+    { subject: 'Geography',          title: 'Certificate Physical and Human Geography',        author: 'G.C. Leong' },
+    { subject: 'English',            title: 'Objective General English',                       author: 'S.P. Bakshi (Arihant)' },
+    { subject: 'Quantitative',       title: 'Quantitative Aptitude for Competitive Exams',     author: 'R.S. Aggarwal' },
+    { subject: 'Current Affairs',    title: 'Monthly Current Affairs (free sources)',          author: 'The Hindu / PIB / Gist of Kurukshetra' },
+  ];
+
+  const freeResources = [
+    { name: 'UPSC Official CAPF Page',          type: 'website', url: 'https://upsc.gov.in',                          description: 'Official notifications, syllabus PDF, previous year question papers, and admit cards for CAPF AC.' },
+    { name: 'StudyIQ Defence on YouTube',        type: 'youtube', url: 'https://www.youtube.com/@studyiqeducation',    description: 'Free CAPF Paper I GK classes and daily current affairs. Good for Paper I preparation.' },
+    { name: 'Adda247 CAPF on YouTube',           type: 'youtube', url: 'https://www.youtube.com/@Adda247',             description: 'Free CAPF classes covering Paper I topics, mock test solutions, and strategy sessions.' },
+    { name: 'SSBCrack YouTube',                  type: 'youtube', url: 'https://www.youtube.com/@SSBCrackOfficial',    description: 'Best resource for CAPF interview and personality test preparation — OLQ tips by serving officers.' },
+    { name: 'PIB Daily Press Releases',          type: 'website', url: 'https://pib.gov.in',                           description: 'Free official government press releases — essential for Paper II essay topics and current affairs.' },
+    { name: 'Testbook CAPF Free Mocks',          type: 'website', url: 'https://testbook.com/upsc-capf',               description: 'Free CAPF Paper I mock tests with performance analytics and topic-wise analysis.' },
+    { name: 'NCERT Free eBooks (Class 6–12)',    type: 'website', url: 'https://ncert.nic.in/textbook.php',            description: 'Free NCERT textbooks — the backbone of CAPF GK: History, Geography, Polity, Science.' },
+    { name: 'SSBCrack.com – CAPF Prep',         type: 'website', url: 'https://ssbcrack.com',                         description: 'Free CAPF interview guides, GK notes, success stories, and community discussion for aspirants.' },
+  ];
+
+  const tips = [
+    { icon: '✍️', tip: 'Paper II is the game-changer. Most candidates prepare only for Paper I and ignore Paper II essay writing. A well-structured, analytical essay on internal security can fetch 60–70+ out of 80 marks and dramatically improve your rank. Practice writing one essay daily for at least 45 days before the exam.' },
+    { icon: '⚠️', tip: 'Paper I has negative marking (1/3rd per wrong answer). Never guess randomly. If you can eliminate two options confidently, attempt. Otherwise skip. Current affairs GK questions are the most guessable — attempt all if you have done your preparation.' },
+    { icon: '💪', tip: 'PET is qualifying but often ignored. Fail it and you are out — regardless of your written score. Train for the 1.6 km run (6 min 30 sec for men), long jump (3.5 m), and high jump (1.2 m) from Day 1 of preparation. Physical fitness also impacts your confidence during the interview stage.' },
+    { icon: '🌍', tip: 'Internal security is the defining theme of CAPF. Paper I GK, Paper II essays, and the interview all heavily focus on Naxalism, border security, counter-insurgency, terrorism, cyber security, and the role of CAPFs in national security. Build a dedicated internal security folder with notes.' },
+    { icon: '📰', tip: 'Current affairs matter for all three stages — Paper I, Paper II, and Interview. CAPF interviews test whether you know what\'s happening in the forces you want to join. Read about recent operations, new appointments as DG of CRPF/BSF/CISF/ITBP/SSB, and India\'s border situation.' },
+    { icon: '🎤', tip: 'In the interview, authenticity beats scripted answers. Know your personal history inside out — hometown, college, extracurriculars, and why you chose CAPF over the Army/IPS/IAS. Most boards also ask why you prefer a specific force (BSF vs CRPF). Have a genuine, well-reasoned answer ready.' },
+    { icon: '📋', tip: 'The total marks are 600 (450 written + 150 interview). A mediocre candidate with exceptional writing skills in Paper II and a strong interview can outrank a better Paper I scorer. Plan your effort across all three stages rather than obsessing only over Paper I mock test scores.' },
+    { icon: '🔁', tip: 'CAPF AC is held once a year. Unlike CDS (twice a year), a bad attempt means waiting 12 months. This makes disciplined year-long preparation essential. Use the last CAPF notification cycle to estimate your own cut-off probability realistically and course-correct early.' },
+  ];
+
+  const faqs = [
+    { q: 'What is UPSC CAPF 2026 notification date?', a: 'The UPSC CAPF AC 2026 notification is expected in June 2026, following the annual cycle. In 2024 and 2025, notifications were released in June. The written exam is typically held in August. Check upsc.gov.in regularly for the official announcement.' },
+    { q: 'What are the forces under UPSC CAPF AC?', a: 'CAPF AC (Assistant Commandant) covers five Central Armed Police Forces: Border Security Force (BSF), Central Reserve Police Force (CRPF), Central Industrial Security Force (CISF), Indo-Tibetan Border Police (ITBP), and Sashastra Seema Bal (SSB). All are Group A Gazetted posts.' },
+    { q: 'What is the age limit for UPSC CAPF 2026?', a: 'The age limit is 20 to 25 years as of 1st August of the exam year. Age relaxation: OBC candidates get +3 years (up to 28 years), SC/ST candidates get +5 years (up to 30 years), PwBD candidates get +10 years. Ex-servicemen relaxation also applies as per government rules.' },
+    { q: 'What is the CAPF AC salary in 2026?', a: 'An Assistant Commandant starts at Pay Level 10 with basic pay of ₹56,100/month under the 7th Pay Commission. With Dearness Allowance (currently ~55%), HRA, transport allowance, ration money, and other benefits, the gross in-hand salary is approximately ₹90,000–₹1,05,000/month. The 8th Pay Commission (effective 2026) is expected to revise salaries upward significantly with an estimated fitment factor of 1.92×.' },
+    { q: 'Is there an interview in UPSC CAPF AC?', a: 'Yes. There is a 3-stage selection: (1) Written exam — Paper I (250 marks, objective) + Paper II (200 marks, descriptive). (2) PET/Medical — qualifying in nature. (3) Personality Test/Interview — 150 marks. Total: 600 marks. Only candidates who clear the written and PET are called for the interview. Final merit is based on Written + Interview scores.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  // Uses native <details>/<summary> – no client state needed
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="bg-surface-50 min-h-screen">
+        <div className="container-main py-8">
+
+          {/* Breadcrumb */}
+          <nav className="text-sm text-surface-500 mb-6">
+            <Link href="/" className="hover:text-primary-500">Home</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams" className="hover:text-primary-500">Exams</Link>
+            <span className="mx-2">›</span>
+            <span className="text-surface-800">UPSC CAPF AC 2026</span>
+          </nav>
+
+          {/* Page Header – white/light, no gradient (exam page rule) */}
+          <div className="bg-white rounded-2xl border border-surface-200 p-6 sm:p-8 mb-8 shadow-sm">
+            <div className="flex flex-wrap gap-2 mb-3">
+              <span className="badge-primary">Defence</span>
+              <span className="bg-red-100 text-red-700 text-xs font-heading font-semibold px-2.5 py-0.5 rounded-full">Central</span>
+              <span className="bg-amber-100 text-amber-700 text-xs font-heading font-semibold px-2.5 py-0.5 rounded-full">Annual</span>
+              <span className="bg-emerald-100 text-emerald-700 text-xs font-heading font-semibold px-2.5 py-0.5 rounded-full">Group A Gazetted</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
+              UPSC CAPF AC 2026 – Assistant Commandant
+            </h1>
+            <p className="text-surface-500 leading-relaxed max-w-3xl">
+              One of India&apos;s most respected officer-level defence exams, conducted by UPSC annually. Assistant Commandants lead operations in BSF, CRPF, CISF, ITBP, and SSB — India&apos;s frontline border and internal security forces. Group A Gazetted post with excellent pay, career growth, and national service.
+            </p>
+
+            {/* Fast Facts Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+              {[
+                { label: '🎯 Vacancies 2026', value: '~300–350 (Expected)', sub: 'Across 5 CAPFs' },
+                { label: '📅 Written Exam', value: 'August 2026 (TBN)', sub: 'Notification: June 2026' },
+                { label: '📋 Application', value: 'July 2026 (TBN)', sub: 'Last date to apply' },
+                { label: '💰 Gross Salary', value: '₹90,000–₹1,05,000', sub: 'Per month (in-hand)' },
+              ].map((f) => (
+                <div key={f.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+                  <p className="text-xs text-surface-400 font-heading">{f.label}</p>
+                  <p className="font-heading font-bold text-surface-900 mt-1 text-sm leading-snug">{f.value}</p>
+                  <p className="text-xs text-surface-400 mt-0.5">{f.sub}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-4 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2">
+              ⚠️ CAPF AC 2026 notification not yet released. Dates above are based on historical patterns (2023–2025). Always verify at <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer" className="underline">upsc.gov.in</a> before applying.
+            </p>
+          </div>
+
+          {/* Two-Column Layout */}
+          <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+            {/* ── MAIN CONTENT ── */}
+            <div className="space-y-0">
+
+              {/* 1. Important Dates */}
+              <section id="important-dates" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">1</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Important Dates 2026</h2>
+                </div>
+                <div className="card overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Event</th>
+                        <th className="text-left p-3 font-heading font-semibold">Date</th>
+                        <th className="text-center p-3 font-heading font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 text-surface-700">{row.event}</td>
+                          <td className="p-3 text-surface-700 font-medium">{row.date}</td>
+                          <td className="p-3 text-center">
+                            {row.status === 'released' && <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✓ Done</span>}
+                            {row.status === 'upcoming' && <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">⏳ Ongoing</span>}
+                            {row.status === 'tbn' && <span className="bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <p className="text-xs text-surface-400 p-3 border-t border-surface-100">TBN = To Be Notified. Dates for 2026 cycle are based on historical patterns and subject to change. Always verify at upsc.gov.in.</p>
+                </div>
+              </section>
+
+              {/* 2. Eligibility */}
+              <section id="eligibility" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">2</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  {[
+                    { label: '🪪 Nationality', value: 'Indian Citizen (Nepal/Bhutan also eligible for some posts)' },
+                    { label: '🎓 Qualification', value: 'Graduation (any stream) from a recognised university' },
+                    { label: '📋 Age Limit', value: '20 to 25 years (as of 1st August of the exam year)' },
+                    { label: '👤 Gender', value: 'Male and Female both eligible' },
+                  ].map((c) => (
+                    <div key={c.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                      <p className="text-xs text-surface-400 uppercase tracking-wide font-heading">{c.label}</p>
+                      <p className="font-semibold mt-1 text-sm text-surface-800">{c.value}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Age Relaxation</h3>
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-100">
+                        <th className="text-left p-2 font-heading text-surface-700">Category</th>
+                        <th className="text-left p-2 font-heading text-surface-700">Relaxation</th>
+                        <th className="text-left p-2 font-heading text-surface-700">Upper Age Limit</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-surface-600">
+                      {[
+                        { cat: 'General / EWS', rel: 'None', upper: '25 years' },
+                        { cat: 'OBC (Non-Creamy Layer)', rel: '+3 years', upper: '28 years' },
+                        { cat: 'SC / ST', rel: '+5 years', upper: '30 years' },
+                        { cat: 'PwBD (General)', rel: '+10 years', upper: '35 years' },
+                        { cat: 'PwBD (OBC)', rel: '+13 years', upper: '38 years' },
+                        { cat: 'PwBD (SC/ST)', rel: '+15 years', upper: '40 years' },
+                      ].map((r, i) => (
+                        <tr key={i} className={i % 2 === 0 ? '' : 'bg-surface-50'}>
+                          <td className="p-2">{r.cat}</td>
+                          <td className="p-2 font-medium text-primary-600">{r.rel}</td>
+                          <td className="p-2">{r.upper}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <p className="text-xs text-surface-400 mt-3">💡 Final year degree students may apply provisionally. Proof of degree must be submitted before the interview stage.</p>
+                </div>
+              </section>
+
+              {/* 3. Vacancies */}
+              <section id="vacancies" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">3</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies & Forces</h2>
+                </div>
+
+                {/* Force cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                  {[
+                    { force: 'BSF', full: 'Border Security Force', role: 'Guards India\'s land borders with Pakistan and Bangladesh. Largest CAPF with ~2.57 lakh personnel.', color: 'bg-emerald-50 border-emerald-200', badge: 'bg-emerald-100 text-emerald-700' },
+                    { force: 'CRPF', full: 'Central Reserve Police Force', role: 'Internal security, counter-Naxal operations, election duty. Largest paramilitary force (~3.25 lakh).', color: 'bg-blue-50 border-blue-200', badge: 'bg-blue-100 text-blue-700' },
+                    { force: 'CISF', full: 'Central Industrial Security Force', role: 'Guards airports, government buildings, nuclear plants, metro rail, and major PSUs.', color: 'bg-purple-50 border-purple-200', badge: 'bg-purple-100 text-purple-700' },
+                    { force: 'ITBP', full: 'Indo-Tibetan Border Police', role: 'Patrols the India–China border (Himalayas). Specialised mountain warfare and disaster relief.', color: 'bg-amber-50 border-amber-200', badge: 'bg-amber-100 text-amber-700' },
+                    { force: 'SSB', full: 'Sashastra Seema Bal', role: 'Guards India\'s open borders with Nepal and Bhutan. Also responsible for border management duties.', color: 'bg-red-50 border-red-200', badge: 'bg-red-100 text-red-700' },
+                  ].map((f) => (
+                    <div key={f.force} className={`card p-4 border ${f.color}`}>
+                      <div className="flex items-start gap-3">
+                        <span className={`text-xs font-heading font-bold px-2 py-1 rounded-md ${f.badge}`}>{f.force}</span>
+                        <div>
+                          <p className="font-heading font-semibold text-surface-800 text-sm">{f.full}</p>
+                          <p className="text-xs text-surface-500 mt-1">{f.role}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Vacancy History Table */}
+                <div className="card overflow-hidden">
+                  <div className="bg-surface-800 text-white px-4 py-3">
+                    <h3 className="font-heading font-semibold text-sm">Vacancy History (2021–2026)</h3>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-100">
+                          <th className="text-left p-3 font-heading text-surface-700">Year</th>
+                          <th className="text-center p-3 font-heading text-surface-700">BSF</th>
+                          <th className="text-center p-3 font-heading text-surface-700">CRPF</th>
+                          <th className="text-center p-3 font-heading text-surface-700">CISF</th>
+                          <th className="text-center p-3 font-heading text-surface-700">ITBP</th>
+                          <th className="text-center p-3 font-heading text-surface-700">SSB</th>
+                          <th className="text-center p-3 font-heading text-emerald-700 font-bold">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {vacancyHistory.map((r, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 font-medium text-surface-800">{r.year}</td>
+                            <td className="p-3 text-center text-surface-600">{r.bsf}</td>
+                            <td className="p-3 text-center text-surface-600">{r.crpf}</td>
+                            <td className="p-3 text-center text-surface-600">{r.cisf}</td>
+                            <td className="p-3 text-center text-surface-600">{r.itbp}</td>
+                            <td className="p-3 text-center text-surface-600">{r.ssb}</td>
+                            <td className={`p-3 text-center font-bold ${i === vacancyHistory.length - 1 ? 'text-amber-600' : 'text-emerald-600'}`}>{r.total}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-surface-400 p-3 border-t border-surface-100">* Vacancy breakdown is approximate based on official UPSC notifications. 2026 vacancies will be confirmed in the official notification.</p>
+                </div>
+              </section>
+
+              {/* 4. Exam Pattern */}
+              <section id="exam-pattern" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">4</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern 2026</h2>
+                </div>
+                <div className="space-y-4 mb-5">
+                  {examPattern.map((p, i) => (
+                    <div key={i} className="card p-5">
+                      <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                        <div>
+                          <span className="text-xs font-heading font-semibold text-primary-600 bg-primary-50 px-2 py-0.5 rounded">{p.paper}</span>
+                          <h3 className="font-heading font-semibold text-surface-900 mt-1">{p.subject}</h3>
+                        </div>
+                        <div className="text-right">
+                          <span className="text-2xl font-heading font-bold text-primary-600">{p.marks}</span>
+                          <span className="text-xs text-surface-400 ml-1">marks</span>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                        <div className="bg-surface-50 rounded-lg p-2"><span className="text-surface-400">Duration</span><br /><span className="font-semibold text-surface-800">{p.duration}</span></div>
+                        <div className="bg-surface-50 rounded-lg p-2"><span className="text-surface-400">Type</span><br /><span className="font-semibold text-surface-800">{p.type}</span></div>
+                        <div className="bg-surface-50 rounded-lg p-2 col-span-2 sm:col-span-1"><span className="text-surface-400">Negative Marking</span><br /><span className="font-semibold text-surface-800">{p.negMarking}</span></div>
+                      </div>
+                      <p className="text-xs text-surface-500 mt-3 border-t border-surface-100 pt-3">{p.topics}</p>
+                    </div>
+                  ))}
+                </div>
+                {/* Total marks summary */}
+                <div className="bg-primary-50 border border-primary-200 rounded-xl p-4">
+                  <div className="flex flex-wrap gap-4 text-sm font-heading">
+                    <span>📄 Written Total: <strong className="text-primary-700">450 marks</strong></span>
+                    <span>🎤 Interview: <strong className="text-primary-700">150 marks</strong></span>
+                    <span>🏆 Grand Total: <strong className="text-primary-700">600 marks</strong></span>
+                  </div>
+                  <p className="text-xs text-surface-500 mt-2">PET/Medical is qualifying in nature — no marks added. Only candidates clearing PET & Medical are called for the Interview.</p>
+                </div>
+              </section>
+
+              {/* 5. Syllabus */}
+              <section id="syllabus" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">5</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus</h2>
+                </div>
+                <div className="space-y-3">
+                  {syllabus.map((s, i) => (
+                    <details key={i} className="card overflow-hidden group" open={i === 0}>
+                      <summary className="w-full flex items-center justify-between p-5 cursor-pointer list-none font-heading font-semibold text-surface-800 hover:text-primary-500">
+                        {s.subject}
+                        <svg className="w-5 h-5 text-surface-400 transition-transform flex-shrink-0 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </summary>
+                      <div className="px-5 pb-5 border-t border-surface-100">
+                        <ul className="space-y-1.5 mt-3">
+                          {s.topics.map((t, j) => (
+                            <li key={j} className="flex gap-2 text-sm text-surface-600">
+                              <span className="text-primary-400 mt-0.5 flex-shrink-0">•</span>
+                              <span>{t}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              {/* 6. PET & Medical */}
+              <section id="pet-medical" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">6</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">PET & Medical Standards</h2>
+                </div>
+                <div className="space-y-4">
+                  <div className="card overflow-hidden">
+                    <div className="bg-surface-800 text-white px-4 py-3">
+                      <h3 className="font-heading font-semibold text-sm">Physical Efficiency Test (PET) – Qualifying</h3>
+                    </div>
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-100">
+                          <th className="text-left p-3 font-heading text-surface-700">Event</th>
+                          <th className="text-center p-3 font-heading text-surface-700">Male Standard</th>
+                          <th className="text-center p-3 font-heading text-surface-700">Female Standard</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {petStandards.map((r, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 font-medium text-surface-800">{r.event}</td>
+                            <td className="p-3 text-center text-surface-600">{r.male}</td>
+                            <td className="p-3 text-center text-surface-600">{r.female}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="card overflow-hidden">
+                    <div className="bg-surface-800 text-white px-4 py-3">
+                      <h3 className="font-heading font-semibold text-sm">Height & Chest Standards</h3>
+                    </div>
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-100">
+                          <th className="text-left p-3 font-heading text-surface-700">Category</th>
+                          <th className="text-center p-3 font-heading text-surface-700">Min. Height</th>
+                          <th className="text-left p-3 font-heading text-surface-700">Chest (Males)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {heightStandards.map((r, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 text-surface-700">{r.category}</td>
+                            <td className="p-3 text-center font-semibold text-surface-800">{r.minHeight}</td>
+                            <td className="p-3 text-surface-600 text-xs">{r.chest}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="bg-red-50 border-l-4 border-red-400 rounded-r-xl p-4 text-sm text-surface-700">
+                    <strong>Medical Standards:</strong> Candidates must have good mental health, sound physique, and no disability affecting duty. Vision: 6/6 (with or without glasses). Colour blindness disqualifies. Flat feet, varicose veins, and squint are also grounds for rejection. Detailed medical norms are published in the official CAPF notification.
+                  </div>
+                </div>
+              </section>
+
+              {/* 7. Interview */}
+              <section id="interview" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">7</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Interview / Personality Test</h2>
+                </div>
+                <div className="space-y-3">
+                  {interviewStages.map((s, i) => (
+                    <div key={i} className="card p-5 flex gap-4">
+                      <span className="text-2xl flex-shrink-0">{s.icon}</span>
+                      <div>
+                        <h3 className="font-heading font-semibold text-surface-800 mb-1">{s.stage}</h3>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 8. Salary */}
+              <section id="salary" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">8</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Salary & Career Growth</h2>
+                </div>
+                <div className="card overflow-hidden mb-4">
+                  <div className="bg-surface-800 text-white px-4 py-3">
+                    <h3 className="font-heading font-semibold text-sm">Salary Breakdown – Assistant Commandant 2026</h3>
+                  </div>
+                  <table className="w-full text-sm">
+                    <tbody>
+                      {salaryBreakdown.map((r, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 text-surface-700">{r.component}</td>
+                          <td className={`p-3 text-right font-semibold ${i === salaryBreakdown.length - 1 ? 'text-amber-600' : i === salaryBreakdown.length - 2 ? 'text-emerald-600' : 'text-surface-800'}`}>{r.amount}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6 text-sm text-emerald-800">
+                  <strong>💰 8th Pay Commission (2026):</strong> The 8th Pay Commission is effective from 1 January 2026. With an expected fitment factor of ~1.92×, the basic pay for Pay Level 10 is projected to rise significantly from ₹56,100 to ~₹1,07,700/month. This will substantially increase gross in-hand salary for all CAPF officers. Official notification awaited from the government.
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="bg-surface-800 text-white px-4 py-3">
+                    <h3 className="font-heading font-semibold text-sm">Career Progression Path</h3>
+                  </div>
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-100">
+                        <th className="text-left p-3 font-heading text-surface-700">Rank</th>
+                        <th className="text-center p-3 font-heading text-surface-700">Service</th>
+                        <th className="text-center p-3 font-heading text-surface-700">Pay Level</th>
+                        <th className="text-right p-3 font-heading text-surface-700">Basic Pay Range</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {careerPath.map((r, i) => (
+                        <tr key={i} className={`${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'} ${i === 0 ? 'border-l-4 border-primary-400' : ''}`}>
+                          <td className="p-3 font-medium text-surface-800">{r.rank}</td>
+                          <td className="p-3 text-center text-surface-500 text-xs">{r.years}</td>
+                          <td className="p-3 text-center text-surface-600">{r.level}</td>
+                          <td className="p-3 text-right text-emerald-600 font-semibold">{r.pay}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <p className="text-xs text-surface-400 p-3 border-t border-surface-100">* Pay ranges are under the 7th Pay Commission. 8th Pay Commission (effective Jan 2026) will revise these upward.</p>
+                </div>
+              </section>
+
+              {/* 9. How to Apply */}
+              <section id="how-to-apply" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">9</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply</h2>
+                </div>
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  <div className="space-y-4">
+                    {[
+                      { step: 1, title: 'Register at upsconline.nic.in', detail: 'Go to the official UPSC OTR (One Time Registration) portal. Create a new account using your email and mobile number. Keep your Aadhaar, graduation certificate, passport-size photo, and signature scan ready before starting.' },
+                      { step: 2, title: 'Complete OTR and Fill Application', detail: 'After OTR registration, fill the CAPF AC application form. Enter academic details, choose preferred force preference order (BSF, CRPF, CISF, ITBP, SSB), and upload documents. Double-check all entries before submitting.' },
+                      { step: 3, title: 'Pay Application Fee', detail: 'Application fee: ₹200 (General/OBC/EWS). SC/ST and PwBD candidates are exempt from fee. Female candidates are also exempt. Payment via SBI Net Banking, credit/debit card, or UPI.' },
+                      { step: 4, title: 'Submit and Save Confirmation', detail: 'Submit the form and save the confirmation page / PDF. Note your Registration ID — you will need it for admit card download, PET, and interview stages. Check your registered email for UPSC confirmation.' },
+                      { step: 5, title: 'Download Admit Card & Attend Written Exam', detail: 'Admit card is released 2–3 weeks before the exam on upsconline.nic.in. Carry it with photo ID to the exam centre. Paper I (objective, 2 hrs) and Paper II (descriptive, 3 hrs) are held on the same day in two sessions.' },
+                    ].map((s) => (
+                      <div key={s.step} className="sm:pl-14 relative card p-5">
+                        <div className="sm:absolute sm:left-0 sm:top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm mb-3 sm:mb-0">{s.step}</div>
+                        <h3 className="font-heading font-semibold text-surface-800 mb-1">{s.title}</h3>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-4 text-sm text-surface-700">
+                  <strong>💡 Important:</strong> UPSC CAPF AC 2026 notification is expected in June 2026. Application window typically stays open for 3–4 weeks. Bookmark <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-600 underline">upsc.gov.in</a> and enable UPSC WhatsApp/email alerts to avoid missing the deadline.
+                </div>
+              </section>
+
+              {/* 10. Study Plan */}
+              <section id="study-plan" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">10</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">6-Month Study Plan</h2>
+                </div>
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  <div className="space-y-4">
+                    {studyPlan.map((s, i) => (
+                      <div key={i} className="sm:pl-14 relative card p-5">
+                        <div className="sm:absolute sm:left-0 sm:top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xs mb-3 sm:mb-0">M{i + 1}</div>
+                        <div className="flex flex-wrap items-center gap-2 mb-1">
+                          <h3 className="font-heading font-semibold text-surface-800">{s.month}</h3>
+                          <span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full font-heading">{s.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{s.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* 11. Best Books */}
+              <section id="books" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">11</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for CAPF AC 2026</h2>
+                </div>
+                <div className="card overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-3 font-heading font-semibold">Subject</th>
+                        <th className="text-left p-3 font-heading font-semibold">Book Title</th>
+                        <th className="text-left p-3 font-heading font-semibold">Author</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {books.map((b, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3"><span className="text-xs font-heading font-semibold text-primary-600 bg-primary-50 px-2 py-0.5 rounded">{b.subject}</span></td>
+                          <td className="p-3 text-surface-700 font-medium">{b.title}</td>
+                          <td className="p-3 text-surface-500">{b.author}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              {/* 12. Free Resources */}
+              <section id="resources" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">12</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {freeResources.map((r) => (
+                    <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xl">{r.type === 'youtube' ? '📺' : '🌐'}</span>
+                        <h3 className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.name}</h3>
+                      </div>
+                      <p className="text-sm text-surface-500 mt-1">{r.description}</p>
+                    </a>
+                  ))}
+                </div>
+              </section>
+
+              {/* 13. Expert Tips */}
+              <section id="tips" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">13</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips</h2>
+                </div>
+                <div className="space-y-3">
+                  {tips.map((t, i) => (
+                    <div key={i} className="card p-5 flex gap-4">
+                      <div className="w-9 h-9 flex-shrink-0 bg-accent-100 text-accent-600 rounded-xl flex items-center justify-center text-lg font-bold">{i + 1}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{t.tip}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 14. FAQs */}
+              <section id="faq" className="mb-12">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">14</div>
+                  <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+                </div>
+                <div className="space-y-3">
+                  {faqs.map((f, i) => (
+                    <details key={i} className="card overflow-hidden group">
+                      <summary className="w-full flex items-center justify-between p-5 cursor-pointer list-none font-heading font-semibold text-surface-800 hover:text-primary-500">
+                        {f.q}
+                        <svg className="w-5 h-5 text-surface-400 transition-transform flex-shrink-0 ml-2 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </summary>
+                      <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed border-t border-surface-100 pt-4">{f.a}</div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+            </div>
+
+            {/* ── SIDEBAR ── */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-24 space-y-4">
+
+                {/* TOC */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">On This Page</h3>
+                  <nav className="space-y-1">
+                    {toc.map((t) => (
+                      <a key={t.id} href={`#${t.id}`} className="block text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 px-3 py-1.5 rounded-md transition-colors">
+                        {t.label}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+
+                {/* Official Website */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Official Website</h3>
+                  <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center block text-sm">
+                    Visit upsc.gov.in ↗
+                  </a>
+                  <p className="text-xs text-surface-400 mt-2">Notifications, admit cards, result — all on UPSC&apos;s official portal.</p>
+                </div>
+
+                {/* Eligibility Checker */}
+                <div className="card p-5 bg-primary-50 border-primary-200">
+                  <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm">Check Your Eligibility</h3>
+                  <p className="text-xs text-primary-600 mb-3">Find out if you meet CAPF AC age and qualification criteria.</p>
+                  <Link href="/tools/eligibility-checker/" className="btn-primary w-full text-center block text-sm">
+                    Eligibility Checker →
+                  </Link>
+                </div>
+
+                {/* Quick Facts */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Quick Facts</h3>
+                  <div className="space-y-2">
+                    {[
+                      { label: 'Conducting Body', value: 'UPSC' },
+                      { label: 'Post Name', value: 'Assistant Commandant' },
+                      { label: 'Group', value: 'Group A Gazetted' },
+                      { label: 'Frequency', value: 'Annual' },
+                      { label: 'Written Total', value: '450 Marks' },
+                      { label: 'Interview', value: '150 Marks' },
+                      { label: 'Grand Total', value: '600 Marks' },
+                      { label: 'Negative Marking', value: '1/3rd (Paper I only)' },
+                    ].map((item) => (
+                      <div key={item.label} className="flex justify-between text-xs border-b border-surface-100 pb-2 last:border-0 last:pb-0">
+                        <span className="text-surface-500">{item.label}</span>
+                        <span className="font-semibold text-surface-800 text-right ml-2">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Related Exams */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related Defence Exams</h3>
+                  <div className="space-y-1.5">
+                    {[
+                      { name: 'UPSC CDS 2026', slug: 'upsc-cds' },
+                      { name: 'UPSC NDA 2026', slug: 'upsc-nda' },
+                      { name: 'SSC CPO 2026', slug: 'ssc-cpo' },
+                      { name: 'AFCAT 2026', slug: 'afcat' },
+                    ].map((e) => (
+                      <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">
+                        🔗 {e.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </aside>
+
+          </div>
         </div>
       </div>
     </>
