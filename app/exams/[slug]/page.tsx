@@ -393,6 +393,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'niacl-ao') {
+    return {
+      title: 'NIACL AO 2026 – Notification, 550 Vacancies, Syllabus & Complete Guide | TaiyarHo',
+      description: 'NIACL AO 2026: 550 vacancies (2025 cycle) for Generalist & Specialist posts in India\'s largest general insurer. Prelims → Mains → Interview. Salary ~₹1,20,000–₹1,35,000/month gross. Graduate with 60% eligible, age 21–30 yrs. Full syllabus, exam pattern & free prep resources.',
+      keywords: 'NIACL AO 2026, NIACL AO notification 2026, NIACL AO syllabus, NIACL AO salary, NIACL AO exam pattern, New India Assurance AO recruitment, insurance exam 2026, NIACL AO taiyari, एनआईएसीएल एओ भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/niacl-ao/' },
+      other: { 'description:hi': 'NIACL AO 2026 – भारत की सबसे बड़ी जनरल बीमा कंपनी में 550 रिक्तियाँ (जनरलिस्ट + स्पेशलिस्ट)। अधिसूचना अगस्त 2026 (अपेक्षित)। प्रारंभिक, मुख्य परीक्षा और साक्षात्कार। सकल वेतन ~₹1,20,000–₹1,35,000/माह। स्नातक 60% अंक, आयु 21–30 वर्ष।' },
+    };
+  }
+
   if (params.slug === 'rbi-grade-b') {
     return {
       title: 'RBI Grade B 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -669,6 +679,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'kerala-psc-kas') return <KeralaKasPage exam={brief} />;
   if (brief && brief.slug === 'drdo-ceptam') return <DrdoCeptamPage exam={brief} />;
   if (brief && brief.slug === 'coast-guard-navik-gd') return <CoastGuardNavikGdPage exam={brief} />;
+  if (brief && brief.slug === 'niacl-ao') return <NiaclAoPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -38590,6 +38601,769 @@ function LicAdoPage({ exam }: { exam: any }) {
 
             </div>
           </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── NIACL AO 2026 RICH PAGE ──────────────────────────────────────────────────
+function NiaclAoPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: '1. Overview' },
+    { id: 'important-dates', label: '2. Important Dates 2026' },
+    { id: 'eligibility',     label: '3. Eligibility Criteria' },
+    { id: 'vacancies',       label: '4. Vacancies History' },
+    { id: 'exam-pattern',    label: '5. Exam Pattern' },
+    { id: 'syllabus',        label: '6. Detailed Syllabus' },
+    { id: 'cutoff',          label: '7. Previous Year Cut-offs' },
+    { id: 'salary',          label: '8. Salary & Career Growth' },
+    { id: 'how-to-apply',    label: '9. How to Apply' },
+    { id: 'study-plan',      label: '10. Study Plan' },
+    { id: 'books',           label: '11. Best Books' },
+    { id: 'resources',       label: '12. Free Resources' },
+    { id: 'tips',            label: '13. Expert Tips' },
+    { id: 'faq',             label: '14. FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'NIACL AO 2025 Official Notification Released', date: '7 August 2025', status: 'released' },
+    { event: 'NIACL AO 2025 Online Application Opens', date: '7 August 2025', status: 'released' },
+    { event: 'NIACL AO 2025 Application Last Date', date: '30 August 2025', status: 'released' },
+    { event: 'NIACL AO 2025 Prelims Exam', date: '14 September 2025', status: 'released' },
+    { event: 'NIACL AO 2025 Mains Exam', date: '29 October 2025', status: 'released' },
+    { event: 'NIACL AO 2025 Interview Round', date: 'December 2025 – February 2026 (Expected)', status: 'tbn' },
+    { event: 'NIACL AO 2025 Final Result & Joining', date: 'March–May 2026 (Expected)', status: 'tbn' },
+    { event: '🆕 NIACL AO 2026 – New Notification', date: 'August 2026 (Expected)', status: 'tbn' },
+    { event: 'NIACL AO 2026 – Online Application', date: 'August–September 2026 (Expected)', status: 'tbn' },
+    { event: 'NIACL AO 2026 – Prelims Exam', date: 'September 2026 (Expected)', status: 'tbn' },
+    { event: 'NIACL AO 2026 – Mains Exam', date: 'October–November 2026 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'NIACL AO 2017', vacancies: '685', prelims: 'Apr 2017', mains: 'Jun 2017' },
+    { year: 'NIACL AO 2018', vacancies: '312 (Generalist)', prelims: 'Sep 2018', mains: 'Nov 2018' },
+    { year: 'NIACL AO 2019', vacancies: '150 (Generalist)', prelims: 'Jan 2019', mains: 'Feb 2019' },
+    { year: 'NIACL AO 2021–22', vacancies: '~200', prelims: 'Feb 2022', mains: 'Apr 2022' },
+    { year: 'NIACL AO 2025', vacancies: '550 (193 Gen + 357 Specialist)', prelims: 'Sep 2025', mains: 'Oct 2025' },
+    { year: 'NIACL AO 2026 (upcoming)', vacancies: 'To Be Notified (TBN)', prelims: 'Sep 2026 (Expected)', mains: 'Oct–Nov 2026 (Expected)' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'English Language', questions: 30, marks: 30, time: '20 min', note: 'Sectional cut-off applies' },
+    { subject: 'Reasoning Ability', questions: 35, marks: 35, time: '20 min', note: 'Sectional cut-off applies' },
+    { subject: 'Quantitative Aptitude', questions: 35, marks: 35, time: '20 min', note: 'Sectional cut-off applies' },
+  ];
+
+  const mainsPattern = [
+    { subject: 'Reasoning Ability & Computer Aptitude', questions: 50, marks: 60, time: '40 min' },
+    { subject: 'English Language', questions: 40, marks: 40, time: '35 min' },
+    { subject: 'General Awareness, Marketing & Computer', questions: 40, marks: 40, time: '20 min' },
+    { subject: 'Data Analysis & Interpretation', questions: 40, marks: 60, time: '40 min' },
+    { subject: 'Descriptive Paper (Essay + Letter Writing)', questions: 2, marks: 30, time: '30 min' },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', prelims2022: '~46/70', mains2022: '~130/200', prelims2019: '~50/70', mains2019: '~125/200' },
+    { category: 'OBC', prelims2022: '~42/70', mains2022: '~121/200', prelims2019: '~45/70', mains2019: '~116/200' },
+    { category: 'SC', prelims2022: '~35/70', mains2022: '~106/200', prelims2019: '~38/70', mains2019: '~101/200' },
+    { category: 'ST', prelims2022: '~29/70', mains2022: '~94/200', prelims2019: '~31/70', mains2019: '~90/200' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay – Pay Scale Scale I', amount: '₹82,485/month' },
+    { component: 'Dearness Allowance (DA) @ ~15% of Basic', amount: '~₹12,370/month' },
+    { component: 'House Rent Allowance (HRA) – Metro Cities (~16%)', amount: '~₹13,200/month' },
+    { component: 'City Compensatory Allowance (CCA)', amount: '₹3,000–₹5,000/month' },
+    { component: 'Medical & Other Allowances', amount: '~₹5,000–₹8,000/month' },
+    { component: 'Gross Estimated Salary (A-Class City)', amount: '~₹1,20,000–₹1,35,000/month' },
+    { component: 'Note – PSU Insurance Wage Revision', amount: 'PSU insurers follow bipartite IBA wage settlements, not Central Pay Commissions. Pay revised via industry-level negotiations.' },
+  ];
+
+  const careerPath = [
+    { level: 'Administrative Officer (AO) – Scale I', scale: 'Class I Officer', years: '0–4 yrs (Probation 1 yr)', payband: '₹82,485 – ₹1,56,745' },
+    { level: 'Assistant Manager / Senior AO', scale: 'Scale II', years: '4–8 yrs', payband: 'Higher Scale' },
+    { level: 'Deputy Manager', scale: 'Scale III', years: '8–14 yrs', payband: 'Higher Scale' },
+    { level: 'Manager / Branch Manager', scale: 'Scale IV', years: '14–20 yrs', payband: 'Higher Scale' },
+    { level: 'Senior Manager / Regional Manager', scale: 'Scale V–VI', years: '20–27 yrs', payband: 'Higher Scale' },
+    { level: 'General Manager / CMD', scale: 'Scale VII', years: '27+ yrs', payband: '₹2,00,000+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🧩 Reasoning Ability',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Puzzles – Floor-based, Box, Scheduling, Month-Year, Comparison types',
+        'Seating Arrangement – Linear, Circular, Square, Double row variants',
+        'Syllogisms (Direct, Reverse, and Possibility-based patterns)',
+        'Coding-Decoding – Word-based, Number-based, new pattern',
+        'Blood Relations, Direction & Distance Problems',
+        'Inequality – Direct and Coded',
+        'Input-Output Machine – shifting, arrangement, alternating patterns',
+        'Order & Ranking, Alphanumeric Series',
+        'Data Sufficiency (Reasoning)',
+        'Critical Reasoning (Mains only) – Assumption, Conclusion, Course of Action',
+        'Computer Aptitude (Mains) – Basics, Memory, Networking, MS Office, Internet',
+      ],
+    },
+    {
+      subject: '🔢 Quantitative Aptitude / Data Analysis & Interpretation',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Number Series – Missing number, Wrong number patterns',
+        'Simplification & Approximation (BODMAS, Surds, Indices)',
+        'Percentage, Average, Ratio & Proportion',
+        'Profit & Loss, Simple & Compound Interest, Partnership',
+        'Time & Work, Pipes & Cisterns, Time, Speed & Distance',
+        'Trains, Boats & Streams',
+        'Permutation, Combination & Probability',
+        'Data Interpretation – Bar, Pie, Line, Tabular, Caselet, Mixed DI',
+        'Quadratic Equations, Data Sufficiency',
+        'Mensuration – 2D and 3D Shapes',
+      ],
+    },
+    {
+      subject: '📝 English Language',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Reading Comprehension – 2–3 passages with inference-based questions',
+        'Cloze Test – blank-based and sentence-based patterns',
+        'Error Spotting – word-level and clause-level',
+        'Sentence Rearrangement, Para Jumbles',
+        'Phrase Replacement, Double Fillers, Triple Fillers',
+        'Vocabulary – Synonyms, Antonyms, Word Usage in Context',
+        'Descriptive Paper (Mains only): Essay Writing (15M) + Letter Writing (15M)',
+      ],
+    },
+    {
+      subject: '🏦 General Awareness, Marketing & Computer',
+      prelims: false,
+      mains: true,
+      topics: [
+        'Current Affairs – last 6 months (national and international)',
+        'Insurance Awareness – IRDAI regulations, types of insurance, key schemes',
+        'New India Assurance – history (est. 1919, nationalised 1973), CMD, products, market share',
+        'Banking Awareness – RBI policies, Repo Rate, CRR, SLR, monetary policy',
+        'Government Insurance Schemes – PMFBY, PMJJBY, PMSBY, Atal Pension Yojana',
+        'Marketing & Management basics',
+        'Computer Fundamentals – hardware, software, OS, networking, internet, MS Office',
+        'Economy – GDP, inflation, Union Budget highlights, FDI, Make in India',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Quant & Reasoning Foundation', detail: 'Build the arithmetic backbone of every insurance exam. Cover Number Series, Simplification, Percentage, Ratio, SI/CI, Profit & Loss. For Reasoning, master all Puzzle and Seating Arrangement types — these dominate 60–70% of the section. Daily target: 25–30 questions per section with a timer. Begin reading the Economic Times or Mint for 15 minutes every morning to seed your General Awareness preparation.' },
+    { month: 'Month 2', focus: 'Advanced Quant (DI) + English', detail: 'Data Interpretation is the heaviest scorer in Mains. Practice Bar, Pie, Line, Tabular, Caselet, and Mixed DI types. NIACL AO DI is at moderate difficulty — prioritise speed and approximation shortcuts. For English, complete 2 Reading Comprehension passages daily plus Cloze Tests and Error Spotting. Start Descriptive Writing — one essay per week on insurance or economy-related topics.' },
+    { month: 'Month 3', focus: 'Insurance & General Awareness', detail: 'This is your NIACL-specific month. Study New India Assurance — its 1919 founding, nationalisation in 1973, product portfolio (motor, health, fire, marine insurance), IRDAI regulations, and key PSU insurance companies. Learn government schemes: PMFBY (crop insurance), PMJJBY, PMSBY, Ayushman Bharat. Maintain a monthly current affairs capsule using Adda247 or Oliveboard free PDFs.' },
+    { month: 'Month 4', focus: 'Mains Sections + Descriptive Practice', detail: 'Take up advanced Reasoning — Computer Aptitude (Mains-only), complex multi-row puzzles, and Input-Output machines. Descriptive Writing: one formal letter and one essay per week. Essay topics to prepare: insurance sector reforms, health insurance in India, climate risk & general insurance, digital transformation in PSU insurance, financial inclusion. Take one sectional mock per section every week.' },
+    { month: 'Month 5', focus: 'Full Prelims Mocks + Mains Revision', detail: 'Prelims is qualifying — target 55–60/100. Take 2–3 full Prelims mocks per week. Analyse each mock for error patterns and time management. Shift to Mains-level practice — advanced DI, longer RC passages, Insurance/GK deep dives. Take one full Mains mock this month. Recalibrate your strategy based on sectional timings.' },
+    { month: 'Month 6', focus: 'Final Revision + Interview Preparation', detail: 'Revise Insurance Awareness and Current Affairs twice. Take 3 Prelims mocks per week and 1 Mains mock per week. Prepare for the interview: know NIACL\'s full product range (fire, marine, motor, health, crop insurance), CMD name, major subsidiaries (NITK), recent financial results, and IRDAI regulations. Practise answering: why NIACL, what is general insurance, explain PMFBY.' },
+  ];
+
+  const books = [
+    { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Quant' },
+    { title: 'Data Interpretation & Data Sufficiency', author: 'Arihant Publications', subject: 'DI (Mains)' },
+    { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali & Indu Sijwali', subject: 'Reasoning' },
+    { title: 'Objective Computer Awareness', author: 'R. Pillai (Arihant)', subject: 'Computer (Mains)' },
+    { title: 'Objective English for Competitive Exams', author: 'Hari Mohan Prasad', subject: 'English' },
+    { title: 'Insurance Awareness for AO Exams', author: 'Adda247 / Disha Publications', subject: 'Insurance GK' },
+    { title: 'NIACL AO 20 Practice Sets', author: 'Disha / Arihant Publications', subject: 'Full Mock Tests' },
+    { title: 'Descriptive English for Banking/Insurance', author: 'S.P. Bakshi (Arihant)', subject: 'Descriptive Paper' },
+  ];
+
+  const freeResources = [
+    { name: 'NIACL Official Careers Page', type: 'website', url: 'https://www.newindia.co.in', description: 'Official source for NIACL AO notifications, admit cards, result PDFs and all recruitment updates.' },
+    { name: 'Adda247 Insurance Exams (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Daily free classes on Insurance Awareness, Current Affairs and full sectional coverage for NIACL AO.' },
+    { name: 'Oliveboard NIACL AO Free Mocks', type: 'website', url: 'https://www.oliveboard.in/niacl-ao/', description: 'Free full-length Prelims and Mains mock tests calibrated to NIACL AO exam pattern.' },
+    { name: 'IRDAI Official Website', type: 'website', url: 'https://www.irdai.gov.in', description: 'Primary source for insurance sector regulations, circulars and IRDAI annual reports — must-read for Mains.' },
+    { name: 'GK Today Daily Current Affairs', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily current affairs, monthly revision PDFs and insurance awareness capsules for exam preparation.' },
+    { name: 'Testbook NIACL AO Practice', type: 'website', url: 'https://testbook.com/niacl-ao', description: 'Free full-length mocks, previous year papers and section-wise practice tests for NIACL AO.' },
+    { name: 'Mrunal Patel (Economy & Finance)', type: 'youtube', url: 'https://www.youtube.com/@TheMrunalPatel', description: 'Best free resource for Economy, Budget and Finance Awareness — directly applicable to General Awareness section.' },
+    { name: 'Unacademy Banking & Insurance', type: 'youtube', url: 'https://www.youtube.com/@UnacademyBanking', description: 'Free NIACL AO live classes covering Insurance Awareness, GK and complete sectional strategies.' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'Both sectional AND overall cut-offs apply in NIACL AO Prelims. Neglecting even one section — often Quantitative Aptitude — will disqualify you despite a high total score. Practise all three sections equally and aim for at least 12–15 marks per section.' },
+    { icon: '🛡️', tip: 'General Awareness with Insurance & Computer Awareness is the differentiator in Mains. Study New India Assurance\'s history, products (motor, health, fire, crop), IRDAI regulations, and key government insurance schemes — PMFBY, PMJJBY, PMSBY. Most aspirants skip this and lose 20–30 marks.' },
+    { icon: '📊', tip: 'Data Analysis & Interpretation carries 60 marks in Mains — the highest weighted section. Caselet and Mixed DI are frequently asked. Practise approximation-based solving to save time; exact calculation slows you down significantly in this exam.' },
+    { icon: '📝', tip: 'The Descriptive Paper (Essay + Letter, 30 marks) is evaluated only for candidates who clear the Mains Objective cut-off. Prepare 6–8 essay topics: insurance sector reforms, health insurance penetration in India, digital insurance, crop insurance, climate risk, financial inclusion. Letter writing: formal complaint or request letters.' },
+    { icon: '⚡', tip: 'Negative marking of 1/4 mark applies in both Prelims and Mains. Do not guess blindly — attempt a question only if you can eliminate at least two options. A disciplined approach to negative marking separates rank holders from those who barely clear the cut-off.' },
+    { icon: '🏢', tip: 'Know NIACL deeply before the interview. Key facts: founded 1919 in Mumbai, nationalised 1973, India\'s largest general insurance company, wholly owned by Government of India (Ministry of Finance), global operations in 28+ countries, CMD name, flagship products (New India Floater Mediclaim, Motor Own Damage policy).' },
+    { icon: '🔄', tip: '5 focused hours daily over 5–6 months is sufficient to crack NIACL AO. Structure: 1 hour Quant/DI, 1 hour Reasoning, 45 min English, 45 min Insurance+GK, 30 min Current Affairs, 30 min revision. Take at least 2 sectional mocks per week from Month 3 and 1 full mock per week from Month 5.' },
+    { icon: '💡', tip: 'NIACL AO Specialist posts (Automobile Engineer, Legal, IT, Health AO, Business Analyst, Actuarial, Accounts, Company Secretary) have separate Mains patterns with Technical Knowledge sections. If you have relevant specialisation, Specialist posts typically have lower competition than the Generalist stream.' },
+  ];
+
+  const faqs = [
+    { q: 'When will NIACL AO 2026 notification be released?', a: 'NIACL AO 2026 notification is expected in August 2026 based on historical patterns. The 2025 cycle notification was released on 7 August 2025. As of May 2026, the next notification is TBN (To Be Notified). Candidates should monitor www.newindia.co.in for the official announcement.' },
+    { q: 'How many vacancies were there in NIACL AO 2025?', a: 'NIACL AO 2025 had 550 total vacancies — 193 for Generalist posts and 357 for Specialist posts (Automobile Engineer 75, Risk Engineer 50, Legal Specialist 50, Accounts Specialist 25, Health AO 50, Business Analyst 75, IT Specialist 25, Actuarial Specialist 5, Company Secretary 2). This was a significant recruitment cycle after years of limited openings.' },
+    { q: 'What is the NIACL AO salary in 2026?', a: 'NIACL AO basic pay starts at ₹82,485/month in the Scale I pay band (₹82,485 – 4,050×14 – ₹1,39,185 – 4,390×4 – ₹1,56,745). Including Dearness Allowance, HRA (metro cities ~16%), City Compensatory Allowance, and medical benefits, the gross salary is approximately ₹1,20,000–₹1,35,000/month. PSU insurance companies follow IBA bipartite wage settlements for revisions, not the Central Pay Commissions.' },
+    { q: 'Is there negative marking in NIACL AO?', a: 'Yes. There is a penalty of 1/4 mark (0.25) for every wrong answer in both Prelims and Mains Objective tests. Both sectional cut-offs and overall cut-offs apply in Prelims — failing even one section will lead to disqualification regardless of your total score. Attempt questions only when you are reasonably confident.' },
+    { q: 'What is the NIACL AO selection process?', a: 'NIACL AO selection happens in three stages: Phase 1 – Preliminary Exam (100 marks, 60 minutes, online) with English Language (30Q), Reasoning Ability (35Q) and Quantitative Aptitude (35Q); Phase 2 – Mains Exam (Objective 200M + Descriptive 30M); Phase 3 – Personal Interview. The final merit is based on Mains Objective (75%) and Interview (25%). Prelims marks are not counted in the final merit list — it is a qualifying stage only.' },
+    { q: 'What is the NIACL AO eligibility criteria?', a: 'For Generalist posts: Any graduate/post-graduate with a minimum of 60% marks (55% for SC/ST/PwBD) from a recognised university. Age limit: 21–30 years as on the cut-off date in the official notification. Age relaxation: OBC +3 years, SC/ST +5 years, PwBD +10 years, Ex-Servicemen +5 years (subject to notification specifics). Specialist posts have additional stream-specific qualifications — check the official notification for details.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── BLUE GRADIENT HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white font-medium">NIACL AO 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-blue-700 text-blue-100 text-xs px-3 py-1 rounded-full font-heading font-semibold">Banking / Insurance</span>
+            <span className="bg-blue-800 text-blue-200 text-xs px-3 py-1 rounded-full font-heading font-semibold">Central Government</span>
+            <span className="bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-heading font-semibold">Scale I Officer</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-3">
+            NIACL AO 2026 – Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base leading-relaxed max-w-2xl mb-6">
+            New India Assurance — India&apos;s largest general insurer — recruits Scale I Administrative Officers. With a gross salary of <strong className="text-white">~₹1,20,000–₹1,35,000/month</strong>, a permanent Central Government-backed career, and postings across India including international offices in 28+ countries.
+          </p>
+
+          {/* Fast-fact grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { icon: '📋', label: 'Vacancies 2025', value: '550 Posts' },
+              { icon: '📅', label: '2026 Notification', value: 'Aug 2026 (TBN)' },
+              { icon: '💰', label: 'Gross Salary', value: '~₹1.2–1.35L/mo' },
+              { icon: '🎓', label: 'Eligibility', value: 'Graduate 60%' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur rounded-xl p-3 border border-white/20">
+                <div className="text-xl mb-1">{item.icon}</div>
+                <div className="text-xs text-blue-200 font-heading">{item.label}</div>
+                <div className="text-white font-heading font-bold text-sm mt-0.5">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-8">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* LEFT COLUMN */}
+          <div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="What is NIACL AO 2026?" />
+              <p className="text-surface-600 leading-relaxed mb-4">
+                NIACL AO (Administrative Officer) is a <strong>Scale I Officer</strong> recruitment conducted by the New India Assurance Company Limited (NIACL) — India&apos;s largest general insurance company, established in 1919 and nationalised in 1973. Wholly owned by the Government of India under the Ministry of Finance, NIACL operates through 2,400+ offices across India and has an international presence in 28+ countries.
+              </p>
+              <p className="text-surface-600 leading-relaxed mb-6">
+                The AO position covers both Generalist and Specialist streams including Automobile Engineering, Risk Engineering, Legal, Accounts, Health, Business Analysis, IT, Actuarial, and Company Secretary. The exam is conducted irregularly — typically once in 1–2 years — making every notification a highly competitive opportunity. The 2025 cycle attracted over 5 lakh applications for 550 posts.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'New India Assurance Co. Ltd. (NIACL)' },
+                  { label: 'Post Level', value: 'Scale I Officer (Class I)' },
+                  { label: 'Age Limit', value: '21–30 years (relaxations apply)' },
+                  { label: 'Exam Mode', value: 'Online (CBT) + Descriptive' },
+                  { label: 'Selection Stages', value: 'Prelims → Mains → Interview' },
+                  { label: 'Basic Pay', value: '₹82,485/month (Scale I)' },
+                  { label: 'Official Website', value: 'newindia.co.in' },
+                  { label: 'Application Fee', value: '₹850 (Gen/EWS/OBC) | ₹100 (SC/ST/PwBD)' },
+                ].map((item) => (
+                  <InfoCard key={item.label} label={item.label} value={item.value} />
+                ))}
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="Important Dates 2025–26 & 2026 (Expected)" />
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Event</th>
+                      <th className="text-left p-3 font-heading">Date</th>
+                      <th className="text-left p-3 font-heading">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.event}</td>
+                        <td className="p-3 text-surface-800 font-medium">{row.date}</td>
+                        <td className="p-3">
+                          {row.status === 'released' ? (
+                            <span className="badge-green text-xs px-2 py-0.5">✓ Released</span>
+                          ) : (
+                            <span className="text-xs bg-amber-100 text-amber-700 rounded-full px-2 py-0.5 font-heading font-semibold">⚠ TBN</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mt-2">💡 All 2026 dates are tentative based on NIACL&apos;s historical recruitment calendar. Always verify at newindia.co.in → Careers/Recruitment.</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria 2026" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                    <span className="text-lg">🪪</span> Nationality
+                  </h3>
+                  <p className="text-sm text-surface-600 leading-relaxed">Must be a Citizen of India. Certain categories of foreign nationals (Tibetan refugees before 1962, persons of Indian origin from specified countries) are also eligible — refer to the official notification for specifics.</p>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                    <span className="text-lg">📋</span> Age Limit
+                  </h3>
+                  <p className="text-sm text-surface-600 leading-relaxed mb-2">Minimum <strong>21 years</strong> — Maximum <strong>30 years</strong> as on the cut-off date in the official notification.</p>
+                  <div className="space-y-1 text-xs text-surface-600">
+                    <div className="flex justify-between"><span>OBC (Non-Creamy Layer)</span><span className="font-semibold text-primary-600">+3 years → max 33</span></div>
+                    <div className="flex justify-between"><span>SC / ST</span><span className="font-semibold text-primary-600">+5 years → max 35</span></div>
+                    <div className="flex justify-between"><span>PwBD (General)</span><span className="font-semibold text-primary-600">+10 years → max 40</span></div>
+                    <div className="flex justify-between"><span>Ex-Servicemen</span><span className="font-semibold text-primary-600">+5 years</span></div>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                    <span className="text-lg">🎓</span> Educational Qualification (Generalist)
+                  </h3>
+                  <p className="text-sm text-surface-600 leading-relaxed">A graduate or post-graduate degree in <strong>any discipline</strong> from a recognised university with a minimum of <strong>60% marks</strong> (55% for SC/ST/PwBD). Final year students awaiting results are generally not eligible — you must have completed the degree before the application cut-off date.</p>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 flex items-center gap-2">
+                    <span className="text-lg">🔧</span> Specialist Post Qualifications
+                  </h3>
+                  <div className="space-y-1 text-xs text-surface-600">
+                    <div className="flex gap-2"><span className="font-semibold min-w-[120px]">Automobile Engineer</span><span>B.E./B.Tech in Automobile/Mechanical</span></div>
+                    <div className="flex gap-2"><span className="font-semibold min-w-[120px]">Legal Specialist</span><span>LLB from recognised university</span></div>
+                    <div className="flex gap-2"><span className="font-semibold min-w-[120px]">IT Specialist</span><span>B.E./B.Tech in CS/IT or MCA</span></div>
+                    <div className="flex gap-2"><span className="font-semibold min-w-[120px]">Accounts Specialist</span><span>CA/ICWA/MBA (Finance)</span></div>
+                    <div className="flex gap-2"><span className="font-semibold min-w-[120px]">Actuarial Specialist</span><span>Actuarial exams from IAI</span></div>
+                    <div className="flex gap-2"><span className="font-semibold min-w-[120px]">Company Secretary</span><span>ACS from ICSI</span></div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 text-sm text-amber-800">
+                ⚠️ <strong>OBC Creamy Layer:</strong> Candidates in the OBC category who fall under the &quot;creamy layer&quot; do not get OBC reservation or age relaxation — they must apply as General (UR) category.
+              </div>
+            </section>
+
+            {/* 4. VACANCIES HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="Vacancies History" />
+              <div className="card overflow-hidden mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Cycle</th>
+                      <th className="text-left p-3 font-heading">Total Vacancies</th>
+                      <th className="text-left p-3 font-heading">Prelims</th>
+                      <th className="text-left p-3 font-heading">Mains</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 text-surface-700">{row.vacancies}</td>
+                        <td className="p-3 text-surface-600">{row.prelims}</td>
+                        <td className="p-3 text-surface-600">{row.mains}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">2025 Vacancy Breakdown by Stream</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {[
+                    { stream: 'Generalist', count: '193' },
+                    { stream: 'Automobile Engineer', count: '75' },
+                    { stream: 'Business Analyst', count: '75' },
+                    { stream: 'Risk Engineer', count: '50' },
+                    { stream: 'Legal Specialist', count: '50' },
+                    { stream: 'Health AO', count: '50' },
+                    { stream: 'Accounts Specialist', count: '25' },
+                    { stream: 'IT Specialist', count: '25' },
+                    { stream: 'Actuarial Specialist', count: '5' },
+                    { stream: 'Company Secretary', count: '2' },
+                  ].map((item) => (
+                    <div key={item.stream} className="bg-surface-50 rounded-lg p-3 border border-surface-200 flex justify-between items-center">
+                      <span className="text-xs text-surface-700 font-heading">{item.stream}</span>
+                      <span className="text-sm font-bold text-primary-600 font-heading">{item.count}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 5. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="Exam Pattern 2026" />
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Phase 1 – Preliminary Examination</h3>
+              <div className="card overflow-hidden mb-2">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Section</th>
+                      <th className="text-left p-3 font-heading">Questions</th>
+                      <th className="text-left p-3 font-heading">Marks</th>
+                      <th className="text-left p-3 font-heading">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prelimsPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                        <td className="p-3 text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-surface-700">{row.marks}</td>
+                        <td className="p-3 text-surface-700">{row.time}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50 font-semibold">
+                      <td className="p-3 text-primary-800 font-heading">Total</td>
+                      <td className="p-3 text-primary-800">100</td>
+                      <td className="p-3 text-primary-800">100</td>
+                      <td className="p-3 text-primary-800">60 min</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mb-6">⚡ Negative marking: 1/4 mark per wrong answer. Both sectional and overall cut-offs apply. Prelims marks are NOT counted in the final merit list.</p>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Phase 2 – Mains Examination (Generalist)</h3>
+              <div className="card overflow-hidden mb-2">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Section</th>
+                      <th className="text-left p-3 font-heading">Questions</th>
+                      <th className="text-left p-3 font-heading">Marks</th>
+                      <th className="text-left p-3 font-heading">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mainsPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.subject}</td>
+                        <td className="p-3 text-surface-700">{row.questions}</td>
+                        <td className="p-3 text-surface-700">{row.marks}</td>
+                        <td className="p-3 text-surface-700">{row.time}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50 font-semibold">
+                      <td className="p-3 text-primary-800 font-heading">Total</td>
+                      <td className="p-3 text-primary-800">172</td>
+                      <td className="p-3 text-primary-800">230</td>
+                      <td className="p-3 text-primary-800">165 min</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500 mb-6">⚡ Negative marking: 1/4 per wrong answer in Objective section. Descriptive paper (30 min, 30M) evaluated only for candidates who clear Objective cut-off. Specialist posts have an additional Technical Knowledge section.</p>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Phase 3 – Personal Interview</h3>
+              <div className="card p-5">
+                <p className="text-sm text-surface-600 leading-relaxed mb-3">Candidates shortlisted from Mains are called for a personal interview. The final merit list is prepared based on:</p>
+                <div className="flex gap-4 flex-wrap">
+                  <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 text-center min-w-[120px]">
+                    <div className="text-2xl font-bold text-primary-600 font-heading">75%</div>
+                    <div className="text-xs text-surface-600 mt-1">Mains Objective</div>
+                  </div>
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center min-w-[120px]">
+                    <div className="text-2xl font-bold text-emerald-600 font-heading">25%</div>
+                    <div className="text-xs text-surface-600 mt-1">Personal Interview</div>
+                  </div>
+                </div>
+                <p className="text-xs text-surface-500 mt-3">💡 Descriptive Paper marks are qualifying in nature — not counted in the final 75:25 ratio. Interview is conducted at select centres; call letters with details are published on the official website.</p>
+              </div>
+            </section>
+
+            {/* 6. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="Detailed Syllabus 2026" />
+              <div className="space-y-3">
+                {syllabus.map((subject, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span className="flex items-center gap-3">
+                        <span>{subject.subject}</span>
+                        <span className="flex gap-1">
+                          {subject.prelims && <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-semibold">Prelims</span>}
+                          {subject.mains && <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-semibold">Mains</span>}
+                        </span>
+                      </span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-5 space-y-1 text-sm text-surface-600">
+                        {subject.topics.map((t, j) => <li key={j}>{t}</li>)}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 7. CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <SectionHeading num="7" title="Previous Year Cut-offs (Generalist)" />
+              <div className="card overflow-hidden mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Category</th>
+                      <th className="text-left p-3 font-heading">Prelims 2022</th>
+                      <th className="text-left p-3 font-heading">Mains 2022</th>
+                      <th className="text-left p-3 font-heading">Prelims 2019</th>
+                      <th className="text-left p-3 font-heading">Mains 2019</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-surface-700">{row.prelims2022}</td>
+                        <td className="p-3 text-surface-700">{row.mains2022}</td>
+                        <td className="p-3 text-surface-700">{row.prelims2019}</td>
+                        <td className="p-3 text-surface-700">{row.mains2019}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-500">These are approximate figures sourced from candidate reports and coaching institutes. Official cut-offs are released by NIACL after results. Prelims max for ranking = 70 (English 30 marks qualifying only).</p>
+            </section>
+
+            {/* 8. SALARY */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="8" title="Salary & Career Growth" />
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading">Salary Component</th>
+                      <th className="text-left p-3 font-heading">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.component}</td>
+                        <td className={`p-3 font-semibold ${row.component.includes('Gross') ? 'text-emerald-600' : row.component.includes('Note') ? 'text-surface-500 text-xs font-normal' : 'text-surface-800'}`}>{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Career Progression</h3>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {careerPath.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-4">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">
+                        {i + 1}
+                      </div>
+                      <div className="flex flex-wrap justify-between items-start gap-2">
+                        <div>
+                          <div className="font-heading font-semibold text-surface-800 text-sm">{step.level}</div>
+                          <div className="text-xs text-surface-500 mt-0.5">{step.scale} · {step.years}</div>
+                        </div>
+                        <div className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg border border-emerald-200">{step.payband}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-5 text-sm text-primary-800">
+                💡 NIACL AO also comes with excellent perquisites: medical benefits for self and family, LTC (Leave Travel Concession), staff loans at concessional rates, pension benefits under NPS, and staff quarters at many locations.
+              </div>
+            </section>
+
+            {/* 9. HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="9" title="How to Apply Online 2026" />
+              <div className="space-y-4">
+                {[
+                  { step: '1', title: 'Visit Official Website', detail: 'Go to newindia.co.in → click "Recruitment" on the homepage. Find the NIACL AO 2026 notification link.' },
+                  { step: '2', title: 'New Registration', detail: 'Click "New Sign-Up" and enter your basic details (name, mobile, email) to generate your Registration Number and Password.' },
+                  { step: '3', title: 'Fill Application Form', detail: 'Log in with your credentials. Fill personal details, educational qualifications, post preference (Generalist or Specialist stream). Upload photo and signature as per size specifications.' },
+                  { step: '4', title: 'Pay Application Fee', detail: 'Pay ₹850 (Gen/EWS/OBC) or ₹100 (SC/ST/PwBD) via Debit Card, Credit Card, Internet Banking, IMPS, Cash Cards or Mobile Wallets.' },
+                  { step: '5', title: 'Submit & Download', detail: 'Preview your application carefully before final submission. Download and print the confirmation page for future reference. Each candidate can apply for only one post.' },
+                ].map((item) => (
+                  <div key={item.step} className="card p-5 flex gap-4 items-start">
+                    <div className="w-9 h-9 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 font-heading font-bold text-sm shrink-0">{item.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.title}</div>
+                      <div className="text-sm text-surface-600">{item.detail}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="10" title="6-Month Study Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-5">
+                  {studyPlan.map((item, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-5">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">
+                        {i + 1}
+                      </div>
+                      <div className="font-heading font-semibold text-surface-800 mb-0.5">{item.month}: {item.focus}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 11. BOOKS */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="11" title="Best Books for NIACL AO 2026" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* 12. FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="12" title="Free Preparation Resources" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
+                    className="card p-5 group hover:border-primary-300 transition">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{r.type === 'youtube' ? '📺' : r.type === 'website' ? '🌐' : '📄'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.name}</div>
+                        <p className="text-xs text-surface-500 mt-1">{r.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. TIPS */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="13" title="Expert Preparation Tips" />
+              <div className="space-y-4">
+                {tips.map((item, i) => (
+                  <div key={i} className="card p-5 flex gap-4 items-start">
+                    <div className="w-9 h-9 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-lg shrink-0">{item.icon}</div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 14. FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="14" title="Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 shrink-0 ml-3 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* RIGHT SIDEBAR */}
+          <div className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`}
+                      className="block text-xs text-surface-600 hover:text-primary-500 py-1 transition-colors leading-snug">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">🔗 Official Website</h3>
+                <a href="https://www.newindia.co.in" target="_blank" rel="noopener noreferrer"
+                  className="block text-xs text-primary-500 hover:text-primary-600 hover:underline break-all">
+                  www.newindia.co.in
+                </a>
+                <p className="text-xs text-surface-500 mt-2">Visit for notifications, admit cards, results and official recruitment PDFs.</p>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">⚡ Quick Facts</h3>
+                <div className="space-y-2 text-xs text-surface-700">
+                  <div className="flex justify-between"><span>Vacancies (2025)</span><span className="font-semibold text-emerald-600">550</span></div>
+                  <div className="flex justify-between"><span>Generalist Posts</span><span className="font-semibold">193</span></div>
+                  <div className="flex justify-between"><span>Age Limit</span><span className="font-semibold">21–30 yrs</span></div>
+                  <div className="flex justify-between"><span>Qualification</span><span className="font-semibold">Grad 60%</span></div>
+                  <div className="flex justify-between"><span>Basic Pay</span><span className="font-semibold text-emerald-600">₹82,485/mo</span></div>
+                  <div className="flex justify-between"><span>Gross Salary</span><span className="font-semibold text-emerald-600">~₹1.2–1.35L</span></div>
+                  <div className="flex justify-between"><span>App Fee (Gen)</span><span className="font-semibold">₹850</span></div>
+                  <div className="flex justify-between"><span>Neg. Marking</span><span className="font-semibold">1/4 mark</span></div>
+                </div>
+              </div>
+
+              {/* Eligibility Checker CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">🎯 Check Your Eligibility</h3>
+                <p className="text-xs text-surface-600 mb-3">See which exams you qualify for based on your age and qualification.</p>
+                <Link href="/tools/eligibility-checker/"
+                  className="btn-primary text-xs px-4 py-2 rounded-full block text-center">
+                  Open Eligibility Checker →
+                </Link>
+              </div>
+
+            </div>
+          </div>
 
         </div>
       </div>
