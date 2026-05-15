@@ -541,6 +541,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'kerala-psc-kas') {
+    return {
+      title: 'Kerala PSC KAS 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'Kerala PSC KAS 2026: Kerala Administrative Service exam for Deputy Collector, DSP & 12+ Group I posts. Graduate eligible, age 21–32 yrs. Salary ₹44,900–₹2,09,200/month (7th Pay). Full syllabus, exam pattern & free resources.',
+      keywords: 'Kerala PSC KAS 2026, Kerala Administrative Service 2026, KAS exam Kerala, Kerala PSC Group 1 2026, KAS syllabus, KAS notification 2026, Kerala PSC taiyari, KAS exam date, Kerala PSC Deputy Collector, KAS eligibility, Kerala sarkari naukri 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/kerala-psc-kas/' },
+      other: { 'description:hi': 'Kerala PSC KAS 2026 – Deputy Collector, DSP व 12+ Group I पदों के लिए भर्ती। स्नातक पात्र, आयु 21–32 वर्ष। वेतन ₹44,900–₹2,09,200/माह। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'mpsc-rajyaseva') {
     return {
       title: 'MPSC Rajyaseva 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -625,6 +635,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'nvs-teaching') return <NvsTeachingPage exam={brief} />;
   if (brief && brief.slug === 'dsssb-tgt-pgt-prt') return <DssbTgtPgtPrtPage exam={brief} />;
   if (brief && brief.slug === 'mpsc-rajyaseva') return <MpscRajyasevaPage exam={brief} />;
+  if (brief && brief.slug === 'kerala-psc-kas') return <KeralaKasPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -42750,6 +42761,850 @@ function MpscRajyasevaPage({ exam }: { exam: any }) {
                 <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block py-2">
                   Check Eligibility →
                 </Link>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── KERALA PSC KAS 2026 RICH PAGE ────────────────────────────────────────────
+function KeralaKasPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies History' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'services',        label: 'Services & Posts' },
+    { id: 'cutoff',          label: 'Previous Year Cut-offs' },
+    { id: 'salary',          label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'KAS 2021 Notification Released',                date: 'October 2021',               status: 'released' },
+    { event: 'KAS 2021 Online Application Last Date',         date: 'November 2021',              status: 'released' },
+    { event: 'KAS 2021 Preliminary Exam (Conducted)',         date: 'January 2022',               status: 'released' },
+    { event: 'KAS 2021 Preliminary Result',                   date: 'March 2022',                 status: 'released' },
+    { event: 'KAS 2021 Main Exam (Conducted)',                date: 'June – July 2022',           status: 'released' },
+    { event: 'KAS 2021 Main Result & Interview Call',         date: 'Early 2023',                 status: 'released' },
+    { event: 'KAS 2021 Interview / Personality Test',         date: 'March – May 2023',           status: 'released' },
+    { event: 'KAS 2021 Final Result & Appointment Orders',    date: 'Late 2023',                  status: 'released' },
+    { event: '🆕 KAS 2024/2025 – Official Notification',     date: 'TBN (To Be Notified)',       status: 'tbn' },
+    { event: 'KAS 2025 – Online Application Window',         date: 'TBN',                        status: 'tbn' },
+    { event: 'KAS 2025 – Preliminary Examination',           date: '2025 – 2026 (TBN)',          status: 'tbn' },
+    { event: 'KAS 2025 – Main Examination',                  date: '2026 (TBN)',                  status: 'tbn' },
+    { event: 'KAS 2025 – Interview & Final Result',          date: 'TBN',                        status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'KAS 2021 (1st Recruitment)', vacancies: '~191',               prelims: 'Jan 2022',         mains: 'Jun–Jul 2022' },
+    { year: 'KAS 2023 (2nd Recruitment)', vacancies: '~150',               prelims: 'Expected 2024',    mains: 'Expected 2024–25' },
+    { year: 'KAS 2025 (upcoming)',         vacancies: '100–250 (Expected)', prelims: 'TBN',              mains: 'TBN' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'General Studies',                           questions: 100, marks: 100, time: '—' },
+    { subject: 'Kerala Renaissance, History & Current Affairs', questions: 50,  marks: 50,  time: '—' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper I',   subject: 'General Studies I – History, Geography, Polity, Economy',                 marks: 200, time: '3 Hrs' },
+    { paper: 'Paper II',  subject: 'General Studies II – Science, Technology, Environment, Current Affairs',   marks: 200, time: '3 Hrs' },
+    { paper: 'Paper III', subject: 'Kerala Renaissance, Social Reform, Kerala Economy & Current Affairs',      marks: 200, time: '3 Hrs' },
+    { paper: 'Paper IV',  subject: 'General English',                                                          marks: 100, time: '2 Hrs' },
+    { paper: 'Paper V',   subject: 'General Malayalam (or other official language)',                            marks: 100, time: '2 Hrs' },
+    { paper: 'Essay',     subject: 'Essay Writing (General & Kerala-focused topics)',                           marks: 100, time: '2 Hrs' },
+    { paper: 'Interview', subject: 'Personality Test / Viva Voce',                                             marks: 100, time: '—' },
+  ];
+
+  const cutoffData = [
+    { category: 'General (OC)',       prelims2021: '~73/150', mains2021: '~520/900' },
+    { category: 'OBC (SEBC)',         prelims2021: '~67/150', mains2021: '~490/900' },
+    { category: 'SC',                 prelims2021: '~59/150', mains2021: '~455/900' },
+    { category: 'ST',                 prelims2021: '~54/150', mains2021: '~430/900' },
+    { category: 'EWS / OBC Hindu Nadar', prelims2021: '~65/150', mains2021: '~475/900' },
+  ];
+
+  const servicesAndPosts = [
+    { service: 'Kerala Administrative Service',              posts: 'Deputy Collector / District Officer' },
+    { service: 'Kerala Police Service',                      posts: 'Deputy Superintendent of Police (DSP)' },
+    { service: 'Kerala Commercial Tax Service',              posts: 'Deputy Commercial Tax Officer' },
+    { service: 'Kerala Treasury Service',                    posts: 'Deputy Director of Treasuries' },
+    { service: 'Kerala Land Revenue Service',                posts: 'Revenue Divisional Officer (RDO)' },
+    { service: 'Kerala Industries Service',                  posts: 'Assistant Director (Industries)' },
+    { service: 'Kerala Fisheries Service',                   posts: 'Assistant Director (Fisheries)' },
+    { service: 'Kerala Registration Service',                posts: 'District Registrar' },
+    { service: 'Kerala Civil Supplies Service',              posts: 'District Supply Officer' },
+    { service: 'Kerala Minor Irrigation Service',            posts: 'Assistant Engineer / Executive (Grade I)' },
+    { service: 'Kerala Tourism Service',                     posts: 'Assistant Director (Tourism)' },
+    { service: 'Kerala Cooperative Service',                 posts: 'Deputy Registrar (Cooperatives)' },
+  ];
+
+  const salaryBreakdown = [
+    { grade: 'Deputy Collector / DSP (Level 26 – Pay Scale)', basic: '₹56,100 – ₹1,77,500/month',  ta: '₹7,200 – ₹9,000', hra: '18–24% of basic' },
+    { grade: 'Group I Posts (Scale 25 / Level 25)',            basic: '₹44,900 – ₹1,42,400/month',  ta: '₹6,000 – ₹7,200', hra: '18% of basic' },
+    { grade: 'Senior Grade / District Collector Level',        basic: '₹78,800 – ₹2,09,200/month',  ta: '₹9,000 – ₹12,000', hra: '24% of basic' },
+    { grade: 'IAS cadre (after empanelment / promotion)',      basic: '₹1,23,100 – ₹2,18,200/month', ta: '₹15,750', hra: 'As applicable' },
+  ];
+
+  const careerPath = [
+    { level: 'KAS Officer – Joining Grade',                   scale: 'Group A Grade I',  years: 'On joining',  payband: '₹44,900 – ₹1,42,400' },
+    { level: 'Deputy Collector / DSP / Revenue Div. Officer', scale: 'Group A Grade II', years: '2–5 yrs',     payband: '₹56,100 – ₹1,77,500' },
+    { level: 'Additional District Collector / SP',            scale: 'Group A Senior',   years: '8–12 yrs',    payband: '₹78,800 – ₹2,09,200' },
+    { level: 'District Collector / Police Commissioner',      scale: 'Senior IAS/KAS',   years: '15–20 yrs',   payband: '₹1,23,100 – ₹2,18,200' },
+    { level: 'Secretary to Government / Joint Secretary',     scale: 'Apex Scale',       years: '20–25 yrs',   payband: '₹1,44,200 – ₹2,18,200' },
+    { level: 'Additional Chief Secretary / Chief Secretary',  scale: 'Apex / Fixed',     years: '30+ yrs',     payband: '₹2,25,000 (fixed)' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🏛️ History, Art & Culture (Prelims + Mains Paper I)',
+      topics: [
+        'Indian History — Ancient, Medieval, Modern periods with freedom movement focus',
+        'Kerala History: Ancient kingdoms (Cheras, Ay dynasty), medieval period (Zamorin, Travancore, Cochin)',
+        'Kerala Renaissance: Sree Narayana Guru, Ayyankali, Chattampi Swamikal, Vaikunda Swamikal',
+        'Social reform movements: SNDP Yogam, NSS, caste-based reform movements in Kerala',
+        'Post-independence Kerala: Responsible Government 1947, State formation 1956, key milestones',
+        'Kerala Art & Culture: Kathakali, Mohiniyattam, Koodiyattam (UNESCO), Theyyam, Ottamthullal',
+        'Kerala Literature: Major poets, novels — Kumaran Asan, Vallathol, Ulloor, G. Sankara Kurup',
+        'Kerala Temples, Monuments: Padmanabhaswamy Temple, Thrissur Pooram, snake boat races',
+      ],
+    },
+    {
+      subject: '🌍 Geography, Environment & Natural Resources (Prelims + Mains Paper I)',
+      topics: [
+        'Physical Geography of India: Climate zones, soil types, river systems, Western Ghats',
+        'Kerala Geography: Physiographic divisions — Highland, Midland, Lowland (Kuttanad)',
+        'Kerala Rivers: Periyar, Bharathapuzha, Pamba, Chaliyar, Kabani, Kallada',
+        'Western Ghats ecology: Biodiversity hotspot, Silent Valley, Agasthyamalai Biosphere Reserve',
+        'Kerala Backwaters, Wetlands: Vembanad Lake, Ashtamudi, Ramsar sites',
+        'Natural disasters in Kerala: Floods (2018, 2019), landslides — management & policy response',
+        'Kerala Wildlife: Elephant reserves, Periyar Tiger Reserve, Parambikulam, Wayanad Sanctuary',
+        'Climate change & Kerala: Sea level rise, coastal erosion, monsoon pattern changes',
+      ],
+    },
+    {
+      subject: '🏛️ Indian & Kerala Polity & Administration (Mains Paper I & III)',
+      topics: [
+        'Indian Constitution: Preamble, Fundamental Rights, DPSPs, Fundamental Duties, Amendments',
+        'Parliament: Lok Sabha, Rajya Sabha, Legislative process, Money Bills, Constitutional Bodies',
+        'Executive: President, PM, Union Cabinet — roles & constitutional provisions',
+        'Judiciary: Supreme Court, High Courts, Judicial Review, Public Interest Litigation (PIL)',
+        'Kerala Legislature: Unicameral Assembly, Speaker, CM, Cabinet, Legislative Council (abolished)',
+        'Kerala Panchayati Raj: Three-tier system, powers under Kerala Panchayat Raj Act 1994',
+        'Kerala Municipalities: Urban Local Bodies, Corporation elections, ward sabhas',
+        'Revenue Administration in Kerala: Land Reforms Act 1963, Land Tribunal, Survey & Resurvey',
+        'District Administration: Collector\'s role, Revenue Division, Taluks, Villages',
+        'Right to Information Act: Kerala SIC, transparency in public administration',
+      ],
+    },
+    {
+      subject: '💰 Economy & Development (Mains Paper I & III)',
+      topics: [
+        'Indian Economy: National Income, GDP, Fiscal Policy, Monetary Policy (RBI)',
+        'Planning in India: NITI Aayog, SDGs, Budget components',
+        'Kerala Economy: High HDI model — health, education, welfare spending',
+        'Kerala\'s sectors: IT/ITES (Technopark, Infopark, Cyberpark), Fisheries, Tourism, Remittances',
+        'Kerala Budget highlights: Social sector expenditure, KIIFB infrastructure funding',
+        'Agriculture in Kerala: Spices, rubber, coconut, paddy (Kuttanad) — major challenges',
+        'Government welfare schemes: PM Kisan, MGNREGS, PMAY; Kerala Karshaka Kshemasena',
+        'KUDUMBASHREE Mission: Women self-help groups, poverty alleviation, microfinance in Kerala',
+        'Kerala Infrastructure: NH development, Smart City projects, Vizhinjam Port, K-Rail (SilverLine)',
+        'NRI remittances: Kerala\'s dependence on Gulf remittances, economic impact, COVID disruption',
+      ],
+    },
+    {
+      subject: '🔬 Science, Technology, Environment & Current Affairs (Mains Paper II)',
+      topics: [
+        'Basic Physics, Chemistry, Biology — Class 10–12 NCERT level',
+        'Space & Defence: ISRO missions (Chandrayaan, Gaganyaan), DRDO, recent achievements',
+        'IT & Digital India: Aadhaar, Digital India, e-Governance, UMANG, DigiLocker',
+        'Health: National Health Mission, Ayushman Bharat, Kerala\'s health model',
+        'Kerala IT Policy: IT Mission, startup ecosystem, emerging technologies',
+        'Environment: Paris Agreement, COP summits, National Action Plan on Climate Change',
+        'Nuclear energy: KKNPP, India\'s nuclear doctrine, BARC',
+        'Current Affairs: Last 18–24 months — national, international + Kerala-specific events',
+        'Awards, appointments, important days, summits, books & authors',
+      ],
+    },
+    {
+      subject: '✍️ English & Malayalam Language (Mains Paper IV & V)',
+      topics: [
+        'English Comprehension: Reading passages (social, cultural, administrative themes)',
+        'English Essay: Minimum 1,000–1,200 words on current affairs / governance topics',
+        'English Précis Writing: Condensing a passage to 1/3rd its original length',
+        'Letter/Application Writing: Official, semi-official formats',
+        'English Grammar: Tenses, active-passive, direct-indirect, error spotting, vocabulary',
+        'Malayalam Comprehension: Reading passages and summary',
+        'Malayalam Essay: Essays on Kerala society, culture, governance',
+        'Malayalam Letter Writing: Official & personal formats',
+        'Malayalam Grammar: Sandhi, Samasam, Vibhakti, sentence structures',
+        'Translation: Malayalam to English and English to Malayalam',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', focus: 'Kerala History, Renaissance & Culture', detail: 'The Kerala PSC KAS is a state-centric exam — Kerala-specific content forms nearly 40% of both Prelims and Mains. Begin with Kerala Renaissance (Sree Narayana Guru, Ayyankali, Chattampi Swamikal), ancient & medieval Kerala history, and the social reform movements. Simultaneously study Kerala Art & Culture: Kathakali, Theyyam, Koodiyattam, literature (Kumaran Asan, Vallathol). These facts are directly tested in Prelims — one topic, one question.' },
+    { month: 'Month 3–4', focus: 'Kerala Geography, Environment & Indian Polity', detail: 'Map every river, wildlife sanctuary, backwater system, and physiographic zone of Kerala. The Western Ghats ecology, flood management (2018 lessons), and Kuttanad wetlands are recurring Mains topics. Simultaneously, complete M. Laxmikanth\'s Indian Polity — cover Constitution, Parliament, Executive, and Kerala-specific governance structures (Panchayat Raj Act 1994, District Administration). This forms the base for both Prelims and Mains Paper I.' },
+    { month: 'Month 5–6', focus: 'Indian & Kerala Economy + Science & Technology', detail: 'Study Kerala\'s unique economic model: KUDUMBASHREE, Kerala\'s HDI success, KIIFB, IT Parks (Technopark, Infopark), Gulf remittances impact, fisheries, and agriculture. For Indian Economy, use Ramesh Singh\'s textbook. Science & Technology (NCERT Class 10–12) can be covered in 3–4 weeks. Start reading one English or Malayalam newspaper daily for current affairs — build a running notes file specifically for Kerala developments.' },
+    { month: 'Month 7–8', focus: 'Mains Writing Practice + Language Papers', detail: 'Begin structured Mains answer writing for Papers I–III. KAS Mains rewards analytical, well-structured answers — not just fact-dumping. Practise one full essay per week in both English and Malayalam. For Language Papers (IV & V), practise comprehension, précis, and letter writing weekly. These 200 marks (Paper IV + V) are highly scoring for candidates who practise consistently from early on.' },
+    { month: 'Month 9–10', focus: 'Full Mocks + Current Affairs Intensive', detail: 'Take weekly full Prelims mocks and analyse every error. For Mains, do full paper simulations in 3-hour timed sessions. Current affairs for last 18–24 months needs thorough coverage — maintain a subject-wise consolidation (Kerala events, national policy, international developments). Focus especially on Kerala government schemes, budget announcements, and appointments — these appear consistently in both stages.' },
+    { month: 'Month 11–12', focus: 'Revision, Essay & Interview Preparation', detail: 'Use your short notes for rapid revision of all topics. Take 3–4 Prelims mocks per week in the final month. For Interview: prepare your biodata (hometown, college, hobbies) thoroughly — Kerala PSC Boards ask about your district\'s geography, history, administration, and development issues. Prepare for situational administrative questions: "What will you do as Deputy Collector if…?" Practise mock interviews with peers or a mentor.' },
+  ];
+
+  const books = [
+    { title: 'Kerala PSC Degree Level GK (Malayalam/English)', author: 'Mathrubhumi / Mangalam Publications', subject: 'Kerala GK – Prelims' },
+    { title: 'Indian Polity',                                    author: 'M. Laxmikanth',                     subject: 'Polity' },
+    { title: 'Indian Economy',                                   author: 'Ramesh Singh',                      subject: 'Economy' },
+    { title: 'Certificate Physical & Human Geography',           author: 'G.C. Leong',                        subject: 'Geography' },
+    { title: 'NCERT History (Class 6–12)',                       author: 'NCERT',                             subject: 'History' },
+    { title: 'Kerala: Land, People & Economy',                   author: 'P.R. Gopinathan Nair / State PIB',  subject: 'Kerala Economy & Society' },
+    { title: 'General Science (Class 9–12)',                     author: 'NCERT',                             subject: 'Science & Technology' },
+    { title: 'Objective General English',                        author: 'S.P. Bakshi (Arihant)',             subject: 'English (Paper IV)' },
+    { title: 'KAS Previous Year Papers (Prelims & Mains)',       author: 'Poorna / Brain Tree Publications',  subject: 'Practice Papers' },
+    { title: 'Current Affairs Monthly (Kerala Focus)',           author: 'Yojna / Pratiyogita Darpan + Kerala PIB', subject: 'Current Affairs' },
+  ];
+
+  const freeResources = [
+    { name: 'Kerala PSC Official Website',                type: 'website',  url: 'https://www.keralapsc.gov.in',           description: 'Official notifications, admit cards, syllabus PDFs, results and answer keys from Kerala PSC.' },
+    { name: 'Kerala PSC Thulasi Portal',                  type: 'website',  url: 'https://thulasi.psc.kerala.gov.in',      description: 'Online application portal for all Kerala PSC exams including KAS. Create your One Time Registration (OTR) here.' },
+    { name: 'Santhosh George Kulangara (YouTube)',         type: 'youtube',  url: 'https://www.youtube.com/@SafariTV',      description: 'Kerala-focused educational channel useful for geography, culture and current affairs revision.' },
+    { name: 'Kerala PSC Helper (YouTube)',                 type: 'youtube',  url: 'https://www.youtube.com/@KeralaPSCHelperYT', description: 'Free KAS and Kerala PSC preparation classes in Malayalam covering all major topics.' },
+    { name: 'BYJU\'S Kerala PSC (YouTube)',               type: 'youtube',  url: 'https://www.youtube.com/@ByjusGovtExams', description: 'Free structured classes for KAS and Kerala PSC exams including syllabus analysis and previous year solutions.' },
+    { name: 'Kerala PIB (Press Information Bureau)',       type: 'website',  url: 'https://pib.gov.in/indexd.aspx?reg=3',  description: 'Official Kerala government press releases — essential for Kerala-specific current affairs and scheme updates.' },
+    { name: 'GK Today Daily Current Affairs',             type: 'website',  url: 'https://www.gktoday.in',                 description: 'Free daily current affairs and monthly revision capsules — useful for national + international topics.' },
+    { name: 'Drishti IAS – Kerala Focus',                  type: 'website',  url: 'https://www.drishtiias.com/state-pcs/kerala-psc', description: 'Free KAS study material, current affairs and exam strategy aligned to Kerala PSC KAS pattern.' },
+  ];
+
+  const tips = [
+    { icon: '🌴', tip: 'Kerala Renaissance is the unique differentiator of KAS. Questions on Sree Narayana Guru, Ayyankali, Chattampi Swamikal, the Vaikom Satyagraha, and social reform movements appear directly in Prelims and as Mains essay topics. Do not skip this — aspirants from other state PSC backgrounds consistently underestimate this section.' },
+    { icon: '📋', tip: 'KAS Mains is 900 marks (Papers I–V + Essay) + 100 marks Interview = 1,000 total. The sheer volume means time management during the exam is as important as content knowledge. Practise writing structured 200-word answers in 8–10 minutes and 600-word essays in 30 minutes — build this speed from Month 7.' },
+    { icon: '🌊', tip: 'Kerala Geography is non-negotiable. Map every river (Periyar, Pamba, Bharathapuzha), wildlife sanctuary, wetland (Vembanad, Ashtamudi), and district. The 2018 and 2019 Kerala floods, landslide management, and Western Ghats ecology are major Mains topics that also appear as current affairs questions. Make a Kerala geography map-sheet and revise it weekly.' },
+    { icon: '✍️', tip: 'Language Papers (Paper IV English + Paper V Malayalam) are 200 marks combined and are among the most scoring sections. Most candidates under-prepare for languages. Practise one essay and one précis per week from Month 1. This habit alone can add 30–40 marks above the competition.' },
+    { icon: '🎯', tip: 'KAS Prelims has negative marking (1/3rd deduction per wrong answer). Aim for 110–120 confident attempts out of 150 — never guess blindly. Kerala-specific questions (50 marks) are your most reliable scoring zone if prepared well. Focus on securing those 40–45 marks before tackling the general GS section.' },
+    { icon: '📰', tip: 'Kerala current affairs for the last 18–24 months is tested directly. Read The Hindu and Mathrubhumi daily, or use their digital summaries. Keep a running Kerala-specific events note: government schemes, budget announcements, appointments, sports achievements, cultural events. A 30-minute daily reading habit from Month 1 beats last-minute cramming completely.' },
+    { icon: '🤝', tip: 'The Personality Test (100 marks) focuses on administrative aptitude, situational responses, and knowledge of your home district. Kerala PSC Boards frequently ask: "What are the key development challenges in your district?", "How would you handle a flood relief operation as Deputy Collector?" Prepare district-specific knowledge and 4–5 governance scenario responses.' },
+    { icon: '⏱️', tip: 'KAS is a long cycle exam — from notification to final appointment typically takes 18–24 months. Use waiting periods between stages to prepare simultaneously for UPSC Prelims (65% syllabus overlap) or other Kerala PSC Group I exams. Never stop study between Prelims results and Mains announcement — use that window for Mains deep-dive preparation.' },
+  ];
+
+  const faqs = [
+    { q: 'What is Kerala PSC KAS 2026 notification date?', a: 'As of May 2026, Kerala PSC has not released the official KAS 2025/2026 notification. The KAS 2021 cycle (the first-ever KAS recruitment) was completed in 2023. A second KAS cycle (2023 recruitment) is expected to be in progress. A new KAS 2025/2026 notification has not been officially announced — always check keralapsc.gov.in and the Thulasi portal for official updates. When notified, the application process is done through One Time Registration (OTR) on the Thulasi portal.' },
+    { q: 'What is One Time Registration (OTR) for Kerala PSC?', a: 'OTR (One Time Registration) is the mandatory registration portal for all Kerala PSC exams including KAS. You register once at thulasi.psc.kerala.gov.in with your personal, educational, and communication details. After OTR, you apply for specific exams using your OTR profile. Your OTR profile must be up to date before applying for KAS — incorrect details can lead to disqualification. OTR registration is free.' },
+    { q: 'What posts are recruited through Kerala PSC KAS?', a: 'KAS recruits for 12+ Group I state service posts including: Deputy Collector (Kerala Administrative Service), Deputy Superintendent of Police (Kerala Police Service), Deputy Commercial Tax Officer, Revenue Divisional Officer (RDO), Deputy Director of Treasuries, Assistant Director (Fisheries, Industries, Tourism), District Registrar, and District Supply Officer. The actual posts and vacancy count vary with each cycle\'s official notification.' },
+    { q: 'What is the age limit for Kerala PSC KAS?', a: 'The standard age limit for KAS is 21–32 years for General/OC candidates (Kerala). Age relaxations: OBC (SEBC): +5 years (up to 37). SC/ST: +5 years (up to 37). PwD: +10 years. Kerala domicile / nativity is required for reservations. The specific age relaxation details are published with each official notification — always refer to the official notification for the exact limits applicable to your category.' },
+    { q: 'What is the KAS exam pattern in Kerala?', a: 'KAS has three stages: (1) Preliminary Exam: 150 MCQ questions (100 General Studies + 50 Kerala Renaissance & History), 150 marks, negative marking 1/3rd. (2) Main Exam (Descriptive): 6 papers totalling 900 marks — Paper I & II (General Studies I & II: 200 each), Paper III (Kerala Renaissance, Economy & Current Affairs: 200), Paper IV (English: 100), Paper V (Malayalam: 100), Essay (100). (3) Interview/Personality Test: 100 marks. Grand total: 1,000 marks.' },
+    { q: 'What is the salary of a KAS officer in Kerala?', a: 'A KAS officer\'s salary depends on the allotted post. Deputy Collector / DSP posts are placed in Scale 26 / Level 26 with basic pay ₹56,100–₹1,77,500/month under the Kerala Government Pay Revision. With DA (revised periodically), HRA (18–24% of basic), TA, medical allowances and other perks, the effective in-hand salary for a fresh KAS Deputy Collector in a metro/urban posting is approximately ₹75,000–₹95,000/month. Senior KAS officers (District Collector level) can earn ₹1.5–₹2.5 lakh/month.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">Kerala PSC KAS 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Kerala Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ Next Notification: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            Kerala PSC KAS 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            The <strong>Kerala Administrative Service (KAS)</strong> is conducted by the <strong>Kerala Public Service Commission (Kerala PSC)</strong> to recruit Group I state officers for 12+ prestigious posts including Deputy Collector, DSP, and Revenue Divisional Officer. Any graduate eligible. Age <strong>21–32 years</strong>. 3-stage selection: Prelims → Mains → Interview. Starting salary <strong>₹44,900–₹1,77,500/month</strong> + DA, HRA & allowances.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies',   value: '100–250',           sub: '(Next cycle)' },
+              { label: 'Prelims Date',          value: 'TBN',               sub: '(KAS 2025/26)' },
+              { label: 'Min. Qualification',   value: 'Any Graduate',      sub: 'Any discipline' },
+              { label: 'Starting Salary',       value: '₹44,900+/month',   sub: '+ DA, HRA, TA' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 max-w-2xl">
+            <div className="text-xs text-blue-200 uppercase tracking-wide mb-2 font-heading">💡 2026 Status at a Glance</div>
+            <p className="text-sm text-blue-100 leading-relaxed">KAS is Kerala's equivalent of the IAS cadre at state level — one of the most competitive and prestigious exams in South India. The KAS 2021 (first-ever cycle, ~191 posts) was completed in 2023. The next cycle is expected but not yet notified as of May 2026. Register on the Thulasi portal and monitor <strong>keralapsc.gov.in</strong> for the official notification.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10 px-4">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* LEFT COLUMN */}
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="Overview – What is Kerala PSC KAS 2026?" />
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-3">
+                  The <strong>Kerala Administrative Service (KAS)</strong> was established by the Kerala Government in 2019 as a dedicated state administrative service — Kerala's own equivalent of the IAS. The exam is conducted by <strong>Kerala Public Service Commission (Kerala PSC)</strong> and is among the toughest and most prestigious state-level exams in India.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-3">
+                  KAS selects officers for 12+ Group I posts including Deputy Collector, Deputy Superintendent of Police, Revenue Divisional Officer, and several allied services. Selected KAS officers have a defined path to senior district administration roles and, through seniority/empanelment, potential promotion to the IAS cadre.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  The selection process has three stages: <strong>Preliminary Exam</strong> (objective, 150 marks), <strong>Main Exam</strong> (descriptive, 900 marks across 6 papers), and <strong>Personality Test / Interview</strong> (100 marks). Kerala domicile / nativity is required for reserved category benefits. Application is through the <strong>Thulasi portal</strong> using One Time Registration (OTR).
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {[
+                  { label: '🏛️ Conducting Body', value: 'Kerala Public Service Commission (Kerala PSC)' },
+                  { label: '📋 Exam Name',         value: 'Kerala Administrative Service (KAS)' },
+                  { label: '🎯 Post Level',        value: 'Group I (Class I) – State Service' },
+                  { label: '🪪 Nationality',        value: 'Indian Citizen + Kerala Nativity (for reservation)' },
+                  { label: '🎓 Qualification',     value: 'Bachelor\'s Degree (any discipline)' },
+                  { label: '📋 Age Limit',          value: '21 – 32 years (General); relaxations available' },
+                  { label: '📍 Posting',            value: 'Throughout Kerala' },
+                  { label: '🌐 Official Website',  value: 'keralapsc.gov.in' },
+                  { label: '💰 Salary',             value: '₹44,900 – ₹2,09,200/month (as per post)' },
+                ].map((item) => (
+                  <InfoCard key={item.label} label={item.label} value={item.value} />
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="KAS Important Dates 2026" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Event</th>
+                        <th className="text-left p-4 font-heading font-semibold whitespace-nowrap">Date / Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 text-surface-800 font-body">{row.event}</td>
+                          <td className="p-4 whitespace-nowrap">
+                            {row.status === 'released' ? (
+                              <span className="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">✅ {row.date}</span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⚠️ {row.date}</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-4 bg-amber-50 border-t border-amber-200 text-xs text-amber-800">
+                  ⚠️ TBN = To Be Notified. KAS 2025/2026 dates are not yet officially announced (as of May 2026). Monitor <strong>keralapsc.gov.in</strong> for official updates.
+                </div>
+              </div>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria" />
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-900">Nationality & Domicile</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Must be a citizen of India</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Kerala nativity / domicile required for reserved category benefits (OBC, SC, ST age relaxations and reservation)</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>General category candidates without Kerala domicile can apply but must meet unreserved eligibility norms</span></li>
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-900">Educational Qualification</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Bachelor's Degree in any discipline from a recognised university</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>No minimum percentage required — passing marks are sufficient</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Final year students who complete their degree before the prescribed date may be eligible — check each notification</span></li>
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-900">Age Limit (General)</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>General / OC:</strong> 21–32 years</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>OBC (SEBC) – Kerala:</strong> Up to 37 years (+5)</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>SC / ST – Kerala:</strong> Up to 37 years (+5)</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>PwD:</strong> Up to 42 years (+10)</span></li>
+                    <li className="flex gap-2"><span className="text-emerald-600 mt-0.5">✓</span><span>Age calculated as of the date specified in official notification</span></li>
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">📝</span>
+                    <h3 className="font-heading font-semibold text-surface-900">Other Requirements</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>One Time Registration (OTR) on the Thulasi portal is mandatory before applying</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>No criminal convictions or pending cases under prescribed laws</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Physical and medical fitness as per post-specific standards</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Malayalam language proficiency is beneficial for Mains (Paper V) and Interview</span></li>
+                    <li className="flex gap-2"><span className="text-emerald-600 mt-0.5">✓</span><span>No service limit — fresh graduates and serving employees both eligible</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                <p className="text-sm text-primary-800"><strong>💡 Quick Eligibility Check:</strong> Use the <Link href="/tools/eligibility-checker/" className="text-primary-600 font-semibold underline underline-offset-2">TaiyarHo Eligibility Checker</Link> to instantly verify if you meet the basic age and qualification criteria for Kerala PSC KAS and other government exams.</p>
+              </div>
+            </section>
+
+            {/* VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="KAS Vacancies History" />
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Recruitment Cycle</th>
+                        <th className="text-left p-4 font-heading font-semibold">Approx. Vacancies</th>
+                        <th className="text-left p-4 font-heading font-semibold">Prelims</th>
+                        <th className="text-left p-4 font-heading font-semibold">Mains</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyHistory.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-heading font-semibold text-surface-800">{row.year}</td>
+                          <td className="p-4 text-emerald-600 font-semibold">{row.vacancies}</td>
+                          <td className="p-4 text-surface-600">{row.prelims}</td>
+                          <td className="p-4 text-surface-600">{row.mains}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-sm text-surface-500">KAS is relatively new — only 2 cycles have been conducted so far (2021 and 2023). Vacancy counts are expected to remain in the 100–250 range per cycle across the 12+ services. The exact post-wise distribution is published with each official notification.</p>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="KAS Exam Pattern 2026" />
+              <div className="space-y-6">
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-1 text-lg">Stage 1 – Preliminary Examination (Objective)</h3>
+                  <p className="text-sm text-surface-500 mb-4">Qualifying stage | Negative marking: –⅓ per wrong answer | Duration: 2 hours | Total: 150 marks</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-3 font-heading font-semibold">Section</th>
+                          <th className="text-center p-3 font-heading font-semibold">Questions</th>
+                          <th className="text-center p-3 font-heading font-semibold">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {prelimsPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 text-surface-800">{row.subject}</td>
+                            <td className="p-3 text-center font-semibold text-primary-600">{row.questions}</td>
+                            <td className="p-3 text-center font-semibold text-surface-800">{row.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-surface-100 font-bold">
+                          <td className="p-3 font-heading font-bold text-surface-900">Total</td>
+                          <td className="p-3 text-center font-heading font-bold text-primary-600">150</td>
+                          <td className="p-3 text-center font-heading font-bold text-surface-900">150</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-1 text-lg">Stage 2 – Main Examination (Descriptive)</h3>
+                  <p className="text-sm text-surface-500 mb-4">Merit stage | 6 papers | Total: 900 marks | Papers III–V based on Kerala & languages</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-3 font-heading font-semibold">Paper</th>
+                          <th className="text-left p-3 font-heading font-semibold">Subject</th>
+                          <th className="text-center p-3 font-heading font-semibold">Marks</th>
+                          <th className="text-center p-3 font-heading font-semibold">Duration</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {mainsPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 font-heading font-semibold text-surface-700 whitespace-nowrap">{row.paper}</td>
+                            <td className="p-3 text-surface-700">{row.subject}</td>
+                            <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                            <td className="p-3 text-center text-surface-600">{row.time}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-surface-100">
+                          <td colSpan={2} className="p-3 font-heading font-bold text-surface-900">Grand Total (Mains + Interview)</td>
+                          <td className="p-3 text-center font-heading font-bold text-emerald-600">1,000</td>
+                          <td className="p-3"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3 text-lg">Stage 3 – Personality Test / Interview</h3>
+                  <div className="grid sm:grid-cols-3 gap-3">
+                    {[
+                      { label: 'Total Marks', value: '100 marks' },
+                      { label: 'Assessed By', value: 'Kerala PSC Board Panel' },
+                      { label: 'Focus Areas', value: 'Administrative aptitude, situational responses, Kerala current affairs, district knowledge' },
+                    ].map((item) => (
+                      <InfoCard key={item.label} label={item.label} value={item.value} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="Detailed KAS Syllabus 2026" />
+              <div className="space-y-3">
+                {syllabus.map((item, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600 transition-colors">
+                      <span>{item.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-2">
+                        {item.topics.map((t, j) => (
+                          <li key={j} className="flex gap-2 text-sm text-surface-700">
+                            <span className="text-primary-500 mt-0.5 flex-shrink-0">•</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SERVICES & POSTS */}
+            <section id="services" className="mb-12">
+              <SectionHeading num="7" title="Services & Posts Recruited through KAS" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">State Service</th>
+                        <th className="text-left p-4 font-heading font-semibold">Post(s) Allotted</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {servicesAndPosts.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-heading font-semibold text-primary-700">{row.service}</td>
+                          <td className="p-4 text-surface-700">{row.posts}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="mt-3 text-sm text-surface-500">Post allotment depends on rank, vacancy availability, and candidate preference. The most sought-after posts are Deputy Collector (Kerala Administrative Service) and DSP (Kerala Police Service). Exact post-wise vacancies are listed in the official notification.</p>
+            </section>
+
+            {/* CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <SectionHeading num="8" title="Previous Year Cut-offs (KAS 2021)" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Category</th>
+                        <th className="text-center p-4 font-heading font-semibold">Prelims 2021 (out of 150)</th>
+                        <th className="text-center p-4 font-heading font-semibold">Mains 2021 (out of 900)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cutoffData.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-heading font-semibold text-surface-800">{row.category}</td>
+                          <td className="p-4 text-center text-primary-600 font-semibold">{row.prelims2021}</td>
+                          <td className="p-4 text-center text-emerald-600 font-semibold">{row.mains2021}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-4 bg-amber-50 border-t border-amber-200 text-xs text-amber-800">
+                  ⚠️ These are approximate cut-offs based on available data from the KAS 2021 (first-ever cycle). KAS is a new exam with limited historical data. Actual cut-offs depend on paper difficulty, number of candidates, and vacancy count. Official cut-offs are published by Kerala PSC on keralapsc.gov.in after each stage.
+                </div>
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="9" title="Salary Structure & Career Growth" />
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Post / Grade</th>
+                        <th className="text-left p-4 font-heading font-semibold">Basic Pay Scale</th>
+                        <th className="text-left p-4 font-heading font-semibold">TA</th>
+                        <th className="text-left p-4 font-heading font-semibold">HRA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryBreakdown.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-heading font-semibold text-surface-800">{row.grade}</td>
+                          <td className="p-4 text-emerald-600 font-semibold">{row.basic}</td>
+                          <td className="p-4 text-surface-600">{row.ta}</td>
+                          <td className="p-4 text-surface-600">{row.hra}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-4 bg-emerald-50 border-t border-emerald-200 text-xs text-emerald-800">
+                  💰 In-hand salary (Deputy Collector grade, metro posting): approximately <strong>₹75,000–₹95,000/month</strong> inclusive of DA, HRA, TA & allowances. Salary follows Kerala Government Pay Revision Orders — subject to periodic revision.
+                </div>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-900 mb-4 text-lg">Career Progression Path</h3>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block"></div>
+                <div className="space-y-4">
+                  {careerPath.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div>
+                            <div className="font-heading font-semibold text-surface-900">{step.level}</div>
+                            <div className="text-xs text-surface-500 mt-0.5">{step.scale} • {step.years}</div>
+                          </div>
+                          <span className="badge-green text-xs font-heading font-semibold">{step.payband}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="10" title="How to Apply for KAS 2026" />
+              <div className="space-y-4">
+                {[
+                  { step: '1', title: 'Complete One Time Registration (OTR)', desc: 'Visit thulasi.psc.kerala.gov.in and register with your basic personal, communication, and educational details. OTR is mandatory for all Kerala PSC exams. Keep your mobile number and email ID active — all future communications are sent here.' },
+                  { step: '2', title: 'Watch for Official Notification', desc: 'Monitor keralapsc.gov.in and the official Kerala PSC mobile app for the KAS 2025/2026 notification. The notification will mention post-wise vacancies, eligibility criteria, important dates, and exam cities.' },
+                  { step: '3', title: 'Submit Online Application via Thulasi Portal', desc: 'Log in to your OTR account at thulasi.psc.kerala.gov.in. Select "Apply Now" for the KAS notification. Verify your details, upload photograph and signature as per the specifications, and submit. Note down your application number.' },
+                  { step: '4', title: 'Pay Application Fee', desc: 'General/OBC candidates pay the prescribed fee online. SC/ST candidates may be exempt — check the official notification. Payment is through the Thulasi portal via net banking, debit/credit card, or UPI.' },
+                  { step: '5', title: 'Download Admit Card', desc: 'Admit card for Prelims will be available on the Thulasi portal 10–15 days before the exam. Download and print two copies. Carry a government photo ID (Aadhaar, Voter ID, or PAN) along with the admit card.' },
+                ].map((item) => (
+                  <div key={item.step} className="card p-5 flex gap-4">
+                    <div className="flex-shrink-0 w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 font-heading font-bold text-sm">{item.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-900 mb-1">{item.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="11" title="12-Month KAS Study Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block"></div>
+                <div className="space-y-4">
+                  {studyPlan.map((phase, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
+                          <span className="font-heading font-bold text-surface-900">{phase.month}</span>
+                          <span className="badge-primary">{phase.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{phase.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* BOOKS */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="12" title="Best Books for KAS 2026" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="13" title="Free Resources for KAS Preparation" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res, i) => (
+                  <a key={i} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl flex-shrink-0">{res.type === 'youtube' ? '📺' : res.type === 'website' ? '🌐' : '📱'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors text-sm">{res.name}</div>
+                        <p className="text-xs text-surface-500 mt-1 leading-relaxed">{res.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* TIPS */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="14" title="Expert Tips for KAS 2026" />
+              <div className="space-y-4">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-accent-100 rounded-xl flex items-center justify-center text-xl">{t.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="15" title="FAQs – Kerala PSC KAS 2026" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600 transition-colors">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="flex items-center gap-2 text-sm text-surface-600 hover:text-primary-500 transition-colors py-1 group">
+                      <span className="w-1 h-1 rounded-full bg-surface-300 group-hover:bg-primary-400 transition-colors flex-shrink-0"></span>
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* OFFICIAL WEBSITE */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm uppercase tracking-wide">Official Links</h3>
+                <div className="space-y-3">
+                  <a href="https://www.keralapsc.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-primary-600 hover:text-primary-700 font-semibold transition-colors">
+                    <span className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-base">🌐</span>
+                    Kerala PSC Official Site
+                  </a>
+                  <a href="https://thulasi.psc.kerala.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-primary-600 hover:text-primary-700 font-semibold transition-colors">
+                    <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-base">📝</span>
+                    Thulasi OTR / Apply Portal
+                  </a>
+                </div>
+              </div>
+
+              {/* ELIGIBILITY CHECKER CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="text-2xl mb-2">🎯</div>
+                <h3 className="font-heading font-semibold text-primary-900 mb-1">Check Your Eligibility</h3>
+                <p className="text-xs text-primary-700 mb-3 leading-relaxed">Instantly verify if you meet the age and qualification criteria for KAS and 100+ other government exams.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-xs py-2 px-4 inline-block text-center w-full">
+                  Try Eligibility Checker →
+                </Link>
+              </div>
+
+              {/* QUICK STATS */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm uppercase tracking-wide">KAS at a Glance</h3>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Exam Type', value: 'State PSC (Group I)' },
+                    { label: 'Stages', value: 'Prelims → Mains → Interview' },
+                    { label: 'Total Marks', value: '1,000 (Mains + Interview)' },
+                    { label: 'Mains Papers', value: '6 papers (900 marks)' },
+                    { label: 'Language', value: 'Malayalam / English' },
+                    { label: 'Apply Via', value: 'Thulasi Portal (OTR)' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex justify-between text-xs border-b border-surface-100 pb-2 last:border-0 last:pb-0">
+                      <span className="text-surface-500">{item.label}</span>
+                      <span className="font-semibold text-surface-800 text-right ml-2">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
             </div>
