@@ -406,7 +406,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (params.slug === 'rbi-grade-b') {
     return {
       title: 'RBI Grade B 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
-      description: 'RBI Grade B 2026: Notification expected Feb–Mar 2026. 250–350 vacancies (General DR + DEPR + DSIM). Phase I, Phase II & Interview. Graduate with 60% required. Age 21–30 yrs. Gross salary ₹1,10,000–₹1,30,000/month. Full syllabus, exam pattern & free preparation guide.',
+      description: 'RBI Grade B 2026: Notification released 29 April 2026. 60 vacancies (40 Gen DR + 10 DEPR + 10 DSIM). Phase I: 13–14 Jun 2026. Phase II: 25–26 Jul 2026. Graduate with 60% required. Age 21–30 yrs. Gross salary ₹1,54,936/month (Basic: ₹78,450). Full syllabus, exam pattern & free preparation guide.',
       keywords: 'RBI Grade B 2026, RBI Grade B notification 2026, RBI Grade B syllabus, RBI Grade B salary, RBI Grade B taiyari, RBI officer bharti 2026, Reserve Bank of India Grade B exam, आरबीआई ग्रेड बी 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/rbi-grade-b/' },
       other: { 'description:hi': 'RBI Grade B 2026 – भारतीय रिज़र्व बैंक में 250–350 रिक्तियाँ। अधिसूचना फरवरी–मार्च 2026 (अपेक्षित)। स्नातक 60% अंक आवश्यक। आयु 21–30 वर्ष। चरण I, चरण II और साक्षात्कार। सकल वेतन ₹1,10,000–₹1,30,000/माह। पूरा सिलेबस और मुफ्त संसाधन।' },
@@ -564,7 +564,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (params.slug === 'kerala-psc-kas') {
     return {
       title: 'Kerala PSC KAS 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
-      description: 'Kerala PSC KAS 2026: Kerala Administrative Service exam for Deputy Collector, DSP & 12+ Group I posts. Graduate eligible, age 21–32 yrs. Salary ₹44,900–₹2,09,200/month (7th Pay). Full syllabus, exam pattern & free resources.',
+      description: 'Kerala PSC KAS 2026: Kerala Administrative Service exam for Deputy Collector, DSP & 12+ Group I posts. Graduate eligible, age 21–32 yrs. Salary ₹65,600–₹2,09,200/month (2026 revised). Full syllabus, exam pattern & free resources.',
       keywords: 'Kerala PSC KAS 2026, Kerala Administrative Service 2026, KAS exam Kerala, Kerala PSC Group 1 2026, KAS syllabus, KAS notification 2026, Kerala PSC taiyari, KAS exam date, Kerala PSC Deputy Collector, KAS eligibility, Kerala sarkari naukri 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/kerala-psc-kas/' },
       other: { 'description:hi': 'Kerala PSC KAS 2026 – Deputy Collector, DSP व 12+ Group I पदों के लिए भर्ती। स्नातक पात्र, आयु 21–32 वर्ष। वेतन ₹44,900–₹2,09,200/माह। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त संसाधन।' },
@@ -17915,6 +17915,23 @@ function SscCpoPage({ exam }: { exam: any }) {
                   <p className="text-blue-700 text-xs leading-relaxed">
                     Conducted for candidates shortlisted after Paper II. Tests vision (near/distant), colour blindness, hearing, physical fitness, and overall health. Post-specific medical standards apply. Candidates declared medically unfit can appeal through the Review Medical Examination process.
                   </p>
+                </div>
+
+                {/* Merit basis */}
+                <div className="card p-5 bg-primary-50 border-primary-200">
+                  <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm">📊 How Final Merit is Calculated</h3>
+                  <p className="text-primary-700 text-sm leading-relaxed mb-3">
+                    The final selection rank is based on the <strong>total composite score of Paper I + Paper II</strong> (combined 400 marks). Candidates must secure the <strong>minimum qualifying marks in each paper separately</strong> as specified by SSC for their category — clearing one paper alone is not sufficient. Note: the 30-minute sectional timer in Paper I is a time-management constraint, not a sectional cut-off for marks.
+                  </p>
+                  <div className="bg-white rounded-lg p-3 border border-primary-200 text-xs text-primary-700">
+                    <strong>🎖️ NCC Bonus Marks:</strong> Holders of NCC certificates receive bonus marks added to their final composite score in each paper:
+                    <ul className="mt-2 space-y-1 ml-4 list-disc">
+                      <li><strong>NCC &apos;C&apos; Certificate:</strong> 10 bonus marks per paper (5% of 200 max marks)</li>
+                      <li><strong>NCC &apos;B&apos; Certificate:</strong> 6 bonus marks per paper (3% of 200 max marks)</li>
+                      <li><strong>NCC &apos;A&apos; Certificate:</strong> 4 bonus marks per paper (2% of 200 max marks)</li>
+                    </ul>
+                    <p className="mt-2">NCC bonus is applicable to both Paper I and Paper II. Candidates must produce the original NCC certificate at the time of document verification.</p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -39399,12 +39416,13 @@ function RbiGradeBPage({ exam }: { exam: any }) {
     { event: 'RBI Grade B 2025 Phase II Result', date: 'October 2025', status: 'released' },
     { event: 'RBI Grade B 2025 Interview', date: 'November–December 2025', status: 'released' },
     { event: 'RBI Grade B 2025 Final Result & Joining', date: 'January–February 2026', status: 'released' },
-    { event: '🆕 RBI Grade B 2026 – Notification', date: 'February–March 2026 (Expected)', status: 'tbn' },
-    { event: 'RBI Grade B 2026 – Online Application', date: 'March 2026 (Expected)', status: 'tbn' },
-    { event: 'RBI Grade B 2026 – Phase I Exam', date: 'May–June 2026 (Expected)', status: 'tbn' },
-    { event: 'RBI Grade B 2026 – Phase II Exam', date: 'August 2026 (Expected)', status: 'tbn' },
-    { event: 'RBI Grade B 2026 – Interview', date: 'October–November 2026 (Expected)', status: 'tbn' },
-    { event: 'RBI Grade B 2026 – Final Result', date: 'December 2026 (Expected)', status: 'tbn' },
+    { event: '🆕 RBI Grade B 2026 – Notification Released', date: '29 April 2026', status: 'released' },
+    { event: 'RBI Grade B 2026 – Online Registration Opens', date: '29 April 2026', status: 'released' },
+    { event: 'RBI Grade B 2026 – Online Registration Last Date', date: '20 May 2026', status: 'upcoming' },
+    { event: 'RBI Grade B 2026 – Phase I Exam', date: '13 & 14 June 2026', status: 'upcoming' },
+    { event: 'RBI Grade B 2026 – Phase II Exam', date: '25 & 26 July 2026', status: 'upcoming' },
+    { event: 'RBI Grade B 2026 – Interview', date: 'To be notified (TBN)', status: 'tbn' },
+    { event: 'RBI Grade B 2026 – Final Result', date: 'To be notified (TBN)', status: 'tbn' },
   ];
 
   const vacancyHistory = [
@@ -39413,7 +39431,7 @@ function RbiGradeBPage({ exam }: { exam: any }) {
     { year: 'RBI Grade B 2023', general: '291', depr: '32', dsim: '30', total: '353' },
     { year: 'RBI Grade B 2024', general: '94', depr: '26', dsim: '21', total: '141' },
     { year: 'RBI Grade B 2025', general: '129', depr: '37', dsim: '23', total: '189' },
-    { year: 'RBI Grade B 2026 (expected)', general: '120–180 (Est.)', depr: '30–40 (Est.)', dsim: '20–30 (Est.)', total: '200–300 (Est.)' },
+    { year: 'RBI Grade B 2026 (notified)', general: '40', depr: '10', dsim: '10', total: '60' },
   ];
 
   const phase1Pattern = [
@@ -39437,18 +39455,18 @@ function RbiGradeBPage({ exam }: { exam: any }) {
   ];
 
   const salaryBreakdown = [
-    { component: 'Basic Pay (Scale B – starting, revised 2023–24)', amount: '₹35,150/month' },
-    { component: 'Special Allowance (25% of Basic Pay)', amount: '₹8,787/month' },
-    { component: 'Dearness Allowance (DA) @ current rate', amount: '~₹25,000–₹30,000/month' },
-    { component: 'House Rent Allowance (HRA) – Metro', amount: '₹10,000–₹16,000/month' },
+    { component: 'Basic Pay (Scale B – starting, revised 2026)', amount: '₹78,450/month' },
+    { component: 'Special Allowance (25% of Basic Pay)', amount: '₹19,612/month' },
+    { component: 'Dearness Allowance (DA) @ current rate', amount: '~₹35,000–₹40,000/month' },
+    { component: 'House Rent Allowance (HRA) – Metro', amount: '₹15,000–₹20,000/month' },
     { component: 'City Compensatory Allowance (CCA)', amount: '₹1,500–₹3,000/month' },
-    { component: 'Grade Allowance, Transport & Other Perks', amount: '~₹8,000–₹12,000/month' },
-    { component: 'Gross Estimated In-Hand (Metro posting)', amount: '~₹1,10,000–₹1,30,000/month' },
+    { component: 'Grade Allowance, Transport & Other Perks', amount: '~₹10,000–₹15,000/month' },
+    { component: 'Gross Salary (Metro posting, 2026)', amount: '₹1,54,936/month' },
   ];
 
   const careerPath = [
-    { level: 'Officer Grade B (Probationary)', scale: 'Grade B', years: '0–2 yrs (Probation)', pay: '₹35,150–₹62,400 (Basic)' },
-    { level: 'Officer Grade B (Confirmed)', scale: 'Grade B', years: '2–6 yrs', pay: '₹35,150–₹62,400 (Basic)' },
+    { level: 'Officer Grade B (Probationary)', scale: 'Grade B', years: '0–2 yrs (Probation)', pay: '₹78,450 onwards (Basic, 2026)' },
+    { level: 'Officer Grade B (Confirmed)', scale: 'Grade B', years: '2–6 yrs', pay: '₹78,450 – ₹1,12,000 (Basic)' },
     { level: 'Officer Grade C (Asst. Manager)', scale: 'Grade C', years: '6–12 yrs', pay: '₹63,840–₹78,230 (Basic)' },
     { level: 'Manager (Grade D)', scale: 'Grade D', years: '12–18 yrs', pay: '₹76,010–₹89,890 (Basic)' },
     { level: 'Asst. General Manager (Grade E)', scale: 'Grade E', years: '18–24 yrs', pay: '₹94,190–₹1,05,950 (Basic)' },
@@ -39585,15 +39603,15 @@ function RbiGradeBPage({ exam }: { exam: any }) {
     { icon: '📰', tip: 'General Awareness (80 marks in Phase I) separates toppers from averages. RBI-specific GA is critical — study RBI Annual Report, Monetary Policy Reports, RBI Press Releases (last 12 months), and Financial Stability Reports. RBI questions are NOT general banking awareness; they are central banking focused.' },
     { icon: '✍️', tip: 'Phase II Paper II (English — Descriptive) is 100 marks in just 90 minutes. Practice writing 600-word essays and 250-word precis under timed conditions. RBI often gives topics from economy, monetary policy, or current social issues. Structure your essays: Introduction → 3 body paragraphs → Conclusion.' },
     { icon: '📊', tip: 'Finance & Management is the most technical paper. Candidates from non-finance backgrounds should spend extra time on Basel III norms, NBFC regulation, derivatives (forwards, futures, options, swaps basics), RBI\'s balance sheet, and monetary transmission mechanism. ICAI study material and M.Y. Khan\'s Financial Services are valuable resources.' },
-    { icon: '🎯', tip: 'RBI Grade B vacancies are small (150–350 per year total across all streams). Every mark counts. Avoid skipping any ESI or F&M topic — RBI has surprised candidates with questions on topics like cooperative banking, FEMA, payment systems, and climate finance risk.' },
+    { icon: '🎯', tip: 'RBI Grade B 2026 has only 60 vacancies — the smallest pool in recent years. Every mark in Phase II counts more than ever. Avoid skipping any ESI or F&M topic — RBI has surprised candidates with questions on cooperative banking, FEMA, payment systems, and climate finance risk.' },
     { icon: '📱', tip: 'Join Telegram channels like "RBI Grade B Preparation", "Finance & Economy Daily" and Oliveboard RBI Grade B group. Free daily PDFs, monthly CA compilations, and past exam discussions are invaluable. RBI Grade B has a small, tight community — connect with serious aspirants for peer motivation.' },
     { icon: '🔄', tip: 'Previous year Phase II papers (especially 2019–2024) are your best practice material. RBI reuses question themes — ESI topics like climate finance, financial inclusion metrics, and India\'s external sector have appeared repeatedly. Solve 3 years of previous papers under exam conditions before attempting mock tests.' },
   ];
 
   const faqs = [
-    { q: 'What is the RBI Grade B 2026 notification date?', a: 'RBI Grade B 2026 notification is expected in February–March 2026 based on the historical annual cycle. RBI typically releases the notification early in the calendar year. Phase I is expected in May–June 2026. Check rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2009 (RBI Opportunities section) regularly for the official announcement.' },
-    { q: 'How many vacancies are expected in RBI Grade B 2026?', a: 'Based on recent trends — 202 (2021), 218 (2022), 353 (2023), 141 (2024), 189 (2025) — RBI Grade B 2026 is expected to have approximately 200–300 vacancies across all streams (General DR + DEPR + DSIM). Vacancies fluctuate based on RBI\'s operational requirements and retirements. The exact number is announced with the official notification.' },
-    { q: 'What is the RBI Grade B 2026 salary?', a: 'RBI Grade B officers follow RBI\'s own pay scale (not IBA Bipartite Settlement). The basic pay scale is ₹35,150–₹62,400/month (Scale B). With DA, Special Allowance (25% of basic), HRA (Metro), CCA, and other benefits, the gross in-hand salary is approximately ₹1,10,000–₹1,30,000/month in metro cities. RBI also provides furnished accommodation (or HRA), medical facilities, pension, and annual increments. The total Cost-to-Company (CTC) including all benefits is approximately ₹20–24 lakh per annum.' },
+    { q: 'What is the RBI Grade B 2026 notification date?', a: 'The RBI Grade B 2026 notification was officially released on 29 April 2026. There are 60 vacancies in this cycle (40 General DR, 10 DEPR, 10 DSIM). Online registration is open from 29 April to 20 May 2026. Phase I exam is scheduled on 13 & 14 June 2026, and Phase II on 25 & 26 July 2026. Apply at rbi.org.in — Opportunities@RBI section.' },
+    { q: 'How many vacancies are there in RBI Grade B 2026?', a: 'RBI Grade B 2026 has 60 officially notified vacancies: 40 in the General DR (Direct Recruitment) stream, 10 in DEPR (Department of Economic and Policy Research), and 10 in DSIM (Department of Statistics and Information Management). This is significantly lower than recent years — 189 in 2025, 141 in 2024, 353 in 2023. With only 60 seats and lakhs of aspirants, competition is exceptionally fierce in 2026.' },
+    { q: 'What is the RBI Grade B 2026 salary?', a: 'RBI Grade B officers follow RBI\'s own pay scale (not IBA Bipartite Settlement). As per the 2026 revised structure, the basic pay is ₹78,450/month. The gross monthly salary (including Basic Pay, Special Allowance at 25% of Basic, DA, HRA for metro cities, CCA, and other allowances) is ₹1,54,936/month. RBI also provides furnished accommodation (or HRA in lieu), comprehensive medical facilities for family, pension scheme, and annual increments. The total CTC including all benefits is approximately ₹25–30 lakh per annum.' },
     { q: 'What is the minimum qualification for RBI Grade B 2026?', a: 'For the General DR stream: A minimum 60% aggregate marks in Bachelor\'s degree from a recognised university (50% for SC/ST/PwBD candidates). Final year students who will complete graduation by the interview stage may also apply. For DEPR (Economics stream): Master\'s degree in Economics with 55% marks OR equivalent. For DSIM (Statistics stream): Master\'s in Statistics/Mathematical Statistics/Mathematical Economics with 55% marks OR equivalent. Always verify the exact qualification criteria from the official notification as RBI updates these requirements.' },
     { q: 'What is the difference between RBI Grade B General DR, DEPR, and DSIM?', a: 'General DR (Direct Recruitment) is for graduates with 60% marks — officers join general banking supervision and regulatory departments. DEPR (Department of Economic and Policy Research) requires an Economics Master\'s degree — officers work on monetary policy research, economic analysis, and policy recommendations. DSIM (Department of Statistics and Information Management) requires a Statistics/Math Master\'s — officers handle data analytics, financial surveys, and statistical reporting. DEPR and DSIM are specialist streams with a separate Phase II paper (Economics/Statistics instead of F&M). Salaries and growth paths are the same across all three streams.' },
     { q: 'Is Phase I score counted in the final RBI Grade B merit list?', a: 'No. Phase I of RBI Grade B is purely a screening/qualifying exam. The final merit list is prepared based on Phase II marks (300 marks total: ESI 100 + English 100 + F&M 100) and Interview (75 marks) — a combined total of 375 marks. This means a candidate scoring just enough to clear Phase I can still rank higher than a Phase I topper if they excel in Phase II and Interview. This makes Phase II preparation the true battleground for RBI Grade B selection.' },
@@ -39647,7 +39665,7 @@ function RbiGradeBPage({ exam }: { exam: any }) {
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏦 Central Banking</span>
             <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
-            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: Feb–Mar 2026 (Expected)</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">✅ Notification: Released 29 April 2026</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
@@ -39655,15 +39673,15 @@ function RbiGradeBPage({ exam }: { exam: any }) {
           </h1>
 
           <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
-            RBI Grade B 2026 notification expected in <strong>February–March 2026</strong> with ~200–300 vacancies across General DR, DEPR &amp; DSIM streams. 3-stage selection: Phase I → Phase II → Interview. Graduate with <strong>60% marks</strong> required. Age 21–30 years. Gross salary <strong>₹1,10,000–₹1,30,000/month</strong>. India&apos;s most prestigious banking exam.
+            RBI Grade B 2026 notification <strong>released 29 April 2026</strong>. <strong>60 vacancies</strong> (40 General DR + 10 DEPR + 10 DSIM). Registration open till 20 May 2026. Phase I: 13–14 June 2026. Graduate with <strong>60% marks</strong> required. Age 21–30 years. Gross salary <strong>₹1,54,936/month</strong> (Basic Pay: ₹78,450). India&apos;s most prestigious banking exam.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
             {[
-              { label: 'Expected Vacancies', value: '200–300', sub: '(All streams, 2026 est.)' },
-              { label: 'Phase I Exam Date', value: 'May–Jun 2026', sub: '(Expected)' },
+              { label: 'Vacancies 2026', value: '60', sub: '(40 Gen + 10 DEPR + 10 DSIM)' },
+              { label: 'Phase I Exam Date', value: '13–14 Jun 2026', sub: '(Confirmed)' },
               { label: 'Min. Qualification', value: 'Graduate 60%', sub: 'Recognised university' },
-              { label: 'Gross Salary', value: '~₹1.1–1.3 Lakh', sub: 'per month (metro)' },
+              { label: 'Gross Salary', value: '₹1,54,936', sub: 'per month (Basic: ₹78,450)' },
             ].map((item) => (
               <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
                 <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
@@ -39673,8 +39691,8 @@ function RbiGradeBPage({ exam }: { exam: any }) {
             ))}
           </div>
 
-          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
-            💡 <strong>Key Update 2026:</strong> Phase I is only qualifying — final merit is based on <strong>Phase II (300 marks) + Interview (75 marks)</strong> only. RBI Grade B has the <strong>smallest vacancy pool</strong> among major banking exams (~150–350/year), making every mark in Phase II critical. Always verify from <a href="https://www.rbi.org.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">rbi.org.in</a>.
+          <div className="bg-emerald-400/15 border border-emerald-400/30 rounded-xl px-4 py-3 text-sm text-emerald-200">
+            ✅ <strong>2026 Update:</strong> Notification released <strong>29 April 2026</strong> — 60 vacancies (40 General DR + 10 DEPR + 10 DSIM). Registration closes <strong>20 May 2026</strong>. Phase I: <strong>13–14 June 2026</strong>. Phase II: <strong>25–26 July 2026</strong>. Phase I is only qualifying — final merit is based on <strong>Phase II (300 marks) + Interview (75 marks)</strong>. Always verify from <a href="https://www.rbi.org.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">rbi.org.in</a>.
           </div>
         </div>
       </div>
@@ -39698,7 +39716,7 @@ function RbiGradeBPage({ exam }: { exam: any }) {
                   RBI Grade B officers are posted across RBI&apos;s <strong>31 offices and sub-offices</strong> across India, with key postings in Mumbai (headquarters), Delhi, Chennai, Kolkata, and regional offices. The work involves drafting banking regulations, conducting monetary policy research, overseeing foreign exchange operations, and supervising commercial banks — career profiles unmatched by any other banking exam in India.
                 </p>
                 <p className="text-surface-700 leading-relaxed">
-                  What makes RBI Grade B uniquely challenging is its <strong>Phase II examination</strong>: three 100-mark papers on Economic &amp; Social Issues, English (Descriptive Writing), and Finance &amp; Management — with <strong>Phase I serving only as a qualifying filter</strong>. With 20–25 lakh banking exam aspirants competing for just 150–350 vacancies annually, RBI Grade B has one of the <strong>most elite selection ratios</strong> in Indian banking.
+                  What makes RBI Grade B uniquely challenging is its <strong>Phase II examination</strong>: three 100-mark papers on Economic &amp; Social Issues, English (Descriptive Writing), and Finance &amp; Management — with <strong>Phase I serving only as a qualifying filter</strong>. With 20–25 lakh banking exam aspirants competing for just 60–350 vacancies annually, RBI Grade B has one of the <strong>most elite selection ratios</strong> in Indian banking.
                 </p>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -39722,8 +39740,8 @@ function RbiGradeBPage({ exam }: { exam: any }) {
                 <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
                 <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 RBI Grade B 2026 Important Dates</h2>
               </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
-                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> RBI Grade B 2026 official dates have not been announced as of May 2026. The table below shows 2025 confirmed dates and expected 2026 dates based on RBI&apos;s historical recruitment cycle. Always verify from <a href="https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2009" target="_blank" rel="noopener noreferrer" className="underline font-medium">rbi.org.in (Opportunities)</a>.</p>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-emerald-800"><strong>✅ 2026 Notification Released:</strong> RBI Grade B 2026 notification was officially released on <strong>29 April 2026</strong>. Online registration is open from 29 April to <strong>20 May 2026</strong>. Phase I exam: <strong>13 & 14 June 2026</strong>. Phase II: <strong>25 & 26 July 2026</strong>. Apply at <a href="https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2009" target="_blank" rel="noopener noreferrer" className="underline font-medium">rbi.org.in (Opportunities)</a>.</p>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
@@ -39770,7 +39788,7 @@ function RbiGradeBPage({ exam }: { exam: any }) {
                     <span className="text-lg">📋</span>
                     <h3 className="font-heading font-semibold text-surface-800">Age Limit (General DR Stream)</h3>
                   </div>
-                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>21 years</strong> | Maximum: <strong>30 years</strong> (as of the official cut-off date in the notification)</p>
+                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>21 years</strong> | Maximum: <strong>30 years</strong> | <strong>Age cut-off date for 2026: 1 April 2026</strong> (your age will be calculated as of this date)</p>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead className="bg-surface-50 border border-surface-200">
@@ -39818,6 +39836,9 @@ function RbiGradeBPage({ exam }: { exam: any }) {
                     ))}
                   </div>
                   <p className="text-xs text-surface-500 mt-3">✅ Use the <Link href="/tools/eligibility-checker/" className="text-primary-500 underline">TaiyarHo Eligibility Checker</Link> to verify your eligibility instantly.</p>
+                  <div className="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
+                    <strong>📋 EWS Candidates:</strong> EWS (Economically Weaker Section) candidates must possess a valid <strong>Income and Asset Certificate</strong> issued for the financial year <strong>2025–26</strong> by a competent authority as specified in the notification. Ensure this certificate is obtained before applying.
+                  </div>
                 </div>
               </div>
             </section>
@@ -40092,8 +40113,8 @@ function RbiGradeBPage({ exam }: { exam: any }) {
                   { step: '2', title: 'Register Online', desc: 'Click on "Apply Online" within the notification. Register with a valid email ID and mobile number to get your provisional registration number.' },
                   { step: '3', title: 'Fill Application Form', desc: 'Enter personal details, educational qualifications, category, and preferred exam centre. Select the correct stream (General DR / DEPR / DSIM) carefully — it cannot be changed after submission.' },
                   { step: '4', title: 'Upload Documents', desc: 'Upload a scanned passport-size photograph (20–50 KB), signature (10–20 KB), and ID proof as per specifications mentioned in the notification.' },
-                  { step: '5', title: 'Pay Application Fee', desc: 'Fee for General/OBC/EWS: ₹850 (including intimation charges). SC/ST/PwBD: ₹100 (intimation charges only). Payment via net banking, debit/credit card.' },
-                  { step: '6', title: 'Submit & Download Confirmation', desc: 'Review all details, submit, and download/save the registration confirmation page. RBI does not send physical acknowledgement — keep the PDF safe.' },
+                  { step: '5', title: 'Pay Application Fee', desc: 'Fee for General/OBC/EWS: ₹850 + GST. SC/ST/PwBD: ₹100 + GST (intimation charges only). Payment via net banking, debit/credit card, or UPI through the RBI online portal.' },
+                  { step: '6', title: 'Submit Application & Handwritten Declaration', desc: 'Review all details carefully before submitting — stream selection (General DR / DEPR / DSIM) cannot be changed. As part of the 2026 application process, candidates are required to submit a handwritten declaration in the prescribed format (available in the notification). Download the format, write it by hand, scan it, and upload it along with your application. Finally, download and save the registration confirmation page for your records.' },
                 ].map((item) => (
                   <div key={item.step} className="card p-4 flex gap-4">
                     <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 font-bold text-sm flex-shrink-0">{item.step}</div>
@@ -43631,9 +43652,9 @@ function KeralaKasPage({ exam }: { exam: any }) {
     { paper: 'Paper II',  subject: 'General Studies II – Science, Technology, Environment, Current Affairs',   marks: 200, time: '3 Hrs' },
     { paper: 'Paper III', subject: 'Kerala Renaissance, Social Reform, Kerala Economy & Current Affairs',      marks: 200, time: '3 Hrs' },
     { paper: 'Paper IV',  subject: 'General English',                                                          marks: 100, time: '2 Hrs' },
-    { paper: 'Paper V',   subject: 'General Malayalam (or other official language)',                            marks: 100, time: '2 Hrs' },
+    { paper: 'Paper V',   subject: 'Language Proficiency (candidate\'s choice of Malayalam, Tamil, or Kannada)',            marks: 100, time: '2 Hrs' },
     { paper: 'Essay',     subject: 'Essay Writing (General & Kerala-focused topics)',                           marks: 100, time: '2 Hrs' },
-    { paper: 'Interview', subject: 'Personality Test / Viva Voce',                                             marks: 100, time: '—' },
+    { paper: 'Interview', subject: 'Personality Test / Viva Voce (45 marks Personality + 5 marks Aptitude)', marks: 50, time: '—' },
   ];
 
   const cutoffData = [
@@ -43661,13 +43682,13 @@ function KeralaKasPage({ exam }: { exam: any }) {
 
   const salaryBreakdown = [
     { grade: 'Deputy Collector / DSP (Level 26 – Pay Scale)', basic: '₹56,100 – ₹1,77,500/month',  ta: '₹7,200 – ₹9,000', hra: '18–24% of basic' },
-    { grade: 'Group I Posts (Scale 25 / Level 25)',            basic: '₹44,900 – ₹1,42,400/month',  ta: '₹6,000 – ₹7,200', hra: '18% of basic' },
+    { grade: 'Junior Time Scale – KAS Joining Grade (2026 revised)',  basic: '₹65,600 – ₹1,66,800/month',  ta: '₹6,500 – ₹7,200', hra: '18% of basic' },
     { grade: 'Senior Grade / District Collector Level',        basic: '₹78,800 – ₹2,09,200/month',  ta: '₹9,000 – ₹12,000', hra: '24% of basic' },
     { grade: 'IAS cadre (after empanelment / promotion)',      basic: '₹1,23,100 – ₹2,18,200/month', ta: '₹15,750', hra: 'As applicable' },
   ];
 
   const careerPath = [
-    { level: 'KAS Officer – Joining Grade',                   scale: 'Group A Grade I',  years: 'On joining',  payband: '₹44,900 – ₹1,42,400' },
+    { level: 'KAS Officer – Joining Grade (Junior Time Scale)',  scale: 'Group A Grade I',  years: 'On joining',  payband: '₹65,600 – ₹1,66,800' },
     { level: 'Deputy Collector / DSP / Revenue Div. Officer', scale: 'Group A Grade II', years: '2–5 yrs',     payband: '₹56,100 – ₹1,77,500' },
     { level: 'Additional District Collector / SP',            scale: 'Group A Senior',   years: '8–12 yrs',    payband: '₹78,800 – ₹2,09,200' },
     { level: 'District Collector / Police Commissioner',      scale: 'Senior IAS/KAS',   years: '15–20 yrs',   payband: '₹1,23,100 – ₹2,18,200' },
@@ -43812,8 +43833,8 @@ function KeralaKasPage({ exam }: { exam: any }) {
     { q: 'What is One Time Registration (OTR) for Kerala PSC?', a: 'OTR (One Time Registration) is the mandatory registration portal for all Kerala PSC exams including KAS. You register once at thulasi.psc.kerala.gov.in with your personal, educational, and communication details. After OTR, you apply for specific exams using your OTR profile. Your OTR profile must be up to date before applying for KAS — incorrect details can lead to disqualification. OTR registration is free.' },
     { q: 'What posts are recruited through Kerala PSC KAS?', a: 'KAS recruits for 12+ Group I state service posts including: Deputy Collector (Kerala Administrative Service), Deputy Superintendent of Police (Kerala Police Service), Deputy Commercial Tax Officer, Revenue Divisional Officer (RDO), Deputy Director of Treasuries, Assistant Director (Fisheries, Industries, Tourism), District Registrar, and District Supply Officer. The actual posts and vacancy count vary with each cycle\'s official notification.' },
     { q: 'What is the age limit for Kerala PSC KAS?', a: 'The standard age limit for KAS is 21–32 years for General/OC candidates (Kerala). Age relaxations: OBC (SEBC): +5 years (up to 37). SC/ST: +5 years (up to 37). PwD: +10 years. Kerala domicile / nativity is required for reservations. The specific age relaxation details are published with each official notification — always refer to the official notification for the exact limits applicable to your category.' },
-    { q: 'What is the KAS exam pattern in Kerala?', a: 'KAS has three stages: (1) Preliminary Exam: 150 MCQ questions (100 General Studies + 50 Kerala Renaissance & History), 150 marks, negative marking 1/3rd. (2) Main Exam (Descriptive): 6 papers totalling 900 marks — Paper I & II (General Studies I & II: 200 each), Paper III (Kerala Renaissance, Economy & Current Affairs: 200), Paper IV (English: 100), Paper V (Malayalam: 100), Essay (100). (3) Interview/Personality Test: 100 marks. Grand total: 1,000 marks.' },
-    { q: 'What is the salary of a KAS officer in Kerala?', a: 'A KAS officer\'s salary depends on the allotted post. Deputy Collector / DSP posts are placed in Scale 26 / Level 26 with basic pay ₹56,100–₹1,77,500/month under the Kerala Government Pay Revision. With DA (revised periodically), HRA (18–24% of basic), TA, medical allowances and other perks, the effective in-hand salary for a fresh KAS Deputy Collector in a metro/urban posting is approximately ₹75,000–₹95,000/month. Senior KAS officers (District Collector level) can earn ₹1.5–₹2.5 lakh/month.' },
+    { q: 'What is the KAS exam pattern in Kerala?', a: 'KAS has three stages: (1) Preliminary Exam: 150 MCQ questions (100 General Studies + 50 Kerala Renaissance & History), 150 marks, duration 90 minutes (1.5 hours), negative marking 1/3rd (0.33 mark per wrong answer). (2) Main Exam (Descriptive): 6 papers totalling 900 marks — Paper I & II (General Studies I & II: 200 each), Paper III (Kerala Renaissance, Economy & Current Affairs: 200), Paper IV (English: 100), Paper V (Language Proficiency — candidate\'s choice of Malayalam, Tamil, or Kannada: 100), Essay (100). (3) Interview/Personality Test: 50 marks (45 for personality + 5 for aptitude). Grand total: 950 marks.' },
+    { q: 'What is the salary of a KAS officer in Kerala?', a: 'A KAS officer\'s salary depends on the allotted post and the applicable pay revision. As per the 2026 revised state scales, KAS officers at the Junior Time Scale (joining grade) receive a basic pay of ₹65,600/month. Deputy Collector / DSP posts are placed in Scale 26 / Level 26 with basic pay ₹56,100–₹1,77,500/month. With DA (revised periodically), HRA (18–24% of basic), TA, medical allowances and other perks, the effective in-hand salary for a fresh KAS officer in a metro/urban posting is approximately ₹90,000–₹1,10,000/month. Senior KAS officers (District Collector level) can earn ₹1.5–₹2.5 lakh/month.' },
   ];
 
   const jsonLd = {
@@ -43852,7 +43873,7 @@ function KeralaKasPage({ exam }: { exam: any }) {
           </h1>
 
           <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
-            The <strong>Kerala Administrative Service (KAS)</strong> is conducted by the <strong>Kerala Public Service Commission (Kerala PSC)</strong> to recruit Group I state officers for 12+ prestigious posts including Deputy Collector, DSP, and Revenue Divisional Officer. Any graduate eligible. Age <strong>21–32 years</strong>. 3-stage selection: Prelims → Mains → Interview. Starting salary <strong>₹44,900–₹1,77,500/month</strong> + DA, HRA & allowances.
+            The <strong>Kerala Administrative Service (KAS)</strong> is conducted by the <strong>Kerala Public Service Commission (Kerala PSC)</strong> to recruit Group I state officers for 12+ prestigious posts including Deputy Collector, DSP, and Revenue Divisional Officer. Any graduate eligible. Age <strong>21–32 years</strong>. 3-stage selection: Prelims → Mains → Interview. Starting salary <strong>₹65,600+/month</strong> (Junior Time Scale, 2026 revised scales) + DA, HRA & allowances.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
@@ -43860,7 +43881,7 @@ function KeralaKasPage({ exam }: { exam: any }) {
               { label: 'Expected Vacancies',   value: '100–250',           sub: '(Next cycle)' },
               { label: 'Prelims Date',          value: 'TBN',               sub: '(KAS 2025/26)' },
               { label: 'Min. Qualification',   value: 'Any Graduate',      sub: 'Any discipline' },
-              { label: 'Starting Salary',       value: '₹44,900+/month',   sub: '+ DA, HRA, TA' },
+              { label: 'Starting Salary',       value: '₹65,600+/month',   sub: '(2026 revised scales)' },
             ].map((item) => (
               <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
                 <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
@@ -43908,7 +43929,7 @@ function KeralaKasPage({ exam }: { exam: any }) {
                   { label: '📋 Age Limit',          value: '21 – 32 years (General); relaxations available' },
                   { label: '📍 Posting',            value: 'Throughout Kerala' },
                   { label: '🌐 Official Website',  value: 'keralapsc.gov.in' },
-                  { label: '💰 Salary',             value: '₹44,900 – ₹2,09,200/month (as per post)' },
+                  { label: '💰 Salary',             value: '₹65,600 – ₹2,09,200/month (2026 revised, as per post)' },
                 ].map((item) => (
                   <InfoCard key={item.label} label={item.label} value={item.value} />
                 ))}
@@ -44044,7 +44065,7 @@ function KeralaKasPage({ exam }: { exam: any }) {
 
                 <div className="card p-5">
                   <h3 className="font-heading font-semibold text-surface-900 mb-1 text-lg">Stage 1 – Preliminary Examination (Objective)</h3>
-                  <p className="text-sm text-surface-500 mb-4">Qualifying stage | Negative marking: –⅓ per wrong answer | Duration: 2 hours | Total: 150 marks</p>
+                  <p className="text-sm text-surface-500 mb-4">Qualifying stage | Negative marking: <strong>–⅓ (0.33) mark deducted per wrong answer</strong> | Duration: <strong>90 minutes (1.5 hours)</strong> per paper | Total: 150 marks</p>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
@@ -44074,7 +44095,7 @@ function KeralaKasPage({ exam }: { exam: any }) {
 
                 <div className="card p-5">
                   <h3 className="font-heading font-semibold text-surface-900 mb-1 text-lg">Stage 2 – Main Examination (Descriptive)</h3>
-                  <p className="text-sm text-surface-500 mb-4">Merit stage | 6 papers | Total: 900 marks | Papers III–V based on Kerala & languages</p>
+                  <p className="text-sm text-surface-500 mb-4">Merit stage | 6 papers | Total: 900 marks | Paper V: candidate may choose Malayalam, Tamil, or Kannada for language proficiency</p>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
@@ -44096,7 +44117,7 @@ function KeralaKasPage({ exam }: { exam: any }) {
                         ))}
                         <tr className="bg-surface-100">
                           <td colSpan={2} className="p-3 font-heading font-bold text-surface-900">Grand Total (Mains + Interview)</td>
-                          <td className="p-3 text-center font-heading font-bold text-emerald-600">1,000</td>
+                          <td className="p-3 text-center font-heading font-bold text-emerald-600">950</td>
                           <td className="p-3"></td>
                         </tr>
                       </tbody>
@@ -44108,12 +44129,15 @@ function KeralaKasPage({ exam }: { exam: any }) {
                   <h3 className="font-heading font-semibold text-surface-900 mb-3 text-lg">Stage 3 – Personality Test / Interview</h3>
                   <div className="grid sm:grid-cols-3 gap-3">
                     {[
-                      { label: 'Total Marks', value: '100 marks' },
+                      { label: 'Total Marks', value: '50 marks' },
                       { label: 'Assessed By', value: 'Kerala PSC Board Panel' },
                       { label: 'Focus Areas', value: 'Administrative aptitude, situational responses, Kerala current affairs, district knowledge' },
                     ].map((item) => (
                       <InfoCard key={item.label} label={item.label} value={item.value} />
                     ))}
+                  </div>
+                  <div className="mt-4 bg-surface-50 border border-surface-200 rounded-xl p-4 text-sm text-surface-600">
+                    <strong>📌 Marks breakdown:</strong> 45 marks for Personality / Viva Voce assessment + 5 marks for General Aptitude = 50 marks total. Grand total (Mains 900 + Interview 50) = <strong>950 marks</strong>.
                   </div>
                 </div>
               </div>
@@ -44227,7 +44251,7 @@ function KeralaKasPage({ exam }: { exam: any }) {
                   </table>
                 </div>
                 <div className="p-4 bg-emerald-50 border-t border-emerald-200 text-xs text-emerald-800">
-                  💰 In-hand salary (Deputy Collector grade, metro posting): approximately <strong>₹75,000–₹95,000/month</strong> inclusive of DA, HRA, TA & allowances. Salary follows Kerala Government Pay Revision Orders — subject to periodic revision.
+                  💰 In-hand salary (Deputy Collector grade, metro posting): approximately <strong>₹90,000–₹1,10,000/month</strong> inclusive of DA, HRA, TA & allowances under 2026 revised scales. Salary follows Kerala Government Pay Revision Orders — subject to periodic revision. Starting basic pay for Junior Time Scale (on joining): <strong>₹65,600/month</strong>.
                 </div>
               </div>
 
@@ -44261,8 +44285,8 @@ function KeralaKasPage({ exam }: { exam: any }) {
                   { step: '1', title: 'Complete One Time Registration (OTR)', desc: 'Visit thulasi.psc.kerala.gov.in and register with your basic personal, communication, and educational details. OTR is mandatory for all Kerala PSC exams. Keep your mobile number and email ID active — all future communications are sent here.' },
                   { step: '2', title: 'Watch for Official Notification', desc: 'Monitor keralapsc.gov.in and the official Kerala PSC mobile app for the KAS 2025/2026 notification. The notification will mention post-wise vacancies, eligibility criteria, important dates, and exam cities.' },
                   { step: '3', title: 'Submit Online Application via Thulasi Portal', desc: 'Log in to your OTR account at thulasi.psc.kerala.gov.in. Select "Apply Now" for the KAS notification. Verify your details, upload photograph and signature as per the specifications, and submit. Note down your application number.' },
-                  { step: '4', title: 'Pay Application Fee', desc: 'General/OBC candidates pay the prescribed fee online. SC/ST candidates may be exempt — check the official notification. Payment is through the Thulasi portal via net banking, debit/credit card, or UPI.' },
-                  { step: '5', title: 'Download Admit Card', desc: 'Admit card for Prelims will be available on the Thulasi portal 10–15 days before the exam. Download and print two copies. Carry a government photo ID (Aadhaar, Voter ID, or PAN) along with the admit card.' },
+                  { step: '4', title: 'Application Fee – No Fee Applicable', desc: 'Kerala PSC charges NO application fee for any category — General, OBC (SEBC), SC, ST, or PwD candidates all apply free of charge. This is Kerala PSC\'s standard policy for all exams including KAS. Simply proceed to the next step after filling the form.' },
+                  { step: '5', title: 'Give Online Confirmation & Download Admit Card', desc: 'Before downloading the hall ticket, candidates MUST give Online Confirmation through their Thulasi (OTR) profile. Only candidates who complete this confirmation step will receive the Preliminary Exam admit card. The admit card is then available on the Thulasi portal 10–15 days before the exam. Download and print two copies. Carry a government photo ID (Aadhaar, Voter ID, or PAN) along with the admit card.' },
                 ].map((item) => (
                   <div key={item.step} className="card p-5 flex gap-4">
                     <div className="flex-shrink-0 w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 font-heading font-bold text-sm">{item.step}</div>
