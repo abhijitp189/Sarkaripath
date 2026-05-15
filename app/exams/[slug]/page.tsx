@@ -571,6 +571,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'coast-guard-navik-gd') {
+    return {
+      title: 'Coast Guard Navik GD 2026 – Vacancy, Syllabus, PFT, Salary & Guide | TaiyarHo',
+      description: 'ICG Navik GD 2026: 250–350 vacancies per batch (biannual). 12th pass with Maths & Physics. Age 18–22 yrs. Stage I CBT, PFT, Medical. Salary ₹28,000–₹40,000/month. Complete syllabus, selection process & free preparation guide.',
+      keywords: 'Coast Guard Navik GD 2026, ICG Navik GD notification 2026, Coast Guard vacancy 2026, Navik GD syllabus, Navik GD physical test, Navik GD salary, joinindiancoastguard.cdac.in, CGEPT 2026, कोस्ट गार्ड नाविक भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/coast-guard-navik-gd/' },
+      other: { 'description:hi': 'Indian Coast Guard Navik GD 2026 – प्रति बैच 250–350 रिक्तियाँ (वार्षिक दो बैच)। 12वीं (गणित व भौतिकी) पास पात्र। आयु 18–22 वर्ष। Stage I CBT, PFT, मेडिकल। वेतन ₹28,000–₹40,000/माह। पूरा सिलेबस, चयन प्रक्रिया और मुफ्त तैयारी गाइड।' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -647,6 +657,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'mpsc-rajyaseva') return <MpscRajyasevaPage exam={brief} />;
   if (brief && brief.slug === 'kerala-psc-kas') return <KeralaKasPage exam={brief} />;
   if (brief && brief.slug === 'drdo-ceptam') return <DrdoCeptamPage exam={brief} />;
+  if (brief && brief.slug === 'coast-guard-navik-gd') return <CoastGuardNavikGdPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -44302,6 +44313,653 @@ function DrdoCeptamPage({ exam }: { exam: any }) {
                     { label: 'Negative Marking', value: 'No (Tier I CBT)' },
                     { label: 'Medium',           value: 'English & Hindi' },
                     { label: 'Apply Via',        value: 'ceptam.drdo.gov.in' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex justify-between text-xs border-b border-surface-100 pb-2 last:border-0 last:pb-0">
+                      <span className="text-surface-500">{item.label}</span>
+                      <span className="font-semibold text-surface-800 text-right ml-2">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── COAST GUARD NAVIK GD RICH PAGE ──────────────────────────────────────────
+function CoastGuardNavikGdPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Stage I Exam Pattern' },
+    { id: 'physical',        label: 'Physical Standards' },
+    { id: 'syllabus',        label: 'Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'career',          label: 'Career Growth' },
+    { id: 'study-plan',      label: 'Preparation Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Notification Released (01/2026 & 02/2026 batch)', date: '11 June 2025', status: 'done' },
+    { event: 'Online Application Opens',                         date: '11 June 2025', status: 'done' },
+    { event: 'Last Date to Apply Online',                        date: '25 June 2025', status: 'done' },
+    { event: 'Stage I (CBT) – CGEPT 01/2026 & 02/2026',         date: '19–22 Sep 2025', status: 'done' },
+    { event: 'Stage II (PFT + Medical + DV)',                    date: 'Nov 2025 (Both batches together)', status: 'done' },
+    { event: 'Stage III (Final Medical – INS Chilka)',           date: 'Feb 2026 (01/2026) / Jul 2026 (02/2026)', status: 'upcoming' },
+    { event: 'Basic Training Commences (01/2026 batch)',         date: 'Feb 2026 at INS Chilka', status: 'upcoming' },
+    { event: 'Basic Training Commences (02/2026 batch)',         date: 'Jul 2026 at INS Chilka', status: 'upcoming' },
+    { event: 'Next Notification (01/2027 batch – estimated)',    date: 'Nov–Dec 2026 (TBN)', status: 'tbn' },
+    { event: 'Next Application Window (01/2027 batch)',          date: 'Nov–Dec 2026 (TBN)', status: 'tbn' },
+    { event: 'Next Stage I CBT (01/2027 batch)',                 date: 'Feb–Mar 2027 (TBN)', status: 'tbn' },
+  ];
+
+  const selectionStages = [
+    {
+      num: '1',
+      title: 'Stage I – Computer Based Test (CBT)',
+      desc: 'Online objective test covering Mathematics, Physics, English, Reasoning & GK. Negative marking of -0.25 per wrong answer. Conducted at designated exam centres across India. E-admit card released 2–3 days before the exam.',
+    },
+    {
+      num: '2',
+      title: 'Stage II – PFT + Document Verification + Initial Medical',
+      desc: '1.6 km run in 7 min, 20 squat-ups, 10 push-ups (pass/fail). Original documents verified. Initial medical examination. Both 01/2026 and 02/2026 batches had Stage II together in Nov 2025.',
+    },
+    {
+      num: '3',
+      title: 'Stage III – Final Medical Examination (INS Chilka)',
+      desc: 'All-India merit list prepared after Stage I & II. Candidates shortlisted as per vacancies and merit are called for final medicals at INS Chilka, Odisha. This stage is decisive.',
+    },
+    {
+      num: '4',
+      title: 'Stage IV – Basic Training at INS Chilka',
+      desc: 'Candidates who clear Stage III and are provisionally selected join basic training at INS Chilka. Followed by sea training and professional training. Branch/trade allocated as per service requirement and training performance.',
+    },
+  ];
+
+  const examPattern = [
+    { section: 'Section I – Common', subjects: 'Reasoning & Quantitative Aptitude, English, General Knowledge & Current Affairs', level: 'Class 10th standard', note: 'Applicable to all posts (GD, DB, Yantrik)' },
+    { section: 'Section II – GD Specific', subjects: 'Mathematics, Physics', level: 'Class 12th standard (PCM)', note: 'Only for Navik GD and Yantrik candidates' },
+  ];
+
+  const syllabusTopics = [
+    {
+      subject: 'Mathematics (Class 12)',
+      topics: ['Sets, Relations & Functions', 'Algebra (Polynomials, Matrices, Determinants)', 'Trigonometry', 'Coordinate Geometry (Straight Lines, Circles, Conics)', 'Calculus (Limits, Derivatives, Integration basics)', 'Probability & Statistics', 'Vectors & 3D Geometry'],
+    },
+    {
+      subject: 'Physics (Class 12)',
+      topics: ['Electrostatics & Electric Potential', 'Current Electricity & Circuits', 'Magnetism & Electromagnetic Induction', 'Optics (Reflection, Refraction, Wave Optics)', 'Modern Physics (Dual Nature, Atoms, Nuclei)', 'Semiconductor Devices & Communication Systems', 'Waves & Oscillations'],
+    },
+    {
+      subject: 'English (Class 10)',
+      topics: ['Grammar & Parts of Speech', 'Tenses & Active/Passive Voice', 'Reading Comprehension', 'Synonyms, Antonyms & Idioms', 'Sentence Improvement & Error Correction', 'One-Word Substitution', 'Fill in the Blanks'],
+    },
+    {
+      subject: 'Reasoning & Quantitative Aptitude',
+      topics: ['Number Series & Analogy', 'Coding–Decoding', 'Blood Relations', 'Direction Sense', 'Percentage, Ratio & Proportion', 'Time & Work, Speed & Distance', 'Simplification & Approximation'],
+    },
+    {
+      subject: 'General Knowledge & Current Affairs',
+      topics: ['Indian Coast Guard – History, Roles, Ships', 'Indian Geography & Economy basics', 'Science & Technology News', 'Defence & National Security updates', 'Sports, Awards & Books', 'Indian Polity & Constitution basics', 'Important Days & Events'],
+    },
+  ];
+
+  const physicalStandards = [
+    { test: '1.6 km Run',           standard: 'To be completed in 7 minutes', note: 'Timed, no rest; must be done in one go' },
+    { test: 'Squat-Ups (Uthak Baithak)', standard: '20 repetitions',          note: 'Full squats, no break in between' },
+    { test: 'Push-Ups',              standard: '10 repetitions',               note: 'Full extension required' },
+    { test: 'Height',                standard: 'Minimum 157 cm (General/OBC/EWS)', note: '155 cm for SC/ST (as per notification)' },
+    { test: 'Chest',                 standard: 'Minimum 5 cm expansion',       note: 'Both normal and expanded measurement taken' },
+    { test: 'Weight',                standard: 'Proportionate to height (±10% acceptable)', note: 'As per Coast Guard medical norms' },
+  ];
+
+  const salaryComponents = [
+    { component: 'Basic Pay',                    amount: '₹21,700/month',       note: 'Pay Level 3 (7th CPC)' },
+    { component: 'Dearness Allowance (DA)',       amount: '~₹11,700/month',      note: 'Revised quarterly; approx. 54% of basic (Jan 2026 rate)' },
+    { component: 'Military Service Pay (MSP)',    amount: '₹5,200/month',        note: 'Fixed for all defence enrolled personnel' },
+    { component: 'Sea Duty Allowance (SDA)',      amount: '₹6,200/month',        note: 'Only when deployed on a vessel/ship' },
+    { component: 'HRA',                           amount: '16–24% of basic',     note: 'Applicable at shore postings; not paid during sea duty' },
+    { component: 'Kit Maintenance Allowance',     amount: '₹400/month',          note: 'Standard for enrolled personnel' },
+    { component: 'Gross (Shore Posting)',         amount: '~₹33,000–40,000/month', note: 'X-class cities like Mumbai, Chennai' },
+    { component: 'Gross (Sea Posting)',           amount: '~₹38,000–45,000/month', note: 'SDA replaces HRA during sea duty' },
+  ];
+
+  const careerGrowth = [
+    { rank: 'Navik GD (Entry)',        payLevel: 'Level 3', basic: '₹21,700', timeline: 'On joining' },
+    { rank: 'Uttam Navik',             payLevel: 'Level 4', basic: '₹25,500', timeline: '~3–5 years' },
+    { rank: 'Adhikari (Petty Officer)', payLevel: 'Level 5', basic: '₹29,200', timeline: '~6–10 years' },
+    { rank: 'Pradhan Navik',           payLevel: 'Level 6', basic: '₹35,400', timeline: '~10–14 years' },
+    { rank: 'Pradhan Adhikari',        payLevel: 'Level 8', basic: '₹47,600', timeline: '~15–20 years' },
+    { rank: 'Assistant Commandant (via CGEPT)', payLevel: 'Level 10', basic: '₹56,100', timeline: 'After 2+ years via internal exam' },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', focus: 'Physics + Mathematics (Class 12 NCERT)', tasks: ['Complete NCERT Phy & Maths chapters', 'Make formula notes', 'Start 1.6 km running practice'] },
+    { month: 'Month 3–4', focus: 'English + Reasoning + GK', tasks: ['S.P. Bakshi for English grammar', 'R.S. Aggarwal for Reasoning', 'Daily current affairs + Coast Guard news', 'Run 1.6 km daily, add push-ups'] },
+    { month: 'Month 5–6', focus: 'Mock Tests + Revision + Physical Fitness', tasks: ['Solve 3–4 previous year papers per week', 'Timed practice for each section', 'Achieve 1.6 km in under 6:30 min', 'Full syllabus revision + weak areas'] },
+  ];
+
+  const books = [
+    { subject: 'Mathematics',              title: 'Mathematics for NDA/Coast Guard/Navy',      author: 'Arihant Publications',    freeLink: '' },
+    { subject: 'Physics (Class 12)',       title: 'NCERT Physics Part I & II (Class 12)',       author: 'NCERT',                   freeLink: 'https://ncert.nic.in/textbook.php' },
+    { subject: 'English',                  title: 'Objective English for Competitive Exams',    author: 'S.P. Bakshi (Arihant)',   freeLink: '' },
+    { subject: 'General Knowledge',        title: "Lucent's General Knowledge",                 author: 'Lucent Publications',     freeLink: '' },
+    { subject: 'Reasoning & Aptitude',     title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', freeLink: '' },
+    { subject: 'Previous Year Papers',     title: 'ICG Navik GD Previous Year Papers',         author: 'Arihant / Oswaal',        freeLink: '' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the age limit for Indian Coast Guard Navik GD 2026?',
+      a: 'Candidates must be between 18 and 22 years of age. For the 2025 recruitment cycle (01/2026 and 02/2026 batches), the eligible birth date range was 01 March 2003 to 28 February 2007 (both inclusive) for Navik GD and Yantrik. The exact date-of-birth range for the next 2026 notification will be specified in the official notification at joinindiancoastguard.cdac.in.',
+    },
+    {
+      q: 'What is the minimum qualification for Coast Guard Navik GD 2026?',
+      a: 'Candidates must have passed 10+2 (Class 12) with Mathematics and Physics as compulsory subjects from a board recognized by the Council of Boards for School Education (COBSE). A minimum of 60% aggregate marks in Class 12 is required. Verify the exact percentage requirement in the official notification as it may vary slightly by cycle.',
+    },
+    {
+      q: 'How many vacancies are released for Coast Guard Navik GD each year?',
+      a: 'The Indian Coast Guard conducts recruitment twice a year. For the 2025 cycle (batches 01/2026 and 02/2026), 260 and 310 vacancies were released respectively, totalling approximately 570 opportunities for Navik GD in that year. Historically, 250–350 vacancies per batch are common. Exact numbers are announced in the official notification.',
+    },
+    {
+      q: 'What is the selection process for ICG Navik GD?',
+      a: 'The selection process has four stages: Stage I is a Computer Based Test (CBT) with negative marking. Stage II includes the Physical Fitness Test (1.6 km run in 7 min, 20 squat-ups, 10 push-ups), document verification, and initial medical examination. Stage III is the final medical at INS Chilka, Odisha. Stage IV is basic training at INS Chilka followed by sea and professional training.',
+    },
+    {
+      q: 'What is the in-hand salary for a Coast Guard Navik GD?',
+      a: 'The basic pay is ₹21,700/month at Pay Level 3 under the 7th Pay Commission. After adding Dearness Allowance, Military Service Pay, HRA, and other allowances, the gross in-hand salary at a shore posting is approximately ₹28,000–33,000/month. When deployed at sea, the Sea Duty Allowance of ~₹6,200/month applies, raising in-hand pay to approximately ₹35,000–40,000/month. The 8th Pay Commission recommendations, once implemented, are expected to further revise pay scales.',
+    },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-amber-100 text-amber-700';
+  };
+  const statusLabel = (s: string) => s === 'done' ? 'Completed' : s === 'upcoming' ? 'Upcoming' : 'TBN';
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* ── Hero Banner ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a3580] to-[#1a56db] text-white">
+        <div className="container-main py-10 pb-8">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white">Home</Link><span className="mx-1 opacity-50">›</span>
+            <Link href="/exams" className="hover:text-white">Exams</Link><span className="mx-1 opacity-50">›</span>
+            <span className="text-white">Coast Guard Navik GD 2026</span>
+          </nav>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">Defence</span>
+            <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
+            <span className="bg-cyan-400/20 text-cyan-200 text-xs font-semibold px-3 py-1 rounded-full">⚓ Indian Coast Guard</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Biannual Recruitment</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
+            Coast Guard Navik GD 2026<br className="hidden sm:block" /> – Complete Preparation Guide
+          </h1>
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+            Join India's maritime security force as a General Duty Navik. Two recruitment batches per year, 12th pass with Maths & Physics required. Sea duty, ship postings, and a clear path to commissioned officer rank.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Vacancies (Per Batch)', value: '250–350' },
+              { label: 'Next Notification',     value: 'Nov–Dec 2026 (Est.)' },
+              { label: 'Age Limit',             value: '18–22 years' },
+              { label: 'Monthly Package',       value: '₹28,000–₹40,000' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+                <div className="text-xs text-blue-200 mb-0.5">{item.label}</div>
+                <div className="font-heading font-bold text-white text-sm">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-main py-10">
+        {/* Mobile TOC */}
+        <div className="card p-5 mb-8 border-l-4 border-primary-500 lg:hidden">
+          <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Quick Navigation</div>
+          <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+            {toc.map((s) => (
+              <li key={s.id}><a href={`#${s.id}`} className="text-sm text-primary-500 hover:underline">{s.label}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          {/* ── Main Content ── */}
+          <div>
+            {/* Overview InfoCards */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12" id="overview">
+              {[
+                { label: '📋 Vacancies (Per Batch)', value: '250–350' },
+                { label: '📅 Next Notification',     value: 'Nov–Dec 2026 (Est.)' },
+                { label: '🪪 Nationality',            value: 'Indian Male Citizens' },
+                { label: '💰 Monthly Package',        value: '₹28,000–₹40,000' },
+              ].map((item) => (
+                <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                  <div className="font-semibold text-surface-800 text-sm">{item.value}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Key Update Callout */}
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-10 text-sm text-blue-800">
+              <strong>💡 Key Update 2026:</strong> The CGEPT 01/2026 and 02/2026 batches are in progress — Stage I was held in Sep 2025 and Stage II in Nov 2025. The <strong>next notification</strong> (01/2027 batch) is expected in <strong>November–December 2026</strong>. Meanwhile, if you are preparing, this is the ideal time to start. Apply only at the official website — <a href="https://joinindiancoastguard.cdac.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">joinindiancoastguard.cdac.in</a>. Beware of fake websites charging fees.
+            </div>
+
+            {/* ── 1. Important Dates ── */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="1" title="📅 Important Dates – Coast Guard Navik GD 2026" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Event</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Date</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                          <td className="px-4 py-3 text-surface-800 font-medium">{row.date}</td>
+                          <td className="px-4 py-3">
+                            <span className={`text-xs px-2 py-1 rounded-full font-semibold ${statusColor(row.status)}`}>
+                              {statusLabel(row.status)}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-2">⚠️ Future dates are estimated based on previous cycles. TBN = To Be Notified. Always verify at joinindiancoastguard.cdac.in before applying.</p>
+            </section>
+
+            {/* ── 2. Eligibility ── */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="2" title="🎓 Eligibility Criteria" />
+              <div className="card p-6 space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🪪 Nationality</div>
+                    <div className="font-semibold text-surface-800">Indian Male Citizens only</div>
+                    <div className="text-xs text-surface-500 mt-1">Currently open to male candidates only</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Age Limit</div>
+                    <div className="font-semibold text-surface-800">18–22 years (on date of enrolment)</div>
+                    <div className="text-xs text-surface-500 mt-1">Exact date-of-birth cut-off specified in notification</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">🎓 Educational Qualification</div>
+                    <div className="font-semibold text-surface-800">12th Pass with Maths & Physics</div>
+                    <div className="text-xs text-surface-500 mt-1">Min. 60% aggregate from COBSE-recognised board</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">📋 Marital Status</div>
+                    <div className="font-semibold text-surface-800">Must be unmarried at time of enrolment</div>
+                    <div className="text-xs text-surface-500 mt-1">Marriage not permitted during initial service period</div>
+                  </div>
+                </div>
+
+                <div className="pt-2 border-t border-surface-100">
+                  <h3 className="font-semibold text-surface-800 mb-3 text-sm">Age Relaxation</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">SC / ST</span><div className="font-bold text-surface-700 mt-1">+5 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">OBC (NCL)</span><div className="font-bold text-surface-700 mt-1">+3 years</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">EWS</span><div className="font-bold text-surface-700 mt-1">No relaxation</div></div>
+                    <div className="bg-surface-50 rounded-lg p-3"><span className="text-surface-400">Ex-Servicemen Ward</span><div className="font-bold text-surface-700 mt-1">As per rules</div></div>
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2">* Always verify relaxation categories from the official notification. Category-based reservations apply as per Government of India norms.</p>
+                </div>
+
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-800">
+                  <strong>⚠️ Important:</strong> You can apply for only <strong>one post per cycle</strong> — either Navik GD, Navik DB, or Yantrik. Applying to multiple posts with the same application will result in rejection. Application fee is <strong>₹250</strong> for General/OBC/EWS; SC/ST candidates are exempt.
+                </div>
+              </div>
+            </section>
+
+            {/* ── 3. Selection Process ── */}
+            <section id="selection" className="mb-12">
+              <SectionHeading num="3" title="🔄 Selection Process (4 Stages)" />
+              <div className="space-y-4">
+                {selectionStages.map((stage) => (
+                  <div key={stage.num} className="card p-5 flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm">
+                      {stage.num}
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 text-sm mb-1">{stage.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{stage.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── 4. Exam Pattern ── */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="4" title="📋 Stage I – CBT Exam Pattern" />
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Section</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Subjects</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Level</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Applicable To</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {examPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-medium text-surface-800">{row.section}</td>
+                          <td className="px-4 py-3 text-surface-700">{row.subjects}</td>
+                          <td className="px-4 py-3 text-surface-700">{row.level}</td>
+                          <td className="px-4 py-3 text-surface-600 text-xs">{row.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                {[
+                  { label: '⏱ Duration', value: 'Approx. 45–60 min per section' },
+                  { label: '❌ Negative Marking', value: '–0.25 per wrong answer' },
+                  { label: '🖥 Mode', value: 'Online – Computer Based Test' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 mb-1">{item.label}</div>
+                    <div className="font-semibold text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── 5. Physical Standards ── */}
+            <section id="physical" className="mb-12">
+              <SectionHeading num="5" title="🏃 Physical Fitness Test (Stage II)" />
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Test</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Standard</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Note</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {physicalStandards.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-medium text-surface-800">{row.test}</td>
+                          <td className="px-4 py-3 text-surface-800 font-semibold">{row.standard}</td>
+                          <td className="px-4 py-3 text-surface-500 text-xs">{row.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                <strong>⚠️ Important:</strong> The PFT is pass/fail — there are <strong>no extra attempts or appeals</strong> if you fail. Candidates with physical disabilities are not eligible. Wear proper sportswear (T-shirt, track pants, sports shoes). The PFT is conducted at the candidate's own risk. Start training well in advance — aim to complete 1.6 km in under 6:30 minutes before the exam date.
+              </div>
+            </section>
+
+            {/* ── 6. Syllabus ── */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="📚 Detailed Syllabus" />
+              <div className="space-y-3">
+                {syllabusTopics.map((sub) => (
+                  <details key={sub.subject} className="card overflow-hidden">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 text-sm">
+                      <span>{sub.subject}</span>
+                      <svg className="w-4 h-4 text-surface-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {sub.topics.map((t) => (
+                          <li key={t} className="flex items-start gap-2 text-sm text-surface-700">
+                            <span className="text-primary-500 mt-0.5 flex-shrink-0">✓</span>{t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+              <p className="text-xs text-surface-400 mt-3">Syllabus based on Class 10th and 12th (PCM) curriculum. NCERT textbooks are the most reliable source for Section II preparation.</p>
+            </section>
+
+            {/* ── 7. Salary ── */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="7" title="💰 Salary, Allowances & Benefits" />
+              <div className="card overflow-hidden mb-5">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Component</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Amount</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Note</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryComponents.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-medium text-surface-800">{row.component}</td>
+                          <td className={`px-4 py-3 font-semibold ${row.component.startsWith('Gross') ? 'text-emerald-600' : 'text-surface-800'}`}>{row.amount}</td>
+                          <td className="px-4 py-3 text-surface-500 text-xs">{row.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-800 mb-4">
+                <strong>💡 8th Pay Commission:</strong> The Central Government has announced the 8th Pay Commission. Once implemented (expected from 2026–27 onwards), pay scales for all central government employees including Coast Guard enrolled personnel are expected to be revised upward. The exact multiplier is not yet finalised — check official announcements once released.
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Additional Perks & Benefits</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { icon: '🏠', perk: 'Free Government Accommodation', desc: 'Barracks/family quarters at posting station' },
+                  { icon: '🍽️', perk: 'Free Rations at Sea', desc: 'Meals provided on board ships; ₹4,000–5,000/month equivalent' },
+                  { icon: '🏥', perk: 'Free Medical (ECHS)', desc: 'For self, spouse, children and dependent parents' },
+                  { icon: '🛒', perk: 'CSD Canteen Facilities', desc: 'Subsidised groceries, electronics, vehicles' },
+                  { icon: '✈️', perk: 'Leave Travel Concession (LTC)', desc: '45 days earned leave + 8 days casual leave per year' },
+                  { icon: '🎓', perk: 'Education Allowance', desc: "For children's schooling; annual concession" },
+                  { icon: '💼', perk: 'NPS Pension Scheme', desc: 'Government contributes 14% of (Basic + DA) to NPS' },
+                  { icon: '⚓', perk: 'Free Uniform & Kit', desc: 'Full uniform kit provided on joining' },
+                ].map((item) => (
+                  <div key={item.perk} className="bg-surface-50 rounded-xl p-4 border border-surface-200 flex gap-3">
+                    <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                    <div>
+                      <div className="font-semibold text-surface-800 text-sm">{item.perk}</div>
+                      <div className="text-xs text-surface-500 mt-0.5">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* ── 8. Career Growth ── */}
+            <section id="career" className="mb-12">
+              <SectionHeading num="8" title="📈 Career Growth & Promotion Ladder" />
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Rank</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Pay Level</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Basic Pay</th>
+                        <th className="text-left px-4 py-3 font-heading font-semibold">Approximate Timeline</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {careerGrowth.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className={`px-4 py-3 font-semibold ${row.rank.includes('Commandant') ? 'text-emerald-600' : 'text-surface-800'}`}>{row.rank}</td>
+                          <td className="px-4 py-3 text-surface-700">{row.payLevel}</td>
+                          <td className="px-4 py-3 text-surface-800 font-medium">{row.basic}</td>
+                          <td className="px-4 py-3 text-surface-600 text-xs">{row.timeline}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-primary-800">
+                <strong>🌟 CGEPT – Path to Officer Rank:</strong> After 2+ years of service, Naviks can appear for the <strong>Coast Guard Enrolled Personnel Test (CGEPT)</strong> — an internal competitive exam that promotes meritorious sailors to <strong>Assistant Commandant</strong> (Level 10, ₹56,100 basic). This is the biggest career jump possible in the ICG and is one of the strongest reasons candidates prefer the Coast Guard over other paramilitary services.
+              </div>
+            </section>
+
+            {/* ── 9. Study Plan ── */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="9" title="📅 6-Month Preparation Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-5">
+                  {studyPlan.map((phase, idx) => (
+                    <div key={idx} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">
+                        {idx + 1}
+                      </div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center gap-3 mb-3">
+                          <span className="sm:hidden w-7 h-7 bg-primary-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">{idx + 1}</span>
+                          <span className="font-heading font-semibold text-surface-800">{phase.month}</span>
+                          <span className="badge-primary">{phase.focus}</span>
+                        </div>
+                        <ul className="space-y-1.5">
+                          {phase.tasks.map((task) => (
+                            <li key={task} className="flex items-start gap-2 text-sm text-surface-700">
+                              <span className="text-primary-500 flex-shrink-0 mt-0.5">→</span>{task}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── 10. Best Books ── */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="10" title="📖 Best Books for ICG Navik GD 2026" />
+              <BooksTable books={books} />
+              <p className="text-xs text-surface-400 mt-3">Tip: Start with NCERT Physics (Class 11 & 12) and Class 12 Maths for Section II. These are available free at ncert.nic.in. Previous year papers from Arihant or Oswaal are highly recommended for Stage I practice.</p>
+            </section>
+
+            {/* ── 11. FAQs ── */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="11" title="❓ Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 text-sm">
+                      <span>{faq.q}</span>
+                      <svg className="w-4 h-4 text-surface-400 flex-shrink-0 ml-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Disclaimer */}
+            <div className="bg-surface-50 border border-surface-200 rounded-xl p-4 text-xs text-surface-500">
+              <strong>Disclaimer:</strong> All information on this page is compiled from the official Indian Coast Guard recruitment notifications and is updated to the best of our knowledge. Exam dates, vacancies, and eligibility may change. Always verify from <a href="https://joinindiancoastguard.cdac.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">joinindiancoastguard.cdac.in</a> before applying. TaiyarHo.in is a free educational resource — no paywalls, no spam.
+            </div>
+          </div>
+
+          {/* ── Sidebar ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+
+              {/* On This Page */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                <ol className="space-y-2 list-decimal list-inside">
+                  {toc.map((s) => (
+                    <li key={s.id} className="text-xs">
+                      <a href={`#${s.id}`} className="text-primary-500 hover:text-primary-600 hover:underline">{s.label}</a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Official Website Card */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">🌐 Official Website</h3>
+                <p className="text-xs text-surface-500 mb-3">Apply and check results only at the official ICG recruitment portal.</p>
+                <a
+                  href="https://joinindiancoastguard.cdac.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-xs w-full text-center block"
+                >
+                  Visit joinindiancoastguard.cdac.in →
+                </a>
+              </div>
+
+              {/* Eligibility Checker Promo */}
+              <div className="bg-primary-50 border border-primary-200 rounded-2xl p-5">
+                <h3 className="font-heading font-semibold text-primary-900 mb-2 text-sm">Am I Eligible?</h3>
+                <p className="text-xs text-primary-700 mb-3">Check your eligibility for Coast Guard Navik GD and 100+ other government exams in seconds.</p>
+                <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center block">
+                  Check Eligibility Free →
+                </Link>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Quick Facts</h3>
+                <div className="space-y-2">
+                  {[
+                    { label: 'Conducting Body',  value: 'Indian Coast Guard (MoD)' },
+                    { label: 'Exam Name',         value: 'CGEPT (Navik GD)' },
+                    { label: 'Frequency',         value: 'Biannual (2 batches/year)' },
+                    { label: 'Training Location', value: 'INS Chilka, Odisha' },
+                    { label: 'Negative Marking',  value: '-0.25 per wrong answer' },
+                    { label: 'Application Fee',   value: '₹250 (SC/ST exempt)' },
+                    { label: 'Mode',              value: 'Online CBT (Stage I)' },
                   ].map((item) => (
                     <div key={item.label} className="flex justify-between text-xs border-b border-surface-100 pb-2 last:border-0 last:pb-0">
                       <span className="text-surface-500">{item.label}</span>
