@@ -224,6 +224,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ssc-selection-post') {
+    return {
+      title: 'SSC Selection Post Phase 14 2026 – Vacancies, Syllabus, Exam Date & Guide | TaiyarHo',
+      description: 'SSC Selection Post Phase XIV 2026: 2,919 vacancies notified on 13 Apr 2026. CBT exam in June 2026. Eligibility: 10th/12th/Graduate. Age 18–30 yrs. Salary ₹25,000–₹60,000/month. Full syllabus, exam pattern & free resources.',
+      keywords: 'SSC Selection Post 2026, SSC Phase 14 2026, SSC Selection Post syllabus, SSC Phase 14 vacancy, ssc selection post taiyari, 10th 12th graduate sarkari naukri 2026, SSC Selection Post salary',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-selection-post/' },
+      other: { 'description:hi': 'SSC Selection Post Phase XIV 2026 – 13 अप्रैल 2026 को 2,919 रिक्तियाँ अधिसूचित। CBT परीक्षा जून 2026 में। 10वीं/12वीं/स्नातक स्तर के पद। आयु 18-30 वर्ष। वेतन ₹25,000–₹60,000/माह। सिलेबस, परीक्षा पैटर्न और निशुल्क संसाधन।' },
+    };
+  }
+
   if (params.slug === 'bpsc-cce') {
     return {
       title: 'BPSC CCE 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -684,6 +694,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'bihar-police-si') return <BiharPoliceSIPage exam={brief} />;
   if (brief && brief.slug === 'ssc-chsl') return <SscChslPage exam={brief} />;
   if (brief && brief.slug === 'ssc-stenographer') return <SscStenographerPage exam={brief} />;
+  if (brief && brief.slug === 'ssc-selection-post') return <SscSelectionPostPage exam={brief} />;
   if (brief && brief.slug === 'uppsc-pcs') return <UppscPcsPage exam={brief} />;
   if (brief && brief.slug === 'bpsc-cce') return <BpscCcePage exam={brief} />;
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
@@ -49736,6 +49747,737 @@ function GpscClass12Page({ exam }: { exam: any }) {
 
             </div>
           </aside>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── SSC SELECTION POST 2026 RICH PAGE ────────────────────────────────────────
+function SscSelectionPostPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancy Trend' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Phase XIV Notification Released', date: '13 April 2026', status: 'released' },
+    { event: 'Online Application Window Opens', date: '13 April 2026', status: 'released' },
+    { event: 'Last Date to Apply Online', date: '4 May 2026 (11 PM)', status: 'released' },
+    { event: 'Fee Payment Last Date', date: '5 May 2026', status: 'released' },
+    { event: 'Application Correction Window', date: '11–13 May 2026', status: 'released' },
+    { event: '🆕 Computer-Based Exam (CBT)', date: 'June 2026 (Tentative)', status: 'tbn' },
+    { event: 'Admit Card Release', date: 'Before exam – To Be Notified', status: 'tbn' },
+    { event: 'Skill Test (where applicable)', date: 'Post CBT – To Be Notified', status: 'tbn' },
+    { event: 'Document Verification', date: 'Post CBT – To Be Notified', status: 'tbn' },
+    { event: 'Result & Merit List', date: 'To Be Notified', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { phase: 'Phase IX (2021)', vacancies: '3,261', exam: '2021', result: '2022' },
+    { phase: 'Phase X (2022)', vacancies: '~2,500', exam: '2022', result: '2023' },
+    { phase: 'Phase XI (2023)', vacancies: '~1,500', exam: 'Jun–Jul 2023', result: '2023' },
+    { phase: 'Phase XII (2024)', vacancies: '2,424', exam: 'Jun 2024', result: 'Aug 2024' },
+    { phase: 'Phase XIII (2025)', vacancies: '~2,500 (est.)', exam: '2025', result: '2025–26' },
+    { phase: 'Phase XIV (2026) ← Current', vacancies: '2,919', exam: 'Jun 2026 (TBN)', result: 'TBN' },
+  ];
+
+  const examPattern = [
+    { section: 'General Intelligence & Reasoning', questions: 25, marks: 50, time: '15 min' },
+    { section: 'General Awareness', questions: 25, marks: 50, time: '15 min' },
+    { section: 'Quantitative Aptitude / Basic Arithmetic', questions: 25, marks: 50, time: '15 min' },
+    { section: 'English Language & Comprehension', questions: 25, marks: 50, time: '15 min' },
+  ];
+
+  const syllabusData = [
+    {
+      subject: '🧠 General Intelligence & Reasoning',
+      levels: 'All levels (10th / 12th / Graduate)',
+      topics: [
+        'Analogies (Semantic, Figurative, Symbolic)',
+        'Similarities & Differences',
+        'Space Visualisation & Orientation',
+        'Problem Solving, Analysis, Judgement',
+        'Visual Memory, Discrimination, Observation',
+        'Relationship Concepts, Arithmetical Reasoning',
+        'Coding-Decoding, Number Series',
+        'Non-Verbal Series, Embedded Figures, Mirror Images',
+        'Syllogisms, Venn Diagrams (Graduate level – higher difficulty)',
+      ],
+    },
+    {
+      subject: '🌍 General Awareness',
+      levels: 'All levels (difficulty scales by qualification)',
+      topics: [
+        'Current Affairs – National & International (last 6 months)',
+        'Indian History, Culture, Geography',
+        'Indian Economy – Budget, Schemes, GDP',
+        'Indian Polity – Constitution, Parliament, Judiciary',
+        'General Science – Physics, Chemistry, Biology basics',
+        'Environmental Science & Climate',
+        'Sports, Awards, Important Days & Appointments',
+        'Science & Technology developments in India',
+      ],
+    },
+    {
+      subject: '🔢 Quantitative Aptitude / Basic Arithmetic',
+      levels: 'Matric: basic | 12th: moderate | Graduate: advanced',
+      topics: [
+        'Number Systems & Integers',
+        'Computation of Whole Numbers, Decimals, Fractions',
+        'Fundamental Arithmetical Operations (+ − × ÷)',
+        'Percentage, Ratio & Proportion',
+        'Average, Simple & Compound Interest',
+        'Profit, Loss & Discount',
+        'Time & Work, Time, Speed & Distance',
+        'Mensuration – Area, Perimeter, Volume',
+        'Data Interpretation – Bar, Pie, Table (Graduate level)',
+      ],
+    },
+    {
+      subject: '📝 English Language & Comprehension',
+      levels: 'Matric: basic grammar | 12th + Graduate: RC & usage',
+      topics: [
+        'Spot the Error, Fill in the Blanks',
+        'Synonyms & Antonyms',
+        'Spelling / Detecting Misspelt Words',
+        'Idioms & Phrases, One Word Substitution',
+        'Improvement of Sentences',
+        'Active / Passive Voice, Direct / Indirect Speech',
+        'Shuffling of Sentence Parts, Para-Completion',
+        'Reading Comprehension (12th and Graduate levels)',
+      ],
+    },
+  ];
+
+  const salaryTable = [
+    { level: 'Level 1', basic: '₹18,000', posts: 'Peon, Multi-Tasking Staff', inHand: '~₹24,000–26,000' },
+    { level: 'Level 2', basic: '₹19,900', posts: 'MTS (Higher Grade), Driver', inHand: '~₹27,000–30,000' },
+    { level: 'Level 3', basic: '₹21,700', posts: 'Lab Asst, Storekeeper, Clerk', inHand: '~₹30,000–33,000' },
+    { level: 'Level 4', basic: '₹25,500', posts: 'UDC, LDC, Junior Assistant', inHand: '~₹35,000–40,000' },
+    { level: 'Level 5', basic: '₹29,200', posts: 'Sr Technical Asst, Stenographer Grade III', inHand: '~₹40,000–46,000' },
+    { level: 'Level 6', basic: '₹35,400', posts: 'Personal Asst, Superintendent, Jr Engineer', inHand: '~₹48,000–55,000' },
+    { level: 'Level 7', basic: '₹44,900', posts: 'Deputy Ranger, Scientific Asst, Stenographer Grade II', inHand: '~₹58,000–65,000' },
+  ];
+
+  const salaryComponents = [
+    { component: 'Basic Pay (varies by post, Level 1–7)', amount: '₹18,000–₹44,900/month' },
+    { component: 'Dearness Allowance (DA) – revised every 6 months', amount: '~42% of Basic (current rate)' },
+    { component: 'House Rent Allowance (HRA) – X City (27% of Basic)', amount: '₹4,860–₹12,123/month' },
+    { component: 'Transport Allowance (TA)', amount: '₹1,350–₹7,200/month (city-dependent)' },
+    { component: 'Other Allowances (Medical, NPS, CGEGIS)', amount: 'As per Central Govt rules' },
+    { component: '8th Pay Commission Impact (expected from Jan 2026)', amount: '~30–40% increase in basic pay (estimated)' },
+  ];
+
+  const studyPlan = [
+    { month: 'Week 1–2', focus: 'Know Your Exam & Level', detail: 'Identify whether you are applying for Matriculation, Higher Secondary, or Graduation level posts — the syllabus difficulty, the posts you can target, and pay levels all depend on this. Download the official Phase XIV notification PDF from ssc.gov.in. Skim previous year question papers to understand the actual exam feel. Do not start heavy study before this step.' },
+    { month: 'Week 3–4', focus: 'General Awareness Sprint', detail: 'This is the fastest section to improve quickly before the exam. Focus on last 6 months of current affairs — use a free Telegram channel (Adda247, Oliveboard) for daily PDFs. Cover Indian polity, economy, history, and geography basics from NCERT Class 6–10 books (they are free online and sufficient for GK at all levels). Do 25 GK MCQs daily.' },
+    { month: 'Week 5–6', focus: 'Reasoning & Maths Foundation', detail: 'Reasoning is logic-based — daily 20–30 practice questions on analogies, coding-decoding, series, and non-verbal reasoning will build speed quickly. For Quant, focus on percentage, ratio, time-work, and profit-loss. Matric-level students need basic arithmetic; Graduate-level students should add DI tables and pie charts. Build accuracy before speed.' },
+    { month: 'Week 7–8', focus: 'English & Full Mocks', detail: 'English: daily one RC passage and 10 error-spotting questions. Grammar rules (active/passive, direct/indirect) can be learnt in one week with regular practice. Start full-length mock tests — aim for 2 per week. Analyse every mock carefully. The CBT is 60 minutes with sectional time (15 min/section) so time management is critical. Never skip a section.' },
+  ];
+
+  const books = [
+    { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Quant (all levels)', freeLink: '' },
+    { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning (all levels)', freeLink: '' },
+    { title: 'Objective General English', author: 'S.P. Bakshi (Arihant)', subject: 'English', freeLink: '' },
+    { title: 'Lucent General Knowledge', author: 'Lucent Publications', subject: 'General Awareness', freeLink: '' },
+    { title: 'SSC Selection Post Previous Year Papers', author: 'Kiran Publications', subject: 'Mock Tests & PYQs', freeLink: '' },
+    { title: 'NCERT Books (Class 6–10)', author: 'NCERT', subject: 'GK Foundation (free online)', freeLink: 'https://ncert.nic.in' },
+  ];
+
+  const freeResources = [
+    { name: 'SSC Official Website', type: 'website', url: 'https://ssc.gov.in', description: 'Notification PDFs, admit cards, answer keys, results — always the primary source for SSC Selection Post Phase XIV 2026.' },
+    { name: 'Adda247 SSC on YouTube', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Free daily classes on Reasoning, Maths, English, and GK specifically for SSC exams. Level-wise preparation guidance available.' },
+    { name: 'SSC Crackers (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@SSCCracker', description: 'Free previous year paper solutions and live mock discussions for SSC Selection Post and CGL/CHSL.' },
+    { name: 'Testbook Free SSC Mocks', type: 'website', url: 'https://testbook.com/ssc-selection-post', description: 'Free full-length SSC Selection Post mock tests with performance analysis across 25 lakh+ candidates.' },
+    { name: 'Oliveboard Free Tests', type: 'website', url: 'https://www.oliveboard.in/ssc/', description: 'Free SSC mock tests, GK capsules, and topic-wise quizzes. Oliveboard is popular for its detailed solutions.' },
+    { name: 'GK Today Daily Current Affairs', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily current affairs, monthly revision PDFs, and MCQ practice — essential for the General Awareness section.' },
+  ];
+
+  const tips = [
+    { icon: '⏱️', tip: 'Sectional timing (15 min per section) is SSC Selection Post\'s unique challenge. Practise all four sections individually with a timer before attempting full mocks. Candidates who attempt sections sequentially without practice tend to run out of time on Maths or Reasoning.' },
+    { icon: '🎯', tip: 'Negative marking is -0.50 per wrong answer (not -0.25 like CHSL). Attempt only questions you are confident about. Skipping 5 doubtful questions is better than attempting all 5 and getting 4 wrong — you\'ll lose 2 marks net vs. gaining 0.' },
+    { icon: '🌍', tip: 'General Awareness is the fastest score booster in SSC Selection Post. It requires no calculation, takes less than 30 seconds per question, and is tested the same way at all three levels. Invest 1 hour daily on current affairs and static GK for the last 4 weeks before the exam.' },
+    { icon: '📋', tip: 'Read the official notification carefully before choosing post codes. The Selection Post exam fills hundreds of specific isolated posts — eligibility, required experience, and posting location vary greatly by post code. Selecting the wrong post code is an irreversible mistake.' },
+    { icon: '🧠', tip: 'Reasoning is the most-attempted section and often the most time-consuming. Skip long and complex puzzles if they take more than 90 seconds — move on and return if time allows. Short questions like analogies, series, and coding-decoding give the fastest returns per minute.' },
+    { icon: '💡', tip: 'Common candidates (applying for multiple qualification levels) get separate admit cards per level. Read the exam day guidelines in the notification carefully — you must appear in the correct session for each level you applied for. Appearing in the wrong session can result in cancellation.' },
+    { icon: '📅', tip: 'The gap between notification and exam is only ~6–8 weeks in Phase XIV. Start as early as possible. A 2–3 hour focused daily study plan covering all four sections with daily mocks is sufficient for most candidates who are already prepared in SSC basics.' },
+    { icon: '🔗', tip: 'Use ssc.gov.in as your single source of truth — not third-party websites — for admit card release dates, exam schedule, answer key, and results. SSC does not announce these via social media. Bookmark the official website and check it every few days.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is SSC Selection Post Phase XIV 2026?',
+      a: 'SSC Selection Post Phase XIV (Phase 14) is the 2026 cycle of an annual recruitment exam conducted by the Staff Selection Commission. It fills Group B (Non-Gazetted) and Group C posts across central government departments — posts that are "isolated" (not covered under CGL or CHSL). The Phase XIV notification was released on 13 April 2026 for 2,919 vacancies across three qualification levels: Matriculation (10th pass), Higher Secondary (12th pass), and Graduation & above.',
+    },
+    {
+      q: 'How many vacancies are announced in SSC Selection Post Phase 14 2026?',
+      a: '2,919 vacancies have been announced in Phase XIV 2026 (revised from the initial 3,003 after some posts were withdrawn). Category-wise distribution: UR 1,534 | OBC 667 | SC 346 | EWS 271 | ST 185. Vacancies are distributed across 9 SSC regions: NR, CR, ER, WR, SR, KKR, MPR, NER, and NWR.',
+    },
+    {
+      q: 'What is the exam pattern for SSC Selection Post Phase XIV 2026?',
+      a: 'The Computer-Based Test (CBT) has 100 MCQs × 2 marks each = 200 marks total. Duration: 60 minutes with sectional timing of 15 minutes per section. 4 equal sections of 25 questions each: (1) General Intelligence & Reasoning, (2) General Awareness, (3) Quantitative Aptitude / Basic Arithmetic, (4) English Language & Comprehension. Negative marking: -0.50 marks per wrong answer. Separate sessions are conducted for Matric, Higher Secondary, and Graduation level candidates.',
+    },
+    {
+      q: 'What is the salary for SSC Selection Post 2026?',
+      a: 'Salary depends strictly on the post and its assigned pay level under the 7th Central Pay Commission (CPC). Posts range from Pay Level 1 (basic ₹18,000/month) to Pay Level 7 (basic ₹44,900/month). After adding DA (~42%), HRA, and TA, the total in-hand salary ranges from approximately ₹24,000 (Level 1, smaller city) to ₹65,000+ (Level 7, metro city). The 8th Pay Commission is expected to increase salaries by ~30–40% once notified.',
+    },
+    {
+      q: 'Is there a Skill Test in SSC Selection Post 2026?',
+      a: 'Yes, for certain posts only. If a post requires a Skill Test (e.g., typing test for Personal Assistant/Stenographer posts, data entry speed test, or a trade-specific test), shortlisted candidates must clear it after the CBT. The Skill Test is qualifying in nature — your CBT score determines merit and selection. Many posts require only CBT + Document Verification with no Skill Test. Check the specific post code in the notification PDF for the Skill Test requirement.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">SSC Selection Post 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">📋 SSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">🆕 Phase XIV Notified: 13 Apr 2026</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            SSC Selection Post 2026<br className="hidden sm:block" /> — Phase XIV Complete Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            SSC Phase XIV notification released on <strong>13 April 2026</strong> with <strong>2,919 vacancies</strong> across central government departments. Open to candidates with 10th, 12th, or Graduation. CBT exam scheduled for <strong>June 2026</strong>. Salary <strong>₹24,000–₹65,000/month</strong> depending on post and city.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Total Vacancies', value: '2,919', sub: 'Phase XIV (2026)' },
+              { label: 'CBT Exam Date', value: 'June 2026', sub: 'Tentative' },
+              { label: 'Qualification', value: '10th / 12th / Graduate', sub: 'Level-specific posts' },
+              { label: 'Salary Range', value: '₹24K–₹65K', sub: 'per month (in-hand)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> Total vacancies revised from 3,003 to <strong>2,919</strong> after some posts were withdrawn. Application closed on 4 May 2026. Correction window was open 11–13 May 2026. CBT tentatively in <strong>June 2026</strong>. Always verify from <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">ssc.gov.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is SSC Selection Post 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>SSC Selection Post exam</strong> (also called Phase Exam or Selection Post Phase) is conducted annually by the <strong>Staff Selection Commission (SSC)</strong> to fill <strong>"isolated posts"</strong> — specific Group B and Group C positions in central government departments, ministries, and organisations that are not covered under the regular SSC CGL or CHSL exams.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  What makes it unique is its <strong>three-level structure</strong>: separate exams for Matriculation (10th pass), Higher Secondary (12th pass), and Graduation & above candidates — all in the same cycle. This means candidates from different educational backgrounds can appear simultaneously and compete for posts matching their qualification. Popular posts include Lab Assistant, Deputy Ranger, UDC, Scientific Assistant, and Stenographer Grade II.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  <strong>Phase XIV (2026)</strong> is the current cycle. The notification was released on <strong>13 April 2026</strong> for <strong>2,919 vacancies</strong> across 9 SSC regions and multiple central government departments. With CBT in June 2026 and only ~6 weeks of preparation window from notification, early starters have a clear advantage.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Staff Selection Commission (SSC)' },
+                  { label: 'Phase Number', value: 'Phase XIV (14th)' },
+                  { label: 'Post Groups', value: 'Group B (NG) & Group C' },
+                  { label: 'Regions', value: '9 SSC Regions' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 SSC Selection Post Phase XIV 2026 – Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> Application is now closed (last date was 4 May 2026). CBT date is tentatively June 2026 — exact date to be announced. Always check <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">ssc.gov.in</a> for official updates.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released' && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'upcoming' && <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">🔵 Upcoming</span>}
+                          {row.status === 'tbn' && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria for SSC Selection Post 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { label: '🪪 Nationality', value: 'Indian citizen (or as per official notification categories)' },
+                  { label: '📋 Age Limit', value: '18–30 years (varies by post; some posts 18–25 or 18–27 years)' },
+                  { label: '📅 Age Cut-off Date', value: '1 January 2026' },
+                  { label: '🎓 Min. Qualification', value: 'Matriculation (10th), Higher Secondary (12th), OR Graduation — level-specific' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card p-5 mb-4">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3">Qualification-wise Post Levels</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Level</th>
+                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Qualification Required</th>
+                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Example Posts</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { level: 'Matriculation', qual: '10th Pass (any recognised board)', posts: 'Multi-Tasking Staff (MTS), Driver, Attendant, Store Keeper' },
+                        { level: 'Higher Secondary', qual: '12th Pass / 10+2 equivalent', posts: 'Lab Assistant, Steno Gr. III, Statistician, Librarian Assistant' },
+                        { level: 'Graduation & Above', qual: "Bachelor's Degree (any discipline, unless specified)", posts: 'Deputy Ranger, Scientific Assistant, Research Assistant, Stenographer Grade II, UDC' },
+                      ].map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 font-semibold text-primary-600">{row.level}</td>
+                          <td className="p-3 text-surface-700">{row.qual}</td>
+                          <td className="p-3 text-surface-600">{row.posts}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3">Age Relaxations (Phase XIV 2026)</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {[
+                    { category: 'OBC (Non-Creamy Layer)', relax: '+3 years' },
+                    { category: 'SC / ST', relax: '+5 years' },
+                    { category: 'PwBD (General)', relax: '+10 years' },
+                    { category: 'PwBD (OBC)', relax: '+13 years' },
+                    { category: 'PwBD (SC/ST)', relax: '+15 years' },
+                    { category: 'Ex-Servicemen', relax: 'As per Govt norms' },
+                  ].map((item) => (
+                    <div key={item.category} className="bg-emerald-50 border border-emerald-200 rounded-xl p-3">
+                      <div className="text-xs text-surface-500">{item.category}</div>
+                      <div className="font-heading font-semibold text-emerald-700 text-sm mt-0.5">{item.relax}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCY TREND */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📊 SSC Selection Post – Vacancy Trend (Phase 9–14)</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Phase</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Vacancies</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Exam Year</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i === vacancyHistory.length - 1 ? 'bg-primary-50 font-semibold' : i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800">{row.phase}</td>
+                        <td className="p-3 text-center text-emerald-700 font-semibold">{row.vacancies}</td>
+                        <td className="p-3 text-center text-surface-600">{row.exam}</td>
+                        <td className="p-3 text-center text-surface-600">{row.result}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">* Phase XI figures are approximate. Phase XIV vacancy revised from 3,003 to 2,919 after post withdrawals.</p>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📝 Exam Pattern – SSC Selection Post Phase XIV 2026</h2>
+              </div>
+              <div className="card p-5 mb-5">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                  {[
+                    { label: 'Total Questions', value: '100 MCQs' },
+                    { label: 'Total Marks', value: '200 marks' },
+                    { label: 'Duration', value: '60 minutes' },
+                    { label: 'Negative Marking', value: '-0.50 per wrong answer' },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-3 text-center">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                      <div className="font-heading font-bold text-primary-600 mt-1">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Section</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                        <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {examPattern.map((row, i) => (
+                        <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                          <td className="p-3 text-surface-800 font-medium">{row.section}</td>
+                          <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                          <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                          <td className="p-3 text-center text-surface-700">{row.time}</td>
+                        </tr>
+                      ))}
+                      <tr className="border-t-2 border-surface-300 bg-surface-100 font-semibold">
+                        <td className="p-3 text-surface-900">Total</td>
+                        <td className="p-3 text-center text-surface-900">100</td>
+                        <td className="p-3 text-center text-primary-700">200</td>
+                        <td className="p-3 text-center text-surface-900">60 min</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                <p className="text-sm text-primary-800">💡 <strong>Important:</strong> The difficulty level of questions scales with the qualification required for the post. A Matriculation-level CBT will have simpler Maths and English than the Graduation-level CBT. Candidates appearing in multiple levels get separate admit cards and must appear in each level&apos;s separate session.</p>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 Detailed Syllabus – SSC Selection Post Phase XIV 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabusData.map((section, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50 transition-colors">
+                      <div>
+                        <span>{section.subject}</span>
+                        <span className="block text-xs font-normal text-surface-400 mt-0.5">{section.levels}</span>
+                      </div>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-5 space-y-1.5 text-sm text-surface-700">
+                        {section.topics.map((t, j) => <li key={j}>{t}</li>)}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary & Career Growth – SSC Selection Post 2026</h2>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-emerald-800">💰 <strong>Salary depends on the specific post&apos;s Pay Level (1–7) as per the 7th Central Pay Commission.</strong> The table below shows level-wise basic pay, typical posts, and approximate in-hand salary in a metro city. Actual in-hand varies by city category (X/Y/Z) and DA rate.</p>
+              </div>
+              <div className="overflow-x-auto mb-5">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Pay Level</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Basic Pay</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Typical Posts</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">In-Hand (approx.)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryTable.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 font-semibold text-primary-600">{row.level}</td>
+                        <td className="p-3 text-center text-surface-700">{row.basic}</td>
+                        <td className="p-3 text-surface-600 text-xs">{row.posts}</td>
+                        <td className="p-3 text-center font-semibold text-emerald-700">{row.inHand}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="card p-5 mb-4">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3">Salary Components Breakdown</h3>
+                <div className="space-y-2">
+                  {salaryComponents.map((item, i) => (
+                    <div key={i} className="flex justify-between items-start gap-4 py-2 border-b border-surface-100 last:border-0">
+                      <span className="text-sm text-surface-700">{item.component}</span>
+                      <span className="text-sm font-semibold text-emerald-700 whitespace-nowrap">{item.amount}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <p className="text-sm text-amber-800">⚠️ <strong>8th Pay Commission Note:</strong> The 8th Pay Commission is expected to revise Central Government pay structures from January 2026. SSC Selection Post employees are central government employees and will benefit from the revision. Final figures are yet to be officially notified — the ~30–40% increase estimate is based on the expected fitment factor. Watch for official announcements on <a href="https://dopt.gov.in" target="_blank" rel="noopener noreferrer" className="underline font-medium">dopt.gov.in</a>.</p>
+              </div>
+            </section>
+
+            {/* SECTION 8: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🖥️ How to Apply – SSC Selection Post Phase XIV 2026</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800">⚠️ <strong>Application is now closed.</strong> The online application window was open from 13 April to 4 May 2026. The steps below are preserved for future phases (Phase XV and beyond).</p>
+              </div>
+              <div className="relative space-y-0">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {[
+                  { step: '1', title: 'Complete One-Time Registration (OTR)', detail: 'Visit ssc.gov.in and complete the One-Time Registration (OTR). Note: Old SSC registrations are not valid — new OTR is mandatory for all candidates. Keep your registration details safe.' },
+                  { step: '2', title: 'Log In and Navigate to Application', detail: 'Log in using your OTR credentials. Navigate to "Apply" → select "Phase XIV/2026/Selection Posts". Read the instructions carefully before filling the form.' },
+                  { step: '3', title: 'Choose Post Codes Carefully', detail: 'Select the post codes you wish to apply for, based on your qualification level (Matriculation/Higher Secondary/Graduation) and preferred region. You can apply for multiple post codes but must submit separate applications. This step cannot be undone after final submission.' },
+                  { step: '4', title: 'Upload Photo & Aadhaar Authentication', detail: 'Upload a live photograph taken via webcam or smartphone (not a scanned photo). Aadhaar-based biometric verification is recommended. Candidates not using Aadhaar must report 2 hours early at the exam centre for manual verification.' },
+                  { step: '5', title: 'Pay Application Fee', detail: 'Fee: ₹100 for General/OBC Male candidates. Women, SC, ST, ESM, and PwBD candidates are exempt. Pay via net banking, debit/credit card, or UPI. Keep the payment confirmation screenshot.' },
+                  { step: '6', title: 'Submit and Save Confirmation', detail: 'Review all details before submitting. After submission, download and print the confirmation page. You may use the correction window (11–13 May 2026) to fix mistakes — no corrections are allowed after this window.' },
+                ].map((item, i) => (
+                  <div key={i} className="sm:pl-14 relative card p-5 mb-3">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">{item.step}</div>
+                    <h3 className="font-heading font-semibold text-surface-900 mb-1">{item.title}</h3>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 9: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🗓️ 8-Week Study Plan for SSC Selection Post Phase XIV 2026</h2>
+              </div>
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-primary-800">💡 The CBT is tentatively in <strong>June 2026</strong> — that is roughly 4–6 weeks from notification. This 8-week plan assumes you start from the notification date. If you start later, compress weeks 1–4 into 2 weeks and focus entirely on mock tests and GK in the final 2 weeks.</p>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((item, i) => (
+                  <div key={i} className="sm:pl-14 relative card p-5 mb-4">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex text-center leading-tight">{i + 1}</div>
+                    <div className="mb-1">
+                      <span className="text-xs font-heading font-semibold text-primary-600 uppercase tracking-wide">{item.month}</span>
+                      <h3 className="font-heading font-semibold text-surface-900 text-base">{item.focus}</h3>
+                    </div>
+                    <p className="text-sm text-surface-600 leading-relaxed">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 10: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📖 Best Books for SSC Selection Post 2026</h2>
+              </div>
+              <BooksTable books={books} />
+            </section>
+
+            {/* SECTION 11: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🔗 Free Resources for SSC Selection Post 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res, i) => (
+                  <a key={i} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition block">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{res.type === 'youtube' ? '📺' : '🌐'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm transition-colors">{res.name}</div>
+                        <div className="text-sm text-surface-500 mt-1 leading-snug">{res.description}</div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 12: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🏆 Expert Tips for SSC Selection Post 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex items-start gap-4">
+                    <div className="w-10 h-10 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center text-lg flex-shrink-0">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: FAQ */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">❓ Frequently Asked Questions – SSC Selection Post 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50 transition-colors">
+                      <span className="pr-4">{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 text-sm mb-3 uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg px-2 py-1.5 transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 text-sm mb-3">Official Links</h3>
+                <div className="space-y-2">
+                  <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium group">
+                    <span className="text-base">🌐</span>
+                    <span>ssc.gov.in (Official)</span>
+                    <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                  <a href="https://ssc.gov.in/for-candidates/cgl-exam/selection-post" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium group">
+                    <span className="text-base">📄</span>
+                    <span>Phase XIV Notification PDF</span>
+                    <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-primary-900 text-sm mb-3">Phase XIV Quick Facts</h3>
+                <div className="space-y-2 text-xs text-primary-800">
+                  <div className="flex justify-between"><span>Notification</span><span className="font-semibold">13 Apr 2026</span></div>
+                  <div className="flex justify-between"><span>Vacancies</span><span className="font-semibold">2,919</span></div>
+                  <div className="flex justify-between"><span>CBT Exam</span><span className="font-semibold">June 2026 (TBN)</span></div>
+                  <div className="flex justify-between"><span>Fee (General)</span><span className="font-semibold">₹100</span></div>
+                  <div className="flex justify-between"><span>Mode</span><span className="font-semibold">Computer-Based</span></div>
+                  <div className="flex justify-between"><span>Levels</span><span className="font-semibold">10th / 12th / Graduate</span></div>
+                </div>
+              </div>
+
+              {/* Eligibility CTA */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-emerald-900 text-sm mb-2">Check Your Eligibility</h3>
+                <p className="text-xs text-emerald-700 mb-3">Find all SSC exams you are eligible for based on your age, category & qualification.</p>
+                <Link href="/tools/eligibility-checker" className="block text-center btn-primary text-sm py-2 rounded-xl font-heading font-semibold">
+                  Use Eligibility Checker →
+                </Link>
+              </div>
+
+            </div>
+          </aside>
+
         </div>
       </div>
     </>
