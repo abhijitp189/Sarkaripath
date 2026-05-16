@@ -65,6 +65,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <Bank5DayWorkWeekArticle post={post} />;
   }
 
+  if (post.slug === 'ibps-po-vs-sbi-po-2026') {
+    return <IbpsPOvsSBIPOArticle post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -6007,6 +6011,531 @@ function Bank5DayWorkWeekArticle({ post }: { post: any }) {
                 <Link href="/exams/sbi-po/" className="block text-sm text-primary-600 hover:underline leading-snug">SBI PO 2026 Complete Guide →</Link>
                 <Link href="/blog/ibps-po-salary-in-hand-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary In-Hand 2026 →</Link>
                 <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Bank PO Eligibility →</Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── IBPS PO vs SBI PO 2026 ARTICLE ─────────────────────────────────────────
+function IbpsPOvsSBIPOArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'overview', label: 'Core Comparison At a Glance' },
+    { id: 'salary', label: 'Salary: 12th Bipartite Settlement' },
+    { id: 'exam-pattern', label: 'Exam Pattern & Difficulty' },
+    { id: 'selection', label: 'Selection Process & Success Rate' },
+    { id: 'career', label: 'Career Growth & Promotions' },
+    { id: 'work-culture', label: 'Work Culture & Postings' },
+    { id: 'verdict', label: 'Final Verdict: Which to Choose?' },
+    { id: 'faqs', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-8">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">IBPS PO vs SBI PO 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+        <article>
+          {/* Dark gradient hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8">
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="badge-primary">Banking</span>
+              <span className="text-xs font-heading font-semibold bg-emerald-100 text-emerald-700 rounded-full px-2.5 py-0.5">12th BPS Updated</span>
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-3">
+              IBPS PO vs SBI PO 2026 — Salary, Difficulty & Which to Choose
+            </h1>
+            <p className="text-surface-300 leading-relaxed mb-5 text-sm sm:text-base">
+              Two prestigious bank PO exams. One career-defining choice. We break down every parameter — salary under the 12th Bipartite Settlement, exam difficulty, selection ratios, and long-term career growth — so you can target the right exam with full clarity.
+            </p>
+            <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+              <span>📅 {post.publishedDate}</span>
+              <span>⏱ {post.readTime}</span>
+              <span>✍️ {post.author}</span>
+            </div>
+          </div>
+
+          {/* 4-metric grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+            {[
+              { label: 'IBPS PO In-Hand', value: '₹74,000–₹76,430/mo' },
+              { label: 'SBI PO In-Hand', value: '₹80,350–₹89,930/mo' },
+              { label: 'IBPS PO Vacancies', value: '4,000–6,000+' },
+              { label: 'SBI PO Vacancies', value: '1,500–2,000' },
+            ].map(({ label, value }) => (
+              <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                <div className="font-semibold mt-1 text-sm text-emerald-600">{value}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* ── Section 1: Core Comparison ── */}
+          <section id="overview" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">1. Core Comparison At a Glance</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Before diving into individual parameters, the table below maps out the fundamental differences between both exam cycles — conducting authority, vacancy density, salary baseline, and evaluation structure.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left p-3 font-heading font-semibold">Parameter</th>
+                    <th className="text-left p-3 font-heading font-semibold">IBPS PO 2026</th>
+                    <th className="text-left p-3 font-heading font-semibold">SBI PO 2026</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Conducting Body', 'IBPS (Institute of Banking Personnel Selection)', 'SBI (Internal Board)'],
+                    ['Participating Banks', '11–12 Public Sector Banks', 'State Bank of India only'],
+                    ['Notification Status', 'To Be Notified (TBN)', 'To Be Notified (TBN)'],
+                    ['Starting Basic Pay', '₹48,480 (Scale I)', '₹56,480 (after 4 advance increments)'],
+                    ['Gross Monthly Salary', '~₹90,733', '₹93,343 – ₹1,07,324'],
+                    ['Net In-Hand Salary', '₹74,000 – ₹76,430', '₹80,350 – ₹89,930'],
+                    ['Exam Stages', 'Prelims → Mains → Interview', 'Prelims → Mains → Psychometric → GE → Interview'],
+                    ['Sectional Cut-offs', 'Yes (Prelims & Mains)', 'No (aggregate only)'],
+                    ['Success Rate', '~0.5%', '~0.15%'],
+                    ['Typical Vacancies', '4,000–6,000+', '1,500–2,000'],
+                  ].map(([param, ibps, sbi], i) => (
+                    <tr key={param} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 font-semibold text-surface-800">{param}</td>
+                      <td className="p-3 text-surface-700">{ibps}</td>
+                      <td className="p-3 text-surface-700">{sbi}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-surface-700">
+              <strong className="text-primary-700">✅ 2026 Key Update:</strong> Both IBPS PO and SBI PO 2026 notifications are yet to be released as of May 2026. All salary figures reflect the revised 12th Bipartite Settlement (BPS) with the current DA rate of 25.70% (effective May 1, 2026).
+            </div>
+          </section>
+
+          {/* ── Section 2: Salary ── */}
+          <section id="salary" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">2. 💰 Salary Breakdown: 12th Bipartite Settlement</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The 12th Bipartite Settlement (BPS) governs compensation for all public sector bank officers. The DA rate was revised upward to 25.70% effective May 1, 2026, based on the latest Consumer Price Index (CPI) data. While both roles use the same pay scale, their implementation differs significantly.
+            </p>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">IBPS PO Salary Structure (May 2026)</h3>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left p-3 font-heading font-semibold">Component</th>
+                    <th className="text-left p-3 font-heading font-semibold">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Basic Pay (Scale I)', '₹48,480'],
+                    ['Special Allowance (~26.5% of Basic)', '₹12,847'],
+                    ['Dearness Allowance (25.70% on Basic + SA)', '~₹15,756'],
+                    ['Learning Allowance + DA', '~₹905'],
+                    ['House Rent Allowance (7%–9% of Basic)', '₹3,394 – ₹4,363'],
+                    ['Gross Monthly Salary', '~₹90,733'],
+                    ['Deductions (NPS + Professional Tax)', '~₹14,303 – ₹16,733'],
+                    ['Net In-Hand Salary', '₹74,000 – ₹76,430'],
+                  ].map(([comp, amt], i) => (
+                    <tr key={comp} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 text-surface-700">{comp}</td>
+                      <td className={`p-3 font-semibold ${i === 7 ? 'text-emerald-600' : 'text-surface-800'}`}>{amt}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">SBI PO Salary Structure (May 2026)</h3>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              SBI gives newly appointed POs four advance increments on day one, pushing the operational basic pay to ₹56,480 — not ₹48,480. Since all allowances (Special Allowance, DA, CCA) are calculated as a percentage of basic pay, every component is higher from the start.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left p-3 font-heading font-semibold">Component</th>
+                    <th className="text-left p-3 font-heading font-semibold">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Basic Pay (after 4 advance increments)', '₹56,480'],
+                    ['Special Allowance (~26.5% of Basic)', '₹14,967'],
+                    ['Dearness Allowance (25.70% on Basic + SA)', '~₹18,367'],
+                    ['City Compensatory Allowance (CCA)', '₹870 – ₹1,350'],
+                    ['Leased Accommodation (in lieu of HRA)', '₹8,000 – ₹29,500'],
+                    ['Gross Monthly Salary', '₹93,343 – ₹1,07,324'],
+                    ['Deductions (NPS + Professional Tax)', '~₹13,000 – ₹17,400'],
+                    ['Net In-Hand Salary', '₹80,350 – ₹89,930'],
+                  ].map(([comp, amt], i) => (
+                    <tr key={comp} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 text-surface-700">{comp}</td>
+                      <td className={`p-3 font-semibold ${i === 7 ? 'text-emerald-600' : 'text-surface-800'}`}>{amt}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 text-sm text-surface-700 mb-4">
+              <strong className="text-emerald-700">📌 Key Perquisite Difference:</strong> SBI provides a leased accommodation system where SBI pays rent directly to the landlord — up to ₹29,500/month in metros like Mumbai. IBPS nationalized banks also offer leased housing but with lower ceilings. SBI also offers fuel reimbursement and a furniture allowance up to ₹1,20,000.
+            </div>
+
+            <div className="bg-amber-50 border-l-4 border-accent-500 rounded-r-xl p-4 text-sm text-surface-700">
+              <strong className="text-accent-700">⚠️ 8th Pay Commission Note:</strong> The 8th Pay Commission has been constituted and is expected to submit recommendations by end-2025 for implementation from January 2026. However, bank employees fall under the bipartite settlement framework, not central government pay commissions. The 12th BPS structure described above remains current for bank POs.
+            </div>
+          </section>
+
+          {/* ── Section 3: Exam Pattern ── */}
+          <section id="exam-pattern" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">3. 📋 Exam Pattern & Difficulty</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Both exams share a common Preliminary phase structure but diverge meaningfully at the Mains level. SBI PO consistently ranks as the harder exam, not just because of fewer vacancies but due to structural differences in question weighting, an extended descriptive section, and an additional Group Exercise phase.
+            </p>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">Preliminary Phase (Identical for Both)</h3>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left p-3 font-heading font-semibold">Section</th>
+                    <th className="text-left p-3 font-heading font-semibold">Questions</th>
+                    <th className="text-left p-3 font-heading font-semibold">Marks</th>
+                    <th className="text-left p-3 font-heading font-semibold">Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['English Language', '30', '30', '20 min'],
+                    ['Quantitative Aptitude', '35', '35', '20 min'],
+                    ['Reasoning Ability', '35', '35', '20 min'],
+                    ['Total', '100', '100', '60 min'],
+                  ].map(([sec, q, m, t], i) => (
+                    <tr key={sec} className={i === 3 ? 'bg-primary-50 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 text-surface-800">{sec}</td>
+                      <td className="p-3 text-surface-700">{q}</td>
+                      <td className="p-3 text-surface-700">{m}</td>
+                      <td className="p-3 text-surface-700">{t}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Negative marking of 0.25 marks applies for every wrong answer in both exams. The critical difference: <strong>IBPS PO enforces strict sectional cut-offs</strong> — you must clear minimum marks in every section to qualify. <strong>SBI PO filters entirely by aggregate score</strong>, giving you more flexibility if one section is weaker.
+            </p>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">Mains Phase — Where They Diverge</h3>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left p-3 font-heading font-semibold">Section</th>
+                    <th className="text-left p-3 font-heading font-semibold">IBPS PO</th>
+                    <th className="text-left p-3 font-heading font-semibold">SBI PO</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Reasoning & Computer Aptitude', '45 Qs / 60 Marks / 60 min', '40 Qs / 60 Marks / 50 min'],
+                    ['Data Analysis & Interpretation', '35 Qs / 50 Marks / 45 min', '30 Qs / 60 Marks / 45 min'],
+                    ['General/Economy/Banking Awareness', '40 Qs / 50 Marks / 35 min', '60 Qs / 60 Marks / 45 min'],
+                    ['English Language', '35 Qs / 40 Marks / 40 min', '35 Qs / 40 Marks / 40 min'],
+                    ['Descriptive Test (Letter + Essay)', '25 Marks / 30 min', '50 Marks / 30 min'],
+                    ['Total', '225 Marks', '250 Marks'],
+                  ].map(([sec, ibps, sbi], i) => (
+                    <tr key={sec} className={i === 5 ? 'bg-primary-50 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 text-surface-800">{sec}</td>
+                      <td className="p-3 text-surface-700">{ibps}</td>
+                      <td className="p-3 text-surface-700">{sbi}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Notice that SBI PO's descriptive section carries 50 marks vs IBPS PO's 25 marks — both within the same 30 minutes. This means writing quality has a much larger impact on SBI PO merit ranking. SBI PO also includes Computer Aptitude questions in the Reasoning section, a topic absent from recent IBPS PO patterns.
+            </p>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-surface-700">
+              <strong className="text-primary-700">✅ Difficulty Verdict:</strong> SBI PO is harder — higher question weight per answer, a 50-mark descriptive paper, and an additional Group Exercise round. Most aspirants who clear SBI PO can also clear IBPS PO with parallel preparation.
+            </div>
+          </section>
+
+          {/* ── Section 4: Selection Process ── */}
+          <section id="selection" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">4. Selection Process & Success Rate</h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+              <div className="card p-5">
+                <div className="text-xs font-heading font-semibold text-primary-700 uppercase tracking-wide mb-2">IBPS PO — Phase 3</div>
+                <ul className="list-disc ml-5 space-y-1 text-sm text-surface-700">
+                  <li>Personal Interview: 100 marks</li>
+                  <li>No Group Exercise or Psychometric Test</li>
+                  <li>Final Merit: 80% Mains + 20% Interview</li>
+                  <li>Success Rate: ~0.5%</li>
+                </ul>
+              </div>
+              <div className="card p-5">
+                <div className="text-xs font-heading font-semibold text-primary-700 uppercase tracking-wide mb-2">SBI PO — Phase 3</div>
+                <ul className="list-disc ml-5 space-y-1 text-sm text-surface-700">
+                  <li>Psychometric Test (behavioral profiling)</li>
+                  <li>Group Exercise: 20 marks</li>
+                  <li>Personal Interview: 30 marks</li>
+                  <li>Final Merit: 75% Mains + 25% GE & Interview</li>
+                  <li>Success Rate: ~0.15%</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-surface-700 leading-relaxed mb-4">
+              SBI PO's Psychometric Test does not have pass/fail marks — it generates a behavioral profile that is shared with the interview panel for situational assessment. However, it adds another layer of scrutiny that IBPS PO does not have.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The lower SBI PO success rate (0.15% vs 0.5%) is a direct result of fewer vacancies and a higher applicant count, not just exam difficulty. Statistically, targeting both exams simultaneously with parallel preparation is the most efficient strategy.
+            </p>
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 text-sm text-surface-700">
+              <strong className="text-emerald-700">📌 Smart Strategy:</strong> IBPS PO and SBI PO share ~90% of their syllabus. Preparing for both simultaneously is highly efficient — most toppers target both exams in the same cycle. Use the{' '}
+              <Link href="/tools/eligibility-checker/" className="text-primary-600 hover:underline">TaiyarHo Eligibility Checker</Link> to confirm your age and qualification eligibility before applying.
+            </div>
+          </section>
+
+          {/* ── Section 5: Career Growth ── */}
+          <section id="career" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">5. Career Growth & Promotion Hierarchy</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Both paths follow the same Grade Scale hierarchy mandated across public sector banking. Both start at Junior Management Grade Scale I (JMGS-I) — the Probationary Officer / Assistant Manager level. But the speed of advancement and the ceiling of achievement differ.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left p-3 font-heading font-semibold">Grade</th>
+                    <th className="text-left p-3 font-heading font-semibold">Designation</th>
+                    <th className="text-left p-3 font-heading font-semibold">SBI Track</th>
+                    <th className="text-left p-3 font-heading font-semibold">IBPS Track</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Scale I', 'Probationary Officer / Asst. Manager', 'Entry', 'Entry'],
+                    ['Scale II', 'Manager', '3–4 years', '4–5 years'],
+                    ['Scale III', 'Senior Manager', '6–8 years', '7–9 years'],
+                    ['Scale IV', 'Chief Manager', '10–14 years', '12–16 years'],
+                    ['Scale V', 'Assistant General Manager', 'Internal track', 'Internal track'],
+                    ['Scale VI+', 'DGM / GM / CGM / CMD', 'Internal (SBI promotes Chairman from within)', 'Managed by FSIB'],
+                  ].map(([grade, desg, sbi, ibps], i) => (
+                    <tr key={grade} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 font-semibold text-surface-800">{grade}</td>
+                      <td className="p-3 text-surface-700">{desg}</td>
+                      <td className="p-3 text-surface-700">{sbi}</td>
+                      <td className="p-3 text-surface-700">{ibps}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              SBI's most significant career advantage is its fully internal leadership track. The MD and Chairman of SBI are always promoted from within the institution — meaning an SBI PO today can theoretically rise to lead India's largest bank. IBPS nationalized bank top appointments are managed by the Financial Services Institutions Bureau (FSIB) and may involve cross-bank transfers.
+            </p>
+          </section>
+
+          {/* ── Section 6: Work Culture ── */}
+          <section id="work-culture" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">6. Work Culture, Postings & Lifestyle</h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+              <div className="card p-5">
+                <div className="text-sm font-heading font-semibold text-surface-800 mb-3">🏦 SBI PO — Work Environment</div>
+                <ul className="list-disc ml-5 space-y-1 text-sm text-surface-700">
+                  <li>High-volume, fast-paced operations</li>
+                  <li>Diverse portfolio: retail, forex, corporate, rural</li>
+                  <li>Mandatory transfers every 2–3 years</li>
+                  <li>International postings possible (30+ countries)</li>
+                  <li>Strong brand recognition</li>
+                </ul>
+              </div>
+              <div className="card p-5">
+                <div className="text-sm font-heading font-semibold text-surface-800 mb-3">🏦 IBPS PO — Work Environment</div>
+                <ul className="list-disc ml-5 space-y-1 text-sm text-surface-700">
+                  <li>Steady, structured retail banking pace</li>
+                  <li>Focus on traditional customer service</li>
+                  <li>Transfers within assigned bank's network</li>
+                  <li>More predictable regional boundaries</li>
+                  <li>Choose preferred bank during application</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border-l-4 border-accent-500 rounded-r-xl p-4 text-sm text-surface-700">
+              <strong className="text-accent-700">⚠️ 5-Day Work Week Status (May 2026):</strong> The proposal for a 5-day bank work week has been accepted in principle under the bipartite framework, but Central Government approval remains pending as of May 16, 2026. Bank branches continue to operate on the 1st, 3rd, and 5th Saturdays of every month. AIBOC submitted an urgent letter to the PM on May 13, 2026, requesting immediate implementation — but no official notification has been issued.
+            </div>
+          </section>
+
+          {/* ── Section 7: Verdict ── */}
+          <section id="verdict" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">7. Final Verdict: Which to Choose?</h2>
+            <p className="text-surface-700 leading-relaxed mb-6">
+              There is no universally correct answer — the right choice depends on what you value most. Here is a clear breakdown to help you decide.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+              <div className="card p-5 border-emerald-200 bg-emerald-50">
+                <div className="text-sm font-heading font-bold text-emerald-800 mb-3">✅ Choose SBI PO If You...</div>
+                <ul className="list-disc ml-5 space-y-2 text-sm text-surface-700">
+                  <li>Want the highest possible in-hand salary (₹80K–₹90K/month)</li>
+                  <li>Are comfortable with nationwide and international transfers</li>
+                  <li>Want fast-track promotions and a chance to reach the top</li>
+                  <li>Have strong written English for the 50-mark descriptive paper</li>
+                  <li>Are motivated by prestige and brand recognition</li>
+                </ul>
+              </div>
+              <div className="card p-5 border-primary-200 bg-primary-50">
+                <div className="text-sm font-heading font-bold text-primary-800 mb-3">✅ Choose IBPS PO If You...</div>
+                <ul className="list-disc ml-5 space-y-2 text-sm text-surface-700">
+                  <li>Want a statistically higher probability of selection</li>
+                  <li>Prefer to choose a bank with a strong presence in your region</li>
+                  <li>Want a structured, stable retail banking career</li>
+                  <li>Prefer no Group Exercise round in the selection process</li>
+                  <li>Are preparing as a fresher and want a broader safety net</li>
+                </ul>
+              </div>
+            </div>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-surface-700">
+              <strong className="text-primary-700">📌 TaiyarHo Recommendation:</strong> Prepare for both simultaneously. The syllabi overlap by ~90%. Appearing for both maximises your chances of selection and gives you the flexibility to choose once you receive results. Start with an eligibility check:{' '}
+              <Link href="/tools/eligibility-checker/" className="text-primary-600 hover:underline">Check Your Bank PO Eligibility →</Link>
+            </div>
+          </section>
+
+          {/* ── Section 8: FAQs ── */}
+          <section id="faqs" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mt-8 mb-4">8. Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'What is the starting basic pay for IBPS PO and SBI PO after the 12th Bipartite Settlement?',
+                  a: 'The regulated basic pay scale starts at ₹48,480 for all public sector bank officers at entry (Scale I). However, SBI PO uniquely provides four advance increments at the time of joining, raising the operational starting basic pay to ₹56,480 from day one.',
+                },
+                {
+                  q: 'What is the current DA rate for bank employees in 2026?',
+                  a: 'The Dearness Allowance (DA) rate was revised upward to 25.70% effective May 1, 2026, under the 12th Bipartite Settlement framework. DA is updated every quarter based on Consumer Price Index (CPI) data.',
+                },
+                {
+                  q: 'Does SBI PO have individual sectional cut-off marks?',
+                  a: 'No. SBI PO does not enforce sectional cut-offs in either the Preliminary or Mains phases. Candidates are filtered purely on aggregate score. IBPS PO, on the other hand, enforces strict sectional minimum thresholds — you must clear every section individually.',
+                },
+                {
+                  q: 'Which exam is harder — IBPS PO or SBI PO?',
+                  a: 'SBI PO is widely considered harder. It has a higher-weight descriptive paper (50 marks vs 25 marks), includes Computer Aptitude in Mains, adds a Group Exercise round, and has a lower selection ratio (~0.15% vs ~0.5% for IBPS PO).',
+                },
+                {
+                  q: 'Is it possible to prepare for both IBPS PO and SBI PO at the same time?',
+                  a: 'Yes — and it is strongly recommended. Both exams share approximately 90% of their syllabus. Preparing for both simultaneously is highly efficient, improves your overall probability of selection, and gives you the freedom to choose between offers if you clear both.',
+                },
+              ].map(({ q, a }) => (
+                <details key={q} className="card overflow-hidden">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800">
+                    {q}
+                    <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{a}</div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* JSON-LD FAQ Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: [
+                  {
+                    '@type': 'Question',
+                    name: 'What is the starting basic pay for IBPS PO and SBI PO after the 12th Bipartite Settlement?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'The regulated basic pay starts at ₹48,480 for all Scale I officers. SBI PO uniquely provides four advance increments at joining, raising the operational starting basic pay to ₹56,480 from day one.' },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'What is the current DA rate for bank employees in 2026?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'The Dearness Allowance rate was revised to 25.70% effective May 1, 2026, under the 12th Bipartite Settlement. DA is updated quarterly based on Consumer Price Index data.' },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Does SBI PO have individual sectional cut-off marks?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'No. SBI PO filters candidates by aggregate score only — no sectional cut-offs in Prelims or Mains. IBPS PO enforces strict sectional thresholds in both stages.' },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Which exam is harder — IBPS PO or SBI PO?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'SBI PO is harder. It has a 50-mark descriptive paper (vs 25 for IBPS PO), includes Computer Aptitude in Mains, adds a Group Exercise round, and has a lower success rate of approximately 0.15% vs 0.5% for IBPS PO.' },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Is it possible to prepare for both IBPS PO and SBI PO simultaneously?',
+                    acceptedAnswer: { '@type': 'Answer', text: 'Yes — and it is strongly recommended. Both exams share approximately 90% of their syllabus. Preparing for both simultaneously improves your overall selection probability and gives you flexibility when results are declared.' },
+                  },
+                ],
+              }),
+            }}
+          />
+        </article>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">IN THIS ARTICLE</div>
+              <ol className="space-y-2">
+                {toc.map(item => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm text-surface-600 hover:text-primary-500 leading-snug block">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-3">💰 SALARY SNAPSHOT</div>
+              <div className="space-y-2">
+                {[
+                  ['IBPS PO Gross', '~₹90,733/mo'],
+                  ['IBPS PO In-Hand', '₹74,000–₹76,430'],
+                  ['SBI PO Gross', '₹93,343–₹1,07,324'],
+                  ['SBI PO In-Hand', '₹80,350–₹89,930'],
+                  ['DA Rate (May 2026)', '25.70%'],
+                ].map(([label, val]) => (
+                  <div key={label} className="flex justify-between">
+                    <span className="text-surface-500 text-xs">{label}</span>
+                    <span className="font-semibold text-surface-800 text-xs text-right">{val}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">RELATED LINKS</div>
+              <div className="space-y-2">
+                <Link href="/exams/ibps-po/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO 2026 Complete Guide →</Link>
+                <Link href="/exams/sbi-po/" className="block text-sm text-primary-600 hover:underline leading-snug">SBI PO 2026 Complete Guide →</Link>
+                <Link href="/blog/ibps-po-salary-in-hand-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary In-Hand 2026 →</Link>
+                <Link href="/blog/bank-5-day-work-week-2026-notification-status/" className="block text-sm text-primary-600 hover:underline leading-snug">Bank 5-Day Work Week Status →</Link>
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
               </div>
             </div>
           </div>
