@@ -601,6 +601,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'gpsc-class-1-2') {
+    return {
+      title: 'GPSC Class 1 & 2 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'GPSC Class 1 & 2 2026: 170–270 vacancies for Deputy Collector, DSP, Mamlatdar & 20+ posts. Graduate eligible, age 20–35 yrs. Prelims + Mains + Interview. Salary ₹39,900–₹1,77,500/month. Full syllabus, exam pattern, cut-offs & free guide.',
+      keywords: 'GPSC Class 1 2 2026, GPSC notification 2026, GPSC syllabus 2026, GPSC exam date 2026, GPSC taiyari, Gujarat PSC 2026, Deputy Collector Gujarat, GPSC eligibility, GPSC salary, OJAS 2026, Gujarat sarkari naukri 2026, gpsc.gujarat.gov.in',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/gpsc-class-1-2/' },
+      other: { 'description:hi': 'GPSC Class 1 & 2 2026 – Deputy Collector, DSP, Mamlatdar व 20+ पदों के लिए 170–270 रिक्तियाँ। स्नातक पात्र, आयु 20–35 वर्ष। प्रारंभिक + मुख्य + साक्षात्कार। वेतन ₹39,900–₹1,77,500/माह। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'mpsc-rajyaseva') {
     return {
       title: 'MPSC Rajyaseva 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -695,6 +705,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'delhi-police-hc') return <DelhiPoliceHcPage exam={brief} />;
   if (brief && brief.slug === 'nvs-teaching') return <NvsTeachingPage exam={brief} />;
   if (brief && brief.slug === 'dsssb-tgt-pgt-prt') return <DssbTgtPgtPrtPage exam={brief} />;
+  if (brief && brief.slug === 'gpsc-class-1-2') return <GpscClass12Page exam={brief} />;
   if (brief && brief.slug === 'mpsc-rajyaseva') return <MpscRajyasevaPage exam={brief} />;
   if (brief && brief.slug === 'kerala-psc-kas') return <KeralaKasPage exam={brief} />;
   if (brief && brief.slug === 'drdo-ceptam') return <DrdoCeptamPage exam={brief} />;
@@ -48900,6 +48911,831 @@ function TNPSCGroup1Page({ exam }: { exam: any }) {
             </aside>
 
           </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── GPSC CLASS 1 & 2 2026 RICH PAGE ─────────────────────────────────────────
+function GpscClass12Page({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'cutoff',          label: 'Previous Cut-offs' },
+    { id: 'salary',          label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'GPSC Class 1 & 2 Advt. 23/2024-25 Notification', date: 'December 2024', status: 'released' },
+    { event: 'GPSC Class 1 & 2 2024-25 Application Last Date', date: 'January 2025', status: 'released' },
+    { event: 'GPSC Class 1 & 2 2024-25 Prelims Exam', date: 'April 2025', status: 'released' },
+    { event: 'GPSC Class 1 & 2 2024-25 Prelims Result', date: 'June 2025', status: 'released' },
+    { event: 'GPSC Class 1 & 2 2024-25 Mains Exam', date: 'September–October 2025', status: 'released' },
+    { event: 'GPSC Class 1 & 2 2024-25 Mains Result', date: 'January 2026 (Expected)', status: 'tbn' },
+    { event: 'GPSC Class 1 & 2 2024-25 Interview', date: 'March–April 2026 (Expected)', status: 'tbn' },
+    { event: '🆕 GPSC Class 1 & 2 2025-26 Notification (New Cycle)', date: 'July–August 2026 (Expected)', status: 'tbn' },
+    { event: 'GPSC Class 1 & 2 2025-26 Prelims Exam', date: 'November–December 2026 (Expected)', status: 'tbn' },
+    { event: 'GPSC Class 1 & 2 2025-26 Mains Exam', date: 'April–May 2027 (Expected)', status: 'tbn' },
+    { event: 'GPSC Class 1 & 2 2025-26 Interview & Final Result', date: 'September–October 2027 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: '2021-22', vacancies: '~200', prelims: 'Sep 2021', mains: 'Feb–Mar 2022' },
+    { year: '2022-23', vacancies: '231',  prelims: 'Apr 2022', mains: 'Sep–Oct 2022' },
+    { year: '2023-24', vacancies: '270',  prelims: 'May 2023', mains: 'Oct–Nov 2023' },
+    { year: '2024-25 (Advt. 23)', vacancies: '171', prelims: 'Apr 2025', mains: 'Sep–Oct 2025' },
+    { year: '2025-26 (upcoming)', vacancies: '150–270 (Expected)', prelims: 'Nov–Dec 2026 (Expected)', mains: 'Apr–May 2027 (Expected)' },
+  ];
+
+  const posts = [
+    { post: 'Deputy Collector',               class: 'Class 1', department: 'Revenue',          payLevel: '14', basicPay: '₹56,100 – ₹1,77,500' },
+    { post: 'Deputy Superintendent of Police', class: 'Class 1', department: 'Police',           payLevel: '14', basicPay: '₹56,100 – ₹1,77,500' },
+    { post: 'Deputy District Registrar',       class: 'Class 1', department: 'Registration',     payLevel: '14', basicPay: '₹56,100 – ₹1,77,500' },
+    { post: 'Asst. Commissioner (State Tax)',  class: 'Class 1', department: 'Finance / Tax',    payLevel: '14', basicPay: '₹56,100 – ₹1,77,500' },
+    { post: 'Mamlatdar',                       class: 'Class 2', department: 'Revenue',          payLevel: '10', basicPay: '₹39,900 – ₹1,27,600' },
+    { post: 'Dy. Section Officer (DYSO)',       class: 'Class 2', department: 'General Admin',   payLevel: '10', basicPay: '₹39,900 – ₹1,27,600' },
+    { post: 'Asst. Programme Impl. Officer',   class: 'Class 2', department: 'Panchayat / Rural', payLevel: '10', basicPay: '₹39,900 – ₹1,27,600' },
+    { post: 'Block Development Officer (BDO)', class: 'Class 2', department: 'Rural Dev.',       payLevel: '10', basicPay: '₹39,900 – ₹1,27,600' },
+    { post: 'Nayab Mamlatdar',                 class: 'Class 2', department: 'Revenue',          payLevel: '9',  basicPay: '₹34,800 – ₹1,10,400' },
+    { post: 'Taluka Development Officer (TDO)', class: 'Class 2', department: 'Development',     payLevel: '10', basicPay: '₹39,900 – ₹1,27,600' },
+  ];
+
+  const prelimsPattern = [
+    { paper: 'General Studies', questions: 200, marks: 200, time: '2 hours', type: 'MCQ (OMR)', note: 'Merit-based; no negative marking in most cycles' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Gujarati Language',  marks: 300, type: 'Descriptive', nature: 'Qualifying (30%)', topics: 'Essay, Precis, Translation, Comprehension, Grammar' },
+    { paper: 'English Language',   marks: 300, type: 'Descriptive', nature: 'Qualifying (30%)', topics: 'Essay, Precis, Translation, Comprehension, Grammar' },
+    { paper: 'Essay',              marks: 150, type: 'Descriptive', nature: 'Merit',             topics: 'Two essays — one social/national, one regional/Gujarat topic' },
+    { paper: 'General Studies 1',  marks: 150, type: 'Descriptive', nature: 'Merit',             topics: 'History, Culture, Heritage of India & Gujarat' },
+    { paper: 'General Studies 2',  marks: 150, type: 'Descriptive', nature: 'Merit',             topics: 'Geography, Environment & Ecology (India & Gujarat)' },
+    { paper: 'General Studies 3',  marks: 150, type: 'Descriptive', nature: 'Merit',             topics: 'Polity, Governance, Constitution, Public Administration, Gujarat Administration' },
+    { paper: 'General Studies 4',  marks: 150, type: 'Descriptive', nature: 'Merit',             topics: 'Economy, Technology, Social Issues; Ethics & Integrity (from 2024 cycle)' },
+    { paper: 'Optional Subject',   marks: 150, type: 'Descriptive', nature: 'Merit',             topics: '1 paper from 20+ options: Geography, History, Sociology, Public Admin, Economics…' },
+    { paper: 'Interview / Personality Test', marks: 50, type: 'Viva', nature: 'Merit', topics: 'Personality, awareness of Gujarat affairs, administrative aptitude' },
+  ];
+
+  const syllabusData = [
+    {
+      subject: '📜 General Studies 1 – History, Culture & Heritage',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Ancient, Medieval & Modern Indian History with emphasis on Gujarat',
+        'Gujarat\'s Cultural Heritage – Somnath, Modhera, Champaner, Rani ki Vav',
+        'Socio-religious Reform Movements in Gujarat – Swami Dayanand, Vallabhbhai Patel',
+        'Freedom Struggle – Dandi March, Bardoli Satyagraha, Gandhi\'s role in Gujarat',
+        'Post-Independence India – Integration of States; Gujarat State Formation (1960)',
+        'Art, Architecture, Literature of Gujarat; UNESCO World Heritage Sites in Gujarat',
+      ],
+    },
+    {
+      subject: '🌏 General Studies 2 – Geography & Environment',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Physical Geography of India and World',
+        'Gujarat Geography – Rann of Kutch, Gir Forest, Gulf of Khambhat, rivers',
+        'Agriculture in Gujarat – cotton, groundnut, tobacco, Amul model',
+        'Natural Resources, Biodiversity, Wetlands of Gujarat',
+        'Environment & Ecology – Climate Change, Disaster Management, Cyclone preparedness in Gujarat',
+        'Urban-Rural Development; Smart Cities Mission; AMRUT in Gujarat cities',
+      ],
+    },
+    {
+      subject: '⚖️ General Studies 3 – Polity, Governance & Constitution',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Indian Constitution – Fundamental Rights, DPSPs, Fundamental Duties',
+        'Parliament, State Legislature, Governor & CM – Gujarat-specific powers',
+        'Panchayati Raj in Gujarat – District Panchayat, Taluka Panchayat, Gram Panchayat',
+        'Urban Local Bodies – Municipalities, AMC, VMC, SMC',
+        'Gujarat Administrative Structure – Collector, Mamlatdar, Taluka system',
+        'Government Schemes – PM Awas, PMGSY, Sagar Mala, Gujarat schemes',
+        'Public Policy, Social Sector, RTI, Public Grievances',
+      ],
+    },
+    {
+      subject: '💡 General Studies 4 – Economy, Technology & Ethics',
+      prelims: true,
+      mains: true,
+      topics: [
+        'Indian Economy – GDP, fiscal policy, Union Budget, monetary policy',
+        'Gujarat Economy – GSDP, industrial corridors (DMIC), Vibrant Gujarat Summit',
+        'Agriculture & Allied Sectors; MSP, cooperative movement, Amul',
+        'Science & Technology – Space (ISRO-Ahmedabad), Defence, AI, Digital India',
+        'Social Justice – Scheduled Areas in Gujarat, tribal welfare, SEBC',
+        'Ethics, Integrity and Aptitude – case studies for administrators; Gujarat lokayukta',
+      ],
+    },
+    {
+      subject: '📊 Prelims General Studies – Quick Topics',
+      prelims: true,
+      mains: false,
+      topics: [
+        'Current Affairs – National & International (last 12 months)',
+        'Gujarat Current Affairs – Chief Minister, Governor, key govt. decisions',
+        'General Science – Biology, Physics, Chemistry basics',
+        'Mental Ability, Logical Reasoning, Data Interpretation',
+        'Sports, Awards, International Days, Persons in News',
+        'Gujarat-specific: Schemes, Wildlife, Census, DANG, Kutch Geography',
+      ],
+    },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS',  prelims2024: '~110/200', mains2024: '~580/950', prelims2023: '~115/200', mains2023: '~600/950' },
+    { category: 'OBC / SEBC',     prelims2024: '~100/200', mains2024: '~545/950', prelims2023: '~106/200', mains2023: '~560/950' },
+    { category: 'SC',              prelims2024: '~88/200',  mains2024: '~490/950', prelims2023: '~90/200',  mains2023: '~510/950' },
+    { category: 'ST',              prelims2024: '~78/200',  mains2024: '~460/950', prelims2023: '~80/200',  mains2023: '~475/950' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Class 1 Basic Pay (Pay Level 14 – e.g., Deputy Collector, DSP)',  amount: '₹56,100/month' },
+    { component: 'Class 2 Basic Pay (Pay Level 10 – e.g., Mamlatdar, DYSO)',        amount: '₹39,900/month' },
+    { component: 'Dearness Allowance (DA) – State Government rate',                 amount: '~42% of Basic (Jan 2026)' },
+    { component: 'House Rent Allowance (HRA) – varies by city tier',               amount: '8–24% of Basic' },
+    { component: 'Travel Allowance & Other Allowances',                             amount: '₹3,000–₹5,000/month' },
+    { component: 'Class 1 Gross In-Hand (Deputy Collector / DSP)',                  amount: '~₹90,000–₹1,05,000/month' },
+    { component: 'Class 2 Gross In-Hand (Mamlatdar / DYSO)',                        amount: '~₹65,000–₹78,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Mamlatdar / DYSO / APIO',   scale: 'Class 2', years: 'Entry',        payband: 'Pay Level 10 → ₹39,900–₹1,27,600' },
+    { level: 'Deputy Collector / DSP',     scale: 'Class 1', years: '5–8 yrs',      payband: 'Pay Level 14 → ₹56,100–₹1,77,500' },
+    { level: 'Additional Collector / SP',  scale: 'Class 1', years: '12–15 yrs',    payband: 'Pay Level 15 → ₹67,700–₹2,08,700' },
+    { level: 'District Collector / DIG',   scale: 'Class 1', years: '18–22 yrs',    payband: 'Pay Level 16 → ₹78,800–₹2,09,200' },
+    { level: 'Commissioner / ADGP',        scale: 'Class 1', years: '22–28 yrs',    payband: 'Pay Level 17 → ₹1,44,200+' },
+    { level: 'Secretary / DGP / ACS',      scale: 'Class 1', years: '28+ yrs',      payband: 'Pay Level 17–18 → ₹1,82,200+' },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Gujarat Foundation', detail: 'Dedicate this entire month to Gujarat-specific content — something that many GPSC aspirants underestimate. Thoroughly cover Gujarat History (Ancient to Modern), Gujarat Geography (districts, rivers, wildlife), Cultural Heritage, and the 1960 State Formation. Use GCERT books (Std. 9-12) as your base — they are the most reliable and frequently cited source in GPSC papers. Start reading Gujarat Samachar or Sandesh daily for 20 minutes.' },
+    { month: 'Month 2', focus: 'Indian History & Polity', detail: 'Cover Modern Indian History (1757 to Independence) with a Gujarat lens — Dandi March, Bardoli Satyagraha, Sardar Patel. Read Laxmikanth\'s Indian Polity fully, paying special attention to State Legislature, Governor\'s powers, and Panchayati Raj (as GPSC tests Gujarat\'s Panchayati Raj system specifically). Complete at least 2 previous year GPSC Prelims papers for self-assessment.' },
+    { month: 'Month 3', focus: 'Geography + Environment', detail: 'World and Indian Physical Geography, then Gujarat Geography in detail. Study the Rann of Kutch, Gir National Park, Marine National Park (Gulf of Kutch), Vansda National Park. For Environment, GPSC increasingly tests Gujarat\'s cyclone preparedness, Coastal Regulation Zone, and wetland conservation. Complete NCERTs (Class 11-12 Geography) and Spectrum\'s Environment for Mains depth.' },
+    { month: 'Month 4', focus: 'Economy + Science & Technology', detail: 'Indian Economic concepts (GDP, Fiscal Deficit, Monetary Policy) followed by Gujarat Economy: GSDP, DMIC, Vibrant Gujarat Summit, textile & petrochemical sectors. Science & Technology: ISRO missions (Ahmedabad ISRO center is always relevant), Digital Gujarat, and basic General Science (Class 10 level) for Prelims. Start Mains answer writing practice — 1 answer daily on economy topics.' },
+    { month: 'Month 5', focus: 'Mains Paper Depth + Essay', detail: 'This is your Mains preparation month. Pick your Optional subject and complete it systematically. Practice Essay writing: write 2 essays per week, both on Gujarat topics (e.g., Gujarat role in national development) and national themes. For GS papers, write structured 200-word answers with headings, bullet points, and data. Time yourself — GPSC Mains papers are time-intensive.' },
+    { month: 'Month 6', focus: 'Revision + Full Mocks', detail: 'Take 3–4 full Prelims mocks weekly and analyse each one. Revise Gujarat-specific content twice — this is where toppers separate from the rest. Focus on Current Affairs (last 12 months) with a strong Gujarat tilt: major Gujarat government decisions, awards, infrastructure projects, appointments. Prepare for the Interview by studying Gujarat administrative structure, current issues facing Gujarat, and your own district if asked.' },
+  ];
+
+  const books = [
+    { title: 'GCERT Textbooks (Std. 9–12)', author: 'Gujarat State Education Dept.', subject: 'Gujarat Specific (All GS)' },
+    { title: 'Gujarat ane Gujaratiyon ni Asmita (Know Gujarat)', author: 'Ankur Prakashan', subject: 'Gujarat History & Culture' },
+    { title: 'Indian Polity', author: 'M. Laxmikanth', subject: 'Polity & Governance' },
+    { title: 'Modern Indian History', author: 'Bipan Chandra', subject: 'History (Mains)' },
+    { title: 'Certificate Physical & Human Geography', author: 'G.C. Leong', subject: 'Geography' },
+    { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy (Mains)' },
+    { title: 'GPSC Class 1 & 2 Previous Year Papers', author: 'Kalpas Publication / GPSC Official', subject: 'Prelims Practice' },
+    { title: 'Ethics, Integrity and Aptitude', author: 'G. Subba Rao / Lexicon', subject: 'GS 4 / Ethics' },
+  ];
+
+  const freeResources = [
+    { name: 'GPSC Official Website', type: 'website', url: 'https://gpsc.gujarat.gov.in', description: 'Notifications, admit cards, results, syllabi and answer keys — always the primary source for GPSC.' },
+    { name: 'OJAS Gujarat (Online Application)', type: 'website', url: 'https://ojas.gujarat.gov.in', description: 'Gujarat government\'s official job application portal — GPSC applications are submitted only here.' },
+    { name: 'Vision IAS GPSC Channel (YouTube)', type: 'youtube', url: 'https://www.youtube.com/@VisionIASonline', description: 'Free GPSC/UPSC lectures on GS topics. GPSC syllabus overlaps significantly with UPSC GS 1–4.' },
+    { name: 'GPSC Study Material by Mission IAS (Gujarat)', type: 'website', url: 'https://gpsc.gujarat.gov.in/studymaterial', description: 'Official GPSC study material uploaded by Gujarat PSC — free to download.' },
+    { name: 'Adda247 GPSC Preparation', type: 'website', url: 'https://www.adda247.com/gpsc', description: 'Free GPSC Prelims mock tests, current affairs and syllabus-based practice sets.' },
+    { name: 'Gujarat History & Culture – Doordarshan Gujarat', type: 'youtube', url: 'https://www.youtube.com/@DDGujarat', description: 'Free documentary-style videos on Gujarat heritage, culture, and governance — excellent for Mains.' },
+    { name: 'Drishti IAS (GS Foundation)', type: 'youtube', url: 'https://www.youtube.com/@DrishtiIASOfficial', description: 'Strong free content for GS 1–4 Mains preparation; GPSC Mains GS pattern closely mirrors UPSC.' },
+    { name: 'GK Today Gujarat Affairs', type: 'website', url: 'https://www.gktoday.in/gk/gujarat-current-affairs/', description: 'Monthly Gujarat Current Affairs capsules — essential for both Prelims and Interview.' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'Gujarat-specific content is GPSC\'s biggest differentiator from other State PSC exams. Every year, 30–40% of Prelims questions directly test Gujarat History, Geography, Culture, and Current Affairs. If you\'re scoring 70% on GS but only 40% on Gujarat topics, you will fail the Prelims cutoff. Prioritise GCERT books and a Gujarat-focused newspaper from Day 1.' },
+    { icon: '📋', tip: 'GPSC has a two-language qualifying barrier in Mains — both Gujarati (300 marks) and English (300 marks) must be cleared at 30% each (90/300). Many aspirants fail here despite strong GS performance. Write 2–3 essays weekly in both languages from Month 2. Practice Gujarati essay especially — it is often under-prepared.' },
+    { icon: '📊', tip: 'The Mains optional subject can be your biggest lever. Popular options include Geography, History, Sociology, and Public Administration — all have good study material overlap with GS. Choose an optional you genuinely enjoy: GPSC Mains requires deep analytical writing, not rote answers. Aim for 110+ out of 150 in your optional.' },
+    { icon: '🏛️', tip: 'The Interview (50 marks) in GPSC tests your knowledge of Gujarat\'s administrative machinery, current district issues, and your own background. Know your own taluka, district collector, major schemes running in your district, and key industries. Panels often ask: "What is the biggest challenge in your district, and how would you solve it as a Mamlatdar?"' },
+    { icon: '📅', tip: 'GPSC operates on an annual cycle but with delays of 3–6 months. Treat any \'expected\' date as a guide only. Use the waiting period productively — write mock Mains answers, expand optional depth, and follow current affairs. Aspirants who maintain study discipline during delays consistently outperform those who \'wait to start\'.' },
+    { icon: '💡', tip: 'GPSC Prelims has no official negative marking in most cycles, but GPSC can change this in any notification. Always read the official notification before the exam. Even without negative marking, time management matters — 200 questions in 120 minutes means 36 seconds per question. Practice full-length mocks under strict time conditions.' },
+    { icon: '🗺️', tip: 'For GPSC Geography, the map of Gujarat is as important as the map of India. Know all 33 districts (Gujarat had 26 districts until 2013, then expanded to 33), major rivers (Sabarmati, Mahi, Tapi, Narmada), wildlife sanctuaries, and the Rann of Kutch geography. GPSC has repeatedly asked location-based questions that trip unprepared candidates.' },
+    { icon: '🌐', tip: 'Join a GPSC study group — either local (Ahmedabad/Vadodara have active GPSC circles) or online (Telegram groups). GPSC current affairs is highly localised, and peers often catch important Gujarat government news you might miss. Share and test each other on Gujarat-specific facts weekly.' },
+  ];
+
+  const faqs = [
+    { q: 'What is GPSC Class 1 & 2 and which posts are covered?', a: 'GPSC Class 1 & 2 is conducted by the Gujarat Public Service Commission (GPSC) to recruit officers for Gujarat\'s state civil services. Class 1 posts include Deputy Collector, Deputy Superintendent of Police (DSP), Assistant Commissioner (State Tax), and Deputy District Registrar — these are senior officer positions. Class 2 posts include Mamlatdar, Deputy Section Officer (DYSO), Assistant Programme Implementation Officer (APIO), Block Development Officer (BDO), and Nayab Mamlatdar. Both classes are recruited through the same common examination.' },
+    { q: 'What is the eligibility for GPSC Class 1 & 2 2026?', a: 'Educational Qualification: A bachelor\'s degree (any discipline) from a recognised university. Age Limit: 20 to 35 years for General/EWS/Unreserved category. Relaxations: OBC/SEBC candidates get 5 additional years (up to 40); SC and ST candidates get 5 additional years (up to 40). Nationality: Indian citizens, or persons of Indian origin who have migrated from Pakistan, Kenya, Uganda, Tanzania etc. with the intention of permanently settling in India are also eligible. Knowledge of Gujarati is mandatory — both the Gujarati Language qualifying paper in Mains and the Interview test this.' },
+    { q: 'What is the GPSC Class 1 & 2 exam pattern 2026?', a: 'The exam has three stages. Stage 1 — Preliminary Exam: 1 paper, 200 MCQ questions, 200 marks, 2 hours. This is a general studies paper covering History, Geography, Polity, Economy, Science, and Current Affairs with a Gujarat focus. Stage 2 — Mains Exam: 9 papers. Two qualifying papers: Gujarati Language (300 marks, 30% cutoff) and English Language (300 marks, 30% cutoff). Seven merit papers: Essay (150), GS 1 (150), GS 2 (150), GS 3 (150), GS 4 (150), Optional Paper (150) = 900 merit marks. Stage 3 — Interview: 50 marks. Grand total for final merit: 950 marks (900 Mains + 50 Interview).' },
+    { q: 'What is the salary of GPSC Class 1 & 2 officers?', a: 'Class 1 officers (Deputy Collector, DSP) are placed at Pay Level 14, with a starting basic pay of ₹56,100/month. With Dearness Allowance (DA at ~42% in 2026), HRA, and other allowances, the gross in-hand package is approximately ₹90,000–₹1,05,000/month. Class 2 officers (Mamlatdar, DYSO) are at Pay Level 10, with a starting basic pay of ₹39,900/month and a gross in-hand package of approximately ₹65,000–₹78,000/month. Note: Gujarat follows the state pay matrix under the 7th Pay Commission recommendations.' },
+    { q: 'Where do I apply for GPSC Class 1 & 2 2026?', a: 'All GPSC applications are submitted online through the OJAS portal (ojas.gujarat.gov.in) — Gujarat\'s official government job application platform. Applications are NOT accepted via the GPSC website or offline mode. You will need to register on OJAS, fill in academic and personal details, upload documents, and pay the application fee. Application fee is typically ₹100 for SC/ST/PH and ₹250 for others (verify from official notification as this may change). Always apply well before the last date — the OJAS portal slows down due to high traffic near deadlines.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const StatusBadge = ({ status }: { status: string }) => {
+    if (status === 'released') return <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">✅ Released</span>;
+    if (status === 'upcoming') return <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">🔜 Upcoming</span>;
+    return <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">⏳ TBN</span>;
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── BLUE GRADIENT HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">GPSC Class 1 &amp; 2 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Gujarat Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 New Cycle: July–Aug 2026 (Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            GPSC Class 1 &amp; 2 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            GPSC Class 1 &amp; 2 is Gujarat&apos;s premier state civil services exam, recruiting officers for posts like <strong>Deputy Collector, DSP, Mamlatdar, and DYSO</strong>. Conducted by the Gujarat Public Service Commission via a 3-stage process: Prelims → Mains (6 GS papers + Optional) → Interview. Applications through <strong>ojas.gujarat.gov.in</strong>.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies',   value: '150–270',            sub: '2025-26 cycle (TBN)' },
+              { label: 'New Notification',      value: 'Jul–Aug 2026',       sub: 'Expected (TBN)' },
+              { label: 'Min. Qualification',    value: 'Any Graduate',       sub: 'From recognised univ.' },
+              { label: 'Salary (Class 1)',      value: '~₹90,000–1,05,000', sub: 'per month (gross)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> The 2024-25 cycle (Advt. 23/2024-25) Mains is completed; results expected mid-2026. The <strong>next new cycle (2025-26) notification is expected July–August 2026</strong>. All 2025-26 dates are estimated — verify from{' '}
+            <a href="https://gpsc.gujarat.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">gpsc.gujarat.gov.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is GPSC Class 1 &amp; 2 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>GPSC Class 1 &amp; 2 exam</strong> is conducted annually by the <strong>Gujarat Public Service Commission (GPSC)</strong> to recruit officers for Gujarat&apos;s state civil services. It is Gujarat&apos;s equivalent of the UPSC Civil Services exam — rigorous, prestigious, and a gateway to administrative power at the district and taluka level across the state.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  <strong>Class 1</strong> positions (Deputy Collector, DSP, Assistant Commissioner) are senior officer roles that come with significant administrative authority. A <strong>Class 2</strong> post like Mamlatdar or DYSO is the bedrock of Gujarat&apos;s revenue administration — directly serving citizens at the taluka level. Both classes are recruited through the same exam, with Class 1 posts going to higher-ranked candidates.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  GPSC has a strong <strong>Gujarat-focus</strong> in its exam pattern: History, Geography, Culture, Current Affairs, and Governance of Gujarat feature prominently in both Prelims and Mains. Unlike UPSC, GPSC requires candidates to write language qualifying papers in <strong>Gujarati and English</strong> — making language preparation a critical part of the strategy.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body',      value: 'Gujarat Public Service Commission' },
+                  { label: 'Application Portal',   value: 'ojas.gujarat.gov.in' },
+                  { label: 'Selection Stages',     value: 'Prelims + Mains + Interview' },
+                  { label: 'Exam Frequency',       value: 'Annual' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Important Dates 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-4 font-heading font-semibold">Event</th>
+                        <th className="text-left p-4 font-heading font-semibold">Date</th>
+                        <th className="text-left p-4 font-heading font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-body text-surface-700">{row.event}</td>
+                          <td className="p-4 font-body text-surface-700">{row.date}</td>
+                          <td className="p-4"><StatusBadge status={row.status} /></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">⚠️ All 2025-26 cycle dates are estimated. Always verify from gpsc.gujarat.gov.in before applying.</p>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '🎓', label: 'Educational Qualification', value: 'Bachelor\'s Degree (any discipline) from a recognised university recognised by UGC / AICTE.' },
+                  { icon: '📋', label: 'Age Limit (General / EWS)', value: '20 to 35 years. Age calculated as per the cut-off date specified in each notification.' },
+                  { icon: '📋', label: 'Age Relaxation', value: 'OBC / SEBC: +5 years (up to 40) | SC / ST: +5 years (up to 40) | Ex-Servicemen: as per Gujarat Government rules.' },
+                  { icon: '🪪', label: 'Nationality', value: 'Indian citizen, or persons of Indian origin who migrated from certain countries (Pakistan, Kenya, Uganda, etc.) intending permanent settlement.' },
+                  { icon: '💬', label: 'Language Requirement', value: 'Knowledge of Gujarati is mandatory. Candidates must clear separate qualifying papers in Gujarati and English in Mains (min. 30% each).' },
+                  { icon: '📄', label: 'Number of Attempts', value: 'No restriction on number of attempts — candidates may appear as long as they meet the age and qualification criteria.' },
+                ].map((item) => (
+                  <div key={item.label} className="card p-5">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{item.icon}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.label}</div>
+                        <div className="text-sm text-surface-600 leading-relaxed">{item.value}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 p-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl text-sm text-primary-800">
+                💡 <strong>Check your eligibility instantly:</strong> Use the{' '}
+                <Link href="/tools/eligibility-checker/" className="underline font-semibold hover:text-primary-600">TaiyarHo Eligibility Checker</Link>{' '}
+                to verify your age and qualification against GPSC and 100+ other government exams in seconds.
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES & POSTS */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies &amp; Posts</h2>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Posts Under GPSC Class 1 &amp; 2</h3>
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold">Post Name</th>
+                        <th className="text-left p-3 font-heading font-semibold">Class</th>
+                        <th className="text-left p-3 font-heading font-semibold">Department</th>
+                        <th className="text-left p-3 font-heading font-semibold">Pay Level</th>
+                        <th className="text-left p-3 font-heading font-semibold">Basic Pay</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {posts.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 font-semibold text-surface-800">{row.post}</td>
+                          <td className="p-3 text-surface-600">
+                            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${row.class === 'Class 1' ? 'bg-primary-100 text-primary-700' : 'bg-emerald-100 text-emerald-700'}`}>{row.class}</span>
+                          </td>
+                          <td className="p-3 text-surface-600">{row.department}</td>
+                          <td className="p-3 text-surface-600">Level {row.payLevel}</td>
+                          <td className="p-3 text-emerald-700 font-semibold">{row.basicPay}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Vacancy History</h3>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold">Cycle</th>
+                        <th className="text-left p-3 font-heading font-semibold">Vacancies</th>
+                        <th className="text-left p-3 font-heading font-semibold">Prelims</th>
+                        <th className="text-left p-3 font-heading font-semibold">Mains</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyHistory.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 font-semibold text-surface-800">{row.year}</td>
+                          <td className="p-3 text-emerald-700 font-semibold">{row.vacancies}</td>
+                          <td className="p-3 text-surface-600">{row.prelims}</td>
+                          <td className="p-3 text-surface-600">{row.mains}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern 2026</h2>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Stage 1 — Preliminary Exam</h3>
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold">Paper</th>
+                        <th className="text-left p-3 font-heading font-semibold">Questions</th>
+                        <th className="text-left p-3 font-heading font-semibold">Marks</th>
+                        <th className="text-left p-3 font-heading font-semibold">Duration</th>
+                        <th className="text-left p-3 font-heading font-semibold">Note</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {prelimsPattern.map((row, i) => (
+                        <tr key={i} className="bg-white">
+                          <td className="p-3 font-semibold text-surface-800">{row.paper}</td>
+                          <td className="p-3 text-surface-600">{row.questions}</td>
+                          <td className="p-3 font-semibold text-primary-600">{row.marks}</td>
+                          <td className="p-3 text-surface-600">{row.time}</td>
+                          <td className="p-3 text-surface-500 text-xs">{row.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Stage 2 — Mains Exam + Interview</h3>
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold">Paper</th>
+                        <th className="text-left p-3 font-heading font-semibold">Marks</th>
+                        <th className="text-left p-3 font-heading font-semibold">Type</th>
+                        <th className="text-left p-3 font-heading font-semibold">Nature</th>
+                        <th className="text-left p-3 font-heading font-semibold">Topics</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {mainsPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 font-semibold text-surface-800">{row.paper}</td>
+                          <td className="p-3 font-semibold text-primary-600">{row.marks}</td>
+                          <td className="p-3 text-surface-600">{row.type}</td>
+                          <td className="p-3">
+                            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${row.nature.startsWith('Qualifying') ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'}`}>{row.nature}</span>
+                          </td>
+                          <td className="p-3 text-surface-500 text-xs">{row.topics}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 text-sm text-emerald-800">
+                📊 <strong>Total Merit Marks: 950</strong> (GS + Essay + Optional = 900 Mains + 50 Interview). Qualifying papers (Gujarati + English, 600 marks total) are NOT counted in merit ranking — candidates just need to score ≥30% (90/300) in each.
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabusData.map((s, i) => (
+                  <details key={i} className="card overflow-hidden">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50">
+                      <span className="flex items-center gap-3">
+                        <span>{s.subject}</span>
+                        <span className="flex gap-1">
+                          {s.prelims && <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Prelims</span>}
+                          {s.mains   && <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">Mains</span>}
+                        </span>
+                      </span>
+                      <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-6 space-y-1">
+                        {s.topics.map((t, j) => <li key={j} className="text-sm text-surface-600">{t}</li>)}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+              <p className="text-xs text-surface-400 mt-3">Note: Verify the latest detailed syllabus from the official GPSC notification at gpsc.gujarat.gov.in as topics may be revised each cycle.</p>
+            </section>
+
+            {/* SECTION 7: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year Cut-offs (Indicative)</h2>
+              </div>
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold">Category</th>
+                        <th className="text-left p-3 font-heading font-semibold">Prelims 2024-25</th>
+                        <th className="text-left p-3 font-heading font-semibold">Mains 2024-25</th>
+                        <th className="text-left p-3 font-heading font-semibold">Prelims 2023-24</th>
+                        <th className="text-left p-3 font-heading font-semibold">Mains 2023-24</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cutoffData.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 font-semibold text-surface-800">{row.category}</td>
+                          <td className="p-3 text-primary-600 font-semibold">{row.prelims2024}</td>
+                          <td className="p-3 text-emerald-600 font-semibold">{row.mains2024}</td>
+                          <td className="p-3 text-primary-600 font-semibold">{row.prelims2023}</td>
+                          <td className="p-3 text-emerald-600 font-semibold">{row.mains2023}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400">⚠️ These are indicative/estimated cut-offs based on available data. Actual cut-offs vary by post category and number of vacancies. Always refer to the official GPSC merit list.</p>
+            </section>
+
+            {/* SECTION 8: SALARY & CAREER */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Salary &amp; Career Growth</h2>
+              </div>
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-surface-800 text-white">
+                      <tr>
+                        <th className="text-left p-3 font-heading font-semibold">Salary Component</th>
+                        <th className="text-left p-3 font-heading font-semibold">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryBreakdown.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3 text-surface-700">{row.component}</td>
+                          <td className={`p-3 font-semibold ${i >= 4 ? 'text-emerald-600' : 'text-surface-800'}`}>{row.amount}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Career Progression Path</h3>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {careerPath.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="card p-4">
+                        <div className="flex items-start justify-between gap-2">
+                          <div>
+                            <div className="font-heading font-semibold text-surface-800">{step.level}</div>
+                            <div className="text-xs text-surface-500 mt-0.5">{step.years} · {step.scale}</div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-sm font-semibold text-emerald-600">{step.payband}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-primary-800">
+                💡 <strong>8th Pay Commission:</strong> The 8th Pay Commission is expected to be implemented from January 2026. Gujarat typically follows Central Government pay commission recommendations with a 1–2 year lag. Exact revised pay scales for Gujarat state employees are TBN pending the state government notification.
+              </div>
+            </section>
+
+            {/* SECTION 9: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Check Official Notification', desc: 'Visit gpsc.gujarat.gov.in and download the official advertisement. Read all eligibility conditions, vacancy details, application fee, and important dates carefully before applying.' },
+                  { step: '2', title: 'Register on OJAS Portal', desc: 'Go to ojas.gujarat.gov.in. If you don\'t have an account, register with your Aadhaar-linked mobile number. All Gujarat government job applications go through OJAS only.' },
+                  { step: '3', title: 'Fill the Application Form', desc: 'Log in to OJAS, select the GPSC Class 1 & 2 advertisement, and fill in your personal details, educational qualifications, category, and choice of optional subject for Mains.' },
+                  { step: '4', title: 'Upload Documents', desc: 'Upload scanned copies of your photo (passport size, recent), signature, educational certificates, and category/caste certificate if applicable. Follow OJAS-specified file size and format requirements.' },
+                  { step: '5', title: 'Pay Application Fee', desc: 'Pay the fee online through OJAS (net banking, debit/credit card, UPI). General/OBC: ~₹250 | SC/ST/PH: ~₹100 (verify exact amounts from the official notification).' },
+                  { step: '6', title: 'Submit & Print Confirmation', desc: 'Review all details carefully, submit the form, and download/print the confirmation receipt. Save your OJAS application number — you will need it for admit card download and future correspondence.' },
+                ].map((item) => (
+                  <div key={item.step} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center font-heading font-bold text-sm flex-shrink-0">{item.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{item.title}</div>
+                      <div className="text-sm text-surface-600 leading-relaxed">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 10: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">6-Month Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-5">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="font-heading font-semibold text-surface-800 mb-1">{step.month} — {step.focus}</div>
+                      <div className="text-sm text-surface-600 leading-relaxed">{step.detail}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 11: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for GPSC Class 1 &amp; 2</h2>
+              </div>
+              <BooksTable books={books} />
+            </section>
+
+            {/* SECTION 12: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Preparation Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl">{r.type === 'youtube' ? '📺' : r.type === 'website' ? '🌐' : '📱'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 mb-1">{r.name}</div>
+                        <div className="text-sm text-surface-500">{r.description}</div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips from Toppers</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <span className="text-2xl flex-shrink-0">{t.icon}</span>
+                    <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: FAQ */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-2">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50">
+                      <span>{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Disclaimer */}
+            <div className="card p-4 bg-surface-100 border-surface-200 text-xs text-surface-500 mb-8">
+              <strong>Disclaimer:</strong> Information on this page is based on official GPSC notifications and commonly available data as of May 2026. Vacancies, dates, exam pattern, and eligibility conditions may change in each official notification. Always verify from <strong>gpsc.gujarat.gov.in</strong> and <strong>ojas.gujarat.gov.in</strong> before applying. TaiyarHo.in is an independent free exam guide — no paywalls, no spam.
+            </div>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 px-2 py-1.5 rounded-md transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Key Dates */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-primary-800 mb-3 text-sm">📅 Key Dates 2026</h3>
+                <div className="space-y-2 text-xs text-surface-700">
+                  <div className="flex justify-between"><span>New Notification</span><span className="font-semibold text-amber-600">Jul–Aug 2026</span></div>
+                  <div className="flex justify-between"><span>Prelims (new cycle)</span><span className="font-semibold text-amber-600">Nov–Dec 2026</span></div>
+                  <div className="flex justify-between"><span>Mains</span><span className="font-semibold text-surface-500">TBN</span></div>
+                  <div className="flex justify-between"><span>Interview</span><span className="font-semibold text-surface-500">TBN</span></div>
+                </div>
+                <a href="https://gpsc.gujarat.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary text-xs w-full text-center mt-3 block">
+                  Official GPSC Website ↗
+                </a>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Quick Stats</h3>
+                <div className="space-y-2 text-xs text-surface-600">
+                  <div className="flex justify-between"><span>Prelims Marks</span><span className="font-semibold">200</span></div>
+                  <div className="flex justify-between"><span>Mains Merit Marks</span><span className="font-semibold">900</span></div>
+                  <div className="flex justify-between"><span>Interview Marks</span><span className="font-semibold">50</span></div>
+                  <div className="flex justify-between"><span>Grand Total</span><span className="font-semibold text-primary-600">950</span></div>
+                  <div className="flex justify-between"><span>Qualifying (each lang)</span><span className="font-semibold">30%</span></div>
+                  <div className="flex justify-between"><span>Age Limit (General)</span><span className="font-semibold">20–35 yrs</span></div>
+                </div>
+              </div>
+
+              {/* Eligibility CTA */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-emerald-800 mb-2 text-sm">✅ Check Your Eligibility</h3>
+                <p className="text-xs text-emerald-700 mb-3">Find out instantly if you are eligible for GPSC and 100+ other government exams.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-xs w-full text-center block">
+                  Use Eligibility Checker →
+                </Link>
+              </div>
+
+              {/* Apply CTA */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">📝 Apply on OJAS</h3>
+                <p className="text-xs text-surface-500 mb-3">All GPSC applications are submitted exclusively through the OJAS Gujarat portal.</p>
+                <a href="https://ojas.gujarat.gov.in" target="_blank" rel="noopener noreferrer" className="btn-outline text-xs w-full text-center block">
+                  OJAS Gujarat Portal ↗
+                </a>
+              </div>
+
+            </div>
+          </aside>
         </div>
       </div>
     </>
