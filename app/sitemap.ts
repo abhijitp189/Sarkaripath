@@ -110,7 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Current Affairs pages ──────────────────────────────────────────────────
   const currentAffairsRoutes: MetadataRoute.Sitemap = currentAffairsPosts.map((post) => ({
     url: `${BASE_URL}/current-affairs/${post.slug}/`,
-    lastModified: new Date(),
+    lastModified: new Date(post.publishedDate),
     changeFrequency: 'monthly' as const,
     priority: 0.9,
   }));
