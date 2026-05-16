@@ -702,6 +702,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'niacl-ao') return <NiaclAoPage exam={brief} />;
   if (brief && brief.slug === 'nicl-ao') return <NiclAoPage exam={brief} />;
   if (brief && brief.slug === 'esic-mts') return <EsicMtsPage exam={brief} />;
+  if (brief && brief.slug === 'tnpsc-group-1') return <TNPSCGroup1Page exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -48209,6 +48210,696 @@ function EsicMtsPage({ exam }: { exam: any }) {
             </div>
           </aside>
 
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── TNPSC GROUP 1 RICH PAGE ──────────────────────────────────────────────────
+function TNPSCGroup1Page({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Posts & Vacancies' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Syllabus' },
+    { id: 'salary', label: 'Salary & Benefits' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'TNPSC Annual Planner 2026 Released', date: '10 February 2026', status: 'released' },
+    { event: 'TNPSC Group 1 & 1A Notification Release', date: '23 June 2026', status: 'upcoming' },
+    { event: 'Online Application Opens', date: 'After Notification Release', status: 'tbn' },
+    { event: 'Last Date to Apply Online', date: 'To be Notified (TBN)', status: 'tbn' },
+    { event: 'Hall Ticket / Admit Card Download', date: 'To be Notified (TBN)', status: 'tbn' },
+    { event: 'Preliminary Exam Date', date: '6 September 2026', status: 'upcoming' },
+    { event: 'Preliminary Exam Result', date: 'To be Notified (TBN)', status: 'tbn' },
+    { event: 'Mains Exam Date', date: 'To be Notified (TBN)', status: 'tbn' },
+    { event: 'Mains Exam Result', date: 'To be Notified (TBN)', status: 'tbn' },
+    { event: 'Interview / Oral Test', date: 'To be Notified (TBN)', status: 'tbn' },
+    { event: 'Final Rank List & Appointment', date: 'To be Notified (TBN)', status: 'tbn' },
+  ];
+
+  const posts = [
+    { post: 'Deputy Collector', dept: 'Revenue & Disaster Management Dept', grade: 'Group 1', category: 'Class I' },
+    { post: 'Deputy Superintendent of Police (DSP)', dept: 'Tamil Nadu Police Dept', grade: 'Group 1', category: 'Class I' },
+    { post: 'Assistant Commissioner (CT)', dept: 'Commercial Taxes Dept (Law/Commerce grad preferred)', grade: 'Group 1', category: 'Class I' },
+    { post: 'District Registrar', dept: 'Registration Dept', grade: 'Group 1', category: 'Class I' },
+    { post: 'District Employment Officer', dept: 'Employment & Training Dept', grade: 'Group 1A', category: 'Class II' },
+    { post: 'Probation Officer', dept: 'Prison Dept', grade: 'Group 1A', category: 'Class II' },
+    { post: 'Municipal Commissioner Grade I', dept: 'Municipal Administration & Water Supply', grade: 'Group 1', category: 'Class I' },
+    { post: 'TOTAL (2026 Cycle)', dept: '—', grade: 'All Posts', category: '72 posts notified' },
+  ];
+
+  const ageLimit = [
+    { category: 'Open Competition (OC) – All applicants', min: '21 years', max: '32 years', note: 'Base age limit' },
+    { category: 'BC / BC (Muslim)', min: '21 years', max: '35 years', note: '+3 years relaxation' },
+    { category: 'MBC / DNC (all applicants)', min: '21 years', max: '35 years', note: '+3 years relaxation' },
+    { category: 'SC / ST (all applicants)', min: '21 years', max: '37 years', note: '+5 years relaxation' },
+    { category: 'Differently-Abled (PwD) candidates', min: '21 years', max: '42 years', note: 'As per Govt. order' },
+    { category: 'Destitute Widows / Women', min: '21 years', max: 'No upper limit', note: 'Special provision' },
+    { category: 'Ex-Servicemen', min: '—', max: 'Service period + 3 years', note: 'Govt. rule' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'Part A – General Studies', std: 'Degree Standard', questions: 175, marks: 262.5, note: 'History, Polity, Geography, Economy, Science, Current Affairs, Tamil Nadu GK' },
+    { subject: 'Part B – Aptitude & Mental Ability', std: 'SSLC Standard', questions: 25, marks: 37.5, note: 'Quantitative aptitude, logical reasoning, data interpretation' },
+    { subject: 'TOTAL', std: '—', questions: 200, marks: 300, note: '3 hours | 1.5 marks per correct answer | No negative marking' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper I – Tamil Language Test', marks: 100, type: 'Qualifying', note: 'Min. 40 marks required to pass. Marks NOT counted in merit.' },
+    { paper: 'Paper II – GS I (Tamil Nadu Administration)', marks: 250, type: 'Merit', note: 'TN History, TN Economy, TN Administration, Land Reforms, Social Welfare' },
+    { paper: 'Paper III – GS II (Indian Polity & Economy)', marks: 250, type: 'Merit', note: 'Indian Polity, Indian Constitution, Indian Economy, Planning, Budget' },
+    { paper: 'Paper IV – GS III (Science, Society & Current Affairs)', marks: 250, type: 'Merit', note: 'General Science, Social Issues, Technology, Environment, Current Events' },
+    { paper: 'Interview / Oral Test', marks: 100, type: 'Merit', note: 'Personality, GK, Current Affairs, Administrative aptitude' },
+    { paper: 'TOTAL (Merit)', marks: 850, type: '—', note: 'Prelims marks are NOT counted in final selection' },
+  ];
+
+  const syllabusSections = [
+    {
+      subject: '📜 History & Culture of India and Tamil Nadu',
+      topics: [
+        'Ancient, Medieval and Modern Indian History',
+        'Indian National Movement — key leaders and events',
+        'Tamil Nadu history — Sangam age, Pallava, Chola, Vijayanagara empires',
+        'Social and cultural history — Bhakti movement, social reform movements in TN',
+        'Art, architecture, literature and religion of India and Tamil Nadu',
+        'Freedom fighters and their contribution to Tamil Nadu',
+        'Post-Independence developments and Five-Year Plans',
+      ],
+    },
+    {
+      subject: '🌏 Geography of India and Tamil Nadu',
+      topics: [
+        'Physical geography — landforms, rivers, mountains, climate of India',
+        'Tamil Nadu geography — districts, rivers, forests, wildlife sanctuaries',
+        'Economic geography — agriculture, major crops, irrigation systems',
+        'Natural resources — minerals, energy, water resources',
+        'Social geography — census data, population distribution',
+        'Environment, ecology and disaster management',
+        'Map-based questions on India and Tamil Nadu',
+      ],
+    },
+    {
+      subject: '🏛️ Indian Polity & Governance',
+      topics: [
+        'Constitution of India — Preamble, Fundamental Rights, DPSP, Duties',
+        'Union Government — Parliament, President, Prime Minister, Cabinet',
+        'State Government — Governor, Chief Minister, Legislature',
+        'Judiciary — Supreme Court, High Courts, judicial review',
+        'Local Self-Government — Panchayat Raj, Urban Local Bodies',
+        'Tamil Nadu administration — District Collector, Revenue system',
+        'Constitutional bodies — Election Commission, CAG, UPSC, Finance Commission',
+        'Union–State relations, federalism, emergency provisions',
+      ],
+    },
+    {
+      subject: '💰 Indian Economy & Tamil Nadu Development',
+      topics: [
+        'Basic economic concepts — GDP, GNP, inflation, national income',
+        'Agriculture — Green Revolution, crop patterns, land reforms in TN',
+        'Industries — types, industrial policy, SEZs, MSME sector',
+        'Banking and financial institutions — RBI, commercial banks, NABARD',
+        'Planning in India — NITI Aayog, Five-Year Plans, budget process',
+        'Tamil Nadu economy — TIDEL Park, automobile hub, textiles, fisheries',
+        'Social welfare schemes of Central and Tamil Nadu governments',
+        'Poverty, unemployment, human development index',
+      ],
+    },
+    {
+      subject: '🔬 General Science & Technology',
+      topics: [
+        'Physics — mechanics, force, energy, electricity, magnetism, nuclear physics, optics',
+        'Chemistry — matter, elements & compounds, acids/bases/salts, fertilisers, pesticides',
+        'Biology — cell structure, classification, evolution, genetics, human physiology',
+        'Health, nutrition and human diseases — communicable and non-communicable',
+        'Environmental science — pollution, climate change, biodiversity',
+        'Science and technology in India — ISRO, DRDO, BARC, IT sector',
+        'Space technology — key ISRO missions and satellite launches',
+      ],
+    },
+    {
+      subject: '📰 Current Events (National & International)',
+      topics: [
+        'National and international current affairs (12 months before the exam)',
+        'Sports — major tournaments, Indian medal wins, sports awards',
+        'Science and technology news — new discoveries, space missions',
+        'Government schemes — Central and Tamil Nadu government launches',
+        'Tamil Nadu in the news — industry, politics, culture, sports',
+        'Important days, international summits, and agreements',
+        'Awards and honours — Bharat Ratna, Padma awards, Nobel prizes',
+      ],
+    },
+    {
+      subject: '🧮 Aptitude & Mental Ability (AMAB)',
+      topics: [
+        'Simplification, HCF, LCM, fractions and decimals',
+        'Percentage, profit and loss, simple and compound interest',
+        'Ratio and proportion, time and work, time and distance',
+        'Area, volume, mensuration problems',
+        'Logical reasoning — blood relations, coding-decoding, direction sense',
+        'Puzzles — dice, visual reasoning, alpha-numeric reasoning',
+        'Number series, data interpretation, data sufficiency',
+        'Clock and calendar problems, ranking and arrangement',
+      ],
+    },
+  ];
+
+  const statusColor = (s: string) => {
+    if (s === 'released') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-surface-100 text-surface-500';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'released') return '✓ Released';
+    if (s === 'upcoming') return '🔔 Expected';
+    return 'TBN';
+  };
+
+  const studyPlan = [
+    { month: 'Month 1–2', title: 'Foundation: Tamil Nadu GK & History', tasks: 'Deep-dive into Tamil Nadu history (Sangam to Modern), TN districts, rivers, culture and economy. Simultaneously study NCERT 6–10 for General Science basics. Target 5–6 hours/day and make concise notes.' },
+    { month: 'Month 3–4', title: 'Core Subjects: Polity, Economy & Geography', tasks: 'Complete Indian Polity (Lakshmikanth), Indian Economy (Ramesh Singh), and both Indian + TN Geography. Begin Aptitude & Mental Ability (AMAB) — cover percentages, time-work and number series fully.' },
+    { month: 'Month 5–6', title: 'Current Affairs & AMAB Mastery', tasks: 'Daily The Hindu reading (focus on Tamil Nadu news). Compile monthly current affairs notes. Revise all core subjects. Complete all AMAB topics — logical reasoning, puzzles, data interpretation.' },
+    { month: 'Month 7–8', title: 'Prelims Mock Test Phase', tasks: 'Attempt 3–4 full-length TNPSC Group 1 prelims mock tests per week (200 questions, 3 hours). Analyse weak areas and revise. Prelims qualifying marks: 120/300 (OC) and 90/300 (Reserved categories).' },
+    { month: 'Month 9–10', title: 'Mains Answer Writing & GS Papers', tasks: 'Shift full focus to descriptive writing. Practice Paper II (TN Administration), Paper III (Indian Polity & Economy), and Paper IV (Science & Current Affairs). Write 10 answers daily and get them reviewed.' },
+    { month: 'Month 11+', title: 'Mains Mocks, Tamil & Interview Prep', tasks: 'Give full-length mains mock papers under timed conditions. Focus on Tamil Paper I to secure qualifying 40+ marks. If mains result is out, begin interview preparation: current affairs, administrative ethics, and personality development.' },
+  ];
+
+  const books = [
+    { title: 'Indian Polity', author: 'M. Lakshmikanth', subject: 'Polity' },
+    { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy' },
+    { title: 'History of Modern India', author: 'Bipan Chandra', subject: 'History' },
+    { title: 'Tamil Nadu — A History', author: 'K.A. Nilakanta Sastri', subject: 'TN History' },
+    { title: 'Certificate Physical & Human Geography', author: 'Goh Cheng Leong', subject: 'Geography' },
+    { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK & Science' },
+    { title: 'TNPSC Group 1 Previous Year Papers', author: 'Various Publishers', subject: 'Mock Tests' },
+    { title: 'Samacheer Kalvi Books (6–12)', author: 'Tamil Nadu State Board', subject: 'TN GK & Science' },
+  ];
+
+  const tips = [
+    { tip: 'Tamil Nadu GK is non-negotiable', body: 'TNPSC Group 1 questions are heavily Tamil Nadu-centric. History, geography, economy, culture, government schemes and current affairs specific to TN consistently account for 25–30% of Prelims questions. Treat TN GK as a separate subject with dedicated daily study time.' },
+    { tip: 'No negative marking — attempt every question in Prelims', body: "Unlike many central exams, TNPSC Group 1 Prelims has zero negative marking. Every unanswered question is a wasted opportunity. Even if you're uncertain, eliminate two options and attempt — you have nothing to lose. On a 300-mark paper, this strategy can net you an extra 5–15 marks." },
+    { tip: 'Prelims marks don\'t matter — Mains is everything', body: 'Many candidates over-prepare for Prelims and neglect Mains writing skills. Remember: Prelims only qualifies you. Your final rank depends entirely on Mains (750 marks) + Interview (100 marks) = 850 marks. Start practising descriptive answers from Month 5 itself — don\'t wait until Prelims results.' },
+    { tip: 'Samacheer Kalvi textbooks are the secret weapon', body: 'TNPSC sets a significant number of questions from Tamil Nadu State Board (Samacheer Kalvi) textbooks, especially for Science, Social Science, and Tamil Nadu-specific topics. Thoroughly revising Samacheer Kalvi books for Classes 6–12 gives you an enormous edge that standard UPSC books cannot provide.' },
+    { tip: 'Tamil Paper I is qualifying — do not ignore it', body: 'Many engineers and English-medium candidates underestimate the Tamil Paper in Mains. Scoring below 40/100 means all three GS papers go unvalued regardless of how well you wrote them. Allocate at least 1 hour daily to Tamil language practice for the entire preparation period.' },
+  ];
+
+  const faqs = [
+    { q: 'What is TNPSC Group 1 2026?', a: 'TNPSC Group 1 (Combined Civil Services Examination – I) is the most prestigious state civil services exam conducted by Tamil Nadu Public Service Commission. It recruits candidates for top-tier Class I and Class II administrative posts such as Deputy Collector, Deputy Superintendent of Police (DSP), District Registrar, and Assistant Commissioner in the Tamil Nadu state government. The exam follows a three-stage process: Prelims, Mains, and Interview.' },
+    { q: 'What is the TNPSC Group 1 2026 exam date?', a: 'As per the TNPSC Annual Planner 2026, the TNPSC Group 1 Preliminary Exam is scheduled for 6 September 2026. The official notification with full details (vacancies, application dates, syllabus) is expected to be released on 23 June 2026 at tnpsc.gov.in. The Mains and Interview dates are to be notified (TBN) after the Prelims results.' },
+    { q: 'What is the age limit for TNPSC Group 1 2026?', a: 'The base age limit for Open Competition (OC/General) candidates is 21–32 years. BC and MBC/DNC candidates get a 3-year upper age relaxation (up to 35 years). SC/ST candidates get a 5-year relaxation (up to 37 years). Differently-abled (PwD) candidates can be up to 42 years. Destitute widows have no upper age limit. Age is calculated as of 1 July of the relevant recruitment year.' },
+    { q: 'What is the exam pattern for TNPSC Group 1 Prelims 2026?', a: 'The Prelims is an objective-type written exam consisting of 200 MCQs for 300 marks (1.5 marks per correct answer), to be completed in 3 hours. It has two sections: Part A — General Studies (175 questions, Degree Standard) and Part B — Aptitude & Mental Ability (25 questions, SSLC Standard). There is no negative marking. Qualifying marks are 120/300 for OC candidates and 90/300 for reserved categories. Prelims marks are NOT counted in the final merit list.' },
+    { q: 'What is the salary of a TNPSC Group 1 officer?', a: 'TNPSC Group 1 officers are placed in Pay Level 22 of Tamil Nadu\'s revised pay structure, with a basic pay ranging from ₹56,100 to ₹2,05,700 per month. With allowances like DA, HRA, TA, Medical Allowance, and City Compensatory Allowance, the gross monthly salary typically ranges from ₹80,000 to ₹1,20,000+ depending on posting location. Officers also enjoy pension, LTC, and government housing benefits.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <div className="bg-surface-50 min-h-screen">
+        <div className="container-main py-8">
+
+          {/* Breadcrumb */}
+          <nav className="text-sm text-surface-500 mb-6">
+            <Link href="/" className="hover:text-primary-500">Home</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams" className="hover:text-primary-500">Exams</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams?category=State+PSC" className="hover:text-primary-500">State PSC</Link>
+            <span className="mx-2">›</span>
+            <span className="text-surface-800">TNPSC Group 1 2026</span>
+          </nav>
+
+          {/* Page Header */}
+          <div className="mb-8">
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <span className="badge-primary">State PSC</span>
+              <span className="badge-primary">Tamil Nadu</span>
+              <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">Class I & II Services</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">TNPSC Group 1 2026</h1>
+            <p className="text-surface-500 leading-relaxed max-w-2xl">Tamil Nadu's most prestigious state civil services exam — recruiting Deputy Collectors, DSPs, and top administrative officers. Prelims on <strong>6 September 2026</strong>. Notification expected <strong>23 June 2026</strong>.</p>
+
+            {/* Fast-fact highlight grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+              <InfoCard label="📅 Prelims Date" value="6 Sep 2026" />
+              <InfoCard label="🏢 Vacancies (2026)" value="72 Posts (TBN)" />
+              <InfoCard label="📋 Age Limit" value="21–32 yrs (OC)" />
+              <InfoCard label="💰 Salary (Pay Lvl 22)" value="₹56,100 – ₹2,05,700" highlight />
+            </div>
+
+            {/* Key update banner */}
+            <div className="mt-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-surface-700">
+              💡 <strong>2026 Update:</strong> TNPSC Annual Planner 2026 confirms Prelims on <strong>6 September 2026</strong> and the official notification on <strong>23 June 2026</strong>. Complete OTR (One-Time Registration) at <em>apply.tnpscexams.in</em> now — it is valid for 5 years and mandatory to apply.
+            </div>
+          </div>
+
+          {/* Two-column layout */}
+          <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+            {/* Main Content */}
+            <div>
+
+              {/* 1. Overview */}
+              <section id="overview" className="mb-12">
+                <SectionHeading num="1" title="What is TNPSC Group 1 2026?" />
+                <div className="card p-6 text-sm text-surface-700 leading-relaxed space-y-3">
+                  <p>The <strong>TNPSC Group 1 exam</strong> (officially: Combined Civil Services Examination – I) is conducted by the Tamil Nadu Public Service Commission to recruit candidates for the highest-ranking posts in Tamil Nadu state services. Often described as Tamil Nadu's equivalent of the UPSC Civil Services, this exam opens doors to coveted posts such as Deputy Collector, Deputy Superintendent of Police (DSP), District Registrar, and Assistant Commissioner.</p>
+                  <p>The examination follows a three-tier structure — Prelims (qualifying), Mains (descriptive, merit-based), and Interview — closely mirroring the UPSC pattern. Final selection is based entirely on Mains (750 marks) + Interview (100 marks) = <strong>850 total marks</strong>. Prelims marks are not added to the merit list.</p>
+                  <p>TNPSC Group 1 is conducted approximately once a year and typically attracts over 2–4 lakh applicants for around 72–170 posts, making it one of the most competitive state-level exams in India.</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+                    <InfoCard label="🏛️ Conducting Body" value="Tamil Nadu PSC (TNPSC)" />
+                    <InfoCard label="🎓 Qualification" value="Any Graduate" />
+                    <InfoCard label="📝 Exam Mode" value="Prelims: OMR | Mains: Descriptive" />
+                    <InfoCard label="🌐 Official Website" value="tnpsc.gov.in" />
+                  </div>
+                </div>
+              </section>
+
+              {/* 2. Important Dates */}
+              <section id="important-dates" className="mb-12">
+                <SectionHeading num="2" title="TNPSC Group 1 Important Dates 2026" />
+                <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4 mb-4 text-sm text-surface-700">
+                  ⚠️ <strong>Disclaimer:</strong> Notification date (23 June 2026) and Prelims date (6 September 2026) are from the official TNPSC Annual Planner 2026. All other dates are TBN and will be published in the official notification at tnpsc.gov.in.
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Event</th>
+                          <th className="text-left p-4 font-heading font-semibold">Date</th>
+                          <th className="text-left p-4 font-heading font-semibold">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {importantDates.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-4 text-surface-700 font-medium">{row.event}</td>
+                            <td className="p-4 text-surface-600">{row.date}</td>
+                            <td className="p-4">
+                              <span className={`text-xs font-semibold px-2.5 py-1 rounded-full font-heading ${statusColor(row.status)}`}>
+                                {statusLabel(row.status)}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              {/* 3. Eligibility */}
+              <section id="eligibility" className="mb-12">
+                <SectionHeading num="3" title="Eligibility Criteria 2026" />
+                <div className="space-y-4">
+                  <div className="card p-5">
+                    <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">🎓 Educational Qualification</h3>
+                    <p className="text-sm text-surface-600 leading-relaxed">Candidates must hold a <strong>Bachelor's Degree (in any discipline)</strong> from a University incorporated by an Act of the Central or State Legislature in India, or any Institution established by an Act of Parliament, or declared a Deemed University under Section 3 of the UGC Act, 1956.</p>
+                    <ul className="mt-2 text-sm text-surface-600 space-y-1 list-disc ml-5">
+                      <li>For <strong>Assistant Commissioner (CT)</strong> posts — Law or Commerce degree holders are preferred.</li>
+                      <li>Final year students are generally permitted to apply but must produce the degree certificate at the Mains stage.</li>
+                      <li>Candidates must have <strong>studied Tamil as a subject at SSLC level</strong> or must pass the Tamil language eligibility test.</li>
+                    </ul>
+                  </div>
+
+                  <div className="card p-5">
+                    <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">📋 Age Limit (as on 1 July 2026)</h3>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="bg-surface-100">
+                            <th className="text-left p-3 font-heading font-semibold text-surface-700">Category</th>
+                            <th className="text-left p-3 font-heading font-semibold text-surface-700">Min Age</th>
+                            <th className="text-left p-3 font-heading font-semibold text-surface-700">Max Age</th>
+                            <th className="text-left p-3 font-heading font-semibold text-surface-700">Relaxation</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {ageLimit.map((row, i) => (
+                            <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                              <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                              <td className="p-3 text-surface-600">{row.min}</td>
+                              <td className="p-3 text-surface-600">{row.max}</td>
+                              <td className="p-3 text-surface-500 text-xs">{row.note}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div className="card p-5">
+                    <h3 className="text-base font-heading font-semibold text-surface-800 mb-2">🪪 Other Eligibility Conditions</h3>
+                    <ul className="text-sm text-surface-600 space-y-2 list-disc ml-5">
+                      <li><strong>Nationality:</strong> Must be a citizen of India.</li>
+                      <li><strong>Tamil Proficiency:</strong> Adequate knowledge of Tamil is mandatory. A Tamil Eligibility Test is part of the Mains examination.</li>
+                      <li><strong>Physical Fitness:</strong> Selected candidates will undergo a medical examination before appointment.</li>
+                      <li><strong>Character:</strong> Must be of good moral character with a clean criminal record.</li>
+                      <li>Check eligibility for <strong>DSP and Deputy Collector</strong> posts separately as they may have additional physical fitness standards.</li>
+                    </ul>
+                    <div className="mt-3">
+                      <Link href="/tools/eligibility-checker" className="btn-outline text-sm inline-block">
+                        ✅ Check Your Eligibility — Free Tool
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* 4. Posts & Vacancies */}
+              <section id="vacancies" className="mb-12">
+                <SectionHeading num="4" title="TNPSC Group 1 Posts & Vacancies 2026" />
+                <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mb-4 text-sm text-surface-700">
+                  💡 <strong>Vacancy Update:</strong> TNPSC has notified <strong>72 posts</strong> for the 2026 Group 1 cycle. Post-wise breakup and reservation details will be published in the official notification on 23 June 2026. Previous cycle (2023-24) had 96 vacancies; historical range is 70–170 posts per cycle.
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Post Name</th>
+                          <th className="text-left p-4 font-heading font-semibold">Department</th>
+                          <th className="text-left p-4 font-heading font-semibold">Grade</th>
+                          <th className="text-left p-4 font-heading font-semibold">Vacancies</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {posts.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-4 font-medium text-surface-800">{row.post}</td>
+                            <td className="p-4 text-surface-600 text-xs">{row.dept}</td>
+                            <td className="p-4"><span className="badge-primary">{row.grade}</span></td>
+                            <td className="p-4 font-semibold text-emerald-600 text-xs">{row.category}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              {/* 5. Exam Pattern */}
+              <section id="exam-pattern" className="mb-12">
+                <SectionHeading num="5" title="Exam Pattern 2026" />
+
+                <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">Stage 1 — Preliminary Examination (Qualifying)</h3>
+                <div className="card overflow-hidden mb-5">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Section</th>
+                          <th className="text-left p-4 font-heading font-semibold">Standard</th>
+                          <th className="text-left p-4 font-heading font-semibold">Questions</th>
+                          <th className="text-left p-4 font-heading font-semibold">Marks</th>
+                          <th className="text-left p-4 font-heading font-semibold">Topics</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {prelimsPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-4 font-semibold text-surface-800">{row.subject}</td>
+                            <td className="p-4 text-surface-600 text-xs">{row.std}</td>
+                            <td className="p-4 font-heading font-bold text-primary-600">{row.questions}</td>
+                            <td className="p-4 font-heading font-bold text-emerald-600">{row.marks}</td>
+                            <td className="p-4 text-surface-500 text-xs">{row.note}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <h3 className="text-base font-heading font-semibold text-surface-800 mb-3">Stage 2 & 3 — Main Examination + Interview (Merit)</h3>
+                <div className="card overflow-hidden mb-5">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Paper</th>
+                          <th className="text-left p-4 font-heading font-semibold">Marks</th>
+                          <th className="text-left p-4 font-heading font-semibold">Type</th>
+                          <th className="text-left p-4 font-heading font-semibold">Details</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {mainsPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-4 font-semibold text-surface-800">{row.paper}</td>
+                            <td className="p-4 font-heading font-bold text-primary-600">{row.marks}</td>
+                            <td className="p-4">
+                              <span className={`text-xs font-semibold px-2 py-0.5 rounded-full font-heading ${row.type === 'Qualifying' ? 'bg-accent-100 text-accent-700' : row.type === 'Merit' ? 'bg-emerald-100 text-emerald-700' : 'bg-surface-100 text-surface-600'}`}>
+                                {row.type}
+                              </span>
+                            </td>
+                            <td className="p-4 text-surface-500 text-xs">{row.note}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <InfoCard label="Prelims — No Neg. Marking" value="Attempt All 200 Questions" />
+                  <InfoCard label="Tamil Paper I (Mains)" value="Min. 40/100 to Qualify" />
+                  <InfoCard label="Final Merit (Mains + Interview)" value="750 + 100 = 850 Marks" highlight />
+                </div>
+              </section>
+
+              {/* 6. Syllabus */}
+              <section id="syllabus" className="mb-12">
+                <SectionHeading num="6" title="Syllabus 2026" />
+                <p className="text-sm text-surface-600 mb-4">The Prelims syllabus is at <strong>Degree Standard</strong> for General Studies and <strong>SSLC Standard</strong> for AMAB. The Mains syllabus is descriptive and goes deeper on each subject.</p>
+                <div className="space-y-2">
+                  {syllabusSections.map((sec, i) => (
+                    <details key={i} className="card overflow-hidden">
+                      <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50">
+                        <span>{sec.subject}</span>
+                        <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </summary>
+                      <div className="px-5 pb-5">
+                        <ul className="space-y-1.5 text-sm text-surface-600">
+                          {sec.topics.map((t, j) => (
+                            <li key={j} className="flex items-start gap-2"><span className="text-primary-400 mt-0.5">▸</span>{t}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              {/* 7. Salary */}
+              <section id="salary" className="mb-12">
+                <SectionHeading num="7" title="Salary & Benefits 2026" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <InfoCard label="Pay Level" value="Level 22 (TN Pay Matrix)" />
+                  <InfoCard label="Basic Pay Range" value="₹56,100 – ₹2,05,700/month" highlight />
+                  <InfoCard label="Estimated Gross Salary" value="₹80,000 – ₹1,20,000+/month" highlight />
+                  <InfoCard label="Interview Marks" value="100 Marks (Personality Test)" />
+                </div>
+                <div className="card p-5 text-sm text-surface-700 space-y-2">
+                  <p className="font-heading font-semibold text-surface-800 mb-1">Allowances & Perks included:</p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 list-none">
+                    {['Dearness Allowance (DA)', 'House Rent Allowance (HRA)', 'Travel Allowance (TA)', 'City Compensatory Allowance', 'Medical Allowance & facilities', 'Leave Travel Concession (LTC)', 'Pension (under NPS)', 'Government housing (as per availability)'].map((b, i) => (
+                      <li key={i} className="flex items-center gap-2"><span className="text-emerald-500">✓</span>{b}</li>
+                    ))}
+                  </ul>
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3 mt-3">
+                    <p className="text-xs text-surface-600"><strong>Career Growth:</strong> Deputy Collectors can be promoted to District Collector, Divisional Commissioner, and ultimately Secretary-level posts. Top performers may be empanelled into the <strong>Indian Administrative Service (IAS)</strong> cadre — the highest career milestone for a Tamil Nadu civil servant.</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* 8. How to Apply */}
+              <section id="how-to-apply" className="mb-12">
+                <SectionHeading num="8" title="How to Apply for TNPSC Group 1 2026" />
+                <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-4 text-sm text-surface-700">
+                  💡 <strong>Start Now:</strong> Complete your <strong>One-Time Registration (OTR)</strong> at <em>apply.tnpscexams.in</em> before the notification is released. OTR is mandatory and valid for 5 years. You cannot apply without it.
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { step: '1', title: 'Complete One-Time Registration (OTR)', desc: 'Visit apply.tnpscexams.in and register with your name, date of birth, email ID, and mobile number. This generates a unique TNPSC Registration ID valid for 5 years.' },
+                    { step: '2', title: 'Wait for Official Notification (23 June 2026)', desc: 'Monitor tnpsc.gov.in for the official Group 1 & 1A notification PDF. Read it carefully for post-wise vacancies, eligibility and reservation details.' },
+                    { step: '3', title: 'Login and Fill the Application Form', desc: 'Use your OTR credentials to login. Select Group 1 notification, fill in your academic, category and language medium details accurately.' },
+                    { step: '4', title: 'Upload Documents', desc: 'Upload a recent passport-size photo (JPG, max 50KB) and signature (JPG, max 30KB). Ensure they meet the prescribed format.' },
+                    { step: '5', title: 'Pay Application Fee and Submit', desc: 'Pay the application fee online (amount TBN — typically ₹150 for OC, ₹0 for SC/ST). Note your application number and download the confirmation for records.' },
+                  ].map((s) => (
+                    <div key={s.step} className="card p-5 flex items-start gap-4">
+                      <span className="w-8 h-8 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm flex-shrink-0">{s.step}</span>
+                      <div>
+                        <p className="font-heading font-semibold text-surface-800 text-sm">{s.title}</p>
+                        <p className="text-xs text-surface-500 mt-1 leading-relaxed">{s.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 9. Study Plan */}
+              <section id="study-plan" className="mb-12">
+                <SectionHeading num="9" title="TNPSC Group 1 Study Plan 2026" />
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  <div className="space-y-4">
+                    {studyPlan.map((p, i) => (
+                      <div key={i} className="sm:pl-14 relative">
+                        <span className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-xs text-center leading-tight">{i + 1}</span>
+                        <div className="card p-5">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="badge-primary">{p.month}</span>
+                            <span className="font-heading font-semibold text-surface-800 text-sm">{p.title}</span>
+                          </div>
+                          <p className="text-sm text-surface-600 leading-relaxed">{p.tasks}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* 10. Best Books */}
+              <section id="books" className="mb-12">
+                <SectionHeading num="10" title="Best Books for TNPSC Group 1 2026" />
+                <BooksTable books={books} />
+                <p className="text-xs text-surface-400 mt-2">💡 <strong>Pro tip:</strong> Samacheer Kalvi textbooks (Classes 6–12) are essential for TNPSC — many direct questions come from TN State Board books.</p>
+              </section>
+
+              {/* 11. Expert Tips */}
+              <section id="tips" className="mb-12">
+                <SectionHeading num="11" title="Expert Tips to Crack TNPSC Group 1 2026" />
+                <div className="space-y-3">
+                  {tips.map((t, i) => (
+                    <div key={i} className="card p-5 flex items-start gap-4">
+                      <span className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center text-accent-600 font-heading font-bold text-sm flex-shrink-0">{i + 1}</span>
+                      <div>
+                        <p className="font-heading font-semibold text-surface-800 text-sm">{t.tip}</p>
+                        <p className="text-xs text-surface-500 mt-1 leading-relaxed">{t.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 12. FAQs */}
+              <section id="faq" className="mb-12">
+                <SectionHeading num="12" title="Frequently Asked Questions" />
+                <div className="space-y-2">
+                  {faqs.map((f, i) => (
+                    <details key={i} className="card overflow-hidden">
+                      <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50">
+                        <span>{f.q}</span>
+                        <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </summary>
+                      <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{f.a}</div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              {/* Disclaimer */}
+              <div className="card p-4 bg-surface-100 border-surface-200 text-xs text-surface-500 mb-8">
+                <strong>Disclaimer:</strong> Information on this page is based on the TNPSC Annual Planner 2026 and previous official notifications. Dates, vacancies, and eligibility conditions may change in the official notification. Always verify from <strong>tnpsc.gov.in</strong> before applying. TaiyarHo.in is an independent free exam guide — no paywalls, no spam.
+              </div>
+
+            </div>
+
+            {/* Sidebar */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-24 space-y-5">
+
+                {/* TOC */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">On This Page</h3>
+                  <nav className="space-y-1">
+                    {toc.map((item) => (
+                      <a key={item.id} href={`#${item.id}`} className="block text-xs text-surface-500 hover:text-primary-500 hover:bg-primary-50 px-2 py-1.5 rounded-md transition-colors">
+                        {item.label}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+
+                {/* Key Dates card */}
+                <div className="card p-5 bg-primary-50 border-primary-200">
+                  <h3 className="font-heading font-semibold text-primary-800 mb-3 text-sm">📅 Key Dates 2026</h3>
+                  <div className="space-y-2 text-xs text-surface-700">
+                    <div className="flex justify-between"><span>Notification</span><span className="font-semibold text-primary-600">23 Jun 2026</span></div>
+                    <div className="flex justify-between"><span>Prelims</span><span className="font-semibold text-emerald-600">6 Sep 2026</span></div>
+                    <div className="flex justify-between"><span>Mains</span><span className="font-semibold text-surface-500">TBN</span></div>
+                    <div className="flex justify-between"><span>Interview</span><span className="font-semibold text-surface-500">TBN</span></div>
+                  </div>
+                  <a href="https://tnpsc.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary text-xs w-full text-center mt-3 block">
+                    Official TNPSC Website ↗
+                  </a>
+                </div>
+
+                {/* Quick Stats */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Quick Stats</h3>
+                  <div className="space-y-2 text-xs text-surface-600">
+                    <div className="flex justify-between"><span>Total Marks (Mains + Interview)</span><span className="font-semibold">850</span></div>
+                    <div className="flex justify-between"><span>Prelims Questions</span><span className="font-semibold">200 MCQs</span></div>
+                    <div className="flex justify-between"><span>Prelims Duration</span><span className="font-semibold">3 Hours</span></div>
+                    <div className="flex justify-between"><span>Neg. Marking (Prelims)</span><span className="font-semibold text-emerald-600">None</span></div>
+                    <div className="flex justify-between"><span>Mains Papers (Merit)</span><span className="font-semibold">3 × 250 marks</span></div>
+                    <div className="flex justify-between"><span>Interview Marks</span><span className="font-semibold">100</span></div>
+                  </div>
+                </div>
+
+                {/* Eligibility Checker */}
+                <div className="card p-5 bg-emerald-50 border-emerald-200">
+                  <h3 className="font-heading font-semibold text-emerald-800 mb-2 text-sm">✅ Eligibility Checker</h3>
+                  <p className="text-xs text-surface-600 mb-3">Check if you are eligible for TNPSC Group 1 and 100+ other government exams instantly.</p>
+                  <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center block">Check My Eligibility</Link>
+                </div>
+
+                {/* Related Exams */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related Exams</h3>
+                  <div className="space-y-1">
+                    {[
+                      { name: 'TNPSC Group 2 2026', slug: 'tnpsc-group-2' },
+                      { name: 'TNPSC Group 4 2026', slug: 'tnpsc-group-4' },
+                      { name: 'UPSC IAS 2026', slug: 'upsc-ias' },
+                      { name: 'MPSC Rajyaseva 2026', slug: 'mpsc-rajyaseva' },
+                      { name: 'BPSC CCE 2026', slug: 'bpsc-cce' },
+                    ].map((e) => (
+                      <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-xs text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">
+                        🔗 {e.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </aside>
+
+          </div>
         </div>
       </div>
     </>
