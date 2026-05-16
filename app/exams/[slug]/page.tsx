@@ -413,6 +413,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'esic-mts') {
+    return {
+      title: 'ESIC MTS 2026 – Vacancy, Syllabus, Exam Pattern, Salary & Guide | TaiyarHo',
+      description: 'ESIC MTS 2026: 1,500–3,000+ vacancies expected. 10th pass eligible. Age 18–25 yrs. Prelims + Mains (no interview). Salary ₹18,000–₹56,900 (7th CPC Level-1). Complete syllabus, exam pattern, previous year cut-off & free preparation guide.',
+      keywords: 'ESIC MTS 2026, ESIC MTS notification 2026, ESIC MTS syllabus, ESIC MTS salary, ESIC MTS exam pattern, ESIC MTS vacancy 2026, ESIC Multi Tasking Staff bharti, esic.nic.in, ईएसआईसी एमटीएस भर्ती 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/esic-mts/' },
+      other: { 'description:hi': 'ESIC MTS 2026 – कर्मचारी राज्य बीमा निगम में 1,500–3,000+ मल्टी टास्किंग स्टाफ रिक्तियाँ अपेक्षित। 10वीं पास पात्र। आयु 18–25 वर्ष। प्रारंभिक + मुख्य परीक्षा (कोई साक्षात्कार नहीं)। वेतन ₹18,000–₹56,900 (7वाँ वेतन आयोग लेवल-1)। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'rbi-grade-b') {
     return {
       title: 'RBI Grade B 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -691,6 +701,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'coast-guard-navik-gd') return <CoastGuardNavikGdPage exam={brief} />;
   if (brief && brief.slug === 'niacl-ao') return <NiaclAoPage exam={brief} />;
   if (brief && brief.slug === 'nicl-ao') return <NiclAoPage exam={brief} />;
+  if (brief && brief.slug === 'esic-mts') return <EsicMtsPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -47394,6 +47405,810 @@ function NiclAoPage({ exam }: { exam: any }) {
             </aside>
 
           </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── ESIC MTS 2026 RICH PAGE ────────────────────────────────────────────────────
+function EsicMtsPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies History' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'ESIC MTS 2022 Notification Released', date: '28 December 2021', status: 'released' as const },
+    { event: 'ESIC MTS 2022 Online Application Last Date', date: '15 February 2022', status: 'released' as const },
+    { event: 'ESIC MTS 2022 Prelims Exam', date: '7 May 2022', status: 'released' as const },
+    { event: 'ESIC MTS 2022 Prelims Result', date: 'May 2022', status: 'released' as const },
+    { event: 'ESIC MTS 2022 Mains Exam', date: '5 June 2022', status: 'released' as const },
+    { event: 'ESIC MTS 2022 Mains Result', date: '28 June 2022', status: 'released' as const },
+    { event: '🆕 ESIC MTS 2026 – Official Notification', date: '2026 (Expected)', status: 'tbn' as const },
+    { event: 'ESIC MTS 2026 – Online Application Opens', date: '2026 (Expected)', status: 'tbn' as const },
+    { event: 'ESIC MTS 2026 – Application Last Date', date: '2026 (Expected)', status: 'tbn' as const },
+    { event: 'ESIC MTS 2026 – Prelims Exam', date: '2026 (Expected)', status: 'tbn' as const },
+    { event: 'ESIC MTS 2026 – Mains Exam', date: '2026 (Expected)', status: 'tbn' as const },
+    { event: 'ESIC MTS 2026 – Final Result', date: '2026–2027 (Expected)', status: 'tbn' as const },
+  ];
+
+  const vacancyHistory = [
+    { year: 'ESIC MTS 2019', vacancies: '1,044', prelims: 'September 2019', mains: 'November 2019' },
+    { year: 'ESIC MTS 2022', vacancies: '1,948', prelims: 'May 2022', mains: 'June 2022' },
+    { year: 'ESIC MTS 2026 (upcoming)', vacancies: '1,500–3,000+ (Expected)', prelims: '2026 (TBN)', mains: '2026 (TBN)' },
+  ];
+
+  const prelimsPattern = [
+    { subject: 'General Intelligence & Reasoning', questions: 25, marks: 50, time: '15 min (combined)' },
+    { subject: 'General Awareness', questions: 25, marks: 50, time: '15 min (combined)' },
+    { subject: 'Quantitative Aptitude', questions: 25, marks: 50, time: '15 min (combined)' },
+    { subject: 'English Comprehension', questions: 25, marks: 50, time: '15 min (combined)' },
+  ];
+
+  const mainsPattern = [
+    { subject: 'General Intelligence & Reasoning', questions: 50, marks: 50, time: '30 min (combined)' },
+    { subject: 'General Awareness', questions: 50, marks: 50, time: '30 min (combined)' },
+    { subject: 'Quantitative Aptitude', questions: 50, marks: 50, time: '30 min (combined)' },
+    { subject: 'English Comprehension', questions: 50, marks: 50, time: '30 min (combined)' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (7th CPC Level-1, initial cell)', amount: '₹18,000/month' },
+    { component: 'Dearness Allowance (DA) @ 60% of Basic (Jan 2026 revision)', amount: '~₹10,800/month' },
+    { component: 'House Rent Allowance (HRA) – X City (30%)', amount: '₹5,400/month' },
+    { component: 'Transport Allowance (TA)', amount: '₹1,350–₹3,600/month' },
+    { component: 'Other Allowances (Medical, Special)', amount: '~₹1,000–₹2,000/month' },
+    { component: 'Gross Estimated In-Hand', amount: '~₹24,000–₹28,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Multi Tasking Staff', scale: 'Level-1', years: '0–5 yrs (Entry)', payband: '₹18,000–₹56,900' },
+    { level: 'Lower Division Clerk (LDC)', scale: 'Level-2', years: '5–10 yrs (Promotion)', payband: '₹19,900–₹63,200' },
+    { level: 'Upper Division Clerk (UDC)', scale: 'Level-4', years: '10–15 yrs', payband: '₹25,500–₹81,100' },
+    { level: 'Assistant / Head Clerk', scale: 'Level-6', years: '15–20 yrs', payband: '₹35,400–₹1,12,400' },
+    { level: 'Social Security Officer / SSO', scale: 'Level-7', years: '20+ yrs', payband: '₹44,900–₹1,42,400' },
+  ];
+
+  const syllabusTopics = [
+    {
+      subject: '🧩 General Intelligence & Reasoning',
+      topics: [
+        'Analogies, Classification, Series (Number, Alphabet, Figure)',
+        'Coding-Decoding, Blood Relations, Direction & Distance',
+        'Non-Verbal Reasoning — Figure completion, Mirror/Water Image, Paper Folding',
+        'Venn Diagrams, Dice & Cube, Ranking & Order',
+        'Syllogisms, Statements & Conclusions, Clock & Calendar',
+        'Embedded Figures, Pattern Recognition, Odd One Out',
+      ],
+    },
+    {
+      subject: '📚 General Awareness',
+      topics: [
+        'Current Affairs — last 6 months national and international events',
+        'Indian History — Ancient, Medieval, Modern (Freedom Movement)',
+        'Geography — India & World (Rivers, Mountains, Capitals, Climate)',
+        'Indian Polity — Constitution, Parliament, Fundamental Rights, Panchayati Raj',
+        'Economy — Budget basics, Five Year Plans, RBI, NITI Aayog, GDP, Inflation',
+        'Science — Physics, Chemistry, Biology basics for everyday life',
+        'ESIC-specific — ESI Act 1948, ESIC functions, social security schemes, Ministry of Labour',
+        'Government Schemes — Ayushman Bharat, PM-JAY, PMJDY, MUDRA, Atal Pension',
+      ],
+    },
+    {
+      subject: '🔢 Quantitative Aptitude',
+      topics: [
+        'Number System — LCM, HCF, Divisibility, Remainder Theorem',
+        'Simplification, BODMAS, Approximation',
+        'Percentage, Profit & Loss, Simple & Compound Interest',
+        'Ratio & Proportion, Average, Mixture & Alligation',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time, Trains, Boats & Streams',
+        'Basic Geometry, Mensuration (Area, Volume)',
+        'Data Interpretation — Bar, Pie, Line, Table (basic level)',
+      ],
+    },
+    {
+      subject: '📝 English Comprehension',
+      topics: [
+        'Reading Comprehension — short passages (150–200 words)',
+        'Fill in the Blanks, Cloze Test',
+        'Error Spotting (sentence level)',
+        'Synonyms & Antonyms, One Word Substitution',
+        'Idioms & Phrases, Sentence Improvement',
+        'Spelling Correction, Active-Passive Voice',
+        'Direct-Indirect Speech, Sentence Rearrangement',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1', focus: 'Foundation Building', detail: 'Start with Quantitative Aptitude basics — Number System, Simplification, Percentage, Ratio. Simultaneously begin General Awareness by reading a newspaper daily (15 min) and learning about ESIC, ESI Act 1948, and social security basics. Solve 20 Reasoning questions daily for pattern recognition.' },
+    { month: 'Month 2', focus: 'Complete Syllabus Coverage', detail: 'Finish remaining Quant topics (Time & Work, SI/CI, Speed-Distance). Complete Reasoning syllabus — focus on Non-Verbal Reasoning (heavily asked in MTS). English: start with grammar rules (Error Spotting, Fill in Blanks) and read one short passage daily.' },
+    { month: 'Month 3', focus: 'Revision + Mock Tests', detail: 'Start taking full-length Prelims mock tests — 2 per week minimum. Analyse every mock: identify weak topics and revise them. Increase GA revision with monthly capsules (Adda247, Oliveboard). Final 2 weeks: one mock per day with thorough analysis. Focus on time management — 60 minutes for 100 questions means 36 seconds per question.' },
+  ];
+
+  const books = [
+    { title: 'Lucent\'s General Knowledge', author: 'Dr. Binay Karna & R.P. Suman', subject: 'General Awareness' },
+    { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' },
+    { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Quantitative Aptitude' },
+    { title: 'Objective General English', author: 'S.P. Bakshi', subject: 'English' },
+    { title: 'ESIC MTS Previous Year Papers', author: 'Kiran Publications / Arihant', subject: 'Practice Papers' },
+    { title: 'Manorama Yearbook 2026', author: 'Malayala Manorama', subject: 'Current Affairs & GK' },
+  ];
+
+  const freeResources = [
+    { name: 'ESIC Official Website', type: 'website', url: 'https://www.esic.nic.in/', description: 'Official notifications, admit cards, results, and recruitment updates — always the primary source.' },
+    { name: 'Adda247 (Bankersadda) on YouTube', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Free daily classes, mock solutions, and current affairs for ESIC MTS/UDC preparation.' },
+    { name: 'Oliveboard ESIC Free Mocks', type: 'website', url: 'https://www.oliveboard.in/', description: 'Free full-length and sectional mocks with performance analysis for ESIC MTS exam pattern.' },
+    { name: 'ixamBee ESIC MTS Free Mock Tests', type: 'website', url: 'https://www.ixambee.com/free-mock-tests/esic-mts-prelims', description: 'Free Prelims mock tests designed by experts matching the ESIC MTS exam pattern.' },
+    { name: 'Testbook ESIC MTS Tests', type: 'website', url: 'https://testbook.com/esic-mts', description: 'Free mock tests, previous year papers, and section-wise practice for ESIC MTS.' },
+    { name: 'GK Today Daily Current Affairs', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily current affairs, monthly capsules, and GK revision PDFs for all competitive exams.' },
+    { name: 'Study IQ Education on YouTube', type: 'youtube', url: 'https://www.youtube.com/@StudyIQEducation', description: 'Free classes on Reasoning, Quant, English, and Current Affairs for SSC/ESIC-level exams.' },
+    { name: 'Wifistudy / Unacademy on YouTube', type: 'youtube', url: 'https://www.youtube.com/@waboriginals', description: 'Free video classes for Reasoning, English, and Quant at the MTS/10th-pass exam level.' },
+  ];
+
+  const tips = [
+    { icon: '🎯', tip: 'ESIC MTS Prelims is qualifying — only Mains marks count for final merit. Still, take Prelims seriously: if you don\'t clear the cut-off (45% for General, 40% OBC, 35% SC/ST), your journey ends there. Aim for 130+ out of 200 in Prelims.' },
+    { icon: '🧩', tip: 'Non-Verbal Reasoning is heavily tested in MTS exams. Practice Figure Series, Mirror Images, Paper Folding, and Embedded Figures daily. These are easy marks once you recognise the patterns — don\'t leave them for last.' },
+    { icon: '📰', tip: 'General Awareness carries 50 marks in both Prelims and Mains. Read a newspaper (or an app like Inshorts) for 15 minutes daily. Focus on last 6 months of current affairs, government schemes, and ESIC-specific questions (ESI Act, social security).' },
+    { icon: '⏱️', tip: 'Prelims: 100 questions in 60 minutes = 36 seconds per question. Mains: 200 questions in 120 minutes = 36 seconds per question. Speed is everything. Practise with a timer from Day 1. Skip questions you\'re unsure about — negative marking (0.25 penalty) punishes guessing.' },
+    { icon: '📝', tip: 'English section is basic at the MTS level — Error Spotting, Fill in the Blanks, Synonyms/Antonyms. Learn 10 new words daily and master the top 50 grammar rules (Subject-Verb Agreement, Tenses, Articles). This is the easiest section to score full marks in.' },
+    { icon: '🔄', tip: 'Take at least 15–20 full-length mock tests before the exam. Analyse every mock — find your mistake patterns. Are you losing marks in Reasoning? GA? Fix the weakest section first. Mock test scores in the last 2 weeks should be your benchmark, not first-attempt scores.' },
+    { icon: '💡', tip: 'ESIC MTS has no interview — your Mains score is the final merit. Every single mark matters. Focus on accuracy over speed in Mains. Even 5 extra correct answers can mean the difference between selection and waiting list.' },
+    { icon: '🌐', tip: 'The exam is conducted in Hindi, English, and regional languages. Choose the language you\'re most comfortable with for Reasoning, GA, and Quant sections. English section must be attempted in English only.' },
+  ];
+
+  const faqs = [
+    { q: 'What is the ESIC MTS 2026 notification date?', a: 'The ESIC MTS 2026 notification date has not been officially announced yet. The last ESIC MTS recruitment was in 2022 (notification released December 2021). ESIC conducts MTS recruitment irregularly — not every year. The next cycle is expected in 2025–2026 based on vacancy trends. Check esic.nic.in regularly for the official announcement.' },
+    { q: 'How many vacancies are expected in ESIC MTS 2026?', a: 'Based on previous recruitment cycles — 1,044 (2019) and 1,948 (2022) — the ESIC MTS 2026 recruitment is expected to have 1,500–3,000+ vacancies across various states and regions. The exact number varies by region and is announced with the official notification.' },
+    { q: 'What is ESIC MTS salary in 2026?', a: 'ESIC MTS salary is in Pay Level-1 of the 7th Central Pay Commission. Basic pay starts at ₹18,000/month. With DA (60% as of January 2026), HRA, TA, and other allowances, the gross in-hand salary is approximately ₹24,000–₹28,000/month depending on posting city. With the 8th Pay Commission (expected implementation 2026–2027), the basic pay may increase to ₹34,500–₹51,500.' },
+    { q: 'What is the educational qualification for ESIC MTS?', a: 'The minimum educational qualification for ESIC MTS is Matriculation (10th Pass) or equivalent from a recognised board. No higher degree is required. This makes ESIC MTS one of the most accessible central government jobs for 10th-pass candidates.' },
+    { q: 'Is there an interview in ESIC MTS selection?', a: 'No. ESIC MTS selection is based only on Prelims (qualifying) and Mains (merit-based). There is no interview, no skill test, and no physical test. Your Mains exam score is the final merit — the highest scorers in each category and region are selected.' },
+    { q: 'What is the age limit for ESIC MTS 2026?', a: 'The age limit for ESIC MTS is 18–25 years for General/EWS candidates (as on the closing date of application). Age relaxations: OBC (+3 years = up to 28), SC/ST (+5 years = up to 30), PwBD (+10 years = up to 35), Ex-Servicemen (+5 years). ESIC employees get additional relaxation as per government norms.' },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">ESIC MTS 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏥 Insurance (ESIC)</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: 2026 (Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            ESIC MTS 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            ESIC MTS 2026 recruitment expected with <strong>1,500–3,000+</strong> vacancies for Multi Tasking Staff across ESIC offices and hospitals nationwide. Only <strong>10th pass required</strong>. 2-stage selection: Prelims → Mains (no interview). Salary <strong>₹18,000–₹56,900</strong> (7th CPC Level-1) with 8th Pay Commission hike expected.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '1,500–3,000+', sub: '(2026 est.)' },
+              { label: 'Exam Date', value: '2026 (TBN)', sub: 'Notification awaited' },
+              { label: 'Min. Qualification', value: '10th Pass', sub: 'Matriculation' },
+              { label: 'Salary (7th CPC)', value: '₹18,000–₹56,900', sub: 'Level-1 Pay Band' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update 2026:</strong> DA has been revised to <strong>60%</strong> (effective January 2026). The <strong>8th Pay Commission</strong> is constituted and expected to be implemented from January 2026 — MTS basic pay may rise to ₹34,500–₹51,500. ESIC MTS 2026 notification is awaited. Always verify from <a href="https://www.esic.nic.in/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">esic.nic.in</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is ESIC MTS 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>ESIC MTS (Multi Tasking Staff)</strong> exam is conducted by the <strong>Employees&apos; State Insurance Corporation (ESIC)</strong> to recruit Group &apos;C&apos; Non-Gazetted, Non-Ministerial staff for its regional offices, sub-regional offices, and hospitals across India. ESIC operates under the <strong>Ministry of Labour &amp; Employment, Government of India</strong>.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  Multi Tasking Staff handle essential support functions — office upkeep, file management, dispatch, photocopying, basic computer work, and assisting clerical staff. It is an <strong>entry-level central government position</strong> open to candidates who have passed Class 10 (Matriculation), making it one of the most accessible government exams in India.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  What makes ESIC MTS attractive is the <strong>no-interview selection</strong> — your Mains exam score is the final merit. Combined with central government benefits (pension, medical, LTC), ESIC MTS is a solid foundation to begin a government career with scope for promotion to LDC, UDC, and eventually SSO.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'ESIC (Min. of Labour)' },
+                  { label: 'Post Type', value: 'Group C, Non-Gazetted' },
+                  { label: 'Selection Stages', value: 'Prelims + Mains' },
+                  { label: 'Probation Period', value: '2 Years' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 ESIC MTS 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> ESIC MTS 2026 dates are not yet officially announced. The table below shows confirmed 2022 dates and expected 2026 dates. ESIC conducts MTS recruitment irregularly (not every year). Always verify from <a href="https://www.esic.nic.in/" target="_blank" rel="noopener noreferrer" className="underline font-medium">esic.nic.in</a>.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released' && <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">✅ Done</span>}
+                          {row.status === 'tbn' && <span className="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria for ESIC MTS 2026</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Nationality</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">Candidate must be a citizen of India. Citizens of Nepal, Bhutan, and certain categories of Tibetan refugees or migrants of Indian origin may also apply — refer to the official notification for full details.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Age Limit</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 mb-3">Minimum: <strong>18 years</strong> | Maximum: <strong>25 years</strong> (as on the closing date for receipt of applications)</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50 border border-surface-200">
+                        <tr>
+                          <th className="text-left p-2 font-semibold text-surface-700">Category</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Relaxation</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Max Age</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / EWS', rel: 'No relaxation', max: '25 years' },
+                          { cat: 'OBC (Non-Creamy Layer)', rel: '+3 years', max: '28 years' },
+                          { cat: 'SC / ST', rel: '+5 years', max: '30 years' },
+                          { cat: 'PwBD (General)', rel: '+10 years', max: '35 years' },
+                          { cat: 'PwBD (OBC)', rel: '+13 years', max: '38 years' },
+                          { cat: 'PwBD (SC/ST)', rel: '+15 years', max: '40 years' },
+                          { cat: 'Ex-Servicemen', rel: '+5 years', max: '30 years' },
+                          { cat: 'ESIC/Govt. Employees', rel: 'Up to 40 years', max: '40 years' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 1 ? 'bg-surface-50' : ''}>
+                            <td className="p-2 text-surface-700">{row.cat}</td>
+                            <td className="p-2 text-primary-600 font-medium">{row.rel}</td>
+                            <td className="p-2 text-surface-700">{row.max}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">
+                    <strong>Matriculation (10th Pass)</strong> or equivalent from a recognised Board or University. No higher qualification is required.
+                  </p>
+                  <div className="mt-3 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
+                    🎓 <strong>Note:</strong> ESIC MTS is one of the few central government jobs open to 10th-pass candidates. Check your eligibility with our <Link href="/tools/eligibility-checker" className="underline font-medium">Eligibility Checker Tool</Link>.
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCIES HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📊 ESIC MTS Vacancy History</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Year</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Vacancies</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Prelims</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Mains</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.year}</td>
+                        <td className="p-3 text-primary-600 font-semibold">{row.vacancies}</td>
+                        <td className="p-3 text-surface-600">{row.prelims}</td>
+                        <td className="p-3 text-surface-600">{row.mains}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-surface-500 mt-3">💡 ESIC MTS recruitment is region-wise. Vacancies are distributed across states — Delhi, Karnataka, Maharashtra, Tamil Nadu, and others typically have the highest numbers.</p>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📋 ESIC MTS Exam Pattern 2026</h2>
+              </div>
+
+              <div className="space-y-6">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Phase I — Preliminary Examination (Qualifying)</h3>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4 text-sm text-blue-800">
+                    📌 <strong>Prelims is qualifying only</strong> — marks are NOT counted for final merit. Candidates are shortlisted for Mains in the ratio of 1:10 (10x vacancies per category).
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {prelimsPattern.map((row, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                            <td className="p-3 text-surface-800 font-medium">{row.subject}</td>
+                            <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                            <td className="p-3 text-center text-primary-600 font-semibold">{row.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-surface-100 font-bold">
+                          <td className="p-3 text-surface-900">Total</td>
+                          <td className="p-3 text-center text-surface-900">100</td>
+                          <td className="p-3 text-center text-primary-700">200</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-sm text-surface-500 mt-3">⏱️ Duration: <strong>1 Hour (60 minutes)</strong> | Each question: <strong>2 marks</strong> | Negative marking: <strong>0.50 marks</strong> (¼th of marks) for each wrong answer</p>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Phase II — Main Examination (Merit-Based)</h3>
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3 mb-4 text-sm text-emerald-800">
+                    ✅ <strong>Mains marks determine final selection.</strong> Same 4 subjects but at a higher difficulty level with more questions.
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Questions</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {mainsPattern.map((row, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                            <td className="p-3 text-surface-800 font-medium">{row.subject}</td>
+                            <td className="p-3 text-center text-surface-700">{row.questions}</td>
+                            <td className="p-3 text-center text-primary-600 font-semibold">{row.marks}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-surface-100 font-bold">
+                          <td className="p-3 text-surface-900">Total</td>
+                          <td className="p-3 text-center text-surface-900">200</td>
+                          <td className="p-3 text-center text-primary-700">200</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-sm text-surface-500 mt-3">⏱️ Duration: <strong>2 Hours (120 minutes)</strong> | Each question: <strong>1 mark</strong> | Negative marking: <strong>0.25 marks</strong> (¼th of marks) for each wrong answer</p>
+                </div>
+
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                  <h4 className="font-heading font-semibold text-amber-900 mb-2">Minimum Qualifying Marks</h4>
+                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-sm">
+                    {[
+                      { cat: 'General', marks: '45%' },
+                      { cat: 'OBC / EWS', marks: '40%' },
+                      { cat: 'SC / ST / Ex-SM', marks: '35%' },
+                      { cat: 'PwBD', marks: '30%' },
+                    ].map((c) => (
+                      <div key={c.cat} className="bg-white rounded-lg p-2 text-center border border-amber-100">
+                        <div className="text-xs text-amber-700">{c.cat}</div>
+                        <div className="font-bold text-amber-900 mt-1">{c.marks}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📖 Detailed Syllabus</h2>
+              </div>
+              <p className="text-sm text-surface-600 mb-5">The syllabus for Prelims and Mains is the same — 4 subjects. Mains has a higher difficulty level and more questions. Focus on all subjects equally as each carries equal weight.</p>
+              <div className="space-y-4">
+                {syllabusTopics.map((sec, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50 transition-colors">
+                      <span>{sec.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-2">
+                        {sec.topics.map((t, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                            <span className="text-primary-500 mt-0.5">▸</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: SALARY & CAREER */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary &amp; Career Growth</h2>
+              </div>
+              <div className="space-y-6">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-4">ESIC MTS Salary Breakdown (7th CPC, as of 2026)</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Component</th>
+                          <th className="text-right p-3 font-heading font-semibold text-xs uppercase tracking-wide">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {salaryBreakdown.map((row, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i === salaryBreakdown.length - 1 ? 'bg-emerald-50 font-bold' : i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                            <td className="p-3 text-surface-800">{row.component}</td>
+                            <td className={`p-3 text-right font-semibold ${i === salaryBreakdown.length - 1 ? 'text-emerald-700' : 'text-surface-700'}`}>{row.amount}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+                  <h4 className="font-heading font-semibold text-blue-900 mb-2">🆕 8th Pay Commission Impact (Expected 2026–2027)</h4>
+                  <p className="text-sm text-blue-800 leading-relaxed mb-2">
+                    The 8th Central Pay Commission has been constituted (November 2025) with implementation expected from <strong>1 January 2026</strong>. For MTS (Level-1), the basic pay is projected to increase from ₹18,000 to <strong>₹34,500–₹51,500</strong> depending on the final fitment factor (1.92x–2.86x). DA will reset to 0% on implementation, but gross salary is expected to be significantly higher.
+                  </p>
+                  <p className="text-sm text-blue-700">⚠️ These are projections based on expert estimates and previous CPC patterns. Final figures await the commission&apos;s report (expected 2027).</p>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-4">Career Progression Path</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                      <thead className="bg-surface-800 text-white">
+                        <tr>
+                          <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Position</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Pay Level</th>
+                          <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Timeline</th>
+                          <th className="text-right p-3 font-heading font-semibold text-xs uppercase tracking-wide">Pay Band</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {careerPath.map((row, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                            <td className="p-3 text-surface-800 font-medium">{row.level}</td>
+                            <td className="p-3 text-center text-primary-600 font-semibold">{row.scale}</td>
+                            <td className="p-3 text-center text-surface-600">{row.years}</td>
+                            <td className="p-3 text-right text-emerald-600 font-semibold">{row.payband}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-sm text-surface-500 mt-3">Promotions are through departmental exams and seniority. MTS can progress to SSO (Level-7) over a 20+ year career.</p>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Additional Benefits &amp; Perks</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {[
+                      { icon: '🏥', title: 'Medical Benefits', desc: 'Free medical treatment at ESIC hospitals for employee and dependents under ESI scheme' },
+                      { icon: '🏖️', title: 'Leave Benefits', desc: 'Earned Leave, Casual Leave, Sick Leave, Maternity/Paternity Leave as per CCS rules' },
+                      { icon: '💼', title: 'Pension (NPS/OPS)', desc: 'National Pension System contribution + gratuity on retirement. Old Pension Scheme (OPS) may apply for some states' },
+                      { icon: '✈️', title: 'LTC & Travel', desc: 'Leave Travel Concession for travel within India. Transport Allowance for daily commute' },
+                      { icon: '🏠', title: 'Housing', desc: 'Government quarters (subject to availability) or House Rent Allowance based on city category' },
+                      { icon: '📈', title: 'Annual Increment', desc: '3% annual increment on basic pay every year on 1st July, in addition to DA revisions every 6 months' },
+                    ].map((perk) => (
+                      <div key={perk.title} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-lg">{perk.icon}</span>
+                          <h4 className="font-heading font-semibold text-surface-800 text-sm">{perk.title}</h4>
+                        </div>
+                        <p className="text-xs text-surface-500 leading-relaxed">{perk.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 8: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📝 How to Apply for ESIC MTS 2026</h2>
+              </div>
+              <div className="card p-6">
+                <div className="space-y-4">
+                  {[
+                    { step: 1, title: 'Visit Official Website', desc: 'Go to esic.nic.in and click on the ESIC MTS recruitment link under "Recruitments" section.' },
+                    { step: 2, title: 'New Registration', desc: 'Click "New Registration" and enter your name, email, mobile number. Note down the Provisional Registration Number and Password.' },
+                    { step: 3, title: 'Fill Application Form', desc: 'Log in with your registration details. Fill personal details, educational qualifications, and select your preferred region/state.' },
+                    { step: 4, title: 'Upload Documents', desc: 'Upload passport-size photo (max 50 KB, JPEG) and signature (max 20 KB, JPEG). Ensure correct dimensions as specified in notification.' },
+                    { step: 5, title: 'Pay Application Fee', desc: 'General/OBC/EWS: ₹500 | SC/ST/PwBD/Female/Ex-SM/Departmental: ₹250. Pay via Debit Card, Credit Card, Net Banking, or UPI.' },
+                    { step: 6, title: 'Submit & Print', desc: 'Review all details carefully — no correction after submission. Take a printout of the confirmation page for future reference.' },
+                  ].map((s) => (
+                    <div key={s.step} className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-bold flex-shrink-0 mt-0.5">{s.step}</div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-surface-800 text-sm">{s.title}</h4>
+                        <p className="text-sm text-surface-600 mt-0.5">{s.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 9: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📆 3-Month Study Plan</h2>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5 text-sm text-blue-800">
+                📌 <strong>Why 3 months?</strong> ESIC MTS syllabus is 10th-pass level — focused preparation of 2–3 hours daily for 3 months is sufficient. The key is consistency and mock test practice, not months of aimless reading.
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-6">
+                  {studyPlan.map((step, i) => (
+                    <div key={i} className="relative sm:pl-14">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="bg-primary-100 text-primary-700 text-xs font-semibold px-2.5 py-0.5 rounded-full sm:hidden">Month {i + 1}</span>
+                          <h3 className="font-heading font-semibold text-surface-800">{step.month} — {step.focus}</h3>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{step.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10: BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 Best Books for ESIC MTS 2026</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Author</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-primary-600 font-medium">{b.subject}</td>
+                        <td className="p-3 text-surface-800 font-medium">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 11: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🆓 Free Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition-colors">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-lg">{r.type === 'youtube' ? '📺' : '🌐'}</span>
+                      <h3 className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors text-sm">{r.name}</h3>
+                    </div>
+                    <p className="text-sm text-surface-500 mt-1 leading-relaxed">{r.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 12: EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💡 Expert Tips for ESIC MTS 2026</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center text-accent-600 text-sm flex-shrink-0">{t.icon}</div>
+                      <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">❓ Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50 transition-colors">
+                      <span className="pr-4">{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* DISCLAIMER */}
+            <div className="bg-surface-50 border border-surface-200 rounded-xl p-5 text-sm text-surface-500 leading-relaxed">
+              <strong className="text-surface-700">Disclaimer:</strong> This page is for informational and preparation purposes only. All data is compiled from official ESIC notifications and publicly available sources. Dates, vacancies, and exam patterns may change with the official 2026 notification. Always verify details from <a href="https://www.esic.nic.in/" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">esic.nic.in</a>. TaiyarHo.in is not affiliated with ESIC or any government body.
+            </div>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-1.5 rounded-md transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-emerald-800 mb-2 text-sm">🏥 Official Website</h3>
+                <a href="https://www.esic.nic.in/" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-500 hover:underline break-all">esic.nic.in</a>
+                <p className="text-xs text-emerald-600 mt-2">Always check the official website for latest notifications, admit cards, and results.</p>
+              </div>
+
+              <div className="card p-5 bg-blue-50 border-blue-200">
+                <h3 className="font-heading font-semibold text-blue-800 mb-2 text-sm">🔧 Check Your Eligibility</h3>
+                <p className="text-xs text-blue-600 mb-3">Verify your age, qualification, and category eligibility for ESIC MTS.</p>
+                <Link href="/tools/eligibility-checker" className="btn-primary text-xs px-4 py-2 inline-block">Open Eligibility Checker →</Link>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related Exams</h3>
+                <div className="space-y-1">
+                  {[
+                    { name: 'SSC MTS 2026', slug: 'ssc-mts' },
+                    { name: 'SSC CGL 2026', slug: 'ssc-cgl' },
+                    { name: 'SSC CHSL 2026', slug: 'ssc-chsl' },
+                    { name: 'RRB Group D 2026', slug: 'rrb-group-d' },
+                    { name: 'IBPS PO 2026', slug: 'ibps-po' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">
+                      🔗 {e.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
         </div>
       </div>
     </>
