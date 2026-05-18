@@ -23,7 +23,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'how-to-start-government-exam-preparation': 'Complete beginner\'s roadmap to government exam preparation in 2026. Which exam to choose, 12-month study plan, free resources, daily timetables, and the mistakes that fail 90% of aspirants. From zero to selection.',
     'how-to-fill-government-job-application-form': 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo & signature upload specs, fee payment, common mistakes to avoid, and correction window details.',
     'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
-    'age-limit-relaxation-government-jobs': 'Updated for May 2026 with Amit Shah\'s 5-year relief announcement. OBC gets +3 years, SC/ST +5 years, PwBD +10–15 years. Exam-wise age limit table for UPSC, SSC CGL, IBPS, SBI PO & Railway 2026.',
+    'age-limit-relaxation-government-jobs': 'Complete guide to age limits and relaxation rules for Indian government exams 2026. OBC gets +3 years, SC/ST +5 years, PwBD +10–15 years. Exam-wise age limit table for UPSC, SSC CGL, IBPS, SBI PO & Railway 2026.',
     'study-plan-working-professionals': 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, 14-hour weekend strategy, best apps for micro-learning, and how to manage burnout as a working aspirant.',
     'documents-needed-government-job': 'Complete 2026 checklist of documents needed for government job applications and document verification. Covers ID proof, educational certificates, OBC/SC/ST/EWS reservation documents, NOC, and pro tips to avoid rejection in SSC, IBPS, UPSC, SBI, and Railway exams.',
   };
@@ -2020,13 +2020,13 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
             </div>
           </div>
 
-          {/* 2026 Key Update Alert */}
+          {/* 2026 Clarification Alert */}
           <div className="bg-amber-50 border border-amber-300 rounded-xl p-5 mb-8 flex gap-3">
-            <span className="text-2xl flex-shrink-0">💡</span>
+            <span className="text-2xl flex-shrink-0">⚠️</span>
             <div>
-              <p className="font-heading font-bold text-amber-800 text-sm mb-1">2026 Key Update — One-Time 5-Year Age Relief for SSC Candidates</p>
+              <p className="font-heading font-bold text-amber-800 text-sm mb-1">Important Clarification — Amit Shah&apos;s &ldquo;5-Year SSC Age Relaxation&rdquo; Was a West Bengal Poll Promise</p>
               <p className="text-sm text-amber-900 leading-relaxed">
-                Union Home Minister Amit Shah has announced a <strong>one-time age relaxation of up to 5 years</strong> for SSC candidates who crossed the age limit due to recent recruitment delays and administrative irregularities. This special relief is intended for aspirants affected by exam postponements and recruitment scams. Ensure you check the official 2026 SSC notification for the <strong>&ldquo;One-Time Relief&rdquo;</strong> checkbox when applying.
+                Amit Shah&apos;s &ldquo;one-time 5-year age relaxation for SSC candidates&rdquo; (March 2, 2026) was a promise made at a West Bengal election rally. The &ldquo;SSC&rdquo; he referred to is the <strong>West Bengal School Service Commission</strong> — a state-level teacher recruitment body — not the central <strong>Staff Selection Commission</strong> (which conducts CGL, CHSL, MTS, GD Constable, etc.). <strong>No official notification has been issued by the central SSC</strong> for any such relaxation. The standard category relaxations (OBC +3 years, SC/ST +5 years) continue to apply as before. Always verify your eligibility at <strong>ssc.gov.in</strong>.
               </p>
             </div>
           </div>

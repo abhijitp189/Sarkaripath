@@ -58,11 +58,11 @@ export const currentAffairsPosts: CurrentAffairsPost[] = [
   /* ═══ NEW: May 11–17, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-may-11-17-2026',
-    title: 'Weekly Current Affairs: May 11\u201317, 2026 \u2014 SSC Age Relaxation, India-Netherlands Semiconductor Pact & WHO Ebola PHEIC',
+    title: 'Weekly Current Affairs: May 11\u201317, 2026 \u2014 India-Netherlands Semiconductor Pact, WHO Ebola PHEIC & Amit Shah\'s WB Age Relaxation Clarified',
     dateRange: 'May 11\u201317, 2026',
     publishedDate: 'May 18, 2026',
     category: 'All',
-    excerpt: "This week: SSC gets a 5-year age relaxation, India-Netherlands semiconductor deal with ASML-Tata, WHO declares Ebola PHEIC, first Made-in-India C-295 ready for flight, CCPA cracks down on e-commerce and coaching institutes, and Kami Rita Sherpa's 32nd Everest summit.",
+    excerpt: "This week: Amit Shah's age relaxation promise clarified (West Bengal state jobs, not central SSC), India-Netherlands semiconductor deal with ASML-Tata, WHO declares Ebola PHEIC, first Made-in-India C-295 ready for flight, CCPA cracks down on e-commerce and coaching institutes, and Kami Rita Sherpa's 32nd Everest summit.",
     targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
     isFeatured: true,
     weekRange: 'May 11\u201317, 2026',
@@ -70,7 +70,7 @@ export const currentAffairsPosts: CurrentAffairsPost[] = [
     staticGkBox: may11_17_staticGk,
     quiz: may11_17_quiz,
     keyPoints: [
-      'Union HM Amit Shah announces one-time 5-year age relaxation for SSC candidates affected by recruitment delays.',
+      'CLARIFICATION: Amit Shah\'s "5-year age relaxation for SSC candidates" (March 2026 WB rally) referred to West Bengal School Service Commission (state jobs) — NOT the central Staff Selection Commission. No central SSC notification issued; check ssc.gov.in for official rules.',
       'India-Netherlands summit: ASML\u2013Tata Electronics semiconductor pact aligns with India Semiconductor Mission.',
       'WHO declares Ebola outbreak in DRC and Uganda a Public Health Emergency of International Concern (PHEIC).',
       'First Made-in-India Airbus C-295 transport aircraft ready for flight testing at Tata-Airbus facility in Vadodara.',
@@ -78,7 +78,7 @@ export const currentAffairsPosts: CurrentAffairsPost[] = [
       "Sikkim celebrates 51st Statehood Day \u2014 became India's 22nd state via 36th Amendment (1975).",
       'Delhi announces \u20b910 crore collateral-free loans for women-led startups and SHGs.',
       'Kami Rita Sherpa scales Everest for a record 32nd time.',
-      "India's first Integrated CCUS Field Lab inaugurated under 'Bharat Innovates 2026'.",
+      "India's first Integrated CCUS Field Lab inaugurated by Union Education Minister Dharmendra Pradhan at IIT Bombay under 'Bharat Innovates 2026'.",
       'CAFE III emission norms for passenger vehicles expected by end of May 2026.',
     ],
   },
