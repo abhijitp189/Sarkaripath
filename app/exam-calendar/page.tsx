@@ -216,6 +216,14 @@ const upcomingExams: MonthGroup[] = [
     month: 'September 2026',
     exams: [
       {
+        name: 'CTET (September)',
+        date: '6 Sep 2026',
+        status: 'OFFICIAL',
+        category: 'Teaching',
+        internalSlug: 'ctet',
+        externalUrl: 'https://ctet.nic.in',
+      },
+      {
         name: 'UPSC NDA (II)',
         date: '13 Sep 2026',
         status: 'OFFICIAL',
