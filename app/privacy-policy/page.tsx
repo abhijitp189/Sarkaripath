@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
           Privacy Policy
         </h1>
         <p className="text-surface-500 text-lg mb-2">
-          Last updated: May 12, 2026
+          Last updated: May 18, 2026
         </p>
         <p className="text-surface-500 mb-8">
           This policy applies to <strong>www.taiyarho.in</strong> and all its sub-pages.
@@ -78,6 +78,11 @@ export default function PrivacyPolicyPage() {
               You can instruct your browser to refuse all cookies or to notify you when a
               cookie is being set. However, some parts of the website may not function properly
               without cookies.
+            </p>
+            <p className="mt-3">
+              <strong>By continuing to use TaiyarHo.in, you consent to the use of cookies
+              as described in this policy.</strong> If you do not agree to the use of cookies,
+              please adjust your browser settings or discontinue use of the website.
             </p>
           </section>
 
@@ -232,7 +237,7 @@ export default function PrivacyPolicyPage() {
             </h2>
             <p>
               This Privacy Policy is governed by the laws of India, including the Information
-              Technology Act, 2000 and its amendments. Any disputes relating to this policy
+              Technology Act, 2000, its amendments, and the Digital Personal Data Protection Act, 2023 (DPDP Act). Any disputes relating to this policy
               shall be subject to the jurisdiction of courts in India.
             </p>
           </section>
