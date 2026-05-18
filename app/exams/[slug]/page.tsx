@@ -611,6 +611,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'kpsc-kas') {
+    return {
+      title: 'KPSC KAS 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'KPSC KAS 2026 (Karnataka Administrative Service): 384 vacancies for Assistant Commissioner, DSP, Tahsildar & more. Graduate eligible, age 21–35 yrs. Prelims + Mains (1750 marks) + Interview. Salary ₹60,000–₹1,00,000/month. Full syllabus, exam pattern & free resources.',
+      keywords: 'KPSC KAS 2026, Karnataka Administrative Service 2026, KPSC Gazetted Probationers 2026, KAS exam 2026, KPSC notification 2026, KPSC KAS syllabus, KAS exam date 2026, Karnataka PSC taiyari, Assistant Commissioner vacancy 2026, KPSC eligibility, Karnataka sarkari naukri 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/kpsc-kas/' },
+      other: { 'description:hi': 'KPSC KAS 2026 – Assistant Commissioner, DSP, Tahsildar व अन्य Group A & B पदों के लिए 384 रिक्तियाँ। स्नातक पात्र, आयु 21–35 वर्ष। Prelims + Mains + साक्षात्कार। वेतन ₹60,000–₹1,00,000/माह। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'kerala-psc-kas') {
     return {
       title: 'Kerala PSC KAS 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -751,6 +761,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'dsssb-tgt-pgt-prt') return <DssbTgtPgtPrtPage exam={brief} />;
   if (brief && brief.slug === 'gpsc-class-1-2') return <GpscClass12Page exam={brief} />;
   if (brief && brief.slug === 'mpsc-rajyaseva') return <MpscRajyasevaPage exam={brief} />;
+  if (brief && brief.slug === 'kpsc-kas') return <KpscKasPage exam={brief} />;
   if (brief && brief.slug === 'kerala-psc-kas') return <KeralaKasPage exam={brief} />;
   if (brief && brief.slug === 'drdo-ceptam') return <DrdoCeptamPage exam={brief} />;
   if (brief && brief.slug === 'isro-scientist') return <IsroScientistPage exam={brief} />;
@@ -43668,6 +43679,905 @@ function MpscRajyasevaPage({ exam }: { exam: any }) {
                 <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block py-2">
                   Check Eligibility →
                 </Link>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── KERALA PSC KAS 2026 RICH PAGE ────────────────────────────────────────────
+// ─── KPSC KAS 2026 RICH PAGE ──────────────────────────────────────────────────
+function KpscKasPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'cutoff',          label: 'Previous Cut-offs' },
+    { id: 'salary',          label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'KPSC KAS 2023–24 Notification Released',           date: '29 February 2024',       status: 'released' },
+    { event: 'Online Application Start',                          date: '4 March 2024',            status: 'released' },
+    { event: 'Online Application Last Date',                      date: '15 April 2024',           status: 'released' },
+    { event: 'Preliminary Examination (Re-conducted)',            date: '29 December 2024',        status: 'released' },
+    { event: 'Prelims Result Declared',                           date: '10–11 February 2025',     status: 'released' },
+    { event: 'Mains Examination Conducted',                       date: '3, 5, 7, 9 May 2025',    status: 'released' },
+    { event: 'Mains Result',                                      date: 'Awaited (TBN)',           status: 'tbn' },
+    { event: 'Interview / Personality Test',                      date: 'TBN (post Mains result)', status: 'tbn' },
+    { event: 'Final Result & Appointment Orders',                 date: 'TBN',                     status: 'tbn' },
+    { event: '🆕 KPSC KAS 2025–26 – Expected Notification',     date: 'TBN (Expected 2026)',     status: 'tbn' },
+    { event: 'KAS 2025–26 – Application Window',                 date: 'TBN',                     status: 'tbn' },
+    { event: 'KAS 2025–26 – Preliminary Exam',                   date: 'TBN',                     status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'KAS 2017–18',    vacancies: '106',   groupA: 'Gr A',  groupB: 'Gr B',  prelims: '24 Aug 2020',    mains: '13–16 Feb 2021' },
+    { year: 'KAS 2023–24',    vacancies: '384',   groupA: '159',   groupB: '225',   prelims: '29 Dec 2024',    mains: '3–9 May 2025' },
+    { year: 'KAS 2025–26 ⚠️', vacancies: 'TBN',  groupA: 'TBN',   groupB: 'TBN',   prelims: 'TBN',            mains: 'TBN' },
+  ];
+
+  const groupAPosts = [
+    { post: 'Assistant Commissioner', dept: 'Revenue Department' },
+    { post: 'Deputy Superintendent of Police (DSP)', dept: 'Home Department' },
+    { post: 'Assistant Labour Commissioner', dept: 'Labour Department' },
+    { post: 'District Backward Classes Welfare Officer', dept: 'Backward Classes Welfare Dept.' },
+    { post: 'District Social Welfare Officer', dept: 'Social Welfare Department' },
+    { post: 'Assistant Commissioner (Commercial Taxes)', dept: 'Finance Department' },
+    { post: 'Executive Officer / Assistant Secretary', dept: 'Rural Dev. & Panchayath Raj' },
+    { post: 'Assistant Director (various)', dept: 'Multiple Departments' },
+  ];
+
+  const groupBPosts = [
+    { post: 'Tahsildar (Grade 2)', dept: 'Revenue Department (Karnataka Administrative Service)' },
+    { post: 'Assistant Superintendent', dept: 'Various State Departments' },
+    { post: 'Deputy Director (various)', dept: 'Multiple Departments' },
+    { post: 'Section Officer', dept: 'State Secretariat' },
+  ];
+
+  const prelimsPattern = [
+    { paper: 'Paper I', subject: 'General Studies – National & International (40 Qs) + Humanities – History, Geography, Polity, Economy (60 Qs)', questions: 100, marks: 200, time: '2 Hrs' },
+    { paper: 'Paper II', subject: 'General Studies – State Importance (40 Qs) + General Science & Technology & Environment (30 Qs) + General Mental Ability (30 Qs)', questions: 100, marks: 200, time: '2 Hrs' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper I',   subject: 'Kannada Language (Qualifying – minimum marks required)',          marks: 150,  time: '3 Hrs', qualifying: true },
+    { paper: 'Paper II',  subject: 'English Language (Qualifying – minimum marks required)',          marks: 150,  time: '3 Hrs', qualifying: true },
+    { paper: 'Paper III', subject: 'Essay (Kannada or English – 2 essays × 125 marks each)',          marks: 250,  time: '3 Hrs', qualifying: false },
+    { paper: 'Paper IV',  subject: 'General Studies I – History, Culture, Geography, Society, Karnataka focus',  marks: 250,  time: '3 Hrs', qualifying: false },
+    { paper: 'Paper V',   subject: 'General Studies II – Polity, Governance, Constitution, International Relations', marks: 250, time: '3 Hrs', qualifying: false },
+    { paper: 'Paper VI',  subject: 'General Studies III – Economy, Science, Technology, Environment, Agriculture', marks: 250, time: '3 Hrs', qualifying: false },
+    { paper: 'Paper VII', subject: 'General Studies IV – Ethics, Integrity, Aptitude, Emotional Intelligence', marks: 250, time: '3 Hrs', qualifying: false },
+    { paper: 'Interview', subject: 'Personality Test / Viva Voce',                                    marks: 200,  time: '—',     qualifying: false },
+  ];
+
+  const cutoffData = [
+    { category: 'General (GM)',     prelims2024: '~104–112 / 200', mains: 'TBN (2025 Mains awaited)' },
+    { category: 'OBC (2A/2B/3A/3B)', prelims2024: '~96–104 / 200', mains: 'TBN' },
+    { category: 'SC',               prelims2024: '~84–96 / 200',  mains: 'TBN' },
+    { category: 'ST',               prelims2024: '~76–88 / 200',  mains: 'TBN' },
+    { category: 'Category I',       prelims2024: '~92–100 / 200', mains: 'TBN' },
+  ];
+
+  const salaryBreakdown = [
+    { grade: 'Group B – Tahsildar / Entry Level',          basic: '₹35,400 – ₹1,12,400/month',  da: 'As per 7th CPC / 8th CPC', hra: '8–24% of basic' },
+    { grade: 'Group A – Assistant Commissioner / DSP',     basic: '₹56,100 – ₹1,77,500/month',  da: 'As per 7th CPC / 8th CPC', hra: '8–24% of basic' },
+    { grade: 'Deputy Commissioner / SP (Promoted)',         basic: '₹78,800 – ₹2,09,200/month',  da: 'As per revised Pay Commission', hra: '24% of basic' },
+    { grade: 'Divisional Commissioner / DIG (Senior)',      basic: '₹1,23,100 – ₹2,18,200/month', da: 'As per revised Pay Commission', hra: '24% of basic' },
+  ];
+
+  const careerPath = [
+    { level: 'Tahsildar (Group B – entry for KAS Gr. B)',          scale: 'Group B',         years: 'On joining',   payband: '₹35,400 – ₹1,12,400' },
+    { level: 'Assistant Commissioner / DSP (Group A entry)',        scale: 'Group A (Junior)', years: '3–5 yrs',      payband: '₹56,100 – ₹1,77,500' },
+    { level: 'Deputy Commissioner / Superintendent of Police',      scale: 'Group A (Senior)', years: '10–15 yrs',    payband: '₹78,800 – ₹2,09,200' },
+    { level: 'Divisional Commissioner / DIG of Police',             scale: 'Senior KAS',       years: '18–22 yrs',    payband: '₹1,23,100 – ₹2,18,200' },
+    { level: 'Principal Secretary / Additional Chief Secretary',    scale: 'Apex Scale',       years: '25–30 yrs',    payband: '₹1,44,200 – ₹2,18,200' },
+    { level: 'Chief Secretary / IAS empanelment (on promotion)',    scale: 'Apex / IAS',       years: '30+ yrs',      payband: '₹2,25,000 (fixed)' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🏛️ Indian History & Karnataka History (Prelims Paper I + Mains GS I)',
+      topics: [
+        'Ancient India: Indus Valley Civilisation, Vedic period, Mauryas, Guptas',
+        'Medieval India: Delhi Sultanate, Mughal Empire, Vijayanagara Empire (Karnataka focus)',
+        'Karnataka History: Chalukyas, Rashtrakutas, Hoysalas, Wodeyar dynasty, Mysore Kingdom',
+        'Modern India & Freedom Movement: 1857 revolt, INC formation, Gandhian era, Partition',
+        'Post-independence India: States reorganisation 1956, Karnataka formation, key milestones',
+        'Karnataka Art & Culture: Yakshagana, Doddata, Bayalata, Carnatic music, Haridasa movement',
+        'Karnataka Literature: Kuvempu, Bendre, Girish Karnad, Kailasam — Jnanapitha Award winners',
+        'Important historical monuments in Karnataka: Hampi, Badami, Aihole, Pattadakal (UNESCO)',
+      ],
+    },
+    {
+      subject: '🌍 Geography – India & Karnataka (Prelims Paper I & II + Mains GS I)',
+      topics: [
+        'Physical Geography of India: Physiographic zones, Himalayan rivers, Deccan plateau, coastal plains',
+        'Karnataka Geography: Western Ghats, Malnad, Deccan Plateau (Maidan), Coastal Karnataka',
+        'Karnataka Rivers: Cauvery, Krishna, Tungabhadra, Sharavati, Netravati, Malaprabha',
+        'Karnataka Ecology: Biodiversity hotspots, Bandipur, Nagarhole, Biligirirangana Hills Tiger Reserve',
+        'Karnataka Agriculture: Ragi, jowar, cotton, coffee, sandalwood — major crops & challenges',
+        'Karnataka Climate: Southwest and northeast monsoon impact, drought-prone districts',
+        'Natural Resources: Minerals (iron ore, gold — Kolar, Bellary), forest cover, water resources',
+        'Karnataka districts, divisions: 4 revenue divisions, 31 districts — district-wise geography',
+      ],
+    },
+    {
+      subject: '🏛️ Indian & Karnataka Polity & Governance (Prelims Paper I + Mains GS I & II)',
+      topics: [
+        'Indian Constitution: Preamble, Fundamental Rights, DPSPs, Fundamental Duties, Schedules',
+        'Parliament: Lok Sabha, Rajya Sabha, budget, legislative procedure, ordinances, CAG',
+        'Judiciary: Supreme Court, High Courts, Judicial Review, PIL, tribunals',
+        'Karnataka Legislature: Vidhana Soudha, Karnataka Vidhana Sabha & Parishad (bicameral)',
+        'Panchayati Raj in Karnataka: ZP, TP, GP structure under Karnataka Panchayat Raj Act 1993',
+        'Karnataka State Administration: Chief Secretary, Division Commissioners, Deputy Commissioners, Tahsildars',
+        'Urban Local Bodies: BBMP (Bengaluru), BWSSB, BDA — structure and functions',
+        'Right to Information Act 2005: Karnataka SIC, transparency in governance',
+        'Administrative Reforms: e-Governance, Atalji Janasnehi Kendras (Nemmadi Centres), Sakala',
+        'Karnataka Land Reforms: Tenancy Act 1961, land ceiling, urban land ceiling implications',
+      ],
+    },
+    {
+      subject: '💰 Indian & Karnataka Economy (Prelims Paper I & II + Mains GS II)',
+      topics: [
+        'Indian Economy: GDP, NNP, fiscal and monetary policy, RBI functions, inflation',
+        'Economic Planning: NITI Aayog, SDGs, Union Budget components',
+        'Karnataka Economy: GSDP, sectoral composition — IT/BT, manufacturing, agriculture',
+        'Karnataka IT sector: Bengaluru as IT capital, STPI, KEONICS, IT Export statistics',
+        'Biotechnology: BioAsia, Bengaluru\'s pharma and biotech clusters',
+        'Karnataka Industrial Policy: Investment Corridors, Special Economic Zones (SEZ)',
+        'Agriculture Finance: NABARD, cooperative banking, Karnataka State Cooperative Apex Bank',
+        'Government Welfare Schemes: MGNREGS, PM-KISAN, PM Awas Yojana; Karnataka-specific: Anna Bhagya, Gruha Jyothi, Shakti (free bus travel)',
+        'Karnataka Budget: Revenue receipts, expenditure priorities, fiscal deficit trends',
+        'Poverty, Unemployment: SHG movement, NRLM, Karnataka SC/ST Sub-Plan',
+      ],
+    },
+    {
+      subject: '🔬 Science, Technology, Environment & Current Affairs (Prelims Paper II + Mains GS II)',
+      topics: [
+        'Basic Science: Physics, Chemistry, Biology — Class 10 SSLC / 12th level',
+        'Space & Defence: ISRO missions (Chandrayaan-3, Aditya-L1, Gaganyaan), DRDO',
+        'Information Technology: Digital India, e-Governance, Aadhaar, UPI, ONDC',
+        'Environment & Ecology: Climate change, Paris Agreement, COP summits, biodiversity conventions',
+        'Karnataka Environment: Western Ghats Ecology Expert Panel (Kasturirangan report), Cauvery water dispute',
+        'Health: National Health Mission, Ayushman Bharat, Karnataka Arogya Karnataka scheme',
+        'Energy: Renewable energy targets, Karnataka Solar Policy, Pavagada Solar Park (world\'s largest)',
+        'Current Affairs: Last 18–24 months — national, international + Karnataka state events',
+        'Appointments, Awards, Important Days, Books & Authors, Summits & Conferences',
+        'General Mental Ability: Series, analogies, data interpretation, blood relations, directions',
+      ],
+    },
+    {
+      subject: '✍️ Essay & General Studies IV – Ethics, Integrity, Aptitude (Mains Papers III & VII)',
+      topics: [
+        'Essay Paper III: Two essays of 125 marks each — can be written in Kannada or English',
+        'Topics typically cover: Governance, rural development, Karnataka society, national policy, environment, women empowerment',
+        'GS IV covers: Ethics and Human Interface — essence, determinants and consequences of Ethics in human actions',
+        'Attitude: content, structure, function; its influence and relation with thought and behaviour',
+        'Aptitude and foundational values for Civil Services — integrity, impartiality, non-partisanship, objectivity',
+        'Emotional Intelligence — concepts, utilities and applications in administration and governance',
+        'Contributions of moral thinkers and philosophers from India and the world',
+        'Public/Civil service values and Ethics in Public Administration, accountability and ethics governance',
+        'Corporate governance and ethics, probity in public life, information-sharing and RTI',
+        'Note: Optional subject papers were removed from KAS Mains under post-2016 amendment rules. All 4 GS papers are now compulsory.',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', focus: 'Karnataka History, Culture & Geography', detail: 'KPSC KAS is Karnataka-centric — state-specific content constitutes nearly 35–40% of both Prelims papers. Start with Karnataka History: Vijayanagara Empire, Chalukyas, Hoysalas, Mysore Kingdom, freedom movement contribution, and post-1956 formation. Study Art & Culture: Yakshagana, Haridasa movement, Jnanapitha Award winners (Kuvempu, Bendre, Girish Karnad). Map all Karnataka districts, rivers (Cauvery, Tungabhadra, Sharavati), wildlife sanctuaries, and divisions. This base cannot be built quickly — start early.' },
+    { month: 'Month 3–4', focus: 'Indian Polity, Karnataka Governance & Economy', detail: 'Complete M. Laxmikanth\'s Indian Polity thoroughly — KAS tests constitutional provisions rigorously in both Prelims and Mains. Then layer Karnataka-specific governance: Vidhana Soudha functioning, Karnataka Panchayat Raj Act 1993, Sakala grievance system, Atalji Janasnehi Kendras. For economy, study Karnataka\'s IT sector (Bengaluru, STPI), Pavagada Solar Park, Cauvery dispute, and flagship schemes (Anna Bhagya, Gruha Jyothi, Shakti). Use Ramesh Singh for Indian Economy base, then layer Karnataka-specific economic data.' },
+    { month: 'Month 5–6', focus: 'Science & Technology + Optional Subject Start', detail: 'Cover Science & Technology at SSLC/PUC level (NCERT Class 9–12). Focus on ISRO missions, Digital India, Karnataka\'s IT/BT policy, Western Ghats ecology (Kasturirangan report), and Cauvery water dispute. Simultaneously, begin your Optional Subject in earnest — KAS Optional (Papers VI & VII) is 600 marks out of 1750 Mains marks (34%). The earlier you start, the more marks you can bank here. Select your optional based on graduation subject + scoring trends.' },
+    { month: 'Month 7–8', focus: 'Mains Answer Writing + Essay Practice', detail: 'Begin structured Mains answer writing for GS Papers IV & V. KAS Mains rewards analytical, well-structured answers with Karnataka-specific examples. For Essay (Paper III), practise one full essay per week — topics like "Role of IT in Karnataka\'s Development", "Cauvery Water Dispute: Challenges and Solutions", "Women Empowerment through SHGs in Karnataka" are recurring themes. These 250 essay marks are highly differentiating — candidates who practise consistently from Month 7 outperform those who start in the last month.' },
+    { month: 'Month 9–10', focus: 'Full Prelims Mocks + Current Affairs Intensive', detail: 'Take full Prelims mock tests weekly and analyse every wrong answer. KAS Prelims has negative marking (0.25 per wrong answer) — calibrate your attempt count carefully. Aim for 150–160 confident attempts across both papers. For current affairs, cover the last 18–24 months: Karnataka Government decisions, budget announcements, sports achievements, international summits, and central government schemes. Maintain a Karnataka-specific current affairs notebook — KPSC boards test this directly in both stages.' },
+    { month: 'Month 11–12', focus: 'Revision, Optional Deep-Dive & Interview Prep', detail: 'Use condensed notes for rapid revision of all topics. Take 3–4 Prelims mocks per week in the final month before Prelims. For Interview: prepare your home district thoroughly — boards frequently ask about the district\'s history, geography, development challenges, and administration. Prepare 4–5 responses to situational administrative questions: "What would you do as Assistant Commissioner if there is a flood in a taluk?" Read The Hindu and Prajavani daily. Mock interview practice with peers or a mentor in the final weeks.' },
+  ];
+
+  const books = [
+    { title: 'Karnataka General Knowledge (Kannada/English)',  author: 'Prism / Sapna Book House',              subject: 'Karnataka GK – Prelims' },
+    { title: 'Indian Polity',                                   author: 'M. Laxmikanth',                         subject: 'Polity (Prelims + Mains)' },
+    { title: 'Indian Economy',                                  author: 'Ramesh Singh',                          subject: 'Economy' },
+    { title: 'Certificate Physical & Human Geography',          author: 'G.C. Leong',                            subject: 'Geography' },
+    { title: 'NCERT History (Class 6–12)',                      author: 'NCERT',                                 subject: 'History' },
+    { title: 'Karnataka History & Culture',                     author: 'R.S. Panchamukhi / State PIB',          subject: 'Karnataka History & Culture' },
+    { title: 'General Science (Class 9–12)',                    author: 'NCERT',                                 subject: 'Science & Technology' },
+    { title: 'Public Administration',                           author: 'M. Laxmikanth (for Optional)',          subject: 'Popular Optional' },
+    { title: 'KAS Previous Year Papers (Prelims & Mains)',      author: 'Sapna / Navakarnataka Publications',    subject: 'Practice & PYQs' },
+    { title: 'Current Affairs Monthly (Karnataka Focus)',        author: 'Yojana + Prajavani / Vijay Karnataka',  subject: 'Current Affairs' },
+  ];
+
+  const freeResources = [
+    { name: 'KPSC Official Website',                type: 'website',  url: 'https://kpsc.kar.nic.in',                    description: 'Official KPSC portal — notifications, syllabus PDFs, admit cards, answer keys and results for KAS and all other KPSC exams.' },
+    { name: 'KPSC Gazetted Probationers Notification Page', type: 'website', url: 'https://kpsc.kar.nic.in/GP.html',     description: 'Dedicated Gazetted Probationers (KAS) notification page on the official KPSC site. Bookmark this to catch the 2026 notification immediately.' },
+    { name: 'Aspire IAS – KPSC KAS',                type: 'website',  url: 'https://www.aspireias.com/kpsc',             description: 'Free KAS preparation resources, current affairs, and exam strategy from Aspire IAS — one of the leading KAS coaching institutes in Bengaluru.' },
+    { name: 'Himalai IAS – KAS YouTube',            type: 'youtube',  url: 'https://www.youtube.com/@HimalaiIASKAS',     description: 'Free KAS video lectures in Kannada and English covering History, Polity, Economy, Karnataka GK, and current affairs — ideal for visual learners.' },
+    { name: 'Drishti IAS – Karnataka PSC',          type: 'website',  url: 'https://www.drishtiias.com/state-pcs/karnataka-psc', description: 'Free KAS study material, syllabus analysis, and current affairs notes aligned to KPSC KAS pattern. Good for GS Papers IV & V Mains preparation.' },
+    { name: 'Prajavani Daily Newspaper',            type: 'website',  url: 'https://www.prajavani.net',                  description: 'Leading Kannada newspaper — essential for Karnataka current affairs, government decisions, and state budget coverage for both Prelims and Mains.' },
+    { name: 'GK Today – Current Affairs',           type: 'website',  url: 'https://www.gktoday.in',                     description: 'Free daily current affairs and monthly capsules for national and international topics. Useful for KAS Prelims Paper I general awareness section.' },
+    { name: 'Karnataka PIB / Dept. of I&PR',        type: 'website',  url: 'https://www.karnataka.gov.in',               description: 'Official Karnataka Government portal — press releases, scheme announcements, budget documents and state data essential for current affairs and Mains GS.' },
+  ];
+
+  const tips = [
+    { icon: '🌿', tip: 'Karnataka-specific content is the decisive differentiator in KAS. Questions on Vijayanagara Empire, Haridasa movement, Yakshagana, Karnataka Panchayat Raj Act, Cauvery dispute, Pavagada Solar Park, and state government schemes like Anna Bhagya and Shakti appear directly in Prelims. Candidates who ignore Karnataka content consistently fall short of cut-offs — treat it as your highest-priority scoring zone.' },
+    { icon: '📋', tip: 'KAS Mains has 7 papers — 2 qualifying (Kannada + English, 300 marks combined) and 5 merit papers: Essay (250) + 4 GS papers (250 each) + Interview (200) = 1,450 marks total. The optional papers were removed from KAS Mains under the post-2016 amendment rules. All 4 GS papers are now compulsory, similar to the UPSC pattern. This means there is no strategic "optional subject" choice — preparation must be comprehensive across all four GS areas.' },
+    { icon: '⚠️', tip: 'The 2023–24 KAS cycle (384 vacancies) saw a significant delay — the Prelims was rescheduled twice (originally May 2024, held December 2024) due to a translation error controversy. KAS cycles often take 18–24 months from notification to final appointment. Use waiting periods strategically: prepare simultaneously for UPSC Prelims (65–70% syllabus overlap) or KPSC FDA/SDA exams to stay sharp and financially secure.' },
+    { icon: '📊', tip: 'KAS Prelims has a strict negative marking of 0.25 marks per wrong answer. Each paper has 100 MCQs of 2 marks each (total 400 marks). The cut-off for General category typically falls between 100–115 out of 200 per paper. Aim for 150–165 confident attempts across both papers — do not guess randomly on the remaining questions. Karnataka-specific questions (approximately 30–40% of Paper II) are your most reliable scoring zone if prepared well.' },
+    { icon: '✍️', tip: 'KAS Mains Essay (Paper III) is worth 250 marks and is often under-prepared. You must write two essays (125 marks each) in 3 hours on topics of national/international importance, Karnataka development, governance, or social issues. Practise timed essay writing from Month 7 onwards — one essay per week minimum. A well-structured, Karnataka-anchored essay with real data (schemes, statistics, policy outcomes) scores 30–40 marks higher than generic answers.' },
+    { icon: '🗣️', tip: 'The Personality Test (Interview) is worth 200 marks — a significant 10.3% of the 1,950 total marks. Karnataka PSC Boards focus on: administrative aptitude, situational problem-solving, awareness of your home district\'s development challenges, and current Karnataka state affairs. Prepare 5–6 situational responses (flood relief, drought management, communal tension, RTI compliance) and know your district\'s geography, major industries, and social issues thoroughly before the interview.' },
+    { icon: '📰', tip: 'Read The Hindu (national) and Prajavani / Vijay Karnataka (state) daily from Day 1 of preparation. Maintain a dual current affairs notebook: one for national/international topics (for Paper I and GS IV/V Mains) and one exclusively for Karnataka (for Paper II and GS Mains state-specific content). A 45-minute daily reading routine beats last-minute cramming and also builds the analytical thinking that KAS Mains and Interview reward.' },
+    { icon: '🔁', tip: 'KAS allows 5 attempts for General Merit candidates (7 for OBC; unlimited for SC/ST within age limit). Do not waste early attempts without adequate preparation — each attempt also builds exam awareness. If you appear without preparation, treat it as a diagnostic attempt to understand the paper pattern. But from the second attempt onwards, ensure you have covered the full syllabus and taken at least 20–25 full mock tests before appearing.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is KPSC KAS 2026 notification status?',
+      a: 'As of May 2026, the KPSC has not released a new KAS notification. The ongoing 2023–24 cycle (384 vacancies) had its Mains conducted in May 2025, and the Mains result and Interview are still awaited. A fresh 2025–26 KAS notification is expected later in 2026 based on historical patterns. Always monitor the official KPSC website kpsc.kar.nic.in and the official Gazetted Probationers page (kpsc.kar.nic.in/GP.html) for real-time updates.'
+    },
+    {
+      q: 'What posts are filled through KPSC KAS (Gazetted Probationers)?',
+      a: 'KPSC KAS fills Group A and Group B gazetted posts. Group A posts include: Assistant Commissioner, Deputy Superintendent of Police (DSP), Assistant Labour Commissioner, District Social Welfare Officer, District Backward Classes Welfare Officer, and Assistant Director in multiple departments. Group B posts include: Tahsildar (Grade 2) under the Karnataka Administrative Service and equivalent posts in other departments. The 2023–24 cycle had 159 Group A and 225 Group B vacancies totalling 384 posts.'
+    },
+    {
+      q: 'What is the age limit for KPSC KAS?',
+      a: 'The age limit for General Merit (GM) candidates is 21–35 years. Age relaxations: Category 2A, 2B, 3A, 3B (OBC Karnataka): +3 years (up to 38 years). SC / ST / Category 1 (Karnataka): +5 years (up to 40 years). PwD: +10 years. Ex-Servicemen: deduction of military service period from age. The cut-off date for age calculation is specified in each official notification. Always verify exact age limits from the official KPSC notification before applying.'
+    },
+    {
+      q: 'What is the KPSC KAS exam pattern?',
+      a: 'KAS has three stages: (1) Preliminary Exam: 2 papers × 100 MCQs × 2 marks = 400 total marks; each paper 2 hours; negative marking 0.25 per wrong answer. (2) Main Exam (Descriptive): 7 papers — Paper I Kannada (qualifying, 150 marks), Paper II English (qualifying, 150 marks), Paper III Essay (250 marks), Papers IV–VII: General Studies I, II, III & IV (250 marks each). Note: Optional papers have been removed from KAS Mains under post-2016 amendment rules. Merit is based on Essay + 4 GS papers = 1,250 marks. (3) Personality Test / Interview: 200 marks. Grand total for ranking: 1,450 marks. Always verify exact marks from the official KPSC notification PDF at kpsc.kar.nic.in.'
+    },
+    {
+      q: 'What is the salary of a KPSC KAS officer?',
+      a: 'A KAS Group A officer (Assistant Commissioner / DSP) draws a basic pay of ₹56,100/month (Level 10, 7th Pay Commission). With DA (approximately 50%+), HRA (8–24% based on city), and other allowances, the effective in-hand salary is approximately ₹80,000–₹1,00,000/month for a fresh KAS Group A officer in an urban posting. Group B posts (Tahsildar) start at approximately ₹35,400–₹1,12,400 basic. Senior KAS officers at Deputy Commissioner level draw ₹78,800+ basic. The 8th Pay Commission recommendations (expected implementation in 2026) may further revise these figures upward.'
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO – Blue Gradient ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">KPSC KAS 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Karnataka Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ Next Notification: TBN</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            KPSC KAS 2026 –<br className="hidden sm:block" /> Karnataka Administrative Service Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            The <strong>Karnataka Administrative Service (KAS)</strong> exam — officially called <strong>Gazetted Probationers Competitive Exam</strong> — is conducted by <strong>Karnataka Public Service Commission (KPSC)</strong> to recruit Group A &amp; B officers for 20+ prestigious posts including Assistant Commissioner, DSP, and Tahsildar. Any graduate eligible. Age <strong>21–35 years</strong>. 3-stage selection: Prelims (400 marks) → Mains (1,750 marks) → Interview (200 marks). Salary <strong>₹56,100–₹1,00,000+/month</strong>.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Last Cycle Vacancies', value: '384 Posts',          sub: '159 Gr-A + 225 Gr-B' },
+              { label: 'Prelims Date 2026',     value: 'TBN',               sub: 'Next cycle' },
+              { label: 'Min. Qualification',    value: 'Any Graduate',      sub: 'Any discipline' },
+              { label: 'Group A Salary',        value: '₹56,100+/month',   sub: '+ DA, HRA & allowances' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 max-w-2xl">
+            <div className="text-xs text-blue-200 uppercase tracking-wide mb-2 font-heading">💡 2026 Status at a Glance</div>
+            <p className="text-sm text-blue-100 leading-relaxed">
+              The 2023–24 KAS cycle (384 vacancies) held Mains in May 2025. The Mains result and Interview are <strong>awaited as of May 2026</strong>. A fresh 2025–26 notification is expected later in 2026. Register on the KPSC portal and monitor <strong>kpsc.kar.nic.in/GP.html</strong> for live updates.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10 px-4">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* LEFT COLUMN */}
+          <div>
+
+            {/* OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="Overview – What is KPSC KAS 2026?" />
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-3">
+                  The <strong>Karnataka Administrative Service (KAS)</strong> is the state-level equivalent of the IAS, conducted by the <strong>Karnataka Public Service Commission (KPSC)</strong> through an annual competitive examination called the <strong>Gazetted Probationers Competitive Exam</strong>. It is one of the most prestigious and competitive exams in South India, attracting over 3–5 lakh applications each cycle.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-3">
+                  KAS officers are recruited for 20+ Group A and Group B gazetted posts across departments including Revenue, Police, Labour, Social Welfare, Finance, and Rural Development. The most sought-after posts are <strong>Assistant Commissioner</strong> (Karnataka Administrative Service) and <strong>Deputy Superintendent of Police (DSP)</strong> under Group A. Senior KAS officers (Group A) have a defined promotion path to Deputy Commissioner, Divisional Commissioner, and can be empanelled to the IAS cadre.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  The selection process has three stages: <strong>Preliminary Exam</strong> (2 objective papers, 400 marks, qualifying), <strong>Main Exam</strong> (descriptive, 1,750 marks for merit), and <strong>Personality Test / Interview</strong> (200 marks). Knowledge of <strong>Kannada language</strong> is required for the qualifying Mains papers (Papers I &amp; II) and is a practical necessity for the Interview and for working in Karnataka administration.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {[
+                  { label: '🏛️ Conducting Body',    value: 'Karnataka Public Service Commission (KPSC)' },
+                  { label: '📋 Exam Name',            value: 'Gazetted Probationers Competitive Exam (KAS)' },
+                  { label: '🎯 Post Level',           value: 'Group A & Group B Gazetted' },
+                  { label: '🪪 Nationality',           value: 'Indian Citizen (Karnataka domicile for reservations)' },
+                  { label: '🎓 Qualification',        value: 'Bachelor\'s Degree (any discipline)' },
+                  { label: '📋 Age Limit',             value: '21–35 yrs (GM); relaxations applicable' },
+                  { label: '📋 Attempts',              value: 'GM: 5 | OBC: 7 | SC/ST: Unlimited (within age)' },
+                  { label: '🌐 Official Website',     value: 'kpsc.kar.nic.in' },
+                  { label: '💰 Group A Salary',       value: '₹56,100–₹1,77,500/month + DA, HRA' },
+                ].map((item) => (
+                  <InfoCard key={item.label} label={item.label} value={item.value} />
+                ))}
+              </div>
+            </section>
+
+            {/* IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="KPSC KAS Important Dates 2026" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Event</th>
+                        <th className="text-left p-4 font-heading font-semibold whitespace-nowrap">Date / Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 text-surface-800 font-body">{row.event}</td>
+                          <td className="p-4 whitespace-nowrap">
+                            {row.status === 'released' ? (
+                              <span className="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">✅ {row.date}</span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⚠️ {row.date}</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-4 bg-amber-50 border-t border-amber-200 text-xs text-amber-800">
+                  ⚠️ TBN = To Be Notified. The 2023–24 cycle Mains result and Interview are awaited (May 2026). The 2025–26 KAS notification has not been released yet. Monitor <strong>kpsc.kar.nic.in/GP.html</strong> for official updates.
+                </div>
+              </div>
+            </section>
+
+            {/* ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria" />
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🪪</span>
+                    <h3 className="font-heading font-semibold text-surface-900">Nationality & Domicile</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Must be a citizen of India</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Karnataka domicile / nativity required to claim SC/ST/OBC/Category-1 reservation and age relaxation benefits</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Candidates from other states can apply for unreserved (General Merit) seats</span></li>
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🎓</span>
+                    <h3 className="font-heading font-semibold text-surface-900">Educational Qualification</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Bachelor's Degree in <strong>any discipline</strong> from a recognised university</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>No minimum percentage requirement — passing marks sufficient</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span>Final-year students who complete the degree before the Mains stage are eligible</span></li>
+                    <li className="flex gap-2"><span className="text-emerald-600 mt-0.5">✓</span><span>Kannada language proficiency required for qualifying Mains papers</span></li>
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">📋</span>
+                    <h3 className="font-heading font-semibold text-surface-900">Age Limit</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>General Merit (GM):</strong> 21–35 years</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>Category 2A, 2B, 3A, 3B (OBC):</strong> Up to 38 years (+3 yrs)</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>SC / ST / Category 1:</strong> Up to 40 years (+5 yrs)</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>PwD:</strong> Up to 45 years (+10 yrs)</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>Ex-Servicemen:</strong> Military service period deducted from age</span></li>
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">📝</span>
+                    <h3 className="font-heading font-semibold text-surface-900">Application Fee</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>General / GM:</strong> ₹500 (as per 2024 notification)</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>Category 2A, 2B, 3A, 3B:</strong> ₹300/-</span></li>
+                    <li className="flex gap-2"><span className="text-primary-500 mt-0.5">•</span><span><strong>Ex-Servicemen:</strong> ₹50/-</span></li>
+                    <li className="flex gap-2"><span className="text-emerald-600 mt-0.5">✓</span><span>Payment mode: Online (Net Banking / Debit Card / UPI)</span></li>
+                    <li className="flex gap-2"><span className="text-emerald-600 mt-0.5">✓</span><span>Apply via KPSC One-Time Registration (OTR) portal</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                <p className="text-sm text-primary-800"><strong>💡 Quick Eligibility Check:</strong> Use the <Link href="/tools/eligibility-checker/" className="text-primary-600 font-semibold underline underline-offset-2">TaiyarHo Eligibility Checker</Link> to instantly verify if you meet the age and qualification criteria for KPSC KAS and 100+ other government exams.</p>
+              </div>
+            </section>
+
+            {/* VACANCIES & POSTS */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="Vacancies History & Posts" />
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">KAS Cycle</th>
+                        <th className="text-center p-4 font-heading font-semibold">Total</th>
+                        <th className="text-center p-4 font-heading font-semibold">Group A</th>
+                        <th className="text-center p-4 font-heading font-semibold">Group B</th>
+                        <th className="text-left p-4 font-heading font-semibold">Prelims</th>
+                        <th className="text-left p-4 font-heading font-semibold">Mains</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyHistory.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-heading font-semibold text-surface-800">{row.year}</td>
+                          <td className="p-4 text-center text-emerald-600 font-semibold">{row.vacancies}</td>
+                          <td className="p-4 text-center text-primary-600 font-semibold">{row.groupA}</td>
+                          <td className="p-4 text-center text-primary-600 font-semibold">{row.groupB}</td>
+                          <td className="p-4 text-surface-600">{row.prelims}</td>
+                          <td className="p-4 text-surface-600">{row.mains}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-900 mb-3 text-lg">Group A Posts (Selected)</h3>
+              <div className="card overflow-hidden mb-5">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Post</th>
+                        <th className="text-left p-4 font-heading font-semibold">Department</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {groupAPosts.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-heading font-semibold text-primary-700">{row.post}</td>
+                          <td className="p-4 text-surface-600">{row.dept}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-900 mb-3 text-lg">Group B Posts (Selected)</h3>
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Post</th>
+                        <th className="text-left p-4 font-heading font-semibold">Department</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {groupBPosts.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-heading font-semibold text-primary-700">{row.post}</td>
+                          <td className="p-4 text-surface-600">{row.dept}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="KAS Exam Pattern 2026" />
+              <div className="space-y-6">
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-1 text-lg">Stage 1 – Preliminary Examination (Objective, Qualifying)</h3>
+                  <p className="text-sm text-surface-500 mb-4">Negative marking: <strong>–0.25 mark per wrong answer</strong> | Each paper: <strong>2 hours</strong> | Total: <strong>400 marks</strong> | Marks NOT counted in merit list</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-3 font-heading font-semibold">Paper</th>
+                          <th className="text-left p-3 font-heading font-semibold">Topics Covered</th>
+                          <th className="text-center p-3 font-heading font-semibold">Questions</th>
+                          <th className="text-center p-3 font-heading font-semibold">Marks</th>
+                          <th className="text-center p-3 font-heading font-semibold">Duration</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {prelimsPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 font-heading font-semibold text-surface-700 whitespace-nowrap">{row.paper}</td>
+                            <td className="p-3 text-surface-600">{row.subject}</td>
+                            <td className="p-3 text-center font-semibold text-primary-600">{row.questions}</td>
+                            <td className="p-3 text-center font-semibold text-surface-800">{row.marks}</td>
+                            <td className="p-3 text-center text-surface-600">{row.time}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-surface-100 font-bold">
+                          <td colSpan={2} className="p-3 font-heading font-bold text-surface-900">Total (Prelims)</td>
+                          <td className="p-3 text-center font-heading font-bold text-primary-600">200</td>
+                          <td className="p-3 text-center font-heading font-bold text-surface-900">400</td>
+                          <td className="p-3 text-center font-heading font-bold text-surface-600">4 Hrs</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-1 text-lg">Stage 2 – Main Examination (Descriptive, Merit)</h3>
+                  <p className="text-sm text-surface-500 mb-4">Papers I &amp; II are <strong>qualifying only</strong> (min. marks required; NOT counted in merit). Papers III–VII + Interview determine final rank. No negative marking in Mains. <strong>Optional papers have been removed</strong> from KAS Mains (post-2016 amendment).</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-3 font-heading font-semibold">Paper</th>
+                          <th className="text-left p-3 font-heading font-semibold">Subject</th>
+                          <th className="text-center p-3 font-heading font-semibold">Marks</th>
+                          <th className="text-center p-3 font-heading font-semibold">Duration</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {mainsPattern.map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-3 font-heading font-semibold text-surface-700 whitespace-nowrap">{row.paper}</td>
+                            <td className="p-3 text-surface-600">
+                              {row.qualifying && <span className="inline-block bg-amber-100 text-amber-700 text-xs rounded px-1.5 py-0.5 font-heading font-semibold mr-2">Qualifying</span>}
+                              {row.subject}
+                            </td>
+                            <td className="p-3 text-center font-semibold text-primary-600">{row.marks}</td>
+                            <td className="p-3 text-center text-surface-600">{row.time}</td>
+                          </tr>
+                        ))}
+                        <tr className="bg-surface-100">
+                          <td colSpan={2} className="p-3 font-heading font-bold text-surface-900">Merit Total (Essay + GS I–IV + Interview)</td>
+                          <td className="p-3 text-center font-heading font-bold text-emerald-600">1,450</td>
+                          <td className="p-3"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="mt-4 bg-surface-50 border border-surface-200 rounded-xl p-4 text-sm text-surface-600">
+                    <strong>📌 Merit calculation:</strong> Essay (250) + GS I (250) + GS II (250) + GS III (250) + GS IV (250) + Interview (200) = <strong>1,450 marks total</strong>. Kannada (150) and English (150) qualifying papers are excluded from merit ranking. Note: Optional papers were removed from KAS Mains under the post-2016 amendment rules. Always verify the exact paper structure and marks from the official KPSC notification PDF at kpsc.kar.nic.in.
+                  </div>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3 text-lg">Stage 3 – Personality Test / Interview</h3>
+                  <div className="grid sm:grid-cols-3 gap-3">
+                    {[
+                      { label: 'Total Marks', value: '200 marks' },
+                      { label: 'Conducted By', value: 'KPSC Interview Board' },
+                      { label: 'Focus Areas', value: 'Administrative aptitude, Karnataka governance, situational responses, personality & communication' },
+                    ].map((item) => (
+                      <InfoCard key={item.label} label={item.label} value={item.value} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="Detailed KAS Syllabus 2026" />
+              <div className="space-y-3">
+                {syllabus.map((item, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600 transition-colors">
+                      <span>{item.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-2">
+                        {item.topics.map((t, j) => (
+                          <li key={j} className="flex gap-2 text-sm text-surface-700">
+                            <span className="text-primary-500 mt-0.5 flex-shrink-0">•</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <SectionHeading num="7" title="Previous Year Cut-offs" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Category</th>
+                        <th className="text-center p-4 font-heading font-semibold">Prelims 2024 (out of 200 per paper)</th>
+                        <th className="text-center p-4 font-heading font-semibold">Mains 2025</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cutoffData.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-heading font-semibold text-surface-800">{row.category}</td>
+                          <td className="p-4 text-center text-primary-600 font-semibold">{row.prelims2024}</td>
+                          <td className="p-4 text-center text-amber-600 font-semibold">{row.mains}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-4 bg-amber-50 border-t border-amber-200 text-xs text-amber-800">
+                  ⚠️ Prelims 2024 cut-offs are approximate based on available post-exam analysis. Official cut-offs are published by KPSC on kpsc.kar.nic.in after each stage. Mains 2025 result is still awaited as of May 2026.
+                </div>
+              </div>
+            </section>
+
+            {/* SALARY */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="8" title="Salary Structure & Career Growth" />
+              <div className="card overflow-hidden mb-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Grade / Post</th>
+                        <th className="text-left p-4 font-heading font-semibold">Pay Scale (Basic)</th>
+                        <th className="text-left p-4 font-heading font-semibold">DA</th>
+                        <th className="text-left p-4 font-heading font-semibold">HRA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryBreakdown.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-heading font-semibold text-surface-800">{row.grade}</td>
+                          <td className="p-4 text-emerald-600 font-semibold">{row.basic}</td>
+                          <td className="p-4 text-surface-600">{row.da}</td>
+                          <td className="p-4 text-surface-600">{row.hra}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-4 bg-emerald-50 border-t border-emerald-200 text-xs text-emerald-800">
+                  💰 Effective in-hand salary for a fresh Group A KAS officer (metro posting, Bengaluru): approximately <strong>₹80,000–₹1,00,000/month</strong> inclusive of DA, HRA, TA & allowances. The 8th Pay Commission is expected to revise basic pay scales upward from 2026. Salary is additionally supplemented by government accommodation, medical benefits, and travel allowances.
+                </div>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-900 mb-4 text-lg">Career Progression Path</h3>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block"></div>
+                <div className="space-y-4">
+                  {careerPath.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div>
+                            <div className="font-heading font-semibold text-surface-900">{step.level}</div>
+                            <div className="text-xs text-surface-500 mt-0.5">{step.scale} • {step.years}</div>
+                          </div>
+                          <span className="badge-green text-xs font-heading font-semibold">{step.payband}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="9" title="How to Apply for KPSC KAS 2026" />
+              <div className="space-y-4">
+                {[
+                  { step: '1', title: 'Complete One-Time Registration (OTR) on KPSC Portal', desc: 'Visit kpsc.kar.nic.in and create your One-Time Registration profile. Enter your personal, educational, and communication details accurately. Upload photograph, signature, and thumb impression in JPEG/JPG format (max 50 KB each). Keep your registered mobile number and email ID active — all hall tickets and results are sent here.' },
+                  { step: '2', title: 'Watch for Official KAS Notification', desc: 'Monitor kpsc.kar.nic.in/GP.html (Gazetted Probationers page) for the 2025–26 KAS notification. The notification PDF will contain post-wise vacancies, eligibility details, exam dates, city preferences, and optional subject list. Based on past cycles, notifications typically release in February–March.' },
+                  { step: '3', title: 'Fill and Submit Online Application', desc: 'Log in with your OTR credentials, select the KAS notification, verify your profile details, and submit the application. Choose your optional subject carefully — this choice is generally final. After submission, take a printout or screenshot of your application confirmation for reference. Note your application number.' },
+                  { step: '4', title: 'Pay Application Fee Online', desc: 'Pay the prescribed fee via Net Banking, Debit Card, or UPI through the KPSC payment gateway. As per the 2024 notification, the fee was ₹500 for General category, ₹300 for 2A/2B/3A/3B, and ₹50 for Ex-Servicemen. Fee amounts may vary for future cycles — always verify from the official notification before payment. SC/ST category fee concession details are specified in each notification.' },
+                  { step: '5', title: 'Download Admit Card & Appear for Prelims', desc: 'Admit cards are released approximately 2–3 weeks before the Prelims exam on the KPSC portal. Download and print two copies. Carry a government photo ID (Aadhaar / Voter ID / PAN) along with the admit card. After clearing Prelims, the Mains admit card is released separately — monitor the portal regularly between stages.' },
+                ].map((item) => (
+                  <div key={item.step} className="card p-5 flex gap-4">
+                    <div className="flex-shrink-0 w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 font-heading font-bold text-sm">{item.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-900 mb-1">{item.title}</div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="10" title="12-Month KAS Study Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block"></div>
+                <div className="space-y-4">
+                  {studyPlan.map((phase, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
+                          <span className="font-heading font-bold text-surface-900">{phase.month}</span>
+                          <span className="badge-primary">{phase.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{phase.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* BOOKS */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="11" title="Best Books for KPSC KAS 2026" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="12" title="Free Resources for KAS Preparation" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res, i) => (
+                  <a key={i} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl flex-shrink-0">{res.type === 'youtube' ? '📺' : '🌐'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors text-sm">{res.name}</div>
+                        <p className="text-xs text-surface-500 mt-1 leading-relaxed">{res.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* TIPS */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="13" title="Expert Tips for KPSC KAS 2026" />
+              <div className="space-y-4">
+                {tips.map((t, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-accent-100 rounded-xl flex items-center justify-center text-xl">{t.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{t.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="14" title="FAQs – KPSC KAS 2026" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600 transition-colors">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="flex items-center gap-2 text-sm text-surface-600 hover:text-primary-500 transition-colors py-1 group">
+                      <span className="w-1 h-1 rounded-full bg-surface-300 group-hover:bg-primary-400 transition-colors flex-shrink-0"></span>
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* OFFICIAL LINKS */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm uppercase tracking-wide">Official Links</h3>
+                <div className="space-y-3">
+                  <a href="https://kpsc.kar.nic.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-primary-600 hover:text-primary-700 font-semibold transition-colors">
+                    <span className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-base">🌐</span>
+                    KPSC Official Website
+                  </a>
+                  <a href="https://kpsc.kar.nic.in/GP.html" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-primary-600 hover:text-primary-700 font-semibold transition-colors">
+                    <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-base">📋</span>
+                    KAS / GP Notifications
+                  </a>
+                </div>
+              </div>
+
+              {/* ELIGIBILITY CHECKER CTA */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="text-2xl mb-2">🎯</div>
+                <h3 className="font-heading font-semibold text-primary-900 mb-1">Check Your Eligibility</h3>
+                <p className="text-xs text-primary-700 mb-3 leading-relaxed">Instantly verify if you meet the age and qualification criteria for KPSC KAS and 100+ other government exams.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-xs py-2 px-4 inline-block text-center w-full">
+                  Try Eligibility Checker →
+                </Link>
+              </div>
+
+              {/* QUICK STATS */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm uppercase tracking-wide">KAS at a Glance</h3>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Exam Type',          value: 'State PSC (Gr A & B)' },
+                    { label: 'Stages',             value: 'Prelims → Mains → Interview' },
+                    { label: 'Prelims Total',       value: '400 marks (qualifying)' },
+                    { label: 'Mains Merit Marks',   value: '1,250 marks (Essay + 4 GS)' },
+                    { label: 'Interview',           value: '200 marks' },
+                    { label: 'Optional Papers',     value: 'Removed (post-2016 rules)' },
+                    { label: 'Language',            value: 'Kannada / English' },
+                    { label: 'Apply Via',           value: 'kpsc.kar.nic.in (OTR)' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex justify-between text-xs border-b border-surface-100 pb-2 last:border-0 last:pb-0">
+                      <span className="text-surface-500">{item.label}</span>
+                      <span className="font-semibold text-surface-800 text-right ml-2">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
             </div>
