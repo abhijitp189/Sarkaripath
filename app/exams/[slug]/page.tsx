@@ -473,6 +473,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'sebi-grade-a') {
+    return {
+      title: 'SEBI Grade A 2026 – Notification, Syllabus, Eligibility & Salary | TaiyarHo',
+      description: 'SEBI Grade A 2026: 135 vacancies (2025 cycle). Next notification expected Oct–Nov 2026. Check Phase 1 & 2 exam pattern, syllabus (General, Legal, IT, Research streams), eligibility (age ≤30, Graduate/PG), salary ₹1,43,000–₹1,84,000/month gross and complete preparation guide.',
+      keywords: 'SEBI Grade A 2026, SEBI Grade A notification 2026, SEBI Grade A syllabus, SEBI Grade A salary, SEBI Assistant Manager 2026, SEBI Grade A eligibility, SEBI exam 2026, सेबी ग्रेड A 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/sebi-grade-a/' },
+      other: { 'description:hi': 'SEBI ग्रेड A 2026 – भारत के सर्वोच्च वेतन वाले सरकारी परीक्षाओं में से एक। 135 रिक्तियाँ (2025 चक्र)। अगली अधिसूचना अक्टूबर–नवंबर 2026 (अपेक्षित)। आयु ≤30 वर्ष। वेतन: ₹1,43,000–₹1,84,000/माह (सकल)। पूरा सिलेबस, परीक्षा पैटर्न, पात्रता और तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'ibps-po') {
     return {
       title: 'IBPS PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -691,6 +701,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (detailed && detailed.slug === 'ibps-po') return <IbpsPoPage exam={detailed} />;
   if (brief && brief.slug === 'nabard-grade-a') return <NabardGradeAPage exam={brief} />;
   if (detailed && detailed.slug === 'sbi-po') return <SbiPoPage exam={detailed} />;
+  if (brief && brief.slug === 'sebi-grade-a') return <SebiGradeAPage exam={brief} />;
   if (brief && brief.slug === 'rbi-grade-b') return <RbiGradeBPage exam={brief} />;
   if (brief && brief.slug === 'rbi-assistant') return <RbiAssistantPage exam={brief} />;
   if (brief && brief.slug === 'upsssc-pet') return <UpssscPetPage exam={brief} />;
@@ -52004,6 +52015,832 @@ function NabardGradeAPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-emerald-50 border-emerald-200">
                 <h3 className="font-heading font-semibold text-emerald-900 text-sm mb-2">Check Your Eligibility</h3>
                 <p className="text-xs text-emerald-700 mb-3">Find all Banking exams you qualify for based on your age, category &amp; qualification.</p>
+                <Link href="/tools/eligibility-checker" className="block text-center btn-primary text-sm py-2 rounded-xl font-heading font-semibold">
+                  Use Eligibility Checker →
+                </Link>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+// ─── SEBI GRADE A 2026 RICH PAGE ────────────────────────────────────────────
+function SebiGradeAPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancy', label: 'Vacancy History' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'salary', label: 'Salary & Perks' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'SEBI Grade A 2025 Short Notification', date: '8 October 2025', status: 'done' },
+    { event: 'SEBI Grade A 2025 Full Notification Released', date: '30 October 2025', status: 'done' },
+    { event: 'Online Application Opens', date: '30 October 2025', status: 'done' },
+    { event: 'Online Application Last Date', date: '28 November 2025', status: 'done' },
+    { event: 'Admit Card Released (Phase 1)', date: '3 January 2026', status: 'done' },
+    { event: 'Phase 1 Online Exam', date: '10 January 2026', status: 'done' },
+    { event: 'Phase 1 Result Declared', date: '30 January 2026', status: 'done' },
+    { event: 'Phase 2 Online Exam', date: '21 February 2026', status: 'done' },
+    { event: 'Phase 2 Result Declared', date: '27 March 2026', status: 'done' },
+    { event: 'Phase 3 Interviews', date: '6 May – 4 June 2026', status: 'done' },
+    { event: 'Final Merit List & Joining', date: 'July 2026 (Expected)', status: 'tbn' },
+    { event: '🆕 SEBI Grade A 2026 Notification', date: 'October–November 2026 (Expected)', status: 'tbn' },
+    { event: 'SEBI Grade A 2026 Application Window', date: 'November 2026 (Expected)', status: 'tbn' },
+    { event: 'SEBI Grade A 2026 Phase 1 Exam', date: 'January 2027 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'SEBI Grade A 2020', total: '147', general: '~100', legal: '~20', it: '~15', other: '~12' },
+    { year: 'SEBI Grade A 2022', total: '120', general: '80', legal: '16', it: '14', other: '10' },
+    { year: 'SEBI Grade A 2023', total: '25', general: '~20', legal: '~3', it: '~2', other: '—' },
+    { year: 'SEBI Grade A 2024', total: '97', general: '56', legal: '17', it: '10', other: '14' },
+    { year: 'SEBI Grade A 2025', total: '135', general: '77', legal: '20', it: '22', other: '16' },
+    { year: 'SEBI Grade A 2026 (Est.)', total: 'TBN', general: '~70–80', legal: 'TBN', it: 'TBN', other: 'TBN' },
+  ];
+
+  const phase1Pattern = [
+    { paper: 'Paper 1 (Common – All Streams)', subjects: 'General Awareness + English Language + Quantitative Aptitude + Reasoning Ability', questions: 80, marks: 100, duration: '60 min', cutoff: '30% (aggregate, no sectional)' },
+    { paper: 'Paper 2 (Stream-Specific)', subjects: 'General: Commerce, Finance, Economics, Management, Companies Act | Legal: Law | IT: Computer Science | Research: Economics/Statistics | Engineering: Civil/Electrical | Official Language: Hindi', questions: 50, marks: 100, duration: '40 min', cutoff: '40%' },
+  ];
+
+  const phase2Pattern = [
+    { paper: 'Paper 1 (English Descriptive – Common)', subjects: 'Essay Writing + Précis Writing + Comprehension', questions: 3, marks: 100, duration: '60 min', type: 'Descriptive' },
+    { paper: 'Paper 2 (Stream-Specific)', subjects: 'General/Research: Objective + Descriptive on Finance, Economics, Securities Law | Legal: MCQ + Descriptive | IT: Coding Test (C++/Java/Python, 180 min) | Official Language: Hindi', questions: 100, marks: 100, duration: '90 min', type: 'Objective + Descriptive' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Revised 2025)', amount: '₹62,500/month' },
+    { component: 'Grade Allowance', amount: 'As per SEBI norms' },
+    { component: 'Dearness Allowance (DA)', amount: '~30.38% of Basic Pay' },
+    { component: 'Special Allowance', amount: 'As per SEBI norms' },
+    { component: 'Family Allowance', amount: 'As per SEBI norms' },
+    { component: 'House Rent Allowance (HRA) / Accommodation', amount: 'HRA (if own accommodation) or SEBI-provided flat' },
+    { component: 'City Compensatory Allowance (CCA)', amount: 'City-dependent' },
+    { component: 'Learning Allowance', amount: 'Newspaper reimbursement + study materials' },
+    { component: 'Gross (Mumbai, with accommodation)', amount: '~₹1,43,000/month' },
+    { component: 'Gross (Mumbai, without accommodation)', amount: '~₹1,84,000/month' },
+  ];
+
+  const payScale = [
+    { years: 'Entry Level', basic: '₹62,500', increment: '₹3,600', note: '4 increments @ ₹3,600' },
+    { years: 'After ~4 years', basic: '₹76,900', increment: '₹4,050', note: '7 increments @ ₹4,050' },
+    { years: 'After ~11 years', basic: '₹1,05,250', increment: '₹4,050', note: 'Efficiency Bar (EB)' },
+    { years: 'After ~15 years', basic: '₹1,21,450', increment: '₹4,650', note: '1 increment' },
+    { years: 'Maximum (17 years)', basic: '₹1,26,100', increment: '—', note: 'Top of Grade A scale' },
+  ];
+
+  const careerPath = [
+    { level: 'Assistant Manager (Grade A)', scale: 'Grade A', years: '0–3 yrs', basic: '₹62,500' },
+    { level: 'Manager (Grade B)', scale: 'Grade B', years: '3–7 yrs', basic: '₹76,000+' },
+    { level: 'Assistant General Manager (Grade C)', scale: 'Grade C', years: '7–12 yrs', basic: '₹1,00,000+' },
+    { level: 'Deputy General Manager (Grade D)', scale: 'Grade D', years: '12–17 yrs', basic: '₹1,20,000+' },
+    { level: 'General Manager / ED (Grade E–F)', scale: 'Grade E–F', years: '17+ yrs', basic: '₹1,50,000+' },
+    { level: 'Whole-Time Member / Chairman', scale: 'Board Level', years: '20+ yrs', basic: 'Government-set' },
+  ];
+
+  const syllabusSections = [
+    {
+      subject: '📊 Quantitative Aptitude (Phase 1, Paper 1)',
+      topics: [
+        'Number Series, Simplification & Approximation',
+        'Percentage, Average, Ratio & Proportion',
+        'Profit & Loss, SI & CI, Partnership',
+        'Time & Work, Pipe & Cistern, Speed, Distance & Time',
+        'Data Interpretation – Tabular, Bar, Pie, Line, Caselet',
+        'Permutation, Combination & Probability',
+        'Quadratic Equations, Mensuration',
+      ],
+    },
+    {
+      subject: '🧩 Reasoning Ability (Phase 1, Paper 1)',
+      topics: [
+        'Puzzles – Floor, Box, Month-Year, Scheduling',
+        'Seating Arrangement – Linear, Circular, Double row',
+        'Syllogisms, Coding-Decoding, Blood Relations',
+        'Direction & Distance, Inequality',
+        'Input-Output, Order & Ranking',
+        'Statement & Conclusions, Logical Reasoning',
+      ],
+    },
+    {
+      subject: '📝 English Language (Phase 1 & Phase 2 Descriptive)',
+      topics: [
+        'Reading Comprehension – long and short passages',
+        'Error Spotting, Sentence Rearrangement, Para Jumbles',
+        'Cloze Test, Phrase/Sentence Connectors, Fill in the Blanks',
+        'Vocabulary – Synonyms, Antonyms, Idioms & Phrases',
+        'Phase 2: Essay Writing (250–300 words on finance/economy topics)',
+        'Phase 2: Précis Writing – summarizing long passages',
+        'Phase 2: Comprehension with analytical questions',
+      ],
+    },
+    {
+      subject: '🌐 General Awareness (Phase 1, Paper 1)',
+      topics: [
+        'Current Affairs – national & international (last 6 months)',
+        'Indian Economy, Union Budget, GDP, fiscal policy',
+        'Securities Market basics – SEBI regulations, IRDAI, RBI, NABARD',
+        'Financial Markets – Sensex, Nifty, mutual funds, derivatives',
+        'Awards, Appointments, Important Days, Sports',
+        'Government Schemes – Make in India, PLI, Digital India',
+      ],
+    },
+    {
+      subject: '💼 General Stream Paper 2 – Finance, Commerce & Economics',
+      topics: [
+        'Commerce & Accountancy – Financial Statements, Ratio Analysis',
+        'Management – Principles, Organizational Behaviour',
+        'Finance – Capital Budgeting, Working Capital, CAPM, Derivatives',
+        'Securities Law – SEBI Act 1992, SCRA 1956, Depositories Act',
+        'Costing – Standard Costing, Marginal Costing, Variance Analysis',
+        'Companies Act 2013 – Key provisions, Board structure, Auditing',
+        'Economics – Micro & Macro, Demand-Supply, Market Structures',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    {
+      month: 'Month 1–2',
+      focus: 'Aptitude & Reasoning Foundation',
+      detail: 'Build strong fundamentals in Quant (Number Series, DI, Algebra) and Reasoning (Puzzles, Seating, Syllogisms). SEBI Phase 1 is qualifying — target above 40% aggregate with accuracy. Start reading Economic Times or Financial Express daily for 20 minutes for General Awareness and Securities Market knowledge.',
+    },
+    {
+      month: 'Month 2–3',
+      focus: 'Paper 2 Domain (General Stream)',
+      detail: 'This is the most critical part of SEBI prep. Cover Commerce, Accountancy, Finance, Securities Law, and Economics systematically. ICSI or CA Foundation material helps for Companies Act. Refer to SEBI Act 1992 and SCRA 1956 directly — 5–8 questions come from these Acts every year.',
+    },
+    {
+      month: 'Month 3–4',
+      focus: 'English Descriptive + Current Affairs',
+      detail: 'Phase 2 Paper 1 is an English Descriptive test. Practise writing one essay and one précis every alternate day. Build a bank of finance-related essay topics: inflation, cryptocurrency regulation, ESG investing, SEBI reforms. Compile and revise monthly current affairs from official sources.',
+    },
+    {
+      month: 'Month 4–5',
+      focus: 'Securities Market Deep Dive',
+      detail: 'SEBI exams are unique — deep knowledge of capital markets is essential. Study: Primary & Secondary markets, IPO process, Mutual Funds, Debt instruments, Derivatives (Futures & Options basics), Insider Trading regulations, SEBI Takeover Code. Read SEBI annual reports and circulars from sebi.gov.in.',
+    },
+    {
+      month: 'Month 5–6',
+      focus: 'Full Mocks + Interview Preparation',
+      detail: 'Attempt 2–3 full-length Phase 1 mocks per week. Analyse every mock thoroughly. For Phase 2, practise full papers under timed conditions. SEBI Interview focuses on your stream knowledge, current regulatory issues, and personality. Prepare a 2-minute introduction, know SEBI\'s recent enforcement actions, and read the SEBI Annual Report.',
+    },
+  ];
+
+  const books = [
+    { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Quant' },
+    { title: 'A Modern Approach to Logical Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' },
+    { title: 'Objective English for Competitive Examinations', author: 'Hari Mohan Prasad', subject: 'English' },
+    { title: 'Indian Financial System & Capital Markets', author: 'M.Y. Khan', subject: 'Finance & Capital Markets' },
+    { title: 'Securities Law & Capital Markets', author: 'Taxmann / ICSI Study Material', subject: 'Securities Law' },
+    { title: 'Fundamentals of Financial Management', author: 'Prasanna Chandra', subject: 'Financial Management' },
+    { title: 'Economics (Micro & Macro)', author: 'HL Ahuja', subject: 'Economics' },
+    { title: 'SEBI Grade A Previous Year Papers', author: 'Adda247 / Oliveboard', subject: 'Mock Tests & PYQs' },
+  ];
+
+  const freeResources = [
+    { name: 'SEBI Official Website – Careers', type: 'website', url: 'https://www.sebi.gov.in/careers.html', description: 'Official notifications, previous papers, and results — primary source for all SEBI recruitment.' },
+    { name: 'Oliveboard SEBI Grade A Free Mocks', type: 'website', url: 'https://www.oliveboard.in/sebi-grade-a/', description: 'Free full-length Phase 1 and Phase 2 mocks with detailed analytics for SEBI exam pattern.' },
+    { name: 'Adda247 Banking on YouTube', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Free daily classes, current affairs capsules, and SEBI Grade A subject-wise videos.' },
+    { name: 'EduTap Finance & Regulatory Exams', type: 'youtube', url: 'https://www.youtube.com/@EduTapStudyMaterial', description: 'Dedicated SEBI, RBI, and NABARD preparation with Paper 2 domain coverage.' },
+    { name: 'SEBI Annual Report & Circulars', type: 'website', url: 'https://www.sebi.gov.in/reports-and-statistics/annual-reports.html', description: 'Reading SEBI\'s annual report gives you an unmatched edge in interview and Paper 2.' },
+    { name: 'Investopedia (Capital Markets)', type: 'website', url: 'https://www.investopedia.com', description: 'Clear, free explanations of financial concepts, derivatives, mutual funds, and securities law.' },
+    { name: 'Mrunal Patel (Economy Lectures)', type: 'youtube', url: 'https://www.youtube.com/@TheMrunalPatel', description: 'Best free resource for Macro/Micro Economics, Union Budget, and Financial Market concepts.' },
+  ];
+
+  const tips = [
+    { icon: '📜', tip: 'Read the SEBI Act 1992 and SCRA 1956 directly — not just summaries. SEBI Paper 2 asks 5–8 questions straight from these Acts every cycle. This is the highest-ROI activity for General Stream candidates.' },
+    { icon: '💹', tip: 'SEBI is the capital markets regulator. Deep knowledge of Derivatives (Futures & Options), IPO processes, Mutual Fund regulations, and Insider Trading Laws separates rank-holders from the rest. Make these your Paper 2 strengths.' },
+    { icon: '✍️', tip: 'The Phase 2 English Descriptive paper (100 marks, 60 min) is often underestimated. Practise writing under timed conditions — one Essay (300 words) and one Précis every alternate day from Month 3. Focus on finance/economy topics: ESG, digital payments, SEBI reforms, startup regulations.' },
+    { icon: '📰', tip: 'Read Economic Times or Business Standard for 20 minutes daily. SEBI\'s General Awareness focuses heavily on financial and securities market current affairs — not general news. Follow SEBI\'s official Twitter and press releases.' },
+    { icon: '🔢', tip: 'Phase 1 is only qualifying — don\'t over-invest here. Aim for 50–55% in Phase 1 (safely above the 40% cut-off). Shift 60–70% of your preparation energy to Phase 2 (Paper 2 domain knowledge), which actually determines your final merit rank.' },
+    { icon: '🏢', tip: 'SEBI interview panels test current regulatory issues deeply. Before the interview, read SEBI\'s last 2 annual reports, recent enforcement orders, and current consultation papers. Know SEBI\'s recent policy initiatives — algo trading, ESG disclosures, SME IPO framework.' },
+    { icon: '🌐', tip: 'SEBI is headquartered in Mumbai with 4 regional offices (Delhi, Chennai, Kolkata, Ahmedabad). Officers are not subject to transfers as frequently as bank employees. This makes SEBI Grade A a particularly stable and sought-after career in regulatory finance.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'When is the SEBI Grade A 2026 notification expected?',
+      a: 'The SEBI Grade A 2026 notification is expected in October–November 2026, based on the pattern of the last two recruitment cycles (2024 notification: Oct 2024; 2025 notification: Oct 30, 2025). As of May 2026, the 2025 cycle interview process (Phase 3) is ongoing (May–June 2026). SEBI typically announces the next cycle after completing the current one. Check sebi.gov.in/careers.html for official updates.',
+    },
+    {
+      q: 'What is the SEBI Grade A 2025 salary in hand per month?',
+      a: 'After the 2025 salary revision, SEBI Grade A basic pay is ₹62,500/month (up from ₹44,500 earlier — a 40% increase). The gross monthly salary is approximately ₹1,43,000 with SEBI-provided accommodation or ₹1,84,000 without accommodation in Mumbai. The in-hand salary after deductions (NPS, income tax, professional tax) is approximately ₹1,06,000–₹1,40,500/month. The annual CTC is approximately ₹22–27 lakh. Note: SEBI is an independent statutory body and does not follow Pay Commission structures.',
+    },
+    {
+      q: 'What is the qualification required for SEBI Grade A General Stream?',
+      a: 'For the General Stream, candidates need any one of the following: (1) Master\'s Degree or PG Diploma (minimum 2 years) in any discipline, (2) Bachelor\'s Degree in Law, (3) Bachelor\'s Degree in Engineering, or (4) Professional qualification — CA / CFA / CS / Cost Accountant (ICWA). No minimum percentage is stated for the General stream in the official notification. Other streams have specific requirements — Legal requires LLB (plus 2 years of advocacy experience is desirable), IT requires BE/BTech in CS/IT/Electronics or MCA, Research requires Master\'s in Economics/Statistics/Finance.',
+    },
+    {
+      q: 'What is the age limit for SEBI Grade A 2026?',
+      a: 'The maximum age limit for SEBI Grade A is 30 years as of the notification date (for General/UR/EWS category). Age relaxations: OBC – 3 years (max 33); SC/ST – 5 years (max 35); PwBD – 10 years; Ex-Servicemen – as per Government norms. For candidates with prior SEBI experience, relaxations may vary. The age cut-off date is specified in each notification.',
+    },
+    {
+      q: 'How is SEBI Grade A different from RBI Grade B?',
+      a: 'Both are premium regulatory finance jobs, but differ significantly. SEBI recruits for the securities market regulator (stocks, mutual funds, brokers) while RBI Grade B is for the central bank (monetary policy, banking regulation). SEBI Grade A starting basic pay (₹62,500) is higher than RBI Grade B (₹55,200). SEBI Phase 2 requires deep securities law and financial markets knowledge, while RBI Grade B Paper 2 covers Economics, Finance, and Management. Both have 3-stage selection. SEBI has fewer vacancies (100–135) vs RBI Grade B (~200–300), making competition equally intense.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">SEBI Grade A 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏦 Banking / Regulatory</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Next Notification: Oct–Nov 2026 (Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            SEBI Grade A 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            SEBI Grade A (Assistant Manager) is one of India&apos;s <strong>highest-paying government jobs</strong> — ₹1,43,000–₹1,84,000/month gross. The 2025 cycle had <strong>135 vacancies</strong> with 86,588 applicants. Next notification expected <strong>Oct–Nov 2026</strong>. 3-stage selection: Phase 1 → Phase 2 → Interview. Graduate degree required. Age ≤30 years.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: '2025 Vacancies', value: '135', sub: '(2026 est.: TBN)' },
+              { label: 'Phase 1 Cut-off', value: '40% Aggregate', sub: 'qualifying only' },
+              { label: 'Min. Qualification', value: 'Graduate/PG', sub: 'stream-specific' },
+              { label: 'Gross Salary', value: '₹1.43L–₹1.84L', sub: 'per month (revised 2025)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> SEBI Grade A 2025 Phase 3 Interviews are currently underway (May 6 – June 4, 2026). Basic pay was revised in 2025 to <strong>₹62,500/month</strong> (up 40% from ₹44,500). The next 2026 cycle notification is expected <strong>Oct–Nov 2026</strong>. Verify all dates at <a href="https://www.sebi.gov.in/careers.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">sebi.gov.in/careers</a>.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is SEBI Grade A 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>SEBI Grade A Officer exam</strong> (also known as the Assistant Manager exam) is conducted by the <strong>Securities and Exchange Board of India (SEBI)</strong> — India&apos;s apex capital markets regulator. Established under the SEBI Act, 1992, SEBI oversees stock exchanges, mutual funds, brokers, depositories, and listed companies across India.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  A SEBI Grade A Officer joins as an <strong>Assistant Manager</strong> and works in one of SEBI&apos;s headquarters (Mumbai) or regional offices (Delhi, Chennai, Kolkata, Ahmedabad). The role involves market regulation, enforcement, policy formulation, and investor protection — making it intellectually demanding and prestigious.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  What makes SEBI Grade A stand out is its <strong>salary package</strong> — ₹62,500 basic pay (revised 2025) with a gross of ₹1.43L–₹1.84L/month — making it one of the highest-paying government jobs in India. With just <strong>100–135 vacancies per year</strong> and 80,000–90,000 applicants, it is also among the most competitive regulatory exams.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'Securities and Exchange Board of India (SEBI)' },
+                  { label: 'Post Name', value: 'Officer Grade A (Assistant Manager)' },
+                  { label: 'Available Streams', value: 'General, Legal, IT, Research, Official Language, Engineering' },
+                  { label: 'Probation Period', value: '2 Years' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 SEBI Grade A 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800">⚠️ The 2025 recruitment cycle (Phase 3 Interviews: May–June 2026) is currently underway. The <strong>2026 cycle notification</strong> is expected in <strong>October–November 2026</strong>. All upcoming dates are estimated based on past patterns. Confirm at <a href="https://www.sebi.gov.in/careers.html" target="_blank" rel="noopener noreferrer" className="underline text-amber-700 hover:text-amber-900">sebi.gov.in/careers</a>.</p>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading font-semibold">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold w-28">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.event}</td>
+                        <td className="p-3 text-surface-700">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'done' && <span className="badge-green text-xs">✅ Done</span>}
+                          {row.status === 'tbn' && <span className="badge bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs">⏳ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { icon: '🪪', label: 'Nationality', value: 'Indian Citizen' },
+                  { icon: '📋', label: 'Age Limit', value: 'Not more than 30 years (as of notification date)' },
+                  { icon: '📋', label: 'Age Relaxation – OBC', value: '+3 years (max 33 years)' },
+                  { icon: '📋', label: 'Age Relaxation – SC/ST', value: '+5 years (max 35 years)' },
+                  { icon: '📋', label: 'Age Relaxation – PwBD', value: '+10 years' },
+                  { icon: '🎓', label: 'Qualification – General Stream', value: 'Master\'s Degree / PG Diploma (min. 2 years) in any discipline, OR Bachelor\'s Degree in Law or Engineering, OR CA / CFA / CS / Cost Accountant (ICWA) — from a recognised university/institute' },
+                  { icon: '🎓', label: 'Qualification – Legal Stream', value: 'Bachelor\'s Degree in Law (LLB) with min. 55% marks OR 5-year integrated law degree' },
+                  { icon: '🎓', label: 'Qualification – IT Stream', value: 'BE/BTech in Computer Science/IT/Electronics, OR MCA, OR MSc (Computer Science/IT) with min. 60% marks' },
+                  { icon: '🎓', label: 'Qualification – Research Stream', value: 'Master\'s Degree in Economics, Commerce, Statistics, or Finance with min. 60% marks' },
+                  { icon: '🎓', label: 'Qualification – Engineering Streams', value: 'BE/BTech in Civil / Electrical Engineering with min. 60% marks' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.icon} {item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                <p className="text-sm text-primary-800">📌 <strong>Note on attempts:</strong> SEBI Grade A has no official limit on the number of attempts. However, you must satisfy the age criteria at the time of each notification. Final-year students who expect to complete their degree before joining date are eligible to apply.</p>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCY HISTORY */}
+            <section id="vacancy" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancy History & 2026 Outlook</h2>
+              </div>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading font-semibold">Year</th>
+                      <th className="text-center p-3 font-heading font-semibold">Total</th>
+                      <th className="text-center p-3 font-heading font-semibold">General</th>
+                      <th className="text-center p-3 font-heading font-semibold">Legal</th>
+                      <th className="text-center p-3 font-heading font-semibold">IT</th>
+                      <th className="text-center p-3 font-heading font-semibold">Others</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-semibold text-surface-800">{row.year}</td>
+                        <td className="p-3 text-center font-bold text-primary-600">{row.total}</td>
+                        <td className="p-3 text-center text-surface-700">{row.general}</td>
+                        <td className="p-3 text-center text-surface-700">{row.legal}</td>
+                        <td className="p-3 text-center text-surface-700">{row.it}</td>
+                        <td className="p-3 text-center text-surface-700">{row.other}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                <p className="text-sm text-emerald-800">💡 <strong>2026 Outlook:</strong> Vacancies have been rising sharply — from 24 in 2022 to 135 in 2025. SEBI is expanding its regulatory capacity. The 2026 cycle is expected to have <strong>100–150 vacancies</strong> across streams, with the General Stream accounting for ~50–60% of total posts.</p>
+              </div>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern 2026</h2>
+              </div>
+
+              <p className="text-surface-600 text-sm mb-5">SEBI Grade A selection has 3 stages. Only Phase 2 + Interview marks count for final merit (85:15 ratio). Phase 1 is qualifying only.</p>
+
+              {/* Phase 1 */}
+              <div className="mb-5">
+                <div className="bg-primary-600 text-white rounded-t-xl px-4 py-2.5">
+                  <h3 className="font-heading font-semibold text-sm">Phase 1 — Online Screening Test (Qualifying)</h3>
+                  <p className="text-xs text-blue-200 mt-0.5">Min. 30% in Paper 1 + 40% in Paper 2 + 40% aggregate required to qualify. Marks NOT counted for final selection.</p>
+                </div>
+                <div className="card rounded-t-none overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-100">
+                        <th className="text-left p-3 font-heading font-semibold text-surface-700">Paper</th>
+                        <th className="text-center p-3 font-heading font-semibold text-surface-700">Questions</th>
+                        <th className="text-center p-3 font-heading font-semibold text-surface-700">Marks</th>
+                        <th className="text-center p-3 font-heading font-semibold text-surface-700">Duration</th>
+                        <th className="text-center p-3 font-heading font-semibold text-surface-700">Cut-off</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {phase1Pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3">
+                            <div className="font-semibold text-surface-800 text-xs">{row.paper}</div>
+                            <div className="text-xs text-surface-500 mt-0.5">{row.subjects}</div>
+                          </td>
+                          <td className="p-3 text-center font-semibold text-surface-800">{row.questions}</td>
+                          <td className="p-3 text-center font-bold text-primary-600">{row.marks}</td>
+                          <td className="p-3 text-center text-surface-700">{row.duration}</td>
+                          <td className="p-3 text-center text-surface-700 text-xs">{row.cutoff}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div className="p-3 bg-surface-50 text-xs text-surface-500">⚠️ Negative Marking: ¼ mark deducted for every wrong answer in both Paper 1 and Paper 2.</div>
+                </div>
+              </div>
+
+              {/* Phase 2 */}
+              <div className="mb-5">
+                <div className="bg-emerald-700 text-white rounded-t-xl px-4 py-2.5">
+                  <h3 className="font-heading font-semibold text-sm">Phase 2 — Online Main Examination (Merit-Based)</h3>
+                  <p className="text-xs text-emerald-200 mt-0.5">Min. 50% aggregate required. Paper 1 carries 1/3 weightage; Paper 2 carries 2/3 weightage. These marks count for final merit (85% weightage).</p>
+                </div>
+                <div className="card rounded-t-none overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-100">
+                        <th className="text-left p-3 font-heading font-semibold text-surface-700">Paper</th>
+                        <th className="text-center p-3 font-heading font-semibold text-surface-700">Questions</th>
+                        <th className="text-center p-3 font-heading font-semibold text-surface-700">Marks</th>
+                        <th className="text-center p-3 font-heading font-semibold text-surface-700">Duration</th>
+                        <th className="text-center p-3 font-heading font-semibold text-surface-700">Type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {phase2Pattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-3">
+                            <div className="font-semibold text-surface-800 text-xs">{row.paper}</div>
+                            <div className="text-xs text-surface-500 mt-0.5">{row.subjects}</div>
+                          </td>
+                          <td className="p-3 text-center font-semibold text-surface-800">{row.questions}</td>
+                          <td className="p-3 text-center font-bold text-emerald-600">{row.marks}</td>
+                          <td className="p-3 text-center text-surface-700">{row.duration}</td>
+                          <td className="p-3 text-center text-surface-700 text-xs">{row.type}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div className="p-3 bg-surface-50 text-xs text-surface-500">⚠️ Negative Marking: ¼ mark deducted for wrong MCQ answers in Paper 2 only. No negative marking for Paper 1 (Descriptive).</div>
+                </div>
+              </div>
+
+              {/* Phase 3 */}
+              <div className="card p-5 bg-purple-50 border-purple-200">
+                <h3 className="font-heading font-semibold text-purple-900 mb-2">Phase 3 — Personal Interview (15% of Final Merit)</h3>
+                <p className="text-sm text-purple-800 mb-3">Only candidates who qualify Phase 2 (min. 50% aggregate) are called for the interview. The interview is conducted at SEBI offices. Candidates can choose Hindi or English as the medium.</p>
+                <p className="text-sm text-purple-800">Interview assesses: domain knowledge (securities market, regulatory framework), current affairs, communication skills, and personality. Final selection = Phase 2 (85%) + Interview (15%).</p>
+              </div>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabusSections.map((section, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{section.subject}</span>
+                      <svg className="w-4 h-4 text-surface-400 flex-shrink-0 ml-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-5 space-y-1.5">
+                        {section.topics.map((topic, j) => (
+                          <li key={j} className="text-sm text-surface-600 leading-relaxed">{topic}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 SEBI Grade A Salary & Perks 2026</h2>
+              </div>
+
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-5 mb-5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-xs text-emerald-600 uppercase tracking-wide mb-1">Basic Pay</div>
+                    <div className="text-2xl font-heading font-bold text-emerald-800">₹62,500/month</div>
+                    <div className="text-xs text-emerald-600">Revised 2025 (up 40% from ₹44,500)</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-emerald-600 uppercase tracking-wide mb-1">Gross (with accommodation)</div>
+                    <div className="text-2xl font-heading font-bold text-emerald-800">~₹1,43,000/month</div>
+                    <div className="text-xs text-emerald-600">Mumbai posting</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-emerald-600 uppercase tracking-wide mb-1">Gross (without accommodation)</div>
+                    <div className="text-2xl font-heading font-bold text-emerald-800">~₹1,84,000/month</div>
+                    <div className="text-xs text-emerald-600">With full HRA, Mumbai</div>
+                  </div>
+                </div>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Salary Breakdown</h3>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading font-semibold">Component</th>
+                      <th className="text-right p-3 font-heading font-semibold">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {salaryBreakdown.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.component}</td>
+                        <td className={`p-3 text-right font-semibold ${row.component.startsWith('Gross') ? 'text-emerald-600 text-base' : 'text-surface-800'}`}>{row.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Pay Scale Progression (17 Years)</h3>
+              <div className="card overflow-hidden mb-5">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading font-semibold">Stage</th>
+                      <th className="text-center p-3 font-heading font-semibold">Basic Pay</th>
+                      <th className="text-center p-3 font-heading font-semibold">Increment</th>
+                      <th className="text-left p-3 font-heading font-semibold">Note</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {payScale.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-semibold text-surface-800">{row.years}</td>
+                        <td className="p-3 text-center font-bold text-emerald-600">{row.basic}</td>
+                        <td className="p-3 text-center text-surface-700">{row.increment}</td>
+                        <td className="p-3 text-surface-600 text-xs">{row.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div className="p-3 bg-surface-50 text-xs text-surface-500">Full pay scale: ₹62,500 – 3,600 (4) – 76,900 – 4,050 (7) – 1,05,250 – EB – 4,050 (4) – 1,21,450 – 4,650 (1) – 1,26,100 [17 years]. SEBI is an independent statutory body — NOT under Pay Commission structures.</div>
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Additional Perks & Benefits</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { icon: '🏠', perk: 'Accommodation', detail: 'SEBI-provided residential accommodation or HRA if not provided' },
+                  { icon: '🏥', perk: 'Medical Benefits', detail: 'Comprehensive medical insurance for officer and dependents' },
+                  { icon: '✈️', perk: 'Leave Fare Concession (LFC)', detail: 'Travel reimbursement for self and family to hometown/anywhere in India' },
+                  { icon: '📰', perk: 'Newspaper & Learning Allowance', detail: 'Reimbursement for financial newspapers, books, and study materials' },
+                  { icon: '🎓', perk: 'Training & Development', detail: 'Sponsored training programmes, certifications, and international seminars' },
+                  { icon: '💼', perk: 'NPS (National Pension Scheme)', detail: 'SEBI contributes 14% of basic pay to NPS; employee contributes 10%' },
+                  { icon: '🍽️', perk: 'Subsidised Lunch Facility', detail: 'Canteen/subsidised meals at SEBI offices' },
+                  { icon: '🕰️', perk: 'Work Hours & Culture', detail: '9:30 AM – 5:30 PM; moderate workload; corporate-style public sector culture' },
+                ].map((item) => (
+                  <div key={item.perk} className="bg-surface-50 border border-surface-200 rounded-xl p-4 flex gap-3">
+                    <span className="text-xl">{item.icon}</span>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 text-sm">{item.perk}</div>
+                      <div className="text-xs text-surface-500 mt-0.5">{item.detail}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 mb-3 mt-6 text-base">Career Growth Path</h3>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {careerPath.map((step, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-4">
+                    <div className="absolute left-0 top-3 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex">{i + 1}</div>
+                    <div className="card p-4">
+                      <div className="flex items-start justify-between gap-2 flex-wrap">
+                        <div>
+                          <div className="font-heading font-semibold text-surface-800 text-sm">{step.level}</div>
+                          <div className="text-xs text-surface-500 mt-0.5">{step.scale} · {step.years}</div>
+                        </div>
+                        <div className="text-right">
+                          <div className="font-bold text-emerald-600 text-sm">{step.basic}</div>
+                          <div className="text-xs text-surface-400">starting basic</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 8: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for SEBI Grade A 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Wait for Official Notification', detail: 'SEBI Grade A 2026 notification is expected in Oct–Nov 2026. Monitor sebi.gov.in/careers.html and follow SEBI on official social channels.' },
+                  { step: '2', title: 'Register on sebi.gov.in', detail: 'Click on "Recruitment" on the SEBI Careers page. Create a new login with your email ID and mobile number.' },
+                  { step: '3', title: 'Choose Your Stream', detail: 'Select your stream (General, Legal, IT, Research, Official Language, or Engineering). You can apply for a maximum of 2 streams per cycle, provided you are eligible for each. Submit a separate application and fee for each stream.' },
+                  { step: '4', title: 'Fill Application Form', detail: 'Enter personal details, educational qualifications, and work experience (if any). Verify each entry carefully before proceeding.' },
+                  { step: '5', title: 'Upload Documents', detail: 'Upload scanned photo (20–50 KB, JPG) and signature (10–20 KB, JPG) in prescribed sizes. Have degree certificates ready for reference.' },
+                  { step: '6', title: 'Pay Application Fee', detail: 'Application fee: ₹1,000 for General/EWS/OBC candidates. ₹100 for SC/ST/PwBD candidates (fee waived in some cycles — check notification). Payment via net banking, debit/credit card, or UPI.' },
+                  { step: '7', title: 'Submit & Download Confirmation', detail: 'Submit the form and download the confirmation page. Keep it safe for reference throughout the recruitment process.' },
+                ].map((item) => (
+                  <div key={item.step} className="card p-5 flex gap-4 items-start">
+                    <div className="w-8 h-8 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 font-heading font-bold text-sm flex-shrink-0">{item.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 text-sm">{item.title}</div>
+                      <div className="text-sm text-surface-600 mt-1 leading-relaxed">{item.detail}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 9: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">SEBI Grade A 2026 Study Plan (6 Months)</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((phase, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-6">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex">{i + 1}</div>
+                    <div className="card p-5">
+                      <div className="flex items-center gap-3 mb-2 flex-wrap">
+                        <span className="badge-primary text-xs">{phase.month}</span>
+                        <span className="font-heading font-semibold text-surface-800 text-sm">{phase.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{phase.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 10: BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for SEBI Grade A 2026</h2>
+              </div>
+              <BooksTable books={books} />
+            </section>
+
+            {/* SECTION 11: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources for SEBI Grade A Preparation</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res, i) => (
+                  <a key={i} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 flex gap-3 items-start">
+                    <span className="text-2xl">{res.type === 'youtube' ? '📺' : res.type === 'telegram' ? '📱' : '🌐'}</span>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition text-sm">{res.name}</div>
+                      <div className="text-xs text-surface-500 mt-1">{res.description}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 12: EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips for SEBI Grade A 2026</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4 items-start">
+                    <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-4 h-4 text-surface-400 flex-shrink-0 ml-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">📋 On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-xs text-surface-600 hover:text-primary-500 py-1 border-l-2 border-surface-200 hover:border-primary-400 pl-3 transition">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-2">🔗 Official Website</h3>
+                <p className="text-xs text-surface-500 mb-3">Official SEBI notifications, admit cards, and results.</p>
+                <a href="https://www.sebi.gov.in/careers.html" target="_blank" rel="noopener noreferrer" className="block text-center btn-primary text-xs py-2 rounded-xl font-heading font-semibold">
+                  Visit sebi.gov.in →
+                </a>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">⚡ Quick Stats</h3>
+                <div className="space-y-2 text-xs">
+                  <div className="flex justify-between"><span className="text-surface-500">Conducting Body</span><strong className="text-surface-800">SEBI</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Post</span><strong className="text-surface-800">Assistant Manager</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Age Limit</span><strong className="text-surface-800">≤30 years</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">2025 Vacancies</span><strong className="text-primary-600">135</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">2025 Applicants</span><strong className="text-primary-600">86,588</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Starting Basic Pay</span><strong className="text-emerald-600">₹62,500/month</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Gross (with accomm.)</span><strong className="text-emerald-600">~₹1,43,000/month</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Gross (no accomm.)</span><strong className="text-emerald-600">~₹1,84,000/month</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Negative Marking</span><strong className="text-surface-800">¼ per wrong answer</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Final Merit Ratio</span><strong className="text-surface-800">Phase 2: 85% + Interview: 15%</strong></div>
+                </div>
+              </div>
+
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-emerald-900 text-sm mb-2">Check Your Eligibility</h3>
+                <p className="text-xs text-emerald-700 mb-3">Find all Banking & Regulatory exams you qualify for based on your age, category &amp; qualification.</p>
                 <Link href="/tools/eligibility-checker" className="block text-center btn-primary text-sm py-2 rounded-xl font-heading font-semibold">
                   Use Eligibility Checker →
                 </Link>
