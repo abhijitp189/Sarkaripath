@@ -58,7 +58,7 @@ export default function CurrentAffairsPage() {
               <span className="text-primary-500">2026</span>
             </h1>
             <p className="text-lg text-surface-500 leading-relaxed max-w-2xl">
-              Exam-oriented weekly digests and monthly roundups — simplified for UPSC, SSC,
+              Exam-oriented weekly digests — simplified for UPSC, SSC,
               Banking, and Railway aspirants. No paywalls, no spam.
             </p>
 
@@ -87,7 +87,7 @@ export default function CurrentAffairsPage() {
               {[
                 { icon: '📰', label: 'Weekly Roundups', value: `${currentAffairsPosts.length}` },
                 { icon: '🎯', label: 'Exams Covered', value: '10+' },
-                { icon: '⚡', label: 'Quick Quiz', value: 'Every issue' },
+                { icon: '🧠', label: 'Interactive Quiz', value: 'Every issue' },
                 { icon: '🔖', label: 'Key Points', value: 'Highlighted' },
               ].map((s) => (
                 <div key={s.label} className="flex items-center gap-2">
@@ -121,10 +121,19 @@ export default function CurrentAffairsPage() {
                 <span className="inline-flex items-center gap-1 text-xs font-heading font-bold uppercase tracking-wide px-3 py-1 rounded-full bg-accent-500 text-white">
                   🆕 New
                 </span>
-                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full bg-white/20 text-white`}>
-                  {featured.category}
-                </span>
-                <span className="text-xs text-primary-200">📅 {featured.dateRange}</span>
+                {featured.weekRange && (
+                  <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/20 text-white">
+                    {featured.weekRange}
+                  </span>
+                )}
+                {/* News + quiz counts */}
+                {(featured.newsItems || featured.quiz) && (
+                  <span className="text-xs text-primary-200">
+                    {featured.newsItems ? `${featured.newsItems.length} stories` : ''}
+                    {featured.newsItems && featured.quiz ? ' · ' : ''}
+                    {featured.quiz ? `${featured.quiz.length} quiz Qs` : ''}
+                  </span>
+                )}
               </div>
 
               <h2 className="font-heading font-bold text-2xl sm:text-3xl text-white mb-3 leading-snug group-hover:text-primary-100 transition-colors">
@@ -134,8 +143,17 @@ export default function CurrentAffairsPage() {
                 {featured.excerpt}
               </p>
 
-              {/* Key points preview */}
-              {featured.keyPoints && (
+              {/* Preview headlines from news items OR key points */}
+              {featured.newsItems ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                  {featured.newsItems.slice(0, 4).map((item) => (
+                    <div key={item.id} className="flex items-start gap-2 text-sm text-primary-100">
+                      <span className="text-accent-400 mt-0.5 flex-shrink-0">▸</span>
+                      <span>{item.headline}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : featured.keyPoints ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                   {featured.keyPoints.slice(0, 4).map((point, i) => (
                     <div key={i} className="flex items-start gap-2 text-sm text-primary-100">
@@ -144,11 +162,11 @@ export default function CurrentAffairsPage() {
                     </div>
                   ))}
                 </div>
-              )}
+              ) : null}
 
               <div className="flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-colors group-hover:bg-white/20">
-                  Read Full Roundup
+                  {featured.quiz ? 'Read & Take Quiz' : 'Read Full Roundup'}
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -193,65 +211,90 @@ export default function CurrentAffairsPage() {
 
         {/* ── Posts Grid ───────────────────────────────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {(activeCategory === 'All' ? regularPosts : allPosts).map((post) => (
-            <Link
-              key={post.slug}
-              href={`/current-affairs/${post.slug}`}
-              className="card p-6 group hover:border-primary-300 flex flex-col"
-            >
-              {/* Header */}
-              <div className="flex items-center gap-2 mb-3">
-                <span className={`text-xs font-heading font-semibold px-2.5 py-1 rounded-full ${categoryColors[post.category] || 'bg-surface-100 text-surface-600'}`}>
-                  {post.category}
-                </span>
-                <span className="text-xs text-surface-400">📅 {post.dateRange}</span>
-              </div>
-
-              <h2 className="font-heading font-bold text-lg text-surface-900 group-hover:text-primary-500 transition-colors mb-2 leading-snug">
-                {post.title}
-              </h2>
-
-              <p className="text-sm text-surface-500 leading-relaxed mb-4 flex-1">
-                {post.excerpt}
-              </p>
-
-              {/* Key points preview */}
-              {post.keyPoints && (
-                <div className="space-y-1.5 mb-4">
-                  {post.keyPoints.slice(0, 3).map((point, i) => (
-                    <div key={i} className="flex items-start gap-1.5 text-xs text-surface-500">
-                      <span className="text-primary-400 mt-0.5 flex-shrink-0">▸</span>
-                      <span>{point}</span>
-                    </div>
-                  ))}
-                  {(post.keyPoints?.length ?? 0) > 3 && (
-                    <div className="text-xs text-primary-500 font-medium pl-3">
-                      +{(post.keyPoints?.length ?? 0) - 3} more points →
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* Target exams */}
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {post.targetExams.map((exam) => (
-                  <span key={exam} className={`text-xs px-2 py-0.5 rounded font-medium ${examBadgeColors[exam] || 'bg-surface-100 text-surface-500'}`}>
-                    {exam}
+          {(activeCategory === 'All' ? regularPosts : allPosts).map((post) => {
+            const hasRichContent = !!post.newsItems && post.newsItems.length > 0;
+            return (
+              <Link
+                key={post.slug}
+                href={`/current-affairs/${post.slug}`}
+                className="card p-6 group hover:border-primary-300 flex flex-col"
+              >
+                {/* Header */}
+                <div className="flex items-center gap-2 mb-3">
+                  <span className={`text-xs font-heading font-semibold px-2.5 py-1 rounded-full ${categoryColors[post.category] || 'bg-surface-100 text-surface-600'}`}>
+                    {post.category}
                   </span>
-                ))}
-              </div>
+                  <span className="text-xs text-surface-400">📅 {post.dateRange}</span>
+                </div>
 
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-surface-400">Published: {post.publishedDate}</span>
-                <span className="text-sm font-medium text-primary-500 group-hover:text-primary-600 flex items-center gap-1">
-                  Read More
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </div>
-            </Link>
-          ))}
+                <h2 className="font-heading font-bold text-lg text-surface-900 group-hover:text-primary-500 transition-colors mb-2 leading-snug">
+                  {post.title}
+                </h2>
+
+                <p className="text-sm text-surface-500 leading-relaxed mb-4 flex-1">
+                  {post.excerpt}
+                </p>
+
+                {/* Rich preview: news headlines */}
+                {hasRichContent ? (
+                  <div className="space-y-1.5 mb-4">
+                    {post.newsItems!.slice(0, 3).map((item) => (
+                      <div key={item.id} className="flex items-start gap-1.5 text-xs text-surface-500">
+                        <span className="text-primary-400 mt-0.5 flex-shrink-0">▸</span>
+                        <span>{item.headline}</span>
+                      </div>
+                    ))}
+                    {post.newsItems!.length > 3 && (
+                      <div className="text-xs text-primary-500 font-medium pl-3">
+                        +{post.newsItems!.length - 3} more stories →
+                      </div>
+                    )}
+                  </div>
+                ) : post.keyPoints ? (
+                  <div className="space-y-1.5 mb-4">
+                    {post.keyPoints.slice(0, 3).map((point, i) => (
+                      <div key={i} className="flex items-start gap-1.5 text-xs text-surface-500">
+                        <span className="text-primary-400 mt-0.5 flex-shrink-0">▸</span>
+                        <span>{point}</span>
+                      </div>
+                    ))}
+                    {(post.keyPoints?.length ?? 0) > 3 && (
+                      <div className="text-xs text-primary-500 font-medium pl-3">
+                        +{(post.keyPoints?.length ?? 0) - 3} more points →
+                      </div>
+                    )}
+                  </div>
+                ) : null}
+
+                {/* Content stats for rich posts */}
+                {hasRichContent && (
+                  <div className="flex items-center gap-3 text-xs text-surface-400 mb-4">
+                    <span>📰 {post.newsItems!.length} stories</span>
+                    {post.quiz && <span>🧠 {post.quiz.length} quiz Qs</span>}
+                  </div>
+                )}
+
+                {/* Target exams */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {post.targetExams.map((exam) => (
+                    <span key={exam} className={`text-xs px-2 py-0.5 rounded font-medium ${examBadgeColors[exam] || 'bg-surface-100 text-surface-500'}`}>
+                      {exam}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-surface-400">Published: {post.publishedDate}</span>
+                  <span className="text-sm font-medium text-primary-500 group-hover:text-primary-600 flex items-center gap-1">
+                    {hasRichContent ? 'Read & Take Quiz' : 'Read More'}
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
         {/* ── Coming Soon notice ───────────────────────────────────────── */}
@@ -272,7 +315,7 @@ export default function CurrentAffairsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-sm text-primary-800">
             {[
               { icon: '📌', title: 'Key Points first', desc: 'Each issue opens with 8–10 bullet facts — review these quickly before any exam.' },
-              { icon: '🧠', title: 'Quick Quiz', desc: 'Test yourself with 3 MCQs at the end of each article — exactly like real exam questions.' },
+              { icon: '🧠', title: 'Interactive Quiz', desc: 'Test yourself with 20 MCQs — instant feedback, explanations, and score tracking.' },
               { icon: '🎯', title: 'Exam Tags', desc: 'Every story is tagged with the exams where it is most likely to appear. Focus accordingly.' },
               { icon: '📄', title: 'Download Free PDF', desc: 'Click "Download PDF" on any weekly page to save it for offline revision — no account needed.' },
             ].map((item) => (

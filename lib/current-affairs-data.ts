@@ -1,3 +1,36 @@
+import type { NewsCategory } from './current-affairs-theme';
+import { may11_17_newsItems, may11_17_staticGk, may11_17_quiz } from './may-11-17-data';
+
+/* ── Interfaces ────────────────────────────────────────────────────────── */
+
+export interface QuizQuestion {
+  id: string;
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+  category: NewsCategory;
+  difficulty: 'easy' | 'medium' | 'hard';
+}
+
+export interface NewsItem {
+  id: string;
+  category: NewsCategory;
+  headline: string;
+  eventDate: string;
+  location?: string;
+  summary: string;
+  keyFacts: string[];
+  whyItMatters: string;
+  examRelevance: ('UPSC' | 'SSC' | 'Banking' | 'Railway' | 'Defence' | 'State PSC' | 'Teaching' | 'Police')[];
+  staticGkConnect?: string;
+}
+
+export interface StaticGkLink {
+  newsItem: string;
+  staticFact: string;
+}
+
 export interface CurrentAffairsPost {
   slug: string;
   title: string;
@@ -10,9 +43,46 @@ export interface CurrentAffairsPost {
   keyPoints?: string[];
   quizQuestions?: { question: string; options: string[]; answer: string }[];
   content?: string;
+  newsItems?: NewsItem[];
+  staticGkBox?: StaticGkLink[];
+  quiz?: QuizQuestion[];
+  weekRange?: string;
 }
 
+export const caCategories = ['All', 'National', 'International', 'Economy', 'Sci-Tech', 'Sports'] as const;
+export type CaCategory = (typeof caCategories)[number];
+
+/* ── Posts ──────────────────────────────────────────────────────────────── */
+
 export const currentAffairsPosts: CurrentAffairsPost[] = [
+  /* ═══ NEW: May 11–17, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-may-11-17-2026',
+    title: 'Weekly Current Affairs: May 11\u201317, 2026 \u2014 SSC Age Relaxation, India-Netherlands Semiconductor Pact & WHO Ebola PHEIC',
+    dateRange: 'May 11\u201317, 2026',
+    publishedDate: 'May 18, 2026',
+    category: 'All',
+    excerpt: "This week: SSC gets a 5-year age relaxation, India-Netherlands semiconductor deal with ASML-Tata, WHO declares Ebola PHEIC, first Made-in-India C-295 ready for flight, CCPA cracks down on e-commerce and coaching institutes, and Kami Rita Sherpa's 32nd Everest summit.",
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'May 11\u201317, 2026',
+    newsItems: may11_17_newsItems,
+    staticGkBox: may11_17_staticGk,
+    quiz: may11_17_quiz,
+    keyPoints: [
+      'Union HM Amit Shah announces one-time 5-year age relaxation for SSC candidates affected by recruitment delays.',
+      'India-Netherlands summit: ASML\u2013Tata Electronics semiconductor pact aligns with India Semiconductor Mission.',
+      'WHO declares Ebola outbreak in DRC and Uganda a Public Health Emergency of International Concern (PHEIC).',
+      'First Made-in-India Airbus C-295 transport aircraft ready for flight testing at Tata-Airbus facility in Vadodara.',
+      'CCPA penalises coaching institutes for misleading ads; issues notices to Amazon, Flipkart over herbicide sales.',
+      "Sikkim celebrates 51st Statehood Day \u2014 became India's 22nd state via 36th Amendment (1975).",
+      'Delhi announces \u20b910 crore collateral-free loans for women-led startups and SHGs.',
+      'Kami Rita Sherpa scales Everest for a record 32nd time.',
+      "India's first Integrated CCUS Field Lab inaugurated under 'Bharat Innovates 2026'.",
+      'CAFE III emission norms for passenger vehicles expected by end of May 2026.',
+    ],
+  },
+  /* ═══ ORIGINAL POSTS (preserved verbatim from repo) ═══ */
   {
     slug: 'weekly-current-affairs-may-4-10-2026',
     title: 'Weekly Current Affairs: May 4–10, 2026 — Press Freedom Index, SC Judges Bill & Kerala Election Results',
@@ -22,7 +92,7 @@ export const currentAffairsPosts: CurrentAffairsPost[] = [
     excerpt:
       "This week: India slips to 157th in World Press Freedom Index, Cabinet clears SC Judges Amendment Bill (33→37), UDF sweeps Kerala with 102 seats ending LDF's decade-long rule, NSE launches Electronic Gold Receipts, and RBI appoints new Deputy Governor.",
     targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
-    isFeatured: true,
+    isFeatured: false,
     keyPoints: [
       'India ranked 157th (down from 151st) in the 2026 World Press Freedom Index by Reporters Without Borders (RSF). Norway retained 1st place; Eritrea last.',
       'Cabinet approved Supreme Court (Number of Judges) Amendment Bill, 2026 — increasing SC judge strength from 33 to 37 (excluding CJI), first increase since 2019.',
@@ -155,7 +225,7 @@ Discussions on Section 473 of the Bharatiya Nagarik Suraksha Sanhita (BNSS) — 
     excerpt:
       "This week: India launches its first-ever Digital Census 2027, Ladakh gets 5 new districts, Lt Gen Dhiraj Seth appointed Vice Chief of Army, and Shekha Jheel becomes India's 99th Ramsar Site.",
     targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
-    isFeatured: true,
+    isFeatured: false,
     keyPoints: [
       "India officially begins rollout of Census 2027 — the country's first-ever Digital Census.",
       'Census 2027 mascots: "Pragati" (Progress) and "Vikas" (Development). Self-enumeration available in 16 languages.',
@@ -303,6 +373,3 @@ ISRO announced August 2026 as the target launch window for Chandrayaan-4, India'
     `,
   },
 ];
-
-export const caCategories = ['All', 'National', 'International', 'Economy', 'Sci-Tech', 'Sports'] as const;
-export type CaCategory = typeof caCategories[number];
