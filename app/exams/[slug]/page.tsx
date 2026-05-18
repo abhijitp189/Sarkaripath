@@ -611,6 +611,17 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'isro-scientist') {
+    return {
+      title: 'ISRO Scientist/Engineer SC 2026 – Syllabus, Eligibility, Exam Pattern & Guide | TaiyarHo',
+      description: 'ISRO Scientist/Engineer SC 2026: 100–300+ vacancies per ICRB cycle. B.Tech 65% required, age 18–28 yrs. Written test 95 MCQs (120 min) + Interview. In-hand salary ~₹75,000–₹85,000/month. Full syllabus, cut-offs & free preparation guide.',
+      keywords: 'ISRO Scientist 2026, ISRO Engineer SC 2026, ISRO recruitment 2026, ICRB recruitment 2026, ISRO exam syllabus 2026, ISRO salary 2026, ISRO exam pattern, isro.gov.in vacancy 2026, ISRO SAC URSC VSSC recruitment, आईएसआरओ भर्ती 2026, ISRO taiyari',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/isro-scientist/' },
+      other: { 'description:hi': 'ISRO Scientist/Engineer SC 2026 – ICRB द्वारा 100–300+ रिक्तियाँ। B.Tech 65% आवश्यक, आयु 18–28 वर्ष। 95 MCQ लिखित परीक्षा (120 मिनट) + साक्षात्कार। अनुमानित वेतन ₹75,000–₹85,000/माह। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त संसाधन।' },
+    };
+  }
+
+
   if (params.slug === 'gpsc-class-1-2') {
     return {
       title: 'GPSC Class 1 & 2 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -720,6 +731,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'mpsc-rajyaseva') return <MpscRajyasevaPage exam={brief} />;
   if (brief && brief.slug === 'kerala-psc-kas') return <KeralaKasPage exam={brief} />;
   if (brief && brief.slug === 'drdo-ceptam') return <DrdoCeptamPage exam={brief} />;
+  if (brief && brief.slug === 'isro-scientist') return <IsroScientistPage exam={brief} />;
   if (brief && brief.slug === 'coast-guard-navik-gd') return <CoastGuardNavikGdPage exam={brief} />;
   if (brief && brief.slug === 'niacl-ao') return <NiaclAoPage exam={brief} />;
   if (brief && brief.slug === 'nicl-ao') return <NiclAoPage exam={brief} />;
@@ -50470,6 +50482,669 @@ function SscSelectionPostPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-emerald-50 border-emerald-200">
                 <h3 className="font-heading font-semibold text-emerald-900 text-sm mb-2">Check Your Eligibility</h3>
                 <p className="text-xs text-emerald-700 mb-3">Find all SSC exams you are eligible for based on your age, category & qualification.</p>
+                <Link href="/tools/eligibility-checker" className="block text-center btn-primary text-sm py-2 rounded-xl font-heading font-semibold">
+                  Use Eligibility Checker →
+                </Link>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ISRO SCIENTIST/ENGINEER 'SC' PAGE
+// ─────────────────────────────────────────────────────────────────────────────
+function IsroScientistPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancy History' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Syllabus by Discipline' },
+    { id: 'cutoff',          label: 'Previous Cut-offs' },
+    { id: 'salary',          label: 'Salary & Career Growth' },
+    { id: 'how-to-apply',    label: 'How to Apply' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'ICRB:02(EMC):2025 – Notification Released (320 vacancies: Elec/Mech/CS)', date: '27 May 2025',           status: 'released' },
+    { event: 'ICRB:02(EMC):2025 – Online Application Window',                            date: '27 May – 16 June 2025', status: 'released' },
+    { event: 'ICRB:03(CEPO):2025 – Notification Released (Civil/Elec/R&AC/Arch)',       date: '24 June 2025',          status: 'released' },
+    { event: 'ICRB:03(CEPO):2025 – Application Window',                                  date: '24 June – 14 July 2025',status: 'released' },
+    { event: 'ICRB:02(EMC):2025 – Written Test Held',                                    date: '26 October 2025',       status: 'released' },
+    { event: 'ICRB:02(EMC):2025 – Shortlisting Results for Interview',                   date: '29 January 2026',       status: 'released' },
+    { event: 'ICRB:03(CEPO):2025 – Interview Results Published',                         date: '22 April 2026',         status: 'released' },
+    { event: 'SAC Recruitment 2026 – Notification (49 SC/SD vacancies)',                 date: '23 January 2026',       status: 'released' },
+    { event: 'SAC Recruitment 2026 – Application Window',                                date: '23 Jan – 12 Feb 2026',  status: 'released' },
+    { event: 'URSC:01:2026 – Notification (SC, SD & Medical Officer)',                   date: '21 March 2026',         status: 'released' },
+    { event: 'URSC:01:2026 – Application Window',                                         date: 'Closed 12 April 2026',  status: 'released' },
+    { event: 'LPSC/01/2026 – Notification (6 SC vacancies)',                             date: '25 April 2026',         status: 'released' },
+    { event: 'LPSC/01/2026 – Application Window',                                         date: 'Closed 12 May 2026',    status: 'released' },
+    { event: '🆕 ICRB Centralised Recruitment – Next Cycle Notification',               date: 'To Be Notified (TBN)',  status: 'tbn' },
+    { event: 'Online Application (next ICRB cycle)',                                      date: 'TBN',                   status: 'tbn' },
+    { event: 'Written Test (next ICRB centralised cycle)',                                date: 'TBN',                   status: 'tbn' },
+    { event: 'Interview & Final Selection',                                               date: 'TBN',                   status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { cycle: 'ICRB:02(EMC):2025',  year: '2025', vacancies: '320',          disciplines: 'Electronics (113) + Mechanical (160) + CS (44) + PRL (3)' },
+    { cycle: 'ICRB:03(CEPO):2025', year: '2025', vacancies: 'Confirmed',    disciplines: 'Civil, Electrical, Refrigeration & A/C, Architecture' },
+    { cycle: 'SAC 2026 (SC/SD)',    year: '2026', vacancies: '49',           disciplines: 'Multiple engineering disciplines (SC & SD grade)' },
+    { cycle: 'URSC:01:2026',        year: '2026', vacancies: '4',            disciplines: 'SC, SD (Engineering) & Medical Officer SC' },
+    { cycle: 'LPSC/01/2026',        year: '2026', vacancies: '6',            disciplines: 'Mechanical/Welding, Turbo Machinery, Power Electronics, RF & Microwaves, Metallurgy' },
+    { cycle: 'Next ICRB',           year: '2026 (Expected)', vacancies: '100–300 (Est.)', disciplines: 'All engineering disciplines' },
+  ];
+
+  const examPattern = [
+    { part: 'Part A', section: 'Core Engineering (Discipline-specific)', questions: 80, marks: 80, negative: '1/3 per wrong answer', time: '120 min (shared)' },
+    { part: 'Part B', section: 'General Aptitude & Reasoning',            questions: 15, marks: 20, negative: 'None',                  time: '120 min (shared)' },
+  ];
+
+  const disciplines = [
+    { name: 'Electronics & Communication', topics: ['Network Theory', 'Signals & Systems', 'Control Systems', 'Analog & Digital Circuits', 'Electromagnetics', 'Microprocessors', 'Communication Systems (Analog & Digital)', 'VLSI Design'] },
+    { name: 'Mechanical Engineering',       topics: ['Engineering Mechanics & SOM', 'Thermodynamics & Heat Transfer', 'Fluid Mechanics', 'Theory of Machines & Vibrations', 'Manufacturing Science & Production', 'Material Science', 'Machine Design', 'Industrial Engineering'] },
+    { name: 'Computer Science',             topics: ['Data Structures & Algorithms', 'Programming (C/C++/Python)', 'Operating Systems', 'Computer Networks', 'DBMS & SQL', 'Computer Architecture', 'Software Engineering', 'Compiler Design'] },
+    { name: 'Civil Engineering',            topics: ['Structural Analysis & Design', 'Fluid Mechanics & Hydraulics', 'Soil Mechanics & Foundation', 'Surveying', 'Transportation Engineering', 'Environmental Engineering', 'Construction Materials', 'RCC & Steel Design'] },
+    { name: 'Electrical Engineering',       topics: ['Circuit Theory & Network Analysis', 'Electrical Machines (DC/AC)', 'Power Systems & Switchgear', 'Control Systems', 'Measurement & Instrumentation', 'Power Electronics', 'Analog & Digital Electronics', 'Utilization of Electrical Energy'] },
+    { name: 'General Aptitude (Part B – all streams)', topics: ['Numerical Computation & Estimation', 'Data Interpretation', 'Spatial Aptitude', 'Verbal Reasoning & Analogies', 'Logical Reasoning', 'Progressions & Series', 'Basic Mathematics & Algebra', 'English Reading Comprehension'] },
+  ];
+
+  const cutoffData = [
+    { discipline: 'Electronics (BE001)',       others: '49.73 / 98',  pwbd: 'Not listed', totalMarks: '98 (1 question cancelled)', cycle: 'ICRB:02(EMC):2025 – Oct 2025 exam' },
+    { discipline: 'Mechanical (BE002)',         others: '55.70 / 99',  pwbd: '50.39 / 99', totalMarks: '99 (1 question cancelled)', cycle: 'ICRB:02(EMC):2025 – Oct 2025 exam' },
+    { discipline: 'Computer Science (BE003)',   others: '57.41 / 96',  pwbd: '44.36 / 96', totalMarks: '96 (4 questions cancelled)', cycle: 'ICRB:02(EMC):2025 – Oct 2025 exam' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay – Pay Level 10 (7th CPC, entry)',                     amount: '₹56,100/month' },
+    { component: 'Dearness Allowance (DA) @ ~60% of Basic Pay (as of 2026)',       amount: '~₹33,660/month' },
+    { component: 'House Rent Allowance (HRA) – X City (24% basic)',                amount: '~₹13,464/month' },
+    { component: 'Transport Allowance (TA)',                                        amount: '~₹7,200–₹15,000/month' },
+    { component: 'Other Allowances (Special Pay, Incentive, Medical)',              amount: '~₹3,000–₹5,000/month' },
+    { component: 'Estimated Gross In-Hand (varies by city & allowances)',           amount: '~₹75,000–₹85,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Scientist/Engineer SC',  payLevel: 'Level 10', payBand: '₹56,100 – ₹1,77,500',  note: 'Entry level – 0 to ~3 yrs' },
+    { level: 'Scientist/Engineer SD',  payLevel: 'Level 11', payBand: '₹67,700 – ₹2,08,700',  note: '~3–6 yrs of service' },
+    { level: 'Scientist/Engineer SE',  payLevel: 'Level 12', payBand: '₹78,800 – ₹2,09,200',  note: '~6–10 yrs of service' },
+    { level: 'Scientist/Engineer SF',  payLevel: 'Level 13', payBand: '₹1,23,100 – ₹2,15,900', note: '~10–15 yrs of service' },
+    { level: 'Scientist/Engineer SG',  payLevel: 'Level 14', payBand: '₹1,44,200 – ₹2,18,200', note: '~15–20 yrs of service' },
+    { level: 'Group Director / Director', payLevel: 'Level 15–16', payBand: '₹1,82,200+',     note: '~20+ yrs of service' },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', phase: 'Foundation',    tasks: 'Download the official ISRO syllabus for your discipline. Revise B.Tech fundamentals: focus on the 4–5 high-weightage subjects. Solve 20–25 GATE PYQs per subject to gauge baseline.' },
+    { month: 'Month 3–4', phase: 'Deep Dive',      tasks: 'Complete all syllabus topics subject-by-subject. Practice 50+ numericals/derivation-based problems per chapter. Start ISRO PYQ papers (2017–2024) to understand question style — ISRO is more conceptual than GATE.' },
+    { month: 'Month 5',   phase: 'Mock Tests',     tasks: 'Take 2–3 full ISRO mock tests per week under timed conditions (120 min). Analyse weak chapters and revisit them immediately. Simultaneously prepare Part B (General Aptitude) — 30 min daily is sufficient.' },
+    { month: 'Month 6',   phase: 'Final Revision', tasks: 'Consolidate all formula sheets and concept cards. Solve the last 3 ISRO papers in exam mode. Focus on speed and accuracy — negative marking in Part A (–1/3) penalises guessing.' },
+  ];
+
+  const books = [
+    { subject: 'Electronics/ECE', title: 'GATE Electronics & Communication Engineering (Chapter-wise PYQ)', author: 'Arihant Experts', freeLink: '' },
+    { subject: 'Computer Science', title: 'GATE Computer Science & IT — Topic-wise Solved Papers', author: 'Made Easy Publications', freeLink: '' },
+    { subject: 'Mechanical', title: 'GATE Mechanical Engineering — 31 Years Solved Papers', author: 'GK Publications', freeLink: '' },
+    { subject: 'Civil Engineering', title: 'GATE Civil Engineering — Solved Papers', author: 'Made Easy Publications', freeLink: '' },
+    { subject: 'Electrical', title: 'GATE Electrical Engineering — Topic-wise PYQ', author: 'Arihant Experts', freeLink: '' },
+    { subject: 'ISRO PYQs', title: 'ISRO Scientist/Engineer Previous Year Papers (2006–2024)', author: 'Various / Free PDFs', freeLink: '' },
+    { subject: 'General Aptitude', title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', freeLink: '' },
+  ];
+
+  const resources = [
+    { icon: '📺', title: 'ISRO Exam Preparation – YouTube',          desc: 'Free subject-wise lectures aligned to ISRO syllabus', url: 'https://www.youtube.com' },
+    { icon: '🌐', title: 'ISRO Official Careers Portal',             desc: 'isro.gov.in – all notifications, admit cards & results', url: 'https://www.isro.gov.in/Careers.html' },
+    { icon: '🌐', title: 'ICRB Centralised Recruitment Portal',       desc: 'Official portal for applying to ICRB-conducted exams', url: 'https://www.isro.gov.in/CurrentOpportunities.html' },
+    { icon: '📄', title: 'ISRO PYQ Papers (Free PDFs)',               desc: 'Download branch-wise ISRO previous year question papers', url: 'https://www.isro.gov.in' },
+    { icon: '📱', title: 'ISRO Exam Telegram Community',              desc: 'PYQs, mock tests, and doubt-solving with fellow aspirants', url: 'https://t.me' },
+  ];
+
+  const tips = [
+    { num: '1', title: 'Treat ISRO Syllabus as Sacred, Not GATE Syllabus', body: 'ISRO has its own official syllabus document (downloadable from isro.gov.in). Topics outside GATE — like specific control systems topics or VLSI design details — appear regularly. Map every chapter to the official ISRO syllabus before studying.' },
+    { num: '2', title: 'ISRO PYQs > GATE PYQs for Final Preparation', body: 'GATE questions are application-heavy; ISRO questions are often more direct but test deep conceptual clarity. Solve ISRO papers from 2017 to 2024 as your primary practice material in the last two months — the difficulty and style differ from GATE.' },
+    { num: '3', title: 'Part A Negative Marking: Never Guess Blindly', body: 'Part A carries ⅓ negative marking, which can dramatically reduce your score. Attempting 65 questions confidently is better than attempting 80 with guesses. Identify your "skip-if-unsure" topics and hold back on those during the actual exam.' },
+    { num: '4', title: 'Interview Preparation Starts the Day You Start Studying', body: 'The interview carries 50% of final selection weight — equal to the written test. Prepare to explain every topic on your mark sheet, your B.Tech projects, and current ISRO missions (Gaganyaan, Aditya-L1, NISAR). Practice mock interviews with peers or mentors.' },
+    { num: '5', title: 'Apply to Multiple ISRO Centre Notifications', body: 'ISRO recruits through both the centralised ICRB and individual centre notifications (SAC, URSC, VSSC, ISAC, etc.). Each centre may recruit for the same disciplines but at different times. Monitor all ISRO official pages and apply to every relevant notification — do not wait for only the big centralised ICRB drive.' },
+  ];
+
+  const faqs = [
+    { q: 'What is ISRO Scientist/Engineer SC and who conducts the recruitment?', a: 'ISRO Scientist/Engineer SC (Entry Grade – Group A, Gazetted) is a prestigious central government position in India\'s space agency. Recruitment is conducted by the ISRO Centralised Recruitment Board (ICRB) for large drives, and by individual ISRO centres (SAC, URSC, VSSC, etc.) for centre-specific openings. Both routes lead to the same SC designation.' },
+    { q: 'What is the age limit for ISRO Scientist/Engineer SC 2026?', a: 'The maximum age is 28 years for General/EWS category as of the application closing date. Age relaxations apply: OBC candidates get +3 years (max 31), SC/ST candidates get +5 years (max 33), and PwBD candidates get +10 years. Ex-Servicemen are eligible for relaxation as per Government of India rules.' },
+    { q: 'What is the minimum qualification required for ISRO Scientist/Engineer SC?', a: 'Candidates must hold a B.E./B.Tech degree in the relevant engineering discipline with a minimum of 65% marks (or 6.84/10 CGPA). Final-year students who will complete their degree by the time of document verification are typically eligible to apply. The qualifying degree must be from a recognised university or institution.' },
+    { q: 'What is the exam pattern for ISRO Scientist/Engineer SC 2026?', a: 'The written test consists of 95 objective-type questions answered in 120 minutes: Part A has 80 discipline-specific Core Engineering questions (80 marks, ⅓ negative marking) and Part B has 15 General Aptitude questions (20 marks, no negative marking). Candidates who qualify the written test face an Interview stage. Final selection = 50% Written Test + 50% Interview.' },
+    { q: 'What is the in-hand salary for a newly joined ISRO Scientist/Engineer SC?', a: 'As per the 7th Pay Commission, the basic pay at entry is ₹56,100 per month (Pay Level 10). Including Dearness Allowance (~60% of basic as of 2026), HRA (24% for X-cities), Transport Allowance, and other perks, the estimated gross in-hand salary ranges from ₹75,000 to ₹85,000 per month depending on the posting city. The 8th Pay Commission (expected 2026) may further revise this structure.' },
+  ];
+
+  const faqSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  });
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
+
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">ISRO Scientist/Engineer 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🚀 Defence / Space</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government – Group A Gazetted</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">⚠️ Next ICRB Drive: TBN | SAC 2026 Active</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            ISRO Scientist/Engineer SC 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            ISRO recruits Scientist/Engineers 'SC' (Entry Grade, Group A) through the <strong>ICRB centralised exam</strong> and individual centre drives. The written test has <strong>95 MCQs in 120 minutes</strong> (80 technical + 15 aptitude). Final selection = 50% Written + 50% Interview. Entry salary <strong>~₹75,000–₹85,000/month</strong> with Pay Level 10.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies',  value: '100–300+',            sub: 'per ICRB cycle (est.)' },
+              { label: 'Written Test',        value: '95 MCQs / 120 min',   sub: 'Part A + Part B' },
+              { label: 'Min. Qualification',  value: 'B.E./B.Tech 65%',     sub: 'relevant engineering' },
+              { label: 'In-Hand Salary',      value: '~₹75,000–₹85,000',    sub: 'per month (est. 2026)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>2026 Update:</strong> SAC (Space Applications Centre) released 49 SC/SD vacancies in Jan 2026. URSC notification came in March 2026. The next large <strong>ICRB centralised drive</strong> notification is awaited. Monitor{' '}
+            <a href="https://www.isro.gov.in/Careers.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">isro.gov.in/Careers.html</a> regularly.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* ── LEFT CONTENT ── */}
+          <div>
+
+            {/* 1. OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="Overview – ISRO Scientist/Engineer SC 2026" />
+              <p className="text-surface-700 leading-relaxed mb-4">
+                The Indian Space Research Organisation (ISRO), established in 1969, is India's premier space agency and one of the most respected organisations for engineering graduates. The Scientist/Engineer 'SC' post is an Entry Grade Group A Gazetted position — one of the most coveted government engineering jobs in the country, associated with India's landmark missions like Chandrayaan, Mangalyaan, Gaganyaan, and Aditya-L1.
+              </p>
+              <p className="text-surface-700 leading-relaxed mb-6">
+                Recruitment happens through two routes: (1) the <strong>ICRB (ISRO Centralised Recruitment Board)</strong> which conducts large, multi-discipline drives, and (2) individual ISRO centres like SAC (Ahmedabad), URSC (Bengaluru), VSSC (Thiruvananthapuram), and others that announce their own centre-specific vacancies. Both routes lead to the same Scientist/Engineer SC designation.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                <InfoCard label="Conducting Body"    value="ISRO / ICRB" />
+                <InfoCard label="Post Grade"         value="Group A Gazetted (Entry)" />
+                <InfoCard label="Pay Level"          value="Level 10 (7th CPC)" highlight />
+                <InfoCard label="Age Limit"          value="18–28 yrs (Gen/EWS)" />
+                <InfoCard label="Qualification"      value="B.E./B.Tech ≥ 65%" />
+                <InfoCard label="Selection Stages"   value="Written Test + Interview" />
+                <InfoCard label="Final Selection"    value="50% Written + 50% Interview" />
+                <InfoCard label="Basic Pay"          value="₹56,100/month" highlight />
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-surface-700">
+                💡 <strong>Multiple Notifications Per Year:</strong> ISRO does not follow a fixed annual cycle. Monitor the official careers page — multiple individual centre notifications (SAC, URSC, VSSC, ISAC, LPSC, etc.) often come out between ICRB centralised drives. Do not miss centre-specific openings while waiting for the big ICRB exam.
+              </div>
+            </section>
+
+            {/* 2. IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="2" title="Important Dates 2026" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Event</th>
+                        <th className="text-left p-4 font-heading font-semibold">Date / Status</th>
+                        <th className="text-left p-4 font-heading font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 text-surface-800 font-medium">{row.event}</td>
+                          <td className="p-4 text-surface-700">📅 {row.date}</td>
+                          <td className="p-4">
+                            {row.status === 'released'
+                              ? <span className="badge badge-green">✓ Released</span>
+                              : <span className="badge badge-primary">⚠️ TBN</span>}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">Source: Official ISRO pages — isro.gov.in/ICRB_Recruitment9.html (EMC:2025), ICRB_Recruitment10.html (CEPO:2025), and individual centre notifications. TBN = To Be Notified. Always verify before applying.</p>
+            </section>
+
+            {/* 3. ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="3" title="Eligibility Criteria" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🪪</div>
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2">Nationality</h3>
+                  <p className="text-sm text-surface-600">Indian citizens only. Candidates must be Indian nationals as per ISRO recruitment rules.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">📋</div>
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2">Age Limit</h3>
+                  <p className="text-sm text-surface-600 mb-2">Minimum 18 years; Maximum <strong>28 years</strong> (General/EWS) as on the closing date of application.</p>
+                  <div className="space-y-1 text-xs text-surface-500">
+                    <div>• OBC (Non-Creamy Layer): <strong>+3 years</strong> → Max 31</div>
+                    <div>• SC/ST: <strong>+5 years</strong> → Max 33</div>
+                    <div>• PwBD (General): <strong>+10 years</strong> → Max 38</div>
+                    <div>• Ex-Servicemen: As per GoI rules</div>
+                  </div>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🎓</div>
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2">Educational Qualification</h3>
+                  <p className="text-sm text-surface-600 mb-2">B.E./B.Tech or equivalent degree in a relevant engineering discipline with a minimum of <strong>65% marks</strong> (or 6.84/10 CGPA, or equivalent) from a recognised university.</p>
+                  <p className="text-xs text-surface-400">Final-year students may apply if they will complete all requirements by the time of document verification. Check discipline-specific requirements in each notification.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="text-2xl mb-2">🔬</div>
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2">Engineering Disciplines</h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {['Electronics', 'Mechanical', 'Computer Science', 'Civil', 'Electrical', 'Refrigeration & A/C', 'Architecture', 'Automobile', 'Chemical', 'Instrumentation'].map((d) => (
+                      <span key={d} className="badge badge-primary text-xs">{d}</span>
+                    ))}
+                  </div>
+                  <p className="text-xs text-surface-400 mt-2">Available disciplines vary per notification. Always check the official advertisement PDF.</p>
+                </div>
+              </div>
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 text-sm text-surface-700">
+                💡 <strong>GATE Score Not Mandatory:</strong> ISRO conducts its own written test and does not require a GATE score for Scientist/Engineer SC posts. However, a strong GATE preparation is excellent foundation since the syllabi overlap significantly.
+              </div>
+            </section>
+
+            {/* 4. VACANCY HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="4" title="Vacancy History" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Recruitment Cycle</th>
+                        <th className="text-left p-4 font-heading font-semibold">Year</th>
+                        <th className="text-left p-4 font-heading font-semibold">Vacancies</th>
+                        <th className="text-left p-4 font-heading font-semibold">Disciplines</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyHistory.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-medium text-surface-800">{row.cycle}</td>
+                          <td className="p-4 text-surface-600">{row.year}</td>
+                          <td className="p-4 font-semibold text-emerald-600">{row.vacancies}</td>
+                          <td className="p-4 text-surface-600">{row.disciplines}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">ISRO recruits irregularly — both through ICRB centralised drives and individual centre notifications. Vacancy counts above represent SC-grade posts across all disciplines.</p>
+            </section>
+
+            {/* 5. EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="5" title="Exam Pattern" />
+              <p className="text-surface-700 text-sm leading-relaxed mb-5">
+                The ISRO Scientist/Engineer SC selection process has two stages: (1) Written Test and (2) Interview. The final merit is based on <strong>50% Written Test + 50% Interview</strong>.
+              </p>
+              <div className="card overflow-hidden mb-5">
+                <div className="bg-surface-800 text-white px-5 py-3">
+                  <span className="font-heading font-semibold text-sm">Written Test Pattern (ICRB Centralised)</span>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50">
+                        <th className="text-left p-4 font-semibold text-surface-700">Part</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Section</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Questions</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Marks</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Negative Marking</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {examPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-medium text-surface-800">{row.part}</td>
+                          <td className="p-4 text-surface-700">{row.section}</td>
+                          <td className="p-4 font-semibold text-primary-600">{row.questions}</td>
+                          <td className="p-4 font-semibold text-surface-800">{row.marks}</td>
+                          <td className="p-4 text-surface-600">{row.negative}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 font-semibold">
+                        <td className="p-4 text-primary-700" colSpan={2}>Total</td>
+                        <td className="p-4 text-primary-700">95</td>
+                        <td className="p-4 text-primary-700">100</td>
+                        <td className="p-4 text-primary-600 text-xs">Part A only: –⅓ per wrong</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm">Written Test Details</h3>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-primary-500 font-bold">→</span> Duration: 120 minutes (2 hours)</li>
+                    <li className="flex gap-2"><span className="text-primary-500 font-bold">→</span> Mode: Online Computer-Based Test (CBT)</li>
+                    <li className="flex gap-2"><span className="text-primary-500 font-bold">→</span> Question Type: Objective (MCQ), single correct answer</li>
+                    <li className="flex gap-2"><span className="text-primary-500 font-bold">→</span> PwBD candidates get compensatory time as applicable</li>
+                    <li className="flex gap-2"><span className="text-primary-500 font-bold">→</span> Shortlisting for Interview: typically top 5× vacancies in each discipline</li>
+                  </ul>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm">Interview Stage</h3>
+                  <ul className="space-y-2 text-sm text-surface-700">
+                    <li className="flex gap-2"><span className="text-emerald-500 font-bold">→</span> Interview marks: 100 (50% of final selection)</li>
+                    <li className="flex gap-2"><span className="text-emerald-500 font-bold">→</span> Evaluates: Technical knowledge + project experience</li>
+                    <li className="flex gap-2"><span className="text-emerald-500 font-bold">→</span> Academic achievements (IIT/NIT bonus in scoring)</li>
+                    <li className="flex gap-2"><span className="text-emerald-500 font-bold">→</span> Awareness of ISRO missions & space science</li>
+                    <li className="flex gap-2"><span className="text-emerald-500 font-bold">→</span> Communication skills and problem-solving approach</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* 6. SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="6" title="Syllabus by Discipline" />
+              <p className="text-surface-700 text-sm leading-relaxed mb-5">
+                Part A (Core Engineering) carries 80% of the written test weight. The syllabus is undergraduate B.E./B.Tech level but questions are often more direct and conceptual than GATE. Below are the key subject areas for the most popular disciplines.
+              </p>
+              <div className="space-y-4">
+                {disciplines.map((d, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600 transition-colors">
+                      <span>📘 {d.name}</span>
+                      <svg className="w-4 h-4 text-surface-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <div className="flex flex-wrap gap-2">
+                        {d.topics.map((t, j) => (
+                          <span key={j} className="bg-surface-100 text-surface-700 border border-surface-200 rounded-lg px-3 py-1 text-xs">{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </details>
+                ))}
+              </div>
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 text-sm text-surface-700 mt-5">
+                💡 The official discipline-wise syllabus PDF is available on <a href="https://www.isro.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-600 underline hover:text-primary-700">isro.gov.in</a> with each recruitment notification. The syllabus slightly varies per notification — always download the latest PDF for your specific cycle.
+              </div>
+            </section>
+
+            {/* 7. PREVIOUS CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <SectionHeading num="7" title="Previous Year Cut-offs (Indicative)" />
+              <p className="text-surface-700 text-sm leading-relaxed mb-4">
+                Below are <strong>official cut-off marks published by ISRO</strong> for the Written Test held on 26 October 2025 (ICRB:02/EMC/2025 — the most recent large centralised cycle). These are the minimum marks required to be shortlisted for the Interview stage. ISRO does not publish category-wise (OBC/SC/ST) breakdowns — the official table only distinguishes between General/Others and PwBD candidates.
+              </p>
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-4 font-heading font-semibold">Discipline</th>
+                        <th className="text-left p-4 font-heading font-semibold">Cut-off (Others / UR)</th>
+                        <th className="text-left p-4 font-heading font-semibold">Cut-off (PwBD)</th>
+                        <th className="text-left p-4 font-heading font-semibold">Total Marks</th>
+                        <th className="text-left p-4 font-heading font-semibold">Cycle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cutoffData.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 font-medium text-surface-800">{row.discipline}</td>
+                          <td className="p-4 font-semibold text-emerald-600">{row.others}</td>
+                          <td className="p-4 text-surface-700">{row.pwbd}</td>
+                          <td className="p-4 text-xs text-surface-500">{row.totalMarks}</td>
+                          <td className="p-4 text-xs text-surface-400">{row.cycle}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-xs text-surface-400">✅ These are <strong>official ISRO cut-off marks</strong> published at isro.gov.in for the Written Test held on 26 Oct 2025 (ICRB:02/EMC/2025). Cut-offs shown are marks required to be shortlisted for Interview (top 5× vacancies). Total marks differ from 100 because some questions were cancelled during evaluation. Minimum qualifying marks: 50% in Part A AND 50% in Part B (40% for PwBD).</p>
+            </section>
+
+            {/* 8. SALARY */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="8" title="Salary & Career Growth" />
+              <div className="card overflow-hidden mb-6">
+                <div className="bg-surface-800 text-white px-5 py-3">
+                  <span className="font-heading font-semibold text-sm">💰 Salary Structure – ISRO Scientist/Engineer SC (2026 Estimate)</span>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-50">
+                        <th className="text-left p-4 font-semibold text-surface-700">Component</th>
+                        <th className="text-left p-4 font-semibold text-surface-700">Monthly Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryBreakdown.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-4 text-surface-700">{row.component}</td>
+                          <td className={`p-4 font-semibold ${i === salaryBreakdown.length - 1 ? 'text-emerald-600 text-base' : 'text-surface-800'}`}>{row.amount}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <h3 className="font-heading font-semibold text-surface-900 mb-4 text-lg">Career Progression at ISRO</h3>
+              <div className="space-y-3 mb-6">
+                {careerPath.map((stage, i) => (
+                  <div key={i} className="card p-4 flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center text-white font-bold text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-heading font-semibold text-surface-900 text-sm">{stage.level}</div>
+                      <div className="text-xs text-surface-500 mt-0.5">{stage.payLevel} · {stage.payBand} · {stage.note}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 text-sm text-surface-700">
+                💡 <strong>8th Pay Commission (Expected 2026):</strong> The Government of India has constituted the 8th Pay Commission with recommendations expected to be implemented from January 2026 onwards. This may revise basic pay levels upward, potentially increasing the ISRO Scientist entry salary beyond ₹56,100/month. Check official government notifications for updates.
+              </div>
+            </section>
+
+            {/* 9. HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <SectionHeading num="9" title="How to Apply" />
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Monitor Official ISRO Careers Page', desc: 'Visit isro.gov.in/Careers.html regularly. ISRO does not follow a fixed calendar — both ICRB centralised and individual centre notifications can appear at any time of the year.' },
+                  { step: '2', title: 'Read the Notification PDF Carefully', desc: 'Download and read the bilingual advertisement PDF completely. Verify your discipline, age, qualification percentage, and category eligibility before applying.' },
+                  { step: '3', title: 'Register and Fill Online Application', desc: 'Create an account on the ISRO/ICRB portal. Fill in personal details, educational qualifications, and discipline preference. Upload photo, signature, and required documents in specified formats.' },
+                  { step: '4', title: 'Pay Application Fee', desc: 'All candidates initially pay ₹750 as a processing fee online. After appearing for the written test, ₹500 is refunded (net cost: ₹250). Women, SC/ST, PwBD, and Ex-Servicemen get a full ₹750 refund — effectively fee-free. Payment is via online banking/UPI/card — keep the transaction receipt.' },
+                  { step: '5', title: 'Download Admit Card', desc: 'ISRO releases admit cards on the official portal before the exam date. Download it using your login credentials. Carry a valid photo ID along with the admit card to the exam centre.' },
+                  { step: '6', title: 'Appear for Written Test and Interview', desc: 'Take the written test (95 MCQs / 120 min). If shortlisted, appear for the personal interview. Carry all original educational certificates, category certificates, and experience documents.' },
+                ].map((item) => (
+                  <div key={item.step} className="card p-5 flex items-start gap-4">
+                    <div className="w-9 h-9 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 font-heading font-bold text-sm flex-shrink-0">{item.step}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-900 mb-1">{item.title}</div>
+                      <div className="text-sm text-surface-600">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="10" title="6-Month Study Plan" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((phase, i) => (
+                    <div key={i} className="sm:pl-14 relative card p-5">
+                      <div className="sm:absolute sm:left-0 sm:top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm mb-3 sm:mb-0">{i + 1}</div>
+                      <div className="font-heading font-semibold text-surface-900 mb-1">{phase.month} – {phase.phase}</div>
+                      <p className="text-sm text-surface-600">{phase.tasks}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 11. BOOKS */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="11" title="Best Books for ISRO Scientist/Engineer SC" />
+              <BooksTable books={books} />
+              <p className="text-xs text-surface-400 mt-3">ISRO Previous Year Question Papers (2006–2024) are available as free PDFs online — these are the single most important resource. Always cross-check recommendations with the latest ISRO syllabus notification PDF.</p>
+            </section>
+
+            {/* 12. RESOURCES */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="12" title="Free Resources" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {resources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
+                     className="card p-5 group hover:border-primary-300 transition">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{r.icon}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-600 text-sm transition-colors">{r.title}</div>
+                        <div className="text-xs text-surface-500 mt-1">{r.desc}</div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. TIPS */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="13" title="Expert Preparation Tips" />
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex items-start gap-4">
+                    <div className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center text-accent-600 font-heading font-bold text-sm flex-shrink-0">{tip.num}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-900 mb-1">{tip.title}</div>
+                      <p className="text-sm text-surface-600">{tip.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 14. FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="14" title="Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:text-primary-600 transition-colors">
+                      <span className="pr-4">{faq.q}</span>
+                      <svg className="w-4 h-4 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 text-sm mb-4">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`}
+                       className="block text-xs text-surface-500 hover:text-primary-600 hover:bg-primary-50 rounded-lg px-3 py-2 transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 text-sm mb-3">Official Resources</h3>
+                <div className="space-y-2">
+                  <a href="https://www.isro.gov.in/Careers.html" target="_blank" rel="noopener noreferrer"
+                     className="flex items-center gap-2 text-primary-600 hover:text-primary-700 text-xs font-medium">
+                    <span>🚀</span> ISRO Careers Page
+                    <svg className="w-3 h-3 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                  <a href="https://www.isro.gov.in/CurrentOpportunities.html" target="_blank" rel="noopener noreferrer"
+                     className="flex items-center gap-2 text-primary-600 hover:text-primary-700 text-xs font-medium">
+                    <span>📋</span> Current ICRB Openings
+                    <svg className="w-3 h-3 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="card p-5 bg-surface-50">
+                <h3 className="font-heading font-semibold text-surface-900 text-sm mb-3">Quick Facts 2026</h3>
+                <div className="space-y-2 text-xs text-surface-600">
+                  <div className="flex justify-between"><span>Part A Questions</span><strong className="text-surface-800">80</strong></div>
+                  <div className="flex justify-between"><span>Part B Questions</span><strong className="text-surface-800">15</strong></div>
+                  <div className="flex justify-between"><span>Total Duration</span><strong className="text-surface-800">120 min</strong></div>
+                  <div className="flex justify-between"><span>Negative Marking</span><strong className="text-surface-800">⅓ (Part A)</strong></div>
+                  <div className="flex justify-between"><span>Interview Weight</span><strong className="text-surface-800">50%</strong></div>
+                  <div className="flex justify-between"><span>Age Limit (Gen)</span><strong className="text-surface-800">28 yrs</strong></div>
+                  <div className="flex justify-between"><span>Min. Marks</span><strong className="text-surface-800">65% in B.Tech</strong></div>
+                  <div className="flex justify-between"><span>Pay Level</span><strong className="text-emerald-600">Level 10 (7th CPC)</strong></div>
+                </div>
+              </div>
+
+              {/* Eligibility Checker CTA */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-emerald-900 text-sm mb-2">Check Your Eligibility</h3>
+                <p className="text-xs text-emerald-700 mb-3">Find all Defence & Space exams you are eligible for based on your age, category & qualification.</p>
                 <Link href="/tools/eligibility-checker" className="block text-center btn-primary text-sm py-2 rounded-xl font-heading font-semibold">
                   Use Eligibility Checker →
                 </Link>
