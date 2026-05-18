@@ -453,6 +453,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'nabard-grade-a') {
+    return {
+      title: 'NABARD Grade A 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
+      description: 'NABARD Grade A 2026: Notification expected July–August 2026. ~80–100 vacancies for Assistant Manager (RDBS, Legal, P&SS). Exam pattern, syllabus, eligibility (Graduate 60%, age 21–30), pay scale ₹44,500–₹89,150 (in-hand ~₹1,00,000/month) and free resources.',
+      keywords: 'NABARD Grade A 2026, NABARD Grade A notification 2026, NABARD Assistant Manager 2026, NABARD Grade A syllabus, NABARD Grade A salary, NABARD Grade A eligibility, nabard bharti 2026, RDBS exam 2026, नाबार्ड ग्रेड A 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/nabard-grade-a/' },
+      other: { 'description:hi': 'NABARD ग्रेड A 2026 – नाबार्ड में असिस्टेंट मैनेजर के ~80–100 पदों के लिए अधिसूचना जुलाई–अगस्त 2026 (अपेक्षित)। स्नातक 60% अंक आवश्यक। आयु 21–30 वर्ष। चयन: प्रारंभिक + मुख्य + साइकोमेट्रिक + साक्षात्कार। वेतन ~₹1,00,000/माह (इन-हैंड)।' },
+    };
+  }
+
   if (params.slug === 'sbi-po') {
     return {
       title: 'SBI PO 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -679,6 +689,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (detailed && detailed.slug === 'rrb-group-d') return <RrbGroupDPage exam={detailed} />;
   if (brief && brief.slug === 'rrb-alp') return <RrbAlpPage exam={brief} />;
   if (detailed && detailed.slug === 'ibps-po') return <IbpsPoPage exam={detailed} />;
+  if (brief && brief.slug === 'nabard-grade-a') return <NabardGradeAPage exam={brief} />;
   if (detailed && detailed.slug === 'sbi-po') return <SbiPoPage exam={detailed} />;
   if (brief && brief.slug === 'rbi-grade-b') return <RbiGradeBPage exam={brief} />;
   if (brief && brief.slug === 'rbi-assistant') return <RbiAssistantPage exam={brief} />;
@@ -51145,6 +51156,854 @@ function IsroScientistPage({ exam }: { exam: any }) {
               <div className="card p-5 bg-emerald-50 border-emerald-200">
                 <h3 className="font-heading font-semibold text-emerald-900 text-sm mb-2">Check Your Eligibility</h3>
                 <p className="text-xs text-emerald-700 mb-3">Find all Defence & Space exams you are eligible for based on your age, category & qualification.</p>
+                <Link href="/tools/eligibility-checker" className="block text-center btn-primary text-sm py-2 rounded-xl font-heading font-semibold">
+                  Use Eligibility Checker →
+                </Link>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── NABARD GRADE A 2026 RICH PAGE ───────────────────────────────────────────
+function NabardGradeAPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancy History' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'cutoff', label: 'Previous Year Cut-offs' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'NABARD Grade A 2025 Newspaper Advertisement', date: '04 November 2025', status: 'released' },
+    { event: 'NABARD Grade A 2025 Official Notification', date: '08 November 2025', status: 'released' },
+    { event: 'Online Application Opens', date: '08 November 2025', status: 'released' },
+    { event: 'Application Last Date', date: '30 November 2025', status: 'released' },
+    { event: 'Phase I (Prelims) Exam Date', date: '20 December 2025', status: 'released' },
+    { event: 'Phase I (Prelims) Merit List', date: '14 January 2026', status: 'released' },
+    { event: 'Phase II (Mains) Admit Card', date: '16 January 2026', status: 'released' },
+    { event: 'Phase II (Mains) Exam Date', date: '25 January 2026', status: 'released' },
+    { event: 'Phase II (Mains) Result', date: '27 February 2026', status: 'released' },
+    { event: 'Psychometric Test & Interview', date: '10–29 April 2026', status: 'released' },
+    { event: 'NABARD Grade A 2025 Final Result', date: '06 May 2026', status: 'released' },
+    { event: '🆕 NABARD Grade A 2026 – Notification', date: 'July–August 2026 (Expected)', status: 'tbn' },
+    { event: 'NABARD Grade A 2026 – Online Application', date: 'July–August 2026 (Expected)', status: 'tbn' },
+    { event: 'NABARD Grade A 2026 – Phase I (Prelims)', date: 'September 2026 (Expected)', status: 'tbn' },
+    { event: 'NABARD Grade A 2026 – Phase II (Mains)', date: 'November 2026 (Expected)', status: 'tbn' },
+    { event: 'NABARD Grade A 2026 – Interview & Final Result', date: 'Early 2027 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: '2020', vacancies: '150', streams: 'RDBS + Specialist', phase1: 'Oct 2020', phase2: 'Nov 2020' },
+    { year: '2021', vacancies: '148', streams: 'RDBS + Specialist', phase1: 'Sep 2021', phase2: 'Oct 2021' },
+    { year: '2022', vacancies: '168', streams: 'RDBS + Legal + P&SS', phase1: 'Sep 2022', phase2: 'Oct 2022' },
+    { year: '2023', vacancies: '150', streams: 'RDBS + Legal + P&SS', phase1: 'Sep 2023', phase2: 'Oct 2023' },
+    { year: '2024', vacancies: '102', streams: 'RDBS + Legal + P&SS', phase1: 'Sep 2024', phase2: 'Nov 2024' },
+    { year: '2025', vacancies: '91', streams: 'RDBS + Legal + P&SS', phase1: '20 Dec 2025', phase2: '25 Jan 2026' },
+    { year: '2026 (Expected)', vacancies: '80–100 (Est.)', streams: 'RDBS + Legal + P&SS', phase1: 'Sep 2026 (Est.)', phase2: 'Nov 2026 (Est.)' },
+  ];
+
+  const phase1Pattern = [
+    { subject: 'Test of Reasoning (Qualifying)', questions: 20, marks: 20 },
+    { subject: 'English Language (Qualifying)', questions: 40, marks: 40 },
+    { subject: 'Computer Knowledge (Qualifying)', questions: 20, marks: 20 },
+    { subject: 'Quantitative Aptitude (Qualifying)', questions: 20, marks: 20 },
+    { subject: 'Decision Making (Qualifying)', questions: 10, marks: 10 },
+    { subject: 'General Awareness (Merit)', questions: 20, marks: 20 },
+    { subject: 'Eco. & Social Issues / ARD (Merit)', questions: 40, marks: 40 },
+  ];
+
+  const phase2Pattern = [
+    { paper: 'Paper I – Economic & Social Issues + ARD', type: 'Objective + Descriptive', marks: 100, time: '90 min' },
+    { paper: 'Paper II – English (Descriptive Writing)', type: 'Descriptive', marks: 100, time: '90 min' },
+  ];
+
+  const cutoffData = [
+    { category: 'General / EWS', y2025: '~44.50/60', y2024: '~42.00/60', y2023: '~41.75/60' },
+    { category: 'OBC', y2025: '~40.25/60', y2024: '~38.00/60', y2023: '~38.50/60' },
+    { category: 'SC', y2025: '~34.00/60', y2024: '~31.25/60', y2023: '~31.00/60' },
+    { category: 'ST', y2025: '~30.00/60', y2024: '~28.00/60', y2023: '~28.50/60' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay (Starting)', amount: '₹44,500/month' },
+    { component: 'Dearness Allowance (DA)', amount: '~₹28,000–₹30,000/month' },
+    { component: 'House Rent Allowance (HRA) – Metro', amount: '~₹8,000–₹10,000/month' },
+    { component: 'Grade Allowance & Special Allowance', amount: '~₹5,000–₹7,000/month' },
+    { component: 'Local Compensatory Allowance (LCA)', amount: 'As per posting city' },
+    { component: 'Gross Estimated In-Hand (Metro)', amount: '~₹1,00,000/month' },
+  ];
+
+  const careerPath = [
+    { level: 'Assistant Manager', scale: 'Grade A', years: '0–3 yrs', pay: '₹44,500–₹54,500' },
+    { level: 'Manager', scale: 'Grade B', years: '3–8 yrs', pay: '₹55,200–₹70,450' },
+    { level: 'Assistant General Manager', scale: 'Grade C', years: '8–14 yrs', pay: '₹73,400–₹86,350' },
+    { level: 'Deputy General Manager', scale: 'Grade D', years: '14–20 yrs', pay: '₹86,400–₹1,00,000+' },
+    { level: 'General Manager', scale: 'Grade E', years: '20–25 yrs', pay: '₹1,00,000+' },
+    { level: 'Chief General Manager / ED / CMD', scale: 'Grade F–G', years: '25+ yrs', pay: '₹1,25,000+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🌾 Agriculture & Rural Development (ARD) — Most Important',
+      phase: 'Phase I (Merit) + Phase II (Paper I)',
+      topics: [
+        'History and importance of agriculture in India, Green Revolution, farm GDP',
+        'Kharif, Rabi and Zaid crops — major producing states, MSP regime',
+        'Irrigation systems — canal, tank, sprinkler, drip — National Irrigation Mission',
+        'Soil types in India, soil health card scheme, fertiliser policy',
+        'Agricultural credit — KCC, crop insurance (PMFBY), agri-value chain',
+        'NABARD — role, history, functions, refinancing, credit to SHGs and MFIs',
+        'Rural development schemes — MGNREGS, PMGSY, PMAY-G, DAY-NRLM',
+        'Cooperatives, SHGs, FPOs, land reforms, tenancy rights',
+        'Food security — National Food Security Act, PDS system, FCI',
+        'Climate change and agriculture — sustainable farming, natural farming',
+      ],
+    },
+    {
+      subject: '📊 Economic & Social Issues (ESI)',
+      phase: 'Phase I (Merit) + Phase II (Paper I)',
+      topics: [
+        'National Income, GDP, GNP, growth and development concepts',
+        'Planning in India — Five Year Plans to NITI Aayog and Viksit Bharat 2047',
+        'Monetary policy — RBI tools, repo, CRR, SLR, inflation targeting',
+        'Fiscal policy — Union Budget, fiscal deficit, FRBM Act',
+        'Banking sector — NPA, capital adequacy, Basel III, priority sector lending',
+        'International trade — WTO, current account deficit, FEMA',
+        'Poverty and inequality — measures, programs (PMGKAY, MNREGA)',
+        'Demographic dividend, urbanisation, human development index',
+        'Social issues — gender inequality, child rights, SC/ST welfare, RTI',
+        'Environment and sustainable development — SDGs, Paris Agreement',
+      ],
+    },
+    {
+      subject: '🧩 Reasoning Ability (Phase I – Qualifying)',
+      phase: 'Phase I (Qualifying)',
+      topics: [
+        'Puzzles and seating arrangements (linear, circular, square)',
+        'Syllogisms — direct and reverse pattern',
+        'Blood relations, direction and distance',
+        'Coding-decoding (new pattern)',
+        'Inequality — direct and coded',
+        'Input-output, data sufficiency, order & ranking',
+        'Analogy, classification, series completion',
+      ],
+    },
+    {
+      subject: '🔢 Quantitative Aptitude (Phase I – Qualifying)',
+      phase: 'Phase I (Qualifying)',
+      topics: [
+        'Number series, simplification and approximation',
+        'Percentage, ratio & proportion, average, ages',
+        'Profit & loss, SI & CI, partnership',
+        'Time & work, pipes & cisterns, speed-distance-time',
+        'Data Interpretation — bar, pie, line, table, caselet',
+        'Quadratic equations, data sufficiency',
+      ],
+    },
+    {
+      subject: '📝 English Language + Descriptive (Phase I + Phase II)',
+      phase: 'Phase I (Qualifying) + Phase II Paper II',
+      topics: [
+        'Reading comprehension (Phase I: objective; Phase II: detailed)',
+        'Cloze test, error spotting, sentence correction',
+        'Para jumbles, phrase replacement, fillers',
+        'Phase II Descriptive: Essay writing (~500 words) on economy/rural topics',
+        'Phase II Descriptive: Precis writing and comprehension',
+        'Letter writing (formal / official letters)',
+      ],
+    },
+    {
+      subject: '💻 Computer Knowledge (Phase I – Qualifying)',
+      phase: 'Phase I (Qualifying)',
+      topics: [
+        'Hardware, software, operating systems',
+        'MS Office — Word, Excel, PowerPoint basics',
+        'Internet, networking, email protocols',
+        'Cyber security basics, database fundamentals',
+        'Computer number systems, shortcuts',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', focus: 'ARD & ESI Foundation', detail: 'ARD and ESI together carry ~60% of Phase I merit marks and are tested in both Phase I and Phase II Paper I. Start with NABARD\'s own annual reports and the Economic Survey. Read Ramesh Singh\'s Indian Economy for ESI. Use Mrunal Patel\'s YouTube lectures for current economic issues. Make notes on NABARD\'s core mandate, rural schemes, and credit flow.' },
+    { month: 'Month 3', focus: 'Phase I Aptitude (Qualifying Sections)', detail: 'Reasoning, Quant, Computer, Decision Making, and English are only qualifying — you need 40–45% marks, not top scores. One month of focused practice is enough to clear these. Prioritise the merit sections (GA, ESI, ARD) over qualifying sections. English descriptive preparation should begin now — write one essay per week on rural/economic topics.' },
+    { month: 'Month 4', focus: 'General Awareness + Current Affairs', detail: 'GA is a merit section in Phase I. Cover banking current affairs (last 12 months), RBI policy decisions, government agri-schemes since 2023, NABARD reports, and major international developments. Read GK Today or Adda247 daily capsules. Subscribe to NABARD\'s press releases at nabard.org for first-hand updates.' },
+    { month: 'Month 5', focus: 'Phase II Descriptive Preparation', detail: 'Phase II Paper I is objective + descriptive on ESI and ARD. Paper II is fully descriptive English. Practice writing 500-word essays on: Digital Agriculture, FPO Ecosystem, Rural Financial Inclusion, Climate-Smart Agriculture, NABARD\'s Role in Rural Credit. Get at least 3 essays reviewed by a mentor or peer.' },
+    { month: 'Month 6', focus: 'Full Mocks + Interview Prep', detail: 'Take 3–4 full Phase I mocks per week and analyse every wrong answer in the merit sections. Start interview preparation: prepare a 2-minute self-introduction, know NABARD\'s current leadership (Chairman, MD), prepare on rural banking, agricultural credit flow, and your stream specialisation. Practice mock interviews with peers.' },
+  ];
+
+  const books = [
+    { subject: 'Economic & Social Issues', title: 'Indian Economy', author: 'Ramesh Singh (McGraw Hill)' },
+    { subject: 'ARD (Exam-Specific)', title: 'Agriculture & Rural Development for NABARD Grade A', author: 'Arihant Publications' },
+    { subject: 'ESI + Current Economy', title: 'Economic Survey (latest edition — Free PDF)', author: 'Ministry of Finance, GOI' },
+    { subject: 'Quantitative Aptitude', title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal' },
+    { subject: 'Reasoning Ability', title: 'A New Approach to Reasoning', author: 'B.S. Sijwali & Indu Sijwali' },
+    { subject: 'English + Descriptive', title: 'Objective English for Competitive Exams', author: 'Hari Mohan Prasad' },
+    { subject: 'Full-Length Practice Tests', title: 'NABARD Grade A 30 Mock Tests', author: 'Oliveboard / Adda247' },
+  ];
+
+  const freeResources = [
+    { name: 'NABARD Official Website', type: 'website', url: 'https://www.nabard.org', description: 'Official notifications, annual reports, rural credit data, and career notices. Always check here first.' },
+    { name: 'Mrunal Patel (Economy & ESI)', type: 'youtube', url: 'https://www.youtube.com/@TheMrunalPatel', description: 'Best free resource for Economic & Social Issues. His ESI playlist is specifically designed for NABARD Grade A and RBI Grade B.' },
+    { name: 'Adda247 Banking YouTube', type: 'youtube', url: 'https://www.youtube.com/@Adda247', description: 'Free classes for Phase I quant, reasoning, English, and daily current affairs capsules.' },
+    { name: 'Oliveboard NABARD Free Mocks', type: 'website', url: 'https://www.oliveboard.in/nabard-grade-a/', description: 'Free Phase I mock tests with detailed analysis. Their ARD practice sections are especially relevant.' },
+    { name: 'GK Today Agriculture Current Affairs', type: 'website', url: 'https://www.gktoday.in', description: 'Free daily agriculture news, rural banking updates, and monthly current affairs PDFs for ARD preparation.' },
+    { name: 'Economic Survey (Free PDF)', type: 'website', url: 'https://www.indiabudget.gov.in/economicsurvey/', description: 'Official Economic Survey from the Ministry of Finance — essential for ESI Paper I preparation.' },
+  ];
+
+  const tips = [
+    { icon: '🌾', tip: 'ARD (Agriculture & Rural Development) is your biggest scorer — it carries merit marks in Phase I AND is tested in Phase II Paper I. Most candidates spend too little time here. Treat ARD as your primary subject, not an afterthought. NABARD\'s own annual report is the best source for ARD data and scheme updates.' },
+    { icon: '📊', tip: 'Phase I is only qualifying for most sections. Only GA and ESI/ARD carry merit marks that count for shortlisting. Don\'t over-prepare Quant and Reasoning at the cost of ESI/ARD. You need 40–45% in qualifying sections and top scores in merit sections.' },
+    { icon: '📝', tip: 'Phase II Paper II (English Descriptive) trips up many aspirants who ignore it. Practice writing 500-word structured essays on rural economy topics from Month 3 onwards. A good essay has: introduction, 3 key arguments, data/scheme references, and a conclusion with a recommendation.' },
+    { icon: '🏦', tip: 'The Interview panel at NABARD expects stream-specific depth. For the RDBS General stream, prepare: NABARD\'s refinancing role, SHG-Bank linkage, agri-value chain finance, Kisan Credit Card, and FPO promotion. Know the current NABARD Chairman and MD by name.' },
+    { icon: '🔄', tip: 'The competition-to-vacancy ratio is severe — 75,000+ applicants for ~100 posts (~750:1). There is almost no margin for error in Phase II. In the merit sections of Phase I, aim for 90%+ accuracy. One wrong answer (0.25 negative marking) can cost you a rank.' },
+    { icon: '💡', tip: 'NABARD Grade A has specialist streams (IT, Finance, Agriculture, CA, Legal, Electrical Engineering). If you hold a CA, MBA (Finance), or B.Tech (Agri/EEE), apply to a specialist stream — competition is far lower and pass rates are higher than the RDBS General stream.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'When will NABARD Grade A 2026 notification be released?',
+      a: 'Based on the previous cycle pattern, the NABARD Grade A 2026 notification is expected to be released in July–August 2026. The 2025 notification was released on 08 November 2025, while the 2024 notification came in July 2024. NABARD typically releases a newspaper advertisement 2–3 days before the detailed notification. Keep checking www.nabard.org under "Career Notices".',
+    },
+    {
+      q: 'How many vacancies are expected in NABARD Grade A 2026?',
+      a: 'The 2026 vacancies have not been announced yet. Based on recent trends — 102 in 2024 and 91 in 2025 — approximately 80–100 vacancies are expected in 2026. However, NABARD vacancies can vary significantly: 168 in 2022 vs 91 in 2025. The exact number will be confirmed with the official notification.',
+    },
+    {
+      q: 'What is the NABARD Grade A 2026 salary?',
+      a: 'NABARD Grade A (Assistant Manager) starting basic pay is ₹44,500/month in the pay scale of ₹44,500 – 2,500(4) – 54,500 – 2,850(7) – 74,450 – EB – 2,850(4) – 85,850 – 3,300(1) – ₹89,150 over 17 years. With DA, HRA, Grade Allowance, and other perquisites, the gross in-hand monthly salary is approximately ₹1,00,000/month in metro cities. NABARD follows its own pay scale — not the 7th/8th Central Pay Commission.',
+    },
+    {
+      q: 'What is the educational qualification for NABARD Grade A (RDBS General)?',
+      a: 'For the RDBS General stream: Bachelor\'s degree from a recognised university with a minimum of 60% marks in aggregate (55% for SC/ST/PwBD candidates). Alternatively: Post Graduate degree or MBA/PGDM with 55% marks (50% for SC/ST/PwBD), or CA/CS/ICWA qualification, or Ph.D from a UGC-recognised institution. Different streams (IT, Finance, Agriculture, Legal) have specific degree requirements as per the official notification.',
+    },
+    {
+      q: 'How is NABARD Grade A different from RBI Grade B?',
+      a: 'Both are prestigious central-level banking exams but differ in key ways. NABARD Grade A focuses on Agriculture & Rural Development (ARD) — a unique subject not in RBI Grade B. RBI Grade B has a heavier focus on Economics, Finance, and Management (EFM). NABARD Grade A typically has fewer vacancies (91–168 per year vs RBI Grade B 250–350). RBI Grade B in-hand salary is slightly higher (~₹1,10,000–₹1,30,000 vs NABARD ~₹1,00,000). Both exams have 3-stage selection: Prelims, Mains (descriptive), and Interview.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">NABARD Grade A 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏦 Banking</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/25 border border-amber-400/30 rounded-full px-3 py-1 text-xs font-medium text-amber-200">📋 Notification: July–Aug 2026 (Expected)</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            NABARD Grade A 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            NABARD Grade A 2026 notification expected in <strong>July–August 2026</strong> with ~80–100 vacancies for Assistant Manager (RDBS, Legal, P&amp;SS streams). 4-stage selection: Phase I (Prelims) → Phase II (Mains + Descriptive) → Psychometric Test → Interview. Graduate with 60% required. Age 21–30 years. Gross in-hand salary <strong>~₹1,00,000/month</strong>.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Expected Vacancies', value: '80–100', sub: '(2026 est.)' },
+              { label: 'Phase I Exam Date', value: 'Sep 2026', sub: '(Expected)' },
+              { label: 'Min. Qualification', value: 'Graduate 60%', sub: 'OR PG / CA / MBA' },
+              { label: 'Gross In-Hand Salary', value: '~₹1,00,000', sub: 'per month (metro)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong>Key Update May 2026:</strong> The NABARD Grade A 2025 cycle (91 vacancies) is now <strong>complete</strong> — Final Result declared May 2026. The 2026 recruitment is expected to begin with a notification in <strong>July–August 2026</strong>. Applications are not yet open. Verify at <a href="https://www.nabard.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">nabard.org</a> → Career Notices.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is NABARD Grade A 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>NABARD Grade A exam</strong> (also called the <strong>NABARD Assistant Manager exam</strong>) is conducted annually by the <strong>National Bank for Agriculture and Rural Development (NABARD)</strong> to recruit officers in Grade &apos;A&apos; across streams including Rural Development Banking Service (RDBS), Legal, and Protocol &amp; Security Service. NABARD is India&apos;s <strong>apex development financial institution</strong> for rural and agricultural credit, wholly owned by the Government of India with headquarters in Mumbai.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  A NABARD Grade A officer joins as an <strong>Assistant Manager</strong> and works on critical mandates: rural credit planning, SHG-bank linkage, agricultural financing, refinancing to cooperative banks and RRBs, and the implementation of rural development schemes like PMAY-G and DAY-NRLM. It is one of the most intellectually challenging banking exams in India, with a unique focus on <strong>Agriculture &amp; Rural Development (ARD)</strong> — a subject not found in any other banking exam.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  With approximately <strong>75,000+ applicants</strong> competing for ~100 vacancies each year, the exam is fiercely competitive. However, most aspirants underestimate the ARD subject — which carries over 40% of Phase I merit marks. Candidates who master ARD and ESI consistently outperform the rest.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Conducting Body', value: 'NABARD' },
+                  { label: 'Post Title', value: 'Assistant Manager (Grade A)' },
+                  { label: 'Selection Stages', value: 'Phase I + Phase II + Psychometric + Interview' },
+                  { label: 'Probation Period', value: '2 Years (extendable by 1 yr)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 2: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 NABARD Grade A 2026 Important Dates</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> NABARD Grade A 2026 dates have not been officially announced. The table shows confirmed 2025 cycle dates and expected 2026 dates. Always verify from <a href="https://www.nabard.org" target="_blank" rel="noopener noreferrer" className="underline font-medium">nabard.org</a> → Career Notices.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.event}</td>
+                        <td className="p-3 font-medium text-surface-800">{row.date}</td>
+                        <td className="p-3 text-center">
+                          {row.status === 'released'
+                            ? <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-heading font-semibold px-2 py-0.5 rounded-full">✅ Done</span>
+                            : <span className="inline-block bg-amber-100 text-amber-700 text-xs font-heading font-semibold px-2 py-0.5 rounded-full">⚠️ TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 3: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria 2026</h2>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { icon: '🪪', label: 'Nationality', value: 'Indian Citizen (or as per Government norms)' },
+                  { icon: '📋', label: 'Age Limit (RDBS / Legal)', value: '21 – 30 years as on cut-off date' },
+                  { icon: '🎓', label: 'Education (General Stream)', value: "Bachelor's degree with min. 60% (55% SC/ST/PwBD)" },
+                  { icon: '🎓', label: 'Alternative Qualification', value: 'PG / MBA (55%) or CA / CS / ICWA or Ph.D (UGC recognised)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4 flex gap-3 items-start">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div>
+                      <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                      <div className="font-semibold text-surface-800 text-sm">{item.value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card p-5 mb-4">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Age Relaxation</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-2.5 font-heading text-xs uppercase tracking-wide">Category</th>
+                        <th className="text-left p-2.5 font-heading text-xs uppercase tracking-wide">Relaxation</th>
+                        <th className="text-left p-2.5 font-heading text-xs uppercase tracking-wide">Max Age</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { cat: 'SC / ST', relax: '+5 years', max: '35 years' },
+                        { cat: 'OBC (NCL)', relax: '+3 years', max: '33 years' },
+                        { cat: 'PwBD (General)', relax: '+10 years', max: '40 years' },
+                        { cat: 'PwBD (SC/ST)', relax: '+15 years', max: '45 years' },
+                        { cat: 'Ex-Servicemen (RDBS)', relax: 'As per Govt. norms', max: 'As applicable' },
+                      ].map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2.5 text-surface-700">{row.cat}</td>
+                          <td className="p-2.5 text-emerald-600 font-medium">{row.relax}</td>
+                          <td className="p-2.5 text-surface-800 font-semibold">{row.max}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Application Fee</h3>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { cat: 'General / OBC / EWS', fee: '₹850 + 18% GST = ₹1,003' },
+                    { cat: 'SC / ST / PwBD', fee: '₹150 (intimation charges only)' },
+                  ].map((row) => (
+                    <div key={row.cat} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{row.cat}</div>
+                      <div className="font-heading font-bold text-surface-800 text-base">{row.fee}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4: VACANCY HISTORY */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">NABARD Grade A Vacancy History (2020–2026)</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Year</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Vacancies</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Streams</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Phase I</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Phase II</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyHistory.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-3 font-heading font-bold text-primary-600">{row.vacancies}</td>
+                        <td className="p-3 text-surface-600">{row.streams}</td>
+                        <td className="p-3 text-surface-700">{row.phase1}</td>
+                        <td className="p-3 text-surface-700">{row.phase2}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">* 2026 data is estimated based on past trends. Official announcement expected July–August 2026.</p>
+            </section>
+
+            {/* SECTION 5: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">NABARD Grade A 2026 Exam Pattern</h2>
+              </div>
+
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-5 text-sm text-primary-800">
+                <strong>Selection Process:</strong> Phase I (Online Prelims) → Phase II (Online Mains + Descriptive) → Psychometric Test → Personal Interview. Negative marking of <strong>¼ mark</strong> per wrong answer in all objective sections.
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 text-base mb-3">Phase I — Online Preliminary Examination (RDBS General)</h3>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Section</th>
+                      <th className="text-center p-3 font-heading text-xs uppercase tracking-wide">Questions</th>
+                      <th className="text-center p-3 font-heading text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 font-heading text-xs uppercase tracking-wide">Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {phase1Pattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{row.subject}</td>
+                        <td className="p-3 text-center font-medium text-surface-800">{row.questions}</td>
+                        <td className="p-3 text-center font-medium text-surface-800">{row.marks}</td>
+                        <td className="p-3 text-center">
+                          {row.subject.includes('Merit')
+                            ? <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">Merit</span>
+                            : <span className="bg-surface-100 text-surface-600 text-xs font-semibold px-2 py-0.5 rounded-full">Qualifying</span>}
+                        </td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-600 text-white font-heading font-bold">
+                      <td className="p-3">Total</td>
+                      <td className="p-3 text-center">170</td>
+                      <td className="p-3 text-center">170</td>
+                      <td className="p-3 text-center">120 min</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6 text-sm text-emerald-800">
+                <strong>💡 Key insight:</strong> Only <strong>General Awareness (20 marks)</strong> and <strong>ESI/ARD (40 marks)</strong> carry merit marks that count for Phase I shortlisting. The remaining 5 sections (110 marks) are qualifying only — you just need ~40–45% in them.
+              </div>
+
+              <h3 className="font-heading font-semibold text-surface-800 text-base mb-3">Phase II — Online Main Examination (RDBS General)</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Paper</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Type</th>
+                      <th className="text-center p-3 font-heading text-xs uppercase tracking-wide">Marks</th>
+                      <th className="text-center p-3 font-heading text-xs uppercase tracking-wide">Duration</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {phase2Pattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700 font-medium">{row.paper}</td>
+                        <td className="p-3 text-surface-600">{row.type}</td>
+                        <td className="p-3 text-center font-heading font-bold text-primary-600">{row.marks}</td>
+                        <td className="p-3 text-center text-surface-700">{row.time}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-surface-400 mt-3">Phase II is followed by a Psychometric Test (qualifying/pass-fail) and Personal Interview (scored). Final merit is based on Phase II + Interview marks combined.</p>
+            </section>
+
+            {/* SECTION 6: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((s, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{s.subject}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full font-medium hidden sm:inline">{s.phase}</span>
+                        <svg className="w-4 h-4 text-surface-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </div>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full font-medium sm:hidden inline-block mb-3">{s.phase}</span>
+                      <ul className="list-disc ml-5 space-y-1.5">
+                        {s.topics.map((t, j) => (
+                          <li key={j} className="text-sm text-surface-600">{t}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 7: CUT-OFFS */}
+            <section id="cutoff" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Previous Year Phase I Cut-offs (Approx.)</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
+                <strong>⚠️ Note:</strong> Cut-offs below are approximate estimates based on coaching institute analysis. NABARD does not officially publish Phase I cut-off scores. These are indicative figures for the merit section (60 marks total: GA 20 + ESI/ARD 40).
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Category</th>
+                      <th className="text-center p-3 font-heading text-xs uppercase tracking-wide">2025 (out of 60)</th>
+                      <th className="text-center p-3 font-heading text-xs uppercase tracking-wide">2024 (out of 60)</th>
+                      <th className="text-center p-3 font-heading text-xs uppercase tracking-wide">2023 (out of 60)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cutoffData.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-surface-800">{row.category}</td>
+                        <td className="p-3 text-center font-heading font-bold text-primary-600">{row.y2025}</td>
+                        <td className="p-3 text-center text-surface-700">{row.y2024}</td>
+                        <td className="p-3 text-center text-surface-700">{row.y2023}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 8: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 NABARD Grade A Salary & Career Growth</h2>
+              </div>
+              <div className="card p-5 mb-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Monthly Salary Breakdown (Metro Cities)</h3>
+                <div className="space-y-2">
+                  {salaryBreakdown.map((row, i) => (
+                    <div key={i} className={`flex justify-between items-center py-2 px-3 rounded-lg text-sm ${i === salaryBreakdown.length - 1 ? 'bg-emerald-50 border border-emerald-200' : 'bg-surface-50'}`}>
+                      <span className={i === salaryBreakdown.length - 1 ? 'text-emerald-800 font-semibold' : 'text-surface-700'}>{row.component}</span>
+                      <strong className={i === salaryBreakdown.length - 1 ? 'text-emerald-700 text-base' : 'text-surface-800'}>{row.amount}</strong>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-3">Pay scale: ₹44,500 – 2,500(4) – 54,500 – 2,850(7) – 74,450 – EB – 2,850(4) – 85,850 – 3,300(1) – ₹89,150 (17 years). NABARD follows its own pay scale — not 7th/8th CPC.</p>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-base">Career Progression</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left p-2.5 font-heading text-xs uppercase tracking-wide">Position</th>
+                        <th className="text-left p-2.5 font-heading text-xs uppercase tracking-wide">Grade</th>
+                        <th className="text-left p-2.5 font-heading text-xs uppercase tracking-wide">Approx. Years</th>
+                        <th className="text-left p-2.5 font-heading text-xs uppercase tracking-wide">Basic Pay Range</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {careerPath.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="p-2.5 font-medium text-surface-800">{row.level}</td>
+                          <td className="p-2.5 text-primary-600 font-semibold">{row.scale}</td>
+                          <td className="p-2.5 text-surface-600">{row.years}</td>
+                          <td className="p-2.5 text-emerald-600 font-medium">{row.pay}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-3">Perks also include: LFC, medical benefits, NPS pension, housing loan, car loan, book grant, furnishing allowance, and phone/internet reimbursements.</p>
+              </div>
+            </section>
+
+            {/* SECTION 9: HOW TO APPLY */}
+            <section id="how-to-apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">How to Apply for NABARD Grade A 2026</h2>
+              </div>
+              <div className="card p-5">
+                <p className="text-surface-600 text-sm mb-4">Applications are accepted only online through the official NABARD website. The 2026 application window has not opened yet — it is expected along with the July–August 2026 notification.</p>
+                <ol className="space-y-3">
+                  {[
+                    'Visit nabard.org and go to "Career Notices"',
+                    'Click the link: "Recruitment to the Post of Assistant Manager in Grade A — 2026"',
+                    'Read the detailed notification PDF carefully and verify your eligibility',
+                    'Click "Apply Online" and register with your email ID and mobile number',
+                    'Fill in personal, educational, and experience details in the online form',
+                    'Upload a recent passport-size photograph and signature in the specified format',
+                    'Select your preferred exam stream and exam centre(s)',
+                    'Pay the application fee online (Net Banking / Credit / Debit Card / UPI)',
+                    'Submit the form and save/print the confirmation for your records',
+                  ].map((step, i) => (
+                    <li key={i} className="flex gap-3 items-start text-sm text-surface-700">
+                      <span className="w-6 h-6 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-4 pt-4 border-t border-surface-200">
+                  <a href="https://www.nabard.org" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-5 py-2 rounded-xl inline-block font-heading font-semibold">
+                    Visit nabard.org for Official Notice →
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">6-Month Study Plan for NABARD Grade A 2026</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-4">
+                  {studyPlan.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm z-10">
+                        {i + 1}
+                      </div>
+                      <div className="card p-5">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="sm:hidden w-7 h-7 bg-primary-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">{i + 1}</span>
+                          <h3 className="font-heading font-semibold text-surface-800">{step.month}: {step.focus}</h3>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{step.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 11: BEST BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for NABARD Grade A 2026</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Subject</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Book Title</th>
+                      <th className="text-left p-3 font-heading text-xs uppercase tracking-wide">Author / Publisher</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((book, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 font-medium text-primary-600">{book.subject}</td>
+                        <td className="p-3 text-surface-800">{book.title}</td>
+                        <td className="p-3 text-surface-600">{book.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 12: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Preparation Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res) => (
+                  <a key={res.name} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition block">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl">{res.type === 'youtube' ? '📺' : '🌐'}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition text-sm">{res.name}</div>
+                        <div className="text-xs text-surface-500 mt-1">{res.description}</div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: EXPERT TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips for NABARD Grade A 2026</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4 items-start">
+                    <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 14: FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">14</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-4 h-4 text-surface-400 flex-shrink-0 ml-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">📋 On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-xs text-surface-600 hover:text-primary-500 py-1 border-l-2 border-surface-200 hover:border-primary-400 pl-3 transition">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-2">🔗 Official Website</h3>
+                <p className="text-xs text-surface-500 mb-3">Notifications, admit cards, and results on the NABARD official site.</p>
+                <a href="https://www.nabard.org" target="_blank" rel="noopener noreferrer" className="block text-center btn-primary text-xs py-2 rounded-xl font-heading font-semibold">
+                  Visit nabard.org →
+                </a>
+              </div>
+
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">⚡ Quick Stats</h3>
+                <div className="space-y-2 text-xs">
+                  <div className="flex justify-between"><span className="text-surface-500">Conducting Body</span><strong className="text-surface-800">NABARD</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Post</span><strong className="text-surface-800">Assistant Manager</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Age Limit</span><strong className="text-surface-800">21–30 years</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">2025 Vacancies</span><strong className="text-primary-600">91</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">2026 Vacancies (Est.)</span><strong className="text-primary-600">80–100</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Starting Basic Pay</span><strong className="text-emerald-600">₹44,500/month</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Gross In-Hand</span><strong className="text-emerald-600">~₹1,00,000/month</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Probation</span><strong className="text-surface-800">2 years</strong></div>
+                  <div className="flex justify-between"><span className="text-surface-500">Negative Marking</span><strong className="text-surface-800">¼ per wrong answer</strong></div>
+                </div>
+              </div>
+
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-emerald-900 text-sm mb-2">Check Your Eligibility</h3>
+                <p className="text-xs text-emerald-700 mb-3">Find all Banking exams you qualify for based on your age, category &amp; qualification.</p>
                 <Link href="/tools/eligibility-checker" className="block text-center btn-primary text-sm py-2 rounded-xl font-heading font-semibold">
                   Use Eligibility Checker →
                 </Link>
