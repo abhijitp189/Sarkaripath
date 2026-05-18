@@ -672,6 +672,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'hpsc-hcs') {
+    return {
+      title: 'HPSC HCS 2026 – Notification, Syllabus, Eligibility & Salary | TaiyarHo',
+      description: 'HPSC HCS 2026: 102 vacancies notified. Prelims held 26 April 2026. Mains 27–29 June 2026. Graduate eligible, age 18–42 yrs. Salary ₹56,100–₹1,77,500/month. Complete syllabus, exam pattern, cut-off, study plan & free resources.',
+      keywords: 'HPSC HCS 2026, Haryana Civil Services 2026, HCS notification 2026, HPSC HCS syllabus, HCS exam date, HCS salary, Haryana PSC 2026, HCS eligibility, हरियाणा सिविल सेवा 2026, HCS mains 2026, HPSC recruitment 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/hpsc-hcs/' },
+      other: { 'description:hi': 'HPSC HCS 2026 – हरियाणा लोक सेवा आयोग द्वारा 102 रिक्तियाँ। प्रारंभिक परीक्षा 26 अप्रैल 2026 (परिणाम घोषित)। मुख्य परीक्षा 27–29 जून 2026। स्नातक पात्र। आयु 18–42 वर्ष। वेतन ₹56,100–₹1,77,500/माह। पूरा सिलेबस और तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'coast-guard-navik-gd') {
     return {
       title: 'Coast Guard Navik GD 2026 – Vacancy, Syllabus, PFT, Salary & Guide | TaiyarHo',
@@ -770,6 +780,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'nicl-ao') return <NiclAoPage exam={brief} />;
   if (brief && brief.slug === 'esic-mts') return <EsicMtsPage exam={brief} />;
   if (brief && brief.slug === 'tnpsc-group-1') return <TNPSCGroup1Page exam={brief} />;
+  if (brief && brief.slug === 'hpsc-hcs') return <HpscHcsPage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -53759,6 +53770,743 @@ function SebiGradeAPage({ exam }: { exam: any }) {
             </div>
           </aside>
 
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── HPSC HCS RICH PAGE ────────────────────────────────────────────────────────
+function HpscHcsPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'What is HPSC HCS?' },
+    { id: 'current-status', label: '🆕 Current Status 2026' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Vacancies & Posts' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released', date: '30 January 2026', status: 'done' },
+    { event: 'Online Application Opens', date: '6 February 2026', status: 'done' },
+    { event: 'Application Last Date', date: '26 February 2026 (5 PM)', status: 'done' },
+    { event: 'Preliminary Examination (Prelims)', date: '26 April 2026', status: 'done' },
+    { event: 'Prelims Result Declared', date: '4 May 2026', status: 'done' },
+    { event: 'Mains Examination (Day 1)', date: '27 June 2026', status: 'upcoming' },
+    { event: 'Mains Examination (Day 2)', date: '28 June 2026', status: 'upcoming' },
+    { event: 'Mains Examination (Day 3)', date: '29 June 2026', status: 'upcoming' },
+    { event: 'Personality Test / Interview', date: 'August–September 2026 (Expected)', status: 'tbn' },
+    { event: 'Document Verification & Final Result', date: 'October–November 2026 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'HCS (Executive Branch)', group: 'Group A', payLevel: 'Level 10', basic: '₹56,100/month' },
+    { post: 'Deputy Superintendent of Police (DSP)', group: 'Group A', payLevel: 'Level 10', basic: '₹56,100/month' },
+    { post: 'Excise & Taxation Officer (ETO)', group: 'Group A', payLevel: 'Level 9', basic: '₹53,100/month' },
+    { post: 'District Food & Supplies Controller (DFSC)', group: 'Group A', payLevel: 'Level 9', basic: '₹53,100/month' },
+    { post: 'Tehsildar (Class A)', group: 'Group B', payLevel: 'Level 8', basic: '₹47,600/month' },
+    { post: 'Asst. Employment Officer (AEO)', group: 'Group B', payLevel: 'Level 7', basic: '₹44,900/month' },
+    { post: 'Block Development & Panchayat Officer (BDPO)', group: 'Group B', payLevel: 'Level 7', basic: '₹44,900/month' },
+    { post: 'Naib Tehsildar', group: 'Group B', payLevel: 'Level 7', basic: '₹44,900/month' },
+  ];
+
+  const prelimsPattern = [
+    { paper: 'Paper I', subject: 'General Studies', questions: 100, marks: 100, time: '2 hrs', type: 'Objective (MCQ)' },
+    { paper: 'Paper II', subject: 'CSAT (Civil Services Aptitude Test)', questions: 100, marks: 100, time: '2 hrs', type: 'Qualifying (33%)' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper I', subject: 'English', marks: 100, type: 'Descriptive' },
+    { paper: 'Paper II', subject: 'Hindi', marks: 100, type: 'Descriptive' },
+    { paper: 'Paper III', subject: 'General Studies – I (History, Culture, Geography)', marks: 100, type: 'Descriptive' },
+    { paper: 'Paper IV', subject: 'General Studies – II (Polity, Economy, Governance)', marks: 100, type: 'Descriptive' },
+    { paper: 'Paper V', subject: 'General Studies – III (Science & Technology, Environment)', marks: 100, type: 'Descriptive' },
+    { paper: 'Paper VI', subject: 'General Studies – IV (Ethics, Integrity & Aptitude)', marks: 100, type: 'Descriptive' },
+    { paper: 'Personality Test', subject: 'Interview / Viva Voce', marks: 75, type: 'Verbal' },
+  ];
+
+  const syllabusSections = [
+    {
+      title: '📋 General Studies (Prelims Paper I)',
+      topics: [
+        'History of Modern India – Freedom Struggle, Partition, Post-Independence',
+        'Indian Culture – Art forms, Literature, Classical Dance, UNESCO heritage sites',
+        'Geography of India – Physical, Economic, Social, Resources',
+        'Indian Polity – Constitution, Parliament, Judiciary, Local Governance',
+        'Economic & Social Development – Poverty, Inclusion, Demographics',
+        'Environmental Issues – Climate Change, Biodiversity, Pollution',
+        'General Science – Physics, Chemistry, Biology (Class 10 level)',
+        'Current Events – National & International (last 12 months)',
+        'Haryana-specific GK – History, Culture, Geography, Polity, Economy',
+      ],
+    },
+    {
+      title: '🧠 CSAT (Prelims Paper II — Qualifying)',
+      topics: [
+        'Comprehension (English and Hindi passages)',
+        'Interpersonal Skills & Communication Skills',
+        'Logical Reasoning & Analytical Ability',
+        'Decision Making & Problem Solving',
+        'General Mental Ability',
+        'Basic Numeracy – Numbers, Ratios, Orders of Magnitude (Class X level)',
+        'Data Interpretation – Charts, Graphs, Tables (Class X level)',
+      ],
+    },
+    {
+      title: '⚖️ Mains – General Studies IV (Ethics, Integrity & Aptitude) — NEW',
+      topics: [
+        'Ethics and Human Interface – Essence, determinants, consequences of ethics in human actions',
+        'Attitude – Content, structure, function; moral and political attitudes; social influence',
+        'Aptitude and foundational values for Civil Services – Integrity, impartiality, non-partisanship',
+        'Emotional Intelligence – Concepts, utility, and application in administration',
+        'Ethics in Public Administration – Probity in governance, Information sharing, RTI',
+        'Corporate Governance and transparency – Accountability, code of ethics',
+        'Philosophical basis of governance and integrity – Contributions of moral thinkers',
+        'Case Studies – Practical scenarios of ethical dilemmas faced by civil servants in Haryana',
+      ],
+    },
+    {
+      title: '📝 Mains – English & Hindi Language Papers',
+      topics: [
+        'Essay Writing – Social, Economic, and Administrative themes',
+        'Précis Writing – Summarising long passages accurately',
+        'Comprehension & Grammar – Spotting errors, sentence correction',
+        'Letter / Report Writing (formal government style)',
+        'Translation – English ↔ Hindi (government terminology)',
+        'Hindi: Vyakaran (Grammar), Nibandh (Essay), Patra (Letter)',
+      ],
+    },
+    {
+      title: '🌍 Mains – General Studies Papers I–III',
+      topics: [
+        'Indian History & Haryana History in depth',
+        "World Geography & India's international relations",
+        'Indian Constitution – Fundamental Rights, DPSP, Amendments',
+        'Governance, Accountability, RTI, e-Governance in Haryana',
+        'Indian Economy – Planning, Agriculture, Industry, Infrastructure',
+        'Science & Technology – IT, Biotechnology, Space, Defence',
+        'Environment & Ecology – National Parks, Climate Policy, Disaster Management',
+        'Social Issues – Women, Minorities, Tribal Affairs, Child Rights',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    {
+      month: 'Months 1–2',
+      focus: 'Foundation: History, Geography & Polity',
+      detail: 'Build your base with NCERT books (Class 9–12). Cover Modern Indian History, Indian Geography, and the Constitution thoroughly. Dedicate 1 hour daily to Haryana-specific GK — this sets HCS apart from UPSC. Start reading a daily newspaper for current affairs.',
+    },
+    {
+      month: 'Months 3–4',
+      focus: 'Economy, Science & Environment',
+      detail: 'Cover Indian Economy (NCERT + Mrunal), Environment & Ecology (Shankar IAS), and General Science (NCERT 6–10). Focus on government schemes and policies affecting Haryana specifically. Begin CSAT practice — aim for 80+ marks comfortably (qualifying only).',
+    },
+    {
+      month: 'Month 5',
+      focus: 'Haryana Deep Dive + Current Affairs',
+      detail: "This is the differentiator. Study Haryana's History, Geography, Economy, Rivers, Districts, and Cultural Heritage intensively. Follow Haryana government press releases. Revise last 12 months of current affairs and monthly capsules. Take 1 full Prelims mock every week.",
+    },
+    {
+      month: 'Month 6',
+      focus: 'Prelims Revision + Mock Tests',
+      detail: 'Attempt 2–3 full HCS Prelims mocks per week. Analyse mistakes — identify weak areas. Score consistently above the expected cut-off (~52–55 for General). Do not start new topics — revise what you know. Read answer keys of previous year HCS papers.',
+    },
+    {
+      month: 'Post-Prelims',
+      focus: 'Mains: Answer Writing + GS-IV Ethics',
+      detail: 'Shift entirely to descriptive writing. Practice daily answer writing — 200-word and 400-word answers. GS-IV (Ethics) is a new addition — practice case studies with Haryana administrative scenarios. English and Hindi writing needs daily practice. Study governance and administrative case studies for both GS-IV and the Personality Test.',
+    },
+  ];
+
+  const books = [
+    { subject: 'Modern Indian History', title: 'India\'s Struggle for Independence', author: 'Bipan Chandra' },
+    { subject: 'Geography', title: 'Certificate Physical and Human Geography', author: 'G.C. Leong' },
+    { subject: 'Indian Polity', title: 'Indian Polity', author: 'M. Laxmikanth' },
+    { subject: 'Indian Economy', title: 'Indian Economy', author: 'Ramesh Singh' },
+    { subject: 'Environment', title: 'Environment & Ecology for Civil Services', author: 'Majid Husain / Shankar IAS' },
+    { subject: 'Haryana GK', title: 'Haryana – History, Culture & Geography', author: 'Deepak Bhardwaj / Haryana Sahitya Akademi' },
+    { subject: 'CSAT', title: 'CSAT Manual – Tata McGraw Hill', author: 'P.N. Roy Chowdhury' },
+    { subject: 'Previous Papers', title: 'HCS Previous Year Papers (Last 10 Years)', author: 'Disha / Arihant Publications' },
+  ];
+
+  const freeResources = [
+    { icon: '🌐', name: 'HPSC Official Website', url: 'https://hpsc.gov.in', desc: 'Download official notifications, admit cards, syllabus, and results directly.' },
+    { icon: '📺', name: 'Mrunal Patel (Economy & GS)', url: 'https://www.youtube.com/@TheMrunalPatel', desc: 'Best free YouTube resource for Economy, Polity and GS paper preparation.' },
+    { icon: '📺', name: 'StudyIQ HCS / Haryana PSC', url: 'https://www.youtube.com/@StudyIQ', desc: 'Dedicated HCS 2026 playlist covering syllabus, strategy and Haryana GK.' },
+    { icon: '🌐', name: 'Vision IAS Current Affairs (Free)', url: 'https://www.visionias.in/resources/current-affairs', desc: 'Free monthly current affairs PDF — essential for GS prelims and mains.' },
+    { icon: '📺', name: 'Unacademy State PSC', url: 'https://www.youtube.com/@Unacademy', desc: 'Free HCS-specific classes on Polity, History, Haryana GK and answer writing.' },
+    { icon: '🌐', name: 'Haryana Government Portal', url: 'https://haryana.gov.in', desc: 'Stay updated on Haryana government schemes, budgets, and administrative notifications.' },
+  ];
+
+  const tips = [
+    { icon: '🏆', tip: 'Haryana GK is the X-factor in HCS. Generic UPSC preparation is not enough — you must study Haryana\'s history, rivers, districts, folk culture, economy, and government schemes in depth. Candidates who score well in Haryana-specific questions get a decisive edge.' },
+    { icon: '📊', tip: 'CSAT is qualifying only (33% = 33/100). Do not over-invest time here. Secure 45–50 to have a comfortable buffer and spend your remaining prep time on General Studies, which decides your Prelims rank.' },
+    { icon: '✅', tip: 'Prelims score does NOT count in the final merit. Only Mains (600 marks) + Interview (75 marks) determine your rank. Clear Prelims as a gateway, then focus entirely on descriptive answer writing quality for Mains.' },
+    { icon: '⚠️', tip: 'The 10% OMR disqualification rule is real. In 2026, over 4,000 candidates were disqualified for OMR irregularities. Darken Circle E if you want to skip a question — never leave any circle blank. Read the instructions before starting.' },
+    { icon: '📝', tip: 'Start Mains answer writing the day after Prelims result (4 May 2026). You have less than 2 months until Mains (27 June 2026). Practise 4–5 answers daily — 200 words and 400 words. Handwriting matters in Haryana PSC descriptive exams.' },
+    { icon: '🎯', tip: 'GS-IV (Ethics, Integrity & Aptitude) is a new addition to HCS Mains under the January 2026 amendment rules. Do not ignore it — it carries 100 marks and tests ethical decision-making through case studies. Practice 8–10 Haryana-specific administrative dilemma scenarios weekly. This paper rewards structured thinking over rote knowledge.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the HPSC HCS 2026 Prelims result status?',
+      a: 'The HPSC HCS Prelims 2026 result was officially declared on 4 May 2026 at hpsc.gov.in. Out of approximately 48,087 candidates who appeared, 1,899 qualified for the Mains examination. The Mains is scheduled for 27–29 June 2026.',
+    },
+    {
+      q: 'What is the total vacancy for HPSC HCS 2026?',
+      a: 'HPSC notified 102 vacancies in the official notification (Advt No. 22/2026) released on 30 January 2026. Some sources cite 114 vacancies (after revision). Posts include HCS Executive Branch, DSP, ETO, DFSC, Tehsildar, BDPO, Naib Tehsildar and more. Refer to hpsc.gov.in for post-wise and category-wise reservation details.',
+    },
+    {
+      q: 'What is the HPSC HCS 2026 salary?',
+      a: 'For Group A posts (HCS Executive Branch, DSP) the basic pay starts at ₹56,100/month under Pay Level 10 (7th Pay Commission). After DA, HRA, and other allowances, the gross in-hand salary is approximately ₹70,000–₹85,000/month. Group B allied services start at ₹35,400–₹53,100 depending on post. The 8th Pay Commission, when implemented, is projected to raise Group A salaries to ₹1,07,712–₹1,93,728/month.',
+    },
+    {
+      q: 'Is there an attempt limit for HPSC HCS exam?',
+      a: 'No. Haryana follows age-based eligibility — there is no fixed attempt limit. Candidates can apply as long as they are within the age bracket (18–42 years for most posts, 18–27 years for DSP). This provides broader flexibility compared to UPSC where attempt limits apply.',
+    },
+    {
+      q: 'What is the HPSC HCS age limit and relaxation?',
+      a: 'For DSP posts: 18–27 years. For all other posts: 18–42 years. Age relaxation: 5 years for SC/BC candidates of Haryana; as per rules for PwD and Ex-Servicemen. The age is calculated as on the closing date of the application form (26 February 2026 for the current cycle).',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO: Blue gradient per guide/State PSC pages ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">HPSC HCS 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ State PSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-yellow-500/25 border border-yellow-400/30 rounded-full px-3 py-1 text-xs font-medium text-yellow-200">Haryana Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">✅ Prelims Result Declared</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            HPSC HCS 2026 – Haryana Civil<br className="hidden sm:block" /> Services Complete Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            Haryana Public Service Commission has notified <strong>102 vacancies</strong> for HCS (Executive Branch) and Allied Services. Prelims conducted on <strong>26 April 2026</strong>; result declared <strong>4 May 2026</strong>. Mains scheduled <strong>27–29 June 2026</strong>. Salary: <strong>₹70,000–₹85,000/month</strong> gross for Group A posts.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Total Vacancies', value: '102', sub: 'HCS & Allied Posts' },
+              { label: 'Mains Exam Date', value: '27–29 June 2026', sub: 'Descriptive' },
+              { label: 'Min. Qualification', value: 'Any Graduate', sub: 'Any discipline' },
+              { label: 'Gross Salary', value: '₹70,000–₹85,000', sub: 'Group A (per month)' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white leading-tight">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-emerald-500/15 border border-emerald-400/30 rounded-xl px-4 py-3 text-sm text-emerald-200">
+            💡 <strong>Key Update (May 2026):</strong> HPSC HCS Prelims Result declared on <strong>4 May 2026</strong> — 1,899 candidates shortlisted for Mains. The Mains examination begins <strong>27 June 2026</strong>. Focus all preparation on descriptive answer writing now. Check{' '}
+            <a href="https://hpsc.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">hpsc.gov.in</a>{' '}
+            for your admit card.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* SECTION 1: OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is HPSC HCS 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  The <strong>Haryana Civil Services (HCS) exam</strong> is conducted by the <strong>Haryana Public Service Commission (HPSC)</strong> to recruit officers for the most prestigious Group A and Group B administrative posts in the Haryana state government. Successful candidates serve as Sub-Divisional Magistrates (SDMs), Deputy Superintendents of Police (DSPs), Excise & Taxation Officers, Tehsildars, and Block Development Officers.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  HCS is often called the <strong>"UPSC of Haryana"</strong> — the selection process mirrors the Union Civil Services exam with a three-stage structure: Objective Prelims, Descriptive Mains, and Personality Test. Officers gain immense administrative authority, prestigious social standing, government accommodation, and a structured career path to the highest levels of state governance.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  The <strong>2026 cycle</strong> covers 102 posts across the Executive Branch and 7 Allied Services. With over 93,000 applicants and only 102 seats, HCS remains one of Haryana's most competitive examinations — and one of the most rewarding careers.
+                </p>
+              </div>
+            </section>
+
+            {/* SECTION 2: CURRENT STATUS */}
+            <section id="current-status" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🆕 Current Status – HCS 2026</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {[
+                  { label: '✅ Prelims Held', value: '26 April 2026', color: 'bg-emerald-50 border-emerald-200' },
+                  { label: '✅ Prelims Result Declared', value: '4 May 2026', color: 'bg-emerald-50 border-emerald-200' },
+                  { label: '✅ Shortlisted for Mains', value: '1,899 Candidates', color: 'bg-emerald-50 border-emerald-200' },
+                  { label: '⏳ Mains Examination', value: '27–29 June 2026', color: 'bg-amber-50 border-amber-200' },
+                ].map((item) => (
+                  <div key={item.label} className={`${item.color} border rounded-xl p-4`}>
+                    <div className="text-xs text-surface-500 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="font-heading font-semibold text-surface-900">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 text-sm text-surface-700">
+                <strong>⚠️ For Mains Qualified Candidates:</strong> The descriptive-format Mains exam covers 6 papers (English, Hindi, GS I–III, Optional) worth 600 marks total, plus a 75-mark Personality Test. Prelims marks do NOT count in final merit — focus entirely on answer writing quality for the next 5 weeks.
+              </div>
+            </section>
+
+            {/* SECTION 3: IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 Important Dates 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-4 font-heading font-semibold">Event</th>
+                      <th className="text-left p-4 font-heading font-semibold">Date</th>
+                      <th className="p-4 font-heading font-semibold text-center">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((item, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-4 text-surface-700">{item.event}</td>
+                        <td className="p-4 text-surface-800 font-medium">{item.date}</td>
+                        <td className="p-4 text-center">
+                          {item.status === 'done' && <span className="badge-green">✅ Done</span>}
+                          {item.status === 'upcoming' && <span className="badge-primary">⏳ Upcoming</span>}
+                          {item.status === 'tbn' && <span className="inline-flex items-center bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">TBN</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 4: ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  {
+                    icon: '🪪',
+                    label: 'Nationality',
+                    value: 'Citizen of India (or eligible Tibetan/PIO with Certificate of Eligibility)',
+                  },
+                  {
+                    icon: '🎓',
+                    label: 'Educational Qualification',
+                    value: 'Bachelor\'s Degree in Arts, Science, Commerce or equivalent from a recognised university',
+                  },
+                  {
+                    icon: '📋',
+                    label: 'Age Limit (General / Other Posts)',
+                    value: '18 to 42 years',
+                  },
+                  {
+                    icon: '📋',
+                    label: 'Age Limit (DSP Post)',
+                    value: '18 to 27 years',
+                  },
+                  {
+                    icon: '📋',
+                    label: 'Age Relaxation',
+                    value: 'SC/BC of Haryana: +5 years | PwBD: as per rules | Ex-Servicemen: as per rules',
+                  },
+                  {
+                    icon: '💰',
+                    label: 'Application Fee',
+                    value: 'General: ₹500 | SC/BC (Haryana): ₹125 | Female (Haryana): ₹250 | PwBD: Nil',
+                  },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.icon} {item.label}</div>
+                    <div className="text-sm font-semibold text-surface-800 mt-1">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-4 text-sm text-surface-700">
+                <strong>Note:</strong> Only Haryana domicile candidates can avail category-wise reservation benefits (SC, BC-A, BC-B, EWS, ESM). Final year students could apply only if they possessed the degree by the application closing date (26 February 2026).
+              </div>
+            </section>
+
+            {/* SECTION 5: VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies & Posts 2026</h2>
+              </div>
+              <div className="card overflow-hidden mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading font-semibold">Post Name</th>
+                      <th className="text-left p-3 font-heading font-semibold">Group</th>
+                      <th className="text-left p-3 font-heading font-semibold">Pay Level</th>
+                      <th className="text-left p-3 font-heading font-semibold">Basic Pay</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vacancyPosts.map((v, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-800 font-medium">{v.post}</td>
+                        <td className="p-3">
+                          <span className={v.group === 'Group A' ? 'badge-primary' : 'badge-green'}>{v.group}</span>
+                        </td>
+                        <td className="p-3 text-surface-700">{v.payLevel}</td>
+                        <td className="p-3 text-emerald-600 font-semibold">{v.basic}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-surface-500">Total: 102 posts across HCS Executive Branch and 7 Allied Services. Category-wise reservation (SC, BC-A, BC-B, EWS, ESM) applies per official notification Advt No. 22/2026.</p>
+            </section>
+
+            {/* SECTION 6: EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern 2026</h2>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-900 mb-3">Stage 1: Preliminary Examination (Screening)</h3>
+              <div className="card overflow-hidden mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading font-semibold">Paper</th>
+                      <th className="text-left p-3 font-heading font-semibold">Subject</th>
+                      <th className="p-3 font-heading font-semibold text-center">Questions</th>
+                      <th className="p-3 font-heading font-semibold text-center">Marks</th>
+                      <th className="p-3 font-heading font-semibold text-center">Duration</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prelimsPattern.map((p, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{p.paper}</td>
+                        <td className="p-3 text-surface-800 font-medium">{p.subject}</td>
+                        <td className="p-3 text-center text-surface-700">{p.questions}</td>
+                        <td className="p-3 text-center text-surface-700">{p.marks}</td>
+                        <td className="p-3 text-center text-surface-700">{p.time}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4 text-sm text-surface-700 mb-6">
+                <strong>⚠️ Important Rules for Prelims:</strong><br />
+                <span className="block mt-1">• <strong>Negative Marking:</strong> −0.25 marks deducted per wrong answer in both papers.</span>
+                <span className="block mt-1">• <strong>10% Rule:</strong> Candidates must attempt at least 10% of questions or face disqualification. If skipping a question, darken Circle <strong>E</strong> — never leave any circle blank (blank circles also attract −0.25).</span>
+                <span className="block mt-1">• In 2026, over 4,000 OMR sheets were rejected for rule violations. Read instructions carefully before starting.</span>
+                <span className="block mt-1">• Prelims marks are <strong>NOT</strong> added to the final merit list.</span>
+              </div>
+
+              <h3 className="text-lg font-heading font-semibold text-surface-900 mb-3">Stage 2: Main Written Examination + Stage 3: Personality Test</h3>
+              <div className="card overflow-hidden mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading font-semibold">Paper</th>
+                      <th className="text-left p-3 font-heading font-semibold">Subject</th>
+                      <th className="p-3 font-heading font-semibold text-center">Marks</th>
+                      <th className="p-3 font-heading font-semibold text-center">Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mainsPattern.map((p, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-700">{p.paper}</td>
+                        <td className="p-3 text-surface-800 font-medium">{p.subject}</td>
+                        <td className="p-3 text-center text-surface-700">{p.marks}</td>
+                        <td className="p-3 text-center">
+                          <span className={p.type === 'Descriptive' ? 'badge-primary' : p.type === 'Verbal' ? 'badge-green' : 'inline-flex items-center bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold'}>{p.type}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-surface-600">Total Mains + Interview: <strong>675 marks</strong>. Final merit is based entirely on this score. <strong>Note:</strong> As per the HPSC Amendment Rules notified on <strong>7 January 2026</strong>, optional subjects have been completely removed. The pattern now has 4 GS papers (including a new Ethics paper) — similar to UPSC Civil Services.</p>
+            </section>
+
+            {/* SECTION 7: SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus 2026</h2>
+              </div>
+              <div className="space-y-4">
+                {syllabusSections.map((section, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{section.title}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="list-disc ml-4 space-y-1.5">
+                        {section.topics.map((t, j) => (
+                          <li key={j} className="text-sm text-surface-700">{t}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 8: SALARY */}
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Salary & Career Growth</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4">HCS Officer (SDM/DSP) – Pay Structure (7th Pay Commission)</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                  {[
+                    { label: 'Basic Pay (Pay Level 10)', value: '₹56,100/month' },
+                    { label: 'Dearness Allowance (DA)', value: '~₹24,000/month' },
+                    { label: 'House Rent Allowance (HRA)', value: '₹5,610–₹11,220/month' },
+                    { label: 'Transport + Other Allowances', value: '₹3,000–₹5,000/month' },
+                    { label: 'Gross In-Hand Salary', value: '₹70,000–₹85,000/month' },
+                    { label: '8th Pay Commission (Projected)', value: '₹1,07,712–₹1,93,728/month' },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
+                      <div className="text-emerald-600 font-heading font-semibold">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <h3 className="font-heading font-semibold text-surface-900 mb-3">Career Progression Path</h3>
+                <div className="space-y-2">
+                  {[
+                    { role: 'HCS Officer (SDM)', level: 'Entry Level', note: 'Sub-Divisional Magistrate / Deputy SP on joining' },
+                    { role: 'Additional District Magistrate (ADM)', level: 'Mid Level', note: '~8–10 years service' },
+                    { role: 'District Magistrate / Collector', level: 'Senior Level', note: '~15–18 years service' },
+                    { role: 'Divisional Commissioner', level: 'Senior IAS Equivalent', note: '~20+ years; IAS empanelment possible' },
+                    { role: 'Principal Secretary / Chief Secretary', level: 'Apex Level', note: 'Highest state administrative post' },
+                  ].map((c, i) => (
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-surface-50 border border-surface-200">
+                      <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</div>
+                      <div>
+                        <div className="font-heading font-semibold text-sm text-surface-900">{c.role}</div>
+                        <div className="text-xs text-surface-500">{c.level} — {c.note}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 text-sm text-surface-700">
+                <strong>8th Pay Commission Note:</strong> The Government of India has approved the 8th Pay Commission. When implemented (expected 2026–27), Group A HCS officers' basic pay is projected to rise to ₹1,07,712–₹1,93,728/month. Group B Allied Services are projected at ₹67,968–₹1,10,554/month. Additional perks: government vehicle with driver, official bungalow, domestic help staff, and security at senior levels.
+              </div>
+            </section>
+
+            {/* SECTION 9: STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Study Plan for HPSC HCS 2026</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                <div className="space-y-5">
+                  {studyPlan.map((step, i) => (
+                    <div key={i} className="sm:pl-14 relative">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">
+                        {i + 1}
+                      </div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className="badge-primary">{step.month}</span>
+                          <span className="font-heading font-semibold text-surface-900">{step.focus}</span>
+                        </div>
+                        <p className="text-sm text-surface-600 leading-relaxed">{step.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 10: BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for HPSC HCS</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-surface-800 text-white">
+                      <th className="text-left p-3 font-heading font-semibold">Subject</th>
+                      <th className="text-left p-3 font-heading font-semibold">Book Title</th>
+                      <th className="text-left p-3 font-heading font-semibold">Author</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {books.map((b, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-3 text-surface-600">{b.subject}</td>
+                        <td className="p-3 text-surface-800 font-medium">{b.title}</td>
+                        <td className="p-3 text-surface-600">{b.author}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* SECTION 11: FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Free Resources</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
+                    className="card p-5 group hover:border-primary-300 transition">
+                    <div className="text-2xl mb-2">{r.icon}</div>
+                    <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 mb-1">{r.name}</div>
+                    <div className="text-sm text-surface-500">{r.desc}</div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 12: TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips to Crack HPSC HCS</h2>
+              </div>
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex gap-4">
+                    <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-xl flex-shrink-0">{tip.icon}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed">{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SECTION 13: FAQ */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">FAQs – HPSC HCS 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <div className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-4 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`}
+                      className="block text-sm text-surface-600 hover:text-primary-500 py-1 hover:translate-x-1 transition-transform">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official Website */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-3 text-sm">Official Website</h3>
+                <a href="https://hpsc.gov.in" target="_blank" rel="noopener noreferrer"
+                  className="btn-primary w-full block text-center text-sm">
+                  🌐 hpsc.gov.in
+                </a>
+                <p className="text-xs text-surface-500 mt-3 leading-relaxed">Check notifications, admit cards, results and syllabus directly from HPSC official portal.</p>
+              </div>
+
+              {/* Quick Status */}
+              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
+                <h3 className="font-heading font-semibold text-emerald-800 mb-3 text-sm">HCS 2026 Quick Status</h3>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2 text-emerald-700"><span>✅</span><span>Prelims: Done (26 Apr)</span></div>
+                  <div className="flex items-center gap-2 text-emerald-700"><span>✅</span><span>Result: Out (4 May)</span></div>
+                  <div className="flex items-center gap-2 text-amber-700"><span>⏳</span><span>Mains: 27–29 June</span></div>
+                  <div className="flex items-center gap-2 text-surface-500"><span>🔲</span><span>Interview: Aug–Sep (TBN)</span></div>
+                </div>
+              </div>
+
+              {/* Eligibility Tool */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-900 mb-2 text-sm">Check Your Eligibility</h3>
+                <p className="text-xs text-surface-500 mb-3">Use our free tool to check if you meet HCS age and qualification criteria.</p>
+                <Link href="/tools/eligibility-checker/" className="btn-outline w-full block text-center text-sm">
+                  Check Eligibility →
+                </Link>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
     </>
