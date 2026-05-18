@@ -406,10 +406,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (params.slug === 'niacl-ao') {
     return {
       title: 'NIACL AO 2026 – Notification, 550 Vacancies, Syllabus & Complete Guide | TaiyarHo',
-      description: 'NIACL AO 2026: 550 vacancies (2025 cycle) for Generalist & Specialist posts in India\'s largest general insurer. Prelims → Mains → Interview. Salary ~₹1,20,000–₹1,35,000/month gross. Graduate with 60% eligible, age 21–30 yrs. Full syllabus, exam pattern & free prep resources.',
+      description: 'NIACL AO 2026: 550 vacancies (2025 cycle) for Generalist & Specialist posts in India\'s largest general insurer. Prelims → Mains → Interview. Basic pay ₹50,925/month, gross ~₹90,000/month (metro). Graduate with 60% eligible, age 21–30 yrs. Full syllabus, exam pattern & free prep resources.',
       keywords: 'NIACL AO 2026, NIACL AO notification 2026, NIACL AO syllabus, NIACL AO salary, NIACL AO exam pattern, New India Assurance AO recruitment, insurance exam 2026, NIACL AO taiyari, एनआईएसीएल एओ भर्ती 2026',
       alternates: { canonical: 'https://www.taiyarho.in/exams/niacl-ao/' },
-      other: { 'description:hi': 'NIACL AO 2026 – भारत की सबसे बड़ी जनरल बीमा कंपनी में 550 रिक्तियाँ (जनरलिस्ट + स्पेशलिस्ट)। अधिसूचना अगस्त 2026 (अपेक्षित)। प्रारंभिक, मुख्य परीक्षा और साक्षात्कार। सकल वेतन ~₹1,20,000–₹1,35,000/माह। स्नातक 60% अंक, आयु 21–30 वर्ष।' },
+      other: { 'description:hi': 'NIACL AO 2026 – भारत की सबसे बड़ी जनरल बीमा कंपनी में 550 रिक्तियाँ (जनरलिस्ट + स्पेशलिस्ट)। अधिसूचना अगस्त 2026 (अपेक्षित)। प्रारंभिक, मुख्य परीक्षा और साक्षात्कार। मूल वेतन ₹50,925/माह, सकल वेतन ~₹90,000/माह (मेट्रो)। स्नातक 60% अंक, आयु 21–30 वर्ष।' },
     };
   }
 
@@ -38751,8 +38751,9 @@ function NiaclAoPage({ exam }: { exam: any }) {
     { event: 'NIACL AO 2025 Application Last Date', date: '30 August 2025', status: 'released' },
     { event: 'NIACL AO 2025 Prelims Exam', date: '14 September 2025', status: 'released' },
     { event: 'NIACL AO 2025 Mains Exam', date: '29 October 2025', status: 'released' },
-    { event: 'NIACL AO 2025 Interview Round', date: 'December 2025 – February 2026 (Expected)', status: 'tbn' },
-    { event: 'NIACL AO 2025 Final Result & Joining', date: 'March–May 2026 (Expected)', status: 'tbn' },
+    { event: 'NIACL AO 2025 Interview Round', date: 'January – February 2026', status: 'released' },
+    { event: 'NIACL AO 2025 Final Result (Provisional Selection List)', date: '2 April 2026', status: 'released' },
+    { event: 'NIACL AO 2025 Pre-Employment Medical Test (PEMT)', date: '6–10 April 2026', status: 'released' },
     { event: '🆕 NIACL AO 2026 – New Notification', date: 'August 2026 (Expected)', status: 'tbn' },
     { event: 'NIACL AO 2026 – Online Application', date: 'August–September 2026 (Expected)', status: 'tbn' },
     { event: 'NIACL AO 2026 – Prelims Exam', date: 'September 2026 (Expected)', status: 'tbn' },
@@ -38790,17 +38791,17 @@ function NiaclAoPage({ exam }: { exam: any }) {
   ];
 
   const salaryBreakdown = [
-    { component: 'Basic Pay – Pay Scale Scale I', amount: '₹82,485/month' },
-    { component: 'Dearness Allowance (DA) @ ~15% of Basic', amount: '~₹12,370/month' },
-    { component: 'House Rent Allowance (HRA) – Metro Cities (~16%)', amount: '~₹13,200/month' },
+    { component: 'Basic Pay – Pay Scale Scale I', amount: '₹50,925/month' },
+    { component: 'Dearness Allowance (DA) – revised quarterly', amount: '~₹17,800/month' },
+    { component: 'House Rent Allowance (HRA) – Metro Cities (~16%)', amount: '~₹8,150/month' },
     { component: 'City Compensatory Allowance (CCA)', amount: '₹3,000–₹5,000/month' },
     { component: 'Medical & Other Allowances', amount: '~₹5,000–₹8,000/month' },
-    { component: 'Gross Estimated Salary (A-Class City)', amount: '~₹1,20,000–₹1,35,000/month' },
-    { component: 'Note – PSU Insurance Wage Revision', amount: 'PSU insurers follow bipartite IBA wage settlements, not Central Pay Commissions. Pay revised via industry-level negotiations.' },
+    { component: 'Gross Estimated Salary (A-Class City)', amount: '~₹88,000–₹92,000/month' },
+    { component: 'Note – PSU Insurance Wage Revision', amount: 'PSU general insurers follow GIPSA bipartite wage settlements (not IBA, not Central Pay Commissions). Pay revised via industry-level negotiations.' },
   ];
 
   const careerPath = [
-    { level: 'Administrative Officer (AO) – Scale I', scale: 'Class I Officer', years: '0–4 yrs (Probation 1 yr)', payband: '₹82,485 – ₹1,56,745' },
+    { level: 'Administrative Officer (AO) – Scale I', scale: 'Class I Officer', years: '0–4 yrs (Probation 1 yr)', payband: '₹50,925 – ₹96,765' },
     { level: 'Assistant Manager / Senior AO', scale: 'Scale II', years: '4–8 yrs', payband: 'Higher Scale' },
     { level: 'Deputy Manager', scale: 'Scale III', years: '8–14 yrs', payband: 'Higher Scale' },
     { level: 'Manager / Branch Manager', scale: 'Scale IV', years: '14–20 yrs', payband: 'Higher Scale' },
@@ -38920,7 +38921,7 @@ function NiaclAoPage({ exam }: { exam: any }) {
   const faqs = [
     { q: 'When will NIACL AO 2026 notification be released?', a: 'NIACL AO 2026 notification is expected in August 2026 based on historical patterns. The 2025 cycle notification was released on 7 August 2025. As of May 2026, the next notification is TBN (To Be Notified). Candidates should monitor www.newindia.co.in for the official announcement.' },
     { q: 'How many vacancies were there in NIACL AO 2025?', a: 'NIACL AO 2025 had 550 total vacancies — 193 for Generalist posts and 357 for Specialist posts (Automobile Engineer 75, Risk Engineer 50, Legal Specialist 50, Accounts Specialist 25, Health AO 50, Business Analyst 75, IT Specialist 25, Actuarial Specialist 5, Company Secretary 2). This was a significant recruitment cycle after years of limited openings.' },
-    { q: 'What is the NIACL AO salary in 2026?', a: 'NIACL AO basic pay starts at ₹82,485/month in the Scale I pay band (₹82,485 – 4,050×14 – ₹1,39,185 – 4,390×4 – ₹1,56,745). Including Dearness Allowance, HRA (metro cities ~16%), City Compensatory Allowance, and medical benefits, the gross salary is approximately ₹1,20,000–₹1,35,000/month. PSU insurance companies follow IBA bipartite wage settlements for revisions, not the Central Pay Commissions.' },
+    { q: 'What is the NIACL AO salary in 2026?', a: 'NIACL AO basic pay starts at ₹50,925/month in the Scale I pay band (₹50,925 – 2,500×14 – ₹85,925 – 2,710×4 – ₹96,765). Including Dearness Allowance (revised quarterly), HRA (metro cities ~16%), City Compensatory Allowance, and medical benefits, the gross salary is approximately ₹88,000–₹92,000/month in A-class cities. PSU general insurance companies follow GIPSA bipartite wage settlements for revisions, not IBA or Central Pay Commissions.' },
     { q: 'Is there negative marking in NIACL AO?', a: 'Yes. There is a penalty of 1/4 mark (0.25) for every wrong answer in both Prelims and Mains Objective tests. Both sectional cut-offs and overall cut-offs apply in Prelims — failing even one section will lead to disqualification regardless of your total score. Attempt questions only when you are reasonably confident.' },
     { q: 'What is the NIACL AO selection process?', a: 'NIACL AO selection happens in three stages: Phase 1 – Preliminary Exam (100 marks, 60 minutes, online) with English Language (30Q), Reasoning Ability (35Q) and Quantitative Aptitude (35Q); Phase 2 – Mains Exam (Objective 200M + Descriptive 30M); Phase 3 – Personal Interview. The final merit is based on Mains Objective (75%) and Interview (25%). Prelims marks are not counted in the final merit list — it is a qualifying stage only.' },
     { q: 'What is the NIACL AO eligibility criteria?', a: 'For Generalist posts: Any graduate/post-graduate with a minimum of 60% marks (55% for SC/ST/PwBD) from a recognised university. Age limit: 21–30 years as on the cut-off date in the official notification. Age relaxation: OBC +3 years, SC/ST +5 years, PwBD +10 years, Ex-Servicemen +5 years (subject to notification specifics). Specialist posts have additional stream-specific qualifications — check the official notification for details.' },
@@ -38961,7 +38962,7 @@ function NiaclAoPage({ exam }: { exam: any }) {
             NIACL AO 2026 – Complete Preparation Guide
           </h1>
           <p className="text-blue-100 text-base leading-relaxed max-w-2xl mb-6">
-            New India Assurance — India&apos;s largest general insurer — recruits Scale I Administrative Officers. With a gross salary of <strong className="text-white">~₹1,20,000–₹1,35,000/month</strong>, a permanent Central Government-backed career, and postings across India including international offices in 28+ countries.
+            New India Assurance — India&apos;s largest general insurer — recruits Scale I Administrative Officers. With a gross salary of <strong className="text-white">~₹90,000/month</strong> (metro), a permanent Central Government-backed career, and postings across India including international offices in 28+ countries.
           </p>
 
           {/* Fast-fact grid */}
@@ -38969,7 +38970,7 @@ function NiaclAoPage({ exam }: { exam: any }) {
             {[
               { icon: '📋', label: 'Vacancies 2025', value: '550 Posts' },
               { icon: '📅', label: '2026 Notification', value: 'Aug 2026 (TBN)' },
-              { icon: '💰', label: 'Gross Salary', value: '~₹1.2–1.35L/mo' },
+              { icon: '💰', label: 'Gross Salary', value: '~₹90,000/mo' },
               { icon: '🎓', label: 'Eligibility', value: 'Graduate 60%' },
             ].map((item) => (
               <div key={item.label} className="bg-white/10 backdrop-blur rounded-xl p-3 border border-white/20">
@@ -39005,7 +39006,7 @@ function NiaclAoPage({ exam }: { exam: any }) {
                   { label: 'Age Limit', value: '21–30 years (relaxations apply)' },
                   { label: 'Exam Mode', value: 'Online (CBT) + Descriptive' },
                   { label: 'Selection Stages', value: 'Prelims → Mains → Interview' },
-                  { label: 'Basic Pay', value: '₹82,485/month (Scale I)' },
+                  { label: 'Basic Pay', value: '₹50,925/month (Scale I)' },
                   { label: 'Official Website', value: 'newindia.co.in' },
                   { label: 'Application Fee', value: '₹850 (Gen/EWS/OBC) | ₹100 (SC/ST/PwBD)' },
                 ].map((item) => (
@@ -39463,8 +39464,8 @@ function NiaclAoPage({ exam }: { exam: any }) {
                   <div className="flex justify-between"><span>Generalist Posts</span><span className="font-semibold">193</span></div>
                   <div className="flex justify-between"><span>Age Limit</span><span className="font-semibold">21–30 yrs</span></div>
                   <div className="flex justify-between"><span>Qualification</span><span className="font-semibold">Grad 60%</span></div>
-                  <div className="flex justify-between"><span>Basic Pay</span><span className="font-semibold text-emerald-600">₹82,485/mo</span></div>
-                  <div className="flex justify-between"><span>Gross Salary</span><span className="font-semibold text-emerald-600">~₹1.2–1.35L</span></div>
+                  <div className="flex justify-between"><span>Basic Pay</span><span className="font-semibold text-emerald-600">₹50,925/mo</span></div>
+                  <div className="flex justify-between"><span>Gross Salary</span><span className="font-semibold text-emerald-600">~₹90,000/mo</span></div>
                   <div className="flex justify-between"><span>App Fee (Gen)</span><span className="font-semibold">₹850</span></div>
                   <div className="flex justify-between"><span>Neg. Marking</span><span className="font-semibold">1/4 mark</span></div>
                 </div>
