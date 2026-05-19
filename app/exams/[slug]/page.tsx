@@ -672,6 +672,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'cgpsc-state-service') {
+    return {
+      title: 'CGPSC State Service Exam 2026 – Syllabus, Vacancy, Salary & Guide | TaiyarHo',
+      description: 'CGPSC State Service 2026: 239 vacancies for Deputy Collector, DSP, Naib Tehsildar & more. Prelims held Feb 2026. Mains rescheduled to 6–9 June 2026. Graduate, age 21–30 yrs. Salary up to ₹56,100/month. Full syllabus, exam pattern & free prep guide.',
+      keywords: 'CGPSC 2026, CGPSC State Service Exam 2026, CG Rajyaseva 2026, CGPSC notification 2026, CGPSC syllabus, CGPSC exam date, CGPSC salary, psc.cg.gov.in, छत्तीसगढ़ लोक सेवा आयोग 2026, CGPSC Deputy Collector DSP',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/cgpsc-state-service/' },
+      other: { 'description:hi': 'CGPSC State Service 2026 – 239 रिक्तियाँ। Deputy Collector, DSP, Naib Tehsildar और अन्य पद। प्रारंभिक परीक्षा 22 फरवरी 2026 (संपन्न)। मुख्य परीक्षा 6–9 जून 2026 (पुनर्निर्धारित)। स्नातक पात्र। आयु 21–30 वर्ष। वेतन ₹56,100/माह तक। पूरा सिलेबस और तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'hpsc-hcs') {
     return {
       title: 'HPSC HCS 2026 – Notification, Syllabus, Eligibility & Salary | TaiyarHo',
@@ -792,6 +802,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'esic-mts') return <EsicMtsPage exam={brief} />;
   if (brief && brief.slug === 'tnpsc-group-1') return <TNPSCGroup1Page exam={brief} />;
   if (brief && brief.slug === 'hpsc-hcs') return <HpscHcsPage exam={brief} />;
+  if (brief && brief.slug === 'cgpsc-state-service') return <CgpscStatePage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
 }
 
@@ -54805,6 +54816,822 @@ function HpscHcsPage({ exam }: { exam: any }) {
               </div>
 
             </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── CGPSC STATE SERVICE 2026 RICH PAGE ──────────────────────────────────────
+function CgpscStatePage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'vacancies', label: 'Posts & Vacancies' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Detailed Syllabus' },
+    { id: 'cutoff', label: 'Previous Year Cut-offs' },
+    { id: 'salary', label: 'Salary & Career Growth' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'study-plan', label: 'Study Plan' },
+    { id: 'books', label: 'Best Books' },
+    { id: 'resources', label: 'Free Resources' },
+    { id: 'tips', label: 'Expert Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'CGPSC SSE 2025 Notification Released', date: '26 November 2025', status: 'released' },
+    { event: 'Online Application Opens', date: '1 December 2025', status: 'released' },
+    { event: 'Application Last Date', date: '30 December 2025', status: 'released' },
+    { event: 'Prelims Admit Card Released', date: 'February 2026', status: 'released' },
+    { event: '✅ Prelims Exam Conducted (Paper I & II)', date: '22 February 2026', status: 'released' },
+    { event: '✅ Prelims Result Declared', date: '25 March 2026', status: 'released' },
+    { event: '⚠️ Mains Exam (Postponed from 16–19 May)', date: '6–9 June 2026 (Rescheduled)', status: 'active' },
+    { event: 'Mains Admit Card', date: 'Last week of May 2026 (Expected)', status: 'tbn' },
+    { event: 'Mains Result', date: 'August–September 2026 (Expected)', status: 'tbn' },
+    { event: 'Interview / Personality Test', date: 'October–November 2026 (Expected)', status: 'tbn' },
+    { event: 'Final Merit List & Appointment', date: 'December 2026 / Early 2027 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyHistory = [
+    { year: 'CGPSC SSE 2021', vacancies: '170', prelims: '2021', mains: '2022' },
+    { year: 'CGPSC SSE 2022', vacancies: '246', prelims: 'Feb 2023', mains: 'Jun 2023' },
+    { year: 'CGPSC SSE 2023', vacancies: '246', prelims: 'Feb 2024', mains: 'Jun 2025' },
+    { year: 'CGPSC SSE 2025-26 (Current)', vacancies: '239', prelims: '22 Feb 2026 (Done)', mains: '6–9 Jun 2026' },
+  ];
+
+  const postsList = [
+    { group: 'Group A', post: 'Deputy Collector / SDM', payLevel: 'Level 12', basicPay: '₹56,100' },
+    { group: 'Group A', post: 'Deputy Superintendent of Police (DSP)', payLevel: 'Level 12', basicPay: '₹56,100' },
+    { group: 'Group A', post: 'State Finance Service Officer', payLevel: 'Level 12', basicPay: '₹56,100' },
+    { group: 'Group A', post: 'Assistant Director (Various Depts.)', payLevel: 'Level 11', basicPay: '₹44,900' },
+    { group: 'Group A', post: 'Commercial Tax Officer', payLevel: 'Level 11', basicPay: '₹44,900' },
+    { group: 'Group A', post: 'District Excise Officer', payLevel: 'Level 10', basicPay: '₹38,100' },
+    { group: 'Group B', post: 'Naib Tehsildar', payLevel: 'Level 8', basicPay: '₹35,400' },
+    { group: 'Group B', post: 'State Tax Inspector', payLevel: 'Level 7', basicPay: '₹28,700' },
+    { group: 'Group B', post: 'Employment Officer', payLevel: 'Level 7', basicPay: '₹28,700' },
+    { group: 'Group B', post: 'Labour Officer', payLevel: 'Level 7', basicPay: '₹28,700' },
+    { group: 'Group B', post: 'Assistant Jail Superintendent', payLevel: 'Level 6', basicPay: '₹25,300' },
+    { group: 'Group B', post: 'Excise Sub-Inspector', payLevel: 'Level 6', basicPay: '₹25,300' },
+  ];
+
+  const prelimsPattern = [
+    { paper: 'Paper I – General Studies', questions: 100, marks: 200, duration: '2 Hours', nature: 'Merit Deciding' },
+    { paper: 'Paper II – Aptitude Test (CSAT)', questions: 100, marks: 200, duration: '2 Hours', nature: 'Qualifying Only' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper 1', subject: 'Language (Hindi & English)', marks: 200, duration: '3 Hours' },
+    { paper: 'Paper 2', subject: 'Essay (National & CG Issues)', marks: 200, duration: '3 Hours' },
+    { paper: 'Paper 3', subject: 'General Studies I (History, Culture, Geography)', marks: 200, duration: '3 Hours' },
+    { paper: 'Paper 4', subject: 'General Studies II (Constitution, Polity, Governance)', marks: 200, duration: '3 Hours' },
+    { paper: 'Paper 5', subject: 'General Studies III (Economy, Agriculture, Science)', marks: 200, duration: '3 Hours' },
+    { paper: 'Paper 6', subject: 'General Studies IV (Ethics, Aptitude, Case Studies)', marks: 200, duration: '3 Hours' },
+    { paper: 'Paper 7', subject: 'General Studies V (Chhattisgarh Specific)', marks: 200, duration: '3 Hours' },
+  ];
+
+  const cutoffData = [
+    { year: '2023 Prelims (Paper I)', general: '~115–125', obc: '~105–115', sc: '~90–100', st: '~80–90' },
+    { year: '2022 Prelims (Paper I)', general: '~118–130', obc: '~108–118', sc: '~92–105', st: '~82–92' },
+  ];
+
+  const salaryBreakdown = [
+    { component: 'Basic Pay – Deputy Collector / DSP (Level 12)', amount: '₹56,100/month' },
+    { component: 'Dearness Allowance (DA) ~42% of Basic (7th CPC, 2026)', amount: '~₹23,562/month' },
+    { component: 'House Rent Allowance (HRA) – City Category Dependent', amount: '₹2,800–₹5,600/month' },
+    { component: 'Travel Allowance & City Compensatory Allowance', amount: '₹1,000–₹2,000/month' },
+    { component: 'Gross Estimated In-Hand (Group A)', amount: '~₹80,000–₹90,000/month' },
+    { component: '⚠️ 8th Pay Commission: Expected in CG from mid-2026', amount: 'Fitment ~1.96×–2.86× Basic' },
+  ];
+
+  const careerPath = [
+    { level: 'Naib Tehsildar / Tax Inspector', group: 'Group B Entry', years: '0–3 yrs', pay: '₹25,300–₹38,100' },
+    { level: 'Deputy Collector / DSP (Entry)', group: 'Group A Entry', years: '0–3 yrs (Training)', pay: '₹56,100' },
+    { level: 'Sub-Divisional Magistrate (SDM)', group: 'Group A Promotion', years: '5–8 yrs', pay: '₹67,700+' },
+    { level: 'Additional Collector / SP', group: 'Senior Group A', years: '10–15 yrs', pay: '₹78,800+' },
+    { level: 'District Collector / DIG', group: 'IAS Equivalent', years: '15–20 yrs (Promotion)', pay: '₹1,00,000+' },
+    { level: 'Commissioner / Secretary Level', group: 'State Senior Service', years: '20+ yrs', pay: '₹1,44,200+' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🇮🇳 General Studies – Paper I (National)',
+      topics: [
+        'Indian History – Ancient, Medieval, Modern; Freedom Movement',
+        'Indian & World Geography – Physical, Human, Economic, CG Geography',
+        'Indian Polity & Constitution – Features, Amendments, SC/HC, Elections',
+        'Indian Economy – Planning, Budget, Poverty, Agriculture, Industry',
+        'General Science – Physics, Chemistry, Biology (Basics)',
+        'Environment & Ecology – Biodiversity, Climate Change, Disasters',
+        'Current Affairs – National & International (Last 12 months)',
+        'Awards, Sports, Important Persons & Places',
+      ],
+    },
+    {
+      subject: '🌾 Chhattisgarh Specific GK (Heavy Weightage in Prelims & Mains GS V)',
+      topics: [
+        'History of Chhattisgarh & Freedom Movement contribution',
+        'CG Geography – Rivers, Forests, Minerals, Climate, Dams',
+        'CG Culture – Tribes (Gond, Baiga, Halba), Festivals, Folk Art, Music',
+        'CG Economy – Agriculture, Forest produce, Industries, Minerals',
+        'CG Administrative Structure – Divisions, Panchayati Raj',
+        'CG Current Affairs – State government schemes & policies',
+        'Literature, Language, Proverbs & Idioms of Chhattisgarh',
+        'CG Sports, Awards & Personalities',
+      ],
+    },
+    {
+      subject: '📊 Aptitude Test / CSAT – Paper II (Qualifying)',
+      topics: [
+        'Reading Comprehension (English & Hindi passages)',
+        'Logical Reasoning & Analytical Ability',
+        'Data Interpretation – Tables, Graphs, Charts',
+        'Decision Making & Problem Solving',
+        'Basic Numeracy – Number System, Percentage, Ratio',
+        'Mental Ability & General Mental Ability Tests',
+        'Communication Skills in Hindi (Chhattisgarhi component)',
+      ],
+    },
+    {
+      subject: '✍️ Mains – Language Paper (Hindi & English)',
+      topics: [
+        'Hindi Grammar – Sandhi, Samas, Karak, Vachya, Idioms',
+        'Word Vocabulary – Synonyms, Antonyms, One-word substitution',
+        'Essay Writing, Summary Writing, Letter Writing (Hindi)',
+        'Chhattisgarhi Literature – Major authors, works, traditions',
+        'English Grammar & Composition',
+        'English Essay, Précis, Letter Writing',
+        'Translation (Hindi ↔ English)',
+      ],
+    },
+    {
+      subject: '📝 Mains – Essay Paper (2 Essays)',
+      topics: [
+        'Part 1: National/International Issues (2 of 4 given, ~750 words each)',
+        'Part 2: Chhattisgarh State-level Issues (2 of 4 given, ~750 words each)',
+        'Topics include – Governance, Social issues, Economy, Environment',
+        'Clarity, logical structure, factual data, CG-specific solutions expected',
+      ],
+    },
+    {
+      subject: '🏛️ Mains – GS Papers 3–7 (Including Ethics & CG Specific)',
+      topics: [
+        'GS III: Indian History, World History, Art & Culture',
+        'GS IV: Constitution, Polity, Governance, Social Justice',
+        'GS V: Economy, Agriculture, Science & Technology, Environment',
+        'GS VI: Ethics, Integrity, Aptitude – Case Studies, Role of Civil Servant',
+        'GS VII: Chhattisgarh – History, Geography, Polity, Economy, Culture (Detailed)',
+      ],
+    },
+  ];
+
+  const books = [
+    { subject: 'CG GK', title: 'Chhattisgarh Samanya Gyan', author: 'Yugantar Prakashan / CG Guruji', freeLink: undefined },
+    { subject: 'Indian History', title: 'India\'s Struggle for Independence', author: 'Bipan Chandra', freeLink: undefined },
+    { subject: 'Indian Polity', title: 'Indian Polity (English/Hindi)', author: 'M. Laxmikanth', freeLink: undefined },
+    { subject: 'Indian Economy', title: 'Indian Economy', author: 'Ramesh Singh', freeLink: undefined },
+    { subject: 'Geography', title: 'Certificate Physical & Human Geography', author: 'G.C. Leong', freeLink: undefined },
+    { subject: 'Ethics (GS VI)', title: 'Ethics, Integrity & Aptitude', author: 'G. Subba Rao / P.N. Roy Chaudhary', freeLink: undefined },
+    { subject: 'Environment', title: 'Environment & Ecology', author: 'Majid Husain / Shankar IAS', freeLink: undefined },
+    { subject: 'Essay', title: 'Mains Essay & Answer Writing Practice', author: 'Drishti IAS / CGPSC Guruji', freeLink: undefined },
+  ];
+
+  const studyPlan = [
+    { month: 'Months 1–2', title: 'Foundation & CG GK', tasks: ['Read Chhattisgarh GK book cover to cover', 'Cover Indian Polity (Laxmikanth) + Indian History basics', 'Follow state newspaper (Navabharat / Haribhoomi) daily for CG Current Affairs', 'Solve CGPSC Prelims PYQs (Paper I) to understand question pattern'] },
+    { month: 'Months 3–4', title: 'National GK + Economy + Geography', tasks: ['Complete Indian Economy (Ramesh Singh) + budget notes', 'Cover World & Indian Geography (G.C. Leong + NCERT)', 'Revise CG-specific topics – tribes, minerals, rivers, festivals', 'Start daily 20-question mock tests on GS topics'] },
+    { month: 'Months 5–6', title: 'Mains Answer Writing Focus', tasks: ['Read Laxmikanth for Polity + Constitution amendments', 'Start answer writing for Mains GS papers (200-word answers daily)', 'Cover Environment & Ecology, Science & Technology current topics', 'Practice 2 full-length Prelims mocks per week'] },
+    { month: 'Months 7–8', title: 'Essay + Ethics + Final Revision', tasks: ['Write 2 essays per week on national & CG issues', 'Cover Ethics case studies – case studies from UPSC perspective', 'Revise all CG-specific content thoroughly', 'Full syllabus revision + 3–4 full Prelims + Mains mocks'] },
+  ];
+
+  const tips = [
+    '💡 CGPSC Paper I (GS) decides your Mains call – Paper II (CSAT) is only qualifying. Put 80% of your effort into Paper I.',
+    '🌾 Chhattisgarh-specific GK is your biggest differentiator. It appears in Prelims Paper I AND Mains Paper 7. Read state-level news daily – most toppers credit this as their edge.',
+    '⚠️ Negative marking in Prelims is 1/3. Attempt only those questions you\'re confident about. Skip doubtful ones; an unanswered question loses 0, a wrong answer costs 0.67 marks.',
+    '📝 Mains carries 1,400 marks. Start answer writing from day one – clarity, structure, and CG-specific examples in answers significantly improve your score.',
+    '🎯 Paper I merit list is based on your GS score. Even 3–5 extra correct answers can move you up 500–800 ranks. Focus on completing CGPSC PYQs first.',
+    '📅 CGPSC releases notifications annually. The 2025-26 cycle is active now. Use this study phase to also prepare for CGPSC 2026-27 cycle in advance.',
+  ];
+
+  const faqs = [
+    { q: 'What is the CGPSC State Service Exam 2026?', a: 'The CGPSC State Service Examination (SSE) is conducted by the Chhattisgarh Public Service Commission to recruit Group A and Group B officers for Chhattisgarh state government. The current 2025-26 cycle has 239 vacancies for posts like Deputy Collector, DSP, Naib Tehsildar and others. Prelims were held on 22 February 2026 and Mains are now scheduled for 6–9 June 2026.' },
+    { q: 'What is the CGPSC 2026 Mains exam date?', a: 'The CGPSC SSE 2025-26 Mains examination has been rescheduled. Originally planned for 16–19 May 2026, it has been postponed to 6–9 June 2026. The Mains admit card is expected in the last week of May 2026. Candidates are advised to check psc.cg.gov.in regularly for official updates.' },
+    { q: 'What is the age limit for CGPSC State Service 2026?', a: 'The general age limit is 21 to 30 years (as on 1 January 2025 for the 2025-26 cycle). Candidates domiciled in Chhattisgarh get additional relaxation – up to 35 years for General/OBC CG residents. SC/ST and other reserved categories get further relaxation as per CG government norms. Check the official notification PDF at psc.cg.gov.in for post-wise age details.' },
+    { q: 'Does CGPSC Prelims have negative marking?', a: 'Yes. In the CGPSC Prelims, 1/3 of the marks allotted for a question is deducted for each wrong answer. For Paper I (200 marks, 100 questions), each correct answer gives 2 marks and each wrong answer deducts 0.67 marks. Paper II (CSAT) is qualifying only and its marks are not counted in the merit list for Mains shortlisting.' },
+    { q: 'What is the CGPSC Deputy Collector salary in 2026?', a: 'A Deputy Collector in Chhattisgarh is placed at Pay Level 12 under the 7th Pay Commission with a basic pay of ₹56,100/month. After adding Dearness Allowance (~42% of basic), HRA, TA and other allowances, the gross in-hand salary is approximately ₹80,000–₹90,000/month. With the 8th Pay Commission (expected to be adopted by CG in mid-to-late 2026), the basic pay is expected to increase significantly.' },
+  ];
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <div className="bg-surface-50 min-h-screen">
+        <div className="container-main py-6 sm:py-10">
+
+          {/* Breadcrumb */}
+          <nav className="text-sm text-surface-500 mb-6">
+            <Link href="/" className="hover:text-primary-500">Home</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams" className="hover:text-primary-500">Exams</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams?category=State+PSC" className="hover:text-primary-500">State PSC</Link>
+            <span className="mx-2">›</span>
+            <span className="text-surface-800">CGPSC State Service Exam 2026</span>
+          </nav>
+
+          {/* Page Layout */}
+          <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+            {/* ── Main Content ── */}
+            <main>
+
+              {/* Hero Header */}
+              <div className="mb-8">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="badge badge-primary">State PSC</span>
+                  <span className="badge bg-purple-100 text-purple-700">Group A & B</span>
+                  <span className="badge bg-emerald-100 text-emerald-700">239 Vacancies</span>
+                  <span className="badge bg-amber-100 text-amber-700">⚠️ Mains: 6–9 June 2026</span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
+                  CGPSC State Service Exam 2026
+                </h1>
+                <p className="text-surface-500 leading-relaxed max-w-2xl">
+                  The Chhattisgarh Public Service Commission (CGPSC) conducts the State Service Examination to recruit
+                  Group A &amp; B officers including Deputy Collectors, DSPs, and Naib Tehsildars. Prelims are complete
+                  — Mains are now scheduled for 6–9 June 2026.
+                </p>
+              </div>
+
+              {/* 4-Grid Highlight Cards */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+                <InfoCard label="Vacancies 2025-26" value="239 Posts" />
+                <InfoCard label="Mains Exam Date" value="6–9 June 2026" />
+                <InfoCard label="Group A Salary" value="₹56,100/month" highlight />
+                <InfoCard label="Min. Qualification" value="Any Graduate" />
+              </div>
+
+              {/* Update Banner */}
+              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-10 flex items-start gap-3">
+                <span className="text-amber-500 text-lg mt-0.5">⚠️</span>
+                <div>
+                  <p className="text-sm font-semibold text-amber-800">Mains Exam Date Postponed</p>
+                  <p className="text-sm text-amber-700 mt-0.5">
+                    CGPSC SSE Mains 2025-26 has been rescheduled from 16–19 May 2026 to <strong>6–9 June 2026</strong>.
+                    Mains admit card is expected in the last week of May 2026. Check <a href="https://psc.cg.gov.in" target="_blank" rel="noopener noreferrer" className="underline">psc.cg.gov.in</a> for the latest official updates.
+                  </p>
+                </div>
+              </div>
+
+              {/* 1. Overview */}
+              <section id="overview" className="mb-12">
+                <SectionHeading num="1" title="What is CGPSC State Service Exam 2026?" />
+                <div className="card p-6 mb-5">
+                  <p className="text-surface-700 leading-relaxed mb-4">
+                    The CGPSC State Service Examination (SSE) is Chhattisgarh&apos;s most prestigious state-level civil services exam,
+                    equivalent to UPSC at the state level. Established after Chhattisgarh became a separate state in 2000, CGPSC operates
+                    under Articles 315–323 of the Indian Constitution and is the primary gateway to the administrative backbone of
+                    state governance.
+                  </p>
+                  <p className="text-surface-700 leading-relaxed mb-4">
+                    The 2025-26 cycle has announced <strong>239 vacancies</strong> for coveted posts like Deputy Collector, DSP, Naib Tehsildar,
+                    Commercial Tax Officer and several other Group A and Group B positions across Chhattisgarh&apos;s administrative and
+                    enforcement departments.
+                  </p>
+                  <p className="text-surface-700 leading-relaxed">
+                    The three-stage selection process — Prelims (22 Feb 2026, completed), Mains (6–9 June 2026), and Interview —
+                    tests general knowledge, writing ability, analytical skills, and personality. This is a truly transformative career
+                    opportunity for graduates aspiring to serve Chhattisgarh.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <InfoCard label="Conducting Body" value="Chhattisgarh PSC (CGPSC)" />
+                  <InfoCard label="Official Website" value="psc.cg.gov.in" />
+                  <InfoCard label="Level" value="State Level" />
+                  <InfoCard label="Selection Stages" value="Prelims + Mains + Interview" />
+                  <InfoCard label="Frequency" value="Annual" />
+                  <InfoCard label="Mode" value="Offline (Pen & Paper)" />
+                </div>
+              </section>
+
+              {/* 2. Important Dates */}
+              <section id="important-dates" className="mb-12">
+                <SectionHeading num="2" title="Important Dates 2026" />
+                <div className="card overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Event</th>
+                          <th className="text-left p-4 font-heading font-semibold">Date</th>
+                          <th className="text-left p-4 font-heading font-semibold">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {importantDates.map((d, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                            <td className="p-4 text-surface-800 font-medium">{d.event}</td>
+                            <td className="p-4 text-surface-700">{d.date}</td>
+                            <td className="p-4">
+                              {d.status === 'released' && <span className="badge badge-green">✅ Done</span>}
+                              {d.status === 'active' && <span className="badge bg-amber-100 text-amber-700">📅 Active</span>}
+                              {d.status === 'tbn' && <span className="badge bg-surface-100 text-surface-500">⏳ TBN</span>}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              {/* 3. Eligibility */}
+              <section id="eligibility" className="mb-12">
+                <SectionHeading num="3" title="Eligibility Criteria 2026" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                  <div className="card p-5">
+                    <div className="flex items-center gap-2 mb-3"><span className="text-xl">🎓</span><span className="font-heading font-semibold text-surface-800">Educational Qualification</span></div>
+                    <ul className="text-sm text-surface-700 space-y-1.5">
+                      <li>• Bachelor&apos;s Degree in any stream from a recognised university</li>
+                      <li>• Degree must be completed by the application deadline</li>
+                      <li>• Final year students are generally not eligible (confirm from notification)</li>
+                    </ul>
+                  </div>
+                  <div className="card p-5">
+                    <div className="flex items-center gap-2 mb-3"><span className="text-xl">📋</span><span className="font-heading font-semibold text-surface-800">Age Limit (as on 1 Jan 2025)</span></div>
+                    <ul className="text-sm text-surface-700 space-y-1.5">
+                      <li>• <strong>General (Non-CG Domicile):</strong> 21–30 years</li>
+                      <li>• <strong>General / OBC (CG Domicile):</strong> 21–35 years</li>
+                      <li>• <strong>SC / ST (CG Domicile):</strong> 21–40 years</li>
+                      <li>• <strong>PwBD:</strong> Additional 10 years relaxation</li>
+                    </ul>
+                  </div>
+                  <div className="card p-5">
+                    <div className="flex items-center gap-2 mb-3"><span className="text-xl">🪪</span><span className="font-heading font-semibold text-surface-800">Nationality</span></div>
+                    <ul className="text-sm text-surface-700 space-y-1.5">
+                      <li>• Indian citizen</li>
+                      <li>• Chhattisgarh domicile candidates get age &amp; reservation benefits</li>
+                      <li>• Some posts have Chhattisgarh domicile as mandatory criterion</li>
+                    </ul>
+                  </div>
+                  <div className="card p-5">
+                    <div className="flex items-center gap-2 mb-3"><span className="text-xl">📋</span><span className="font-heading font-semibold text-surface-800">Other Criteria</span></div>
+                    <ul className="text-sm text-surface-700 space-y-1.5">
+                      <li>• No limit on number of attempts</li>
+                      <li>• Some posts (DSP, Police Services) have physical fitness standards</li>
+                      <li>• Good moral character and no criminal record required</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-primary-800">
+                  💡 <strong>Domicile Advantage:</strong> Chhattisgarh domicile candidates have a significant advantage — up to 5 extra years in age limit and access to reserved category seats. Ensure you have a valid Chhattisgarh domicile certificate before applying.
+                </div>
+              </section>
+
+              {/* 4. Posts & Vacancies */}
+              <section id="vacancies" className="mb-12">
+                <SectionHeading num="4" title="Posts & Vacancies 2025-26" />
+                <div className="card overflow-hidden mb-5">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Group</th>
+                          <th className="text-left p-4 font-heading font-semibold">Post Name</th>
+                          <th className="text-left p-4 font-heading font-semibold">Pay Level</th>
+                          <th className="text-left p-4 font-heading font-semibold">Basic Pay</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {postsList.map((p, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                            <td className="p-4">
+                              <span className={`badge ${p.group === 'Group A' ? 'badge-primary' : 'badge-green'}`}>{p.group}</span>
+                            </td>
+                            <td className="p-4 font-medium text-surface-800">{p.post}</td>
+                            <td className="p-4 text-surface-600">{p.payLevel}</td>
+                            <td className="p-4 font-semibold text-emerald-600">{p.basicPay}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <p className="text-xs text-surface-500 mb-5">* Exact post-wise vacancy breakdowns are in the official notification PDF at psc.cg.gov.in. Total vacancies for 2025-26 cycle: 239.</p>
+
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-4">Historical Vacancy Trend</h3>
+                <div className="card overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-50">
+                          <th className="text-left p-4 font-semibold text-surface-700">Cycle</th>
+                          <th className="text-left p-4 font-semibold text-surface-700">Vacancies</th>
+                          <th className="text-left p-4 font-semibold text-surface-700">Prelims</th>
+                          <th className="text-left p-4 font-semibold text-surface-700">Mains</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {vacancyHistory.map((v, i) => (
+                          <tr key={i} className="border-t border-surface-100">
+                            <td className="p-4 font-medium text-surface-800">{v.year}</td>
+                            <td className="p-4 font-semibold text-emerald-600">{v.vacancies}</td>
+                            <td className="p-4 text-surface-600">{v.prelims}</td>
+                            <td className="p-4 text-surface-600">{v.mains}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              {/* 5. Exam Pattern */}
+              <section id="exam-pattern" className="mb-12">
+                <SectionHeading num="5" title="Exam Pattern 2026" />
+
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Stage 1: Preliminary Examination (Completed – 22 Feb 2026)</h3>
+                <div className="card overflow-hidden mb-5">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Paper</th>
+                          <th className="text-left p-4 font-heading font-semibold">Questions</th>
+                          <th className="text-left p-4 font-heading font-semibold">Marks</th>
+                          <th className="text-left p-4 font-heading font-semibold">Duration</th>
+                          <th className="text-left p-4 font-heading font-semibold">Nature</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {prelimsPattern.map((p, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                            <td className="p-4 font-medium text-surface-800">{p.paper}</td>
+                            <td className="p-4 text-surface-600">{p.questions}</td>
+                            <td className="p-4 font-semibold">{p.marks}</td>
+                            <td className="p-4 text-surface-600">{p.duration}</td>
+                            <td className="p-4">
+                              <span className={`badge ${p.nature === 'Merit Deciding' ? 'badge-primary' : 'bg-amber-100 text-amber-700'}`}>{p.nature}</span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-primary-800 mb-6">
+                  💡 <strong>Key Rule:</strong> Paper II (CSAT/Aptitude) is qualifying only — its marks are NOT counted in the Mains shortlist. Only Paper I (GS) marks decide who gets called for Mains. Minimum 33% in each paper required (23% for reserved categories). Negative marking: −1/3 per wrong answer.
+                </div>
+
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Stage 2: Main Examination (6–9 June 2026)</h3>
+                <div className="card overflow-hidden mb-5">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Paper</th>
+                          <th className="text-left p-4 font-heading font-semibold">Subject</th>
+                          <th className="text-left p-4 font-heading font-semibold">Marks</th>
+                          <th className="text-left p-4 font-heading font-semibold">Duration</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {mainsPattern.map((p, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                            <td className="p-4 font-semibold text-surface-800">{p.paper}</td>
+                            <td className="p-4 text-surface-700">{p.subject}</td>
+                            <td className="p-4 font-semibold text-primary-600">{p.marks}</td>
+                            <td className="p-4 text-surface-600">{p.duration}</td>
+                          </tr>
+                        ))}
+                        <tr className="border-t-2 border-surface-300 bg-surface-100">
+                          <td className="p-4 font-bold text-surface-900" colSpan={2}>Total Mains Marks</td>
+                          <td className="p-4 font-bold text-primary-600">1,400</td>
+                          <td className="p-4"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Stage 3: Interview / Personality Test</h3>
+                <div className="card p-5">
+                  <p className="text-sm text-surface-700 mb-3">
+                    Candidates who qualify Mains are called for the Interview (Personality Test) conducted by CGPSC.
+                    It carries <strong>100 marks</strong> and assesses overall personality, communication, decision-making ability,
+                    awareness of current affairs, and suitability for public service.
+                  </p>
+                  <p className="text-sm text-surface-700">
+                    <strong>Final Merit = Mains (1,400) + Interview (100) = 1,500 marks.</strong> Prelims marks are NOT counted in the final merit list.
+                  </p>
+                </div>
+              </section>
+
+              {/* 6. Syllabus */}
+              <section id="syllabus" className="mb-12">
+                <SectionHeading num="6" title="Detailed Syllabus 2026" />
+                <div className="space-y-3">
+                  {syllabus.map((s, i) => (
+                    <details key={i} className="card overflow-hidden">
+                      <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50">
+                        <span>{s.subject}</span>
+                        <svg className="w-5 h-5 text-surface-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </summary>
+                      <div className="px-5 pb-5">
+                        <ul className="space-y-1.5">
+                          {s.topics.map((t, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-surface-700">
+                              <span className="text-primary-500 mt-0.5">›</span><span>{t}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              {/* 7. Cut-offs */}
+              <section id="cutoff" className="mb-12">
+                <SectionHeading num="7" title="Previous Year Cut-offs (Prelims Paper I)" />
+                <div className="card overflow-hidden mb-4">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Year</th>
+                          <th className="text-left p-4 font-heading font-semibold">General</th>
+                          <th className="text-left p-4 font-heading font-semibold">OBC</th>
+                          <th className="text-left p-4 font-heading font-semibold">SC</th>
+                          <th className="text-left p-4 font-heading font-semibold">ST</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {cutoffData.map((c, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                            <td className="p-4 font-medium text-surface-800">{c.year}</td>
+                            <td className="p-4 text-surface-700">{c.general}</td>
+                            <td className="p-4 text-surface-700">{c.obc}</td>
+                            <td className="p-4 text-surface-700">{c.sc}</td>
+                            <td className="p-4 text-surface-700">{c.st}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <p className="text-xs text-surface-500">* Cut-off figures are approximate and sourced from coaching institutes. Exact official cut-offs are published by CGPSC after result declarations. Out of 200 marks (Paper I).</p>
+              </section>
+
+              {/* 8. Salary */}
+              <section id="salary" className="mb-12">
+                <SectionHeading num="8" title="Salary & Career Growth 2026" />
+                <div className="card overflow-hidden mb-5">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-800 text-white">
+                          <th className="text-left p-4 font-heading font-semibold">Component</th>
+                          <th className="text-left p-4 font-heading font-semibold">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {salaryBreakdown.map((s, i) => (
+                          <tr key={i} className={`border-t border-surface-100 ${i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}`}>
+                            <td className="p-4 text-surface-700">{s.component}</td>
+                            <td className="p-4 font-semibold text-emerald-600">{s.amount}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Career Progression Path</h3>
+                <div className="card overflow-hidden mb-4">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-surface-50">
+                          <th className="text-left p-4 font-semibold text-surface-700">Position</th>
+                          <th className="text-left p-4 font-semibold text-surface-700">Service</th>
+                          <th className="text-left p-4 font-semibold text-surface-700">Timeline</th>
+                          <th className="text-left p-4 font-semibold text-surface-700">Pay Band</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {careerPath.map((c, i) => (
+                          <tr key={i} className="border-t border-surface-100">
+                            <td className="p-4 font-medium text-surface-800">{c.level}</td>
+                            <td className="p-4 text-surface-600">{c.group}</td>
+                            <td className="p-4 text-surface-600">{c.years}</td>
+                            <td className="p-4 text-emerald-600 font-semibold">{c.pay}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 text-sm text-emerald-800">
+                  💰 <strong>8th Pay Commission Update (2026):</strong> The 8th Pay Commission is expected to take effect from 1 January 2026. Chhattisgarh state government is likely to adopt it in mid-to-late 2026. With an expected fitment factor of 1.96×–2.86×, Group A basic pay could increase from ₹56,100 to approximately ₹1.1–1.6 lakh/month. This will significantly improve the overall compensation package for CGPSC officers.
+                </div>
+              </section>
+
+              {/* 9. How to Apply */}
+              <section id="how-to-apply" className="mb-12">
+                <SectionHeading num="9" title="How to Apply" />
+                <div className="card p-6">
+                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm text-amber-800">
+                    ⚠️ <strong>Application Closed:</strong> The online application window for CGPSC SSE 2025-26 was open from 1–30 December 2025 and is now closed. Information below is for future reference for the next CGPSC SSE cycle (expected 2026-27).
+                  </div>
+                  <ol className="space-y-3 text-sm text-surface-700">
+                    {[
+                      'Visit the official CGPSC website at psc.cg.gov.in',
+                      'Click on "State Service Examination – Apply Online" link on the homepage',
+                      'Register with your mobile number and email ID to create a candidate profile',
+                      'Fill in the application form with personal details, academic qualifications, and category',
+                      'Upload required documents: photograph, signature, and certificates as specified',
+                      'Pay the application fee (₹400 for General/OBC; ₹300 for SC/ST/PwBD – check official notification for 2026-27)',
+                      'Submit the form and download the confirmation receipt for future reference',
+                    ].map((step, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
+                        <span>{step}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </section>
+
+              {/* 10. Study Plan */}
+              <section id="study-plan" className="mb-12">
+                <SectionHeading num="10" title="8-Month Study Plan" />
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  <div className="space-y-5">
+                    {studyPlan.map((phase, i) => (
+                      <div key={i} className="sm:pl-14 relative">
+                        <div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-sm">{i + 1}</div>
+                        <div className="card p-5">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="badge badge-primary">{phase.month}</span>
+                            <span className="font-heading font-semibold text-surface-800">{phase.title}</span>
+                          </div>
+                          <ul className="space-y-1.5">
+                            {phase.tasks.map((task, j) => (
+                              <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                                <span className="text-primary-400 mt-0.5">›</span><span>{task}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* 11. Best Books */}
+              <section id="books" className="mb-12">
+                <SectionHeading num="11" title="Best Books for CGPSC 2026" />
+                <BooksTable books={books} />
+              </section>
+
+              {/* 12. Free Resources */}
+              <section id="resources" className="mb-12">
+                <SectionHeading num="12" title="Free Resources" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    { icon: '🌐', title: 'CGPSC Official Website', desc: 'Notifications, admit cards, results, official syllabus PDF', href: 'https://psc.cg.gov.in' },
+                    { icon: '📺', title: 'Study IQ – CGPSC Channel', desc: 'Free video lectures for CG GK, CGPSC Prelims & Mains strategy', href: 'https://www.youtube.com/@StudyIQEducation' },
+                    { icon: '📺', title: 'CGPSC Guruji YouTube', desc: 'Dedicated CG-specific content, PYQs analysis, shortcuts', href: 'https://www.youtube.com/@CGPSCGuruji' },
+                    { icon: '📱', title: 'CG Vyapam / CGPSC Telegram Groups', desc: 'Daily current affairs, free notes, CG GK updates', href: '#' },
+                    { icon: '📄', title: 'CGPSC Previous Year Papers', desc: 'Download official PYQs from psc.cg.gov.in for Prelims & Mains', href: 'https://psc.cg.gov.in' },
+                    { icon: '🌐', title: 'NCERT eBooks (Free)', desc: 'History, Geography, Polity, Economy – Class 6–12 free PDFs', href: 'https://ncert.nic.in/textbook.php' },
+                  ].map((r, i) => (
+                    <a key={i} href={r.href} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition">
+                      <div className="flex items-start gap-3">
+                        <span className="text-2xl">{r.icon}</span>
+                        <div>
+                          <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 text-sm">{r.title}</div>
+                          <div className="text-sm text-surface-500 mt-1">{r.desc}</div>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </section>
+
+              {/* 13. Tips */}
+              <section id="tips" className="mb-12">
+                <SectionHeading num="13" title="Expert Preparation Tips" />
+                <div className="card p-6 space-y-4">
+                  {tips.map((tip, i) => (
+                    <div key={i} className="flex items-start gap-3 text-sm text-surface-700">
+                      <span className="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center text-accent-600 text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
+                      <span>{tip}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 14. FAQs */}
+              <section id="faq" className="mb-12">
+                <SectionHeading num="14" title="Frequently Asked Questions" />
+                <div className="space-y-3">
+                  {faqs.map((faq, i) => (
+                    <details key={i} className="card overflow-hidden">
+                      <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 hover:bg-surface-50">
+                        <span className="pr-4">{faq.q}</span>
+                        <svg className="w-5 h-5 text-surface-400 flex-shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </summary>
+                      <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+            </main>
+
+            {/* ── Sidebar ── */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-24 space-y-5">
+
+                {/* On This Page */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">On This Page</h3>
+                  <nav className="space-y-1">
+                    {toc.map((item) => (
+                      <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-500 hover:text-primary-500 py-0.5 hover:pl-1 transition-all">
+                        {item.label}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+
+                {/* Quick Status */}
+                <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
+                  <h3 className="font-heading font-semibold text-emerald-800 mb-3 text-sm">CGPSC 2026 Quick Status</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2 text-emerald-700"><span>✅</span><span>Notification Out</span></div>
+                    <div className="flex items-center gap-2 text-emerald-700"><span>✅</span><span>Prelims: Done (22 Feb)</span></div>
+                    <div className="flex items-center gap-2 text-emerald-700"><span>✅</span><span>Prelims Result: Out (25 Mar)</span></div>
+                    <div className="flex items-center gap-2 text-amber-700"><span>⏳</span><span>Mains: 6–9 June 2026</span></div>
+                    <div className="flex items-center gap-2 text-surface-500"><span>🔲</span><span>Interview: TBN</span></div>
+                    <div className="flex items-center gap-2 text-surface-500"><span>🔲</span><span>Final Result: TBN</span></div>
+                  </div>
+                </div>
+
+                {/* Official Website */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2 text-sm">Official Website</h3>
+                  <p className="text-xs text-surface-500 mb-3">Download admit cards, results, notifications and official syllabus PDF directly from CGPSC.</p>
+                  <a href="https://psc.cg.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary w-full block text-center text-sm">
+                    Visit psc.cg.gov.in →
+                  </a>
+                </div>
+
+                {/* Eligibility Tool */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-900 mb-2 text-sm">Check Your Eligibility</h3>
+                  <p className="text-xs text-surface-500 mb-3">Use our free tool to check if you meet CGPSC age and qualification criteria.</p>
+                  <Link href="/tools/eligibility-checker/" className="btn-outline w-full block text-center text-sm">
+                    Check Eligibility →
+                  </Link>
+                </div>
+
+                {/* Related Exams */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 text-sm mb-3">Related State PSC Exams</h3>
+                  <div className="space-y-1.5">
+                    {[
+                      { name: 'MPPSC State Service', slug: 'mppsc-state-service' },
+                      { name: 'UPPSC PCS', slug: 'uppsc-pcs' },
+                      { name: 'BPSC CCE', slug: 'bpsc-cce' },
+                      { name: 'RPSC RAS', slug: 'rpsc-ras' },
+                      { name: 'MPSC Rajyaseva', slug: 'mpsc-rajyaseva' },
+                    ].map((e) => (
+                      <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">
+                        {e.name} →
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </aside>
+
           </div>
         </div>
       </div>
