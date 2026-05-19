@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Government Exam Eligibility Checker 2026 | TaiyarHo',
-    description: 'Find out which government exams you qualify for in 2026. Free tool with Quick Check (100 exams) and Deep Check (UPSC, SSC, Banking, Railway).',
+    description: 'Find out which government exams you qualify for in 2026. Free tool with Quick Check (100 exams) and Deep Check — full eligibility rules for UPSC IAS, SSC CGL, IBPS PO, SBI PO, RRB NTPC, IBPS Clerk, SBI Clerk, RRB Group D, and SSC GD Constable.',
     type: 'website',
     url: 'https://www.taiyarho.in/tools/eligibility-checker/',
   },
@@ -126,7 +126,7 @@ export default function EligibilityCheckerPage() {
             Instantly find out which government exams you are eligible for in 2026 — based on your age, category, qualification, and domicile. No login. No spam. 100% free.
           </p>
           <p className="text-surface-500 text-base leading-relaxed">
-            Use <strong className="text-surface-700">⚡ Quick Check</strong> to scan all 100 exams in seconds, or <strong className="text-surface-700">🔍 Deep Check</strong> for a full eligibility report on UPSC IAS, SSC CGL, IBPS PO, SBI PO, and RRB NTPC — including attempt counts, domicile rules, and physical standards.
+            Use <strong className="text-surface-700">⚡ Quick Check</strong> to scan all 100 exams in seconds, or <strong className="text-surface-700">🔍 Deep Check</strong> for a full eligibility report on UPSC IAS, SSC CGL, IBPS PO, SBI PO, RRB NTPC, IBPS Clerk, SBI Clerk, RRB Group D, and SSC GD Constable — including attempt counts, domicile rules, and physical standards.
           </p>
         </div>
 

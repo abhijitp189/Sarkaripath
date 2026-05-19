@@ -36,7 +36,7 @@ export default function TabSwitcher() {
           <span className="text-base">🔍</span>
           <div className="text-left">
             <div>Deep Check</div>
-            <div className="text-xs font-normal text-surface-400">5 major exams · full rules</div>
+            <div className="text-xs font-normal text-surface-400">9 major exams · full rules</div>
           </div>
         </button>
       </div>
@@ -48,7 +48,7 @@ export default function TabSwitcher() {
         </div>
       ) : (
         <div className="bg-primary-50 border border-primary-200 rounded-xl px-5 py-3 mb-6 text-sm text-primary-800">
-          <strong>🔍 Deep Check (2026):</strong> Detailed eligibility breakdown for UPSC IAS, SSC CGL, IBPS PO, SBI PO, and RRB NTPC — including attempt counts, domicile rules, graduation status rules, physical standards, and 2026 salary figures.
+          <strong>🔍 Deep Check (2026):</strong> Detailed eligibility breakdown for <strong>UPSC IAS, SSC CGL, IBPS PO, SBI PO, RRB NTPC, IBPS Clerk, SBI Clerk, RRB Group D,</strong> and <strong>SSC GD Constable</strong> — including category-wise age limits, attempt counts, domicile rules, physical standards (SSC GD, RRB), and 2026 salary figures.
         </div>
       )}
 
