@@ -69,6 +69,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <IbpsPOvsSBIPOArticle post={post} />;
   }
 
+  if (post.slug === 'easiest-government-exams-to-crack-2026') {
+    return <EasiestGovtExams2026Article post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -6536,6 +6540,775 @@ function IbpsPOvsSBIPOArticle({ post }: { post: any }) {
                 <Link href="/blog/ibps-po-salary-in-hand-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary In-Hand 2026 →</Link>
                 <Link href="/blog/bank-5-day-work-week-2026-notification-status/" className="block text-sm text-primary-600 hover:underline leading-snug">Bank 5-Day Work Week Status →</Link>
                 <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── EASIEST GOVERNMENT EXAMS 2026 ARTICLE ───────────────────────────────────
+function EasiestGovtExams2026Article({ post }: { post: any }) {
+  const toc = [
+    { id: 'what-is-easy', label: 'What Makes an Exam "Easy"?' },
+    { id: 'ranked-list', label: 'Top 10 Ranked List' },
+    { id: 'ssc-mts', label: '1. SSC MTS 2026' },
+    { id: 'india-post-gds', label: '2. India Post GDS 2026' },
+    { id: 'rrb-group-d', label: '3. RRB Group D 2026' },
+    { id: 'ssc-chsl', label: '4. SSC CHSL 2026' },
+    { id: 'ibps-clerk', label: '5. IBPS Clerk 2026' },
+    { id: 'ibps-rrb-assistant', label: '6. IBPS RRB Office Assistant' },
+    { id: 'state-police', label: '7. State Police Constable' },
+    { id: 'ssc-steno', label: '8. SSC Stenographer 2026' },
+    { id: 'agniveer', label: '9. Army Agniveer 2026' },
+    { id: 'rpf-constable', label: '10. RPF Constable 2026' },
+    { id: 'comparison', label: 'Quick Comparison Table' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Which is the easiest government exam to crack in 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SSC MTS and India Post GDS are the easiest in 2026. India Post GDS has no written exam — selection is purely on 10th board marks. SSC MTS requires a Class 10 pass and covers only basic syllabus with no interview round, and can be cracked in 3–4 months of focused preparation.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Which is the easiest bank exam in India in 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'IBPS RRB Office Assistant (Multipurpose) is widely considered the easiest bank exam in 2026. Candidates can attempt the exam in regional languages, the syllabus is lighter than IBPS Clerk, and there is no interview. IBPS Clerk is the second easiest bank exam.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Which government exam can I crack in 3 months?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SSC MTS, RRB Group D, and State Police Constable exams are realistically clearable in 3–4 months for a dedicated aspirant. All three have Class 10 level syllabuses covering Reasoning, Basic Math, General Science, and General Awareness.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the easiest government exam after 12th in 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SSC CHSL is the best government exam after 12th in 2026, with expected 4,000–6,000 vacancies for LDC, PA/SA, and DEO posts. SSC MTS also accepts 12th pass candidates and is slightly easier. RPF Constable and State Police Constable exams are other good options after 12th.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do any government exams have no interview in 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes — SSC abolished interviews for Group B and C posts in 2016. SSC MTS, SSC CHSL, SSC Stenographer, IBPS Clerk, IBPS RRB Office Assistant, RPF Constable, and India Post GDS all have zero interview rounds in 2026. Selection is based purely on written/skill tests.',
+        },
+      },
+    ],
+  };
+
+  const exams = [
+    {
+      rank: '1',
+      name: 'SSC MTS',
+      eligibility: '10th Pass',
+      ageLimit: '18–25 (MTS) / 18–27 (Havaldar)',
+      vacancies: '7,948 (2025 cycle); 2026 TBN',
+      notificationDate: '30 June 2026',
+      salary: '₹26,000–₹35,000/mo',
+      interview: 'No',
+      difficulty: '⭐⭐ (Easy)',
+    },
+    {
+      rank: '2',
+      name: 'India Post GDS',
+      eligibility: '10th Pass',
+      ageLimit: '18–40 yrs',
+      vacancies: '28,740 (Jan 2026 cycle)',
+      notificationDate: 'Closed; Next: TBN',
+      salary: '₹12,000–₹29,380/mo (TRCA)',
+      interview: 'No',
+      difficulty: '⭐ (Easiest)',
+    },
+    {
+      rank: '3',
+      name: 'RRB Group D',
+      eligibility: '10th Pass + ITI',
+      ageLimit: '18–33 yrs',
+      vacancies: '22,195 (CEN 09/2025)',
+      notificationDate: 'Released Jan 30, 2026',
+      salary: '₹22,000–₹28,000/mo',
+      interview: 'No',
+      difficulty: '⭐⭐ (Easy)',
+    },
+    {
+      rank: '4',
+      name: 'SSC CHSL',
+      eligibility: '12th Pass',
+      ageLimit: '18–27 yrs',
+      vacancies: '4,000–6,000 expected',
+      notificationDate: 'Expected May 2026',
+      salary: '₹25,000–₹35,000/mo',
+      interview: 'No',
+      difficulty: '⭐⭐⭐ (Moderate)',
+    },
+    {
+      rank: '5',
+      name: 'IBPS Clerk',
+      eligibility: 'Graduate',
+      ageLimit: '20–28 yrs',
+      vacancies: '15,700+ (last cycle)',
+      notificationDate: 'Expected Jul–Aug 2026',
+      salary: '₹37,000–₹43,000/mo',
+      interview: 'No',
+      difficulty: '⭐⭐⭐ (Moderate)',
+    },
+    {
+      rank: '6',
+      name: 'IBPS RRB Office Asst.',
+      eligibility: 'Graduate',
+      ageLimit: '18–28 yrs',
+      vacancies: 'TBN',
+      notificationDate: 'Expected Jun 2026',
+      salary: '₹40,000–₹44,000/mo',
+      interview: 'No',
+      difficulty: '⭐⭐ (Easy)',
+    },
+    {
+      rank: '7',
+      name: 'State Police Constable',
+      eligibility: '10th/12th Pass',
+      ageLimit: '18–25 yrs (varies)',
+      vacancies: '50,000+ across states',
+      notificationDate: 'Varies by state',
+      salary: '₹20,000–₹35,000/mo',
+      interview: 'No',
+      difficulty: '⭐⭐ (Easy)',
+    },
+    {
+      rank: '8',
+      name: 'SSC Stenographer',
+      eligibility: '12th Pass + Typing',
+      ageLimit: '18–27 yrs',
+      vacancies: '~2,000',
+      notificationDate: 'TBN',
+      salary: '₹26,000–₹38,000/mo',
+      interview: 'No',
+      difficulty: '⭐⭐ (Easy + Skill)',
+    },
+    {
+      rank: '9',
+      name: 'Army Agniveer',
+      eligibility: '10th/12th Pass',
+      ageLimit: '17.5–23 yrs',
+      vacancies: '~50,000+',
+      notificationDate: 'Rally-based, year-round',
+      salary: '₹30,000–₹40,000/mo (pkg)',
+      interview: 'No',
+      difficulty: '⭐⭐ (Easy + Physical)',
+    },
+    {
+      rank: '10',
+      name: 'RPF Constable',
+      eligibility: '10th Pass',
+      ageLimit: '18–25 yrs',
+      vacancies: 'TBN',
+      notificationDate: 'TBN',
+      salary: '₹22,000–₹28,000/mo',
+      interview: 'No',
+      difficulty: '⭐⭐ (Easy + Physical)',
+    },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Easiest Government Exams 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        <article>
+          {/* Dark gradient hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8">
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="badge-primary">Preparation</span>
+              <span className="bg-amber-500/20 text-amber-300 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">All Qualifications</span>
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-3">
+              Top 10 Easiest Government Exams to Crack in 2026
+            </h1>
+            <p className="text-surface-300 text-sm leading-relaxed mb-5 max-w-2xl">
+              Not every government exam needs two years of prep. SSC MTS is clearable in 3 months. India Post GDS has no written test at all. Here's the honest, ranked guide — with syllabus difficulty, notification dates, and salary for each exam.
+            </p>
+            <div className="flex flex-wrap items-center gap-4 text-surface-400 text-xs">
+              <span>📅 {post.publishedDate}</span>
+              <span>⏱ {post.readTime}</span>
+              <span>✍ {post.author}</span>
+            </div>
+          </div>
+
+          {/* 4-grid key metrics */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            {[
+              { label: 'Exams Covered', value: '10 Exams' },
+              { label: 'Min. Qualification', value: 'Class 10' },
+              { label: 'Interviews Required', value: 'None' },
+              { label: 'Best for Beginners', value: 'SSC MTS' },
+            ].map(({ label, value }) => (
+              <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* ✅ 2026 Key Update */}
+          <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-8">
+            <div className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-1">✅ 2026 Key Update</div>
+            <p className="text-sm text-surface-700 leading-relaxed">
+              SSC MTS 2026 notification is officially scheduled for <strong>30 June 2026</strong> (per SSC Examination Calendar 2026–27). The RRB Group D 2026 notification has already been released (Jan 30, 2026) for 22,195 vacancies — exam expected June 2026. All 10 exams listed below require no interview — selection is based purely on written test, skill test, or board marks.
+            </p>
+          </div>
+
+          {/* Section 1 */}
+          <section id="what-is-easy" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">1</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What Makes a Government Exam "Easy"?</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              No government exam is a shortcut. What separates "easier" exams from harder ones is a combination of four factors that affect how long you need to prepare and your realistic chances of selection.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              {[
+                { icon: '📚', title: 'Syllabus Difficulty', desc: 'Class 10 level math and reasoning vs. advanced quant or UPSC-level GS' },
+                { icon: '📊', title: 'Competition Ratio', desc: 'Applicants vs. vacancies — more vacancies = better selection odds' },
+                { icon: '🎯', title: 'Selection Stages', desc: 'Fewer stages = less attrition. No interview = no subjective elimination' },
+                { icon: '⏱', title: 'Prep Time Required', desc: '3–4 months vs. 1–2+ years of dedicated study' },
+              ].map(({ icon, title, desc }) => (
+                <div key={title} className="card p-4">
+                  <div className="text-2xl mb-2">{icon}</div>
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{title}</div>
+                  <div className="text-xs text-surface-500 leading-relaxed">{desc}</div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4">
+              <div className="text-xs font-semibold text-accent-600 uppercase tracking-wide mb-1">⚠️ Warning</div>
+              <p className="text-sm text-surface-700 leading-relaxed">
+                "Easy" does not mean clearing without preparation. Even SSC MTS attracts lakhs of applicants. The advantage is that 3–4 months of focused, daily study is genuinely sufficient — unlike UPSC or SBI PO which require 12–24 months.
+              </p>
+            </div>
+          </section>
+
+          {/* Section 2 — Ranked list overview */}
+          <section id="ranked-list" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">2</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Top 10 Easiest Government Exams in 2026 — Ranked</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-6">
+              These 10 exams are ranked based on syllabus difficulty, required preparation time, number of vacancies, and selection stages. Exams lower on the list are still manageable but need slightly more prep or have physical requirements.
+            </p>
+            <div className="space-y-3">
+              {[
+                { rank: '#1', name: 'SSC MTS 2026', tag: '10th Pass · No Interview · 3 Months Prep', anchor: 'ssc-mts' },
+                { rank: '#2', name: 'India Post GDS 2026', tag: '10th Pass · No Written Exam · Merit Based', anchor: 'india-post-gds' },
+                { rank: '#3', name: 'RRB Group D 2026', tag: '10th Pass + ITI · Railway Job · High Vacancies', anchor: 'rrb-group-d' },
+                { rank: '#4', name: 'SSC CHSL 2026', tag: '12th Pass · Clerk/DEO Posts · 4,000–6,000 Vacancies', anchor: 'ssc-chsl' },
+                { rank: '#5', name: 'IBPS Clerk 2026', tag: 'Graduate · Bank Clerk · No Interview', anchor: 'ibps-clerk' },
+                { rank: '#6', name: 'IBPS RRB Office Assistant', tag: 'Graduate · Regional Language · Easiest Bank Exam', anchor: 'ibps-rrb-assistant' },
+                { rank: '#7', name: 'State Police Constable', tag: '10th/12th Pass · 50,000+ Vacancies · Physical Test', anchor: 'state-police' },
+                { rank: '#8', name: 'SSC Stenographer 2026', tag: '12th Pass + Typing Skill · Good Salary', anchor: 'ssc-steno' },
+                { rank: '#9', name: 'Army Agniveer 2026', tag: '10th/12th Pass · Defence · Rally-based', anchor: 'agniveer' },
+                { rank: '#10', name: 'RPF Constable 2026', tag: '10th Pass · Railway Police · Physical Test', anchor: 'rpf-constable' },
+              ].map(({ rank, name, tag, anchor }) => (
+                <a key={name} href={`#${anchor}`} className="card p-4 group hover:border-primary-300 flex items-center gap-4 transition">
+                  <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm shrink-0">{rank}</div>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-600 text-sm">{name}</div>
+                    <div className="text-xs text-surface-500 mt-0.5">{tag}</div>
+                  </div>
+                  <svg className="w-4 h-4 text-primary-400 ml-auto group-hover:translate-x-1 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          {/* Exam 1 — SSC MTS */}
+          <section id="ssc-mts" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">3</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">#1 — SSC MTS 2026 (Multi Tasking Staff)</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+              {[
+                { label: '🎓 Eligibility', value: 'Class 10 Pass' },
+                { label: '📋 Age Limit', value: '18–25 (MTS) / 18–27 (Havaldar)' },
+                { label: '💰 Salary', value: '₹26,000–₹35,000/mo' },
+                { label: '📅 Notification', value: '30 June 2026' },
+              ].map(({ label, value }) => (
+                <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                  <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              SSC MTS is consistently ranked as the easiest central government exam for candidates who have passed Class 10. The exam is conducted by the Staff Selection Commission in two sessions — Session 1 (Reasoning + Math at Class 8–10 level) and Session 2 (General Awareness + Basic English). There is <strong>no negative marking in Session 1</strong>, allowing candidates to attempt all questions freely.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The 2026 notification is officially confirmed for <strong>30 June 2026</strong> per the SSC Examination Calendar 2026–27, with the exam scheduled September–November 2026. Last cycle saw 7,948 vacancies across MTS and Havaldar posts in central government ministries.
+            </p>
+            <div className="card p-5 mb-5">
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">SSC MTS 2026 — Key Facts</h3>
+              <ul className="space-y-2 text-sm text-surface-700">
+                <li className="flex items-start gap-2"><span className="text-emerald-600 font-bold mt-0.5">✓</span><span><strong>No interview:</strong> Final selection is based purely on written CBT score</span></li>
+                <li className="flex items-start gap-2"><span className="text-emerald-600 font-bold mt-0.5">✓</span><span><strong>No negative marking:</strong> Session 1 has zero penalty for wrong answers</span></li>
+                <li className="flex items-start gap-2"><span className="text-emerald-600 font-bold mt-0.5">✓</span><span><strong>Basic syllabus:</strong> Class 8–10 level Math, Reasoning, GK, and English</span></li>
+                <li className="flex items-start gap-2"><span className="text-emerald-600 font-bold mt-0.5">✓</span><span><strong>Prep time:</strong> 3–4 months of focused daily study (4–5 hours)</span></li>
+                <li className="flex items-start gap-2"><span className="text-emerald-600 font-bold mt-0.5">✓</span><span><strong>8th Pay Commission:</strong> Salary expected to rise with revised pay matrix (implementation TBN)</span></li>
+              </ul>
+            </div>
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+              <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">📌 Quick Note</div>
+              <p className="text-sm text-surface-700 leading-relaxed">
+                SSC MTS posts include Peon, Daftary, Chowkidar, and Office Support Roles across all central government ministries. These are permanent Group-C central government jobs with pension benefits, CGHS medical cover, and LTC.
+              </p>
+            </div>
+          </section>
+
+          {/* Exam 2 — India Post GDS */}
+          <section id="india-post-gds" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">4</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">#2 — India Post GDS 2026 (Gramin Dak Sevak)</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+              {[
+                { label: '🎓 Eligibility', value: 'Class 10 Pass' },
+                { label: '📋 Age Limit', value: '18–40 years' },
+                { label: '💰 Salary', value: '₹12,000–₹29,380/mo' },
+                { label: '📅 Exam', value: 'No Written Test' },
+              ].map(({ label, value }) => (
+                <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                  <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              India Post GDS is technically the <strong>easiest government job in India</strong> — because there is no written examination at all. Selection is based entirely on the candidate's 10th standard board marks. The higher your board percentage, the higher your chance of selection.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The 2026 cycle was released in January 2026 with <strong>28,740 officially confirmed vacancies</strong> across all India Post circles. Applications closed on February 14, 2026, and the 3rd merit list has been released. The next GDS cycle is expected later in 2026 — check indiapostgdsonline.gov.in for the next notification. The wide age limit (up to 40 years) and minimal qualification make it accessible to a very large pool.
+            </p>
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4">
+              <div className="text-xs font-semibold text-accent-600 uppercase tracking-wide mb-1">⚠️ Warning</div>
+              <p className="text-sm text-surface-700 leading-relaxed">
+                GDS is not a regular government job — it is a Gramin Dak Sevak (village postal worker) role with Time-Related Continuity Allowance (TRCA) in place of a standard salary. Job security and benefits are lower than regular central government posts. Apply for SSC MTS alongside GDS for a regular post.
+              </p>
+            </div>
+          </section>
+
+          {/* Exam 3 — RRB Group D */}
+          <section id="rrb-group-d" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">5</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">#3 — RRB Group D 2026</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+              {[
+                { label: '🎓 Eligibility', value: '10th + ITI / NCVT' },
+                { label: '📋 Age Limit', value: '18–33 years' },
+                { label: '💰 Salary', value: '₹22,000–₹28,000/mo' },
+                { label: '📅 Exam Date', value: 'Expected June 2026' },
+              ].map(({ label, value }) => (
+                <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                  <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              RRB Group D recruits candidates for Level-1 posts in Indian Railways — Track Maintainer, Helper, Assistant Pointsman, and similar roles. The Computer-Based Test covers General Science, Math, General Intelligence &amp; Reasoning, and General Awareness, all at the Class 10 level.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Railway jobs come with significant non-salary benefits: <strong>free railway passes, free medical for the employee and family, government quarters, and job permanency</strong>. The RRB Group D 2026 notification (CEN 09/2025) was released on <strong>January 30, 2026</strong> for 22,195 vacancies. Applications closed on March 9, 2026. The CBT exam is expected in <strong>June 2026</strong> — candidates who applied should start preparation immediately.
+            </p>
+            <div className="card p-5 mb-4">
+              <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">Why RRB Group D is Considered Easy</h3>
+              <ul className="space-y-2 text-sm text-surface-700">
+                <li className="flex items-start gap-2"><span className="text-emerald-600 font-bold mt-0.5">✓</span><span>Class 10 level syllabus — same as school curriculum</span></li>
+                <li className="flex items-start gap-2"><span className="text-emerald-600 font-bold mt-0.5">✓</span><span>Only one CBT stage (plus Physical Efficiency Test)</span></li>
+                <li className="flex items-start gap-2"><span className="text-emerald-600 font-bold mt-0.5">✓</span><span>General Science section favours Science stream students</span></li>
+                <li className="flex items-start gap-2"><span className="text-emerald-600 font-bold mt-0.5">✓</span><span>No interview — objective CBT decides final merit list</span></li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Exam 4 — SSC CHSL */}
+          <section id="ssc-chsl" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">6</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">#4 — SSC CHSL 2026 (Combined Higher Secondary Level)</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+              {[
+                { label: '🎓 Eligibility', value: '12th Pass' },
+                { label: '📋 Age Limit', value: '18–27 years' },
+                { label: '💰 Salary', value: '₹25,000–₹38,000/mo' },
+                { label: '📅 Notification', value: 'Expected May–Jun 2026' },
+              ].map(({ label, value }) => (
+                <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                  <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              SSC CHSL is the best option if you've completed 12th and want a central government desk job. Posts include Lower Division Clerk (LDC), Postal Assistant (PA), Sorting Assistant (SA), and Data Entry Operator (DEO) across central government ministries. Expected vacancies for 2026 are 4,000–6,000 based on previous cycles (2025 cycle saw 6,013 vacancies).
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The Tier 1 exam covers General Intelligence, General Awareness, Quantitative Aptitude (basic arithmetic), and English at a Class 12 level. A Tier 2 CBT plus Skill/Typing Test follows. There is <strong>no interview</strong>. SSC abolished interviews for all Group B and C posts in 2016.
+            </p>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+              <div className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-1">✅ 2026 Key Update</div>
+              <p className="text-sm text-surface-700 leading-relaxed">
+                SSC CHSL 2026 notification is expected in May–June 2026 per the SSC Examination Calendar. Tier 1 (CBT) is likely to be scheduled July–September 2026. Apply at <strong>ssc.gov.in</strong> once the notification is live.
+              </p>
+            </div>
+          </section>
+
+          {/* Exam 5 — IBPS Clerk */}
+          <section id="ibps-clerk" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">7</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">#5 — IBPS Clerk 2026</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+              {[
+                { label: '🎓 Eligibility', value: 'Graduate' },
+                { label: '📋 Age Limit', value: '20–28 years' },
+                { label: '💰 Salary', value: '₹37,000–₹43,000/mo' },
+                { label: '📅 Notification', value: 'Expected Jul–Aug 2026' },
+              ].map(({ label, value }) => (
+                <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                  <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              IBPS Clerk is the gateway to public sector banking for graduates. The exam tests English, Reasoning, and Quantitative Aptitude at a basic level — no advanced topics, no Group Discussion, no interview. Selection is based entirely on Prelims and Mains scores.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              IBPS Clerk posts are offered across 11 nationalised banks including Punjab National Bank, Bank of Baroda, Union Bank, and Indian Bank. The 12th Bipartite Settlement (2022–2027) revised IBPS Clerk basic pay to <strong>₹24,050/month</strong>. With DA at 60%, HRA, and special allowances, the actual in-hand salary is approximately <strong>₹37,000–₹43,000/month</strong> depending on city of posting — significantly higher than the pre-settlement figures still cited by older sources.
+            </p>
+          </section>
+
+          {/* Exam 6 — IBPS RRB */}
+          <section id="ibps-rrb-assistant" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">8</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">#6 — IBPS RRB Office Assistant 2026 (Easiest Bank Exam)</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+              {[
+                { label: '🎓 Eligibility', value: 'Graduate' },
+                { label: '📋 Age Limit', value: '18–28 years' },
+                { label: '💰 Salary', value: '₹40,000–₹44,000/mo' },
+                { label: '📅 Notification', value: 'Expected Jun 2026' },
+              ].map(({ label, value }) => (
+                <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                  <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                  <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              IBPS RRB Office Assistant (Multipurpose) is the easiest bank exam in India in 2026. Conducted by IBPS for Regional Rural Banks, the key advantage is that candidates can write the exam <strong>in their regional language</strong> — Hindi, Telugu, Tamil, Kannada, Marathi, Bengali, Gujarati, and more.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The Prelims exam has only two sections — Reasoning (40 questions) and Numerical Ability (40 questions). There is no English section in the Prelims, which is a major advantage for candidates more comfortable in regional languages. No interview is conducted — final merit is based on Mains scores only.
+            </p>
+          </section>
+
+          {/* Exam 7 — State Police */}
+          <section id="state-police" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">9</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">#7 — State Police Constable 2026</h2>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              State Police Constable exams are among the most accessible government exams, with minimum qualification of 10th or 12th pass depending on the state. With over 50,000+ vacancies across states like UP (32,679), Maharashtra, Bihar, and Rajasthan in 2025–26, these exams offer high absolute selection numbers.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Written tests are at a basic level — General Knowledge, Reasoning, Hindi/Regional Language, and Elementary Math. A Physical Efficiency Test (PET) and Medical Examination follow. There is <strong>no interview</strong> for constable posts.
+            </p>
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4">
+              <div className="text-xs font-semibold text-accent-600 uppercase tracking-wide mb-1">⚠️ Warning</div>
+              <p className="text-sm text-surface-700 leading-relaxed">
+                State Police Constable exams are state-specific — each state has its own syllabus, physical standards, and notification cycle. Check the notification for your state's police recruitment board directly. Physical standards (height, chest, running distance) must be met — start physical preparation early alongside written prep.
+              </p>
+            </div>
+          </section>
+
+          {/* Exams 8–10 condensed */}
+          <section id="ssc-steno" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">10</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">#8 to #10 — SSC Steno, Army Agniveer &amp; RPF Constable</h2>
+            </div>
+            <div className="space-y-5">
+              {/* SSC Steno */}
+              <div id="ssc-steno-detail" className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-2">#8 — SSC Stenographer 2026</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
+                  {[
+                    { label: '🎓 Eligibility', value: '12th Pass' },
+                    { label: '📋 Age Limit', value: '18–27 years' },
+                    { label: '💰 Salary', value: '₹26,000–₹38,000/mo' },
+                  ].map(({ label, value }) => (
+                    <div key={label} className="bg-surface-50 rounded-xl p-3 border border-surface-200">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                      <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-surface-700 leading-relaxed">
+                  SSC Stenographer is an excellent option for 12th-pass candidates with good typing speed. The written exam (General Intelligence + General Awareness + English) is manageable. The skill test (shorthand at 100/80 wpm for Grade C/D) is the differentiator — if you can type well, the written test is straightforward. No interview. Vacancies are announced periodically; expect the 2026 notification on the SSC calendar.
+                </p>
+              </div>
+
+              {/* Army Agniveer */}
+              <div id="agniveer-detail" className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-2">#9 — Army Agniveer 2026</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
+                  {[
+                    { label: '🎓 Eligibility', value: '10th or 12th Pass' },
+                    { label: '📋 Age Limit', value: '17.5–23 years' },
+                    { label: '💰 Package', value: '₹30,000–₹40,000/mo' },
+                  ].map(({ label, value }) => (
+                    <div key={label} className="bg-surface-50 rounded-xl p-3 border border-surface-200">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                      <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-surface-700 leading-relaxed">
+                  Army Agniveer is a 4-year defence service scheme with approximately 50,000+ entries annually through rally-based recruitment. The Common Entrance Examination (CEE) covers Class 10–12 level Science, Math, GK, and Reasoning. Physical fitness (run, beam, balance, 9 ft ditch) is a genuine filter. Around 25% of Agniveers are retained as regular Army soldiers after 4 years.
+                </p>
+              </div>
+
+              {/* RPF Constable */}
+              <div id="rpf-constable-detail" className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-2">#10 — RPF Constable 2026</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
+                  {[
+                    { label: '🎓 Eligibility', value: '10th Pass' },
+                    { label: '📋 Age Limit', value: '18–25 years' },
+                    { label: '💰 Salary', value: '₹22,000–₹28,000/mo' },
+                  ].map(({ label, value }) => (
+                    <div key={label} className="bg-surface-50 rounded-xl p-3 border border-surface-200">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{label}</div>
+                      <div className="font-semibold mt-1 text-sm text-surface-800">{value}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-surface-700 leading-relaxed">
+                  RPF (Railway Protection Force) Constable is a Central Armed Police Force post under Indian Railways. It requires only a 10th pass. The written CBT covers General Awareness, Arithmetic, and General Intelligence &amp; Reasoning at a basic level, followed by PET and PMT. RPF 2026 notification dates are To Be Notified (TBN) — check indianrailways.gov.in or rpfonlinereg.org for updates.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Quick Comparison Table */}
+          <section id="comparison" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">11</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Quick Comparison Table — All 10 Exams</h2>
+            </div>
+            <div className="overflow-x-auto rounded-xl border border-surface-200">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white font-heading text-xs">
+                    <th className="text-left px-4 py-3">Exam</th>
+                    <th className="text-left px-4 py-3">Min. Qualification</th>
+                    <th className="text-left px-4 py-3">Age</th>
+                    <th className="text-left px-4 py-3">Interview</th>
+                    <th className="text-left px-4 py-3">Salary (In-Hand)</th>
+                    <th className="text-left px-4 py-3">Difficulty</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {exams.map((exam, i) => (
+                    <tr key={exam.name} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 font-medium text-surface-800 whitespace-nowrap">{exam.rank}. {exam.name}</td>
+                      <td className="px-4 py-3 text-surface-600 whitespace-nowrap">{exam.eligibility}</td>
+                      <td className="px-4 py-3 text-surface-600 whitespace-nowrap">{exam.ageLimit}</td>
+                      <td className="px-4 py-3">
+                        <span className="badge-green">{exam.interview}</span>
+                      </td>
+                      <td className="px-4 py-3 text-emerald-700 font-medium whitespace-nowrap">{exam.salary}</td>
+                      <td className="px-4 py-3 text-surface-600 whitespace-nowrap">{exam.difficulty}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400 mt-3">*Salary figures are approximate in-hand for 7th CPC. Notification dates and vacancies are as per available information on May 19, 2026. TBN = To Be Notified.</p>
+          </section>
+
+          {/* Which should you choose */}
+          <section className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">12</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Which Exam Should You Choose?</h2>
+            </div>
+            <div className="space-y-3">
+              {[
+                { profile: 'Just passed Class 10, age 18–25', choice: '→ Apply for India Post GDS immediately (no study needed) + start SSC MTS prep in parallel.' },
+                { profile: 'Class 10 pass, comfortable with physical tests', choice: '→ RRB Group D or RPF Constable or State Police Constable.' },
+                { profile: 'Class 12 pass, want a desk job', choice: '→ SSC CHSL. If good at typing, also add SSC Stenographer.' },
+                { profile: 'Graduate, want a bank job', choice: '→ IBPS RRB Office Assistant first (easiest), then IBPS Clerk. Both have overlapping prep.' },
+                { profile: 'Class 12 (PCM), age under 23, physically fit', choice: '→ Army Agniveer is worth adding — 50,000 entries, your school syllabus maps directly to the CEE.' },
+                { profile: 'Preparing for multiple exams', choice: '→ SSC MTS + SSC CHSL share ~80% syllabus. IBPS Clerk + IBPS RRB share ~90% syllabus. Pair them.' },
+              ].map(({ profile, choice }, i) => (
+                <div key={i} className="card p-4">
+                  <div className="text-xs font-heading font-semibold text-primary-600 mb-1">If you are: {profile}</div>
+                  <div className="text-sm text-surface-700">{choice}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Internal link to eligibility checker */}
+          <div className="card p-6 mb-12 bg-primary-50 border-primary-200">
+            <h3 className="font-heading font-semibold text-surface-800 mb-2">Not Sure Which Exam You Are Eligible For?</h3>
+            <p className="text-sm text-surface-600 mb-4">Use the TaiyarHo Eligibility Checker — enter your age, qualification, and category to see which of these 10 exams you qualify for right now.</p>
+            <Link href="/tools/eligibility-checker/" className="btn-primary inline-block">
+              Check Your Eligibility →
+            </Link>
+          </div>
+
+          {/* FAQs */}
+          <section id="faq" className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">13</div>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+            </div>
+            <div className="space-y-3">
+              {[
+                {
+                  q: 'Which is the easiest government exam to crack in 2026?',
+                  a: 'SSC MTS and India Post GDS are the easiest. India Post GDS has no written exam — selection is on 10th board marks. SSC MTS has a Class 10 level syllabus, no interview, and no negative marking in Session 1 — clearable in 3–4 months of focused prep.',
+                },
+                {
+                  q: 'Which is the easiest bank exam in India in 2026?',
+                  a: 'IBPS RRB Office Assistant (Multipurpose) is the easiest bank exam in 2026. Candidates can appear in regional languages, there is no English section in Prelims, and no interview. IBPS Clerk is the second easiest.',
+                },
+                {
+                  q: 'Which government exam can I crack in 3 months?',
+                  a: 'SSC MTS, RRB Group D, and State Police Constable exams are realistically clearable in 3–4 months with 4–5 hours of daily study. All have Class 10 level syllabuses.',
+                },
+                {
+                  q: 'What is the easiest government exam after 12th in 2026?',
+                  a: 'SSC CHSL is the best exam after 12th in 2026, with expected 4,000–6,000 vacancies for LDC, PA/SA, and DEO posts. SSC Stenographer is another option if you have typing skills.',
+                },
+                {
+                  q: 'Do any government exams have no interview in 2026?',
+                  a: 'Yes — SSC abolished interviews for Group B and C posts in 2016. SSC MTS, SSC CHSL, SSC Stenographer, IBPS Clerk, IBPS RRB Office Assistant, RPF Constable, and India Post GDS all have zero interview rounds. Selection is entirely written/skill test based.',
+                },
+              ].map(({ q, a }, i) => (
+                <details key={i} className="card overflow-hidden">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 text-sm">
+                    {q}
+                    <svg className="w-4 h-4 text-surface-400 shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{a}</div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* Disclaimer */}
+          <div className="bg-surface-50 border border-surface-200 rounded-xl p-5 text-xs text-surface-500 leading-relaxed">
+            <strong className="text-surface-700">Disclaimer:</strong> Notification dates, vacancies, and salary figures are based on official announcements and verified sources as of May 19, 2026. TBN (To Be Notified) means the official announcement has not been made. Always verify final details at official sources: <strong>ssc.gov.in</strong>, <strong>ibps.in</strong>, <strong>indianpost.gov.in</strong>, and respective RRB/Police Board websites before applying.
+          </div>
+        </article>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">IN THIS ARTICLE</div>
+              <ol className="space-y-2">
+                {toc.map(item => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm text-surface-600 hover:text-primary-500 leading-snug block">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-3">💰 SALARY SNAPSHOT</div>
+              <div className="space-y-2">
+                {[
+                  ['SSC MTS', '₹26,000–₹35,000'],
+                  ['India Post GDS', '₹12,000–₹29,380'],
+                  ['RRB Group D', '₹22,000–₹28,000'],
+                  ['SSC CHSL (DEO)', '₹25,000–₹35,000'],
+                  ['IBPS Clerk', '₹37,000–₹43,000'],
+                  ['IBPS RRB Asst.', '₹40,000–₹44,000'],
+                ].map(([label, val]) => (
+                  <div key={label} className="flex justify-between">
+                    <span className="text-surface-500 text-xs">{label}</span>
+                    <span className="font-semibold text-emerald-700 text-xs text-right">{val}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">🗓 NOTIFICATION DATES</div>
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between"><span className="text-surface-500">SSC MTS</span><span className="font-semibold text-surface-700">30 Jun 2026</span></div>
+                <div className="flex justify-between"><span className="text-surface-500">SSC CHSL</span><span className="font-semibold text-surface-700">May–Jun 2026</span></div>
+                <div className="flex justify-between"><span className="text-surface-500">IBPS RRB</span><span className="font-semibold text-surface-700">Jun 2026 (Exp.)</span></div>
+                <div className="flex justify-between"><span className="text-surface-500">IBPS Clerk</span><span className="font-semibold text-surface-700">Jul–Aug 2026 (Exp.)</span></div>
+                <div className="flex justify-between"><span className="text-surface-500">RRB Group D</span><span className="font-semibold text-surface-700">Exam: Jun 2026</span></div>
+                <div className="flex justify-between"><span className="text-surface-500">RPF Constable</span><span className="font-semibold text-surface-700">TBN</span></div>
+              </div>
+            </div>
+
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">RELATED LINKS</div>
+              <div className="space-y-2">
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
+                <Link href="/exams/rrb-ntpc/" className="block text-sm text-primary-600 hover:underline leading-snug">RRB NTPC 2026 Guide →</Link>
+                <Link href="/exams/ssc-cgl/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL 2026 Guide →</Link>
+                <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Age Limit & Relaxations →</Link>
+                <Link href="/blog/highest-salary-government-exam-after-12th-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Highest Salary After 12th →</Link>
               </div>
             </div>
           </div>
