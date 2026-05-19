@@ -29,10 +29,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (params.slug === 'ssc-cgl') {
     return {
       title: 'SSC CGL 2026 – Syllabus, Eligibility & Preparation Guide | TaiyarHo',
-      description: 'SSC CGL 2026 notification released. Tier 1 exam in May–June 2026. Check complete syllabus, exam pattern, eligibility, 14,000+ vacancies, salary, best books and free study resources.',
+      description: 'SSC CGL 2026 notification delayed — expected late May/June 2026. Tier 1 exam expected June–July 2026. Check complete syllabus, exam pattern, eligibility, vacancies (TBA), salary, best books and free study resources.',
       keywords: 'SSC CGL 2026, SSC CGL syllabus, SSC CGL taiyari, sarkari naukri taiyari, SSC CGL परीक्षा तैयारी, SSC CGL सिलेबस, government exam preparation',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ssc-cgl/' },
-      other: { 'description:hi': 'SSC CGL 2026 परीक्षा की पूरी जानकारी – सिलेबस, परीक्षा पैटर्न, पात्रता, 14,000+ रिक्तियाँ, वेतन और मुफ्त अध्ययन सामग्री। SSC CGL तैयारी के लिए TaiyarHo पर आएं।' },
+      other: { 'description:hi': 'SSC CGL 2026 अधिसूचना में देरी — मई/जून 2026 में अपेक्षित। Tier 1 परीक्षा जून–जुलाई 2026 में संभावित। सिलेबस, परीक्षा पैटर्न, पात्रता, वेतन और मुफ्त अध्ययन सामग्री देखें। TaiyarHo पर तैयारी करें।' },
     };
   }
 
@@ -1605,13 +1605,13 @@ function SscCglPage({ exam }: { exam: any }) {
   ];
 
   const importantDates = [
-    { event: 'Official Notification Released', date: '31 March 2026', status: 'released' },
-    { event: 'Online Application Opens', date: '31 March 2026', status: 'released' },
-    { event: 'Last Date to Apply Online', date: '30 April 2026', status: 'upcoming' },
-    { event: 'Application Correction Window', date: 'May 2026 (TBN)', status: 'tbn' },
-    { event: 'Tier 1 Admit Card', date: 'Last week of April 2026 (TBN)', status: 'tbn' },
-    { event: 'Tier 1 Exam Date', date: 'May – June 2026', status: 'upcoming' },
-    { event: 'Tier 1 Answer Key Release', date: 'Within 1 week of exam (TBN)', status: 'tbn' },
+    { event: 'Official Notification Release', date: 'Expected: Late May / June 2026 (Delayed)', status: 'tbn' },
+    { event: 'Online Application Opens', date: 'Expected: Late May / June 2026', status: 'tbn' },
+    { event: 'Last Date to Apply Online', date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: 'Application Correction Window', date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: 'Tier 1 Admit Card', date: 'To Be Notified (TBN)', status: 'tbn' },
+    { event: 'Tier 1 Exam Date', date: 'Expected: June–July 2026', status: 'tbn' },
+    { event: 'Tier 1 Answer Key Release', date: 'To Be Notified (TBN)', status: 'tbn' },
     { event: 'Tier 1 Result', date: 'To be notified (TBN)', status: 'tbn' },
     { event: 'Tier 2 Admit Card', date: 'To be notified (TBN)', status: 'tbn' },
     { event: 'Tier 2 Exam Date', date: 'To be notified (TBN)', status: 'tbn' },
@@ -1658,7 +1658,7 @@ function SscCglPage({ exam }: { exam: any }) {
     { year: '2023', vacancies: '17,727' },
     { year: '2024', vacancies: '17,727' },
     { year: '2025', vacancies: '14,582' },
-    { year: '2026', vacancies: '14,000–15,000 (Expected)' },
+    { year: '2026', vacancies: 'TBA (Notification Awaited)' },
   ];
 
   const statusColor = (s: string) => {
@@ -1687,19 +1687,20 @@ function SscCglPage({ exam }: { exam: any }) {
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">SSC</span>
             <span className="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">Central Govt</span>
-            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 Notification Out</span>
+            <span className="bg-orange-400/20 text-orange-200 text-xs font-semibold px-3 py-1 rounded-full">🔔 Notification Awaited</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight">
             SSC CGL 2026 – Complete<br className="hidden sm:block" /> Preparation Guide
           </h1>
           <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
-            SSC CGL 2026 notification released on 31 March 2026. Tier 1 exam in May–June 2026. 14,000+ vacancies for Group B & C posts in Central Government.
+            SSC CGL 2026 official notification is delayed and expected in late May/June 2026. Tier 1 exam expected June–July 2026. 15,000+ vacancies expected for Group B &amp; C posts across Central Government.
           </p>
+          <p className="text-blue-200 text-xs mb-4">📅 Last updated: 19 May 2026</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              { label: 'Vacancies (2025)', value: '14,582' },
-              { label: 'Tier 1 Exam', value: 'May–Jun 2026' },
-              { label: 'Application Deadline', value: '30 Apr 2026' },
+              { label: 'Vacancies 2026', value: 'TBA' },
+              { label: 'Tier 1 Exam (Expected)', value: 'Jun–Jul 2026' },
+              { label: 'Notification (Expected)', value: 'Late May/Jun 2026' },
               { label: 'Salary (Max)', value: '₹1,51,100/mo' },
             ].map((item) => (
               <div key={item.label} className="bg-white/10 rounded-xl px-4 py-3 border border-white/10">
@@ -1733,10 +1734,10 @@ function SscCglPage({ exam }: { exam: any }) {
                   The <strong>Staff Selection Commission Combined Graduate Level (SSC CGL) 2026</strong> is one of India&apos;s most sought-after government recruitment exams. Conducted annually by SSC, it fills <strong>Group B and Group C</strong> posts across central government ministries, departments, and organizations — from Income Tax Inspector and CBI Sub Inspector to Auditor, Accountant, and Assistant Section Officer.
                 </p>
                 <p className="text-surface-600 leading-relaxed mb-4">
-                  With <strong>over 20 lakh aspirants</strong> competing for approximately 14,000–15,000 vacancies each cycle, SSC CGL offers unmatched job security, a structured career path, and a competitive salary — making it the dream exam for millions of graduates across India.
+                  With <strong>over 20 lakh aspirants</strong> competing each cycle for Group B &amp; C posts across central ministries, SSC CGL offers unmatched job security, a structured career path, and a competitive salary — making it the dream exam for millions of graduates across India.
                 </p>
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
-                  <strong>💡 Key update for 2026:</strong> The SSC CGL 2026 official notification was released on <strong>31 March 2026</strong>. The Tier 1 Computer Based Examination is scheduled for <strong>May–June 2026</strong>. Applications close on <strong>30 April 2026</strong>. Complete your One-Time Registration (OTR) on ssc.gov.in now.
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+                  <strong>⚠️ Update — 19 May 2026:</strong> The SSC CGL 2026 official notification has been <strong>delayed due to administrative reasons</strong> and is now expected to release in <strong>late May / June 2026</strong>. The Tier 1 exam is consequently expected to move to <strong>June–July or July 2026</strong>. The previously reported date of 31 March 2026 is incorrect. Monitor <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="underline text-amber-700">ssc.gov.in</a> and the official <strong>mySSC app</strong> for the confirmed notification.
                 </div>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -1857,9 +1858,13 @@ function SscCglPage({ exam }: { exam: any }) {
             {/* VACANCIES & POSTS */}
             <section id="vacancies" className="mb-12">
               <SectionHeading num="4" title="SSC CGL 2026 Vacancies & Posts" />
-              <div className="card p-5 mb-5 bg-blue-50 border-blue-200">
-                <p className="text-sm text-blue-800">
-                  <strong>Vacancy Update:</strong> SSC CGL 2026 vacancy details will be released with the official notification. Based on previous years, approximately <strong>14,000–15,000 posts</strong> are expected. SSC CGL 2025 had <strong>14,582 officially notified vacancies</strong>.
+              <div className="card p-5 mb-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm flex items-center gap-2">📱 Official mySSC App — Now Live</h3>
+                <p className="text-sm text-primary-700 leading-relaxed">SSC has launched the official <strong>mySSC mobile app</strong>. Candidates can now complete their <strong>One-Time Registration (OTR)</strong>, apply for exams directly, and verify identity via <strong>Aadhaar-based face/OTP authentication</strong> — all within the app. Download from the Google Play Store or Apple App Store and complete your OTR before the notification releases.</p>
+              </div>
+              <div className="card p-5 mb-5 bg-amber-50 border-amber-200">
+                <p className="text-sm text-amber-800">
+                  <strong>⚠️ Vacancy Update (19 May 2026):</strong> SSC CGL 2026 vacancies are <strong>To Be Announced (TBA)</strong> — the official notification is delayed and expected in late May/June 2026. Based on previous cycles, approximately <strong>15,000+ posts</strong> are expected. SSC CGL 2025 had <strong>14,582 officially notified vacancies</strong>. Do not rely on any unofficial vacancy figures until the formal notification is live on ssc.gov.in.
                 </p>
               </div>
               <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">Vacancy Trend (Last 8 Years)</h3>
@@ -2163,17 +2168,17 @@ function SscCglPage({ exam }: { exam: any }) {
                   ))}
                 </nav>
               </div>
-              <div className="card p-5 bg-emerald-50 border-emerald-200">
-                <h3 className="font-heading font-semibold text-emerald-800 mb-2 text-sm">🔔 Apply Online</h3>
-                <p className="text-xs text-emerald-700 mb-3">Notification released. Last date: 30 April 2026</p>
-                <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center text-sm font-semibold py-2 rounded-lg transition-colors">Apply at ssc.gov.in →</a>
+              <div className="card p-5 bg-amber-50 border-amber-200">
+                <h3 className="font-heading font-semibold text-amber-800 mb-2 text-sm">🔔 Notification Awaited</h3>
+                <p className="text-xs text-amber-700 mb-3">Expected: Late May / June 2026. Monitor ssc.gov.in and the official mySSC app for updates.</p>
+                <a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" className="block w-full bg-amber-600 hover:bg-amber-700 text-white text-center text-sm font-semibold py-2 rounded-lg transition-colors">Check ssc.gov.in →</a>
               </div>
               <div className="card p-5 bg-primary-50 border-primary-200">
                 <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm">Quick Facts</h3>
                 <div className="space-y-2 text-xs text-primary-700">
-                  <div className="flex justify-between"><span>Application Fee</span><strong>₹100</strong></div>
-                  <div className="flex justify-between"><span>Vacancies (2025)</span><strong>14,582</strong></div>
-                  <div className="flex justify-between"><span>Tier 1</span><strong>May–Jun 2026</strong></div>
+                  <div className="flex justify-between"><span>Application Fee</span><strong>₹100 (Gen/OBC)</strong></div>
+                  <div className="flex justify-between"><span>Vacancies 2026</span><strong>TBA</strong></div>
+                  <div className="flex justify-between"><span>Tier 1 (Expected)</span><strong>Jun–Jul 2026</strong></div>
                   <div className="flex justify-between"><span>Interview</span><strong>No Interview</strong></div>
                   <div className="flex justify-between"><span>Attempts</span><strong>Unlimited</strong></div>
                 </div>
@@ -2308,8 +2313,9 @@ function SscGdPage({ exam }: { exam: any }) {
             SSC GD Constable 2026 –<br className="hidden sm:block" /> Complete Preparation Guide
           </h1>
           <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
-            CBT exam underway: 27 April – 30 May 2026. 25,487 vacancies in BSF, CISF, CRPF, ITBP, SSB, Assam Rifles & NCB. Class 10 pass eligible.
+            CBT exam underway: 27 April – 30 May 2026. 25,487 vacancies in BSF, CISF, CRPF, ITBP, SSB, Assam Rifles &amp; NCB. Class 10 pass eligible.
           </p>
+          <p className="text-blue-200 text-xs mb-4">📅 Last updated: 19 May 2026</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { label: 'Total Vacancies', value: '25,487' },
@@ -2429,6 +2435,37 @@ function SscGdPage({ exam }: { exam: any }) {
                     </tbody>
                   </table>
                 </div>
+              </div>
+
+              {/* One-Time 5-Year Age Relaxation Alert */}
+              <div className="bg-amber-50 border-l-4 border-amber-500 rounded-r-xl p-5 mt-4">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🚨</span>
+                  <div>
+                    <h4 className="font-heading font-bold text-amber-800 mb-1">Special One-Time 5-Year Age Relaxation Announced</h4>
+                    <p className="text-sm text-amber-800 leading-relaxed">
+                      Union Home Minister <strong>Amit Shah</strong> has announced a <strong>one-time additional 5-year age relaxation</strong> for candidates who were adversely affected by recent exam scheduling delays and recruitment disruptions in CAPF recruitments. This relaxation is applicable over and above the standard category-wise relaxations shown above. <strong>Candidates who may have crossed the normal upper age limit due to CAPF recruitment delays should check their eligibility again with this additional relaxation.</strong>
+                    </p>
+                    <p className="text-xs text-amber-700 mt-2">Source: Home Ministry announcement. Always verify the exact applicability from the official SSC notification or ssc.gov.in.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* PwBD Clause */}
+              <div className="bg-red-50 border border-red-200 rounded-xl p-4 mt-4">
+                <h4 className="font-heading font-semibold text-red-800 mb-1 text-sm">⚠️ Important: PwBD Candidates — Not Eligible</h4>
+                <p className="text-sm text-red-700 leading-relaxed">
+                  <strong>Persons with Benchmark Disabilities (PwBD) are not eligible to apply for SSC GD Constable.</strong> The posts are in the Central Armed Police Forces (CAPFs), which have mandatory combat and security-related physical requirements. These posts are classified as unsuitable for PwBD candidates as per the mandate of the respective CAPF forces. While standard government age relaxation tables list PwBD relaxations, the physical benchmark requirements effectively disqualify PwBD applicants from these specific posts.
+                </p>
+              </div>
+
+              {/* Eligibility Checker CTA */}
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mt-4 flex items-center justify-between gap-4">
+                <div>
+                  <p className="font-heading font-semibold text-primary-800 text-sm mb-0.5">Not sure if you qualify?</p>
+                  <p className="text-xs text-primary-600">Check your age eligibility instantly with the TaiyarHo Eligibility Checker tool.</p>
+                </div>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-sm px-4 py-2 whitespace-nowrap flex-shrink-0">Check Eligibility →</Link>
               </div>
             </section>
 
@@ -2968,6 +3005,7 @@ function UpPoliceConstablePage({ exam }: { exam: any }) {
     { event: 'Official Notification Released', date: '31 December 2025', status: 'released' },
     { event: 'Online Application Opens', date: '31 December 2025', status: 'released' },
     { event: 'Last Date to Apply Online', date: '30 January 2026', status: 'released' },
+    { event: 'Fee Adjustment & Application Correction Window', date: '2 February 2026', status: 'released' },
     { event: 'OTR (One-Time Registration) Mandatory', date: 'Active at uppbpb.gov.in', status: 'released' },
     { event: 'Admit Card Release', date: 'To be notified (TBN)', status: 'tbn' },
     { event: 'Written Exam – Day 1', date: '08 June 2026', status: 'upcoming' },
@@ -3007,10 +3045,10 @@ function UpPoliceConstablePage({ exam }: { exam: any }) {
   ];
 
   const physicalPst = [
-    { category: 'Male – General / OBC / EWS / SC', height: '168 cm', chest: '79 cm (min. 5 cm expansion)', weight: 'Proportionate' },
-    { category: 'Male – ST / Hilly / Tribal Areas', height: '160 cm', chest: '77 cm (min. 5 cm expansion)', weight: 'Proportionate' },
-    { category: 'Female – General / OBC / EWS / SC', height: '152 cm', chest: 'N/A', weight: 'Proportionate' },
-    { category: 'Female – ST / Hilly / Tribal Areas', height: '147 cm', chest: 'N/A', weight: 'Proportionate' },
+    { category: 'Male – General / OBC / EWS / SC', height: '168 cm', chest: '79 cm unexpanded / 84 cm expanded (min. 5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Male – ST / Hilly / Tribal Areas', height: '160 cm', chest: '77 cm unexpanded / 82 cm expanded (min. 5 cm expansion)', weight: 'Proportionate' },
+    { category: 'Female – General / OBC / EWS / SC', height: '152 cm', chest: 'N/A', weight: 'Minimum 40 kg' },
+    { category: 'Female – ST / Hilly / Tribal Areas', height: '147 cm', chest: 'N/A', weight: 'Minimum 40 kg' },
   ];
 
   const physicalPet = [
@@ -3085,7 +3123,7 @@ function UpPoliceConstablePage({ exam }: { exam: any }) {
   const faqs = [
     { q: 'How many vacancies are there in UP Police Constable 2026?', a: 'UPPRPB has announced a total of 32,679 vacancies in its notification released on 31 December 2025. These include posts for Civil Police, PAC, Special Security Force, Jail Warder, and Mounted Police.' },
     { q: 'When is the UP Police Constable 2026 written exam?', a: 'The written examination is scheduled across three days – 8, 9, and 10 June 2026. It will be conducted in offline (OMR-based) mode across multiple exam centres in Uttar Pradesh.' },
-    { q: 'Is there negative marking in the UP Police Constable exam?', a: 'There is some conflicting information across sources. Some report that negative marking has been removed for 2026, while others mention 0.5 marks deducted per wrong answer. Always verify the exact rule from the official UPPRPB notification at uppbpb.gov.in before the exam.' },
+    { q: 'Is there negative marking in the UP Police Constable exam?', a: 'Yes. As per the official UPPRPB notification, a negative marking of 0.5 marks is deducted for each incorrect answer. Each correct answer carries +2 marks, so attempting wrong answers can significantly hurt your score. Avoid guessing on questions you are unsure about.' },
     { q: 'What is the minimum educational qualification for UP Police Constable?', a: 'Candidates must have passed Class 12 (Intermediate) or an equivalent examination from a recognised board. This qualification must be completed on or before the last date of application.' },
     { q: 'Are the physical tests (PET and PST) part of the merit calculation?', a: 'No. Both the Physical Efficiency Test (PET) and Physical Standard Test (PST) are qualifying in nature only. The final merit list is prepared entirely on the basis of written examination marks.' },
     { q: 'What is the salary of a UP Police Constable?', a: 'The basic pay scale is Rs.21,700 to Rs.69,100 per month under Level 3 of the 7th Pay Commission. Including allowances such as DA, HRA, and TA, the gross monthly salary typically ranges from Rs.30,000 to Rs.40,000.' },
@@ -3115,6 +3153,7 @@ function UpPoliceConstablePage({ exam }: { exam: any }) {
           <p className="text-blue-100 text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
             UPPRPB has announced 32,679 constable vacancies. Written exam scheduled 8–10 June 2026. Minimum qualification: 12th Pass. 150 questions, 300 marks, 2 hours.
           </p>
+          <p className="text-blue-200 text-xs mb-4">📅 Last updated: 19 May 2026</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { label: 'Total Vacancies', value: '32,679' },
@@ -3209,8 +3248,8 @@ function UpPoliceConstablePage({ exam }: { exam: any }) {
                 {[
                   { label: 'Nationality', value: 'Indian citizen. Tibetan refugees who arrived in India before 1 January 1962 are also eligible under specified conditions.' },
                   { label: 'Educational Qualification', value: 'Class 12 (Intermediate) pass or equivalent from a recognised board. Must be completed on or before the last date of application.' },
-                  { label: 'Application Fee', value: 'General / OBC / EWS: ₹400 | SC / ST / Female: ₹400. Payment via Debit Card, Credit Card, or Net Banking.' },
-                  { label: 'Age Reference Date', value: 'Age calculated as on 1 July 2025. The UP Government granted a one-time 3-year relaxation in the upper age limit for all categories.' },
+                  { label: 'Application Fee', value: 'General / OBC / EWS: ₹500 | SC / ST: ₹400. Payment via Debit Card, Credit Card, or Net Banking.' },
+                  { label: 'Application Window', value: 'Registration: 31 Dec 2025 – 30 Jan 2026 | Correction Window: Closed 2 Feb 2026.' },
                 ].map((item) => (
                   <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
                     <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.label}</div>
@@ -3320,7 +3359,7 @@ function UpPoliceConstablePage({ exam }: { exam: any }) {
                 <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">📌 Key Exam Rules</h3>
                 <ul className="space-y-2 text-sm text-surface-600">
                   <li className="flex gap-2"><span className="text-emerald-500 font-bold">✓</span> Each correct answer: <strong>+2 marks</strong></li>
-                  <li className="flex gap-2"><span className="text-red-400 font-bold">✗</span> Negative marking: <strong>0.5 marks deducted per wrong answer</strong> — verify the exact rule from the official notification at uppbpb.gov.in</li>
+                  <li className="flex gap-2"><span className="text-red-400 font-bold">✗</span> Negative marking: <strong>–0.5 marks deducted per wrong answer</strong> as officially mandated in the UPPRPB notification</li>
                   <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Language: <strong>Bilingual</strong> (Hindi and English)</li>
                   <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Final merit is based <strong>only on written exam marks</strong>. Physical tests are qualifying only and do not add to the score.</li>
                   <li className="flex gap-2"><span className="text-blue-500">ℹ</span> Exam conducted in <strong>multiple shifts</strong> across 3 days — scores may be normalised across shifts.</li>
@@ -3458,7 +3497,7 @@ function UpPoliceConstablePage({ exam }: { exam: any }) {
                     { title: 'Complete OTR Registration (Mandatory)', desc: 'Visit uppbpb.gov.in and create a One-Time Registration (OTR) account. Enter your mobile number, email address, and basic personal details.' },
                     { title: 'Log in and Fill the Application Form', desc: 'Use your OTR credentials to log in. Fill in personal details, educational qualifications, and other required information carefully.' },
                     { title: 'Upload Documents', desc: 'Upload a clear passport-size photograph, signature, 10th/12th certificates, and category certificate (if applicable) in the prescribed format and file size.' },
-                    { title: 'Pay the Application Fee', desc: 'All categories (General / OBC / EWS / SC / ST / Female): Rs.400. Payment accepted via Debit Card, Credit Card, or Net Banking.' },
+                    { title: 'Pay the Application Fee', desc: 'General / OBC / EWS: ₹500 | SC / ST: ₹400. Payment accepted via Debit Card, Credit Card, or Net Banking.' },
                     { title: 'Submit and Save Confirmation', desc: 'Review all details before submitting. Download and print the submitted application form for future reference.' },
                   ].map((item, i) => (
                     <li key={i} className="flex gap-4">
@@ -3557,7 +3596,7 @@ function UpPoliceConstablePage({ exam }: { exam: any }) {
                   { icon: '⏱️', tip: 'Time management is critical', desc: '150 questions in 120 minutes means roughly 48 seconds per question. Without timed practice, you will struggle on exam day. Attempt at least one full mock test per week.' },
                   { icon: '🏃', tip: 'Begin physical training now', desc: 'Start running well before the written exam date. Male candidates need to cover 4.8 km in 25 minutes — this level of fitness requires consistent training over 2–3 months minimum.' },
                   { icon: '📊', tip: 'Solve previous year papers', desc: 'Past UP Police Constable papers (2018, 2019 cycles) will show you the actual difficulty level, question distribution, and which topics repeat most often.' },
-                  { icon: '✅', tip: 'Verify negative marking rules before exam day', desc: 'There is conflicting information on whether negative marking applies in 2026. Always check the official UPPRPB notification at uppbpb.gov.in before finalising your exam strategy.' },
+                  { icon: '✅', tip: 'Account for negative marking in your strategy', desc: 'A penalty of –0.5 marks applies per wrong answer as per the official UPPRPB notification. Each correct answer carries +2 marks, so blind guessing can cost you significantly. Skip questions you are genuinely unsure about.' },
                 ].map((item, i) => (
                   <div key={i} className="card p-4 flex gap-4">
                     <div className="text-2xl flex-shrink-0">{item.icon}</div>

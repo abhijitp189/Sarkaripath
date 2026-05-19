@@ -130,10 +130,10 @@ function SscCgl2026Article({ post }: { post: any }) {
           {/* Quick Facts Strip */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
             {[
-              { label: 'Notification', value: 'Soon', sub: 'Expected April 2026' },
-              { label: 'Tier 1 Exam', value: 'May–Jun', sub: '2026 (expected)' },
-              { label: 'Vacancies', value: 'TBA', sub: 'Released with official notification' },
-              { label: 'Apply By', value: 'Apr–May', sub: '2026 (tentative)' },
+              { label: 'Notification', value: 'Delayed', sub: 'Expected Late May/Jun 2026' },
+              { label: 'Tier 1 Exam', value: 'Jun–Jul', sub: '2026 (expected)' },
+              { label: 'Vacancies', value: 'TBA', sub: 'Announced with official notification' },
+              { label: 'Apply By', value: 'TBN', sub: 'After notification releases' },
             ].map(f => (
               <div key={f.label} className="card p-4 text-center">
                 <div className="text-xs text-surface-400 uppercase tracking-wide font-semibold">{f.label}</div>
@@ -144,8 +144,8 @@ function SscCgl2026Article({ post }: { post: any }) {
           </div>
 
           {/* Action Required callout */}
-          <Callout type="warning" title="⚡ Action Required Now">
-            The SSC CGL 2026 notification will be released as per the official SSC exam calendar on <strong>ssc.gov.in</strong>. Dates may change — always check the official calendar for the latest schedule. Complete your One-Time Registration (OTR) now so you're ready to apply the moment it opens.
+          <Callout type="warning" title="⚠️ Notification Update — 19 May 2026">
+            The SSC CGL 2026 official notification is <strong>delayed due to administrative reasons</strong> and is now expected in <strong>late May / June 2026</strong>. The Tier 1 exam is consequently expected in June–July 2026. Complete your <strong>One-Time Registration (OTR) on the mySSC app</strong> now so you are ready to apply the moment the notification releases. Always verify on <strong>ssc.gov.in</strong>.
           </Callout>
 
           {/* Table of Contents (mobile) */}
@@ -1323,7 +1323,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
             '@type': 'FAQPage',
             mainEntity: [
               { '@type': 'Question', name: 'Is SSC CGL harder than SSC CHSL?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. SSC CGL is significantly harder than SSC CHSL. CGL has deeper mathematics (Algebra, Trigonometry, Data Interpretation), tougher English, and more questions per section. CHSL questions are of Class 10–12 standard, while CGL expects graduation-level depth. CGL competition is also much higher.' } },
-              { '@type': 'Question', name: 'Will SSC CGL vacancies increase in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL 2026 is expected to have approximately 14,000–15,000 vacancies, similar to 2025 which had 14,582 posts. The trend shows stable vacancy numbers over the past 3 years. An increase cannot be confirmed until the official notification is released on ssc.gov.in.' } },
+              { '@type': 'Question', name: 'Will SSC CGL vacancies increase in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL 2026 vacancies are To Be Announced (TBA) — the official notification is delayed and expected in late May/June 2026. SSC CGL 2025 had 14,582 posts. Based on previous trends, 15,000+ posts are expected, but no confirmed figure exists yet. Always check the official notification at ssc.gov.in once released.' } },
               { '@type': 'Question', name: 'What is the salary of SSC CHSL in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CHSL salary in 2026 ranges from ₹25,000–₹30,000 per month for LDC/JSA posts to ₹35,000–₹42,000 per month for DEO/PA/SA posts. This includes basic pay plus DA, HRA, and TA allowances under the 7th Pay Commission.' } },
               { '@type': 'Question', name: 'Which job is called mini IAS?', acceptedAnswer: { '@type': 'Answer', text: 'The Assistant Section Officer (ASO) in the Central Secretariat Service (CSS) under SSC CGL is often called the "mini IAS." ASOs work directly with IAS officers on policy files and have one of the fastest promotion tracks in SSC CGL — ASO to Section Officer in just 3–5 years.' } },
               { '@type': 'Question', name: 'Who is the rank 1 topper of SSC CHSL?', acceptedAnswer: { '@type': 'Answer', text: 'SSC does not officially publish a single rank 1 topper for CHSL. Final merit is category-wise and post-wise. The highest scorers are typically from the General category in DEO Grade A posts. SSC publishes merit lists on ssc.gov.in after each cycle.' } },
@@ -1419,7 +1419,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
                     ['Number of Tiers', '2 Tiers (Tier 1 qualifying)', '2 Tiers (Tier 1 qualifying)'],
                     ['Difficulty Level', '⭐⭐⭐⭐⭐ High', '⭐⭐⭐ Moderate'],
                     ['Vacancies (2025)', '~14,582 posts', '~3,131 posts'],
-                    ['Expected Vacancies 2026', '14,000–15,000', '~3,500 (estimated)'],
+                    ['Expected Vacancies 2026', 'TBA (Notification Awaited)', '~3,500 (estimated)'],
                     ['Post Category', 'Group B & Group C', 'Group C (mostly clerical)'],
                     ['Top Posts', 'Income Tax Inspector, ASO, CBI SI', 'LDC, DEO, Postal Assistant'],
                     ['Starting In-Hand Salary', '₹44,000–₹55,000/month', '₹25,000–₹42,000/month'],
@@ -1670,7 +1670,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
                     ['2023', '7,500 (low year)', '~3,500'],
                     ['2024', '17,727', '~3,700'],
                     ['2025', '14,582', '~3,131'],
-                    ['2026 (Expected)', '14,000–15,000', '~3,500 (estimated)'],
+                    ['2026 (Expected)', 'TBA (Notification Delayed)', '~3,500 (estimated)'],
                   ].map(([year, cgl, chsl], idx) => (
                     <tr key={year} className={idx % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
                       <td className="p-3 font-medium text-surface-700 border-b border-surface-100">{year}</td>
@@ -1682,7 +1682,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
               </table>
             </div>
             <Callout type="info" title="📊 Vacancy Verdict for 2026">
-              <strong>CGL 2026:</strong> Approximately 14,000–15,000 vacancies are expected based on the 2024–2025 trend. A significant surge (like 2022) is unlikely but not impossible — it depends on government hiring requirements. The official notification on ssc.gov.in will confirm numbers.<br/><br/>
+              <strong>CGL 2026:</strong> Vacancies are <strong>To Be Announced (TBA)</strong> — the official notification is delayed and expected in late May/June 2026. Based on the 2024–2025 trend (17,727 → 14,582 posts), approximately 15,000+ posts are anticipated. The official notification on ssc.gov.in will confirm exact numbers.<br/><br/>
               <strong>CHSL 2026:</strong> CHSL consistently sees fewer vacancies than CGL (around 3,000–4,000 posts), making competition per seat actually comparable despite the easier syllabus. Don't assume CHSL is easy to get just because the paper is easier — the final merit is highly competitive too.
             </Callout>
           </Section>
@@ -1747,7 +1747,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
                 },
                 {
                   q: 'Will SSC CGL vacancies increase in 2026?',
-                  a: 'Based on the 3-year trend (17,727 in 2024 → 14,582 in 2025), CGL 2026 is expected to have 14,000–15,000 posts. A major increase like 2022 (20,000+) is possible but not guaranteed. Always check the official notification at ssc.gov.in once released — likely in late April 2026.',
+                  a: 'SSC CGL 2026 vacancies are TBA — the official notification is delayed (expected late May/June 2026). SSC CGL 2025 had 14,582 posts; based on the trend, 15,000+ are anticipated for 2026. No confirmed figure exists yet. Always check the official notification at ssc.gov.in once released.',
                 },
                 {
                   q: 'What is the salary of SSC CHSL in 2026?',
@@ -4864,7 +4864,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
             <ChannelTable channels={sscChannels} id="ssc-channels" />
             <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
               <p className="text-primary-800 font-medium text-sm leading-relaxed">
-                <span className="font-bold">📌 Quick Note:</span> SSC CGL 2026 Tier 1 notification dropped on April 30, 2026. Subscribe to <strong>SSC Adda247</strong> and <strong>RBE – Shubham Jain</strong> immediately to track date changes, exam centre lists, and cut-off predictions.
+                <span className="font-bold">📌 Quick Note:</span> SSC CGL 2026 official notification is delayed — expected late May/June 2026. Subscribe to <strong>SSC Adda247</strong> and <strong>RBE – Shubham Jain</strong> immediately so you get notified the moment the notification drops, and can track date changes, admit card releases, and cut-off predictions.
               </p>
             </div>
           </section>

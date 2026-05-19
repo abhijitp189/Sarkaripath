@@ -274,7 +274,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'SSC CGL',
     icon: '📝',
     slug: 'ssc-cgl',
-    tip: 'You qualify for SSC CGL 2026! The notification is out — focus on Quantitative Aptitude and Reasoning for Tier 1. In-hand salary can reach ₹75,000/month for top posts.',
+    tip: 'You qualify for SSC CGL 2026! The official notification is delayed — expected late May/June 2026. Complete your One-Time Registration (OTR) on the mySSC app now so you can apply the moment the notification releases. In-hand salary can reach ₹75,000/month for top posts.',
   },
   {
     id: 'ibps',
@@ -330,6 +330,6 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'SSC GD Constable',
     icon: '👮',
     slug: 'ssc-gd-constable',
-    tip: 'SSC GD 2026 expected later this year with 25,000–80,000 vacancies. 10th Pass eligible. Age 18–23 yrs (General). Physical standards: Height 170/157 cm (M/F), Chest 80/85 cm. Prepare Maths, GK and physical fitness now.',
+    tip: 'SSC GD Constable 2026 CBT is ACTIVE (27 Apr–30 May 2026). 25,487 vacancies across BSF, CISF, CRPF, ITBP, SSB & Assam Rifles. Admit cards released. Download yours from ssc.gov.in and check your exam city. Note: PwBD candidates are not eligible due to mandatory physical/combat requirements.',
   },
 ];
