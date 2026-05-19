@@ -284,6 +284,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'sbi-apprentice') {
+    return {
+      title: 'SBI Apprentice 2026 – 7150 Posts, Apply Online 19 May–8 Jun, Exam Pattern & Guide | TaiyarHo',
+      description: 'SBI Apprentice 2026: 7,150 posts under Apprenticeship Act 1961. Apply online 19 May – 8 June 2026 at sbi.bank.in. Graduate eligible, age 20–28 years. Fee ₹300. Check exam pattern, syllabus, eligibility, selection process and complete preparation guide.',
+      keywords: 'SBI Apprentice 2026, SBI Apprentice apply online, SBI Apprentice notification 2026, SBI Apprentice eligibility, SBI Apprentice exam pattern, SBI apprenticeship 2026, sbi.bank.in apprentice apply, SBI अप्रेंटिस 2026',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/sbi-apprentice/' },
+      other: { 'description:hi': 'SBI अप्रेंटिस 2026 – 7,150 पद। ऑनलाइन आवेदन 19 मई से 8 जून 2026 तक। स्नातक पात्र, आयु 20–28 वर्ष। शुल्क ₹300। परीक्षा पैटर्न, सिलेबस, पात्रता और पूरी तैयारी गाइड।' },
+    };
+  }
+
   if (params.slug === 'ugc-net') {
     return {
       title: 'UGC NET 2026 – Notification Out, Application Dates, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -755,6 +765,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ssc-cpo') return <SscCpoPage exam={brief} />;
   if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
   if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
+  if (brief && brief.slug === 'sbi-apprentice') return <SbiApprenticePage exam={brief} />;
   if (brief && brief.slug === 'ibps-clerk') return <IbpsClerkPage exam={brief} />;
   if (brief && brief.slug === 'ugc-net') return <UgcNetPage exam={brief} />;
   if (brief && brief.slug === 'army-agniveer') return <ArmyAgniveerPage exam={brief} />;
@@ -55633,6 +55644,714 @@ function CgpscStatePage({ exam }: { exam: any }) {
             </aside>
 
           </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SBI APPRENTICE 2026 PAGE  (verified 19 May 2026)
+// ─────────────────────────────────────────────────────────────────────────────
+function SbiApprenticePage({ exam }: { exam: any }) {
+
+  const importantDates = [
+    { event: 'Official Notification Released',              date: '19 May 2026',          status: 'done' },
+    { event: 'Online Application Window Opens',             date: '19 May 2026',          status: 'done' },
+    { event: 'Last Date to Apply Online & Pay Fee',         date: '8 June 2026',          status: 'upcoming' },
+    { event: 'Written Examination (Tentative)',             date: 'July 2026',            status: 'tbn' },
+    { event: 'Local Language Test (LLT)',                   date: 'After Written Exam',   status: 'tbn' },
+    { event: 'Medical Examination & DV',                    date: 'After LLT',            status: 'tbn' },
+    { event: 'Apprenticeship Training Begins',              date: 'To Be Notified',       status: 'tbn' },
+    { event: 'Training Duration',                           date: '1 Year from Joining',  status: 'tbn' },
+  ];
+
+  // CONFIRMED from official notification CRPD/APPR/2026-27/07
+  const examPattern = [
+    { section: 'General/Financial Awareness',          questions: 25, marks: 25, duration: '15 min' },
+    { section: 'General English',                      questions: 25, marks: 25, duration: '15 min' },
+    { section: 'Quantitative Aptitude',                questions: 25, marks: 25, duration: '15 min' },
+    { section: 'Reasoning Ability & Computer Aptitude', questions: 25, marks: 25, duration: '15 min' },
+  ];
+
+  const syllabus = [
+    {
+      subject: '🧩 Reasoning Ability & Computer Aptitude',
+      color: 'text-indigo-600',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'Puzzles – Linear arrangement, Floor-based, Box, Scheduling',
+        'Seating Arrangement – Linear & Circular',
+        'Coding-Decoding, Syllogisms, Blood Relations',
+        'Direction & Distance, Inequalities',
+        'Input-Output, Ordering & Ranking, Alphanumeric Series',
+        'Computer Hardware & Software basics',
+        'Operating System (Windows), MS Office (Word, Excel, PowerPoint)',
+        'Networking & Internet basics, RAM/ROM, Computer Abbreviations',
+        'Keyboard shortcuts, Database fundamentals',
+      ],
+    },
+    {
+      subject: '🔢 Quantitative Aptitude',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Simplification & Approximation',
+        'Number Series (Missing & Wrong number)',
+        'Data Interpretation – Bar Graph, Table, Pie Chart',
+        'Percentage, Average, Ratio & Proportion',
+        'Profit & Loss, Discount, Simple & Compound Interest',
+        'Time & Work, Pipe & Cistern',
+        'Speed, Distance & Time',
+        'Mensuration – Area & Volume basics',
+      ],
+    },
+    {
+      subject: '📝 General English',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Reading Comprehension (1 passage)',
+        'Cloze Test, Sentence Completion',
+        'Error Detection & Spotting',
+        'Sentence Rearrangement / Para Jumbles',
+        'Fill in the Blanks (Single & Double)',
+        'Antonyms, Synonyms, Idioms & Phrases',
+        'Phrase / Word Replacement, Odd One Out',
+      ],
+    },
+    {
+      subject: '🏦 General / Financial Awareness',
+      color: 'text-orange-700',
+      bg: 'bg-orange-50 border-orange-200',
+      topics: [
+        'Current Affairs – Last 3–4 months (National + International)',
+        'Banking Awareness – Accounts, ATM, NEFT, RTGS, UPI, CBS',
+        'RBI – Functions, Repo Rate, CRR, SLR, Monetary Policy basics',
+        'SBI – History, Products, Subsidiaries, Current MD & Chairman',
+        'Government Schemes – PMJDY, MUDRA, PM SVANidhi, DBT',
+        'Financial Terms – Inflation, GDP, Union Budget basics',
+        'Insurance – LIC, IRDAI basics',
+        'Important Appointments, Sports, Awards, Static GK',
+      ],
+    },
+  ];
+
+  const books = [
+    { subject: 'Reasoning + Computer', title: 'A New Approach to Reasoning',           author: 'B.S. Sijwali (Arihant)',          freeLink: '' },
+    { subject: 'Quant',               title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal (S.Chand)',    freeLink: '' },
+    { subject: 'English',             title: 'Objective English for Competitive Exams', author: 'Hari Mohan Prasad (TMH)',        freeLink: '' },
+    { subject: 'Banking GK',          title: 'Banking Awareness',                       author: 'Arihant / Disha Publications',    freeLink: '' },
+    { subject: 'Current Affairs',     title: 'GK Digest – Monthly',                    author: 'Adda247 / GK Today (online)',     freeLink: 'https://www.gktoday.in' },
+    { subject: 'Mock Tests',          title: 'SBI Apprentice Mock Test Series',         author: 'Oliveboard / Testbook (online)', freeLink: 'https://www.oliveboard.in' },
+  ];
+
+  const faqs = [
+    {
+      q: 'Is SBI Apprentice 2026 a permanent government job?',
+      a: 'No. SBI Apprentice is NOT a permanent job. It is a 1-year training under the Apprenticeship Act 1961. After training you receive a National Apprenticeship Certificate (NAC) from NCVT. The official notification clearly states: "Engagement of apprentices does not guarantee employment in the Bank." However, SBI Clerk recruitment gives weightage/relaxation to candidates who have successfully completed SBI Apprenticeship — making it an excellent stepping stone.',
+    },
+    {
+      q: 'What is the confirmed stipend for SBI Apprentice 2026?',
+      a: 'The confirmed monthly stipend is ₹15,000 as stated in the official notification (CRPD/APPR/2026-27/07). This is a fixed training stipend — no DA, HRA, medical benefits, or other allowances are payable. It is NOT comparable to the salary of a permanent SBI employee.',
+    },
+    {
+      q: 'What is the eligibility for SBI Apprentice 2026?',
+      a: 'You must hold a Graduate degree in any discipline from a recognised university (or equivalent qualification approved by the Government). Your age must be between 20 and 28 years as on 30 April 2026. Age relaxation applies as per government rules: OBC (NCL): +3 years; SC/ST: +5 years; PwBD: +10 years.',
+    },
+    {
+      q: 'Who is exempt from the Local Language Test (LLT)?',
+      a: 'Candidates who have studied the local language of the state they applied for at Class 10 or Class 12 level — and whose mark sheet/certificate mentions it — are exempt from the Local Language Test. All other candidates must qualify the LLT. The test is conducted at the candidate\'s own expense at a centre in the applied state.',
+    },
+    {
+      q: 'What is the exam pattern for SBI Apprentice 2026?',
+      a: 'The written exam has 4 sections: (1) General/Financial Awareness, (2) General English, (3) Quantitative Aptitude, (4) Reasoning Ability & Computer Aptitude. Total: 100 questions, 100 marks, 60 minutes. Each section has 25 questions, 25 marks, 15 minutes. Negative marking of 0.25 marks per wrong answer. No penalty for unanswered questions. Questions are bilingual (English + Hindi) except General English.',
+    },
+    {
+      q: 'What is the application fee and last date to apply?',
+      a: 'Application fee: ₹300 for General, OBC, and EWS candidates. SC, ST, and PwBD candidates are fully exempt. Payment is online only (Debit Card, Credit Card, Net Banking, UPI). Last date to apply: 8 June 2026. Apply at sbi.bank.in/web/careers/current-openings.',
+    },
+    {
+      q: 'What benefit does completing SBI Apprenticeship give for SBI Clerk?',
+      a: 'This is a key advantage: SBI\'s official notification states that "Weightage/Relaxation in recruitment of Junior Associates (SBI Clerk) will be given to apprentices who have successfully completed the Apprenticeship training in our Bank." This means SBI Apprentice completers get preferential treatment when applying for SBI Clerk — a permanent, well-paid position. This makes SBI Apprenticeship a strategic career move, not just a training programme.',
+    },
+    {
+      q: 'Can I apply for SBI Apprentice in more than one state?',
+      a: 'No. Each candidate can apply for only one state or Union Territory. Choose carefully based on where you want to be posted and which local language you are comfortable with. Candidates who apply for a state whose local language they cannot read or write risk failing the LLT and being disqualified.',
+    },
+  ];
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  const statusColor = (s: string) => {
+    if (s === 'done') return 'bg-emerald-100 text-emerald-700';
+    if (s === 'upcoming') return 'bg-blue-100 text-blue-700';
+    return 'bg-amber-100 text-amber-700';
+  };
+  const statusLabel = (s: string) => {
+    if (s === 'done') return '✅ Done';
+    if (s === 'upcoming') return '🔵 Upcoming';
+    return '⚠️ TBN';
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      {/* ── HERO — matches SBI PO gradient style ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1 flex-wrap">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">SBI Apprentice 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏦 Banking</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-orange-500/25 border border-orange-400/30 rounded-full px-3 py-1 text-xs font-medium text-orange-200">📅 Apply: 19 May – 8 Jun 2026</span>
+            <span className="inline-flex items-center gap-1.5 bg-red-500/20 border border-red-400/30 rounded-full px-3 py-1 text-xs font-medium text-red-200">⚠️ Training — Not a Permanent Job</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            SBI Apprentice 2026 – Complete Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-6 max-w-3xl">
+            7,150 apprenticeship posts under the Apprenticeship Act 1961. Apply online <strong className="text-white">19 May – 8 June 2026</strong> at sbi.bank.in. Graduate eligible, age 20–28 years. ₹15,000/month stipend. 1-year training in SBI branches across India — plus <strong className="text-white">SBI Clerk recruitment gives weightage</strong> to apprenticeship completers.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Total Vacancies',      value: '7,150 Posts',      sub: '2026–27 batch' },
+              { label: 'Application Deadline', value: '8 June 2026',      sub: 'Do not miss' },
+              { label: 'Monthly Stipend',      value: '₹15,000',          sub: 'Fixed (no DA/HRA)' },
+              { label: 'Training Period',      value: '1 Year',           sub: 'Not permanent' },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                <div className="text-xs text-blue-200 uppercase tracking-wide mb-1">{item.label}</div>
+                <div className="font-heading font-bold text-lg text-white">{item.value}</div>
+                <div className="text-xs text-blue-300">{item.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-amber-400/15 border border-amber-400/30 rounded-xl px-4 py-3 text-sm text-amber-200">
+            💡 <strong className="text-white">Key fact:</strong> SBI officially states that SBI Clerk recruitment gives <strong className="text-white">weightage to SBI Apprenticeship completers</strong>. This makes the programme a strategic stepping stone toward a permanent banking career. Advt. No. <strong className="text-white">CRPD/APPR/2026-27/07</strong> dated 19 May 2026.
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+
+            {/* 1 OVERVIEW */}
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">What is SBI Apprentice 2026?</h2>
+              </div>
+              <div className="card p-6 mb-5">
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  SBI Apprentice is a training programme run by the <strong>State Bank of India (SBI)</strong> under the Apprentices Act, 1961. Selected candidates undergo a <strong>one-year apprenticeship</strong> at SBI branches across India, gaining hands-on experience in banking operations, customer service, digital banking, and branch administration.
+                </p>
+                <p className="text-surface-700 leading-relaxed mb-4">
+                  This is <strong>not a permanent employment offer</strong>. Apprentices receive a fixed stipend of <strong>₹15,000/month</strong> with no DA, HRA, or other allowances. Upon completion, you receive a <strong>National Apprenticeship Certificate (NAC)</strong> from NCVT — a recognised credential.
+                </p>
+                <p className="text-surface-700 leading-relaxed">
+                  The most important strategic benefit: SBI&apos;s official notification states that <strong>SBI Clerk (Junior Associates) recruitment gives weightage and relaxation</strong> to candidates who have successfully completed SBI Apprenticeship. For banking aspirants, this makes SBI Apprentice one of the smartest ways to build both experience and a competitive edge.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: '📋 Advt. No.',       value: 'CRPD/APPR/2026-27/07' },
+                  { label: '🎓 Qualification',   value: 'Any Graduate' },
+                  { label: '📋 Age Limit',        value: '20–28 Years (as on 30 Apr 2026)' },
+                  { label: '💰 Monthly Stipend',  value: '₹15,000 (confirmed)' },
+                  { label: '🏦 Conducting Body',  value: 'SBI CRPD, Mumbai' },
+                  { label: '📋 Total Posts',       value: '7,150 (2026–27)' },
+                  { label: '📅 Apply By',          value: '8 June 2026' },
+                  { label: '⏳ Training Period',   value: '1 Year (Not Permanent)' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 border border-surface-200 rounded-xl p-4">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className="font-semibold text-surface-800 mt-1 text-sm">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 2 IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📅 SBI Apprentice 2026 Important Dates</h2>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-blue-800"><strong>🔵 Applications are OPEN now.</strong> Online window: 19 May – 8 June 2026. Exam expected in July 2026 (TBN). Source: sbi.bank.in — Advt. No. CRPD/APPR/2026-27/07 dated 19/05/2026.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Event</th>
+                      <th className="text-left p-3 font-heading font-semibold text-xs uppercase tracking-wide">Date</th>
+                      <th className="text-center p-3 font-heading font-semibold text-xs uppercase tracking-wide">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {importantDates.map((row, i) => (
+                      <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : 'bg-white'}`}>
+                        <td className="p-3 text-surface-800 font-medium">{row.event}</td>
+                        <td className="p-3 text-surface-600">{row.date}</td>
+                        <td className="p-3 text-center">
+                          <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full ${statusColor(row.status)}`}>
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 3 ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎓 Eligibility Criteria for SBI Apprentice 2026</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3"><span className="text-lg">🪪</span><h3 className="font-heading font-semibold text-surface-800">Nationality</h3></div>
+                  <p className="text-sm text-surface-600 leading-relaxed">Must be a citizen of India. Applications are invited from Indian citizens for engagement of Apprentices in State Bank of India branches and offices.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3"><span className="text-lg">🎓</span><h3 className="font-heading font-semibold text-surface-800">Educational Qualification</h3></div>
+                  <p className="text-sm text-surface-600 leading-relaxed"><strong>Graduation degree in any discipline</strong> from a recognised university or any equivalent qualification approved by the Central or State Government. Final-year students may apply provisionally.</p>
+                </div>
+                <div className="card p-5">
+                  <div className="flex items-center gap-2 mb-3"><span className="text-lg">📋</span><h3 className="font-heading font-semibold text-surface-800">Age Limit</h3></div>
+                  <p className="text-sm text-surface-600 mb-4">Minimum <strong>20 years</strong> | Maximum <strong>28 years</strong> — as on <strong>30 April 2026</strong></p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-surface-50 border border-surface-200">
+                        <tr>
+                          <th className="text-left p-2 font-semibold text-surface-700">Category</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Relaxation</th>
+                          <th className="text-left p-2 font-semibold text-surface-700">Max Age</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-surface-100">
+                        {[
+                          { cat: 'General / EWS', rel: 'No relaxation', max: '28 years' },
+                          { cat: 'OBC (Non-Creamy Layer)', rel: '+3 years', max: '31 years' },
+                          { cat: 'SC / ST', rel: '+5 years', max: '33 years' },
+                          { cat: 'PwBD (Persons with Benchmark Disability)', rel: '+10 years', max: '38 years' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                            <td className="p-2 text-surface-700">{row.cat}</td>
+                            <td className="p-2 text-emerald-700 font-medium">{row.rel}</td>
+                            <td className="p-2 font-semibold text-surface-800">{row.max}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-4">
+                <p className="text-sm text-primary-800 leading-relaxed">
+                  💡 <strong>Local Language:</strong> Candidates must be proficient in the local language of the state they apply for (reading, writing, speaking, understanding). If your 10th or 12th certificate shows the local language as a studied subject, you are <strong>exempt from the Local Language Test</strong>.
+                </p>
+              </div>
+            </section>
+
+            {/* 4 VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📊 Vacancies 2026</h2>
+              </div>
+              <div className="card p-5 mb-4">
+                <div className="flex items-start gap-4">
+                  <div className="bg-emerald-100 text-emerald-700 rounded-xl px-4 py-3 text-center shrink-0">
+                    <div className="text-3xl font-heading font-bold">7,150</div>
+                    <div className="text-xs font-semibold mt-0.5">Total Posts</div>
+                    <div className="text-xs text-emerald-600">2026–27 batch</div>
+                  </div>
+                  <div className="text-sm text-surface-600">
+                    <p className="mb-2">Vacancies are distributed across all states and Union Territories of India. Each state has a separate state-wise and category-wise vacancy breakup. Candidates can apply for <strong>only one state</strong>.</p>
+                    <p>Reservation for Persons with Benchmark Disabilities (PwBD) applies horizontally across all categories. The number of training seats is provisional and may vary based on the actual requirement of the bank.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="card overflow-hidden">
+                <div className="bg-surface-800 text-white px-4 py-3 font-heading font-semibold text-sm">Year-wise Vacancy History</div>
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-100">
+                    <tr>
+                      <th className="text-left p-4 font-heading font-semibold text-surface-700">Year</th>
+                      <th className="text-left p-4 font-heading font-semibold text-surface-700">Vacancies</th>
+                      <th className="text-left p-4 font-heading font-semibold text-surface-700">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { year: '2026–27', vacancies: '7,150', status: 'Current — Apply Now' },
+                      { year: '2024–25', vacancies: '~4,000–5,000 (approx.)', status: 'Completed' },
+                      { year: '2022–23', vacancies: '~6,000 (approx.)', status: 'Completed' },
+                    ].map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-4 font-medium text-surface-800">{row.year}</td>
+                        <td className="p-4 text-surface-700">{row.vacancies}</td>
+                        <td className="p-4 text-xs text-surface-500">{row.status}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* 5 SELECTION PROCESS */}
+            <section id="selection" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">✅ Selection Process</h2>
+              </div>
+              <div className="space-y-4">
+                {[
+                  {
+                    step: '1',
+                    title: 'Online Written Examination',
+                    desc: '100 objective questions, 100 marks, 60 minutes. 4 sections of 25 questions each with 15-minute sectional timing. Negative marking: 0.25 marks per wrong answer. Questions are bilingual (English & Hindi) except the General English section. Conducted in 13 regional languages in addition to English and Hindi.',
+                  },
+                  {
+                    step: '2',
+                    title: 'Local Language Test (LLT)',
+                    desc: 'Qualifying test in the official language of the state you applied for. Tests reading, writing, speaking, and understanding. Marks are NOT counted in the merit list — you simply need to pass. Exempted if your 10th or 12th certificate shows the local language as a studied subject. Candidates appearing for LLT must travel to the test centre at their own expense.',
+                  },
+                  {
+                    step: '3',
+                    title: 'Medical Examination & Eligibility Verification',
+                    desc: 'Medical fitness as per SBI norms is mandatory. Document verification occurs here: original graduation certificate, age proof, category certificate (if applicable), and identity proof must be submitted. Any discrepancy in eligibility details provided in the application leads to disqualification.',
+                  },
+                ].map((s) => (
+                  <div key={s.step} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 bg-primary-600 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm shrink-0">{s.step}</div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{s.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 6 EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📋 Exam Pattern – Written Test</h2>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+                <p className="text-sm text-amber-800"><strong>⚠️ Note:</strong> Exam pattern confirmed from official notification CRPD/APPR/2026-27/07. The 4th section is <strong>Reasoning Ability & Computer Aptitude</strong> (combined) — not just Reasoning alone.</p>
+              </div>
+              <div className="overflow-x-auto card overflow-hidden mb-4">
+                <table className="w-full text-sm">
+                  <thead className="bg-surface-800 text-white">
+                    <tr>
+                      <th className="text-left p-4 font-heading font-semibold">Section</th>
+                      <th className="text-center p-4 font-heading font-semibold">Questions</th>
+                      <th className="text-center p-4 font-heading font-semibold">Marks</th>
+                      <th className="text-center p-4 font-heading font-semibold">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {examPattern.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className="p-4 font-medium text-surface-800">{row.section}</td>
+                        <td className="p-4 text-center text-surface-700">{row.questions}</td>
+                        <td className="p-4 text-center text-surface-700">{row.marks}</td>
+                        <td className="p-4 text-center text-surface-500">{row.duration}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-primary-50 font-semibold border-t border-primary-200">
+                      <td className="p-4 text-primary-700 font-heading font-bold">Total</td>
+                      <td className="p-4 text-center text-primary-700">100</td>
+                      <td className="p-4 text-center text-primary-700">100</td>
+                      <td className="p-4 text-center text-primary-700">60 min</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="card p-4 text-center"><div className="text-xs text-surface-400 uppercase tracking-wide mb-1">Mode</div><div className="font-heading font-semibold text-surface-800 text-sm">Online CBT</div></div>
+                <div className="card p-4 text-center"><div className="text-xs text-surface-400 uppercase tracking-wide mb-1">Negative Marking</div><div className="font-heading font-semibold text-surface-800 text-sm">0.25 per wrong answer</div></div>
+                <div className="card p-4 text-center"><div className="text-xs text-surface-400 uppercase tracking-wide mb-1">Languages Available</div><div className="font-heading font-semibold text-surface-800 text-sm">English, Hindi + 13 Regional</div></div>
+              </div>
+            </section>
+
+            {/* 7 SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📚 Detailed Syllabus 2026</h2>
+              </div>
+              <div className="space-y-3">
+                {syllabus.map((s) => (
+                  <details key={s.subject} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{s.subject}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className={`px-5 pb-5 border-t ${s.bg}`}>
+                      <ul className="mt-3 space-y-1.5">
+                        {s.topics.map((t) => (
+                          <li key={t} className={`text-sm flex items-start gap-2 ${s.color}`}>
+                            <span className="mt-0.5 shrink-0">›</span><span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 8 STIPEND */}
+            <section id="stipend" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">💰 Stipend & Benefits</h2>
+              </div>
+              <div className="bg-orange-50 border border-orange-200 rounded-2xl p-5 mb-5">
+                <h3 className="font-heading font-semibold text-orange-800 mb-2">⚠️ This is a Stipend — Not a Salary</h3>
+                <p className="text-sm text-orange-700 leading-relaxed">
+                  SBI Apprentices receive a monthly <strong>training stipend of ₹15,000</strong> (confirmed, as per official notification). No DA, HRA, medical benefits, pension, leave encashment, or other employee allowances are payable. This is NOT equivalent to the salary of a permanent SBI employee (SBI Clerk gross: ~₹46,000/month; SBI PO gross: ~₹72,500/month).
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">Monthly Stipend</h3>
+                  <div className="text-3xl font-heading font-bold text-emerald-600 mb-1">₹15,000</div>
+                  <div className="text-xs text-surface-400">Per month — confirmed from official notification CRPD/APPR/2026-27/07. No additional allowances.</div>
+                </div>
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3">What You Gain</h3>
+                  <ul className="text-sm text-surface-600 space-y-1.5">
+                    <li className="flex items-start gap-2"><span className="text-emerald-500 mt-0.5">✓</span> National Apprenticeship Certificate (NAC) from NCVT</li>
+                    <li className="flex items-start gap-2"><span className="text-emerald-500 mt-0.5">✓</span> 1-year hands-on banking experience in SBI branches</li>
+                    <li className="flex items-start gap-2"><span className="text-emerald-500 mt-0.5">✓</span> <strong>Weightage in SBI Clerk recruitment</strong> — official SBI policy</li>
+                    <li className="flex items-start gap-2"><span className="text-emerald-500 mt-0.5">✓</span> Real banking knowledge that boosts exam scores for SBI Clerk/PO</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* 9 HOW TO APPLY */}
+            <section id="apply" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🖥️ How to Apply Online</h2>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { step: '1', title: 'Visit Official SBI Careers Portal', desc: 'Go to sbi.bank.in/web/careers/current-openings. Find and click "ENGAGEMENT OF APPRENTICES IN SBI UNDER THE APPRENTICES ACT, 1961 — CRPD/APPR/2026-27/07". The notification PDF and Apply Online link are both here.' },
+                  { step: '2', title: 'Register & Login', desc: 'Click "New Registration". Enter your name, date of birth, mobile number, and email ID. You will receive OTPs for verification. Save your registration credentials securely.' },
+                  { step: '3', title: 'Fill Application Form', desc: 'Enter personal details, educational qualification, and select your preferred state/UT. You can apply for only one state — choose carefully based on local language proficiency.' },
+                  { step: '4', title: 'Upload Photo & Signature', desc: 'Upload a recent passport-size photo (JPG, max 200KB) and signature (JPG, max 100KB) in the specified format. Incorrect uploads lead to rejection.' },
+                  { step: '5', title: 'Pay Application Fee', desc: 'General/OBC/EWS: ₹300. SC/ST/PwBD: NIL (exempt). Pay via Debit Card, Credit Card, Net Banking, or UPI. Fee is non-refundable.' },
+                  { step: '6', title: 'Submit & Save Confirmation', desc: 'Review all entries before final submission. After submitting, download and save the application confirmation page. Last date: 8 June 2026. No hard copy needs to be sent to SBI.' },
+                ].map((s) => (
+                  <div key={s.step} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold shrink-0">{s.step}</div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{s.title}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-4">
+                <p className="text-sm text-primary-800">
+                  <strong>Official apply link:</strong>{' '}
+                  <a href="https://sbi.bank.in/web/careers/current-openings" target="_blank" rel="noopener noreferrer" className="text-primary-600 underline">sbi.bank.in/web/careers/current-openings ↗</a>
+                  {' '}| Also available at apprenticeshipindia.org, nsdcindia.org/apprenticeship, and bfsissc.com.
+                </p>
+              </div>
+            </section>
+
+            {/* 10 STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🗓️ 4-Week Study Plan</h2>
+              </div>
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {[
+                  { week: '1', title: 'Reasoning & Quant Foundation', tasks: ['Puzzles: floor, box, linear (5 sets/day)', 'Seating Arrangement: linear & circular (3 sets/day)', 'Quant: Simplification, Number Series, Percentage, Ratio', 'Computer basics: hardware/software, OS, keyboard shortcuts'] },
+                  { week: '2', title: 'Data Interpretation & GK', tasks: ['DI: bar graph, table, pie chart (2 sets/day)', 'Profit & Loss, SI/CI, Time & Work', 'Banking Awareness: RBI basics, NEFT/RTGS/UPI, account types', 'Current Affairs: read GK Today daily or Adda247 CA capsule'] },
+                  { week: '3', title: 'English, Vocabulary & SBI GK', tasks: ['Error detection & para jumbles (daily)', 'Vocabulary: 10 words/day from Word Power Made Easy', 'SBI-specific GK: history, subsidiaries, MD & Chairman, YONO', 'Government schemes: PMJDY, MUDRA, PM SVANidhi'] },
+                  { week: '4', title: 'Full Mocks & Revision', tasks: ['3–4 full-length SBI Apprentice mocks (Oliveboard/Testbook)', 'Analyse errors — focus revision on weakest section', 'Revise all GK notes + 3-month current affairs', 'Target: finish 100 questions in 55 minutes (leave 5 min buffer)'] },
+                ].map((w) => (
+                  <div key={w.week} className="sm:pl-14 relative mb-5">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex">W{w.week}</div>
+                    <div className="card p-5">
+                      <h3 className="font-heading font-semibold text-surface-800 mb-3">Week {w.week}: {w.title}</h3>
+                      <ul className="space-y-1.5">
+                        {w.tasks.map((t) => (<li key={t} className="text-sm text-surface-600 flex items-start gap-2"><span className="text-primary-400 mt-0.5 shrink-0">›</span><span>{t}</span></li>))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 11 BOOKS */}
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">📖 Best Books & Resources</h2>
+              </div>
+              <BooksTable books={books} />
+            </section>
+
+            {/* 12 TIPS */}
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">🎯 Expert Tips</h2>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { icon: '⚡', tip: 'Apply immediately — deadline is 8 June 2026', body: 'The application window is only 3 weeks. SBI career portals slow down near the deadline. Apply in the first week to avoid last-minute technical glitches. Fee payment also closes on 8 June.' },
+                  { icon: '🗣️', tip: 'Pick your state based on language — LLT is a hard knockout', body: 'The Local Language Test is mandatory unless you have studied the language at 10th or 12th level. Failing LLT means disqualification even if you top the written exam. Only choose a state whose language you can read and write.' },
+                  { icon: '💻', tip: "Don't ignore Computer Aptitude — it's merged with Reasoning", body: "The 4th section is officially 'Reasoning Ability & Computer Aptitude'. Computer questions on MS Office, hardware/software basics, networking, and OS shortcuts are included. 25 combined questions in 15 minutes." },
+                  { icon: '📰', tip: 'Last 3–4 months of current affairs matter most', body: 'General/Financial Awareness heavily tests recent banking events, RBI policy updates, and SBI news. Use GK Today, Adda247 current affairs capsule, or The Hindu daily. 15 minutes every morning for 4 weeks will cover it.' },
+                  { icon: '🏆', tip: "This is a strategic move toward SBI Clerk — plan it that way", body: "SBI officially gives weightage to apprenticeship completers in SBI Clerk recruitment. Use the 1-year training to prepare intensively for SBI Clerk or SBI PO. The branch exposure will directly improve your banking awareness scores." },
+                ].map((t) => (
+                  <div key={t.tip} className="card p-5 flex gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center text-lg shrink-0">{t.icon}</div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-surface-800 mb-1">{t.tip}</h3>
+                      <p className="text-sm text-surface-600 leading-relaxed">{t.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13 FAQs */}
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">13</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">❓ Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <details key={i} className="card overflow-hidden group">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 list-none">
+                      <span>{f.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed border-t border-surface-100 pt-4">{f.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-3">On This Page</div>
+                <nav className="space-y-1">
+                  {[
+                    { id: 'overview',        label: 'Overview' },
+                    { id: 'important-dates', label: 'Important Dates' },
+                    { id: 'eligibility',     label: 'Eligibility' },
+                    { id: 'vacancies',       label: 'Vacancies 2026' },
+                    { id: 'selection',       label: 'Selection Process' },
+                    { id: 'exam-pattern',    label: 'Exam Pattern' },
+                    { id: 'syllabus',        label: 'Syllabus' },
+                    { id: 'stipend',         label: 'Stipend & Benefits' },
+                    { id: 'apply',           label: 'How to Apply' },
+                    { id: 'study-plan',      label: 'Study Plan' },
+                    { id: 'books',           label: 'Best Books' },
+                    { id: 'tips',            label: 'Expert Tips' },
+                    { id: 'faq',             label: 'FAQs' },
+                  ].map((t) => (
+                    <a key={t.id} href={`#${t.id}`} className="block text-sm text-surface-500 hover:text-primary-500 py-0.5 hover:underline">{t.label}</a>
+                  ))}
+                </nav>
+              </div>
+
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <div className="font-heading font-semibold text-emerald-800 mb-1">📅 Apply Now — Open!</div>
+                <p className="text-xs text-emerald-700 mb-3">Closes <strong>8 June 2026</strong>. Apply early to avoid deadline rush.</p>
+                <a href="https://sbi.bank.in/web/careers/current-openings" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center text-sm py-2 block">
+                  Apply on SBI Official Site ↗
+                </a>
+              </div>
+
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-2">Official Website</div>
+                <a href="https://sbi.bank.in/web/careers/current-openings" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-500 hover:underline break-all">
+                  sbi.bank.in/web/careers ↗
+                </a>
+                <p className="text-xs text-surface-400 mt-1">Advt. No. CRPD/APPR/2026-27/07</p>
+              </div>
+
+              <div className="card p-5">
+                <div className="font-heading font-semibold text-surface-800 text-sm mb-3">Related Banking Exams</div>
+                <div className="space-y-1.5">
+                  {[
+                    { name: 'SBI Clerk 2026', slug: 'sbi-clerk' },
+                    { name: 'SBI PO 2026', slug: 'sbi-po' },
+                    { name: 'IBPS PO 2026', slug: 'ibps-po' },
+                    { name: 'IBPS Clerk 2026', slug: 'ibps-clerk' },
+                    { name: 'RBI Assistant', slug: 'rbi-assistant' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <div className="font-heading font-semibold text-primary-800 text-sm mb-2">Check Your Eligibility</div>
+                <p className="text-xs text-primary-700 mb-3">See all exams you qualify for based on your age and qualification.</p>
+                <Link href="/tools/eligibility-checker" className="btn-primary w-full text-center text-sm py-2 block">Eligibility Checker →</Link>
+              </div>
+
+            </div>
+          </aside>
+
         </div>
       </div>
     </>
