@@ -70,7 +70,7 @@ const quickRefTable = [
 // ─── Stats bar ────────────────────────────────────────────────────────────────
 const stats = [
   { label: 'Exams Covered', value: '100+', sub: 'All categories' },
-  { label: 'Age Reference Date', value: '1 Aug', sub: 'Standard cut-off' },
+  { label: 'Age Reference Date', value: `1 Aug ${new Date().getFullYear()}`, sub: 'Standard cut-off' },
   { label: 'OBC Relaxation', value: '+3 yrs', sub: 'Central exams' },
   { label: 'SC / ST Relaxation', value: '+5 yrs', sub: 'Central exams' },
   { label: 'PwBD Relaxation', value: '+10 yrs', sub: 'General category' },
