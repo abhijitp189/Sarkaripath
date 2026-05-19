@@ -267,10 +267,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (params.slug === 'ibps-clerk') {
     return {
       title: 'IBPS Clerk 2026 (CRP CSA-XVI) – Syllabus, Exam Date, Eligibility & Complete Guide | TaiyarHo',
-      description: 'IBPS Clerk 2026: Prelims on 10–11 Oct, Mains on 27 Dec. 15,000+ vacancies in 11 public sector banks. Check complete syllabus, exam pattern (revised Mains), eligibility, age limit, salary ₹28,000–₹32,000/month and free preparation resources.',
+      description: 'IBPS Clerk 2026: Prelims on 10–11 Oct, Mains on 27 Dec. 4,000–8,000 vacancies in 11 public sector banks. Complete syllabus, exam pattern, eligibility, age limit 20–28 years, salary ₹36,000–₹42,000/month and free preparation resources.',
       keywords: 'IBPS Clerk 2026, IBPS Clerk taiyari, bank clerk sarkari naukri, IBPS Clerk syllabus Hindi, बैंक क्लर्क परीक्षा तैयारी, banking exam preparation',
       alternates: { canonical: 'https://www.taiyarho.in/exams/ibps-clerk/' },
-      other: { 'description:hi': 'IBPS Clerk 2026 – 11 सार्वजनिक क्षेत्र के बैंकों में 15,000+ रिक्तियाँ। प्रारंभिक परीक्षा 10-11 अक्टूबर, मुख्य 27 दिसंबर। सिलेबस, पात्रता, वेतन ₹28,000–₹32,000/माह और मुफ्त संसाधन।' },
+      other: { 'description:hi': 'IBPS Clerk 2026 – 11 सार्वजनिक क्षेत्र के बैंकों में 4,000–8,000 रिक्तियाँ। प्रारंभिक परीक्षा 10-11 अक्टूबर, मुख्य 27 दिसंबर। सिलेबस, पात्रता, वेतन ₹36,000–₹42,000/माह और मुफ्त संसाधन।' },
     };
   }
 
@@ -692,6 +692,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'tnpsc-group-1') {
+    return {
+      title: 'TNPSC Group 1 2026 – Notification, Syllabus, Eligibility, Salary & Guide | TaiyarHo',
+      description: 'TNPSC Group 1 2026: Notification expected June 2026. Prelims on 6 Sep 2026. Posts include Deputy Collector, DSP, Block Development Officer. Age 21–32 yrs (OC). Graduate eligible. Salary ₹56,100–₹2,09,200/month. Prelims + Mains + Interview.',
+      keywords: 'TNPSC Group 1 2026, TNPSC Group 1 notification, TNPSC Group 1 syllabus, TNPSC Group 1 eligibility, Deputy Collector Tamil Nadu, TNPSC Group 1 salary, tnpsc.gov.in',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/tnpsc-group-1/' },
+      other: { 'description:hi': 'TNPSC Group 1 2026 – जून 2026 में अधिसूचना अपेक्षित। प्रारंभिक परीक्षा 6 सितंबर 2026। Deputy Collector, DSP, BDO जैसे पद। आयु 21–32 वर्ष। स्नातक योग्य। वेतन ₹56,100–₹2,09,200/माह।' },
+    };
+  }
+
   return {
     title: `${name} – Complete Preparation Guide | TaiyarHo`,
     description: `${name}: syllabus, exam pattern, eligibility, best books, free resources, study plan. ${desc.substring(0, 100)}`,
@@ -735,6 +745,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ssc-cpo') return <SscCpoPage exam={brief} />;
   if (brief && brief.slug === 'ssc-mts') return <SscMtsPage exam={brief} />;
   if (brief && brief.slug === 'sbi-clerk') return <SbiClerkPage exam={brief} />;
+  if (brief && brief.slug === 'ibps-clerk') return <IbpsClerkPage exam={brief} />;
   if (brief && brief.slug === 'ugc-net') return <UgcNetPage exam={brief} />;
   if (brief && brief.slug === 'army-agniveer') return <ArmyAgniveerPage exam={brief} />;
   if (brief && brief.slug === 'navy-agniveer') return <NavyAgniveerPage exam={brief} />;
@@ -7746,6 +7757,254 @@ function SbiClerkPage({ exam }: { exam: any }) {
             </div>
           </div>
 
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+// ─── IBPS CLERK 2026 RICH PAGE ───────────────────────────────────────────────
+function IbpsClerkPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Banks' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+  const dates = [
+    { event: 'IBPS Clerk CRP CSA-XV (2025 cycle) Notification', date: 'October 2025',            status: 'done' },
+    { event: 'Prelims Exam (CRP CSA-XV)',                        date: 'December 2025',           status: 'done' },
+    { event: 'Mains Exam (CRP CSA-XV)',                          date: 'February 2026',           status: 'done' },
+    { event: 'CRP CSA-XVI Notification (2026 cycle)',            date: 'Aug–Sep 2026 (expected)', status: 'upcoming' },
+    { event: 'Online Application Window',                        date: 'After Notification',      status: 'tbn' },
+    { event: 'Prelims Admit Card',                               date: 'Sep–Oct 2026',            status: 'tbn' },
+    { event: 'Prelims Exam (CRP CSA-XVI)',                       date: '10–11 October 2026',      status: 'upcoming' },
+    { event: 'Prelims Result',                                   date: 'Oct–Nov 2026',            status: 'tbn' },
+    { event: 'Mains Admit Card',                                 date: 'Nov–Dec 2026',            status: 'tbn' },
+    { event: 'Mains Exam (CRP CSA-XVI)',                         date: '27 December 2026',        status: 'upcoming' },
+    { event: 'Provisional Allotment',                            date: 'Jan–Feb 2027 (expected)', status: 'tbn' },
+  ];
+  const prelims = [
+    { section: 'English Language',   q: 30, marks: 30, time: '20 min' },
+    { section: 'Numerical Ability',  q: 35, marks: 35, time: '20 min' },
+    { section: 'Reasoning Ability',  q: 35, marks: 35, time: '20 min' },
+  ];
+  const mains = [
+    { section: 'General/Financial Awareness',       q: 50, marks: 50, time: '35 min' },
+    { section: 'General English',                   q: 40, marks: 40, time: '35 min' },
+    { section: 'Quantitative Aptitude & DI',        q: 50, marks: 50, time: '45 min' },
+    { section: 'Reasoning Ability & Computer Apt.', q: 50, marks: 60, time: '45 min' },
+  ];
+  const syllabus = [
+    { subject: 'Reasoning Ability', color: 'text-indigo-600', bg: 'bg-indigo-50 border-indigo-200', topics: ['Puzzles – Floor, Box, Month-based, Scheduling','Seating Arrangement – Linear, Circular, Square','Syllogisms (Direct + Reverse Pattern)','Coding-Decoding (New Pattern)','Blood Relations, Direction & Distance','Inequality (Direct + Coded)','Order & Ranking, Alphanumeric Series','Data Sufficiency, Input-Output'] },
+    { subject: 'Numerical / Quantitative Aptitude', color: 'text-emerald-700', bg: 'bg-emerald-50 border-emerald-200', topics: ['Simplification & Approximation','Number Series (Missing & Wrong)','Data Interpretation – Bar, Line, Pie, Table','Percentage, Average, Ratio & Proportion','Profit & Loss, Discount, Markup','Simple & Compound Interest','Time & Work, Pipe & Cistern','Speed, Distance & Time','Quadratic Equations, Mensuration'] },
+    { subject: 'English Language', color: 'text-blue-700', bg: 'bg-blue-50 border-blue-200', topics: ['Reading Comprehension (1–2 passages)','Cloze Test (Single + Double Blank)','Error Detection & Spotting','Sentence Rearrangement (Para Jumbles)','Fill in the Blanks','Phrase Replacement, Word Usage','Vocabulary-based Questions'] },
+    { subject: 'General / Financial Awareness (Mains)', color: 'text-orange-700', bg: 'bg-orange-50 border-orange-200', topics: ['Current Affairs – Last 6 months','Banking Awareness – NPA, CRAR, CBS, Accounts','RBI – Monetary Policy, Repo Rate, CRR, SLR','Government Schemes – PMJDY, MUDRA, Jan Suraksha','IBPS – Participating banks, CRP process','Financial Terms – Inflation, GDP, Budget','Capital Markets, Insurance, SEBI, IRDAI'] },
+    { subject: 'Computer Aptitude (Mains)', color: 'text-purple-700', bg: 'bg-purple-50 border-purple-200', topics: ['Computer Fundamentals – Hardware, Software, Memory','MS Office – Word, Excel, PowerPoint shortcuts','Internet & Networking Basics','Keyboard Shortcuts, Basic DOS Commands','Cyber Security basics','Number Systems – Binary, Octal, Hexadecimal','Database Basics – DBMS, SQL keywords'] },
+  ];
+  const banks = ['Bank of Baroda','Bank of India','Bank of Maharashtra','Canara Bank','Central Bank of India','Indian Bank','Indian Overseas Bank','Punjab & Sind Bank','Punjab National Bank','UCO Bank','Union Bank of India'];
+  const plan = [
+    { phase: 'Month 1–2', focus: 'Foundation Building', tasks: ['Master Simplification, Number Series, Percentage for Quant','English: Error Spotting, Cloze Test, Fill in the Blanks daily','Reasoning: Floor/Box Puzzles, Syllogisms, Inequalities','Start 5 min Daily Current Affairs + Banking Awareness basics'] },
+    { phase: 'Month 3', focus: 'Speed & Sectional Practice', tasks: ['Full Prelims syllabus – DI, Seating Arrangement, RC','1 sectional mock per day; target 80%+ accuracy','Full-length Prelims mocks (Gradeup/Oliveboard/Testbook)','Analyze every mock; identify and revisit weak topics'] },
+    { phase: 'Month 4', focus: 'Mains Preparation', tasks: ['GFA: monthly CA capsules, banking awareness, RBI circulars','Computer Aptitude: MS Office shortcuts, networking basics','Advanced DI (Caselet), complex puzzles','2 full Mains mocks per week; maintain error log'] },
+    { phase: 'Final 2 Weeks', focus: 'Revision & Strategy', tasks: ['Revise Banking Awareness notes + last 3 months CA capsule','Attempt IBPS Clerk previous papers (2019–2025)','Prelims: aim for 75+ correct in 60 min with sectional focus','Mains: target 140+ out of 200 for a safe rank'] },
+  ];
+  const books = [
+    { sub: 'Reasoning', title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', pdf: null },
+    { sub: 'Quantitative Aptitude', title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal', pdf: null },
+    { sub: 'English Language', title: 'Objective General English', author: 'S.P. Bakshi', pdf: null },
+    { sub: 'Banking Awareness', title: 'Banking Awareness', author: 'Arihant Experts', pdf: null },
+    { sub: 'Computer Aptitude', title: 'Objective Computer Awareness', author: 'Arihant / BSC Publication', pdf: null },
+    { sub: 'Current Affairs', title: 'Monthly CA Capsule (free download)', author: 'Gradeup / Oliveboard', pdf: 'https://www.gradeup.co/' },
+  ];
+  const tips = [
+    { title: 'Prelims is a Screening Test — Attempt Smartly', body: 'Prelims marks are NOT counted in the final merit list. You only need to clear the sectional + overall cutoff. Aim for 75–80 correct out of 100. Sectional timer is strict (20 min each) — never leave any section untouched.' },
+    { title: 'Mains: Banking GFA is the Real Differentiator', body: 'Most candidates score similarly in Reasoning and Quant. Your GFA score (50 marks) determines your final rank. Read monthly Current Affairs capsules from Gradeup or Oliveboard. Revise RBI circulars, budget highlights, and banking terminology weekly.' },
+    { title: 'Computer Aptitude: Easy 45+ Marks in Mains', body: 'Computer Aptitude (60 marks in Mains) is the lowest-difficulty section. Spend 15–20 days on MS Office shortcuts, networking basics, and number systems. You can reliably score 45–55 marks — never skip this section.' },
+    { title: 'Language Proficiency Matters for State Allocation', body: 'For state-specific vacancies, you must be proficient in the official language of that state. IBPS verifies this post-selection through a Language Proficiency Test (LPT). Apply only for states where you know the local language.' },
+    { title: 'Mock Test Analysis Over Quantity', body: 'After each mock, spend 30 minutes reviewing wrong answers. Build an error log — categorize errors as silly mistakes, concept gaps, or time pressure. Revisiting the weakest category each week is more effective than attempting more mocks blindly.' },
+  ];
+  const faqs = [
+    { q: 'What is the age limit for IBPS Clerk 2026?', a: '20–28 years (General/EWS) as of the cutoff date in the notification. OBC: 20–31 yrs (+3). SC/ST: 20–33 yrs (+5). PwBD: +10 years on max age. Ex-Servicemen: exemption as per discharge date rules.' },
+    { q: 'What is the salary of IBPS Clerk in 2026?', a: 'Gross monthly salary at joining is approximately ₹36,000–₹42,000/month (Metro city) under the 12th Bipartite Wage Settlement. Basic Pay starts at ₹17,900/month. Add DA (~₹10,000–₹14,000), HRA (7–9% of basic), Special Allowance (7.75%), and Transport Allowance. CTC is approximately ₹4.5–₹5.5 lakh per annum.' },
+    { q: 'Is there a negative marking in IBPS Clerk?', a: 'Yes — 0.25 marks deducted per wrong answer in both Prelims and Mains. No penalty for unattempted questions. In Prelims, sectional cutoffs also apply, so never leave a section completely blank.' },
+    { q: 'Which banks participate in IBPS Clerk 2026?', a: '11 public sector banks: Bank of Baroda, Bank of India, Bank of Maharashtra, Canara Bank, Central Bank of India, Indian Bank, Indian Overseas Bank, Punjab & Sind Bank, Punjab National Bank, UCO Bank, and Union Bank of India. SBI and RBI conduct separate exams and are not part of IBPS CRP.' },
+    { q: 'Is there an interview for IBPS Clerk?', a: 'No. IBPS Clerk has no interview stage. Selection is based solely on Mains marks + provisional allotment based on merit, bank preference, and state-wise vacancies.' },
+    { q: 'What is the difference between IBPS Clerk and IBPS RRB Clerk?', a: 'IBPS Clerk (CRP CSA) recruits for 11 public sector banks in urban and semi-urban areas. IBPS RRB Office Assistant recruits for 43 Regional Rural Banks, primarily in rural and semi-urban areas. Both are clerical posts but the banks, posting locations, salary structures, and service conditions differ significantly.' },
+  ];
+  return (
+    <>
+      <div className="container-main py-8">
+        <nav className="text-sm text-surface-500 mb-6">
+          <Link href="/" className="hover:text-primary-500">Home</Link>
+          <span className="mx-2">›</span>
+          <Link href="/exams" className="hover:text-primary-500">Exams</Link>
+          <span className="mx-2">›</span>
+          <span className="text-surface-800">IBPS Clerk 2026</span>
+        </nav>
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+          <div>
+            <div className="mb-8">
+              <div className="flex flex-wrap gap-2 mb-3">
+                <span className="badge-primary">Banking</span>
+                <span className="badge badge-green">Central Government</span>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold bg-blue-100 text-blue-700">Graduate Level</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">IBPS Clerk 2026 (CRP CSA-XVI)</h1>
+              <p className="text-surface-500 leading-relaxed">Clerical cadre recruitment for 11 Public Sector Banks. Prelims: 10–11 Oct 2026 · Mains: 27 Dec 2026 · 4,000–8,000 vacancies expected. No interview stage.</p>
+            </div>
+            <section id="overview" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">1</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Overview</h2>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                {[
+                  { label: 'Conducting Body', value: 'IBPS' },
+                  { label: 'Post Name', value: 'Clerk / Junior Associate' },
+                  { label: 'Expected Vacancies', value: '4,000–8,000 (CRP CSA-XVI)', green: false },
+                  { label: 'Salary (Gross)', value: '₹36,000–₹42,000/month', green: true },
+                  { label: 'Age Limit', value: '20–28 years (General)' },
+                  { label: 'Qualification', value: 'Any Graduation Degree' },
+                  { label: 'Selection Process', value: 'Prelims + Mains (No Interview)' },
+                  { label: 'Official Website', value: 'ibps.in' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                    <div className={`font-semibold mt-1 text-sm ${(item as any).green ? 'text-emerald-600' : 'text-surface-800'}`}>{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-4 bg-primary-50 border-primary-200">
+                <p className="text-sm text-primary-800"><strong>2026 Key Dates (Official IBPS Calendar):</strong> Prelims on <strong>10–11 October 2026</strong> and Mains on <strong>27 December 2026</strong>. CRP CSA-XVI Notification expected August–September 2026. Apply only at ibps.in.</p>
+              </div>
+            </section>
+            <section id="important-dates" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">2</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Important Dates 2026</h2>
+              </div>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-surface-800 text-white"><th className="text-left px-4 py-3 font-heading">Event</th><th className="text-left px-4 py-3 font-heading">Date</th><th className="text-left px-4 py-3 font-heading">Status</th></tr></thead>
+                  <tbody>{dates.map((r, i) => (<tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}><td className="px-4 py-3 text-surface-700">{r.event}</td><td className="px-4 py-3 text-surface-600 whitespace-nowrap">{r.date}</td><td className="px-4 py-3">{r.status === 'done' && <span className="text-xs px-2 py-0.5 rounded-full bg-surface-100 text-surface-500 font-heading">Completed</span>}{r.status === 'upcoming' && <span className="text-xs px-2 py-0.5 rounded-full bg-primary-100 text-primary-700 font-heading">Upcoming</span>}{r.status === 'tbn' && <span className="text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 font-heading">TBN</span>}</td></tr>))}</tbody>
+                </table>
+              </div>
+            </section>
+            <section id="eligibility" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">3</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Eligibility Criteria</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                {[
+                  { icon: '🪪', label: 'Nationality', value: 'Indian Citizen. OCI / Nepal / Bhutan citizens eligible for certain posts — verify in official notification.' },
+                  { icon: '📋', label: 'Age Limit', value: 'General/EWS: 20–28 yrs. OBC: 20–31 yrs (+3). SC/ST: 20–33 yrs (+5). PwBD: +10 yrs on max age.' },
+                  { icon: '🎓', label: 'Qualification', value: "Bachelor's Degree (any discipline) from a recognised university. Degree must be completed — not appearing." },
+                  { icon: '💻', label: 'Computer Literacy', value: 'Certificate/Diploma/Degree in Computers, or a computer course from a recognised institute is required.' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{item.icon} {item.label}</div>
+                    <div className="text-sm font-semibold text-surface-800">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="card p-4 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl">
+                <p className="text-sm text-amber-800"><strong>⚠️ Language Proficiency:</strong> Must be proficient (read, write, speak) in the official language of the state for which vacancy is applied. Verified via Language Proficiency Test (LPT) post-selection.</p>
+              </div>
+            </section>
+            <section id="vacancies" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">4</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Vacancies & Participating Banks</h2>
+              </div>
+              <p className="text-sm text-surface-600 mb-4">CRP CSA-XVI (2026) expected to have <strong>4,000–8,000 vacancies</strong> across 11 PSBs. State-wise and category-wise breakdowns are released with the official notification.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">{banks.map((b) => (<div key={b} className="flex items-center gap-2 bg-surface-50 rounded-lg px-4 py-3 border border-surface-200 text-sm text-surface-700"><span className="text-primary-500">🏦</span><span>{b}</span></div>))}</div>
+              <p className="text-xs text-surface-400">*SBI and RBI conduct their own separate recruitments and are not part of IBPS CRP.</p>
+            </section>
+            <section id="selection" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">5</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Selection Process</h2>
+              </div>
+              <div className="space-y-3">{[{step:'1',title:'Preliminary Examination (Online CBT)',detail:'100 marks, 60 minutes. Strict sectional timing (20 min each). English + Numerical + Reasoning. Prelims marks NOT counted in final merit — only a screening stage.'},{step:'2',title:'Main Examination (Online CBT)',detail:'200 marks, 160 minutes. GFA + English + Quant + Reasoning & Computer Aptitude. These marks determine your final bank allotment. No interview.'},{step:'3',title:'Provisional Allotment',detail:'Based on Mains score, state preference, and bank vacancies. Language Proficiency Test (LPT) may follow for certain state-language posts.'}].map((s) => (<div key={s.step} className="card p-5 flex gap-4"><div className="w-9 h-9 flex-shrink-0 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm">{s.step}</div><div><div className="font-heading font-semibold text-surface-800 mb-1">{s.title}</div><p className="text-sm text-surface-600">{s.detail}</p></div></div>))}</div>
+            </section>
+            <section id="exam-pattern" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">6</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Exam Pattern</h2>
+              </div>
+              <p className="font-heading font-semibold text-surface-800 mb-3">Prelims — 100 Marks · 60 Min · Sectional Timer (20 min each)</p>
+              <div className="card overflow-hidden mb-6">
+                <table className="w-full text-sm"><thead><tr className="bg-surface-800 text-white"><th className="text-left px-4 py-3 font-heading">Section</th><th className="text-center px-4 py-3 font-heading">Questions</th><th className="text-center px-4 py-3 font-heading">Marks</th><th className="text-center px-4 py-3 font-heading">Time</th></tr></thead><tbody>{prelims.map((r,i)=>(<tr key={i} className={i%2===0?'bg-white':'bg-surface-50'}><td className="px-4 py-3 text-surface-700">{r.section}</td><td className="px-4 py-3 text-center">{r.q}</td><td className="px-4 py-3 text-center">{r.marks}</td><td className="px-4 py-3 text-center">{r.time}</td></tr>))}<tr className="bg-primary-50 font-semibold"><td className="px-4 py-3 text-primary-800">Total</td><td className="px-4 py-3 text-center text-primary-800">100</td><td className="px-4 py-3 text-center text-primary-800">100</td><td className="px-4 py-3 text-center text-primary-800">60 min</td></tr></tbody></table>
+              </div>
+              <p className="font-heading font-semibold text-surface-800 mb-3">Mains — 200 Marks · 160 Min · Negative Marking −0.25</p>
+              <div className="card overflow-hidden">
+                <table className="w-full text-sm"><thead><tr className="bg-surface-800 text-white"><th className="text-left px-4 py-3 font-heading">Section</th><th className="text-center px-4 py-3 font-heading">Q</th><th className="text-center px-4 py-3 font-heading">Marks</th><th className="text-center px-4 py-3 font-heading">Time</th></tr></thead><tbody>{mains.map((r,i)=>(<tr key={i} className={i%2===0?'bg-white':'bg-surface-50'}><td className="px-4 py-3 text-surface-700">{r.section}</td><td className="px-4 py-3 text-center">{r.q}</td><td className="px-4 py-3 text-center">{r.marks}</td><td className="px-4 py-3 text-center">{r.time}</td></tr>))}<tr className="bg-primary-50 font-semibold"><td className="px-4 py-3 text-primary-800">Total</td><td className="px-4 py-3 text-center text-primary-800">190</td><td className="px-4 py-3 text-center text-primary-800">200</td><td className="px-4 py-3 text-center text-primary-800">160 min</td></tr></tbody></table>
+              </div>
+            </section>
+            <section id="syllabus" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">7</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Detailed Syllabus</h2>
+              </div>
+              <div className="space-y-3">{syllabus.map((s)=>(<details key={s.subject} className={`card border rounded-xl overflow-hidden ${s.bg}`}><summary className="flex items-center justify-between p-4 cursor-pointer select-none"><span className={`font-heading font-semibold text-sm ${s.color}`}>{s.subject}</span><svg className="w-4 h-4 text-surface-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></summary><div className="px-4 pb-4 pt-1 bg-white"><ul className="grid grid-cols-1 sm:grid-cols-2 gap-1">{s.topics.map((t)=>(<li key={t} className="text-sm text-surface-700 flex gap-2"><span className="text-primary-400 flex-shrink-0">▸</span>{t}</li>))}</ul></div></details>))}</div>
+            </section>
+            <section id="salary" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">8</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Salary & Benefits</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">{[{label:'Basic Pay (at Joining)',value:'₹17,900/month (JMG Scale I)',green:false},{label:'Gross Monthly Salary',value:'₹36,000–₹42,000/month',green:true},{label:'DA (Dearness Allowance)',value:'~₹10,000–₹14,000/month (CPI-linked)',green:false},{label:'HRA',value:'7–9% of Basic (city-based)',green:false},{label:'Special Allowance',value:'7.75% of Basic Pay',green:false},{label:'CTC (approximate)',value:'₹4.5–₹5.5 lakh per annum',green:true}].map((item)=>(<div key={item.label} className="bg-surface-50 rounded-xl p-4 border border-surface-200"><div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div><div className={`font-semibold mt-1 text-sm ${item.green?'text-emerald-600':'text-surface-800'}`}>{item.value}</div></div>))}</div>
+              <div className="card p-4 bg-emerald-50 border-emerald-200"><p className="text-sm text-emerald-800"><strong>💼 Benefits:</strong> Provident Fund, Gratuity, LFC/LTC, Medical Benefits (self &amp; family), staff loans at concessional rates (Home Loan ~1%, Car Loan ~3.5%), staff canteen, and promotion to Officer Scale via internal JAIIB/CAIIB exams within 3–5 years.</p></div>
+            </section>
+            <section id="study-plan" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">9</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Study Plan (4 Months)</h2>
+              </div>
+              <div className="relative"><div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block"></div><div className="space-y-4">{plan.map((p,i)=>(<div key={i} className="sm:pl-14 relative"><div className="hidden sm:flex absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl items-center justify-center text-white font-heading font-bold text-xs">{i+1}</div><div className="card p-5"><div className="font-heading font-semibold text-surface-800 mb-1">{p.phase} — <span className="text-primary-500">{p.focus}</span></div><ul className="space-y-1 mt-2">{p.tasks.map((t)=>(<li key={t} className="text-sm text-surface-600 flex gap-2"><span className="text-primary-400 flex-shrink-0 mt-0.5">•</span>{t}</li>))}</ul></div></div>))}</div></div>
+            </section>
+            <section id="books" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">10</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Best Books for IBPS Clerk</h2>
+              </div>
+              <div className="card overflow-hidden"><table className="w-full text-sm"><thead><tr className="bg-surface-800 text-white"><th className="text-left px-4 py-3 font-heading">Subject</th><th className="text-left px-4 py-3 font-heading">Book Title</th><th className="text-left px-4 py-3 font-heading">Author</th><th className="text-left px-4 py-3 font-heading">Free PDF</th></tr></thead><tbody>{books.map((b,i)=>(<tr key={i} className={i%2===0?'bg-white':'bg-surface-50'}><td className="px-4 py-3 text-surface-700 font-medium">{b.sub}</td><td className="px-4 py-3 text-surface-700">{b.title}</td><td className="px-4 py-3 text-surface-500">{b.author}</td><td className="px-4 py-3">{b.pdf?<a href={b.pdf} target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline text-xs">Open →</a>:<span className="text-surface-300">—</span>}</td></tr>))}</tbody></table></div>
+            </section>
+            <section id="tips" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">11</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Expert Tips</h2>
+              </div>
+              <div className="space-y-4">{tips.map((tip,i)=>(<div key={i} className="card p-5 flex gap-4"><div className="w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-center text-accent-600 bg-accent-100 font-heading font-bold text-sm">{i+1}</div><div><div className="font-heading font-semibold text-surface-800 mb-1">{tip.title}</div><p className="text-sm text-surface-600">{tip.body}</p></div></div>))}</div>
+            </section>
+            <section id="faq" className="mb-12">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">12</div>
+                <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-3">{faqs.map((faq,i)=>(<details key={i} className="card border border-surface-200 rounded-xl overflow-hidden"><summary className="flex items-center justify-between cursor-pointer p-4 gap-4 select-none"><span className="font-heading font-semibold text-surface-800 text-sm pr-2">{faq.q}</span><svg className="w-4 h-4 text-surface-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></summary><div className="px-4 pb-4 pt-1 text-sm text-surface-600 leading-relaxed border-t border-surface-100">{faq.a}</div></details>))}</div>
+            </section>
+            <div className="card p-5 bg-surface-50 border-surface-200 text-xs text-surface-400 leading-relaxed"><strong className="text-surface-600">Disclaimer:</strong> Data compiled from official IBPS notifications (CRP CSA-XV) and the IBPS Calendar 2026 (released Jan 2026). All 2026 dates are tentative per the official IBPS calendar and subject to revision. Always verify at <a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">ibps.in</a>. TaiyarHo is not affiliated with IBPS.</div>
+          </div>
+          <div className="hidden lg:block">
+            <div className="sticky top-24 space-y-4">
+              <div className="card p-5"><div className="font-heading font-semibold text-surface-800 text-sm uppercase tracking-wide mb-3">On This Page</div><nav className="space-y-0.5">{toc.map((s)=>(<a key={s.id} href={`#${s.id}`} className="block py-1.5 px-3 rounded-lg text-sm text-surface-500 hover:text-primary-500 hover:bg-primary-50 transition-colors">{s.label}</a>))}</nav></div>
+              <div className="card p-5 bg-primary-50 border-primary-200"><div className="font-heading font-semibold text-primary-800 text-sm mb-2">Official Website</div><a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 break-all hover:text-primary-800">ibps.in →</a></div>
+              <div className="card p-5 bg-emerald-50 border-emerald-200"><div className="font-heading font-semibold text-emerald-800 text-sm mb-2">Check Your Eligibility</div><p className="text-xs text-emerald-700 mb-3">Use our free tool to check if you qualify for IBPS Clerk 2026.</p><Link href="/tools/eligibility-checker/" className="block text-center text-xs font-semibold bg-emerald-600 text-white px-3 py-2 rounded-lg hover:bg-emerald-700 transition-colors">Check Eligibility →</Link></div>
+              <div className="card p-5"><div className="font-heading font-semibold text-surface-800 text-sm mb-3">Related Banking Exams</div><div className="space-y-1.5">{[{name:'SBI Clerk',slug:'sbi-clerk'},{name:'IBPS PO',slug:'ibps-po'},{name:'SBI PO',slug:'sbi-po'},{name:'IBPS RRB Clerk',slug:'ibps-rrb-clerk'},{name:'RBI Grade B',slug:'rbi-grade-b'}].map((e)=>(<Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-primary-500 hover:text-primary-700 hover:underline">{e.name} →</Link>))}</div></div>
+            </div>
+          </div>
         </div>
       </div>
     </>

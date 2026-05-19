@@ -9,6 +9,7 @@ import {
   IBPS_AGE,
   SBI_AGE,
   RRB_GRAD_AGE, RRB_UG_AGE, RRB_VISION, RRB_SM_PHYSICAL,
+  IBPS_CLERK_AGE, SBI_CLERK_AGE, RRB_GROUP_D_AGE, SSC_GD_AGE, SSC_GD_PHYSICAL,
   VISION_RANK, VISION_OPTIONS, EXAMS,
   type Category, type Qualification, type Nationality, type Gender,
 } from '@/lib/eligibility-data';
@@ -117,13 +118,17 @@ const EXAM_2026_INFO: Record<string, { salary: string; notification: string }> =
   ibps: { salary: '~₹52,000–₹65,000/month (in-hand, Metro)', notification: 'Jul–Aug 2026 (expected)' },
   sbi:  { salary: '~₹65,000–₹75,000/month (in-hand, Metro)', notification: 'Mar 2026 (released)' },
   rrb:  { salary: '₹19,900–₹35,400/month (Pay Level 2–6)', notification: 'TBN — based on prior cycle patterns' },
+  'ibps-clerk':  { salary: '₹36,000–₹42,000/month gross (12th BPS)', notification: 'Aug–Sep 2026 (expected) · Prelims 10–11 Oct 2026' },
+  'sbi-clerk':   { salary: '~₹46,000/month gross at joining', notification: 'Jul–Aug 2026 (expected)' },
+  'rrb-group-d': { salary: '₹18,000–₹56,900/month (8th CPC Level 1)', notification: 'CEN 09/2025 active — apply at rrbapply.gov.in' },
+  'ssc-gd':      { salary: '~₹28,000–₹35,000/month gross', notification: '2026 notification expected later this year' },
 };
 
 // ─── Main component ───────────────────────────────────────────────────────────
 export default function EligibilityChecker() {
   const [form, setForm] = useState<FormData>({
     dob: '', gender: '', category: '', state: '', qualification: '', nationality: '',
-    attempts: { upsc: 0, ssc: 0, ibps: 0, sbi: 0, rrb: 0 },
+    attempts: { upsc: 0, ssc: 0, ibps: 0, sbi: 0, rrb: 0, 'ibps-clerk': 0, 'sbi-clerk': 0, 'rrb-group-d': 0, 'ssc-gd': 0 },
     height: '', weight: '', chestNormal: '', chestExpanded: '',
     visionRight: '', visionLeft: '', colourBlind: '',
   });
@@ -383,6 +388,76 @@ export default function EligibilityChecker() {
         salary: EXAM_2026_INFO.rrb.salary,
         notification2026: EXAM_2026_INFO.rrb.notification,
       });
+    }
+
+    // ── IBPS CLERK ─────────────────────────────────────────────────────────────
+    {
+      const ageRule = IBPS_CLERK_AGE[cat] ?? IBPS_CLERK_AGE['General'];
+      const qualOk  = QUAL_RANK[qual] >= QUAL_RANK['Graduate'];
+      const ageOk   = age >= ageRule.min && age <= ageRule.max;
+      const natOk   = nat === 'Indian Citizen';
+      const checks: CheckResult[] = [
+        { passed: natOk,  label: '🪪 Nationality',   detail: natOk  ? 'Indian citizens are eligible' : `${nat} — not eligible for IBPS Clerk` },
+        { passed: ageOk,  label: '📋 Age Limit',     detail: ageOk  ? `Age ${age} yrs — within ${ageRule.label}` : `Age ${age} yrs — outside limit (${ageRule.label})` },
+        { passed: qualOk, label: '🎓 Qualification', detail: qualOk ? `${qual} meets the requirement (minimum: Graduate)` : `Graduate required — you have: ${qual}` },
+      ];
+      const status: ExamResult['status'] = checks.every(c => c.passed) ? 'eligible' : checks.some(c => c.passed) ? 'partial' : 'ineligible';
+      examResults.push({ examId: 'ibps-clerk', status, checks, tip: EXAMS[5].tip, salary: EXAM_2026_INFO['ibps-clerk'].salary, notification2026: EXAM_2026_INFO['ibps-clerk'].notification });
+    }
+
+    // ── SBI CLERK ──────────────────────────────────────────────────────────────
+    {
+      const ageRule = SBI_CLERK_AGE[cat] ?? SBI_CLERK_AGE['General'];
+      const qualOk  = QUAL_RANK[qual] >= QUAL_RANK['Graduate'];
+      const ageOk   = age >= ageRule.min && age <= ageRule.max;
+      const natOk   = nat === 'Indian Citizen';
+      const checks: CheckResult[] = [
+        { passed: natOk,  label: '🪪 Nationality',   detail: natOk  ? 'Indian citizens are eligible' : `${nat} — not eligible for SBI Clerk` },
+        { passed: ageOk,  label: '📋 Age Limit',     detail: ageOk  ? `Age ${age} yrs — within ${ageRule.label}` : `Age ${age} yrs — outside limit (${ageRule.label})` },
+        { passed: qualOk, label: '🎓 Qualification', detail: qualOk ? `${qual} meets the requirement (minimum: Graduate)` : `Graduate required — you have: ${qual}` },
+      ];
+      const status: ExamResult['status'] = checks.every(c => c.passed) ? 'eligible' : checks.some(c => c.passed) ? 'partial' : 'ineligible';
+      examResults.push({ examId: 'sbi-clerk', status, checks, tip: EXAMS[6].tip, salary: EXAM_2026_INFO['sbi-clerk'].salary, notification2026: EXAM_2026_INFO['sbi-clerk'].notification });
+    }
+
+    // ── RRB GROUP D ────────────────────────────────────────────────────────────
+    {
+      const ageRule = RRB_GROUP_D_AGE[cat] ?? RRB_GROUP_D_AGE['General'];
+      const qualOk  = QUAL_RANK[qual] >= QUAL_RANK['10th Pass'];
+      const ageOk   = age >= ageRule.min && age <= ageRule.max;
+      const natOk   = nat === 'Indian Citizen';
+      const checks: CheckResult[] = [
+        { passed: natOk,  label: '🪪 Nationality',   detail: natOk  ? 'Indian citizens are eligible' : `${nat} — not eligible for RRB Group D` },
+        { passed: ageOk,  label: '📋 Age Limit',     detail: ageOk  ? `Age ${age} yrs — within ${ageRule.label}` : `Age ${age} yrs — outside limit (${ageRule.label})` },
+        { passed: qualOk, label: '🎓 Qualification', detail: qualOk ? `${qual} meets the requirement (minimum: 10th Pass or ITI)` : `10th Pass / ITI required — you have: ${qual}` },
+      ];
+      const status: ExamResult['status'] = checks.every(c => c.passed) ? 'eligible' : checks.some(c => c.passed) ? 'partial' : 'ineligible';
+      examResults.push({ examId: 'rrb-group-d', status, checks, tip: EXAMS[7].tip, salary: EXAM_2026_INFO['rrb-group-d'].salary, notification2026: EXAM_2026_INFO['rrb-group-d'].notification });
+    }
+
+    // ── SSC GD CONSTABLE ───────────────────────────────────────────────────────
+    {
+      const ageRule = SSC_GD_AGE[cat] ?? SSC_GD_AGE['General'];
+      const qualOk  = QUAL_RANK[qual] >= QUAL_RANK['10th Pass'];
+      const ageOk   = age >= ageRule.min && age <= ageRule.max;
+      const natOk   = nat === 'Indian Citizen';
+      let physCheck: CheckResult | null = null;
+      if (showPhysical && form.height) {
+        const h   = parseFloat(form.height);
+        const req = gender === 'Female' ? SSC_GD_PHYSICAL.heightFemale! : SSC_GD_PHYSICAL.heightMale!;
+        physCheck = { passed: h >= req, label: '📏 Height', detail: h >= req ? `Height ${h} cm — meets SSC GD requirement (${req} cm for ${gender === 'Female' ? 'Female' : 'Male'})` : `Height ${h} cm — below SSC GD requirement (${req} cm for ${gender === 'Female' ? 'Female' : 'Male'})` };
+      }
+      const checks: CheckResult[] = [
+        { passed: natOk,  label: '🪪 Nationality',   detail: natOk  ? 'Indian citizens are eligible' : `${nat} — not eligible for SSC GD` },
+        { passed: ageOk,  label: '📋 Age Limit',     detail: ageOk  ? `Age ${age} yrs — within ${ageRule.label}` : `Age ${age} yrs — outside limit (${ageRule.label})` },
+        { passed: qualOk, label: '🎓 Qualification', detail: qualOk ? `${qual} meets the requirement (minimum: 10th Pass)` : `10th Pass required — you have: ${qual}` },
+      ];
+      if (physCheck) checks.push(physCheck);
+      const allPass  = checks.every(c => c.passed);
+      const somePass = checks.some(c => c.passed);
+      const status: ExamResult['status'] = allPass ? 'eligible' : somePass ? 'partial' : 'ineligible';
+      const partialNote = !allPass ? 'Physical Efficiency Test (PET) and Physical Standards Test (PST) required. Height 170/157 cm (M/F), Chest 80/85 cm. Check SSC GD official notification.' : undefined;
+      examResults.push({ examId: 'ssc-gd', status, checks, tip: EXAMS[8].tip, partialNote, salary: EXAM_2026_INFO['ssc-gd'].salary, notification2026: EXAM_2026_INFO['ssc-gd'].notification });
     }
 
     setResults(examResults);

@@ -37,7 +37,7 @@ const KNOWN_SLUGS = new Set([
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
 // Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
-// Last updated: 5 May 2026
+// Last updated: 19 May 2026
 const upcomingExams: MonthGroup[] = [
   {
     month: 'May 2026',
@@ -53,12 +53,12 @@ const upcomingExams: MonthGroup[] = [
       },
       {
         name: 'RRB NTPC UG (CBT 1)',
-        date: '7–9 May & 13–21 Jun 2026',
+        date: '13–21 Jun 2026',
         status: 'OFFICIAL',
         category: 'Railway',
         internalSlug: 'rrb-ntpc',
         externalUrl: 'https://rrbapply.gov.in',
-        note: '3,058 vacancies (12th-level) • CEN 07/2025',
+        note: '3,058 vacancies (12th-level) • CEN 07/2025 • May phase done; Jun phase upcoming',
       },
       {
         name: 'UPSC Civil Services (Prelims)',
@@ -86,12 +86,22 @@ const upcomingExams: MonthGroup[] = [
         externalUrl: 'https://bseh.org.in',
       },
       {
+        name: 'SSC CPO 2026 Notification',
+        date: '31 May 2026',
+        status: 'OFFICIAL',
+        category: 'Police',
+        internalSlug: 'ssc-cpo',
+        externalUrl: 'https://ssc.gov.in',
+        note: 'Sub-Inspector in Delhi Police & CAPFs. Apply Jun 2026. Paper 1: Oct–Nov 2026',
+      },
+      {
         name: 'UP Police Constable',
-        date: 'May 2026',
+        date: 'Jun–Jul 2026 (tentative)',
         status: 'TENTATIVE',
         category: 'Police',
         internalSlug: 'up-police-constable',
         externalUrl: 'https://uppbpb.gov.in',
+        note: 'Expected Jun–Jul 2026 per UPPBPB; confirm at uppbpb.gov.in',
       },
     ],
   },
@@ -278,6 +288,15 @@ const upcomingExams: MonthGroup[] = [
         note: 'As per IBPS Calendar 2026',
       },
       {
+        name: 'SSC CPO (Paper 1)',
+        date: 'Oct–Nov 2026',
+        status: 'TENTATIVE',
+        category: 'Police',
+        internalSlug: 'ssc-cpo',
+        externalUrl: 'https://ssc.gov.in',
+        note: 'Notification 31 May 2026. As per SSC Exam Calendar 2026–27',
+      },
+      {
         name: 'IBPS Clerk (Prelims)',
         date: '10–11 Oct 2026',
         status: 'OFFICIAL',
@@ -353,6 +372,24 @@ const upcomingExams: MonthGroup[] = [
     month: 'December 2026',
     exams: [
       {
+        name: 'IBPS RRB PO (Mains)',
+        date: '20 Dec 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'ibps-rrb-po',
+        externalUrl: 'https://ibps.in',
+        note: 'As per IBPS Calendar 2026',
+      },
+      {
+        name: 'IBPS RRB Clerk (Prelims)',
+        date: '6, 12 & 13 Dec 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'ibps-rrb-clerk',
+        externalUrl: 'https://ibps.in',
+        note: 'As per IBPS Calendar 2026',
+      },
+      {
         name: 'IBPS Clerk (Mains)',
         date: '27 Dec 2026',
         status: 'OFFICIAL',
@@ -369,14 +406,6 @@ const upcomingExams: MonthGroup[] = [
         internalSlug: 'rrb-group-d',
         externalUrl: 'https://rrbapply.gov.in',
         note: 'As per RRB Exam Calendar 2026',
-      },
-      {
-        name: 'SSC CPO (Tier 1)',
-        date: 'Dec 2026',
-        status: 'TENTATIVE',
-        category: 'SSC',
-        internalSlug: 'ssc-cpo',
-        externalUrl: 'https://ssc.gov.in',
       },
     ],
   },

@@ -118,6 +118,71 @@ export const RRB_UG_AGE: AgeRuleMap = {
   'Ex-Serviceman':  { min: 18, max: 30, label: '18–30 + service period' },
 };
 
+// IBPS Clerk (CRP CSA — 11 PSBs)
+export const IBPS_CLERK_AGE: AgeRuleMap = {
+  'General':        { min: 20, max: 28, label: '20–28 years' },
+  'OBC':            { min: 20, max: 31, label: '20–31 years (+3)' },
+  'SC':             { min: 20, max: 33, label: '20–33 years (+5)' },
+  'ST':             { min: 20, max: 33, label: '20–33 years (+5)' },
+  'EWS':            { min: 20, max: 28, label: '20–28 years' },
+  'PwBD-General':   { min: 20, max: 38, label: '20–38 years (+10)' },
+  'PwBD-OBC':       { min: 20, max: 41, label: '20–41 years (+13)' },
+  'PwBD-SC/ST':     { min: 20, max: 43, label: '20–43 years (+15)' },
+  'Ex-Serviceman':  { min: 20, max: 28, label: '20–28 years (+ service period)' },
+};
+
+// SBI Clerk (Junior Associates)
+export const SBI_CLERK_AGE: AgeRuleMap = {
+  'General':        { min: 20, max: 28, label: '20–28 years' },
+  'OBC':            { min: 20, max: 31, label: '20–31 years (+3)' },
+  'SC':             { min: 20, max: 33, label: '20–33 years (+5)' },
+  'ST':             { min: 20, max: 33, label: '20–33 years (+5)' },
+  'EWS':            { min: 20, max: 28, label: '20–28 years' },
+  'PwBD-General':   { min: 20, max: 38, label: '20–38 years (+10)' },
+  'PwBD-OBC':       { min: 20, max: 41, label: '20–41 years (+13)' },
+  'PwBD-SC/ST':     { min: 20, max: 43, label: '20–43 years (+15)' },
+  'Ex-Serviceman':  { min: 20, max: 28, label: '20–28 years (+ service period)' },
+};
+
+// RRB Group D (CEN 09/2025 — 22,195 vacancies)
+export const RRB_GROUP_D_AGE: AgeRuleMap = {
+  'General':        { min: 18, max: 36, label: '18–36 years' },
+  'OBC':            { min: 18, max: 39, label: '18–39 years (+3)' },
+  'SC':             { min: 18, max: 41, label: '18–41 years (+5)' },
+  'ST':             { min: 18, max: 41, label: '18–41 years (+5)' },
+  'EWS':            { min: 18, max: 36, label: '18–36 years' },
+  'PwBD-General':   { min: 18, max: 46, label: '18–46 years (+10)' },
+  'PwBD-OBC':       { min: 18, max: 49, label: '18–49 years (+13)' },
+  'PwBD-SC/ST':     { min: 18, max: 51, label: '18–51 years (+15)' },
+  'Ex-Serviceman':  { min: 18, max: 36, label: '18–36 years (+ service period)' },
+};
+
+// SSC GD Constable
+export const SSC_GD_AGE: AgeRuleMap = {
+  'General':        { min: 18, max: 23, label: '18–23 years' },
+  'OBC':            { min: 18, max: 26, label: '18–26 years (+3)' },
+  'SC':             { min: 18, max: 28, label: '18–28 years (+5)' },
+  'ST':             { min: 18, max: 28, label: '18–28 years (+5)' },
+  'EWS':            { min: 18, max: 23, label: '18–23 years' },
+  'PwBD-General':   { min: 18, max: 33, label: '18–33 years (+10)' },
+  'PwBD-OBC':       { min: 18, max: 36, label: '18–36 years (+13)' },
+  'PwBD-SC/ST':     { min: 18, max: 38, label: '18–38 years (+15)' },
+  'Ex-Serviceman':  { min: 18, max: 26, label: '18–26 years (+3 yrs after discharge)' },
+};
+
+export const SSC_GD_PHYSICAL: PhysicalStandard = {
+  heightMale: 170,
+  heightFemale: 157,
+  chestNormal: 80,
+  chestExpanded: 85,
+  vision: {
+    distantUncorrected: '6/6 one eye, 6/9 other (no glasses at exam)',
+    distantCorrected:   '6/6 one eye, 6/9 other',
+    colourBlindness: 'Not Allowed',
+    nightBlindness: 'Not Allowed',
+  },
+};
+
 // ─── Attempt limits ───────────────────────────────────────────────────────────
 export const UPSC_ATTEMPTS: Record<string, number | 'Unlimited'> = {
   'General': 6, 'EWS': 6,
@@ -234,5 +299,37 @@ export const EXAMS: ExamMeta[] = [
     icon: '🚂',
     slug: 'rrb-ntpc',
     tip: 'Railway career awaits! RRB NTPC 2026 notification is expected. General Awareness accounts for 40 marks — read Lucent GK and follow current affairs daily.',
+  },
+  {
+    id: 'ibps-clerk',
+    name: 'IBPS Clerk (Junior Associate – 11 PSBs)',
+    shortName: 'IBPS Clerk',
+    icon: '🏛️',
+    slug: 'ibps-clerk',
+    tip: 'IBPS Clerk 2026 — Prelims 10–11 Oct, Mains 27 Dec. Focus on Reasoning (Puzzles) and Quant (DI) for Prelims. Banking Awareness is the key differentiator in Mains. Gross salary ~₹36,000–₹42,000/month.',
+  },
+  {
+    id: 'sbi-clerk',
+    name: 'SBI Clerk (Junior Associates – SBI)',
+    shortName: 'SBI Clerk',
+    icon: '💳',
+    slug: 'sbi-clerk',
+    tip: "SBI Clerk 2026 notification expected July–August. 5,000–10,000 vacancies in India's largest bank. Same exam pattern as IBPS Clerk. Gross salary ~₹46,000/month. Language Proficiency Test post-allotment.",
+  },
+  {
+    id: 'rrb-group-d',
+    name: 'RRB Group D (Track Maintainer, Helper, Gateman)',
+    shortName: 'RRB Group D',
+    icon: '🛤️',
+    slug: 'rrb-group-d',
+    tip: 'RRB Group D (CEN 09/2025) has 22,195 vacancies. 10th Pass or ITI eligible. Age 18–36 yrs (General). CBT → Physical Efficiency Test (PET) → Medical. Start GK/Current Affairs and basic Maths now.',
+  },
+  {
+    id: 'ssc-gd',
+    name: 'SSC GD Constable (BSF/CISF/CRPF/ITBP/SSB/NIA)',
+    shortName: 'SSC GD Constable',
+    icon: '👮',
+    slug: 'ssc-gd-constable',
+    tip: 'SSC GD 2026 expected later this year with 25,000–80,000 vacancies. 10th Pass eligible. Age 18–23 yrs (General). Physical standards: Height 170/157 cm (M/F), Chest 80/85 cm. Prepare Maths, GK and physical fitness now.',
   },
 ];
