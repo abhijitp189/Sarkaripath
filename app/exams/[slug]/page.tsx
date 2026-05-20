@@ -204,6 +204,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'ppsc-pcs') {
+    return {
+      title: 'PPSC PCS 2026 – Punjab Civil Services Notification, Syllabus & Guide | TaiyarHo',
+      description: 'PPSC Punjab PCS 2026 complete guide: 331 vacancies (2025 cycle), Mains held Apr 2026, result awaited. DSP, Tehsildar, ETO, BDO posts. Graduate eligible, age 21–37 yrs. Salary ₹44,900–₹53,100/month.',
+      keywords: 'PPSC PCS 2026, Punjab PCS notification 2026, PPSC PCS syllabus, Punjab civil services taiyari, PPSC PCS eligibility, DSP Tehsildar ETO BDO Punjab, ppsc.gov.in',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/ppsc-pcs/' },
+      other: { 'description:hi': 'PPSC Punjab PCS 2026 – 331 रिक्तियाँ, मुख्य परीक्षा अप्रैल 2026 में हुई, परिणाम प्रतीक्षित। DSP, तहसीलदार, ETO, BDO पद। स्नातक पात्र, आयु 21–37 वर्ष। वेतन ₹44,900–₹53,100/माह।' },
+    };
+  }
+
   if (params.slug === 'ssc-chsl') {
     return {
       title: 'SSC CHSL 2026 – Notification, Syllabus, Eligibility & Complete Guide | TaiyarHo',
@@ -781,6 +791,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'ssc-stenographer') return <SscStenographerPage exam={brief} />;
   if (brief && brief.slug === 'ssc-selection-post') return <SscSelectionPostPage exam={brief} />;
   if (brief && brief.slug === 'uppsc-pcs') return <UppscPcsPage exam={brief} />;
+  if (brief && brief.slug === 'ppsc-pcs') return <PpscPcsPage exam={brief} />;
   if (brief && brief.slug === 'bpsc-cce') return <BpscCcePage exam={brief} />;
   if (brief && brief.slug === 'rrb-je') return <RrbJePage exam={brief} />;
   if (brief && brief.slug === 'maharashtra-police-constable') return <MaharashtraPoliceConstablePage exam={brief} />;
@@ -56352,6 +56363,674 @@ function SbiApprenticePage({ exam }: { exam: any }) {
             </div>
           </aside>
 
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── PPSC PCS PAGE ─────────────────────────────────────────────────────────────
+function PpscPcsPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'selection',       label: 'Selection Process' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Benefits' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'PPSC PCS 2025 Notification Released',              date: 'January 2025',              status: 'done' },
+    { event: 'PPSC PCS 2025 Application Window',                 date: 'Jan – Feb 2025',            status: 'done' },
+    { event: 'PPSC PCS 2025 Prelims Exam',                       date: '7 December 2025',           status: 'done' },
+    { event: 'PPSC PCS 2025 Prelims Result',                     date: '10 January 2026',           status: 'done' },
+    { event: 'PPSC PCS 2025 Mains Application Window',           date: '26 Feb – 8 Mar 2026',       status: 'done' },
+    { event: 'PPSC PCS 2025 Mains Admit Card Released',          date: '27 March 2026',             status: 'done' },
+    { event: 'PPSC PCS 2025 Mains Exam',                         date: '1 Apr – 10 Apr 2026',       status: 'done' },
+    { event: '⚠️ PPSC PCS 2025 Mains Result (Expected)',          date: 'June – July 2026 (TBN)',    status: 'tbn' },
+    { event: '⚠️ PPSC PCS 2025 Interview (Expected)',             date: 'July – Sep 2026 (TBN)',     status: 'tbn' },
+    { event: '⚠️ PPSC PCS 2025 Final Result (Expected)',          date: 'Oct – Nov 2026 (TBN)',      status: 'tbn' },
+    { event: '💡 PPSC PCS 2026 Notification (Expected)',          date: 'Oct 2026 – Jan 2027 (TBN)',  status: 'upcoming' },
+    { event: 'PPSC PCS 2026 Prelims (Expected)',                  date: 'Apr – Jun 2027 (TBN)',       status: 'upcoming' },
+  ];
+
+  const prelimsPattern = [
+    { paper: 'Paper I – General Studies', questions: 100, marks: 200, duration: '2 hours', note: 'Merit-based (2 marks/question)' },
+    { paper: 'Paper II – CSAT (Qualifying)', questions: 80, marks: 200, duration: '2 hours', note: 'Min. 40% to qualify (2.5 marks/question)' },
+  ];
+
+  const mainsPattern = [
+    { paper: 'Paper I – General Punjabi (Gurmukhi)', marks: 100, type: 'Descriptive', note: 'Qualifying' },
+    { paper: 'Paper II – General English',            marks: 100, type: 'Descriptive', note: 'Qualifying' },
+    { paper: 'Paper III – Essay',                     marks: 150, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper IV – General Studies I',          marks: 250, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper V – General Studies II',          marks: 250, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper VI – General Studies III',        marks: 250, type: 'Descriptive', note: 'Merit-based' },
+    { paper: 'Paper VII – General Studies IV',        marks: 250, type: 'Descriptive', note: 'Merit-based' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'Punjab Civil Service (Exec. Branch)',       payScale: '₹53,100/month',  vac2025: '~90–100', vac2026: 'TBN' },
+    { post: 'Deputy Superintendent of Police (DSP)',     payScale: '₹53,100/month',  vac2025: '~50–60',  vac2026: 'TBN' },
+    { post: 'Tehsildar',                                 payScale: '₹44,900/month',  vac2025: '~40–50',  vac2026: 'TBN' },
+    { post: 'Block Dev. & Panchayat Officer (BDPO)',     payScale: '₹44,900/month',  vac2025: '~40–50',  vac2026: 'TBN' },
+    { post: 'Excise & Taxation Officer (ETO)',           payScale: '₹44,900/month',  vac2025: '~30–40',  vac2026: 'TBN' },
+    { post: 'Food & Civil Supply Officer',               payScale: '₹44,900/month',  vac2025: '~20–30',  vac2026: 'TBN' },
+    { post: 'Asst. Registrar Cooperative Societies',     payScale: '₹44,900/month',  vac2025: '~15–20',  vac2026: 'TBN' },
+    { post: 'Employment Gen. & Training Officer (EGTO)', payScale: '₹44,900/month',  vac2025: '~10–15',  vac2026: 'TBN' },
+    { post: 'Labour & Conciliation Officer',             payScale: '₹44,900/month',  vac2025: '~10–15',  vac2026: 'TBN' },
+    { post: 'Other Allied Services',                     payScale: '₹35,400+/month', vac2025: '~10–20',  vac2026: 'TBN' },
+  ];
+
+  const salaryBreakdown = [
+    { post: 'PCS (Exec.) / DSP',     basic: '₹53,100', da: '~₹29,205 (55%)', hra: '₹6,372–₹12,744', gross: '~₹88,000–₹1,00,000', inhand: '₹75,000–₹88,000' },
+    { post: 'Tehsildar / ETO / BDO', basic: '₹44,900', da: '~₹24,695 (55%)', hra: '₹5,388–₹10,776', gross: '~₹74,000–₹88,000',  inhand: '₹63,000–₹76,000' },
+    { post: 'Other Allied Services', basic: '₹35,400', da: '~₹19,470 (55%)', hra: '₹4,248–₹8,496',  gross: '~₹58,000–₹72,000',  inhand: '₹50,000–₹62,000' },
+  ];
+
+  const ageRelaxation = [
+    { category: 'General (All Services except Police/Prison)', limit: '21 – 37 years' },
+    { category: 'DSP (Punjab Police Service)',                  limit: '21 – 28 years (as per Dec 2024 update)' },
+    { category: 'OBC / BC (Punjab)',                            limit: 'Up to 40 years (+3)' },
+    { category: 'SC / ST (Punjab)',                             limit: 'Up to 42 years (+5)' },
+    { category: 'PwBD',                                         limit: '+10 years relaxation' },
+    { category: 'Ex-Servicemen',                                limit: '+3 years relaxation' },
+    { category: 'SC/ST Punjab (Attempts)',                      limit: 'Unlimited attempts till age 37' },
+  ];
+
+  const syllabus = [
+    {
+      subject: 'GS I – History, Culture & Geography',
+      color: 'text-indigo-700',
+      bg: 'bg-indigo-50 border-indigo-200',
+      topics: [
+        'History of India & Punjab: Ancient, Medieval and Modern',
+        'Punjab\'s Role in the Indian Freedom Struggle',
+        'Post-independence consolidation and reorganization',
+        'World History: Industrial Revolution, World Wars, Colonisation',
+        'Indian & World Geography: Physical, Social & Economic',
+        'Geography of Punjab: Rivers, Agriculture, Resources',
+        'Indian Society: Features, diversity and social empowerment',
+        'Urbanization, environmental issues and remedies',
+        'Art forms, literature and architecture (ancient to modern)',
+      ],
+    },
+    {
+      subject: 'GS II – Polity, Governance & International Relations',
+      color: 'text-emerald-700',
+      bg: 'bg-emerald-50 border-emerald-200',
+      topics: [
+        'Indian Constitution: Historical underpinnings, features, amendments',
+        'Functions of Union, State and Local Governments',
+        'Parliament, State Legislature: Structure and functioning',
+        'Panchayati Raj & Urban Local Bodies (73rd & 74th Amendments)',
+        'Punjab\'s Administrative Structure and Governance',
+        'Government Policies, Welfare Schemes and Interventions',
+        'e-Governance: Applications, models, challenges',
+        'India and its neighbourhood – bilateral and regional groupings',
+        'India in multilateral forums: UN, WTO, SCO, BRICS',
+      ],
+    },
+    {
+      subject: 'GS III – Economy, Environment & Science',
+      color: 'text-blue-700',
+      bg: 'bg-blue-50 border-blue-200',
+      topics: [
+        'Indian Economy and Planning: resource mobilisation, growth',
+        'Punjab\'s Economy: Agriculture, Industry, Services sector',
+        'Major crops, cropping patterns, Green Revolution legacy',
+        'Food processing, supply chain, MSP and PDS',
+        'Infrastructure: Energy, Roads, Railways, Ports',
+        'Science and Technology: Recent developments and applications',
+        'Environment: Conservation, pollution, climate change',
+        'Disaster Management: Prevention, mitigation, response',
+        'Internal Security: Challenges, extremism, cyber threats',
+        'Data Interpretation and statistical analysis',
+      ],
+    },
+    {
+      subject: 'GS IV – Ethics, Integrity & Aptitude',
+      color: 'text-amber-700',
+      bg: 'bg-amber-50 border-amber-200',
+      topics: [
+        'Ethics and Human Interface: essence, determinants, consequences',
+        'Aptitude and foundational values for Civil Services',
+        'Emotional Intelligence: concepts and applications in administration',
+        'Contributions of moral thinkers and philosophers',
+        'Civil Service values and ethics in public administration',
+        'Probity in governance: concept of public service, integrity',
+        'Transparency and accountability in public institutions',
+        'Code of Ethics, Citizen\'s Charter and RTI',
+        'Anti-corruption measures and good governance',
+        'Case Studies on ethical dilemmas in administration',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    { month: 'Month 1–2', title: 'Foundation & Punjab Focus', tasks: ['Read Punjab history, culture, economy (NCERT + Punjab Year Book)', 'Study Indian Polity (Laxmikanth)', 'Build daily current affairs habit — focus on Punjab-specific news', 'Practice essay writing 3x/week (150–200 words each)'] },
+    { month: 'Month 3–4', title: 'Core GS Building', tasks: ['Geography of India & Punjab (NCERT 6–12)', 'Indian Economy: NCERT + Ramesh Singh + 8th Pay Commission updates', 'Science & Technology basics (NCERT + The Hindu)', 'Start GS answer writing (250 words/answer)'] },
+    { month: 'Month 5–6', title: 'Governance & Ethics', tasks: ['Ethics: ARC Reports + IGNOU material + case study practice', 'Governance: Punchhi Commission, Punjab governance structure', 'Attempt full-length Prelims mock tests weekly', 'Consolidate Punjabi & English language paper skills'] },
+    { month: 'Month 7–8', title: 'Revision & Mocks', tasks: ['Full revision of all GS subjects with short notes', 'Attempt 20+ full-length Prelims mock tests (PPSC-pattern)', 'Write at least 30 Mains answers for practice', 'Personality development preparation for Interview'] },
+  ];
+
+  const books: { subject: string; title: string; author: string; link: string }[] = [
+    { subject: 'Punjab History & Culture', title: 'History of Punjab (2 Vols.)', author: 'Fauja Singh & L.M. Joshi', link: '' },
+    { subject: 'Indian Polity',            title: 'Indian Polity',               author: 'M. Laxmikanth',             link: '' },
+    { subject: 'Indian Economy',           title: 'Indian Economy',              author: 'Ramesh Singh',               link: '' },
+    { subject: 'General Studies',          title: 'NCERT Textbooks (6–12)',      author: 'NCERT',                     link: '' },
+    { subject: 'Geography',                title: 'Certificate Physical & Human Geography', author: 'G.C. Leong',    link: '' },
+    { subject: 'Ethics',                   title: 'Ethics, Integrity & Aptitude', author: 'G. Subba Rao & P.N. Roy Chowdhury', link: '' },
+    { subject: 'Essay Writing',            title: 'Essay & Answer Writing Guide', author: 'Arihant Experts',          link: '' },
+    { subject: 'Punjab Current Affairs',   title: 'Punjab Year Book (Annual)',   author: 'Punjab Govt / Vision IAS',  link: '' },
+  ];
+
+  const faqs = [
+    { q: 'How many vacancies were announced for PPSC PCS 2025?', a: 'The Punjab Public Service Commission initially announced 322 vacancies in January 2025, which were later revised to 331 posts through an official addendum issued in September 2025. Posts include PCS (Executive Branch), DSP, Tehsildar, ETO, BDPO, and allied services.' },
+    { q: 'What is the status of PPSC PCS 2025 as of May 2026?', a: 'The Prelims was held on 7 December 2025 and the result was declared on 10 January 2026. The Mains was conducted from 1 to 10 April 2026. The Mains result and interview schedule are awaited and expected around July–August 2026.' },
+    { q: 'Is Punjabi language mandatory for PPSC PCS eligibility?', a: 'Yes. Candidates must have passed the Matriculation Examination with Punjabi as one of the compulsory or elective subjects, or an equivalent examination in the Punjabi language. This is a mandatory eligibility condition specific to Punjab PCS.' },
+    { q: 'How many attempts are allowed for PPSC PCS?', a: 'As per the official PPSC notification, General category candidates get 6 attempts within the age limit. Backward Classes (BC) Punjab candidates get 9 attempts. Scheduled Castes (SC) Punjab candidates have unlimited attempts till they reach the maximum age limit of 37 years.' },
+    { q: 'What is the age limit for the DSP post under PPSC PCS 2026?', a: 'As per the public notice dated December 2024, the maximum age limit for the Deputy Superintendent of Police (DSP) post was revised to 28 years for general category candidates, which is lower than the standard 37-year limit for other PCS posts. Relaxation for reserved categories applies as per Punjab Govt rules.' },
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="bg-surface-50 min-h-screen">
+        <div className="container-main py-8">
+
+          {/* Breadcrumb */}
+          <nav className="text-sm text-surface-500 mb-6">
+            <Link href="/" className="hover:text-primary-500">Home</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams" className="hover:text-primary-500">Exams</Link>
+            <span className="mx-2">›</span>
+            <Link href="/exams?category=State+PSC" className="hover:text-primary-500">State PSC</Link>
+            <span className="mx-2">›</span>
+            <span className="text-surface-800">PPSC PCS 2026</span>
+          </nav>
+
+          <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+            {/* MAIN CONTENT */}
+            <main>
+
+              {/* PAGE HEADER */}
+              <div className="mb-8">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="badge-primary">State PSC</span>
+                  <span className="bg-yellow-100 text-yellow-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">Punjab</span>
+                  <span className="bg-emerald-100 text-emerald-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">331 Vacancies</span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl font-heading font-bold text-surface-900 mb-3">
+                  PPSC Punjab Civil Services (PCS) 2026
+                </h1>
+                <p className="text-surface-500 leading-relaxed max-w-2xl">
+                  The Punjab Public Service Commission (PPSC) conducts the Punjab State Civil Services Combined Competitive Examination to recruit officers for prestigious administrative, police, and revenue posts in Punjab. The 2025 cycle (331 vacancies) Mains concluded in April 2026 — results are awaited. The 2026 cycle notification is expected by end of 2026.
+                </p>
+
+                {/* Fast-fact block */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+                  <div className="bg-white rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">Vacancies 2025</div>
+                    <div className="font-semibold mt-1 text-sm text-emerald-600">331 Posts</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">Mains Held</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">1–10 Apr 2026</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">Mains Result</div>
+                    <div className="font-semibold mt-1 text-sm text-amber-600">⚠️ TBN</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">Salary</div>
+                    <div className="font-semibold mt-1 text-sm text-emerald-600">₹44,900–₹53,100</div>
+                  </div>
+                </div>
+
+                {/* 💡 Update banner */}
+                <div className="mt-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                  <p className="text-sm text-primary-800">
+                    <span className="font-semibold">💡 Latest Update (May 2026):</span> PPSC PCS 2025 Mains (7 papers) concluded 1–10 April 2026. Mains result and interview schedule are expected around July–August 2026. The 2026 cycle notification is likely by December 2026 based on historical trends.
+                  </p>
+                </div>
+              </div>
+
+              {/* 1. IMPORTANT DATES */}
+              <section id="important-dates" className="mb-12">
+                <SectionHeading num="1" title="Important Dates 2025–2026" />
+                <div className="card overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading text-sm">Event</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Date</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-body text-surface-800">{row.event}</td>
+                          <td className="px-4 py-3 font-body text-surface-600 whitespace-nowrap">{row.date}</td>
+                          <td className="px-4 py-3">
+                            {row.status === 'done' && <span className="badge-green">✓ Done</span>}
+                            {row.status === 'tbn' && <span className="bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⚠️ TBN</span>}
+                            {row.status === 'upcoming' && <span className="bg-blue-100 text-blue-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">💡 Expected</span>}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              {/* 2. ELIGIBILITY */}
+              <section id="eligibility" className="mb-12">
+                <SectionHeading num="2" title="Eligibility Criteria" />
+                <div className="grid sm:grid-cols-2 gap-4 mb-5">
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">🪪 Nationality</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">Indian Citizen (Punjab domicile / state subject)</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">📋 Age (General)</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">21 – 37 years (DSP: max 28 years)</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">🎓 Education</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">Graduate (any discipline) from recognised university</div>
+                  </div>
+                  <div className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                    <div className="text-xs text-surface-400 uppercase tracking-wide">📝 Language Requirement</div>
+                    <div className="font-semibold mt-1 text-sm text-surface-800">Punjabi in Matric (compulsory or elective)</div>
+                  </div>
+                </div>
+                <div className="card overflow-hidden">
+                  <div className="px-5 py-3 bg-surface-100 border-b border-surface-200">
+                    <h3 className="font-heading font-semibold text-surface-800 text-sm">Age Relaxation</h3>
+                  </div>
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading text-sm">Category</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Age Limit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ageRelaxation.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-body text-surface-800">{row.category}</td>
+                          <td className="px-4 py-3 font-body text-surface-600">{row.limit}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400 mt-2">* Attempts allowed: General — 6 | BC Punjab — 9 | SC Punjab — Unlimited till age 37. Always verify with official notification.</p>
+              </section>
+
+              {/* 3. VACANCIES & POSTS */}
+              <section id="vacancies" className="mb-12">
+                <SectionHeading num="3" title="Vacancies & Posts 2025" />
+                <div className="card overflow-hidden mb-4">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading text-sm">Post Name</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Basic Pay</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Approx. Vacancies 2025</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">2026</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyPosts.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-body text-surface-800">{row.post}</td>
+                          <td className="px-4 py-3 font-body text-emerald-700 font-semibold">{row.payScale}</td>
+                          <td className="px-4 py-3 font-body text-surface-600">{row.vac2025}</td>
+                          <td className="px-4 py-3">
+                            <span className="bg-amber-100 text-amber-700 rounded-full px-2 py-0.5 text-xs font-heading font-semibold">TBN</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400">Total 2025 cycle: 331 posts (revised from initial 322 via September 2025 addendum). Post-wise final count may differ from estimates above. Source: ppsc.gov.in official notification.</p>
+              </section>
+
+              {/* 4. SELECTION PROCESS */}
+              <section id="selection" className="mb-12">
+                <SectionHeading num="4" title="Selection Process" />
+                <div className="space-y-4">
+                  {[
+                    { step: '01', title: 'Preliminary Examination (Screening)', desc: 'Objective MCQ test — Paper I (GS, 200 marks) + Paper II (CSAT, qualifying at 40%). Only Paper I marks count for merit. No negative marking. Approx. 12–13× vacancies qualify for Mains.', color: 'bg-primary-500' },
+                    { step: '02', title: 'Mains Examination (Descriptive)', desc: '7 descriptive papers totalling 1,350 marks (3 hours each). Papers I & II (Punjabi, English) are qualifying. Papers III–VII (Essay + 4 GS) are merit-based. Candidates must score 45% aggregate (40% for SC/ST) and 25% in each paper.', color: 'bg-primary-600' },
+                    { step: '03', title: 'Personal Interview / Personality Test', desc: '150 marks. Assesses personality, communication, leadership, administrative aptitude, awareness of Punjab affairs, and moral integrity. Conducted at PPSC headquarters, Patiala.', color: 'bg-primary-700' },
+                    { step: '04', title: 'Final Merit & Appointment', desc: 'Final merit is based on Mains (1,350) + Interview (150) = 1,500 marks. Prelims marks are NOT counted. After document verification, final appointment orders are issued by the Punjab Government.', color: 'bg-primary-800' },
+                  ].map((s, i) => (
+                    <div key={i} className="card p-5 flex gap-4">
+                      <div className={`${s.color} text-white font-heading font-bold text-sm rounded-xl w-10 h-10 flex items-center justify-center flex-shrink-0`}>{s.step}</div>
+                      <div>
+                        <h3 className="font-heading font-semibold text-surface-800">{s.title}</h3>
+                        <p className="text-sm text-surface-600 mt-1 leading-relaxed">{s.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 5. EXAM PATTERN */}
+              <section id="exam-pattern" className="mb-12">
+                <SectionHeading num="5" title="Exam Pattern 2025–2026" />
+
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-lg">Stage 1: Preliminary Examination</h3>
+                <div className="card overflow-hidden mb-6">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading text-sm">Paper</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Questions</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Marks</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Duration</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Nature</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {prelimsPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-body text-surface-800">{row.paper}</td>
+                          <td className="px-4 py-3 font-body text-surface-600">{row.questions}</td>
+                          <td className="px-4 py-3 font-body text-surface-800 font-semibold">{row.marks}</td>
+                          <td className="px-4 py-3 font-body text-surface-600">{row.duration}</td>
+                          <td className="px-4 py-3 font-body text-surface-600 text-xs">{row.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="bg-primary-50 border-l-4 border-primary-400 rounded-r-xl p-3 text-sm text-primary-800 mb-6">
+                  ✅ <strong>No negative marking</strong> in Prelims. CSAT (Paper II) is qualifying — you need 40% (80/200). Paper I score alone determines Prelims merit.
+                </div>
+
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-lg">Stage 2: Mains Examination</h3>
+                <div className="card overflow-hidden mb-4">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading text-sm">Paper</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Marks</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Type</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Nature</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {mainsPattern.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-body text-surface-800">{row.paper}</td>
+                          <td className="px-4 py-3 font-body text-surface-800 font-semibold">{row.marks}</td>
+                          <td className="px-4 py-3 font-body text-surface-600">{row.type}</td>
+                          <td className="px-4 py-3">
+                            <span className={row.note === 'Merit-based' ? 'badge-green' : 'bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold'}>{row.note}</span>
+                          </td>
+                        </tr>
+                      ))}
+                      <tr className="bg-surface-800 text-white">
+                        <td className="px-4 py-3 font-heading font-bold text-sm">Total (Mains)</td>
+                        <td className="px-4 py-3 font-heading font-bold text-sm">1,350</td>
+                        <td className="px-4 py-3"></td><td className="px-4 py-3"></td>
+                      </tr>
+                      <tr className="bg-primary-700 text-white">
+                        <td className="px-4 py-3 font-heading font-bold text-sm">Interview</td>
+                        <td className="px-4 py-3 font-heading font-bold text-sm">150</td>
+                        <td className="px-4 py-3 text-sm">Personality Test</td><td className="px-4 py-3"></td>
+                      </tr>
+                      <tr className="bg-emerald-700 text-white">
+                        <td className="px-4 py-3 font-heading font-bold text-sm">Grand Total (Merit)</td>
+                        <td className="px-4 py-3 font-heading font-bold text-sm">1,500</td>
+                        <td className="px-4 py-3"></td><td className="px-4 py-3"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-surface-400">Each Mains paper is 3 hours. Visually impaired candidates get +60 min per paper. All papers can be attempted in English or Punjabi medium (except language papers).</p>
+              </section>
+
+              {/* 6. SYLLABUS */}
+              <section id="syllabus" className="mb-12">
+                <SectionHeading num="6" title="Detailed Syllabus" />
+                <p className="text-sm text-surface-600 mb-5">PPSC Mains GS papers have a strong emphasis on Punjab-specific topics — treat Punjab history, economy, governance, and current affairs as a separate subject within each GS paper.</p>
+                <div className="space-y-3">
+                  {syllabus.map((item, i) => (
+                    <details key={i} className="card overflow-hidden group">
+                      <summary className={`flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 ${item.bg} border-b border-surface-200`}>
+                        <span className={`${item.color}`}>{item.subject}</span>
+                        <svg className="w-4 h-4 text-surface-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </summary>
+                      <div className="px-5 pb-5 pt-3">
+                        <ul className="space-y-1.5">
+                          {item.topics.map((t, j) => (
+                            <li key={j} className="text-sm text-surface-600 flex gap-2"><span className="text-primary-400 mt-0.5">›</span>{t}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+                <div className="mt-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+                  <p className="text-sm text-emerald-800"><strong>💡 Punjab Specialist Tip:</strong> PPSC GS papers carry a special emphasis on History, Culture, Economy, and Geography of Punjab. Dedicate at least 30–40% of your GS study time to Punjab-specific content using the Punjab Year Book and official Punjab government reports.</p>
+                </div>
+              </section>
+
+              {/* 7. SALARY */}
+              <section id="salary" className="mb-12">
+                <SectionHeading num="7" title="💰 Salary & Benefits" />
+                <div className="card overflow-hidden mb-5">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading text-sm">Post Group</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Basic Pay</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">DA (~55%)</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">HRA</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">Gross</th>
+                        <th className="text-left px-4 py-3 font-heading text-sm">In-Hand</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {salaryBreakdown.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-body text-surface-800">{row.post}</td>
+                          <td className="px-4 py-3 font-body text-emerald-700 font-semibold">{row.basic}</td>
+                          <td className="px-4 py-3 font-body text-surface-600">{row.da}</td>
+                          <td className="px-4 py-3 font-body text-surface-600">{row.hra}</td>
+                          <td className="px-4 py-3 font-body text-surface-800 font-semibold">{row.gross}</td>
+                          <td className="px-4 py-3 font-body text-emerald-600 font-semibold">{row.inhand}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    { label: 'Other Allowances', value: 'Transport Allowance (TA), Medical Allowance, LTC, Communication Allowance' },
+                    { label: 'Perks & Benefits', value: 'Govt. accommodation, official vehicle, domestic help, electricity/water subsidy for senior posts' },
+                    { label: 'Pension', value: 'New Pension Scheme (NPS) applies. Approx. 10% deduction from basic pay' },
+                    { label: 'Career Growth', value: 'Promotion to IAS / Punjab cadre or senior PCS posts based on DPC (Departmental Promotion Committee)' },
+                  ].map((item, i) => (
+                    <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
+                      <div className="text-xs text-surface-400 uppercase tracking-wide">{item.label}</div>
+                      <div className="font-body text-sm text-surface-800 mt-1">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-surface-400 mt-3">* Salary figures based on 7th Pay Commission + current DA rate (~55%) as of May 2026. Actual in-hand may vary by posting location. 8th Pay Commission implementation pending.</p>
+              </section>
+
+              {/* 8. STUDY PLAN */}
+              <section id="study-plan" className="mb-12">
+                <SectionHeading num="8" title="8-Month Study Plan" />
+                <div className="relative">
+                  <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                  {studyPlan.map((phase, i) => (
+                    <div key={i} className="sm:pl-14 relative mb-5">
+                      <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xs hidden sm:flex">{i + 1}</div>
+                      <div className="card p-5">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className="badge-primary">{phase.month}</span>
+                          <h3 className="font-heading font-semibold text-surface-800">{phase.title}</h3>
+                        </div>
+                        <ul className="space-y-1.5">
+                          {phase.tasks.map((t, j) => (
+                            <li key={j} className="text-sm text-surface-600 flex gap-2"><span className="text-emerald-500 mt-0.5">✓</span>{t}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 9. BOOKS */}
+              <section id="books" className="mb-12">
+                <SectionHeading num="9" title="Best Books for PPSC PCS" />
+                <BooksTable books={books} />
+              </section>
+
+              {/* 10. EXPERT TIPS */}
+              <section id="tips" className="mb-12">
+                <SectionHeading num="10" title="Expert Tips to Crack PPSC PCS" />
+                <div className="space-y-4">
+                  {[
+                    { tip: 'Master Punjab-Specific Content First', detail: 'PPSC is unique — every GS paper carries a special emphasis on Punjab. Dedicate the first two months entirely to Punjab history (Fauja Singh volumes), Punjab Year Book, and state government reports.' },
+                    { tip: 'No Negative Marking = Attempt All in Prelims', detail: 'Unlike UPSC, there is no negative marking in PPSC Prelims. Attempt every question. Even educated guesses boost your score without penalty.' },
+                    { tip: 'Both Punjabi and English Must Be Strong', detail: 'The Mains has qualifying language papers (Punjabi + English). You cannot ignore either. Practice 2 short essays per week in both languages from month one.' },
+                    { tip: 'Descriptive Writing is the Real Differentiator', detail: 'Mains is 100% descriptive — 7 papers. Toppers write structured, concise, and Punjab-grounded answers. Practice answer writing from month 3 onwards with a mentor or test series.' },
+                    { tip: 'Check ppsc.gov.in Weekly for Official Notices', detail: 'PPSC releases notifications, syllabus updates, and exam schedules without widespread media coverage. Set a weekly reminder to check the official website — missing a notice can cost you a cycle.' },
+                  ].map((item, i) => (
+                    <div key={i} className="card p-5 flex gap-4">
+                      <div className="w-8 h-8 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center font-heading font-bold text-sm flex-shrink-0">{i + 1}</div>
+                      <div>
+                        <h3 className="font-heading font-semibold text-surface-800">{item.tip}</h3>
+                        <p className="text-sm text-surface-600 mt-1 leading-relaxed">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 11. FAQs */}
+              <section id="faq" className="mb-12">
+                <SectionHeading num="11" title="Frequently Asked Questions" />
+                <div className="space-y-3">
+                  {faqs.map((item, i) => (
+                    <details key={i} className="card overflow-hidden">
+                      <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800">
+                        <span>{item.q}</span>
+                        <svg className="w-4 h-4 text-surface-400 flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </summary>
+                      <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{item.a}</div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              {/* CTA */}
+              <div className="card p-6 bg-primary-50 border-primary-200 text-center">
+                <h3 className="font-heading font-bold text-surface-900 text-lg mb-2">Are you eligible for PPSC PCS 2026?</h3>
+                <p className="text-sm text-surface-600 mb-4">Check age, qualification, category and attempt eligibility in seconds.</p>
+                <Link href="/tools/eligibility-checker" className="btn-primary inline-block">Check Eligibility Free →</Link>
+              </div>
+
+            </main>
+
+            {/* SIDEBAR */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-24 space-y-5">
+                {/* TOC */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                  <nav className="space-y-1">
+                    {toc.map(item => (
+                      <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-2 py-1.5 rounded-md transition-colors">
+                        {item.label}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+
+                {/* Official site */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Official Website</h3>
+                  <a href="https://ppsc.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary block text-center text-sm py-2">
+                    Visit ppsc.gov.in →
+                  </a>
+                  <p className="text-xs text-surface-400 mt-2 text-center">Always verify dates & notifications on the official PPSC portal</p>
+                </div>
+
+                {/* Quick stats */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">2025 Cycle Snapshot</h3>
+                  <div className="space-y-2">
+                    {[
+                      { label: 'Total Vacancies', value: '331' },
+                      { label: 'Prelims Held', value: '7 Dec 2025' },
+                      { label: 'Prelims Result', value: '10 Jan 2026' },
+                      { label: 'Mains Held', value: '1–10 Apr 2026' },
+                      { label: 'Mains Result', value: 'Awaited (TBN)' },
+                      { label: 'Total Marks', value: '1,500' },
+                      { label: 'Conducting Body', value: 'PPSC, Patiala' },
+                    ].map((s, i) => (
+                      <div key={i} className="flex justify-between text-xs">
+                        <span className="text-surface-500">{s.label}</span>
+                        <span className="font-semibold text-surface-800">{s.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Related exams */}
+                <div className="card p-5">
+                  <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related State PSC Exams</h3>
+                  <div className="space-y-1">
+                    {[
+                      { name: 'UPPSC PCS 2026', slug: 'uppsc-pcs' },
+                      { name: 'HPSC HCS 2026',  slug: 'hpsc-hcs' },
+                      { name: 'RPSC RAS 2026',   slug: 'rpsc-ras' },
+                      { name: 'BPSC CCE 2026',   slug: 'bpsc-cce' },
+                      { name: 'MPSC Rajyaseva',  slug: 'mpsc-rajyaseva' },
+                    ].map(e => (
+                      <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">
+                        🔗 {e.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+          </div>
         </div>
       </div>
     </>
