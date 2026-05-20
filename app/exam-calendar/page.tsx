@@ -26,6 +26,7 @@ const KNOWN_SLUGS = new Set([
   'ssc-je', 'ssc-jht',
   'rrb-alp', 'rrb-je', 'rrb-technician', 'rrb-group-d',
   'ibps-rrb-po', 'ibps-rrb-clerk', 'sbi-clerk', 'rbi-assistant', 'rbi-grade-b',
+  'sbi-apprentice',
   'upsc-nda', 'upsc-cds', 'upsc-capf',
   'up-police-constable', 'up-police-si', 'up-police-asi',
   'up-tet', 'up-tgt', 'up-pgt',
@@ -93,6 +94,15 @@ const upcomingExams: MonthGroup[] = [
         internalSlug: 'ssc-cpo',
         externalUrl: 'https://ssc.gov.in',
         note: 'Sub-Inspector in Delhi Police & CAPFs. Apply Jun 2026. Paper 1: Oct–Nov 2026',
+      },
+      {
+        name: 'SBI Apprentice (Apply Online)',
+        date: '19 May – 8 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'sbi-apprentice',
+        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
+        note: '7,150 posts • Graduate eligible • Age 20–28 • Fee ₹300 • 1-year training under Apprenticeship Act',
       },
       {
         name: 'UP Police Constable',

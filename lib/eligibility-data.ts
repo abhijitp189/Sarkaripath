@@ -144,6 +144,19 @@ export const SBI_CLERK_AGE: AgeRuleMap = {
   'Ex-Serviceman':  { min: 20, max: 28, label: '20–28 years (+ service period)' },
 };
 
+// SBI Apprentice 2026 (CRPD/APPR/2026-27/07 — age as on 30 Apr 2026)
+export const SBI_APPRENTICE_AGE: AgeRuleMap = {
+  'General':        { min: 20, max: 28, label: '20–28 years' },
+  'OBC':            { min: 20, max: 31, label: '20–31 years (+3)' },
+  'SC':             { min: 20, max: 33, label: '20–33 years (+5)' },
+  'ST':             { min: 20, max: 33, label: '20–33 years (+5)' },
+  'EWS':            { min: 20, max: 28, label: '20–28 years' },
+  'PwBD-General':   { min: 20, max: 38, label: '20–38 years (+10)' },
+  'PwBD-OBC':       { min: 20, max: 41, label: '20–41 years (+13)' },
+  'PwBD-SC/ST':     { min: 20, max: 43, label: '20–43 years (+15)' },
+  'Ex-Serviceman':  { min: 20, max: 28, label: '20–28 years (as per Govt. norms)' },
+};
+
 // RRB Group D (CEN 09/2025 — 22,195 vacancies)
 export const RRB_GROUP_D_AGE: AgeRuleMap = {
   'General':        { min: 18, max: 36, label: '18–36 years' },
@@ -331,5 +344,13 @@ export const EXAMS: ExamMeta[] = [
     icon: '👮',
     slug: 'ssc-gd-constable',
     tip: 'SSC GD Constable 2026 CBT is ACTIVE (27 Apr–30 May 2026). 25,487 vacancies across BSF, CISF, CRPF, ITBP, SSB & Assam Rifles. Admit cards released. Download yours from ssc.gov.in and check your exam city. Note: PwBD candidates are not eligible due to mandatory physical/combat requirements.',
+  },
+  {
+    id: 'sbi-apprentice',
+    name: 'SBI Apprentice 2026 (Training — Not Permanent)',
+    shortName: 'SBI Apprentice',
+    icon: '💼',
+    slug: 'sbi-apprentice',
+    tip: 'SBI Apprentice 2026: 7,150 posts. Apply online 19 May – 8 June 2026 at sbi.bank.in. Stipend ₹15,000/month for 1-year training. NOT a permanent job — but SBI officially gives weightage to apprenticeship completers in SBI Clerk recruitment. Graduate eligible, age 20–28.',
   },
 ];
