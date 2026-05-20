@@ -702,6 +702,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
   }
 
+  if (params.slug === 'upsc-cms') {
+    return {
+      title: 'UPSC CMS 2026 – Notification, Exam Date, Syllabus & Guide | TaiyarHo',
+      description: 'UPSC CMS 2026: 1358 vacancies notified. Exam on 2 August 2026. MBBS eligible, age ≤32 yrs. Medical Officer in CHS, Railways, NDMC & MCD. Salary ₹56,100–₹1,77,500/month + NPA. Complete syllabus, exam pattern, books & free resources.',
+      keywords: 'UPSC CMS 2026, UPSC CMS notification 2026, combined medical services 2026, UPSC CMS exam date, UPSC CMS eligibility MBBS, UPSC CMS salary, upsc.gov.in CMS, medical officer government job 2026, UPSC CMS syllabus',
+      alternates: { canonical: 'https://www.taiyarho.in/exams/upsc-cms/' },
+      other: { 'description:hi': 'UPSC CMS 2026 – 1358 रिक्तियाँ अधिसूचित। परीक्षा 2 अगस्त 2026। MBBS योग्य, आयु ≤32 वर्ष। CHS, रेलवे, NDMC और MCD में मेडिकल ऑफिसर। वेतन ₹56,100–₹1,77,500/माह + NPA। पूरा सिलेबस, परीक्षा पैटर्न और मुफ्त संसाधन।' },
+    };
+  }
+
   if (params.slug === 'hpsc-hcs') {
     return {
       title: 'HPSC HCS 2026 – Notification, Syllabus, Eligibility & Salary | TaiyarHo',
@@ -823,6 +833,7 @@ export default function ExamDetailPage({ params }: { params: { slug: string } })
   if (brief && brief.slug === 'nicl-ao') return <NiclAoPage exam={brief} />;
   if (brief && brief.slug === 'esic-mts') return <EsicMtsPage exam={brief} />;
   if (brief && brief.slug === 'tnpsc-group-1') return <TNPSCGroup1Page exam={brief} />;
+  if (brief && brief.slug === 'upsc-cms') return <UpscCmsPage exam={brief} />;
   if (brief && brief.slug === 'hpsc-hcs') return <HpscHcsPage exam={brief} />;
   if (brief && brief.slug === 'cgpsc-state-service') return <CgpscStatePage exam={brief} />;
   return <BasicExamPage exam={brief!} />;
@@ -57031,6 +57042,621 @@ function PpscPcsPage({ exam }: { exam: any }) {
             </aside>
 
           </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── UPSC CMS 2026 PAGE ────────────────────────────────────────────────────────
+function UpscCmsPage({ exam }: { exam: any }) {
+  const toc = [
+    { id: 'overview',        label: 'What is UPSC CMS?' },
+    { id: 'current-status',  label: '🆕 Current Status 2026' },
+    { id: 'important-dates', label: 'Important Dates 2026' },
+    { id: 'eligibility',     label: 'Eligibility Criteria' },
+    { id: 'vacancies',       label: 'Vacancies & Posts' },
+    { id: 'exam-pattern',    label: 'Exam Pattern' },
+    { id: 'syllabus',        label: 'Detailed Syllabus' },
+    { id: 'salary',          label: 'Salary & Job Profile' },
+    { id: 'study-plan',      label: 'Study Plan' },
+    { id: 'books',           label: 'Best Books' },
+    { id: 'resources',       label: 'Free Resources' },
+    { id: 'tips',            label: 'Expert Tips' },
+    { id: 'faq',             label: 'FAQs' },
+  ];
+
+  const importantDates = [
+    { event: 'Official Notification Released (Advt. 09/2026-CMS)', date: '11 March 2026', status: 'done' },
+    { event: 'Online Application Opens',                            date: '11 March 2026', status: 'done' },
+    { event: 'Application Last Date',                               date: '31 March 2026 (6:00 PM)', status: 'done' },
+    { event: 'Application Correction Window',                       date: 'April 2026 (Expected)', status: 'done' },
+    { event: 'Official Exam Schedule Released',                     date: '15 May 2026', status: 'done' },
+    { event: 'Admit Card for CBE',                                  date: 'Mid-July 2026 (Expected — ~2 weeks before exam)', status: 'upcoming' },
+    { event: 'Computer-Based Exam — Paper I (Gen Medicine & Paeds)', date: '2 August 2026 | 9:30 AM – 11:30 AM', status: 'upcoming' },
+    { event: 'Computer-Based Exam — Paper II (Surgery, Gynae, PSM)', date: '2 August 2026 | 2:00 PM – 4:00 PM', status: 'upcoming' },
+    { event: 'Personality Test / Interview',                        date: 'October–November 2026 (Expected)', status: 'tbn' },
+    { event: 'Final Result & Recommendation',                       date: 'December 2026 – January 2027 (Expected)', status: 'tbn' },
+  ];
+
+  const vacancyPosts = [
+    { post: 'Medical Officer – Central Health Service (CHS)', category: 'Category I', count: 864,  payLevel: 'Level 10', basic: '₹56,100 – ₹1,77,500/month' },
+    { post: 'Assistant Divisional Medical Officer – Railways', category: 'Category II', count: 450, payLevel: 'Level 10', basic: '₹56,100 – ₹1,77,500/month' },
+    { post: 'General Duty Medical Officer – NDMC',             category: 'Category II', count: 14,  payLevel: 'Level 10', basic: '₹56,100 – ₹1,77,500/month' },
+    { post: 'General Duty Medical Officer Gr-II – MCD',        category: 'Category II', count: 30,  payLevel: 'Level 10', basic: '₹56,100 – ₹1,77,500/month' },
+  ];
+
+  const examPatternData = [
+    { paper: 'Paper I', subjects: 'General Medicine (96 Q) + Paediatrics (24 Q)', questions: 120, marks: 250, duration: '9:30 AM – 11:30 AM', mode: 'Computer-Based (MCQ)' },
+    { paper: 'Paper II', subjects: 'Surgery (40 Q) + Gynaecology & Obstetrics (40 Q) + Preventive & Social Medicine (40 Q)', questions: 120, marks: 250, duration: '2:00 PM – 4:00 PM', mode: 'Computer-Based (MCQ)' },
+    { paper: 'Personality Test', subjects: 'General Knowledge, Leadership, Alertness, Ethical Attitude', questions: 0, marks: 100, duration: 'As scheduled', mode: 'Interview Panel' },
+  ];
+
+  const syllabusSections = [
+    {
+      title: '🩺 Paper I – General Medicine',
+      topics: [
+        'Cardiology – Heart failure, IHD, Hypertension, Valvular diseases',
+        'Respiratory Diseases – Tuberculosis, COPD, Asthma, Pneumonia, Lung carcinoma',
+        'Gastro-intestinal – PUD, Liver diseases (cirrhosis, hepatitis), IBD, Malabsorption',
+        'Genito-Urinary – Renal failure, Glomerulonephritis, UTI, Nephrotic syndrome',
+        'Neurology – Stroke, Epilepsy, Meningitis, Parkinsonism, Neuropathies',
+        'Haematology – Anaemia, Leukaemia, Coagulation disorders, Haemolytic disorders',
+        'Endocrinology – Diabetes mellitus, Thyroid disorders, Adrenal disorders, Pituitary diseases',
+        'Infectious / Communicable Diseases – Malaria, Typhoid, Dengue, HIV/AIDS, Viral hepatitis',
+        'Dermatology – Skin infections, Psoriasis, SLE, Leprosy',
+        'Psychiatry – Depression, Schizophrenia, Bipolar disorder, Substance abuse',
+        'Emergency Medicine & Toxicology – Common poisoning, Snake bite, Anaphylaxis, Trauma',
+        'Critical Care & Metabolic Disorders – DKA, Electrolyte disorders, Sepsis, Shock',
+      ],
+    },
+    {
+      title: '👶 Paper I – Paediatrics',
+      topics: [
+        'Growth & Development – Milestones, nutritional disorders, PEM',
+        'Neonatal conditions – Prematurity, Neonatal jaundice, Birth asphyxia',
+        'Childhood infections – Measles, Mumps, Varicella, Whooping cough, Diphtheria',
+        'Congenital anomalies – CHD, Down syndrome, Neural tube defects',
+        'Paediatric emergencies – Febrile convulsions, Status epilepticus, Acute respiratory distress',
+        'Immunisation schedule – National Immunisation Programme (UIP)',
+      ],
+    },
+    {
+      title: '🔪 Paper II – Surgery',
+      topics: [
+        'General Surgery – Wounds, Ulcers, Cysts, Sinuses, Fistulae',
+        'Abdomen – Hernia, Appendicitis, Intestinal obstruction, Peritonitis',
+        'Hepato-biliary – Gallstones, Cholecystitis, Jaundice, Liver abscess',
+        'Urology – BPH, Renal calculi, Bladder disorders, Urethral stricture',
+        'Orthopaedics – Common fractures, Dislocations, Osteoarthritis, Infections of bone',
+        'Head & Neck – Thyroid swellings, Salivary gland disorders, Lymphadenopathy',
+        'Vascular Surgery – Varicose veins, Peripheral arterial disease, DVT',
+        'Surgical Emergencies – Trauma management, Burns, Post-operative complications',
+      ],
+    },
+    {
+      title: '🤰 Paper II – Gynaecology & Obstetrics',
+      topics: [
+        'Normal & Abnormal Labour – Stages, Malpresentations, Operative deliveries',
+        'Ante-natal care – High-risk pregnancy, Pre-eclampsia, Eclampsia, Anaemia in pregnancy',
+        'Post-partum complications – PPH, Puerperal sepsis, Lactation',
+        'Gynaecological infections – PID, STIs, Cervicitis, Vaginitis',
+        'Menstrual disorders – Amenorrhea, Menorrhagia, Dysmenorrhea, PCOD',
+        'Reproductive health – Contraception, Family planning, MTP Act, Infertility',
+        'Gynaecological malignancies – Carcinoma cervix, Carcinoma ovary, Endometrial cancer',
+      ],
+    },
+    {
+      title: '🏥 Paper II – Preventive & Social Medicine (PSM)',
+      topics: [
+        'Epidemiology – Descriptive, Analytical & Experimental epidemiology; Measures of disease',
+        'Communicable Diseases & Control – Surveillance, Contact tracing, Outbreak investigation',
+        'National Health Programmes – RNTCP, NVBDCP, RBSK, NHM, Mission Indradhanush',
+        'Environment & Occupational Health – Water, Air, Noise pollution; Occupational hazards',
+        'Nutrition & Health – PEM, Vitamin deficiencies, Mid-Day Meal, ICDS',
+        'Biostatistics – Mean, Median, Sensitivity, Specificity, Predictive values',
+        'Health Administration – Health planning (FYPs), District Health System, ASHA, ANM',
+        'Family Planning & RCH – MCH services, ANC, immunisation, safe motherhood',
+      ],
+    },
+  ];
+
+  const studyPlan = [
+    {
+      month: 'Months 1–2',
+      focus: 'Foundation: General Medicine & PSM',
+      detail: 'Begin with General Medicine — the highest-weightage subject (96 questions). Use Harrison\'s or Davidson\'s for concepts. Simultaneously build PSM from K. Park; this subject rewards consistent reading. Create short clinical notes. Target: complete all chapters once with case-based revision.',
+    },
+    {
+      month: 'Months 3–4',
+      focus: 'Paediatrics + Surgery + Gynaecology',
+      detail: 'Cover Paediatrics using Nelson\'s (focus on neonatal, infectious, emergency sections). For Surgery, use Bailey & Love selectively (operative surgery) and SRB\'s Manual for clinical approach. Gynaecology & Obstetrics: DC Dutta remains the standard. Integrate national health programme updates throughout.',
+    },
+    {
+      month: 'Month 5',
+      focus: 'Revision + Previous Year Papers',
+      detail: 'Solve last 10 years of UPSC CMS PYQs by subject. Identify recurring topics — Cardiology, Tuberculosis, PSM epidemiology, Obstetric emergencies appear consistently. Time yourself to 120 questions in 2 hours. Review weak areas and revise clinical scenarios.',
+    },
+    {
+      month: 'Month 6 (Pre-exam)',
+      focus: 'Mock Tests + Admit Card + Final Revision',
+      detail: 'Attempt 2–3 full mock tests per week. Focus on negative marking discipline — skip genuinely uncertain questions. Download admit card once released (July 2026). Revise PSM statistics, drug doses, and diagnostic criteria. Avoid starting new topics in the final 2 weeks.',
+    },
+    {
+      month: 'Post-Exam',
+      focus: 'Interview Preparation',
+      detail: 'If selected for Personality Test, prepare for General Knowledge, current health policy, MBBS clinical reasoning, and ethical scenarios in public health. Read about National Health Policy 2017, Ayushman Bharat, and India\'s disease burden. Present yourself as a confident, service-oriented medical professional.',
+    },
+  ];
+
+  const books = [
+    { subject: 'General Medicine', title: "Harrison's Principles of Internal Medicine (or Davidson's)", author: 'Kasper / Walker' },
+    { subject: 'Paediatrics', title: "Nelson Textbook of Pediatrics", author: 'Kliegman et al.' },
+    { subject: 'Surgery', title: "Bailey & Love's Short Practice of Surgery", author: "Williams & O'Connell" },
+    { subject: 'Gynaecology & Obstetrics', title: 'DC Dutta\'s Textbook of Obstetrics + Gynaecology', author: 'DC Dutta / Hiralal Konar' },
+    { subject: 'PSM', title: 'Textbook of Preventive & Social Medicine', author: 'K. Park (Banarsidas Bhanot)' },
+    { subject: 'Previous Year Papers', title: 'UPSC CMS Previous Year Solved Papers (Last 15 Yrs)', author: 'Disha / Arihant Publications' },
+    { subject: 'Quick Revision', title: 'Rapid Review for CMS (Short notes + MCQs)', author: 'MAHE / MedPG Publications' },
+  ];
+
+  const freeResources = [
+    { icon: '🌐', name: 'UPSC Official Website',          url: 'https://upsc.gov.in',                                   desc: 'Official source for notifications, admit cards, syllabus PDF, and results.' },
+    { icon: '📺', name: 'Marrow / PrepLadder (Free tier)', url: 'https://www.youtube.com/@MarrowMedical',               desc: 'High-yield video lectures for MBBS subjects — excellent for CMS Paper I & II.' },
+    { icon: '📺', name: 'Dr. Najeeb Lectures (YouTube)',  url: 'https://www.youtube.com/@DrNajeebLectures',            desc: 'Free anatomy and physiology lectures; builds strong clinical understanding.' },
+    { icon: '📺', name: 'DAMS / Galaxy (PSM Videos)',     url: 'https://www.youtube.com/@DAMSDelhi',                   desc: 'Best free PSM lectures for epidemiology, national programmes and biostatistics.' },
+    { icon: '🌐', name: 'Mockers.in (CMS Mock Tests)',    url: 'https://mockers.in',                                   desc: 'Free subject-wise and full-length UPSC CMS mock tests with detailed solutions.' },
+    { icon: '📄', name: 'UPSC CMS Official Syllabus PDF', url: 'https://upsc.gov.in/sites/default/files/CMS-2026-Ntf-Engl.pdf', desc: 'Download the official CMS 2026 notification and detailed syllabus directly from UPSC.' },
+  ];
+
+  const tips = [
+    { icon: '📊', tip: 'PSM (Preventive & Social Medicine) is the highest ROI subject in CMS. 40 dedicated questions in Paper II, and toppers report scoring 80–90% here with 4–6 weeks of focused K. Park reading. Never ignore this subject — it is the most predictable and formula-based section.' },
+    { icon: '⚠️', tip: 'Negative marking of 1/3 per wrong answer means unanswered is better than a wrong guess. If you are genuinely unsure (less than 50% confidence), skip. Strong CMS scorers attempt 90–100 out of 120 in each paper and score well above cut-off.' },
+    { icon: '🩺', tip: 'Focus on clinical diagnosis-type MCQs — "A 45-year-old presents with…" — which form the majority of questions. Practice from PYQs by case scenario. Harrison\'s Clinical Reasoning boxes and Davidson\'s clinical summaries are ideal for this.' },
+    { icon: '🎯', tip: 'The Personality Test carries 100 out of 600 marks and can swing your final rank by up to 2–3 positions. Prepare current health policy (Ayushman Bharat, NHM, National Health Policy 2017) and practise communicating clearly and confidently about your clinical training.' },
+    { icon: '📅', tip: 'Both Paper I and Paper II are held on 2 August 2026 in two shifts — Paper I: 9:30 AM to 11:30 AM, Paper II: 2:00 PM to 4:00 PM (official schedule released 15 May 2026 at upsc.gov.in). Arrive at least 30 minutes before each shift. Carry a valid government photo ID along with your printed admit card. Gates close before the exam starts — do not be late.' },
+    { icon: '✅', tip: 'The cut-off qualifying mark is 25% in each paper for General/OBC/SC/ST, and 15% for PwBD candidates. The final merit list is based on Paper I + Paper II + Personality Test (600 marks total). Do not focus on just clearing cut-off — aim to maximise all-round scores.' },
+  ];
+
+  const faqs = [
+    {
+      q: 'What is the UPSC CMS 2026 exam date?',
+      a: 'The UPSC Combined Medical Services Examination 2026 is scheduled for 2nd August 2026 (Sunday). Both Paper I and Paper II will be conducted on the same day as a Computer-Based Examination at centres across India.',
+    },
+    {
+      q: 'How many vacancies are there in UPSC CMS 2026?',
+      a: 'UPSC CMS 2026 has notified a total of 1,358 vacancies (Advt No. 09/2026-CMS): 864 Medical Officer posts in Central Health Service (CHS), 450 Assistant Divisional Medical Officer posts in Indian Railways, 14 GDMO posts in NDMC, and 30 GDMO Grade-II posts in MCD.',
+    },
+    {
+      q: 'What is the UPSC CMS 2026 eligibility criteria?',
+      a: 'Candidates must hold an MBBS degree (or be appearing in the final year of MBBS — subject to proof of passing within the specified date). The upper age limit is 32 years as of 1st August 2026 (born not before 2nd August 1994) for most posts. For Medical Officers Grade (General Duty) under CHS, the upper age limit is 35 years. Age relaxation: SC/ST +5 years, OBC +3 years, PwBD +10 years, Ex-Servicemen +5 years.',
+    },
+    {
+      q: 'What is the UPSC CMS 2026 salary?',
+      a: 'All posts filled through UPSC CMS 2026 carry Pay Matrix Level-10: basic pay ₹56,100 to ₹1,77,500 per month (7th Pay Commission). In addition, candidates receive Non-Practising Allowance (NPA), HRA, DA, and other central government perquisites. Private medical practice of any kind is strictly prohibited for these posts.',
+    },
+    {
+      q: 'What is the selection process for UPSC CMS 2026?',
+      a: 'The selection process has two stages: (1) Computer-Based Examination — Paper I (General Medicine + Paediatrics, 250 marks, 2 hrs) and Paper II (Surgery + Gynaecology & Obstetrics + Preventive & Social Medicine, 250 marks, 2 hrs), totalling 500 marks. (2) Personality Test — 100 marks for shortlisted candidates. Final merit list is prepared out of 600 marks. Negative marking of 1/3 applies to wrong answers.',
+    },
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── HERO: Blue gradient ── */}
+      <div className="bg-gradient-to-br from-[#0a1e4f] via-[#1a56db] to-[#1e40af] text-white py-10 px-4">
+        <div className="container-main">
+          <nav className="text-sm text-blue-200 mb-5 flex items-center gap-1">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-1.5">›</span>
+            <Link href="/exams" className="hover:text-white transition-colors">Exams</Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-white">UPSC CMS 2026</span>
+          </nav>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 rounded-full px-3 py-1 text-xs font-medium">🏛️ UPSC</span>
+            <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 rounded-full px-3 py-1 text-xs font-medium">Central Government</span>
+            <span className="inline-flex items-center gap-1.5 bg-emerald-500/25 border border-emerald-400/30 rounded-full px-3 py-1 text-xs font-medium text-emerald-200">✅ Notification Out</span>
+            <span className="inline-flex items-center gap-1.5 bg-yellow-500/25 border border-yellow-400/30 rounded-full px-3 py-1 text-xs font-medium text-yellow-200">📅 Exam: 2 Aug 2026</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 leading-tight">
+            UPSC CMS 2026 – Combined<br className="hidden sm:block" /> Medical Services Complete Guide
+          </h1>
+
+          <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-8 max-w-3xl">
+            UPSC has notified <strong>1,358 vacancies</strong> for Medical Officers across Central Health Services, Indian Railways, NDMC, and MCD. Written exam on <strong>2 August 2026</strong> (Computer-Based). Salary: <strong>₹56,100 – ₹1,77,500/month + NPA</strong>.
+          </p>
+
+          {/* Fast-fact block */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-2">
+            {[
+              { label: 'Total Vacancies', value: '1,358', icon: '📋' },
+              { label: 'Exam Date 2026',  value: '2 Aug 2026',    icon: '📅' },
+              { label: 'Qualification',   value: 'MBBS',          icon: '🎓' },
+              { label: 'Salary',          value: '₹56,100–₹1,77,500', icon: '💰' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
+                <div className="text-2xl mb-1">{stat.icon}</div>
+                <div className="font-heading font-bold text-lg sm:text-xl">{stat.value}</div>
+                <div className="text-blue-200 text-xs mt-0.5">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="container-main py-10">
+        <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+
+          {/* ── LEFT COLUMN ── */}
+          <div className="min-w-0">
+
+            {/* 1 · WHAT IS UPSC CMS */}
+            <section id="overview" className="mb-12">
+              <SectionHeading num="1" title="What is UPSC CMS 2026?" />
+              <p className="text-surface-700 leading-relaxed mb-4">
+                The <strong>UPSC Combined Medical Services (CMS) Examination</strong> is a national-level competitive exam conducted annually by the Union Public Service Commission to recruit <strong>Medical Officers</strong> for various central government departments. Successful candidates serve as doctors in government hospitals, public health institutions, the Indian Railways medical wing, and municipal health services.
+              </p>
+              <p className="text-surface-700 leading-relaxed mb-4">
+                For 2026, UPSC has notified <strong>1,358 vacancies</strong> through Advt No. 09/2026-CMS. The exam tests MBBS-level clinical knowledge across two computer-based papers — General Medicine &amp; Paediatrics (Paper I) and Surgery, Gynaecology &amp; Obstetrics, and Preventive &amp; Social Medicine (Paper II) — followed by a Personality Test for shortlisted candidates.
+              </p>
+              <p className="text-surface-700 leading-relaxed">
+                UPSC CMS is one of the most sought-after central government medical recruitment exams because it offers <strong>job security, a fixed pay scale with NPA</strong>, and opportunities in prestigious services like the Central Health Service. Private practice of any kind is prohibited for all posts.
+              </p>
+            </section>
+
+            {/* 2 · CURRENT STATUS */}
+            <section id="current-status" className="mb-12">
+              <SectionHeading num="2" title="Current Status — UPSC CMS 2026" />
+              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
+                <h3 className="font-heading font-semibold text-emerald-800 mb-3">🆕 Latest Updates (as of 20 May 2026)</h3>
+                <ul className="space-y-2 text-sm text-surface-700">
+                  <li className="flex items-start gap-2"><span className="text-emerald-500 mt-0.5">✅</span><span>Notification released: <strong>11 March 2026</strong> — Advt No. 09/2026-CMS</span></li>
+                  <li className="flex items-start gap-2"><span className="text-emerald-500 mt-0.5">✅</span><span>Total vacancies: <strong>1,358</strong> (864 CHS + 450 Railways + 44 NDMC/MCD)</span></li>
+                  <li className="flex items-start gap-2"><span className="text-emerald-500 mt-0.5">✅</span><span>Online applications closed on <strong>31 March 2026</strong></span></li>
+                  <li className="flex items-start gap-2"><span className="text-emerald-500 mt-0.5">✅</span><span>Official exam timetable released: <strong>15 May 2026</strong> — Paper I: 9:30–11:30 AM | Paper II: 2:00–4:00 PM on 2 Aug 2026</span></li>
+                  <li className="flex items-start gap-2"><span className="text-yellow-500 mt-0.5">⏳</span><span>Admit card: expected <strong>mid-July 2026</strong> (~2–3 weeks before exam) — download from upsconline.nic.in</span></li>
+                  <li className="flex items-start gap-2"><span className="text-yellow-500 mt-0.5">⏳</span><span>Computer-Based Examination scheduled: <strong>2 August 2026 (Sunday)</strong></span></li>
+                  <li className="flex items-start gap-2"><span className="text-surface-400 mt-0.5">⚠️</span><span>Personality Test dates: <strong>To Be Notified (TBN)</strong> — after written result</span></li>
+                </ul>
+              </div>
+            </section>
+
+            {/* 3 · IMPORTANT DATES */}
+            <section id="important-dates" className="mb-12">
+              <SectionHeading num="3" title="Important Dates 2026" />
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading">Event</th>
+                        <th className="text-left px-4 py-3 font-heading">📅 Date</th>
+                        <th className="text-left px-4 py-3 font-heading">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importantDates.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 text-surface-700">{row.event}</td>
+                          <td className="px-4 py-3 font-medium text-surface-800 whitespace-nowrap">{row.date}</td>
+                          <td className="px-4 py-3">
+                            {row.status === 'done'     && <span className="badge-green">✅ Done</span>}
+                            {row.status === 'upcoming' && <span className="inline-flex items-center bg-blue-100 text-blue-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⏳ Upcoming</span>}
+                            {row.status === 'tbn'      && <span className="inline-flex items-center bg-yellow-100 text-yellow-700 rounded-full px-2.5 py-0.5 text-xs font-heading font-semibold">⚠️ TBN</span>}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            {/* 4 · ELIGIBILITY */}
+            <section id="eligibility" className="mb-12">
+              <SectionHeading num="4" title="Eligibility Criteria" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <InfoCard label="🪪 Nationality" value="Indian Citizen (or eligible OCI/PIO as per notification)" />
+                <InfoCard label="🎓 Qualification" value="MBBS degree (final-year students appearing in finals also eligible — proof required)" />
+                <InfoCard label="📋 Age Limit (General)" value="Not exceeding 32 years as of 1 August 2026 (born not before 2 August 1994)" highlight />
+                <InfoCard label="📋 Age Limit (CHS General Duty)" value="Upper age limit: 35 years for Medical Officers Grade (General Duty) under CHS" />
+                <InfoCard label="📋 OBC Age Relaxation" value="+3 years (upper limit: 35 years for most posts)" />
+                <InfoCard label="📋 SC / ST Age Relaxation" value="+5 years (upper limit: 37 years for most posts)" />
+                <InfoCard label="📋 PwBD Age Relaxation" value="+10 years (General); +13 years (OBC); +15 years (SC/ST)" />
+                <InfoCard label="💰 Application Fee" value="₹200 (Women / SC / ST / PwBD candidates are fully exempted)" />
+              </div>
+              <div className="mt-4 bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+                <p className="text-sm text-surface-700">
+                  <strong>💡 Final Year MBBS Students:</strong> Candidates appearing in the final year of their MBBS examination are eligible to apply. However, they must submit documentary proof of having passed the complete MBBS examination (including practical part) by a date specified in the official notification. Failure to do so will result in cancellation of candidature.
+                </p>
+              </div>
+            </section>
+
+            {/* 5 · VACANCIES */}
+            <section id="vacancies" className="mb-12">
+              <SectionHeading num="5" title="Vacancies & Posts 2026" />
+              <div className="card overflow-hidden mb-4">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading">Post</th>
+                        <th className="text-left px-4 py-3 font-heading">Category</th>
+                        <th className="text-center px-4 py-3 font-heading">Vacancies</th>
+                        <th className="text-left px-4 py-3 font-heading">Pay Level</th>
+                        <th className="text-left px-4 py-3 font-heading">Basic Pay</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vacancyPosts.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-medium text-surface-800">{row.post}</td>
+                          <td className="px-4 py-3"><span className="badge-primary">{row.category}</span></td>
+                          <td className="px-4 py-3 text-center font-bold text-primary-600">{row.count}</td>
+                          <td className="px-4 py-3 text-surface-700">{row.payLevel}</td>
+                          <td className="px-4 py-3 font-medium text-emerald-600">{row.basic}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 border-t-2 border-primary-200">
+                        <td colSpan={2} className="px-4 py-3 font-heading font-bold text-surface-900">Total Vacancies</td>
+                        <td className="px-4 py-3 text-center font-heading font-bold text-primary-700 text-lg">1,358</td>
+                        <td colSpan={2}></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-sm text-surface-500">Source: UPSC CMS 2026 Official Notification (Advt No. 09/2026-CMS) dated 11 March 2026. Category-wise (UR/OBC/SC/ST/EWS) reservation breakdown available in the official notification PDF at upsc.gov.in.</p>
+            </section>
+
+            {/* 6 · EXAM PATTERN */}
+            <section id="exam-pattern" className="mb-12">
+              <SectionHeading num="6" title="Exam Pattern 2026" />
+              <div className="card overflow-hidden mb-5">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-surface-800 text-white">
+                        <th className="text-left px-4 py-3 font-heading">Stage</th>
+                        <th className="text-left px-4 py-3 font-heading">Subjects</th>
+                        <th className="text-center px-4 py-3 font-heading">Questions</th>
+                        <th className="text-center px-4 py-3 font-heading">Marks</th>
+                        <th className="text-center px-4 py-3 font-heading">Duration</th>
+                        <th className="text-left px-4 py-3 font-heading">Mode</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {examPatternData.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                          <td className="px-4 py-3 font-heading font-semibold text-primary-600 whitespace-nowrap">{row.paper}</td>
+                          <td className="px-4 py-3 text-surface-700">{row.subjects}</td>
+                          <td className="px-4 py-3 text-center font-medium">{row.questions > 0 ? row.questions : '—'}</td>
+                          <td className="px-4 py-3 text-center font-bold text-surface-800">{row.marks}</td>
+                          <td className="px-4 py-3 text-center whitespace-nowrap">{row.duration}</td>
+                          <td className="px-4 py-3 text-surface-600">{row.mode}</td>
+                        </tr>
+                      ))}
+                      <tr className="bg-primary-50 border-t-2 border-primary-200">
+                        <td colSpan={3} className="px-4 py-3 font-heading font-bold text-surface-900">Grand Total</td>
+                        <td className="px-4 py-3 text-center font-heading font-bold text-primary-700 text-lg">600</td>
+                        <td colSpan={2}></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                  <div className="font-heading font-bold text-red-700 text-lg">⅓ Negative Marking</div>
+                  <div className="text-xs text-surface-600 mt-1">Per wrong answer (0.33 marks deducted). No penalty for unanswered questions.</div>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
+                  <div className="font-heading font-bold text-blue-700 text-lg">CBE Only</div>
+                  <div className="text-xs text-surface-600 mt-1">Full exam is Computer-Based. No OMR sheet. Conducted at 48 centres across India.</div>
+                </div>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                  <div className="font-heading font-bold text-emerald-700 text-lg">25% Cut-off</div>
+                  <div className="text-xs text-surface-600 mt-1">Minimum qualifying marks: 25% in each paper (Gen/OBC/SC/ST); 15% for PwBD.</div>
+                </div>
+              </div>
+            </section>
+
+            {/* 7 · SYLLABUS */}
+            <section id="syllabus" className="mb-12">
+              <SectionHeading num="7" title="Detailed Syllabus 2026" />
+              <p className="text-surface-600 text-sm mb-5">The UPSC CMS syllabus is based on MBBS final year standards. Both papers are MCQ-based with 120 questions each. Click a section to expand topics.</p>
+              <div className="space-y-3">
+                {syllabusSections.map((sec, i) => (
+                  <details key={i} className="card overflow-hidden">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      <span>{sec.title}</span>
+                      <svg className="w-5 h-5 text-surface-400 transition-transform duration-200 details-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <ul className="space-y-1.5">
+                        {sec.topics.map((t, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm text-surface-600">
+                            <span className="text-primary-400 mt-0.5 flex-shrink-0">•</span>
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* 8 · SALARY */}
+            <section id="salary" className="mb-12">
+              <SectionHeading num="8" title="Salary & Job Profile" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                <InfoCard label="💰 Pay Scale (7th CPC)" value="Level-10: ₹56,100 – ₹1,77,500/month" highlight />
+                <InfoCard label="💰 Non-Practising Allowance (NPA)" value="As per applicable Central Government rules (approx. 25% of basic)" highlight />
+                <InfoCard label="💰 HRA" value="8% / 16% / 24% of basic pay (depending on city category)" />
+                <InfoCard label="💰 DA (Dearness Allowance)" value="50% of basic as of 2026 (revised biannually)" />
+                <InfoCard label="💰 Gross In-Hand (Approx.)" value="₹85,000 – ₹1,10,000/month (depending on city and post)" />
+                <InfoCard label="🚫 Private Practice" value="Strictly PROHIBITED for all posts filled through UPSC CMS" />
+              </div>
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mb-4">
+                <p className="text-sm text-surface-700">
+                  <strong>💡 8th Pay Commission (2026 Projection):</strong> The 8th Pay Commission, expected to be implemented from 1 January 2026, is projected to revise Level-10 pay to approximately <strong>₹1,07,712 – ₹1,93,728/month</strong> using the proposed 2.86 fitment factor. Final figures will be official only after the Commission submits its recommendations.
+                </p>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3">Job Profile & Responsibilities</h3>
+                <ul className="space-y-2 text-sm text-surface-700">
+                  <li className="flex items-start gap-2"><span className="text-primary-400">•</span>Provide curative, preventive, and promotional healthcare services in government hospitals and clinics</li>
+                  <li className="flex items-start gap-2"><span className="text-primary-400">•</span>Implement National Health Programmes (NHM, RNTCP, NVBDCP, Ayushman Bharat, etc.)</li>
+                  <li className="flex items-start gap-2"><span className="text-primary-400">•</span>Handle medical emergencies and OPD/IPD management in central government institutions</li>
+                  <li className="flex items-start gap-2"><span className="text-primary-400">•</span>Carry out administrative and health management duties at district and sub-district level</li>
+                  <li className="flex items-start gap-2"><span className="text-primary-400">•</span>Examine railway employees and passengers (for Railway posts); conduct medico-legal work</li>
+                  <li className="flex items-start gap-2"><span className="text-primary-400">•</span>Opportunity for promotion to Senior Medical Officer, CMO, and higher grades within CHS</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* 9 · STUDY PLAN */}
+            <section id="study-plan" className="mb-12">
+              <SectionHeading num="9" title="Study Plan for UPSC CMS 2026" />
+              <div className="relative">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-200 hidden sm:block" />
+                {studyPlan.map((step, i) => (
+                  <div key={i} className="sm:pl-14 relative mb-6 last:mb-0">
+                    <div className="absolute left-0 top-4 w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-heading font-bold text-sm hidden sm:flex">{i + 1}</div>
+                    <div className="card p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="badge-primary">{step.month}</span>
+                        <span className="font-heading font-semibold text-surface-800">{step.focus}</span>
+                      </div>
+                      <p className="text-sm text-surface-600 leading-relaxed">{step.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10 · BOOKS */}
+            <section id="books" className="mb-12">
+              <SectionHeading num="10" title="Best Books for UPSC CMS 2026" />
+              <BooksTable books={books} />
+            </section>
+
+            {/* 11 · FREE RESOURCES */}
+            <section id="resources" className="mb-12">
+              <SectionHeading num="11" title="Free Preparation Resources" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {freeResources.map((res, i) => (
+                  <a key={i} href={res.url} target="_blank" rel="noopener noreferrer" className="card p-5 group hover:border-primary-300 transition-all">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">{res.icon}</span>
+                      <div>
+                        <div className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors">{res.name}</div>
+                        <div className="text-sm text-surface-500 mt-1">{res.desc}</div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* 12 · TIPS */}
+            <section id="tips" className="mb-12">
+              <SectionHeading num="12" title="Expert Tips for UPSC CMS 2026" />
+              <div className="space-y-4">
+                {tips.map((tip, i) => (
+                  <div key={i} className="card p-5 flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-accent-100 text-accent-600 flex items-center justify-center text-lg flex-shrink-0 font-heading font-bold">{i + 1}</div>
+                    <p className="text-sm text-surface-700 leading-relaxed"><span className="mr-1">{tip.icon}</span>{tip.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13 · FAQs */}
+            <section id="faq" className="mb-12">
+              <SectionHeading num="13" title="Frequently Asked Questions" />
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="card overflow-hidden">
+                    <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 select-none">
+                      <span>{faq.q}</span>
+                      <svg className="w-5 h-5 text-surface-400 flex-shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+          </div>{/* end left column */}
+
+          {/* ── SIDEBAR ── */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+
+              {/* TOC */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm uppercase tracking-wide">On This Page</h3>
+                <nav className="space-y-1">
+                  {toc.map((item) => (
+                    <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Official site */}
+              <div className="card p-5 bg-primary-50 border-primary-200">
+                <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">🌐 Official Website</h3>
+                <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 text-sm font-medium block">upsc.gov.in ↗</a>
+                <p className="text-xs text-surface-500 mt-1">Download notification, admit card &amp; results from the official UPSC portal.</p>
+              </div>
+
+              {/* Eligibility checker CTA */}
+              <div className="card p-5 bg-emerald-50 border-emerald-200">
+                <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">✅ Check Your Eligibility</h3>
+                <p className="text-xs text-surface-600 mb-3">Find out if you're eligible for UPSC CMS 2026 in seconds — age, qualification, category.</p>
+                <Link href="/tools/eligibility-checker" className="btn-primary text-xs px-4 py-2 block text-center">Check Eligibility →</Link>
+              </div>
+
+              {/* Related exams */}
+              <div className="card p-5">
+                <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Related UPSC Exams</h3>
+                <div className="space-y-1">
+                  {[
+                    { name: 'UPSC IAS 2026',    slug: 'upsc-ias' },
+                    { name: 'UPSC CDS 2026',    slug: 'upsc-cds' },
+                    { name: 'UPSC CAPF 2026',   slug: 'upsc-capf' },
+                    { name: 'UPSC NDA 2026',    slug: 'upsc-nda' },
+                    { name: 'UPSC Geo-Scientist', slug: 'upsc-geo-scientist' },
+                  ].map((e) => (
+                    <Link key={e.slug} href={`/exams/${e.slug}`} className="block text-sm text-surface-600 hover:text-primary-500 hover:bg-primary-50 px-3 py-2 rounded-md transition-colors">
+                      🔗 {e.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </aside>
+
         </div>
       </div>
     </>
