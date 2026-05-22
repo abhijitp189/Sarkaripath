@@ -111,7 +111,7 @@ function SscCgl2026Article({ post }: { post: any }) {
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="inline-flex items-center gap-1.5 bg-accent-500/20 border border-accent-500/40 text-accent-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
                   <span className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse" />
-                  Updated {post.publishedDate}
+                  Updated {post.updatedDate}
                 </span>
                 <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">SSC CGL</span>
                 <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Syllabus 2026</span>
@@ -134,10 +134,10 @@ function SscCgl2026Article({ post }: { post: any }) {
           {/* Quick Facts Strip */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
             {[
-              { label: 'Notification', value: 'Delayed', sub: 'Expected Late May/Jun 2026' },
-              { label: 'Tier 1 Exam', value: 'Jun–Jul', sub: '2026 (expected)' },
-              { label: 'Vacancies', value: 'TBA', sub: 'Announced with official notification' },
-              { label: 'Apply By', value: 'TBN', sub: 'After notification releases' },
+              { label: 'Notification', value: 'Out! 🟢', sub: '21 May 2026 — ssc.gov.in' },
+              { label: 'Tier 1 Exam', value: 'Aug–Sep', sub: '2026 (Confirmed)' },
+              { label: 'Vacancies', value: '12,256', sub: 'Notified 21 May 2026' },
+              { label: 'Apply By', value: '22 Jun', sub: '2026 (Fee: 23 Jun)' },
             ].map(f => (
               <div key={f.label} className="card p-4 text-center">
                 <div className="text-xs text-surface-400 uppercase tracking-wide font-semibold">{f.label}</div>
@@ -148,8 +148,8 @@ function SscCgl2026Article({ post }: { post: any }) {
           </div>
 
           {/* Action Required callout */}
-          <Callout type="warning" title="⚠️ Notification Update — 19 May 2026">
-            The SSC CGL 2026 official notification is <strong>delayed due to administrative reasons</strong> and is now expected in <strong>late May / June 2026</strong>. The Tier 1 exam is consequently expected in June–July 2026. Complete your <strong>One-Time Registration (OTR) on the mySSC app</strong> now so you are ready to apply the moment the notification releases. Always verify on <strong>ssc.gov.in</strong>.
+          <Callout type="tip" title="✅ Notification Update — 22 May 2026">
+            The SSC CGL 2026 official notification has been <strong>released on 21 May 2026</strong> at ssc.gov.in. <strong>12,256 vacancies</strong> have been announced. Apply online by <strong>22 June 2026</strong> (fee payment by 23 June). Application correction window: <strong>29 June – 1 July 2026</strong>. <strong>🆕 Key 2026 change:</strong> Sectional timing introduced in both Tier 1 (15 min per section) and Tier 2.
           </Callout>
 
           {/* Table of Contents (mobile) */}
@@ -204,8 +204,8 @@ function SscCgl2026Article({ post }: { post: any }) {
                   </tr>
                   <tr className="border-t border-surface-100 bg-surface-50">
                     <td className="p-3 font-medium text-surface-800">Application Deadline</td>
-                    <td className="p-3 text-surface-600">April–May 2026 (tentative)</td>
-                    <td className="p-3 text-surface-500 text-xs">Exact date confirmed in official notification</td>
+                    <td className="p-3 text-surface-600">22 June 2026</td>
+                    <td className="p-3 text-surface-500 text-xs">Fee payment by 23 June 2026 · Correction window 29 Jun–1 Jul</td>
                   </tr>
                 </tbody>
               </table>
@@ -241,7 +241,8 @@ function SscCgl2026Article({ post }: { post: any }) {
               </div>
             </div>
 
-            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3 mt-6">Tier 1 Pattern</h3>
+            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-1 mt-6">Tier 1 Pattern</h3>
+            <p className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2 mb-3">🆕 <strong>New in 2026:</strong> Each section has a strict <strong>15-minute time limit</strong>. You cannot go back to a previous section once it ends.</p>
             <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
               <table className="w-full text-sm">
                 <thead className="bg-surface-900 text-white">
@@ -249,20 +250,22 @@ function SscCgl2026Article({ post }: { post: any }) {
                     <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Section</th>
                     <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Questions</th>
                     <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Marks</th>
-                    <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Negative Marking</th>
+                    <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Time</th>
+                    <th className="p-3 font-semibold text-xs uppercase tracking-wide text-center">Negative</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ['General Intelligence & Reasoning', '25', '50', '–0.50/wrong'],
-                    ['Quantitative Aptitude', '25', '50', '–0.50/wrong'],
-                    ['English Language & Comprehension', '25', '50', '–0.50/wrong'],
-                    ['General Awareness', '25', '50', '–0.50/wrong'],
-                  ].map(([section, q, m, neg], i) => (
+                    ['General Intelligence & Reasoning', '25', '50', '15 min', '–0.50/wrong'],
+                    ['Quantitative Aptitude', '25', '50', '15 min', '–0.50/wrong'],
+                    ['English Language & Comprehension', '25', '50', '15 min', '–0.50/wrong'],
+                    ['General Awareness', '25', '50', '15 min', '–0.50/wrong'],
+                  ].map(([section, q, m, time, neg], i) => (
                     <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
                       <td className="p-3 font-medium text-surface-800">{section}</td>
                       <td className="p-3 text-center text-surface-600">{q}</td>
                       <td className="p-3 text-center text-surface-600">{m}</td>
+                      <td className="p-3 text-center text-emerald-600 font-semibold">{time}</td>
                       <td className="p-3 text-center text-surface-500 text-xs">{neg}</td>
                     </tr>
                   ))}
@@ -270,7 +273,8 @@ function SscCgl2026Article({ post }: { post: any }) {
                     <td className="p-3 font-bold text-surface-900">Total</td>
                     <td className="p-3 text-center font-bold text-surface-900">100</td>
                     <td className="p-3 text-center font-bold text-surface-900">200</td>
-                    <td className="p-3 text-center font-semibold text-surface-700 text-xs">Time: 60 min</td>
+                    <td className="p-3 text-center font-bold text-surface-700 text-xs">60 min</td>
+                    <td className="p-3"></td>
                   </tr>
                 </tbody>
               </table>
@@ -485,7 +489,7 @@ function SscCgl2026Article({ post }: { post: any }) {
           {/* STRATEGY */}
           <Section id="strategy" title="Preparation Strategy for SSC CGL 2026">
             <p className="text-surface-600 leading-relaxed mb-5">
-              With Tier 1 expected in May–June 2026, here's how to use the time left effectively:
+              With Tier 1 scheduled for <strong>August–September 2026</strong>, here's how to use the time left effectively:
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
@@ -609,9 +613,9 @@ function SscCgl2026Article({ post }: { post: any }) {
             '@context': 'https://schema.org',
             '@type': 'Article',
             headline: 'SSC CGL 2026 Syllabus: Complete Guide (Tier 1 & Tier 2)',
-            description: 'Complete SSC CGL 2026 syllabus with topic-wise breakdown for Tier 1 and Tier 2, exam pattern, marking scheme, and free preparation tips. Updated April 2026.',
+            description: 'Complete SSC CGL 2026 syllabus with topic-wise breakdown for Tier 1 and Tier 2, exam pattern, marking scheme, and free preparation tips. Updated May 2026.',
             datePublished: '2026-04-24',
-            dateModified: '2026-04-26',
+            dateModified: '2026-05-22',
             author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
             publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in', logo: { '@type': 'ImageObject', url: 'https://www.taiyarho.in/logo.svg' } },
             mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/blog/ssc-cgl-2026-syllabus-complete-guide/' },
@@ -626,7 +630,7 @@ function SscCgl2026Article({ post }: { post: any }) {
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
             mainEntity: [
-              { '@type': 'Question', name: 'What is the SSC CGL 2026 exam date?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL 2026 Tier 1 is expected between September–October 2026. The official notification is typically released in April–May. Check ssc.gov.in for the latest schedule.' } },
+              { '@type': 'Question', name: 'What is the SSC CGL 2026 exam date?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL 2026 Tier 1 is officially scheduled for August–September 2026. Tier 2 is scheduled for December 2026. The official notification was released on 21 May 2026 at ssc.gov.in. Last date to apply is 22 June 2026.' } },
               { '@type': 'Question', name: 'How many subjects are in SSC CGL Tier 1?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL Tier 1 has 4 sections: General Intelligence & Reasoning (25 Qs), General Awareness (25 Qs), Quantitative Aptitude (25 Qs), and English Comprehension (25 Qs). Total: 100 questions, 200 marks, 60 minutes.' } },
               { '@type': 'Question', name: 'Is there negative marking in SSC CGL?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. In Tier 1, there is a negative marking of 0.50 marks for each wrong answer. In Tier 2, Module 1 of Paper 1 carries 1 mark negative marking per wrong answer.' } },
               { '@type': 'Question', name: 'What is the syllabus for SSC CGL Tier 2?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL Tier 2 Paper 1 has three modules: Module 1 (Mathematical Abilities + Reasoning), Module 2 (English Language), and Module 3 (General Awareness + Computer Knowledge + Data Entry Speed Test). Paper 2 is Statistics for JSO post.' } },
