@@ -4,6 +4,8 @@ import Script from 'next/script';
 import UniversalSearch from '@/components/UniversalSearch';
 import ExamsMegaMenu from '@/components/ExamsMegaMenu';
 import GoogleTranslate from '@/components/GoogleTranslate';
+import MobileMenu from '@/components/MobileMenu';
+import BackToTop from '@/components/BackToTop';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -49,7 +51,7 @@ function Navbar() {
           {/* Mobile: search + hamburger */}
           <div className="md:hidden flex items-center gap-1.5">
             <UniversalSearch />
-            <MobileMenuButton />
+            <MobileMenu />
           </div>
         </div>
       </div>
@@ -100,40 +102,7 @@ function NavLink({ href, children, dark }: { href: string; children: React.React
   );
 }
 
-function MobileMenuButton() {
-  return (
-    <details className="relative">
-      <summary className="list-none cursor-pointer p-2 rounded-lg hover:bg-surface-100">
-        <svg className="w-6 h-6 text-surface-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </summary>
-      <div className="absolute right-0 top-full mt-2 w-60 bg-white rounded-xl shadow-lg border border-surface-200 py-2 z-50">
-        <MobileNavLink href="/exams" icon="🏛️">All Exams</MobileNavLink>
-        <MobileNavLink href="/current-affairs" icon="📰">Current Affairs</MobileNavLink>
-        <MobileNavLink href="/blog" icon="✍️">Blog</MobileNavLink>
-        <div className="my-1 border-t border-surface-100" />
-        <MobileNavLink href="/guides" icon="📖">Guides</MobileNavLink>
-        <MobileNavLink href="/exam-calendar" icon="📅">Exam Calendar</MobileNavLink>
-        <MobileNavLink href="/resources" icon="📚">Resources</MobileNavLink>
-        <MobileNavLink href="/tools/eligibility-checker" icon="✅">Eligibility Checker</MobileNavLink>
-        <div className="my-1 border-t border-surface-100" />
-        <div className="px-4 py-2">
-          <GoogleTranslate />
-        </div>
-      </div>
-    </details>
-  );
-}
-
-function MobileNavLink({ href, icon, children }: { href: string; icon?: string; children: React.ReactNode }) {
-  return (
-    <Link href={href} className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-surface-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
-      {icon && <span className="text-base leading-none">{icon}</span>}
-      <span className="font-medium">{children}</span>
-    </Link>
-  );
-}
+/* MobileMenu is now a client component in components/MobileMenu.tsx */
 
 function Footer() {
   return (
@@ -185,11 +154,11 @@ function Footer() {
         <div className="border-t border-surface-700 mt-10 pt-6 space-y-4">
           {/* Legal nav links */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <nav className="flex flex-wrap justify-center sm:justify-start gap-x-5 gap-y-1.5">
-              <Link href="/about/" className="text-sm text-surface-400 hover:text-white transition-colors">About Us</Link>
-              <Link href="/contact/" className="text-sm text-surface-400 hover:text-white transition-colors">Contact Us</Link>
-              <Link href="/privacy-policy/" className="text-sm text-surface-400 hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/disclaimer/" className="text-sm text-surface-400 hover:text-white transition-colors">Disclaimer</Link>
+            <nav className="flex flex-wrap justify-center sm:justify-start gap-x-5 gap-y-2">
+              <Link href="/about/" className="text-sm text-surface-400 hover:text-white transition-colors py-1">About Us</Link>
+              <Link href="/contact/" className="text-sm text-surface-400 hover:text-white transition-colors py-1">Contact Us</Link>
+              <Link href="/privacy-policy/" className="text-sm text-surface-400 hover:text-white transition-colors py-1">Privacy Policy</Link>
+              <Link href="/disclaimer/" className="text-sm text-surface-400 hover:text-white transition-colors py-1">Disclaimer</Link>
             </nav>
             <div className="flex items-center gap-3">
               <span className="text-xs text-surface-500 uppercase tracking-wider font-heading">Follow us</span>
@@ -216,7 +185,7 @@ function Footer() {
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="block text-sm text-surface-400 hover:text-primary-400 transition-colors">
+    <Link href={href} className="block text-sm text-surface-400 hover:text-primary-400 transition-colors py-0.5">
       {children}
     </Link>
   );
@@ -276,6 +245,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <AdSlot position="header-banner" />
         <main className="flex-1">{children}</main>
+        <BackToTop />
         <AdSlot position="footer-banner" />
         <Footer />
         {/* Google Analytics */}
