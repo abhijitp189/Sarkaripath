@@ -7364,8 +7364,7 @@ function SscCglSalaryArticle({ post }: { post: any }) {
                 <span className="bg-white/10 text-white text-xs font-heading px-3 py-1 rounded-full">7th & 8th Pay Commission</span>
               </div>
               <h1 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-3 leading-snug">
-                SSC CGL Salary 2026 —<br />
-                <span className="text-accent-400 italic">Post-wise In-Hand Reality</span>
+                SSC CGL Salary 2026: Post-wise In-Hand Salary After 7th &amp; 8th Pay Commission
               </h1>
               <p className="text-surface-300 text-sm sm:text-base leading-relaxed mb-5 max-w-2xl">
                 Forget the vague ranges you find everywhere. This is the real breakdown — post-wise, city-wise, with exact deduction math. DA is confirmed at 60%, HRA is at the peak 30/20/10% slab. Here is exactly what hits your bank account in 2026.
@@ -7373,6 +7372,7 @@ function SscCglSalaryArticle({ post }: { post: any }) {
               <div className="flex flex-wrap gap-4 text-xs text-surface-400">
                 <span>📅 {post.publishedDate}</span>
                 <span>⏱ {post.readTime}</span>
+                <span>✍️ {post.author}</span>
                 <span>✅ Cabinet-approved DA · Official 7th CPC pay matrix</span>
               </div>
             </div>
