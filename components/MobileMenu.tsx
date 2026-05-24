@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import GoogleTranslate from './GoogleTranslate';
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -18,13 +17,17 @@ export default function MobileMenu() {
   // Close menu when tapping outside
   useEffect(() => {
     if (!open) return;
-    function handleClick(e: MouseEvent) {
+    function handleClick(e: MouseEvent | TouchEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
+    document.addEventListener('touchstart', handleClick);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('touchstart', handleClick);
+    };
   }, [open]);
 
   // Prevent body scroll when menu is open
@@ -68,20 +71,6 @@ export default function MobileMenu() {
           className="fixed right-0 left-0 z-50 bg-white border-t border-surface-200 shadow-xl overflow-y-auto"
           style={{ top: '56px', maxHeight: 'calc(100vh - 56px)' }}
         >
-          {/* Language selector - prominent on mobile */}
-          <div className="px-4 py-3 bg-primary-50 border-b border-primary-100">
-            <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
-              </svg>
-              <span className="text-xs font-semibold text-primary-700 uppercase tracking-wide">Select Language</span>
-            </div>
-            <div className="mt-2">
-              <GoogleTranslate />
-            </div>
-          </div>
-
           {/* Navigation links */}
           <nav className="py-2">
             <MobileNavItem href="/exams" icon="🏛️" label="All Exams" onClick={() => setOpen(false)} />

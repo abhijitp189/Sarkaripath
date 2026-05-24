@@ -42,16 +42,14 @@ function Navbar() {
             <img src="/logo.svg" alt="TaiyarHo" className="h-12 w-auto" />
           </Link>
 
-          {/* Desktop utilities */}
-          <div className="hidden md:flex items-center gap-2">
+          {/* Right side: all utilities in one row, visible on ALL screens */}
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <UniversalSearch />
             <GoogleTranslate />
-          </div>
-
-          {/* Mobile: search + hamburger */}
-          <div className="md:hidden flex items-center gap-1.5">
-            <UniversalSearch />
-            <MobileMenu />
+            {/* Mobile hamburger only */}
+            <div className="md:hidden">
+              <MobileMenu />
+            </div>
           </div>
         </div>
       </div>

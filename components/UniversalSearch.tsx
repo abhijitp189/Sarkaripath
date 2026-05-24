@@ -478,17 +478,31 @@ export default function UniversalSearch() {
     }
   };
 
-  // Click outside to close
+  // Click/touch outside to close
   useEffect(() => {
     if (!open) return;
-    const handler = (e: MouseEvent) => {
+    const handler = (e: MouseEvent | TouchEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         closeSearch();
       }
     };
     document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
+    document.addEventListener('touchstart', handler);
+    return () => {
+      document.removeEventListener('mousedown', handler);
+      document.removeEventListener('touchstart', handler);
+    };
   }, [open, closeSearch]);
+
+  // Lock body scroll when search is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
 
   const categoryIcon: Record<string, string> = {
     UPSC: '🏛️',
@@ -537,9 +551,9 @@ export default function UniversalSearch() {
 
       {/* Overlay + Modal */}
       {open && (
-        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-20 px-4">
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-surface-900/50 backdrop-blur-sm" />
+        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-12 sm:pt-20 px-4">
+          {/* Backdrop — tapping it closes search */}
+          <div className="absolute inset-0 bg-surface-900/50 backdrop-blur-sm" onClick={closeSearch} />
 
           {/* Search panel */}
           <div
@@ -573,11 +587,18 @@ export default function UniversalSearch() {
                   </svg>
                 </button>
               )}
+              {/* Close button — X icon on mobile, "Esc" label on desktop */}
               <button
                 onClick={closeSearch}
-                className="text-xs text-surface-400 border border-surface-200 rounded px-2 py-1 hover:bg-surface-100 font-mono"
+                className="flex-shrink-0 flex items-center justify-center text-surface-400 border border-surface-200 rounded hover:bg-surface-100 transition-colors"
+                aria-label="Close search"
               >
-                Esc
+                <span className="sm:hidden p-1.5">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </span>
+                <span className="hidden sm:inline text-xs px-2 py-1 font-mono">Esc</span>
               </button>
             </div>
 
@@ -677,11 +698,12 @@ export default function UniversalSearch() {
               </div>
             )}
 
-            {/* Footer hint */}
+            {/* Footer hint — keyboard hints on desktop, close button on mobile */}
             <div className="px-4 py-2 border-t border-surface-100 bg-surface-50 flex items-center gap-3 text-xs text-surface-400">
-              <span>↑↓ navigate</span>
-              <span>↵ open</span>
-              <span>Esc close</span>
+              <span className="hidden sm:inline">↑↓ navigate</span>
+              <span className="hidden sm:inline">↵ open</span>
+              <span className="hidden sm:inline">Esc close</span>
+              <button onClick={closeSearch} className="sm:hidden text-primary-500 font-medium py-1">✕ Close search</button>
               <span className="ml-auto text-surface-300">Smart Search</span>
             </div>
           </div>
