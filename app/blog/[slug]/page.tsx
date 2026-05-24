@@ -73,6 +73,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <EasiestGovtExams2026Article post={post} />;
   }
 
+  if (post.slug === 'ssc-cgl-salary-2026-post-wise-in-hand') {
+    return <SscCglSalaryArticle post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -7313,6 +7317,589 @@ function EasiestGovtExams2026Article({ post }: { post: any }) {
                 <Link href="/exams/ssc-cgl/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL 2026 Guide →</Link>
                 <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Age Limit & Relaxations →</Link>
                 <Link href="/blog/highest-salary-government-exam-after-12th-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Highest Salary After 12th →</Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── SSC CGL SALARY 2026 ARTICLE ─────────────────────────────────────────────
+function SscCglSalaryArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'overview', label: 'All Posts at a Glance' },
+    { id: 'structure', label: 'How SSC CGL Salary Works' },
+    { id: 'level4', label: 'Level 4: Tax Assistant & UDC' },
+    { id: 'level7-standard', label: 'Level 7: Inspector IT, ASO CSS & More' },
+    { id: 'level7-sia', label: 'Level 7+: AEO (ED) & SI (CBI)' },
+    { id: 'hra', label: 'HRA: X, Y, Z City Explained' },
+    { id: 'deductions', label: 'Deductions Explained' },
+    { id: '8thcpc', label: '8th Pay Commission Impact' },
+    { id: 'perks', label: 'Perks Beyond Salary' },
+    { id: 'best-post', label: 'Which Post Has Best Salary?' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-8">
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">SSC CGL Salary 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full -translate-y-32 translate-x-32 pointer-events-none" />
+            <div className="relative">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-accent-500 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">● UPDATED MAY 2026</span>
+                <span className="bg-white/10 text-white text-xs font-heading px-3 py-1 rounded-full">SSC CGL</span>
+                <span className="bg-white/10 text-white text-xs font-heading px-3 py-1 rounded-full">7th & 8th Pay Commission</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-3 leading-snug">
+                SSC CGL Salary 2026 —<br />
+                <span className="text-accent-400 italic">Post-wise In-Hand Reality</span>
+              </h1>
+              <p className="text-surface-300 text-sm sm:text-base leading-relaxed mb-5 max-w-2xl">
+                Forget the vague ranges you find everywhere. This is the real breakdown — post-wise, city-wise, with exact deduction math. DA is confirmed at 60%, HRA is at the peak 30/20/10% slab. Here is exactly what hits your bank account in 2026.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+                <span>📅 {post.publishedDate}</span>
+                <span>⏱ {post.readTime}</span>
+                <span>✅ Cabinet-approved DA · Official 7th CPC pay matrix</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick stat tiles */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            {[
+              { label: 'LOWEST IN-HAND', value: '₹41,870', sub: 'UDC / Tax Asst — Z city' },
+              { label: 'HIGHEST IN-HAND', value: '₹94,401', sub: 'SI CBI — Delhi (X city)' },
+              { label: 'CURRENT DA', value: '60%', sub: 'Effective Jan 1, 2026 ✅' },
+              { label: '8TH CPC STATUS', value: 'Consultation', sub: 'Report expected 2026–27' },
+            ].map(({ label, value, sub }) => (
+              <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+                <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{label}</div>
+                <div className="font-heading font-bold text-surface-900 text-lg">{value}</div>
+                <div className="text-xs text-surface-500 mt-0.5">{sub}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Section 1 — Quick summary table */}
+          <section id="overview" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">SSC CGL Salary 2026 — All Posts at a Glance</h2>
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              All figures use the 7th CPC pay matrix with <strong>DA at 60%</strong> (Cabinet-approved, effective January 1, 2026), <strong>HRA at 30/20/10%</strong> for X/Y/Z cities (peak slab, triggered when DA crossed 50%), and NPS calculated on Basic + DA. These are starting pay figures — salary grows 3% every year through annual increments.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading text-xs">Post</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">Pay Level</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">Basic Pay</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">In-Hand X City</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">In-Hand Z City</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Tax Assistant (CBDT / CBIC)', '4', '₹25,500', '₹49,850', '₹41,870'],
+                    ['Upper Division Clerk (UDC)', '4', '₹25,500', '₹49,850', '₹41,870'],
+                    ['ASO — CSS (Secretariat)', '7', '₹44,900', '₹83,176', '₹71,316'],
+                    ['Assistant (Other Ministries)', '7', '₹44,900', '₹83,176', '₹71,316'],
+                    ['ASO — MEA', '7', '₹44,900', '₹83,176', '₹71,316'],
+                    ['Inspector, Income Tax (CBDT)', '7', '₹44,900', '₹83,176', '₹71,316'],
+                    ['Inspector, Central Excise & Customs (CBIC)', '7', '₹44,900', '₹83,176', '₹71,316'],
+                    ['Asst. Enforcement Officer — ED ★', '7+', '₹44,900', '₹92,156', '₹80,296'],
+                    ['Sub-Inspector — CBI ★★', '7++', '₹44,900', '₹94,401', '₹82,541'],
+                  ].map(([postName, level, basic, xcity, zcity], i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 font-body text-surface-800">{postName}</td>
+                      <td className="px-3 py-3 text-center"><span className="badge-primary">{level}</span></td>
+                      <td className="px-3 py-3 text-center font-semibold text-surface-700">{basic}</td>
+                      <td className="px-3 py-3 text-center font-semibold text-emerald-600">{xcity}</td>
+                      <td className="px-3 py-3 text-center font-semibold text-surface-600">{zcity}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="text-xs text-surface-400 mt-2 space-y-1">
+              <p>★ AEO (ED) receives 20% Special Incentive Allowance (SIA) on basic pay in addition to standard Level 7 components.</p>
+              <p>★★ SI (CBI) receives 25% Special Incentive Allowance (SIA) on basic pay in addition to standard Level 7 components.</p>
+            </div>
+          </section>
+
+          {/* Section 2 — How salary works */}
+          <section id="structure" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">How SSC CGL Salary is Structured</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Your in-hand salary is not just your basic pay. It is built from three parts: your earnings (basic + allowances), your deductions (NPS, CGHS, CGEGIS), and what remains is what reaches your bank account.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-4 mb-6">
+              {[
+                { icon: '➕', title: 'Earnings', items: ['Basic Pay (as per pay level)', 'DA — 60% of basic pay', 'HRA — 30/20/10% of basic', 'TA — ₹5,760 or ₹2,880/month', 'SIA — 20–25% (AEO/CBI only)'] },
+                { icon: '➖', title: 'Deductions', items: ['NPS — 10% of (Basic + DA)', 'CGHS — ₹250 or ₹650/month', 'CGEGIS — ₹30 or ₹60/month', 'TDS (income tax if applicable)'] },
+                { icon: '💰', title: 'In-Hand', items: ['Earnings minus Deductions', 'Varies by city & pay level', 'Grows 3% per year (increment)', 'DA revised every 6 months'] },
+              ].map(({ icon, title, items }) => (
+                <div key={title} className="card p-5">
+                  <div className="text-2xl mb-2">{icon}</div>
+                  <div className="font-heading font-semibold text-surface-800 mb-3">{title}</div>
+                  <ul className="space-y-1">
+                    {items.map(item => <li key={item} className="text-xs text-surface-600 flex gap-2"><span className="text-primary-400 mt-0.5">•</span>{item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 text-sm text-surface-700">
+              <strong className="text-primary-700">📌 2026 Key Update:</strong> DA was hiked to 60% on April 18, 2026 (effective January 1, 2026). Since DA has crossed 50%, HRA operates at the <strong>peak slab — 30% for X cities, 20% for Y, 10% for Z</strong> — a significant increase over earlier rates.
+            </div>
+          </section>
+
+          {/* Section 3 — Level 4 */}
+          <section id="level4" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">Pay Level 4 Posts: Tax Assistant & UDC</h2>
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              Tax Assistants (CBDT and CBIC) and Upper Division Clerks are Group C Ministerial posts — the entry-level clerical roles under SSC CGL. Both start at Pay Level 4, basic ₹25,500. They offer stable desk jobs with fixed hours, making them popular among candidates who also want time to prepare for higher-level exams.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading text-xs">Salary Component</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">X City (Metros)</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">Y City (State Capitals)</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">Z City (Other Towns)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Pay Level & Group', 'Level 4 (Gr. C Ministerial)', 'Level 4 (Gr. C Ministerial)', 'Level 4 (Gr. C Ministerial)'],
+                    ['Basic Pay', '₹25,500', '₹25,500', '₹25,500'],
+                    ['DA (60% of basic)', '₹15,300', '₹15,300', '₹15,300'],
+                    ['HRA (30 / 20 / 10%)', '₹7,650', '₹5,100', '₹2,550'],
+                    ['Transport Allowance', '₹5,760', '₹2,880', '₹2,880'],
+                    ['Gross Monthly Salary', '₹54,210', '₹48,780', '₹46,230'],
+                    ['NPS — 10% of (Basic+DA)', '−₹4,080', '−₹4,080', '−₹4,080'],
+                    ['CGHS Subscription', '−₹250', '−₹250', '−₹250'],
+                    ['CGEGIS Premium (Gr. C)', '−₹30', '−₹30', '−₹30'],
+                    ['Total Deductions', '₹4,360', '₹4,360', '₹4,360'],
+                    ['NET IN-HAND SALARY', '₹49,850', '₹44,420', '₹41,870'],
+                  ].map(([comp, x, y, z], i) => (
+                    <tr key={i} className={comp === 'NET IN-HAND SALARY' ? 'bg-emerald-50 font-bold' : comp === 'Gross Monthly Salary' || comp === 'Total Deductions' ? 'bg-surface-100 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className={`px-4 py-2.5 ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700' : 'text-surface-700'}`}>{comp}</td>
+                      <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{x}</td>
+                      <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{y}</td>
+                      <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{z}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400">TA: ₹3,600 + 60% DA = ₹5,760 in X-class TPTA cities; ₹1,800 + 60% DA = ₹2,880 in other cities. NPS = 10% of (₹25,500 + ₹15,300) = ₹4,080.</p>
+          </section>
+
+          {/* Section 4 — Level 7 standard */}
+          <section id="level7-standard" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-2">Pay Level 7 Posts: Inspector IT, ASO CSS, ASO MEA & Others</h2>
+            <p className="text-surface-600 text-sm mb-5 leading-relaxed">
+              This is the most sought-after tier in SSC CGL. ASO in CSS, ASO in MEA, Assistant in Other Ministries, Inspector Income Tax (CBDT), and Inspector Central Excise & Customs (CBIC) all sit at Pay Level 7 with a basic of ₹44,900. The differences between these posts are in job profile and career growth, not starting salary.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading text-xs">Salary Component</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">X City (Metros)</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">Y City (State Capitals)</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">Z City (Other Towns)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Pay Level & Group', 'Level 7 (Gr. B Non-Gazetted)', 'Level 7 (Gr. B Non-Gazetted)', 'Level 7 (Gr. B Non-Gazetted)'],
+                    ['Basic Pay', '₹44,900', '₹44,900', '₹44,900'],
+                    ['DA (60% of basic)', '₹26,940', '₹26,940', '₹26,940'],
+                    ['HRA (30 / 20 / 10%)', '₹13,470', '₹8,980', '₹4,490'],
+                    ['Transport Allowance', '₹5,760', '₹2,880', '₹2,880'],
+                    ['Gross Monthly Salary', '₹91,070', '₹83,700', '₹79,210'],
+                    ['NPS — 10% of (Basic+DA)', '−₹7,184', '−₹7,184', '−₹7,184'],
+                    ['CGHS Subscription', '−₹650', '−₹650', '−₹650'],
+                    ['CGEGIS Premium (Gr. B)', '−₹60', '−₹60', '−₹60'],
+                    ['Total Deductions', '₹7,894', '₹7,894', '₹7,894'],
+                    ['NET IN-HAND SALARY', '₹83,176', '₹75,806', '₹71,316'],
+                  ].map(([comp, x, y, z], i) => (
+                    <tr key={i} className={comp === 'NET IN-HAND SALARY' ? 'bg-emerald-50 font-bold' : comp === 'Gross Monthly Salary' || comp === 'Total Deductions' ? 'bg-surface-100 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className={`px-4 py-2.5 ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700' : 'text-surface-700'}`}>{comp}</td>
+                      <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{x}</td>
+                      <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{y}</td>
+                      <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{z}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400">NPS = 10% of (₹44,900 + ₹26,940) = 10% × ₹71,840 = ₹7,184. CGHS: ₹650/month for Level 6+ officers. CGEGIS: ₹60/month for Group B.</p>
+          </section>
+
+          {/* Section 5 — Level 7 with SIA */}
+          <section id="level7-sia" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">AEO (ED) & SI (CBI) — The Special Allowance Posts</h2>
+            <p className="text-surface-600 text-sm mb-6 leading-relaxed">
+              Two Level 7 posts stand apart from the rest because of a Special Incentive Allowance (SIA) — an extra percentage of basic pay given to compensate for the high-risk, enforcement-heavy nature of the work.
+            </p>
+
+            {/* AEO ED */}
+            <div className="card p-5 mb-5 border-primary-200">
+              <h3 className="font-heading font-semibold text-surface-800 mb-1">Assistant Enforcement Officer (AEO) — Enforcement Directorate (ED)</h3>
+              <p className="text-xs text-surface-500 mb-4">Investigates money laundering and FEMA violations. Gets <strong>20% SIA</strong> (₹44,900 × 20% = ₹8,980/month) on top of standard Level 7 pay.</p>
+              <div className="overflow-x-auto rounded-xl border border-surface-200">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-primary-700 text-white"><th className="text-left px-4 py-2.5 font-heading text-xs">Component</th><th className="text-center px-3 py-2.5 font-heading text-xs">X City</th><th className="text-center px-3 py-2.5 font-heading text-xs">Y City</th><th className="text-center px-3 py-2.5 font-heading text-xs">Z City</th></tr></thead>
+                  <tbody>
+                    {[
+                      ['Basic Pay', '₹44,900', '₹44,900', '₹44,900'],
+                      ['DA (60%)', '₹26,940', '₹26,940', '₹26,940'],
+                      ['SIA (20% of basic)', '₹8,980', '₹8,980', '₹8,980'],
+                      ['HRA (30/20/10%)', '₹13,470', '₹8,980', '₹4,490'],
+                      ['Transport Allowance', '₹5,760', '₹2,880', '₹2,880'],
+                      ['Gross Monthly Salary', '₹1,00,050', '₹92,680', '₹88,190'],
+                      ['Total Deductions', '−₹7,894', '−₹7,894', '−₹7,894'],
+                      ['NET IN-HAND SALARY', '₹92,156', '₹84,786', '₹80,296'],
+                    ].map(([comp, x, y, z], i) => (
+                      <tr key={i} className={comp === 'NET IN-HAND SALARY' ? 'bg-emerald-50 font-bold' : comp === 'Gross Monthly Salary' ? 'bg-surface-100 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                        <td className={`px-4 py-2.5 ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700' : 'text-surface-700'}`}>{comp}</td>
+                        <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{x}</td>
+                        <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{y}</td>
+                        <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{z}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* SI CBI */}
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
+              <h3 className="font-heading font-semibold text-surface-800 mb-1">⭐ Sub-Inspector (CBI) — The Highest-Paid SSC CGL Post</h3>
+              <p className="text-xs text-surface-500 mb-4">Handles anti-corruption and criminal investigations. Gets <strong>25% SIA</strong> (₹44,900 × 25% = ₹11,225/month) — the highest allowance among all SSC CGL posts.</p>
+              <div className="overflow-x-auto rounded-xl border border-amber-200">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-amber-600 text-white"><th className="text-left px-4 py-2.5 font-heading text-xs">Component</th><th className="text-center px-3 py-2.5 font-heading text-xs">X City (Delhi)</th><th className="text-center px-3 py-2.5 font-heading text-xs">Y City</th><th className="text-center px-3 py-2.5 font-heading text-xs">Z City</th></tr></thead>
+                  <tbody>
+                    {[
+                      ['Basic Pay', '₹44,900', '₹44,900', '₹44,900'],
+                      ['DA (60%)', '₹26,940', '₹26,940', '₹26,940'],
+                      ['SIA (25% of basic)', '₹11,225', '₹11,225', '₹11,225'],
+                      ['HRA (30/20/10%)', '₹13,470', '₹8,980', '₹4,490'],
+                      ['Transport Allowance', '₹5,760', '₹2,880', '₹2,880'],
+                      ['Gross Monthly Salary', '₹1,02,295', '₹94,925', '₹90,435'],
+                      ['Total Deductions', '−₹7,894', '−₹7,894', '−₹7,894'],
+                      ['NET IN-HAND SALARY', '₹94,401', '₹87,031', '₹82,541'],
+                    ].map(([comp, x, y, z], i) => (
+                      <tr key={i} className={comp === 'NET IN-HAND SALARY' ? 'bg-emerald-50 font-bold' : comp === 'Gross Monthly Salary' ? 'bg-amber-100 font-semibold' : i % 2 === 0 ? 'bg-white' : 'bg-amber-50/50'}>
+                        <td className={`px-4 py-2.5 ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700' : 'text-surface-700'}`}>{comp}</td>
+                        <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{x}</td>
+                        <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{y}</td>
+                        <td className={`px-3 py-2.5 text-center ${comp === 'NET IN-HAND SALARY' ? 'text-emerald-700 font-bold' : 'text-surface-700'}`}>{z}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 6 — HRA */}
+          <section id="hra" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">HRA Explained — X, Y, Z City Difference</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              HRA (House Rent Allowance) is calculated as a percentage of your basic pay and depends entirely on where you are posted. The 7th Pay Commission set three city tiers, with the rates escalating as DA crosses 25% and then 50%.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-4 mb-5">
+              {[
+                { city: 'X Cities — 30% HRA', rate: '30%', cities: 'New Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Ahmedabad, Pune (8 cities only)', example: 'On ₹44,900 basic → ₹13,470/month HRA' },
+                { city: 'Y Cities — 20% HRA', rate: '20%', cities: 'State capitals & cities with 5–50 lakh population: Lucknow, Jaipur, Patna, Chandigarh, Bhopal, Nagpur, Indore, etc.', example: 'On ₹44,900 basic → ₹8,980/month HRA' },
+                { city: 'Z Cities — 10% HRA', rate: '10%', cities: 'All other towns, districts, and rural postings not in X or Y category', example: 'On ₹44,900 basic → ₹4,490/month HRA' },
+              ].map(({ city, rate, cities, example }) => (
+                <div key={city} className="card p-5">
+                  <div className="font-heading font-bold text-primary-600 text-lg mb-1">{rate} HRA</div>
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-2">{city}</div>
+                  <p className="text-xs text-surface-500 mb-2">{cities}</p>
+                  <p className="text-xs font-semibold text-emerald-600">{example}</p>
+                </div>
+              ))}
+            </div>
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 text-sm text-surface-700">
+              <strong className="text-emerald-700">✅ Why 30/20/10% in 2026:</strong> The 7th CPC built in an automatic HRA hike when DA crosses 50%. Since DA hit 60% (effective January 1, 2026), HRA is now at the peak slab — 30/20/10% — up from 24/16/8% at inception in 2016.
+            </div>
+          </section>
+
+          {/* Section 7 — Deductions */}
+          <section id="deductions" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Deductions Explained</h2>
+            <p className="text-surface-700 leading-relaxed mb-5">
+              Three standard deductions appear on every SSC CGL salary slip. Each one actually works in your long-term favour.
+            </p>
+            <div className="space-y-3">
+              {[
+                { name: 'NPS (National Pension Scheme)', rate: '10% of (Basic + DA)', what: 'Your retirement fund. Deducted on the combined pay, not just basic. The government also contributes 14% on your behalf — meaning for every ₹7,184 you contribute at Level 7, the government adds ₹10,058. You get a lump-sum corpus at retirement.' },
+                { name: 'CGHS (Central Govt. Health Scheme)', rate: '₹250/month (Gr. C) · ₹650/month (Gr. B)', what: 'Gives you and your dependents cashless treatment at government hospitals and thousands of empanelled private hospitals across India. One hospitalisation easily covers decades of CGHS contributions.' },
+                { name: 'CGEGIS (Group Insurance Scheme)', rate: '₹30/month (Gr. C) · ₹60/month (Gr. B)', what: 'Institutional life insurance. The scheme has a savings fund and an insurance fund. In case of death in service, the family receives a lump-sum payout from the insurance fund. Premiums are very low.' },
+                { name: 'Income Tax (TDS)', rate: 'Only if applicable', what: 'For most Level 4 employees, tax liability under the new regime is nil or minimal. Level 7 employees in X cities may have a small TDS deduction depending on their other income and deductions claimed.' },
+              ].map(({ name, rate, what }) => (
+                <div key={name} className="card p-4 flex gap-4">
+                  <div className="w-2 bg-primary-200 rounded-full shrink-0" />
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3 mb-1">
+                      <span className="font-heading font-semibold text-surface-800 text-sm">{name}</span>
+                      <span className="badge-primary text-xs">{rate}</span>
+                    </div>
+                    <p className="text-xs text-surface-500 leading-relaxed">{what}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section 8 — 8th Pay Commission */}
+          <section id="8thcpc" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">8th Pay Commission — Impact on SSC CGL Salary</h2>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-5">
+              <p className="text-sm font-semibold text-amber-700 mb-1">⚠️ Status as of May 24, 2026</p>
+              <p className="text-sm text-surface-700">The 8th CPC is in the <strong>active consultation phase</strong> — collecting memoranda from employee federations (deadline extended to May 31, 2026). The Commission is conducting regional meetings through June 2026. Final report is expected by late 2026 or early 2027, with actual revised salary slips likely from <strong>2027 onwards</strong>, though the notional effective date is January 1, 2026 (meaning employees will receive arrears).</p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+              {[
+                { label: '✅ CONFIRMED', items: ['8th CPC constituted Jan 16, 2025 (Gazette)', 'Notional effective date: January 1, 2026', 'Employees will receive arrears from Jan 1, 2026', 'Report submission timeline: ~18 months from constitution', 'Memoranda deadline extended to May 31, 2026', 'At implementation, current DA merges into basic (resets to 0%)'] },
+                { label: '⚠️ PROPOSED / NOT CONFIRMED', items: ['Fitment factor: unions demand 2.86×–3.83×', 'Government economists estimate 2.57×–2.86×', 'Minimum basic pay may rise from ₹18,000 → ₹40,000–₹54,000', 'All figures subject to final Cabinet approval', 'Actual revised slips likely from 2027', 'New HRA/DA structure not yet decided'] },
+              ].map(({ label, items }) => (
+                <div key={label} className="card p-5">
+                  <div className={`text-xs font-heading font-bold uppercase tracking-wide mb-3 ${label.startsWith('✅') ? 'text-emerald-600' : 'text-amber-600'}`}>{label}</div>
+                  <ul className="space-y-2">
+                    {items.map(item => <li key={item} className="text-xs text-surface-600 flex gap-2"><span className="mt-0.5 shrink-0">{label.startsWith('✅') ? '✓' : '~'}</span>{item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <h3 className="font-heading font-semibold text-surface-800 mb-3">⚠️ Expected Basic Pay After 8th CPC (Illustrative — Not Confirmed)</h3>
+            <div className="overflow-x-auto rounded-xl border border-surface-200">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading text-xs">Post</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">Current Basic (7th CPC)</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">⚠️ At 2.57× fitment</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">⚠️ At 2.86× fitment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Tax Assistant / UDC (Level 4)', '₹25,500', '~₹65,500', '~₹72,900'],
+                    ['Inspector IT / ASO CSS (Level 7)', '₹44,900', '~₹1,15,400', '~₹1,28,400'],
+                    ['SI CBI / AEO ED (Level 7 + SIA)', '₹44,900+', 'SIA % on revised basic', 'SIA % on revised basic'],
+                  ].map(([postItem, curr, low, high], i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-2.5 text-surface-700">{postItem}</td>
+                      <td className="px-3 py-2.5 text-center font-semibold text-surface-700">{curr}</td>
+                      <td className="px-3 py-2.5 text-center text-amber-700">{low}</td>
+                      <td className="px-3 py-2.5 text-center text-amber-700">{high}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-400 mt-2">⚠️ DA merges into basic at implementation and resets to 0%. Net in-hand will depend on new DA/HRA structure, not yet announced. Do not use these figures for planning purposes.</p>
+          </section>
+
+          {/* Section 9 — Perks */}
+          <section id="perks" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Perks & Benefits Beyond the Salary Slip</h2>
+            <p className="text-surface-700 leading-relaxed mb-5">
+              The in-hand figures above are only part of the picture. Non-cash benefits add ₹15,000–₹40,000/month in equivalent value — and most of them last for life.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { icon: '🏥', title: 'CGHS Medical Coverage', desc: 'Cashless treatment for you and your dependents at government hospitals and empanelled private hospitals. Pensioners retain this benefit after retirement.' },
+                { icon: '✈️', title: 'Leave Travel Concession (LTC)', desc: 'Fully funded family travel within India once every two years. Travel fares and sometimes accommodation are covered by the department.' },
+                { icon: '🎓', title: 'Children Education Allowance', desc: '₹2,250/month per child (max 2 children) for school-going kids up to Class 12. Hostel subsidy is also available where applicable.' },
+                { icon: '🏠', title: 'Government Quarters', desc: 'Many departments offer subsidised government housing at a fraction of market rent, particularly valuable in expensive X-category metro cities.' },
+                { icon: '📅', title: 'Generous Leave Policy', desc: '8 casual leaves, 20 earned leaves per year (accumulable up to 300 days), plus 20 half-pay leaves. Earned leave can be encashed at retirement.' },
+                { icon: '💼', title: 'NPS Retirement Corpus', desc: 'A 30-year career at Level 7 builds an NPS corpus of ₹2–₹3 crore, depending on investment returns. Government contributes 14% extra beyond your 10% deduction.' },
+              ].map(({ icon, title, desc }) => (
+                <div key={title} className="card p-5 flex gap-4">
+                  <span className="text-2xl">{icon}</span>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{title}</div>
+                    <p className="text-xs text-surface-500 leading-relaxed">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section 10 — Best post */}
+          <section id="best-post" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Which SSC CGL Post Has the Best Salary?</h2>
+            <div className="space-y-4">
+              {[
+                { rank: '1', post: 'Sub-Inspector, CBI', why: 'Highest in-hand at ₹94,401/month in Delhi. The 25% SIA makes this untouchable in pure take-home pay among all SSC CGL posts. Typically posted in Delhi and major metros.', badge: '🏆 Highest Take-Home' },
+                { rank: '2', post: 'AEO — Enforcement Directorate', why: 'In-hand ₹92,156 in X cities thanks to 20% SIA. Also carries the prestige of ED, opportunity to handle high-profile financial crime cases, and promotions that track well.', badge: '⭐ Strong SIA + Growth' },
+                { rank: '3', post: 'Inspector IT / Inspector CE / ASO MEA', why: 'All at ₹83,176/month in Delhi. Inspector IT (CBDT) offers field work and enforcement powers. ASO MEA can lead to foreign postings with substantial additional allowances.', badge: '💼 Best All-Round' },
+                { rank: '4', post: 'ASO CSS / Assistant (Other Ministries)', why: 'Same ₹83,176 in-hand — identical starting salary to Inspectors. The advantage is pure desk work, excellent career progression in the CSS, and a direct path to Under Secretary and Deputy Secretary roles.', badge: '📈 Best Career Growth' },
+              ].map(({ rank, post, why, badge }) => (
+                <div key={rank} className="card p-5 flex gap-4">
+                  <div className="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 font-heading font-bold text-sm shrink-0">{rank}</div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                      <span className="font-heading font-semibold text-surface-800">{post}</span>
+                      <span className="badge-green text-xs">{badge}</span>
+                    </div>
+                    <p className="text-xs text-surface-500 leading-relaxed">{why}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-5 text-sm text-surface-700">
+              <strong className="text-primary-700">📌 Our take:</strong> For pure salary, target SI CBI or AEO (ED). For the best blend of pay, job satisfaction, and career progression, Inspector Income Tax (CBDT) is hard to beat — Level 7 pay, field authority, and a clear promotion track to ITO and beyond.
+            </div>
+          </section>
+
+          {/* FAQs */}
+          <section id="faq" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              {[
+                {
+                  q: 'What is the in-hand salary of SSC CGL Inspector Income Tax in Delhi?',
+                  a: 'An Inspector Income Tax posted in Delhi (X city) receives exactly ₹83,176 per month in-hand. The gross salary is ₹91,070 — basic ₹44,900 + DA ₹26,940 + HRA ₹13,470 (30%) + TA ₹5,760. Deductions are ₹7,894 — NPS ₹7,184 + CGHS ₹650 + CGEGIS ₹60.',
+                },
+                {
+                  q: 'Is SSC CGL salary good in 2026?',
+                  a: 'Yes — particularly for Level 7 posts. With in-hand pay of ₹71,316–₹94,401/month depending on post and city, plus CGHS medical, NPS pension, LTC, and government housing, the total value of the package is highly competitive against private sector roles at the same qualification level.',
+                },
+                {
+                  q: 'How much does an ASO in CSS earn per month?',
+                  a: 'An ASO in the Central Secretariat Service (CSS) is at Pay Level 7, the same as Inspector IT. The in-hand salary in Delhi is ₹83,176/month, ₹75,806 in Y cities, and ₹71,316 in Z cities. Despite being a "Group B Non-Gazetted" desk job, the CSS carries one of the best career growth tracks in central government service.',
+                },
+                {
+                  q: 'Will the 8th Pay Commission significantly increase SSC CGL salary?',
+                  a: 'Yes — when implemented. Projections at a 2.86× fitment factor suggest the basic pay for Level 7 posts would rise from ₹44,900 to approximately ₹1,28,414. At implementation, the current DA (60%) merges into this new basic and resets to 0%, so the new gross will be recalculated from scratch. Actual revised salary slips are expected from 2027, with arrears paid from January 1, 2026.',
+                },
+                {
+                  q: 'What is the SSC CGL salary after the probation period?',
+                  a: 'During probation (typically 2 years), your salary structure is identical — full basic pay, DA, HRA, and TA from day one. After confirmation, you receive your first 3% annual increment on basic pay, and salary continues to grow through increments and biannual DA revisions.',
+                },
+                {
+                  q: 'Why does SI CBI earn more than Inspector IT despite both being Level 7?',
+                  a: 'Sub-Inspector CBI officers receive a 25% Special Incentive Allowance (SIA) on basic pay due to the high-risk nature of CBI investigations. On a ₹44,900 basic, this adds ₹11,225/month to the salary — pushing the gross in Delhi past ₹1 lakh and the in-hand to ₹94,401 versus ₹83,176 for an Inspector IT.',
+                },
+              ].map(({ q, a }, i) => (
+                <details key={i} className="card overflow-hidden">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 text-sm">
+                    {q}
+                    <svg className="w-4 h-4 text-surface-400 shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{a}</div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* Conclusion */}
+          <section className="mb-12">
+            <div className="card p-6 bg-gradient-to-br from-primary-50 to-surface-50 border-primary-100">
+              <h2 className="text-lg font-heading font-bold text-surface-900 mb-3">The Bottom Line</h2>
+              <p className="text-sm text-surface-700 leading-relaxed mb-3">
+                SSC CGL offers one of the clearest paths from graduation to a ₹75,000–₹94,000/month in-hand salary — with job security, medical cover, pension, and a DA that gets revised every 6 months. Whether you aim for Tax Assistant (₹49,850/month in Delhi) or Sub-Inspector CBI (₹94,401/month), the package is difficult to match at the same qualification level in India.
+              </p>
+              <p className="text-sm text-surface-700 leading-relaxed mb-4">
+                The 8th Pay Commission, when it arrives, will push these figures 30–40% higher still. Start preparing now — and by the time you join service, you may step directly into the revised pay structure.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/exams/ssc-cgl" className="btn-primary text-sm">SSC CGL 2026 Complete Details →</Link>
+                <Link href="/tools/eligibility-checker" className="btn-outline text-sm">Check Your SSC CGL Eligibility</Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Disclaimer */}
+          <div className="bg-surface-50 border border-surface-200 rounded-xl p-5 text-xs text-surface-500 leading-relaxed">
+            <strong className="text-surface-700">Sources & Disclaimer:</strong> Basic pay from 7th CPC official pay matrix (ssc.gov.in notification). DA at 60% per Cabinet decision April 18, 2026, effective January 1, 2026 (pmindia.gov.in). HRA at 30/20/10% per 7th CPC rules (DA crossed 50% threshold). NPS at 10% of Basic+DA per CCS (NPS) Rules. CGHS and CGEGIS rates per official scheme documents. SIA figures (25% CBI, 20% ED) from department-specific service rules. 8th CPC projections are illustrative only — not official. Always verify with your department or <strong>ssc.gov.in</strong>.
+          </div>
+
+          {/* JSON-LD FAQ Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  { "@type": "Question", "name": "What is the in-hand salary of SSC CGL Inspector Income Tax in Delhi?", "acceptedAnswer": { "@type": "Answer", "text": "An Inspector Income Tax in Delhi earns ₹83,176/month in-hand. Gross is ₹91,070 (basic ₹44,900 + DA 60% + HRA 30% + TA), minus deductions of ₹7,894 (NPS ₹7,184 + CGHS ₹650 + CGEGIS ₹60)." } },
+                  { "@type": "Question", "name": "Is SSC CGL salary good in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Level 7 posts earn ₹71,316–₹94,401/month in-hand depending on city and post, plus CGHS medical, NPS pension, LTC, and government housing." } },
+                  { "@type": "Question", "name": "Will the 8th Pay Commission increase SSC CGL salary?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, when implemented. At the widely discussed 2.86× fitment factor, Level 7 basic pay would rise from ₹44,900 to ~₹1,28,400. Actual revised salaries likely from 2027, with arrears from January 1, 2026." } },
+                  { "@type": "Question", "name": "What is the SSC CGL salary after probation?", "acceptedAnswer": { "@type": "Answer", "text": "Full salary from day one of probation. After confirmation, you receive a 3% annual increment on basic pay." } },
+                  { "@type": "Question", "name": "Why does SI CBI earn more than Inspector IT?", "acceptedAnswer": { "@type": "Answer", "text": "SI CBI receives a 25% Special Incentive Allowance on basic pay (₹11,225/month at entry level), pushing in-hand to ₹94,401 in Delhi vs ₹83,176 for Inspector IT." } },
+                ],
+              }),
+            }}
+          />
+        </article>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">IN THIS ARTICLE</div>
+              <ol className="space-y-2">
+                {toc.map(item => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm text-surface-600 hover:text-primary-500 leading-snug block">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-3">💰 IN-HAND SNAPSHOT</div>
+              <div className="space-y-3">
+                {[
+                  ['Tax Asst / UDC', 'Level 4', '₹41.9k–₹49.9k'],
+                  ['ASO CSS / Insp IT', 'Level 7', '₹71.3k–₹83.2k'],
+                  ['AEO — ED', 'Level 7+', '₹80.3k–₹92.2k'],
+                  ['SI — CBI', 'Level 7++', '₹82.5k–₹94.4k'],
+                ].map(([postItem, level, salary]) => (
+                  <div key={postItem} className="flex justify-between items-center">
+                    <div>
+                      <div className="text-xs font-semibold text-surface-700">{postItem}</div>
+                      <div className="text-xs text-surface-400">{level}</div>
+                    </div>
+                    <span className="text-xs font-bold text-emerald-700">{salary}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 pt-3 border-t border-emerald-200 text-xs text-emerald-600">DA 60% · HRA 30/20/10% · May 2026</div>
+            </div>
+
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-3">🔗 RELATED</div>
+              <div className="space-y-2">
+                <Link href="/exams/ssc-cgl" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL 2026 Full Details →</Link>
+                <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Check Your Eligibility →</Link>
+                <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL vs CHSL 2026 →</Link>
               </div>
             </div>
           </div>

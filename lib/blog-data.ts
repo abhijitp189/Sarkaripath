@@ -162,6 +162,20 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Everything you need — full topic lists, exam pattern, marking scheme, and topic-wise weightage for SSC CGL 2026. Based on the official SSC notification. 100% free.',
     examSlug: 'ssc-cgl',
   },
+  {
+    slug: 'ssc-cgl-salary-2026-post-wise-in-hand',
+    title: 'SSC CGL Salary 2026: Post-wise In-Hand Salary After 7th & 8th Pay Commission',
+    metaTitle: 'SSC CGL Salary 2026: Post-wise In-Hand Salary, 7th & 8th Pay Commission | TaiyarHo',
+    metaDescription: 'SSC CGL salary 2026 post-wise: in-hand ₹42,000–₹91,000/month. Full 7th CPC breakdown by post & city (X/Y/Z). DA at 60%. 8th Pay Commission expected impact. Updated May 2026.',
+    category: 'SSC',
+    tags: ['SSC CGL Salary 2026', 'SSC CGL In-Hand Salary', 'SSC CGL Post-wise Salary', 'SSC CGL Salary After 8th Pay Commission', 'SSC CGL Salary Slip', 'Inspector Income Tax Salary', 'ASO Salary 2026', '7th Pay Commission'],
+    publishedDate: 'May 24, 2026',
+    updatedDate: 'May 24, 2026',
+    readTime: '14 min read',
+    author: 'TaiyarHo Editorial',
+    excerpt: 'What does an SSC CGL employee actually earn in 2026? Here\'s the complete post-wise salary breakdown — from Tax Assistant (₹42,000/month) to SI CBI (₹91,000/month in Delhi) — with real deduction math, DA at 60%, city-wise HRA, and 8th Pay Commission expected impact.',
+    examSlug: 'ssc-cgl',
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
