@@ -1,5 +1,6 @@
 import type { NewsCategory } from './current-affairs-theme';
 import { may11_17_newsItems, may11_17_staticGk, may11_17_quiz } from './may-11-17-data';
+import { may18_24_newsItems, may18_24_staticGk, may18_24_quiz } from './may-18-24-data';
 
 /* ── Interfaces ────────────────────────────────────────────────────────── */
 
@@ -55,6 +56,37 @@ export type CaCategory = (typeof caCategories)[number];
 /* ── Posts ──────────────────────────────────────────────────────────────── */
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
+  /* ═══ NEW: May 18–24, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-may-18-24-2026',
+    title: 'Weekly Current Affairs: May 18\u201324, 2026 \u2014 Gaganyaan G-1 Cleared, Chandrayaan-3 Wins Goddard Award, PM Modi\u2019s Nordic Summit & Record-Breaking Athletics',
+    dateRange: 'May 18\u201324, 2026',
+    publishedDate: 'May 25, 2026',
+    category: 'All',
+    excerpt:
+      'This week: Gaganyaan G-1 unmanned mission cleared for launch, Chandrayaan-3 wins the 2026 Goddard Astronautics Award, PM Modi attends Third India-Nordic Summit and receives the FAO Agricola Medal, Agni-1 tested, Suryastra 300-km rocket system flagged off, VD Satheesan sworn in as Kerala CM, and a record-breaking week at the Senior Athletics Federation Cup in Ranchi.',
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'May 18\u201324, 2026',
+    newsItems: may18_24_newsItems,
+    staticGkBox: may18_24_staticGk,
+    quiz: may18_24_quiz,
+    keyPoints: [
+      'Gaganyaan G-1 unmanned mission cleared by National Review Committee; launch expected within 3\u20134 months from May 24, 2026.',
+      'Chandrayaan-3 lunar mission wins the 2026 Goddard Astronautics Award from the American Institute of Aeronautics and Astronautics (AIAA) in Washington DC.',
+      'PM Modi attends Third India-Nordic Summit in Oslo (May 19) with all five Nordic nations (Norway, Sweden, Finland, Iceland, Denmark); bilateral upgraded to Green Technology and Innovation Strategic Partnership.',
+      'PM Modi receives Grand Cross of the Royal Norwegian Order of Merit (Oslo, May 18) and FAO Agricola Medal (Rome, May 20) — 2nd Indian PM after Manmohan Singh (2008) to win the Agricola Medal.',
+      'India-Norway Business and Research Summit held in Oslo on May 18, focusing on deep-sea mining, offshore wind, and marine resources.',
+      'Cyprus President Nikos Christodoulides makes official state visit to India; joint declaration signed (May 22).',
+      'Agni-1 short-range ballistic missile successfully test-fired from Chandipur, Odisha (May 22).',
+      'Defence Minister Rajnath Singh flags off Suryastra \u2014 India\u2019s first 300-km Universal Rocket Launching System \u2014 at Shirdi (May 23).',
+      'VD Satheesan (UDF/Congress) sworn in as Chief Minister of Kerala on May 18, 2026.',
+      'NITI Aayog convenes first Education-to-Employment Committee meeting under CEO Smt. Nidhi Chibber (May 22).',
+      "Historic week at Senior Athletics Federation Cup, Ranchi: Gurindervir Singh clocks 10.09s (men's 100m NR, first Indian under 10.10s); Vishal TK clocks 44.98s (400m NR, first Indian under 45s); Tejaswin Shankar scores 8,057 pts (decathlon NR, first Indian above 8,000); Dev Meena & Kuldeep Kumar clear 5.45m (joint pole vault NR).",
+      '19th Rozgar Mela: PM distributes 51,000+ appointment letters via video conferencing (May 23).',
+      'International Day for Biological Diversity observed on May 22; theme: \u201cActing Locally for Global Impact.\u201d',
+    ],
+  },
   /* ═══ NEW: May 11–17, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-may-11-17-2026',
