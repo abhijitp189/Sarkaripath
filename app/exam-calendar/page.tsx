@@ -34,11 +34,12 @@ const KNOWN_SLUGS = new Set([
   'gate', 'afcat',
   'bihar-teacher',
   'uppsc', 'mppsc',
+  'ibps-clerk', 'upsc-ifs', 'upsc-ese', 'upsc-cms',
 ]);
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
 // Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
-// Last updated: 19 May 2026
+// Last updated: 26 May 2026
 const upcomingExams: MonthGroup[] = [
   {
     month: 'May 2026',
@@ -50,33 +51,16 @@ const upcomingExams: MonthGroup[] = [
         category: 'Police',
         internalSlug: 'ssc-gd-constable',
         externalUrl: 'https://ssc.gov.in',
-        note: '25,487 vacancies • Exam ongoing',
+        note: '25,487 vacancies • Phase 4 (25–30 May) ongoing • Answer key expected after completion',
       },
       {
-        name: 'RRB NTPC UG (CBT 1)',
-        date: '13–21 Jun 2026',
+        name: 'SSC CGL 2026 (Apply Online)',
+        date: '21 May – 22 Jun 2026',
         status: 'OFFICIAL',
-        category: 'Railway',
-        internalSlug: 'rrb-ntpc',
-        externalUrl: 'https://rrbapply.gov.in',
-        note: '3,058 vacancies (12th-level) • CEN 07/2025 • May phase done; Jun phase upcoming',
-      },
-      {
-        name: 'UPSC Civil Services (Prelims)',
-        date: '24 May 2026',
-        status: 'OFFICIAL',
-        category: 'UPSC',
-        internalSlug: 'upsc-ias',
-        externalUrl: 'https://upsc.gov.in',
-        note: '933 vacancies (IAS/IPS/IFS)',
-      },
-      {
-        name: 'UPSC CDS (I)',
-        date: '24 May 2026',
-        status: 'OFFICIAL',
-        category: 'Defence',
-        internalSlug: 'upsc-cds',
-        externalUrl: 'https://upsc.gov.in',
+        category: 'SSC',
+        internalSlug: 'ssc-cgl',
+        externalUrl: 'https://ssc.gov.in',
+        note: '12,256 vacancies • Notification out 21 May • Tier 1: Aug–Sep 2026 • Tier 2: Dec 2026',
       },
       {
         name: 'Haryana TET (HTET)',
@@ -85,6 +69,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Teaching',
         internalSlug: 'htet',
         externalUrl: 'https://bseh.org.in',
+        note: '2.33 lakh+ candidates registered • PRT, TGT, PGT levels',
       },
       {
         name: 'SSC CPO 2026 Notification',
@@ -125,7 +110,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'rbi-assistant',
         externalUrl: 'https://rbi.org.in',
-        note: '650 vacancies • Prelims conducted Apr 2026',
+        note: '650 vacancies • Prelims result out 25 May 2026',
       },
       {
         name: 'UP TGT',
@@ -136,28 +121,45 @@ const upcomingExams: MonthGroup[] = [
         externalUrl: 'https://upsessb.org',
       },
       {
-        name: 'SSC CGL (Notification)',
+        name: 'RRB NTPC UG (CBT 1 — June Phase)',
+        date: '13–21 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Railway',
+        internalSlug: 'rrb-ntpc',
+        externalUrl: 'https://rrbapply.gov.in',
+        note: '3,058 vacancies (12th-level) • CEN 07/2025 • May phase (7–9 May) done; June phase remaining',
+      },
+      {
+        name: 'RBI Grade B (Phase 1 Prelims)',
+        date: '13–14 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'rbi-grade-b',
+        externalUrl: 'https://rbi.org.in',
+        note: '60 vacancies • General DR: 13 Jun, DEPR/DSIM: 14 Jun • Phase 2: 25–26 Jul 2026',
+      },
+      {
+        name: 'UPSC IES/ISS',
+        date: '19 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'UPSC',
+        externalUrl: 'https://upsc.gov.in',
+        note: 'Indian Economic Service / Indian Statistical Service exam',
+      },
+      {
+        name: 'SBI PO (Notification Expected)',
         date: 'Jun 2026',
         status: 'TENTATIVE',
-        category: 'SSC',
-        internalSlug: 'ssc-cgl',
-        externalUrl: 'https://ssc.gov.in',
-        note: '~15,000 vacancies expected • Tier 1 Jun–Jul 2026',
+        category: 'Banking',
+        internalSlug: 'sbi-po',
+        externalUrl: 'https://sbi.co.in/careers',
+        note: 'Notification expected mid-June • Prelims likely Aug 2026',
       },
     ],
   },
   {
     month: 'July 2026',
     exams: [
-      {
-        name: 'SSC CGL (Tier 1 CBT)',
-        date: 'Jun–Jul 2026',
-        status: 'TENTATIVE',
-        category: 'SSC',
-        internalSlug: 'ssc-cgl',
-        externalUrl: 'https://ssc.gov.in',
-        note: 'As per SSC Exam Calendar 2026–27',
-      },
       {
         name: 'SSC CHSL (Tier 1)',
         date: 'Jul–Sep 2026',
@@ -184,6 +186,15 @@ const upcomingExams: MonthGroup[] = [
         externalUrl: 'https://upsc.gov.in',
       },
       {
+        name: 'RBI Grade B (Phase 2 Mains)',
+        date: '25–26 Jul 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'rbi-grade-b',
+        externalUrl: 'https://rbi.org.in',
+        note: 'General DR: 25 Jul, DEPR/DSIM: 26 Jul',
+      },
+      {
         name: 'RRB ALP',
         date: 'Jul 2026',
         status: 'TENTATIVE',
@@ -197,21 +208,39 @@ const upcomingExams: MonthGroup[] = [
     month: 'August 2026',
     exams: [
       {
-        name: 'UPSC Civil Services (Mains)',
-        date: '21 Aug 2026 (5 days)',
-        status: 'OFFICIAL',
-        category: 'UPSC',
-        internalSlug: 'upsc-ias',
-        externalUrl: 'https://upsc.gov.in',
-      },
-      {
         name: 'SBI PO (Prelims)',
         date: '1–2 Aug 2026',
         status: 'TENTATIVE',
         category: 'Banking',
         internalSlug: 'sbi-po',
         externalUrl: 'https://sbi.co.in/careers',
-        note: 'Notification expected May–Jun 2026',
+        note: 'Notification expected Jun 2026 • ~500 vacancies expected',
+      },
+      {
+        name: 'UPSC CMS (Combined Medical Services)',
+        date: '2 Aug 2026',
+        status: 'OFFICIAL',
+        category: 'UPSC',
+        internalSlug: 'upsc-cms',
+        externalUrl: 'https://upsc.gov.in',
+        note: '1,358 vacancies • For MBBS holders • Central Health Service, Railways, NDMC',
+      },
+      {
+        name: 'SSC CGL (Tier 1 CBT)',
+        date: 'Aug–Sep 2026',
+        status: 'OFFICIAL',
+        category: 'SSC',
+        internalSlug: 'ssc-cgl',
+        externalUrl: 'https://ssc.gov.in',
+        note: '12,256 vacancies • Applications close 22 Jun 2026 • Tier 2: Dec 2026',
+      },
+      {
+        name: 'UPSC Civil Services (Mains)',
+        date: '21 Aug 2026 (5 days)',
+        status: 'OFFICIAL',
+        category: 'UPSC',
+        internalSlug: 'upsc-ias',
+        externalUrl: 'https://upsc.gov.in',
       },
       {
         name: 'IBPS PO (Prelims)',
@@ -311,7 +340,7 @@ const upcomingExams: MonthGroup[] = [
         date: '10–11 Oct 2026',
         status: 'OFFICIAL',
         category: 'Banking',
-        internalSlug: 'ibps-rrb-clerk',
+        internalSlug: 'ibps-clerk',
         externalUrl: 'https://ibps.in',
         note: 'As per IBPS Calendar 2026',
       },
@@ -366,6 +395,7 @@ const upcomingExams: MonthGroup[] = [
         date: '22 Nov 2026',
         status: 'OFFICIAL',
         category: 'UPSC',
+        internalSlug: 'upsc-ifs',
         externalUrl: 'https://upsc.gov.in',
       },
       {
@@ -404,9 +434,18 @@ const upcomingExams: MonthGroup[] = [
         date: '27 Dec 2026',
         status: 'OFFICIAL',
         category: 'Banking',
-        internalSlug: 'ibps-rrb-clerk',
+        internalSlug: 'ibps-clerk',
         externalUrl: 'https://ibps.in',
         note: 'As per IBPS Calendar 2026',
+      },
+      {
+        name: 'SSC CGL (Tier 2 CBT)',
+        date: 'Dec 2026',
+        status: 'OFFICIAL',
+        category: 'SSC',
+        internalSlug: 'ssc-cgl',
+        externalUrl: 'https://ssc.gov.in',
+        note: '12,256 vacancies • As per SSC Exam Calendar 2026–27',
       },
       {
         name: 'RRB Group D (Notification)',
@@ -424,6 +463,38 @@ const upcomingExams: MonthGroup[] = [
 // ─── PAST EXAMS (Jan – Apr 2026, already conducted) ─────────────────────────
 const pastExams: MonthGroup[] = [
   {
+    month: 'May 2026',
+    exams: [
+      {
+        name: 'UPSC Civil Services (Prelims)',
+        date: '24 May 2026',
+        status: 'OFFICIAL',
+        category: 'UPSC',
+        internalSlug: 'upsc-ias',
+        externalUrl: 'https://upsc.gov.in',
+        note: '933 vacancies (IAS/IPS/IFS) • 5.49 lakh appeared • Answer key objections till 31 May',
+      },
+      {
+        name: 'UPSC IFS (Prelims)',
+        date: '24 May 2026',
+        status: 'OFFICIAL',
+        category: 'UPSC',
+        internalSlug: 'upsc-ifs',
+        externalUrl: 'https://upsc.gov.in',
+        note: 'Combined with CSE Prelims • 80 vacancies',
+      },
+      {
+        name: 'RRB NTPC UG (CBT 1 — May Phase)',
+        date: '7–9 May 2026',
+        status: 'OFFICIAL',
+        category: 'Railway',
+        internalSlug: 'rrb-ntpc',
+        externalUrl: 'https://rrbapply.gov.in',
+        note: '3,058 vacancies • CEN 07/2025 • June phase (13–21 Jun) remaining',
+      },
+    ],
+  },
+  {
     month: 'April 2026',
     exams: [
       {
@@ -434,6 +505,15 @@ const pastExams: MonthGroup[] = [
         internalSlug: 'upsc-nda',
         externalUrl: 'https://upsc.gov.in',
         note: '394 vacancies • Answer key released',
+      },
+      {
+        name: 'UPSC CDS (I)',
+        date: '12 Apr 2026',
+        status: 'OFFICIAL',
+        category: 'Defence',
+        internalSlug: 'upsc-cds',
+        externalUrl: 'https://upsc.gov.in',
+        note: '451 vacancies • CDS 2 on 13 Sep 2026',
       },
       {
         name: 'RBI Assistant (Prelims)',
@@ -451,7 +531,7 @@ const pastExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'rbi-grade-b',
         externalUrl: 'https://rbi.org.in',
-        note: 'Phase 1 exam expected Jun 2026',
+        note: '60 vacancies • Phase 1: 13–14 Jun 2026',
       },
     ],
   },
@@ -831,7 +911,7 @@ export default function ExamCalendarPage() {
           <div className="flex items-center gap-3">
             <span className="text-xl">📋</span>
             <div className="text-left">
-              <h2 className="font-heading font-bold text-surface-900 text-lg">Past Exams (Jan–Apr 2026)</h2>
+              <h2 className="font-heading font-bold text-surface-900 text-lg">Past Exams (Jan–May 2026)</h2>
               <p className="text-sm text-surface-500">{totalPast} exams already conducted this year</p>
             </div>
           </div>
@@ -858,7 +938,7 @@ export default function ExamCalendarPage() {
           <strong className="text-surface-700">Disclaimer:</strong> Exam dates are sourced from official notifications
           (upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in) and may change without notice.
           Tentative dates are based on official exam calendars and previous-year patterns. Always verify from the
-          official conducting body&apos;s website before applying. Last updated: 5 May 2026.
+          official conducting body&apos;s website before applying. Last updated: 26 May 2026.
         </div>
       </div>
     </div>
