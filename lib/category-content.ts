@@ -18,6 +18,8 @@ export const categoryContent: Record<string, CategoryContent> = {
       { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy' , amazonLink: 'https://amzn.to/4dGoMQC' },
       { title: 'Certificate Physical and Human Geography', author: 'G.C. Leong', subject: 'Geography' , amazonLink: 'https://amzn.to/4fDY0uG' },
       { title: 'NCERT Books (Class 6-12)', author: 'NCERT', subject: 'Foundation' },
+      { title: 'Authentic NCERT Summary (Class 6-12)', author: 'Disha Publications', subject: 'NCERT Revision', amazonLink: 'https://amzn.to/4nNYCzS' },
+      { title: 'Vision IAS Monthly Current Affairs', author: 'Vision IAS', subject: 'Current Affairs', amazonLink: 'https://amzn.to/4v7B3oa' },
     ],
     youtubeChannels: [
       { name: 'Unacademy IAS', url: 'https://www.youtube.com/@UnacademyIASEnglish', desc: 'Free UPSC lectures by top educators' },
@@ -51,7 +53,7 @@ export const categoryContent: Record<string, CategoryContent> = {
       { title: 'SSC Mathematics (Chapterwise)', author: 'Rakesh Yadav', subject: 'Maths' , amazonLink: 'https://amzn.to/4e3lKan' },
       { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
       { title: 'Objective General English', author: 'S.P. Bakshi', subject: 'English' , amazonLink: 'https://amzn.to/3RJm9Gi' },
-      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' },
+      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://amzn.to/4nQmNhi' },
       { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'Vocabulary' , amazonLink: 'https://amzn.to/42UgxeW' },
     ],
     youtubeChannels: [
@@ -117,7 +119,7 @@ export const categoryContent: Record<string, CategoryContent> = {
       { title: 'Fast Track Objective Arithmetic', author: 'Rajesh Verma', subject: 'Maths' },
       { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://amzn.to/4f7ANkA' },
       { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
-      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' },
+      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://amzn.to/4nQmNhi' },
       { title: "Lucent's General Science", author: 'Lucent Publications', subject: 'Science' },
     ],
     youtubeChannels: [
@@ -147,7 +149,7 @@ export const categoryContent: Record<string, CategoryContent> = {
     commonBooks: [
       { title: 'Pathfinder NDA/NA Entrance Examination', author: 'Arihant Publications', subject: 'All subjects' },
       { title: 'Mathematics for NDA/CDS', author: 'R.S. Aggarwal', subject: 'Maths' },
-      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' },
+      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://amzn.to/4nQmNhi' },
       { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English' , amazonLink: 'https://amzn.to/42UgxeW' },
       { title: 'NCERT Books (Class 11-12)', author: 'NCERT', subject: 'Science/Maths' },
     ],
@@ -181,6 +183,8 @@ export const categoryContent: Record<string, CategoryContent> = {
       { title: 'NCERT Books (Class 6-12)', author: 'NCERT', subject: 'Foundation' },
       { title: 'State-specific GK book', author: 'Lucent / Arihant (state edition)', subject: 'State GK' },
       { title: 'Certificate Physical and Human Geography', author: 'G.C. Leong', subject: 'Geography' , amazonLink: 'https://amzn.to/4fDY0uG' },
+      { title: 'Authentic NCERT Summary (Class 6-12)', author: 'Disha Publications', subject: 'NCERT Revision', amazonLink: 'https://amzn.to/4nNYCzS' },
+      { title: 'Vision IAS Monthly Current Affairs', author: 'Vision IAS', subject: 'Current Affairs', amazonLink: 'https://amzn.to/4v7B3oa' },
     ],
     youtubeChannels: [
       { name: 'StudyIQ', url: 'https://www.youtube.com/@StudyIQEducationLtd', desc: 'State PSC preparation' },
@@ -238,7 +242,7 @@ export const categoryContent: Record<string, CategoryContent> = {
     commonBooks: [
       { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://amzn.to/4f7ANkA' },
       { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
-      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' },
+      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://amzn.to/4nQmNhi' },
       { title: 'State-specific GK', author: 'Various', subject: 'State GK' },
     ],
     youtubeChannels: [
