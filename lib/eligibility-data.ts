@@ -157,17 +157,17 @@ export const SBI_APPRENTICE_AGE: AgeRuleMap = {
   'Ex-Serviceman':  { min: 20, max: 28, label: '20–28 years (as per Govt. norms)' },
 };
 
-// RRB Group D (CEN 09/2025 — 22,195 vacancies)
+// RRB Group D (CEN 09/2025 — 22,195 vacancies; age as on 01.01.2026)
 export const RRB_GROUP_D_AGE: AgeRuleMap = {
-  'General':        { min: 18, max: 36, label: '18–36 years' },
-  'OBC':            { min: 18, max: 39, label: '18–39 years (+3)' },
-  'SC':             { min: 18, max: 41, label: '18–41 years (+5)' },
-  'ST':             { min: 18, max: 41, label: '18–41 years (+5)' },
-  'EWS':            { min: 18, max: 36, label: '18–36 years' },
-  'PwBD-General':   { min: 18, max: 46, label: '18–46 years (+10)' },
-  'PwBD-OBC':       { min: 18, max: 49, label: '18–49 years (+13)' },
-  'PwBD-SC/ST':     { min: 18, max: 51, label: '18–51 years (+15)' },
-  'Ex-Serviceman':  { min: 18, max: 36, label: '18–36 years (+ service period)' },
+  'General':        { min: 18, max: 33, label: '18–33 years' },
+  'OBC':            { min: 18, max: 36, label: '18–36 years (+3)' },
+  'SC':             { min: 18, max: 38, label: '18–38 years (+5)' },
+  'ST':             { min: 18, max: 38, label: '18–38 years (+5)' },
+  'EWS':            { min: 18, max: 33, label: '18–33 years' },
+  'PwBD-General':   { min: 18, max: 43, label: '18–43 years (+10)' },
+  'PwBD-OBC':       { min: 18, max: 46, label: '18–46 years (+13)' },
+  'PwBD-SC/ST':     { min: 18, max: 48, label: '18–48 years (+15)' },
+  'Ex-Serviceman':  { min: 18, max: 33, label: '18–33 years (+ service period)' },
 };
 
 // SSC GD Constable
@@ -335,7 +335,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'RRB Group D',
     icon: '🛤️',
     slug: 'rrb-group-d',
-    tip: 'RRB Group D (CEN 09/2025) has 22,195 vacancies. 10th Pass or ITI eligible. Age 18–36 yrs (General). CBT → Physical Efficiency Test (PET) → Medical. Start GK/Current Affairs and basic Maths now.',
+    tip: 'RRB Group D (CEN 09/2025) has 22,195 vacancies. 10th Pass or ITI eligible. Age 18–33 yrs (General). CBT expected Jun–Jul 2026. CBT → Physical Efficiency Test (PET) → Medical.',
   },
   {
     id: 'ssc-gd',
