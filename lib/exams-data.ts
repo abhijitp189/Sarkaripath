@@ -11,6 +11,7 @@ export interface Book {
   author: string;
   subject: string;
   freeLink?: string;
+  amazonLink?: string;
 }
 
 export interface Resource {
@@ -175,14 +176,14 @@ export const exams: Exam[] = [
       },
     ],
     bestBooks: [
-      { title: 'Indian Polity', author: 'M. Laxmikanth', subject: 'Polity' },
-      { title: 'India\'s Struggle for Independence', author: 'Bipan Chandra', subject: 'Modern History' },
-      { title: 'Indian Art and Culture', author: 'Nitin Singhania', subject: 'Art & Culture' },
-      { title: 'Certificate Physical and Human Geography', author: 'G.C. Leong', subject: 'Geography' },
-      { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy' },
+      { title: 'Indian Polity', author: 'M. Laxmikanth', subject: 'Polity' , amazonLink: 'https://amzn.to/4f7rP6Q' },
+      { title: 'India\'s Struggle for Independence', author: 'Bipan Chandra', subject: 'Modern History' , amazonLink: 'https://amzn.to/4dr4rQs' },
+      { title: 'Indian Art and Culture', author: 'Nitin Singhania', subject: 'Art & Culture' , amazonLink: 'https://amzn.to/3PzBcln' },
+      { title: 'Certificate Physical and Human Geography', author: 'G.C. Leong', subject: 'Geography' , amazonLink: 'https://amzn.to/4fDY0uG' },
+      { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy' , amazonLink: 'https://amzn.to/4dGoMQC' },
       { title: 'NCERT Books (Class 6-12)', author: 'NCERT', subject: 'Foundation', freeLink: 'https://ncert.nic.in/textbook.php' },
       { title: 'Economic Survey (Latest)', author: 'Ministry of Finance', subject: 'Economy', freeLink: 'https://www.indiabudget.gov.in/economicsurvey/' },
-      { title: 'Environment by Shankar IAS', author: 'Shankar IAS', subject: 'Environment' },
+      { title: 'Environment by Shankar IAS', author: 'Shankar IAS', subject: 'Environment' , amazonLink: 'https://amzn.to/42TJFCY' },
       { title: 'Ethics, Integrity and Aptitude', author: 'Lexicon Publications', subject: 'Ethics' },
     ],
     freeResources: [
@@ -318,11 +319,11 @@ export const exams: Exam[] = [
       },
     ],
     bestBooks: [
-      { title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal', subject: 'Maths' },
-      { title: 'SSC Mathematics (Chapterwise)', author: 'Rakesh Yadav', subject: 'Maths' },
-      { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' },
-      { title: 'Objective General English', author: 'S.P. Bakshi', subject: 'English' },
-      { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English Vocabulary' },
+      { title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://amzn.to/4f7ANkA' },
+      { title: 'SSC Mathematics (Chapterwise)', author: 'Rakesh Yadav', subject: 'Maths' , amazonLink: 'https://amzn.to/4e3lKan' },
+      { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
+      { title: 'Objective General English', author: 'S.P. Bakshi', subject: 'English' , amazonLink: 'https://amzn.to/3RJm9Gi' },
+      { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English Vocabulary' , amazonLink: 'https://amzn.to/42UgxeW' },
       { title: 'Lucent\'s General Knowledge', author: 'Lucent Publications', subject: 'General Awareness' },
       { title: 'SSC CGL Previous Year Papers', author: 'Kiran Prakashan', subject: 'Practice', freeLink: 'https://ssc.nic.in' },
     ],
@@ -580,8 +581,8 @@ export const exams: Exam[] = [
     ],
     bestBooks: [
       { title: 'Fast Track Objective Arithmetic', author: 'Rajesh Verma', subject: 'Maths' },
-      { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' },
-      { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' },
+      { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://amzn.to/4f7ANkA' },
+      { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
       { title: 'Lucent\'s General Knowledge', author: 'Lucent Publications', subject: 'GK' },
       { title: 'Lucent\'s General Science', author: 'Lucent Publications', subject: 'Science' },
       { title: 'RRB NTPC Previous Year Papers', author: 'Various', subject: 'Practice', freeLink: 'https://www.rrbcdg.gov.in' },
@@ -868,7 +869,7 @@ export const exams: Exam[] = [
     ],
     bestBooks: [
       { title: 'Fast Track Objective Arithmetic', author: 'Rajesh Verma (Arihant)', subject: 'Numerical Ability' },
-      { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' },
+      { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
       { title: 'Objective English for Competitive Exams', author: 'Hari Mohan Prasad', subject: 'English' },
       { title: 'Banking & Financial Awareness', author: 'Arihant Publications', subject: 'Banking Awareness' },
       { title: 'IBPS Clerk 20 Practice Sets (Mains)', author: 'Kiran Prakashan', subject: 'Full Practice' },
@@ -1025,8 +1026,8 @@ export const exams: Exam[] = [
       { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'General Awareness' },
       { title: "Lucent's General Science", author: 'Lucent Publications', subject: 'Science' },
       { title: 'Fast Track Objective Arithmetic', author: 'Rajesh Verma (Arihant)', subject: 'Maths' },
-      { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Maths' },
-      { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' },
+      { title: 'Quantitative Aptitude for Competitive Examinations', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://amzn.to/4f7ANkA' },
+      { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
       { title: 'A New Approach to Reasoning Verbal & Non-Verbal', author: 'B.S. Sijwali, Indu Sijwali (Arihant)', subject: 'Reasoning' },
       { title: 'Manorama Yearbook (latest edition)', author: 'Malayala Manorama', subject: 'Current Affairs / GK' },
       { title: 'NCERT Science (Class 6-10)', author: 'NCERT', subject: 'Science', freeLink: 'https://ncert.nic.in/textbook.php' },
@@ -1198,11 +1199,11 @@ export const exams: Exam[] = [
     ],
     bestBooks: [
       { title: 'SSC GD Constable Chapterwise Solved Papers', author: 'Kiran Prakashan', subject: 'All Subjects' },
-      { title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal', subject: 'Mathematics' },
-      { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' },
+      { title: 'Quantitative Aptitude for Competitive Exams', author: 'R.S. Aggarwal', subject: 'Mathematics' , amazonLink: 'https://amzn.to/4f7ANkA' },
+      { title: 'A Modern Approach to Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
       { title: 'Lucent\'s General Knowledge', author: 'Lucent Publications', subject: 'General Awareness' },
       { title: 'Samanya Hindi', author: 'Dr. Brij Kishore Prasad Singh', subject: 'Hindi' },
-      { title: 'Objective General English', author: 'S.P. Bakshi', subject: 'English' },
+      { title: 'Objective General English', author: 'S.P. Bakshi', subject: 'English' , amazonLink: 'https://amzn.to/3RJm9Gi' },
       { title: 'SSC GD Previous Year Papers (20+ Sets)', author: 'Arihant Publications', subject: 'Practice', freeLink: 'https://ssc.gov.in' },
     ],
     freeResources: [
