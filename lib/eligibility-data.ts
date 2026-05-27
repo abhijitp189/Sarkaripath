@@ -279,7 +279,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'UPSC IAS',
     icon: '🏛️',
     slug: 'upsc-ias',
-    tip: 'You are eligible for UPSC CSE 2026! Start with NCERTs (Class 6–12), build your NCERT base, then move to standard references. The 2026 notification was released in February.',
+    tip: 'You are eligible for UPSC CSE 2026! Prelims were held on 24 May 2026 (933 vacancies). If you appeared, start Mains prep now — Mains from 21 August 2026. New aspirants: start with NCERTs (Class 6–12) for the 2027 cycle.',
   },
   {
     id: 'ssc',
