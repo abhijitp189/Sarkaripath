@@ -176,6 +176,20 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'What does an SSC CGL employee actually earn in 2026? Here\'s the complete post-wise salary breakdown — from Tax Assistant (₹42,000/month) to SI CBI (₹91,000/month in Delhi) — with real deduction math, DA at 60%, city-wise HRA, and 8th Pay Commission expected impact.',
     examSlug: 'ssc-cgl',
   },
+  {
+    slug: 'upsc-vs-state-psc-2026',
+    title: 'UPSC vs State PSC 2026: Which is Better for Your Career?',
+    metaTitle: 'UPSC vs State PSC 2026: Salary, Difficulty, Promotions & Which to Choose | TaiyarHo',
+    metaDescription: 'UPSC vs State PSC 2026 — honest comparison of salary (Pay Level 10, DA 60%), syllabus difficulty, promotions, selection rates & career growth. Make an informed choice.',
+    category: 'Preparation',
+    tags: ['UPSC', 'State PSC', 'Career Guide', 'Civil Services', 'Salary Breakdown', 'Exam Pattern', '2026 Exams', 'IAS vs PCS', 'UPSC vs UPPSC'],
+    publishedDate: 'May 27, 2026',
+    updatedDate: 'May 27, 2026',
+    readTime: '11 min read',
+    author: 'TaiyarHo Editorial',
+    excerpt: 'Confused between UPSC and State PSC? This honest 2026 comparison covers real salary numbers, syllabus overlap, promotion timelines, and selection rates — so you can pick the path that fits your life.',
+    examSlug: 'upsc-ias',
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
@@ -185,3 +199,4 @@ export function getBlogPostBySlug(slug: string): BlogPost | undefined {
 export function getBlogPostsByCategory(category: string): BlogPost[] {
   return blogPosts.filter(p => p.category === category);
 }
+// Note: Added UPSC vs State PSC blog entry above the closing functions

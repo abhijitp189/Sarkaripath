@@ -77,6 +77,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <SscCglSalaryArticle post={post} />;
   }
 
+  if (post.slug === 'upsc-vs-state-psc-2026') {
+    return <UpscVsStatePscArticle post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -7900,6 +7904,570 @@ function SscCglSalaryArticle({ post }: { post: any }) {
                 <Link href="/exams/ssc-cgl" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL 2026 Full Details →</Link>
                 <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Check Your Eligibility →</Link>
                 <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL vs CHSL 2026 →</Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+function UpscVsStatePscArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'key-takeaways', label: 'Key Takeaways' },
+    { id: 'core-difference', label: 'The Core Difference' },
+    { id: 'syllabus', label: 'Syllabus & Language' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'age-eligibility', label: 'Age Limits & Eligibility' },
+    { id: 'salary', label: 'Real Salary Breakdown' },
+    { id: '8th-cpc', label: '8th Pay Commission' },
+    { id: 'career', label: 'Career Progression' },
+    { id: 'lifestyle', label: 'Posting & Lifestyle' },
+    { id: 'selection-rates', label: 'Selection Rates' },
+    { id: 'decision', label: 'Decision Framework' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-8">
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">UPSC vs State PSC 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full -translate-y-32 translate-x-32 pointer-events-none" />
+            <div className="relative">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-accent-500 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">● UPDATED MAY 2026</span>
+                <span className="bg-white/10 text-white text-xs font-heading px-3 py-1 rounded-full">UPSC</span>
+                <span className="bg-white/10 text-white text-xs font-heading px-3 py-1 rounded-full">State PSC</span>
+                <span className="bg-white/10 text-white text-xs font-heading px-3 py-1 rounded-full">Career Guide</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-3 leading-snug">
+                UPSC vs State PSC 2026: Which is Better for Your Career?
+              </h1>
+              <p className="text-surface-300 text-sm sm:text-base leading-relaxed mb-5 max-w-2xl">
+                An honest, fact-checked comparison of salary, syllabus difficulty, promotion speed, and selection rates — so you can stop guessing and start preparing for the right exam.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+                <span>📅 {post.publishedDate}</span>
+                <span>⏱ {post.readTime}</span>
+                <span>✍️ {post.author}</span>
+                <span>✅ 7th CPC pay matrix · DA 60% confirmed</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick stat tiles */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            {[
+              { label: 'UPSC IN-HAND (ENTRY)', value: '₹75k–85k', sub: 'IAS/IPS — during probation' },
+              { label: 'STATE PSC IN-HAND', value: '₹70k–80k', sub: 'SDM/DSP — varies by state' },
+              { label: 'UPSC SELECTION', value: '~0.1%', sub: '~950 of 10+ lakh applicants' },
+              { label: '8TH CPC STATUS', value: 'Consultation', sub: 'Report expected mid-2027' },
+            ].map(({ label, value, sub }) => (
+              <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+                <div className="text-xs text-surface-400 uppercase tracking-wide mb-1">{label}</div>
+                <div className="font-heading font-bold text-surface-900 text-lg">{value}</div>
+                <div className="text-xs text-surface-500 mt-0.5">{sub}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Section — Key Takeaways */}
+          <section id="key-takeaways" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">Quick Summary &amp; Key Takeaways</h2>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-5 mb-5">
+              <p className="text-sm text-surface-700 leading-relaxed mb-3">Before diving into the detailed comparison, here are the critical facts for the 2026 cycle:</p>
+              <div className="space-y-2 text-sm text-surface-700">
+                <p><strong>Scope of Work:</strong> UPSC recruits for all-India services (IAS, IPS, IFS) with national-level impact. State PSC exams select officers for a single state&apos;s provincial services (SDM, DSP, BDO).</p>
+                <p><strong>Syllabus Overlap:</strong> By 2026, most major state commissions have aligned their General Studies syllabus with the UPSC template — roughly 70–80% overlap. But every State PSC adds a mandatory 20–30% local GK component.</p>
+                <p><strong>Selection Rates:</strong> UPSC recommended 958 candidates out of roughly 10+ lakh applicants in 2025 — a selection rate near 0.1%. State PSC exams have smaller pools but limited, often delayed vacancy cycles.</p>
+                <p><strong>Starting Pay:</strong> Both cadres start at Pay Level 10 (basic ₹56,100/month). With DA at 60%, entry-level gross salary is ₹80,000–₹1,00,000/month. Realistic in-hand after deductions: ₹70,000–₹85,000.</p>
+                <p><strong>8th CPC Status:</strong> The 8th Pay Commission was constituted on November 3, 2025, chaired by Justice Ranjana Prakash Desai. It is in its stakeholder consultation phase as of May 2026. The reference date is January 1, 2026, but final payouts are expected in 2027 or later.</p>
+              </div>
+            </div>
+            <p className="text-surface-700 text-sm leading-relaxed mb-4">
+              Every year, lakhs of competitive exam aspirants find themselves at a crossroads. You might be sitting in a rented room in Old Rajinder Nagar or Prayagraj, with UPSC material on one side and a State PSC syllabus on the other. Choosing between UPSC and State PSC is not just about which form to fill — it is a decision that shapes your lifestyle, income, and career growth for the next three decades.
+            </p>
+            <p className="text-surface-700 text-sm leading-relaxed">
+              This guide provides an honest, fact-checked breakdown of both career paths as of May 2026. We look beyond social media hype and examine real numbers, promotion timelines, and exam difficulties so you can make an informed choice.
+            </p>
+          </section>
+
+          {/* Section — Core Difference */}
+          <section id="core-difference" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">What is the Core Difference Between UPSC and State PSC?</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-5">
+              The structural difference comes down to jurisdictional scope, administrative authority, and appointment structures.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading text-xs">Parameter</th>
+                    <th className="text-left px-4 py-3 font-heading text-xs">UPSC Civil Services</th>
+                    <th className="text-left px-4 py-3 font-heading text-xs">State PSC</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Recruiting Body', 'Union Public Service Commission', 'State Public Service Commission (UPPSC, BPSC, MPSC, etc.)'],
+                    ['Services Recruited', 'IAS, IPS, IFS + 20+ Central Services', 'PCS, SPS, State Revenue Services + state posts'],
+                    ['Appointing Authority', 'President of India', 'Governor of the State'],
+                    ['Jurisdiction', 'Pan-India (posted to any state cadre)', 'Within one state only'],
+                    ['Career Ceiling', 'Cabinet Secretary / Chief Secretary', 'State service officer (promotion to IAS possible after 12–15 years)'],
+                  ].map(([param, upsc, state], i) => (
+                    <tr key={param} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 font-semibold text-surface-800">{param}</td>
+                      <td className="px-4 py-3 text-surface-700">{upsc}</td>
+                      <td className="px-4 py-3 text-surface-700">{state}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-surface-700 text-sm leading-relaxed">
+              When you clear UPSC CSE, you join elite all-India cadres like IAS or IPS. Your career operates on a national canvas. Conversely, a State PSC officer (such as through <Link href="/exams/uppsc-pcs" className="text-primary-500 hover:underline">UPPSC PCS</Link> or <Link href="/exams/bpsc-cce" className="text-primary-500 hover:underline">BPSC CCE</Link>) enters state-level administrative or police ranks, with jurisdiction limited to that state&apos;s borders.
+            </p>
+          </section>
+
+          {/* Section — Syllabus */}
+          <section id="syllabus" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">UPSC vs State PSC 2026: Syllabus and Language Barriers</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-4">
+              Understanding the syllabus overlap is the most practical way to save preparation time. By 2026, major commissions like UPPSC, BPSC, and MPPSC have heavily aligned their main syllabus with the UPSC template — identical General Studies papers covering Polity, Economy, History, and Ethics.
+            </p>
+            <div className="card p-5 mb-5 bg-surface-50 border-surface-200">
+              <p className="text-sm font-heading font-semibold text-surface-800 mb-2">📊 Syllabus Overlap Estimate</p>
+              <p className="text-sm text-surface-700 leading-relaxed">
+                UPSC GS Core ≈ 70–80% overlap with State PSC GS Core. The remaining 20–30% in every State PSC is mandatory state-specific General Knowledge — local history, geography, economy, and administrative structure.
+              </p>
+            </div>
+            <p className="text-surface-700 text-sm leading-relaxed mb-3">
+              Despite this synchronization, the State PSC pathway introduces two unique challenges:
+            </p>
+            <div className="space-y-4 mb-5">
+              <div className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-2">1. The Local General Knowledge Load</h3>
+                <p className="text-sm text-surface-700 leading-relaxed">
+                  You cannot clear a state service exam simply by being good at national current affairs. Most states reserve 20–30% of their question papers for localized content — tribal histories, regional economic budgets, local geography, and historical movements specific to that state. For example, <Link href="/exams/wbcs-executive" className="text-primary-500 hover:underline">WBCS Executive</Link> has a significant Bengal-specific component.
+                </p>
+              </div>
+              <div className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-2">2. Mandatory Regional Languages</h3>
+                <p className="text-sm text-surface-700 leading-relaxed">
+                  While UPSC allows you to write papers in various scheduled languages, it treats regional language papers as qualifying thresholds only. Many State PSC exams require high proficiency in the local language. Clearing <Link href="/exams/tnpsc-group-1" className="text-primary-500 hover:underline">TNPSC Group 1</Link> requires Tamil proficiency, while West Bengal and Maharashtra have strong regional language requirements.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section — Exam Pattern */}
+          <section id="exam-pattern" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">Exam Pattern Comparison: The Three-Stage Marathon</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-5">
+              Both pathways require navigating a three-stage elimination process designed to test cognitive speed and deep analytical capacity.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+              <div className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">🏛️ UPSC CSE Pattern</h3>
+                <div className="space-y-3 text-sm text-surface-700">
+                  <p><strong>Prelims:</strong> Two objective papers — General Studies I (merit) and CSAT (qualifying at 33%). GS-I marks determine who proceeds.</p>
+                  <p><strong>Mains:</strong> Nine descriptive papers over several days — 1 Essay, 4 GS papers, 2 Optional Subject papers, 2 qualifying language papers.</p>
+                  <p><strong>Interview:</strong> 275-mark Personality Test in New Delhi evaluating analytical ability, integrity, and leadership.</p>
+                </div>
+              </div>
+              <div className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">🏢 State PSC Pattern (2026 Standard)</h3>
+                <div className="space-y-3 text-sm text-surface-700">
+                  <p><strong>Prelims:</strong> Objective screening. Some states merge CSAT or evaluate aptitude within a single composite score.</p>
+                  <p><strong>Mains:</strong> Descriptive papers. Several states have removed optional subjects to prevent scaling disparities, replacing them with state-focused GS modules.</p>
+                  <p><strong>Interview:</strong> Personality assessment at the state commission HQ, generally carrying lower total marks than the UPSC interview.</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4">
+              <p className="text-sm text-surface-700 leading-relaxed">
+                <strong>Key Difference:</strong> UPSC Mains has an optional subject — which means months of specialized preparation for papers like Sociology, Public Administration, or Geography. Many state PSCs have dropped the optional entirely, reducing total preparation breadth but increasing the weight of mandatory state-specific papers.
+              </p>
+            </div>
+          </section>
+
+          {/* Section — Age & Eligibility */}
+          <section id="age-eligibility" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">Age Limits and Eligibility for the 2026 Cycle</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-5">
+              Your timeline and category status determine how many attempts you have. To check your specific age alignment dynamically, use our <Link href="/tools/eligibility-checker" className="text-primary-500 hover:underline font-semibold">TaiyarHo Eligibility Checker</Link>.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading text-xs">Category</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">UPSC Max Age</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">UPSC Attempts</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">State PSC (Typical)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['General / EWS', '32 years', '6', '37–40 years (varies)'],
+                    ['OBC (Non-Creamy)', '35 years', '9', '38–43 years'],
+                    ['SC / ST', '37 years', 'Unlimited', '40–45 years'],
+                    ['PwBD (Gen/OBC)', '42 years', '9', '42–47 years'],
+                    ['PwBD (SC/ST)', '42 years', 'Unlimited', '45+ years'],
+                  ].map(([cat, upscAge, attempts, stateAge], i) => (
+                    <tr key={cat} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 font-semibold text-surface-800">{cat}</td>
+                      <td className="text-center px-3 py-3 text-surface-700">{upscAge}</td>
+                      <td className="text-center px-3 py-3 text-surface-700">{attempts}</td>
+                      <td className="text-center px-3 py-3 text-surface-700">{stateAge}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4 mb-5">
+              <p className="text-sm text-surface-700 leading-relaxed">
+                <strong>⚠️ Domicile Caveat:</strong> Age relaxations for OBC, SC, and ST in State PSC exams are strictly limited to candidates holding a valid domicile certificate from that state. If you live in Bihar and apply for <Link href="/exams/rpsc-ras" className="text-primary-500 hover:underline">RPSC RAS</Link>, you will be treated as an Unreserved (General) candidate.
+              </p>
+            </div>
+            <p className="text-surface-700 text-sm leading-relaxed">
+              State PSCs generally offer much wider age windows — making them an excellent option for aspirants approaching the UPSC age ceiling. For a complete breakdown of category-wise age relaxations across all major exams, read our <Link href="/guides/age-limit-relaxation-government-jobs" className="text-primary-500 hover:underline">guide on age relaxation for government jobs</Link>.
+            </p>
+          </section>
+
+          {/* Section — Salary */}
+          <section id="salary" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">UPSC vs State PSC 2026: Real Salary and Allowances</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-5">
+              Let&apos;s address a common myth: entry-level officers in both cadres start at nearly the same basic pay. The difference comes down to posting location, allowances, and perks rather than a fundamentally different pay structure.
+            </p>
+            <p className="text-surface-700 text-sm leading-relaxed mb-5">
+              As of May 2026, salaries operate under the 7th Central Pay Commission framework. The Dearness Allowance stands at 60% of basic pay, effective from January 1, 2026 (approved by the Union Cabinet).
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading text-xs">Component</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">Central Cadre (IAS/IPS)</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">State Cadre (SDM/DSP)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Basic Pay (Level 10)', '₹56,100', '₹56,100'],
+                    ['Dearness Allowance (60%)', '₹33,660', '₹33,660*'],
+                    ['HRA (Metro / X-City = 30%)', '₹16,830', '₹5,610–₹11,220 (Y/Z City typical)'],
+                    ['Transport Allowance + DA', '~₹11,500', 'Varies by state rules'],
+                    ['Gross Monthly Salary', '₹1,05,000–₹1,18,000', '₹90,000–₹1,05,000'],
+                    ['NPS Deduction (10% of Basic+DA)', '~₹8,976', '~₹8,976'],
+                    ['Other Deductions (CGHS, Tax)', '~₹3,000–₹8,000', '~₹2,500–₹6,000'],
+                    ['Realistic In-Hand Pay', '₹75,000–₹85,000', '₹70,000–₹80,000'],
+                  ].map(([comp, central, state], i) => (
+                    <tr key={comp} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 font-semibold text-surface-800">{comp}</td>
+                      <td className="text-center px-3 py-3 text-surface-700">{central}</td>
+                      <td className="text-center px-3 py-3 text-surface-700">{state}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mb-5">
+              <p className="text-sm text-surface-700 leading-relaxed">
+                <strong>💡 Reality Check:</strong> The gross salary looks impressive, but in-hand pay for a fresh IAS officer during probation is typically ₹75,000–₹85,000/month. Social media pages that claim ₹1 lakh+ &quot;in-hand&quot; are usually quoting gross salary before deductions, or including perks like free housing and vehicle at their monetary value.
+              </p>
+            </div>
+            <p className="text-xs text-surface-500 leading-relaxed">
+              *Most major states have matched the 60% DA mark, but some states may lag by one or two revisions. Verify with your state&apos;s finance department for the latest DA rate.
+            </p>
+          </section>
+
+          {/* Section — 8th Pay Commission */}
+          <section id="8th-cpc" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">The 8th Pay Commission Factor in 2026</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-4">
+              The 8th Pay Commission was officially constituted via government notification on November 3, 2025, chaired by Justice Ranjana Prakash Desai (Retd., Supreme Court). Throughout May and June 2026, the commission is conducting stakeholder consultations — the memorandum submission deadline was extended to May 31, 2026, with scheduled field visits to cities including Hyderabad, Srinagar, and Lucknow.
+            </p>
+            <div className="card p-5 bg-surface-50 border-surface-200 mb-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <p className="font-heading font-semibold text-surface-800 mb-1">Reference Date</p>
+                  <p className="text-surface-700">January 1, 2026 (retrospective)</p>
+                </div>
+                <div>
+                  <p className="font-heading font-semibold text-surface-800 mb-1">Report Submission</p>
+                  <p className="text-surface-700">Expected mid-2027 (18 months from constitution)</p>
+                </div>
+                <div>
+                  <p className="font-heading font-semibold text-surface-800 mb-1">Actual Payout</p>
+                  <p className="text-surface-700">Late 2027 or 2028 (after Cabinet approval)</p>
+                </div>
+                <div>
+                  <p className="font-heading font-semibold text-surface-800 mb-1">Union Demand</p>
+                  <p className="text-surface-700">Fitment factor of 3.83× (min basic ₹69,000)</p>
+                </div>
+              </div>
+            </div>
+            <p className="text-surface-700 text-sm leading-relaxed">
+              Once implemented, basic pay components are expected to rise significantly, and backdated arrears will apply from January 2026. Both UPSC and State PSC officers will benefit. For a deeper breakdown, see our <Link href="/blog/8th-pay-commission-salary-calculator-2026" className="text-primary-500 hover:underline">8th Pay Commission Salary Calculator</Link>.
+            </p>
+          </section>
+
+          {/* Section — Career Progression */}
+          <section id="career" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">Career Progression and Promotions</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-5">
+              This is where the two career paths diverge significantly. If you want to maximize long-term career ceiling, the UPSC route offers a much faster trajectory.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+              <div className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-primary-600 mb-3">🏛️ UPSC — Direct IAS Trajectory</h3>
+                <div className="space-y-2 text-sm text-surface-700">
+                  <p>→ <strong>Year 0–2:</strong> Assistant Collector / SDM (training + probation)</p>
+                  <p>→ <strong>Year 4–6:</strong> District Magistrate / Collector</p>
+                  <p>→ <strong>Year 12–16:</strong> Commissioner / Secretary to State Government</p>
+                  <p>→ <strong>Year 20–30:</strong> Joint Secretary, Additional Secretary, Chief Secretary</p>
+                </div>
+              </div>
+              <div className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-emerald-600 mb-3">🏢 State PSC — PCS Trajectory</h3>
+                <div className="space-y-2 text-sm text-surface-700">
+                  <p>→ <strong>Year 0–6:</strong> SDM / Sub-Divisional Magistrate</p>
+                  <p>→ <strong>Year 8–12:</strong> ADM / Additional District Magistrate</p>
+                  <p>→ <strong>Year 12–15:</strong> Eligible for promotion to IAS cadre</p>
+                  <p>→ <strong>Year 20+:</strong> District Magistrate (if promoted to IAS)</p>
+                </div>
+              </div>
+            </div>
+            <p className="text-surface-700 text-sm leading-relaxed">
+              A direct-recruit IAS officer typically becomes a full District Magistrate within 4–6 years. A State PCS officer starts at SDM level but remains there much longer — it typically takes 12–15 years of unblemished service to get promoted into the formal IAS cadre. This means a state service officer spends a large part of their career in field operations, rarely reaching top-tier policy roles reserved for senior secretariat officers.
+            </p>
+          </section>
+
+          {/* Section — Lifestyle */}
+          <section id="lifestyle" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">Posting and Lifestyle: Home Turf vs All-India Transfers</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-5">
+              A primary factor when evaluating UPSC vs State PSC is your family situation and where you want to settle.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">The UPSC Wanderer Lifestyle</h3>
+                <div className="space-y-2 text-sm text-surface-700">
+                  <p>You are allocated a state cadre based on your rank, preferences, and insider-outsider vacancies — with a high probability of being assigned far from home.</p>
+                  <p>Mandatory transfers every 2–3 years across different districts. You may need to learn a new language and adapt to an unfamiliar culture.</p>
+                  <p>Your children&apos;s education and family&apos;s living arrangements face frequent disruption.</p>
+                </div>
+              </div>
+              <div className="card p-5">
+                <h3 className="text-lg font-heading font-semibold text-surface-800 mb-3">The State PSC Home Advantage</h3>
+                <div className="space-y-2 text-sm text-surface-700">
+                  <p><strong>Geographical Stability:</strong> Your entire career takes place within a single state. No cross-country moves.</p>
+                  <p><strong>Family Proximity:</strong> You work within familiar socio-political networks, making it easier to balance family life.</p>
+                  <p><strong>Fewer Radical Shocks:</strong> No disruptive all-India service adjustments for children&apos;s schooling or spouse&apos;s career.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section — Selection Rates */}
+          <section id="selection-rates" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">The Brutal Truth: Selection Rates</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-4">
+              Let&apos;s be completely honest: the competition for both exams is intense.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading text-xs">Metric</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">UPSC CSE 2025</th>
+                    <th className="text-center px-3 py-3 font-heading text-xs">State PSC (Typical)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Applicants', '~10–13 lakh registered', '1–5 lakh per state'],
+                    ['Actually Appeared', '~5–6 lakh (50% show rate)', '50–70% of registered'],
+                    ['Vacancies (2026 cycle)', '933 posts', '200–2,500 per state'],
+                    ['Final Selected', '958 recommended (2025)', 'Varies widely'],
+                    ['Selection Rate', '~0.1% of applicants', '0.2–1% (better odds, but fewer posts)'],
+                  ].map(([metric, upsc, state], i) => (
+                    <tr key={metric} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 font-semibold text-surface-800">{metric}</td>
+                      <td className="text-center px-3 py-3 text-surface-700">{upsc}</td>
+                      <td className="text-center px-3 py-3 text-surface-700">{state}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4">
+              <p className="text-sm text-surface-700 leading-relaxed">
+                <strong>⚠️ Honest Advice:</strong> Spending 4–5 years exclusively preparing for one exam without a backup plan can hurt your career prospects. Many successful officers prepared for UPSC and their home-state PSC simultaneously, keeping both options open. Build a balanced preparation strategy rather than gambling on a single cycle.
+              </p>
+            </div>
+          </section>
+
+          {/* Section — Decision Framework */}
+          <section id="decision" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">The Four-Step Decision Framework</h2>
+            <p className="text-surface-700 text-sm leading-relaxed mb-5">
+              If you are struggling to choose, use this framework:
+            </p>
+            <div className="space-y-4 mb-5">
+              {[
+                { num: '1', title: 'Assess Your Academic Strengths', desc: 'Strong analytical writing and global awareness? Go all-in on UPSC. Strength in memorizing local facts and factual data? The State PSC format may suit you.' },
+                { num: '2', title: 'Check the Age Clock', desc: 'Between 21–26? You have time for 2–3 UPSC attempts. Crossing 28 as General category? Prioritize your State PSC to secure a career before eligibility windows close.' },
+                { num: '3', title: 'Clarify Location Preferences', desc: 'Ask honestly: Am I comfortable living in a remote district or unfamiliar state for the next decade? If not, focus on your home state\'s commission.' },
+                { num: '4', title: 'Implement Parallel Preparation', desc: 'Since most state exams mirror UPSC GS by 70–80%, build a UPSC-level foundation while dedicating 2 hours daily to state-specific GK and regional language papers. This keeps both options alive.' },
+              ].map(step => (
+                <div key={step.num} className="card p-5 flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center">
+                    <span className="text-primary-600 font-heading font-bold text-sm">{step.num}</span>
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold text-surface-800 mb-1">{step.title}</h3>
+                    <p className="text-sm text-surface-700 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-surface-700 text-sm leading-relaxed">
+              Not sure where to begin? Start with our <Link href="/guides/how-to-start-government-exam-preparation" className="text-primary-500 hover:underline">guide on how to start government exam preparation</Link>.
+            </p>
+          </section>
+
+          {/* Section — FAQs */}
+          <section id="faq" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              {[
+                { q: 'Is the State PSC syllabus easier than UPSC?', a: 'Not necessarily. State PSC exams require less deep conceptual analysis, but demand a higher volume of factual memorization. The mandatory local history, regional geography, and state language papers can make them just as challenging — especially for candidates from outside that state.' },
+                { q: 'Can a State PSC officer become an IAS officer?', a: 'Yes. Provincial civil service officers are eligible for promotion into the IAS cadre. However, this typically requires 12–15 years of unblemished service and depends on state-level cadre vacancies. It is not guaranteed.' },
+                { q: 'What is the starting in-hand salary for an entry-level officer in 2026?', a: 'Both cadres start at Pay Level 10 (Basic Pay ₹56,100). With DA at 60%, the gross monthly pay is ₹90,000–₹1,18,000 depending on location. Realistic in-hand after NPS, tax, and other deductions is ₹70,000–₹85,000.' },
+                { q: 'Can candidates from other states apply for a specific State PSC exam?', a: 'Yes, Indian citizens can apply for most state service exams. However, out-of-state candidates compete under the Unreserved (General) category and do not receive age or score relaxations reserved for local residents with valid domicile certificates.' },
+                { q: 'How has the 8th Pay Commission affected salaries in 2026?', a: 'It has not affected salaries yet. The 8th Pay Commission was constituted in November 2025 and is currently conducting consultations. Revised pay scales will apply retrospectively from January 1, 2026, but actual payouts are expected in 2027 or 2028 after the commission submits its report.' },
+                { q: 'Do State PSC officers get government accommodation and vehicles?', a: 'Yes. Executive positions like SDM and DSP typically receive official government quarters, vehicle allowances, and security staff. The exact perks vary by state and posting level.' },
+              ].map((faq, i) => (
+                <details key={i} className="card overflow-hidden group">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer">
+                    <span className="font-heading font-semibold text-surface-800 text-sm pr-4">{faq.q}</span>
+                    <svg className="w-5 h-5 text-surface-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* Conclusion */}
+          <section className="mb-12">
+            <div className="card p-6 bg-gradient-to-br from-primary-50 to-surface-50 border-primary-100">
+              <h2 className="text-lg font-heading font-bold text-surface-900 mb-3">The Bottom Line</h2>
+              <p className="text-sm text-surface-700 leading-relaxed mb-3">
+                Neither path is objectively &quot;better&quot; — UPSC offers faster career growth and national prestige, while State PSC provides geographical stability and wider age windows. The smartest aspirants prepare for both simultaneously, using the 70–80% syllabus overlap to their advantage.
+              </p>
+              <p className="text-sm text-surface-700 leading-relaxed mb-4">
+                Whichever path you choose, the key is to start now, stay consistent, and keep a backup plan. Government service — whether central or state — remains one of the most secure and respected career paths in India.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/exams/upsc-ias" className="btn-primary text-sm">UPSC IAS 2026 Full Details →</Link>
+                <Link href="/tools/eligibility-checker" className="btn-outline text-sm">Check Your Eligibility</Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Disclaimer */}
+          <div className="bg-surface-50 border border-surface-200 rounded-xl p-5 text-xs text-surface-500 leading-relaxed">
+            <strong className="text-surface-700">Sources &amp; Disclaimer:</strong> Basic pay from 7th CPC official pay matrix. DA at 60% per Cabinet decision effective January 1, 2026. UPSC CSE 2025 statistics from upsc.gov.in (958 recommended, 1087 vacancies). UPSC CSE 2026 notification: 933 vacancies. 8th Pay Commission constitution per Gazette Notification dated November 3, 2025. Age limits per UPSC CSE 2026 notification and respective State PSC notifications. Salary figures are approximate and vary by posting location and individual circumstances. Always verify with official sources — <strong>upsc.gov.in</strong> and respective state PSC websites.
+          </div>
+
+          {/* JSON-LD FAQ Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  { "@type": "Question", "name": "Is the State PSC syllabus easier than UPSC?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. State PSC exams require less deep conceptual analysis but demand higher factual memorization. Mandatory local history, regional geography, and state language papers can make them just as challenging, especially for out-of-state candidates." } },
+                  { "@type": "Question", "name": "Can a State PSC officer become an IAS officer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, provincial civil service officers are eligible for promotion into the IAS cadre after 12-15 years of unblemished service, subject to cadre vacancies." } },
+                  { "@type": "Question", "name": "What is the starting in-hand salary for an entry-level officer in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Both cadres start at Pay Level 10 (Basic Pay ₹56,100). With DA at 60%, gross monthly pay is ₹90,000-₹1,18,000. Realistic in-hand after NPS, tax, and deductions is ₹70,000-₹85,000." } },
+                  { "@type": "Question", "name": "Can candidates from other states apply for State PSC exams?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Indian citizens can apply for most state service exams. However, out-of-state candidates compete as Unreserved (General) category and do not receive local age or score relaxations." } },
+                  { "@type": "Question", "name": "How has the 8th Pay Commission affected salaries in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "The 8th Pay Commission was constituted in November 2025 and is in consultation phase. Revised pay scales will apply from January 1, 2026 retrospectively, but actual payouts are expected in 2027 or 2028." } },
+                  { "@type": "Question", "name": "Do State PSC officers get government accommodation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. SDM and DSP posts typically receive official government quarters, vehicle allowances, and security staff. Exact perks vary by state and posting." } },
+                ],
+              }),
+            }}
+          />
+
+          {/* BreadcrumbList Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.taiyarho.in/" },
+                  { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.taiyarho.in/blog/" },
+                  { "@type": "ListItem", "position": 3, "name": "UPSC vs State PSC 2026" },
+                ],
+              }),
+            }}
+          />
+        </article>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">IN THIS ARTICLE</div>
+              <ol className="space-y-2">
+                {toc.map(item => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm text-surface-600 hover:text-primary-500 leading-snug block">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-3">🔗 RELATED EXAM</div>
+              <Link href="/exams/upsc-ias" className="block mb-3">
+                <span className="font-heading font-semibold text-sm text-surface-800 hover:text-primary-500">UPSC Civil Services (IAS/IPS/IFS) →</span>
+                <p className="text-xs text-surface-500 mt-1">Full details, syllabus, salary &amp; eligibility</p>
+              </Link>
+              <div className="border-t border-emerald-200 pt-3">
+                <p className="text-xs font-semibold text-emerald-700 mb-2">EXPLORE STATE PSCs</p>
+                <div className="space-y-1">
+                  <Link href="/exams/uppsc-pcs" className="block text-xs text-surface-600 hover:text-primary-500">UPPSC PCS →</Link>
+                  <Link href="/exams/bpsc-cce" className="block text-xs text-surface-600 hover:text-primary-500">BPSC CCE →</Link>
+                  <Link href="/exams/mpsc-rajyaseva" className="block text-xs text-surface-600 hover:text-primary-500">MPSC Rajyaseva →</Link>
+                  <Link href="/exams/rpsc-ras" className="block text-xs text-surface-600 hover:text-primary-500">RPSC RAS →</Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-3">📚 RELATED ARTICLES</div>
+              <div className="space-y-2">
+                <Link href="/blog/8th-pay-commission-salary-calculator-2026" className="block text-sm text-surface-600 hover:text-primary-500">8th Pay Commission Calculator →</Link>
+                <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026" className="block text-sm text-surface-600 hover:text-primary-500">Age Relaxation Guide 2026 →</Link>
+                <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Eligibility Checker Tool →</Link>
               </div>
             </div>
           </div>
