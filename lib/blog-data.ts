@@ -190,6 +190,19 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Confused between UPSC and State PSC? This honest 2026 comparison covers real salary numbers, syllabus overlap, promotion timelines, and selection rates — so you can pick the path that fits your life.',
     examSlug: 'upsc-ias',
   },
+  {
+    slug: 'rpsc-apo-recruitment-2026-371-vacancies',
+    title: 'RPSC APO Recruitment 2026: 371 Vacancies, Eligibility, Exam Pattern & How to Apply',
+    metaTitle: 'RPSC APO Recruitment 2026: 371 Assistant Prosecution Officer Vacancies | TaiyarHo',
+    metaDescription: 'RPSC APO Recruitment 2026 — 371 Assistant Prosecution Officer vacancies. Eligibility: Law degree. Age: 21–40. Apply online 8 June – 7 July 2026 at rpsc.rajasthan.gov.in. Exam pattern, salary & syllabus.',
+    category: 'State PSC',
+    tags: ['RPSC APO 2026', 'Rajasthan APO Recruitment', 'Assistant Prosecution Officer', 'RPSC Recruitment 2026', 'Rajasthan Govt Jobs', 'Law Jobs 2026', 'RPSC APO Exam Pattern', 'RPSC APO Salary'],
+    publishedDate: 'May 29, 2026',
+    updatedDate: 'May 29, 2026',
+    readTime: '8 min read',
+    author: 'TaiyarHo Editorial',
+    excerpt: 'RPSC has announced 371 Assistant Prosecution Officer vacancies under the Home Department (Prosecution). Law graduates aged 21–40 can apply online from 8 June to 7 July 2026. Complete details on eligibility, exam pattern, salary, and step-by-step application process.',
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

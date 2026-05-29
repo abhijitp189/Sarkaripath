@@ -81,6 +81,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <UpscVsStatePscArticle post={post} />;
   }
 
+  if (post.slug === 'rpsc-apo-recruitment-2026-371-vacancies') {
+    return <RpscApoRecruitmentArticle post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -8469,6 +8473,474 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
                 <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026" className="block text-sm text-surface-600 hover:text-primary-500">Age Relaxation Guide 2026 →</Link>
                 <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Eligibility Checker Tool →</Link>
               </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── RPSC APO RECRUITMENT 2026 ARTICLE ────────────────────────────────────────
+function RpscApoRecruitmentArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'overview', label: 'Recruitment Overview' },
+    { id: 'important-dates', label: 'Important Dates' },
+    { id: 'vacancies', label: 'Vacancy Breakdown' },
+    { id: 'eligibility', label: 'Eligibility Criteria' },
+    { id: 'age-limit', label: 'Age Limit & Relaxation' },
+    { id: 'exam-pattern', label: 'Exam Pattern' },
+    { id: 'syllabus', label: 'Syllabus Highlights' },
+    { id: 'salary', label: 'Salary & Pay Scale' },
+    { id: 'application-fee', label: 'Application Fee' },
+    { id: 'how-to-apply', label: 'How to Apply' },
+    { id: 'preparation-tips', label: 'Preparation Tips' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  return (
+    <div className="container-main py-8">
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">RPSC APO Recruitment 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full -translate-y-32 translate-x-32 pointer-events-none" />
+            <div className="relative">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-accent-500 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">● NOTIFICATION OUT</span>
+                <span className="bg-white/10 text-white text-xs font-heading px-3 py-1 rounded-full">State PSC</span>
+                <span className="bg-white/10 text-white text-xs font-heading px-3 py-1 rounded-full">Rajasthan</span>
+                <span className="bg-white/10 text-white text-xs font-heading px-3 py-1 rounded-full">Law Jobs</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-3 leading-snug">
+                RPSC APO Recruitment 2026: 371 Assistant Prosecution Officer Vacancies
+              </h1>
+              <p className="text-surface-300 text-sm sm:text-base leading-relaxed mb-5 max-w-2xl">
+                Rajasthan Public Service Commission has released 371 vacancies for Assistant Prosecution Officer under the Home Department. Apply online from 8 June to 7 July 2026.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+                <span>📅 {post.publishedDate}</span>
+                <span>⏱ {post.readTime}</span>
+                <span>✍️ {post.author}</span>
+                <span>✅ Official notification verified</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick stat tiles */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            <div className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+              <div className="text-xs text-surface-400 uppercase tracking-wide">Vacancies</div>
+              <div className="font-heading font-bold text-lg text-primary-600 mt-1">371</div>
+            </div>
+            <div className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+              <div className="text-xs text-surface-400 uppercase tracking-wide">Pay Level</div>
+              <div className="font-heading font-bold text-lg text-emerald-600 mt-1">L-11</div>
+            </div>
+            <div className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+              <div className="text-xs text-surface-400 uppercase tracking-wide">Age Limit</div>
+              <div className="font-heading font-bold text-lg text-surface-800 mt-1">21–40 yrs</div>
+            </div>
+            <div className="bg-surface-50 rounded-xl p-4 border border-surface-200 text-center">
+              <div className="text-xs text-surface-400 uppercase tracking-wide">Last Date</div>
+              <div className="font-heading font-bold text-lg text-red-600 mt-1">7 Jul 2026</div>
+            </div>
+          </div>
+
+          {/* Urgent callout */}
+          <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4 mb-10">
+            <p className="text-sm text-surface-700 font-semibold">⚡ Applications open 8 June 2026 — don&apos;t wait till the last week. The RPSC portal tends to slow down near deadline. Apply early and keep your confirmation printout safe.</p>
+          </div>
+
+          {/* Overview */}
+          <section id="overview" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📋 RPSC APO 2026 — Recruitment Overview</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The Rajasthan Public Service Commission (RPSC), Ajmer, has officially released Advertisement No. 03/EXAM/APO/EP-I/2026-27, dated 27 May 2026, for the recruitment of 371 Assistant Prosecution Officers (APOs). These posts fall under the Rajasthan Prosecution Subordinate Service, 1978, within the Home Department (Prosecution).
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              This is a significant recruitment drive — 371 vacancies is one of the largest APO intakes in Rajasthan in recent years. For law graduates seeking a stable government career with courtroom exposure, this is a strong opportunity.
+            </p>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <tbody>
+                  <tr className="bg-surface-800 text-white"><td className="p-3 font-heading font-semibold" colSpan={2}>RPSC APO 2026 — At a Glance</td></tr>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 font-semibold text-surface-600 w-2/5">Organisation</td><td className="p-3 border-b border-surface-200 text-surface-800">Rajasthan Public Service Commission (RPSC), Ajmer</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 font-semibold text-surface-600">Advertisement No.</td><td className="p-3 border-b border-surface-200 text-surface-800">03/EXAM/APO/EP-I/2026-27</td></tr>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 font-semibold text-surface-600">Post Name</td><td className="p-3 border-b border-surface-200 text-surface-800">Assistant Prosecution Officer (Sahayak Abhiyojan Adhikari)</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 font-semibold text-surface-600">Department</td><td className="p-3 border-b border-surface-200 text-surface-800">Home Department (Prosecution), Rajasthan</td></tr>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 font-semibold text-surface-600">Total Vacancies</td><td className="p-3 border-b border-surface-200 text-surface-800 font-semibold">371</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 font-semibold text-surface-600">Qualification</td><td className="p-3 border-b border-surface-200 text-surface-800">Degree in Law</td></tr>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 font-semibold text-surface-600">Selection Process</td><td className="p-3 border-b border-surface-200 text-surface-800">Prelims (Qualifying) → Mains (Merit)</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 font-semibold text-surface-600">Pay Scale</td><td className="p-3 border-b border-surface-200 text-emerald-600 font-semibold">Pay Matrix Level L-11</td></tr>
+                  <tr className="bg-white"><td className="p-3 font-semibold text-surface-600">Official Website</td><td className="p-3 text-surface-800"><a href="https://rpsc.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">rpsc.rajasthan.gov.in</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* Important Dates */}
+          <section id="important-dates" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📅 Important Dates</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Event</th>
+                    <th className="p-3 text-left font-heading">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Notification Published</td><td className="p-3 border-b border-surface-200 text-surface-800 font-semibold">27 May 2026</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 text-surface-700">Online Application Opens</td><td className="p-3 border-b border-surface-200 text-surface-800 font-semibold">8 June 2026</td></tr>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Last Date to Apply</td><td className="p-3 border-b border-surface-200 text-red-600 font-semibold">7 July 2026 (midnight)</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 text-surface-700">Age Calculated As On</td><td className="p-3 border-b border-surface-200 text-surface-800 font-semibold">1 January 2027</td></tr>
+                  <tr className="bg-white"><td className="p-3 text-surface-700">Prelims Exam Date</td><td className="p-3 text-surface-500 font-semibold">To Be Notified (TBN)</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-500 mt-3 italic">The exam date has not been announced yet. RPSC will notify it separately on their official website.</p>
+          </section>
+
+          {/* Vacancy Breakdown */}
+          <section id="vacancies" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">👥 Vacancy Breakdown</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The 371 vacancies are distributed between Non-Scheduled Area and Scheduled Area posts, with a category-wise reservation as per Rajasthan government norms.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Category</th>
+                    <th className="p-3 text-center font-heading">Vacancies</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Non-Scheduled Area (NON SA)</td><td className="p-3 border-b border-surface-200 text-center text-surface-800 font-semibold">355</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 text-surface-700">Scheduled Area (SA)</td><td className="p-3 border-b border-surface-200 text-center text-surface-800 font-semibold">15</td></tr>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Additional</td><td className="p-3 border-b border-surface-200 text-center text-surface-800 font-semibold">1</td></tr>
+                  <tr className="bg-primary-50"><td className="p-3 font-semibold text-primary-700">Total</td><td className="p-3 text-center font-heading font-bold text-primary-700">371</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4 mt-4">
+              <p className="text-sm text-surface-700">💡 Category-wise reservation (General, OBC, SC, ST, EWS) within each area will follow Rajasthan government reservation rules. Check the official notification PDF for the detailed breakup.</p>
+            </div>
+          </section>
+
+          {/* Eligibility */}
+          <section id="eligibility" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">🎓 Eligibility Criteria</h2>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">Educational Qualification</h3>
+            <p className="text-surface-700 leading-relaxed mb-3">Candidates must hold:</p>
+            <ul className="list-disc ml-6 space-y-1 text-surface-700 mb-4">
+              <li><strong>Degree in Law (Professional)</strong> from a university established by law in India, OR</li>
+              <li>An <strong>Integrated Law Course</strong> (e.g., 5-year BA LLB, BBA LLB) from a recognised university</li>
+            </ul>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">Additional Requirements</h3>
+            <ul className="list-disc ml-6 space-y-1 text-surface-700 mb-4">
+              <li><strong>Working knowledge of Hindi</strong> written in Devnagri script</li>
+              <li><strong>Knowledge of Rajasthani culture</strong> and dialects/social customs</li>
+            </ul>
+            <p className="text-surface-700 leading-relaxed">
+              This means fresh LLB graduates can apply — there is no mandatory bar enrollment or practice experience requirement mentioned in the notification.
+            </p>
+
+            <div className="mt-4">
+              <Link href="/tools/eligibility-checker" className="inline-flex items-center text-sm font-medium text-primary-500 hover:text-primary-600">
+                Check your eligibility for other exams →
+              </Link>
+            </div>
+          </section>
+
+          {/* Age Limit */}
+          <section id="age-limit" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">🎂 Age Limit & Relaxation</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Parameter</th>
+                    <th className="p-3 text-left font-heading">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Minimum Age</td><td className="p-3 border-b border-surface-200 text-surface-800 font-semibold">21 years</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 text-surface-700">Maximum Age</td><td className="p-3 border-b border-surface-200 text-surface-800 font-semibold">40 years</td></tr>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Age Calculated As On</td><td className="p-3 border-b border-surface-200 text-surface-800 font-semibold">1 January 2027</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 text-surface-700">Date of Birth Range</td><td className="p-3 text-surface-800">2 Jan 1987 to 1 Jan 2006 (inclusive)</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-surface-700 leading-relaxed mt-4">
+              Age relaxation is applicable as per Rajasthan Government rules for reserved categories (SC, ST, OBC, PwD, EWS, women, etc.). Check the official notification for the exact relaxation years for each category.
+            </p>
+            <div className="mt-3">
+              <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026" className="inline-flex items-center text-sm font-medium text-primary-500 hover:text-primary-600">
+                Read our complete guide on age relaxation for government exams →
+              </Link>
+            </div>
+          </section>
+
+          {/* Exam Pattern */}
+          <section id="exam-pattern" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📝 Exam Pattern</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The selection process has two stages: a qualifying Preliminary Examination and a merit-based Main Examination. There is no interview round.
+            </p>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">Stage 1: Preliminary Examination (Qualifying Only)</h3>
+            <p className="text-surface-700 leading-relaxed mb-3">
+              The Prelims is a screening test — its marks are NOT counted in the final merit. You simply need to clear the cutoff to reach Mains.
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Subject</th>
+                    <th className="p-3 text-center font-heading">Marks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Law</td><td className="p-3 border-b border-surface-200 text-center text-surface-800 font-semibold">70</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 text-surface-700">General Hindi & General English</td><td className="p-3 border-b border-surface-200 text-center text-surface-800 font-semibold">30</td></tr>
+                  <tr className="bg-primary-50"><td className="p-3 font-semibold text-primary-700">Total</td><td className="p-3 text-center font-heading font-bold text-primary-700">100</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-500 mb-6">Objective type (MCQs). Negative marking applies — ⅓ mark deducted per wrong answer.</p>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">Stage 2: Main Examination (Merit-Based)</h3>
+            <p className="text-surface-700 leading-relaxed mb-3">
+              Mains marks are the sole basis for your final rank. It consists of two papers:
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Paper</th>
+                    <th className="p-3 text-center font-heading">Marks</th>
+                    <th className="p-3 text-center font-heading">Duration</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Law Paper</td><td className="p-3 border-b border-surface-200 text-center text-surface-800 font-semibold">300</td><td className="p-3 border-b border-surface-200 text-center text-surface-800">3 hours</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 text-surface-700">Language Paper (Hindi 50 + English 50)</td><td className="p-3 border-b border-surface-200 text-center text-surface-800 font-semibold">100</td><td className="p-3 border-b border-surface-200 text-center text-surface-800">2 hours</td></tr>
+                  <tr className="bg-primary-50"><td className="p-3 font-semibold text-primary-700">Total</td><td className="p-3 text-center font-heading font-bold text-primary-700">400</td><td className="p-3 text-center text-primary-700">5 hours</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-500">The Main Examination is descriptive/written — not objective type. No negative marking in Mains.</p>
+          </section>
+
+          {/* Syllabus Highlights */}
+          <section id="syllabus" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📚 Syllabus Highlights</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The RPSC APO syllabus is law-focused. Here are the key subjects you need to prepare:
+            </p>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">Law Paper (Prelims + Mains)</h3>
+            <ul className="list-disc ml-6 space-y-1 text-surface-700 mb-4">
+              <li>Bharatiya Nyaya Sanhita (BNS) — replaces IPC from 1 July 2024</li>
+              <li>Bharatiya Nagarik Suraksha Sanhita (BNSS) — replaces CrPC</li>
+              <li>Bharatiya Sakshya Adhiniyam (BSA) — replaces Indian Evidence Act</li>
+              <li>Constitution of India (fundamental rights, directive principles, judicial review)</li>
+              <li>Special & Local Laws (SC/ST Act, POCSO, NDPS, Prevention of Corruption Act)</li>
+              <li>Rajasthan-specific laws and rules</li>
+            </ul>
+
+            <h3 className="text-lg font-heading font-semibold text-surface-800 mt-6 mb-3">Language Paper (Mains)</h3>
+            <ul className="list-disc ml-6 space-y-1 text-surface-700 mb-4">
+              <li><strong>General Hindi (50 marks):</strong> Grammar, comprehension, essay, precis writing</li>
+              <li><strong>General English (50 marks):</strong> Grammar, comprehension, essay, letter writing</li>
+            </ul>
+
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mt-4">
+              <p className="text-sm text-surface-700"><strong>🔑 Key change for 2026:</strong> The new criminal laws (BNS, BNSS, BSA) that replaced IPC, CrPC, and Indian Evidence Act from 1 July 2024 are now part of the syllabus. Focus on these — many candidates still prepare from old law textbooks.</p>
+            </div>
+          </section>
+
+          {/* Salary */}
+          <section id="salary" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">💰 Salary & Pay Scale</h2>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Selected candidates will be placed at <strong>Pay Matrix Level L-11</strong> (Grade Pay ₹4,200) as per Rajasthan State Government norms. A fixed pay may apply during the initial probation period as per rules.
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Component</th>
+                    <th className="p-3 text-left font-heading">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Pay Level</td><td className="p-3 border-b border-surface-200 text-surface-800 font-semibold">Level L-11 (Rajasthan Pay Matrix)</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 border-b border-surface-200 text-surface-700">Grade Pay</td><td className="p-3 border-b border-surface-200 text-surface-800 font-semibold">₹4,200</td></tr>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">Additional Benefits</td><td className="p-3 border-b border-surface-200 text-surface-800">DA, HRA, Travel Allowance, Medical, Pension</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 text-surface-700">Career Growth</td><td className="p-3 text-surface-800">Promotion to Senior Prosecution Officer and above</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-surface-700 leading-relaxed">
+              Beyond salary, APOs get courtroom exposure and a respected position in the state&apos;s legal framework. Career progression leads to senior prosecution roles at the district and state level.
+            </p>
+          </section>
+
+          {/* Application Fee */}
+          <section id="application-fee" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">💳 Application Fee</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-surface-200 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="p-3 text-left font-heading">Category</th>
+                    <th className="p-3 text-center font-heading">Fee</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white"><td className="p-3 border-b border-surface-200 text-surface-700">General / BC / EBC (Creamy Layer) / Other State</td><td className="p-3 border-b border-surface-200 text-center text-surface-800 font-semibold">₹600</td></tr>
+                  <tr className="bg-surface-50"><td className="p-3 text-surface-700">SC / ST / BC / EBC (Non-Creamy Layer) / PwD / EWS</td><td className="p-3 text-center text-surface-800 font-semibold">₹400</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-500 mt-3">Payment via Debit Card, Credit Card, Net Banking, or UPI. No fee refund once paid.</p>
+          </section>
+
+          {/* How to Apply */}
+          <section id="how-to-apply" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">📱 How to Apply — Step by Step</h2>
+            <div className="space-y-4">
+              {[
+                { step: '1', title: 'Visit the official portal', desc: 'Go to rpsc.rajasthan.gov.in and click on "Apply Online" for APO Recruitment 2026.' },
+                { step: '2', title: 'Register / Login', desc: 'If you are a new user, register with your mobile number and email. Existing users can log in with SSO ID.' },
+                { step: '3', title: 'Fill the application form', desc: 'Enter personal details, educational qualifications, and category information carefully.' },
+                { step: '4', title: 'Upload documents', desc: 'Upload your recent passport-size photo, signature, and other required documents in the specified format.' },
+                { step: '5', title: 'Pay the application fee', desc: 'Pay ₹600 (General) or ₹400 (Reserved) via Debit Card, Credit Card, Net Banking, or UPI.' },
+                { step: '6', title: 'Submit & print confirmation', desc: 'Review your form, submit it, and download/print the confirmation page for your records.' },
+              ].map(item => (
+                <div key={item.step} className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 text-sm font-heading font-bold">{item.step}</div>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm">{item.title}</div>
+                    <p className="text-sm text-surface-600 mt-0.5">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6">
+              <a href="https://rpsc.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
+                Apply on RPSC Official Website →
+              </a>
+            </div>
+          </section>
+
+          {/* Preparation Tips */}
+          <section id="preparation-tips" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">🎯 Preparation Tips</h2>
+            <div className="space-y-4">
+              {[
+                { num: '1', title: 'Master the new criminal laws first', tip: 'BNS, BNSS, and BSA are central to the syllabus. Most competition will be between candidates who actually studied the new laws vs those still relying on IPC/CrPC notes.' },
+                { num: '2', title: 'Focus on Bare Acts', tip: 'Read the original text of key laws — BNS, BNSS, BSA, Constitution, POCSO, NDPS. Bare Acts are the most reliable source for MCQs in Prelims and answers in Mains.' },
+                { num: '3', title: 'Practice answer writing for Mains', tip: 'The Law Paper (300 marks) is descriptive. Practice writing structured legal answers with case citations and section references. Time yourself to 3 hours.' },
+                { num: '4', title: 'Don\'t ignore the Language Paper', tip: 'Hindi and English together carry 100 marks in Mains — a quarter of your total score. Strong essay and precis writing can be a rank booster.' },
+                { num: '5', title: 'Solve RPSC APO previous year papers', tip: 'Check RPSC\'s official website for past APO question papers. The pattern tends to repeat in terms of topic weightage.' },
+              ].map(item => (
+                <div key={item.num} className="card p-5">
+                  <div className="flex gap-3 items-start">
+                    <div className="flex-shrink-0 w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center text-accent-600 text-sm font-heading font-bold">{item.num}</div>
+                    <div>
+                      <div className="font-heading font-semibold text-surface-800">{item.title}</div>
+                      <p className="text-sm text-surface-600 mt-1 leading-relaxed">{item.tip}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* FAQs */}
+          <section id="faq" className="mb-12">
+            <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5">❓ Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              {[
+                { q: 'What is the last date to apply for RPSC APO 2026?', a: 'The last date to submit the online application is 7 July 2026 at midnight. Applications open from 8 June 2026.' },
+                { q: 'Is there an interview round for RPSC APO?', a: 'No. The selection is based entirely on written examinations — Prelims (qualifying) and Mains (merit). There is no interview.' },
+                { q: 'Can fresh LLB graduates apply?', a: 'Yes. There is no bar enrollment or practice experience requirement. A Degree in Law from a recognised university is sufficient.' },
+                { q: 'Are Prelims marks counted in the final merit?', a: 'No. Prelims is only a qualifying/screening test. Final merit is based entirely on Mains marks.' },
+                { q: 'Is there negative marking?', a: 'Yes, in Prelims only — ⅓ mark is deducted for each wrong answer. Mains is descriptive, so no negative marking.' },
+                { q: 'What is the salary of RPSC APO?', a: 'The post is at Pay Matrix Level L-11 (Grade Pay ₹4,200) with DA, HRA, and other allowances as per Rajasthan government rules.' },
+                { q: 'What are the new criminal laws in the syllabus?', a: 'BNS (replaces IPC), BNSS (replaces CrPC), and BSA (replaces Indian Evidence Act) — all effective from 1 July 2024. These are now the primary laws for the RPSC APO exam.' },
+                { q: 'Can candidates from other states apply?', a: 'Yes, but the application fee is ₹600 for other state candidates. Knowledge of Hindi in Devnagri script and Rajasthani dialects is required.' },
+              ].map((faq, i) => (
+                <details key={i} className="card overflow-hidden group">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800 text-sm">
+                    {faq.q}
+                    <svg className="w-4 h-4 text-surface-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* Disclaimer */}
+          <div className="bg-surface-50 rounded-xl p-5 border border-surface-200 text-xs text-surface-500 leading-relaxed">
+            <strong className="text-surface-700">Disclaimer:</strong> This article is based on the official RPSC notification (Advt. No. 03/EXAM/APO/EP-I/2026-27) and information available from trusted sources as of May 2026. Always verify details from the official RPSC website (<a href="https://rpsc.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">rpsc.rajasthan.gov.in</a>) before applying. TaiyarHo is not affiliated with RPSC.
+          </div>
+        </article>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">IN THIS ARTICLE</div>
+              <ol className="space-y-2">
+                {toc.map(item => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm text-surface-600 hover:text-primary-500 leading-snug block">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-3">🔗 RELATED EXAM</div>
+              <Link href="/exams/rpsc-ras" className="block mb-3">
+                <span className="font-heading font-semibold text-sm text-surface-800 hover:text-primary-500">RPSC RAS/RTS Exam →</span>
+                <p className="text-xs text-surface-500 mt-1">Another major RPSC exam — details, syllabus & eligibility</p>
+              </Link>
+            </div>
+
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-3">📚 RELATED ARTICLES</div>
+              <div className="space-y-2">
+                <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026" className="block text-sm text-surface-600 hover:text-primary-500">Age Relaxation Guide 2026 →</Link>
+                <Link href="/blog/upsc-vs-state-psc-2026" className="block text-sm text-surface-600 hover:text-primary-500">UPSC vs State PSC 2026 →</Link>
+                <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Eligibility Checker Tool →</Link>
+              </div>
+            </div>
+
+            <div className="card p-5 bg-amber-50 border-amber-200">
+              <div className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-3">⏰ KEY DEADLINE</div>
+              <p className="text-sm text-surface-800 font-heading font-semibold">Apply by 7 July 2026</p>
+              <p className="text-xs text-surface-500 mt-1">Applications open from 8 June at rpsc.rajasthan.gov.in</p>
+              <a href="https://rpsc.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="mt-3 block text-center btn-primary text-xs py-2">
+                Visit RPSC Website →
+              </a>
             </div>
           </div>
         </aside>
