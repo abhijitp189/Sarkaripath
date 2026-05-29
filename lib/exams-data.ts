@@ -230,7 +230,7 @@ export const exams: Exam[] = [
     conductingBody: 'Staff Selection Commission',
     category: 'SSC',
     level: 'Central',
-    frequency: 'Once a year (Notification: Expected Late May–June 2026 | Tier 1: Expected June–July 2026)',
+    frequency: 'Once a year (Notification: 21 May 2026 | Tier 1: August–September 2026 | Tier 2: December 2026)',
     avgVacancies: '12,256 (SSC CGL 2026 — Notified 21 May 2026)',
     salaryRange: '₹25,500 – ₹1,51,100 per month (Pay Level 4 to 10)',
     description: 'SSC CGL (Staff Selection Commission Combined Graduate Level) is India\'s largest graduate-level government recruitment exam. With over 20 lakh aspirants annually competing for ~14,000 posts, it offers careers as Income Tax Inspector, CBI Sub Inspector, Customs Inspector, Auditor (CAG/CGDA), Assistant Section Officer (MEA/CSS/IB), Statistical Investigator, and many more Group B & C central government posts.',
