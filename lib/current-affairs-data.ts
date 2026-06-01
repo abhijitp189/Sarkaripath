@@ -1,6 +1,7 @@
 import type { NewsCategory } from './current-affairs-theme';
 import { may11_17_newsItems, may11_17_staticGk, may11_17_quiz } from './may-11-17-data';
 import { may18_24_newsItems, may18_24_staticGk, may18_24_quiz } from './may-18-24-data';
+import { may25_31_newsItems, may25_31_staticGk, may25_31_quiz } from './may-25-31-data';
 
 /* ── Interfaces ────────────────────────────────────────────────────────── */
 
@@ -56,6 +57,39 @@ export type CaCategory = (typeof caCategories)[number];
 /* ── Posts ──────────────────────────────────────────────────────────────── */
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
+  /* ═══ NEW: May 25–31, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-may-25-31-2026',
+    title: 'Weekly Current Affairs: May 25\u201331, 2026 \u2014 Assam Passes UCC Bill, New CDS Gen. Raja Subramani, India-US Critical Minerals Pact, Karnataka CM Change & PSG Retains Champions League',
+    dateRange: 'May 25\u201331, 2026',
+    publishedDate: 'June 1, 2026',
+    category: 'All',
+    excerpt:
+      'This week: Assam becomes third state to pass a Uniform Civil Code Bill, General N.S. Raja Subramani takes charge as India\u2019s 3rd CDS, India-US sign critical minerals cooperation framework at Quad FM meet, D.K. Shivakumar named Karnataka CM after Siddaramaiah resigns, Supreme Court orders Yamuna cleaning committee, RBI reports $30.8B BoP deficit, cotton import duty exempted, PSG wins Champions League, and Padma Awards investiture at Rashtrapati Bhavan.',
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'May 25\u201331, 2026',
+    newsItems: may25_31_newsItems,
+    staticGkBox: may25_31_staticGk,
+    quiz: may25_31_quiz,
+    keyPoints: [
+      'General N.S. Raja Subramani officially took charge as India\u2019s 3rd Chief of Defence Staff on May 31, 2026.',
+      'Assam Assembly passed the Uniform Civil Code Bill 2026 on May 27 \u2014 3rd state after Uttarakhand and Gujarat. Scheduled Tribes (12.45% of population) exempted.',
+      'India and the United States signed a critical minerals cooperation framework on May 26, 2026, to secure rare earth supply chains.',
+      'Quad Foreign Ministers met at Hyderabad House, New Delhi (May 26), hosted by EAM S. Jaishankar with US, Australia, and Japan counterparts.',
+      'Supreme Court constituted a committee under Union Home Secretary to formulate a Yamuna Action Plan (8-week deadline).',
+      'Central government set up a high-level committee on demographic change under retired SC Justice Prakash Prabhakar Naolekar.',
+      'Karnataka CM Siddaramaiah resigned on May 28; D.K. Shivakumar named successor, swearing-in on June 3, 2026.',
+      'Union Finance Ministry exempted all customs duties on cotton imports from June 1 to October 31, 2026.',
+      'Paris Saint-Germain won 2nd consecutive UEFA Champions League title, defeating Arsenal 4\u20133 on penalties in Budapest.',
+      'RBI data: Balance of Payments deficit reached $30.8 billion for FY 2025\u201326 \u2014 six-fold increase from previous year.',
+      'Padma Awards investiture: Dharmendra (Padma Vibhushan, posthumous), N. Rajam (Padma Vibhushan), Uday Kotak (Padma Bhushan).',
+      'Cabinet approved SARTHAK-PDS scheme extension (\u20B925,530 crore central outlay) for five years.',
+      'Union Minister Shivraj Singh Chouhan launched his book Apnapan on May 26, 2026.',
+      'BSE Sensex fell 1,092 points on May 29 over below-normal monsoon concerns.',
+      'Indian shooter Esha Singh set a world record (43/50) at the ISSF World Cup Munich on May 27, winning gold in Women\u2019s 25m Pistol.',
+    ],
+  },
   /* ═══ NEW: May 18–24, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-may-18-24-2026',
