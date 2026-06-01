@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useState, useCallback } from 'react';
 
 declare global {
   interface Window {
@@ -18,7 +18,12 @@ declare global {
 }
 
 export default function GoogleTranslate() {
-  useEffect(() => {
+  const [loaded, setLoaded] = useState(false);
+
+  const loadTranslate = useCallback(() => {
+    if (loaded) return;
+    setLoaded(true);
+
     window.googleTranslateElementInit = () => {
       if (window.google?.translate?.TranslateElement) {
         new window.google.translate.TranslateElement(
@@ -43,16 +48,24 @@ export default function GoogleTranslate() {
     } else if (window.google?.translate?.TranslateElement) {
       window.googleTranslateElementInit?.();
     }
-  }, []);
+  }, [loaded]);
 
   return (
     <div className="flex items-center">
-      <span className="flex items-center text-surface-400 mr-1 pointer-events-none select-none" title="Translate page">
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
-        </svg>
-      </span>
+      {!loaded && (
+        <button
+          onClick={loadTranslate}
+          className="flex items-center gap-1 text-surface-400 hover:text-primary-500 transition-colors px-2 py-1.5 rounded-lg hover:bg-primary-50"
+          title="Translate page"
+          aria-label="Translate page"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+              d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
+          </svg>
+          <span className="text-xs font-medium hidden sm:inline">Translate</span>
+        </button>
+      )}
       <div id="google_translate_element" className="translate-widget" />
     </div>
   );

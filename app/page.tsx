@@ -88,8 +88,11 @@ export default function HomePage() {
         </div>
         <div className="absolute right-0 bottom-0 hidden lg:block pointer-events-none" style={{ width: '55%', height: '100%' }}>
           <img
-            src="/students.png"
+            src="/students.webp"
             alt="Students preparing for government exams"
+            width={1920}
+            height={1080}
+            fetchPriority="high"
             style={{ position: 'absolute', bottom: 0, right: 0, height: '100%', width: 'auto', maxWidth: 'none' }}
           />
         </div>
@@ -149,7 +152,7 @@ export default function HomePage() {
                   {cat.icon}
                 </div>
                 <h3 className="font-heading font-semibold text-surface-800 group-hover:text-primary-500 transition-colors text-sm sm:text-base">{cat.name}</h3>
-                <p className="text-xs text-surface-400 mt-1 leading-tight">{cat.description}</p>
+                <p className="text-xs text-surface-500 mt-1 leading-tight">{cat.description}</p>
                 <span className={`inline-block mt-3 px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold ${c.badgeBg} ${c.badgeText}`}>
                   {count} exams
                 </span>
@@ -242,7 +245,7 @@ export default function HomePage() {
                 </h3>
                 <p className="text-sm text-surface-500 leading-relaxed mb-4">{guide.description}</p>
                 <div className="flex items-center justify-between pt-3 border-t border-surface-100">
-                  <span className="text-xs text-surface-400">{guide.readTime}</span>
+                  <span className="text-xs text-surface-500">{guide.readTime}</span>
                   <span className="text-xs font-medium text-primary-500 group-hover:text-primary-600 flex items-center gap-1">
                     Read Guide
                     <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -286,7 +289,7 @@ export default function HomePage() {
                     <span className={`px-2.5 py-0.5 rounded-full text-xs font-heading font-semibold ${catColor.bg} ${catColor.text}`}>
                       {post.category}
                     </span>
-                    <span className="text-xs text-surface-400">{post.readTime}</span>
+                    <span className="text-xs text-surface-500">{post.readTime}</span>
                   </div>
                   <h3 className="font-heading font-bold text-surface-900 group-hover:text-primary-500 transition-colors mb-2 leading-snug flex-1">
                     {post.title}
@@ -295,7 +298,7 @@ export default function HomePage() {
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between pt-3 border-t border-surface-100">
-                    <span className="text-xs text-surface-400">{post.publishedDate}</span>
+                    <span className="text-xs text-surface-500">{post.publishedDate}</span>
                     <span className="text-xs font-medium text-primary-500 group-hover:text-primary-600 flex items-center gap-1">
                       Read
                       <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -344,7 +347,7 @@ export default function HomePage() {
                   <ul className="space-y-1.5">
                     {catExams.map((exam) => (
                       <li key={exam.slug}>
-                        <Link href={`/exams/${exam.slug}`} className="text-xs text-surface-500 hover:text-primary-500 transition-colors leading-tight block">
+                        <Link href={`/exams/${exam.slug}`} className="text-xs text-surface-500 hover:text-primary-500 transition-colors leading-tight block py-1.5">
                           {exam.name.length > 40 ? exam.name.substring(0, 40) + '…' : exam.name}
                         </Link>
                       </li>

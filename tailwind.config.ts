@@ -46,8 +46,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        heading: ['Poppins', 'sans-serif'],
-        body: ['Source Sans 3', 'sans-serif'],
+        heading: ['var(--font-heading)', 'Poppins', 'sans-serif'],
+        body: ['var(--font-body)', 'Source Sans 3', 'sans-serif'],
       },
     },
   },

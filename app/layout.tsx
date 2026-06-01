@@ -1,12 +1,27 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
+import { Poppins, Source_Sans_3 } from 'next/font/google';
 import UniversalSearch from '@/components/UniversalSearch';
 import ExamsMegaMenu from '@/components/ExamsMegaMenu';
 import GoogleTranslate from '@/components/GoogleTranslate';
 import MobileMenu from '@/components/MobileMenu';
 import BackToTop from '@/components/BackToTop';
 import './globals.css';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-heading',
+});
+
+const sourceSans3 = Source_Sans_3({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-body',
+});
 
 export const metadata: Metadata = {
   title: 'TaiyarHo – Free Guide for Indian Government Exam Preparation',
@@ -39,7 +54,7 @@ function Navbar() {
         <div className="container-main flex items-center justify-between h-14">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
-            <img src="/logo.svg" alt="TaiyarHo" className="h-12 w-auto" />
+            <img src="/logo.svg" alt="TaiyarHo" className="h-12 w-auto" width={114} height={48} />
           </Link>
 
           {/* Right side: all utilities in one row, visible on ALL screens */}
@@ -205,8 +220,11 @@ function AdSlot({ position }: { position: 'header-banner' | 'sidebar' | 'in-cont
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${sourceSans3.variable}`}>
       <head>
+        {/* Preconnect to Google Analytics for faster initial connection */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         {/* Google AdSense */}
         {process.env.NEXT_PUBLIC_ADSENSE_ID && (
           <script
