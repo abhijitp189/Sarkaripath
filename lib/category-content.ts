@@ -211,6 +211,8 @@ export const categoryContent: Record<string, CategoryContent> = {
   },
   Teaching: {
     commonBooks: [
+      { title: 'Examcart All Subjects Pedagogy Textbook (CTET, KVS, NVS, DSSSB & All TETs)', author: 'Prateek Shivalik', subject: 'Pedagogy', amazonLink: 'https://amzn.to/4fNk8D2' },
+      { title: 'CTET & TETs English Language & Pedagogy (Class 1–5 & 6–8)', author: 'Arihant Publications', subject: 'English Language', amazonLink: 'https://amzn.to/4375kb0' },
       { title: 'Child Development and Pedagogy', author: 'Arihant / Disha', subject: 'Pedagogy' },
       { title: 'NCERT Books (Class 1-8)', author: 'NCERT', subject: 'Content subjects' },
       { title: 'Environmental Studies', author: 'NCERT', subject: 'EVS' },
