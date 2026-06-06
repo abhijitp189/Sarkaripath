@@ -4652,6 +4652,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
     { id: 'banking-channels', label: 'Banking & Insurance' },
     { id: 'railway-channels', label: 'Railway (RRB NTPC, Group D)' },
     { id: 'defence-channels', label: 'Defence (NDA, CDS, Agniveer)' },
+    { id: 'teaching-channels', label: 'Teaching (CTET, UGC NET)' },
     { id: 'state-psc-channels', label: 'State PSC & Police' },
     { id: 'current-affairs', label: 'Current Affairs Channels' },
     { id: 'how-to-spot-fakes', label: 'How to Spot Fake Channels' },
@@ -4701,6 +4702,13 @@ function TelegramChannelsArticle({ post }: { post: any }) {
     { name: 'BPSC Official Prep', focus: 'Bihar PSC PT + Mains capsules in Hindi', subscribers: '3 lakh+', rating: '⭐⭐⭐⭐', type: 'Hindi PDFs' },
     { name: 'MPPSC & Vyapam', focus: 'Madhya Pradesh specific GK, MP Police', subscribers: '2 lakh+', rating: '⭐⭐⭐⭐', type: 'State GK' },
     { name: 'Rajasthan Police Prep', focus: 'Rajasthan GK, constable and SI exam material', subscribers: '2.5 lakh+', rating: '⭐⭐⭐', type: 'State GK' },
+  ];
+
+  const teachingChannels = [
+    { name: 'Teachers Adda247', focus: 'CTET, UPTET, KVS, NVS, DSSSB, Super TET material', subscribers: '5 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'UGC NET Adda247', focus: 'Paper 1 & Paper 2 prep for 80+ subjects, JRF guidance', subscribers: '3 lakh+', rating: '⭐⭐⭐⭐⭐', type: 'Free PDFs' },
+    { name: 'Teaching Exam Official', focus: 'DSSSB, KVS, NVS, EMRS, CTET alerts and PDFs', subscribers: '2 lakh+', rating: '⭐⭐⭐⭐', type: 'Alerts + PDF' },
+    { name: 'CTET Champions', focus: 'CDP, Pedagogy, EVS notes for CTET Paper 1 & 2', subscribers: '1.5 lakh+', rating: '⭐⭐⭐⭐', type: 'Notes + Quiz' },
   ];
 
   const currentAffairsChannels = [
@@ -4771,6 +4779,10 @@ function TelegramChannelsArticle({ post }: { post: any }) {
       q: 'Can I use Telegram channels as my only study source?',
       a: 'No. Telegram channels are excellent supplements for current affairs, alerts, and quick revision PDFs — but they cannot replace standard textbooks (NCERT, Laxmikant, etc.) or structured mock test platforms. Use them as a daily habit, not as your primary prep tool.',
     },
+    {
+      q: 'Which Telegram channels are best for CTET 2026?',
+      a: 'Teachers Adda247 is the most comprehensive channel covering CTET, UPTET, KVS, NVS, DSSSB, and all TET exams. For UGC NET, the dedicated UGC NET Adda247 channel covers Paper 1 and Paper 2 for 80+ subjects. Both post daily quizzes, free PDFs, and notification alerts.',
+    },
   ];
 
   return (
@@ -4806,10 +4818,10 @@ function TelegramChannelsArticle({ post }: { post: any }) {
                 <span className="text-blue-400">2026 – Verified Master Directory</span>
               </h1>
               <p className="text-surface-300 text-base leading-relaxed mb-5">
-                No paywalls, no spam. Only the highest-quality free Telegram channels for UPSC, SSC, Banking, Railway, Defence, and State PSC exams — each personally vetted by TaiyarHo&apos;s editorial team for 2026.
+                No paywalls, no spam. Only the highest-quality free Telegram channels for UPSC, SSC, Banking, Railway, Defence, Teaching, and State PSC exams — each personally vetted by TaiyarHo&apos;s editorial team for 2026.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['UPSC Telegram', 'SSC CGL 2026', 'Banking Prep', 'Free PDFs', 'Zero Spam'].map(tag => (
+                {['UPSC Telegram', 'SSC CGL 2026', 'Banking Prep', 'CTET 2026', 'Free PDFs', 'Zero Spam'].map(tag => (
                   <span key={tag} className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">{tag}</span>
                 ))}
               </div>
@@ -4819,8 +4831,8 @@ function TelegramChannelsArticle({ post }: { post: any }) {
           {/* Key Metrics Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
             {[
-              { label: 'Categories Covered', value: '7', sub: 'UPSC to State PSC' },
-              { label: 'Channels Listed', value: '27+', sub: 'All verified 2026' },
+              { label: 'Categories Covered', value: '8', sub: 'UPSC to Teaching' },
+              { label: 'Channels Listed', value: '35+', sub: 'All verified June 2026' },
               { label: 'Min. Subscribers', value: '1 Lakh+', sub: 'Quality threshold' },
               { label: 'Cost to Access', value: '₹0', sub: 'Free forever' },
             ].map(m => (
@@ -4870,7 +4882,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
             <ChannelTable channels={upscChannels} id="upsc-channels" />
             <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
               <p className="text-emerald-800 font-medium text-sm leading-relaxed">
-                <span className="font-bold">✅ 2026 UPSC Note:</span> With UPSC Prelims 2026 scheduled for May 25, these channels are now in peak-frequency mode — expect daily quizzes, revision PDFs, and post-paper shift analyses.
+                <span className="font-bold">✅ June 2026 Update:</span> UPSC Prelims 2026 was conducted on May 24. Result is expected by mid-June 2026. These channels have now shifted to <strong>post-Prelims analysis</strong>, Mains answer writing practice, and GS revision — the most critical phase for qualified candidates.
               </p>
             </div>
           </section>
@@ -4882,9 +4894,9 @@ function TelegramChannelsArticle({ post }: { post: any }) {
               SSC exams are highly competitive with 30–50 lakh applicants per year. The channels below are known for data-driven shift analysis, which helps you track the exact difficulty trend across CGL Tier 1 and CHSL shifts.
             </p>
             <ChannelTable channels={sscChannels} id="ssc-channels" />
-            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
-              <p className="text-primary-800 font-medium text-sm leading-relaxed">
-                <span className="font-bold">📌 Quick Note:</span> SSC CGL 2026 official notification is delayed — expected late May/June 2026. Subscribe to <strong>SSC Adda247</strong> and <strong>RBE – Shubham Jain</strong> immediately so you get notified the moment the notification drops, and can track date changes, admit card releases, and cut-off predictions.
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+              <p className="text-emerald-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">✅ June 2026 Update:</span> SSC CGL 2026 notification is out (May 21) for <strong>12,256 vacancies</strong>. Apply at ssc.gov.in by <strong>June 22, 2026</strong>. Tier 1 exam is scheduled for August–September 2026. Subscribe to <strong>SSC Adda247</strong> and <strong>RBE – Shubham Jain</strong> to track admit card releases, exam centre lists, and cut-off predictions.
               </p>
             </div>
           </section>
@@ -4898,7 +4910,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
             <ChannelTable channels={bankingChannels} id="banking-channels" />
             <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
               <p className="text-emerald-800 font-medium text-sm leading-relaxed">
-                <span className="font-bold">✅ 2026 Update:</span> IBPS PO 2026 notification is expected in July 2026. <strong>AffairsCloud</strong> and <strong>Oliveboard</strong> will release dedicated GA capsules aligned with the new exam pattern as soon as the official notification drops.
+                <span className="font-bold">✅ June 2026 Update:</span> IBPS PO 2026 notification is expected in <strong>June 2026</strong>, with Prelims on August 22–23 and Mains on October 4. <strong>AffairsCloud</strong> and <strong>Oliveboard</strong> will release dedicated GA capsules aligned with the new exam pattern as soon as the official notification drops.
               </p>
             </div>
           </section>
@@ -4907,9 +4919,14 @@ function TelegramChannelsArticle({ post }: { post: any }) {
           <section className="mb-12">
             <SectionH2 num="5" icon="🚂" title="Railway Exam Telegram Channels 2026 (RRB NTPC, Group D)" />
             <p className="text-surface-700 leading-relaxed mb-4">
-              Railway exams attract the largest candidate base in India. RRB NTPC 2026 is expected to announce vacancy for over 11,000 posts. These channels will be your fastest source for official notifications, admit cards, and city-wise exam schedules.
+              Railway exams attract the largest candidate base in India. RRB NTPC 2026 was notified in October 2025 for <strong>8,868 vacancies</strong> (5,810 Graduate + 3,058 Undergraduate). The Graduate CBT 1 was conducted in March 2026, and the Undergraduate CBT 1 is ongoing (May–June 2026). These channels are your fastest source for result updates, admit cards, and city-wise exam schedules.
             </p>
             <ChannelTable channels={railwayChannels} id="railway-channels" />
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+              <p className="text-emerald-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">✅ June 2026 Update:</span> RRB NTPC Graduate CBT 1 results are awaited. Undergraduate CBT 1 exams continue through <strong>June 21, 2026</strong>. Subscribe to <strong>Railway Adda247</strong> for shift-wise analysis and cut-off predictions.
+              </p>
+            </div>
           </section>
 
           {/* Defence Section */}
@@ -4926,9 +4943,23 @@ function TelegramChannelsArticle({ post }: { post: any }) {
             </div>
           </section>
 
+          {/* Teaching Exams Section */}
+          <section className="mb-12">
+            <SectionH2 num="7" icon="📚" title="Teaching Exam Telegram Channels 2026 (CTET, UGC NET)" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Teaching exams like CTET, UGC NET, KVS, and NVS have massive candidate pools — CTET alone sees over 30 lakh applicants per session. The channels below provide Child Development &amp; Pedagogy (CDP) notes, Paper 1 &amp; Paper 2 subject-wise content, and the fastest notification alerts for teaching recruitment drives.
+            </p>
+            <ChannelTable channels={teachingChannels} id="teaching-channels" />
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
+              <p className="text-emerald-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">✅ June 2026 Update:</span> CTET September 2026 notification is out (May 11). Apply at ctet.nic.in by <strong>June 10, 2026</strong>. Exam on September 6, 2026. UGC NET June 2026 will be held from <strong>June 22–30</strong>. Subscribe to <strong>Teachers Adda247</strong> and <strong>UGC NET Adda247</strong> for daily quizzes and last-minute revision PDFs.
+              </p>
+            </div>
+          </section>
+
           {/* State PSC Section */}
           <section className="mb-12">
-            <SectionH2 num="7" icon="🗺️" title="State PSC & Police Telegram Channels 2026" />
+            <SectionH2 num="8" icon="🗺️" title="State PSC & Police Telegram Channels 2026" />
             <p className="text-surface-700 leading-relaxed mb-4">
               State PSC exams are often overlooked in national prep communities. These channels fill that gap — providing state-specific GK, Hindi-medium study material, and region-specific exam pattern analysis that national channels miss.
             </p>
@@ -4937,7 +4968,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
 
           {/* Current Affairs Section */}
           <section className="mb-12">
-            <SectionH2 num="8" icon="📰" title="Current Affairs Channels for All Exams 2026" />
+            <SectionH2 num="9" icon="📰" title="Current Affairs Channels for All Exams 2026" />
             <p className="text-surface-700 leading-relaxed mb-4">
               No matter which exam you are targeting, current affairs is a common section. These channels cut through the noise and deliver only exam-relevant news — so you spend 20 minutes daily instead of 2 hours.
             </p>
@@ -4951,7 +4982,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
 
           {/* How to Spot Fakes */}
           <section id="how-to-spot-fakes" className="mb-12">
-            <SectionH2 num="9" icon="⚠️" title="How to Identify Fake Telegram Channels in 2026" />
+            <SectionH2 num="10" icon="⚠️" title="How to Identify Fake Telegram Channels in 2026" />
             <p className="text-surface-700 leading-relaxed mb-4">
               Fake channels are a serious problem. Impersonators clone verified channels like &quot;RBE – Shubham Jain&quot; or &quot;Drishti IAS&quot; to sell pirated courses or harvest phone numbers. Here&apos;s your 5-step verification checklist before joining any channel.
             </p>
@@ -4981,7 +5012,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
 
           {/* FAQ Section */}
           <section id="faq" className="mb-12">
-            <SectionH2 num="10" icon="❓" title="Frequently Asked Questions" />
+            <SectionH2 num="11" icon="❓" title="Frequently Asked Questions" />
             <div className="space-y-3">
               {faqs.map((faq) => (
                 <details key={faq.q} className="card overflow-hidden group">
@@ -5004,6 +5035,16 @@ function TelegramChannelsArticle({ post }: { post: any }) {
             <Link href="/tools/eligibility-checker/" className="inline-flex items-center gap-2 bg-white text-primary-700 font-heading font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-primary-50 transition">
               Use Free Eligibility Checker →
             </Link>
+          </div>
+
+          {/* Last Updated + Disclaimer */}
+          <div className="bg-surface-50 border border-surface-200 rounded-xl p-5 text-xs text-surface-500 leading-relaxed mb-6 space-y-3">
+            <p>
+              <strong className="text-surface-700">📅 Last Updated:</strong> {post.updatedDate}
+            </p>
+            <p>
+              <strong className="text-surface-700">Disclaimer:</strong> Channel names, subscriber counts, and ratings listed in this article are based on our editorial team&apos;s review and publicly available information as of {post.updatedDate}. TaiyarHo.in is not affiliated with, endorsed by, or officially connected to any of the Telegram channels listed above. Subscriber counts are approximate and may change. Exam notification dates, vacancy counts, and application deadlines mentioned are sourced from official websites — always verify final details at <strong>upsc.gov.in</strong>, <strong>ssc.gov.in</strong>, <strong>ibps.in</strong>, <strong>rrbcdg.gov.in</strong>, <strong>ctet.nic.in</strong>, and respective official portals before taking any action.
+            </p>
           </div>
 
           {/* JSON-LD FAQ Schema */}
@@ -5048,6 +5089,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
                 { label: '🏦 Banking', val: '5 channels' },
                 { label: '🚂 Railway', val: '4 channels' },
                 { label: '🎖️ Defence', val: '4 channels' },
+                { label: '📚 Teaching', val: '4 channels' },
                 { label: '🗺️ State PSC', val: '4 channels' },
                 { label: '📰 Current Affairs', val: '4 channels' },
               ].map(s => (
@@ -5076,7 +5118,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
               <Link href="/blog/government-exam-preparation-beginners-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Govt Exam Prep for Beginners →</Link>
               <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Age Limit & Relaxation Guide →</Link>
               <Link href="/blog/highest-salary-government-exam-after-12th-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Highest Salary Exams After 12th →</Link>
-              <Link href="/exams/" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
+              <Link href="/exams/" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 101 Exams →</Link>
               <Link href="/resources/" className="block text-sm text-primary-600 hover:underline leading-snug">Free Resources Hub →</Link>
             </div>
           </div>
