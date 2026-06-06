@@ -82,12 +82,12 @@ const upcomingExams: MonthGroup[] = [
       },
       {
         name: 'SBI Apprentice (Apply Online)',
-        date: '19 May – 8 Jun 2026',
+        date: '19 May – 15 Jun 2026',
         status: 'OFFICIAL',
         category: 'Banking',
         internalSlug: 'sbi-apprentice',
         externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
-        note: '7,150 posts • Graduate eligible • Age 20–28 • Fee ₹300 • 1-year training under Apprenticeship Act',
+        note: '7,150 posts • Deadline EXTENDED to 15 June • Graduate eligible • Age 20–28 • Fee ₹300 • 1-year training under Apprenticeship Act',
       },
       {
         name: 'UP Police Constable',
@@ -96,7 +96,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Police',
         internalSlug: 'up-police-constable',
         externalUrl: 'https://uppbpb.gov.in',
-        note: 'Written exam 8, 9, 10 June 2026 (official notice 3 Feb 2026). 32,679 vacancies.',
+        note: 'Admit Card Out (4 June) • Written exam 8, 9, 10 June 2026 (official notice 3 Feb 2026). 32,679 vacancies.',
       },
     ],
   },
@@ -136,7 +136,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'rbi-grade-b',
         externalUrl: 'https://rbi.org.in',
-        note: '60 vacancies • General DR: 13 Jun, DEPR/DSIM: 14 Jun • Phase 2: 25–26 Jul 2026',
+        note: 'Admit Card Out (5 June) • 60 vacancies • General DR: 13 Jun, DEPR/DSIM: 14 Jun • Phase 2: 25–26 Jul 2026',
       },
       {
         name: 'UPSC IES/ISS',
@@ -145,6 +145,15 @@ const upcomingExams: MonthGroup[] = [
         category: 'UPSC',
         externalUrl: 'https://upsc.gov.in',
         note: 'Indian Economic Service / Indian Statistical Service exam',
+      },
+      {
+        name: 'Indian Navy Agniveer Apprentice (Apply Online)',
+        date: '5–29 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Defence',
+        internalSlug: 'navy-agniveer',
+        externalUrl: 'https://joinindiannavy.gov.in',
+        note: 'Apprentice 01/2027 & 02/2027 batches • Diploma holders (AICTE) • Unmarried males • Fee ₹550+GST • INET Aug 2026',
       },
       {
         name: 'SBI PO (Notification Expected)',
