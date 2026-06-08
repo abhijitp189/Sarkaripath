@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import type { QuizQuestion } from '@/lib/current-affairs-data';
 import { categoryTheme } from '@/lib/current-affairs-theme';
 
@@ -16,6 +16,7 @@ const difficultyColors = {
 };
 
 export default function CurrentAffairsQuiz({ questions, slug }: Props) {
+  const [quizStarted, setQuizStarted] = useState(false);
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<(number | null)[]>(Array(questions.length).fill(null));
   const [showResult, setShowResult] = useState(false);
@@ -24,30 +25,20 @@ export default function CurrentAffairsQuiz({ questions, slug }: Props) {
   const [elapsed, setElapsed] = useState(0);
   const [copied, setCopied] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  // Timer only runs after quiz is started and until results are shown
   useEffect(() => {
-    setStartTime(Date.now());
-    timerRef.current = setInterval(() => {
-      setElapsed(Math.floor((Date.now() - Date.now()) / 1000)); // will be fixed on mount
-    }, 1000);
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, []);
-
-  useEffect(() => {
-    if (showResult && timerRef.current) {
-      clearInterval(timerRef.current);
-    }
-  }, [showResult]);
-
-  // Timer update
-  useEffect(() => {
-    if (showResult) return;
+    if (!quizStarted || showResult) return;
     const id = setInterval(() => {
       setElapsed(Math.floor((Date.now() - startTime) / 1000));
     }, 1000);
     return () => clearInterval(id);
-  }, [startTime, showResult]);
+  }, [quizStarted, startTime, showResult]);
+
+  const handleStartQuiz = useCallback(() => {
+    setStartTime(Date.now());
+    setQuizStarted(true);
+  }, []);
 
   const q = questions[current];
   const answered = answers[current] !== null;
@@ -83,7 +74,9 @@ export default function CurrentAffairsQuiz({ questions, slug }: Props) {
     setShowResult(false);
     setReviewMode(false);
     setStartTime(Date.now());
+    setElapsed(0);
     setShowConfetti(false);
+    // quizStarted stays true — no need to show intro again
   }, [questions.length]);
 
   const handleCopyScore = useCallback(() => {
@@ -112,6 +105,55 @@ export default function CurrentAffairsQuiz({ questions, slug }: Props) {
     });
     return Object.entries(cats).sort((a, b) => b[1].total - a[1].total);
   };
+
+  // ── START SCREEN ────────────────────────────────────────────────────
+  if (!quizStarted) {
+    const diffCounts = { easy: 0, medium: 0, hard: 0 };
+    questions.forEach((q) => { diffCounts[q.difficulty]++; });
+    const catSet = new Set(questions.map((q) => q.category));
+
+    return (
+      <div className="bg-white rounded-2xl border border-surface-200 p-6 sm:p-8 shadow-sm text-center">
+        <div className="text-5xl mb-4">🧠</div>
+        <h3 className="font-heading font-bold text-xl sm:text-2xl text-surface-900 mb-2">
+          Ready to Test Yourself?
+        </h3>
+        <p className="text-surface-500 text-sm mb-6 max-w-md mx-auto">
+          {questions.length} questions covering {catSet.size} categories. Read each question carefully, select your answer, and see instant feedback with explanations.
+        </p>
+
+        <div className="flex items-center justify-center gap-3 mb-6 flex-wrap">
+          {diffCounts.easy > 0 && (
+            <span className={`text-xs font-heading font-semibold px-2.5 py-1 rounded-full ${difficultyColors.easy}`}>
+              {diffCounts.easy} Easy
+            </span>
+          )}
+          {diffCounts.medium > 0 && (
+            <span className={`text-xs font-heading font-semibold px-2.5 py-1 rounded-full ${difficultyColors.medium}`}>
+              {diffCounts.medium} Medium
+            </span>
+          )}
+          {diffCounts.hard > 0 && (
+            <span className={`text-xs font-heading font-semibold px-2.5 py-1 rounded-full ${difficultyColors.hard}`}>
+              {diffCounts.hard} Hard
+            </span>
+          )}
+        </div>
+
+        <button
+          onClick={handleStartQuiz}
+          className="btn-primary text-base min-h-[48px] px-8 inline-flex items-center gap-2"
+          aria-label="Start quiz"
+        >
+          Start Quiz →
+        </button>
+
+        <p className="text-xs text-surface-400 mt-4">
+          Timer starts when you click the button
+        </p>
+      </div>
+    );
+  }
 
   // ── REVIEW MODE ──────────────────────────────────────────────────────
   if (reviewMode) {
