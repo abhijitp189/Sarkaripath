@@ -2,6 +2,7 @@ import type { NewsCategory } from './current-affairs-theme';
 import { may11_17_newsItems, may11_17_staticGk, may11_17_quiz } from './may-11-17-data';
 import { may18_24_newsItems, may18_24_staticGk, may18_24_quiz } from './may-18-24-data';
 import { may25_31_newsItems, may25_31_staticGk, may25_31_quiz } from './may-25-31-data';
+import { jun01_07_newsItems, jun01_07_staticGk, jun01_07_quiz } from './jun-01-07-data';
 
 /* ── Interfaces ────────────────────────────────────────────────────────── */
 
@@ -57,6 +58,39 @@ export type CaCategory = (typeof caCategories)[number];
 /* ── Posts ──────────────────────────────────────────────────────────────── */
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
+  /* ═══ NEW: June 1–7, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-june-01-07-2026',
+    title: 'Weekly Current Affairs: June 1\u20137, 2026 \u2014 India\u2019s 100th Ramsar Site, RBI Holds Repo Rate at 5.25%, Praggnanandhaa Wins Norway Chess, GDP Growth 7.7%, Project Kusha Air Defence & UNSC Elections',
+    dateRange: 'June 1\u20137, 2026',
+    publishedDate: 'June 8, 2026',
+    category: 'All',
+    excerpt:
+      'This week: Surha Taal becomes India\u2019s 100th Ramsar Site on World Environment Day, RBI MPC unanimously holds repo rate at 5.25%, NSO reports 7.7% GDP growth for FY26, Praggnanandhaa wins historic Norway Chess title, Major Abhilasha Barak wins UN Military Gender Advocate Award, Germany abolishes transit visa for Indians, UNGA elects 5 new non-permanent UNSC members (including Kyrgyzstan\u2019s first-ever seat), Project Kusha air defence progresses, Zorawar light tank showcased, and India\u2019s market cap drops to 7th globally.',
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'June 1\u20137, 2026',
+    newsItems: jun01_07_newsItems,
+    staticGkBox: jun01_07_staticGk,
+    quiz: jun01_07_quiz,
+    keyPoints: [
+      'Surha Taal (Jai Prakash Narayan Bird Sanctuary) in Ballia, Uttar Pradesh, designated as India\u2019s 100th Ramsar Site on World Environment Day (June 5). UP now has 13 Ramsar Sites.',
+      'RBI MPC voted unanimously to keep the policy repo rate unchanged at 5.25%. SDF at 5.00%, MSF/Bank Rate at 5.50%.',
+      'NSO provisional estimates: India\u2019s real GDP grew at 7.7% for FY 2025-26. Q4 growth at 7.8%, GVA growth at 7.9%.',
+      'Rameshbabu Praggnanandhaa became the first Indian to win the Norway Chess title (Stavanger, June 6, 2026).',
+      'Major Abhilasha Barak conferred the UN Military Gender Advocate of the Year Award (June 7).',
+      'Germany abolished airport transit visa (Type A) requirement for Indian citizens (effective June 3).',
+      'UNGA elected 5 non-permanent UNSC members: Germany, Philippines, Austria, Portugal, Kyrgyzstan (first-ever seat). Term starts January 1, 2027.',
+      'India\u2019s market capitalization slipped to 7th globally (USD 4.84 trillion), overtaken by South Korea (USD 5.01 trillion).',
+      'Justice V. Mohana sworn in as 12th woman judge in the history of the Supreme Court of India (June 2).',
+      'Union Cabinet approved \u20B99,585 crore two-year scheme to replace 2.07 lakh old commercial vehicles in Delhi-NCR with BS-VI or electric vehicles.',
+      'Project Kusha long-range air defence system progresses: 3 interceptor variants (M1: 120\u2013150 km, M2: ~250 km, M3: up to 400 km). Induction: 2028\u20132030.',
+      'Indigenous 25-tonne Zorawar light tank and Tejastra counter-drone directed energy weapon showcased in Gujarat.',
+      'India & US held 29th Army-to-Army Staff Talks in Hawaii at US Indo-Pacific Command HQ.',
+      'SIDE Report 2026: India ranked 5th most digitalized economy and 4th on AI Capability Index globally.',
+      'Dr. Subhash C. Kashyap, former Lok Sabha Secretary-General and constitutional expert, passed away at age 97.',
+    ],
+  },
   /* ═══ NEW: May 25–31, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-may-25-31-2026',
