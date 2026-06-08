@@ -85,6 +85,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <RpscApoRecruitmentArticle post={post} />;
   }
 
+  if (post.slug === 'best-youtube-channels-ssc-cgl-2026') {
+    return <BestYouTubeChannelsSscCglArticle post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -8983,6 +8987,551 @@ function RpscApoRecruitmentArticle({ post }: { post: any }) {
               <a href="https://rpsc.rajasthan.gov.in" target="_blank" rel="noopener noreferrer" className="mt-3 block text-center btn-primary text-xs py-2">
                 Visit RPSC Website →
               </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ─── BEST FREE YOUTUBE CHANNELS FOR SSC CGL 2026 ─────────────────────────────
+function BestYouTubeChannelsSscCglArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'key-takeaways', label: 'Key Takeaways' },
+    { id: 'why-youtube', label: 'Why Free YouTube Over Paid Courses?' },
+    { id: 'salary-reality', label: 'The Financial Reality: Level 7 Salary' },
+    { id: 'maths-channels', label: 'Mathematics Channels' },
+    { id: 'english-channels', label: 'English Channels' },
+    { id: 'reasoning-channels', label: 'Reasoning Channels' },
+    { id: 'gk-channels', label: 'General Awareness Channels' },
+    { id: 'comparison', label: 'Quick Comparison Matrix' },
+    { id: 'youtube-trap', label: 'How to Avoid the YouTube Trap' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const faqs = [
+    {
+      q: 'Can an average student crack SSC CGL 2026 entirely by studying from free YouTube channels?',
+      a: 'Yes. Free YouTube channels cover 100% of the concepts required for the exam. However, YouTube alone is not enough — your selection depends on how rigorously you practice concepts offline using previous year question banks and full-length mock tests. The 30:70 rule applies: 30% YouTube for learning, 70% self-practice.',
+    },
+    {
+      q: 'Which YouTube channel is best for completing the entire SSC CGL Math syllabus for free?',
+      a: 'For complete beginners, Rankers Gurukul (Aditya Ranjan Sir) is excellent due to his foundational approach. For students who want exhaustive coverage of all tough and advanced variations, Gagan Pratap Maths is widely recommended. Pick one based on your current level — do not follow both simultaneously.',
+    },
+    {
+      q: 'How can I safely cover General Awareness (GK/GS) for SSC CGL on YouTube?',
+      a: 'Follow Parmar SSC for deeply conceptual, subject-wise preparation and PYQ analysis. For memorization tricks and regular practice sets, Rojgar With Ankit (RWA) is strong. Parcham Classes is excellent for geography and visual learners.',
+    },
+    {
+      q: 'Should I watch live classes or recorded videos on YouTube?',
+      a: 'Always prefer recorded videos. Live sessions contain significant delays, promotions, and chat distractions. Recorded lectures let you study at 1.25x–1.5x speed, saving hundreds of hours over a preparation cycle.',
+    },
+    {
+      q: 'Is the content on these YouTube channels updated for the SSC CGL 2026 pattern with sectional timing?',
+      a: 'Yes. Major channels like Gagan Pratap Maths, Rankers Gurukul, and Parmar SSC are actively releasing content specifically for SSC CGL 2026 with the new sectional timing format. Check upload dates — prioritize playlists from 2025 and 2026.',
+    },
+    {
+      q: 'What is the biggest change in SSC CGL 2026 that affects my YouTube study plan?',
+      a: 'Sectional timing. Each Tier 1 section now has a fixed 15-minute limit — you cannot borrow time from one subject to another. This means you must practice each subject under timed conditions separately. Channels that offer section-wise mock tests and speed drills are now more valuable than ever.',
+    },
+  ];
+
+  const SectionH2 = ({ num, icon, title }: { num: string; icon: string; title: string }) => (
+    <div className="flex items-center gap-3 mb-5">
+      <div className="w-9 h-9 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 font-heading font-bold text-sm flex-shrink-0">
+        {num}
+      </div>
+      <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900">
+        <span className="mr-2">{icon}</span>{title}
+      </h2>
+    </div>
+  );
+
+  const ChannelCard = ({ name, best, playlists, vibe }: { name: string; best: string; playlists: string; vibe: string }) => (
+    <div className="card p-5 mb-4">
+      <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3">{name}</h3>
+      <div className="space-y-2 text-sm text-surface-700 leading-relaxed">
+        <p><span className="font-semibold text-surface-800">Best For:</span> {best}</p>
+        <p><span className="font-semibold text-surface-800">Top Free Playlists:</span> {playlists}</p>
+        <p><span className="font-semibold text-surface-800">Teaching Vibe:</span> {vibe}</p>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Best Free YouTube Channels for SSC CGL 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        {/* MAIN CONTENT */}
+        <article>
+          {/* Dark Gradient Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-red-500 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
+                  Preparation
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-green-500/20 border border-green-500/40 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">
+                  ✅ 2026 Verified
+                </span>
+                <span className="text-white/50 text-xs">{post.publishedDate} · {post.readTime}</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                Best Free YouTube Channels for SSC CGL{' '}
+                <span className="text-red-400">Preparation 2026</span>
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed mb-5">
+                Finding the right YouTube channels for SSC CGL can feel like searching for a needle in a haystack. We have done the filtering for you — here are the best free channels for Maths, English, Reasoning &amp; GK, each vetted for the latest 2026 exam pattern with sectional timing.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['SSC CGL 2026', 'Free Channels', 'Maths', 'English', 'Reasoning', 'GK', 'No Paid Course'].map(tag => (
+                  <span key={tag} className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Key Metrics Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            {[
+              { label: 'Channels Listed', value: '10+', sub: 'Subject-wise picks' },
+              { label: 'Subjects Covered', value: '4', sub: 'Math, Eng, Reason, GK' },
+              { label: 'Cost to Access', value: '₹0', sub: 'Free forever' },
+              { label: 'CGL 2026 Vacancies', value: '12,256', sub: 'Notification out' },
+            ].map(m => (
+              <div key={m.label} className="card p-4 text-center">
+                <p className="text-xs text-surface-500 font-medium mb-1">{m.label}</p>
+                <p className="text-xl font-heading font-bold text-primary-600">{m.value}</p>
+                <p className="text-xs text-surface-400">{m.sub}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Key Takeaways */}
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8">
+            <p className="text-red-800 font-heading font-semibold text-sm leading-relaxed">
+              🚨 <span className="font-bold">Apply NOW — Only 14 Days Left!</span> SSC CGL 2026 application deadline is <strong>June 22, 2026</strong>. Fee payment closes <strong>June 23</strong>. Do not wait until the last day — SSC servers crash under heavy traffic. Apply at <strong>ssc.gov.in</strong> today.
+            </p>
+          </div>
+
+          <section id="key-takeaways" className="mb-12">
+            <SectionH2 num="1" icon="📌" title="Key Takeaways" />
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-5 space-y-3 text-sm text-primary-900 leading-relaxed">
+              <p><span className="font-bold">No Paid Course Required:</span> You can cover 100% of the SSC CGL 2026 syllabus for free if you pick the right educators on YouTube.</p>
+              <p><span className="font-bold">Math Kings:</span> Gagan Pratap Sir and Aditya Ranjan Sir offer the most comprehensive free conceptual playlists and practice marathons.</p>
+              <p><span className="font-bold">English Foundations:</span> Rani Ma&apos;am and Neetu Ma&apos;am are the gold standards for grammar rules and vocabulary for Tier 1 and Tier 2.</p>
+              <p><span className="font-bold">GK Game Changer:</span> Parmar SSC has emerged as the most structured, exam-oriented channel for General Awareness.</p>
+              <p><span className="font-bold">The YouTube Trap:</span> Self-discipline is your biggest hurdle. Switch off live chats, avoid following too many teachers, and focus on self-practice with PYQs.</p>
+              <p><span className="font-bold">New for 2026:</span> Sectional timing is now introduced in both Tier 1 and Tier 2 — practice each subject under a strict 15-minute clock.</p>
+            </div>
+          </section>
+
+          {/* Why YouTube Section */}
+          <section id="why-youtube" className="mb-12">
+            <SectionH2 num="2" icon="🎥" title="Why Free YouTube Over Paid Courses for SSC CGL 2026?" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Many aspirants believe free content lacks quality. In India&apos;s online education ecosystem, that is a myth. Top educators put their premium-quality crash courses, marathon sessions, and conceptual series on YouTube for free — to build trust and reach millions of students in tier-2, tier-3 cities, and villages.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The competition is real, though. In SSC CGL 2025, approximately <strong>28 lakh candidates</strong> applied for around 14,582 vacancies — a selection rate of roughly 0.5%. For SSC CGL 2026, the notification is already out with <strong>12,256 vacancies</strong>. Similar or higher application numbers are expected.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The good news? A student with a basic smartphone and a stable internet connection in a remote village has access to the <em>exact same</em> teaching quality as someone in Delhi. The educators below have given you the tools for free — the execution, the practice, and the discipline are entirely up to you.
+            </p>
+            <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mb-4">
+              <p className="text-emerald-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">✅ SSC CGL 2026 Update (June 8):</span> The SSC CGL 2026 notification was released on <strong>May 21, 2026</strong> for <strong>12,256 vacancies</strong> across 40 Group B &amp; C posts. Apply at ssc.gov.in by <strong>June 22, 2026</strong> (only 14 days left!). Fee payment deadline: <strong>June 23</strong>. Application fee: ₹100 (SC/ST/PwBD/Female/ESM exempted). Correction window: <strong>June 29 – July 1</strong>. Tier 1: <strong>August–September 2026</strong>. Tier 2: <strong>December 2026</strong>. Major change this year: <strong>sectional timing</strong> in both Tier 1 and Tier 2 — each Tier 1 section is locked at 15 minutes. You cannot borrow time between subjects.
+              </p>
+            </div>
+          </section>
+
+          {/* Salary Reality Section */}
+          <section id="salary-reality" className="mb-12">
+            <SectionH2 num="3" icon="💰" title="The Financial Reality: SSC CGL Level 7 Salary (June 2026)" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Before diving into channels, let&apos;s ground your motivation in reality. An SSC CGL Level 7 post (Income Tax Inspector, Assistant Section Officer, Central Excise Inspector) offers exceptional financial security. Here is the verified salary structure as of June 2026:
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading font-semibold rounded-tl-xl">Salary Component</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold rounded-tr-xl">Amount (June 2026)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { label: 'Pay Level / Grade Pay', value: 'Level 7 / ₹4,600' },
+                    { label: 'Basic Pay', value: '₹44,900' },
+                    { label: 'Dearness Allowance (DA)', value: '60% of Basic = ₹26,940' },
+                    { label: 'HRA (X-City like Delhi/Mumbai)', value: '30% of Basic = ₹13,470' },
+                    { label: 'Transport Allowance + DA on TA', value: '₹3,600 + ₹2,160 = ₹5,760' },
+                    { label: 'Gross Salary', value: '~₹91,070' },
+                    { label: 'Deductions (NPS, CGHS, CGEGIS)', value: '~₹7,800 – ₹8,500' },
+                    { label: 'Income Tax (New Regime, approx.)', value: '~₹3,000 – ₹4,000' },
+                    { label: 'Net In-Hand Salary', value: '₹75,000 – ₹80,000' },
+                  ].map((row, i) => (
+                    <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 text-surface-700 border-b border-surface-100">{row.label}</td>
+                      <td className={`px-4 py-3 font-semibold border-b border-surface-100 ${row.label === 'Net In-Hand Salary' ? 'text-emerald-600 text-base' : 'text-surface-800'}`}>{row.value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4 mb-4">
+              <p className="text-accent-900 font-medium text-sm leading-relaxed">
+                <span className="font-bold">⚠️ Important:</span> DA was hiked to 60% by the Union Cabinet on April 18, 2026, effective from January 1, 2026. HRA is at its highest slab (30/20/10%) since DA crossed 50% in January 2024. Income tax varies by regime and investments — the figure above assumes the new tax regime with standard deduction. Many YouTube channels quote ₹82,000–₹85,000, but that omits income tax. The realistic in-hand range is ₹75,000–₹80,000 for X-city postings.
+              </p>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              For the complete post-wise salary breakdown (Level 4 to Level 8), read our detailed guide: <Link href="/blog/ssc-cgl-salary-2026-post-wise-in-hand/" className="text-primary-500 hover:underline font-medium">SSC CGL Salary 2026: Post-Wise In-Hand Salary →</Link>
+            </p>
+          </section>
+
+          {/* MATHS CHANNELS */}
+          <section id="maths-channels" className="mb-12">
+            <SectionH2 num="4" icon="📐" title="Quantitative Aptitude (Mathematics) Channels" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Mathematics is often the biggest hurdle for non-math background students, while speed is the bottleneck for engineering graduates. With sectional timing now in place (15 minutes for 25 Maths questions in Tier 1), concept clarity <em>and</em> speed both matter. These channels offer the best balance:
+            </p>
+
+            <ChannelCard
+              name="A. Gagan Pratap Maths (Math Concept King)"
+              best="Advanced Mathematics — Geometry, Mensuration, Algebra — and high-level arithmetic practice. His &quot;Type-wise&quot; breakdown of chapters builds an organized mental map of all question variations."
+              playlists="8-to-12-hour complete chapter marathon videos and topic-wise PYQ series. His &quot;SSC CGL 2026 Maths Speed Test Series&quot; with timed 15-minute practice sets (matching the new sectional timing) is actively running."
+              vibe="Strict, deeply practical, highly focused on latest patterns. Not for those who want slow hand-holding."
+            />
+
+            <ChannelCard
+              name="B. Rankers Gurukul (Aditya Ranjan Sir)"
+              best="Arithmetic shortcuts, Vedic math calculations, and building a solid foundation from absolute zero. Aditya Ranjan Sir is himself a selected Excise Inspector (SSC CGL 2019) — so he teaches from first-hand experience. Ideal for students from non-math backgrounds."
+              playlists="&quot;60 Days 60 Marathons&quot; and &quot;75 Days Hard Challenge&quot; series are gold mines for both Tier 1 and Tier 2. His &quot;75 Hard Challenge&quot; free series for SSC CGL 2026 is currently live."
+              vibe="Highly encouraging, interactive, structured for both Hindi and English-medium students."
+            />
+
+            <ChannelCard
+              name="C. Abhinay Maths"
+              best="Conceptual clarity in Algebra and Trigonometry. Abhinay Sharma Sir is one of the pioneer educators of the online SSC revolution."
+              playlists="The &quot;88 Days Videos&quot; series remains a classic for conceptual foundations. His unique approach teaches you to think logically through a question rather than blindly applying formulas."
+              vibe="Methodical, logic-first teaching style. Focuses on understanding over memorization."
+            />
+
+            <ChannelCard
+              name="D. RBE – Revolution By Education (Shubham Jain)"
+              best="Data-driven problem solving, Tier 2 standard questions, and genuine post-exam analysis. Shubham Sir provides the most accurate shift analysis and cutoff trends."
+              playlists="Regular post-exam mathematical analyses and difficulty breakdowns. Also runs targeted Tier 2 practice sessions."
+              vibe="Analytical, transparent, zero hype. Particularly trusted for honest cutoff predictions."
+            />
+
+            <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-4">
+              <p className="text-primary-800 font-medium text-sm leading-relaxed">
+                <span className="font-bold">📌 TaiyarHo Tip:</span> For the full SSC CGL syllabus with topic-wise weightage, check our detailed guide: <Link href="/blog/ssc-cgl-2026-syllabus-complete-guide/" className="underline font-bold">SSC CGL 2026 Syllabus: Complete Guide →</Link>
+              </p>
+            </div>
+          </section>
+
+          {/* ENGLISH CHANNELS */}
+          <section id="english-channels" className="mb-12">
+            <SectionH2 num="5" icon="📖" title="English Language &amp; Comprehension Channels" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              English carries the highest weightage in SSC CGL Tier 2 (45 questions, 135 marks, 40 minutes). With the new sectional timing, you cannot skip English and spend extra time on Maths. Solid grammar foundations and reading speed are non-negotiable.
+            </p>
+
+            <ChannelCard
+              name="A. English With Rani Ma'am"
+              best="Comprehensive, structured, and free English grammar library. Her channel is a one-stop solution for error detection, vocabulary, and reading comprehension."
+              playlists="&quot;60 Rules of Grammar&quot; and root-word vocabulary marathons. Complete chapter-wise coverage from basics to advanced."
+              vibe="Calm, systematic, and academic. Ideal for structured, topic-by-topic study."
+            />
+
+            <ChannelCard
+              name="B. English by Neetu Ma'am (KD Live)"
+              best="Building strong base rules for spot-the-error and sentence improvement questions. Author of the &quot;Plinth to Paramount&quot; book, she understands Hindi-medium students' specific challenges."
+              playlists="Complete chapter-wise series based on her signature grammar books. Excellent for translating Hindi thought patterns into correct English structure."
+              vibe="Practical, patient, especially effective for students overcoming English fear."
+            />
+
+            <ChannelCard
+              name="C. Careerwill English (Jaideep Singh Sir)"
+              best="Logic behind English grammar rules rather than passive memorization. Extremely helpful for tricky Tier 2 questions — Cloze Tests, Para-jumbles, and advanced comprehension."
+              playlists="Concept-focused series that explain the &quot;why&quot; behind grammar rules, not just the &quot;what.&quot;"
+              vibe="Logic-driven, analytical, and targeted at students who want deep understanding."
+            />
+          </section>
+
+          {/* REASONING CHANNELS */}
+          <section id="reasoning-channels" className="mb-12">
+            <SectionH2 num="6" icon="🧩" title="General Intelligence &amp; Reasoning Channels" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Reasoning was once considered the easiest SSC CGL section, but recent exam cycles have introduced high-level puzzles, statement-assumptions, and complex series. With sectional timing, you have exactly 15 minutes for 25 questions in Tier 1 — under 40 seconds per question. Do not take reasoning lightly.
+            </p>
+
+            <ChannelCard
+              name="A. Rankers Gurukul (Vikramjeet Sir)"
+              best="Dynamic practice sessions and tricky analytical reasoning chapters. Covers both verbal and non-verbal reasoning with a focus on time-saving methodologies."
+              playlists="Topic-wise marathon practice sessions curated for the latest TCS-pattern questions. His &quot;Reasoning Rank Booster – SSC 2026&quot; series and &quot;75 Hard Challenge&quot; free series for SSC CGL 2026 are currently live."
+              vibe="Energetic, practice-oriented, keeps sessions focused and fast-paced."
+            />
+
+            <ChannelCard
+              name="B. e1 Coaching Center (Kamal Sir)"
+              best="Visualizing tricky non-verbal reasoning matrices and understanding number series logics systematically. Preferred by self-directed learners."
+              playlists="Calm, dense lecture-quality videos. Best for students who prefer focused, noise-free teaching."
+              vibe="Highly sophisticated, zero-nonsense, quiet concentration atmosphere."
+            />
+
+            <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4">
+              <p className="text-accent-900 font-medium text-sm leading-relaxed">
+                <span className="font-bold">⚠️ Warning:</span> Older reasoning playlists (pre-2025) may not cover the harder analytical questions, statement-conclusion puzzles, and complex patterns introduced recently by TCS. Always check upload dates — prioritize playlists from 2025–2026.
+              </p>
+            </div>
+          </section>
+
+          {/* GK/GS CHANNELS */}
+          <section id="gk-channels" className="mb-12">
+            <SectionH2 num="7" icon="🌍" title="General Awareness (GK/GS) Channels" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              General Awareness is the ultimate maker-or-breaker section. The syllabus is vast, and with only 15 minutes for 25 questions (Tier 1) or 20 minutes for 25 questions (Tier 2 Paper I), you need educators who compress the ocean of information into highly testable nuggets. In Tier 2, the other sectional limits are: Maths 30 min, Reasoning 30 min, and English 40 min.
+            </p>
+
+            <ChannelCard
+              name="A. Parmar SSC (Parmar Sir)"
+              best="The absolute champion for SSC General Awareness preparation in 2026. He connects history, polity, and geography visually while referencing exact PYQ patterns. His &quot;Blitz Series&quot; for SSC CGL 2026 GK is currently running with daily lectures and mock tests."
+              playlists="Ongoing &quot;Blitz Series&quot; for SSC CGL 2026 (GK lectures + mock tests), core subject playlists (Polity, History, Geography), and high-density PYQ explanation batches."
+              vibe="Absolute seriousness, deeply educational, zero time-wasting filler or drama."
+            />
+
+            <ChannelCard
+              name="B. Rojgar With Ankit (RWA – Naveen Sir &amp; Team)"
+              best="Learning in clean, simple Hindi-medium frameworks. Naveen Sir's memory tricks (mnemonics) make memorizing complex facts incredibly easy."
+              playlists="&quot;Practice Set&quot; series that runs regularly before major SSC exams. Strong on static GK, classical dances, art &amp; culture, and modern Indian history."
+              vibe="Practical, mnemonic-heavy, great for retention-focused students."
+            />
+
+            <ChannelCard
+              name="C. Parcham Classes (Richa Ma'am)"
+              best="Visual learners. Neat maps, timelines, and tabular infographics make geography and current affairs highly scannable."
+              playlists="Indian &amp; World Geography, National Parks, and thematic current affairs (Awards, Sports, Appointments)."
+              vibe="Visual, map-heavy, structured. Ideal for students who learn better with graphics."
+            />
+          </section>
+
+          {/* COMPARISON MATRIX */}
+          <section id="comparison" className="mb-12">
+            <SectionH2 num="8" icon="📊" title="Quick Comparison Matrix: Which Channel Is Right for You?" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Feeling overwhelmed by choices? Use this direct selection matrix to pick <strong>one channel per subject</strong> based on your current level:
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-surface-800 text-white">
+                    <th className="text-left px-4 py-3 font-heading font-semibold rounded-tl-xl">Subject</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold">YouTube Channel</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold hidden sm:table-cell">Primary USP</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold rounded-tr-xl">Ideal For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { subject: 'Mathematics', channel: 'Gagan Pratap Maths', usp: 'Exhaustive type-wise problem variations', ideal: 'Intermediate to advanced students' },
+                    { subject: 'Mathematics', channel: 'Rankers Gurukul (Aditya Ranjan)', usp: 'Simple tricks, foundational breakdowns', ideal: 'Absolute beginners / non-math background' },
+                    { subject: 'English', channel: 'English With Rani Ma\'am', usp: 'Complete grammar framework, root vocab', ideal: 'Structured topic-by-topic learners' },
+                    { subject: 'English', channel: 'KD Live (Neetu Ma\'am)', usp: 'Foundation rules, Hindi-to-English translation', ideal: 'Hindi-medium students overcoming English fear' },
+                    { subject: 'Reasoning', channel: 'Rankers Gurukul (Vikramjeet)', usp: 'Dynamic practice, time-saving methods', ideal: 'Students who need speed improvement' },
+                    { subject: 'Reasoning', channel: 'e1 Coaching (Kamal Sir)', usp: 'Logical shortcuts, dense quiet lectures', ideal: 'Self-directed learners who dislike noise' },
+                    { subject: 'Gen. Awareness', channel: 'Parmar SSC', usp: 'Analytical PYQ deep dives, connected concepts', ideal: 'Students targeting 35+ marks in GK' },
+                    { subject: 'Gen. Awareness', channel: 'Rojgar With Ankit', usp: 'Memorization tricks, regular practice sets', ideal: 'Hindi-medium, retention-focused students' },
+                  ].map((row, i) => (
+                    <tr key={`${row.channel}-${i}`} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="px-4 py-3 text-surface-700 border-b border-surface-100 font-medium">{row.subject}</td>
+                      <td className="px-4 py-3 text-surface-800 border-b border-surface-100 font-semibold">{row.channel}</td>
+                      <td className="px-4 py-3 text-surface-600 border-b border-surface-100 hidden sm:table-cell">{row.usp}</td>
+                      <td className="px-4 py-3 text-surface-600 border-b border-surface-100">{row.ideal}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* YOUTUBE TRAP SECTION */}
+          <section id="youtube-trap" className="mb-12">
+            <SectionH2 num="9" icon="🚫" title="How to Avoid the &quot;YouTube Trap&quot; During SSC CGL 2026 Preparation" />
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Studying on YouTube is a double-edged sword. The platform is designed to keep you scrolling, clicking, and watching endlessly. If you are not careful, you will fall into the vicious cycle of passive watching — consuming content without actually learning. Follow these rules:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              {[
+                {
+                  icon: '⏸️',
+                  title: 'Turn Off Live Chats',
+                  desc: 'Live sessions drag a 30-minute concept into 90 minutes of shout-outs and promotions. Watch the recorded version at 1.25x–1.5x speed instead.',
+                },
+                {
+                  icon: '☝️',
+                  title: 'One Master Per Subject',
+                  desc: 'Do not watch Percentage from 4 different teachers. Pick one who matches your level, finish their complete playlist, and exit YouTube to practice.',
+                },
+                {
+                  icon: '📚',
+                  title: 'The 30:70 Rule',
+                  desc: 'YouTube = 30% of your study time (learning concepts). The remaining 70% must be offline self-practice — solving chapter-wise questions from PYQ books.',
+                },
+                {
+                  icon: '✍️',
+                  title: 'Stop Hoarding PDFs',
+                  desc: 'Your phone may have hundreds of Telegram PDFs, but your brain matters. Write down formulas, idioms, and tricky facts in your own handwriting.',
+                },
+                {
+                  icon: '⏱️',
+                  title: 'Practice Sectional Timing',
+                  desc: 'With the 2026 pattern, practice each section under a strict 15-minute clock. Never solve a practice paper without a timer anymore.',
+                },
+                {
+                  icon: '🔕',
+                  title: 'Disable Notifications',
+                  desc: 'Turn off YouTube notifications after subscribing. Check for new uploads once a day at a fixed time — do not let YouTube interrupt your study blocks.',
+                },
+              ].map(tip => (
+                <div key={tip.title} className="card p-4">
+                  <div className="text-2xl mb-2">{tip.icon}</div>
+                  <h3 className="font-heading font-semibold text-surface-800 text-sm mb-1">{tip.title}</h3>
+                  <p className="text-xs text-surface-500 leading-relaxed">{tip.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section id="faq" className="mb-12">
+            <SectionH2 num="10" icon="❓" title="Frequently Asked Questions" />
+            <div className="space-y-3">
+              {faqs.map((faq) => (
+                <details key={faq.q} className="card overflow-hidden group">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-heading font-semibold text-surface-800">
+                    <span>{faq.q}</span>
+                    <svg className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* CTA Banner */}
+          <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-6 text-white mb-8">
+            <h3 className="font-heading font-bold text-lg mb-2">Ready to start? First, check your SSC CGL eligibility.</h3>
+            <p className="text-primary-100 text-sm mb-4">Before you invest months of preparation, confirm you meet the age and qualification requirements for SSC CGL 2026.</p>
+            <Link href="/tools/eligibility-checker/" className="inline-flex items-center gap-2 bg-white text-primary-700 font-heading font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-primary-50 transition">
+              Use Free Eligibility Checker →
+            </Link>
+          </div>
+
+          {/* Last Updated + Disclaimer */}
+          <div className="bg-surface-50 border border-surface-200 rounded-xl p-5 text-xs text-surface-500 leading-relaxed mb-6 space-y-3">
+            <p>
+              <strong className="text-surface-700">📅 Last Updated:</strong> {post.updatedDate}
+            </p>
+            <p>
+              <strong className="text-surface-700">Disclaimer:</strong> YouTube channel names and descriptions listed in this article are based on our editorial team&apos;s review and publicly available information as of {post.updatedDate}. TaiyarHo.in is not affiliated with, endorsed by, or officially connected to any YouTube channel mentioned above. Subscriber counts are approximate and may change. SSC CGL 2026 vacancy count (12,256), exam dates (Tier 1: August–September 2026, Tier 2: December 2026), application deadline (June 22, 2026), fee payment deadline (June 23), and correction window (June 29 – July 1, 2026) are sourced from the official notification at <strong>ssc.gov.in</strong>. Salary figures use DA at 60% effective January 1, 2026 (Cabinet-approved April 18, 2026) and HRA at 30/20/10% for X/Y/Z cities. Always verify final details on the official SSC website before taking any action.
+            </p>
+          </div>
+
+          {/* JSON-LD FAQ Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: faqs.map(f => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              }),
+            }}
+          />
+
+          {/* BreadcrumbList Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.taiyarho.in/' },
+                  { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.taiyarho.in/blog/' },
+                  { '@type': 'ListItem', position: 3, name: 'Best Free YouTube Channels for SSC CGL 2026' },
+                ],
+              }),
+            }}
+          />
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-5">
+            {/* TOC */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">In This Article</div>
+              <nav className="space-y-1.5">
+                {toc.map(item => (
+                  <a key={item.id} href={`#${item.id}`} className="block text-sm text-surface-600 hover:text-primary-600 hover:translate-x-1 transition-all duration-150 leading-snug">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            {/* Related Exam Card */}
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-3">🔗 Related Exam</div>
+              <Link href="/exams/ssc-cgl" className="block mb-3">
+                <span className="font-heading font-semibold text-sm text-surface-800 hover:text-primary-500">SSC CGL 2026 — Full Exam Details →</span>
+                <p className="text-xs text-surface-500 mt-1">Syllabus, salary, eligibility &amp; exam pattern</p>
+              </Link>
+              <div className="border-t border-emerald-200 pt-3">
+                <Link href="/blog/ssc-cgl-salary-2026-post-wise-in-hand/" className="block text-sm text-primary-600 hover:underline mb-2 leading-snug">SSC CGL Salary 2026 Guide →</Link>
+                <Link href="/blog/ssc-cgl-2026-syllabus-complete-guide/" className="block text-sm text-primary-600 hover:underline mb-2 leading-snug">SSC CGL 2026 Syllabus Guide →</Link>
+                <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL Comparison →</Link>
+              </div>
+            </div>
+
+            {/* Tools CTA */}
+            <div className="card p-5 bg-primary-50 border-primary-200">
+              <div className="text-xs font-semibold text-primary-600 uppercase tracking-wider mb-2">Free Tool</div>
+              <p className="text-sm font-semibold text-surface-800 mb-2">Check Your SSC CGL Eligibility</p>
+              <p className="text-xs text-surface-500 mb-3">Enter age + qualification → see if you qualify for SSC CGL and 100 other govt exams.</p>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs py-2 px-4 block text-center">
+                Open Eligibility Checker →
+              </Link>
+            </div>
+
+            {/* Related Guides */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related Articles</div>
+              <div className="space-y-2">
+                <Link href="/blog/best-telegram-channels-govt-exams-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Best Telegram Channels 2026 →</Link>
+                <Link href="/blog/easiest-government-exams-to-crack-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">10 Easiest Govt Exams to Crack →</Link>
+                <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Age Limit &amp; Relaxation Guide →</Link>
+                <Link href="/exams/" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 101 Exams →</Link>
+                <Link href="/resources/" className="block text-sm text-primary-600 hover:underline leading-snug">Free Resources Hub →</Link>
+              </div>
             </div>
           </div>
         </aside>
