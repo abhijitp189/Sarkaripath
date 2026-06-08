@@ -150,12 +150,13 @@ export const jun01_07_newsItems: NewsItem[] = [
     eventDate: 'June 3, 2026',
     location: 'New York, USA',
     summary:
-      'The United Nations General Assembly elected five non-permanent members to the Security Council for a two-year term beginning January 1, 2027. Kyrgyzstan secured a seat for the first time in its history, marking a diplomatic milestone.',
+      'The United Nations General Assembly elected five non-permanent members to the Security Council for a two-year term beginning January 1, 2027. Austria and Portugal won the WEOG seats (defeating Germany), Trinidad and Tobago and Zimbabwe were elected unopposed, and Kyrgyzstan defeated the Philippines to secure a historic first-ever UNSC seat.',
     keyFacts: [
       'Election date: June 3, 2026.',
-      'Elected nations: Germany, The Philippines, Austria, Portugal, and Kyrgyzstan.',
+      'Elected nations: Austria, Kyrgyzstan, Portugal, Trinidad and Tobago, and Zimbabwe.',
       'Term: Two years beginning January 1, 2027.',
       'Historic first: Kyrgyzstan\u2019s first-ever UNSC non-permanent seat.',
+      'They replace outgoing members: Denmark, Greece, Pakistan, Panama, and Somalia.',
     ],
     whyItMatters:
       'UNSC composition, non-permanent member elections, and India\u2019s campaign for permanent membership are high-priority International Relations topics for UPSC and SSC exams.',
@@ -375,15 +376,16 @@ export const jun01_07_newsItems: NewsItem[] = [
     id: 'praggnanandhaa-norway-chess-2026',
     category: 'sports',
     headline: 'Praggnanandhaa Wins Historic Norway Chess 2026 Title',
-    eventDate: 'June 6, 2026',
-    location: 'Stavanger, Norway',
+    eventDate: 'June 5, 2026',
+    location: 'Oslo, Norway',
     summary:
-      'Indian Grandmaster Rameshbabu Praggnanandhaa delivered a masterful performance to win the Norway Chess 2026 title in Stavanger, becoming the first Indian chess player to win this prestigious elite tournament.',
+      'Indian Grandmaster Rameshbabu Praggnanandhaa delivered a masterful performance to win the Norway Chess 2026 title in Oslo, becoming the first Indian chess player to win this prestigious elite tournament. He scored four consecutive classical victories in the final rounds to overtake Wesley So.',
     keyFacts: [
       'Tournament: Norway Chess 2026.',
       'Champion: Rameshbabu Praggnanandhaa.',
       'Historic status: First Indian to win the Norway Chess title.',
-      'Victory date: June 6, 2026.',
+      'Victory date: June 5, 2026.',
+      'Venue: Oslo, Norway (tournament ran May 25 – June 5).',
     ],
     whyItMatters:
       'Indian achievements in chess are frequently asked in SSC, Railway, Banking, and State PSC General Knowledge sections.',
@@ -434,20 +436,22 @@ export const jun01_07_newsItems: NewsItem[] = [
     id: 'major-abhilasha-barak-un-gender-award-2026',
     category: 'awards',
     headline: 'Major Abhilasha Barak Receives UN Military Gender Advocate Award',
-    eventDate: 'June 7, 2026',
+    eventDate: 'June 6, 2026',
     summary:
-      'Indian Army officer Major Abhilasha Barak was selected for the prestigious United Nations Military Gender Advocate of the Year Award. The award recognizes her outstanding contributions to gender mainstreaming and community defense frameworks during international peacekeeping deployment.',
+      'Indian Army officer Major Abhilasha Barak, India\u2019s first woman combat helicopter pilot, was conferred the prestigious 2025 United Nations Military Gender Advocate of the Year Award by UN Secretary-General Ant\u00f3nio Guterres. She is the third Indian peacekeeper to receive this honour, recognized for her gender mainstreaming work during deployment with UNIFIL in Lebanon.',
     keyFacts: [
-      'Award: UN Military Gender Advocate of the Year Award.',
+      'Award: 2025 UN Military Gender Advocate of the Year Award.',
       'Recipient: Major Abhilasha Barak.',
-      'Conferral date: June 7, 2026.',
-      'Awarding body: United Nations.',
+      'Conferral date: June 6, 2026 (ceremony at UN Headquarters).',
+      'Awarding authority: UN Secretary-General Ant\u00f3nio Guterres.',
+      'She is India\u2019s first woman combat helicopter pilot (Army Aviation Corps, 2022).',
+      'Third Indian peacekeeper to receive this award.',
     ],
     whyItMatters:
       'UN awards to Indian armed forces personnel are important for UPSC, Defence, SSC, and Police exam GK sections.',
     examRelevance: ['UPSC', 'Defence', 'SSC', 'State PSC', 'Police'],
     staticGkConnect:
-      'India is the largest contributor of troops to UN Peacekeeping operations. The UN Military Gender Advocate Award was established in 2016. Major Abhilasha Barak also made history as the first woman combat aviator in the Indian Army.',
+      'India is the largest contributor of troops to UN Peacekeeping operations. The UN Military Gender Advocate Award was established in 2016. Major Abhilasha Barak made history in 2022 as the first woman combat helicopter pilot in the Indian Army\u2019s Aviation Corps.',
   },
   {
     id: 'dalai-lama-grammy-trophy-dharamshala-2026',
@@ -659,15 +663,15 @@ export const jun01_07_newsItems: NewsItem[] = [
   {
     id: 'nso-gva-estimates-fy26',
     category: 'reports',
-    headline: 'NSO Releases Annual GVA Estimates — Secondary Sector at 8.8%, Tertiary at 9.3%',
+    headline: 'NSO Releases Annual GVA Estimates — Secondary Sector at 8.8%, Tertiary at 9.9%',
     eventDate: 'June 2, 2026',
     location: 'New Delhi',
     summary:
-      'The National Statistical Office published its annual GVA (Gross Value Added) estimates for FY 2025-26, showing strong sectoral expansion. Total GVA was estimated at ₹294.91 lakh crore, with the secondary sector at 8.8% growth and tertiary sector at 9.3% growth.',
+      'The National Statistical Office published its annual GVA (Gross Value Added) estimates for FY 2025-26, showing strong sectoral expansion. Total GVA was estimated at ₹294.91 lakh crore, with the secondary sector at 8.8% growth and tertiary sector at 9.9% growth.',
     keyFacts: [
       'Total GVA: ₹294.91 lakh crore for FY 2025-26.',
       'Secondary sector growth: 8.8%.',
-      'Tertiary sector growth: 9.3%.',
+      'Tertiary sector growth: 9.9%.',
       'Ministry: Ministry of Statistics and Programme Implementation.',
     ],
     whyItMatters:
@@ -928,7 +932,7 @@ export const jun01_07_quiz: QuizQuestion[] = [
     question: 'Rameshbabu Praggnanandhaa became the first Indian to win which elite chess tournament?',
     options: ['Tata Steel Chess', 'Wijk aan Zee', 'Norway Chess', 'Sinquefield Cup'],
     correctIndex: 2,
-    explanation: 'Praggnanandhaa won the Norway Chess 2026 title in Stavanger on June 6, 2026, becoming the first Indian chess player to win this elite tournament.',
+    explanation: 'Praggnanandhaa won the Norway Chess 2026 title in Oslo on June 5, 2026, becoming the first Indian chess player to win this elite tournament.',
     category: 'sports',
     difficulty: 'easy',
   },
@@ -1033,7 +1037,7 @@ export const jun01_07_quiz: QuizQuestion[] = [
   },
   {
     id: 'jun01-q15',
-    question: 'Consider the following statements:\n1. India\u2019s real GDP grew at 7.7% in FY 2025-26.\n2. The tertiary sector GVA growth was 9.3%.\n3. The NSO used 2011-12 as the base year for these calculations.\nWhich of the above statements are correct?',
+    question: 'Consider the following statements:\n1. India\u2019s real GDP grew at 7.7% in FY 2025-26.\n2. The tertiary sector GVA growth was 9.9%.\n3. The NSO used 2011-12 as the base year for these calculations.\nWhich of the above statements are correct?',
     options: ['1 and 2 only', '2 and 3 only', '1 and 3 only', 'All of the above'],
     correctIndex: 0,
     explanation: 'Statements 1 and 2 are correct. However, Statement 3 is incorrect — the NSO used the revised 2022-23 base year for these calculations, not the older 2011-12 base year.',
