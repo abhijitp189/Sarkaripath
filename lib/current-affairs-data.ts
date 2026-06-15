@@ -3,6 +3,7 @@ import { may11_17_newsItems, may11_17_staticGk, may11_17_quiz } from './may-11-1
 import { may18_24_newsItems, may18_24_staticGk, may18_24_quiz } from './may-18-24-data';
 import { may25_31_newsItems, may25_31_staticGk, may25_31_quiz } from './may-25-31-data';
 import { jun01_07_newsItems, jun01_07_staticGk, jun01_07_quiz } from './jun-01-07-data';
+import { jun08_14_newsItems, jun08_14_staticGk, jun08_14_quiz } from './jun-08-14-data';
 
 /* ── Interfaces ────────────────────────────────────────────────────────── */
 
@@ -58,6 +59,37 @@ export type CaCategory = (typeof caCategories)[number];
 /* ── Posts ──────────────────────────────────────────────────────────────── */
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
+  /* ═══ NEW: June 8–14, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-june-08-14-2026',
+    title: 'Weekly Current Affairs: June 8\u201314, 2026 \u2014 US-Iran Ceasefire Deal, Lt Gen Dhiraj Seth Next COAS, Varya AI Model Launch, FIFA WC 2026 Begins, Bharat Innovates 2026 & IAF AN-32 Crash',
+    dateRange: 'June 8\u201314, 2026',
+    publishedDate: 'June 15, 2026',
+    category: 'All',
+    excerpt:
+      'This week: US and Iran reach ceasefire (Pakistan-mediated) to reopen the Strait of Hormuz, Lt Gen Dhiraj Seth appointed next COAS, India launches Varya (first distilled video AI model), FIFA World Cup 2026 group stage kicks off with Qatar-Switzerland and Brazil-Morocco draws, PM Modi and Macron inaugurate Bharat Innovates 2026 in Nice, IAF AN-32 crashes in Jorhat killing five, Dinesh Trivedi assumes charge as HC to Bangladesh, EU proposes 21st Russia sanctions package, and SC dismisses Meenakshi Natarajan\u2019s Rajya Sabha plea.',
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'June 8\u201314, 2026',
+    newsItems: jun08_14_newsItems,
+    staticGkBox: jun08_14_staticGk,
+    quiz: jun08_14_quiz,
+    keyPoints: [
+      'The United States and Iran reached a ceasefire agreement (announced June 11\u201314, 2026), mediated by Pakistan, ending the West Asia conflict and reopening the Strait of Hormuz to toll-free shipping.',
+      'Lt Gen Dhiraj Seth appointed the next (31st) Chief of Army Staff, effective June 30, 2026, succeeding General Upendra Dwivedi. He is the first Armoured Corps officer to head the army since 1997.',
+      'India launched Varya, the country\u2019s first distilled video-generation AI model, built by startup Avataar under the IndiaAI Mission. Cost: \u20B90.48/second \u2014 up to 10x cheaper than global rivals.',
+      'FIFA World Cup 2026 group stage began \u2014 Qatar drew 1\u20131 with Switzerland (Group B), Morocco held Brazil 1\u20131 at MetLife Stadium (Group C).',
+      'PM Modi and French President Macron inaugurated Bharat Innovates 2026 in Nice, France (June 14), showcasing 120 Indian deep-tech startups and ~20 Institutes of Excellence across 13 technology sectors.',
+      'Five IAF personnel killed in AN-32 transport aircraft crash during landing at Rowriah Air Force Station, Jorhat, Assam. Court of Inquiry constituted.',
+      'European Commission proposed its 21st sanctions package against Russia (June 9), targeting energy, financial services, crypto, trade, and fisheries \u2014 including third-country entities in India, China, T\u00FCrkiye, Kazakhstan, and the UAE.',
+      'Dinesh Trivedi assumed charge as India\u2019s High Commissioner to Bangladesh in Dhaka on June 12, 2026 \u2014 the first political appointee to this post in over three decades.',
+      'Supreme Court on June 12 refused to stall the Madhya Pradesh Rajya Sabha election after Congress leader Meenakshi Natarajan\u2019s nomination was rejected, citing Article 329.',
+      'India and Nepal held the 10th Project Steering Committee and 8th Joint Working Group meetings in Kathmandu (June 11\u201312) on cross-border railway connectivity on the Janakpur\u2013Ayodhya section.',
+      'Union Petroleum Minister Hardeep Singh Puri announced that India\u2019s fuel prices dropped by ~3.1% from May 2022 to May 2026 despite global volatility from the West Asia conflict.',
+      'Centre announced a resettlement census in Great Nicobar Island for the holistic development project, including the International Transshipment Terminal and greenfield city.',
+      'Gold and silver prices surged across Indian markets on June 12, 2026, on easing inflation concerns following the West Asia diplomatic breakthrough.',
+    ],
+  },
   /* ═══ NEW: June 1–7, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-june-01-07-2026',
@@ -68,7 +100,7 @@ export const currentAffairsPosts: CurrentAffairsPost[] = [
     excerpt:
       'This week: Surha Taal becomes India\u2019s 100th Ramsar Site on World Environment Day, RBI MPC unanimously holds repo rate at 5.25%, NSO reports 7.7% GDP growth for FY26, Praggnanandhaa wins historic Norway Chess title, Major Abhilasha Barak wins UN Military Gender Advocate Award, Germany abolishes transit visa for Indians, UNGA elects 5 new non-permanent UNSC members (including Kyrgyzstan\u2019s first-ever seat), Project Kusha air defence progresses, Zorawar light tank showcased, and India\u2019s market cap drops to 7th globally.',
     targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
-    isFeatured: true,
+    isFeatured: false,
     weekRange: 'June 1\u20137, 2026',
     newsItems: jun01_07_newsItems,
     staticGkBox: jun01_07_staticGk,
