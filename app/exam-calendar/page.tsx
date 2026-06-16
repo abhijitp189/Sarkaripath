@@ -51,7 +51,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Police',
         internalSlug: 'ssc-gd-constable',
         externalUrl: 'https://ssc.gov.in',
-        note: '25,487 vacancies • Phase 4 (25–30 May) ongoing • Answer key expected after completion',
+        note: '25,487 vacancies • All CBT phases done • Answer key out 15 Jun • Result expected Jul–Aug 2026',
       },
       {
         name: 'SSC CGL 2026 (Apply Online)',
@@ -136,7 +136,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'rbi-grade-b',
         externalUrl: 'https://rbi.org.in',
-        note: 'Admit Card Out (5 June) • 60 vacancies • General DR: 13 Jun, DEPR/DSIM: 14 Jun • Phase 2: 25–26 Jul 2026',
+        note: 'Phase 1 conducted (13–14 Jun) • 60 vacancies • Phase 1 result expected Jul • Phase 2: 25–26 Jul 2026',
       },
       {
         name: 'UPSC IES/ISS',
@@ -481,7 +481,7 @@ const pastExams: MonthGroup[] = [
         category: 'UPSC',
         internalSlug: 'upsc-ias',
         externalUrl: 'https://upsc.gov.in',
-        note: '933 vacancies (IAS/IPS/IFS) • 5.49 lakh appeared • Answer key objections till 31 May',
+        note: '933 vacancies (IAS/IPS/IFS) • Prelims result out 15 Jun — 13,343 qualified for Mains',
       },
       {
         name: 'UPSC IFS (Prelims)',
@@ -490,7 +490,7 @@ const pastExams: MonthGroup[] = [
         category: 'UPSC',
         internalSlug: 'upsc-ifs',
         externalUrl: 'https://upsc.gov.in',
-        note: 'Combined with CSE Prelims • 80 vacancies',
+        note: 'Combined with CSE Prelims • 80 vacancies • Result out 15 Jun — 1,046 shortlisted for Mains',
       },
       {
         name: 'RRB NTPC UG (CBT 1 — May Phase)',
