@@ -215,7 +215,7 @@ export default function EligibilityCheckerPage() {
             <p className="text-sm text-primary-800 leading-relaxed">
               <strong>📖 Want the complete guide?</strong>{' '}
               Read our{' '}
-              <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026" className="text-primary-600 hover:underline font-semibold">
+              <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="text-primary-600 hover:underline font-semibold">
                 Government Exam Age Limit with OBC, SC/ST Relaxation 2026 — Full List
               </Link>{' '}
               for exam-wise tables and all edge cases.
@@ -230,13 +230,13 @@ export default function EligibilityCheckerPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { href: '/exams/upsc-ias', label: 'UPSC IAS 2026 — Complete Guide', sub: 'Syllabus, eligibility, salary, books', icon: '🏛️' },
-              { href: '/exams/ssc-cgl', label: 'SSC CGL 2026 — Full Details', sub: 'Age limit, posts, salary, cut-offs', icon: '📝' },
-              { href: '/exams/ibps-po', label: 'IBPS PO 2026 — Preparation Guide', sub: 'Eligibility, syllabus, in-hand salary', icon: '🏦' },
-              { href: '/exams/sbi-po', label: 'SBI PO 2026 — Complete Guide', sub: 'Notification, exam pattern, career path', icon: '💼' },
-              { href: '/exams/rrb-ntpc', label: 'RRB NTPC 2026 — Railway Guide', sub: 'Posts, eligibility, physical standards', icon: '🚂' },
-              { href: '/blog/government-exam-age-limit-obc-sc-st-relaxation-2026', label: 'Age Relaxation 2026 — Full Guide', sub: 'OBC, SC/ST, PwBD, Ex-SM rules', icon: '📅' },
-              { href: '/guides/age-relaxation-government-exams', label: 'Age Relaxation Deep Dive', sub: 'Category-wise rules, documents needed', icon: '📋' },
+              { href: '/exams/upsc-ias/', label: 'UPSC IAS 2026 — Complete Guide', sub: 'Syllabus, eligibility, salary, books', icon: '🏛️' },
+              { href: '/exams/ssc-cgl/', label: 'SSC CGL 2026 — Full Details', sub: 'Age limit, posts, salary, cut-offs', icon: '📝' },
+              { href: '/exams/ibps-po/', label: 'IBPS PO 2026 — Preparation Guide', sub: 'Eligibility, syllabus, in-hand salary', icon: '🏦' },
+              { href: '/exams/sbi-po/', label: 'SBI PO 2026 — Complete Guide', sub: 'Notification, exam pattern, career path', icon: '💼' },
+              { href: '/exams/rrb-ntpc/', label: 'RRB NTPC 2026 — Railway Guide', sub: 'Posts, eligibility, physical standards', icon: '🚂' },
+              { href: '/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/', label: 'Age Relaxation 2026 — Full Guide', sub: 'OBC, SC/ST, PwBD, Ex-SM rules', icon: '📅' },
+              { href: '/guides/age-limit-relaxation-government-jobs/', label: 'Age Relaxation Deep Dive', sub: 'Category-wise rules, documents needed', icon: '📋' },
               { href: '/resources', label: 'Free Resources Hub', sub: 'Books, YouTube, mock tests — all free', icon: '📚' },
             ].map(link => (
               <Link key={link.href} href={link.href}

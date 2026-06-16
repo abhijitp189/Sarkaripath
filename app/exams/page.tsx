@@ -71,7 +71,7 @@ function ExamsContent() {
       {filteredExams.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredExams.map((exam) => (
-            <Link key={exam.id} href={`/exams/${exam.slug}`} className="card p-5 group flex flex-col">
+            <Link key={exam.id} href={`/exams/${exam.slug}/`} className="card p-5 group flex flex-col">
               <div className="flex items-start justify-between mb-2">
                 <span className="badge badge-primary">{exam.category}</span>
                 <span className="badge badge-green">{exam.level}</span>

@@ -371,7 +371,7 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
                       <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Previous Issues</h3>
                       <div className="space-y-3">
                         {otherPosts.slice(0, 3).map((p) => (
-                          <Link key={p.slug} href={`/current-affairs/${p.slug}`} className="block group">
+                          <Link key={p.slug} href={`/current-affairs/${p.slug}/`} className="block group">
                             <div className="text-xs text-surface-400 mb-0.5">{p.dateRange}</div>
                             <div className="text-sm text-surface-700 group-hover:text-primary-500 transition-colors leading-snug font-medium">
                               {p.title}
@@ -547,7 +547,7 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
                     <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Previous Issues</h3>
                     <div className="space-y-3">
                       {otherPosts.slice(0, 3).map((p) => (
-                        <Link key={p.slug} href={`/current-affairs/${p.slug}`} className="block group">
+                        <Link key={p.slug} href={`/current-affairs/${p.slug}/`} className="block group">
                           <div className="text-xs text-surface-400 mb-0.5">{p.dateRange}</div>
                           <div className="text-sm text-surface-700 group-hover:text-primary-500 transition-colors leading-snug font-medium">
                             {p.title}

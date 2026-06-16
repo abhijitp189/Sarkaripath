@@ -82,7 +82,7 @@ export default function CurrentAffairsPage() {
               </span>
             </div>
             <Link
-              href={`/current-affairs/${latest.slug}`}
+              href={`/current-affairs/${latest.slug}/`}
               className="block rounded-2xl bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 p-6 sm:p-8 group hover:shadow-2xl transition-all duration-300"
             >
               <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -157,7 +157,7 @@ export default function CurrentAffairsPage() {
                 return (
                   <Link
                     key={post.slug}
-                    href={`/current-affairs/${post.slug}`}
+                    href={`/current-affairs/${post.slug}/`}
                     className="card p-5 sm:p-6 group hover:border-primary-300 flex flex-col sm:flex-row sm:items-start gap-4 transition-all"
                   >
                     {/* Date block */}

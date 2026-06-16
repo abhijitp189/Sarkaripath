@@ -743,7 +743,7 @@ export default function EligibilityChecker() {
                     {r.status !== 'ineligible' && (
                       <div className="mt-4 pt-4 border-t border-surface-200 flex items-center justify-between gap-3">
                         <p className="text-xs text-surface-500 italic">💡 {r.tip}</p>
-                        <Link href={`/exams/${meta.slug}`} className="text-xs font-semibold text-primary-500 hover:text-primary-600 whitespace-nowrap flex items-center gap-1">
+                        <Link href={`/exams/${meta.slug}/`} className="text-xs font-semibold text-primary-500 hover:text-primary-600 whitespace-nowrap flex items-center gap-1">
                           Full 2026 Guide <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                         </Link>
                       </div>

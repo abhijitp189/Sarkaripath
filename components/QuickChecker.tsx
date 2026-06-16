@@ -189,7 +189,7 @@ export default function QuickChecker() {
                   <span className="text-xs text-surface-400">Min: {r.requiredQual}</span>
                 </div>
                 <p className="text-xs text-surface-500 mb-2 leading-relaxed">{r.reason}</p>
-                <Link href={`/exams/${r.slug}`} className="text-xs text-primary-500 hover:text-primary-600 font-medium">
+                <Link href={`/exams/${r.slug}/`} className="text-xs text-primary-500 hover:text-primary-600 font-medium">
                   View 2026 Guide →
                 </Link>
               </div>

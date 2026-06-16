@@ -178,7 +178,7 @@ export default function GuidesPage() {
                   </p>
                 </div>
                 <div className="flex-shrink-0">
-                  <Link href={`/guides/${featuredGuide.slug}`} className="btn-primary inline-flex items-center gap-2 text-sm whitespace-nowrap">
+                  <Link href={`/guides/${featuredGuide.slug}/`} className="btn-primary inline-flex items-center gap-2 text-sm whitespace-nowrap">
                     Read Guide
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -328,7 +328,7 @@ function GuideCard({
   return (
     <article>
       <Link
-        href={`/guides/${guide.slug}`}
+        href={`/guides/${guide.slug}/`}
         className={`card p-5 group flex flex-col border-l-4 ${borderColor} hover:border-primary-300 hover:-translate-y-1 transition-all duration-200 h-full`}
       >
         <div className="flex items-center justify-between mb-3">

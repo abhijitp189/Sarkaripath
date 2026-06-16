@@ -147,7 +147,7 @@ export default function ExamsMegaMenu({ variant = 'light' }: { variant?: 'light'
                 {featuredExams.map((exam) => (
                   <Link
                     key={exam.slug}
-                    href={`/exams/${exam.slug}`}
+                    href={`/exams/${exam.slug}/`}
                     onClick={() => setOpen(false)}
                     className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-primary-50 group transition-colors border border-transparent hover:border-primary-100"
                   >

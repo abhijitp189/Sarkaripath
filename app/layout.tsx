@@ -134,20 +134,20 @@ function Footer() {
           <div>
             <h3 className="font-heading font-semibold text-white mb-4 text-sm uppercase tracking-wider">Popular Exams</h3>
             <div className="space-y-2">
-              <FooterLink href="/exams/upsc-ias">UPSC IAS</FooterLink>
-              <FooterLink href="/exams/ssc-cgl">SSC CGL</FooterLink>
-              <FooterLink href="/exams/ibps-po">IBPS PO</FooterLink>
-              <FooterLink href="/exams/rrb-ntpc">RRB NTPC</FooterLink>
-              <FooterLink href="/exams/sbi-po">SBI PO</FooterLink>
+              <FooterLink href="/exams/upsc-ias/">UPSC IAS</FooterLink>
+              <FooterLink href="/exams/ssc-cgl/">SSC CGL</FooterLink>
+              <FooterLink href="/exams/ibps-po/">IBPS PO</FooterLink>
+              <FooterLink href="/exams/rrb-ntpc/">RRB NTPC</FooterLink>
+              <FooterLink href="/exams/sbi-po/">SBI PO</FooterLink>
             </div>
           </div>
 
           <div>
             <h3 className="font-heading font-semibold text-white mb-4 text-sm uppercase tracking-wider">Guides</h3>
             <div className="space-y-2">
-              <FooterLink href="/guides/how-to-start-government-exam-preparation">Getting Started</FooterLink>
-              <FooterLink href="/guides/best-free-resources-government-exams">Free Resources</FooterLink>
-              <FooterLink href="/guides/age-limit-relaxation-government-jobs">Age Relaxation</FooterLink>
+              <FooterLink href="/guides/how-to-start-government-exam-preparation/">Getting Started</FooterLink>
+              <FooterLink href="/guides/best-free-resources-government-exams/">Free Resources</FooterLink>
+              <FooterLink href="/guides/age-limit-relaxation-government-jobs/">Age Relaxation</FooterLink>
               <FooterLink href="/tools/eligibility-checker">Eligibility Checker</FooterLink>
             </div>
           </div>

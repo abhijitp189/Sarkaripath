@@ -572,7 +572,7 @@ function SscCgl2026Article({ post }: { post: any }) {
             <h3 className="font-heading font-bold text-xl mb-2">Start Your SSC CGL Preparation Today — It's Free</h3>
             <p className="text-primary-100 text-sm mb-5">Access free study notes, previous year papers, monthly current affairs, and exam guides on TaiyarHo. No fees. No hidden charges.</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/exams/ssc-cgl" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
+              <Link href="/exams/ssc-cgl/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
                 View Full SSC CGL Guide →
               </Link>
               <Link href="/resources" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
@@ -605,7 +605,7 @@ function SscCgl2026Article({ post }: { post: any }) {
             {/* Related */}
             <div className="card p-5 bg-primary-50 border-primary-200">
               <h3 className="font-heading font-semibold text-primary-800 mb-3 text-sm">Related Guide</h3>
-              <Link href="/exams/ssc-cgl" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">
+              <Link href="/exams/ssc-cgl/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">
                 Full SSC CGL Exam Guide →
               </Link>
               <p className="text-xs text-primary-500 mt-1">Books, study plan, free resources</p>
@@ -1066,7 +1066,7 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
             </div>
 
             <Callout type="tip" title="✅ Consistency Beats Intensity">
-              Studying 4 hours every single day for 6 months is <strong>far more effective</strong> than studying 12 hours for 10 days and then burning out. Set a realistic target and stick to it. Use our <Link href="/guides/study-plan-working-professionals" className="text-emerald-700 underline font-semibold">study plan for working professionals</Link> for more detailed strategies.
+              Studying 4 hours every single day for 6 months is <strong>far more effective</strong> than studying 12 hours for 10 days and then burning out. Set a realistic target and stick to it. Use our <Link href="/guides/study-plan-working-professionals/" className="text-emerald-700 underline font-semibold">study plan for working professionals</Link> for more detailed strategies.
             </Callout>
           </Section>
 
@@ -1130,7 +1130,7 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
             </div>
 
             <p className="text-sm text-surface-500">
-              For a complete list of exam-specific free resources, visit our <Link href="/resources" className="text-primary-500 font-semibold hover:underline">Free Resources Hub</Link> and our guide on <Link href="/guides/best-free-resources-government-exams" className="text-primary-500 font-semibold hover:underline">Best Free Resources for Government Exams</Link>.
+              For a complete list of exam-specific free resources, visit our <Link href="/resources" className="text-primary-500 font-semibold hover:underline">Free Resources Hub</Link> and our guide on <Link href="/guides/best-free-resources-government-exams/" className="text-primary-500 font-semibold hover:underline">Best Free Resources for Government Exams</Link>.
             </p>
           </Section>
 
@@ -1232,10 +1232,10 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
             <div className="card p-5 bg-primary-50 border-primary-200">
               <h3 className="font-heading font-semibold text-primary-800 mb-3 text-sm">Popular Exam Guides</h3>
               <div className="space-y-2">
-                <Link href="/exams/ssc-cgl" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
-                <Link href="/exams/ibps-po" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
-                <Link href="/exams/rrb-ntpc" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
-                <Link href="/exams/upsc-ias" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
+                <Link href="/exams/ssc-cgl/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
+                <Link href="/exams/ibps-po/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
+                <Link href="/exams/rrb-ntpc/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
+                <Link href="/exams/upsc-ias/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
               </div>
             </div>
 
@@ -1874,7 +1874,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
                 <strong className="text-white">SSC CGL offers more</strong> — more salary, more authority, more growth. But it demands more too. <strong className="text-white">SSC CHSL is genuinely worth it</strong> for anyone who qualifies, especially as a launchpad or a backup. The question isn't which exam is better — it's which one is right for <em>where you are right now</em>. Start preparing today. Both exams reward consistency over intelligence.
               </p>
               <div className="flex flex-wrap justify-center gap-3 mt-5">
-                <Link href="/exams/ssc-cgl" className="btn-primary text-sm px-5 py-2">
+                <Link href="/exams/ssc-cgl/" className="btn-primary text-sm px-5 py-2">
                   SSC CGL Full Guide →
                 </Link>
                 <Link href="/exams" className="btn-outline text-sm px-5 py-2">
@@ -1905,7 +1905,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
             <div className="card p-5">
               <div className="font-heading font-bold text-sm text-surface-800 mb-3">🔗 Related Pages</div>
               <div className="space-y-2">
-                <Link href="/exams/ssc-cgl" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> SSC CGL Full Guide</Link>
+                <Link href="/exams/ssc-cgl/" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> SSC CGL Full Guide</Link>
                 <Link href="/exams" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> All SSC Exams</Link>
                 <Link href="/tools/eligibility-checker/" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> Check Eligibility</Link>
                 <Link href="/blog" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> More Articles</Link>
@@ -2585,7 +2585,7 @@ function IbpsPOSalaryArticle({ post }: { post: any }) {
             <p className="text-primary-100 leading-relaxed mb-5">
               If you're serious about cracking IBPS PO, start your preparation now. The exam rewards consistency, and the payoff — both financial and in terms of career security — is real.
             </p>
-            <Link href="/exams/ibps-po" className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-5 py-2.5 rounded-xl text-sm hover:bg-primary-50 transition-colors">
+            <Link href="/exams/ibps-po/" className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold px-5 py-2.5 rounded-xl text-sm hover:bg-primary-50 transition-colors">
               View IBPS PO Complete Guide →
             </Link>
           </div>
@@ -2616,10 +2616,10 @@ function IbpsPOSalaryArticle({ post }: { post: any }) {
             <div className="card p-5">
               <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related</div>
               <div className="space-y-2">
-                <Link href="/exams/ibps-po" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/exams/ibps-po/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   IBPS PO Complete Exam Guide →
                 </Link>
-                <Link href="/exams/sbi-po" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/exams/sbi-po/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   SBI PO Salary Comparison →
                 </Link>
                 <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
@@ -2977,7 +2977,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
             <p className="text-surface-700 leading-relaxed mb-4">
               The UPSC CSE cut-off date for age calculation is <strong>August 1 of the exam year</strong>.
               Visit the{' '}
-              <Link href="/exams/upsc-ias" className="text-primary-500 hover:text-primary-600 underline">
+              <Link href="/exams/upsc-ias/" className="text-primary-500 hover:text-primary-600 underline">
                 UPSC IAS exam page
               </Link>{' '}
               for complete eligibility criteria, syllabus, and preparation resources.
@@ -3003,7 +3003,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
             </ul>
             <p className="text-surface-700 leading-relaxed mb-4">
               See the full{' '}
-              <Link href="/exams/ssc-cgl" className="text-primary-500 hover:text-primary-600 underline">
+              <Link href="/exams/ssc-cgl/" className="text-primary-500 hover:text-primary-600 underline">
                 SSC CGL exam guide
               </Link>{' '}
               including eligibility, syllabus, and preparation strategy.
@@ -3030,11 +3030,11 @@ function AgeLimit2026Article({ post }: { post: any }) {
             </ul>
             <p className="text-surface-700 leading-relaxed mb-4">
               Check the{' '}
-              <Link href="/exams/ibps-po" className="text-primary-500 hover:text-primary-600 underline">
+              <Link href="/exams/ibps-po/" className="text-primary-500 hover:text-primary-600 underline">
                 IBPS PO complete guide
               </Link>{' '}
               and the{' '}
-              <Link href="/exams/sbi-po" className="text-primary-500 hover:text-primary-600 underline">
+              <Link href="/exams/sbi-po/" className="text-primary-500 hover:text-primary-600 underline">
                 SBI PO complete guide
               </Link>{' '}
               for full eligibility breakdowns.
@@ -3060,7 +3060,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
             </ul>
             <p className="text-surface-700 leading-relaxed mb-4">
               Visit the{' '}
-              <Link href="/exams/rrb-ntpc" className="text-primary-500 hover:text-primary-600 underline">
+              <Link href="/exams/rrb-ntpc/" className="text-primary-500 hover:text-primary-600 underline">
                 RRB NTPC complete guide
               </Link>{' '}
               for full preparation resources.
@@ -3230,13 +3230,13 @@ function AgeLimit2026Article({ post }: { post: any }) {
                 <Link href="/exams" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Browse All 100 Exams →
                 </Link>
-                <Link href="/exams/upsc-ias" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/exams/upsc-ias/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   UPSC IAS Complete Guide →
                 </Link>
-                <Link href="/exams/ssc-cgl" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/exams/ssc-cgl/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   SSC CGL Complete Guide →
                 </Link>
-                <Link href="/exams/ibps-po" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/exams/ibps-po/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   IBPS PO Complete Guide →
                 </Link>
               </div>
@@ -3857,7 +3857,7 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
             </div>
             <Callout type="tip" title="✅ Free Resources on TaiyarHo">
               You don't need to buy every book. Check our{' '}
-              <Link href="/exams/rrb-ntpc" className="text-primary-600 underline">RRB NTPC complete guide</Link>{' '}
+              <Link href="/exams/rrb-ntpc/" className="text-primary-600 underline">RRB NTPC complete guide</Link>{' '}
               for free YouTube channels, mock test links, and study material — all free, no registration.
             </Callout>
           </Section>
@@ -3934,7 +3934,7 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
             <h3 className="font-heading font-bold text-primary-900 text-lg mb-2">Ready to Start Your Railway Journey?</h3>
             <p className="text-sm text-primary-700 mb-4">Check out our complete RRB NTPC guide with books, YouTube channels, mock tests — all free.</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/exams/rrb-ntpc" className="btn-primary text-sm">RRB NTPC Complete Guide →</Link>
+              <Link href="/exams/rrb-ntpc/" className="btn-primary text-sm">RRB NTPC Complete Guide →</Link>
               <Link href="/tools/eligibility-checker/" className="btn-outline text-sm">Check My Eligibility →</Link>
             </div>
           </div>
@@ -3944,9 +3944,9 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
             <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Read Next</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
-                { href: '/blog/ssc-cgl-2026-syllabus-complete-guide', label: 'SSC CGL 2026 Syllabus Guide' },
-                { href: '/blog/government-exam-age-limit-obc-sc-st-relaxation-2026', label: 'Govt Exam Age Limits & Relaxation' },
-                { href: '/exams/rrb-ntpc', label: 'RRB NTPC Complete Preparation Guide' },
+                { href: '/blog/ssc-cgl-2026-syllabus-complete-guide/', label: 'SSC CGL 2026 Syllabus Guide' },
+                { href: '/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/', label: 'Govt Exam Age Limits & Relaxation' },
+                { href: '/exams/rrb-ntpc/', label: 'RRB NTPC Complete Preparation Guide' },
                 { href: '/resources', label: 'Free Study Resources Hub' },
               ].map(link => (
                 <Link key={link.href} href={link.href} className="text-sm text-primary-600 hover:text-primary-700 hover:underline flex items-center gap-1">
@@ -3977,7 +3977,7 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
 
             <div className="card p-5 bg-emerald-50 border-emerald-200">
               <div className="text-xs font-semibold text-emerald-800 uppercase tracking-wider mb-2">Related Exam</div>
-              <Link href="/exams/rrb-ntpc" className="block text-sm font-semibold text-emerald-700 hover:text-emerald-900 hover:underline">
+              <Link href="/exams/rrb-ntpc/" className="block text-sm font-semibold text-emerald-700 hover:text-emerald-900 hover:underline">
                 RRB NTPC Complete Guide →
               </Link>
               <p className="text-xs text-emerald-600 mt-1">Eligibility, salary, books, study plan</p>
@@ -4633,7 +4633,7 @@ function HighestSalary12thArticle({ post }: { post: any }) {
             <div className="card p-5">
               <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related</div>
               <div className="space-y-2">
-                <Link href="/exams/ssc-cgl" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL Complete Guide →</Link>
+                <Link href="/exams/ssc-cgl/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL Complete Guide →</Link>
                 <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL 2026 →</Link>
                 <Link href="/blog/ibps-po-salary-in-hand-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 →</Link>
                 <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
@@ -5119,7 +5119,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
           <div className="card p-5">
             <div className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Related Guides</div>
             <div className="space-y-2">
-              <Link href="/blog/government-exam-preparation-beginners-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Govt Exam Prep for Beginners →</Link>
+              <Link href="/guides/how-to-start-government-exam-preparation/" className="block text-sm text-primary-600 hover:underline leading-snug">Govt Exam Prep for Beginners →</Link>
               <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Age Limit & Relaxation Guide →</Link>
               <Link href="/blog/highest-salary-government-exam-after-12th-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">Highest Salary Exams After 12th →</Link>
               <Link href="/exams/" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 101 Exams →</Link>
@@ -5493,8 +5493,8 @@ function PayCommissionArticle({ post }: { post: any }) {
                     { exam: 'RRB NTPC', levels: 'Levels 2–7 (Clerk to Station Master)', link: '/exams/rrb-ntpc/' },
                     { exam: 'UPSC IAS/IPS/IFS', levels: 'Level 10 (₹56,100 entry)', link: '/exams/upsc-ias/' },
                     { exam: 'SSC GD Constable', levels: 'Level 3 (₹21,700)', link: '/exams/ssc-gd-constable/' },
-                    { exam: 'NDA / CDS / AFCAT', levels: 'Defence services pay scales', link: '/exams/nda/' },
-                    { exam: 'DRDO / ISRO / BARC', levels: 'Scientific Grade B onwards', link: '/exams/drdo-scientist/' },
+                    { exam: 'NDA / CDS / AFCAT', levels: 'Defence services pay scales', link: '/exams/upsc-nda/' },
+                    { exam: 'DRDO / ISRO / BARC', levels: 'Scientific Grade B onwards', link: '/exams/drdo-ceptam/' },
                   ].map(item => (
                     <div key={item.exam} className="flex items-start justify-between gap-2">
                       <div>
@@ -7883,7 +7883,7 @@ function SscCglSalaryArticle({ post }: { post: any }) {
                 The 8th Pay Commission, when it arrives, will push these figures 30–40% higher still. Start preparing now — and by the time you join service, you may step directly into the revised pay structure.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/exams/ssc-cgl" className="btn-primary text-sm">SSC CGL 2026 Complete Details →</Link>
+                <Link href="/exams/ssc-cgl/" className="btn-primary text-sm">SSC CGL 2026 Complete Details →</Link>
                 <Link href="/tools/eligibility-checker" className="btn-outline text-sm">Check Your SSC CGL Eligibility</Link>
               </div>
             </div>
@@ -7951,9 +7951,9 @@ function SscCglSalaryArticle({ post }: { post: any }) {
             <div className="card p-5">
               <div className="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-3">🔗 RELATED</div>
               <div className="space-y-2">
-                <Link href="/exams/ssc-cgl" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL 2026 Full Details →</Link>
+                <Link href="/exams/ssc-cgl/" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL 2026 Full Details →</Link>
                 <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Check Your Eligibility →</Link>
-                <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL vs CHSL 2026 →</Link>
+                <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026/" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL vs CHSL 2026 →</Link>
               </div>
             </div>
           </div>
@@ -8086,7 +8086,7 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
               </table>
             </div>
             <p className="text-surface-700 text-sm leading-relaxed">
-              When you clear UPSC CSE, you join elite all-India cadres like IAS or IPS. Your career operates on a national canvas. Conversely, a State PSC officer (such as through <Link href="/exams/uppsc-pcs" className="text-primary-500 hover:underline">UPPSC PCS</Link> or <Link href="/exams/bpsc-cce" className="text-primary-500 hover:underline">BPSC CCE</Link>) enters state-level administrative or police ranks, with jurisdiction limited to that state&apos;s borders.
+              When you clear UPSC CSE, you join elite all-India cadres like IAS or IPS. Your career operates on a national canvas. Conversely, a State PSC officer (such as through <Link href="/exams/uppsc-pcs/" className="text-primary-500 hover:underline">UPPSC PCS</Link> or <Link href="/exams/bpsc-cce/" className="text-primary-500 hover:underline">BPSC CCE</Link>) enters state-level administrative or police ranks, with jurisdiction limited to that state&apos;s borders.
             </p>
           </section>
 
@@ -8109,13 +8109,13 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
               <div className="card p-5">
                 <h3 className="text-lg font-heading font-semibold text-surface-800 mb-2">1. The Local General Knowledge Load</h3>
                 <p className="text-sm text-surface-700 leading-relaxed">
-                  You cannot clear a state service exam simply by being good at national current affairs. Most states reserve 20–30% of their question papers for localized content — tribal histories, regional economic budgets, local geography, and historical movements specific to that state. For example, <Link href="/exams/wbcs-executive" className="text-primary-500 hover:underline">WBCS Executive</Link> has a significant Bengal-specific component.
+                  You cannot clear a state service exam simply by being good at national current affairs. Most states reserve 20–30% of their question papers for localized content — tribal histories, regional economic budgets, local geography, and historical movements specific to that state. For example, <Link href="/exams/wbcs-executive/" className="text-primary-500 hover:underline">WBCS Executive</Link> has a significant Bengal-specific component.
                 </p>
               </div>
               <div className="card p-5">
                 <h3 className="text-lg font-heading font-semibold text-surface-800 mb-2">2. Mandatory Regional Languages</h3>
                 <p className="text-sm text-surface-700 leading-relaxed">
-                  While UPSC allows you to write papers in various scheduled languages, it treats regional language papers as qualifying thresholds only. Many State PSC exams require high proficiency in the local language. Clearing <Link href="/exams/tnpsc-group-1" className="text-primary-500 hover:underline">TNPSC Group 1</Link> requires Tamil proficiency, while West Bengal and Maharashtra have strong regional language requirements.
+                  While UPSC allows you to write papers in various scheduled languages, it treats regional language papers as qualifying thresholds only. Many State PSC exams require high proficiency in the local language. Clearing <Link href="/exams/tnpsc-group-1/" className="text-primary-500 hover:underline">TNPSC Group 1</Link> requires Tamil proficiency, while West Bengal and Maharashtra have strong regional language requirements.
                 </p>
               </div>
             </div>
@@ -8188,11 +8188,11 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
             </div>
             <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4 mb-5">
               <p className="text-sm text-surface-700 leading-relaxed">
-                <strong>⚠️ Domicile Caveat:</strong> Age relaxations for OBC, SC, and ST in State PSC exams are strictly limited to candidates holding a valid domicile certificate from that state. If you live in Bihar and apply for <Link href="/exams/rpsc-ras" className="text-primary-500 hover:underline">RPSC RAS</Link>, you will be treated as an Unreserved (General) candidate.
+                <strong>⚠️ Domicile Caveat:</strong> Age relaxations for OBC, SC, and ST in State PSC exams are strictly limited to candidates holding a valid domicile certificate from that state. If you live in Bihar and apply for <Link href="/exams/rpsc-ras/" className="text-primary-500 hover:underline">RPSC RAS</Link>, you will be treated as an Unreserved (General) candidate.
               </p>
             </div>
             <p className="text-surface-700 text-sm leading-relaxed">
-              State PSCs generally offer much wider age windows — making them an excellent option for aspirants approaching the UPSC age ceiling. For a complete breakdown of category-wise age relaxations across all major exams, read our <Link href="/guides/age-limit-relaxation-government-jobs" className="text-primary-500 hover:underline">guide on age relaxation for government jobs</Link>.
+              State PSCs generally offer much wider age windows — making them an excellent option for aspirants approaching the UPSC age ceiling. For a complete breakdown of category-wise age relaxations across all major exams, read our <Link href="/guides/age-limit-relaxation-government-jobs/" className="text-primary-500 hover:underline">guide on age relaxation for government jobs</Link>.
             </p>
           </section>
 
@@ -8271,7 +8271,7 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
               </div>
             </div>
             <p className="text-surface-700 text-sm leading-relaxed">
-              Once implemented, basic pay components are expected to rise significantly, and backdated arrears will apply from January 2026. Both UPSC and State PSC officers will benefit. For a deeper breakdown, see our <Link href="/blog/8th-pay-commission-salary-calculator-2026" className="text-primary-500 hover:underline">8th Pay Commission Salary Calculator</Link>.
+              Once implemented, basic pay components are expected to rise significantly, and backdated arrears will apply from January 2026. Both UPSC and State PSC officers will benefit. For a deeper breakdown, see our <Link href="/blog/8th-pay-commission-salary-calculator-2026/" className="text-primary-500 hover:underline">8th Pay Commission Salary Calculator</Link>.
             </p>
           </section>
 
@@ -8396,7 +8396,7 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
               ))}
             </div>
             <p className="text-surface-700 text-sm leading-relaxed">
-              Not sure where to begin? Start with our <Link href="/guides/how-to-start-government-exam-preparation" className="text-primary-500 hover:underline">guide on how to start government exam preparation</Link>.
+              Not sure where to begin? Start with our <Link href="/guides/how-to-start-government-exam-preparation/" className="text-primary-500 hover:underline">guide on how to start government exam preparation</Link>.
             </p>
           </section>
 
@@ -8434,7 +8434,7 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
                 Whichever path you choose, the key is to start now, stay consistent, and keep a backup plan. Government service — whether central or state — remains one of the most secure and respected career paths in India.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/exams/upsc-ias" className="btn-primary text-sm">UPSC IAS 2026 Full Details →</Link>
+                <Link href="/exams/upsc-ias/" className="btn-primary text-sm">UPSC IAS 2026 Full Details →</Link>
                 <Link href="/tools/eligibility-checker" className="btn-outline text-sm">Check Your Eligibility</Link>
               </div>
             </div>
@@ -8497,17 +8497,17 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
 
             <div className="card p-5 bg-emerald-50 border-emerald-200">
               <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-3">🔗 RELATED EXAM</div>
-              <Link href="/exams/upsc-ias" className="block mb-3">
+              <Link href="/exams/upsc-ias/" className="block mb-3">
                 <span className="font-heading font-semibold text-sm text-surface-800 hover:text-primary-500">UPSC Civil Services (IAS/IPS/IFS) →</span>
                 <p className="text-xs text-surface-500 mt-1">Full details, syllabus, salary &amp; eligibility</p>
               </Link>
               <div className="border-t border-emerald-200 pt-3">
                 <p className="text-xs font-semibold text-emerald-700 mb-2">EXPLORE STATE PSCs</p>
                 <div className="space-y-1">
-                  <Link href="/exams/uppsc-pcs" className="block text-xs text-surface-600 hover:text-primary-500">UPPSC PCS →</Link>
-                  <Link href="/exams/bpsc-cce" className="block text-xs text-surface-600 hover:text-primary-500">BPSC CCE →</Link>
-                  <Link href="/exams/mpsc-rajyaseva" className="block text-xs text-surface-600 hover:text-primary-500">MPSC Rajyaseva →</Link>
-                  <Link href="/exams/rpsc-ras" className="block text-xs text-surface-600 hover:text-primary-500">RPSC RAS →</Link>
+                  <Link href="/exams/uppsc-pcs/" className="block text-xs text-surface-600 hover:text-primary-500">UPPSC PCS →</Link>
+                  <Link href="/exams/bpsc-cce/" className="block text-xs text-surface-600 hover:text-primary-500">BPSC CCE →</Link>
+                  <Link href="/exams/mpsc-rajyaseva/" className="block text-xs text-surface-600 hover:text-primary-500">MPSC Rajyaseva →</Link>
+                  <Link href="/exams/rpsc-ras/" className="block text-xs text-surface-600 hover:text-primary-500">RPSC RAS →</Link>
                 </div>
               </div>
             </div>
@@ -8515,8 +8515,8 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
             <div className="card p-5">
               <div className="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-3">📚 RELATED ARTICLES</div>
               <div className="space-y-2">
-                <Link href="/blog/8th-pay-commission-salary-calculator-2026" className="block text-sm text-surface-600 hover:text-primary-500">8th Pay Commission Calculator →</Link>
-                <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026" className="block text-sm text-surface-600 hover:text-primary-500">Age Relaxation Guide 2026 →</Link>
+                <Link href="/blog/8th-pay-commission-salary-calculator-2026/" className="block text-sm text-surface-600 hover:text-primary-500">8th Pay Commission Calculator →</Link>
+                <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-surface-600 hover:text-primary-500">Age Relaxation Guide 2026 →</Link>
                 <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Eligibility Checker Tool →</Link>
               </div>
             </div>
@@ -8734,7 +8734,7 @@ function RpscApoRecruitmentArticle({ post }: { post: any }) {
               Age relaxation is applicable as per Rajasthan Government rules for reserved categories (SC, ST, OBC, PwD, EWS, women, etc.). Check the official notification for the exact relaxation years for each category.
             </p>
             <div className="mt-3">
-              <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026" className="inline-flex items-center text-sm font-medium text-primary-500 hover:text-primary-600">
+              <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="inline-flex items-center text-sm font-medium text-primary-500 hover:text-primary-600">
                 Read our complete guide on age relaxation for government exams →
               </Link>
             </div>
@@ -8965,7 +8965,7 @@ function RpscApoRecruitmentArticle({ post }: { post: any }) {
 
             <div className="card p-5 bg-emerald-50 border-emerald-200">
               <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-3">🔗 RELATED EXAM</div>
-              <Link href="/exams/rpsc-ras" className="block mb-3">
+              <Link href="/exams/rpsc-ras/" className="block mb-3">
                 <span className="font-heading font-semibold text-sm text-surface-800 hover:text-primary-500">RPSC RAS/RTS Exam →</span>
                 <p className="text-xs text-surface-500 mt-1">Another major RPSC exam — details, syllabus & eligibility</p>
               </Link>
@@ -8974,8 +8974,8 @@ function RpscApoRecruitmentArticle({ post }: { post: any }) {
             <div className="card p-5">
               <div className="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-3">📚 RELATED ARTICLES</div>
               <div className="space-y-2">
-                <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026" className="block text-sm text-surface-600 hover:text-primary-500">Age Relaxation Guide 2026 →</Link>
-                <Link href="/blog/upsc-vs-state-psc-2026" className="block text-sm text-surface-600 hover:text-primary-500">UPSC vs State PSC 2026 →</Link>
+                <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-surface-600 hover:text-primary-500">Age Relaxation Guide 2026 →</Link>
+                <Link href="/blog/upsc-vs-state-psc-2026/" className="block text-sm text-surface-600 hover:text-primary-500">UPSC vs State PSC 2026 →</Link>
                 <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Eligibility Checker Tool →</Link>
               </div>
             </div>
@@ -9501,7 +9501,7 @@ function BestYouTubeChannelsSscCglArticle({ post }: { post: any }) {
             {/* Related Exam Card */}
             <div className="card p-5 bg-emerald-50 border-emerald-200">
               <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-3">🔗 Related Exam</div>
-              <Link href="/exams/ssc-cgl" className="block mb-3">
+              <Link href="/exams/ssc-cgl/" className="block mb-3">
                 <span className="font-heading font-semibold text-sm text-surface-800 hover:text-primary-500">SSC CGL 2026 — Full Exam Details →</span>
                 <p className="text-xs text-surface-500 mt-1">Syllabus, salary, eligibility &amp; exam pattern</p>
               </Link>

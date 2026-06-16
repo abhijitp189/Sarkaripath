@@ -9,6 +9,36 @@
       "source": "/tools/age-calculator/",
       "destination": "/tools/eligibility-checker/",
       "permanent": true
+    },
+    {
+      "source": "/exams/nvs-teacher",
+      "destination": "/exams/nvs-teaching/",
+      "permanent": true
+    },
+    {
+      "source": "/exams/nvs-teacher/",
+      "destination": "/exams/nvs-teaching/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-to-apply",
+      "destination": "/guides/how-to-fill-government-job-application-form/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-to-apply/",
+      "destination": "/guides/how-to-fill-government-job-application-form/",
+      "permanent": true
+    },
+    {
+      "source": "/exams/delhi-high-court-jja",
+      "destination": "/exams/",
+      "permanent": true
+    },
+    {
+      "source": "/exams/delhi-high-court-jja/",
+      "destination": "/exams/",
+      "permanent": true
     }
   ]
 }

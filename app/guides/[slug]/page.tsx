@@ -231,7 +231,7 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
           <h3 className="font-heading font-bold text-lg text-surface-800 mb-4">Related Guides</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {guides.filter((g) => g.slug !== params.slug).slice(0, 4).map((g) => (
-              <Link key={g.slug} href={`/guides/${g.slug}`} className="card p-4 group">
+              <Link key={g.slug} href={`/guides/${g.slug}/`} className="card p-4 group">
                 <span className="badge badge-accent mb-2 text-xs">{g.category}</span>
                 <h4 className="font-semibold text-sm text-surface-800 group-hover:text-primary-500 transition-colors">{g.title}</h4>
               </Link>
@@ -613,7 +613,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
               </div>
             </div>
             <GCallout type="tip" title="✅ Consistency Beats Intensity">
-              4 hours every single day for 6 months beats 12 hours for 10 days and then burning out. See our <Link href="/guides/study-plan-working-professionals" className="text-emerald-700 underline font-semibold">full guide for working professionals</Link>.
+              4 hours every single day for 6 months beats 12 hours for 10 days and then burning out. See our <Link href="/guides/study-plan-working-professionals/" className="text-emerald-700 underline font-semibold">full guide for working professionals</Link>.
             </GCallout>
           </GSection>
 
@@ -662,7 +662,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
                 </div>
               ))}
             </div>
-            <p className="text-sm text-surface-500">Full curated list at our <Link href="/resources" className="text-primary-500 font-semibold hover:underline">Free Resources Hub</Link> and <Link href="/guides/best-free-resources-government-exams" className="text-primary-500 font-semibold hover:underline">Best Free Resources guide</Link>.</p>
+            <p className="text-sm text-surface-500">Full curated list at our <Link href="/resources" className="text-primary-500 font-semibold hover:underline">Free Resources Hub</Link> and <Link href="/guides/best-free-resources-government-exams/" className="text-primary-500 font-semibold hover:underline">Best Free Resources guide</Link>.</p>
           </GSection>
 
           {/* MISTAKES */}
@@ -748,10 +748,10 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
             <div className="card p-5 bg-primary-50 border-primary-200">
               <h3 className="font-heading font-semibold text-primary-800 mb-3 text-sm">Popular Exam Guides</h3>
               <div className="space-y-2">
-                <Link href="/exams/ssc-cgl" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
-                <Link href="/exams/ibps-po" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
-                <Link href="/exams/rrb-ntpc" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
-                <Link href="/exams/upsc-ias" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
+                <Link href="/exams/ssc-cgl/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
+                <Link href="/exams/ibps-po/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
+                <Link href="/exams/rrb-ntpc/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
+                <Link href="/exams/upsc-ias/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
               </div>
             </div>
             <div className="card p-5">
@@ -1286,16 +1286,16 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
                 <a href="https://ncert.nic.in/textbook.php" className="block hover:underline font-medium" target="_blank" rel="noopener noreferrer">1. Download NCERT Books →</a>
                 <Link href="/resources" className="block hover:underline font-medium">2. View All Resources →</Link>
                 <Link href="/tools/eligibility-checker" className="block hover:underline font-medium">3. Find Your Exams →</Link>
-                <Link href="/guides/how-to-start-government-exam-preparation" className="block hover:underline font-medium">4. Read Beginner&apos;s Guide →</Link>
+                <Link href="/guides/how-to-start-government-exam-preparation/" className="block hover:underline font-medium">4. Read Beginner&apos;s Guide →</Link>
               </div>
             </div>
             <div className="card p-5 bg-primary-50 border-primary-200">
               <h3 className="font-heading font-semibold text-primary-800 mb-3 text-sm">Popular Exam Guides</h3>
               <div className="space-y-2">
-                <Link href="/exams/ssc-cgl" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
-                <Link href="/exams/ibps-po" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
-                <Link href="/exams/rrb-ntpc" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
-                <Link href="/exams/upsc-ias" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
+                <Link href="/exams/ssc-cgl/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
+                <Link href="/exams/ibps-po/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
+                <Link href="/exams/rrb-ntpc/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
+                <Link href="/exams/upsc-ias/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
               </div>
             </div>
             <div className="card p-5">
@@ -1898,7 +1898,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 { slug: 'age-limit-relaxation-government-jobs', cat: 'Eligibility', title: 'Complete Guide to Age Limit & Relaxation for Government Jobs' },
                 { slug: 'documents-needed-government-job', cat: 'Documents', title: 'Documents Required for Government Job (2026) – Complete Checklist' },
               ].map(g => (
-                <Link key={g.slug} href={`/guides/${g.slug}`} className="card p-4 group">
+                <Link key={g.slug} href={`/guides/${g.slug}/`} className="card p-4 group">
                   <span className="badge-primary mb-2 text-xs inline-block">{g.cat}</span>
                   <h4 className="font-semibold text-sm text-surface-800 group-hover:text-primary-500 transition-colors leading-snug">{g.title}</h4>
                 </Link>
@@ -2486,7 +2486,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
             <h3 className="font-heading font-bold text-lg text-surface-800 mb-4">Related Guides</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {guides.filter((g) => g.slug !== guide.slug).slice(0, 4).map((g) => (
-                <Link key={g.slug} href={`/guides/${g.slug}`} className="card p-4 group">
+                <Link key={g.slug} href={`/guides/${g.slug}/`} className="card p-4 group">
                   <span className="badge badge-accent mb-2 text-xs">{g.category}</span>
                   <h4 className="font-semibold text-sm text-surface-800 group-hover:text-primary-500 transition-colors">{g.title}</h4>
                 </Link>
@@ -2516,19 +2516,19 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Popular Exam Pages</h3>
               <div className="space-y-2">
-                <Link href="/exams/upsc-ias" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
-                <Link href="/exams/ssc-cgl" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
-                <Link href="/exams/ibps-po" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
-                <Link href="/exams/sbi-po" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SBI PO →</Link>
-                <Link href="/exams/rrb-ntpc" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
+                <Link href="/exams/upsc-ias/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">UPSC IAS →</Link>
+                <Link href="/exams/ssc-cgl/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SSC CGL →</Link>
+                <Link href="/exams/ibps-po/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">IBPS PO →</Link>
+                <Link href="/exams/sbi-po/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">SBI PO →</Link>
+                <Link href="/exams/rrb-ntpc/" className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">RRB NTPC →</Link>
               </div>
             </div>
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Related Guides</h3>
               <div className="space-y-2">
-                <Link href="/guides/how-to-start-government-exam-preparation" className="text-sm text-primary-500 hover:text-primary-600 font-medium block">How to Start Preparation →</Link>
-                <Link href="/guides/documents-needed-government-job" className="text-sm text-primary-500 hover:text-primary-600 font-medium block">Documents Required →</Link>
-                <Link href="/guides/how-to-fill-government-job-application-form" className="text-sm text-primary-500 hover:text-primary-600 font-medium block">How to Fill Application Form →</Link>
+                <Link href="/guides/how-to-start-government-exam-preparation/" className="text-sm text-primary-500 hover:text-primary-600 font-medium block">How to Start Preparation →</Link>
+                <Link href="/guides/documents-needed-government-job/" className="text-sm text-primary-500 hover:text-primary-600 font-medium block">Documents Required →</Link>
+                <Link href="/guides/how-to-fill-government-job-application-form/" className="text-sm text-primary-500 hover:text-primary-600 font-medium block">How to Fill Application Form →</Link>
               </div>
             </div>
           </div>
@@ -3013,7 +3013,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
               <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📚 Related Guides</div>
               <div className="space-y-3">
                 {guides.filter(g => g.slug !== guide.slug).slice(0, 4).map(g => (
-                  <Link key={g.slug} href={`/guides/${g.slug}`} className="block text-sm text-primary-500 hover:underline leading-snug">
+                  <Link key={g.slug} href={`/guides/${g.slug}/`} className="block text-sm text-primary-500 hover:underline leading-snug">
                     {g.title}
                   </Link>
                 ))}
@@ -3544,17 +3544,17 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
             <div className="card p-5">
               <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">🔗 Related Guides</div>
               <div className="space-y-3">
-                <Link href="/guides/how-to-fill-government-job-application-form" className="block text-sm text-primary-500 hover:underline leading-snug">How to Fill Application Form →</Link>
-                <Link href="/guides/age-limit-relaxation-government-jobs" className="block text-sm text-primary-500 hover:underline leading-snug">Age Limit & Relaxation Guide →</Link>
-                <Link href="/guides/how-to-start-government-exam-preparation" className="block text-sm text-primary-500 hover:underline leading-snug">Beginner's Preparation Roadmap →</Link>
+                <Link href="/guides/how-to-fill-government-job-application-form/" className="block text-sm text-primary-500 hover:underline leading-snug">How to Fill Application Form →</Link>
+                <Link href="/guides/age-limit-relaxation-government-jobs/" className="block text-sm text-primary-500 hover:underline leading-snug">Age Limit & Relaxation Guide →</Link>
+                <Link href="/guides/how-to-start-government-exam-preparation/" className="block text-sm text-primary-500 hover:underline leading-snug">Beginner's Preparation Roadmap →</Link>
               </div>
             </div>
             <div className="card p-5">
               <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">🚀 Quick Links</div>
               <div className="space-y-2">
-                <Link href="/exams/ssc-cgl" className="block text-sm text-primary-500 hover:underline">SSC CGL →</Link>
-                <Link href="/exams/ibps-po" className="block text-sm text-primary-500 hover:underline">IBPS PO →</Link>
-                <Link href="/exams/sbi-po" className="block text-sm text-primary-500 hover:underline">SBI PO →</Link>
+                <Link href="/exams/ssc-cgl/" className="block text-sm text-primary-500 hover:underline">SSC CGL →</Link>
+                <Link href="/exams/ibps-po/" className="block text-sm text-primary-500 hover:underline">IBPS PO →</Link>
+                <Link href="/exams/sbi-po/" className="block text-sm text-primary-500 hover:underline">SBI PO →</Link>
                 <Link href="/tools/eligibility-checker" className="block text-sm text-primary-500 hover:underline">Eligibility Checker →</Link>
               </div>
             </div>

@@ -754,7 +754,7 @@ function ExamCard({ exam, isPast }: { exam: UpcomingExam; isPast?: boolean }) {
 
         {hasPage ? (
           <Link
-            href={`/exams/${exam.internalSlug}`}
+            href={`/exams/${exam.internalSlug}/`}
             className="text-xs font-semibold text-primary-600 hover:text-primary-700 flex items-center gap-1"
           >
             View Guide →
