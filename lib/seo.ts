@@ -55,7 +55,12 @@ export function generateExamJsonLd(exam: {
       '@type': 'Organization',
       name: exam.conductingBody,
     },
-    url: `${SITE_URL}/exams/${exam.slug}`,
+    url: `${SITE_URL}/exams/${exam.slug}/`,
+    inLanguage: ['en-IN', 'hi-IN'],
+    isAccessibleForFree: true,
+    about: 'Indian government exam preparation',
+    educationalLevel: 'Government recruitment / competitive examination',
+    publisher: { '@id': `${SITE_URL}/#organization` },
   };
 }
 

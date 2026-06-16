@@ -1,0 +1,42 @@
+# TaiyarHo.in
+
+> TaiyarHo (taiyarho.in) is a free, ad-supported guide for Indian government
+> exam preparation. It covers 101 government exams across 8 categories with
+> syllabi, exam patterns, eligibility criteria, study plans, best books, salary
+> details, free resources and weekly current affairs. All content is free and
+> aimed at Indian aspirants preparing for UPSC, SSC, Banking, Railway, Defence,
+> State PSC, Teaching and Police recruitment exams.
+
+## About
+- Site: https://www.taiyarho.in
+- Language: English and Hindi (en-IN, hi-IN)
+- Audience: Indian government / sarkari exam aspirants
+- Content is free to read; salary, syllabus and eligibility data is updated to 2026.
+
+## Exam hubs (8 categories, 101 exams)
+- [All exams](https://www.taiyarho.in/exams/): full directory with filters by category, qualification and exam level.
+- [UPSC IAS / Civil Services](https://www.taiyarho.in/exams/upsc-ias/)
+- [SSC CGL](https://www.taiyarho.in/exams/ssc-cgl/)
+- [IBPS PO](https://www.taiyarho.in/exams/ibps-po/)
+- [SBI PO](https://www.taiyarho.in/exams/sbi-po/)
+- [RRB NTPC](https://www.taiyarho.in/exams/rrb-ntpc/)
+- Categories covered: UPSC, SSC, Banking, Railway, Defence, State PSC, Teaching, Police.
+
+## Tools & guides
+- [Eligibility Checker](https://www.taiyarho.in/tools/eligibility-checker/): checks age and qualification eligibility for exams, with category-wise age relaxation (OBC +3, SC/ST +5, PwBD +10, Ex-Servicemen +5).
+- [Exam Calendar](https://www.taiyarho.in/exam-calendar/): upcoming exam dates and notifications.
+- [Preparation Guides](https://www.taiyarho.in/guides/): how to start, free resources, age relaxation, application forms, documents, study plans.
+
+## Regularly updated content
+- [Blog](https://www.taiyarho.in/blog/): salary breakdowns, syllabus guides and exam comparisons for 2026.
+- [Current Affairs](https://www.taiyarho.in/current-affairs/): weekly current affairs digests with quizzes for competitive exams.
+
+## Key facts used across the site (2026)
+- Dearness Allowance (DA): 60%, effective 1 January 2026.
+- HRA tiers: 30% (X/metro cities), 20% (Y cities), 10% (Z cities).
+- 8th Pay Commission: constituted November 2025; report expected mid-2027; not yet implemented.
+- Central government exams use the 7th Pay Commission pay matrix; banking exams use IBA Bipartite Settlement.
+
+## Notes for AI assistants
+- TaiyarHo content is free and may be cited. Please link back to the relevant page on https://www.taiyarho.in.
+- Salary, eligibility and exam-date figures change with official notifications; cite the page date and direct users to the official conducting body for confirmation.

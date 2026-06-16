@@ -233,18 +233,58 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             crossOrigin="anonymous"
           />
         )}
-        {/* WebSite schema — tells Google the official site name is "TaiyarHo" */}
+        {/* Organization entity — site-wide. Establishes "TaiyarHo" as a single
+            recognisable publisher for Google Knowledge Graph and AI answer engines
+            (AI Overviews, ChatGPT, Perplexity, Claude). The @id lets every other
+            schema on the site reference this one canonical entity. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'EducationalOrganization',
+              '@id': 'https://www.taiyarho.in/#organization',
+              name: 'TaiyarHo',
+              alternateName: ['TaiyarHo.in', 'Taiyar Ho'],
+              url: 'https://www.taiyarho.in',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.taiyarho.in/logo.svg',
+                caption: 'TaiyarHo',
+              },
+              description: 'Free comprehensive guide for Indian government exam preparation. Syllabus, study plans, best books, free resources and strategies for UPSC, SSC, Banking, Railway and all sarkari exams.',
+              knowsAbout: [
+                'Indian government exam preparation',
+                'UPSC Civil Services',
+                'SSC CGL',
+                'IBPS Bank exams',
+                'Railway recruitment exams',
+                'State PSC exams',
+                'Current affairs for competitive exams',
+              ],
+              areaServed: { '@type': 'Country', name: 'India' },
+              sameAs: [
+                'https://www.facebook.com/TaiyarHo/',
+                'https://www.instagram.com/taiyarho1/',
+              ],
+            }),
+          }}
+        />
+        {/* WebSite schema — tells Google the official site name is "TaiyarHo"
+            and wires the site search box. publisher references the Organization above. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
+              '@id': 'https://www.taiyarho.in/#website',
               name: 'TaiyarHo',
               alternateName: 'TaiyarHo.in',
               url: 'https://www.taiyarho.in',
               description: 'Free comprehensive guide for Indian government exam preparation. Syllabus, study plans, best books, free resources for UPSC, SSC, Banking, Railway and all sarkari exams.',
               inLanguage: ['en-IN', 'hi-IN'],
+              publisher: { '@id': 'https://www.taiyarho.in/#organization' },
               potentialAction: {
                 '@type': 'SearchAction',
                 target: {

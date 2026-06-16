@@ -8,31 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.taiyarho.in/' },
 };
 
-const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'TaiyarHo',
-  url: 'https://www.taiyarho.in',
-  logo: 'https://www.taiyarho.in/logo.svg',
-  description: 'Free comprehensive guide for Indian government exam preparation. Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all government exams.',
-  sameAs: [],
-};
-
-const websiteJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'TaiyarHo',
-  url: 'https://www.taiyarho.in',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: 'https://www.taiyarho.in/exams/?q={search_term_string}',
-    },
-    'query-input': 'required name=search_term_string',
-  },
-};
-
 // Color coding per exam category (used in Browse by Category section)
 const categoryColors: Record<string, { iconBg: string; iconText: string; badgeBg: string; badgeText: string; hoverBorder: string }> = {
   'UPSC':      { iconBg: 'bg-purple-100', iconText: 'text-purple-600', badgeBg: 'bg-purple-100', badgeText: 'text-purple-700', hoverBorder: 'hover:border-purple-300' },
@@ -77,8 +52,9 @@ const features = [
 export default function HomePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+      {/* Organization + WebSite JSON-LD now live site-wide in app/layout.tsx
+          (single canonical entity with @id and filled sameAs) — removed here to
+          avoid duplicate entities on the homepage. */}
 
       {/* ── Hero Section ─────────────────────────────────────────────────── */}
       <section className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800 text-white overflow-hidden" style={{ minHeight: '520px' }}>
@@ -169,7 +145,7 @@ export default function HomePage() {
           <p className="section-subtitle mb-10">Detailed preparation guides with syllabus, books, and study plans</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {exams.map((exam) => (
-              <Link key={exam.slug} href={`/exams/${exam.slug}/`} className="card p-6 group flex flex-col hover:border-primary-300">
+              <Link key={exam.slug} href={`/exams/${exam.slug}`} className="card p-6 group flex flex-col hover:border-primary-300">
                 <div className="flex items-start justify-between mb-3">
                   <span className="badge badge-primary">{exam.category}</span>
                   <span className="badge badge-green">{exam.level}</span>
@@ -238,7 +214,7 @@ export default function HomePage() {
           <p className="section-subtitle mb-10">Step-by-step guides to help you at every stage of your preparation</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides.slice(0, 6).map((guide) => (
-              <Link key={guide.slug} href={`/guides/${guide.slug}/`} className="card p-6 group hover:border-primary-300 flex flex-col">
+              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="card p-6 group hover:border-primary-300 flex flex-col">
                 <span className="badge badge-accent mb-3 self-start">{guide.category}</span>
                 <h3 className="font-heading font-semibold text-surface-900 group-hover:text-primary-500 transition-colors mb-2 flex-1">
                   {guide.title}
@@ -281,7 +257,7 @@ export default function HomePage() {
             return (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}/`}
+                href={`/blog/${post.slug}`}
                 className={`card group flex flex-col hover:border-primary-300 overflow-hidden ${catColor.topBorder}`}
               >
                 <div className="p-6 flex flex-col flex-1">
@@ -347,7 +323,7 @@ export default function HomePage() {
                   <ul className="space-y-1.5">
                     {catExams.map((exam) => (
                       <li key={exam.slug}>
-                        <Link href={`/exams/${exam.slug}/`} className="text-xs text-surface-500 hover:text-primary-500 transition-colors leading-tight block py-1.5">
+                        <Link href={`/exams/${exam.slug}`} className="text-xs text-surface-500 hover:text-primary-500 transition-colors leading-tight block py-1.5">
                           {exam.name.length > 40 ? exam.name.substring(0, 40) + '…' : exam.name}
                         </Link>
                       </li>
