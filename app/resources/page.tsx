@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Free Study Material & Resources for Government Exam Preparation 2025 | TaiyarHo',
+  title: 'Free Study Material & Resources for Government Exam Preparation 2026 | TaiyarHo',
   description:
     'Best free resources for UPSC, SSC CGL, IBPS PO, RRB NTPC, SBI PO and 100+ government exams — NCERT books, previous year papers, YouTube channels, mock tests, current affairs, official websites, and PDF study material. 100% free, no registration.',
   keywords: [
     'free study material government exams',
-    'UPSC free resources 2025',
+    'UPSC free resources 2026',
     'SSC CGL study material free PDF',
     'IBPS PO free mock test',
     'RRB NTPC previous year papers free download',
@@ -45,6 +45,7 @@ interface Resource {
   tags: string[];
   badge?: string;
   badgeColor?: string;
+  internal?: boolean;
 }
 
 interface ResourceSection {
@@ -56,6 +57,68 @@ interface ResourceSection {
 }
 
 const resourceSections: ResourceSection[] = [
+  {
+    id: 'taiyarho',
+    icon: '🧭',
+    title: 'TaiyarHo Free Tools & Study Hub',
+    subtitle: 'Start here — our own free, no-login tools and continuously updated study material',
+    items: [
+      {
+        name: 'Browse All 100+ Exam Guides',
+        url: '/exams',
+        internal: true,
+        desc: 'Detailed pages for 100+ government exams — eligibility, syllabus, exam pattern, salary, best books, and free resources for UPSC, SSC, Banking, Railway, Defence, State PSC, Teaching, and Police.',
+        tags: ['All Exams'],
+        badge: 'TaiyarHo · Free',
+        badgeColor: 'bg-primary-100 text-primary-700',
+      },
+      {
+        name: 'Free Weekly Current Affairs',
+        url: '/current-affairs',
+        internal: true,
+        desc: 'Our own weekly current affairs digests with quizzes — fact-checked against official sources (PIB, ministries). Perfect for SSC, Banking, Railway, and State PSC daily revision.',
+        tags: ['All Exams'],
+        badge: '⭐ Updated Weekly',
+        badgeColor: 'bg-yellow-100 text-yellow-700',
+      },
+      {
+        name: 'Eligibility Checker Tool',
+        url: '/tools/eligibility-checker',
+        internal: true,
+        desc: 'Instantly find which government exams you qualify for based on your age, qualification, and category — with age-relaxation built in for OBC, SC/ST, PwBD, and Ex-Servicemen. 100% free, no sign-up.',
+        tags: ['All Exams'],
+        badge: 'Free Tool',
+        badgeColor: 'bg-emerald-100 text-emerald-700',
+      },
+      {
+        name: 'Exam Calendar',
+        url: '/exam-calendar',
+        internal: true,
+        desc: 'Upcoming notification, application, and exam dates for major government exams in one place. Plan your preparation around the real exam timeline.',
+        tags: ['All Exams'],
+        badge: 'Free Tool',
+        badgeColor: 'bg-emerald-100 text-emerald-700',
+      },
+      {
+        name: 'Preparation Guides',
+        url: '/guides',
+        internal: true,
+        desc: 'Step-by-step free guides — how to start preparation from zero, age limit & relaxation rules, filling application forms, documents needed, and study plans for working professionals.',
+        tags: ['All Exams'],
+        badge: 'TaiyarHo · Free',
+        badgeColor: 'bg-primary-100 text-primary-700',
+      },
+      {
+        name: 'Blog — Salary, Syllabus & Strategy',
+        url: '/blog',
+        internal: true,
+        desc: 'In-depth articles on in-hand salaries, latest syllabus breakdowns, exam comparisons (IBPS vs SBI PO, CGL vs CHSL), and which exams are easiest to crack in 2026.',
+        tags: ['All Exams'],
+        badge: 'TaiyarHo · Free',
+        badgeColor: 'bg-primary-100 text-primary-700',
+      },
+    ],
+  },
   {
     id: 'foundation',
     icon: '📖',
@@ -125,12 +188,10 @@ const resourceSections: ResourceSection[] = [
         badgeColor: 'bg-emerald-100 text-emerald-700',
       },
       {
-        name: 'RRB Previous Year Papers (All Exams)',
+        name: 'RRB Previous Year Papers (Memory-Based)',
         url: 'https://railwayexams.com/rrb-group-d-previous-year-question-paper/',
-        desc: '850+ official RRB Group D question papers across 3 recruitment cycles (2018, 2022, 2025-26) in 11 Indian languages. Separate sections for NTPC, ALP, JE, and Technician PYQs.',
+        desc: 'Large free collection of memory-based RRB Group D, NTPC, ALP, JE, and Technician question papers across multiple recruitment cycles in several Indian languages. Note: RRB does not officially release CBT papers — these are aspirant-compiled.',
         tags: ['Railway'],
-        badge: 'Official',
-        badgeColor: 'bg-emerald-100 text-emerald-700',
       },
       {
         name: 'Prepp — Free PYQ for All Exams',
@@ -177,8 +238,8 @@ const resourceSections: ResourceSection[] = [
       {
         name: 'Adda247 Free Quizzes & Mocks',
         url: 'https://www.adda247.com/mock-tests',
-        desc: 'Daily free quizzes for SSC, Banking, Railway, and Teaching exams. Weekly free full-length mock tests available in Hindi and English.',
-        tags: ['SSC', 'Banking', 'Railway'],
+        desc: 'Daily free quizzes for SSC, Banking, Railway, Teaching, and police exams. Weekly free full-length mock tests available in Hindi and English.',
+        tags: ['SSC', 'Banking', 'Railway', 'Police'],
       },
       {
         name: 'Prepp — Free Mock Test Series',
@@ -215,12 +276,10 @@ const resourceSections: ResourceSection[] = [
         badgeColor: 'bg-red-100 text-red-700',
       },
       {
-        name: 'Unacademy IAS — UPSC',
+        name: 'Unacademy UPSC: English',
         url: 'https://www.youtube.com/@UnacademyIASEnglish',
-        desc: 'Free UPSC lectures by Roman Saini and top educators. Covers GS 1-4, Essay, and Current Affairs. Daily live sessions available.',
+        desc: "Free UPSC lectures from Unacademy's English-medium educators — daily 'The Hindu' editorial analysis, GS subject classes, and weekly current affairs. Regular free live sessions.",
         tags: ['UPSC'],
-        badge: '15M+ subscribers',
-        badgeColor: 'bg-red-100 text-red-700',
       },
       {
         name: 'Drishti IAS — Hindi Medium',
@@ -235,10 +294,10 @@ const resourceSections: ResourceSection[] = [
         tags: ['UPSC', 'Banking'],
       },
       {
-        name: 'Adda247 — SSC, Banking, Railway',
+        name: 'Adda247 — Banking & Insurance',
         url: 'https://www.youtube.com/channel/UC1L2JoMpcY6MRLhFd3gg5Xg',
-        desc: 'Free daily classes for Banking (IBPS, SBI), SSC CGL/CHSL, and Railway (RRB NTPC). Live quizzes with experts in English and Hindi.',
-        tags: ['SSC', 'Banking', 'Railway'],
+        desc: 'Free daily live classes for Banking and Insurance exams — IBPS PO/Clerk, SBI PO/Clerk, IBPS RRB, and RBI Assistant. Daily current affairs and editorial analysis in Hindi and English.',
+        tags: ['Banking'],
       },
       {
         name: 'Rakesh Yadav Maths',
@@ -255,13 +314,13 @@ const resourceSections: ResourceSection[] = [
       {
         name: 'SSBCrack — Defence Exams',
         url: 'https://www.youtube.com/@SSBCrackYT',
-        desc: 'NDA, CDS, AFCAT, and SSB interview preparation. Strategy videos, defence current affairs, and insider tips from ex-defence officers. 911K+ subscribers.',
+        desc: 'NDA, CDS, AFCAT, and SSB interview preparation. Strategy videos, defence current affairs, and insider tips from ex-defence officers.',
         tags: ['Defence'],
       },
       {
         name: 'Bankers Way — SBI & Banking',
         url: 'https://www.youtube.com/channel/UCzdgWZfyWtkrlRUrLwWYfbw',
-        desc: "Dedicated Banking and Insurance exam channel on Unacademy. Daily free classes for SBI PO, SBI Clerk, IBPS PO/Clerk, RBI Grade B, and RBI Assistant. India's top educators.",
+        desc: "Dedicated Banking and Insurance exam channel by Unacademy. Free live classes for SBI PO/Clerk, IBPS PO/Clerk/RRB, RBI Assistant, and insurance exams like LIC AAO — with subject experts for Quant, Reasoning, English, and GA.",
         tags: ['Banking'],
       },
     ],
@@ -355,6 +414,12 @@ const resourceSections: ResourceSection[] = [
         url: 'https://www.exampur.com/ctet-study-material/',
         desc: 'Free CTET study material for Paper 1 and Paper 2 — Child Development & Pedagogy (CDP), EVS, Maths, Language. Available in Hindi.',
         tags: ['Teaching'],
+      },
+      {
+        name: 'SSC GD & State Police — Free Mock Tests',
+        url: 'https://testbook.com/ssc-gd-constable/test-series',
+        desc: 'Free CBT-pattern mock tests for SSC GD Constable and state police constable/SI exams — Reasoning, GK/GA, Maths, and Hindi/English. Free live tests and previous-year practice in multiple languages.',
+        tags: ['Police'],
       },
     ],
   },
@@ -470,13 +535,6 @@ const resourceSections: ResourceSection[] = [
   },
 ];
 
-const stats = [
-  { value: '80+', label: 'Free Resources' },
-  { value: '8', label: 'Exam Categories' },
-  { value: '100%', label: 'Free Forever' },
-  { value: '0', label: 'Paid Promotions' },
-];
-
 const tagColorMap: Record<string, string> = {
   'All Exams': 'bg-primary-100 text-primary-700',
   'UPSC':      'bg-violet-100 text-violet-700',
@@ -491,13 +549,11 @@ const tagColorMap: Record<string, string> = {
 };
 
 function ResourceCard({ item }: { item: Resource }) {
-  return (
-    <a
-      href={item.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="card p-5 group hover:border-primary-300 hover:shadow-lg transition-all duration-200 flex flex-col"
-    >
+  const cardClass =
+    'card p-5 group hover:border-primary-300 hover:shadow-lg transition-all duration-200 flex flex-col';
+
+  const inner = (
+    <>
       <div className="flex items-start justify-between gap-2 mb-2">
         <div className="flex flex-wrap gap-1.5">
           {item.badge && (
@@ -506,12 +562,21 @@ function ResourceCard({ item }: { item: Resource }) {
             </span>
           )}
         </div>
-        <svg
-          className="w-3.5 h-3.5 text-surface-300 group-hover:text-primary-400 shrink-0 mt-0.5 transition-colors"
-          fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
+        {item.internal ? (
+          <svg
+            className="w-3.5 h-3.5 text-surface-300 group-hover:text-primary-400 shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-all"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        ) : (
+          <svg
+            className="w-3.5 h-3.5 text-surface-300 group-hover:text-primary-400 shrink-0 mt-0.5 transition-colors"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        )}
       </div>
       <h3 className="font-heading font-semibold text-surface-800 group-hover:text-primary-600 transition-colors mb-2 text-[15px] leading-snug">
         {item.name}
@@ -527,12 +592,33 @@ function ResourceCard({ item }: { item: Resource }) {
           </span>
         ))}
       </div>
+    </>
+  );
+
+  if (item.internal) {
+    return (
+      <Link href={item.url} className={cardClass}>
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={item.url} target="_blank" rel="noopener noreferrer" className={cardClass}>
+      {inner}
     </a>
   );
 }
 
 export default function ResourcesPage() {
   const totalResources = resourceSections.reduce((sum, s) => sum + s.items.length, 0);
+
+  const stats = [
+    { value: `${totalResources}+`, label: 'Free Resources' },
+    { value: `${examCategories.length}`, label: 'Exam Categories' },
+    { value: '100%', label: 'Free Forever' },
+    { value: '0', label: 'Paid Promotions' },
+  ];
 
   return (
     <div className="bg-surface-50 min-h-screen">
