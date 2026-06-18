@@ -39,20 +39,11 @@ const KNOWN_SLUGS = new Set([
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
 // Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
-// Last updated: 26 May 2026
+// Last updated: 18 June 2026
 const upcomingExams: MonthGroup[] = [
   {
     month: 'May 2026',
     exams: [
-      {
-        name: 'SSC GD Constable (CBT)',
-        date: '27 Apr – 30 May 2026',
-        status: 'OFFICIAL',
-        category: 'Police',
-        internalSlug: 'ssc-gd-constable',
-        externalUrl: 'https://ssc.gov.in',
-        note: '25,487 vacancies • All CBT phases done • Answer key out 15 Jun • Result expected Jul–Aug 2026',
-      },
       {
         name: 'SSC CGL 2026 (Apply Online)',
         date: '21 May – 22 Jun 2026',
@@ -62,64 +53,11 @@ const upcomingExams: MonthGroup[] = [
         externalUrl: 'https://ssc.gov.in',
         note: '12,256 vacancies • Notification out 21 May • Tier 1: Aug–Sep 2026 • Tier 2: Dec 2026',
       },
-      {
-        name: 'Haryana TET (HTET)',
-        date: '30–31 May 2026',
-        status: 'OFFICIAL',
-        category: 'Teaching',
-        internalSlug: 'htet',
-        externalUrl: 'https://bseh.org.in',
-        note: '2.33 lakh+ candidates registered • PRT, TGT, PGT levels',
-      },
-      {
-        name: 'SSC CPO 2026 Notification',
-        date: '31 May 2026',
-        status: 'OFFICIAL',
-        category: 'Police',
-        internalSlug: 'ssc-cpo',
-        externalUrl: 'https://ssc.gov.in',
-        note: 'Sub-Inspector in Delhi Police & CAPFs. Apply Jun 2026. Paper 1: Oct–Nov 2026',
-      },
-      {
-        name: 'SBI Apprentice (Apply Online)',
-        date: '19 May – 15 Jun 2026',
-        status: 'OFFICIAL',
-        category: 'Banking',
-        internalSlug: 'sbi-apprentice',
-        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
-        note: '7,150 posts • Deadline EXTENDED to 15 June • Graduate eligible • Age 20–28 • Fee ₹300 • 1-year training under Apprenticeship Act',
-      },
-      {
-        name: 'UP Police Constable',
-        date: '8–10 Jun 2026',
-        status: 'OFFICIAL',
-        category: 'Police',
-        internalSlug: 'up-police-constable',
-        externalUrl: 'https://uppbpb.gov.in',
-        note: 'Admit Card Out (4 June) • Written exam 8, 9, 10 June 2026 (official notice 3 Feb 2026). 32,679 vacancies.',
-      },
     ],
   },
   {
     month: 'June 2026',
     exams: [
-      {
-        name: 'RBI Assistant (Mains)',
-        date: '7 Jun 2026',
-        status: 'OFFICIAL',
-        category: 'Banking',
-        internalSlug: 'rbi-assistant',
-        externalUrl: 'https://rbi.org.in',
-        note: '650 vacancies • Prelims result out 25 May 2026',
-      },
-      {
-        name: 'UP TGT',
-        date: '3–4 Jun 2026',
-        status: 'OFFICIAL',
-        category: 'Teaching',
-        internalSlug: 'up-tgt',
-        externalUrl: 'https://upsessb.org',
-      },
       {
         name: 'RRB NTPC UG (CBT 1 — June Phase)',
         date: '13–21 Jun 2026',
@@ -127,16 +65,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Railway',
         internalSlug: 'rrb-ntpc',
         externalUrl: 'https://rrbapply.gov.in',
-        note: '3,058 vacancies (12th-level) • CEN 07/2025 • May phase (7–9 May) done; June phase remaining',
-      },
-      {
-        name: 'RBI Grade B (Phase 1 Prelims)',
-        date: '13–14 Jun 2026',
-        status: 'OFFICIAL',
-        category: 'Banking',
-        internalSlug: 'rbi-grade-b',
-        externalUrl: 'https://rbi.org.in',
-        note: 'Phase 1 conducted (13–14 Jun) • 60 vacancies • Phase 1 result expected Jul • Phase 2: 25–26 Jul 2026',
+        note: '3,058 vacancies (12th-level) • CEN 07/2025 • May phase done • June phase (13–21 Jun) underway',
       },
       {
         name: 'UPSC IES/ISS',
@@ -162,7 +91,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'sbi-po',
         externalUrl: 'https://sbi.co.in/careers',
-        note: 'Notification expected mid-June • Prelims likely Aug 2026',
+        note: 'Notification expected late June 2026 • Prelims likely 1–2 Aug 2026',
       },
     ],
   },
@@ -469,11 +398,87 @@ const upcomingExams: MonthGroup[] = [
   },
 ];
 
-// ─── PAST EXAMS (Jan – Apr 2026, already conducted) ─────────────────────────
+// ─── PAST EXAMS (Jan – Jun 2026, already conducted) ─────────────────────────
 const pastExams: MonthGroup[] = [
+  {
+    month: 'June 2026',
+    exams: [
+      {
+        name: 'RBI Grade B (Phase 1 Prelims)',
+        date: '13–14 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'rbi-grade-b',
+        externalUrl: 'https://rbi.org.in',
+        note: '60 vacancies • Phase 1 conducted 13–14 Jun • Phase 1 result expected Jul • Phase 2: 25–26 Jul 2026',
+      },
+      {
+        name: 'UP Police Constable',
+        date: '8–10 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Police',
+        internalSlug: 'up-police-constable',
+        externalUrl: 'https://uppbpb.gov.in',
+        note: '32,679 vacancies • Written exam held 8, 9, 10 Jun (6 shifts) • Official answer key expected 3rd week of June',
+      },
+      {
+        name: 'RBI Assistant (Mains)',
+        date: '7 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'rbi-assistant',
+        externalUrl: 'https://rbi.org.in',
+        note: '650 vacancies • 8,171 candidates appeared • Result expected Jul–Aug 2026',
+      },
+      {
+        name: 'SBI Apprentice (Application Closed)',
+        date: '19 May – 15 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'sbi-apprentice',
+        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
+        note: '7,150 posts • Application window closed 15 Jun • 1-year training under Apprenticeship Act',
+      },
+      {
+        name: 'UP TGT',
+        date: '3–4 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Teaching',
+        internalSlug: 'up-tgt',
+        externalUrl: 'https://upsessb.org',
+      },
+    ],
+  },
   {
     month: 'May 2026',
     exams: [
+      {
+        name: 'SSC GD Constable (CBT)',
+        date: '27 Apr – 30 May 2026',
+        status: 'OFFICIAL',
+        category: 'Police',
+        internalSlug: 'ssc-gd-constable',
+        externalUrl: 'https://ssc.gov.in',
+        note: '25,487 vacancies • All CBT phases done • Answer key out 15 Jun • Result expected Jul–Aug 2026',
+      },
+      {
+        name: 'Haryana TET (HTET)',
+        date: '30–31 May 2026',
+        status: 'OFFICIAL',
+        category: 'Teaching',
+        internalSlug: 'htet',
+        externalUrl: 'https://bseh.org.in',
+        note: '2.33 lakh+ candidates registered • PRT, TGT, PGT levels',
+      },
+      {
+        name: 'SSC CPO 2026 Notification',
+        date: '31 May 2026',
+        status: 'OFFICIAL',
+        category: 'Police',
+        internalSlug: 'ssc-cpo',
+        externalUrl: 'https://ssc.gov.in',
+        note: 'Sub-Inspector in Delhi Police & CAPFs • Notification out 31 May • Paper 1: Oct–Nov 2026',
+      },
       {
         name: 'UPSC Civil Services (Prelims)',
         date: '24 May 2026',
@@ -499,7 +504,7 @@ const pastExams: MonthGroup[] = [
         category: 'Railway',
         internalSlug: 'rrb-ntpc',
         externalUrl: 'https://rrbapply.gov.in',
-        note: '3,058 vacancies • CEN 07/2025 • June phase (13–21 Jun) remaining',
+        note: '3,058 vacancies • CEN 07/2025 • June phase (13–21 Jun) underway',
       },
     ],
   },
@@ -920,7 +925,7 @@ export default function ExamCalendarPage() {
           <div className="flex items-center gap-3">
             <span className="text-xl">📋</span>
             <div className="text-left">
-              <h2 className="font-heading font-bold text-surface-900 text-lg">Past Exams (Jan–May 2026)</h2>
+              <h2 className="font-heading font-bold text-surface-900 text-lg">Past Exams (Jan–Jun 2026)</h2>
               <p className="text-sm text-surface-500">{totalPast} exams already conducted this year</p>
             </div>
           </div>
@@ -947,7 +952,7 @@ export default function ExamCalendarPage() {
           <strong className="text-surface-700">Disclaimer:</strong> Exam dates are sourced from official notifications
           (upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in) and may change without notice.
           Tentative dates are based on official exam calendars and previous-year patterns. Always verify from the
-          official conducting body&apos;s website before applying. Last updated: 26 May 2026.
+          official conducting body&apos;s website before applying. Last updated: 18 June 2026.
         </div>
       </div>
     </div>
