@@ -292,6 +292,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
   const toc = [
     { id: 'why', label: 'Why Government Jobs?' },
     { id: 'choose', label: 'Which Exam to Choose' },
+    { id: 'setup', label: 'Before You Start (OTR)' },
     { id: 'roadmap', label: '12-Month Roadmap' },
     { id: 'subjects', label: 'Subject-wise Strategy' },
     { id: 'timetable', label: 'Daily Study Timetable' },
@@ -318,10 +319,6 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-400 rounded-full opacity-10 translate-y-1/2 -translate-x-1/4" />
             <div className="relative z-10">
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-flex items-center gap-1.5 bg-accent-500/20 border border-accent-500/40 text-accent-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
-                  <span className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse" />
-                  Updated April 2026
-                </span>
                 <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Beginners</span>
                 <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">2026 Roadmap</span>
                 <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Free Guide</span>
@@ -333,7 +330,6 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
                 No coaching, no background, no idea where to start? This guide gives you the complete roadmap — which exam to pick, what to study, and a 12-month plan to get selected. 100% free.
               </p>
               <div className="flex flex-wrap gap-4 text-xs text-primary-300">
-                <span>📅 April 2026</span>
                 <span>⏱ {guide.readTime}</span>
                 <span>🎯 For fresh starters, 18–30 yrs</span>
               </div>
@@ -391,6 +387,9 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
                 </div>
               ))}
             </div>
+            <GCallout type="info" title="💰 2026 Salary Reality — What Beginners Should Know">
+              Government salaries today still run on the <strong>7th Pay Commission</strong>. The current Dearness Allowance (DA) is <strong>60% of basic pay</strong> (effective 1 January 2026), which sits on top of your basic pay along with HRA. You will see a lot of hype online about the <strong>8th Pay Commission</strong> — it was officially constituted in November 2025 and is chaired by Justice Ranjana Prakash Desai, but it is <strong>not implemented yet</strong>. Its report is expected around mid-2027, so ignore any &quot;new 8th CPC salary&quot; figures floating around — they are only estimates. For a realistic, current breakdown, see our <Link href="/blog/8th-pay-commission-salary-calculator-2026/" className="text-blue-700 underline font-semibold">8th Pay Commission salary guide</Link>.
+            </GCallout>
             <GCallout type="tip" title="✅ Reality Check">
               Government jobs are competitive — but government exams have a <strong>defined syllabus, a transparent process, and no referral culture</strong>. If you study the right things, you will clear.
             </GCallout>
@@ -462,6 +461,33 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
             <p className="text-sm text-surface-500 mt-4">
               Not sure which exam you qualify for? Use our <Link href="/tools/eligibility-checker" className="text-primary-500 font-semibold hover:underline">Eligibility Checker</Link> — enter your age and qualification, and it shows every exam you can apply for.
             </p>
+          </GSection>
+
+          {/* OTR / SETUP — registration before you start */}
+          <GSection id="setup" title="Before You Start: One-Time Registration (OTR)">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Most major recruiting bodies now use a <strong>One-Time Registration (OTR)</strong> system — you create one profile, then reuse it to apply for every future exam without re-entering your details. Setting this up early (even before you finish studying) means you will never miss an application deadline because of a last-minute registration scramble.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              {[
+                { body: 'SSC (CGL, CHSL, MTS, GD, CPO, JE)', portal: 'ssc.gov.in', note: 'OTR is now mandatory on the new portal and is Aadhaar-linked. The old ssc.nic.in logins no longer work — every aspirant must register fresh.' },
+                { body: 'UPSC (IAS, NDA, CDS, CAPF)', portal: 'upsconline.nic.in', note: 'Uses a One-Time Registration on its online application portal. The portal was revamped recently, so register fresh even if you had an old profile, then fill the exam-specific form when a notification opens.' },
+                { body: 'IBPS (PO, Clerk, RRB, SO)', portal: 'ibps.in', note: 'Separate registration per notification, but the same profile details carry over each cycle.' },
+                { body: 'Railways (RRB)', portal: 'Regional RRB portals', note: 'Apply through the official RRB application portal when notifications open. Always verify links from the official Indian Railways site.' },
+              ].map(item => (
+                <div key={item.body} className="card p-4">
+                  <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.body}</div>
+                  <div className="text-xs text-primary-500 font-mono mb-1">{item.portal}</div>
+                  <div className="text-xs text-surface-500 leading-relaxed">{item.note}</div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="tip" title="✅ Documents to Keep Ready for OTR">
+              Class 10 marksheet (for date of birth + roll number), Aadhaar card, a valid email and mobile number, a recent passport-size photograph, and a clear signature scan. Fill your name and date of birth <strong>exactly</strong> as on your Class 10 certificate — mismatches are the #1 reason applications get rejected at verification.
+            </GCallout>
+            <GCallout type="warning" title="⚠️ Only Use Official Portals">
+              Register only on the official government websites listed above. Many lookalike sites charge a &quot;registration fee&quot; — government OTR is always free. Once your profile is ready, just watch for notifications and apply the moment your target exam opens.
+            </GCallout>
           </GSection>
 
           {/* 12-MONTH ROADMAP */}
@@ -633,9 +659,9 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
                 <tbody>
                   {[
                     ['NCERT Books (ncert.nic.in)', 'Foundation for all subjects', 'Free', '⭐⭐⭐⭐⭐'],
-                    ['YouTube (StudyIQ, Adda247, Exampur)', 'Video lectures for all exams', 'Free', '⭐⭐⭐⭐⭐'],
+                    ['Free YouTube lectures', 'Video lessons for every subject', 'Free', '⭐⭐⭐⭐⭐'],
                     ['Official exam websites (ssc.gov.in, ibps.in)', 'Previous year papers + notifications', 'Free', '⭐⭐⭐⭐⭐'],
-                    ['Testbook / Oliveboard free mocks', 'Mock tests with analysis', 'Free (limited)', '⭐⭐⭐⭐'],
+                    ['Free mock test apps', 'Mock tests with analysis', 'Free (limited)', '⭐⭐⭐⭐'],
                     ['Daily newspaper (The Hindu / Indian Express)', 'Current affairs', '₹0–₹300/mo', '⭐⭐⭐⭐⭐'],
                     ['TaiyarHo.in', 'Exam guides, eligibility checker, resources', 'Free', '⭐⭐⭐⭐⭐'],
                   ].map(([resource, best, cost, rating], i) => (
@@ -704,6 +730,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
                 { q: 'How much does government exam preparation cost?', a: 'You can prepare almost entirely for free. If you want books, budget ₹1,500–₹2,000 for four standard books. A premium mock test subscription costs ₹300–₹500/year. Total: under ₹2,500.' },
                 { q: 'Which exam should I start with if I have no idea?', a: 'If you are a graduate, start with SSC CGL or IBPS PO. They have well-defined syllabi, regular annual recruitment, large vacancies, and plenty of free study material. Use our Eligibility Checker to see all exams you qualify for.' },
                 { q: 'Can working professionals prepare for government exams?', a: 'Yes. Many successful candidates study 3–4 hours daily (early morning + late night + weekends). The key is consistency and using commute time for passive learning like podcasts and audio current affairs.' },
+                { q: 'Do I need to register before I can apply for exams?', a: 'Yes. Bodies like SSC and UPSC now use a mandatory One-Time Registration (OTR) — you create one profile on the official portal (for example, ssc.gov.in), then reuse it for every future exam. SSC OTR is Aadhaar-linked, and old ssc.nic.in logins no longer work. It is free, so set it up early and avoid any site that charges a registration fee.' },
               ].map((faq, i) => (
                 <details key={i} className="border-b border-surface-200 group">
                   <summary className="flex items-start gap-3 py-4 cursor-pointer list-none font-medium text-surface-800 hover:text-primary-500 transition-colors">
@@ -728,7 +755,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
           </div>
 
           <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
-            This guide is for informational purposes only. Exam patterns, eligibility, and syllabi may change — always verify from official exam websites. Last updated: April 2026.
+            This guide is for informational purposes only. Exam patterns, eligibility, and syllabi may change — always verify from official exam websites.
           </p>
         </article>
 
@@ -769,7 +796,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
       </div>
 
       {/* Schema.org */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: guide.title, description: guide.description, datePublished: '2026-04-27', dateModified: '2026-04-27', author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' }, publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' }, mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/guides/how-to-start-government-exam-preparation' } }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: guide.title, description: guide.description, datePublished: '2026-04-27', dateModified: '2026-06-18', author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' }, publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' }, mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/guides/how-to-start-government-exam-preparation' } }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: 'Can I crack a government exam without coaching?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Lakhs of candidates clear SSC, Banking, and Railway exams every year through self-study.' } }, { '@type': 'Question', name: 'How many hours should I study daily?', acceptedAnswer: { '@type': 'Answer', text: 'Start with 3–4 focused hours and gradually increase to 5–6 hours.' } }, { '@type': 'Question', name: 'Which exam should I start with if I have no idea?', acceptedAnswer: { '@type': 'Answer', text: 'If you are a graduate, start with SSC CGL or IBPS PO.' } }] }) }} />
     </div>
   );
