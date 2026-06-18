@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { getAllExamSlugs } from '@/lib/exams-data';
 
 // ─── TYPES ───────────────────────────────────────────────────────────────────
 interface UpcomingExam {
@@ -20,22 +21,11 @@ interface MonthGroup {
 }
 
 // ─── WHICH SLUGS HAVE INTERNAL PAGES ────────────────────────────────────────
-const KNOWN_SLUGS = new Set([
-  'upsc-ias', 'ssc-cgl', 'ibps-po', 'rrb-ntpc', 'sbi-po',
-  'ssc-gd-constable', 'ssc-chsl', 'ssc-mts', 'ssc-stenographer', 'ssc-cpo',
-  'ssc-je', 'ssc-jht',
-  'rrb-alp', 'rrb-je', 'rrb-technician', 'rrb-group-d',
-  'ibps-rrb-po', 'ibps-rrb-clerk', 'sbi-clerk', 'rbi-assistant', 'rbi-grade-b',
-  'sbi-apprentice',
-  'upsc-nda', 'upsc-cds', 'upsc-capf',
-  'up-police-constable', 'up-police-si', 'up-police-asi',
-  'up-tet', 'up-tgt', 'up-pgt',
-  'ctet', 'htet',
-  'gate', 'afcat',
-  'bihar-teacher',
-  'uppsc', 'mppsc',
-  'ibps-clerk', 'upsc-ifs', 'upsc-ese', 'upsc-cms',
-]);
+// Derived from the canonical exam registry (lib/exams-data.ts) so this list can
+// never drift out of sync with the actual /exams/[slug]/ pages that exist.
+// A card links to "View Guide" only when its internalSlug is a real page here;
+// otherwise it shows "Info Coming Soon" + the official website link.
+const KNOWN_SLUGS = new Set(getAllExamSlugs());
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
 // Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
@@ -72,6 +62,7 @@ const upcomingExams: MonthGroup[] = [
         date: '19 Jun 2026',
         status: 'OFFICIAL',
         category: 'UPSC',
+        internalSlug: 'upsc-ies-iss',
         externalUrl: 'https://upsc.gov.in',
         note: 'Indian Economic Service / Indian Statistical Service exam',
       },
@@ -582,6 +573,7 @@ const pastExams: MonthGroup[] = [
         date: '23 Mar 2026',
         status: 'OFFICIAL',
         category: 'Defence',
+        internalSlug: 'drdo-ceptam',
         externalUrl: 'https://drdo.gov.in',
       },
     ],
@@ -634,7 +626,7 @@ const pastExams: MonthGroup[] = [
         date: '2–3 Feb 2026',
         status: 'OFFICIAL',
         category: 'State PSC',
-        internalSlug: 'uppsc',
+        internalSlug: 'uppsc-pcs',
         externalUrl: 'https://uppsc.up.nic.in',
       },
       {
@@ -642,6 +634,7 @@ const pastExams: MonthGroup[] = [
         date: '22 Feb 2026',
         status: 'OFFICIAL',
         category: 'Defence',
+        internalSlug: 'ib-security-assistant',
         externalUrl: 'https://mha.gov.in/IB',
       },
     ],
@@ -670,6 +663,7 @@ const pastExams: MonthGroup[] = [
         date: '10 Jan 2026',
         status: 'OFFICIAL',
         category: 'Banking',
+        internalSlug: 'sebi-grade-a',
         externalUrl: 'https://sebi.gov.in',
       },
       {
@@ -677,6 +671,7 @@ const pastExams: MonthGroup[] = [
         date: '10–11 Jan 2026',
         status: 'OFFICIAL',
         category: 'Teaching',
+        internalSlug: 'kvs-prt-tgt-pgt',
         externalUrl: 'https://kvsangathan.nic.in',
       },
       {
@@ -684,6 +679,7 @@ const pastExams: MonthGroup[] = [
         date: '10–11 Jan 2026',
         status: 'OFFICIAL',
         category: 'Teaching',
+        internalSlug: 'nvs-teaching',
         externalUrl: 'https://navodaya.gov.in',
       },
       {
