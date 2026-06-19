@@ -124,7 +124,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo.svg" alt="TaiyarHo" className="h-10 w-auto" style={{ filter: 'brightness(0) invert(1)' }} />
+              <img src="/logo.svg" alt="TaiyarHo" className="h-10 w-auto" width={95} height={40} style={{ filter: 'brightness(0) invert(1)' }} />
             </div>
             <p className="text-sm text-surface-400 leading-relaxed">
               Taiyar Ho? Your free, complete guide for Indian government exam preparation. No paywalls, no spam.
@@ -307,9 +307,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7Z5G3W10VG"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

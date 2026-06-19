@@ -79,7 +79,7 @@ export default function HomePage() {
                 className="rounded-2xl p-7 sm:p-8"
                 style={{ background: 'rgba(10,30,79,0.55)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.12)' }}
               >
-                <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-4 py-1.5 text-sm font-medium mb-5">
+                <div className="inline-flex items-center gap-2 bg-black/30 rounded-full px-4 py-1.5 text-sm font-medium mb-5">
                   <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                   100% Free – No Login Required
                 </div>
