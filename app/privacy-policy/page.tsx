@@ -152,7 +152,7 @@ export default function PrivacyPolicyPage() {
               </a>
               {' '}or{' '}
               <a
-                href="http://www.networkadvertising.org/managing/opt_out.asp"
+                href="https://optout.networkadvertising.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:underline"
