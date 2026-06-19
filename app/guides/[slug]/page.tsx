@@ -2003,6 +2003,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
     { id: 'documents', label: 'Documents Required' },
     { id: 'mistakes', label: 'Common Mistakes' },
     { id: 'faq', label: 'FAQs' },
+    { id: 'disclaimer', label: 'Disclaimer' },
   ];
 
   return (
@@ -2022,7 +2023,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
           <div className="bg-gradient-to-br from-primary-500 to-primary-800 rounded-2xl p-8 mb-10 text-white">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="bg-white/20 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">{guide.category}</span>
-              <span className="text-white/70 text-xs">Updated May 2026</span>
+              <span className="text-white/70 text-xs">Updated June 2026</span>
               <span className="text-white/50 text-xs">•</span>
               <span className="text-white/70 text-xs">{guide.readTime}</span>
             </div>
@@ -2051,9 +2052,9 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
           <div className="bg-amber-50 border border-amber-300 rounded-xl p-5 mb-8 flex gap-3">
             <span className="text-2xl flex-shrink-0">⚠️</span>
             <div>
-              <p className="font-heading font-bold text-amber-800 text-sm mb-1">Important Clarification — Amit Shah&apos;s &ldquo;5-Year SSC Age Relaxation&rdquo; Was a West Bengal Poll Promise</p>
+              <p className="font-heading font-bold text-amber-800 text-sm mb-1">Important — The &ldquo;One-Time 5-Year SSC Age Relaxation&rdquo; Was a Political Commitment, Not an Implemented Policy</p>
               <p className="text-sm text-amber-900 leading-relaxed">
-                Amit Shah&apos;s &ldquo;one-time 5-year age relaxation for SSC candidates&rdquo; (March 2, 2026) was a promise made at a West Bengal election rally. The &ldquo;SSC&rdquo; he referred to is the <strong>West Bengal School Service Commission</strong> — a state-level teacher recruitment body — not the central <strong>Staff Selection Commission</strong> (which conducts CGL, CHSL, MTS, GD Constable, etc.). <strong>No official notification has been issued by the central SSC</strong> for any such relaxation. The standard category relaxations (OBC +3 years, SC/ST +5 years) continue to apply as before. Always verify your eligibility at <strong>ssc.gov.in</strong>.
+                Amit Shah&apos;s &ldquo;one-time 5-year SSC age relaxation&rdquo; was a <strong>political commitment / proposal, not an implemented policy</strong>. In early 2026 the Union Home Minister indicated that aspirants who became overage because of delayed and disrupted recruitment cycles could be given a one-time age relaxation of up to 5 years. As of <strong>June 2026, it remains a proposal only</strong> — no official Gazette notification or office memorandum has been issued by the Staff Selection Commission implementing it, and the eligibility rules, covered posts, and timelines have not been clarified. Critically, the <strong>SSC CGL 2026 notification (released 21 May 2026) does NOT include any one-time 5-year relaxation</strong> — it carries only the standard category relaxations (OBC +3 years, SC/ST +5 years). Until an official notification is published, plan your eligibility using the standard rules below. Always confirm at <strong>ssc.gov.in</strong>.
               </p>
             </div>
           </div>
@@ -2066,7 +2067,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
               {[
                 { exam: 'UPSC / SSC exams', cutoff: '1st August of the exam year', note: 'E.g., for UPSC CSE 2026: age as on 01-08-2026' },
-                { exam: 'SSC CGL / CHSL 2026', cutoff: '1st August 2026 (Tentative)', note: 'SSC typically uses Aug 1 when notification is released after July. Verify in official notification.' },
+                { exam: 'SSC CGL 2026', cutoff: '1st August 2026', note: 'Confirmed in the SSC CGL 2026 notification (released 21 May 2026). Age reckoned as on 01-08-2026.' },
                 { exam: 'Banking (IBPS / SBI)', cutoff: '1st of the notification month', note: 'Exact date mentioned in the CRP notification' },
               ].map(item => (
                 <div key={item.exam} className="card p-4">
@@ -2381,8 +2382,8 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
                 <tbody>
                   {[
                     ['UPSC CSE (IAS)', '21', '32', '35', '37', '1st August'],
-                    ['SSC CGL 2026', '18', '27–32 (post-wise)', '30–35', '32–37', '01-08-2026 (Tentative)'],
-                    ['SSC CHSL 2026', '18', '27', '30', '32', '01-08-2026 (Tentative)'],
+                    ['SSC CGL 2026', '18', '27–32 (post-wise)', '30–35', '32–37', '01-08-2026'],
+                    ['SSC CHSL 2026', '18', '27', '30', '32', '01-01-2026 ⚠️ (notification awaited)'],
                     ['SSC MTS', '18', '25', '28', '30', '1st August'],
                     ['IBPS PO (CRP PO)', '20', '30', '33', '35', '1st of notification month'],
                     ['IBPS Clerk (CRP Clerk)', '20', '28', '31', '33', '1st of notification month'],
@@ -2410,9 +2411,9 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
             <div className="mt-4 bg-red-50 border border-red-200 rounded-xl p-4 flex gap-3">
               <span className="text-xl flex-shrink-0">📌</span>
               <div>
-                <p className="font-heading font-semibold text-red-800 text-sm mb-1">2026 Note — RRB &ldquo;3-Year Extra&rdquo; Relaxation Has Expired</p>
+                <p className="font-heading font-semibold text-red-800 text-sm mb-1">2026 Note — RRB NTPC Age Limits Depend on the Specific CEN Notification</p>
                 <p className="text-sm text-red-900 leading-relaxed">
-                  The 3-year &ldquo;Covid-compensation&rdquo; relaxation that was active in 2024–25 RRB recruitment cycles is <strong>not currently active</strong> for 2026 notifications unless specifically mentioned in the new official PDF. The standard RRB NTPC age limits are back to normal: <strong>33 years for Graduate posts</strong> and <strong>30 years for UG posts</strong> (General category).
+                  Railways has periodically granted an <strong>extra age relaxation</strong> to offset the gap between recruitment cycles. The most recent RRB NTPC cycle (CEN 2025 series, with CBTs held in mid-2026) applied <strong>extended upper limits</strong> — graduate-level general candidates were eligible up to roughly <strong>36 years</strong> rather than the base 33. Do not assume this extra relaxation will apply (or has lapsed) for any future notification. The base limits in the table above are the standard figures; the <strong>exact upper age limit and cut-off date are decided afresh in each CEN PDF</strong>, so always verify against the specific RRB NTPC notification before applying.
                 </p>
               </div>
             </div>
@@ -2497,6 +2498,31 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
               ))}
             </div>
           </GSection>
+
+          {/* General Disclaimer */}
+          <section id="disclaimer" className="mb-12 scroll-mt-20">
+            <div className="bg-surface-50 border border-surface-200 rounded-2xl p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xl">📌</span>
+                <h2 className="text-lg font-heading font-bold text-surface-900">General Disclaimer</h2>
+              </div>
+              <div className="text-sm text-surface-600 leading-relaxed space-y-3">
+                <p>
+                  TaiyarHo.in is a <strong>free, independent educational resource</strong>. It is <strong>not affiliated with, endorsed by, or connected to</strong> the UPSC, SSC, IBPS, SBI, RRB, any State PSC, or any other government department or recruitment body.
+                </p>
+                <p>
+                  The age limits, category relaxations, cut-off dates, and rules on this page are compiled from official notifications and trusted public sources and are provided <strong>for general guidance only</strong>. Government recruitment rules change frequently and differ post-wise and exam-wise, so some figures may become outdated after publication.
+                </p>
+                <p>
+                  This page is <strong>not legal advice and not an official eligibility determination</strong>. Before applying for any exam, always verify your exact eligibility from the <strong>official notification PDF</strong> on the conducting body&apos;s website (for example, upsc.gov.in, ssc.gov.in, ibps.in, or the relevant RRB / State PSC portal). In any conflict, the official notification is final.
+                </p>
+                <p>
+                  TaiyarHo.in is not responsible for any loss, rejection, or consequence arising from reliance on this information. If you spot an error, please let us know via our contact page so we can correct it.
+                </p>
+                <p className="text-xs text-surface-400 pt-1">Information on this page last reviewed: June 2026.</p>
+              </div>
+            </div>
+          </section>
 
           {/* Bottom CTA */}
           <div className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 text-center text-white mb-10">
