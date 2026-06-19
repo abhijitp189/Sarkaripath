@@ -76,19 +76,28 @@ const upcomingExams: MonthGroup[] = [
         note: 'Apprentice 01/2027 & 02/2027 batches • Diploma holders (AICTE) • Unmarried males • Fee ₹550+GST • INET Aug 2026',
       },
       {
-        name: 'SBI PO (Notification Expected)',
-        date: 'Jun 2026',
-        status: 'TENTATIVE',
+        name: 'SBI PO 2026 (Notification Out)',
+        date: '18 Jun – 8 Jul 2026',
+        status: 'OFFICIAL',
         category: 'Banking',
         internalSlug: 'sbi-po',
-        externalUrl: 'https://sbi.co.in/careers',
-        note: 'Notification expected late June 2026 • Prelims likely 1–2 Aug 2026',
+        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
+        note: 'Notification released 18 June 2026 (Advt CRPD/PO/2026-27/09) • 1,500 vacancies • Apply by 8 July 2026 • Prelims expected Aug 2026',
       },
     ],
   },
   {
     month: 'July 2026',
     exams: [
+      {
+        name: 'IAF Agniveervayu Intake 02/2027 (Apply)',
+        date: '6–26 Jul 2026',
+        status: 'OFFICIAL',
+        category: 'Defence',
+        internalSlug: 'iaf-agniveer',
+        externalUrl: 'https://iafrecruitment.edcil.co.in',
+        note: 'Registration 6–26 Jul 2026 • Online exam (STAR) 22–23 Sep 2026 • Fee ₹550 + 18% GST',
+      },
       {
         name: 'SSC CHSL (Tier 1)',
         date: 'Jul–Sep 2026',
@@ -142,8 +151,8 @@ const upcomingExams: MonthGroup[] = [
         status: 'TENTATIVE',
         category: 'Banking',
         internalSlug: 'sbi-po',
-        externalUrl: 'https://sbi.co.in/careers',
-        note: 'Notification expected Jun 2026 • ~500 vacancies expected',
+        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
+        note: 'Notification out 18 Jun 2026 • 1,500 vacancies • Prelims date tentative',
       },
       {
         name: 'UPSC CMS (Combined Medical Services)',
@@ -194,6 +203,15 @@ const upcomingExams: MonthGroup[] = [
     month: 'September 2026',
     exams: [
       {
+        name: 'IAF Agniveervayu Intake 02/2027 (Phase-I Exam)',
+        date: '22–23 Sep 2026',
+        status: 'OFFICIAL',
+        category: 'Defence',
+        internalSlug: 'iaf-agniveer',
+        externalUrl: 'https://iafrecruitment.edcil.co.in',
+        note: 'STAR online test • Admit card 48–72 hrs before exam',
+      },
+      {
         name: 'CTET (September)',
         date: '6 Sep 2026',
         status: 'OFFICIAL',
@@ -223,7 +241,7 @@ const upcomingExams: MonthGroup[] = [
         status: 'TENTATIVE',
         category: 'Banking',
         internalSlug: 'sbi-po',
-        externalUrl: 'https://sbi.co.in/careers',
+        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
       },
       {
         name: 'Bihar Teacher (BPSC)',
