@@ -4,6 +4,7 @@ import { may18_24_newsItems, may18_24_staticGk, may18_24_quiz } from './may-18-2
 import { may25_31_newsItems, may25_31_staticGk, may25_31_quiz } from './may-25-31-data';
 import { jun01_07_newsItems, jun01_07_staticGk, jun01_07_quiz } from './jun-01-07-data';
 import { jun08_14_newsItems, jun08_14_staticGk, jun08_14_quiz } from './jun-08-14-data';
+import { jun15_21_newsItems, jun15_21_staticGk, jun15_21_quiz } from './jun-15-21-data';
 
 /* ── Interfaces ────────────────────────────────────────────────────────── */
 
@@ -59,6 +60,36 @@ export type CaCategory = (typeof caCategories)[number];
 /* ── Posts ──────────────────────────────────────────────────────────────── */
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
+  /* ═══ NEW: June 15–21, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-june-15-21-2026',
+    title:
+      'Weekly Current Affairs: June 15\u201321, 2026 \u2014 G7 Summit in \u00C9vian, India\u2013EU FTA by 2026, Bimal Patel Elected to ITLOS, 12th Yoga Day, INS Dunagiri Commissioned & India Win FIH Women\u2019s Nations Cup',
+    dateRange: 'June 15\u201321, 2026',
+    publishedDate: 'June 23, 2026',
+    category: 'All',
+    excerpt:
+      'This week: India joins the 52nd G7 Summit in \u00C9vian (France) as a Partner Country and reaffirms the India\u2013EU FTA will be signed by end-2026; jurist Bimal N. Patel is elected to ITLOS; Hitesh Joshi becomes CMD of GIC Re; PM Modi disburses \u20B92,400 crore under PM-VBRY and commissions INS Dunagiri, INS Sanshodhak and INS Agray in Kolkata; the 12th International Day of Yoga is observed with the theme "Yoga for Healthy Ageing"; India\u2019s women win the FIH Nations Cup; and Vaibhav Sooryavanshi hits the fastest fifty in List A history.',
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'June 15\u201321, 2026',
+    newsItems: jun15_21_newsItems,
+    staticGkBox: jun15_21_staticGk,
+    quiz: jun15_21_quiz,
+    keyPoints: [
+      'The 52nd G7 Summit was held in \u00C9vian-les-Bains, France (June 15\u201317, 2026); India attended as a Partner Country and PM Modi joined the outreach sessions.',
+      'India and the EU reaffirmed (June 17) they will sign their concluded Free Trade Agreement by the end of 2026; it will cut tariffs on 99% of Indian exports to the EU.',
+      'Indian jurist Bimal N. Patel was elected a Judge of the International Tribunal for the Law of the Sea (ITLOS) for the 2026\u20132035 term; he takes office on October 1, 2026.',
+      'Hitesh Rameshchandra Joshi was appointed Chairman-cum-Managing Director (CMD) of GIC Re, India\u2019s national reinsurer, effective June 16, 2026.',
+      'PM Modi disbursed around \u20B92,400 crore under the Pradhan Mantri Viksit Bharat Rozgar Yojana (PM-VBRY) on June 19, supporting 15 lakh jobs (scheme outlay: \u20B999,446 crore).',
+      'The 12th International Day of Yoga (June 21) was observed with the theme "Yoga for Healthy Ageing"; PM Modi led the main event from Red Road, Kolkata.',
+      'PM Modi commissioned three indigenous GRSE-built warships \u2014 INS Dunagiri (Project 17A stealth frigate), INS Sanshodhak (survey vessel) and INS Agray (anti-submarine warfare craft) \u2014 in Kolkata on June 21.',
+      'India\u2019s women\u2019s hockey team won the FIH Women\u2019s Nations Cup 2025-26, beating New Zealand 2-0 in the Auckland final, and earned promotion to the FIH Pro League.',
+      'India\u2019s men\u2019s hockey team beat the Netherlands 3-2 in Rotterdam in the FIH Pro League on June 21 (Player of the Match: Hardik Singh).',
+      '15-year-old Vaibhav Sooryavanshi hit the fastest fifty in List A cricket history (11 balls) in the India A vs Sri Lanka A tri-series final, scoring 94 off 29 balls.',
+      'On June 19, the RBI issued the final revised Kisan Credit Card (KCC) Directions, 2026, applicable from January 1, 2027 (deferred from the proposed July 1, 2026).',
+    ],
+  },
   /* ═══ NEW: June 8–14, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-june-08-14-2026',
