@@ -287,7 +287,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'SSC CGL',
     icon: '📝',
     slug: 'ssc-cgl',
-    tip: 'You qualify for SSC CGL 2026! The official notification was released on 21 May 2026 with 12,256 vacancies. Apply online at ssc.gov.in before 22 June 2026. Complete your One-Time Registration (OTR) first. In-hand salary can reach ₹80,000/month for top posts.',
+    tip: 'You qualify for SSC CGL 2026! The official notification was released on 21 May 2026 with 12,256 vacancies. The application window reopened 23–25 June 2026 — confirm the latest deadline at ssc.gov.in and complete your One-Time Registration (OTR) first. In-hand salary can reach ₹80,000/month for top posts.',
   },
   {
     id: 'ibps',

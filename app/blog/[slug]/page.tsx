@@ -168,8 +168,8 @@ function SscCgl2026Article({ post }: { post: any }) {
           </div>
 
           {/* Action Required callout */}
-          <Callout type="tip" title="✅ Notification Update — 22 May 2026">
-            The SSC CGL 2026 official notification has been <strong>released on 21 May 2026</strong> at ssc.gov.in. <strong>12,256 vacancies</strong> have been announced. Apply online by <strong>22 June 2026</strong> (fee payment by 23 June). Application correction window: <strong>29 June – 1 July 2026</strong>. <strong>🆕 Key 2026 change:</strong> Sectional timing introduced in both Tier 1 (15 min per section) and Tier 2.
+          <Callout type="tip" title="✅ Notification Update — 24 June 2026">
+            The SSC CGL 2026 official notification was <strong>released on 21 May 2026</strong> at ssc.gov.in. <strong>12,256 vacancies</strong> have been announced. The application window <strong>reopened 23–25 June 2026</strong> (fee payment by 26 June). Application correction window: <strong>1–3 July 2026</strong>. Confirm the latest deadline at ssc.gov.in. <strong>🆕 Key 2026 change:</strong> Sectional timing introduced in both Tier 1 (15 min per section) and Tier 2.
           </Callout>
 
           {/* Table of Contents (mobile) */}
@@ -224,8 +224,8 @@ function SscCgl2026Article({ post }: { post: any }) {
                   </tr>
                   <tr className="border-t border-surface-100 bg-surface-50">
                     <td className="p-3 font-medium text-surface-800">Application Deadline</td>
-                    <td className="p-3 text-surface-600">22 June 2026</td>
-                    <td className="p-3 text-surface-500 text-xs">Fee payment by 23 June 2026 · Correction window 29 Jun–1 Jul</td>
+                    <td className="p-3 text-surface-600">25 June 2026 (reopened)</td>
+                    <td className="p-3 text-surface-500 text-xs">Window reopened 23–25 June · Fee payment by 26 June 2026 · Correction window 1–3 July</td>
                   </tr>
                 </tbody>
               </table>
@@ -650,7 +650,7 @@ function SscCgl2026Article({ post }: { post: any }) {
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
             mainEntity: [
-              { '@type': 'Question', name: 'What is the SSC CGL 2026 exam date?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL 2026 Tier 1 is officially scheduled for August–September 2026. Tier 2 is scheduled for December 2026. The official notification was released on 21 May 2026 at ssc.gov.in. Last date to apply is 22 June 2026.' } },
+              { '@type': 'Question', name: 'What is the SSC CGL 2026 exam date?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL 2026 Tier 1 is officially scheduled for August–September 2026. Tier 2 is scheduled for December 2026. The official notification was released on 21 May 2026 at ssc.gov.in. The application window reopened from 23 to 25 June 2026; candidates should confirm the latest deadline at ssc.gov.in.' } },
               { '@type': 'Question', name: 'How many subjects are in SSC CGL Tier 1?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL Tier 1 has 4 sections: General Intelligence & Reasoning (25 Qs), General Awareness (25 Qs), Quantitative Aptitude (25 Qs), and English Comprehension (25 Qs). Total: 100 questions, 200 marks, 60 minutes.' } },
               { '@type': 'Question', name: 'Is there negative marking in SSC CGL?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. In Tier 1, there is a negative marking of 0.50 marks for each wrong answer. In Tier 2, Module 1 of Paper 1 carries 1 mark negative marking per wrong answer.' } },
               { '@type': 'Question', name: 'What is the syllabus for SSC CGL Tier 2?', acceptedAnswer: { '@type': 'Answer', text: 'SSC CGL Tier 2 Paper 1 has three modules: Module 1 (Mathematical Abilities + Reasoning), Module 2 (English Language), and Module 3 (General Awareness + Computer Knowledge + Data Entry Speed Test). Paper 2 is Statistics for JSO post.' } },
@@ -4904,7 +4904,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
             <ChannelTable channels={sscChannels} id="ssc-channels" />
             <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
               <p className="text-emerald-800 font-medium text-sm leading-relaxed">
-                <span className="font-bold">✅ June 2026 Update:</span> SSC CGL 2026 notification is out (May 21) for <strong>12,256 vacancies</strong>. Apply at ssc.gov.in by <strong>June 22, 2026</strong>. Tier 1 exam is scheduled for August–September 2026. Subscribe to <strong>SSC Adda247</strong> and <strong>RBE – Shubham Jain</strong> to track admit card releases, exam centre lists, and cut-off predictions.
+                <span className="font-bold">✅ June 2026 Update:</span> SSC CGL 2026 notification is out (May 21) for <strong>12,256 vacancies</strong>. The application window reopened <strong>23–25 June 2026</strong> at ssc.gov.in. Tier 1 exam is scheduled for August–September 2026. Follow the official SSC website and trusted exam YouTube channels like <strong>RBE – Shubham Jain</strong> to track admit card releases, exam centre lists, and cut-off predictions.
               </p>
             </div>
           </section>
@@ -9125,7 +9125,7 @@ function BestYouTubeChannelsSscCglArticle({ post }: { post: any }) {
           {/* Key Takeaways */}
           <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8">
             <p className="text-red-800 font-heading font-semibold text-sm leading-relaxed">
-              🚨 <span className="font-bold">Apply NOW — Only 14 Days Left!</span> SSC CGL 2026 application deadline is <strong>June 22, 2026</strong>. Fee payment closes <strong>June 23</strong>. Do not wait until the last day — SSC servers crash under heavy traffic. Apply at <strong>ssc.gov.in</strong> today.
+              ✅ <span className="font-bold">SSC CGL 2026 — Application Reopened:</span> The SSC CGL 2026 application window reopened <strong>23–25 June 2026</strong> (fee payment by June 26) after the original June 22 deadline. Confirm the final deadline and apply at <strong>ssc.gov.in</strong>.
             </p>
           </div>
 
@@ -9155,7 +9155,7 @@ function BestYouTubeChannelsSscCglArticle({ post }: { post: any }) {
             </p>
             <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4 mb-4">
               <p className="text-emerald-800 font-medium text-sm leading-relaxed">
-                <span className="font-bold">✅ SSC CGL 2026 Update (June 8):</span> The SSC CGL 2026 notification was released on <strong>May 21, 2026</strong> for <strong>12,256 vacancies</strong> across 40 Group B &amp; C posts. Apply at ssc.gov.in by <strong>June 22, 2026</strong> (only 14 days left!). Fee payment deadline: <strong>June 23</strong>. Application fee: ₹100 (SC/ST/PwBD/Female/ESM exempted). Correction window: <strong>June 29 – July 1</strong>. Tier 1: <strong>August–September 2026</strong>. Tier 2: <strong>December 2026</strong>. Major change this year: <strong>sectional timing</strong> in both Tier 1 and Tier 2 — each Tier 1 section is locked at 15 minutes. You cannot borrow time between subjects.
+                <span className="font-bold">✅ SSC CGL 2026 Update (June 24):</span> The SSC CGL 2026 notification was released on <strong>May 21, 2026</strong> for <strong>12,256 vacancies</strong> across 40 Group B &amp; C posts. The application window <strong>reopened 23–25 June 2026</strong> at ssc.gov.in (fee payment by June 26). Application fee: ₹100 (SC/ST/PwBD/Female/ESM exempted). Correction window: <strong>July 1–3</strong>. Tier 1: <strong>August–September 2026</strong>. Tier 2: <strong>December 2026</strong>. Major change this year: <strong>sectional timing</strong> in both Tier 1 and Tier 2 — each Tier 1 section is locked at 15 minutes. You cannot borrow time between subjects.
               </p>
             </div>
           </section>
@@ -9450,7 +9450,7 @@ function BestYouTubeChannelsSscCglArticle({ post }: { post: any }) {
               <strong className="text-surface-700">📅 Last Updated:</strong> {post.updatedDate}
             </p>
             <p>
-              <strong className="text-surface-700">Disclaimer:</strong> YouTube channel names and descriptions listed in this article are based on our editorial team&apos;s review and publicly available information as of {post.updatedDate}. TaiyarHo.in is not affiliated with, endorsed by, or officially connected to any YouTube channel mentioned above. Subscriber counts are approximate and may change. SSC CGL 2026 vacancy count (12,256), exam dates (Tier 1: August–September 2026, Tier 2: December 2026), application deadline (June 22, 2026), fee payment deadline (June 23), and correction window (June 29 – July 1, 2026) are sourced from the official notification at <strong>ssc.gov.in</strong>. Salary figures use DA at 60% effective January 1, 2026 (Cabinet-approved April 18, 2026) and HRA at 30/20/10% for X/Y/Z cities. Always verify final details on the official SSC website before taking any action.
+              <strong className="text-surface-700">Disclaimer:</strong> YouTube channel names and descriptions listed in this article are based on our editorial team&apos;s review and publicly available information as of {post.updatedDate}. TaiyarHo.in is not affiliated with, endorsed by, or officially connected to any YouTube channel mentioned above. Subscriber counts are approximate and may change. SSC CGL 2026 vacancy count (12,256), exam dates (Tier 1: August–September 2026, Tier 2: December 2026), reopened application window (23–25 June 2026), fee payment deadline (June 26), and correction window (July 1–3, 2026) are sourced from the official notification at <strong>ssc.gov.in</strong>. Salary figures use DA at 60% effective January 1, 2026 (Cabinet-approved April 18, 2026) and HRA at 30/20/10% for X/Y/Z cities. Always verify final details on the official SSC website before taking any action.
             </p>
           </div>
 
