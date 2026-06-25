@@ -113,12 +113,16 @@ export default function DisclaimerPage() {
 
           <section>
             <h2 className="text-xl font-heading font-bold text-surface-900 mb-3">
-              5. Book & Resource Recommendations
+              5. Book & Resource Recommendations &amp; Affiliate Disclosure
             </h2>
             <p>
               Book recommendations and resource lists on this website are based on general
-              popularity among aspirants. We may include affiliate links in the future. Any
-              such links will be clearly disclosed. We do not guarantee results from using
+              popularity among aspirants and our editorial review. TaiyarHo.in is a participant
+              in the Amazon Associates Program, an affiliate advertising program. This means some
+              of the book links on our pages are affiliate links, and as an Amazon Associate we
+              earn from qualifying purchases made through them — at no extra cost to you. These
+              small commissions help us keep TaiyarHo.in free for everyone. We only recommend
+              books we believe are genuinely useful, and we do not guarantee results from using
               any recommended book or resource.
             </p>
           </section>

@@ -188,6 +188,10 @@ function Footer() {
               </a>
             </div>
           </div>
+          {/* Affiliate disclosure */}
+          <p className="text-xs text-surface-500 text-center sm:text-left leading-relaxed">
+            Some book links on TaiyarHo.in are affiliate links — buying through them helps keep the site free for everyone. As an Amazon Associate, we earn from qualifying purchases, at no extra cost to you.
+          </p>
           {/* Copyright */}
           <p className="text-sm text-surface-500 text-center sm:text-left">&copy; {new Date().getFullYear()} TaiyarHo. All rights reserved.</p>
         </div>
