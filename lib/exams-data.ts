@@ -1301,6 +1301,13 @@ export const guides = [
     category: 'Strategy',
     readTime: '12 min read',
   },
+  {
+    slug: 'how-to-read-newspaper-government-exams',
+    title: 'How to Read Newspaper for Government Exams in 30 Minutes (2026)',
+    description: 'Learn how to read the newspaper for government exams like UPSC, SSC and Banking in just 30 minutes a day. A simple 2026 strategy covering all 8 exam categories — what to read, what to note, and what you can safely skip.',
+    category: 'Strategy',
+    readTime: '8 min read',
+  },
 ];
 
 export function getExamBySlug(slug: string): Exam | undefined {

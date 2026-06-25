@@ -17,6 +17,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'age-limit-relaxation-government-jobs': 'Age Relaxation in Govt Jobs 2026: OBC, SC/ST, PwBD, EWS – Meaning & Full Rules | TaiyarHo',
     'study-plan-working-professionals': 'Government Exam Preparation for Working Professionals 2026 – Study Plan, Schedule & Strategy | TaiyarHo',
     'documents-needed-government-job': 'Documents Required for Government Job 2026 – Complete Checklist for Application & Document Verification | TaiyarHo',
+    'how-to-read-newspaper-government-exams': 'How to Read Newspaper for Government Exams in 30 Minutes (2026) – UPSC, SSC & Banking Strategy | TaiyarHo',
   };
 
   const seoDescriptions: Record<string, string> = {
@@ -26,6 +27,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'age-limit-relaxation-government-jobs': 'Complete guide to age limits and relaxation rules for Indian government exams 2026. OBC gets +3 years, SC/ST +5 years, PwBD +10–15 years. Exam-wise age limit table for UPSC, SSC CGL, IBPS, SBI PO & Railway 2026.',
     'study-plan-working-professionals': 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, 14-hour weekend strategy, best apps for micro-learning, and how to manage burnout as a working aspirant.',
     'documents-needed-government-job': 'Complete 2026 checklist of documents needed for government job applications and document verification. Covers ID proof, educational certificates, OBC/SC/ST/EWS reservation documents, NOC, and pro tips to avoid rejection in SSC, IBPS, UPSC, SBI, and Railway exams.',
+    'how-to-read-newspaper-government-exams': 'Learn how to read the newspaper for government exams like UPSC, SSC and Banking in just 30 minutes a day. A simple 2026 strategy with the best newspaper picks, a minute-by-minute method, syllabus mapping for all 8 exam categories, and what to skip.',
   };
 
   const seoKeywords: Record<string, string> = {
@@ -35,6 +37,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'age-limit-relaxation-government-jobs': 'age limit government jobs India 2026, age relaxation OBC SC ST EWS PwBD ex-servicemen, sarkari naukri age limit, UPSC SSC CGL IBPS PO SBI PO RRB NTPC age limit, government exam age relaxation rules, umar mein choot sarkari naukri, age relaxation central government',
     'study-plan-working-professionals': 'government exam preparation while working full time, sarkari exam naukri ke saath taiyari, working professional study plan 2026, UPSC preparation job, SSC CGL banking exam while employed, time management government exam, study schedule working professional, sarkari naukri taiyari job ke saath',
     'documents-needed-government-job': 'documents for government job India 2026, document verification DV government exam, OBC NCL certificate validity, documents needed SSC CGL IBPS PO UPSC, government job document checklist, sarkari naukri ke liye documents, name mismatch affidavit, EWS certificate format, government job rejection reasons',
+    'how-to-read-newspaper-government-exams': 'how to read newspaper for government exams, newspaper reading strategy UPSC SSC banking, best newspaper for competitive exams 2026, the hindu vs indian express for exams, daily newspaper reading method, current affairs newspaper reading, newspaper notes for government exams, regional language newspaper state psc, current affairs kaise padhe',
   };
 
   return {
@@ -192,6 +195,11 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
   // Full rich article for documents needed guide
   if (params.slug === 'documents-needed-government-job') {
     return <DocumentsGuide guide={guide} />;
+  }
+
+  // Full rich article for newspaper reading guide
+  if (params.slug === 'how-to-read-newspaper-government-exams') {
+    return <NewspaperReadingGuide guide={guide} />;
   }
 
   return (
@@ -3636,5 +3644,352 @@ function DocSection({ id, title, children }: { id: string; title: string; childr
       <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-5 pb-3 border-b border-surface-200">{title}</h2>
       {children}
     </section>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HOW TO READ NEWSPAPER FOR GOVERNMENT EXAMS — Full Rich Guide
+// ─────────────────────────────────────────────────────────────────────────────
+function NewspaperReadingGuide({ guide }: { guide: { slug: string; title: string; description: string; category: string; readTime: string } }) {
+  const toc = [
+    { id: 'why', label: 'Why It Matters in 2026' },
+    { id: 'best-paper', label: 'Which Newspaper Is Best' },
+    { id: 'method', label: 'The 30-Minute Method' },
+    { id: 'syllabus', label: 'Match News to Your Syllabus' },
+    { id: 'skip', label: 'What to Skip' },
+    { id: 'regional', label: 'Reading in Your Language' },
+    { id: 'mistakes', label: 'Common Mistakes' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const papers = [
+    { name: 'The Hindu', best: 'UPSC, State PSCs', level: 'Hard', why: 'Strong editorials, deep coverage of international relations and the environment.' },
+    { name: 'The Indian Express', best: 'SSC CGL, Banking, UPSC', level: 'Medium', why: 'The "Explained" section simplifies tough topics. Great for Economy and policy.' },
+    { name: 'Business Standard / Mint', best: 'RBI Grade B, Bank PO', level: 'Hard (financial)', why: 'RBI policy, inflation data and banking reforms.' },
+    { name: 'Your top regional daily (Lokmat, Eenadu, Dinamalar, Dainik Jagran)', best: 'State PSC & regional-language students', level: 'Medium (your language)', why: 'Strong state and national news — great for State PSC. Pair with English editorial analysis for depth.' },
+  ];
+
+  const blocks = [
+    { time: 'Minutes 0–5', title: 'Skim the front page & national news', color: 'bg-blue-50 border-blue-200', head: 'text-blue-700', body: 'Look for big policy announcements, Supreme Court verdicts or new government schemes. If you see a headline about the expected 8th Pay Commission, or a change in the central government\'s DA rate (around 60% as of June 2026, revised every six months), just note the key point — skip the politicians\' quotes. Ignore local city news unless it is a major project (a new Ramsar wetland site, a big bridge).' },
+    { time: 'Minutes 5–20', title: 'Read the editorial page (the core)', color: 'bg-amber-50 border-amber-200', head: 'text-amber-700', body: 'Spend half your time here. The editorial page is the heart of current affairs for UPSC, and a big boost for the English and descriptive sections in SSC and Banking exams. Pick just one or two articles written by experts — economists, retired diplomats or scientists. Read for the "why" and "how" behind an issue. This boosts your English speed and gives you ready-made points for Mains answers and interviews.' },
+    { time: 'Minutes 20–25', title: 'Economy & International Relations', color: 'bg-emerald-50 border-emerald-200', head: 'text-emerald-700', body: 'For banking aspirants, this is gold. Note Repo Rate changes, GDP forecasts from the World Bank or IMF, and major mergers. On the World page, focus on bilateral visits (like a new India–France pact), big geopolitical shifts, and summits like G20 or ASEAN. Skip small foreign elections and celebrity news.' },
+    { time: 'Minutes 25–30', title: 'Make micro-notes', color: 'bg-purple-50 border-purple-200', head: 'text-purple-700', body: 'Don\'t copy sentences. In the last 5 minutes, jot down only "micro-notes": new words, names of new committees, Constitution articles in the news, or unique data points. Use monthly current affairs PDFs for the detailed summaries. Your daily notes are just memory triggers.' },
+  ];
+
+  const faqs = [
+    { q: 'Which newspaper is best for SSC CGL 2026?', a: 'The Indian Express is the top pick. Its English is easier than The Hindu, and its factual coverage matches the SSC General Awareness pattern well.' },
+    { q: 'Can I clear UPSC or a State PSC without reading the newspaper?', a: 'It is very hard. Monthly magazines give you the facts, but daily reading builds the analytical mindset and vocabulary you need for Mains answers and interviews.' },
+    { q: 'Should I make detailed daily notes?', a: 'No. Avoid copying paragraphs. Note only new keywords, key data, rankings or Constitution articles. Use free monthly or weekly PDFs for revision.' },
+    { q: 'Are e-papers enough, or do I need the printed copy?', a: 'E-papers are perfectly fine and save money — as long as you can read them without getting pulled into social media.' },
+    { q: 'How do I read the newspaper for bank exams like IBPS PO or SBI PO?', a: 'Focus on the Business and Economy pages. Track RBI policy, inflation numbers, banking reforms and big mergers. Skip deep political news.' },
+    { q: 'Are regional-language newspapers enough for UPSC?', a: 'They are great for facts and state news, but often lack deep policy analysis. If you study in a regional language, add some English editorial analysis (many are explained in your own language) for UPSC Mains depth.' },
+    { q: 'How long should a beginner take to read the paper?', a: 'A beginner may take 1 to 1.5 hours at first. With practice and strict syllabus mapping, bring it down to 30–45 minutes within a month.' },
+  ];
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Strategy</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-primary-700 to-primary-900 rounded-2xl p-8 mb-10 text-white">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="bg-white/20 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">{guide.category}</span>
+              <span className="text-white/70 text-xs">Updated June 2026</span>
+              <span className="text-white/50 text-xs">•</span>
+              <span className="text-white/70 text-xs">{guide.readTime}</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4 leading-tight">
+              How to Read the Newspaper for Government Exams in 30 Minutes (2026)
+            </h1>
+            <p className="text-white/85 leading-relaxed text-base mb-6">
+              A simple, no-fluff daily method to pull exam-relevant current affairs out of the newspaper — without losing three hours and a yellow highlighter to it. Works for UPSC, SSC, Banking and every other category.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { num: '30 min', label: 'Daily target' },
+                { num: '50%', label: 'Time on editorials' },
+                { num: '8', label: 'Exam categories covered' },
+                { num: 'Free', label: 'Weekly digests on TaiyarHo' },
+              ].map(item => (
+                <div key={item.label} className="bg-white/15 rounded-xl p-4 text-center">
+                  <div className="text-xl font-bold text-white">{item.num}</div>
+                  <div className="text-xs text-white/80 font-medium mt-1">{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile TOC */}
+          <div className="card p-5 mb-10 border-l-4 border-primary-500 lg:hidden">
+            <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Table of Contents</div>
+            <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+              {toc.map(item => (
+                <li key={item.id}><a href={`#${item.id}`} className="text-sm text-primary-500 hover:underline">{item.label}</a></li>
+              ))}
+            </ol>
+          </div>
+
+          {/* Quick summary */}
+          <GCallout type="info" title="⚡ Quick Summary">
+            <ul className="space-y-1.5 mt-1">
+              <li><strong>Time:</strong> No more than 30–45 minutes a day. It is a support tool, not your main textbook.</li>
+              <li><strong>Match the syllabus:</strong> Read only the news that connects to your exam.</li>
+              <li><strong>The skip rule:</strong> Ignore political fights, local crime, Bollywood and city-level updates.</li>
+              <li><strong>Best picks 2026:</strong> The Indian Express for SSC &amp; Banking; The Hindu for UPSC Mains.</li>
+              <li><strong>Notes:</strong> Don&apos;t copy paragraphs — note only new keywords, key data and Constitution articles.</li>
+            </ul>
+          </GCallout>
+
+          {/* SECTION: Why */}
+          <GSection id="why" title="Why Newspaper Reading Matters in 2026">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              If you are serious about your exam, you have probably fallen into the &quot;newspaper trap.&quot; You sit down with a cup of tea, open the paper, and three hours disappear. The whole page is yellow with highlighter — but you remember almost nothing useful.
+            </p>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              The 2026 exam cycle shows a clear change across all major exams. Examiners now test your awareness of the real world, not just rote learning.
+            </p>
+            <ul className="space-y-2 mb-4">
+              <li className="flex items-start gap-2 text-sm text-surface-700"><span className="text-primary-500 mt-0.5 flex-shrink-0">›</span><span><strong>For UPSC and State PSCs:</strong> Static subjects like Polity and Geography are now linked to current events. A question on the Election Commission or a Governor&apos;s powers usually starts from a recent news story.</span></li>
+              <li className="flex items-start gap-2 text-sm text-surface-700"><span className="text-primary-500 mt-0.5 flex-shrink-0">›</span><span><strong>For SSC CGL 2026 and Banking:</strong> General Awareness leans heavily on recent economic policies, international summits and defence exercises.</span></li>
+            </ul>
+            <p className="text-surface-600 leading-relaxed">
+              Reading daily also builds your English vocabulary, improves your reading speed for the English section, and gives you points to use in descriptive writing and interviews. But your time is your most valuable resource — so the goal is to read smart, not long.
+            </p>
+          </GSection>
+
+          {/* SECTION: Best paper */}
+          <GSection id="best-paper" title="Which Newspaper Is Best in 2026?">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              The best paper depends on your exam and your current English level. There is no single &quot;best&quot; — there is a best <em>for you</em>.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-2">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-surface-800 text-white font-heading">
+                    <th className="text-left p-3">Newspaper</th>
+                    <th className="text-left p-3">Best for</th>
+                    <th className="text-left p-3">English level</th>
+                    <th className="text-left p-3">Why it helps</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {papers.map((p, i) => (
+                    <tr key={p.name} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
+                      <td className="p-3 font-semibold text-surface-800">{p.name}</td>
+                      <td className="p-3 text-surface-600">{p.best}</td>
+                      <td className="p-3 text-surface-600">{p.level}</td>
+                      <td className="p-3 text-surface-600">{p.why}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </GSection>
+
+          {/* SECTION: Method */}
+          <GSection id="method" title="The 30-Minute Method, Step by Step">
+            <p className="text-surface-600 leading-relaxed mb-6">
+              You don&apos;t need to read every word. Treat the paper like a search tool: go in, take what you need, get out.
+            </p>
+            <div className="space-y-4">
+              {blocks.map(b => (
+                <div key={b.time} className={`card border ${b.color} p-5`}>
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-xs font-heading font-bold px-3 py-1 rounded-full bg-white/70 text-surface-700">{b.time}</span>
+                    <h3 className={`font-heading font-bold text-base ${b.head}`}>{b.title}</h3>
+                  </div>
+                  <p className="text-sm text-surface-600 leading-relaxed">{b.body}</p>
+                </div>
+              ))}
+            </div>
+            <GCallout type="warning" title="✍️ What a good micro-note actually looks like">
+              The gap between a useful note and a wasted one is huge. Say the headline is about the RBI keeping the repo rate unchanged:
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                <div className="bg-white/70 rounded-lg p-3 border border-red-200">
+                  <div className="text-xs font-bold text-red-600 mb-1">❌ Don&apos;t write (copying)</div>
+                  <p className="text-xs text-surface-600 leading-relaxed">&quot;In its latest meeting, the Reserve Bank of India&apos;s Monetary Policy Committee decided to keep the repo rate unchanged amid concerns over inflation…&quot;</p>
+                </div>
+                <div className="bg-white/70 rounded-lg p-3 border border-emerald-200">
+                  <div className="text-xs font-bold text-emerald-600 mb-1">✅ Do write (a micro-note)</div>
+                  <p className="text-xs text-surface-600 leading-relaxed">Repo rate unchanged · MPC · inflation target 4% (±2%) · link → Economy: Monetary Policy</p>
+                </div>
+              </div>
+            </GCallout>
+          </GSection>
+
+          {/* SECTION: Syllabus */}
+          <GSection id="syllabus" title="Match the News to Your Syllabus">
+            <p className="text-surface-600 leading-relaxed mb-6">
+              The biggest mistake students make is reading the news before learning their syllabus. If you don&apos;t know the syllabus, everything looks important. Here is what to track for each category.
+            </p>
+            <div className="space-y-4">
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-800 mb-2">UPSC &amp; State PSCs</h3>
+                <p className="text-sm text-surface-600 leading-relaxed">Link every article to a GS paper. An article on the anti-defection law → GS Paper 2 (Polity). A report on unseasonal rain hurting crops → GS Paper 3 (Agriculture/Environment) and GS Paper 1 (Geography).</p>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-800 mb-2">SSC CGL &amp; Railway</h3>
+                <p className="text-sm text-surface-600 leading-relaxed">Stay factual. Track the &quot;Who, What, When and Where&quot; — sports awards, defence exercise names (like Surya Kiran or Malabar), new appointments to top posts, and space/science launches (ISRO, DRDO). See the full <Link href="/exams/ssc-cgl" className="text-primary-500 hover:underline font-medium">SSC CGL 2026 exam pattern</Link> to know exactly how General Awareness is weighted.</p>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-800 mb-2">Bank PO &amp; RBI Grade B</h3>
+                <p className="text-sm text-surface-600 leading-relaxed">Focus on the financial world — SEBI rules, RBI circulars, inflation numbers (WPI/CPI) and digital banking. If you are aiming for a high-paying job like SBI PO (official starting basic pay ₹48,480, which becomes ₹56,480 after 4 advance increments), the economy page is a must. For the full take-home breakdown, read our <Link href="/blog/ibps-po-salary-in-hand-2026" className="text-primary-500 hover:underline font-medium">IBPS PO in-hand salary guide</Link>.</p>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-800 mb-2">Defence (NDA, CDS, AFCAT, CAPF)</h3>
+                <p className="text-sm text-surface-600 leading-relaxed">Current affairs and GK carry serious weight here. Track defence deals and exercises, new service-chief appointments, missile and space launches (DRDO, ISRO), and major national-security news.</p>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-800 mb-2">Police (SSC GD, State Police)</h3>
+                <p className="text-sm text-surface-600 leading-relaxed">Stay factual. Note new laws (like the Bharatiya Nyaya Sanhita), national and state schemes, awards, sports and important days for the GK section.</p>
+              </div>
+              <div className="card p-5">
+                <h3 className="font-heading font-bold text-surface-800 mb-2">Teaching (UGC NET, KVS, DSSSB)</h3>
+                <p className="text-sm text-surface-600 leading-relaxed">Watch education-policy news (like NEP updates) and government schemes, plus general current affairs for the GA section. CTET leans more on child development and teaching methods, so current affairs matters less there.</p>
+              </div>
+            </div>
+          </GSection>
+
+          {/* SECTION: Skip */}
+          <GSection id="skip" title="What to Skip (the Time-Wasters)">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              To stay inside 30 minutes, be strict about what you ignore. Government exams test administrative awareness, not drama.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { icon: '🚫', title: 'Political blame games', desc: '"Party A blames Party B" is useless. Pay attention only if a constitutional rule (like anti-defection) is involved.' },
+                { icon: '🚫', title: 'Local crime & accidents', desc: 'Skip city crime reports unless a major national law is involved (like the Bharatiya Nyaya Sanhita).' },
+                { icon: '🚫', title: 'Bollywood & entertainment', desc: 'Skip movie reviews and gossip. Only note major awards — National Film Awards, Oscars or Padma awards.' },
+                { icon: '🚫', title: 'Hyper-local news', desc: 'Road repairs and municipal complaints won\'t appear in a national exam.' },
+              ].map(s => (
+                <div key={s.title} className="card p-5 flex gap-3">
+                  <div className="text-xl flex-shrink-0">{s.icon}</div>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 mb-1 text-sm">{s.title}</div>
+                    <p className="text-sm text-surface-500 leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </GSection>
+
+          {/* SECTION: Regional */}
+          <GSection id="regional" title="Reading in Your Own Language? Tips for Regional-Language Students">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              You don&apos;t need to read in English to crack these exams. India has strong newspapers in every major language — Marathi, Tamil, Telugu, Bengali, Kannada, Malayalam, Gujarati, Hindi and more. If you read a leading daily in your own language, you already get solid national and state coverage.
+            </p>
+            <GCallout type="tip" title="🎯 Big advantage for State PSC aspirants">
+              This matters most for State PSC exams like MPSC, TNPSC, WBCS or BPSC, which test a lot of state-level current affairs. Your local-language paper often covers state news better than any national English daily.
+            </GCallout>
+            <p className="text-surface-600 leading-relaxed">
+              For deeper analysis — especially for UPSC Mains or descriptive papers — add a little English. Read your regional paper daily, then spend 15 minutes on a daily editorial analysis (many are explained in regional languages) that breaks down The Hindu or The Indian Express. This way you get high-level views without struggling through tough English.
+            </p>
+          </GSection>
+
+          {/* SECTION: Mistakes */}
+          <GSection id="mistakes" title="Common Mistakes Students Make">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              Most people don&apos;t struggle with current affairs because they read too little — they struggle because they read the wrong way. Avoid these six traps.
+            </p>
+            <div className="space-y-3">
+              {[
+                { title: 'Reading two or three papers', desc: 'Pick ONE paper and stick with it. Reading multiple papers is the fastest way to blow past 30 minutes and still feel behind.' },
+                { title: 'Highlighting the whole page', desc: 'If everything is highlighted, nothing stands out. Highlight only what you would actually put in a note.' },
+                { title: 'Notes that are far too long', desc: 'A note you cannot revise in seconds is a wasted note. Keep them to keywords, names, numbers and a link to your syllabus.' },
+                { title: 'Reading for hours just to feel safe', desc: 'More time does not mean more marks. After 45 minutes you hit diminishing returns — spend the rest of your day on static subjects and practice.' },
+                { title: 'Starting current affairs too early', desc: 'If your static base (Polity, History, Economy basics) is weak, the news will not stick. Build the base first, then layer current affairs on top.' },
+                { title: 'Never revising your notes', desc: 'Notes you make and never reopen are useless. Spend 20–30 minutes every weekend revising the micro-notes from that week — that is where the memory actually forms.' },
+              ].map(m => (
+                <div key={m.title} className="card p-4 flex items-start gap-3">
+                  <span className="w-6 h-6 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center text-sm flex-shrink-0 mt-0.5">⚠</span>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{m.title}</div>
+                    <p className="text-sm text-surface-500 leading-relaxed">{m.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </GSection>
+
+          {/* SECTION: FAQ */}
+          <GSection id="faq" title="FAQs">
+            <div className="divide-y divide-surface-200">
+              {faqs.map((faq, i) => (
+                <details key={i} className="group">
+                  <summary className="flex items-start gap-3 py-4 cursor-pointer list-none font-medium text-surface-800 hover:text-primary-500 transition-colors">
+                    <span className="w-6 h-6 bg-accent-500 text-white text-xs font-bold rounded flex items-center justify-center flex-shrink-0 mt-0.5">Q</span>
+                    <span className="flex-1">{faq.q}</span>
+                    <svg className="w-4 h-4 text-surface-400 flex-shrink-0 mt-1 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="pl-9 pb-4 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </GSection>
+
+          {/* Final thought */}
+          <GCallout type="tip" title="💬 Final Thought">
+            Building this habit takes a few weeks — at first it may take you an hour to filter out the noise, and that&apos;s normal. Current affairs is a marathon, not a sprint. Pair your 30 minutes of daily reading with TaiyarHo&apos;s free <Link href="/current-affairs/" className="underline font-medium">weekly current affairs digests</Link> (and the official PIB website for government schemes) and you will have full coverage. Stick to your syllabus and stay consistent.
+          </GCallout>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 text-center text-white mb-10">
+            <h3 className="font-heading font-bold text-xl mb-2">Taiyar Ho? Start Smart — Everything on TaiyarHo Is Free</h3>
+            <p className="text-primary-100 text-sm mb-5 max-w-xl mx-auto">Read our weekly current affairs digests, check which exams you qualify for, and explore exam-specific guides — no login, no fees.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/current-affairs/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Read Weekly Current Affairs →</Link>
+              <Link href="/tools/eligibility-checker" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
+            </div>
+          </div>
+
+          <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+            This guide is for informational purposes only. Newspaper choices and exam patterns can change — always verify the latest from official exam websites. Last updated: June 2026.
+          </p>
+        </article>
+
+        {/* Desktop Sidebar */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-4">📖 Contents</div>
+              <ol className="space-y-2 list-decimal list-inside">
+                {toc.map(item => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm text-primary-500 hover:underline">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="card p-5 border-l-4 border-accent-500">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">🧰 Use These (Free)</div>
+              <div className="space-y-2.5">
+                <Link href="/current-affairs/" className="block text-sm text-primary-500 hover:underline leading-snug">Weekly Current Affairs Digests</Link>
+                <Link href="/tools/eligibility-checker" className="block text-sm text-primary-500 hover:underline leading-snug">Eligibility Checker Tool</Link>
+                <Link href="/exams" className="block text-sm text-primary-500 hover:underline leading-snug">Browse All Exams</Link>
+              </div>
+            </div>
+            <div className="card p-5">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📚 Related Guides</div>
+              <div className="space-y-3">
+                {guides.filter(g => g.slug !== guide.slug).slice(0, 4).map(g => (
+                  <Link key={g.slug} href={`/guides/${g.slug}/`} className="block text-sm text-primary-500 hover:underline leading-snug">
+                    {g.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
   );
 }
