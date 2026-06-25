@@ -36,12 +36,12 @@ const upcomingExams: MonthGroup[] = [
     exams: [
       {
         name: 'SSC CGL 2026 (Apply Online)',
-        date: '21 May – 22 Jun 2026',
+        date: '21 May – 25 Jun 2026',
         status: 'OFFICIAL',
         category: 'SSC',
         internalSlug: 'ssc-cgl',
         externalUrl: 'https://ssc.gov.in',
-        note: '12,256 vacancies • Notification out 21 May • Tier 1: Aug–Sep 2026 • Tier 2: Dec 2026',
+        note: '12,256 vacancies • Notification out 21 May • Apply window reopened 23–25 Jun • Tier 1: Aug–Sep 2026 • Tier 2: Dec 2026',
       },
     ],
   },
