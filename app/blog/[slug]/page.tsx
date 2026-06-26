@@ -93,6 +93,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <GovtVsPrivateJobArticle post={post} />;
   }
 
+  if (post.slug === 'ssc-gd-rpf-police-physical-test-guide-2026') {
+    return <PhysicalFitnessGuideArticle post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -9991,6 +9995,534 @@ function GovtVsPrivateJobArticle({ post }: { post: any }) {
           </div>
         </aside>
       </div>
+    </div>
+  );
+}
+
+// ─── PHYSICAL FITNESS GUIDE: SSC GD, RPF & POLICE 2026 ───────────────────────
+function PhysicalFitnessGuideArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'why', label: 'Why It Decides Everything' },
+    { id: 'ssc-gd', label: 'SSC GD Standards' },
+    { id: 'rpf', label: 'RPF Standards (2025 Rules)' },
+    { id: 'police', label: 'Police Standards' },
+    { id: 'compare', label: 'Compare All Three' },
+    { id: 'training', label: '12-Week Training Plan' },
+    { id: 'diet', label: 'Diet & Recovery' },
+    { id: 'medical', label: 'Medical Stage' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const thBase = 'text-left p-3 font-semibold text-xs uppercase tracking-wide';
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">Physical Fitness Guide 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        {/* MAIN CONTENT */}
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-accent-500/20 border border-accent-500/40 text-accent-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse" />
+                  Updated {post.updatedDate}
+                </span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">SSC GD</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">RPF</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Police</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                Physical Fitness Guide for <span className="text-accent-300 italic">SSC GD, RPF & Police</span> Exams 2026
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed mb-5">
+                The exact PET/PST standards — running time, height, chest, long jump — plus an honest training plan. No hype, no crash diets.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+                <span>📅 Published: {post.publishedDate}</span>
+                <span>⏱ {post.readTime}</span>
+                <span>👁 Based on official notifications & Gazette G.S.R. 766(E)</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Facts Strip */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+            {[
+              { label: 'SSC GD Male Run', value: '5 km', sub: 'in 24 minutes' },
+              { label: 'RPF Male Height', value: '170 cm', sub: 'revised 2025 rules' },
+              { label: 'Test Type', value: 'Pass/Fail', sub: 'qualifying, no marks' },
+              { label: 'Prep Time', value: '3–4 mo', sub: 'realistic minimum' },
+            ].map(f => (
+              <div key={f.label} className="card p-4 text-center">
+                <div className="text-xs text-surface-400 uppercase tracking-wide font-semibold">{f.label}</div>
+                <div className="text-xl font-heading font-bold text-accent-500 mt-1">{f.value}</div>
+                <div className="text-xs text-surface-400 mt-0.5">{f.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Key takeaways */}
+          <Callout type="tip" title="📌 Quick Summary — Key Takeaways">
+            <ul className="list-disc ml-5 space-y-1.5 mt-1">
+              <li>The physical test is <strong>pass/fail</strong> — it adds zero marks to your merit, but failing it ends your selection completely.</li>
+              <li><strong>SSC GD:</strong> male run is 5 km in 24 min; female is 1.6 km in 8.5 min. RPF and Police runs are shorter (1600 m / 800 m) but add long jump and high jump.</li>
+              <li>General-category <strong>male height is 170 cm</strong> across SSC GD, RPF Executive Cadre (revised 2025) and Delhi Police.</li>
+              <li><strong>Chest is measured for males only</strong> — around 80 cm with 5 cm expansion.</li>
+              <li>Most people who fail started training too late. Give yourself <strong>3–4 months minimum</strong>.</li>
+              <li><strong>State police standards vary by state</strong> — always check your own state's official notification.</li>
+            </ul>
+          </Callout>
+
+          {/* Table of Contents (mobile) */}
+          <div className="card p-5 mb-10 border-l-4 border-primary-500 lg:hidden">
+            <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Table of Contents</div>
+            <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+              {toc.map(item => (
+                <li key={item.id}><a href={`#${item.id}`} className="text-sm text-primary-500 hover:underline">{item.label}</a></li>
+              ))}
+            </ol>
+          </div>
+
+          {/* WHY */}
+          <Section id="why" title="Why the Physical Test Decides Everything">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Lakhs of candidates clear the written exam every year. The physical stage is where the field gets cut down sharply. Here is the part nobody tells you early enough: <strong>the run usually gives you only one attempt.</strong> Miss the time by even a few seconds and there is no appeal.
+            </p>
+            <p className="text-surface-600 leading-relaxed mb-4">
+              The good news is that these standards are very clearable for an average healthy young person who trains consistently. You do not need to be an athlete — you need a plan and a few honest months of effort.
+            </p>
+            <Callout type="info" title="💡 Reality check">
+              If you cannot currently run 1 km without stopping, that is completely normal at the start. Almost everyone begins there. What matters is steady weekly improvement, not where you start.
+            </Callout>
+          </Section>
+
+          {/* SSC GD */}
+          <Section id="ssc-gd" title="SSC GD Constable — Physical Standards 2026">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              The SSC GD Physical Test has two parts: the <strong>PET</strong> (the run) and the <strong>PST</strong> (height and chest measurement). It is conducted by the CAPFs (BSF, CRPF, CISF, ITBP and others) at designated centres.
+            </p>
+
+            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3 mt-6">SSC GD Running Standard (PET)</h3>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-900 text-white">
+                  <tr>
+                    <th className={thBase}>Candidate</th>
+                    <th className={thBase + ' text-center'}>Distance</th>
+                    <th className={thBase + ' text-center'}>Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Male (all-India)', '5 km', '24 minutes'],
+                    ['Female (all-India)', '1.6 km', '8 min 30 sec'],
+                    ['Male (Ladakh region)', '1.6 km', '7 minutes'],
+                    ['Female (Ladakh region)', '800 m', '5 minutes'],
+                  ].map((r, i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800">{r[0]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[1]}</td>
+                      <td className="p-3 text-center text-emerald-600 font-semibold">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-500 mb-6">The run gives only <strong>1 chance</strong> and there is no appeal on the PET result.</p>
+
+            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3">SSC GD Height & Chest (PST)</h3>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-900 text-white">
+                  <tr>
+                    <th className={thBase}>Standard</th>
+                    <th className={thBase + ' text-center'}>Male (Gen/OBC/SC)</th>
+                    <th className={thBase + ' text-center'}>Female (Gen/OBC/SC)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Height', '170 cm', '157 cm'],
+                    ['Height (ST)', '162.5 cm', '150 cm'],
+                    ['Chest (unexpanded → expanded)', '80 → 85 cm', 'Not measured'],
+                  ].map((r, i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800">{r[0]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[1]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <ul className="list-disc ml-6 space-y-1 text-surface-600 text-sm mb-4">
+              <li><strong>Height relaxations</strong> apply for ST, North-Eastern states, hilly regions and Gorkha Territorial Administration candidates — carry the Annexure-IX certificate to the PST ground.</li>
+              <li><strong>Chest is for males only.</strong> For females, examiners only note that the chest is well-developed at the medical stage.</li>
+            </ul>
+            <Callout type="warning" title="⚠️ Important 2026 update — weight is now BMI-based">
+              As per the Ministry of Home Affairs OM dated 9 March 2026, candidates are <strong>no longer rejected on weight at the PST stage</strong>. Weight is assessed at the Detailed Medical Examination using BMI (qualifying range roughly 18–25). Keep your BMI in a healthy range to avoid problems at the medical.
+            </Callout>
+          </Section>
+
+          {/* RPF */}
+          <Section id="rpf" title="RPF Constable & SI — Physical Standards 2026">
+            <Callout type="info" title="🆕 Big change you must know — RPF Amendment Rules 2025">
+              The <strong>RPF (Amendment) Rules, 2025</strong> (Gazette of India, G.S.R. 766(E), notified 17 October 2025) overhauled RPF recruitment to bring it in line with Central Armed Police Force (CAPF) norms. For the <strong>Executive Cadre</strong> (the Constable and SI posts you sit the exam for):
+              <ul className="list-disc ml-5 space-y-1 mt-2">
+                <li>Recruitment moves from the Railway Recruitment Boards (RRB) to the <strong>Staff Selection Commission (SSC)</strong>, following SSC's CAPF recruitment procedure. Apply only through ssc.gov.in once the notification is live.</li>
+                <li>Minimum <strong>male height raised from 165 cm to 170 cm</strong>; chest 80 cm (unexpanded) / 85 cm (expanded).</li>
+                <li><strong>Female and reserved-category</strong> standards are set "at par with CAPF" — exact figures will come with the SSC notification.</li>
+                <li><strong>Constable (Executive) age reduced to 18–23 years</strong>, 10th pass. (SI age follows SSC norms — confirm in the notification.)</li>
+                <li>Medical exam now by CAPF Medical Officers or a Grade-I Central/State Government Medical Officer.</li>
+              </ul>
+            </Callout>
+
+            <p className="text-surface-600 leading-relaxed mb-4">
+              RPF has a <strong>PMT</strong> (Physical Measurement Test — height/chest) and a <strong>PET</strong> (Physical Efficiency Test — running, long jump, high jump). Unlike SSC GD, <strong>jumps are part of the test</strong>, and the run is shorter.
+            </p>
+
+            <Callout type="warning" title="⚠️ RPF PET figures below are provisional">
+              The 2025 gazette does not print any running or jump standards — it defers selection (and therefore the PET specifics) to "SSC's recruitment procedure for CAPF." The table below uses the previously documented figures; the official numbers will be confirmed only in the upcoming SSC RPF notification. Verify before relying on them.
+            </Callout>
+
+            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3 mt-6">RPF Running, Long Jump & High Jump (PET)</h3>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-900 text-white">
+                  <tr>
+                    <th className={thBase}>Candidate</th>
+                    <th className={thBase + ' text-center'}>Run</th>
+                    <th className={thBase + ' text-center'}>Long Jump</th>
+                    <th className={thBase + ' text-center'}>High Jump</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Constable — Male', '1600 m in 5:45', '14 feet', '4 feet'],
+                    ['Constable — Female', '800 m in 3:40', '9 feet', '3 feet'],
+                    ['SI — Male', '1600 m in 6:30', '~12 feet', '3 ft 9 in'],
+                    ['SI — Female', '800 m in 4:00', 'TBN', 'TBN'],
+                  ].map((r, i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800">{r[0]}</td>
+                      <td className="p-3 text-center text-emerald-600 font-semibold">{r[1]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[2]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[3]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-500 mb-6">The run gives only 1 chance; long jump and high jump allow a small number of attempts (around 2). SI timings are slightly easier than Constable, reflecting the older graduate-level applicant pool. (TBN = To Be Notified.)</p>
+
+            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3">RPF Height & Chest (PMT)</h3>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-900 text-white">
+                  <tr>
+                    <th className={thBase}>Group</th>
+                    <th className={thBase + ' text-center'}>Height</th>
+                    <th className={thBase + ' text-center'}>Chest (unexpanded → expanded)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Male — Executive Cadre (Constable/SI)', '170 cm', '80 → 85 cm'],
+                    ['Female — Executive Cadre', 'At par with CAPF — TBN', 'Not measured'],
+                    ['Reserved categories (SC/ST/hill)', 'At par with CAPF — TBN', 'Per CAPF norms'],
+                  ].map((r, i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800">{r[0]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[1]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <ul className="list-disc ml-6 space-y-1 text-surface-600 text-sm">
+              <li>The gazette does <strong>not</strong> print numeric heights for female or reserved-category candidates — it sets them "at par with CAPF". The old RPF figures are not safe to reuse under the new baseline.</li>
+              <li>Chest applies to <strong>male candidates only</strong>; minimum expansion 5 cm.</li>
+              <li>A separate "other than Executive Cadre" category exists at 165 cm — that is <strong>not</strong> the exam audience, so ignore it for Constable/SI preparation.</li>
+            </ul>
+          </Section>
+
+          {/* POLICE */}
+          <Section id="police" title="Police Exams — Physical Standards 2026">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              "Police" covers two very different groups, and this trips up a lot of aspirants:
+            </p>
+            <ol className="list-decimal ml-6 space-y-1 text-surface-600 text-sm mb-5">
+              <li><strong>SSC-conducted police posts</strong> (like Delhi Police Constable) — standardised, similar to SSC GD.</li>
+              <li><strong>State police</strong> (UP, Bihar, Maharashtra, Rajasthan and others) — <strong>each state sets its own standards.</strong> A chart for one state is wrong for another.</li>
+            </ol>
+
+            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-3">Example: Delhi Police Constable (SSC-conducted)</h3>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-3">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-900 text-white">
+                  <tr>
+                    <th className={thBase}>Standard</th>
+                    <th className={thBase + ' text-center'}>Male (up to 30 yrs)</th>
+                    <th className={thBase + ' text-center'}>Female (up to 30 yrs)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Race', '1600 m in 6 minutes', '1600 m in 8 minutes'],
+                    ['Long Jump', '14 feet', '10 feet'],
+                    ['High Jump', '3 ft 9 in', '3 ft 0 in'],
+                    ['Height', '170 cm', '157 cm'],
+                    ['Chest (male)', '81 → 85 cm', 'Not measured'],
+                  ].map((r, i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800">{r[0]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[1]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-surface-500 mb-4">Standards relax for older age bands — e.g. the female race becomes 10 minutes and high jump 2 ft 6 in for the above-40 band. Male candidates also need a valid LMV driving licence by the PE&MT date.</p>
+
+            <Callout type="warning" title="🟡 For state police — do not trust a generic chart">
+              UP Police, Bihar Police, Maharashtra Police, Rajasthan Police and others each publish their own height, chest and race standards in the official notification. Find your exam's dedicated page on TaiyarHo and read the official PDF before you start training to a number.
+            </Callout>
+          </Section>
+
+          {/* COMPARE */}
+          <Section id="compare" title="How the Three Compare (At a Glance)">
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-900 text-white">
+                  <tr>
+                    <th className={thBase}>Feature</th>
+                    <th className={thBase + ' text-center'}>SSC GD</th>
+                    <th className={thBase + ' text-center'}>RPF Constable</th>
+                    <th className={thBase + ' text-center'}>Delhi Police</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Male run', '5 km / 24 min', '1600 m / 5:45', '1600 m / 6:00'],
+                    ['Female run', '1.6 km / 8.5 min', '800 m / 3:40', '1600 m / 8:00'],
+                    ['Jumps tested?', 'No', 'Yes (long + high)', 'Yes (long + high)'],
+                    ['Male height (Gen)', '170 cm', '170 cm (2025)', '170 cm'],
+                    ['Hardest part', 'Long-distance stamina', 'Jump technique + speed', 'Speed + jumps'],
+                  ].map((r, i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800">{r[0]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[1]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[2]}</td>
+                      <td className="p-3 text-center text-surface-600">{r[3]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <Callout type="tip" title="✅ Honest takeaway">
+              SSC GD's 5 km run demands the most endurance. RPF and Police runs are shorter, but the jumps catch out strong runners who never practised technique. Train for what your specific exam actually tests.
+            </Callout>
+          </Section>
+
+          {/* TRAINING */}
+          <Section id="training" title="A Realistic 12-Week Training Plan">
+            <Callout type="warning" title="⚠️ Train safely">
+              See a doctor before starting intense training, especially if you have any heart, joint or breathing condition. Stop if you feel sharp pain — shin splints, knee pain and stress fractures are how over-eager aspirants lose a whole year.
+            </Callout>
+
+            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-2 mt-6">Weeks 1–4: Build the Base</h3>
+            <ul className="list-disc ml-6 space-y-1 text-surface-600 text-sm mb-5">
+              <li>Run/walk 4 days a week. Start with run 2 min / walk 1 min for 20–25 minutes, increasing the running portion weekly.</li>
+              <li>Add basic strength twice a week: bodyweight squats, push-ups, lunges, planks.</li>
+              <li>Goal by week 4: jog 2–3 km non-stop without gasping.</li>
+            </ul>
+
+            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-2">Weeks 5–8: Build Speed & Distance</h3>
+            <ul className="list-disc ml-6 space-y-1 text-surface-600 text-sm mb-5">
+              <li>One long run a week, building toward your target distance (5 km for SSC GD, a fast 1600 m for RPF/Police).</li>
+              <li>One interval session a week: e.g. 400 m fast, jog to recover, repeat 4–6 times. This is the single best workout for hitting timed targets.</li>
+              <li>If your exam has jumps, start long jump and high jump technique twice a week on a soft surface. Strong runners still fail jumps without practice.</li>
+            </ul>
+
+            <h3 className="font-heading font-semibold text-surface-800 text-lg mb-2">Weeks 9–12: Sharpen & Simulate</h3>
+            <ul className="list-disc ml-6 space-y-1 text-surface-600 text-sm mb-5">
+              <li>Run full mock tests at your exact target distance, timed, on similar ground. Aim to finish 2–3 minutes inside the cut-off so exam-day nerves do not push you over.</li>
+              <li>Keep one easy week before the test. Stop heavy training in the final 5–7 days — light jogging and rest only. Showing up fresh beats showing up exhausted.</li>
+            </ul>
+
+            <Callout type="info" title="💡 Smart training rules">
+              Consistency beats intensity — four steady weeks beat one brutal week followed by an injury. Rest days are training days: muscles rebuild during rest. Sleep 7–8 hours; recovery and stamina both depend on it.
+            </Callout>
+          </Section>
+
+          {/* DIET */}
+          <Section id="diet" title="Eating Well for the Physical Test (Keep It Simple)">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              You do not need supplements or extreme diets — you need consistent, balanced fuel:
+            </p>
+            <ul className="list-disc ml-6 space-y-1 text-surface-600 text-sm mb-4">
+              <li><strong>Protein</strong> at every meal helps recovery: dal, eggs, milk, paneer, chicken, soya.</li>
+              <li><strong>Carbohydrates</strong> are your running fuel: rice, roti, oats, fruit, potatoes. Do not cut them.</li>
+              <li><strong>Hydration:</strong> drink water through the day, especially around training and on test day.</li>
+              <li><strong>Avoid junk and very oily food</strong> in the weeks before your test — not for looks, but for how you feel when running.</li>
+            </ul>
+            <Callout type="warning" title="⚠️ Do not crash-diet to make weight">
+              Rapid weight loss wrecks your stamina and your health. A steady, healthy BMI is the goal, reached gradually. If you are significantly under- or over-weight, talk to a doctor and build a gradual, safe plan rather than rushing it before a deadline.
+            </Callout>
+          </Section>
+
+          {/* MEDICAL */}
+          <Section id="medical" title="Medical Stage — Don't Get Caught Off Guard">
+            <p className="text-surface-600 leading-relaxed mb-4">
+              Clearing the run and measurements is not the finish line. The medical exam commonly checks for:
+            </p>
+            <ul className="list-disc ml-6 space-y-1 text-surface-600 text-sm mb-4">
+              <li>Vision standards (SSC GD is stricter; RPF has historically been more lenient — confirm current norms).</li>
+              <li>Colour blindness — disqualifying for most forces.</li>
+              <li>Flat feet (flat foot) and knock knees — both can disqualify.</li>
+              <li>Hernia, piles and other conditions per each force's medical manual.</li>
+            </ul>
+            <Callout type="tip" title="✅ Action step">
+              If you suspect flat feet, knock knees or any vision issue, get checked by a doctor now — early correction is sometimes possible, last-minute panic is not.
+            </Callout>
+          </Section>
+
+          {/* FAQ */}
+          <Section id="faq" title="Frequently Asked Questions">
+            <div className="space-y-0">
+              {[
+                { q: 'Is the physical test in SSC GD, RPF and Police exams qualifying or scored?', a: 'It is qualifying only — you pass or fail, and it adds no marks to your merit list. But failing any event (run, jump or measurement) disqualifies you completely.' },
+                { q: 'How long does it take to prepare for the physical test from zero fitness?', a: 'For most healthy aspirants, 3–4 months of consistent training is enough. Beginners with weak stamina may need a little longer. Consistency matters far more than training hard for a few weeks.' },
+                { q: 'What is the running time for SSC GD male and female candidates?', a: 'Male candidates must run 5 km in 24 minutes and females 1.6 km in 8 minutes 30 seconds (all-India). Ladakh-region candidates have relaxed shorter-distance standards.' },
+                { q: 'What is the height requirement for RPF Constable?', a: 'Under the RPF (Amendment) Rules 2025, the minimum height for male Executive Cadre candidates is 170 cm (raised from 165 cm), with chest 80/85 cm. Female and reserved-category standards are set at par with CAPF — exact numbers will be published in the SSC RPF notification, so do not rely on the old figures.' },
+                { q: 'Is RPF recruitment conducted by RRB or SSC now?', a: 'As per the revised 2025 rules, RPF Constable and SI (Executive) recruitment is moving from the Railway Recruitment Boards (RRB) to the Staff Selection Commission (SSC). The SSC notification is still awaited — apply only through ssc.gov.in once it is officially released.' },
+                { q: 'Do female candidates have a chest measurement?', a: 'No. Chest is measured for male candidates only. For females, examiners only note general physical development at the medical stage, not a chest figure.' },
+                { q: 'How many chances do I get in the running test?', a: 'Only one chance for the run in SSC GD, RPF and Delhi Police — there is no appeal if you miss the time. Long jump and high jump (in RPF and Police) usually allow a small number of attempts.' },
+                { q: 'Are state police physical standards the same everywhere?', a: 'No. Each state (UP, Bihar, Maharashtra and others) sets its own height, chest and race standards. Always read your state\'s official notification — a generic chart will mislead you.' },
+              ].map((faq, i) => (
+                <details key={i} className="border-b border-surface-200 group">
+                  <summary className="flex items-start gap-3 py-4 cursor-pointer list-none font-medium text-surface-800 hover:text-primary-500 transition-colors">
+                    <span className="w-6 h-6 bg-accent-500 text-white text-xs font-bold rounded flex items-center justify-center flex-shrink-0 mt-0.5">Q</span>
+                    <span className="flex-1">{faq.q}</span>
+                    <svg className="w-4 h-4 text-surface-400 flex-shrink-0 mt-1 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="pl-9 pb-4 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </Section>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 text-center text-white mb-10">
+            <h3 className="font-heading font-bold text-xl mb-2">Check Your Eligibility — It's Free</h3>
+            <p className="text-primary-100 text-sm mb-5">See if you meet the age and qualification criteria for SSC GD, RPF and police exams before you start training.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/tools/eligibility-checker" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
+                Eligibility Checker →
+              </Link>
+              <Link href="/exams/ssc-gd-constable/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
+                SSC GD Exam Guide
+              </Link>
+            </div>
+          </div>
+
+          {/* Disclaimer */}
+          <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+            This article is based on official notifications and the Gazette of India (G.S.R. 766(E), notified 17 October 2025). RPF PET running and jump standards, and the numeric female/reserved-category heights, will be finalised in the upcoming SSC RPF notification. Last updated: {post.updatedDate}. Always confirm the latest standards on the official site of the conducting body (ssc.gov.in, rpf.indianrailways.gov.in or your state police portal) before applying.
+          </p>
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-4">
+            {/* TOC */}
+            <div className="card p-5 border-l-4 border-primary-500">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Table of Contents</div>
+              <ol className="space-y-2 list-decimal list-inside">
+                {toc.map(item => (
+                  <li key={item.id} className="text-sm">
+                    <a href={`#${item.id}`} className="text-primary-500 hover:text-primary-600 hover:underline">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Related Exam */}
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <h3 className="font-heading font-semibold text-emerald-800 mb-3 text-sm">Related Exams</h3>
+              <div className="space-y-2">
+                <Link href="/exams/ssc-gd-constable/" className="block text-sm text-emerald-700 hover:text-emerald-800 font-medium">SSC GD Constable Guide →</Link>
+                <Link href="/exams/rpf-constable/" className="block text-sm text-emerald-700 hover:text-emerald-800 font-medium">RPF Constable Guide →</Link>
+                <Link href="/exams/delhi-police-constable/" className="block text-sm text-emerald-700 hover:text-emerald-800 font-medium">Delhi Police Constable →</Link>
+              </div>
+            </div>
+
+            {/* Eligibility */}
+            <div className="card p-5">
+              <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Check Your Eligibility</h3>
+              <p className="text-xs text-surface-500 mb-3">See if you qualify based on your age and qualification.</p>
+              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center">Check Now →</Link>
+            </div>
+
+            {/* Related Articles */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-3">📚 Related Articles</div>
+              <div className="space-y-2">
+                <Link href="/blog/rrb-ntpc-2026-syllabus-tier-1-tier-2/" className="block text-sm text-surface-600 hover:text-primary-500">RRB NTPC 2026 Syllabus →</Link>
+                <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-surface-600 hover:text-primary-500">Age Limit & Relaxation 2026 →</Link>
+                <Link href="/guides/documents-needed-government-job/" className="block text-sm text-surface-600 hover:text-primary-500">Documents Needed for Govt Job →</Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      {/* Article structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'Physical Fitness Guide for SSC GD, RPF & Police Exams 2026',
+            description: 'Exact PET/PST physical standards for SSC GD, RPF and Delhi Police 2026 — running time, height, chest, long jump and high jump — plus the new RPF Amendment Rules 2025 and a realistic training plan.',
+            datePublished: '2026-06-26',
+            dateModified: '2026-06-26',
+            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in', logo: { '@type': 'ImageObject', url: 'https://www.taiyarho.in/logo.svg' } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/blog/ssc-gd-rpf-police-physical-test-guide-2026/' },
+          }),
+        }}
+      />
+      {/* FAQ structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'What is the running time for SSC GD male and female candidates?', acceptedAnswer: { '@type': 'Answer', text: 'Male candidates must run 5 km in 24 minutes and females 1.6 km in 8 minutes 30 seconds (all-India). Ladakh-region candidates have relaxed shorter-distance standards.' } },
+              { '@type': 'Question', name: 'What is the height requirement for RPF Constable?', acceptedAnswer: { '@type': 'Answer', text: 'Under the RPF (Amendment) Rules 2025, the minimum height for male Executive Cadre candidates is 170 cm (raised from 165 cm), with chest 80/85 cm. Female and reserved-category standards are at par with CAPF and will be confirmed in the SSC RPF notification.' } },
+              { '@type': 'Question', name: 'Is RPF recruitment conducted by RRB or SSC now?', acceptedAnswer: { '@type': 'Answer', text: 'As per the revised 2025 rules, RPF Constable and SI (Executive) recruitment is moving from the Railway Recruitment Boards to the Staff Selection Commission. The SSC notification is still awaited; apply only through ssc.gov.in once released.' } },
+              { '@type': 'Question', name: 'Is the physical test qualifying or scored?', acceptedAnswer: { '@type': 'Answer', text: 'It is qualifying only — pass or fail, with no marks added to your merit. But failing any event disqualifies you completely.' } },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }

@@ -230,6 +230,20 @@ export const blogPosts: BlogPost[] = [
     author: 'TaiyarHo Editorial',
     excerpt: 'Government job or private job in 2026? Skip the WhatsApp-forward myths. This honest, fact-checked comparison breaks down real in-hand salary (net vs net), job stability, the 8th Pay Commission status, work-life balance, and the hidden cons of both paths.',
   },
+  {
+    slug: 'ssc-gd-rpf-police-physical-test-guide-2026',
+    title: 'Physical Fitness Guide for SSC GD, RPF & Police Exams 2026',
+    metaTitle: 'SSC GD, RPF & Police Physical Test Guide 2026: PET/PST Standards | TaiyarHo',
+    metaDescription: 'SSC GD, RPF & Police physical test 2026 — exact PET/PST running time, height, chest & jump standards, the new RPF 2025 rules, and a realistic 12-week training plan.',
+    category: 'Police',
+    tags: ['SSC GD physical test 2026', 'RPF PET standards', 'Delhi Police physical test', 'PET PST running time', 'government exam fitness', 'height and chest requirement', 'long jump high jump'],
+    publishedDate: 'June 26, 2026',
+    updatedDate: 'June 26, 2026',
+    readTime: '11 min read',
+    author: 'TaiyarHo Editorial',
+    excerpt: 'You can ace the written exam and still go home if you fail the physical. Here are the exact SSC GD, RPF and Delhi Police PET/PST standards (running time, height, chest, jumps), the new RPF Amendment Rules 2025, and an honest 12-week training plan — no hype, no crash diets.',
+    examSlug: 'ssc-gd-constable',
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
