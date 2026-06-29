@@ -5,6 +5,7 @@ import { may25_31_newsItems, may25_31_staticGk, may25_31_quiz } from './may-25-3
 import { jun01_07_newsItems, jun01_07_staticGk, jun01_07_quiz } from './jun-01-07-data';
 import { jun08_14_newsItems, jun08_14_staticGk, jun08_14_quiz } from './jun-08-14-data';
 import { jun15_21_newsItems, jun15_21_staticGk, jun15_21_quiz } from './jun-15-21-data';
+import { jun22_28_newsItems, jun22_28_staticGk, jun22_28_quiz } from './jun-22-28-data';
 
 /* ── Interfaces ────────────────────────────────────────────────────────── */
 
@@ -60,6 +61,38 @@ export type CaCategory = (typeof caCategories)[number];
 /* ── Posts ──────────────────────────────────────────────────────────────── */
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
+  /* ═══ NEW: June 22–28, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-june-22-28-2026',
+    title:
+      'Weekly Current Affairs: June 22\\u201328, 2026 \\u2014 BRICS NSA & Energy Meetings, Padma Awards 2026, CPCL 28th Navratna, ISRO Semi-Cryogenic Test, Mahesh Dixit New IB Chief & Alan Greenspan Dies',
+    dateRange: 'June 22\\u201328, 2026',
+    publishedDate: 'June 29, 2026',
+    category: 'All',
+    excerpt:
+      'This week: India hosts the BRICS National Security Advisers\\u2019 Meeting (chaired by Ajit Doval) and the 11th BRICS Energy Ministers\\u2019 Meeting in Gurugram; President Murmu confers 65 Padma Awards at the second 2026 investiture; CPCL becomes India\\u2019s 28th Navratna CPSE; the MHA amends the FCRA Rules for NGOs; Amit Shah launches NAFEX.in and the Narcotics Control Vision Document 2026\\u201329; ISRO hot-tests its semi-cryogenic engine at 175 tonnes; India becomes the world\\u2019s top ship-recycling nation (35.4%); Mahesh Dixit is named the new IB Director; the DGCA conducts the first GAGAN-based jet landing at Udaipur; and former US Fed Chairman Alan Greenspan dies at 100.',
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'June 22\\u201328, 2026',
+    newsItems: jun22_28_newsItems,
+    staticGkBox: jun22_28_staticGk,
+    quiz: jun22_28_quiz,
+    keyPoints: [
+      'India hosted the BRICS National Security Advisers\\u2019 Meeting (June 22\\u201323), chaired by NSA Ajit Doval under India\\u2019s 2026 BRICS Presidency, and the 11th BRICS Energy Ministers\\u2019 Meeting in Gurugram (June 25\\u201326), themed \"Sarveshaam Urjam (Energy for All)\".',
+      'The Ministry of Home Affairs amended the Foreign Contribution (Regulation) Rules, 2011 via a gazette notification on June 22, tightening disclosure norms for NGOs receiving foreign funds.',
+      'Chennai Petroleum Corporation Ltd (CPCL) became India\\u2019s 28th Navratna CPSE, granted by the Finance Ministry / Department of Public Enterprises.',
+      'President Droupadi Murmu conferred 65 Padma Awards (2 Vibhushan, 7 Bhushan, 56 Shri) at the second 2026 Civil Investiture Ceremony on June 23; Padma Bhushan recipients included Mammootty, Alka Yagnik, Vijay Amritraj, Uday Kotak, and Piyush Pandey.',
+      'Tushar Mehta was reappointed Solicitor General of India for three years from July 1, 2026 (approved by the ACC).',
+      'Amit Shah launched NAFEX.in (a NAFED digital auction platform) on June 23, plus the NAFED-KALYAN Scholarship Scheme and the DRISHTI Portal.',
+      'ISRO conducted the 8th hot test of its semi-cryogenic engine power head at 175 tonnes thrust (88% of target) at IPRC, Mahendragiri, on June 24 \\u2014 the SE2000 engine will replace the L110 core stage of the LVM3.',
+      'India became the world\\u2019s leading ship-recycling nation with a 35.4% global share in 2025 (UNCTAD report), meeting the Maritime India Vision 2030 target five years early.',
+      'Senior IPS officer Mahesh Dixit (1993 batch) was appointed the new Director of the Intelligence Bureau, succeeding Tapan Kumar Deka.',
+      'Amit Shah launched the Vision Document on Narcotics Control (2026\\u20132029) at the 10th NCORD apex-level meeting on June 27.',
+      'The DGCA conducted India\\u2019s first GAGAN-based satellite landing approach on a jet aircraft (an IndiGo Airbus A320) at Udaipur on June 27.',
+      'Former US Federal Reserve Chairman Alan Greenspan \\u2014 the \"Maestro\" who led the Fed from 1987 to 2006 \\u2014 died on June 22, 2026, aged 100.',
+      'Important days this week: World Rainforest Day (June 22), International Olympic Day (June 23), International Day of Women in Diplomacy (June 24), and Day of the Seafarer (June 25).',
+    ],
+  },
   /* ═══ NEW: June 15–21, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-june-15-21-2026',
