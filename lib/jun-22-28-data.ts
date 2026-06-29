@@ -12,7 +12,7 @@ export const jun22_28_newsItems: NewsItem[] = [
       'The Union Ministry of Home Affairs amended the Foreign Contribution (Regulation) Rules, 2011 through a gazette notification on June 22, 2026, tightening disclosure, registration, renewal, and utilisation norms for entities receiving foreign funds under the Foreign Contribution (Regulation) Act, 2010 (FCRA).',
     keyFacts: [
       'Amended through a gazette notification dated June 22, 2026.',
-      'NGOs must now specify exact activities from a defined Schedule \\u2014 social, economic, educational, cultural, and religious.',
+      'NGOs must now specify exact activities from a defined Schedule \u2014 social, economic, educational, cultural, and religious.',
       'An additional fee applies for each extra state or purpose added to an application.',
       'Existing registrations get a one-year window to update declarations and comply.',
       'Nodal ministry: Ministry of Home Affairs (MHA).',
@@ -33,7 +33,7 @@ export const jun22_28_newsItems: NewsItem[] = [
       'Union Home and Cooperation Minister Amit Shah launched NAFEX.in, a digital auction platform developed by the National Agricultural Cooperative Marketing Federation of India (NAFED), to digitise agricultural commodity auctions and improve price discovery for farmers. He also launched the NAFED-KALYAN Scholarship Scheme and the DRISHTI Portal.',
     keyFacts: [
       'Platform: NAFEX.in, developed by NAFED; launched by Amit Shah on June 23, 2026.',
-      'Also launched: the NAFED-KALYAN Scholarship Scheme (for farmers\\u2019 children) and the DRISHTI Portal (for pulses and oilseeds inventory).',
+      'Also launched: the NAFED-KALYAN Scholarship Scheme (for farmers\u2019 children) and the DRISHTI Portal (for pulses and oilseeds inventory).',
       'Aim: a transparent, technology-driven agricultural marketplace with better price discovery.',
       'Nodal ministry: Ministry of Cooperation.',
     ],
@@ -46,41 +46,41 @@ export const jun22_28_newsItems: NewsItem[] = [
   {
     id: 'narcotics-control-vision-document-2026',
     category: 'national',
-    headline: 'Amit Shah Launches Narcotics Control Vision Document 2026\\u20132029',
+    headline: 'Amit Shah Launches Narcotics Control Vision Document 2026\u20132029',
     eventDate: 'June 27, 2026',
     location: 'New Delhi',
     summary:
-      'Union Home Minister Amit Shah launched the Vision Document on Narcotics Control (2026\\u20132029) at the 10th apex-level meeting of the Narco-Coordination Centre (NCORD) in New Delhi, and inaugurated a Drug Disposal Fortnight to destroy seized narcotics.',
+      'Union Home Minister Amit Shah launched the Vision Document on Narcotics Control (2026\u20132029) at the 10th apex-level meeting of the Narco-Coordination Centre (NCORD) in New Delhi, and inaugurated a Drug Disposal Fortnight to destroy seized narcotics.',
     keyFacts: [
-      'Vision Document on Narcotics Control (2026\\u20132029) launched at the 10th NCORD apex-level meeting.',
+      'Vision Document on Narcotics Control (2026\u20132029) launched at the 10th NCORD apex-level meeting.',
       'Focus: demand reduction, supply reduction, rehabilitation, and tackling synthetic and darknet-enabled drug trafficking.',
-      'A Drug Disposal Fortnight was inaugurated to destroy over 2.09 lakh kg of seized narcotics worth about \\u20B96,000 crore.',
+      'A Drug Disposal Fortnight was inaugurated to destroy over 2.09 lakh kg of seized narcotics worth about \u20B96,000 crore.',
       'Nodal body: the Narco-Coordination Centre (NCORD), under the Ministry of Home Affairs.',
     ],
     whyItMatters:
       'Internal-security initiatives, anti-narcotics policy, and NCORD are relevant for UPSC, Police, and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'Police', 'State PSC'],
     staticGkConnect:
-      'The Narcotics Control Bureau (NCB), set up in 1986, is India\\u2019s nodal anti-drug law-enforcement agency under the Ministry of Home Affairs. The Narcotic Drugs and Psychotropic Substances (NDPS) Act, 1985 governs narcotics control in India.',
+      'The Narcotics Control Bureau (NCB), set up in 1986, is India\u2019s nodal anti-drug law-enforcement agency under the Ministry of Home Affairs. The Narcotic Drugs and Psychotropic Substances (NDPS) Act, 1985 governs narcotics control in India.',
   },
 
   /* ── SUMMITS & CONFERENCES ────────────────────────────────────────────── */
   {
     id: 'brics-nsa-meeting-india-2026',
     category: 'summits',
-    headline: 'India Hosts BRICS National Security Advisers\\u2019 Meeting in New Delhi',
-    eventDate: 'June 22\\u201323, 2026',
+    headline: 'India Hosts BRICS National Security Advisers\u2019 Meeting in New Delhi',
+    eventDate: 'June 22\u201323, 2026',
     location: 'New Delhi',
     summary:
-      'India hosted the BRICS National Security Advisers\\u2019 (NSA) Meeting on June 22\\u201323, 2026, chaired by National Security Adviser Ajit Doval under India\\u2019s 2026 BRICS Presidency. NSAs and high representatives of member states deliberated on counter-terrorism, cyber security, and multilateral security governance.',
+      'India hosted the BRICS National Security Advisers\u2019 (NSA) Meeting on June 22\u201323, 2026, chaired by National Security Adviser Ajit Doval under India\u2019s 2026 BRICS Presidency. NSAs and high representatives of member states deliberated on counter-terrorism, cyber security, and multilateral security governance.',
     keyFacts: [
       'Host: India; chaired by National Security Adviser Ajit Doval.',
-      'Held under India\\u2019s 2026 BRICS Presidency.',
+      'Held under India\u2019s 2026 BRICS Presidency.',
       'Focus areas: counter-terrorism, cyber security, and multilateral governance.',
       'BRICS founding members: Brazil, Russia, India, China, and South Africa.',
     ],
     whyItMatters:
-      'BRICS, its members, and India\\u2019s presidency are core International Relations topics for UPSC and State PSC exams.',
+      'BRICS, its members, and India\u2019s presidency are core International Relations topics for UPSC and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'Banking', 'State PSC'],
     staticGkConnect:
       'BRICS began as BRIC in 2009; South Africa joined in 2010, and the bloc expanded further from 2024 with new members. The New Development Bank (NDB), the BRICS bank, is headquartered in Shanghai, China.',
@@ -88,19 +88,19 @@ export const jun22_28_newsItems: NewsItem[] = [
   {
     id: 'brics-energy-ministers-meeting-gurugram-2026',
     category: 'summits',
-    headline: 'India Hosts 11th BRICS Energy Ministers\\u2019 Meeting in Gurugram',
-    eventDate: 'June 25\\u201326, 2026',
+    headline: 'India Hosts 11th BRICS Energy Ministers\u2019 Meeting in Gurugram',
+    eventDate: 'June 25\u201326, 2026',
     location: 'Gurugram, Haryana',
     summary:
-      'India hosted the 11th BRICS Energy Ministers\\u2019 Meeting on June 25\\u201326, 2026 in Gurugram, Haryana, under the theme \"Sarveshaam Urjam (Energy for All),\" focusing on energy security, renewable energy, and sustainable development among BRICS nations.',
+      'India hosted the 11th BRICS Energy Ministers\u2019 Meeting on June 25\u201326, 2026 in Gurugram, Haryana, under the theme \"Sarveshaam Urjam (Energy for All),\" focusing on energy security, renewable energy, and sustainable development among BRICS nations.',
     keyFacts: [
       '11th edition; hosted by India under its 2026 BRICS Presidency.',
-      'Venue: Gurugram, Haryana; dates: June 25\\u201326, 2026.',
+      'Venue: Gurugram, Haryana; dates: June 25\u201326, 2026.',
       'Theme: \"Sarveshaam Urjam (Energy for All)\".',
       'Focus: energy cooperation, energy security, renewable energy, and sustainable development.',
     ],
     whyItMatters:
-      'BRICS ministerial meetings and India\\u2019s presidency themes are relevant International Relations and economy topics for UPSC and State PSC exams.',
+      'BRICS ministerial meetings and India\u2019s presidency themes are relevant International Relations and economy topics for UPSC and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'State PSC'],
     staticGkConnect:
       'India holds the rotating BRICS Presidency in 2026 and is hosting multiple BRICS ministerial tracks through the year. BRICS originated as BRIC in 2009, with South Africa joining in 2010.',
@@ -110,41 +110,41 @@ export const jun22_28_newsItems: NewsItem[] = [
   {
     id: 'cpcl-28th-navratna-cpse-2026',
     category: 'economy',
-    headline: 'Chennai Petroleum (CPCL) Becomes India\\u2019s 28th Navratna CPSE',
+    headline: 'Chennai Petroleum (CPCL) Becomes India\u2019s 28th Navratna CPSE',
     eventDate: 'June 22, 2026',
     location: 'Chennai',
     summary:
-      'Chennai Petroleum Corporation Limited (CPCL) was upgraded to Navratna status by the Government of India, becoming the country\\u2019s 28th Navratna Central Public Sector Enterprise. The upgrade, granted by the Department of Public Enterprises under the Finance Ministry, gives CPCL greater financial and operational autonomy.',
+      'Chennai Petroleum Corporation Limited (CPCL) was upgraded to Navratna status by the Government of India, becoming the country\u2019s 28th Navratna Central Public Sector Enterprise. The upgrade, granted by the Department of Public Enterprises under the Finance Ministry, gives CPCL greater financial and operational autonomy.',
     keyFacts: [
       'CPCL is the 28th Navratna CPSE; approved by the Finance Ministry / Department of Public Enterprises (DPE).',
       'CPCL is a subsidiary of Indian Oil Corporation (IOCL holds about 51.89%), under the Ministry of Petroleum and Natural Gas.',
-      'A Navratna can invest up to \\u20B91,000 crore or 15% of its net worth in a single project without prior government approval.',
-      'CPCL was earlier a Miniratna Category-I enterprise; its FY 2025\\u201326 turnover was about \\u20B959,400 crore.',
+      'A Navratna can invest up to \u20B91,000 crore or 15% of its net worth in a single project without prior government approval.',
+      'CPCL was earlier a Miniratna Category-I enterprise; its FY 2025\u201326 turnover was about \u20B959,400 crore.',
     ],
     whyItMatters:
       'The Maharatna/Navratna/Miniratna classification of CPSEs is a perennial Banking, SSC, and UPSC topic.',
     examRelevance: ['UPSC', 'SSC', 'Banking', 'State PSC'],
     staticGkConnect:
-      'The Navratna scheme was introduced in 1997. CPSEs are graded into three tiers \\u2014 Maharatna, Navratna, and Miniratna. CPCL was originally set up in 1965 as Madras Refineries Limited.',
+      'The Navratna scheme was introduced in 1997. CPSEs are graded into three tiers \u2014 Maharatna, Navratna, and Miniratna. CPCL was originally set up in 1965 as Madras Refineries Limited.',
   },
 
   /* ── REPORTS & INDICES ────────────────────────────────────────────────── */
   {
     id: 'india-top-ship-recycling-nation-2026',
     category: 'reports',
-    headline: 'India Becomes World\\u2019s Leading Ship-Recycling Nation',
+    headline: 'India Becomes World\u2019s Leading Ship-Recycling Nation',
     eventDate: 'June 22, 2026',
     location: 'New Delhi',
     summary:
-      'The Ministry of Ports, Shipping and Waterways announced, citing a UNCTAD report, that India has become the world\\u2019s leading ship-recycling nation. India\\u2019s share of the global market rose to 35.4% in 2025 from 30.1% in 2024, meeting the Maritime India Vision 2030 target five years ahead of schedule.',
+      'The Ministry of Ports, Shipping and Waterways announced, citing a UNCTAD report, that India has become the world\u2019s leading ship-recycling nation. India\u2019s share of the global market rose to 35.4% in 2025 from 30.1% in 2024, meeting the Maritime India Vision 2030 target five years ahead of schedule.',
     keyFacts: [
       'Global ship-recycling share: 35.4% in 2025, up from 30.1% in 2024; source: UNCTAD report.',
       'Recycling volume rose nearly 60% to 2.99 million gross tonnes (from 1.86 million GT).',
       'Maritime India Vision 2030 target achieved five years early.',
-      'Union Minister: Sarbananda Sonowal; the Alang-Sosiya cluster in Gujarat is the world\\u2019s largest ship-recycling hub.',
+      'Union Minister: Sarbananda Sonowal; the Alang-Sosiya cluster in Gujarat is the world\u2019s largest ship-recycling hub.',
     ],
     whyItMatters:
-      'UNCTAD reports, maritime-sector data, and India\\u2019s global rankings are tested in UPSC, Banking, and SSC exams.',
+      'UNCTAD reports, maritime-sector data, and India\u2019s global rankings are tested in UPSC, Banking, and SSC exams.',
     examRelevance: ['UPSC', 'SSC', 'Banking', 'State PSC'],
     staticGkConnect:
       'India enacted the Recycling of Ships Act, 2019, aligning with the Hong Kong International Convention for the Safe and Environmentally Sound Recycling of Ships, which India ratified in 2019. UNCTAD (UN Conference on Trade and Development) is headquartered in Geneva, Switzerland.',
@@ -189,7 +189,7 @@ export const jun22_28_newsItems: NewsItem[] = [
       'Heads of key security and intelligence agencies are frequently asked appointment questions in UPSC, SSC, Police, and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'Police', 'State PSC'],
     staticGkConnect:
-      'The Intelligence Bureau (IB), founded in 1887, is India\\u2019s internal intelligence agency under the Ministry of Home Affairs. The external intelligence agency is the Research and Analysis Wing (R&AW), which functions under the Cabinet Secretariat.',
+      'The Intelligence Bureau (IB), founded in 1887, is India\u2019s internal intelligence agency under the Ministry of Home Affairs. The external intelligence agency is the Research and Analysis Wing (R&AW), which functions under the Cabinet Secretariat.',
   },
 
   /* ── AWARDS & HONOURS ─────────────────────────────────────────────────── */
@@ -212,7 +212,7 @@ export const jun22_28_newsItems: NewsItem[] = [
       'Padma Awards, their categories, and notable recipients are very high-probability questions across SSC, Banking, Railway, and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'Banking', 'Railway', 'State PSC', 'Police', 'Teaching'],
     staticGkConnect:
-      'The Padma Awards were instituted in 1954 and are conferred in three categories \\u2014 Padma Vibhushan (highest), Padma Bhushan, and Padma Shri. They are announced annually on the eve of Republic Day. The Bharat Ratna is India\\u2019s highest civilian award.',
+      'The Padma Awards were instituted in 1954 and are conferred in three categories \u2014 Padma Vibhushan (highest), Padma Bhushan, and Padma Shri. They are announced annually on the eve of Republic Day. The Bharat Ratna is India\u2019s highest civilian award.',
   },
 
   /* ── SCIENCE & TECHNOLOGY ─────────────────────────────────────────────── */
@@ -228,13 +228,13 @@ export const jun22_28_newsItems: NewsItem[] = [
       'Test on June 24, 2026 at IPRC, Mahendragiri, Tamil Nadu; thrust level of 175 tonnes (about 88% of target).',
       'Eighth PHTA hot test; earlier tests were at 47% (94 tonnes) and 60% (120 tonnes); next target is the full 200-tonne thrust.',
       'The 2,000 kN-class SE2000 engine will power the SC120 stage and replace the L110 core stage of the LVM3.',
-      'The engine uses cleaner propellants \\u2014 Liquid Oxygen (LOX) and refined kerosene (Isrosene).',
+      'The engine uses cleaner propellants \u2014 Liquid Oxygen (LOX) and refined kerosene (Isrosene).',
     ],
     whyItMatters:
       'ISRO missions, launch vehicles, and propulsion technology are key Science & Technology topics for UPSC, SSC, and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'State PSC'],
     staticGkConnect:
-      'ISRO was founded in 1969 and is headquartered in Bengaluru. The LVM3 (formerly GSLV Mk III) is India\\u2019s heaviest operational launch vehicle, used for Chandrayaan-3 and the Gaganyaan programme.',
+      'ISRO was founded in 1969 and is headquartered in Bengaluru. The LVM3 (formerly GSLV Mk III) is India\u2019s heaviest operational launch vehicle, used for Chandrayaan-3 and the Gaganyaan programme.',
   },
   {
     id: 'dgca-gagan-jet-landing-udaipur-2026',
@@ -243,7 +243,7 @@ export const jun22_28_newsItems: NewsItem[] = [
     eventDate: 'June 27, 2026',
     location: 'Udaipur, Rajasthan',
     summary:
-      'The Directorate General of Civil Aviation (DGCA) conducted India\\u2019s first satellite-based landing system approach on a jet engine aircraft at Udaipur airport, using an IndiGo Airbus A320 guided by GAGAN, India\\u2019s satellite-based augmentation system.',
+      'The Directorate General of Civil Aviation (DGCA) conducted India\u2019s first satellite-based landing system approach on a jet engine aircraft at Udaipur airport, using an IndiGo Airbus A320 guided by GAGAN, India\u2019s satellite-based augmentation system.',
     keyFacts: [
       'First satellite-based landing approach on a jet aircraft in India; June 27, 2026 at Udaipur airport.',
       'Aircraft: an IndiGo Airbus A320; conducted by the DGCA.',
@@ -254,7 +254,7 @@ export const jun22_28_newsItems: NewsItem[] = [
       'GAGAN, satellite navigation, and civil-aviation technology are Science & Technology topics for UPSC, SSC, and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'State PSC'],
     staticGkConnect:
-      'GAGAN is India\\u2019s Satellite-Based Augmentation System (SBAS), developed by ISRO and the Airports Authority of India. The DGCA is India\\u2019s civil-aviation regulator under the Ministry of Civil Aviation.',
+      'GAGAN is India\u2019s Satellite-Based Augmentation System (SBAS), developed by ISRO and the Airports Authority of India. The DGCA is India\u2019s civil-aviation regulator under the Ministry of Civil Aviation.',
   },
 
   /* ── OBITUARIES ───────────────────────────────────────────────────────── */
@@ -265,10 +265,10 @@ export const jun22_28_newsItems: NewsItem[] = [
     eventDate: 'June 22, 2026',
     location: 'Washington, D.C., USA',
     summary:
-      'Alan Greenspan, who served as Chairman of the US Federal Reserve under four presidents from 1987 to 2006, died on June 22, 2026, at the age of 100, from complications of Parkinson\\u2019s disease.',
+      'Alan Greenspan, who served as Chairman of the US Federal Reserve under four presidents from 1987 to 2006, died on June 22, 2026, at the age of 100, from complications of Parkinson\u2019s disease.',
     keyFacts: [
       'Died on June 22, 2026, aged 100.',
-      'The 13th Chairman of the US Federal Reserve (1987\\u20132006), under Reagan, G.H.W. Bush, Clinton, and G.W. Bush.',
+      'The 13th Chairman of the US Federal Reserve (1987\u20132006), under Reagan, G.H.W. Bush, Clinton, and G.W. Bush.',
       'His tenure was the second-longest in Fed history; he was nicknamed \"the Maestro\".',
       'He famously coined the phrase \"irrational exuberance\".',
     ],
@@ -276,23 +276,23 @@ export const jun22_28_newsItems: NewsItem[] = [
       'International obituaries and central-bank leaders are relevant for Banking and UPSC current-affairs sections.',
     examRelevance: ['UPSC', 'SSC', 'Banking', 'State PSC'],
     staticGkConnect:
-      'The US Federal Reserve, established in 1913, is the central bank of the United States. India\\u2019s central bank is the Reserve Bank of India, established in 1935 and headquartered in Mumbai.',
+      'The US Federal Reserve, established in 1913, is the central bank of the United States. India\u2019s central bank is the Reserve Bank of India, established in 1935 and headquartered in Mumbai.',
   },
 
   /* ── IMPORTANT DAYS ───────────────────────────────────────────────────── */
   {
     id: 'important-days-june-22-28-2026',
     category: 'days',
-    headline: 'Important International Days Observed (June 22\\u201328, 2026)',
-    eventDate: 'June 22\\u201328, 2026',
+    headline: 'Important International Days Observed (June 22\u201328, 2026)',
+    eventDate: 'June 22\u201328, 2026',
     location: 'Worldwide',
     summary:
       'Several internationally observed days fell during this week, including World Rainforest Day, International Olympic Day, the International Day of Women in Diplomacy, and the Day of the Seafarer.',
     keyFacts: [
-      'World Rainforest Day \\u2014 June 22; 2026 theme: \"Rainforests: Our Life Support System\".',
-      'International Olympic Day \\u2014 June 23 (marks the founding of the IOC on June 23, 1894).',
-      'International Day of Women in Diplomacy \\u2014 June 24 (a UN-recognised observance).',
-      'Day of the Seafarer \\u2014 June 25; 2026 theme: \"Carrying world trade. Carrying the risks\".',
+      'World Rainforest Day \u2014 June 22; 2026 theme: \"Rainforests: Our Life Support System\".',
+      'International Olympic Day \u2014 June 23 (marks the founding of the IOC on June 23, 1894).',
+      'International Day of Women in Diplomacy \u2014 June 24 (a UN-recognised observance).',
+      'Day of the Seafarer \u2014 June 25; 2026 theme: \"Carrying world trade. Carrying the risks\".',
     ],
     whyItMatters:
       'Important days, their dates, and themes are very common one-liner questions in SSC, Banking, Railway, and State PSC exams.',
@@ -304,7 +304,7 @@ export const jun22_28_newsItems: NewsItem[] = [
 
 export const jun22_28_staticGk: StaticGkLink[] = [
   {
-    newsItem: 'India hosted the BRICS NSA Meeting and the 11th BRICS Energy Ministers\\u2019 Meeting under its 2026 Presidency.',
+    newsItem: 'India hosted the BRICS NSA Meeting and the 11th BRICS Energy Ministers\u2019 Meeting under its 2026 Presidency.',
     staticFact:
       'BRICS began as BRIC in 2009; South Africa joined in 2010 and the bloc expanded further from 2024. The New Development Bank (NDB), the BRICS bank, is headquartered in Shanghai, China.',
   },
@@ -314,51 +314,51 @@ export const jun22_28_staticGk: StaticGkLink[] = [
       'The Attorney General for India (Article 76) is the highest law officer of the country; the Solicitor General is the second-highest, assisted by Additional Solicitors General. These are statutory posts.',
   },
   {
-    newsItem: 'CPCL became India\\u2019s 28th Navratna CPSE.',
+    newsItem: 'CPCL became India\u2019s 28th Navratna CPSE.',
     staticFact:
-      'The Navratna scheme was introduced in 1997. CPSEs are graded into three tiers \\u2014 Maharatna, Navratna, and Miniratna. A Navratna can invest up to \\u20B91,000 crore or 15% of net worth in a single project without prior approval.',
+      'The Navratna scheme was introduced in 1997. CPSEs are graded into three tiers \u2014 Maharatna, Navratna, and Miniratna. A Navratna can invest up to \u20B91,000 crore or 15% of net worth in a single project without prior approval.',
   },
   {
     newsItem: 'President Murmu conferred 65 Padma Awards at the second 2026 investiture.',
     staticFact:
-      'The Padma Awards were instituted in 1954 and are conferred in three categories \\u2014 Padma Vibhushan, Padma Bhushan, and Padma Shri \\u2014 announced annually on the eve of Republic Day. The Bharat Ratna is India\\u2019s highest civilian award.',
+      'The Padma Awards were instituted in 1954 and are conferred in three categories \u2014 Padma Vibhushan, Padma Bhushan, and Padma Shri \u2014 announced annually on the eve of Republic Day. The Bharat Ratna is India\u2019s highest civilian award.',
   },
   {
     newsItem: 'ISRO hot-tested its semi-cryogenic engine power head at 175 tonnes.',
     staticFact:
-      'ISRO was founded in 1969 and is headquartered in Bengaluru. The LVM3 (formerly GSLV Mk III) is India\\u2019s heaviest operational launch vehicle, used for Chandrayaan-3 and the Gaganyaan programme.',
+      'ISRO was founded in 1969 and is headquartered in Bengaluru. The LVM3 (formerly GSLV Mk III) is India\u2019s heaviest operational launch vehicle, used for Chandrayaan-3 and the Gaganyaan programme.',
   },
   {
-    newsItem: 'India became the world\\u2019s leading ship-recycling nation with a 35.4% share.',
+    newsItem: 'India became the world\u2019s leading ship-recycling nation with a 35.4% share.',
     staticFact:
-      'India enacted the Recycling of Ships Act, 2019, aligned with the Hong Kong International Convention. The Alang-Sosiya cluster in Gujarat is the world\\u2019s largest ship-recycling hub. UNCTAD is headquartered in Geneva.',
+      'India enacted the Recycling of Ships Act, 2019, aligned with the Hong Kong International Convention. The Alang-Sosiya cluster in Gujarat is the world\u2019s largest ship-recycling hub. UNCTAD is headquartered in Geneva.',
   },
   {
     newsItem: 'Mahesh Dixit was appointed Director of the Intelligence Bureau.',
     staticFact:
-      'The Intelligence Bureau (IB), founded in 1887, is India\\u2019s internal intelligence agency under the Ministry of Home Affairs. The Research and Analysis Wing (R&AW) is the external intelligence agency, under the Cabinet Secretariat.',
+      'The Intelligence Bureau (IB), founded in 1887, is India\u2019s internal intelligence agency under the Ministry of Home Affairs. The Research and Analysis Wing (R&AW) is the external intelligence agency, under the Cabinet Secretariat.',
   },
   {
     newsItem: 'India conducted its first GAGAN-based landing approach on a jet aircraft at Udaipur.',
     staticFact:
-      'GAGAN (GPS Aided GEO Augmented Navigation) is India\\u2019s Satellite-Based Augmentation System, jointly developed by ISRO and the Airports Authority of India. The DGCA regulates civil aviation under the Ministry of Civil Aviation.',
+      'GAGAN (GPS Aided GEO Augmented Navigation) is India\u2019s Satellite-Based Augmentation System, jointly developed by ISRO and the Airports Authority of India. The DGCA regulates civil aviation under the Ministry of Civil Aviation.',
   },
 ];
 
 export const jun22_28_quiz: QuizQuestion[] = [
   {
     id: 'jun22-q1',
-    question: 'Who chaired the BRICS National Security Advisers\\u2019 Meeting hosted by India in June 2026?',
+    question: 'Who chaired the BRICS National Security Advisers\u2019 Meeting hosted by India in June 2026?',
     options: ['S. Jaishankar', 'Ajit Doval', 'Amit Shah', 'Rajnath Singh'],
     correctIndex: 1,
     explanation:
-      'India hosted the BRICS NSA Meeting on June 22\\u201323, 2026, chaired by National Security Adviser Ajit Doval under India\\u2019s 2026 BRICS Presidency.',
+      'India hosted the BRICS NSA Meeting on June 22\u201323, 2026, chaired by National Security Adviser Ajit Doval under India\u2019s 2026 BRICS Presidency.',
     category: 'summits',
     difficulty: 'easy',
   },
   {
     id: 'jun22-q2',
-    question: 'Which company became India\\u2019s 28th Navratna CPSE in June 2026?',
+    question: 'Which company became India\u2019s 28th Navratna CPSE in June 2026?',
     options: [
       'Garden Reach Shipbuilders (GRSE)',
       'Chennai Petroleum Corporation Ltd (CPCL)',
@@ -367,7 +367,7 @@ export const jun22_28_quiz: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Chennai Petroleum Corporation Limited (CPCL), a subsidiary of IOCL, was granted Navratna status, becoming India\\u2019s 28th Navratna CPSE.',
+      'Chennai Petroleum Corporation Limited (CPCL), a subsidiary of IOCL, was granted Navratna status, becoming India\u2019s 28th Navratna CPSE.',
     category: 'economy',
     difficulty: 'medium',
   },
@@ -432,17 +432,17 @@ export const jun22_28_quiz: QuizQuestion[] = [
     options: ['Attorney General of India', 'Solicitor General of India', 'Comptroller and Auditor General', 'Chief Justice of India'],
     correctIndex: 1,
     explanation:
-      'Tushar Mehta was reappointed Solicitor General of India \\u2014 the second-highest law officer \\u2014 for three years from July 1, 2026.',
+      'Tushar Mehta was reappointed Solicitor General of India \u2014 the second-highest law officer \u2014 for three years from July 1, 2026.',
     category: 'appointments',
     difficulty: 'easy',
   },
   {
     id: 'jun22-q9',
-    question: 'According to a UNCTAD report (June 2026), what was India\\u2019s share of the global ship-recycling market in 2025?',
+    question: 'According to a UNCTAD report (June 2026), what was India\u2019s share of the global ship-recycling market in 2025?',
     options: ['25.1%', '30.1%', '35.4%', '42.0%'],
     correctIndex: 2,
     explanation:
-      'India became the world\\u2019s leading ship-recycling nation with a 35.4% share in 2025 (up from 30.1% in 2024), meeting the Maritime India Vision 2030 target five years early.',
+      'India became the world\u2019s leading ship-recycling nation with a 35.4% share in 2025 (up from 30.1% in 2024), meeting the Maritime India Vision 2030 target five years early.',
     category: 'reports',
     difficulty: 'medium',
   },
@@ -452,13 +452,13 @@ export const jun22_28_quiz: QuizQuestion[] = [
     options: ['Jaipur', 'Udaipur', 'Kochi', 'Varanasi'],
     correctIndex: 1,
     explanation:
-      'On June 27, 2026, the DGCA conducted India\\u2019s first satellite-based (GAGAN) landing approach on a jet aircraft \\u2014 an IndiGo Airbus A320 \\u2014 at Udaipur airport.',
+      'On June 27, 2026, the DGCA conducted India\u2019s first satellite-based (GAGAN) landing approach on a jet aircraft \u2014 an IndiGo Airbus A320 \u2014 at Udaipur airport.',
     category: 'science',
     difficulty: 'medium',
   },
   {
     id: 'jun22-q11',
-    question: 'GAGAN, India\\u2019s satellite-based augmentation system, was jointly developed by ISRO and which body?',
+    question: 'GAGAN, India\u2019s satellite-based augmentation system, was jointly developed by ISRO and which body?',
     options: ['DRDO', 'Airports Authority of India (AAI)', 'BSNL', 'HAL'],
     correctIndex: 1,
     explanation:
