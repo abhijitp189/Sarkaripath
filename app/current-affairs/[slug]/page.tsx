@@ -215,14 +215,6 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
           <span className="text-surface-800">{post.weekRange ?? post.dateRange}</span>
         </nav>
 
-        {/* AI-content accuracy disclaimer (shows on every current affairs post) */}
-        <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4 mb-8">
-          <p className="text-sm text-surface-700 leading-relaxed">
-            <span className="font-heading font-semibold text-accent-600">⚠️ Accuracy Note:&nbsp;</span>
-            This summary is provided for reference and quick revision only. Mistakes are possible, so always cross-check important details — dates, names, figures, and notifications — with the official source before relying on them for your exam preparation.
-          </p>
-        </div>
-
         {isRichFormat ? (
           /* ═════════════ RICH FORMAT ═════════════ */
           <>
@@ -575,6 +567,14 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
             </aside>
           </div>
         )}
+
+        {/* Accuracy disclaimer (shows at the bottom of every current affairs post) */}
+        <div className="bg-accent-50 border-l-4 border-accent-500 rounded-r-xl p-4 mt-10">
+          <p className="text-sm text-surface-700 leading-relaxed">
+            <span className="font-heading font-semibold text-accent-600">⚠️ Accuracy Note:&nbsp;</span>
+            This summary is provided for reference and quick revision only. Mistakes are possible, so always cross-check important details — dates, names, figures, and notifications — with the official source before relying on them for your exam preparation.
+          </p>
+        </div>
       </div>
     </div>
   );
