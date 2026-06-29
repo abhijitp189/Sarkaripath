@@ -428,7 +428,7 @@ const pastExams: MonthGroup[] = [
         category: 'Police',
         internalSlug: 'up-police-constable',
         externalUrl: 'https://uppbpb.gov.in',
-        note: '32,679 vacancies • Written exam held 8, 9, 10 Jun (6 shifts) • Official answer key expected 3rd week of June',
+        note: '32,679 vacancies • Written exam held 8, 9, 10 Jun (6 shifts) • Provisional answer key out 20 Jun; objections closed 23 Jun • Final key & result expected Jul 2026',
       },
       {
         name: 'RBI Assistant (Mains)',
