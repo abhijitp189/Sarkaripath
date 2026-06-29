@@ -419,7 +419,7 @@ const pastExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'rbi-grade-b',
         externalUrl: 'https://rbi.org.in',
-        note: '60 vacancies • Phase 1 conducted 13–14 Jun • Phase 1 result expected Jul • Phase 2: 25–26 Jul 2026',
+        note: '60 vacancies • Phase 1 conducted 13–14 Jun • Phase 1 result (General) declared 25 Jun • Phase 2: 25–26 Jul 2026',
       },
       {
         name: 'UP Police Constable',
