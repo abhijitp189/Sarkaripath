@@ -257,7 +257,7 @@ const upcomingExams: MonthGroup[] = [
         status: 'TENTATIVE',
         category: 'Banking',
         internalSlug: 'sbi-clerk',
-        externalUrl: 'https://sbi.co.in/careers',
+        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
       },
     ],
   },
@@ -335,7 +335,7 @@ const upcomingExams: MonthGroup[] = [
         status: 'TENTATIVE',
         category: 'Banking',
         internalSlug: 'sbi-clerk',
-        externalUrl: 'https://sbi.co.in/careers',
+        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
       },
       {
         name: 'UPSC IFS (Mains)',

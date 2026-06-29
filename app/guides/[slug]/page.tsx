@@ -92,7 +92,7 @@ const guideContent: Record<string, { sections: { heading: string; content: strin
     sections: [
       {
         heading: 'Why Filling the Form Correctly Matters',
-        content: 'Every year, thousands of government job applications are rejected before the exam even begins — not because candidates lack eligibility, but because of avoidable mistakes in the application form. A wrong date of birth, an incorrectly sized photograph, a mismatched name spelling, or a missed fee payment can disqualify you silently. Most recruiting bodies like SSC, UPSC, IBPS, and RRB do not notify you about form rejection — your application simply disappears from the system. The application form is the first stage of your selection process, and getting it right is non-negotiable. This guide walks you through every step of the online application process for major government exams in India, covering SSC (ssc.gov.in), UPSC (upsconline.nic.in), IBPS (ibps.in), SBI (sbi.co.in), and RRB (rrbcdg.gov.in). While each exam portal looks slightly different, the overall process follows the same structure: registration, form filling, document upload, fee payment, and submission.',
+        content: 'Every year, thousands of government job applications are rejected before the exam even begins — not because candidates lack eligibility, but because of avoidable mistakes in the application form. A wrong date of birth, an incorrectly sized photograph, a mismatched name spelling, or a missed fee payment can disqualify you silently. Most recruiting bodies like SSC, UPSC, IBPS, and RRB do not notify you about form rejection — your application simply disappears from the system. The application form is the first stage of your selection process, and getting it right is non-negotiable. This guide walks you through every step of the online application process for major government exams in India, covering SSC (ssc.gov.in), UPSC (upsconline.nic.in), IBPS (ibps.in), SBI (sbi.bank.in), and RRB (rrbcdg.gov.in). While each exam portal looks slightly different, the overall process follows the same structure: registration, form filling, document upload, fee payment, and submission.',
       },
       {
         heading: 'Documents and Information to Keep Ready Before You Start',
@@ -144,7 +144,7 @@ const guideContent: Record<string, { sections: { heading: string; content: strin
       },
       {
         heading: 'Official Websites for Applying to Major Government Exams',
-        content: 'Always apply through the official website only. Beware of fake websites that look similar but are designed to steal your money or personal data. SSC exams (CGL, CHSL, MTS, GD, CPO, Stenographer): ssc.gov.in — this is the only official SSC website. You can also use the MySSC mobile app available on Google Play Store. UPSC exams (CSE, NDA, CDS, CAPF, ESE, CMS): upsconline.nic.in for OTR and applications, upsc.gov.in for notifications and results. IBPS exams (PO, Clerk, SO, RRB Officer): ibps.in — the only official IBPS portal. SBI exams (PO, Clerk, SO): sbi.co.in/careers — navigate to the recruitment section. RRB Railway exams (NTPC, Group D, ALP, JE): each RRB has its own regional website — rrbcdg.gov.in (Delhi), rrbchennai.gov.in (Chennai), rrbmumbai.gov.in (Mumbai), and so on. The exam notification will mention which RRB website to use. Never pay anyone to fill your form on your behalf. The process is straightforward, and this guide has everything you need.',
+        content: 'Always apply through the official website only. Beware of fake websites that look similar but are designed to steal your money or personal data. SSC exams (CGL, CHSL, MTS, GD, CPO, Stenographer): ssc.gov.in — this is the only official SSC website. You can also use the MySSC mobile app available on Google Play Store. UPSC exams (CSE, NDA, CDS, CAPF, ESE, CMS): upsconline.nic.in for OTR and applications, upsc.gov.in for notifications and results. IBPS exams (PO, Clerk, SO, RRB Officer): ibps.in — the only official IBPS portal. SBI exams (PO, Clerk, SO): sbi.bank.in/careers — navigate to the recruitment section. RRB Railway exams (NTPC, Group D, ALP, JE): each RRB has its own regional website — rrbcdg.gov.in (Delhi), rrbchennai.gov.in (Chennai), rrbmumbai.gov.in (Mumbai), and so on. The exam notification will mention which RRB website to use. Never pay anyone to fill your form on your behalf. The process is straightforward, and this guide has everything you need.',
       },
       {
         heading: 'Quick Checklist Before You Submit',
@@ -1163,7 +1163,7 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
                   </tr>
                   <tr className="hover:bg-surface-50">
                     <td className="p-3 font-medium text-surface-800">SBI</td>
-                    <td className="p-3"><a href="https://sbi.co.in/careers" className="text-primary-500 hover:text-primary-600 underline" target="_blank" rel="noopener noreferrer">sbi.co.in/careers</a></td>
+                    <td className="p-3"><a href="https://sbi.bank.in/web/careers/current-openings" className="text-primary-500 hover:text-primary-600 underline" target="_blank" rel="noopener noreferrer">sbi.bank.in/careers</a></td>
                     <td className="p-3 text-surface-600">SBI PO, Clerk, SO</td>
                   </tr>
                 </tbody>
@@ -1877,7 +1877,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 { body: 'SSC', exams: 'CGL, CHSL, MTS, GD, CPO, Stenographer', url: 'ssc.gov.in', extra: 'Also available on the MySSC mobile app (Google Play).' },
                 { body: 'UPSC', exams: 'CSE, NDA, CDS, CAPF, ESE, CMS', url: 'upsconline.nic.in (applications) + upsc.gov.in (notifications)', extra: '' },
                 { body: 'IBPS', exams: 'PO, Clerk, SO, RRB Officer', url: 'ibps.in', extra: 'Only one official IBPS portal.' },
-                { body: 'SBI', exams: 'PO, Clerk, SO', url: 'sbi.co.in/careers', extra: 'Navigate to the Recruitment section.' },
+                { body: 'SBI', exams: 'PO, Clerk, SO', url: 'sbi.bank.in/careers', extra: 'Navigate to the Recruitment section.' },
                 { body: 'RRB (Railway)', exams: 'NTPC, Group D, ALP, JE', url: 'Regional RRB website (rrbcdg.gov.in, rrbchennai.gov.in, rrbmumbai.gov.in, etc.)', extra: 'The notification will specify which regional RRB to use.' },
               ].map(item => (
                 <div key={item.body} className="card p-4 group">
@@ -1970,7 +1970,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                   { name: 'SSC', url: 'https://ssc.gov.in' },
                   { name: 'UPSC', url: 'https://upsconline.nic.in' },
                   { name: 'IBPS', url: 'https://www.ibps.in' },
-                  { name: 'SBI Careers', url: 'https://sbi.co.in/careers' },
+                  { name: 'SBI Careers', url: 'https://sbi.bank.in/web/careers/current-openings' },
                   { name: 'RRB CDG', url: 'https://rrbcdg.gov.in' },
                 ].map(item => (
                   <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-primary-600 hover:text-primary-800 font-medium">

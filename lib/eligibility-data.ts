@@ -303,7 +303,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'SBI PO',
     icon: '💼',
     slug: 'sbi-po',
-    tip: 'SBI PO 2026 notification is expected in June 2026 — not yet released (as of May 2026). Keep checking sbi.co.in/careers. Prelims expected August, Mains September 2026. Aim for ₹75,000/month in-hand salary at India\'s largest bank.',
+    tip: 'SBI PO 2026 notification is OUT (released 18 June 2026) — 1,500 vacancies, apply by 8 July 2026 at sbi.bank.in. Prelims expected August, Mains September 2026. Aim for ₹75,000/month in-hand salary at India\'s largest bank.',
   },
   {
     id: 'rrb',

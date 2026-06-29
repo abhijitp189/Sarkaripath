@@ -455,7 +455,7 @@ const resourceSections: ResourceSection[] = [
       },
       {
         name: 'SBI Careers Portal',
-        url: 'https://sbi.co.in/web/careers',
+        url: 'https://sbi.bank.in/web/careers/current-openings',
         desc: 'SBI PO, SBI Clerk, SBI SO recruitment. Apply directly and download official admit cards and results.',
         tags: ['Banking'],
         badge: 'Official',
