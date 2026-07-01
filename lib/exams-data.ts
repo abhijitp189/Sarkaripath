@@ -1333,6 +1333,10 @@ export interface ExamBrief {
   salaryRange?: string;
   avgVacancies?: string;
   description?: string;
+  // Optional: date this exam's content was last meaningfully updated (e.g. 'June 30, 2026').
+  // When set, the sitemap uses it as this page's lastmod. When absent, it falls
+  // back to SITE_CONTENT_DATE in app/sitemap.ts. Set/bump this when you edit an exam.
+  updatedDate?: string;
 }
 
 export const allExams: ExamBrief[] = [
