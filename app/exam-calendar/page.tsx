@@ -29,7 +29,7 @@ const KNOWN_SLUGS = new Set(getAllExamSlugs());
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
 // Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
-// Last updated: 18 June 2026
+// Last updated: 1 July 2026
 const upcomingExams: MonthGroup[] = [
   {
     month: 'May 2026',
@@ -68,12 +68,12 @@ const upcomingExams: MonthGroup[] = [
       },
       {
         name: 'Indian Navy Agniveer Apprentice (Apply Online)',
-        date: '5–29 Jun 2026',
+        date: '5 Jun – 5 Jul 2026',
         status: 'OFFICIAL',
         category: 'Defence',
         internalSlug: 'navy-agniveer',
         externalUrl: 'https://joinindiannavy.gov.in',
-        note: 'Apprentice 01/2027 & 02/2027 batches • Diploma holders (AICTE) • Unmarried males • Fee ₹550+GST • INET Aug 2026',
+        note: 'Apprentice 01/2027 & 02/2027 batches • Diploma holders (AICTE) • Unmarried males • Fee ₹550+GST • Last date extended to 5 Jul 2026 • INET Aug 2026',
       },
       {
         name: 'SBI PO 2026 (Notification Out)',
@@ -966,7 +966,7 @@ export default function ExamCalendarPage() {
           <strong className="text-surface-700">Disclaimer:</strong> Exam dates are sourced from official notifications
           (upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in) and may change without notice.
           Tentative dates are based on official exam calendars and previous-year patterns. Always verify from the
-          official conducting body&apos;s website before applying. Last updated: 18 June 2026.
+          official conducting body&apos;s website before applying. Last updated: 1 July 2026.
         </div>
       </div>
     </div>
