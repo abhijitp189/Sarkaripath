@@ -29,7 +29,7 @@ const KNOWN_SLUGS = new Set(getAllExamSlugs());
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
 // Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
-// Last updated: 1 July 2026
+// Last updated: 2 July 2026
 const upcomingExams: MonthGroup[] = [
   {
     month: 'May 2026',
@@ -50,12 +50,12 @@ const upcomingExams: MonthGroup[] = [
     exams: [
       {
         name: 'RRB NTPC UG (CBT 1 — June Phase)',
-        date: '13–21 Jun 2026',
+        date: '13–20 Jun 2026',
         status: 'OFFICIAL',
         category: 'Railway',
         internalSlug: 'rrb-ntpc',
         externalUrl: 'https://rrbapply.gov.in',
-        note: '3,058 vacancies (12th-level) • CEN 07/2025 • May phase done • June phase (13–21 Jun) underway',
+        note: '3,058 vacancies (12th-level) • CEN 07/2025 • CBT 1 completed (7–9 May & 13–20 Jun, revised) • Answer key out — objections till 5 Jul 2026',
       },
       {
         name: 'UPSC IES/ISS',
@@ -89,6 +89,15 @@ const upcomingExams: MonthGroup[] = [
   {
     month: 'July 2026',
     exams: [
+      {
+        name: 'RRB NTPC Graduate (CBT 2)',
+        date: '10 Jul 2026',
+        status: 'OFFICIAL',
+        category: 'Railway',
+        internalSlug: 'rrb-ntpc',
+        externalUrl: 'https://rrbapply.gov.in',
+        note: '5,810 vacancies (Graduate posts) • CEN 06/2025 • CBT 1 result declared 11 Jun 2026 • Single-day exam',
+      },
       {
         name: 'IAF Agniveervayu Intake 02/2027 (Apply)',
         date: '6–26 Jul 2026',
@@ -202,6 +211,15 @@ const upcomingExams: MonthGroup[] = [
   {
     month: 'September 2026',
     exams: [
+      {
+        name: 'RRB NTPC UG (CBT 2)',
+        date: '17 Sep 2026',
+        status: 'OFFICIAL',
+        category: 'Railway',
+        internalSlug: 'rrb-ntpc',
+        externalUrl: 'https://rrbapply.gov.in',
+        note: '3,058 vacancies (12th-level) • CEN 07/2025 • For candidates qualifying CBT 1',
+      },
       {
         name: 'IAF Agniveervayu Intake 02/2027 (Phase-I Exam)',
         date: '22–23 Sep 2026',
@@ -513,7 +531,7 @@ const pastExams: MonthGroup[] = [
         category: 'Railway',
         internalSlug: 'rrb-ntpc',
         externalUrl: 'https://rrbapply.gov.in',
-        note: '3,058 vacancies • CEN 07/2025 • June phase (13–21 Jun) underway',
+        note: '3,058 vacancies • CEN 07/2025 • June phase (13–20 Jun, revised) completed',
       },
     ],
   },
@@ -966,7 +984,7 @@ export default function ExamCalendarPage() {
           <strong className="text-surface-700">Disclaimer:</strong> Exam dates are sourced from official notifications
           (upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in) and may change without notice.
           Tentative dates are based on official exam calendars and previous-year patterns. Always verify from the
-          official conducting body&apos;s website before applying. Last updated: 1 July 2026.
+          official conducting body&apos;s website before applying. Last updated: 2 July 2026.
         </div>
       </div>
     </div>

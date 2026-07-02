@@ -2233,7 +2233,7 @@ function IbpsPOSalaryArticle({ post }: { post: any }) {
 
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl text-sm text-blue-800 leading-relaxed">
               <div className="font-semibold text-xs uppercase tracking-wide mb-1">📌 Quick Note on DA</div>
-              DA is revised twice a year — in February and August. As of early 2026, DA for bank employees is approximately <strong>55–56% of basic pay</strong>. This means your gross salary will keep increasing every 6 months even without a promotion.
+              DA for bank employees is revised every quarter — effective February, May, August and November — based on the quarterly average of the CPI. This means your gross salary keeps increasing every few months even without a promotion. Always check the latest IBA circular for the current quarter&apos;s rate.
             </div>
           </section>
 
