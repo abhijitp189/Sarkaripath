@@ -6,6 +6,7 @@ import { jun01_07_newsItems, jun01_07_staticGk, jun01_07_quiz } from './jun-01-0
 import { jun08_14_newsItems, jun08_14_staticGk, jun08_14_quiz } from './jun-08-14-data';
 import { jun15_21_newsItems, jun15_21_staticGk, jun15_21_quiz } from './jun-15-21-data';
 import { jun22_28_newsItems, jun22_28_staticGk, jun22_28_quiz } from './jun-22-28-data';
+import { jun29_jul05_newsItems, jun29_jul05_staticGk, jun29_jul05_quiz } from './jun-29-jul-05-data';
 
 /* ── Interfaces ────────────────────────────────────────────────────────── */
 
@@ -61,6 +62,35 @@ export type CaCategory = (typeof caCategories)[number];
 /* ── Posts ──────────────────────────────────────────────────────────────── */
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
+  /* ═══ NEW: June 29 – July 5, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-june-29-july-5-2026',
+    title:
+      'Weekly Current Affairs: June 29 \\u2013 July 5, 2026 \\u2014 VB-G RAM G Replaces MGNREGA, 16th India-Japan Summit, Air Marshal Ashutosh Dixit New Air Vice Chief, Vikram Misri Extension & Vaibhav Sooryavanshi\\u2019s Record India Debut',
+    dateRange: 'June 29 \\u2013 July 5, 2026',
+    publishedDate: 'July 6, 2026',
+    category: 'All',
+    excerpt:
+      'This week: the VB\\u2013G RAM G Act, 2025 replaces MGNREGA from July 1 with a 125-day rural job guarantee; Japanese PM Sanae Takaichi visits New Delhi for the 16th India-Japan Annual Summit; Air Marshal Ashutosh Dixit becomes the 51st Vice Chief of the Air Staff; Foreign Secretary Vikram Misri gets a one-year extension; the RBI names Ravi Shankar as Executive Director; Sunil Bharti Mittal receives the 2026 USISPF Leadership Award; 15-year-old Vaibhav Sooryavanshi becomes India\\u2019s youngest international cricket debutant; and India observes the 20th National Statistics Day, National Doctors\\u2019 Day, and nine years of GST.',
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'June 29 \\u2013 July 5, 2026',
+    newsItems: jun29_jul05_newsItems,
+    staticGkBox: jun29_jul05_staticGk,
+    quiz: jun29_jul05_quiz,
+    keyPoints: [
+      'The Viksit Bharat\\u2013G RAM G Act, 2025 came into force on July 1, 2026, repealing MGNREGA (2005) and raising the rural wage-employment guarantee from 100 to 125 days per household per year, with a \\u20B9300 daily floor wage and a \\u20B995,692.31 crore allocation for FY 2026\\u201327.',
+      'Japanese PM Sanae Takaichi (Japan\\u2019s first female PM) made her first official visit to India (July 1\\u20133) for the 16th India-Japan Annual Summit; the two sides adopted joint statements on Economic Security, Artificial Intelligence, and Energy Resilience.',
+      'Air Marshal Ashutosh Dixit assumed charge as the 51st Vice Chief of the Air Staff on July 1, 2026, succeeding Air Marshal Nagesh Kapoor.',
+      'The Appointments Committee of the Cabinet extended Foreign Secretary Vikram Misri\\u2019s tenure by one year, up to July 14, 2027.',
+      'The RBI appointed Ravi Shankar as Executive Director (effective July 1) to head the Department of Statistics and Information Management (DSIM).',
+      'Sunil Bharti Mittal, Founder and Chairman of Bharti Enterprises, received the 2026 USISPF Leadership Award at the ninth USISPF Annual Leadership Summit in Washington, D.C.',
+      '15-year-old Vaibhav Sooryavanshi became India\\u2019s youngest international debutant (15 years, 99 days) in the 2nd T20I vs England at Old Trafford on July 4, surpassing Sachin Tendulkar.',
+      'India observed the 20th National Statistics Day (June 29) with the theme \\u201cUnlocking the Potential of Administrative Data,\\u201d honouring P.C. Mahalanobis.',
+      'National Doctors\\u2019 Day (July 1) was observed with the theme \\u201cBehind the Mask: Who Heals the Healers?\\u201d, commemorating Dr. B.C. Roy.',
+      'GST Day (July 1) marked nine years since the Goods and Services Tax was rolled out on July 1, 2017.',
+    ],
+  },
   /* ═══ NEW: June 22–28, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-june-22-28-2026',
