@@ -92,11 +92,11 @@ export default function HomePage() {
                   Syllabus, study plans, best books, and free resources for UPSC, SSC, Banking, Railway, and all major government exams. Everything in one place.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Link href="/exams" className="inline-flex items-center px-7 py-3.5 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] text-sm">
+                  <Link href="/exams/" className="inline-flex items-center px-7 py-3.5 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] text-sm">
                     Explore All Exams
                     <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                   </Link>
-                  <Link href="/tools/eligibility-checker" className="inline-flex items-center px-7 py-3.5 border-2 border-white/40 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all text-sm">
+                  <Link href="/tools/eligibility-checker/" className="inline-flex items-center px-7 py-3.5 border-2 border-white/40 text-white font-heading font-semibold rounded-xl hover:bg-white/10 transition-all text-sm">
                     Check Your Eligibility
                   </Link>
                 </div>
@@ -121,7 +121,7 @@ export default function HomePage() {
             return (
               <Link
                 key={cat.name}
-                href={`/exams?category=${cat.name}`}
+                href={`/exams/?category=${cat.name}`}
                 className={`card p-5 text-center group transition ${c.hoverBorder}`}
               >
                 <div className={`w-14 h-14 ${c.iconBg} rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 group-hover:scale-105 transition-transform`}>
@@ -145,7 +145,7 @@ export default function HomePage() {
           <p className="section-subtitle mb-10">Detailed preparation guides with syllabus, books, and study plans</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {exams.map((exam) => (
-              <Link key={exam.slug} href={`/exams/${exam.slug}`} className="card p-6 group flex flex-col hover:border-primary-300">
+              <Link key={exam.slug} href={`/exams/${exam.slug}/`} className="card p-6 group flex flex-col hover:border-primary-300">
                 <div className="flex items-start justify-between mb-3">
                   <span className="badge badge-primary">{exam.category}</span>
                   <span className="badge badge-green">{exam.level}</span>
@@ -180,7 +180,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/exams" className="btn-outline">View All Exams →</Link>
+            <Link href="/exams/" className="btn-outline">View All Exams →</Link>
           </div>
         </div>
       </section>
@@ -214,7 +214,7 @@ export default function HomePage() {
           <p className="section-subtitle mb-10">Step-by-step guides to help you at every stage of your preparation</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides.slice(0, 6).map((guide) => (
-              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="card p-6 group hover:border-primary-300 flex flex-col">
+              <Link key={guide.slug} href={`/guides/${guide.slug}/`} className="card p-6 group hover:border-primary-300 flex flex-col">
                 <span className="badge badge-accent mb-3 self-start">{guide.category}</span>
                 <h3 className="font-heading font-semibold text-surface-900 group-hover:text-primary-500 transition-colors mb-2 flex-1">
                   {guide.title}
@@ -233,7 +233,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/guides" className="btn-outline">View All Guides →</Link>
+            <Link href="/guides/" className="btn-outline">View All Guides →</Link>
           </div>
         </div>
       </section>
@@ -246,7 +246,7 @@ export default function HomePage() {
             <h2 className="section-title">Latest from the Blog</h2>
             <p className="section-subtitle">In-depth guides on syllabus, exam pattern, and preparation strategy</p>
           </div>
-          <Link href="/blog" className="hidden sm:inline-flex text-sm font-medium text-primary-500 hover:text-primary-600 items-center gap-1">
+          <Link href="/blog/" className="hidden sm:inline-flex text-sm font-medium text-primary-500 hover:text-primary-600 items-center gap-1">
             View All Posts →
           </Link>
         </div>
@@ -257,7 +257,7 @@ export default function HomePage() {
             return (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug}/`}
                 className={`card group flex flex-col hover:border-primary-300 overflow-hidden ${catColor.topBorder}`}
               >
                 <div className="p-6 flex flex-col flex-1">
@@ -289,7 +289,7 @@ export default function HomePage() {
         </div>
 
         <div className="text-center mt-8 sm:hidden">
-          <Link href="/blog" className="btn-outline">View All Posts →</Link>
+          <Link href="/blog/" className="btn-outline">View All Posts →</Link>
         </div>
       </section>
 
@@ -300,7 +300,7 @@ export default function HomePage() {
           <p className="text-primary-100 max-w-2xl mx-auto mb-6">
             Use our Eligibility Checker to find out which government exams you qualify for based on your age, qualification, and category.
           </p>
-          <Link href="/tools/eligibility-checker" className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg">
+          <Link href="/tools/eligibility-checker/" className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-heading font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg">
             Check Your Eligibility →
           </Link>
         </div>
@@ -323,7 +323,7 @@ export default function HomePage() {
                   <ul className="space-y-1.5">
                     {catExams.map((exam) => (
                       <li key={exam.slug}>
-                        <Link href={`/exams/${exam.slug}`} className="text-xs text-surface-500 hover:text-primary-500 transition-colors leading-tight block py-1.5">
+                        <Link href={`/exams/${exam.slug}/`} className="text-xs text-surface-500 hover:text-primary-500 transition-colors leading-tight block py-1.5">
                           {exam.name.length > 40 ? exam.name.substring(0, 40) + '…' : exam.name}
                         </Link>
                       </li>

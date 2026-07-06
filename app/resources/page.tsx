@@ -65,7 +65,7 @@ const resourceSections: ResourceSection[] = [
     items: [
       {
         name: 'Browse All 100+ Exam Guides',
-        url: '/exams',
+        url: '/exams/',
         internal: true,
         desc: 'Detailed pages for 100+ government exams — eligibility, syllabus, exam pattern, salary, best books, and free resources for UPSC, SSC, Banking, Railway, Defence, State PSC, Teaching, and Police.',
         tags: ['All Exams'],
@@ -74,7 +74,7 @@ const resourceSections: ResourceSection[] = [
       },
       {
         name: 'Free Weekly Current Affairs',
-        url: '/current-affairs',
+        url: '/current-affairs/',
         internal: true,
         desc: 'Our own weekly current affairs digests with quizzes — fact-checked against official sources (PIB, ministries). Perfect for SSC, Banking, Railway, and State PSC daily revision.',
         tags: ['All Exams'],
@@ -92,7 +92,7 @@ const resourceSections: ResourceSection[] = [
       },
       {
         name: 'Exam Calendar',
-        url: '/exam-calendar',
+        url: '/exam-calendar/',
         internal: true,
         desc: 'Upcoming notification, application, and exam dates for major government exams in one place. Plan your preparation around the real exam timeline.',
         tags: ['All Exams'],
@@ -101,7 +101,7 @@ const resourceSections: ResourceSection[] = [
       },
       {
         name: 'Preparation Guides',
-        url: '/guides',
+        url: '/guides/',
         internal: true,
         desc: 'Step-by-step free guides — how to start preparation from zero, age limit & relaxation rules, filling application forms, documents needed, and study plans for working professionals.',
         tags: ['All Exams'],
@@ -110,7 +110,7 @@ const resourceSections: ResourceSection[] = [
       },
       {
         name: 'Blog — Salary, Syllabus & Strategy',
-        url: '/blog',
+        url: '/blog/',
         internal: true,
         desc: 'In-depth articles on in-hand salaries, latest syllabus breakdowns, exam comparisons (IBPS vs SBI PO, CGL vs CHSL), and which exams are easiest to crack in 2026.',
         tags: ['All Exams'],
@@ -746,7 +746,7 @@ export default function ResourcesPage() {
             and check your eligibility — all in one place, completely free.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/exams" className="btn-primary bg-accent-500 hover:bg-accent-600">
+            <Link href="/exams/" className="btn-primary bg-accent-500 hover:bg-accent-600">
               Browse 100+ Exams →
             </Link>
             <Link href="/tools/eligibility-checker/" className="btn-outline border-white text-white hover:bg-white/10">

@@ -93,7 +93,7 @@ export default function ExamsMegaMenu({ variant = 'light' }: { variant?: 'light'
             <div className="w-48 bg-surface-50 border-r border-surface-100 flex-shrink-0 py-2 overflow-y-auto">
               {/* All Exams link */}
               <Link
-                href="/exams"
+                href="/exams/"
                 onClick={() => setOpen(false)}
                 className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-primary-600 hover:bg-primary-50 transition-colors border-b border-surface-200 mb-1"
               >
@@ -134,7 +134,7 @@ export default function ExamsMegaMenu({ variant = 'light' }: { variant?: 'light'
                   {activeCategory} Exams
                 </h3>
                 <Link
-                  href={`/exams?category=${encodeURIComponent(activeCategory)}`}
+                  href={`/exams/?category=${encodeURIComponent(activeCategory)}`}
                   onClick={() => setOpen(false)}
                   className="text-xs text-primary-600 hover:underline font-medium"
                 >
@@ -169,7 +169,7 @@ export default function ExamsMegaMenu({ variant = 'light' }: { variant?: 'light'
               {/* View all link for remaining exams */}
               {remainingCount > 0 && (
                 <Link
-                  href={`/exams?category=${encodeURIComponent(activeCategory)}`}
+                  href={`/exams/?category=${encodeURIComponent(activeCategory)}`}
                   onClick={() => setOpen(false)}
                   className="mt-3 flex items-center justify-center gap-1.5 w-full py-2 rounded-xl border border-primary-200 text-xs text-primary-600 hover:bg-primary-50 font-medium transition-colors"
                 >

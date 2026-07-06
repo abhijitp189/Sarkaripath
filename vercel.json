@@ -39,6 +39,26 @@
       "source": "/exams/delhi-high-court-jja/",
       "destination": "/exams/",
       "permanent": true
+    },
+    {
+      "source": "/exams/bihar-teacher",
+      "destination": "/exams/",
+      "permanent": true
+    },
+    {
+      "source": "/exams/bihar-teacher/",
+      "destination": "/exams/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/government-exam-preparation-beginners-2026",
+      "destination": "/guides/how-to-start-government-exam-preparation/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/government-exam-preparation-beginners-2026/",
+      "destination": "/guides/how-to-start-government-exam-preparation/",
+      "permanent": true
     }
   ]
 }

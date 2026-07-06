@@ -73,14 +73,14 @@ function Navbar() {
       <div className="hidden md:block bg-primary-600 shadow-sm">
         <nav className="container-main flex items-center justify-center gap-0.5 h-10">
           <ExamsMegaMenu variant="dark" />
-          <NavLink href="/current-affairs" dark>Current Affairs</NavLink>
-          <NavLink href="/blog" dark>Blog</NavLink>
-          <NavLink href="/guides" dark>Guides</NavLink>
-          <NavLink href="/exam-calendar" dark>Exam Calendar</NavLink>
-          <NavLink href="/resources" dark>Resources</NavLink>
+          <NavLink href="/current-affairs/" dark>Current Affairs</NavLink>
+          <NavLink href="/blog/" dark>Blog</NavLink>
+          <NavLink href="/guides/" dark>Guides</NavLink>
+          <NavLink href="/exam-calendar/" dark>Exam Calendar</NavLink>
+          <NavLink href="/resources/" dark>Resources</NavLink>
           {/* Eligibility Checker — pill CTA */}
           <Link
-            href="/tools/eligibility-checker"
+            href="/tools/eligibility-checker/"
             className="ml-2 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-heading font-semibold bg-accent-500 text-white hover:bg-accent-600 transition-colors whitespace-nowrap"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,18 +148,18 @@ function Footer() {
               <FooterLink href="/guides/how-to-start-government-exam-preparation/">Getting Started</FooterLink>
               <FooterLink href="/guides/best-free-resources-government-exams/">Free Resources</FooterLink>
               <FooterLink href="/guides/age-limit-relaxation-government-jobs/">Age Relaxation</FooterLink>
-              <FooterLink href="/tools/eligibility-checker">Eligibility Checker</FooterLink>
+              <FooterLink href="/tools/eligibility-checker/">Eligibility Checker</FooterLink>
             </div>
           </div>
 
           <div>
             <h3 className="font-heading font-semibold text-white mb-4 text-sm uppercase tracking-wider">Quick Links</h3>
             <div className="space-y-2">
-              <FooterLink href="/exams">All Exams</FooterLink>
-              <FooterLink href="/current-affairs">Current Affairs</FooterLink>
-              <FooterLink href="/blog">Blog</FooterLink>
-              <FooterLink href="/resources">Free Resources</FooterLink>
-              <FooterLink href="/guides">Preparation Guides</FooterLink>
+              <FooterLink href="/exams/">All Exams</FooterLink>
+              <FooterLink href="/current-affairs/">Current Affairs</FooterLink>
+              <FooterLink href="/blog/">Blog</FooterLink>
+              <FooterLink href="/resources/">Free Resources</FooterLink>
+              <FooterLink href="/guides/">Preparation Guides</FooterLink>
             </div>
           </div>
         </div>
@@ -289,14 +289,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Free comprehensive guide for Indian government exam preparation. Syllabus, study plans, best books, free resources for UPSC, SSC, Banking, Railway and all sarkari exams.',
               inLanguage: ['en-IN', 'hi-IN'],
               publisher: { '@id': 'https://www.taiyarho.in/#organization' },
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: {
-                  '@type': 'EntryPoint',
-                  urlTemplate: 'https://www.taiyarho.in/exams?q={search_term_string}',
-                },
-                'query-input': 'required name=search_term_string',
-              },
             }),
           }}
         />

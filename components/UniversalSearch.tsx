@@ -654,7 +654,7 @@ export default function UniversalSearch() {
                     )}
                     
                     <Link
-                      href={`/exams?q=${encodeURIComponent(query)}`}
+                      href={`/exams/?q=${encodeURIComponent(query)}`}
                       onClick={closeSearch}
                       className="inline-block mt-3 text-xs text-primary-600 hover:underline"
                     >
@@ -673,7 +673,7 @@ export default function UniversalSearch() {
                   {['UPSC', 'SSC', 'Banking', 'Railway', 'Defence', 'Police', 'Teaching', 'State PSC'].map((cat) => (
                     <Link
                       key={cat}
-                      href={`/exams?category=${encodeURIComponent(cat)}`}
+                      href={`/exams/?category=${encodeURIComponent(cat)}`}
                       onClick={closeSearch}
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-100 text-surface-600 hover:bg-primary-50 hover:text-primary-600 text-xs font-medium transition-colors"
                     >

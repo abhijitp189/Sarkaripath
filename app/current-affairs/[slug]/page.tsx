@@ -210,7 +210,7 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
         <nav className="text-sm text-surface-500 mb-6">
           <Link href="/" className="hover:text-primary-500">Home</Link>
           <span className="mx-2">›</span>
-          <Link href="/current-affairs" className="hover:text-primary-500">Current Affairs</Link>
+          <Link href="/current-affairs/" className="hover:text-primary-500">Current Affairs</Link>
           <span className="mx-2">›</span>
           <span className="text-surface-800">{post.weekRange ?? post.dateRange}</span>
         </nav>
@@ -294,7 +294,7 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
 
                 {/* Navigation */}
                 <div className="flex items-center justify-between pt-6 border-t border-surface-200">
-                  <Link href="/current-affairs" className="btn-outline text-sm inline-flex items-center gap-1.5">
+                  <Link href="/current-affairs/" className="btn-outline text-sm inline-flex items-center gap-1.5">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
@@ -360,7 +360,7 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
                     <p className="text-xs text-surface-500 mb-3">
                       Check upcoming exam dates and never miss a deadline.
                     </p>
-                    <Link href="/exam-calendar" className="btn-outline text-xs w-full text-center block">
+                    <Link href="/exam-calendar/" className="btn-outline text-xs w-full text-center block">
                       View Calendar →
                     </Link>
                   </div>
@@ -379,7 +379,7 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
                           </Link>
                         ))}
                       </div>
-                      <Link href="/current-affairs" className="block mt-4 text-xs font-medium text-primary-500 hover:text-primary-600">
+                      <Link href="/current-affairs/" className="block mt-4 text-xs font-medium text-primary-500 hover:text-primary-600">
                         View all issues →
                       </Link>
                     </div>
@@ -505,7 +505,7 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
 
               {/* Navigation */}
               <div className="flex items-center justify-between pt-6 border-t border-surface-200">
-                <Link href="/current-affairs" className="btn-outline text-sm inline-flex items-center gap-1.5">
+                <Link href="/current-affairs/" className="btn-outline text-sm inline-flex items-center gap-1.5">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
@@ -537,7 +537,7 @@ export default function CurrentAffairsDetailPage({ params }: Props) {
                 <div className="bg-white rounded-2xl border border-primary-200 shadow-sm p-5 bg-primary-50">
                   <h3 className="font-heading font-semibold text-primary-800 mb-2 text-sm">🧮 Eligibility Checker</h3>
                   <p className="text-xs text-primary-700 mb-3">Enter your details — see every exam you qualify for.</p>
-                  <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center block">
+                  <Link href="/tools/eligibility-checker/" className="btn-primary text-xs w-full text-center block">
                     Check Eligibility →
                   </Link>
                 </div>

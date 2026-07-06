@@ -25,7 +25,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return (
       <div className="container-main py-20 text-center">
         <h1 className="text-2xl font-heading font-bold text-surface-800 mb-4">Article Not Found</h1>
-        <Link href="/blog" className="btn-primary">Back to Blog</Link>
+        <Link href="/blog/" className="btn-primary">Back to Blog</Link>
       </div>
     );
   }
@@ -120,7 +120,7 @@ function SscCgl2026Article({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">SSC CGL 2026 Syllabus</span>
       </nav>
@@ -583,7 +583,7 @@ function SscCgl2026Article({ post }: { post: any }) {
               <Link href="/exams/ssc-cgl/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
                 View Full SSC CGL Guide →
               </Link>
-              <Link href="/resources" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
+              <Link href="/resources/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
                 Free Resources
               </Link>
             </div>
@@ -623,7 +623,7 @@ function SscCgl2026Article({ post }: { post: any }) {
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Check Your Eligibility</h3>
               <p className="text-xs text-surface-500 mb-3">See if you qualify for SSC CGL based on your age and qualification.</p>
-              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center">Check Now →</Link>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs w-full text-center">Check Now →</Link>
             </div>
           </div>
         </aside>
@@ -685,7 +685,7 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Government Exam Preparation for Beginners</span>
       </nav>
@@ -851,7 +851,7 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
             </Callout>
 
             <p className="text-sm text-surface-500 mt-4">
-              Not sure which exam you qualify for? Use our <Link href="/tools/eligibility-checker" className="text-primary-500 font-semibold hover:underline">Eligibility Checker</Link> — enter your age and qualification, and it shows every exam you can apply for.
+              Not sure which exam you qualify for? Use our <Link href="/tools/eligibility-checker/" className="text-primary-500 font-semibold hover:underline">Eligibility Checker</Link> — enter your age and qualification, and it shows every exam you can apply for.
             </p>
           </Section>
 
@@ -1138,7 +1138,7 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
             </div>
 
             <p className="text-sm text-surface-500">
-              For a complete list of exam-specific free resources, visit our <Link href="/resources" className="text-primary-500 font-semibold hover:underline">Free Resources Hub</Link> and our guide on <Link href="/guides/best-free-resources-government-exams/" className="text-primary-500 font-semibold hover:underline">Best Free Resources for Government Exams</Link>.
+              For a complete list of exam-specific free resources, visit our <Link href="/resources/" className="text-primary-500 font-semibold hover:underline">Free Resources Hub</Link> and our guide on <Link href="/guides/best-free-resources-government-exams/" className="text-primary-500 font-semibold hover:underline">Best Free Resources for Government Exams</Link>.
             </p>
           </Section>
 
@@ -1206,10 +1206,10 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
             <h3 className="font-heading font-bold text-xl mb-2">Start Your Government Exam Journey Today — It&apos;s Free</h3>
             <p className="text-primary-100 text-sm mb-5 max-w-xl mx-auto">Browse exam guides, use the eligibility checker, and access free resources on TaiyarHo. No registration. No fees. Just start.</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/exams" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
+              <Link href="/exams/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
                 Browse All Exams →
               </Link>
-              <Link href="/tools/eligibility-checker" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
+              <Link href="/tools/eligibility-checker/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
                 Check Your Eligibility
               </Link>
             </div>
@@ -1217,7 +1217,7 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
 
           {/* Disclaimer */}
           <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
-            This article is for informational purposes only. Exam patterns, eligibility, and syllabi may change — always verify from official exam websites. Last updated: {post.updatedDate}. Visit <Link href="/exams" className="text-primary-500">our exam pages</Link> for links to all official websites.
+            This article is for informational purposes only. Exam patterns, eligibility, and syllabi may change — always verify from official exam websites. Last updated: {post.updatedDate}. Visit <Link href="/exams/" className="text-primary-500">our exam pages</Link> for links to all official websites.
           </p>
         </article>
 
@@ -1251,14 +1251,14 @@ function GovExamBeginnersArticle({ post }: { post: any }) {
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Find Your Exams</h3>
               <p className="text-xs text-surface-500 mb-3">Enter your age and qualification — see every exam you qualify for.</p>
-              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center">Check Eligibility →</Link>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs w-full text-center">Check Eligibility →</Link>
             </div>
 
             {/* Free resources */}
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Free Resources</h3>
               <p className="text-xs text-surface-500 mb-3">Books, YouTube channels, apps, and mock tests — all free.</p>
-              <Link href="/resources" className="text-sm text-primary-500 hover:text-primary-600 font-medium">View Resources →</Link>
+              <Link href="/resources/" className="text-sm text-primary-500 hover:text-primary-600 font-medium">View Resources →</Link>
             </div>
           </div>
         </aside>
@@ -1324,7 +1324,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">SSC CGL vs CHSL 2026</span>
       </nav>
@@ -1885,7 +1885,7 @@ function SscCglVsChslArticle({ post }: { post: any }) {
                 <Link href="/exams/ssc-cgl/" className="btn-primary text-sm px-5 py-2">
                   SSC CGL Full Guide →
                 </Link>
-                <Link href="/exams" className="btn-outline text-sm px-5 py-2">
+                <Link href="/exams/" className="btn-outline text-sm px-5 py-2">
                   Browse All 100 Exams
                 </Link>
               </div>
@@ -1914,9 +1914,9 @@ function SscCglVsChslArticle({ post }: { post: any }) {
               <div className="font-heading font-bold text-sm text-surface-800 mb-3">🔗 Related Pages</div>
               <div className="space-y-2">
                 <Link href="/exams/ssc-cgl/" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> SSC CGL Full Guide</Link>
-                <Link href="/exams" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> All SSC Exams</Link>
+                <Link href="/exams/" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> All SSC Exams</Link>
                 <Link href="/tools/eligibility-checker/" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> Check Eligibility</Link>
-                <Link href="/blog" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> More Articles</Link>
+                <Link href="/blog/" className="flex items-center gap-2 text-sm text-primary-600 hover:underline"><span>→</span> More Articles</Link>
               </div>
             </div>
             {/* Verdict Card */}
@@ -2022,7 +2022,7 @@ function IbpsPOSalaryArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">IBPS PO Salary 2026</span>
       </nav>
@@ -2600,7 +2600,7 @@ function IbpsPOSalaryArticle({ post }: { post: any }) {
 
           {/* Back to blog */}
           <div className="flex justify-start">
-            <Link href="/blog" className="text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1.5 font-medium">
+            <Link href="/blog/" className="text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1.5 font-medium">
               ← Back to all articles
             </Link>
           </div>
@@ -2731,7 +2731,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Age Limit 2026</span>
       </nav>
@@ -2816,7 +2816,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
                 free Eligibility Checker tool
               </Link>{' '}
               to instantly verify whether you qualify for any of our{' '}
-              <Link href="/exams" className="text-primary-500 hover:text-primary-600 underline">
+              <Link href="/exams/" className="text-primary-500 hover:text-primary-600 underline">
                 100 listed government exams
               </Link>
               .
@@ -3210,7 +3210,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
 
           {/* Back to blog */}
           <div className="flex justify-start">
-            <Link href="/blog" className="text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1.5 font-medium">
+            <Link href="/blog/" className="text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1.5 font-medium">
               ← Back to all articles
             </Link>
           </div>
@@ -3235,7 +3235,7 @@ function AgeLimit2026Article({ post }: { post: any }) {
                 <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Free Eligibility Checker →
                 </Link>
-                <Link href="/exams" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/exams/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Browse All 100 Exams →
                 </Link>
                 <Link href="/exams/upsc-ias/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
@@ -3338,7 +3338,7 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6" aria-label="Breadcrumb">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">RRB NTPC 2026 Syllabus</span>
       </nav>
@@ -4009,13 +4009,13 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
                 <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Free Eligibility Checker →
                 </Link>
-                <Link href="/exams" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/exams/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Browse All 100 Exams →
                 </Link>
                 <Link href="/blog/ssc-cgl-2026-syllabus-complete-guide/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   SSC CGL Syllabus Guide →
                 </Link>
-                <Link href="/resources" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
+                <Link href="/resources/" className="block text-sm text-primary-600 hover:text-primary-700 hover:underline leading-snug">
                   Free Study Resources →
                 </Link>
               </div>
@@ -4048,7 +4048,7 @@ function HighestSalary12thArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Highest Salary Govt Exam After 12th 2026</span>
       </nav>
@@ -4645,7 +4645,7 @@ function HighestSalary12thArticle({ post }: { post: any }) {
                 <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">SSC CGL vs CHSL 2026 →</Link>
                 <Link href="/blog/ibps-po-salary-in-hand-2026/" className="block text-sm text-primary-600 hover:underline leading-snug">IBPS PO Salary 2026 →</Link>
                 <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-600 hover:underline leading-snug">Check Your Eligibility →</Link>
-                <Link href="/exams" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
+                <Link href="/exams/" className="block text-sm text-primary-600 hover:underline leading-snug">Browse All 100 Exams →</Link>
               </div>
             </div>
           </div>
@@ -4803,7 +4803,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Best Telegram Channels for Govt Exams 2026</span>
       </nav>
@@ -5232,7 +5232,7 @@ function PayCommissionArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">8th Pay Commission Calculator 2026</span>
       </nav>
@@ -5680,7 +5680,7 @@ function Bank5DayWorkWeekArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Bank 5-Day Work Week 2026</span>
       </nav>
@@ -6113,7 +6113,7 @@ function IbpsPOvsSBIPOArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">IBPS PO vs SBI PO 2026</span>
       </nav>
@@ -6809,7 +6809,7 @@ function EasiestGovtExams2026Article({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Easiest Government Exams 2026</span>
       </nav>
@@ -7409,7 +7409,7 @@ function SscCglSalaryArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">SSC CGL Salary 2026</span>
       </nav>
@@ -7892,7 +7892,7 @@ function SscCglSalaryArticle({ post }: { post: any }) {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/exams/ssc-cgl/" className="btn-primary text-sm">SSC CGL 2026 Complete Details →</Link>
-                <Link href="/tools/eligibility-checker" className="btn-outline text-sm">Check Your SSC CGL Eligibility</Link>
+                <Link href="/tools/eligibility-checker/" className="btn-outline text-sm">Check Your SSC CGL Eligibility</Link>
               </div>
             </div>
           </section>
@@ -7960,7 +7960,7 @@ function SscCglSalaryArticle({ post }: { post: any }) {
               <div className="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-3">🔗 RELATED</div>
               <div className="space-y-2">
                 <Link href="/exams/ssc-cgl/" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL 2026 Full Details →</Link>
-                <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Check Your Eligibility →</Link>
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-surface-600 hover:text-primary-500">Check Your Eligibility →</Link>
                 <Link href="/blog/ssc-cgl-vs-chsl-which-is-easier-2026/" className="block text-sm text-surface-600 hover:text-primary-500">SSC CGL vs CHSL 2026 →</Link>
               </div>
             </div>
@@ -7992,7 +7992,7 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">UPSC vs State PSC 2026</span>
       </nav>
@@ -8164,7 +8164,7 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
           <section id="age-eligibility" className="mb-12">
             <h2 className="text-xl sm:text-2xl font-heading font-bold text-surface-900 mb-4">Age Limits and Eligibility for the 2026 Cycle</h2>
             <p className="text-surface-700 text-sm leading-relaxed mb-5">
-              Your timeline and category status determine how many attempts you have. To check your specific age alignment dynamically, use our <Link href="/tools/eligibility-checker" className="text-primary-500 hover:underline font-semibold">TaiyarHo Eligibility Checker</Link>.
+              Your timeline and category status determine how many attempts you have. To check your specific age alignment dynamically, use our <Link href="/tools/eligibility-checker/" className="text-primary-500 hover:underline font-semibold">TaiyarHo Eligibility Checker</Link>.
             </p>
             <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
               <table className="w-full text-sm">
@@ -8443,7 +8443,7 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/exams/upsc-ias/" className="btn-primary text-sm">UPSC IAS 2026 Full Details →</Link>
-                <Link href="/tools/eligibility-checker" className="btn-outline text-sm">Check Your Eligibility</Link>
+                <Link href="/tools/eligibility-checker/" className="btn-outline text-sm">Check Your Eligibility</Link>
               </div>
             </div>
           </section>
@@ -8525,7 +8525,7 @@ function UpscVsStatePscArticle({ post }: { post: any }) {
               <div className="space-y-2">
                 <Link href="/blog/8th-pay-commission-salary-calculator-2026/" className="block text-sm text-surface-600 hover:text-primary-500">8th Pay Commission Calculator →</Link>
                 <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-surface-600 hover:text-primary-500">Age Relaxation Guide 2026 →</Link>
-                <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Eligibility Checker Tool →</Link>
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-surface-600 hover:text-primary-500">Eligibility Checker Tool →</Link>
               </div>
             </div>
           </div>
@@ -8557,7 +8557,7 @@ function RpscApoRecruitmentArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">RPSC APO Recruitment 2026</span>
       </nav>
@@ -8713,7 +8713,7 @@ function RpscApoRecruitmentArticle({ post }: { post: any }) {
             </p>
 
             <div className="mt-4">
-              <Link href="/tools/eligibility-checker" className="inline-flex items-center text-sm font-medium text-primary-500 hover:text-primary-600">
+              <Link href="/tools/eligibility-checker/" className="inline-flex items-center text-sm font-medium text-primary-500 hover:text-primary-600">
                 Check your eligibility for other exams →
               </Link>
             </div>
@@ -8984,7 +8984,7 @@ function RpscApoRecruitmentArticle({ post }: { post: any }) {
               <div className="space-y-2">
                 <Link href="/blog/government-exam-age-limit-obc-sc-st-relaxation-2026/" className="block text-sm text-surface-600 hover:text-primary-500">Age Relaxation Guide 2026 →</Link>
                 <Link href="/blog/upsc-vs-state-psc-2026/" className="block text-sm text-surface-600 hover:text-primary-500">UPSC vs State PSC 2026 →</Link>
-                <Link href="/tools/eligibility-checker" className="block text-sm text-surface-600 hover:text-primary-500">Eligibility Checker Tool →</Link>
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-surface-600 hover:text-primary-500">Eligibility Checker Tool →</Link>
               </div>
             </div>
 
@@ -9073,7 +9073,7 @@ function BestYouTubeChannelsSscCglArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Best Free YouTube Channels for SSC CGL 2026</span>
       </nav>
@@ -9567,7 +9567,7 @@ function GovtVsPrivateJobArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Government Job vs Private Job 2026</span>
       </nav>
@@ -9885,7 +9885,7 @@ function GovtVsPrivateJobArticle({ post }: { post: any }) {
                 If the government route appeals to you, start by checking which exams you qualify for and what they pay.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/tools/eligibility-checker" className="btn-primary text-sm">Check Your Eligibility →</Link>
+                <Link href="/tools/eligibility-checker/" className="btn-primary text-sm">Check Your Eligibility →</Link>
                 <Link href="/exam-calendar/" className="btn-outline text-sm">2026 Exam Calendar</Link>
                 <Link href="/exams/ssc-cgl/" className="btn-outline text-sm">SSC CGL Full Details</Link>
               </div>
@@ -9979,7 +9979,7 @@ function GovtVsPrivateJobArticle({ post }: { post: any }) {
                 <Link href="/exams/sbi-po/" className="block text-sm text-surface-700 hover:text-primary-500 font-heading font-semibold">SBI PO 2026 →</Link>
               </div>
               <div className="border-t border-emerald-200 pt-3 mt-3">
-                <Link href="/tools/eligibility-checker" className="block text-xs text-emerald-700 font-semibold hover:underline">✓ Check Your Eligibility →</Link>
+                <Link href="/tools/eligibility-checker/" className="block text-xs text-emerald-700 font-semibold hover:underline">✓ Check Your Eligibility →</Link>
               </div>
             </div>
 
@@ -10021,7 +10021,7 @@ function PhysicalFitnessGuideArticle({ post }: { post: any }) {
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/blog" className="hover:text-primary-500">Blog</Link>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Physical Fitness Guide 2026</span>
       </nav>
@@ -10430,7 +10430,7 @@ function PhysicalFitnessGuideArticle({ post }: { post: any }) {
             <h3 className="font-heading font-bold text-xl mb-2">Check Your Eligibility — It's Free</h3>
             <p className="text-primary-100 text-sm mb-5">See if you meet the age and qualification criteria for SSC GD, RPF and police exams before you start training.</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/tools/eligibility-checker" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
+              <Link href="/tools/eligibility-checker/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
                 Eligibility Checker →
               </Link>
               <Link href="/exams/ssc-gd-constable/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
@@ -10474,7 +10474,7 @@ function PhysicalFitnessGuideArticle({ post }: { post: any }) {
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Check Your Eligibility</h3>
               <p className="text-xs text-surface-500 mb-3">See if you qualify based on your age and qualification.</p>
-              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center">Check Now →</Link>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs w-full text-center">Check Now →</Link>
             </div>
 
             {/* Related Articles */}

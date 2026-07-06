@@ -162,7 +162,7 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
     return (
       <div className="container-main py-20 text-center">
         <h1 className="text-2xl font-heading font-bold text-surface-800 mb-4">Guide Not Found</h1>
-        <Link href="/guides" className="btn-primary">Browse All Guides</Link>
+        <Link href="/guides/" className="btn-primary">Browse All Guides</Link>
       </div>
     );
   }
@@ -207,7 +207,7 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <Link href="/guides/" className="hover:text-primary-500">Guides</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">{guide.category}</span>
       </nav>
@@ -314,7 +314,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <Link href="/guides/" className="hover:text-primary-500">Guides</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Beginner&apos;s Roadmap 2026</span>
       </nav>
@@ -467,7 +467,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
               Pick <strong>one exam category</strong> and prepare for 2–3 exams within it. SSC CGL + CHSL + NTPC makes sense (70–80% overlap). SSC CGL + UPSC IAS + IBPS PO together does not.
             </GCallout>
             <p className="text-sm text-surface-500 mt-4">
-              Not sure which exam you qualify for? Use our <Link href="/tools/eligibility-checker" className="text-primary-500 font-semibold hover:underline">Eligibility Checker</Link> — enter your age and qualification, and it shows every exam you can apply for.
+              Not sure which exam you qualify for? Use our <Link href="/tools/eligibility-checker/" className="text-primary-500 font-semibold hover:underline">Eligibility Checker</Link> — enter your age and qualification, and it shows every exam you can apply for.
             </p>
           </GSection>
 
@@ -696,7 +696,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
                 </div>
               ))}
             </div>
-            <p className="text-sm text-surface-500">Full curated list at our <Link href="/resources" className="text-primary-500 font-semibold hover:underline">Free Resources Hub</Link> and <Link href="/guides/best-free-resources-government-exams/" className="text-primary-500 font-semibold hover:underline">Best Free Resources guide</Link>.</p>
+            <p className="text-sm text-surface-500">Full curated list at our <Link href="/resources/" className="text-primary-500 font-semibold hover:underline">Free Resources Hub</Link> and <Link href="/guides/best-free-resources-government-exams/" className="text-primary-500 font-semibold hover:underline">Best Free Resources guide</Link>.</p>
           </GSection>
 
           {/* MISTAKES */}
@@ -757,8 +757,8 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
             <h3 className="font-heading font-bold text-xl mb-2">Start Your Government Exam Journey Today — It&apos;s Free</h3>
             <p className="text-primary-100 text-sm mb-5 max-w-xl mx-auto">Browse exam guides, use the eligibility checker, and access free resources on TaiyarHo. No registration. No fees. Just start.</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/exams" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Browse All Exams →</Link>
-              <Link href="/tools/eligibility-checker" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
+              <Link href="/exams/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Browse All Exams →</Link>
+              <Link href="/tools/eligibility-checker/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
             </div>
           </div>
 
@@ -792,12 +792,12 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Find Your Exams</h3>
               <p className="text-xs text-surface-500 mb-3">Enter your age and qualification — see every exam you qualify for.</p>
-              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center">Check Eligibility →</Link>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs w-full text-center">Check Eligibility →</Link>
             </div>
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Free Resources</h3>
               <p className="text-xs text-surface-500 mb-3">Books, YouTube channels, apps, and mock tests — all free.</p>
-              <Link href="/resources" className="text-sm text-primary-500 hover:text-primary-600 font-medium">View Resources →</Link>
+              <Link href="/resources/" className="text-sm text-primary-500 hover:text-primary-600 font-medium">View Resources →</Link>
             </div>
           </div>
         </aside>
@@ -831,7 +831,7 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <Link href="/guides/" className="hover:text-primary-500">Guides</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Free Resources 2026</span>
       </nav>
@@ -1292,8 +1292,8 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
             <h3 className="font-heading font-bold text-xl mb-2">You Have Everything You Need — Start Now</h3>
             <p className="text-primary-100 text-sm mb-5 max-w-xl mx-auto">Every resource on this page is free. The only cost is your time and discipline. Start with NCERT, pick a YouTube channel, and take your first mock test this week.</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/exams" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Browse All Exams →</Link>
-              <Link href="/tools/eligibility-checker" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
+              <Link href="/exams/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Browse All Exams →</Link>
+              <Link href="/tools/eligibility-checker/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
             </div>
           </div>
 
@@ -1319,8 +1319,8 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
               <h3 className="font-heading font-semibold text-emerald-800 mb-3 text-sm">🎯 Quick Start Kit</h3>
               <div className="space-y-2 text-sm text-emerald-700">
                 <a href="https://ncert.nic.in/textbook.php" className="block hover:underline font-medium" target="_blank" rel="noopener noreferrer">1. Download NCERT Books →</a>
-                <Link href="/resources" className="block hover:underline font-medium">2. View All Resources →</Link>
-                <Link href="/tools/eligibility-checker" className="block hover:underline font-medium">3. Find Your Exams →</Link>
+                <Link href="/resources/" className="block hover:underline font-medium">2. View All Resources →</Link>
+                <Link href="/tools/eligibility-checker/" className="block hover:underline font-medium">3. Find Your Exams →</Link>
                 <Link href="/guides/how-to-start-government-exam-preparation/" className="block hover:underline font-medium">4. Read Beginner&apos;s Guide →</Link>
               </div>
             </div>
@@ -1336,7 +1336,7 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Find Your Exams</h3>
               <p className="text-xs text-surface-500 mb-3">Enter your age and qualification — see every exam you qualify for.</p>
-              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center">Check Eligibility →</Link>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs w-full text-center">Check Eligibility →</Link>
             </div>
           </div>
         </aside>
@@ -1444,7 +1444,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <Link href="/guides/" className="hover:text-primary-500">Guides</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Application Form</span>
       </nav>
@@ -1985,7 +1985,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
             <div className="card p-5 bg-emerald-50 border-emerald-200">
               <div className="text-sm font-heading font-semibold text-emerald-800 mb-2">Check Your Eligibility</div>
               <p className="text-xs text-emerald-600 mb-3">See which exams you qualify for based on your age, qualification, and category.</p>
-              <Link href="/tools/eligibility-checker" className="btn-primary text-sm w-full text-center block">
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-sm w-full text-center block">
                 Check Eligibility →
               </Link>
             </div>
@@ -2020,7 +2020,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <Link href="/guides/" className="hover:text-primary-500">Guides</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Age Limit &amp; Relaxation</span>
       </nav>
@@ -2537,7 +2537,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
             <div className="text-3xl mb-3">🧮</div>
             <h3 className="text-xl font-heading font-bold mb-2">Check Your Eligibility Now</h3>
             <p className="text-white/80 text-sm mb-5">Enter your age, category, and qualification — see every government exam you qualify for across 100+ exams.</p>
-            <Link href="/tools/eligibility-checker" className="inline-flex items-center gap-2 bg-white text-primary-700 font-heading font-semibold px-6 py-3 rounded-full hover:bg-surface-50 transition-colors text-sm">
+            <Link href="/tools/eligibility-checker/" className="inline-flex items-center gap-2 bg-white text-primary-700 font-heading font-semibold px-6 py-3 rounded-full hover:bg-surface-50 transition-colors text-sm">
               Open Eligibility Checker →
             </Link>
           </div>
@@ -2572,7 +2572,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
             <div className="card p-5 bg-primary-50 border-primary-200">
               <h3 className="font-heading font-semibold text-primary-800 mb-3 text-sm">🧮 Eligibility Checker</h3>
               <p className="text-xs text-primary-700 mb-3">Enter your details — see every exam you are eligible for, with category relaxation applied automatically.</p>
-              <Link href="/tools/eligibility-checker" className="btn-primary text-xs w-full text-center block">Check Eligibility →</Link>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs w-full text-center block">Check Eligibility →</Link>
             </div>
             <div className="card p-5">
               <h3 className="font-heading font-semibold text-surface-800 mb-3 text-sm">Popular Exam Pages</h3>
@@ -2672,7 +2672,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <Link href="/guides/" className="hover:text-primary-500">Guides</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Strategy</span>
       </nav>
@@ -3032,8 +3032,8 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
             <h3 className="font-heading font-bold text-xl mb-2">Start Your Prep Today — Everything on TaiyarHo Is Free</h3>
             <p className="text-primary-100 text-sm mb-5 max-w-xl mx-auto">Check which exams you qualify for, read exam-specific guides, and use the eligibility checker — no login, no fees.</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/exams" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Browse All Exams →</Link>
-              <Link href="/tools/eligibility-checker" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
+              <Link href="/exams/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Browse All Exams →</Link>
+              <Link href="/tools/eligibility-checker/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
             </div>
           </div>
 
@@ -3111,7 +3111,7 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <Link href="/guides/" className="hover:text-primary-500">Guides</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Documents</span>
       </nav>
@@ -3582,8 +3582,8 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
             <h2 className="text-xl font-heading font-bold mb-3">Ready for Your Exam?</h2>
             <p className="text-white/80 text-sm mb-5">Start preparing with our free tools and 100+ exam pages.</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/tools/eligibility-checker" className="bg-white text-primary-700 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors">Check Eligibility</Link>
-              <Link href="/exams" className="border border-white/40 text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-white/10 transition-colors">Browse All Exams</Link>
+              <Link href="/tools/eligibility-checker/" className="bg-white text-primary-700 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors">Check Eligibility</Link>
+              <Link href="/exams/" className="border border-white/40 text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-white/10 transition-colors">Browse All Exams</Link>
             </div>
           </div>
 
@@ -3616,7 +3616,7 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                 <Link href="/exams/ssc-cgl/" className="block text-sm text-primary-500 hover:underline">SSC CGL →</Link>
                 <Link href="/exams/ibps-po/" className="block text-sm text-primary-500 hover:underline">IBPS PO →</Link>
                 <Link href="/exams/sbi-po/" className="block text-sm text-primary-500 hover:underline">SBI PO →</Link>
-                <Link href="/tools/eligibility-checker" className="block text-sm text-primary-500 hover:underline">Eligibility Checker →</Link>
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-500 hover:underline">Eligibility Checker →</Link>
               </div>
             </div>
           </div>
@@ -3692,7 +3692,7 @@ function NewspaperReadingGuide({ guide }: { guide: { slug: string; title: string
       <nav className="text-sm text-surface-500 mb-6">
         <Link href="/" className="hover:text-primary-500">Home</Link>
         <span className="mx-2">›</span>
-        <Link href="/guides" className="hover:text-primary-500">Guides</Link>
+        <Link href="/guides/" className="hover:text-primary-500">Guides</Link>
         <span className="mx-2">›</span>
         <span className="text-surface-800">Strategy</span>
       </nav>
@@ -3838,11 +3838,11 @@ function NewspaperReadingGuide({ guide }: { guide: { slug: string; title: string
               </div>
               <div className="card p-5">
                 <h3 className="font-heading font-bold text-surface-800 mb-2">SSC CGL &amp; Railway</h3>
-                <p className="text-sm text-surface-600 leading-relaxed">Stay factual. Track the &quot;Who, What, When and Where&quot; — sports awards, defence exercise names (like Surya Kiran or Malabar), new appointments to top posts, and space/science launches (ISRO, DRDO). See the full <Link href="/exams/ssc-cgl" className="text-primary-500 hover:underline font-medium">SSC CGL 2026 exam pattern</Link> to know exactly how General Awareness is weighted.</p>
+                <p className="text-sm text-surface-600 leading-relaxed">Stay factual. Track the &quot;Who, What, When and Where&quot; — sports awards, defence exercise names (like Surya Kiran or Malabar), new appointments to top posts, and space/science launches (ISRO, DRDO). See the full <Link href="/exams/ssc-cgl/" className="text-primary-500 hover:underline font-medium">SSC CGL 2026 exam pattern</Link> to know exactly how General Awareness is weighted.</p>
               </div>
               <div className="card p-5">
                 <h3 className="font-heading font-bold text-surface-800 mb-2">Bank PO &amp; RBI Grade B</h3>
-                <p className="text-sm text-surface-600 leading-relaxed">Focus on the financial world — SEBI rules, RBI circulars, inflation numbers (WPI/CPI) and digital banking. If you are aiming for a high-paying job like SBI PO (official starting basic pay ₹48,480, which becomes ₹56,480 after 4 advance increments), the economy page is a must. For the full take-home breakdown, read our <Link href="/blog/ibps-po-salary-in-hand-2026" className="text-primary-500 hover:underline font-medium">IBPS PO in-hand salary guide</Link>.</p>
+                <p className="text-sm text-surface-600 leading-relaxed">Focus on the financial world — SEBI rules, RBI circulars, inflation numbers (WPI/CPI) and digital banking. If you are aiming for a high-paying job like SBI PO (official starting basic pay ₹48,480, which becomes ₹56,480 after 4 advance increments), the economy page is a must. For the full take-home breakdown, read our <Link href="/blog/ibps-po-salary-in-hand-2026/" className="text-primary-500 hover:underline font-medium">IBPS PO in-hand salary guide</Link>.</p>
               </div>
               <div className="card p-5">
                 <h3 className="font-heading font-bold text-surface-800 mb-2">Defence (NDA, CDS, AFCAT, CAPF)</h3>
@@ -3947,7 +3947,7 @@ function NewspaperReadingGuide({ guide }: { guide: { slug: string; title: string
             <p className="text-primary-100 text-sm mb-5 max-w-xl mx-auto">Read our weekly current affairs digests, check which exams you qualify for, and explore exam-specific guides — no login, no fees.</p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link href="/current-affairs/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">Read Weekly Current Affairs →</Link>
-              <Link href="/tools/eligibility-checker" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
+              <Link href="/tools/eligibility-checker/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">Check Your Eligibility</Link>
             </div>
           </div>
 
@@ -3973,8 +3973,8 @@ function NewspaperReadingGuide({ guide }: { guide: { slug: string; title: string
               <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">🧰 Use These (Free)</div>
               <div className="space-y-2.5">
                 <Link href="/current-affairs/" className="block text-sm text-primary-500 hover:underline leading-snug">Weekly Current Affairs Digests</Link>
-                <Link href="/tools/eligibility-checker" className="block text-sm text-primary-500 hover:underline leading-snug">Eligibility Checker Tool</Link>
-                <Link href="/exams" className="block text-sm text-primary-500 hover:underline leading-snug">Browse All Exams</Link>
+                <Link href="/tools/eligibility-checker/" className="block text-sm text-primary-500 hover:underline leading-snug">Eligibility Checker Tool</Link>
+                <Link href="/exams/" className="block text-sm text-primary-500 hover:underline leading-snug">Browse All Exams</Link>
               </div>
             </div>
             <div className="card p-5">

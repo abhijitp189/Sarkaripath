@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.taiyarho.in/current-affairs',
+    canonical: 'https://www.taiyarho.in/current-affairs/',
   },
 };
 

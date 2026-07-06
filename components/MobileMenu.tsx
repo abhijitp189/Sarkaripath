@@ -73,19 +73,19 @@ export default function MobileMenu() {
         >
           {/* Navigation links */}
           <nav className="py-2">
-            <MobileNavItem href="/exams" icon="🏛️" label="All Exams" onClick={() => setOpen(false)} />
-            <MobileNavItem href="/current-affairs" icon="📰" label="Current Affairs" onClick={() => setOpen(false)} />
-            <MobileNavItem href="/blog" icon="✍️" label="Blog" onClick={() => setOpen(false)} />
+            <MobileNavItem href="/exams/" icon="🏛️" label="All Exams" onClick={() => setOpen(false)} />
+            <MobileNavItem href="/current-affairs/" icon="📰" label="Current Affairs" onClick={() => setOpen(false)} />
+            <MobileNavItem href="/blog/" icon="✍️" label="Blog" onClick={() => setOpen(false)} />
             <div className="my-1 mx-4 border-t border-surface-100" />
-            <MobileNavItem href="/guides" icon="📖" label="Guides" onClick={() => setOpen(false)} />
-            <MobileNavItem href="/exam-calendar" icon="📅" label="Exam Calendar" onClick={() => setOpen(false)} />
-            <MobileNavItem href="/resources" icon="📚" label="Resources" onClick={() => setOpen(false)} />
+            <MobileNavItem href="/guides/" icon="📖" label="Guides" onClick={() => setOpen(false)} />
+            <MobileNavItem href="/exam-calendar/" icon="📅" label="Exam Calendar" onClick={() => setOpen(false)} />
+            <MobileNavItem href="/resources/" icon="📚" label="Resources" onClick={() => setOpen(false)} />
           </nav>
 
           {/* Eligibility Checker CTA */}
           <div className="px-4 py-3 border-t border-surface-100">
             <Link
-              href="/tools/eligibility-checker"
+              href="/tools/eligibility-checker/"
               onClick={() => setOpen(false)}
               className="flex items-center justify-center gap-2 w-full py-3 bg-accent-500 text-white font-heading font-semibold rounded-xl hover:bg-accent-600 transition-colors text-sm"
             >
