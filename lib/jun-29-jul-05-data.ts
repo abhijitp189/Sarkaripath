@@ -9,18 +9,18 @@ export const jun29_jul05_newsItems: NewsItem[] = [
     eventDate: 'July 1, 2026',
     location: 'New Delhi',
     summary:
-      'The Viksit Bharat\\u2013Guarantee for Rozgar and Ajeevika Mission (Gramin) Act, 2025 (VB\\u2013G RAM G) came into force on July 1, 2026, repealing the Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA), 2005. The new law raises the guaranteed wage-employment entitlement for rural households from 100 to 125 days per financial year.',
+      'The Viksit Bharat\u2013Guarantee for Rozgar and Ajeevika Mission (Gramin) Act, 2025 (VB\u2013G RAM G) came into force on July 1, 2026, repealing the Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA), 2005. The new law raises the guaranteed wage-employment entitlement for rural households from 100 to 125 days per financial year.',
     keyFacts: [
       'Came into force on July 1, 2026; notified earlier on May 11, 2026 by the Ministry of Rural Development.',
       'Guarantees 125 days of wage employment per rural household per year, up from 100 days under MGNREGA.',
-      'A daily floor wage of \\u20B9300 was notified; 21 states/UTs paying below that were raised to \\u20B9300.',
-      'Union allocation of \\u20B995,692.31 crore for FY 2026\\u201327; existing e-KYC verified MGNREGA job cards remain valid until new Gramin Rozgar Guarantee Cards are issued.',
+      'A daily floor wage of \u20B9300 was notified; 21 states/UTs paying below that were raised to \u20B9300.',
+      'Union allocation of \u20B995,692.31 crore for FY 2026\u201327; existing e-KYC verified MGNREGA job cards remain valid until new Gramin Rozgar Guarantee Cards are issued.',
     ],
     whyItMatters:
       'Flagship rural-employment legislation, its provisions, and the nodal ministry are high-probability topics for UPSC, Banking, SSC, and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'Banking', 'Railway', 'State PSC'],
     staticGkConnect:
-      'MGNREGA was enacted in 2005 and guaranteed 100 days of wage employment per rural household per year. It was administered by the Ministry of Rural Development, which also administers the successor VB\\u2013G RAM G Act.',
+      'MGNREGA was enacted in 2005 and guaranteed 100 days of wage employment per rural household per year. It was administered by the Ministry of Rural Development, which also administers the successor VB\u2013G RAM G Act.',
   },
 
   /* ── SUMMITS & CONFERENCES ────────────────────────────────────────────── */
@@ -28,13 +28,13 @@ export const jun29_jul05_newsItems: NewsItem[] = [
     id: 'india-japan-16th-annual-summit-2026',
     category: 'summits',
     headline: '16th India-Japan Annual Summit Held in New Delhi',
-    eventDate: 'July 1\\u20133, 2026',
+    eventDate: 'July 1\u20133, 2026',
     location: 'New Delhi',
     summary:
-      'Japanese Prime Minister Sanae Takaichi paid an official visit to India from July 1\\u20133, 2026 for the 16th India-Japan Annual Summit with Prime Minister Narendra Modi. It was Takaichi\\u2019s first official visit to India, and the two sides adopted three joint statements to deepen the India-Japan Special Strategic and Global Partnership.',
+      'Japanese Prime Minister Sanae Takaichi paid an official visit to India from July 1\u20133, 2026 for the 16th India-Japan Annual Summit with Prime Minister Narendra Modi. It was Takaichi\u2019s first official visit to India, and the two sides adopted three joint statements to deepen the India-Japan Special Strategic and Global Partnership.',
     keyFacts: [
-      'Sanae Takaichi, Japan\\u2019s first female Prime Minister, made her maiden official visit to India.',
-      'Three joint statements were adopted \\u2014 on Economic Security, Artificial Intelligence, and Energy Resilience.',
+      'Sanae Takaichi, Japan\u2019s first female Prime Minister, made her maiden official visit to India.',
+      'Three joint statements were adopted \u2014 on Economic Security, Artificial Intelligence, and Energy Resilience.',
       'Both leaders reaffirmed the Mumbai-Ahmedabad High Speed Rail as a flagship India-Japan project.',
       'PM Modi accepted an invitation to visit Japan in 2027 for the 17th Annual Summit.',
     ],
@@ -42,7 +42,7 @@ export const jun29_jul05_newsItems: NewsItem[] = [
       'Bilateral summits, partner countries, and the India-Japan partnership are core International Relations topics for UPSC and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'Banking', 'State PSC'],
     staticGkConnect:
-      'The India-Japan Special Strategic and Global Partnership was established in 2014 by PM Modi and then-PM Shinzo Abe. Japan is among India\\u2019s largest sources of foreign investment.',
+      'The India-Japan Special Strategic and Global Partnership was established in 2014 by PM Modi and then-PM Shinzo Abe. Japan is among India\u2019s largest sources of foreign investment.',
   },
 
   /* ── APPOINTMENTS ─────────────────────────────────────────────────────── */
@@ -75,7 +75,7 @@ export const jun29_jul05_newsItems: NewsItem[] = [
     summary:
       'The Appointments Committee of the Cabinet approved a one-year extension for Foreign Secretary Vikram Misri on July 1, 2026, allowing him to remain in office until July 14, 2027, beyond his scheduled retirement on July 14, 2026.',
     keyFacts: [
-      'A 1989-batch Indian Foreign Service (IFS) officer; India\\u2019s 35th Foreign Secretary, in the post since 2024.',
+      'A 1989-batch Indian Foreign Service (IFS) officer; India\u2019s 35th Foreign Secretary, in the post since 2024.',
       'Extension granted under Fundamental Rule 56(d) by the Department of Personnel and Training.',
       'Valid up to July 14, 2027, or until further orders, whichever is earlier.',
       'Widely regarded as an expert on China; previously served as Deputy National Security Adviser.',
@@ -98,7 +98,7 @@ export const jun29_jul05_newsItems: NewsItem[] = [
       'Appointed Executive Director of the RBI effective July 1, 2026.',
       'Will oversee the Department of Statistics and Information Management (DSIM).',
       'A career central banker with over three decades of experience at the RBI.',
-      'Holds a Master\\u2019s degree in Statistics from Banaras Hindu University and is a Certified Associate of the Indian Institute of Banking and Finance (CAIIB).',
+      'Holds a Master\u2019s degree in Statistics from Banaras Hindu University and is a Certified Associate of the Indian Institute of Banking and Finance (CAIIB).',
     ],
     whyItMatters:
       'RBI leadership appointments are high-probability questions in Banking (IBPS, SBI, RBI Grade B) and also appear in UPSC and SSC current affairs.',
@@ -115,11 +115,11 @@ export const jun29_jul05_newsItems: NewsItem[] = [
     eventDate: 'June 30, 2026',
     location: 'Washington, D.C., USA',
     summary:
-      'The US-India Strategic Partnership Forum (USISPF) presented its 2026 Leadership Award to Sunil Bharti Mittal, Founder and Chairman of Bharti Enterprises, at its ninth Annual Leadership Summit in Washington, D.C., recognising his contribution to India\\u2019s telecommunications sector and to India-US economic ties.',
+      'The US-India Strategic Partnership Forum (USISPF) presented its 2026 Leadership Award to Sunil Bharti Mittal, Founder and Chairman of Bharti Enterprises, at its ninth Annual Leadership Summit in Washington, D.C., recognising his contribution to India\u2019s telecommunications sector and to India-US economic ties.',
     keyFacts: [
       'Award presented at the IX USISPF Annual Leadership Summit in Washington, D.C.',
       'Sunil Bharti Mittal is the Founder and Chairman of Bharti Enterprises, the parent of Bharti Airtel.',
-      'Recognised for transforming India\\u2019s telecom sector and advancing India-North America economic ties.',
+      'Recognised for transforming India\u2019s telecom sector and advancing India-North America economic ties.',
       'Two other 2026 awardees: V. Prem Watsa (Chairman & CEO, Fairfax Financial Holdings) and Christopher T. Calio (Chairman & CEO, RTX Corporation).',
     ],
     whyItMatters:
@@ -133,15 +133,15 @@ export const jun29_jul05_newsItems: NewsItem[] = [
   {
     id: 'vaibhav-sooryavanshi-youngest-india-debutant-2026',
     category: 'sports',
-    headline: 'Vaibhav Sooryavanshi Becomes India\\u2019s Youngest International Debutant',
+    headline: 'Vaibhav Sooryavanshi Becomes India\u2019s Youngest International Debutant',
     eventDate: 'July 4, 2026',
     location: 'Manchester, England',
     summary:
       'On July 4, 2026, 15-year-old Vaibhav Sooryavanshi made his international debut for India in the second Twenty20 International against England at Old Trafford, Manchester, becoming the youngest player ever to represent India in international cricket.',
     keyFacts: [
-      'Made his debut aged 15 years and 99 days \\u2014 India\\u2019s youngest international debutant across all formats.',
-      'Surpassed Sachin Tendulkar, who debuted at 16 years and 205 days in 1989, as India\\u2019s youngest men\\u2019s debutant.',
-      'Also went past Shafali Verma\\u2019s mark to become the youngest across men\\u2019s and women\\u2019s cricket.',
+      'Made his debut aged 15 years and 99 days \u2014 India\u2019s youngest international debutant across all formats.',
+      'Surpassed Sachin Tendulkar, who debuted at 16 years and 205 days in 1989, as India\u2019s youngest men\u2019s debutant.',
+      'Also went past Shafali Verma\u2019s mark to become the youngest across men\u2019s and women\u2019s cricket.',
       'A left-handed batter from Samastipur, Bihar; scored 14 runs off 10 balls with two sixes on debut.',
     ],
     whyItMatters:
@@ -170,16 +170,16 @@ export const jun29_jul05_newsItems: NewsItem[] = [
       'National days, their themes, and associated personalities are frequently asked in UPSC, SSC, Banking, and State PSC exams.',
     examRelevance: ['UPSC', 'SSC', 'Banking', 'State PSC', 'Teaching'],
     staticGkConnect:
-      'Professor P.C. Mahalanobis founded the Indian Statistical Institute (ISI) in 1931 and the National Sample Survey (NSS) in 1950, and played a central role in India\\u2019s Second Five-Year Plan.',
+      'Professor P.C. Mahalanobis founded the Indian Statistical Institute (ISI) in 1931 and the National Sample Survey (NSS) in 1950, and played a central role in India\u2019s Second Five-Year Plan.',
   },
   {
     id: 'national-doctors-day-2026',
     category: 'days',
-    headline: 'National Doctors\\u2019 Day Observed on July 1',
+    headline: 'National Doctors\u2019 Day Observed on July 1',
     eventDate: 'July 1, 2026',
     location: 'India',
     summary:
-      'India observed National Doctors\\u2019 Day on July 1, 2026, honouring the medical profession and commemorating Dr. Bidhan Chandra Roy, whose birth and death anniversaries both fall on this date. The 2026 theme was \\\"Behind the Mask: Who Heals the Healers?\\\".',
+      'India observed National Doctors\u2019 Day on July 1, 2026, honouring the medical profession and commemorating Dr. Bidhan Chandra Roy, whose birth and death anniversaries both fall on this date. The 2026 theme was \\\"Behind the Mask: Who Heals the Healers?\\\".',
     keyFacts: [
       'Observed every July 1 since 1991 to recognise the contribution of doctors.',
       'Commemorates Dr. B.C. Roy, physician and former Chief Minister of West Bengal (born and died on July 1).',
@@ -216,9 +216,9 @@ export const jun29_jul05_newsItems: NewsItem[] = [
 
 export const jun29_jul05_staticGk: StaticGkLink[] = [
   {
-    newsItem: 'The VB\\u2013G RAM G Act, 2025 replaced MGNREGA from July 1, 2026.',
+    newsItem: 'The VB\u2013G RAM G Act, 2025 replaced MGNREGA from July 1, 2026.',
     staticFact:
-      'MGNREGA was enacted in 2005 and guaranteed 100 days of wage employment per rural household per year. Both MGNREGA and its successor VB\\u2013G RAM G are administered by the Ministry of Rural Development.',
+      'MGNREGA was enacted in 2005 and guaranteed 100 days of wage employment per rural household per year. Both MGNREGA and its successor VB\u2013G RAM G are administered by the Ministry of Rural Development.',
   },
   {
     newsItem: 'India and Japan held their 16th Annual Summit in New Delhi.',
@@ -246,9 +246,9 @@ export const jun29_jul05_staticGk: StaticGkLink[] = [
       'The US-India Strategic Partnership Forum (USISPF) is a non-profit organisation that works to strengthen the strategic and commercial partnership between India and the United States.',
   },
   {
-    newsItem: 'Vaibhav Sooryavanshi became India\\u2019s youngest international cricket debutant.',
+    newsItem: 'Vaibhav Sooryavanshi became India\u2019s youngest international cricket debutant.',
     staticFact:
-      'The BCCI, founded in 1928, governs cricket in India. Sachin Tendulkar previously held India\\u2019s youngest-debutant record, made against Pakistan in 1989 at 16 years and 205 days.',
+      'The BCCI, founded in 1928, governs cricket in India. Sachin Tendulkar previously held India\u2019s youngest-debutant record, made against Pakistan in 1989 at 16 years and 205 days.',
   },
   {
     newsItem: 'India observed the 20th National Statistics Day on June 29.',
@@ -268,23 +268,23 @@ export const jun29_jul05_quiz: QuizQuestion[] = [
     question: 'Which Act replaced MGNREGA across rural India from July 1, 2026?',
     options: [
       'PM Gram Sadak Rozgar Act',
-      'Viksit Bharat\\u2013G RAM G Act, 2025',
+      'Viksit Bharat\u2013G RAM G Act, 2025',
       'National Rural Livelihood Act, 2025',
       'Deen Dayal Rozgar Guarantee Act',
     ],
     correctIndex: 1,
     explanation:
-      'The Viksit Bharat\\u2013Guarantee for Rozgar and Ajeevika Mission (Gramin) Act, 2025 (VB\\u2013G RAM G) came into force on July 1, 2026, repealing MGNREGA, 2005.',
+      'The Viksit Bharat\u2013Guarantee for Rozgar and Ajeevika Mission (Gramin) Act, 2025 (VB\u2013G RAM G) came into force on July 1, 2026, repealing MGNREGA, 2005.',
     category: 'national',
     difficulty: 'medium',
   },
   {
     id: 'jun29-q2',
-    question: 'Under the new VB\\u2013G RAM G Act, how many days of guaranteed wage employment are provided per rural household per year?',
+    question: 'Under the new VB\u2013G RAM G Act, how many days of guaranteed wage employment are provided per rural household per year?',
     options: ['100 days', '120 days', '125 days', '150 days'],
     correctIndex: 2,
     explanation:
-      'The VB\\u2013G RAM G Act raises the guarantee to 125 days per rural household per financial year, up from 100 days under MGNREGA.',
+      'The VB\u2013G RAM G Act raises the guarantee to 125 days per rural household per financial year, up from 100 days under MGNREGA.',
     category: 'national',
     difficulty: 'easy',
   },
@@ -294,7 +294,7 @@ export const jun29_jul05_quiz: QuizQuestion[] = [
     options: ['Fumio Kishida', 'Shinzo Abe', 'Sanae Takaichi', 'Yoshihide Suga'],
     correctIndex: 2,
     explanation:
-      'Japanese Prime Minister Sanae Takaichi \\u2014 Japan\\u2019s first female PM \\u2014 visited India from July 1\\u20133, 2026 for the 16th India-Japan Annual Summit.',
+      'Japanese Prime Minister Sanae Takaichi \u2014 Japan\u2019s first female PM \u2014 visited India from July 1\u20133, 2026 for the 16th India-Japan Annual Summit.',
     category: 'summits',
     difficulty: 'easy',
   },
@@ -344,7 +344,7 @@ export const jun29_jul05_quiz: QuizQuestion[] = [
     options: ['July 14, 2026', 'December 31, 2026', 'July 14, 2027', 'January 1, 2028'],
     correctIndex: 2,
     explanation:
-      'The Appointments Committee of the Cabinet extended Vikram Misri\\u2019s tenure as Foreign Secretary by one year, up to July 14, 2027.',
+      'The Appointments Committee of the Cabinet extended Vikram Misri\u2019s tenure as Foreign Secretary by one year, up to July 14, 2027.',
     category: 'appointments',
     difficulty: 'medium',
   },
@@ -380,11 +380,11 @@ export const jun29_jul05_quiz: QuizQuestion[] = [
   },
   {
     id: 'jun29-q10',
-    question: 'Vaibhav Sooryavanshi, who debuted for India in July 2026, broke whose record as India\\u2019s youngest men\\u2019s international debutant?',
+    question: 'Vaibhav Sooryavanshi, who debuted for India in July 2026, broke whose record as India\u2019s youngest men\u2019s international debutant?',
     options: ['Sachin Tendulkar', 'Virat Kohli', 'Prithvi Shaw', 'Yuvraj Singh'],
     correctIndex: 0,
     explanation:
-      'At 15 years and 99 days, Vaibhav Sooryavanshi surpassed Sachin Tendulkar (16 years, 205 days in 1989) to become India\\u2019s youngest men\\u2019s international debutant.',
+      'At 15 years and 99 days, Vaibhav Sooryavanshi surpassed Sachin Tendulkar (16 years, 205 days in 1989) to become India\u2019s youngest men\u2019s international debutant.',
     category: 'sports',
     difficulty: 'easy',
   },
@@ -435,7 +435,7 @@ export const jun29_jul05_quiz: QuizQuestion[] = [
   },
   {
     id: 'jun29-q14',
-    question: 'National Doctors\\u2019 Day, observed on July 1, commemorates which eminent physician?',
+    question: 'National Doctors\u2019 Day, observed on July 1, commemorates which eminent physician?',
     options: [
       'Dr. Bidhan Chandra Roy',
       'Dr. A.P.J. Abdul Kalam',
@@ -444,7 +444,7 @@ export const jun29_jul05_quiz: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'National Doctors\\u2019 Day is observed on July 1, the birth and death anniversary of Dr. B.C. Roy, physician and former Chief Minister of West Bengal.',
+      'National Doctors\u2019 Day is observed on July 1, the birth and death anniversary of Dr. B.C. Roy, physician and former Chief Minister of West Bengal.',
     category: 'days',
     difficulty: 'easy',
   },
