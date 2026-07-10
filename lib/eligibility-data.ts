@@ -295,7 +295,7 @@ export const EXAMS: ExamMeta[] = [
     shortName: 'IBPS PO',
     icon: '🏦',
     slug: 'ibps-po',
-    tip: 'IBPS PO 2026 is expected July–August. Master puzzles, seating arrangement, and DI. In-hand salary ~₹52,000–₹65,000/month (Metro city) under 12th Bipartite Settlement.',
+    tip: 'IBPS PO 2026 notification is out — apply 1–21 July 2026 at ibps.in (6,715 vacancies). Prelims 22–23 Aug 2026. Master puzzles, seating arrangement, and DI. In-hand salary ~₹74,000–₹76,000/month (metro) under the 12th Bipartite Settlement.',
   },
   {
     id: 'sbi',

@@ -196,7 +196,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'ibps-po',
         externalUrl: 'https://ibps.in',
-        note: 'As per IBPS Calendar 2026 (released Jan 2026)',
+        note: 'Confirmed in CRP PO/MT-XVI notification (1 Jul 2026); apply 1–21 Jul 2026',
       },
       {
         name: 'IBPS SO (Prelims)',
@@ -289,7 +289,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'ibps-po',
         externalUrl: 'https://ibps.in',
-        note: 'As per IBPS Calendar 2026',
+        note: 'Confirmed in CRP PO/MT-XVI notification (revised pattern: 170 Qs)',
       },
       {
         name: 'SSC CPO (Paper 1)',

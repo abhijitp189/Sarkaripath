@@ -4922,7 +4922,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
             <ChannelTable channels={bankingChannels} id="banking-channels" />
             <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-4">
               <p className="text-emerald-800 font-medium text-sm leading-relaxed">
-                <span className="font-bold">✅ June 2026 Update:</span> IBPS PO 2026 notification is expected in <strong>June 2026</strong>, with Prelims on August 22–23 and Mains on October 4. <strong>AffairsCloud</strong> and <strong>Oliveboard</strong> will release dedicated GA capsules aligned with the new exam pattern as soon as the official notification drops.
+                <span className="font-bold">✅ July 2026 Update:</span> The IBPS PO 2026 (CRP PO/MT-XVI) notification was released on <strong>1 July 2026</strong> with 6,715 vacancies — apply 1–21 July 2026. Prelims: August 22–23; Mains: October 4. <strong>AffairsCloud</strong> and <strong>Oliveboard</strong> release dedicated GA capsules aligned with the revised exam pattern (170-question Mains).
               </p>
             </div>
           </section>
@@ -6144,7 +6144,7 @@ function IbpsPOvsSBIPOArticle({ post }: { post: any }) {
             {[
               { label: 'IBPS PO In-Hand', value: '₹74,000–₹76,430/mo' },
               { label: 'SBI PO In-Hand', value: '₹80,350–₹89,930/mo' },
-              { label: 'IBPS PO Vacancies', value: '4,000–6,000+' },
+              { label: 'IBPS PO Vacancies', value: '6,715 (2026)' },
               { label: 'SBI PO Vacancies', value: '1,500–2,000' },
             ].map(({ label, value }) => (
               <div key={label} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
