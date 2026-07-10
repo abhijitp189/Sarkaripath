@@ -196,6 +196,24 @@ export default function PrivacyPolicyPage() {
               the privacy practices of those external sites and encourage you to read their
               privacy policies.
             </p>
+            <p className="mt-3">
+              TaiyarHo.in is a participant in the <strong>Amazon Associates Program</strong>.
+              Some book links on our pages are affiliate links that take you to Amazon.in.
+              When you click such a link, Amazon may place or recognise cookies on your
+              browser to attribute purchases, and may collect information about your visit
+              in accordance with{' '}
+              <a
+                href="https://www.amazon.in/gp/help/customer/display.html?nodeId=200534380"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-500 hover:underline"
+              >
+                Amazon&apos;s Privacy Notice
+              </a>
+              . As an Amazon Associate, we earn from qualifying purchases — at no extra
+              cost to you. We do not receive any personally identifiable information about
+              your Amazon activity.
+            </p>
           </section>
 
           <section>
