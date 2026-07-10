@@ -13,13 +13,13 @@ export interface CategoryContent {
 export const categoryContent: Record<string, CategoryContent> = {
   UPSC: {
     commonBooks: [
-      { title: 'Indian Polity', author: 'M. Laxmikanth', subject: 'Polity' , amazonLink: 'https://amzn.to/4f7rP6Q' },
-      { title: "India's Struggle for Independence", author: 'Bipan Chandra', subject: 'History' , amazonLink: 'https://amzn.to/4dr4rQs' },
-      { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy' , amazonLink: 'https://amzn.to/4dGoMQC' },
-      { title: 'Certificate Physical and Human Geography', author: 'G.C. Leong', subject: 'Geography' , amazonLink: 'https://amzn.to/4fDY0uG' },
+      { title: 'Indian Polity', author: 'M. Laxmikanth', subject: 'Polity' , amazonLink: 'https://www.amazon.in/s?k=Indian+Polity+M.+Laxmikanth&tag=taiyarho0b-21' },
+      { title: "India's Struggle for Independence", author: 'Bipan Chandra', subject: 'History' , amazonLink: 'https://www.amazon.in/s?k=Indias+Struggle+for+Independence+Bipan+Chandra&tag=taiyarho0b-21' },
+      { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy' , amazonLink: 'https://www.amazon.in/s?k=Indian+Economy+Ramesh+Singh&tag=taiyarho0b-21' },
+      { title: 'Certificate Physical and Human Geography', author: 'G.C. Leong', subject: 'Geography' , amazonLink: 'https://www.amazon.in/s?k=Certificate+Physical+and+Human+Geography+G.C.+Leong&tag=taiyarho0b-21' },
       { title: 'NCERT Books (Class 6-12)', author: 'NCERT', subject: 'Foundation' },
-      { title: 'Authentic NCERT Summary (Class 6-12)', author: 'Disha Publications', subject: 'NCERT Revision', amazonLink: 'https://amzn.to/4nNYCzS' },
-      { title: 'Vision IAS Monthly Current Affairs', author: 'Vision IAS', subject: 'Current Affairs', amazonLink: 'https://amzn.to/4v7B3oa' },
+      { title: 'Authentic NCERT Summary (Class 6-12)', author: 'Disha Publications', subject: 'NCERT Revision', amazonLink: 'https://www.amazon.in/s?k=Authentic+NCERT+Summary+Class+6-12+Disha+Publications&tag=taiyarho0b-21' },
+      { title: 'Vision IAS Monthly Current Affairs', author: 'Vision IAS', subject: 'Current Affairs', amazonLink: 'https://www.amazon.in/s?k=Vision+IAS+Monthly+Current+Affairs+Vision+IAS&tag=taiyarho0b-21' },
     ],
     youtubeChannels: [
       { name: 'Unacademy IAS', url: 'https://www.youtube.com/@UnacademyIASEnglish', desc: 'Free UPSC lectures by top educators' },
@@ -49,12 +49,12 @@ export const categoryContent: Record<string, CategoryContent> = {
   },
   SSC: {
     commonBooks: [
-      { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://amzn.to/4f7ANkA' },
-      { title: 'SSC Mathematics (Chapterwise)', author: 'Rakesh Yadav', subject: 'Maths' , amazonLink: 'https://amzn.to/4e3lKan' },
-      { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
-      { title: 'Objective General English', author: 'S.P. Bakshi', subject: 'English' , amazonLink: 'https://amzn.to/3RJm9Gi' },
-      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://amzn.to/4v6Pitr' },
-      { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'Vocabulary' , amazonLink: 'https://amzn.to/42UgxeW' },
+      { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://www.amazon.in/s?k=Quantitative+Aptitude+R.S.+Aggarwal&tag=taiyarho0b-21' },
+      { title: 'SSC Mathematics (Chapterwise)', author: 'Rakesh Yadav', subject: 'Maths' , amazonLink: 'https://www.amazon.in/s?k=SSC+Mathematics+Chapterwise+Rakesh+Yadav&tag=taiyarho0b-21' },
+      { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://www.amazon.in/s?k=Verbal+%26+Non-Verbal+Reasoning+R.S.+Aggarwal&tag=taiyarho0b-21' },
+      { title: 'Objective General English', author: 'S.P. Bakshi', subject: 'English' , amazonLink: 'https://www.amazon.in/s?k=Objective+General+English+S.P.+Bakshi&tag=taiyarho0b-21' },
+      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://www.amazon.in/s?k=Lucents+General+Knowledge+Lucent+Publications&tag=taiyarho0b-21' },
+      { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'Vocabulary' , amazonLink: 'https://www.amazon.in/s?k=Word+Power+Made+Easy+Norman+Lewis&tag=taiyarho0b-21' },
     ],
     youtubeChannels: [
       { name: 'Rakesh Yadav Maths', url: 'https://www.youtube.com/@rakeshyadav_sir', desc: 'Mathematics shortcuts and tricks' },
@@ -83,10 +83,10 @@ export const categoryContent: Record<string, CategoryContent> = {
   },
   Banking: {
     commonBooks: [
-      { title: 'Quantitative Aptitude for Banking', author: 'Arun Sharma', subject: 'Quant' , amazonLink: 'https://amzn.to/4v9GCmi' },
-      { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4fHDjOx' },
-      { title: 'Objective English', author: 'Hari Mohan Prasad', subject: 'English' , amazonLink: 'https://amzn.to/4urXfcJ' },
-      { title: 'Banking Awareness', author: 'Arihant Publications', subject: 'Banking' , amazonLink: 'https://amzn.to/4f8aUkt' },
+      { title: 'Quantitative Aptitude for Banking', author: 'Arun Sharma', subject: 'Quant' , amazonLink: 'https://www.amazon.in/s?k=Quantitative+Aptitude+for+Banking+Arun+Sharma&tag=taiyarho0b-21' },
+      { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali', subject: 'Reasoning' , amazonLink: 'https://www.amazon.in/s?k=A+New+Approach+to+Reasoning+B.S.+Sijwali&tag=taiyarho0b-21' },
+      { title: 'Objective English', author: 'Hari Mohan Prasad', subject: 'English' , amazonLink: 'https://www.amazon.in/s?k=Objective+English+Hari+Mohan+Prasad&tag=taiyarho0b-21' },
+      { title: 'Banking Awareness', author: 'Arihant Publications', subject: 'Banking' , amazonLink: 'https://www.amazon.in/s?k=Banking+Awareness+Arihant+Publications&tag=taiyarho0b-21' },
       { title: 'Computer Knowledge for Bank Exams', author: 'Kiran Prakashan', subject: 'Computer' },
     ],
     youtubeChannels: [
@@ -116,11 +116,11 @@ export const categoryContent: Record<string, CategoryContent> = {
   },
   Railway: {
     commonBooks: [
-      { title: 'Fast Track Objective Arithmetic', author: 'Rajesh Verma', subject: 'Maths' , amazonLink: 'https://amzn.to/49oSOXL' },
-      { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://amzn.to/4f7ANkA' },
-      { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
-      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://amzn.to/4v6Pitr' },
-      { title: "Lucent's General Science", author: 'Lucent Publications', subject: 'Science' , amazonLink: 'https://amzn.to/4tXtSxZ' },
+      { title: 'Fast Track Objective Arithmetic', author: 'Rajesh Verma', subject: 'Maths' , amazonLink: 'https://www.amazon.in/s?k=Fast+Track+Objective+Arithmetic+Rajesh+Verma&tag=taiyarho0b-21' },
+      { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://www.amazon.in/s?k=Quantitative+Aptitude+R.S.+Aggarwal&tag=taiyarho0b-21' },
+      { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://www.amazon.in/s?k=Verbal+%26+Non-Verbal+Reasoning+R.S.+Aggarwal&tag=taiyarho0b-21' },
+      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://www.amazon.in/s?k=Lucents+General+Knowledge+Lucent+Publications&tag=taiyarho0b-21' },
+      { title: "Lucent's General Science", author: 'Lucent Publications', subject: 'Science' , amazonLink: 'https://www.amazon.in/s?k=Lucents+General+Science+Lucent+Publications&tag=taiyarho0b-21' },
     ],
     youtubeChannels: [
       { name: 'Exampur', url: 'https://www.youtube.com/@Exampur__Official', desc: 'Free daily classes for Railway exams' },
@@ -149,8 +149,8 @@ export const categoryContent: Record<string, CategoryContent> = {
     commonBooks: [
       { title: 'Pathfinder NDA/NA Entrance Examination', author: 'Arihant Publications', subject: 'All subjects' },
       { title: 'Mathematics for NDA/CDS', author: 'R.S. Aggarwal', subject: 'Maths' },
-      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://amzn.to/4v6Pitr' },
-      { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English' , amazonLink: 'https://amzn.to/42UgxeW' },
+      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://www.amazon.in/s?k=Lucents+General+Knowledge+Lucent+Publications&tag=taiyarho0b-21' },
+      { title: 'Word Power Made Easy', author: 'Norman Lewis', subject: 'English' , amazonLink: 'https://www.amazon.in/s?k=Word+Power+Made+Easy+Norman+Lewis&tag=taiyarho0b-21' },
       { title: 'NCERT Books (Class 11-12)', author: 'NCERT', subject: 'Science/Maths' },
     ],
     youtubeChannels: [
@@ -178,13 +178,13 @@ export const categoryContent: Record<string, CategoryContent> = {
   },
   'State PSC': {
     commonBooks: [
-      { title: 'Indian Polity', author: 'M. Laxmikanth', subject: 'Polity' , amazonLink: 'https://amzn.to/4f7rP6Q' },
-      { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy' , amazonLink: 'https://amzn.to/4dGoMQC' },
+      { title: 'Indian Polity', author: 'M. Laxmikanth', subject: 'Polity' , amazonLink: 'https://www.amazon.in/s?k=Indian+Polity+M.+Laxmikanth&tag=taiyarho0b-21' },
+      { title: 'Indian Economy', author: 'Ramesh Singh', subject: 'Economy' , amazonLink: 'https://www.amazon.in/s?k=Indian+Economy+Ramesh+Singh&tag=taiyarho0b-21' },
       { title: 'NCERT Books (Class 6-12)', author: 'NCERT', subject: 'Foundation' },
       { title: 'State-specific GK book', author: 'Lucent / Arihant (state edition)', subject: 'State GK' },
-      { title: 'Certificate Physical and Human Geography', author: 'G.C. Leong', subject: 'Geography' , amazonLink: 'https://amzn.to/4fDY0uG' },
-      { title: 'Authentic NCERT Summary (Class 6-12)', author: 'Disha Publications', subject: 'NCERT Revision', amazonLink: 'https://amzn.to/4nNYCzS' },
-      { title: 'Vision IAS Monthly Current Affairs', author: 'Vision IAS', subject: 'Current Affairs', amazonLink: 'https://amzn.to/4v7B3oa' },
+      { title: 'Certificate Physical and Human Geography', author: 'G.C. Leong', subject: 'Geography' , amazonLink: 'https://www.amazon.in/s?k=Certificate+Physical+and+Human+Geography+G.C.+Leong&tag=taiyarho0b-21' },
+      { title: 'Authentic NCERT Summary (Class 6-12)', author: 'Disha Publications', subject: 'NCERT Revision', amazonLink: 'https://www.amazon.in/s?k=Authentic+NCERT+Summary+Class+6-12+Disha+Publications&tag=taiyarho0b-21' },
+      { title: 'Vision IAS Monthly Current Affairs', author: 'Vision IAS', subject: 'Current Affairs', amazonLink: 'https://www.amazon.in/s?k=Vision+IAS+Monthly+Current+Affairs+Vision+IAS&tag=taiyarho0b-21' },
     ],
     youtubeChannels: [
       { name: 'StudyIQ', url: 'https://www.youtube.com/@StudyIQEducationLtd', desc: 'State PSC preparation' },
@@ -211,8 +211,8 @@ export const categoryContent: Record<string, CategoryContent> = {
   },
   Teaching: {
     commonBooks: [
-      { title: 'Examcart All Subjects Pedagogy Textbook (CTET, KVS, NVS, DSSSB & All TETs)', author: 'Prateek Shivalik', subject: 'Pedagogy', amazonLink: 'https://amzn.to/4fNk8D2' },
-      { title: 'CTET & TETs English Language & Pedagogy (Class 1–5 & 6–8)', author: 'Arihant Publications', subject: 'English Language', amazonLink: 'https://amzn.to/4375kb0' },
+      { title: 'Examcart All Subjects Pedagogy Textbook (CTET, KVS, NVS, DSSSB & All TETs)', author: 'Prateek Shivalik', subject: 'Pedagogy', amazonLink: 'https://www.amazon.in/s?k=Examcart+All+Subjects+Pedagogy+Textbook+CTET%2C+KVS%2C+NVS%2C+DSSSB+%26+All+TETs+Prateek+Shivalik&tag=taiyarho0b-21' },
+      { title: 'CTET & TETs English Language & Pedagogy (Class 1–5 & 6–8)', author: 'Arihant Publications', subject: 'English Language', amazonLink: 'https://www.amazon.in/s?k=CTET+%26+TETs+English+Language+%26+Pedagogy+Class+1+5+%26+6+8+Arihant+Publications&tag=taiyarho0b-21' },
       { title: 'Child Development and Pedagogy', author: 'Arihant / Disha', subject: 'Pedagogy' },
       { title: 'NCERT Books (Class 1-8)', author: 'NCERT', subject: 'Content subjects' },
       { title: 'Environmental Studies', author: 'NCERT', subject: 'EVS' },
@@ -242,9 +242,9 @@ export const categoryContent: Record<string, CategoryContent> = {
   },
   Police: {
     commonBooks: [
-      { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://amzn.to/4f7ANkA' },
-      { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://amzn.to/4nMZXqN' },
-      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://amzn.to/4v6Pitr' },
+      { title: 'Quantitative Aptitude', author: 'R.S. Aggarwal', subject: 'Maths' , amazonLink: 'https://www.amazon.in/s?k=Quantitative+Aptitude+R.S.+Aggarwal&tag=taiyarho0b-21' },
+      { title: 'Verbal & Non-Verbal Reasoning', author: 'R.S. Aggarwal', subject: 'Reasoning' , amazonLink: 'https://www.amazon.in/s?k=Verbal+%26+Non-Verbal+Reasoning+R.S.+Aggarwal&tag=taiyarho0b-21' },
+      { title: "Lucent's General Knowledge", author: 'Lucent Publications', subject: 'GK' , amazonLink: 'https://www.amazon.in/s?k=Lucents+General+Knowledge+Lucent+Publications&tag=taiyarho0b-21' },
       { title: 'State-specific GK', author: 'Various', subject: 'State GK' },
     ],
     youtubeChannels: [
