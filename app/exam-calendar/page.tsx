@@ -212,6 +212,15 @@ const upcomingExams: MonthGroup[] = [
     month: 'September 2026',
     exams: [
       {
+        name: 'MPPSC State Service (Mains)',
+        date: '7–12 Sep 2026',
+        status: 'OFFICIAL',
+        category: 'State PSC',
+        internalSlug: 'mppsc-state-service',
+        externalUrl: 'https://mppsc.mp.gov.in',
+        note: '155 vacancies • SSE 2026 • Prelims result declared 22 May — 3,044 candidates qualified for Mains',
+      },
+      {
         name: 'RRB NTPC UG (CBT 2)',
         date: '17 Sep 2026',
         status: 'OFFICIAL',
