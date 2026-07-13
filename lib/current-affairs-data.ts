@@ -7,6 +7,7 @@ import { jun08_14_newsItems, jun08_14_staticGk, jun08_14_quiz } from './jun-08-1
 import { jun15_21_newsItems, jun15_21_staticGk, jun15_21_quiz } from './jun-15-21-data';
 import { jun22_28_newsItems, jun22_28_staticGk, jun22_28_quiz } from './jun-22-28-data';
 import { jun29_jul05_newsItems, jun29_jul05_staticGk, jun29_jul05_quiz } from './jun-29-jul-05-data';
+import { jul06_12_newsItems, jul06_12_staticGk, jul06_12_quiz } from './jul-06-12-data';
 
 /* ── Interfaces ────────────────────────────────────────────────────────── */
 
@@ -62,7 +63,40 @@ export type CaCategory = (typeof caCategories)[number];
 /* ── Posts ──────────────────────────────────────────────────────────────── */
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
-  /* ═══ NEW: June 29 – July 5, 2026 (Rich Format) ═══ */
+  /* ═══ NEW: July 6–12, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-july-6-12-2026',
+    title:
+      'Weekly Current Affairs: July 6\u201312, 2026 \u2014 PM Modi\u2019s Three-Nation Tour, $600 Million BrahMos-Astra Deal with Indonesia, Bintang Adipurna Honour, EPFO CITES 2.01, Pinaka LRGR Test & Sinner-Noskova Win Wimbledon',
+    dateRange: 'July 6\u201312, 2026',
+    publishedDate: 'July 13, 2026',
+    category: 'All',
+    excerpt:
+      'This week: PM Modi completes a three-nation tour of Indonesia, Australia and New Zealand; India and Indonesia sign a $600 million-plus BrahMos-Astra missile deal; Modi becomes the second Indian PM after Nehru to receive Indonesia\u2019s highest honour, the Bintang Republik Indonesia Adipurna; an India-Australia arrangement enables Australian uranium supply; India and New Zealand elevate ties to a Strategic Partnership; DRDO flight-tests the Pinaka LRGR at 60 km; EPFO launches CITES 2.01 with FY26 interest (8.25%) due by July 15; the IMF trims India\u2019s FY27 forecast to 6.4%; Jaipur ranks 6th on the Happy City Index 2026; Jannik Sinner and Linda Noskova win Wimbledon; and Lord\u2019s hosts its first-ever women\u2019s Test.',
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'July 6\u201312, 2026',
+    newsItems: jul06_12_newsItems,
+    staticGkBox: jul06_12_staticGk,
+    quiz: jul06_12_quiz,
+    keyPoints: [
+      'PM Modi undertook a three-nation tour of Indonesia (July 6\u20138), Australia (July 8\u201310) and New Zealand (July 10\u201311), advancing the Act East Policy and MAHASAGAR Vision.',
+      'India and Indonesia announced 20 outcomes in Jakarta on July 7, headlined by a $600 million-plus deal for BrahMos cruise missiles and Astra air-to-air missiles \u2014 Indonesia becomes the third BrahMos export customer.',
+      'PM Modi was conferred Indonesia\u2019s highest honour, the Bintang Republik Indonesia Adipurna \u2014 only the second Indian PM after Jawaharlal Nehru (1995).',
+      'The India-Australia summit in Melbourne delivered 18 outcomes, including an administrative arrangement under the Civil Nuclear Agreement enabling Australian uranium supply to India and the return of three Tamil Nadu-origin antiquities.',
+      'India and New Zealand elevated ties to a Strategic Partnership with a \u201cRoadmap to 2030\u201d and a target to double trade to NZD 7 billion by 2030 \u2014 the first Indian PM visit to NZ in 40 years.',
+      'DRDO successfully flight-tested the Pinaka Long Range Guided Rocket (LRGR) at ITR Chandipur on July 8, hitting a target at a user-defined 60 km range.',
+      'EPFO launched the CITES 2.01 platform on July 8; FY 2025\u201326 EPF interest at 8.25% (\u20B91.44 lakh crore across ~34 crore accounts) will be credited by July 15, and the auto-settlement limit rose from \u20B91 lakh to \u20B95 lakh.',
+      'The IMF\u2019s July WEO Update trimmed India\u2019s FY27 growth forecast to 6.4%; India\u2019s GDP grew 7.7% in FY26.',
+      'The RBI approved Mahesh Muralidhar Pai as MD & CEO of South Indian Bank (from October 1, 2026) and re-approved N.S. Vishwanathan as Axis Bank\u2019s part-time Chairman.',
+      'The UDISE+ 2025\u201326 report recorded 1,02,73,020 school teachers (up 8.3%) with dropout rates falling across all levels.',
+      'Jaipur ranked 6th on the Happy City Index 2026 \u2014 the only Indian city in the top 10; Sweden topped the GCS Global Passport Index 2026 with India at 125th.',
+      'Catch-up from July 4: PM Modi dedicated India\u2019s first greenfield refinery-cum-petrochemical complex at Pachpadra, Rajasthan (\u20B979,450+ crore, 9 MMTPA, HPCL-Rajasthan JV) and launched the Modified UDAN Scheme.',
+      'Jannik Sinner (5th Grand Slam) and Linda Noskova (first Grand Slam, all-Czech final) won the Wimbledon 2026 singles titles; Lord\u2019s hosted its first-ever women\u2019s Test from July 10, with India scoring 285 on Day 1.',
+      'West Bengal\u2019s Chandannagar Jalbhara sweet received a GI tag, taking India\u2019s GI total to 822.',
+    ],
+  },
+  /* ═══ June 29 – July 5, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-june-29-july-5-2026',
     title:
