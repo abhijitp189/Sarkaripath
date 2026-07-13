@@ -29,7 +29,7 @@ const KNOWN_SLUGS = new Set(getAllExamSlugs());
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
 // Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
-// Last updated: 2 July 2026
+// Last updated: 13 July 2026
 const upcomingExams: MonthGroup[] = [
   {
     month: 'May 2026',
@@ -142,6 +142,24 @@ const upcomingExams: MonthGroup[] = [
         note: 'General DR: 25 Jul, DEPR/DSIM: 26 Jul',
       },
       {
+        name: 'JPSC Civil Services (Mains)',
+        date: '25–27 Jul 2026',
+        status: 'OFFICIAL',
+        category: 'State PSC',
+        internalSlug: 'jpsc-civil-services',
+        externalUrl: 'https://jpsc.gov.in',
+        note: '14th JPSC Mains (Advt. 01/2026) • Revised per JPSC Exam Calendar dated 9 Jul 2026 • Prelims result declared 2 Jul 2026',
+      },
+      {
+        name: 'UPPSC PCS 2026 (Apply — Last Date)',
+        date: '27 Jul 2026',
+        status: 'OFFICIAL',
+        category: 'State PSC',
+        internalSlug: 'uppsc-pcs',
+        externalUrl: 'https://uppsc.up.nic.in',
+        note: 'Notification out 25 Jun 2026 • ~500 vacancies • Modification till 3 Aug • Prelims 6 Dec 2026 • OTR mandatory',
+      },
+      {
         name: 'RRB ALP',
         date: 'Jul 2026',
         status: 'TENTATIVE',
@@ -154,6 +172,15 @@ const upcomingExams: MonthGroup[] = [
   {
     month: 'August 2026',
     exams: [
+      {
+        name: 'JPSC Civil Services Backlog (Mains)',
+        date: '1–3 & 8–10 Aug 2026',
+        status: 'OFFICIAL',
+        category: 'State PSC',
+        internalSlug: 'jpsc-civil-services',
+        externalUrl: 'https://jpsc.gov.in',
+        note: 'Backlog 2023 (Advt. 06/2026): 1–3 Aug • Backlog 2025 (Advt. 05/2026): 8–10 Aug • Per JPSC Exam Calendar dated 9 Jul 2026',
+      },
       {
         name: 'SBI PO (Prelims)',
         date: '1–2 Aug 2026',
@@ -292,6 +319,15 @@ const upcomingExams: MonthGroup[] = [
     month: 'October 2026',
     exams: [
       {
+        name: 'UKPSC Civil Services (Prelims)',
+        date: '1–15 Oct 2026 (Proposed)',
+        status: 'TENTATIVE',
+        category: 'State PSC',
+        internalSlug: 'ukpsc-civil-services',
+        externalUrl: 'https://psc.uk.gov.in',
+        note: 'Short notice 29 Jun 2026 • 63 posts • Prelims proposed in first fortnight of Oct 2026 • Detailed advertisement TBN',
+      },
+      {
         name: 'IBPS PO (Mains)',
         date: '4 Oct 2026',
         status: 'OFFICIAL',
@@ -385,6 +421,15 @@ const upcomingExams: MonthGroup[] = [
   {
     month: 'December 2026',
     exams: [
+      {
+        name: 'UPPSC PCS 2026 (Prelims)',
+        date: '6 Dec 2026',
+        status: 'OFFICIAL',
+        category: 'State PSC',
+        internalSlug: 'uppsc-pcs',
+        externalUrl: 'https://uppsc.up.nic.in',
+        note: 'Notification out 25 Jun 2026 • ~500 vacancies (SDM, DSP, BDO & allied) • Apply till 27 Jul 2026',
+      },
       {
         name: 'IBPS RRB PO (Mains)',
         date: '20 Dec 2026',
@@ -993,7 +1038,7 @@ export default function ExamCalendarPage() {
           <strong className="text-surface-700">Disclaimer:</strong> Exam dates are sourced from official notifications
           (upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in) and may change without notice.
           Tentative dates are based on official exam calendars and previous-year patterns. Always verify from the
-          official conducting body&apos;s website before applying. Last updated: 2 July 2026.
+          official conducting body&apos;s website before applying. Last updated: 13 July 2026.
         </div>
       </div>
     </div>
