@@ -729,7 +729,7 @@ export const exams: Exam[] = [
       { title: 'Data Interpretation & Data Sufficiency', author: 'Arun Sharma', subject: 'Quant' , amazonLink: 'https://www.amazon.in/s?k=Data+Interpretation+%26+Data+Sufficiency+Arun+Sharma&tag=taiyarho0b-21' },
       { title: 'A New Approach to Reasoning', author: 'B.S. Sijwali', subject: 'Reasoning' , amazonLink: 'https://www.amazon.in/s?k=A+New+Approach+to+Reasoning+B.S.+Sijwali&tag=taiyarho0b-21' },
       { title: 'High Level DI & Reasoning for SBI', author: 'Mrunal (YouTube)', subject: 'Quant + Reasoning', freeLink: 'https://www.youtube.com/@TheMrunalPatel' },
-      { title: 'English for Banking Exams', author: 'Adda247', subject: 'English' },
+      { title: 'English for Banking Exams', author: 'Various publishers', subject: 'English' },
       { title: 'Banking Awareness', author: 'Arihant / Disha', subject: 'Banking' , amazonLink: 'https://www.amazon.in/s?k=Banking+Awareness+Arihant&tag=taiyarho0b-21' },
     ],
     freeResources: [
