@@ -8,6 +8,21 @@
   html {
     scroll-behavior: smooth;
   }
+  /* Anchored sections must clear the sticky navbar (56–96px) and, on mobile,
+     the sticky section chip bar (48px). Without this, jumping to #syllabus etc.
+     hides the heading under the fixed bars.
+     :where() keeps specificity at zero so pages that set their own scroll-mt-*
+     utility (blog/guide sections use scroll-mt-20) are NOT overridden. */
+  :where(section[id], div[id]) {
+    scroll-margin-top: 7rem;
+  }
+  /* Tablets (md–lg): both navbar rows (96px) AND the mobile section chip bar
+     (48px) are visible, so anchored sections need a larger offset. */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    :where(section[id], div[id]) {
+      scroll-margin-top: 9.5rem;
+    }
+  }
   body {
     @apply font-body text-surface-800 bg-surface-50 antialiased;
   }
@@ -168,4 +183,14 @@ body { top: 0 !important; }
   .container-main {
     overflow-x: hidden;
   }
+}
+
+/* ── Mobile Section Nav ─────────────────────────────────────────────────── */
+/* Hide the horizontal scrollbar on the sticky section chip bar (exam pages) */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
