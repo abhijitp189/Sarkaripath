@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { exams, examCategories, guides, allExams } from '@/lib/exams-data';
 import { blogPosts } from '@/lib/blog-data';
+import { currentAffairsPosts } from '@/lib/current-affairs-data';
+import { homeNotices } from '@/lib/home-updates';
 import { AnimatedExamText, CountingStats } from '@/components/HeroAnimations';
 
 export const metadata: Metadata = {
@@ -38,6 +40,28 @@ const blogCategoryColors: Record<string, { bg: string; text: string; topBorder: 
 const sortedBlogPosts = [...blogPosts].sort(
   (a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
 );
+
+/* ── Latest Updates strip (below hero) ──
+   Item 1 is auto-derived: the newest weekly Current Affairs digest (refreshes
+   itself on every build when a new digest is registered — zero maintenance).
+   The rest come from lib/home-updates.ts (curated, verified notices only). */
+const latestCaPost = [...currentAffairsPosts].sort(
+  (a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+)[0];
+
+const sortedNotices = [...homeNotices]
+  .sort((a, b) => new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime())
+  .slice(0, 3);
+
+// Full class names per colour (never build Tailwind classes dynamically —
+// the compiler only keeps classes it can see verbatim in the source).
+const noticeTagStyles: Record<string, string> = {
+  blue: 'bg-blue-100 text-blue-700',
+  emerald: 'bg-emerald-100 text-emerald-700',
+  orange: 'bg-orange-100 text-orange-700',
+  purple: 'bg-purple-100 text-purple-700',
+  red: 'bg-red-100 text-red-700',
+};
 
 // Feature list for "Why TaiyarHo" — each with a coloured icon background
 const features = [
@@ -105,6 +129,49 @@ export default function HomePage() {
             <div className="hidden lg:block" />
           </div>
           <CountingStats />
+        </div>
+      </section>
+
+      {/* ── Latest Updates ───────────────────────────────────────────────── */}
+      <section className="container-main pt-8 pb-0" aria-label="Latest updates">
+        <div className="card p-5 sm:p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg sm:text-xl font-heading font-bold text-surface-900 flex items-center gap-2">
+              <span aria-hidden="true">📢</span> Latest Updates
+            </h2>
+            <Link href="/exam-calendar/" className="text-sm font-medium text-primary-500 hover:text-primary-600 whitespace-nowrap">
+              Exam Calendar →
+            </Link>
+          </div>
+          <ul className="space-y-3">
+            {latestCaPost && (
+              <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
+                <span className="badge bg-primary-100 text-primary-700 font-heading font-semibold shrink-0 w-fit">New Digest</span>
+                <p className="text-sm text-surface-700 leading-relaxed">
+                  Weekly Current Affairs ({latestCaPost.dateRange}) is live — read the digest and take the free quiz.{' '}
+                  <Link href={`/current-affairs/${latestCaPost.slug}/`} className="text-primary-500 hover:text-primary-600 font-medium whitespace-nowrap">
+                    Read now →
+                  </Link>
+                </p>
+              </li>
+            )}
+            {sortedNotices.map((notice) => (
+              <li key={notice.sortDate + notice.tag} className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 border-t border-surface-100 pt-3">
+                <span className={`badge font-heading font-semibold shrink-0 w-fit ${noticeTagStyles[notice.tagColor]}`}>{notice.tag}</span>
+                <p className="text-sm text-surface-700 leading-relaxed">
+                  {notice.text}
+                  {notice.href && notice.linkLabel && (
+                    <>
+                      {' '}
+                      <Link href={notice.href} className="text-primary-500 hover:text-primary-600 font-medium whitespace-nowrap">
+                        {notice.linkLabel} →
+                      </Link>
+                    </>
+                  )}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
