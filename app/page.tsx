@@ -64,15 +64,29 @@ const noticeTagStyles: Record<string, string> = {
   red: 'bg-red-100 text-red-700',
 };
 
-// Serializable items for the rotating ticker (client component). Tag classes
-// are resolved here so Tailwind sees the full class strings in this file.
-const tickerItems: TickerItem[] = sortedNotices.map((notice) => ({
-  tag: notice.tag,
-  tagClass: noticeTagStyles[notice.tagColor],
-  text: notice.text,
-  href: notice.href,
-  linkLabel: notice.linkLabel,
-}));
+// Serializable items for the scrolling ticker. Tag classes are resolved here
+// so Tailwind sees the full class strings in this file. The newest weekly CA
+// digest is always the first item (auto-derived — refreshes on every build).
+const tickerItems: TickerItem[] = [
+  ...(latestCaPost
+    ? [
+        {
+          tag: 'New Digest',
+          tagClass: 'bg-primary-100 text-primary-700',
+          text: `Weekly Current Affairs (${latestCaPost.dateRange}) is live — read the digest and take the free quiz.`,
+          href: `/current-affairs/${latestCaPost.slug}/`,
+          linkLabel: 'Read now',
+        },
+      ]
+    : []),
+  ...sortedNotices.map((notice) => ({
+    tag: notice.tag,
+    tagClass: noticeTagStyles[notice.tagColor],
+    text: notice.text,
+    href: notice.href,
+    linkLabel: notice.linkLabel,
+  })),
+];
 
 // Feature list for "Why TaiyarHo" — each with a coloured icon background
 const features = [
@@ -144,32 +158,20 @@ export default function HomePage() {
       </section>
 
       {/* ── Latest Updates ───────────────────────────────────────────────── */}
+      {/* Single-line continuously scrolling news ticker (CSS-only animation).
+          Items: newest CA digest (auto) + curated notices from lib/home-updates.ts */}
       <section className="container-main pt-8 pb-0" aria-label="Latest updates">
-        <div className="card p-5 sm:p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg sm:text-xl font-heading font-bold text-surface-900 flex items-center gap-2">
-              <span aria-hidden="true">📢</span> Latest Updates
-            </h2>
-            <Link href="/exam-calendar/" className="text-sm font-medium text-primary-500 hover:text-primary-600 whitespace-nowrap">
-              Exam Calendar →
-            </Link>
-          </div>
-          <ul className="space-y-3">
-            {latestCaPost && (
-              <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
-                <span className="badge bg-primary-100 text-primary-700 font-heading font-semibold shrink-0 w-fit">New Digest</span>
-                <p className="text-sm text-surface-700 leading-relaxed">
-                  Weekly Current Affairs ({latestCaPost.dateRange}) is live — read the digest and take the free quiz.{' '}
-                  <Link href={`/current-affairs/${latestCaPost.slug}/`} className="text-primary-500 hover:text-primary-600 font-medium whitespace-nowrap">
-                    Read now →
-                  </Link>
-                </p>
-              </li>
-            )}
-          </ul>
-          <div className="border-t border-surface-100 mt-3 pt-4">
-            <LatestUpdatesTicker items={tickerItems} />
-          </div>
+        <div className="card px-4 sm:px-5 py-3 flex items-center gap-3 sm:gap-4">
+          <span className="badge bg-accent-100 text-accent-600 font-heading font-bold shrink-0 flex items-center gap-1.5">
+            <span aria-hidden="true">📢</span> Updates
+          </span>
+          <LatestUpdatesTicker items={tickerItems} />
+          <Link
+            href="/exam-calendar/"
+            className="hidden sm:block shrink-0 text-sm font-medium text-primary-500 hover:text-primary-600 whitespace-nowrap border-l border-surface-200 pl-4"
+          >
+            Exam Calendar →
+          </Link>
         </div>
       </section>
 
