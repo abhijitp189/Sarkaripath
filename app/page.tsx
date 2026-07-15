@@ -4,6 +4,7 @@ import { exams, examCategories, guides, allExams } from '@/lib/exams-data';
 import { blogPosts } from '@/lib/blog-data';
 import { currentAffairsPosts } from '@/lib/current-affairs-data';
 import { homeNotices } from '@/lib/home-updates';
+import LatestUpdatesTicker, { TickerItem } from '@/components/LatestUpdatesTicker';
 import { AnimatedExamText, CountingStats } from '@/components/HeroAnimations';
 
 export const metadata: Metadata = {
@@ -62,6 +63,16 @@ const noticeTagStyles: Record<string, string> = {
   purple: 'bg-purple-100 text-purple-700',
   red: 'bg-red-100 text-red-700',
 };
+
+// Serializable items for the rotating ticker (client component). Tag classes
+// are resolved here so Tailwind sees the full class strings in this file.
+const tickerItems: TickerItem[] = sortedNotices.map((notice) => ({
+  tag: notice.tag,
+  tagClass: noticeTagStyles[notice.tagColor],
+  text: notice.text,
+  href: notice.href,
+  linkLabel: notice.linkLabel,
+}));
 
 // Feature list for "Why TaiyarHo" — each with a coloured icon background
 const features = [
@@ -155,23 +166,10 @@ export default function HomePage() {
                 </p>
               </li>
             )}
-            {sortedNotices.map((notice) => (
-              <li key={notice.sortDate + notice.tag} className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 border-t border-surface-100 pt-3">
-                <span className={`badge font-heading font-semibold shrink-0 w-fit ${noticeTagStyles[notice.tagColor]}`}>{notice.tag}</span>
-                <p className="text-sm text-surface-700 leading-relaxed">
-                  {notice.text}
-                  {notice.href && notice.linkLabel && (
-                    <>
-                      {' '}
-                      <Link href={notice.href} className="text-primary-500 hover:text-primary-600 font-medium whitespace-nowrap">
-                        {notice.linkLabel} →
-                      </Link>
-                    </>
-                  )}
-                </p>
-              </li>
-            ))}
           </ul>
+          <div className="border-t border-surface-100 mt-3 pt-4">
+            <LatestUpdatesTicker items={tickerItems} />
+          </div>
         </div>
       </section>
 
