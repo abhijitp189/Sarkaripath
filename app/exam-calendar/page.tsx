@@ -29,74 +29,19 @@ const KNOWN_SLUGS = new Set(getAllExamSlugs());
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
 // Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
-// Last updated: 13 July 2026
+// Last updated: 15 July 2026
 const upcomingExams: MonthGroup[] = [
-  {
-    month: 'May 2026',
-    exams: [
-      {
-        name: 'SSC CGL 2026 (Apply Online)',
-        date: '21 May – 25 Jun 2026',
-        status: 'OFFICIAL',
-        category: 'SSC',
-        internalSlug: 'ssc-cgl',
-        externalUrl: 'https://ssc.gov.in',
-        note: '12,256 vacancies • Notification out 21 May • Apply window reopened 23–25 Jun • Tier 1: Aug–Sep 2026 • Tier 2: Dec 2026',
-      },
-    ],
-  },
-  {
-    month: 'June 2026',
-    exams: [
-      {
-        name: 'RRB NTPC UG (CBT 1 — June Phase)',
-        date: '13–20 Jun 2026',
-        status: 'OFFICIAL',
-        category: 'Railway',
-        internalSlug: 'rrb-ntpc',
-        externalUrl: 'https://rrbapply.gov.in',
-        note: '3,058 vacancies (12th-level) • CEN 07/2025 • CBT 1 completed (7–9 May & 13–20 Jun, revised) • Answer key out — objections till 5 Jul 2026',
-      },
-      {
-        name: 'UPSC IES/ISS',
-        date: '19 Jun 2026',
-        status: 'OFFICIAL',
-        category: 'UPSC',
-        internalSlug: 'upsc-ies-iss',
-        externalUrl: 'https://upsc.gov.in',
-        note: 'Indian Economic Service / Indian Statistical Service exam',
-      },
-      {
-        name: 'Indian Navy Agniveer Apprentice (Apply Online)',
-        date: '5 Jun – 5 Jul 2026',
-        status: 'OFFICIAL',
-        category: 'Defence',
-        internalSlug: 'navy-agniveer',
-        externalUrl: 'https://joinindiannavy.gov.in',
-        note: 'Apprentice 01/2027 & 02/2027 batches • Diploma holders (AICTE) • Unmarried males • Fee ₹550+GST • Last date extended to 5 Jul 2026 • INET Aug 2026',
-      },
-      {
-        name: 'SBI PO 2026 (Notification Out)',
-        date: '18 Jun – 8 Jul 2026',
-        status: 'OFFICIAL',
-        category: 'Banking',
-        internalSlug: 'sbi-po',
-        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
-        note: 'Notification released 18 June 2026 (Advt CRPD/PO/2026-27/09) • 1,500 vacancies • Apply by 8 July 2026 • Prelims expected Aug 2026',
-      },
-    ],
-  },
   {
     month: 'July 2026',
     exams: [
       {
-        name: 'RRB NTPC Graduate (CBT 2)',
-        date: '10 Jul 2026',
+        name: 'IBPS PO 2026 (Apply Online)',
+        date: '1–21 Jul 2026',
         status: 'OFFICIAL',
-        category: 'Railway',
-        internalSlug: 'rrb-ntpc',
-        externalUrl: 'https://rrbapply.gov.in',
-        note: '5,810 vacancies (Graduate posts) • CEN 06/2025 • CBT 1 result declared 11 Jun 2026 • Single-day exam',
+        category: 'Banking',
+        internalSlug: 'ibps-po',
+        externalUrl: 'https://ibps.in',
+        note: 'CRP PO/MT-XVI • 6,715 vacancies across 11 PSU banks • Last date 21 Jul 2026 • 2-day edit window after close • Prelims 22–23 Aug • Mains 4 Oct',
       },
       {
         name: 'IAF Agniveervayu Intake 02/2027 (Apply)',
@@ -115,14 +60,6 @@ const upcomingExams: MonthGroup[] = [
         internalSlug: 'ssc-chsl',
         externalUrl: 'https://ssc.gov.in',
         note: 'As per SSC Exam Calendar 2026–27',
-      },
-      {
-        name: 'UP TET',
-        date: '2–4 Jul 2026',
-        status: 'OFFICIAL',
-        category: 'Teaching',
-        internalSlug: 'up-tet',
-        externalUrl: 'https://updeled.gov.in',
       },
       {
         name: 'UPSC CAPF (AC)',
@@ -183,12 +120,12 @@ const upcomingExams: MonthGroup[] = [
       },
       {
         name: 'SBI PO (Prelims)',
-        date: '1–2 Aug 2026',
+        date: 'Aug 2026 (Exact Date TBN)',
         status: 'TENTATIVE',
         category: 'Banking',
         internalSlug: 'sbi-po',
         externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
-        note: 'Notification out 18 Jun 2026 • 1,500 vacancies • Prelims date tentative',
+        note: '1,500 vacancies • Applications closed 8 Jul 2026 • Prelims in Aug 2026 as per notification — exact date & admit card awaited',
       },
       {
         name: 'UPSC CMS (Combined Medical Services)',
@@ -223,7 +160,7 @@ const upcomingExams: MonthGroup[] = [
         category: 'Banking',
         internalSlug: 'ibps-po',
         externalUrl: 'https://ibps.in',
-        note: 'Confirmed in CRP PO/MT-XVI notification (1 Jul 2026); apply 1–21 Jul 2026',
+        note: 'Confirmed in CRP PO/MT-XVI notification (1 Jul 2026) • 6,715 vacancies • Apply by 21 Jul 2026',
       },
       {
         name: 'IBPS SO (Prelims)',
@@ -479,11 +416,78 @@ const upcomingExams: MonthGroup[] = [
   },
 ];
 
-// ─── PAST EXAMS (Jan – Jun 2026, already conducted) ─────────────────────────
+// ─── PAST EXAMS (Jan – Jul 2026, already conducted) ─────────────────────────
 const pastExams: MonthGroup[] = [
+  {
+    month: 'July 2026',
+    exams: [
+      {
+        name: 'RRB NTPC Graduate (CBT 2)',
+        date: '10 Jul 2026',
+        status: 'OFFICIAL',
+        category: 'Railway',
+        internalSlug: 'rrb-ntpc',
+        externalUrl: 'https://rrbapply.gov.in',
+        note: '5,810 vacancies (Graduate posts) • CEN 06/2025 • Exam held 10 Jul • Answer key & objection window awaited • CBT 1 result was declared 11 Jun',
+      },
+      {
+        name: 'SBI PO 2026 (Application Closed)',
+        date: '18 Jun – 8 Jul 2026',
+        status: 'OFFICIAL',
+        category: 'Banking',
+        internalSlug: 'sbi-po',
+        externalUrl: 'https://sbi.bank.in/web/careers/current-openings',
+        note: 'Advt CRPD/PO/2026-27/09 • 1,500 vacancies • Applications closed 8 Jul 2026 • Prelims: Aug 2026',
+      },
+      {
+        name: 'Indian Navy Agniveer Apprentice (Application Closed)',
+        date: '5 Jun – 5 Jul 2026',
+        status: 'OFFICIAL',
+        category: 'Defence',
+        internalSlug: 'navy-agniveer',
+        externalUrl: 'https://joinindiannavy.gov.in',
+        note: 'Apprentice 01/2027 & 02/2027 batches • Diploma holders (AICTE) • Applications closed 5 Jul 2026 • INET Aug 2026',
+      },
+      {
+        name: 'UP TET',
+        date: '2–4 Jul 2026',
+        status: 'OFFICIAL',
+        category: 'Teaching',
+        internalSlug: 'up-tet',
+        externalUrl: 'https://updeled.gov.in',
+      },
+    ],
+  },
   {
     month: 'June 2026',
     exams: [
+      {
+        name: 'SSC CGL 2026 (Application Closed)',
+        date: '21 May – 25 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'SSC',
+        internalSlug: 'ssc-cgl',
+        externalUrl: 'https://ssc.gov.in',
+        note: '12,256 vacancies • Notification out 21 May • Apply window closed 25 Jun (reopened 23–25 Jun) • Tier 1: Aug–Sep 2026 • Tier 2: Dec 2026',
+      },
+      {
+        name: 'RRB NTPC UG (CBT 1 — June Phase)',
+        date: '13–20 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'Railway',
+        internalSlug: 'rrb-ntpc',
+        externalUrl: 'https://rrbapply.gov.in',
+        note: '3,058 vacancies (12th-level) • CEN 07/2025 • CBT 1 completed (7–9 May & 13–20 Jun) • Answer key objections closed 5 Jul • Result awaited • CBT 2: 17 Sep 2026',
+      },
+      {
+        name: 'UPSC IES/ISS',
+        date: '19 Jun 2026',
+        status: 'OFFICIAL',
+        category: 'UPSC',
+        internalSlug: 'upsc-ies-iss',
+        externalUrl: 'https://upsc.gov.in',
+        note: 'Indian Economic Service / Indian Statistical Service exam',
+      },
       {
         name: 'RBI Grade B (Phase 1 Prelims)',
         date: '13–14 Jun 2026',
@@ -1011,7 +1015,7 @@ export default function ExamCalendarPage() {
           <div className="flex items-center gap-3">
             <span className="text-xl">📋</span>
             <div className="text-left">
-              <h2 className="font-heading font-bold text-surface-900 text-lg">Past Exams (Jan–Jun 2026)</h2>
+              <h2 className="font-heading font-bold text-surface-900 text-lg">Past Exams (Jan–Jul 2026)</h2>
               <p className="text-sm text-surface-500">{totalPast} exams already conducted this year</p>
             </div>
           </div>
@@ -1038,7 +1042,7 @@ export default function ExamCalendarPage() {
           <strong className="text-surface-700">Disclaimer:</strong> Exam dates are sourced from official notifications
           (upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in) and may change without notice.
           Tentative dates are based on official exam calendars and previous-year patterns. Always verify from the
-          official conducting body&apos;s website before applying. Last updated: 13 July 2026.
+          official conducting body&apos;s website before applying. Last updated: 15 July 2026.
         </div>
       </div>
     </div>
