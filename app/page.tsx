@@ -4,7 +4,7 @@ import { exams, examCategories, guides, allExams } from '@/lib/exams-data';
 import { blogPosts } from '@/lib/blog-data';
 import { currentAffairsPosts } from '@/lib/current-affairs-data';
 import { homeNotices } from '@/lib/home-updates';
-import LatestUpdatesTicker, { TickerItem } from '@/components/LatestUpdatesTicker';
+import LatestUpdatesCards, { UpdateCardItem } from '@/components/LatestUpdatesCards';
 import { AnimatedExamText, CountingStats } from '@/components/HeroAnimations';
 
 export const metadata: Metadata = {
@@ -64,15 +64,24 @@ const noticeTagStyles: Record<string, string> = {
   red: 'bg-red-100 text-red-700',
 };
 
-// Serializable items for the scrolling ticker. Tag classes are resolved here
-// so Tailwind sees the full class strings in this file. The newest weekly CA
-// digest is always the first item (auto-derived — refreshes on every build).
-const tickerItems: TickerItem[] = [
+// Coloured top edge per tag (full class names so Tailwind keeps them).
+const noticeAccentBorders: Record<string, string> = {
+  blue: 'border-t-blue-400',
+  emerald: 'border-t-emerald-400',
+  orange: 'border-t-orange-400',
+  purple: 'border-t-purple-400',
+  red: 'border-t-red-400',
+};
+
+// Cards for the Latest Updates strip. The newest weekly CA digest is always
+// the first card (auto-derived — refreshes on every build).
+const updateCards: UpdateCardItem[] = [
   ...(latestCaPost
     ? [
         {
           tag: 'New Digest',
           tagClass: 'bg-primary-100 text-primary-700',
+          accentBorder: 'border-t-primary-500',
           text: `Weekly Current Affairs (${latestCaPost.dateRange}) is live — read the digest and take the free quiz.`,
           href: `/current-affairs/${latestCaPost.slug}/`,
           linkLabel: 'Read now',
@@ -82,6 +91,7 @@ const tickerItems: TickerItem[] = [
   ...sortedNotices.map((notice) => ({
     tag: notice.tag,
     tagClass: noticeTagStyles[notice.tagColor],
+    accentBorder: noticeAccentBorders[notice.tagColor],
     text: notice.text,
     href: notice.href,
     linkLabel: notice.linkLabel,
@@ -158,21 +168,21 @@ export default function HomePage() {
       </section>
 
       {/* ── Latest Updates ───────────────────────────────────────────────── */}
-      {/* Single-line continuously scrolling news ticker (CSS-only animation).
+      {/* Static notice cards: grid on desktop, swipeable snap-row on mobile.
           Items: newest CA digest (auto) + curated notices from lib/home-updates.ts */}
-      <section className="container-main pt-8 pb-0" aria-label="Latest updates">
-        <div className="card px-4 sm:px-5 py-3 flex items-center gap-3 sm:gap-4">
-          <span className="badge bg-accent-100 text-accent-600 font-heading font-bold shrink-0 flex items-center gap-1.5">
-            <span aria-hidden="true">📢</span> Updates
-          </span>
-          <LatestUpdatesTicker items={tickerItems} />
+      <section className="container-main pt-10 pb-0" aria-label="Latest updates">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg sm:text-xl font-heading font-bold text-surface-900 flex items-center gap-2">
+            <span aria-hidden="true">📢</span> Latest Updates
+          </h2>
           <Link
             href="/exam-calendar/"
-            className="hidden sm:block shrink-0 text-sm font-medium text-primary-500 hover:text-primary-600 whitespace-nowrap border-l border-surface-200 pl-4"
+            className="text-sm font-medium text-primary-500 hover:text-primary-600 whitespace-nowrap"
           >
             Exam Calendar →
           </Link>
         </div>
+        <LatestUpdatesCards items={updateCards} />
       </section>
 
       {/* ── Browse by Category ───────────────────────────────────────────── */}

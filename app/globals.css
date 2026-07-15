@@ -194,32 +194,3 @@ body { top: 0 !important; }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
-/* ── Latest Updates ticker (homepage) ───────────────────────────────────── */
-/* Continuous right-to-left scroll. The track holds the item list twice;
-   sliding to -50% then looping is therefore seamless. */
-.ticker-track {
-  animation: ticker-scroll 80s linear infinite;
-}
-.ticker-viewport:hover .ticker-track,
-.ticker-viewport:focus-within .ticker-track {
-  animation-play-state: paused;
-}
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-/* Reduced motion: no animation — strip becomes a normal swipeable line,
-   and the duplicate half is removed. */
-@media (prefers-reduced-motion: reduce) {
-  .ticker-track {
-    animation: none;
-  }
-  .ticker-viewport {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .ticker-dup {
-    display: none;
-  }
-}
