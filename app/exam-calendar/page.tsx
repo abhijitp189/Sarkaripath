@@ -29,7 +29,7 @@ const KNOWN_SLUGS = new Set(getAllExamSlugs());
 
 // ─── UPCOMING EXAMS (verified from official sources) ─────────────────────────
 // Sources: upsc.gov.in, ssc.gov.in, rbi.org.in, ibps.in, rrbapply.gov.in
-// Last updated: 15 July 2026
+// Last updated: 19 July 2026
 const upcomingExams: MonthGroup[] = [
   {
     month: 'July 2026',
@@ -175,6 +175,15 @@ const upcomingExams: MonthGroup[] = [
   {
     month: 'September 2026',
     exams: [
+      {
+        name: 'UPSC ESE 2027 (Notification)',
+        date: '16 Sep 2026',
+        status: 'OFFICIAL',
+        category: 'UPSC',
+        internalSlug: 'upsc-ese',
+        externalUrl: 'https://upsc.gov.in',
+        note: 'Per UPSC Annual Calendar 2027 (released 20 May 2026) • Apply till 6 Oct 2026 • Prelims 31 Jan 2027',
+      },
       {
         name: 'MPPSC State Service (Mains)',
         date: '7–12 Sep 2026',
