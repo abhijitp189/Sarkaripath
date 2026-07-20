@@ -30,12 +30,12 @@ export interface HomeNotice {
 
 export const homeNotices: HomeNotice[] = [
   {
-    sortDate: '2026-07-01',
+    sortDate: '2026-07-19',
     tag: 'Railway',
     tagColor: 'orange',
-    text: 'All 21 regional RRB websites will be discontinued after 31 July 2026 and replaced by a single unified portal. Applications continue on rrbapply.gov.in as usual.',
-    href: '/exams/rrb-ntpc/',
-    linkLabel: 'RRB NTPC guide',
+    text: 'All 21 regional RRB websites will be discontinued after 31 July 2026. The new unified official portal rrb.indianrailways.gov.in is already live. Applications continue on rrbapply.gov.in as usual.',
+    href: '/blog/new-rrb-website-2026-old-rrb-sites-closing/',
+    linkLabel: 'Full details & fake-site warning',
   },
   {
     sortDate: '2026-04-18',

@@ -97,6 +97,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return <PhysicalFitnessGuideArticle post={post} />;
   }
 
+  if (post.slug === 'new-rrb-website-2026-old-rrb-sites-closing') {
+    return <NewRrbWebsiteArticle post={post} />;
+  }
+
   return <div className="container-main py-20 text-center"><p>Article coming soon.</p></div>;
 }
 
@@ -10519,6 +10523,432 @@ function PhysicalFitnessGuideArticle({ post }: { post: any }) {
               { '@type': 'Question', name: 'What is the height requirement for RPF Constable?', acceptedAnswer: { '@type': 'Answer', text: 'Under the RPF (Amendment) Rules 2025, the minimum height for male Executive Cadre candidates is 170 cm (raised from 165 cm), with chest 80/85 cm. Female and reserved-category standards are at par with CAPF and will be confirmed in the SSC RPF notification.' } },
               { '@type': 'Question', name: 'Is RPF recruitment conducted by RRB or SSC now?', acceptedAnswer: { '@type': 'Answer', text: 'As per the revised 2025 rules, RPF Constable and SI (Executive) recruitment is moving from the Railway Recruitment Boards to the Staff Selection Commission. The SSC notification is still awaited; apply only through ssc.gov.in once released.' } },
               { '@type': 'Question', name: 'Is the physical test qualifying or scored?', acceptedAnswer: { '@type': 'Answer', text: 'It is qualifying only — pass or fail, with no marks added to your merit. But failing any event disqualifies you completely.' } },
+            ],
+          }),
+        }}
+      />
+    </div>
+  );
+}
+
+
+// ─── NEW RRB WEBSITE 2026 ARTICLE ───────────────────────────────────────────
+function NewRrbWebsiteArticle({ post }: { post: any }) {
+  const toc = [
+    { id: 'what-happening', label: 'What Is Happening?' },
+    { id: 'new-website', label: 'The New Official Website' },
+    { id: 'rrbapply', label: 'What About rrbapply.gov.in?' },
+    { id: 'all-21', label: 'All 21 Sites That Are Closing' },
+    { id: 'why', label: 'Why Railways Did This' },
+    { id: 'fake-sites', label: 'Beware of Fake RRB Sites' },
+    { id: 'ongoing', label: 'Ongoing Recruitments' },
+    { id: 'action', label: 'What You Should Do Now' },
+    { id: 'faq', label: 'FAQs' },
+  ];
+
+  const thBase = 'text-left p-3 font-semibold text-xs uppercase tracking-wide';
+
+  return (
+    <div className="container-main py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-surface-500 mb-6">
+        <Link href="/" className="hover:text-primary-500">Home</Link>
+        <span className="mx-2">›</span>
+        <Link href="/blog/" className="hover:text-primary-500">Blog</Link>
+        <span className="mx-2">›</span>
+        <span className="text-surface-800">New RRB Website 2026</span>
+      </nav>
+
+      <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-10 max-w-6xl">
+        {/* MAIN CONTENT */}
+        <article>
+          {/* Hero */}
+          <div className="bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 bg-accent-500/20 border border-accent-500/40 text-accent-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse" />
+                  Updated {post.updatedDate}
+                </span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Railway</span>
+                <span className="bg-white/10 text-white/60 text-xs px-2.5 py-1 rounded">Official Notice</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white leading-tight mb-3">
+                New RRB Website 2026: All 21 Old RRB Sites <span className="text-accent-300 italic">Closing 31 July</span>
+              </h1>
+              <p className="text-surface-300 text-base leading-relaxed mb-5">
+                Every regional RRB website — Chennai, Mumbai, Patna, Secunderabad and the rest — shuts down permanently after 31 July 2026. Here is the one new official address, and how to stay safe from fake sites.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-surface-400">
+                <span>📅 Published: {post.publishedDate}</span>
+                <span>⏱ {post.readTime}</span>
+                <span>👁 Based on official RRB notices</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Facts Strip */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+            {[
+              { label: 'Old Sites Close', value: '31 Jul', sub: '2026 — permanent' },
+              { label: 'Sites Affected', value: '21', sub: 'all regional RRBs' },
+              { label: 'New Portal', value: 'ONE', sub: 'already live' },
+              { label: 'Applications', value: 'Same', sub: 'rrbapply.gov.in' },
+            ].map(f => (
+              <div key={f.label} className="card p-4 text-center">
+                <div className="text-xs text-surface-400 uppercase tracking-wide font-semibold">{f.label}</div>
+                <div className="text-xl font-heading font-bold text-accent-500 mt-1">{f.value}</div>
+                <div className="text-xs text-surface-400 mt-0.5">{f.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Quick Summary */}
+          <Callout type="tip" title="📌 Quick Summary — Key Takeaways">
+            <ul className="list-disc ml-5 space-y-1.5 mt-1">
+              <li>All <strong>21 regional RRB websites</strong> (rrbchennai.gov.in, rrbmumbai.gov.in, rrbcdg.gov.in and the rest) stay live only until <strong>31 July 2026</strong>. From 1 August 2026 they are discontinued permanently.</li>
+              <li>The one new official RRB website is <strong>rrb.indianrailways.gov.in</strong> — a unified portal for all notifications, admit cards, results and notices. It is <strong>already live</strong>.</li>
+              <li><strong>rrbapply.gov.in is NOT closing.</strong> Online applications for all RRB recruitments continue there exactly as before.</li>
+              <li>No ongoing recruitment (NTPC, Group D, ALP, JE) is affected — only the <em>address</em> where you check updates changes.</li>
+              <li>Expect a wave of <strong>fake lookalike websites</strong> after the switchover. RRBs have officially warned against them. Bookmark only the two official addresses.</li>
+              <li>Update your bookmarks now — do not wait for 31 July.</li>
+            </ul>
+          </Callout>
+
+          {/* Table of Contents (mobile) */}
+          <div className="card p-5 mb-10 border-l-4 border-primary-500 lg:hidden">
+            <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Table of Contents</div>
+            <ol className="grid grid-cols-2 gap-x-4 gap-y-1.5 list-decimal list-inside">
+              {toc.map(item => (
+                <li key={item.id}><a href={`#${item.id}`} className="text-sm text-primary-500 hover:underline">{item.label}</a></li>
+              ))}
+            </ol>
+          </div>
+
+          {/* WHAT IS HAPPENING */}
+          <Section id="what-happening" title="What Is Happening to the RRB Websites?">
+            <p className="text-surface-700 leading-relaxed mb-4">
+              For decades, Indian Railways recruitment worked through <strong>21 separate Railway Recruitment Boards</strong>, and each board ran its own website. If you applied for <Link href="/exams/rrb-ntpc/" className="text-primary-500 hover:underline">RRB NTPC</Link> from Maharashtra, you checked rrbmumbai.gov.in. Your friend in Bihar checked rrbpatna.gov.in for the same exam. Same notification, 21 different websites.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              That era is ending. The Ministry of Railways has merged all 21 regional websites into <strong>one unified portal</strong>. The old regional sites carry an official notice right now: they will remain operational <strong>only until 31 July 2026</strong> and will be <strong>discontinued thereafter</strong>.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-900 text-white">
+                  <tr>
+                    <th className={thBase}>Date</th>
+                    <th className={thBase}>What Happens</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Now (already live)', 'New unified portal rrb.indianrailways.gov.in is functional — all notices, admit cards and results in one place'],
+                    ['Till 31 July 2026', 'Old regional RRB websites keep working alongside the new portal'],
+                    ['From 1 August 2026', 'All 21 old regional websites are discontinued permanently'],
+                  ].map((r, i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800 whitespace-nowrap">{r[0]}</td>
+                      <td className="p-3 text-surface-600">{r[1]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <Callout type="info" title="💡 Official vs rumour">
+              This is not a rumour or a media claim. The 31 July 2026 shutdown notice is published on the RRB regional websites themselves — for example, RRB Ahmedabad and RRB Chennai both display it on their homepages. That is as official as it gets.
+            </Callout>
+          </Section>
+
+          {/* NEW WEBSITE */}
+          <Section id="new-website" title="What Is the New Official RRB Website?">
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The new official RRB website is:
+            </p>
+            <div className="bg-primary-50 border-2 border-primary-200 rounded-xl p-6 text-center mb-4">
+              <div className="text-xs uppercase tracking-wide text-primary-600 font-semibold mb-1">The one address to remember</div>
+              <a href="https://rrb.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="text-xl sm:text-2xl font-heading font-bold text-primary-700 hover:underline break-all">
+                rrb.indianrailways.gov.in
+              </a>
+              <div className="text-xs text-surface-500 mt-2">Note the .gov.in ending — that is how you know it is a government site</div>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Everything the 21 old sites used to publish now appears here in one place:
+            </p>
+            <ul className="list-disc ml-6 space-y-1.5 text-surface-700 mb-4">
+              <li>Centralised Employment Notifications (CENs) for NTPC, Group D, ALP, JE and every other RRB recruitment</li>
+              <li>Exam city intimation and e-call letter (admit card) links</li>
+              <li>Results, scorecards and cut-off notices for every region</li>
+              <li>Answer keys, objection trackers and corrigenda</li>
+              <li>Official warnings and candidate notices</li>
+            </ul>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              For aspirants this is genuinely good news. Earlier, region-wise result PDFs were scattered across 21 sites, some of which were slow or went down on result day. One portal means one bookmark, no confusion about which regional site is "yours", and no more hunting through outdated regional pages.
+            </p>
+          </Section>
+
+          {/* RRBAPPLY */}
+          <Section id="rrbapply" title="What About rrbapply.gov.in? Is It Closing Too?">
+            <p className="text-surface-700 leading-relaxed mb-4">
+              <strong>No — rrbapply.gov.in is not closing.</strong> This is the single most common confusion, so let us be crystal clear about the two official addresses and what each one does:
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-surface-200 mb-4">
+              <table className="w-full text-sm">
+                <thead className="bg-surface-900 text-white">
+                  <tr>
+                    <th className={thBase}>Website</th>
+                    <th className={thBase}>What It Is For</th>
+                    <th className={thBase + ' text-center'}>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['rrb.indianrailways.gov.in', 'Notifications, admit cards, results, notices — the information hub (replaces all 21 regional sites)', 'NEW — already live'],
+                    ['rrbapply.gov.in', 'Filling and submitting online application forms, fee payment, application status', 'UNCHANGED — continues as before'],
+                    ['21 regional sites (rrbchennai.gov.in etc.)', 'Old region-wise information sites', 'CLOSING after 31 July 2026'],
+                  ].map((r, i) => (
+                    <tr key={i} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
+                      <td className="p-3 font-medium text-surface-800">{r[0]}</td>
+                      <td className="p-3 text-surface-600">{r[1]}</td>
+                      <td className="p-3 text-center text-surface-600 whitespace-nowrap">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Simple way to remember it: <strong>read on rrb.indianrailways.gov.in, apply on rrbapply.gov.in.</strong> Your existing rrbapply account, registration ID and submitted applications are completely unaffected by the website merger.
+            </p>
+          </Section>
+
+          {/* ALL 21 */}
+          <Section id="all-21" title="Which RRB Websites Are Shutting Down?">
+            <p className="text-surface-700 leading-relaxed mb-4">
+              The websites of all 21 Railway Recruitment Boards close after 31 July 2026. If any of these is in your bookmarks, replace it with the new unified portal:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">
+              {[
+                'Ahmedabad', 'Ajmer', 'Bengaluru', 'Bhopal', 'Bhubaneswar', 'Bilaspur',
+                'Chandigarh', 'Chennai', 'Gorakhpur', 'Guwahati', 'Jammu–Srinagar', 'Kolkata',
+                'Malda', 'Mumbai', 'Muzaffarpur', 'Patna', 'Prayagraj', 'Ranchi',
+                'Secunderabad', 'Siliguri', 'Thiruvananthapuram',
+              ].map(city => (
+                <div key={city} className="bg-surface-50 border border-surface-200 rounded-lg px-3 py-2 text-sm text-surface-700 text-center">
+                  RRB {city}
+                </div>
+              ))}
+            </div>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Note that <strong>the RRBs themselves are not being abolished</strong> — the 21 boards continue to exist and conduct recruitment for their zones. Only their separate websites are being merged into one.
+            </p>
+            <Callout type="warning" title="⚠️ A special note about rrbcdg.gov.in">
+              rrbcdg.gov.in (RRB Chandigarh) has for years been the most-searched RRB address in India because major pan-India results were often hosted there first. It closes with the rest on 31 July 2026. If "rrbcdg" is your bookmark or your search habit, retrain yourself to rrb.indianrailways.gov.in now.
+            </Callout>
+          </Section>
+
+          {/* WHY */}
+          <Section id="why" title="Why Did Railways Merge 21 Websites Into One?">
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Three practical reasons, all of which help you as a candidate:
+            </p>
+            <ul className="list-disc ml-6 space-y-1.5 text-surface-700 mb-4">
+              <li><strong>Less confusion.</strong> Every CEN is pan-India, but information was duplicated (sometimes inconsistently) across 21 sites. One portal means one authoritative version of every notice.</li>
+              <li><strong>Better reliability.</strong> Regional sites frequently crashed on result days. A single centrally-maintained portal is easier to keep online and secure.</li>
+              <li><strong>Safety from fakes.</strong> With 21 similar-looking official domains, scammers could easily register a 22nd lookalike. One well-known address makes fakes easier to spot — which brings us to the most important section of this article.</li>
+            </ul>
+          </Section>
+
+          {/* FAKE SITES */}
+          <Section id="fake-sites" title="Beware of Fake RRB Websites — This Is the Real Danger">
+            <p className="text-surface-700 leading-relaxed mb-4">
+              Whenever a government website changes address, fraudsters move fast. They register lookalike domains, copy the official design, and target aspirants with fake application forms, fake fee payments and fake "selection letters". The RRBs know this — regional boards like RRB Bhubaneswar and RRB Secunderabad carry a standing official warning to <strong>"BEWARE of FAKE websites put up by unscrupulous elements/touts"</strong> and to ignore recruitment claims circulating on social media.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              After 31 July, lakhs of aspirants will type old addresses or search "RRB official website" — and scam sites will be waiting in the search results. Protect yourself with these checks:
+            </p>
+            <div className="space-y-3 mb-4">
+              {[
+                { n: '1', t: 'Check the domain ending', d: 'Real government sites end in .gov.in. A site ending in .com, .org, .in alone, or .net is NOT an official RRB site, no matter how official it looks.' },
+                { n: '2', t: 'Type the address yourself', d: 'Do not reach RRB through WhatsApp forwards, Telegram links or SMS links. Type rrb.indianrailways.gov.in directly, or use your saved bookmark.' },
+                { n: '3', t: 'Never pay outside rrbapply.gov.in', d: 'RRB exam fees are paid only inside the official application portal during a live application window. Anyone asking for money for a "job letter", "backdoor seat" or "form correction" is a fraudster — RRB selection cannot be bought.' },
+                { n: '4', t: 'Ignore social media "notices"', d: 'RRBs officially say any RRB information circulating on social media should be ignored. If a notice is real, it will be on rrb.indianrailways.gov.in.' },
+                { n: '5', t: 'Watch for lookalike spellings', d: 'Fakes use domains like "rrbapplygovt", "rrb-result", "indianrailway-rrb" and similar. One extra word or letter is the whole trick. When in doubt, close the tab and type the official address fresh.' },
+              ].map(item => (
+                <div key={item.n} className="card p-4 flex gap-4">
+                  <div className="w-8 h-8 bg-accent-100 text-accent-600 rounded-lg flex items-center justify-center font-heading font-bold text-sm flex-shrink-0">{item.n}</div>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm">{item.t}</div>
+                    <p className="text-sm text-surface-600 mt-1 leading-relaxed">{item.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Callout type="warning" title="⚠️ Golden rule">
+              Only two addresses matter for RRB: <strong>rrb.indianrailways.gov.in</strong> for information and <strong>rrbapply.gov.in</strong> for applications. Anything else claiming to be RRB is either an aggregator (at best) or a scam (at worst).
+            </Callout>
+          </Section>
+
+          {/* ONGOING */}
+          <Section id="ongoing" title="Does This Affect Ongoing RRB Recruitments?">
+            <p className="text-surface-700 leading-relaxed mb-4">
+              No. The website change does not touch any recruitment process, exam date, or your submitted application. Recruitment activity is continuing normally through the transition — CBT results, scorecards, answer-key objection windows and corrigenda for active CENs are being published as usual.
+            </p>
+            <p className="text-surface-700 leading-relaxed mb-4">
+              If you are preparing for <Link href="/exams/rrb-ntpc/" className="text-primary-500 hover:underline">RRB NTPC</Link>, <Link href="/exams/rrb-group-d/" className="text-primary-500 hover:underline">RRB Group D</Link>, <Link href="/exams/rrb-alp/" className="text-primary-500 hover:underline">RRB ALP</Link> or <Link href="/exams/rrb-je/" className="text-primary-500 hover:underline">RRB JE</Link>, nothing about your exam changes — only the address where you check updates. (One separate change worth knowing: <Link href="/exams/rpf-si/" className="text-primary-500 hover:underline">RPF recruitment</Link> is moving from RRBs to SSC under the 2025 amendment rules — but that is a rules change, not part of this website merger.)
+            </p>
+          </Section>
+
+          {/* ACTION */}
+          <Section id="action" title="What Should You Do Before 31 July 2026?">
+            <p className="text-surface-700 leading-relaxed mb-4">
+              A five-minute checklist to make this transition painless:
+            </p>
+            <ul className="list-disc ml-6 space-y-1.5 text-surface-700 mb-4">
+              <li><strong>Delete old bookmarks</strong> for any regional RRB site and bookmark <strong>rrb.indianrailways.gov.in</strong> instead.</li>
+              <li><strong>Keep your rrbapply.gov.in login safe</strong> — registration ID and password. That account carries forward for future CENs.</li>
+              <li><strong>Download anything you need from old sites now</strong> — old scorecards, region-specific notices or PDFs you saved links to. After 31 July those links will be dead.</li>
+              <li><strong>Warn your study group.</strong> The people most likely to land on a fake site are the ones who never heard about this change. Share the correct address, not a screenshot of a random forward.</li>
+              <li>Before applying to any CEN, confirm your <Link href="/tools/eligibility-checker/" className="text-primary-500 hover:underline">age and qualification eligibility</Link>, and see our guide on <Link href="/guides/how-to-fill-government-job-application-form/" className="text-primary-500 hover:underline">filling government job application forms</Link> without mistakes.</li>
+            </ul>
+          </Section>
+
+          {/* FAQ */}
+          <Section id="faq" title="Frequently Asked Questions">
+            <div className="space-y-0">
+              {[
+                { q: 'What is the new official RRB website in 2026?', a: 'The new official RRB website is rrb.indianrailways.gov.in. It is a unified portal that replaces all 21 regional RRB websites for notifications, admit cards, results and official notices. It is already live.' },
+                { q: 'When are the old RRB websites shutting down?', a: 'All 21 regional RRB websites remain operational only until 31 July 2026. From 1 August 2026 they are discontinued permanently, as per the official notice published on the RRB sites themselves.' },
+                { q: 'Is rrbapply.gov.in also closing?', a: 'No. rrbapply.gov.in continues unchanged as the official application portal. Only the 21 regional information websites are closing. Your existing rrbapply account and applications are unaffected.' },
+                { q: 'Is rrbcdg.gov.in still the official RRB website?', a: 'Only until 31 July 2026. rrbcdg.gov.in is the RRB Chandigarh regional site and closes with the other 20 regional sites. After that, use rrb.indianrailways.gov.in for all RRB updates.' },
+                { q: 'Will my RRB NTPC or Group D application be affected by the website change?', a: 'No. The merger changes only where information is published. Applications, exam schedules, results and your candidature continue exactly as before — recruitment notices for active CENs are already being published on the new portal.' },
+                { q: 'How do I identify a fake RRB website?', a: 'Check the domain ending: real RRB sites end in .gov.in. Type the address yourself instead of clicking links from WhatsApp, Telegram or SMS. RRBs officially warn that recruitment information circulating on social media should be ignored.' },
+                { q: 'Are the 21 RRBs themselves being closed or merged?', a: 'No. The 21 Railway Recruitment Boards continue to exist and conduct recruitment for their zones. Only their separate websites are being merged into one unified portal.' },
+                { q: 'Where will RRB admit cards and results come now?', a: 'On rrb.indianrailways.gov.in. Exam city intimation, e-call letters (admit cards), results, scorecards and cut-offs for all regions are published on the unified portal, with application-linked downloads through rrbapply.gov.in.' },
+              ].map((faq, i) => (
+                <details key={i} className="border-b border-surface-200 group">
+                  <summary className="flex items-start gap-3 py-4 cursor-pointer list-none font-medium text-surface-800 hover:text-primary-500 transition-colors">
+                    <span className="w-6 h-6 bg-accent-500 text-white text-xs font-bold rounded flex items-center justify-center flex-shrink-0 mt-0.5">Q</span>
+                    <span className="flex-1">{faq.q}</span>
+                    <svg className="w-4 h-4 text-surface-400 flex-shrink-0 mt-1 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div className="pl-9 pb-4 text-sm text-surface-600 leading-relaxed">{faq.a}</div>
+                </details>
+              ))}
+            </div>
+          </Section>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 text-center text-white mb-10">
+            <h3 className="font-heading font-bold text-xl mb-2">Preparing for a Railway Exam?</h3>
+            <p className="text-primary-100 text-sm mb-5">Full free guides for every RRB exam — syllabus, pattern, books and eligibility. No paywalls, no spam.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/exams/rrb-ntpc/" className="bg-white text-primary-600 font-heading font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all text-sm">
+                RRB NTPC Guide →
+              </Link>
+              <Link href="/blog/rrb-ntpc-2026-syllabus-tier-1-tier-2/" className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-sm">
+                NTPC 2026 Syllabus
+              </Link>
+            </div>
+          </div>
+
+          {/* Disclaimer */}
+          <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
+            This article is based on official notices published on the Railway Recruitment Board regional websites announcing their discontinuation after 31 July 2026 and directing candidates to the unified portal rrb.indianrailways.gov.in. Last updated: {post.updatedDate}. Always confirm the latest information on the official portals (rrb.indianrailways.gov.in and rrbapply.gov.in) before acting.
+          </p>
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-4">
+            {/* TOC */}
+            <div className="card p-5 border-l-4 border-primary-500">
+              <div className="text-xs font-semibold uppercase tracking-wide text-surface-500 mb-3">📖 Table of Contents</div>
+              <ol className="space-y-2 list-decimal list-inside">
+                {toc.map(item => (
+                  <li key={item.id} className="text-sm">
+                    <a href={`#${item.id}`} className="text-primary-500 hover:text-primary-600 hover:underline">{item.label}</a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Related Exams */}
+            <div className="card p-5 bg-emerald-50 border-emerald-200">
+              <h3 className="font-heading font-semibold text-emerald-800 mb-3 text-sm">Related Exams</h3>
+              <div className="space-y-2">
+                <Link href="/exams/rrb-ntpc/" className="block text-sm text-emerald-700 hover:text-emerald-800 font-medium">RRB NTPC Guide →</Link>
+                <Link href="/exams/rrb-group-d/" className="block text-sm text-emerald-700 hover:text-emerald-800 font-medium">RRB Group D Guide →</Link>
+                <Link href="/exams/rrb-alp/" className="block text-sm text-emerald-700 hover:text-emerald-800 font-medium">RRB ALP Guide →</Link>
+                <Link href="/exams/rrb-je/" className="block text-sm text-emerald-700 hover:text-emerald-800 font-medium">RRB JE Guide →</Link>
+              </div>
+            </div>
+
+            {/* Eligibility */}
+            <div className="card p-5">
+              <h3 className="font-heading font-semibold text-surface-800 mb-2 text-sm">Check Your Eligibility</h3>
+              <p className="text-xs text-surface-500 mb-3">See if you qualify for railway exams based on your age and qualification.</p>
+              <Link href="/tools/eligibility-checker/" className="btn-primary text-xs w-full text-center">Check Now →</Link>
+            </div>
+
+            {/* Related Articles */}
+            <div className="card p-5">
+              <div className="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-3">📚 Related Articles</div>
+              <div className="space-y-2">
+                <Link href="/blog/rrb-ntpc-2026-syllabus-tier-1-tier-2/" className="block text-sm text-surface-600 hover:text-primary-500">RRB NTPC 2026 Syllabus →</Link>
+                <Link href="/guides/how-to-fill-government-job-application-form/" className="block text-sm text-surface-600 hover:text-primary-500">How to Fill Application Forms →</Link>
+                <Link href="/guides/documents-needed-government-job/" className="block text-sm text-surface-600 hover:text-primary-500">Documents Needed for Govt Job →</Link>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      {/* Article structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'New RRB Website 2026: All 21 Old RRB Sites Closing 31 July',
+            description: 'All 21 regional RRB websites shut down after 31 July 2026, replaced by the unified official portal rrb.indianrailways.gov.in. What changes, what stays (rrbapply.gov.in), and how to avoid fake RRB websites.',
+            datePublished: '2026-07-19',
+            dateModified: '2026-07-19',
+            author: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in' },
+            publisher: { '@type': 'Organization', name: 'TaiyarHo', url: 'https://www.taiyarho.in', logo: { '@type': 'ImageObject', url: 'https://www.taiyarho.in/logo.svg' } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.taiyarho.in/blog/new-rrb-website-2026-old-rrb-sites-closing/' },
+          }),
+        }}
+      />
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.taiyarho.in/' },
+              { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.taiyarho.in/blog/' },
+              { '@type': 'ListItem', position: 3, name: 'New RRB Website 2026', item: 'https://www.taiyarho.in/blog/new-rrb-website-2026-old-rrb-sites-closing/' },
+            ],
+          }),
+        }}
+      />
+      {/* FAQ structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              { '@type': 'Question', name: 'What is the new official RRB website in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'The new official RRB website is rrb.indianrailways.gov.in — a unified portal replacing all 21 regional RRB websites for notifications, admit cards, results and notices. It is already live.' } },
+              { '@type': 'Question', name: 'When are the old RRB websites shutting down?', acceptedAnswer: { '@type': 'Answer', text: 'All 21 regional RRB websites remain operational only until 31 July 2026 and are discontinued permanently from 1 August 2026, per the official notice on the RRB sites themselves.' } },
+              { '@type': 'Question', name: 'Is rrbapply.gov.in also closing?', acceptedAnswer: { '@type': 'Answer', text: 'No. rrbapply.gov.in continues unchanged as the official RRB application portal. Only the 21 regional information websites are closing.' } },
+              { '@type': 'Question', name: 'Is rrbcdg.gov.in still the official RRB website?', acceptedAnswer: { '@type': 'Answer', text: 'Only until 31 July 2026. rrbcdg.gov.in is the RRB Chandigarh regional site and closes with the other regional sites. After that, use rrb.indianrailways.gov.in.' } },
+              { '@type': 'Question', name: 'How do I identify a fake RRB website?', acceptedAnswer: { '@type': 'Answer', text: 'Real RRB sites end in .gov.in. Type the address yourself instead of clicking WhatsApp, Telegram or SMS links, and ignore recruitment information circulating on social media, as RRBs officially advise.' } },
             ],
           }),
         }}

@@ -244,6 +244,20 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'You can ace the written exam and still go home if you fail the physical. Here are the exact SSC GD, RPF and Delhi Police PET/PST standards (running time, height, chest, jumps), the new RPF Amendment Rules 2025, and an honest 12-week training plan — no hype, no crash diets.',
     examSlug: 'ssc-gd-constable',
   },
+  {
+    slug: 'new-rrb-website-2026-old-rrb-sites-closing',
+    title: 'New RRB Website 2026: All 21 Old RRB Sites Closing 31 July',
+    metaTitle: 'New RRB Website 2026: All 21 Old RRB Sites Closing 31 July | TaiyarHo',
+    metaDescription: 'All 21 RRB websites close after 31 July 2026. The new official RRB website is rrb.indianrailways.gov.in — what changes, and how to spot fake railway sites.',
+    category: 'Railway',
+    tags: ['New RRB Website 2026', 'rrb.indianrailways.gov.in', 'RRB Website Change', 'rrbcdg.gov.in Closed', 'Fake RRB Websites', 'rrbapply.gov.in', 'RRB NTPC', 'Railway Recruitment Board'],
+    publishedDate: 'July 19, 2026',
+    updatedDate: 'July 19, 2026',
+    readTime: '9 min read',
+    author: 'TaiyarHo Editorial',
+    excerpt: 'All 21 regional RRB websites — Chennai, Mumbai, Patna, Chandigarh (rrbcdg) and the rest — shut down permanently after 31 July 2026. The new official RRB website rrb.indianrailways.gov.in is already live. Here is exactly what changes, what stays (rrbapply.gov.in), and how to protect yourself from the fake sites that will follow.',
+    examSlug: 'rrb-ntpc',
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
