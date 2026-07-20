@@ -8,6 +8,7 @@ import { jun15_21_newsItems, jun15_21_staticGk, jun15_21_quiz } from './jun-15-2
 import { jun22_28_newsItems, jun22_28_staticGk, jun22_28_quiz } from './jun-22-28-data';
 import { jun29_jul05_newsItems, jun29_jul05_staticGk, jun29_jul05_quiz } from './jun-29-jul-05-data';
 import { jul06_12_newsItems, jul06_12_staticGk, jul06_12_quiz } from './jul-06-12-data';
+import { jul13_19_newsItems, jul13_19_staticGk, jul13_19_quiz } from './jul-13-19-data';
 
 /* ── Interfaces ────────────────────────────────────────────────────────── */
 
@@ -63,7 +64,40 @@ export type CaCategory = (typeof caCategories)[number];
 /* ── Posts ──────────────────────────────────────────────────────────────── */
 
 export const currentAffairsPosts: CurrentAffairsPost[] = [
-  /* ═══ NEW: July 6–12, 2026 (Rich Format) ═══ */
+  /* ═══ NEW: July 13–19, 2026 (Rich Format) ═══ */
+  {
+    slug: 'weekly-current-affairs-july-13-19-2026',
+    title:
+      'Weekly Current Affairs: July 13\u201319, 2026 \u2014 India-UK FTA in Force, India\u2019s First Hydrogen Train, CPI at 4.38%, SHANTI UNSC Campaign, 60th Jnanpith to Vairamuthu & Spain Win the FIFA World Cup',
+    dateRange: 'July 13\u201319, 2026',
+    publishedDate: 'July 20, 2026',
+    category: 'All',
+    excerpt:
+      'This week: the India-UK CETA enters into force with 99% of Indian tariff lines duty-free into the UK; PM Modi flags off India\u2019s first hydrogen-powered train on the Jind\u2013Sonipat route; CPI inflation rises to 4.38% \u2014 the first breach of 4% under the new series \u2014 while WPI hits 9.87%; EAM Jaishankar launches India\u2019s UNSC 2028\u201329 campaign with the SHANTI theme; Hyderabad hosts the 12th BRICS Labour Ministers\u2019 Meeting; the 60th Jnanpith Award is presented to Vairamuthu; Dr. Srinivasa Kumar Tummala becomes Earth Sciences Secretary; and Spain beat Argentina 1-0 to win the FIFA World Cup 2026. Plus catch-ups: INS Mahendragiri\u2019s commissioning, India\u2019s five IPhO golds, the ICC Hall of Fame Class of 2026, Gaganyaan crew module tests, and the passing of S. Janaki.',
+    targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
+    isFeatured: true,
+    weekRange: 'July 13\u201319, 2026',
+    newsItems: jul13_19_newsItems,
+    staticGkBox: jul13_19_staticGk,
+    quiz: jul13_19_quiz,
+    keyPoints: [
+      'The India-UK Comprehensive Economic and Trade Agreement (CETA) entered into force on July 15, 2026 \u2014 the UK removes duties on 99% of Indian tariff lines, and India\u2019s Scotch whisky tariff falls from 150% to 75% (then 40% over a decade).',
+      'PM Modi flagged off India\u2019s first hydrogen-powered train from Jind, Haryana on July 17 \u2014 a 10-coach, ~2,600-passenger train on the 89-km Jind\u2013Sonipat route with a 1,200-kW fuel cell, the world\u2019s most powerful for a train.',
+      'CPI retail inflation rose to 4.38% in June 2026 (from 3.93% in May) \u2014 the first breach of 4% under the new 2024-base series; food inflation (CFPI) was 5.32%. The next RBI MPC meeting is August 3\u20135.',
+      'WPI wholesale inflation rose to 9.87% in June (from 9.68% in May), driven by mineral oils, food articles, basic metals and chemicals; Fuel and Power inflation was 27.41%.',
+      'EAM Dr. S. Jaishankar launched India\u2019s UNSC 2028\u201329 campaign at UN Headquarters on July 13 with the theme SHANTI \u2014 Securing Holistic Advancement through Norms, Trust, Integrity; India faces Tajikistan in the June 2027 election.',
+      'India hosted the 12th BRICS Labour and Employment Ministers\u2019 Meeting in Hyderabad (July 15\u201316), chaired by Mansukh Mandaviya under India\u2019s 2026 BRICS Chairship.',
+      'The 60th Jnanpith Award was presented to Tamil poet R. Vairamuthu in New Delhi on July 13 \u2014 the third Tamil writer to win, after Akilan (1975) and Jayakanthan (2002).',
+      'The ACC appointed Dr. Srinivasa Kumar Tummala \u2014 former INCOIS Director and UNESCO-IOC tsunami warning chief \u2014 as Secretary, Ministry of Earth Sciences, for two years (order dated July 16).',
+      'Spain won the FIFA World Cup 2026, beating Argentina 1-0 in extra time on July 19 at MetLife Stadium; Ferran Torres scored the winner, and Kylian Mbapp\u00e9 took the Golden Boot with 10 goals, becoming the all-time World Cup top scorer.',
+      'Catch-up from July 11: Defence Minister Rajnath Singh commissioned INS Mahendragiri \u2014 the final Project 17A Nilgiri-class stealth frigate (75%+ indigenous, built by MDL) \u2014 at Visakhapatnam.',
+      'Catch-up from July 11: Sourav Ganguly, Anjum Chopra and Kevin Pietersen were inducted into the ICC Hall of Fame (Class of 2026) in Edinburgh, taking total members to 125.',
+      'Catch-up from July 12: all five Indian students won gold at the 56th International Physics Olympiad in Bucaramanga, Colombia \u2014 India finished joint World No. 1.',
+      'Catch-up from July 12: ISRO completed key Gaganyaan Crew Module qualification tests, including the Crew Module Uprighting System (CMUS) and the CM\u2013SM Connect-Disconnect System.',
+      'Catch-up from July 11: legendary playback singer S. Janaki, the \u201cNightingale of South India\u201d and four-time National Film Award winner, passed away in Mysuru at 88.',
+    ],
+  },
+  /* ═══ July 6–12, 2026 (Rich Format) ═══ */
   {
     slug: 'weekly-current-affairs-july-6-12-2026',
     title:
