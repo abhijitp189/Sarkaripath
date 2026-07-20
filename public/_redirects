@@ -1,0 +1,21 @@
+# Cloudflare Pages redirects for www.taiyarho.in
+# Replaces vercel.json redirects + Vercel's non-www -> www redirect.
+# Both taiyarho.in and www.taiyarho.in must be attached as custom
+# domains on the Cloudflare Pages project for the first rule to work.
+
+# 1. Force non-www -> www (301)
+https://taiyarho.in/* https://www.taiyarho.in/:splat 301
+
+# 2. Legacy URL redirects (mirrors vercel.json — six pairs)
+/tools/age-calculator /tools/eligibility-checker/ 301
+/tools/age-calculator/ /tools/eligibility-checker/ 301
+/exams/nvs-teacher /exams/nvs-teaching/ 301
+/exams/nvs-teacher/ /exams/nvs-teaching/ 301
+/guides/how-to-apply /guides/how-to-fill-government-job-application-form/ 301
+/guides/how-to-apply/ /guides/how-to-fill-government-job-application-form/ 301
+/exams/delhi-high-court-jja /exams/ 301
+/exams/delhi-high-court-jja/ /exams/ 301
+/exams/bihar-teacher /exams/ 301
+/exams/bihar-teacher/ /exams/ 301
+/blog/government-exam-preparation-beginners-2026 /guides/how-to-start-government-exam-preparation/ 301
+/blog/government-exam-preparation-beginners-2026/ /guides/how-to-start-government-exam-preparation/ 301
