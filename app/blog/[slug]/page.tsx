@@ -3315,7 +3315,7 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
           {
             '@type': 'Question',
             name: 'Where can I download the official RRB NTPC syllabus PDF?',
-            acceptedAnswer: { '@type': 'Answer', text: 'The official RRB NTPC syllabus PDF is available on the Indian Railways official recruitment portals — rrbcdg.gov.in, indianrailways.gov.in, and the respective RRB zone websites. The syllabus is published along with the official CEN notification.' },
+            acceptedAnswer: { '@type': 'Answer', text: 'The official RRB NTPC syllabus PDF is available on the unified RRB portal — rrb.indianrailways.gov.in. The syllabus is published along with the official CEN notification.' },
           },
         ],
       },
@@ -3805,9 +3805,9 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
             </p>
             <div className="space-y-3">
               {[
-                { label: '📄 CEN 05/2024 NTPC Graduate — Official PDF', desc: 'Detailed notification PDF for Graduate-level posts (Level 4–6) — direct from rrbcdg.gov.in', url: 'https://www.rrbcdg.gov.in/uploads/2024/05-NTPCG/CEN_05_2024_Graduate.pdf', badge: 'Graduate Posts' },
-                { label: '📄 CEN 06/2024 NTPC Under-Graduate — Official PDF', desc: 'Detailed notification PDF for Under-Graduate posts (Level 2–3, 12th pass) — direct from rrbcdg.gov.in', url: 'https://www.rrbcdg.gov.in/uploads/2024/06-NTPCUG/Detailed%20CEN%2006-2024%20NTPC.pdf', badge: 'UG Posts' },
-                { label: '🏛️ RRB CDG Official Website', desc: 'All notifications, results, call letters, and score cards for ongoing CENs', url: 'https://www.rrbcdg.gov.in', badge: null },
+                { label: '📄 CEN 05/2024 NTPC Graduate — Official PDF', desc: 'Detailed notification for Graduate-level posts (Level 4–6) — find it under Recruitment (CENs) on the unified RRB portal', url: 'https://rrb.indianrailways.gov.in', badge: 'Graduate Posts' },
+                { label: '📄 CEN 06/2024 NTPC Under-Graduate — Official PDF', desc: 'Detailed notification for Under-Graduate posts (Level 2–3, 12th pass) — find it under Recruitment (CENs) on the unified RRB portal', url: 'https://rrb.indianrailways.gov.in', badge: 'UG Posts' },
+                { label: '🏛️ RRB Official Website (Unified Portal)', desc: 'All notifications, results, call letters, and score cards for ongoing CENs', url: 'https://rrb.indianrailways.gov.in', badge: null },
                 { label: '🚂 Indian Railways — Ministry Portal', desc: 'Central government portal for Railway Recruitment Board listings', url: 'https://indianrailways.gov.in', badge: null },
                 { label: '📋 RRB Apply Portal', desc: 'Online registration and application portal for all RRB exams', url: 'https://rrbapply.gov.in', badge: null },
               ].map(link => (
@@ -3929,7 +3929,7 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
                 },
                 {
                   q: 'Where can I download the official RRB NTPC syllabus PDF?',
-                  a: 'The official syllabus PDF is part of the Centralized Employment Notification (CEN) published on rrbcdg.gov.in and indianrailways.gov.in. Always download from the official portal for the most accurate and updated information.',
+                  a: 'The official syllabus PDF is part of the Centralized Employment Notification (CEN) published on the unified RRB portal rrb.indianrailways.gov.in. Always download from the official portal for the most accurate and updated information.',
                 },
               ].map((item, i) => (
                 <div key={i} className="card p-5">
@@ -3998,8 +3998,8 @@ function RrbNtpcSyllabusArticle({ post }: { post: any }) {
             <div className="card p-5 bg-primary-50 border-primary-200">
               <div className="text-xs font-semibold text-primary-800 uppercase tracking-wider mb-2">Official Links</div>
               <div className="space-y-2">
-                <a href="https://www.rrbcdg.gov.in" target="_blank" rel="noopener noreferrer" className="block text-sm text-primary-600 hover:underline break-all">
-                  rrbcdg.gov.in →
+                <a href="https://rrb.indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="block text-sm text-primary-600 hover:underline break-all">
+                  rrb.indianrailways.gov.in →
                 </a>
                 <a href="https://indianrailways.gov.in" target="_blank" rel="noopener noreferrer" className="block text-sm text-primary-600 hover:underline break-all">
                   indianrailways.gov.in →
@@ -5059,7 +5059,7 @@ function TelegramChannelsArticle({ post }: { post: any }) {
               <strong className="text-surface-700">📅 Last Updated:</strong> {post.updatedDate}
             </p>
             <p>
-              <strong className="text-surface-700">Disclaimer:</strong> Channel names, subscriber counts, and ratings listed in this article are based on our editorial team&apos;s review and publicly available information as of {post.updatedDate}. TaiyarHo.in is not affiliated with, endorsed by, or officially connected to any of the Telegram channels listed above. Subscriber counts are approximate and may change. Exam notification dates, vacancy counts, and application deadlines mentioned are sourced from official websites — always verify final details at <strong>upsc.gov.in</strong>, <strong>ssc.gov.in</strong>, <strong>ibps.in</strong>, <strong>rrbcdg.gov.in</strong>, <strong>ctet.nic.in</strong>, and respective official portals before taking any action.
+              <strong className="text-surface-700">Disclaimer:</strong> Channel names, subscriber counts, and ratings listed in this article are based on our editorial team&apos;s review and publicly available information as of {post.updatedDate}. TaiyarHo.in is not affiliated with, endorsed by, or officially connected to any of the Telegram channels listed above. Subscriber counts are approximate and may change. Exam notification dates, vacancy counts, and application deadlines mentioned are sourced from official websites — always verify final details at <strong>upsc.gov.in</strong>, <strong>ssc.gov.in</strong>, <strong>ibps.in</strong>, <strong>rrb.indianrailways.gov.in</strong>, <strong>ctet.nic.in</strong>, and respective official portals before taking any action.
             </p>
           </div>
 

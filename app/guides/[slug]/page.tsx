@@ -92,7 +92,7 @@ const guideContent: Record<string, { sections: { heading: string; content: strin
     sections: [
       {
         heading: 'Why Filling the Form Correctly Matters',
-        content: 'Every year, thousands of government job applications are rejected before the exam even begins — not because candidates lack eligibility, but because of avoidable mistakes in the application form. A wrong date of birth, an incorrectly sized photograph, a mismatched name spelling, or a missed fee payment can disqualify you silently. Most recruiting bodies like SSC, UPSC, IBPS, and RRB do not notify you about form rejection — your application simply disappears from the system. The application form is the first stage of your selection process, and getting it right is non-negotiable. This guide walks you through every step of the online application process for major government exams in India, covering SSC (ssc.gov.in), UPSC (upsconline.nic.in), IBPS (ibps.in), SBI (sbi.bank.in), and RRB (rrbcdg.gov.in). While each exam portal looks slightly different, the overall process follows the same structure: registration, form filling, document upload, fee payment, and submission.',
+        content: 'Every year, thousands of government job applications are rejected before the exam even begins — not because candidates lack eligibility, but because of avoidable mistakes in the application form. A wrong date of birth, an incorrectly sized photograph, a mismatched name spelling, or a missed fee payment can disqualify you silently. Most recruiting bodies like SSC, UPSC, IBPS, and RRB do not notify you about form rejection — your application simply disappears from the system. The application form is the first stage of your selection process, and getting it right is non-negotiable. This guide walks you through every step of the online application process for major government exams in India, covering SSC (ssc.gov.in), UPSC (upsconline.nic.in), IBPS (ibps.in), SBI (sbi.bank.in), and RRB (rrb.indianrailways.gov.in). While each exam portal looks slightly different, the overall process follows the same structure: registration, form filling, document upload, fee payment, and submission.',
       },
       {
         heading: 'Documents and Information to Keep Ready Before You Start',
@@ -100,7 +100,7 @@ const guideContent: Record<string, { sections: { heading: string; content: strin
       },
       {
         heading: 'Step 1: One-Time Registration (OTR) — Your Permanent Exam Profile',
-        content: 'Most major exam bodies now use a One-Time Registration (OTR) system. This means you create your profile once and can reuse it for all future exams conducted by that body. For SSC exams (CGL, CHSL, MTS, GD, CPO): visit ssc.gov.in and click "Register / Login" or use the MySSC app. You will enter your name, date of birth, father\'s name, mobile number, email ID, and Aadhaar number. After submitting, you receive a Registration ID and password via SMS and email. For UPSC exams (CSE, NDA, CDS, CAPF): visit upsconline.nic.in and click "New Registration" under the OTR section. Verify your email ID and mobile number via OTP, then create a password. UPSC\'s new portal (launched 2025) requires you to fill personal details, upload documents, and complete a Common Application Form — all of which are saved permanently in your profile. For IBPS exams (PO, Clerk, SO, RRB): visit ibps.in and click on the relevant exam notification link, then select "New Registration". Enter your name, mobile number, email ID, and a security code. You will receive login credentials on your registered mobile and email. For RRB exams (NTPC, Group D, ALP): visit the regional RRB website (e.g., rrbcdg.gov.in, rrbchennai.gov.in) and register with basic details. Important: save your Registration ID and password securely. Write them down and take a screenshot. You will need these credentials for downloading admit cards, checking results, and applying for future exams.',
+        content: 'Most major exam bodies now use a One-Time Registration (OTR) system. This means you create your profile once and can reuse it for all future exams conducted by that body. For SSC exams (CGL, CHSL, MTS, GD, CPO): visit ssc.gov.in and click "Register / Login" or use the MySSC app. You will enter your name, date of birth, father\'s name, mobile number, email ID, and Aadhaar number. After submitting, you receive a Registration ID and password via SMS and email. For UPSC exams (CSE, NDA, CDS, CAPF): visit upsconline.nic.in and click "New Registration" under the OTR section. Verify your email ID and mobile number via OTP, then create a password. UPSC\'s new portal (launched 2025) requires you to fill personal details, upload documents, and complete a Common Application Form — all of which are saved permanently in your profile. For IBPS exams (PO, Clerk, SO, RRB): visit ibps.in and click on the relevant exam notification link, then select "New Registration". Enter your name, mobile number, email ID, and a security code. You will receive login credentials on your registered mobile and email. For RRB exams (NTPC, Group D, ALP): visit the unified RRB portal rrb.indianrailways.gov.in — applications are filed through rrbapply.gov.in — and register with basic details. Important: save your Registration ID and password securely. Write them down and take a screenshot. You will need these credentials for downloading admit cards, checking results, and applying for future exams.',
       },
       {
         heading: 'Step 2: Log In and Select the Exam You Want to Apply For',
@@ -144,7 +144,7 @@ const guideContent: Record<string, { sections: { heading: string; content: strin
       },
       {
         heading: 'Official Websites for Applying to Major Government Exams',
-        content: 'Always apply through the official website only. Beware of fake websites that look similar but are designed to steal your money or personal data. SSC exams (CGL, CHSL, MTS, GD, CPO, Stenographer): ssc.gov.in — this is the only official SSC website. You can also use the MySSC mobile app available on Google Play Store. UPSC exams (CSE, NDA, CDS, CAPF, ESE, CMS): upsconline.nic.in for OTR and applications, upsc.gov.in for notifications and results. IBPS exams (PO, Clerk, SO, RRB Officer): ibps.in — the only official IBPS portal. SBI exams (PO, Clerk, SO): sbi.bank.in/careers — navigate to the recruitment section. RRB Railway exams (NTPC, Group D, ALP, JE): each RRB has its own regional website — rrbcdg.gov.in (Delhi), rrbchennai.gov.in (Chennai), rrbmumbai.gov.in (Mumbai), and so on. The exam notification will mention which RRB website to use. Never pay anyone to fill your form on your behalf. The process is straightforward, and this guide has everything you need.',
+        content: 'Always apply through the official website only. Beware of fake websites that look similar but are designed to steal your money or personal data. SSC exams (CGL, CHSL, MTS, GD, CPO, Stenographer): ssc.gov.in — this is the only official SSC website. You can also use the MySSC mobile app available on Google Play Store. UPSC exams (CSE, NDA, CDS, CAPF, ESE, CMS): upsconline.nic.in for OTR and applications, upsc.gov.in for notifications and results. IBPS exams (PO, Clerk, SO, RRB Officer): ibps.in — the only official IBPS portal. SBI exams (PO, Clerk, SO): sbi.bank.in/careers — navigate to the recruitment section. RRB Railway exams (NTPC, Group D, ALP, JE): all RRBs now use one unified portal — rrb.indianrailways.gov.in — with applications filed through rrbapply.gov.in. The 21 old regional RRB websites are discontinued after 31 July 2026. Never pay anyone to fill your form on your behalf. The process is straightforward, and this guide has everything you need.',
       },
       {
         heading: 'Quick Checklist Before You Submit',
@@ -1158,7 +1158,7 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
                   </tr>
                   <tr className="hover:bg-surface-50">
                     <td className="p-3 font-medium text-surface-800">RRB</td>
-                    <td className="p-3"><a href="https://rrbcdg.gov.in" className="text-primary-500 hover:text-primary-600 underline" target="_blank" rel="noopener noreferrer">Regional RRB websites (e.g., rrbcdg.gov.in)</a></td>
+                    <td className="p-3"><a href="https://rrb.indianrailways.gov.in" className="text-primary-500 hover:text-primary-600 underline" target="_blank" rel="noopener noreferrer">RRB unified portal (rrb.indianrailways.gov.in)</a></td>
                     <td className="p-3 text-surface-600">NTPC, Group D, ALP, JE</td>
                   </tr>
                   <tr className="hover:bg-surface-50">
@@ -1548,7 +1548,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 { exam: 'SSC (CGL, CHSL, MTS, GD, CPO)', url: 'ssc.gov.in', steps: 'Click "Register / Login" or use the MySSC app. Enter your name, DOB, father\'s name, mobile, email, and Aadhaar. You\'ll receive a Registration ID and password via SMS and email.' },
                 { exam: 'UPSC (CSE, NDA, CDS, CAPF)', url: 'upsconline.nic.in', steps: 'Click "New Registration" under the OTR section. Verify email and mobile via OTP, then create a password. UPSC\'s new portal (2025) saves personal details, documents, and a Common Application Form permanently.' },
                 { exam: 'IBPS (PO, Clerk, SO, RRB)', url: 'ibps.in', steps: 'Click the relevant exam notification link, then "New Registration". Enter your name, mobile, email, and security code. Login credentials arrive on your registered mobile and email.' },
-                { exam: 'RRB (NTPC, Group D, ALP)', url: 'rrbcdg.gov.in (or your regional RRB)', steps: 'Visit your regional RRB website and register with basic details. The notification will specify which RRB site to use.' },
+                { exam: 'RRB (NTPC, Group D, ALP)', url: 'rrb.indianrailways.gov.in', steps: 'Visit the unified RRB portal and register with basic details. Applications are filed through rrbapply.gov.in.' },
               ].map((item, i) => (
                 <div key={item.exam} className="card p-5">
                   <div className="flex items-start gap-3">
@@ -1878,7 +1878,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 { body: 'UPSC', exams: 'CSE, NDA, CDS, CAPF, ESE, CMS', url: 'upsconline.nic.in (applications) + upsc.gov.in (notifications)', extra: '' },
                 { body: 'IBPS', exams: 'PO, Clerk, SO, RRB Officer', url: 'ibps.in', extra: 'Only one official IBPS portal.' },
                 { body: 'SBI', exams: 'PO, Clerk, SO', url: 'sbi.bank.in/careers', extra: 'Navigate to the Recruitment section.' },
-                { body: 'RRB (Railway)', exams: 'NTPC, Group D, ALP, JE', url: 'Regional RRB website (rrbcdg.gov.in, rrbchennai.gov.in, rrbmumbai.gov.in, etc.)', extra: 'The notification will specify which regional RRB to use.' },
+                { body: 'RRB (Railway)', exams: 'NTPC, Group D, ALP, JE', url: 'rrb.indianrailways.gov.in (unified portal)', extra: 'All 21 old regional RRB sites are discontinued after 31 July 2026 — apply through rrbapply.gov.in.' },
               ].map(item => (
                 <div key={item.body} className="card p-4 group">
                   <div className="flex items-center justify-between mb-2">
@@ -1971,7 +1971,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                   { name: 'UPSC', url: 'https://upsconline.nic.in' },
                   { name: 'IBPS', url: 'https://www.ibps.in' },
                   { name: 'SBI Careers', url: 'https://sbi.bank.in/web/careers/current-openings' },
-                  { name: 'RRB CDG', url: 'https://rrbcdg.gov.in' },
+                  { name: 'RRB (Unified Portal)', url: 'https://rrb.indianrailways.gov.in' },
                 ].map(item => (
                   <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-primary-600 hover:text-primary-800 font-medium">
                     <span>{item.name}</span>

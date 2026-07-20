@@ -128,7 +128,7 @@ export const categoryContent: Record<string, CategoryContent> = {
       { name: 'Study Smart', url: 'https://www.youtube.com/@testabornindia', desc: 'Free video classes' },
     ],
     websites: [
-      { name: 'RRB Official', url: 'https://www.rrbcdg.gov.in', desc: 'Official notifications and previous papers' },
+      { name: 'RRB Official', url: 'https://rrb.indianrailways.gov.in', desc: 'Official notifications and previous papers' },
       { name: 'Testbook Railway', url: 'https://testbook.com', desc: 'Free mock tests for Railway exams' },
     ],
     generalTips: [
