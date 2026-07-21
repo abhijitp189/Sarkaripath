@@ -19,3 +19,17 @@ https://taiyarho.in/* https://www.taiyarho.in/:splat 301
 /exams/bihar-teacher/ /exams/ 301
 /blog/government-exam-preparation-beginners-2026 /guides/how-to-start-government-exam-preparation/ 301
 /blog/government-exam-preparation-beginners-2026/ /guides/how-to-start-government-exam-preparation/ 301
+
+# 3. Renamed / restructured pages found via Search Console 404 report (added 21 Jul 2026)
+/exams/ssc-gd /exams/ssc-gd-constable/ 301
+/exams/ssc-gd/ /exams/ssc-gd-constable/ 301
+/exams/nda /exams/upsc-nda/ 301
+/exams/nda/ /exams/upsc-nda/ 301
+/exams/ibps-rrb /exams/ibps-rrb-po/ 301
+/exams/ibps-rrb/ /exams/ibps-rrb-po/ 301
+/exams/delhi-police-si /exams/ssc-cpo/ 301
+/exams/delhi-police-si/ /exams/ssc-cpo/ 301
+/guides/how-to-fill-government-exam-form /guides/how-to-fill-government-job-application-form/ 301
+/guides/how-to-fill-government-exam-form/ /guides/how-to-fill-government-job-application-form/ 301
+/guides/age-relaxation-government-exams /guides/age-limit-relaxation-government-jobs/ 301
+/guides/age-relaxation-government-exams/ /guides/age-limit-relaxation-government-jobs/ 301
