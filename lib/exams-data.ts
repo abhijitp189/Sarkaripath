@@ -1291,11 +1291,11 @@ export const guides = [
   },
   {
     slug: 'how-to-fill-government-job-application-form',
-    updatedDate: '2026-07-20',
+    updatedDate: '2026-07-23',
     title: 'How to Fill Government Job Application Forms (Step by Step)',
-    description: 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo and signature upload specifications, fee payment, common mistakes to avoid, and correction window details.',
+    description: 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams in 2026. Covers the new live photo capture rules, UPSC\'s Universal Registration portal, SSC Aadhaar authentication, photo and signature specifications, application fees, correction windows and their charges, and the mistakes that cause silent rejection.',
     category: 'Application',
-    readTime: '15 min read',
+    readTime: '18 min read',
   },
   {
     slug: 'documents-needed-government-job',

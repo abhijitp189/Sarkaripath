@@ -22,7 +22,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   const seoDescriptions: Record<string, string> = {
     'how-to-start-government-exam-preparation': 'Complete beginner\'s roadmap to government exam preparation in 2026. Which exam to choose, 12-month study plan, free resources, daily timetables, and the mistakes that fail 90% of aspirants. From zero to selection.',
-    'how-to-fill-government-job-application-form': 'Complete step-by-step guide for filling online application forms for SSC, UPSC, IBPS, SBI, and Railway exams. Covers OTR registration, photo & signature upload specs, fee payment, common mistakes to avoid, and correction window details.',
+    'how-to-fill-government-job-application-form': 'Updated July 2026 step-by-step guide to filling online application forms for SSC, UPSC, IBPS, SBI and Railway exams. Covers the new live photo capture rule, UPSC\'s Universal Registration portal that replaced OTR, SSC Aadhaar authentication, exam-wise photo and signature specs, fees, correction windows and their charges, and the mistakes that cause silent rejection.',
     'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
     'age-limit-relaxation-government-jobs': 'Age relaxation meaning: extra years added to the upper age limit for reserved categories in govt exams. OBC gets +3 years, SC/ST +5, PwBD +10–15, Ex-Servicemen service+3. Exam-wise 2026 age limit table for UPSC, SSC CGL, IBPS, SBI PO & Railway, documents needed & common mistakes.',
     'study-plan-working-professionals': 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, 14-hour weekend strategy, best apps for micro-learning, and how to manage burnout as a working aspirant.',
@@ -32,7 +32,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   const seoKeywords: Record<string, string> = {
     'how-to-start-government-exam-preparation': 'government exam preparation for beginners 2026, how to start government exam preparation, sarkari exam ki taiyari kaise kare, government exam study plan, which government exam to choose, 12 month government exam roadmap',
-    'how-to-fill-government-job-application-form': 'how to fill government job application form, SSC CGL application form, UPSC application form, IBPS PO apply online, RRB NTPC application, government exam form filling, photo signature upload government exam, OTR registration, sarkari naukri form kaise bhare',
+    'how-to-fill-government-job-application-form': 'how to fill government job application form, SSC CGL application form 2026, UPSC application form, UPSC universal registration URN, IBPS PO apply online, RRB NTPC application, rrbapply.gov.in, government exam form filling, live photo capture SSC UPSC IBPS RRB, photo signature upload government exam, SSC Aadhaar authentication OTR, SSC correction window fee 200 500, IBPS edit window, UPSC correction window, application fee government exams, sarkari naukri form kaise bhare',
     'best-free-resources-government-exams': 'free resources government exam preparation 2026, free study material UPSC SSC Banking Railway, best free YouTube channels government exams, NCERT free textbooks, free mock tests government exams, DIKSHA app, SWAYAM, sarkari exam free resources, previous year papers download, muft study material sarkari naukri',
     'age-limit-relaxation-government-jobs': 'age limit government jobs India 2026, age relaxation OBC SC ST EWS PwBD ex-servicemen, sarkari naukri age limit, UPSC SSC CGL IBPS PO SBI PO RRB NTPC age limit, government exam age relaxation rules, umar mein choot sarkari naukri, age relaxation central government',
     'study-plan-working-professionals': 'government exam preparation while working full time, sarkari exam naukri ke saath taiyari, working professional study plan 2026, UPSC preparation job, SSC CGL banking exam while employed, time management government exam, study schedule working professional, sarkari naukri taiyari job ke saath',
@@ -246,6 +246,7 @@ export default function GuideDetailPage({ params }: { params: { slug: string } }
             ))}
           </div>
         </div>
+        <GuideDisclaimer />
       </article>
 
       {/* Schema.org structured data for SEO */}
@@ -762,9 +763,7 @@ function GovExamBeginnersGuide({ guide }: { guide: { slug: string; title: string
             </div>
           </div>
 
-          <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
-            This guide is for informational purposes only. Exam patterns, eligibility, and syllabi may change — always verify from official exam websites.
-          </p>
+          <GuideDisclaimer />
         </article>
 
         {/* SIDEBAR */}
@@ -1297,9 +1296,7 @@ function FreeResourcesGuide({ guide }: { guide: { slug: string; title: string; d
             </div>
           </div>
 
-          <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
-            All links verified as of April 2026. This guide is for informational purposes only. Websites, apps, and features may change — always verify from official sources. TaiyarHo is not affiliated with any platform mentioned above. Last updated: April 2026.
-          </p>
+          <GuideDisclaimer />
         </article>
 
         {/* SIDEBAR */}
@@ -1422,12 +1419,13 @@ function AppCard({ name, platform, desc, free }: { name: string; platform: strin
 // ─── HOW TO FILL GOVERNMENT JOB APPLICATION FORM — FULL RICH ARTICLE ─────────
 function FillFormGuide({ guide }: { guide: { slug: string; title: string; description: string; category: string; readTime: string } }) {
   const toc = [
+    { id: 'whatsnew', label: 'What Changed in 2026' },
     { id: 'docs', label: 'Documents to Keep Ready' },
     { id: 'otr', label: 'Step 1: OTR Registration' },
     { id: 'login', label: 'Step 2: Log In & Select Exam' },
     { id: 'personal', label: 'Step 3: Personal Details' },
     { id: 'education', label: 'Step 4: Educational Details' },
-    { id: 'upload', label: 'Step 5: Photo & Signature Upload' },
+    { id: 'upload', label: 'Step 5: Live Photo & Signature' },
     { id: 'centres', label: 'Step 6: Centre & Preferences' },
     { id: 'fee', label: 'Step 7: Pay Application Fee' },
     { id: 'preview', label: 'Step 8: Preview & Submit' },
@@ -1459,7 +1457,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="inline-flex items-center gap-1.5 bg-white/20 border border-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
                   <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
-                  Updated April 2026
+                  Updated July 2026
                 </span>
                 <span className="bg-white/10 text-white/70 text-xs px-2.5 py-1 rounded">Application</span>
                 <span className="bg-white/10 text-white/70 text-xs px-2.5 py-1 rounded">Step-by-Step</span>
@@ -1468,10 +1466,10 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 How to Fill Government Job <span className="text-yellow-200">Application Forms</span> (Step by Step)
               </h1>
               <p className="text-primary-100 text-base leading-relaxed mb-5 max-w-2xl">
-                Complete guide for SSC, UPSC, IBPS, SBI, and Railway exam forms — OTR registration, photo &amp; signature specs, fee payment, and how to avoid silent rejection.
+                Complete 2026 guide for SSC, UPSC, IBPS, SBI, and Railway exam forms — registration, the new <strong className="text-white">live photo capture</strong> rules, fee payment, correction windows, and how to avoid silent rejection.
               </p>
               <div className="flex flex-wrap gap-4 text-xs text-primary-200">
-                <span>📅 April 2026</span>
+                <span>📅 Updated 23 July 2026</span>
                 <span>⏱ {guide.readTime}</span>
                 <span>📋 9 Steps covered</span>
               </div>
@@ -1483,8 +1481,8 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
             {[
               { label: 'Exams Covered', value: '5+', sub: 'SSC, UPSC, IBPS, SBI, RRB' },
               { label: 'Steps in Process', value: '9', sub: 'Registration to confirmation' },
-              { label: 'Common Mistakes', value: '8', sub: 'That cause silent rejection' },
-              { label: 'Photo Specs Listed', value: '4', sub: 'Exam-wise requirements' },
+              { label: 'Common Mistakes', value: '9', sub: 'That cause silent rejection' },
+              { label: 'Live Photo Needed', value: 'All 4', sub: 'SSC, UPSC, IBPS, RRB' },
             ].map(f => (
               <div key={f.label} className="card p-4 text-center">
                 <div className="text-xs text-surface-400 uppercase tracking-wide font-semibold">{f.label}</div>
@@ -1508,6 +1506,63 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
             </ol>
           </div>
 
+          {/* WHAT CHANGED */}
+          <GSection id="whatsnew" title="What Changed in 2026 — Read This First">
+            <p className="text-surface-600 leading-relaxed mb-5">
+              If you last applied for a government exam a year or two ago, several things have changed. These are the updates that catch people out most often:
+            </p>
+            <div className="space-y-3 mb-5">
+              {[
+                {
+                  tag: 'Biggest change',
+                  title: 'Live photo capture has replaced the studio photo upload',
+                  detail: 'SSC, UPSC, IBPS/SBI and RRB now ask you to take a photo on the spot using your webcam or phone camera while filling the form. A pre-saved studio photo will not be accepted where live capture applies. No cap, mask or spectacles, plain background, good lighting, full front view of the face.',
+                },
+                {
+                  tag: 'UPSC',
+                  title: 'The old OTR module is gone',
+                  detail: 'UPSC replaced One-Time Registration with a new Online Application Portal on 28 May 2025. Even if you had an OTR profile, you must register again on the new portal. It has four parts — Account Creation, Universal Registration, Common Application Form (CAF) and Examinations — and gives you a Universal Registration Number (URN).',
+                },
+                {
+                  tag: 'UPSC',
+                  title: 'UPSC now offers a correction window',
+                  detail: 'For CSE and IFoS 2026, UPSC opened a three-day correction window after applications closed — announced as a one-time measure. Earlier NDA (II) 2025 and CDS (II) 2025 got the same facility. Do not count on it every cycle, but it is no longer true that UPSC never allows corrections.',
+                },
+                {
+                  tag: 'IBPS',
+                  title: 'IBPS introduced an Edit Window',
+                  detail: 'For CRP PO/MT-XVI (2026), IBPS added a two-day application correction facility after registration closes, with a ₹200 correction fee. Several core fields still cannot be edited.',
+                },
+                {
+                  tag: 'SSC',
+                  title: 'Aadhaar authentication is worth opting into',
+                  detail: 'SSC offers voluntary Aadhaar-based authentication during One-Time Registration. If you opt in, your application cannot be rejected on the grounds that the photograph or signature does not meet the prescribed standard — and you are exempt from carrying a physical photo ID to the exam centre.',
+                },
+                {
+                  tag: 'IBPS',
+                  title: 'DigiLocker is now built into the IBPS form',
+                  detail: 'The IBPS online application form is integrated with DigiLocker. You can voluntarily give the portal access to your issued documents — Aadhaar, educational certificates — and details like name, date of birth and gender, instead of typing them in. It is optional, but it removes a whole class of typing errors.',
+                },
+                {
+                  tag: 'Railway',
+                  title: 'One RRB website instead of 21',
+                  detail: 'All 21 regional RRB websites have been merged into a single portal at rrb.indianrailways.gov.in. The old regional sites stay live only until 31 July 2026 and are discontinued from 1 August 2026. Applications continue through rrbapply.gov.in.',
+                },
+              ].map(item => (
+                <div key={item.title} className="card p-4 border-l-4 border-accent-400">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <span className="text-xs font-heading font-semibold bg-accent-100 text-accent-700 px-2 py-0.5 rounded-full">{item.tag}</span>
+                    <div className="font-heading font-semibold text-surface-800 text-sm">{item.title}</div>
+                  </div>
+                  <div className="text-xs text-surface-500 leading-relaxed">{item.detail}</div>
+                </div>
+              ))}
+            </div>
+            <GCallout type="warning" title="⚠️ Specifications Change With Every Notification">
+              File sizes, pixel dimensions and fees are set afresh in each notification and can differ between two exams by the same body. Use the figures in this guide to prepare in advance — then open the actual notification PDF for your exam and confirm the numbers before you upload anything.
+            </GCallout>
+          </GSection>
+
           {/* DOCUMENTS */}
           <GSection id="docs" title="Documents and Information to Keep Ready">
             <p className="text-surface-600 leading-relaxed mb-5">
@@ -1520,7 +1575,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 { icon: '📋', title: '10th Marksheet', desc: 'Your name, date of birth, roll number, board name must match exactly. This is the base document for all govt exams.' },
                 { icon: '🎓', title: '12th & Graduation', desc: 'Percentage and passing year for both. If you have a CGPA, convert it to percentage first.' },
                 { icon: '🏷️', title: 'Category Certificate', desc: 'OBC Non-Creamy Layer, SC, ST, or EWS — must be in central government format from the competent authority.' },
-                { icon: '🖼️', title: 'Photo & Signature', desc: 'Recent passport-size JPG photo (plain white background) + signature in black ink. Specifications vary by exam — see Step 5.' },
+                { icon: '🖼️', title: 'Signature & Photo', desc: 'Scanned signature in black ink on white paper, in running hand. Most exams now capture your photo live through your webcam or phone, so keep a working camera and good light ready — see Step 5.' },
                 { icon: '👆', title: 'Thumb Impression', desc: 'Left-hand thumb impression scanned on white paper — required by IBPS and some banking exams.' },
                 { icon: '♿', title: 'PwBD Certificate', desc: '40%+ disability certified by a government medical board, if applicable.' },
               ].map(item => (
@@ -1539,16 +1594,16 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
           </GSection>
 
           {/* OTR */}
-          <GSection id="otr" title="Step 1: One-Time Registration (OTR) — Your Permanent Exam Profile">
-            <GCallout type="info" title="ℹ️ What Is OTR?">
-              Most major exam bodies now use a One-Time Registration system. You create your profile once and reuse it for all future exams by the same body. This saves time and prevents re-entering details for every notification.
+          <GSection id="otr" title="Step 1: Create Your Registration Profile — Done Once, Reused Forever">
+            <GCallout type="info" title="ℹ️ One Profile, Many Exams">
+              Every major exam body keeps a permanent candidate profile. You create it once and reuse it for all future exams by that body, so you are not re-entering your 10th marksheet details every time a notification drops. SSC calls it One-Time Registration (OTR). UPSC now calls it Universal Registration and issues you a Universal Registration Number (URN). Create yours <strong>before</strong> a notification is out — not on the last day.
             </GCallout>
             <div className="space-y-4 mt-5">
               {[
-                { exam: 'SSC (CGL, CHSL, MTS, GD, CPO)', url: 'ssc.gov.in', steps: 'Click "Register / Login" or use the MySSC app. Enter your name, DOB, father\'s name, mobile, email, and Aadhaar. You\'ll receive a Registration ID and password via SMS and email.' },
-                { exam: 'UPSC (CSE, NDA, CDS, CAPF)', url: 'upsconline.nic.in', steps: 'Click "New Registration" under the OTR section. Verify email and mobile via OTP, then create a password. UPSC\'s new portal (2025) saves personal details, documents, and a Common Application Form permanently.' },
-                { exam: 'IBPS (PO, Clerk, SO, RRB)', url: 'ibps.in', steps: 'Click the relevant exam notification link, then "New Registration". Enter your name, mobile, email, and security code. Login credentials arrive on your registered mobile and email.' },
-                { exam: 'RRB (NTPC, Group D, ALP)', url: 'rrb.indianrailways.gov.in', steps: 'Visit the unified RRB portal and register with basic details. Applications are filed through rrbapply.gov.in.' },
+                { exam: 'SSC (CGL, CHSL, MTS, GD, CPO)', url: 'ssc.gov.in', steps: 'Complete One-Time Registration on the SSC website, or do the whole thing on the mySSC mobile app — since June 2025 the app supports the full application process, not just photo upload. You get a Registration ID and password by SMS and email. Strongly consider opting for Aadhaar-based authentication (see the tip below).' },
+                { exam: 'UPSC (CSE, IFoS, NDA, CDS, CAPF)', url: 'upsconline.nic.in', steps: 'Register afresh on the new Online Application Portal — the old OTR module was retired on 28 May 2025 and old OTR profiles do not carry over. Complete Account Creation, then Universal Registration (you receive a URN), then the Common Application Form. UPSC advises using Aadhaar as your ID document for smoother verification.' },
+                { exam: 'IBPS (PO, Clerk, SO, RRB)', url: 'ibps.in', steps: 'Open the relevant exam notification link, then "New Registration". Enter your name, mobile, email and the security code. Login credentials arrive on your registered mobile and email. Keep your photo, signature, left thumb impression and handwritten declaration files ready before you start.' },
+                { exam: 'RRB (NTPC, Group D, ALP, Technician)', url: 'rrb.indianrailways.gov.in', steps: 'All notices now appear on the single unified RRB portal. Applications are filed at rrbapply.gov.in — if you created an account there for an earlier CEN, reuse the same login rather than making a second account.' },
               ].map((item, i) => (
                 <div key={item.exam} className="card p-5">
                   <div className="flex items-start gap-3">
@@ -1562,8 +1617,11 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 </div>
               ))}
             </div>
+            <GCallout type="tip" title="✅ SSC Candidates: Opt For Aadhaar Authentication">
+              SSC&apos;s Aadhaar-based authentication is voluntary, but it gives you two real protections. First, your application <strong>cannot be rejected</strong> on the grounds that your photograph or signature does not meet the prescribed standard. Second, you are exempt from carrying a physical photo ID to the exam centre. Given that photo and signature problems are the single biggest cause of silent rejection, this is worth a few extra minutes.
+            </GCallout>
             <GCallout type="warning" title="⚠️ Save Your Credentials Immediately">
-              Write down your Registration ID and password. Screenshot it. You will need these for admit cards, results, and all future exams. Losing credentials means contacting helplines — which takes days.
+              Write down your Registration ID / URN and password. Screenshot it. You will need these for admit cards, results, correction windows, and every future exam by the same body. Losing credentials means contacting helplines — which takes days.
             </GCallout>
           </GSection>
 
@@ -1582,10 +1640,11 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 </thead>
                 <tbody>
                   {[
-                    ['SSC', '"Apply" or "Latest Notifications" on ssc.gov.in'],
+                    ['SSC', '"Apply" or "Latest Notifications" on ssc.gov.in, or the mySSC app'],
                     ['IBPS', '"CRP PO/MT" or "CRP Clerk" link on ibps.in'],
-                    ['UPSC', '"Latest Notification" in your OTR dashboard'],
-                    ['RRB', 'Specific recruitment link on the regional RRB website'],
+                    ['UPSC', 'The "Examinations" card on upsconline.nic.in — the fourth module of the portal'],
+                    ['SBI', 'Careers → Current Openings on sbi.bank.in'],
+                    ['RRB', 'Notices on rrb.indianrailways.gov.in; apply at rrbapply.gov.in'],
                   ].map(([portal, where], i) => (
                     <tr key={portal} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
                       <td className="p-3 font-semibold text-primary-600">{portal}</td>
@@ -1620,8 +1679,8 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 </div>
               ))}
             </div>
-            <GCallout type="info" title="ℹ️ Correction Windows Are Limited">
-              Some portals (SSC, IBPS) offer a correction window — but it only covers specific fields like name and DOB. Category and address fields may not be editable. Get it right the first time.
+            <GCallout type="info" title="ℹ️ Correction Windows Exist — But They Cost Money And Have Limits">
+              SSC, IBPS and RRB all offer paid correction windows, and UPSC provided one for CSE/IFoS 2026. But each has fields that can never be edited, each charges a fee, and each closes within a few days. Treat the correction window as an emergency backup, not a plan. Details are in the correction section below.
             </GCallout>
           </GSection>
 
@@ -1652,26 +1711,45 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
           </GSection>
 
           {/* PHOTO & SIGNATURE */}
-          <GSection id="upload" title="Step 5: Upload Photograph and Signature">
+          <GSection id="upload" title="Step 5: Capture Your Live Photo and Upload Your Signature">
             <GCallout type="warning" title="⚠️ Most Common Reason for Silent Rejection">
-              Wrong photo/signature format, size, or dimensions is the most frequent cause of applications being silently rejected. Each exam body has specific requirements. Check the table below before uploading.
+              Wrong photo or signature format, size or dimensions remains the most frequent cause of applications being silently rejected. Read this section slowly — it is the part of the form where most eligible candidates lose their chance.
             </GCallout>
+            <GCallout type="info" title="ℹ️ The Big 2026 Change: Live Photo Capture">
+              SSC, UPSC, IBPS/SBI and RRB have all moved to <strong>live photo capture</strong>. Instead of uploading a studio photograph, you take the photo there and then through your webcam or phone camera while the form is open. Where live capture applies, a pre-saved or studio photo will not be accepted at all. Your signature is still a scanned file upload.
+            </GCallout>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-5">
+              {[
+                { icon: '💡', title: 'Good lighting, plain background', desc: 'Face a window or a lamp. Stand against a plain light-coloured wall. Shadows behind you cause rejection.' },
+                { icon: '🚫', title: 'No cap, mask or spectacles', desc: 'All four bodies say the same thing. Religious headgear is allowed provided it does not cover the face.' },
+                { icon: '👤', title: 'Full front view, camera at eye level', desc: 'Whole face inside the frame, not too close, not too far. Look straight into the lens.' },
+                { icon: '📱', title: 'Phone camera works', desc: 'If your laptop webcam is poor, most portals show a QR code — scan it and capture using your phone instead.' },
+              ].map(item => (
+                <div key={item.title} className="card p-4 flex gap-3">
+                  <span className="text-xl flex-shrink-0" aria-hidden="true">{item.icon}</span>
+                  <div>
+                    <div className="font-heading font-semibold text-surface-800 text-sm mb-1">{item.title}</div>
+                    <div className="text-xs text-surface-500 leading-relaxed">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
             <div className="overflow-x-auto rounded-xl border border-surface-200 my-5">
               <table className="w-full text-sm">
                 <thead className="bg-surface-800 text-white">
                   <tr>
                     <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Exam</th>
-                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Photo (JPG)</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Photograph</th>
                     <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Signature (JPG)</th>
-                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Extra Requirement</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Also Required</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ['SSC (CGL, CHSL, MTS, GD)', '100×120 px, 4–12 KB, white/light bg', '1–12 KB, black/blue ink on white', '—'],
-                    ['UPSC (CSE, NDA, CDS)', '200×230 px, 20–300 KB, plain white bg + name & date printed at bottom', 'Triple signature (3 signatures on one sheet)', 'Live photo capture during form submission (new portal)'],
-                    ['IBPS & SBI (PO, Clerk, SO)', '200×230 px, 20–50 KB, white bg', '140×60 px, 10–20 KB, black ink on white', 'Left-hand thumb impression (10–20 KB, JPG) + handwritten declaration'],
-                    ['RRB (NTPC, Group D, ALP)', '3.5×4.5 cm passport size, 20–50 KB, white bg — photo taken after notification date', '10–20 KB, black ink on white', '—'],
+                    ['SSC (CGL, CHSL, MTS, GD, CPO)', 'Live capture via webcam / mobile during the form. Pre-saved photos not accepted.', 'JPG/JPEG, 10–20 KB, about 4.0 × 2.0 cm, black ink on white', 'Optional Aadhaar authentication — protects you from photo/signature rejection'],
+                    ['UPSC (CSE, IFoS, NDA, CDS)', 'Live capture in the Common Application Form is mandatory, plus a photograph with your name and the date printed at the bottom.', 'Triple signature — sign three times on one white sheet in black ink, scan as a single image (about 20–100 KB)', 'Scanned photo ID proof (Aadhaar / passport / voter ID / driving licence)'],
+                    ['IBPS & SBI (PO, Clerk, SO)', 'Upload 200×230 px, 20–50 KB, light background — plus a live photo capture through webcam or mobile', 'JPG/JPEG, 140×60 px, 10–20 KB, black ink on white, running hand (never capitals)', 'Left thumb impression (240×240 px, 20–50 KB) + handwritten declaration (800×400 px, 50–100 KB, English only)'],
+                    ['RRB (NTPC, Group D, ALP, Technician)', 'Live capture on rrbapply.gov.in. Recent notifications no longer take a pre-existing photograph.', 'JPG/JPEG, 30–49 KB, minimum 140×60 px at 100 DPI, black ink, running hand', 'Certificates as PDF where required (e.g. SC/ST certificate for free travel pass)'],
                   ].map(([exam, photo, sign, extra], i) => (
                     <tr key={exam} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
                       <td className="p-3 font-semibold text-surface-800 text-xs">{exam}</td>
@@ -1683,8 +1761,11 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 </tbody>
               </table>
             </div>
-            <GCallout type="tip" title="✅ Use a Free Online Photo Resizer">
-              Several free tools let you select your specific exam and automatically resize photo and signature to the correct specifications. Search &quot;photo resizer for SSC / UPSC / IBPS&quot; — saves time and prevents size errors.
+            <GCallout type="warning" title="⚠️ Signature Rules That Quietly Fail People">
+              Sign in your normal <strong>running hand</strong> — joined, flowing letters. Signatures in BLOCK or CAPITAL letters are rejected by IBPS, SBI and RRB at scrutiny. Use black ink on plain white paper, crop tightly so there is not a large blank margin, and use the same signature at every later stage: attendance sheet, answer booklet, document verification and joining. A mismatch later is treated seriously.
+            </GCallout>
+            <GCallout type="tip" title="✅ Resizing Your Signature">
+              Free online resizers let you pick your exam and compress the signature to the exact pixel and KB range. Search for a &quot;signature resizer&quot; for your specific exam. Prefer tools that process the image in your browser rather than uploading it to a server, and always preview the result on the portal before final submission.
             </GCallout>
           </GSection>
 
@@ -1697,7 +1778,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
               {[
                 { exam: 'IBPS PO / SBI PO', detail: 'Select preferred banks in order of priority. Your posting after final selection depends on this — think carefully about where you\'re willing to work. IBPS has 11 participating public sector banks.' },
                 { exam: 'SSC CGL', detail: 'You may indicate post preferences (Inspector of Income Tax, Sub-Inspector in CBI, AAO, etc.) during the application or in a separate post-preference form after the exam.' },
-                { exam: 'UPSC CSE', detail: 'Rank your preferred services (IAS, IPS, IFS, IRS, etc.) and select your optional subject and examination language.' },
+                { exam: 'UPSC CSE', detail: 'Rank your preferred services (IAS, IPS, IFS, IRS, etc.) and select your optional subject and examination language. Preferences recorded now are not final — UPSC opens a service preference updation window after the Civil Services (Main) result, so you can revise the order before the Personality Test.' },
                 { exam: 'Pre-Examination Training', detail: 'Some banking and central government exams offer PET for SC/ST/OBC/EWS candidates. Opt in if eligible — it\'s free coaching and helps you prepare.' },
               ].map(item => (
                 <div key={item.exam} className="card p-4 border-t-4 border-primary-300">
@@ -1711,24 +1792,24 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
           {/* FEE */}
           <GSection id="fee" title="Step 7: Pay the Application Fee">
             <p className="text-surface-600 leading-relaxed mb-4">
-              Fees can be paid via net banking, debit/credit card, or UPI. SSC also accepts SBI challan (offline). Exempted categories vary by exam — check the notification carefully.
+              Fees are paid online — BHIM UPI, net banking, or debit/credit card. Exempted categories differ by exam, so check your notification rather than assuming. The figures below are from the most recent 2026 notifications for each exam.
             </p>
             <div className="overflow-x-auto rounded-xl border border-surface-200 mb-5">
               <table className="w-full text-sm">
                 <thead className="bg-surface-800 text-white">
                   <tr>
                     <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Exam</th>
-                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">General / OBC</th>
-                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">SC / ST / PwBD / Female</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">General / OBC / EWS</th>
+                    <th className="text-left p-3 font-semibold text-xs uppercase tracking-wide">Concession / Exemption</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ['SSC (CGL, CHSL, MTS)', '₹100', 'Exempt (₹0)'],
-                    ['UPSC CSE', '₹100', 'Exempt (₹0) for Female/SC/ST/PwBD'],
-                    ['IBPS PO', '₹850', '₹175'],
-                    ['SBI PO', '₹750 (+ GST)', '₹125 (+ GST)'],
-                    ['RRB NTPC', '₹500', '₹250 (partial refund on appearing)'],
+                    ['SSC (CGL, CHSL, MTS, GD)', '₹100', 'Exempt (₹0) — all women, SC, ST, PwBD, Ex-Servicemen'],
+                    ['UPSC CSE / IFoS', '₹100', 'Exempt (₹0) — all women, SC, ST, PwBD'],
+                    ['IBPS PO (CRP PO/MT-XVI)', '₹850', '₹175 — SC, ST, PwBD'],
+                    ['SBI PO', '₹750', 'Exempt (₹0) — SC, ST, PwBD'],
+                    ['RRB (NTPC, Group D, ALP)', '₹500 — ₹400 refunded once you sit CBT-1', '₹250 — fully refunded once you sit CBT-1'],
                   ].map(([exam, gen, sc], i) => (
                     <tr key={exam} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
                       <td className="p-3 font-semibold text-surface-800">{exam}</td>
@@ -1739,6 +1820,9 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 </tbody>
               </table>
             </div>
+            <GCallout type="info" title="ℹ️ Railway Candidates: The Refund Needs An Aadhaar-Linked Account">
+              RRB refunds the examination fee to candidates who actually appear for the first stage CBT — ₹400 back for General/OBC/EWS and the full ₹250 for SC, ST, PwBD, women, transgender, Ex-Servicemen, minority and EBC candidates. The refund is credited only to a bank account that is seeded with your Aadhaar, and RRB gives a deadline to add or fix those bank details. Enter the account number and IFSC carefully at application time — a wrong IFSC is the usual reason a refund fails.
+            </GCallout>
             <GCallout type="warning" title="⚠️ Payment Failure? Do Not Submit Again">
               Your application is NOT submitted until the fee is paid. If payment fails, log back in and retry. If the amount was debited but the portal shows failure, wait 48–72 hours — it usually auto-reconciles. If not, contact the helpline with your transaction reference number. Do not submit a second application.
             </GCallout>
@@ -1774,10 +1858,11 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 </thead>
                 <tbody>
                   {[
-                    ['SSC', '2–3 days after application closes', 'Name, father\'s/mother\'s name, DOB, gender, 10th roll number (up to 2 edits)'],
-                    ['IBPS', '2 days (₹200 fee)', 'Most fields except name, email ID, and mobile number'],
-                    ['UPSC', 'None', 'No corrections allowed after final submission'],
-                    ['RRB', 'Limited — check notification', 'Specific to each notification'],
+                    ['SSC', '2–3 days after applications close', '₹200 for the first correction, ₹500 for the second — same for every category. Maximum 2 corrections; the last submitted form is final.'],
+                    ['IBPS', '2-day Edit Window after registration closes', '₹200 correction fee, one correction only. Cannot be changed: name, email ID, mobile number, state/UT, permanent address, post, nationality.'],
+                    ['UPSC', '3 days — given for CSE & IFoS 2026 as a one-time measure', 'Edits to the Common Application Form and the Examination Application Form. Not promised for every cycle. Applications cannot be withdrawn.'],
+                    ['SBI', 'Usually none', 'Edit before final submission only. SBI PO 2026 offered no correction window after the deadline.'],
+                    ['RRB', 'Modification window announced per CEN', '₹250 modification fee, non-refundable. Changing category to a less-concessional one costs an extra ₹250.'],
                   ].map(([exam, window, what], i) => (
                     <tr key={exam} className={`border-t border-surface-100 ${i % 2 === 1 ? 'bg-surface-50' : ''}`}>
                       <td className="p-3 font-semibold text-surface-800">{exam}</td>
@@ -1826,7 +1911,8 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                 { mistake: 'Name Mismatch', detail: 'Your application name must match your 10th marksheet letter-for-letter. Even small differences like "Mohammad" vs "Mohammed" or "Subramaniam" vs "Subramanian" cause problems in DV.' },
                 { mistake: 'Wrong Date of Birth', detail: 'Must match your 10th certificate exactly. No exceptions, no alternative documents accepted.' },
                 { mistake: 'Wrong Category Selection', detail: 'Choosing General when you\'re OBC, or selecting OBC without a valid Non-Creamy Layer certificate. If your OBC NCL certificate has expired, you lose the reservation benefit.' },
-                { mistake: 'Wrong Photo/Signature Format', detail: 'Using PNG instead of JPG, exceeding the file size limit, uploading a blurry photo, or for IBPS — signing in capital letters instead of a running-hand signature.' },
+                { mistake: 'Wrong Photo/Signature Format', detail: 'Using PNG instead of JPG, exceeding the file size limit, uploading a blurry scan, or signing in capital letters instead of a running-hand signature. Renaming a PNG to .jpg does not work — the portal reads the file header, not the name.' },
+                { mistake: 'Treating the Live Photo Casually', detail: 'The live photo is now the photo of record for the whole recruitment. Taking it in a dark room, wearing spectacles or a cap, or sitting too far from the camera causes rejection — and your appearance at the exam centre has to match it.' },
                 { mistake: 'Fee Not Paid', detail: 'Many candidates fill the entire form but forget to complete payment. The application remains incomplete and invalid.' },
                 { mistake: 'Multiple Applications', detail: 'SSC explicitly states that if duplicate applications are found, all of them may be cancelled. Apply only once per exam.' },
                 { mistake: 'Incorrect Educational Details', detail: 'Wrong passing year, wrong percentage, or wrong university name leads to cancellation during DV — even after clearing the written exam.' },
@@ -1846,14 +1932,14 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
           {/* CORRECTION WINDOW */}
           <GSection id="correction" title="Using the Correction Window Effectively">
             <p className="text-surface-600 leading-relaxed mb-5">
-              If you spot an error after submission, check whether the exam body offers a correction window — and act fast. The window typically opens within 1–3 days of the application period closing.
+              If you spot an error after submission, check whether the exam body offers a correction window — and act fast. The window usually opens within 1–3 days of the application period closing and stays open only two or three days. Almost all of them now charge a fee, and every one of them has fields that can never be edited.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
               {[
-                { exam: 'SSC', when: '2–3 days after application deadline', how: 'Log in with Registration ID and password. You can make up to 2 corrections to: name, father\'s/mother\'s name, DOB, gender, 10th roll number.' },
-                { exam: 'IBPS', when: 'Usually 2 days, ₹200 fee', how: 'Most details editable except name, email ID, and mobile number.' },
-                { exam: 'UPSC', when: 'No correction window', how: 'Verify everything before submission. No changes allowed after final submit.' },
-                { exam: 'RRB', when: 'Limited — check notification', how: 'Look for specific correction details in the official notification for each recruitment.' },
+                { exam: 'SSC', when: '2–3 days after the deadline — ₹200 / ₹500', how: 'Log in, click the re-apply or edit option, make your changes, then pay the correction charge online. The first correction costs ₹200 and the second ₹500, the same for every category and gender, and the fee is non-refundable. You get a maximum of two corrections and only the last paid submission counts. Name, parents\' names, date of birth, category, exam city preference, and the photograph and signature can generally be resubmitted. Only candidates who completed the original fee payment can use the window.' },
+                { exam: 'IBPS', when: '2-day Edit Window after registration closes — ₹200', how: 'You may correct and re-submit the form only ONCE, so get it right in that single attempt. The ₹200 fee is inclusive of GST, uniform across categories and non-refundable. Locked fields: name, email ID, mobile number, state/UT, permanent address, post and nationality. Category can be changed from General/EWS/OBC to SC/ST/PwBD but not the reverse, and no fee difference is refunded. Bank preferences are locked permanently once this window closes.' },
+                { exam: 'UPSC', when: '3 days — provided as a one-time measure for CSE & IFoS 2026', how: 'UPSC opened a three-day correction window after applications closed for CSE and IFoS 2026, and had done the same for NDA (II) 2025 and CDS (II) 2025. It lets you edit the Common Application Form and the Examination Application Form. Treat it as a bonus rather than a guarantee — UPSC describes it as a one-time measure, and applications still cannot be withdrawn once submitted.' },
+                { exam: 'RRB', when: 'Modification window announced with each CEN — ₹250', how: 'Each Centralised Employment Notice announces its own modification dates. The fee is ₹250 and is not refunded. If you change your category from a concessional one to General or OBC, you pay an additional ₹250 on top of the modification fee.' },
               ].map(item => (
                 <div key={item.exam} className="card p-5">
                   <div className="font-heading font-bold text-primary-600 mb-1">{item.exam}</div>
@@ -1874,11 +1960,11 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
             </GCallout>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
               {[
-                { body: 'SSC', exams: 'CGL, CHSL, MTS, GD, CPO, Stenographer', url: 'ssc.gov.in', extra: 'Also available on the MySSC mobile app (Google Play).' },
-                { body: 'UPSC', exams: 'CSE, NDA, CDS, CAPF, ESE, CMS', url: 'upsconline.nic.in (applications) + upsc.gov.in (notifications)', extra: '' },
+                { body: 'SSC', exams: 'CGL, CHSL, MTS, GD, CPO, Stenographer', url: 'ssc.gov.in', extra: 'The mySSC Android app now supports the full application process, not just photo upload.' },
+                { body: 'UPSC', exams: 'CSE, IFoS, NDA, CDS, CAPF, ESE, CMS', url: 'upsconline.nic.in (applications) + upsc.gov.in (notifications)', extra: 'upsconline.nic.in is the current portal. The older upsconline.gov.in address now only lets you preview forms submitted on or before 25 March 2025.' },
                 { body: 'IBPS', exams: 'PO, Clerk, SO, RRB Officer', url: 'ibps.in', extra: 'Only one official IBPS portal.' },
-                { body: 'SBI', exams: 'PO, Clerk, SO', url: 'sbi.bank.in/careers', extra: 'Navigate to the Recruitment section.' },
-                { body: 'RRB (Railway)', exams: 'NTPC, Group D, ALP, JE', url: 'rrb.indianrailways.gov.in (unified portal)', extra: 'All 21 old regional RRB sites are discontinued after 31 July 2026 — apply through rrbapply.gov.in.' },
+                { body: 'SBI', exams: 'PO, Clerk, SO', url: 'sbi.bank.in → Careers → Current Openings', extra: 'SBI now uses the .bank.in domain. Application links are hosted on ibpsreg.ibps.in, which is normal for SBI recruitments.' },
+                { body: 'RRB (Railway)', exams: 'NTPC, Group D, ALP, JE, Technician', url: 'rrb.indianrailways.gov.in (unified portal)', extra: 'All 21 regional RRB sites run only until 31 July 2026 and are discontinued from 1 August 2026. Applications are filed at rrbapply.gov.in.' },
               ].map(item => (
                 <div key={item.body} className="card p-4 group">
                   <div className="flex items-center justify-between mb-2">
@@ -1904,8 +1990,8 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
                   'Name, father\'s and mother\'s name match your 10th marksheet exactly',
                   'Date of birth is correct and matches your 10th certificate',
                   'Category (General/OBC/SC/ST/EWS/PwBD) is selected correctly with a valid certificate',
-                  'Photo is recent (within last 3 months), JPG format, within specified file size, white background',
-                  'Signature is black ink on white paper, JPG, within specified file size',
+                  'Live photo captured properly — good light, plain background, no cap, mask or spectacles, full face visible',
+                  'Signature is black ink on white paper, in running hand (not capitals), JPG, within the specified file size',
                   'Educational details (board, percentage, passing year) are accurate',
                   'Exam centre preferences are filled in',
                   'Application fee is paid and confirmed',
@@ -1940,6 +2026,7 @@ function FillFormGuide({ guide }: { guide: { slug: string; title: string; descri
               ))}
             </div>
           </div>
+          <GuideDisclaimer />
         </article>
 
         {/* Sticky Sidebar */}
@@ -2568,6 +2655,7 @@ function AgeRelaxationGuide({ guide }: { guide: { slug: string; title: string; d
               ))}
             </div>
           </div>
+          <GuideDisclaimer />
         </article>
 
         {/* Sidebar */}
@@ -2642,6 +2730,31 @@ function GCallout({ type, title, children }: { type: 'info' | 'tip' | 'warning';
     <div className={`p-4 rounded-r-xl border-l-4 my-5 text-sm leading-relaxed ${styles[type]}`}>
       <div className="font-semibold text-xs uppercase tracking-wide mb-1">{title}</div>
       <div>{children}</div>
+    </div>
+  );
+}
+
+function GuideDisclaimer() {
+  return (
+    <div className="mt-12 pt-6 border-t border-surface-200">
+      <div className="card p-5 bg-surface-50">
+        <div className="flex items-start gap-3">
+          <span className="text-lg flex-shrink-0" aria-hidden="true">ℹ️</span>
+          <div>
+            <div className="font-heading font-semibold text-surface-800 text-sm mb-2">Disclaimer</div>
+            <p className="text-xs text-surface-500 leading-relaxed">
+              TaiyarHo.in is an independent, free educational website. We are <strong>not affiliated with, endorsed by, or connected to</strong> UPSC, SSC, IBPS, SBI, the Railway Recruitment Boards, or any other government body, department, or recruitment agency. This guide is published for general information and preparation guidance only.
+            </p>
+            <p className="text-xs text-surface-500 leading-relaxed mt-2">
+              Exam dates, vacancies, eligibility rules, fees, application procedures, photo and signature specifications, and selection patterns are decided by the conducting body and can change at any time — often without prior notice. The details on this page reflect the most recent official notifications available to us at the time of writing. <strong>The official notification is always the final authority.</strong> Please verify every detail on the conducting body&apos;s own website before you apply, pay a fee, or make any decision based on this page.
+            </p>
+            <p className="text-xs text-surface-500 leading-relaxed mt-2">
+              We work hard to keep this information accurate, but we cannot accept responsibility for any loss arising from errors, omissions, or later changes. Spotted something out of date?{' '}
+              <Link href="/contact/" className="text-primary-500 hover:underline font-medium">Tell us</Link> and we will correct it.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -3051,9 +3164,7 @@ function WorkingProfessionalsGuide({ guide }: { guide: { slug: string; title: st
             </div>
           </div>
 
-          <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
-            This guide is for informational purposes only. Exam patterns, eligibility, and syllabi may change — always verify from official exam websites. Last updated: April 2026.
-          </p>
+          <GuideDisclaimer />
         </article>
 
         {/* Desktop Sidebar */}
@@ -3639,7 +3750,7 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
               <Link href="/exams" className="border border-white/40 text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-white/10 transition-colors">Browse All Exams</Link>
             </div>
           </div>
-
+          <GuideDisclaimer />
         </article>
 
         {/* Sidebar */}
@@ -4006,9 +4117,7 @@ function NewspaperReadingGuide({ guide }: { guide: { slug: string; title: string
             </div>
           </div>
 
-          <p className="text-xs text-surface-400 bg-surface-50 rounded-lg p-4">
-            This guide is for informational purposes only. Newspaper choices and exam patterns can change — always verify the latest from official exam websites. Last updated: June 2026.
-          </p>
+          <GuideDisclaimer />
         </article>
 
         {/* Desktop Sidebar */}
