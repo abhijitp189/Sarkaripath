@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { guides } from '@/lib/exams-data';
+import { guides, allExams } from '@/lib/exams-data';
 
 export function generateStaticParams() {
   return guides.map((guide) => ({ slug: guide.slug }));
@@ -26,7 +26,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'best-free-resources-government-exams': 'Comprehensive 2026 guide to 50+ free resources for Indian government exam preparation. Official government platforms (NCERT, DIKSHA, SWAYAM), YouTube channels, mock test sites, apps, previous year papers, and current affairs sources — all verified and free.',
     'age-limit-relaxation-government-jobs': 'Age relaxation meaning: extra years added to the upper age limit for reserved categories in govt exams. OBC gets +3 years, SC/ST +5, PwBD +10–15, Ex-Servicemen service+3. Exam-wise 2026 age limit table for UPSC, SSC CGL, IBPS, SBI PO & Railway, documents needed & common mistakes.',
     'study-plan-working-professionals': 'How to crack government exams while working full-time in 2026. Covers the 3-phase 12-month blueprint, real daily schedules, 14-hour weekend strategy, best apps for micro-learning, and how to manage burnout as a working aspirant.',
-    'documents-needed-government-job': 'Complete 2026 checklist of documents needed for government job applications and document verification. Covers ID proof, educational certificates, OBC/SC/ST/EWS reservation documents, NOC, and pro tips to avoid rejection in SSC, IBPS, UPSC, SBI, and Railway exams.',
+    'documents-needed-government-job': 'Updated July 2026 checklist of documents needed for government job applications and Document Verification. Covers the new SSC live-photo and Aadhaar rules, OBC-NCL after the March 2026 Supreme Court ruling, EWS and SC/ST certificates, UDID for PwBD, DigiLocker, NOC, and the mistakes that get candidates rejected at DV in SSC, IBPS, UPSC, SBI and Railway exams.',
     'how-to-read-newspaper-government-exams': 'Learn how to read the newspaper for government exams like UPSC, SSC and Banking in just 30 minutes a day. A simple 2026 strategy with the best newspaper picks, a minute-by-minute method, syllabus mapping for all 8 exam categories, and what to skip.',
   };
 
@@ -36,7 +36,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     'best-free-resources-government-exams': 'free resources government exam preparation 2026, free study material UPSC SSC Banking Railway, best free YouTube channels government exams, NCERT free textbooks, free mock tests government exams, DIKSHA app, SWAYAM, sarkari exam free resources, previous year papers download, muft study material sarkari naukri',
     'age-limit-relaxation-government-jobs': 'age limit government jobs India 2026, age relaxation OBC SC ST EWS PwBD ex-servicemen, sarkari naukri age limit, UPSC SSC CGL IBPS PO SBI PO RRB NTPC age limit, government exam age relaxation rules, umar mein choot sarkari naukri, age relaxation central government',
     'study-plan-working-professionals': 'government exam preparation while working full time, sarkari exam naukri ke saath taiyari, working professional study plan 2026, UPSC preparation job, SSC CGL banking exam while employed, time management government exam, study schedule working professional, sarkari naukri taiyari job ke saath',
-    'documents-needed-government-job': 'documents for government job India 2026, document verification DV government exam, OBC NCL certificate validity, documents needed SSC CGL IBPS PO UPSC, government job document checklist, sarkari naukri ke liye documents, name mismatch affidavit, EWS certificate format, government job rejection reasons',
+    'documents-needed-government-job': 'documents for government job India 2026, document verification DV government exam, OBC NCL certificate validity 2026, creamy layer Supreme Court judgment 2026, SSC live photograph upload rule, SSC Aadhaar authentication OTR, UDID certificate PwBD recruitment, DigiLocker document verification, documents needed SSC CGL IBPS PO UPSC, government job document checklist, sarkari naukri ke liye documents, name mismatch affidavit, EWS certificate format, government job rejection reasons',
     'how-to-read-newspaper-government-exams': 'how to read newspaper for government exams, newspaper reading strategy UPSC SSC banking, best newspaper for competitive exams 2026, the hindu vs indian express for exams, daily newspaper reading method, current affairs newspaper reading, newspaper notes for government exams, regional language newspaper state psc, current affairs kaise padhe',
   };
 
@@ -3136,9 +3136,9 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
           <div className="bg-gradient-to-br from-primary-500 to-primary-800 rounded-2xl p-8 mb-10 text-white">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="bg-white/20 text-white text-xs font-heading font-semibold px-3 py-1 rounded-full">{guide.category}</span>
-              <span className="text-white/70 text-xs">Updated May 2026</span>
+              <span className="text-white/70 text-xs">Updated 23 July 2026</span>
               <span className="text-white/50 text-xs">•</span>
-              <span className="text-white/70 text-xs">15 min read</span>
+              <span className="text-white/70 text-xs">18 min read</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4 leading-tight">
               Documents Required for Government Job (2026) – Complete Checklist
@@ -3152,11 +3152,13 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
           <div id="summary" className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-10">
             <h2 className="text-lg font-heading font-bold text-amber-800 mb-3">⚡ Quick Summary — What You Need to Know</h2>
             <ul className="space-y-2 text-sm text-amber-900">
-              <li>✅ <strong>Stage 1 (Online Application):</strong> Scanned copies of photo, signature, and basic ID — kept under specific file size limits.</li>
-              <li>✅ <strong>Stage 2 (Document Verification / DV):</strong> Originals + 2 self-attested photocopies of every document listed in the appointment letter.</li>
-              <li>✅ <strong>OBC-NCL certificates</strong> must be issued within the current or immediately previous financial year — this is the #1 reason for DV rejection.</li>
-              <li>✅ <strong>Name mismatches</strong> are fixable with an affidavit + gazette notification — but you need to arrange this before DV day.</li>
-              <li>✅ <strong>If you are a serving government employee,</strong> you will need an NOC from your current employer — don't forget it.</li>
+              <li>✅ <strong>Stage 1 (Online Application):</strong> Almost entirely digital — but SSC and IBPS now capture a <strong>live photograph</strong> inside the portal, so an old gallery photo gets your form rejected.</li>
+              <li>✅ <strong>Stage 2 (Document Verification / DV):</strong> Originals + 2 self-attested photocopies of every document listed in the call letter.</li>
+              <li>✅ <strong>OBC-NCL certificates</strong> must belong to the financial year your notification asks for — still the single biggest cause of DV rejection.</li>
+              <li>✅ <strong>A March 2026 Supreme Court ruling</strong> changed how creamy layer is judged for children of PSU, bank and private-sector employees. See the OBC section below.</li>
+              <li>✅ <strong>PwBD candidates:</strong> get your disability certificate onto the UDID portal — recruiters now verify it there directly.</li>
+              <li>✅ <strong>Name mismatches</strong> are fixable with an affidavit — but arrange it well before DV day.</li>
+              <li>✅ <strong>Serving government employees</strong> need an NOC from their current employer. Start early; it can take weeks.</li>
             </ul>
           </div>
 
@@ -3179,12 +3181,13 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                     { cat: 'Identity & Age', docs: 'Aadhaar, PAN, Voter ID, Passport, 10th Marksheet', who: 'All candidates' },
                     { cat: 'Education', docs: '10th, 12th, Graduation (all semester marksheets + degree/provisional)', who: 'All candidates' },
                     { cat: 'Reservation', docs: 'OBC-NCL / SC / ST / EWS certificate (Central Govt format)', who: 'Reserved category candidates' },
-                    { cat: 'Disability', docs: 'PwBD certificate from CMO/Government hospital board', who: 'PwBD candidates' },
+                    { cat: 'Disability', docs: 'Certificate of Disability (SSC Form V / Form VI) + UDID card or UDID enrolment number', who: 'PwBD candidates' },
                     { cat: 'Ex-Servicemen', docs: 'Discharge certificate, service certificate, pension payment order', who: 'Ex-servicemen' },
                     { cat: 'Employment', docs: 'NOC from current employer, service certificate', who: 'Serving Govt employees' },
                     { cat: 'Domicile', docs: 'State domicile certificate (for State-specific posts)', who: 'Candidates applying for State quota posts' },
                     { cat: 'Experience', docs: 'Experience letters on letterhead, appointment order', who: 'Posts requiring work experience' },
                     { cat: 'Photo', docs: 'Passport-size photographs (6–10 copies, recent)', who: 'All candidates' },
+                    { cat: 'Application uploads', docs: 'Live photograph captured in the portal, scanned signature, plus thumb impression and handwritten declaration for IBPS/SBI', who: 'All candidates (online stage)' },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
                       <td className="px-4 py-3 font-semibold text-surface-700 whitespace-nowrap">{row.cat}</td>
@@ -3214,7 +3217,7 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                   name: 'Aadhaar Card',
                   badge: 'Must-Have',
                   badgeColor: 'bg-red-100 text-red-700',
-                  detail: 'Mandatory for most central exams (SSC, IBPS, RRB). Carry both the physical card and download an e-Aadhaar from the UIDAI website as a backup. Your Aadhaar name and DOB should ideally match your 10th marksheet.',
+                  detail: 'Used across the SSC, IBPS and RRB portals. SSC offers Aadhaar-based authentication at One Time Registration. It is voluntary, but worth taking: applications of candidates who opt in are not rejected on the ground that the uploaded photograph or signature fails the prescribed standards, and those candidates are not required to produce a physical photo ID at the computer-based exam. Carry the physical card and keep an e-Aadhaar from the UIDAI website as backup. Your Aadhaar name and date of birth should match your Class 10 marksheet.',
                 },
                 {
                   name: 'PAN Card',
@@ -3233,6 +3236,12 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                   badge: 'Optional',
                   badgeColor: 'bg-green-100 text-green-700',
                   detail: 'Useful as an additional strong ID document. For posts involving international travel or security clearance (like IFS, foreign services), having a passport is an advantage during verification.',
+                },
+                {
+                  name: 'DigiLocker Copies',
+                  badge: 'Strongly Recommended',
+                  badgeColor: 'bg-purple-100 text-purple-700',
+                  detail: 'Documents pulled into DigiLocker directly from the issuing authority are legally equivalent to physical originals under Rule 9A of the Information Technology Rules, 2016. Fetch your Class 10 and 12 marksheets, degree, Aadhaar and PAN into DigiLocker now — it is the fastest insurance against a lost certificate. Two catches: only issuer-fetched documents carry the verified tag (files you upload yourself do not), and acceptance at a DV table still varies from panel to panel. Treat it as a backup, not a replacement for originals.',
                 },
               ].map((doc, i) => (
                 <div key={i} className="card p-4 flex gap-3">
@@ -3307,10 +3316,11 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
               </div>
               <div className="space-y-3">
                 {[
-                  { label: 'Validity Period', content: 'OBC-NCL certificates are valid only for the financial year in which they are issued (April to March). If your certificate was issued in FY 2024–25 and your DV is in May 2025, it is already expired. Most recruiting bodies ask for a certificate issued in the current financial year OR the immediately preceding financial year, depending on their notification.' },
+                  { label: 'Validity Period', content: 'OBC-NCL certificates are tied to a financial year (April to March). A certificate issued for FY 2025–26 will usually not carry you through a DV held in FY 2026–27. What actually decides it is your notification: some recruiting bodies accept only the current financial year, others accept the immediately preceding year as well. Read that clause before you book your appointment at the Tehsildar office.' },
                   { label: 'Central vs. State Format', content: 'This is the most common format-related error. For Central Government exams (SSC, IBPS, UPSC, Railways), your OBC certificate must be in the Central Government format — it must state that you belong to OBC as per the Central List and are not in the Creamy Layer. A State Government format OBC certificate — which most State Governments issue by default — is NOT accepted for Central Government posts. Ask your Tehsildar or SDM office for a certificate "in the prescribed format for Central Government services."' },
                   { label: 'Who Issues It', content: 'The certificate must be issued by a competent authority — usually the Sub-Divisional Magistrate (SDM), District Magistrate (DM), Tehsildar, or Revenue Officer authorised by the State Government. Certificates from unofficial sources or panchayat offices are not accepted.' },
-                  { label: 'Non-Creamy Layer Clause', content: 'Your certificate must clearly state that you do not belong to the Creamy Layer. The Creamy Layer threshold is a family income of ₹8 lakh per year (as of 2024 — subject to revision). If your family income exceeds this limit, you are no longer eligible for OBC reservation in Central Government exams.' },
+                  { label: 'Non-Creamy Layer Clause', content: 'Your certificate must state clearly that you do not fall in the Creamy Layer. The income ceiling remains ₹8 lakh per year for the family — last revised by the DoPT in September 2017, and still unchanged. In a written reply in Parliament in February 2026, the Government confirmed that no proposal to revise it was under consideration, despite long-standing demands to raise the figure for inflation.' },
+                  { label: 'What the March 2026 Supreme Court ruling changed', content: 'This matters if your parents work in a PSU, a bank or a private company. In Union of India v. Rohith Nathan, decided on 11 March 2026, the Supreme Court held that creamy layer status cannot be decided on parental income alone, without reference to the rank and status of the post the parent holds. The Court reaffirmed the 1993 Office Memorandum, under which income from salary and from agricultural land is excluded from the income test, and disapproved the October 2004 DoPT clarification that had counted the salary of PSU and private-sector employees. The ₹8 lakh ceiling itself stands. Candidates who were earlier pushed into the creamy layer purely on a parent salary now have a clear judgment to rely on.' },
                 ].map((item, i) => (
                   <div key={i} className="card p-4">
                     <p className="font-semibold text-surface-700 text-sm mb-1">{item.label}</p>
@@ -3343,7 +3353,8 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
               <div className="space-y-3">
                 {[
                   { label: 'Who Needs It', content: 'General (unreserved) category candidates whose family annual income is below ₹8 lakh and who do not own agricultural land above 5 acres, a residential flat above 1000 sq. ft., a residential plot above 100 sq. yards in notified municipalities, or a residential plot above 200 sq. yards in non-notified areas.' },
-                  { label: 'Validity Period', content: 'EWS certificates must be renewed every year. The certificate issued for a particular financial year is valid for that year only. For DV purposes, the certificate must relate to the financial year in which the notification or application was made — check your exam notification for the exact requirement.' },
+                  { label: 'Validity Period', content: 'There is no single centrally fixed validity period. What decides it is which financial year the recruiting body asks for, and every notification states this. In practice central recruiters want a certificate in the central Income and Asset proforma, issued on or after 1 April of the relevant financial year. A certificate from an earlier year, or one in a state-only format, is a routine cause of rejection.' },
+                  { label: 'Two Tests, Not One', content: 'You must clear both the income test and the asset test. Plenty of candidates comfortably under ₹8 lakh are still disqualified by the land or property limits, because they never read that half of the rule. EWS is also only for candidates who are not covered by SC, ST or OBC reservation — if you are eligible for any of those, you cannot claim EWS.' },
                   { label: 'Age Relaxation Note', content: 'EWS candidates get 10% reservation in Central Government jobs but do NOT get any age relaxation. They must meet the General category age limit. This is different from OBC (which gets +3 years) and SC/ST (which gets +5 years).' },
                 ].map((item, i) => (
                   <div key={i} className="bg-surface-50 rounded-xl p-4 border border-surface-200">
@@ -3370,7 +3381,7 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                 {
                   icon: '♿',
                   name: 'PwBD (Persons with Benchmark Disability) Certificate',
-                  detail: 'The disability must be 40% or more as certified by the competent authority — a government-run medical board (CMO or Medical Superintendent of a District/Civil Hospital). The certificate must clearly state the type of disability, percentage of disability, and permanent or temporary status. The format is prescribed in the Rights of Persons with Disabilities Act 2016 (RPWD Act). This certificate entitles you to reservation, age relaxation (General +10 years, OBC +13 years, SC/ST +15 years), and post-specific concessions.',
+                  detail: 'The disability must be 40% or more — a benchmark disability under the Rights of Persons with Disabilities Act, 2016 — certified by a notified government medical authority. Two things have changed and both matter in 2026. First, get your certificate onto the national UDID portal (swavlambancard.gov.in). Recruiting bodies now authenticate disability certificates and UDID cards directly against that portal, and a paper certificate that has never been digitised can stall your verification at exactly the wrong moment. Second, SSC has moved to two formats — Form V for a single disability and Form VI for multiple disabilities — which carry UDID details. The certificate must state the type of disability, the percentage, and whether it is permanent or temporary. It entitles you to 4% reservation, age relaxation (General +10 years, OBC +13, SC/ST +15), fee exemption, and a scribe or compensatory time where applicable. Carry the original; photocopies alone are not accepted.',
                 },
                 {
                   icon: '🎖️',
@@ -3411,15 +3422,17 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                 <h3 className="font-heading font-bold text-blue-800 mb-3 text-base">🖥️ Online Application Stage</h3>
                 <p className="text-xs text-blue-700 mb-3">You only upload scanned digital files — no originals needed.</p>
                 <ul className="space-y-2 text-sm text-blue-800">
-                  <li>📷 <strong>Recent passport-size photo</strong> (JPG, 20–50 KB, white background)</li>
-                  <li>✍️ <strong>Signature</strong> (JPG, 10–20 KB, black ink on white paper)</li>
-                  <li>👆 <strong>Left thumb impression</strong> (IBPS/SBI only — JPG, 10–20 KB)</li>
-                  <li>📝 <strong>Handwritten declaration</strong> (IBPS — JPG, your own handwriting)</li>
-                  <li>🔢 Aadhaar number, mobile, email entered manually</li>
-                  <li>📊 Educational details entered manually (no certificate upload)</li>
-                  <li>📂 Category certificate details entered — no upload usually required</li>
+                  <li>📷 <strong>Live photograph</strong> — SSC and IBPS now capture this inside the portal using a webcam or phone. A pre-existing gallery photo is rejected.</li>
+                  <li>✍️ <strong>Signature</strong> (JPEG, 10–20 KB, black ink on white paper, never in capitals)</li>
+                  <li>👆 <strong>Left thumb impression</strong> (IBPS/SBI — JPEG, 20–50 KB)</li>
+                  <li>📝 <strong>Handwritten declaration</strong> (IBPS/SBI — JPEG, 50–100 KB, English, own handwriting, not in capitals)</li>
+                  <li>🔢 Aadhaar number, mobile and email entered manually</li>
+                  <li>📊 Educational details typed in — certificates usually not uploaded at this stage</li>
+                  <li>📂 Category certificate details entered; whether you upload depends on the notification</li>
                 </ul>
-                <p className="text-xs text-blue-600 mt-3">⚠️ UPSC is an exception — their new portal requires document uploads during registration itself.</p>
+                <p className="text-xs text-blue-700 mt-3">⚠️ <strong>SSC:</strong> One Time Registration now lives on ssc.gov.in. An OTR created on the older ssc.nic.in site does not carry over — create a fresh one before you apply.</p>
+                <p className="text-xs text-blue-700 mt-2">💡 <strong>Take the Aadhaar option at SSC OTR.</strong> It is voluntary, but candidates who opt in cannot be rejected over photograph or signature standards, and need not carry a physical photo ID to the computer-based exam.</p>
+                <p className="text-xs text-blue-700 mt-2">⚠️ <strong>UPSC is the exception.</strong> Its portal asks for photo ID and certificate uploads at the application stage itself, and now issues a Universal Registration Number (URN) in place of the older One Time Registration module.</p>
               </div>
               <div className="bg-green-50 border border-green-200 rounded-xl p-5">
                 <h3 className="font-heading font-bold text-green-800 mb-3 text-base">📁 Document Verification (DV) Stage</h3>
@@ -3436,6 +3449,10 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                   <li>📄 <strong>Printed application form</strong> from online submission</li>
                 </ul>
               </div>
+            </div>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-5">
+              <p className="text-sm text-amber-800 font-semibold mb-1">⚠️ File sizes change — always check your own notification</p>
+              <p className="text-sm text-amber-900">The sizes above are the ones most commonly specified, but pixel dimensions and KB limits differ between exams and are revised from notification to notification. Whatever you read here or anywhere else, the figures in the notification you are applying under are the only ones that count. Prepare your files against that document.</p>
             </div>
             <div className="bg-surface-100 rounded-xl p-4 mt-5">
               <p className="text-sm text-surface-700 font-semibold mb-1">📌 Self-Attestation — Do It Right</p>
@@ -3501,7 +3518,10 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                 { mistake: 'Forgetting the NOC if serving in a government job', fix: 'Apply for NOC from your employer as soon as you clear the written exam. It can take weeks.' },
                 { mistake: 'Photocopies without self-attestation', fix: 'Write "Self-Attested", sign, and date every photocopy before arriving for DV.' },
                 { mistake: 'EWS certificate from the wrong financial year', fix: 'EWS certificates must be renewed annually. Carry a fresh one for the relevant financial year.' },
-                { mistake: 'Relying only on e-documents (soft copies)', fix: 'Always carry physical originals. Most DV panels ask for originals to physically verify. E-copies on your phone are a backup, not a substitute.' },
+                { mistake: 'Uploading a gallery photo where a live photo is required', fix: 'SSC and IBPS capture the photograph inside the portal itself. Set up a plain, well-lit background before you start and take it on the spot — no cap, mask or dark glasses.' },
+                { mistake: 'Assuming your old SSC OTR still works', fix: 'SSC registration now sits on ssc.gov.in. An OTR created on the older ssc.nic.in site does not carry over. Create a fresh one well before the notification closes.' },
+                { mistake: 'PwBD certificate never digitised on the UDID portal', fix: 'Get it onto swavlambancard.gov.in early. Recruiters now authenticate disability certificates against that portal, and an undigitised paper certificate slows verification down.' },
+                { mistake: 'Treating DigiLocker as a full substitute for originals', fix: 'Issuer-fetched DigiLocker documents are legally equivalent to originals under Rule 9A of the IT Rules 2016, but acceptance still varies by panel. Carry the physical originals and keep DigiLocker as your backup.' },
               ].map((item, i) => (
                 <div key={i} className="flex gap-3 card p-4">
                   <span className="text-red-500 text-lg flex-shrink-0">✗</span>
@@ -3517,7 +3537,7 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
           {/* Salary Section */}
           <DocSection id="salary" title="💰 Which Government Jobs Pay ₹50,000+ Per Month?">
             <p className="text-surface-600 leading-relaxed mb-5">
-              Many aspirants ask this question — and the answer depends on the post, pay level, and allowances. Here are the most realistic government jobs where in-hand salary crosses ₹50,000 per month (including HRA, DA, and other allowances as applicable in major cities).
+              This comes up constantly, so here is a current answer. Dearness Allowance for central government staff rose to <strong>60% of basic pay with effect from 1 January 2026</strong>, which lifted every 7th CPC in-hand figure noticeably — a lot of the salary tables floating around online were built at 50% or 55% DA and now understate reality.
             </p>
             <div className="overflow-x-auto rounded-xl border border-surface-200">
               <table className="w-full text-sm">
@@ -3525,19 +3545,17 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                   <tr>
                     <th className="text-left px-4 py-3 font-heading font-semibold">Post / Exam</th>
                     <th className="text-left px-4 py-3 font-heading font-semibold">Pay Level</th>
-                    <th className="text-left px-4 py-3 font-heading font-semibold">Approx. In-Hand (City)</th>
+                    <th className="text-left px-4 py-3 font-heading font-semibold">Approx. in-hand (X-city)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-surface-100">
                   {[
-                    { post: 'IAS / IPS / IFS (UPSC CSE)', level: 'Level 10 (₹56,100 basic) → Level 18', salary: '₹70,000 – ₹2,50,000+' },
-                    { post: 'SSC CGL — Inspector of Income Tax, CBI Sub-Inspector', level: 'Level 7 (₹44,900 basic) + allowances', salary: '₹55,000 – ₹70,000 (metros)' },
-                    { post: 'SSC CGL — Assistant Section Officer (MEA, CSS)', level: 'Level 7 (₹44,900 basic) + allowances', salary: '₹55,000 – ₹65,000' },
-                    { post: 'IBPS PO / SBI PO (Probationary Officer)', level: 'JMGS-I (₹48,480 – ₹85,920 scale)', salary: '₹52,000 – ₹65,000 (metros)' },
-                    { post: 'RBI Grade B Officer', level: 'Grade B (₹55,200 basic)', salary: '₹80,000 – ₹1,00,000+' },
-                    { post: 'NABARD Grade A', level: 'Grade A (₹44,500 basic + allowances)', salary: '₹55,000 – ₹70,000' },
-                    { post: 'State PSC Class II Officers (e.g., Deputy SP, SDM)', level: 'PB-3 / Level 10 equivalent', salary: '₹50,000 – ₹80,000 (varies by state)' },
-                    { post: 'SSC CGL — Auditor / Accountant (CAG)', level: 'Level 5 (₹29,200 basic) — lower, but rises fast with promotions', salary: '₹38,000 – ₹48,000 initially; ₹55,000+ after 5–7 yrs' },
+                    { post: 'RBI Grade B Officer', level: 'Revised scale — basic ₹78,450', salary: '₹1,08,000 – ₹1,25,000' },
+                    { post: 'IAS / IPS / IFS (UPSC CSE), entry level', level: 'Pay Level 10 — basic ₹56,100', salary: '₹1,00,000 – ₹1,10,000' },
+                    { post: 'SBI PO (Probationary Officer)', level: 'JMGS-I — basic ₹48,480 + 4 advance increments', salary: '₹80,000 – ₹86,000' },
+                    { post: 'SSC CGL — Inspector (Income Tax / GST), SI in CBI, ASO', level: 'Pay Level 7 — basic ₹44,900', salary: '₹75,000 – ₹83,000' },
+                    { post: 'IBPS PO (Probationary Officer)', level: 'JMGS-I — basic ₹48,480', salary: '₹70,000 – ₹76,000' },
+                    { post: 'SSC CGL — Auditor / Accountant (CAG)', level: 'Pay Level 5 — basic ₹29,200', salary: '₹52,000 – ₹56,000' },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface-50'}>
                       <td className="px-4 py-3 font-semibold text-surface-700">{row.post}</td>
@@ -3548,7 +3566,20 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-surface-400 mt-3">Note: In-hand salaries are estimates including HRA and DA as applicable in Class X cities. Salaries change with DA revisions. Always check the official notification for the most current pay scale.</p>
+            <div className="bg-surface-50 border border-surface-200 rounded-xl p-4 mt-4">
+              <p className="text-sm text-surface-600 leading-relaxed mb-3">
+                Figures are approximate in-hand amounts for an X-category (metro) posting at 60% DA, after routine deductions such as NPS and CGHS. Your own figure moves with your city, your post and your tax situation. Two things worth knowing: bank salaries follow the IBA bipartite settlement rather than the 7th CPC, and their DA is revised quarterly rather than half-yearly. And state PSC Class II posts such as Deputy SP or SDM broadly track Pay Level 10, but every state runs its own pay commission and allowance rules, so a single national figure would be misleading — check your state notification.
+              </p>
+              <p className="text-sm text-surface-600 leading-relaxed mb-3">
+                <strong>On the 8th Pay Commission:</strong> it was constituted on 3 November 2025 under Justice (Retd.) Ranjana Prakash Desai, with an 18-month deadline, and was still holding stakeholder consultations through mid-2026. Its report is expected around mid-2027. Nothing has been implemented yet — every figure above is 7th CPC.
+              </p>
+              <p className="text-sm text-surface-600">
+                For a proper post-by-post breakdown, see our dedicated pages:{' '}
+                <Link href="/blog/ssc-cgl-salary-2026-post-wise-in-hand/" className="text-primary-500 hover:underline">SSC CGL salary post-wise</Link>,{' '}
+                <Link href="/blog/ibps-po-salary-in-hand-2026/" className="text-primary-500 hover:underline">IBPS PO in-hand salary</Link>, and the{' '}
+                <Link href="/blog/8th-pay-commission-salary-calculator-2026/" className="text-primary-500 hover:underline">8th Pay Commission calculator</Link>.
+              </p>
+            </div>
           </DocSection>
 
           {/* FAQ */}
@@ -3561,7 +3592,7 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                 },
                 {
                   q: 'Which document is required when applying for a job (online application)?',
-                  a: 'At the online application stage, you only need digital copies. The main ones are: a scanned passport-size photograph (JPG, 20–50 KB), a scanned signature (JPG, 10–20 KB), and your Aadhaar/enrollment number. Your educational and category details are usually entered manually — no certificate upload is required for SSC, IBPS, or RRB at this stage.',
+                  a: 'At the online application stage you work almost entirely with digital files, but the rules changed. For SSC and IBPS the photograph is no longer uploaded from your gallery — it is captured live inside the portal through a webcam or phone camera, and uploading a photo of an existing photograph gets the application rejected. You still upload a scanned signature (JPEG, 10–20 KB, black ink on white paper, never in capitals). IBPS and SBI additionally require a left thumb impression (20–50 KB) and a handwritten declaration in English in your own handwriting (50–100 KB). Educational and category details are typed in rather than uploaded for SSC, IBPS and RRB. UPSC is the exception: its portal asks for photo ID and certificate uploads at the application stage itself.',
                 },
                 {
                   q: 'Can I get rejected in document verification?',
@@ -3574,6 +3605,14 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
                 {
                   q: 'How many passport-size photographs should I bring to DV?',
                   a: 'Bring at least 8–10 recent passport-size photographs. DV offices often ask for 2–4 photos, and there are sometimes multiple stages (medical examination, joining formalities) that each need separate sets. Use photographs taken on the same day in the same clothes as far as possible — consistency helps.',
+                },
+                {
+                  q: 'My parents work in a PSU or a private company. Can I still claim OBC-NCL?',
+                  a: 'Very possibly, and the position improved in March 2026. In Union of India v. Rohith Nathan, decided on 11 March 2026, the Supreme Court held that creamy layer status cannot be decided on parental income alone without reference to the rank and status of the post the parent holds. The Court reaffirmed the 1993 Office Memorandum, under which salary income and agricultural income are excluded from the income test, and disapproved the October 2004 DoPT clarification that had counted the salary of PSU and private-sector employees. The ₹8 lakh ceiling itself is unchanged. Apply for the certificate in the normal way, and if you are refused purely on the basis of a parent salary, cite this judgment.',
+                },
+                {
+                  q: 'Are DigiLocker documents accepted at document verification?',
+                  a: 'Documents fetched into DigiLocker from the issuing authority are legally equivalent to physical originals under Rule 9A of the Information Technology Rules, 2016, and recruiting bodies increasingly verify certificates digitally. In practice, acceptance at the DV table still varies from panel to panel, so treat DigiLocker as a strong backup rather than a replacement, and carry the physical originals. One detail people miss: only issuer-fetched documents carry the verified tag. Files you upload into DigiLocker yourself do not.',
                 },
                 {
                   q: 'What if my OBC-NCL certificate expired just last month?',
@@ -3594,7 +3633,7 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
           {/* CTA */}
           <div className="bg-gradient-to-br from-primary-500 to-primary-800 rounded-2xl p-8 text-center text-white mt-10">
             <h2 className="text-xl font-heading font-bold mb-3">Ready for Your Exam?</h2>
-            <p className="text-white/80 text-sm mb-5">Start preparing with our free tools and 100+ exam pages.</p>
+            <p className="text-white/80 text-sm mb-5">Start preparing with our free tools and {allExams.length} exam pages.</p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link href="/tools/eligibility-checker" className="bg-white text-primary-700 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors">Check Eligibility</Link>
               <Link href="/exams" className="border border-white/40 text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-white/10 transition-colors">Browse All Exams</Link>
@@ -3645,7 +3684,9 @@ function DocumentsGuide({ guide }: { guide: { slug: string; title: string; descr
           { '@type': 'Question', name: 'What documents are needed for a government job?', acceptedAnswer: { '@type': 'Answer', text: 'Core documents: Aadhaar card, PAN card, Class 10 marksheet, Class 12 marksheet, graduation degree + all semester marksheets, passport-size photographs, and reservation certificate (OBC-NCL/SC/ST/EWS if applicable). Serving govt employees also need an NOC.' } },
           { '@type': 'Question', name: 'Can I get rejected in document verification?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Common rejection reasons include: expired OBC-NCL certificate, wrong format (State format instead of Central Government format), name mismatch, missing semester marksheets, and no NOC for serving government employees.' } },
           { '@type': 'Question', name: 'What is the validity period of an OBC-NCL certificate for Central Government jobs?', acceptedAnswer: { '@type': 'Answer', text: 'OBC-NCL certificates are valid for the financial year in which they are issued (April to March). Most Central Government exams require a certificate from the current or immediately preceding financial year.' } },
-          { '@type': 'Question', name: 'Which government jobs pay ₹50,000 per month?', acceptedAnswer: { '@type': 'Answer', text: 'Jobs paying ₹50,000+ per month (in-hand, metros) include: IAS/IPS via UPSC CSE, SSC CGL Inspector of Income Tax, SSC CGL Assistant Section Officer in MEA/CSS, IBPS PO / SBI PO, RBI Grade B Officer, and NABARD Grade A Officer.' } },
+          { '@type': 'Question', name: 'My parents work in a PSU or private company. Can I still claim OBC-NCL?', acceptedAnswer: { '@type': 'Answer', text: 'In Union of India v. Rohith Nathan (11 March 2026), the Supreme Court held that creamy layer status cannot be decided on parental income alone without reference to the rank and status of the post held. Salary and agricultural income are excluded from the income test under the 1993 Office Memorandum. The ₹8 lakh ceiling is unchanged.' } },
+          { '@type': 'Question', name: 'Are DigiLocker documents accepted at document verification?', acceptedAnswer: { '@type': 'Answer', text: 'Documents fetched into DigiLocker from the issuing authority are legally equivalent to physical originals under Rule 9A of the IT Rules, 2016. Acceptance at DV still varies by panel, so carry physical originals and treat DigiLocker as a backup. Only issuer-fetched documents carry the verified tag.' } },
+          { '@type': 'Question', name: 'Which government jobs pay ₹50,000 per month?', acceptedAnswer: { '@type': 'Answer', text: 'At the current 60% DA effective 1 January 2026, jobs with in-hand pay above ₹50,000 per month in metro postings include RBI Grade B Officer, IAS/IPS/IFS via UPSC CSE, SBI PO, IBPS PO, SSC CGL Pay Level 7 posts such as Income Tax Inspector and Assistant Section Officer, and SSC CGL Pay Level 5 posts such as Auditor.' } },
         ],
       })}} />
     </div>

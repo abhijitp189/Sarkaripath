@@ -1299,10 +1299,11 @@ export const guides = [
   },
   {
     slug: 'documents-needed-government-job',
+    updatedDate: '2026-07-23',
     title: 'Documents Required for Government Job (2026) – Complete Checklist',
     description: 'Complete 2026 checklist of documents needed for government job applications and Document Verification (DV). Covers identity proof, educational certificates, OBC-NCL/SC/ST/EWS reservation documents, NOC, disability certificates, pro tips on name mismatches, and the most common DV rejection reasons.',
     category: 'Documents',
-    readTime: '15 min read',
+    readTime: '18 min read',
   },
   {
     slug: 'study-plan-working-professionals',
