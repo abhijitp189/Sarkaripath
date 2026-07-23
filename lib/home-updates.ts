@@ -30,6 +30,14 @@ export interface HomeNotice {
 
 export const homeNotices: HomeNotice[] = [
   {
+    sortDate: '2026-07-23',
+    tag: 'State PSC',
+    tagColor: 'blue',
+    text: 'TNPSC Group 1 Prelims 2026 postponed from 6 September to 27 September 2026 (Addendum No. 5A/2026 dated 16 July 2026). Applications close 29 July 2026; correction window 2–4 August 2026. All other notification conditions are unchanged.',
+    href: '/exams/tnpsc-group-1/',
+    linkLabel: 'Revised dates & full guide',
+  },
+  {
     sortDate: '2026-07-19',
     tag: 'Railway',
     tagColor: 'orange',
