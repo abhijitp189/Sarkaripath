@@ -33,3 +33,9 @@ https://taiyarho.in/* https://www.taiyarho.in/:splat 301
 /guides/how-to-fill-government-exam-form/ /guides/how-to-fill-government-job-application-form/ 301
 /guides/age-relaxation-government-exams /guides/age-limit-relaxation-government-jobs/ 301
 /guides/age-relaxation-government-exams/ /guides/age-limit-relaxation-government-jobs/ 301
+
+# 4. Removed thin-content current affairs digests (removed 24 Jul 2026)
+/current-affairs/weekly-current-affairs-april-20-26-2026 /current-affairs/ 301
+/current-affairs/weekly-current-affairs-april-20-26-2026/ /current-affairs/ 301
+/current-affairs/weekly-current-affairs-may-4-10-2026 /current-affairs/ 301
+/current-affairs/weekly-current-affairs-may-4-10-2026/ /current-affairs/ 301
