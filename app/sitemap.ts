@@ -28,7 +28,7 @@ function newestOf(dates: Date[], fallback: Date = SITE_CONTENT_DATE): Date {
 export default function sitemap(): MetadataRoute.Sitemap {
   // ── Real content dates for the dynamic collections ─────────────────────────
   const blogDates = blogPosts.map((p) => toDate(p.updatedDate));
-  const caDates = currentAffairsPosts.map((p) => toDate(p.publishedDate));
+  const caDates = currentAffairsPosts.map((p) => toDate(p.updatedDate ?? p.publishedDate));
   const examDates = allExams.map((e) => toDate(e.updatedDate));
   const guideDates = guides.map((g) => toDate((g as { updatedDate?: string }).updatedDate));
 
@@ -146,7 +146,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Current Affairs pages ──────────────────────────────────────────────────
   const currentAffairsRoutes: MetadataRoute.Sitemap = currentAffairsPosts.map((post) => ({
     url: `${BASE_URL}/current-affairs/${post.slug}/`,
-    lastModified: toDate(post.publishedDate),
+    lastModified: toDate(post.updatedDate ?? post.publishedDate),
     changeFrequency: 'monthly' as const,
     priority: 0.9,
   }));

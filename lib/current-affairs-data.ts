@@ -45,6 +45,8 @@ export interface CurrentAffairsPost {
   title: string;
   dateRange: string;
   publishedDate: string;
+  /** Set only when an archived post is materially corrected/updated. Drives sitemap lastModified. */
+  updatedDate?: string;
   category: 'National' | 'International' | 'Economy' | 'Sci-Tech' | 'Sports' | 'All';
   excerpt: string;
   targetExams: string[];
@@ -515,20 +517,23 @@ Discussions on Section 473 of the Bharatiya Nagarik Suraksha Sanhita (BNSS) — 
     title: "Weekly Roundup: Census 2027, Ladakh's New Districts & Army Appointments",
     dateRange: 'April 27 – May 4, 2026',
     publishedDate: 'May 4, 2026',
+    updatedDate: '2026-07-24',
     category: 'National',
     excerpt:
       "This week: India launches its first-ever Digital Census 2027, Ladakh gets 5 new districts, Lt Gen Dhiraj Seth appointed Vice Chief of Army, and Shekha Jheel becomes India's 99th Ramsar Site.",
     targetExams: ['UPSC', 'SSC CGL', 'IBPS PO', 'RRB NTPC', 'State PSC'],
     isFeatured: false,
     keyPoints: [
-      "India officially begins rollout of Census 2027 — the country's first-ever Digital Census.",
-      'Census 2027 mascots: "Pragati" (Progress) and "Vikas" (Development). Self-enumeration available in 16 languages.',
-      'LG Vinai Kumar Saxena approves 5 new districts in Ladakh: Nubra, Sham, Changthang, Zanskar, and Drass.',
-      'Ladakh now has 7 total districts — up from just Leh and Kargil previously.',
-      'Lt Gen Dhiraj Seth appointed as the new Vice Chief of the Indian Army.',
-      'Ashwini Bhide becomes the first-ever female Commissioner of BMC (Brihanmumbai Municipal Corporation).',
-      "Shekha Jheel Bird Sanctuary (Aligarh, UP) designated as India's 99th Ramsar Site.",
-      'UP now has 12 Ramsar wetland sites — the highest count among all Indian states.',
+      "Census 2027 — India's first-ever fully digital Census — moves into its operational phase.",
+      'Census 2027 mascots "Pragati" (female enumerator, Progress) and "Vikas" (male enumerator, Development) were unveiled on 5 March 2026 by Home Minister Amit Shah.',
+      'Self-Enumeration is available in 16 languages via the official portal se.census.gov.in.',
+      'Census 2027 reference date: 1 March 2027 (1 October 2026 for snow-bound areas). First Census to enumerate caste since 1931.',
+      'LG Vinai Kumar Saxena notified 5 new districts in Ladakh on 27 April 2026: Nubra, Sham, Changthang, Zanskar and Drass.',
+      'Ladakh now has 7 total districts — 3 carved out of Leh and 2 out of Kargil, up from just Leh and Kargil previously.',
+      'Lt Gen Dhiraj Seth became Vice Chief of the Army Staff on 1 April 2026 — and has since been appointed Chief of the Army Staff with effect from 30 June 2026.',
+      'Ashwini Bhide became the first-ever female Commissioner of BMC (Brihanmumbai Municipal Corporation) on 31 March 2026.',
+      "Shekha Jheel Bird Sanctuary (Aligarh, UP) was designated India's 99th Ramsar Site on 22 April 2026.",
+      'Tamil Nadu has the highest number of Ramsar sites in India (20) — NOT Uttar Pradesh. India crossed 100 Ramsar sites on 5 June 2026.',
     ],
     quizQuestions: [
       {
@@ -551,21 +556,50 @@ Discussions on Section 473 of the Bharatiya Nagarik Suraksha Sanhita (BNSS) — 
         ],
         answer: 'Shekha Jheel Bird Sanctuary, UP',
       },
+      {
+        question: 'Which Indian state has the highest number of Ramsar sites?',
+        options: ['Uttar Pradesh', 'Tamil Nadu', 'Kerala', 'West Bengal'],
+        answer: 'Tamil Nadu',
+      },
+      {
+        question: 'Who took over as Chief of the Army Staff with effect from 30 June 2026?',
+        options: [
+          'Gen Upendra Dwivedi',
+          'Lt Gen Sandeep Jain',
+          'Gen Dhiraj Seth',
+          'Lt Gen Pushpendra Pal Singh',
+        ],
+        answer: 'Gen Dhiraj Seth',
+      },
     ],
     content: `
+**Fact-check update — 24 July 2026:** This archive page has been re-verified against official sources. One factual error has been corrected (the state with the most Ramsar sites), and two items have changed since this issue was first published — the Army Vice Chief and India's Ramsar site count. Look for the Correction and Update notes below, and study those versions.
+
 ## National Affairs
 
 **Commencement of Census 2027**
-India has officially started the rollout of Census 2027 — a landmark exercise and the country's first-ever Digital Census. The Census was originally scheduled for 2021 but was delayed due to the COVID-19 pandemic. Key features include a Self-Enumeration facility available in 16 languages, allowing citizens to fill in their own data via a mobile app or web portal. The government has officially named the two mascots of Census 2027: "Pragati" (representing Progress) and "Vikas" (representing Development).
+Census 2027 is the country's first-ever fully digital Census. It was originally due in 2021 but was postponed because of the COVID-19 pandemic. The Government notified its intent to conduct it through a Gazette Notification on 16 June 2025. On 5 March 2026, Union Home Minister Amit Shah unveiled the two official mascots and soft-launched four digital tools developed by C-DAC: the Houselisting Block Creator web application, the HLO mobile application, the Self-Enumeration Portal and the Census Management and Monitoring System.
+
+The mascots are "Pragati", a female enumerator representing progress, and "Vikas", a male enumerator representing development. Together they symbolise the equal participation of women and men in building a developed India by 2047.
+
+A Self-Enumeration facility is available in 16 languages through the official portal se.census.gov.in. Households can submit their own details before the door-to-door visit, and a unique identification number is generated on submission for the enumerator to verify. President Droupadi Murmu and Vice President C. P. Radhakrishnan both self-enumerated on 1 April 2026.
+
+Census 2027 runs in two phases — Houselisting and Housing Census (April to September 2026) and Population Enumeration (February 2027) — and will engage more than 30 lakh enumerators, supervisors and officials, making it the world's largest census exercise. The reference date is 1 March 2027 for most States and Union Territories, and 1 October 2026 for snow-bound areas. It will also be the first Census since 1931 to enumerate caste.
+
+**Exam pointers:** This will be India's 16th Census, and the first since 2011. It is conducted under the Census Act, 1948 and the Census Rules, 1990, by the Office of the Registrar General and Census Commissioner under the Ministry of Home Affairs. The Registrar General and Census Commissioner of India is Mritunjay Kumar Narayan. India's first non-synchronous Census was held in 1872 under Lord Mayo; the first synchronous Census was in 1881.
 
 *Why it matters for exams: Demography, Social Issues — UPSC GS Paper 1, SSC CGL General Awareness, State PSC prelims.*
 
 ---
 
 **5 New Districts Created in Ladakh**
-Lieutenant Governor Vinai Kumar Saxena approved the creation of 5 new districts in the Union Territory of Ladakh. The new districts are: Nubra, Sham, Changthang, Zanskar, and Drass. Prior to this decision, Ladakh had only 2 districts — Leh and Kargil. With this addition, Ladakh now has a total of 7 districts.
+Lieutenant Governor Vinai Kumar Saxena notified the creation of 5 new districts in the Union Territory of Ladakh on 27 April 2026. The new districts are Nubra, Sham, Changthang, Zanskar and Drass. Prior to this, Ladakh had only 2 districts — Leh and Kargil. With this addition, Ladakh now has a total of 7 districts.
 
-Context: Ladakh was carved out as a separate Union Territory from Jammu and Kashmir on October 31, 2019 (Reorganisation Act, 2019).
+Three of the new districts were carved out of Leh — Nubra (headquarters: Diskit), Sham (Khaltse) and Changthang (Nyoma). Two were carved out of Kargil — Zanskar (Padum) and Drass (Drass-Ranbirpura). The Ministry of Home Affairs had approved the proposal in August 2024; this notification gave it legal effect and also defined the territorial limits of all seven districts.
+
+Context: Ladakh was carved out as a separate Union Territory from Jammu and Kashmir on 31 October 2019 under the Jammu and Kashmir Reorganisation Act, 2019.
+
+**Note for aspirants:** Vinai Kumar Saxena took oath as the 4th Lieutenant Governor of Ladakh on 13 March 2026, succeeding Kavinder Gupta. He was previously the Lieutenant Governor of Delhi from 2022 to 2026, so older notes may still list him under Delhi.
 
 *Why it matters: Geography and Polity — direct question potential for SSC CGL, SSC CPO, and State PSC geography/polity sections.*
 
@@ -574,10 +608,12 @@ Context: Ladakh was carved out as a separate Union Territory from Jammu and Kash
 ## Appointments
 
 **New Vice Chief of the Indian Army**
-Lt Gen Dhiraj Seth has been appointed as the Vice Chief of the Indian Army. The Vice Chief of Army Staff (VCOAS) is the second highest position in the Indian Army, after the Chief of Army Staff.
+Lt Gen Dhiraj Seth assumed charge as the 49th Vice Chief of the Army Staff (VCOAS) on 1 April 2026, succeeding Lt Gen Pushpendra Pal Singh. The Vice Chief of Army Staff is the second highest position in the Indian Army, after the Chief of the Army Staff.
+
+**Update (July 2026):** Lt Gen Dhiraj Seth has since been appointed Chief of the Army Staff with effect from the afternoon of 30 June 2026, succeeding General Upendra Dwivedi, who retired the same day. An alumnus of the National Defence Academy, he was commissioned into the Armoured Corps in December 1986 and is the first Armoured Corps officer to head the Indian Army since 1997. Lt Gen Sandeep Jain, of the Mahar Regiment, took over as Vice Chief of the Army Staff on 1 July 2026. For any exam held after June 2026, the correct answers are: Chief of the Army Staff — General Dhiraj Seth; Vice Chief of the Army Staff — Lt Gen Sandeep Jain.
 
 **First Female BMC Commissioner**
-Ashwini Bhide has been appointed as the Commissioner of the Brihanmumbai Municipal Corporation (BMC), making her the first-ever woman to hold this position. BMC is the richest municipal corporation in India and one of the largest in Asia.
+Ashwini Bhide, a 1995-batch IAS officer, took charge as Municipal Commissioner of the Brihanmumbai Municipal Corporation (BMC) on 31 March 2026, becoming the first woman to hold the post in the civic body's more than 160-year history. She succeeded Bhushan Gagrani and was picked by Chief Minister Devendra Fadnavis. She continues to hold additional charge as Managing Director of the Mumbai Metro Rail Corporation (MMRC), which is executing Metro Line 3, the Aqua Line. BMC is the richest municipal corporation in India and one of the largest in Asia.
 
 *Why it matters: Appointments are a high-probability topic for Banking (IBPS PO, SBI PO) and SSC CPO exams.*
 
@@ -586,9 +622,17 @@ Ashwini Bhide has been appointed as the Commissioner of the Brihanmumbai Municip
 ## Environment
 
 **India's 99th Ramsar Site**
-Shekha Jheel Bird Sanctuary, located in Aligarh district of Uttar Pradesh, has been officially designated as a Ramsar Site — making it India's 99th Ramsar Wetland. With this addition, Uttar Pradesh now has 12 Ramsar sites, the highest count among all Indian states.
+Shekha Jheel Bird Sanctuary, located in Aligarh district of Uttar Pradesh, was designated a Ramsar Site on 22 April 2026 — Earth Day — in an announcement by Union Environment Minister Bhupender Yadav. It became India's 99th Ramsar Wetland and Uttar Pradesh's 12th at the time.
 
-What is a Ramsar Site? It is a wetland site designated under the Ramsar Convention (1971), an international treaty for the conservation and sustainable use of wetlands. India became a signatory in 1982.
+Shekha Jheel is a 25-hectare freshwater perennial wetland that came into existence in 1852 following construction of the Upper Ganga Canal, which divides the lake into two parts. It lies on the Central Asian Flyway and is a wintering habitat for over 166 waterbird species, including the bar-headed goose and the painted stork, alongside fauna such as the blackbuck and nilgai.
+
+**Correction:** An earlier version of this page stated that Uttar Pradesh had the highest number of Ramsar sites among Indian states. That was wrong. Tamil Nadu has the highest number of Ramsar sites in India with 20; Uttar Pradesh is second. Please correct this in your notes.
+
+**Update (July 2026):** India crossed the 100-site milestone on 5 June 2026, World Environment Day, when the Jai Prakash Narayan Bird Sanctuary — popularly known as Surha Tal — in Ballia district, Uttar Pradesh was designated India's 100th Ramsar Site. Surha Tal is an oxbow lake formed by a meander of the Ganga and was declared a bird sanctuary in 1991. That designation took Uttar Pradesh's tally to 13. Tamil Nadu still leads with 20.
+
+What is a Ramsar Site? It is a wetland site designated under the Ramsar Convention, an international treaty for the conservation and sustainable use of wetlands, signed at Ramsar in Iran on 2 February 1971 — now marked every year as World Wetlands Day. India became a signatory in 1982. India's first two Ramsar sites, both designated in 1981, were Chilika Lake in Odisha and Keoladeo National Park in Rajasthan.
+
+**Ramsar quick facts:** India has the highest number of Ramsar sites in Asia and ranks third in the world, after the United Kingdom (176) and Mexico (144). Largest Ramsar site in India: Sundarbans Wetland, West Bengal. Smallest: Renuka Wetland, Himachal Pradesh. Two Indian sites are on the Montreux Record — Keoladeo National Park and Loktak Lake.
 
 *Why it matters: Environment and Ecology — vital for UPSC Prelims GS Paper 1, SSC CGL, RRB NTPC, and Banking GK sections.*
     `,
